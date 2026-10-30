@@ -1,6 +1,6 @@
 // Scripture Companion service worker. Caches only the app itself so it opens offline;
 // sermon audio always streams from the publisher (never cached, never proxied).
-const CACHE = 'sc-v23';
+const CACHE = 'sc-v24';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

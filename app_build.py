@@ -14,7 +14,7 @@ import config
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 23  # bump on every shipped build; also busts the service-worker cache
+VERSION = 24  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -256,7 +256,14 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 #np .ctl{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
 #np .ctl button{background:none;border:0;color:var(--ink);font:inherit;font-size:15px;padding:10px}
 #np .ctl .big{width:64px;height:64px;border-radius:50%;background:var(--gold);color:#1b2440;font-size:26px}
-#np.mini{padding-top:10px}#np.mini .grab,#np.mini .times,#np.mini input,#np.mini .ctl .side{display:none}#np.mini .ctl{margin:0}#np.mini .t{font-size:15px}#np.mini .ctl .big{width:44px;height:44px;font-size:18px}
+#np .grab{position:relative;cursor:grab}#np .grab::after{content:"";position:absolute;left:-80px;right:-80px;top:-14px;bottom:-12px}
+#np{touch-action:none}#np input[type=range]{touch-action:auto}
+#np.mini{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto;column-gap:12px;align-items:center;padding:8px 16px calc(10px + env(safe-area-inset-bottom));cursor:pointer}
+#np.mini .grab{grid-column:1/-1;grid-row:1;margin:0 auto 8px}
+#np.mini .t{grid-column:1;grid-row:2;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#np.mini .s{grid-column:1;grid-row:3;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#np.mini .times,#np.mini input,#np.mini .ctl .side,#np.mini #cls{display:none}
+#np.mini .ctl{grid-column:2;grid-row:2/4;margin:0}#np.mini .ctl .big{width:44px;height:44px;font-size:18px}
 .settings{padding:calc(70px + env(safe-area-inset-top)) 20px 60px;max-width:560px}
 .settings .note{color:var(--mute);font-size:14px;line-height:1.5}textarea{width:100%;height:110px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;font:12px/1.4 ui-monospace,monospace}
 .btn{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 14px;font:inherit;margin:4px 6px 4px 0}
@@ -456,7 +463,7 @@ function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(
 const audio=$('#audio');let cur=null,speed=S.get('speed',1);audio.playbackRate=speed;$('#spd').textContent=speed+'×';
 function where(id){for(const b of D.books){if(b.ov.includes(id)||(b.spans||[]).some(x=>x.id===id))return b.name;for(const c of b.ch)if(c.ids.includes(id))return b.name+' '+c.c}return ''}
 function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;audio.src=i.audio;const p=prog[id]||{};audio.addEventListener('loadedmetadata',()=>{if(p.pos&&p.pos<audio.duration-5)audio.currentTime=p.pos},{once:true});
-  $('#np-t').textContent=i.t;$('#np-s').textContent=teacher(i)+' · '+where(id);$('#np').classList.add('on');$('#np').classList.remove('mini');setPP();
+  $('#np-t').textContent=i.t;$('#np-s').textContent=teacher(i)+' · '+where(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(false)}setPP();
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play(),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=15,'seekforward',()=>audio.currentTime+=30,'nexttrack',next].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  audio.paused?audio.play():audio.pause()}
 function next(){const seq=[];for(const b of books()){seq.push(...(b.spans||[]).map(x=>x.id),...b.ov);const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;chs.forEach(c=>seq.push(...c.ids))}const k=seq.indexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
@@ -473,8 +480,20 @@ $('#pp').onclick=()=>cur&&(audio.paused?audio.play():audio.pause());$('#bk').onc
 $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.target.value/1000};
 $('#spd').onclick=()=>{const sp=[1,1.25,1.5,1.75,2];speed=sp[(sp.indexOf(speed)+1)%sp.length];audio.playbackRate=speed;$('#spd').textContent=speed+'×';S.set('speed',speed)};
 let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};
-$('#cls').onclick=()=>{audio.pause();audio.removeAttribute('src');audio.load();cur=null;$('#np').classList.remove('on');render()};
-$('#np').querySelector('.grab').onclick=()=>$('#np').classList.toggle('mini');$('#np-t').onclick=()=>$('#np').classList.toggle('mini');
+$('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NP().classList.remove('on');roomForPlayer();render()};
+/* player sheet: swipe down or tap the page to shrink it to a bar; tap or swipe up the bar to open it */
+function NP(){return $('#np')}
+function roomForPlayer(){requestAnimationFrame(()=>{document.body.style.paddingBottom=NP().classList.contains('on')?NP().offsetHeight+'px':''})}
+let fullAtScroll=0;
+function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;roomForPlayer()}
+(()=>{const np=NP();let y0=null,dy=0;
+ np.addEventListener('touchstart',e=>{if(e.target.closest('input'))return;y0=e.touches[0].clientY;dy=0;np.style.transition='none'},{passive:true});
+ np.addEventListener('touchmove',e=>{if(y0===null)return;dy=e.touches[0].clientY-y0;if(!np.classList.contains('mini')&&dy>0)np.style.transform=`translateY(${dy}px)`},{passive:true});
+ np.addEventListener('touchend',()=>{if(y0===null)return;np.style.transition='';np.style.transform='';if(dy>50)setMini(true);else if(dy<-30)setMini(false);y0=null});
+ np.addEventListener('click',e=>{if(e.target.closest('input')||e.target.closest('button'))return;if(np.classList.contains('mini'))setMini(false);else if(e.target.closest('.grab'))setMini(true)});
+ document.addEventListener('click',e=>{if(np.classList.contains('on')&&!np.classList.contains('mini')&&!np.contains(e.target))setMini(true)},true);
+ addEventListener('scroll',()=>{if(np.classList.contains('on')&&!np.classList.contains('mini')&&Math.abs(scrollY-fullAtScroll)>60)setMini(true)},{passive:true});
+})();
 /* wiring */
 function wire(){document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();play(b.dataset.play)});
  
