@@ -1,7 +1,7 @@
 # Runs on GitHub's servers (which can reach the podcast feeds).
-# - Every push: rebuild the app and publish it to GitHub Pages.
-# - Weekly, or by hand from the Actions tab: pull new episodes, check links, rebuild, publish,
-#   and save the updated catalog back into the repo.
+# - Every push: rebuild the app and publish it.
+# - Weekly, or by hand from the Actions tab: pull new episodes and publish them right away,
+#   then check every link and publish again with the results. The catalog is saved back to the repo.
 name: Refresh and publish
 
 on:
@@ -14,6 +14,10 @@ on:
       sources:
         description: "Feeds to pull (comma list)"
         default: "ptw,platt_messages,secret_church_podcast,twr360,2819_podcast"
+      check_links:
+        description: "Also open every link (slow)"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -21,6 +25,11 @@ permissions:
 concurrency:
   group: refresh
   cancel-in-progress: false
+
+env:
+  SOURCES: ${{ github.event.inputs.sources || 'ptw,platt_messages,secret_church_podcast,twr360,2819_podcast' }}
+  REFRESH: ${{ github.event_name != 'push' }}
+  CHECK: ${{ github.event_name == 'schedule' || github.event.inputs.check_links == 'true' }}
 
 jobs:
   build:
@@ -33,39 +42,24 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt feedparser
 
-      - name: Pull episodes and check links
-        if: github.event_name != 'push'
-        env:
-          SOURCES: ${{ github.event.inputs.sources || 'ptw,platt_messages,secret_church_podcast,twr360,2819_podcast' }}
+      - name: Pull episodes
+        if: env.REFRESH == 'true'
         run: |
           python run.py harvest --sources "$SOURCES"
-          python run.py verify
-          python - <<'PY'
-          import json, collections
-          es = [json.loads(l) for l in open("data/catalog_verified.jsonl")]
-          print("entries:", len(es))
-          print("by tier:", dict(collections.Counter(e["tier"] for e in es)))
-          print("by source:", dict(collections.Counter(e["source"] for e in es)))
-          PY
+          python run.py stamp
+          cat data/harvest_report.json
 
-      - name: Build app
-        run: python app_build.py
+      - name: Build and publish
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: ./publish.sh "Publish app"
 
-      - name: Save updated catalog
-        if: github.event_name != 'push'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
-          git add data/ out/
-          git diff --cached --quiet || git commit -m "Refresh catalog ($(date -u +%F))"
-          git push
+      - name: Check every link
+        if: env.CHECK == 'true'
+        run: python run.py verify
 
-      - name: Publish app to the gh-pages branch (served by GitHub Pages)
-        run: |
-          cd out/site
-          touch .nojekyll
-          git init -q -b gh-pages
-          git config user.name "github-actions[bot]"
-          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
-          git add -A && git commit -q -m "Publish app ($(date -u +%F))"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" gh-pages
+      - name: Publish again with link results
+        if: env.CHECK == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: ./publish.sh "Publish app (links checked)"

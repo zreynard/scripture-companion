@@ -49,9 +49,11 @@ def harvest_feed(key: str, feed_url: str, era: str = "platt") -> list[dict]:
             slug = re.sub(r"^#?\d+\s*[–-]\s*", "", it["title"])
             slug = re.sub(r"[^a-z0-9]+", "-", slug.lower()).strip("-")
             alt.append(f"https://radical.net/podcasts/pray-the-word/{slug}/")
-        out.append(make_entry(source=key, source_url=feed_url, url=url, title=it["title"],
-                              description=it["description"], published=it["pubdate"],
-                              duration=it["duration"], author=it["author"], era=era, alt_urls=alt))
+        e = make_entry(source=key, source_url=feed_url, url=url, title=it["title"],
+                       description=it["description"], published=it["pubdate"],
+                       duration=it["duration"], author=it["author"], era=era, alt_urls=alt)
+        e["audio_override"] = it.get("enclosure") or None
+        out.append(e)
     _log(f"{key}: {len(out)} items")
     return out
 
@@ -82,11 +84,63 @@ def harvest_itunes_podcast(key: str, term: str, must_match: str, era: str, chann
         url = it.get("link") or it.get("enclosure")
         if not url:
             continue
-        out.append(make_entry(source=key, source_url=feed_url, url=url, title=it["title"],
-                              description=it["description"], published=it["pubdate"], duration=it["duration"],
-                              author=it["author"], era=era, channel_default=channel_default, series=name))
+        e = make_entry(source=key, source_url=feed_url, url=url, title=it["title"],
+                       description=it["description"], published=it["pubdate"], duration=it["duration"],
+                       author=it["author"], era=era, channel_default=channel_default, series=name)
+        e["audio_override"] = it.get("enclosure") or None
+        if key == "secret_church_podcast":
+            secret_church_fixup(e)
+        out.append(e)
     _log(f"{key} ({name}): {len(out)} items")
     return out
+
+# ---------- Secret Church podcast: numbering + whole-book spans ----------
+_GENRES = [  # fixed spans for genre words (CLAUDE_CODE_PROMPT.md Phase 2)
+    (r"\bpentateuch\b|\bthe law\b", "Genesis", "Deuteronomy"),
+    (r"historical books", "Joshua", "Esther"),
+    (r"wisdom literature|poetry and wisdom|wisdom books", "Job", "Song of Solomon"),
+    (r"major prophets", "Isaiah", "Daniel"),
+    (r"minor prophets", "Hosea", "Malachi"),
+    (r"\bthe prophets\b|\bprophets\b", "Isaiah", "Malachi"),
+    (r"\bgospels\b", "Matthew", "John"),
+    (r"letters of paul|paul'?s letters|pauline", "Romans", "Philemon"),
+    (r"letters from others|general letters", "Hebrews", "Revelation"),
+    (r"old testament", "Genesis", "Malachi"),
+    (r"new testament", "Matthew", "Revelation"),
+]
+def _span(a, z):
+    from canon import BOOKS
+    names = [b[0] for b in BOOKS]
+    return names[names.index(a):names.index(z) + 1]
+
+def secret_church_fixup(e: dict) -> dict:
+    """Sets sc_season/sc_episode from 'N.M – Title' and maps bare book lists / genre words to whole books.
+    Only for titles that name no chapter numbers (no inference beyond the stated books)."""
+    from canon import CHAPTERS
+    from refs import _canon
+    m = re.match(r"\s*(\d+)\.(\d+)\s*[\u2013\u2014-]\s*(.+)$", e["title"])
+    if not m:
+        return e
+    e["sc_season"], e["sc_episode"], rest = int(m.group(1)), int(m.group(2)), m.group(3)
+    e["track"] = "overview"; e["speaker"] = "Platt"; e["era"] = "platt"
+    if e.get("refs"):
+        return e
+    books = []
+    lst = re.sub(r"^(the )?(books? of )", "", rest, flags=re.I)
+    lst = re.sub(r"\b([123])\s*(?:&|and)\s*([23])\s*(?:&|and)?\s*(3)?\s+([A-Z][a-z]+)",  # "1 & 2 Kings" -> "1 Kings, 2 Kings"
+                 lambda m: ", ".join(f"{n} {m.group(4)}" for n in (m.group(1), m.group(2), m.group(3)) if n), lst)
+    pieces = [p.strip() for p in re.split(r",\s*(?:and\s+)?|\s+and\s+|\s*&\s*", lst)]
+    canon_pieces = [_canon(re.sub(r"^the\s+", "", p, flags=re.I)) for p in pieces if p]
+    if canon_pieces and all(canon_pieces):
+        books = canon_pieces
+    elif not re.search(r"\d", rest):  # genre words only when no numbers are stated
+        for pat, a, z in _GENRES:
+            if re.search(pat, rest, re.I):
+                books = _span(a, z); break
+    if books:
+        e["refs"] = {b: {"chapters": list(range(1, CHAPTERS[b] + 1)), "verse_level": False, "whole_book": True, "raw": [rest]} for b in books}
+        e["refs_text"] = rest
+    return e
 
 # ---------- radical.net ----------
 def _sitemap_urls(sitemap_url: str, depth=0) -> list[str]:
@@ -269,8 +323,29 @@ def run(sources: list[str], radical_limit: int | None = None):
             _log(f"{s}: ERROR {type(e).__name__}: {e}")
             report["sources"][s] = {"error": f"{type(e).__name__}: {e}"}
             continue
+        from urllib.parse import urlparse
+        _n = lambda t: re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
+        by_title = {}
+        for x in existing.values():
+            by_title.setdefault(_n(x.get("title")), x)
+        added = merged = 0
         for e in entries:
-            existing[e["url"]] = {**existing.get(e["url"], {}), **e}
+            old_e = existing.get(e["url"])
+            if old_e is None:
+                twin = by_title.get(_n(e["title"]))
+                if twin and urlparse(twin["url"]).netloc != urlparse(e["url"]).netloc:
+                    old_e = twin  # same episode published on another host: keep the shipped id/url
+                    if e["url"] not in twin.setdefault("alt_urls", []):
+                        twin["alt_urls"].append(e["url"])
+            if old_e is None:
+                existing[e["url"]] = e; by_title.setdefault(_n(e["title"]), e); added += 1
+            else:
+                # curated fields win; only fill what is missing (audio, duration, dates, description)
+                for k, v in e.items():
+                    if k in ("id", "url", "alt_urls"): continue
+                    if v and not old_e.get(k): old_e[k] = v
+                merged += 1
+        _log(f"{s}: {added} new, {merged} matched existing entries")
         report["sources"][s] = {"count": len(entries), "seconds": round(time.time() - t0, 1)}
     # a placeholder retires once the real episode (same title) has been harvested
     _t = lambda t: re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
