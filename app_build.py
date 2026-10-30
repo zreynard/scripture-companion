@@ -14,7 +14,7 @@ import config
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 26  # bump on every shipped build; also busts the service-worker cache
+VERSION = 27  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -470,10 +470,10 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
   <div class="acts"><button class="read ${r?'on':''}" data-read="${b.abbr+c.c}">${r?'Read ✓':'Mark read'}</button><button class="go" data-camp="${Math.min(w.length-1,camp+1)}">Walk on ›</button>${camp!==first?`<button data-camp="${first}">My place</button>`:''}</div>`;
  const cw=cl.offsetWidth;cl.style.left=Math.max(10,Math.min(window.innerWidth-cw-10,m.x*sc-cw/2))+'px';
  // camera: keep you ~30% from top
- if(!decorate.moving){const y=m.y*sc+$('#world').offsetTop-window.innerHeight*0.30;window.scrollTo({top:Math.max(0,y),behavior:decorate.first?'auto':'smooth'});decorate.first=false}
+ if(!decorate.moving&&(decorate.follow||decorate.first)){const y=m.y*sc+$('#world').offsetTop-window.innerHeight*0.30;window.scrollTo({top:Math.max(0,y),behavior:decorate.first?'auto':'smooth'})}decorate.first=false;decorate.follow=false
  $('#hit').onclick=e=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());let best=0,bd=1e12;for(let i=0;i<w.length;i++){const q=at(i),dd=(q.x-p.x)**2+(q.y-p.y)**2;if(dd<bd){bd=dd;best=i}}go(best)};
  document.querySelectorAll('.bl[data-camp], #labels g[data-camp]').forEach(t=>t.onclick=e=>{e.stopPropagation();go(+t.dataset.camp)})}
-function go(i){camp=i;decorate.more=false;S.set('camp',camp);render()}
+function go(i){camp=i;decorate.more=false;decorate.follow=true;S.set('camp',camp);render()}
 function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(b=>b.ov.includes(i.id)||(b.spans||[]).some(x=>x.id===i.id)||b.ch.some(c=>c.ids.includes(i.id)))).length;const n=Object.keys(I).length,na=Object.values(I).filter(i=>i.audio).length;
  return `<div class="settings"><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
  <p>
@@ -505,7 +505,7 @@ let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NP().classList.remove('on');roomForPlayer();render()};
 /* player sheet: swipe down or tap the page to shrink it to a bar; tap or swipe up the bar to open it */
 function NP(){return $('#np')}
-function roomForPlayer(){requestAnimationFrame(()=>{document.body.style.paddingBottom=NP().classList.contains('on')?NP().offsetHeight+'px':''})}
+function roomForPlayer(){requestAnimationFrame(()=>{const np=NP();if(!np.classList.contains('on')){document.body.style.paddingBottom='';return}if(!np.classList.contains('mini'))roomForPlayer.full=np.offsetHeight;document.body.style.paddingBottom=(roomForPlayer.full||np.offsetHeight)+'px'})}
 let fullAtScroll=0;
 function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;roomForPlayer()}
 (()=>{const np=NP();let y0=null,dy=0;
@@ -519,14 +519,14 @@ function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;r
 /* wiring */
 function wire(){document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();play(b.dataset.play)});
  
- document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{const was=!!read[b.dataset.read];read[b.dataset.read]=!was;S.set('read',read);if(!was)camp=Math.min(walk().length-1,camp+1);S.set('camp',camp);render()});
+ document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{const was=!!read[b.dataset.read];read[b.dataset.read]=!was;S.set('read',read);if(!was){camp=Math.min(walk().length-1,camp+1);decorate.follow=true}S.set('camp',camp);render()});
  document.querySelectorAll('.acts [data-camp], .nv[data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;go(+b.dataset.camp)});const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
  const g=$('#gear');g.onclick=()=>{view=view==='settings'?'walk':'settings';S.set('view',view);decorate.first=true;render();window.scrollTo(0,0)};
  const back=$('#back');if(back)back.onclick=g.onclick;const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const wh=$('#who');if(wh)wh.onclick=()=>{cfg.who=cfg.who===''?'Platt':cfg.who==='Platt'?'PAM':'';S.set('cfg',cfg);render()};
  const io=$('#io');if(io){$('#exp').onclick=()=>io.value=JSON.stringify({prog,read,cfg});$('#imp').onclick=()=>{try{const v=JSON.parse(io.value);prog=v.prog||prog;read=v.read||read;S.set('prog',prog);S.set('read',read);render()}catch(e){io.value='Could not read that JSON.'}};
   $('#reset').onclick=()=>{if(confirm('Erase all progress on this device?')){prog={};read={};camp=null;S.set('prog',prog);S.set('read',read);S.set('camp',null);render()}};
   $('#atest').onclick=()=>{const o=$('#atest-out');o.textContent=' testing…';const a=new Audio();a.src=Object.values(I).find(i=>i.audio).audio;a.addEventListener('loadedmetadata',()=>o.textContent=' ✓ streams ('+fmt(a.duration)+')');a.addEventListener('error',()=>o.textContent=' ✗ blocked here');a.load()}}}
-decorate.first=true;render();window.addEventListener('resize',()=>{decorate.first=true;render()});
+decorate.first=true;render();let lastW=innerWidth;window.addEventListener('resize',()=>{if(innerWidth===lastW)return;lastW=innerWidth;decorate.first=true;render()});
 /* home-screen app: offline shell + keep progress from being evicted */
 if('serviceWorker' in navigator&&isSecureContext)navigator.serviceWorker.register('sw.js').catch(()=>{});
 if(navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(()=>{});
