@@ -30,6 +30,16 @@ def audio_url(e: dict) -> str | None:
             return f"https://www.buzzsprout.com/{m.group(1)}/{m.group(2)}.mp3"
     return None
 
+def iso_date(s) -> str:
+    """'Sun, 04 Feb 2024 02:00:00 -0600' (RSS) or '2024-02-04…' -> '2024-02-04'."""
+    s = (s or "").strip()
+    if re.match(r"\d{4}-\d{2}-\d{2}", s): return s[:10]
+    try:
+        from email.utils import parsedate_to_datetime
+        return parsedate_to_datetime(s).date().isoformat()
+    except Exception:
+        return ""
+
 def main():
     entries = [json.loads(l) for l in open(VERIFIED, encoding="utf-8")]
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
@@ -48,7 +58,7 @@ def main():
         it = {"id": e["id"], "t": e["title"], "who": "PAM" if e["speaker"] == "PAM" else "Platt",
               "era": e["era"], "tr": e["track"], "src": e["source"], "url": e.get("primary_url") or e["url"],
               "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() else 0,
-              "date": (e.get("published") or "")[:10], "pass": e.get("refs_text", ""), "tier": e["tier"],
+              "date": iso_date(e.get("published")), "pass": e.get("refs_text", ""), "tier": e["tier"],
               "sc": [e.get("sc_season"), e.get("sc_episode")] if e.get("sc_season") else None}
         items[it["id"]] = it
         ov_books = [b for b, d in e["refs"].items() if e["track"] == "overview" and (d["whole_book"] or len(d["chapters"]) / CHAPTERS[book] >= 0.6)] if False else \

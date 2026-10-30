@@ -17,6 +17,7 @@ import xml.etree.ElementTree as ET
 
 import config
 from net import get, get_json, parse_rss, page_meta, strip_tags
+from html import unescape as html_unescape
 from classify import make_entry
 
 DATA = os.path.join(os.path.dirname(__file__), "data")
@@ -278,18 +279,69 @@ def harvest_twr360() -> list[dict]:
     import base64
     out = []
     for sid, sc in TWR_SERIES.items():
-        r = get(f"https://www.twr360.org/programs/ministry_id,2/series_id,{sid}")
+        src = f"https://www.twr360.org/programs/ministry_id,2/series_id,{sid}"
+        r = get(src)
         if not r.ok: _log(f"twr360 series {sid}: {r.status}"); continue
-        for pid, title in re.findall(r'href="https://www\.twr360\.org/programs/view/id,(\d+)"[^>]*>([^<]+)</a>', r.text):
+        progs = re.findall(r'href="(?:https://www\.twr360\.org)?/programs/view/id,(\d+)"[^>]*>\s*([^<]+?)\s*</a>', r.text)
+        for pid, title in dict.fromkeys(progs):
+            title = html_unescape(title)
             pr = get(f"https://www.twr360.org/programs/view/id,{pid}")
-            m = re.search(r'mediahit/id,\d+/url,([A-Za-z0-9+/~=_-]+)"[^>]*>\s*Audio', pr.text) if pr.ok else None
-            mp3 = base64.b64decode(m.group(1).replace("~", "=")).decode() if m else None
-            e = make_entry(source="twr360_secret_church", source_url=f"https://www.twr360.org/programs/ministry_id,2/series_id,{sid}",
-                           url=f"https://www.twr360.org/programs/view/id,{pid}", title=f"Secret Church {sc} – {title.strip()}", author="David Platt", era="platt", series=f"Secret Church {sc}")
-            e["track"] = "overview"; e["audio_override"] = mp3; e["sc_season"] = sc
+            mp3 = None
+            if pr.ok:
+                m = re.search(r"src:\s*'(https://[^']+\.mp3[^']*)'", pr.text)
+                if m: mp3 = m.group(1)
+                else:
+                    for b64 in re.findall(r'mediahit/id,\d+/url,([A-Za-z0-9+/~=_-]+)', pr.text):
+                        u = base64.b64decode(b64.replace("~", "=") + "==").decode(errors="ignore")
+                        if ".mp3" in u: mp3 = u; break
+            e = make_entry(source="twr360_secret_church", source_url=src,
+                           url=f"https://www.twr360.org/programs/view/id,{pid}", title=f"Secret Church {sc} – {title}",
+                           author="David Platt", era="platt", series=f"Secret Church {sc}")
+            e["track"] = "overview"; e["speaker"] = "Platt"; e["audio_override"] = mp3; e["sc_season"] = sc
             mm = re.search(r"Part (\d+)", title); e["sc_episode"] = int(mm.group(1)) if mm else 0
+            if not e["refs"]:  # a span only when the title states one ("Survey of the New Testament")
+                bare = re.sub(r"\s*[-–,]?\s*Part \d+\s*$", "", title, flags=re.I)
+                for pat, a, z in _GENRES:
+                    if not re.search(r"\d", bare) and re.search(pat, bare, re.I):
+                        from canon import CHAPTERS
+                        e["refs"] = {b: {"chapters": list(range(1, CHAPTERS[b] + 1)), "verse_level": False, "whole_book": True, "raw": [bare]} for b in _span(a, z)}
+                        e["refs_text"] = bare; break
             out.append(e); time.sleep(config.REQUEST_SLEEP)
-    _log(f"twr360: {len(out)} sessions")
+    _log(f"twr360: {len(out)} sessions, {sum(1 for e in out if e['audio_override'])} with audio")
+    return out
+
+# ---------- Buzzsprout archive: episodes older than the feed's newest 1,000 ----------
+def harvest_buzzsprout_archive(key: str, show_id: int, feed_url: str, era: str = "platt") -> list[dict]:
+    """The RSS feed stops at 1,000 items. The show's 'load more' pages (episodes.turbo_stream?page=N)
+    each return a 1,000-episode window that moves back 25 episodes per page, so stepping 36 pages at a
+    time walks the whole archive with overlap. Stops when a page adds nothing new."""
+    seen, out, page = set(), [], 0
+    blk = re.compile(r'<h3 id="title_episode_(\d+)"[^>]*>(.*?)</h3>\s*<p id="description_episode_\1"[^>]*>(.*?)</p>'
+                     r'.*?<time datetime="([^"]+)"[^>]*>.*?</time>\s*<span\s*>[^<]*</span>\s*([\d:]+)', re.S)
+    while page < 2000:
+        r = get(f"https://www.buzzsprout.com/{show_id}/episodes.turbo_stream?page={page}", timeout=90)
+        if not r.ok: _log(f"{key} archive page {page}: {r.status}"); break
+        slugs = dict(re.findall(rf'href="/{show_id}/episodes/(\d+)-([\w-]+)"', r.text))
+        new = 0
+        for eid, title, desc, date, dur in blk.findall(r.text):
+            if eid in seen or eid not in slugs: continue
+            seen.add(eid); new += 1
+            secs = 0
+            for part in dur.split(":"): secs = secs * 60 + int(part)
+            try: pub = datetime.strptime(date, "%B %d, %Y").date().isoformat()
+            except ValueError: pub = date
+            title = html_unescape(strip_tags(title)); url = f"https://www.buzzsprout.com/{show_id}/episodes/{eid}-{slugs[eid]}"
+            alt = []
+            if key == "ptw":
+                slug = re.sub(r"[^a-z0-9]+", "-", re.sub(r"^#?\d+\s*[–-]\s*", "", title).lower()).strip("-")
+                alt.append(f"https://radical.net/podcasts/pray-the-word/{slug}/")
+            e = make_entry(source=key, source_url=feed_url, url=url, title=title, description=html_unescape(strip_tags(desc)),
+                           published=pub, duration=str(secs), era=era, alt_urls=alt)
+            e["audio_override"] = url + ".mp3"
+            out.append(e)
+        _log(f"{key} archive page {page}: +{new} (total {len(out)})")
+        if new == 0: break
+        page += 36; time.sleep(config.REQUEST_SLEEP)
     return out
 
 # ---------- orchestration ----------
@@ -313,7 +365,7 @@ def run(sources: list[str], radical_limit: int | None = None):
     for s in sources:
         t0 = time.time(); entries = []
         try:
-            if s == "ptw": entries = harvest_feed("ptw", config.PTW_FEED)
+            if s == "ptw": entries = harvest_feed("ptw", config.PTW_FEED) + harvest_buzzsprout_archive("ptw", 112848, config.PTW_FEED)
             elif s == "platt_messages": entries = harvest_feed("platt_messages", config.PLATT_MESSAGES_FEED)
             elif s == "secret_church": entries = harvest_secret_church()
             elif s == "twr360": entries = harvest_twr360()
