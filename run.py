@@ -59,6 +59,10 @@ def stamp():
     with open(verify.VERIFIED, "w", encoding="utf-8") as f:
         for e in out: f.write(json.dumps(e, ensure_ascii=False) + "\n")
     from collections import Counter
+    from classify import remap
+    for e in out: remap(e)  # current passage + speaker rules
+    with open(verify.VERIFIED, "w", encoding="utf-8") as f:
+        for e in out: f.write(json.dumps(e, ensure_ascii=False) + "\n")
     print("[stamp]", len(out), "entries", dict(Counter(e["tier"] for e in out)))
 
 def offline_stamp():
