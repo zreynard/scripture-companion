@@ -1,5 +1,5 @@
 {
-  "started": "2026-10-30T15:56:15.082014+00:00",
+  "started": "2026-10-30T15:58:18.029813+00:00",
   "sources": {
     "ptw": {
       "count": 4371,
@@ -7,7 +7,7 @@
     },
     "platt_messages": {
       "count": 571,
-      "seconds": 0.8
+      "seconds": 0.5
     },
     "secret_church_podcast": {
       "count": 198,
@@ -15,15 +15,15 @@
     },
     "twr360": {
       "count": 43,
-      "seconds": 23.2
+      "seconds": 25.0
     },
     "2819_podcast": {
       "count": 147,
-      "seconds": 0.1
+      "seconds": 0.2
     },
     "mclean": {
       "count": 199,
-      "seconds": 1.5
+      "seconds": 1.1
     }
   },
   "catalog_total": 4647
