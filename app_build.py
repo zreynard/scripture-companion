@@ -45,9 +45,10 @@ def iso_date(s) -> str:
 def main():
     entries = [json.loads(l) for l in open(VERIFIED, encoding="utf-8")]
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
-    usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["speaker"] in ("Platt", "PAM")]
+    team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
+    usable = [e for e in entries if e["tier"] in ("V2", "V1") and (e["speaker"] in ("Platt", "PAM") or e["speaker"] in team)]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
-    item_books, title_states = {}, {}
+    item_books, title_states, ref_how, cited = {}, {}, {}, {}
     order = [b[0] for b in BOOKS]; OT = order[:39]; NT = order[39:]
     def span_label(bks):
         if set(bks) >= set(OT): return "the Old Testament"
@@ -58,13 +59,16 @@ def main():
         idx = sorted(order.index(b) for b in bks)
         return f"{order[idx[0]]}–{order[idx[-1]]}" if idx[-1]-idx[0] == len(idx)-1 else ", ".join(bks)
     for e in usable:
-        it = {"id": e["id"], "t": e["title"], "who": "PAM" if e["speaker"] == "PAM" else "Platt",
+        it = {"id": e["id"], "t": e["title"], "who": "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else "Platt",
+              "by": e["speaker"].split(":", 1)[1] if e["speaker"] in team else None,
               "era": e["era"], "tr": e["track"], "src": e["source"], "url": e.get("primary_url") or e["url"],
               "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() else 0,
               "date": iso_date(e.get("published")), "pass": e.get("refs_text", ""), "tier": e["tier"],
               "sc": [e.get("sc_season"), e.get("sc_episode")] if e.get("sc_season") else None}
         items[it["id"]] = it
         item_books[it["id"]] = set(e["refs"])
+        ref_how[it["id"]] = e.get("ref_how", "curated")
+        cited[it["id"]] = len({(r.book, tuple(sorted(r.chapters))) for r in parse_refs(e.get("description", "")) if not r.whole_book})
         title_states[it["id"]] = bool(parse_refs(e["title"]))
         ov_books = [b for b, d in e["refs"].items() if e["track"] == "overview" and (d["whole_book"] or len(d["chapters"]) / CHAPTERS[book] >= 0.6)] if False else \
                    [b for b, d in e["refs"].items() if e["track"] == "overview" and (d["whole_book"] or len(d["chapters"]) / CHAPTERS[b] >= 0.6)]
@@ -125,6 +129,18 @@ def main():
         if it["tr"] == "sermon" and d and sum(1 for x in by_book_sermons[(book, it["who"])] if abs(x - d) <= 90) >= 3:
             return 2
         return 1 if title_states[i] else 0
+    TOPICAL, NEVER = re.compile(config.TOPICAL_TITLE_RE, re.I), re.compile(config.NEVER_ON_ROAD_RE, re.I)
+    def on_road(i, book):
+        it = items[i]
+        if NEVER.search(it["t"]): return False
+        if it["tr"] != "sermon": return True
+        if ref_how[i] == "description-first" and cited[i] > 1: return False  # several passages cited, none named the text
+        if TOPICAL.search(it["t"]) and focus(i, book) < 2: return False  # one-off topical message
+        return True
+    off_road = set()
+    for (book, c), lst in by_chapter.items():
+        keep = [i for i in lst if on_road(i, book)]
+        off_road |= set(lst) - set(keep); lst[:] = keep
     rank = lambda book: (lambda i: (items[i]["tr"] != "sermon", not items[i]["audio"], -focus(i, book),
                                     items[i]["who"] != "Platt", -(_day(i) or 0), i))
     books = []
@@ -150,7 +166,8 @@ def main():
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
     n_audio = sum(1 for i in items.values() if i["audio"])
-    print(f"wrote {OUT}: {len(items)} items, {n_audio} with in-app audio")
+    print(f"wrote {OUT}: {len(items)} items, {n_audio} with in-app audio; off the road: {len(off_road)}")
+    json.dump(sorted(items[i]["t"] for i in off_road), open(os.path.join(HERE, "out", "off_road.json"), "w"), indent=0, ensure_ascii=False)
     write_site(html)
 
 def write_site(html: str):
@@ -336,7 +353,7 @@ const isDone=id=>!!(prog[id]&&prog[id].done);
 const LANDS=[['Genesis','The Law'],['Joshua','History'],['Job','Wisdom & Song'],['Isaiah','Major Prophets'],['Hosea','Minor Prophets'],['Matthew','The Gospels'],['Acts','The Church Begins'],['Romans','Letters of Paul'],['Hebrews','General Letters'],['Revelation','The End & the New Beginning']];
 function books(){const b=[...D.books];if(cfg.order==='narr')b.sort((x,y)=>Math.min(...x.ch.map(c=>c.seq))-Math.min(...y.ch.map(c=>c.seq)));return b}
 function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;for(const c of chs)w.push({b,c})}return w}
-function teacher(i){return i.who==='PAM'?'Philip Anthony Mitchell':'David Platt'}
+function teacher(i){return i.by||(i.who==='PAM'?'Philip Anthony Mitchell':'David Platt')}
 function voiceHTML(id){const i=I[id],p=prog[id]||{},deg=p.dur&&!isDone(id)?Math.round(360*(p.pos||0)/p.dur):0,playing=cur===id&&!audio.paused;
  return `<div class="voice ${isDone(id)?'done':''}"><button class="pb ${i.audio?'':'off'} ${playing?'playing':''}" style="--p:${deg}deg;position:relative" data-play="${id}"><span style="color:${playing?'var(--gold2)':'var(--ink)'}">${icon(playing?'pause':'play',18,0,'currentColor')}</span></button>
  <div class="tx"><div class="who">${teacher(i)}${i.tr==='devotional'?' · Pray the Word':i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(i.t)}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}</div></div>

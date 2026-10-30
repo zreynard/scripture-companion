@@ -27,12 +27,17 @@ def detect_speaker(source: str, title: str, description: str, author: str, chann
             return f"guest:{author}", "page-author"
         return ("Platt", "page-author") if (PLATT_RE.search(blob) or author) else ("unknown", "no-author")
     if source.startswith("youtube") or source in ("2819_podcast", "victory_podcast", "pam_podcast"):
-        if re.search(PAM_NAME_RE, blob, re.I):
+        # The speaker is the trailing "| Name" in the title (CLAUDE_CODE_PROMPT rule 3). Channel descriptions
+        # name PAM on every episode ("messages from Philip Anthony Mitchell and guest communicators"), so the
+        # description never decides the speaker when the title names one.
+        m = re.search(r"\|\s*([^|]{3,60}?)\s*$", title)
+        if m and re.search(r"[A-Za-z]{2,}\s+[A-Za-z]{2,}|^PAM$", m.group(1).strip(), re.I) and not re.search(r"\d", m.group(1)):
+            who = m.group(1).strip()
+            if re.search(PAM_NAME_RE, who, re.I):
+                return "PAM", "title-suffix"
+            return f"guest:{re.sub(r'^(?:Elder|Pastor|Minister|Rev\.?|Dr\.?)\s+', '', who, flags=re.I)}", "title-suffix"
+        if re.search(PAM_NAME_RE, title, re.I):
             return "PAM", "named-in-title"
-        # 2819 titles end "| Speaker Name"; capture a non-PAM speaker
-        m = re.search(r"\|\s*([A-Z][A-Za-z.'\-]+(?:\s+[A-Z][A-Za-z.'\-]+){1,3})\s*$", title)
-        if m:
-            return f"guest:{m.group(1).strip()}", "title-suffix"
         if channel_default == "PAM":
             return "PAM", "channel-default"
         return "unknown", "no-name"
@@ -140,5 +145,7 @@ def remap(e: dict) -> dict:
     e["refs"] = {b: {"chapters": sorted(d["chapters"]), "verse_level": d["verse_level"],
                      "whole_book": d["whole_book"], "raw": d["raw"]} for b, d in merged.items()}
     e["refs_text"] = refs_to_text(merged); e["ref_how"] = how
+    if e["source"] in ("2819_podcast", "victory_podcast") or e["source"].startswith("youtube_") and e["source"] != "youtube_radical":
+        e["speaker"], e["speaker_evidence"] = detect_speaker(e["source"], e["title"], e.get("description", ""), e.get("author_raw", ""), None)
     e["track"] = detect_track(e["source"], e["title"], e.get("description", ""), merged)
     return e

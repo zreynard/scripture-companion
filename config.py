@@ -98,3 +98,16 @@ SECRET_CHURCH_EVENTS = [
  (25,"The Gospel of Matthew","https://radical.net/secret_church/matthew/","Matthew"),
  (26,"Elijah (1 Kings 17–2 Kings 2)","https://radical.net/secret_church/elijah/","1 Kings 17–2 Kings 2"),
 ]
+
+
+# ---- what belongs on the road (app_build.py) ----
+# The road is teaching that works through the passage. These titles mark one-off topical or occasional
+# messages; they stay on the road only inside a series through that book.
+TOPICAL_TITLE_RE = (r"\bwom[ae]n|womanhood|manhood|\bmoms?\b|mother|ladies|election|conference|\bgather \d|"
+                    r"baptism|membership|\belders?\b|deacons?|christmas|thanksgiving|new year|generosity|giving|\bmoney\b|"
+                    r"abortion|justice|racializ|sexuality|special needs|\bvision\b|south by southwest|panel|q ?& ?a|interview")
+# Never on the road, series or not.
+NEVER_ON_ROAD_RE = r"\bwom[ae]n\b|womanhood|\bmoms?\b|mother'?s day|\bladies\b"
+
+# 2819 Church preachers who teach inside PAM's series; they ride the road with PAM's voices, under their own name.
+PAM_CHURCH_PREACHERS = ["Arik Hayes", "Milton James"]
