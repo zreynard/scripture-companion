@@ -38,7 +38,7 @@ json.dump(out, open("probe.json", "w"), indent=1)
 # full bodies for pages listed in SAVE (written to pages/N.html)
 import os
 os.makedirs("pages", exist_ok=True)
-for i, u in enumerate(SAVE):
+for i, u in enumerate(SAVE + sys.argv[1:]):
     try:
         open(f"pages/{i}.html", "w").write(f"<!-- {u} -->\n" + requests.get(u, headers=H, timeout=60).text)
     except Exception as e:
