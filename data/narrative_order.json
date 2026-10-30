@@ -1,0 +1,5947 @@
+[
+{
+"seq": 1,
+"book": "Genesis",
+"chapter": 1
+},
+{
+"seq": 2,
+"book": "Genesis",
+"chapter": 2
+},
+{
+"seq": 3,
+"book": "Genesis",
+"chapter": 3
+},
+{
+"seq": 4,
+"book": "Genesis",
+"chapter": 4
+},
+{
+"seq": 5,
+"book": "Genesis",
+"chapter": 5
+},
+{
+"seq": 6,
+"book": "Genesis",
+"chapter": 6
+},
+{
+"seq": 7,
+"book": "Genesis",
+"chapter": 7
+},
+{
+"seq": 8,
+"book": "Genesis",
+"chapter": 8
+},
+{
+"seq": 9,
+"book": "Genesis",
+"chapter": 9
+},
+{
+"seq": 10,
+"book": "Genesis",
+"chapter": 10
+},
+{
+"seq": 11,
+"book": "Genesis",
+"chapter": 11
+},
+{
+"seq": 12,
+"book": "Job",
+"chapter": 1
+},
+{
+"seq": 13,
+"book": "Job",
+"chapter": 2
+},
+{
+"seq": 14,
+"book": "Job",
+"chapter": 3
+},
+{
+"seq": 15,
+"book": "Job",
+"chapter": 4
+},
+{
+"seq": 16,
+"book": "Job",
+"chapter": 5
+},
+{
+"seq": 17,
+"book": "Job",
+"chapter": 6
+},
+{
+"seq": 18,
+"book": "Job",
+"chapter": 7
+},
+{
+"seq": 19,
+"book": "Job",
+"chapter": 8
+},
+{
+"seq": 20,
+"book": "Job",
+"chapter": 9
+},
+{
+"seq": 21,
+"book": "Job",
+"chapter": 10
+},
+{
+"seq": 22,
+"book": "Job",
+"chapter": 11
+},
+{
+"seq": 23,
+"book": "Job",
+"chapter": 12
+},
+{
+"seq": 24,
+"book": "Job",
+"chapter": 13
+},
+{
+"seq": 25,
+"book": "Job",
+"chapter": 14
+},
+{
+"seq": 26,
+"book": "Job",
+"chapter": 15
+},
+{
+"seq": 27,
+"book": "Job",
+"chapter": 16
+},
+{
+"seq": 28,
+"book": "Job",
+"chapter": 17
+},
+{
+"seq": 29,
+"book": "Job",
+"chapter": 18
+},
+{
+"seq": 30,
+"book": "Job",
+"chapter": 19
+},
+{
+"seq": 31,
+"book": "Job",
+"chapter": 20
+},
+{
+"seq": 32,
+"book": "Job",
+"chapter": 21
+},
+{
+"seq": 33,
+"book": "Job",
+"chapter": 22
+},
+{
+"seq": 34,
+"book": "Job",
+"chapter": 23
+},
+{
+"seq": 35,
+"book": "Job",
+"chapter": 24
+},
+{
+"seq": 36,
+"book": "Job",
+"chapter": 25
+},
+{
+"seq": 37,
+"book": "Job",
+"chapter": 26
+},
+{
+"seq": 38,
+"book": "Job",
+"chapter": 27
+},
+{
+"seq": 39,
+"book": "Job",
+"chapter": 28
+},
+{
+"seq": 40,
+"book": "Job",
+"chapter": 29
+},
+{
+"seq": 41,
+"book": "Job",
+"chapter": 30
+},
+{
+"seq": 42,
+"book": "Job",
+"chapter": 31
+},
+{
+"seq": 43,
+"book": "Job",
+"chapter": 32
+},
+{
+"seq": 44,
+"book": "Job",
+"chapter": 33
+},
+{
+"seq": 45,
+"book": "Job",
+"chapter": 34
+},
+{
+"seq": 46,
+"book": "Job",
+"chapter": 35
+},
+{
+"seq": 47,
+"book": "Job",
+"chapter": 36
+},
+{
+"seq": 48,
+"book": "Job",
+"chapter": 37
+},
+{
+"seq": 49,
+"book": "Job",
+"chapter": 38
+},
+{
+"seq": 50,
+"book": "Job",
+"chapter": 39
+},
+{
+"seq": 51,
+"book": "Job",
+"chapter": 40
+},
+{
+"seq": 52,
+"book": "Job",
+"chapter": 41
+},
+{
+"seq": 53,
+"book": "Job",
+"chapter": 42
+},
+{
+"seq": 54,
+"book": "Genesis",
+"chapter": 12
+},
+{
+"seq": 55,
+"book": "Genesis",
+"chapter": 13
+},
+{
+"seq": 56,
+"book": "Genesis",
+"chapter": 14
+},
+{
+"seq": 57,
+"book": "Genesis",
+"chapter": 15
+},
+{
+"seq": 58,
+"book": "Genesis",
+"chapter": 16
+},
+{
+"seq": 59,
+"book": "Genesis",
+"chapter": 17
+},
+{
+"seq": 60,
+"book": "Genesis",
+"chapter": 18
+},
+{
+"seq": 61,
+"book": "Genesis",
+"chapter": 19
+},
+{
+"seq": 62,
+"book": "Genesis",
+"chapter": 20
+},
+{
+"seq": 63,
+"book": "Genesis",
+"chapter": 21
+},
+{
+"seq": 64,
+"book": "Genesis",
+"chapter": 22
+},
+{
+"seq": 65,
+"book": "Genesis",
+"chapter": 23
+},
+{
+"seq": 66,
+"book": "Genesis",
+"chapter": 24
+},
+{
+"seq": 67,
+"book": "Genesis",
+"chapter": 25
+},
+{
+"seq": 68,
+"book": "Genesis",
+"chapter": 26
+},
+{
+"seq": 69,
+"book": "Genesis",
+"chapter": 27
+},
+{
+"seq": 70,
+"book": "Genesis",
+"chapter": 28
+},
+{
+"seq": 71,
+"book": "Genesis",
+"chapter": 29
+},
+{
+"seq": 72,
+"book": "Genesis",
+"chapter": 30
+},
+{
+"seq": 73,
+"book": "Genesis",
+"chapter": 31
+},
+{
+"seq": 74,
+"book": "Genesis",
+"chapter": 32
+},
+{
+"seq": 75,
+"book": "Genesis",
+"chapter": 33
+},
+{
+"seq": 76,
+"book": "Genesis",
+"chapter": 34
+},
+{
+"seq": 77,
+"book": "Genesis",
+"chapter": 35
+},
+{
+"seq": 78,
+"book": "Genesis",
+"chapter": 36
+},
+{
+"seq": 79,
+"book": "Genesis",
+"chapter": 37
+},
+{
+"seq": 80,
+"book": "Genesis",
+"chapter": 38
+},
+{
+"seq": 81,
+"book": "Genesis",
+"chapter": 39
+},
+{
+"seq": 82,
+"book": "Genesis",
+"chapter": 40
+},
+{
+"seq": 83,
+"book": "Genesis",
+"chapter": 41
+},
+{
+"seq": 84,
+"book": "Genesis",
+"chapter": 42
+},
+{
+"seq": 85,
+"book": "Genesis",
+"chapter": 43
+},
+{
+"seq": 86,
+"book": "Genesis",
+"chapter": 44
+},
+{
+"seq": 87,
+"book": "Genesis",
+"chapter": 45
+},
+{
+"seq": 88,
+"book": "Genesis",
+"chapter": 46
+},
+{
+"seq": 89,
+"book": "Genesis",
+"chapter": 47
+},
+{
+"seq": 90,
+"book": "Genesis",
+"chapter": 48
+},
+{
+"seq": 91,
+"book": "Genesis",
+"chapter": 49
+},
+{
+"seq": 92,
+"book": "Genesis",
+"chapter": 50
+},
+{
+"seq": 93,
+"book": "Exodus",
+"chapter": 1
+},
+{
+"seq": 94,
+"book": "Exodus",
+"chapter": 2
+},
+{
+"seq": 95,
+"book": "Exodus",
+"chapter": 3
+},
+{
+"seq": 96,
+"book": "Exodus",
+"chapter": 4
+},
+{
+"seq": 97,
+"book": "Exodus",
+"chapter": 5
+},
+{
+"seq": 98,
+"book": "Exodus",
+"chapter": 6
+},
+{
+"seq": 99,
+"book": "Exodus",
+"chapter": 7
+},
+{
+"seq": 100,
+"book": "Exodus",
+"chapter": 8
+},
+{
+"seq": 101,
+"book": "Exodus",
+"chapter": 9
+},
+{
+"seq": 102,
+"book": "Exodus",
+"chapter": 10
+},
+{
+"seq": 103,
+"book": "Exodus",
+"chapter": 11
+},
+{
+"seq": 104,
+"book": "Exodus",
+"chapter": 12
+},
+{
+"seq": 105,
+"book": "Exodus",
+"chapter": 13
+},
+{
+"seq": 106,
+"book": "Exodus",
+"chapter": 14
+},
+{
+"seq": 107,
+"book": "Exodus",
+"chapter": 15
+},
+{
+"seq": 108,
+"book": "Exodus",
+"chapter": 16
+},
+{
+"seq": 109,
+"book": "Exodus",
+"chapter": 17
+},
+{
+"seq": 110,
+"book": "Exodus",
+"chapter": 18
+},
+{
+"seq": 111,
+"book": "Exodus",
+"chapter": 19
+},
+{
+"seq": 112,
+"book": "Exodus",
+"chapter": 20
+},
+{
+"seq": 113,
+"book": "Exodus",
+"chapter": 21
+},
+{
+"seq": 114,
+"book": "Exodus",
+"chapter": 22
+},
+{
+"seq": 115,
+"book": "Exodus",
+"chapter": 23
+},
+{
+"seq": 116,
+"book": "Exodus",
+"chapter": 24
+},
+{
+"seq": 117,
+"book": "Exodus",
+"chapter": 25
+},
+{
+"seq": 118,
+"book": "Exodus",
+"chapter": 26
+},
+{
+"seq": 119,
+"book": "Exodus",
+"chapter": 27
+},
+{
+"seq": 120,
+"book": "Exodus",
+"chapter": 28
+},
+{
+"seq": 121,
+"book": "Exodus",
+"chapter": 29
+},
+{
+"seq": 122,
+"book": "Exodus",
+"chapter": 30
+},
+{
+"seq": 123,
+"book": "Exodus",
+"chapter": 31
+},
+{
+"seq": 124,
+"book": "Exodus",
+"chapter": 32
+},
+{
+"seq": 125,
+"book": "Exodus",
+"chapter": 33
+},
+{
+"seq": 126,
+"book": "Exodus",
+"chapter": 34
+},
+{
+"seq": 127,
+"book": "Exodus",
+"chapter": 35
+},
+{
+"seq": 128,
+"book": "Exodus",
+"chapter": 36
+},
+{
+"seq": 129,
+"book": "Exodus",
+"chapter": 37
+},
+{
+"seq": 130,
+"book": "Exodus",
+"chapter": 38
+},
+{
+"seq": 131,
+"book": "Exodus",
+"chapter": 39
+},
+{
+"seq": 132,
+"book": "Exodus",
+"chapter": 40
+},
+{
+"seq": 133,
+"book": "Leviticus",
+"chapter": 1
+},
+{
+"seq": 134,
+"book": "Leviticus",
+"chapter": 2
+},
+{
+"seq": 135,
+"book": "Leviticus",
+"chapter": 3
+},
+{
+"seq": 136,
+"book": "Leviticus",
+"chapter": 4
+},
+{
+"seq": 137,
+"book": "Leviticus",
+"chapter": 5
+},
+{
+"seq": 138,
+"book": "Leviticus",
+"chapter": 6
+},
+{
+"seq": 139,
+"book": "Leviticus",
+"chapter": 7
+},
+{
+"seq": 140,
+"book": "Leviticus",
+"chapter": 8
+},
+{
+"seq": 141,
+"book": "Leviticus",
+"chapter": 9
+},
+{
+"seq": 142,
+"book": "Leviticus",
+"chapter": 10
+},
+{
+"seq": 143,
+"book": "Leviticus",
+"chapter": 11
+},
+{
+"seq": 144,
+"book": "Leviticus",
+"chapter": 12
+},
+{
+"seq": 145,
+"book": "Leviticus",
+"chapter": 13
+},
+{
+"seq": 146,
+"book": "Leviticus",
+"chapter": 14
+},
+{
+"seq": 147,
+"book": "Leviticus",
+"chapter": 15
+},
+{
+"seq": 148,
+"book": "Leviticus",
+"chapter": 16
+},
+{
+"seq": 149,
+"book": "Leviticus",
+"chapter": 17
+},
+{
+"seq": 150,
+"book": "Leviticus",
+"chapter": 18
+},
+{
+"seq": 151,
+"book": "Leviticus",
+"chapter": 19
+},
+{
+"seq": 152,
+"book": "Leviticus",
+"chapter": 20
+},
+{
+"seq": 153,
+"book": "Leviticus",
+"chapter": 21
+},
+{
+"seq": 154,
+"book": "Leviticus",
+"chapter": 22
+},
+{
+"seq": 155,
+"book": "Leviticus",
+"chapter": 23
+},
+{
+"seq": 156,
+"book": "Leviticus",
+"chapter": 24
+},
+{
+"seq": 157,
+"book": "Leviticus",
+"chapter": 25
+},
+{
+"seq": 158,
+"book": "Leviticus",
+"chapter": 26
+},
+{
+"seq": 159,
+"book": "Leviticus",
+"chapter": 27
+},
+{
+"seq": 160,
+"book": "Numbers",
+"chapter": 1
+},
+{
+"seq": 161,
+"book": "Numbers",
+"chapter": 2
+},
+{
+"seq": 162,
+"book": "Numbers",
+"chapter": 3
+},
+{
+"seq": 163,
+"book": "Numbers",
+"chapter": 4
+},
+{
+"seq": 164,
+"book": "Numbers",
+"chapter": 5
+},
+{
+"seq": 165,
+"book": "Numbers",
+"chapter": 6
+},
+{
+"seq": 166,
+"book": "Numbers",
+"chapter": 7
+},
+{
+"seq": 167,
+"book": "Numbers",
+"chapter": 8
+},
+{
+"seq": 168,
+"book": "Numbers",
+"chapter": 9
+},
+{
+"seq": 169,
+"book": "Numbers",
+"chapter": 10
+},
+{
+"seq": 170,
+"book": "Numbers",
+"chapter": 11
+},
+{
+"seq": 171,
+"book": "Numbers",
+"chapter": 12
+},
+{
+"seq": 172,
+"book": "Numbers",
+"chapter": 13
+},
+{
+"seq": 173,
+"book": "Numbers",
+"chapter": 14
+},
+{
+"seq": 174,
+"book": "Numbers",
+"chapter": 15
+},
+{
+"seq": 175,
+"book": "Numbers",
+"chapter": 16
+},
+{
+"seq": 176,
+"book": "Numbers",
+"chapter": 17
+},
+{
+"seq": 177,
+"book": "Numbers",
+"chapter": 18
+},
+{
+"seq": 178,
+"book": "Numbers",
+"chapter": 19
+},
+{
+"seq": 179,
+"book": "Numbers",
+"chapter": 20
+},
+{
+"seq": 180,
+"book": "Numbers",
+"chapter": 21
+},
+{
+"seq": 181,
+"book": "Numbers",
+"chapter": 22
+},
+{
+"seq": 182,
+"book": "Numbers",
+"chapter": 23
+},
+{
+"seq": 183,
+"book": "Numbers",
+"chapter": 24
+},
+{
+"seq": 184,
+"book": "Numbers",
+"chapter": 25
+},
+{
+"seq": 185,
+"book": "Numbers",
+"chapter": 26
+},
+{
+"seq": 186,
+"book": "Numbers",
+"chapter": 27
+},
+{
+"seq": 187,
+"book": "Numbers",
+"chapter": 28
+},
+{
+"seq": 188,
+"book": "Numbers",
+"chapter": 29
+},
+{
+"seq": 189,
+"book": "Numbers",
+"chapter": 30
+},
+{
+"seq": 190,
+"book": "Numbers",
+"chapter": 31
+},
+{
+"seq": 191,
+"book": "Numbers",
+"chapter": 32
+},
+{
+"seq": 192,
+"book": "Numbers",
+"chapter": 33
+},
+{
+"seq": 193,
+"book": "Numbers",
+"chapter": 34
+},
+{
+"seq": 194,
+"book": "Numbers",
+"chapter": 35
+},
+{
+"seq": 195,
+"book": "Numbers",
+"chapter": 36
+},
+{
+"seq": 196,
+"book": "Deuteronomy",
+"chapter": 1
+},
+{
+"seq": 197,
+"book": "Deuteronomy",
+"chapter": 2
+},
+{
+"seq": 198,
+"book": "Deuteronomy",
+"chapter": 3
+},
+{
+"seq": 199,
+"book": "Deuteronomy",
+"chapter": 4
+},
+{
+"seq": 200,
+"book": "Deuteronomy",
+"chapter": 5
+},
+{
+"seq": 201,
+"book": "Deuteronomy",
+"chapter": 6
+},
+{
+"seq": 202,
+"book": "Deuteronomy",
+"chapter": 7
+},
+{
+"seq": 203,
+"book": "Deuteronomy",
+"chapter": 8
+},
+{
+"seq": 204,
+"book": "Deuteronomy",
+"chapter": 9
+},
+{
+"seq": 205,
+"book": "Deuteronomy",
+"chapter": 10
+},
+{
+"seq": 206,
+"book": "Deuteronomy",
+"chapter": 11
+},
+{
+"seq": 207,
+"book": "Deuteronomy",
+"chapter": 12
+},
+{
+"seq": 208,
+"book": "Deuteronomy",
+"chapter": 13
+},
+{
+"seq": 209,
+"book": "Deuteronomy",
+"chapter": 14
+},
+{
+"seq": 210,
+"book": "Deuteronomy",
+"chapter": 15
+},
+{
+"seq": 211,
+"book": "Deuteronomy",
+"chapter": 16
+},
+{
+"seq": 212,
+"book": "Deuteronomy",
+"chapter": 17
+},
+{
+"seq": 213,
+"book": "Deuteronomy",
+"chapter": 18
+},
+{
+"seq": 214,
+"book": "Deuteronomy",
+"chapter": 19
+},
+{
+"seq": 215,
+"book": "Deuteronomy",
+"chapter": 20
+},
+{
+"seq": 216,
+"book": "Deuteronomy",
+"chapter": 21
+},
+{
+"seq": 217,
+"book": "Deuteronomy",
+"chapter": 22
+},
+{
+"seq": 218,
+"book": "Deuteronomy",
+"chapter": 23
+},
+{
+"seq": 219,
+"book": "Deuteronomy",
+"chapter": 24
+},
+{
+"seq": 220,
+"book": "Deuteronomy",
+"chapter": 25
+},
+{
+"seq": 221,
+"book": "Deuteronomy",
+"chapter": 26
+},
+{
+"seq": 222,
+"book": "Deuteronomy",
+"chapter": 27
+},
+{
+"seq": 223,
+"book": "Deuteronomy",
+"chapter": 28
+},
+{
+"seq": 224,
+"book": "Deuteronomy",
+"chapter": 29
+},
+{
+"seq": 225,
+"book": "Deuteronomy",
+"chapter": 30
+},
+{
+"seq": 226,
+"book": "Deuteronomy",
+"chapter": 31
+},
+{
+"seq": 227,
+"book": "Deuteronomy",
+"chapter": 32
+},
+{
+"seq": 228,
+"book": "Deuteronomy",
+"chapter": 33
+},
+{
+"seq": 229,
+"book": "Deuteronomy",
+"chapter": 34
+},
+{
+"seq": 230,
+"book": "Joshua",
+"chapter": 1
+},
+{
+"seq": 231,
+"book": "Joshua",
+"chapter": 2
+},
+{
+"seq": 232,
+"book": "Joshua",
+"chapter": 3
+},
+{
+"seq": 233,
+"book": "Joshua",
+"chapter": 4
+},
+{
+"seq": 234,
+"book": "Joshua",
+"chapter": 5
+},
+{
+"seq": 235,
+"book": "Joshua",
+"chapter": 6
+},
+{
+"seq": 236,
+"book": "Joshua",
+"chapter": 7
+},
+{
+"seq": 237,
+"book": "Joshua",
+"chapter": 8
+},
+{
+"seq": 238,
+"book": "Joshua",
+"chapter": 9
+},
+{
+"seq": 239,
+"book": "Joshua",
+"chapter": 10
+},
+{
+"seq": 240,
+"book": "Joshua",
+"chapter": 11
+},
+{
+"seq": 241,
+"book": "Joshua",
+"chapter": 12
+},
+{
+"seq": 242,
+"book": "Joshua",
+"chapter": 13
+},
+{
+"seq": 243,
+"book": "Joshua",
+"chapter": 14
+},
+{
+"seq": 244,
+"book": "Joshua",
+"chapter": 15
+},
+{
+"seq": 245,
+"book": "Joshua",
+"chapter": 16
+},
+{
+"seq": 246,
+"book": "Joshua",
+"chapter": 17
+},
+{
+"seq": 247,
+"book": "Joshua",
+"chapter": 18
+},
+{
+"seq": 248,
+"book": "Joshua",
+"chapter": 19
+},
+{
+"seq": 249,
+"book": "Joshua",
+"chapter": 20
+},
+{
+"seq": 250,
+"book": "Joshua",
+"chapter": 21
+},
+{
+"seq": 251,
+"book": "Joshua",
+"chapter": 22
+},
+{
+"seq": 252,
+"book": "Joshua",
+"chapter": 23
+},
+{
+"seq": 253,
+"book": "Joshua",
+"chapter": 24
+},
+{
+"seq": 254,
+"book": "Judges",
+"chapter": 1
+},
+{
+"seq": 255,
+"book": "Judges",
+"chapter": 2
+},
+{
+"seq": 256,
+"book": "Judges",
+"chapter": 3
+},
+{
+"seq": 257,
+"book": "Judges",
+"chapter": 4
+},
+{
+"seq": 258,
+"book": "Judges",
+"chapter": 5
+},
+{
+"seq": 259,
+"book": "Judges",
+"chapter": 6
+},
+{
+"seq": 260,
+"book": "Judges",
+"chapter": 7
+},
+{
+"seq": 261,
+"book": "Judges",
+"chapter": 8
+},
+{
+"seq": 262,
+"book": "Judges",
+"chapter": 9
+},
+{
+"seq": 263,
+"book": "Judges",
+"chapter": 10
+},
+{
+"seq": 264,
+"book": "Judges",
+"chapter": 11
+},
+{
+"seq": 265,
+"book": "Judges",
+"chapter": 12
+},
+{
+"seq": 266,
+"book": "Judges",
+"chapter": 13
+},
+{
+"seq": 267,
+"book": "Judges",
+"chapter": 14
+},
+{
+"seq": 268,
+"book": "Judges",
+"chapter": 15
+},
+{
+"seq": 269,
+"book": "Judges",
+"chapter": 16
+},
+{
+"seq": 270,
+"book": "Judges",
+"chapter": 17
+},
+{
+"seq": 271,
+"book": "Judges",
+"chapter": 18
+},
+{
+"seq": 272,
+"book": "Judges",
+"chapter": 19
+},
+{
+"seq": 273,
+"book": "Judges",
+"chapter": 20
+},
+{
+"seq": 274,
+"book": "Judges",
+"chapter": 21
+},
+{
+"seq": 275,
+"book": "Ruth",
+"chapter": 1
+},
+{
+"seq": 276,
+"book": "Ruth",
+"chapter": 2
+},
+{
+"seq": 277,
+"book": "Ruth",
+"chapter": 3
+},
+{
+"seq": 278,
+"book": "Ruth",
+"chapter": 4
+},
+{
+"seq": 279,
+"book": "1 Samuel",
+"chapter": 1
+},
+{
+"seq": 280,
+"book": "1 Samuel",
+"chapter": 2
+},
+{
+"seq": 281,
+"book": "1 Samuel",
+"chapter": 3
+},
+{
+"seq": 282,
+"book": "1 Samuel",
+"chapter": 4
+},
+{
+"seq": 283,
+"book": "1 Samuel",
+"chapter": 5
+},
+{
+"seq": 284,
+"book": "1 Samuel",
+"chapter": 6
+},
+{
+"seq": 285,
+"book": "1 Samuel",
+"chapter": 7
+},
+{
+"seq": 286,
+"book": "1 Samuel",
+"chapter": 8
+},
+{
+"seq": 287,
+"book": "1 Samuel",
+"chapter": 9
+},
+{
+"seq": 288,
+"book": "1 Samuel",
+"chapter": 10
+},
+{
+"seq": 289,
+"book": "1 Samuel",
+"chapter": 11
+},
+{
+"seq": 290,
+"book": "1 Samuel",
+"chapter": 12
+},
+{
+"seq": 291,
+"book": "1 Samuel",
+"chapter": 13
+},
+{
+"seq": 292,
+"book": "1 Samuel",
+"chapter": 14
+},
+{
+"seq": 293,
+"book": "1 Samuel",
+"chapter": 15
+},
+{
+"seq": 294,
+"book": "1 Samuel",
+"chapter": 16
+},
+{
+"seq": 295,
+"book": "1 Samuel",
+"chapter": 17
+},
+{
+"seq": 296,
+"book": "1 Samuel",
+"chapter": 18
+},
+{
+"seq": 297,
+"book": "1 Samuel",
+"chapter": 19
+},
+{
+"seq": 298,
+"book": "1 Samuel",
+"chapter": 20
+},
+{
+"seq": 299,
+"book": "1 Samuel",
+"chapter": 21
+},
+{
+"seq": 300,
+"book": "1 Samuel",
+"chapter": 22
+},
+{
+"seq": 301,
+"book": "1 Samuel",
+"chapter": 23
+},
+{
+"seq": 302,
+"book": "1 Samuel",
+"chapter": 24
+},
+{
+"seq": 303,
+"book": "1 Samuel",
+"chapter": 25
+},
+{
+"seq": 304,
+"book": "1 Samuel",
+"chapter": 26
+},
+{
+"seq": 305,
+"book": "1 Samuel",
+"chapter": 27
+},
+{
+"seq": 306,
+"book": "1 Samuel",
+"chapter": 28
+},
+{
+"seq": 307,
+"book": "1 Samuel",
+"chapter": 29
+},
+{
+"seq": 308,
+"book": "1 Samuel",
+"chapter": 30
+},
+{
+"seq": 309,
+"book": "1 Samuel",
+"chapter": 31
+},
+{
+"seq": 310,
+"book": "2 Samuel",
+"chapter": 1
+},
+{
+"seq": 311,
+"book": "2 Samuel",
+"chapter": 2
+},
+{
+"seq": 312,
+"book": "2 Samuel",
+"chapter": 3
+},
+{
+"seq": 313,
+"book": "2 Samuel",
+"chapter": 4
+},
+{
+"seq": 314,
+"book": "2 Samuel",
+"chapter": 5
+},
+{
+"seq": 315,
+"book": "2 Samuel",
+"chapter": 6
+},
+{
+"seq": 316,
+"book": "2 Samuel",
+"chapter": 7
+},
+{
+"seq": 317,
+"book": "2 Samuel",
+"chapter": 8
+},
+{
+"seq": 318,
+"book": "2 Samuel",
+"chapter": 9
+},
+{
+"seq": 319,
+"book": "2 Samuel",
+"chapter": 10
+},
+{
+"seq": 320,
+"book": "2 Samuel",
+"chapter": 11
+},
+{
+"seq": 321,
+"book": "2 Samuel",
+"chapter": 12
+},
+{
+"seq": 322,
+"book": "2 Samuel",
+"chapter": 13
+},
+{
+"seq": 323,
+"book": "2 Samuel",
+"chapter": 14
+},
+{
+"seq": 324,
+"book": "2 Samuel",
+"chapter": 15
+},
+{
+"seq": 325,
+"book": "2 Samuel",
+"chapter": 16
+},
+{
+"seq": 326,
+"book": "2 Samuel",
+"chapter": 17
+},
+{
+"seq": 327,
+"book": "2 Samuel",
+"chapter": 18
+},
+{
+"seq": 328,
+"book": "2 Samuel",
+"chapter": 19
+},
+{
+"seq": 329,
+"book": "2 Samuel",
+"chapter": 20
+},
+{
+"seq": 330,
+"book": "2 Samuel",
+"chapter": 21
+},
+{
+"seq": 331,
+"book": "2 Samuel",
+"chapter": 22
+},
+{
+"seq": 332,
+"book": "2 Samuel",
+"chapter": 23
+},
+{
+"seq": 333,
+"book": "2 Samuel",
+"chapter": 24
+},
+{
+"seq": 334,
+"book": "1 Chronicles",
+"chapter": 1
+},
+{
+"seq": 335,
+"book": "1 Chronicles",
+"chapter": 2
+},
+{
+"seq": 336,
+"book": "1 Chronicles",
+"chapter": 3
+},
+{
+"seq": 337,
+"book": "1 Chronicles",
+"chapter": 4
+},
+{
+"seq": 338,
+"book": "1 Chronicles",
+"chapter": 5
+},
+{
+"seq": 339,
+"book": "1 Chronicles",
+"chapter": 6
+},
+{
+"seq": 340,
+"book": "1 Chronicles",
+"chapter": 7
+},
+{
+"seq": 341,
+"book": "1 Chronicles",
+"chapter": 8
+},
+{
+"seq": 342,
+"book": "1 Chronicles",
+"chapter": 9
+},
+{
+"seq": 343,
+"book": "1 Chronicles",
+"chapter": 10
+},
+{
+"seq": 344,
+"book": "1 Chronicles",
+"chapter": 11
+},
+{
+"seq": 345,
+"book": "1 Chronicles",
+"chapter": 12
+},
+{
+"seq": 346,
+"book": "1 Chronicles",
+"chapter": 13
+},
+{
+"seq": 347,
+"book": "1 Chronicles",
+"chapter": 14
+},
+{
+"seq": 348,
+"book": "1 Chronicles",
+"chapter": 15
+},
+{
+"seq": 349,
+"book": "1 Chronicles",
+"chapter": 16
+},
+{
+"seq": 350,
+"book": "1 Chronicles",
+"chapter": 17
+},
+{
+"seq": 351,
+"book": "1 Chronicles",
+"chapter": 18
+},
+{
+"seq": 352,
+"book": "1 Chronicles",
+"chapter": 19
+},
+{
+"seq": 353,
+"book": "1 Chronicles",
+"chapter": 20
+},
+{
+"seq": 354,
+"book": "1 Chronicles",
+"chapter": 21
+},
+{
+"seq": 355,
+"book": "1 Chronicles",
+"chapter": 22
+},
+{
+"seq": 356,
+"book": "1 Chronicles",
+"chapter": 23
+},
+{
+"seq": 357,
+"book": "1 Chronicles",
+"chapter": 24
+},
+{
+"seq": 358,
+"book": "1 Chronicles",
+"chapter": 25
+},
+{
+"seq": 359,
+"book": "1 Chronicles",
+"chapter": 26
+},
+{
+"seq": 360,
+"book": "1 Chronicles",
+"chapter": 27
+},
+{
+"seq": 361,
+"book": "1 Chronicles",
+"chapter": 28
+},
+{
+"seq": 362,
+"book": "1 Chronicles",
+"chapter": 29
+},
+{
+"seq": 363,
+"book": "Psalms",
+"chapter": 1
+},
+{
+"seq": 364,
+"book": "Psalms",
+"chapter": 2
+},
+{
+"seq": 365,
+"book": "Psalms",
+"chapter": 3
+},
+{
+"seq": 366,
+"book": "Psalms",
+"chapter": 4
+},
+{
+"seq": 367,
+"book": "Psalms",
+"chapter": 5
+},
+{
+"seq": 368,
+"book": "Psalms",
+"chapter": 6
+},
+{
+"seq": 369,
+"book": "Psalms",
+"chapter": 7
+},
+{
+"seq": 370,
+"book": "Psalms",
+"chapter": 8
+},
+{
+"seq": 371,
+"book": "Psalms",
+"chapter": 9
+},
+{
+"seq": 372,
+"book": "Psalms",
+"chapter": 10
+},
+{
+"seq": 373,
+"book": "Psalms",
+"chapter": 11
+},
+{
+"seq": 374,
+"book": "Psalms",
+"chapter": 12
+},
+{
+"seq": 375,
+"book": "Psalms",
+"chapter": 13
+},
+{
+"seq": 376,
+"book": "Psalms",
+"chapter": 14
+},
+{
+"seq": 377,
+"book": "Psalms",
+"chapter": 15
+},
+{
+"seq": 378,
+"book": "Psalms",
+"chapter": 16
+},
+{
+"seq": 379,
+"book": "Psalms",
+"chapter": 17
+},
+{
+"seq": 380,
+"book": "Psalms",
+"chapter": 18
+},
+{
+"seq": 381,
+"book": "Psalms",
+"chapter": 19
+},
+{
+"seq": 382,
+"book": "Psalms",
+"chapter": 20
+},
+{
+"seq": 383,
+"book": "Psalms",
+"chapter": 21
+},
+{
+"seq": 384,
+"book": "Psalms",
+"chapter": 22
+},
+{
+"seq": 385,
+"book": "Psalms",
+"chapter": 23
+},
+{
+"seq": 386,
+"book": "Psalms",
+"chapter": 24
+},
+{
+"seq": 387,
+"book": "Psalms",
+"chapter": 25
+},
+{
+"seq": 388,
+"book": "Psalms",
+"chapter": 26
+},
+{
+"seq": 389,
+"book": "Psalms",
+"chapter": 27
+},
+{
+"seq": 390,
+"book": "Psalms",
+"chapter": 28
+},
+{
+"seq": 391,
+"book": "Psalms",
+"chapter": 29
+},
+{
+"seq": 392,
+"book": "Psalms",
+"chapter": 30
+},
+{
+"seq": 393,
+"book": "Psalms",
+"chapter": 31
+},
+{
+"seq": 394,
+"book": "Psalms",
+"chapter": 32
+},
+{
+"seq": 395,
+"book": "Psalms",
+"chapter": 33
+},
+{
+"seq": 396,
+"book": "Psalms",
+"chapter": 34
+},
+{
+"seq": 397,
+"book": "Psalms",
+"chapter": 35
+},
+{
+"seq": 398,
+"book": "Psalms",
+"chapter": 36
+},
+{
+"seq": 399,
+"book": "Psalms",
+"chapter": 37
+},
+{
+"seq": 400,
+"book": "Psalms",
+"chapter": 38
+},
+{
+"seq": 401,
+"book": "Psalms",
+"chapter": 39
+},
+{
+"seq": 402,
+"book": "Psalms",
+"chapter": 40
+},
+{
+"seq": 403,
+"book": "Psalms",
+"chapter": 41
+},
+{
+"seq": 404,
+"book": "Psalms",
+"chapter": 42
+},
+{
+"seq": 405,
+"book": "Psalms",
+"chapter": 43
+},
+{
+"seq": 406,
+"book": "Psalms",
+"chapter": 44
+},
+{
+"seq": 407,
+"book": "Psalms",
+"chapter": 45
+},
+{
+"seq": 408,
+"book": "Psalms",
+"chapter": 46
+},
+{
+"seq": 409,
+"book": "Psalms",
+"chapter": 47
+},
+{
+"seq": 410,
+"book": "Psalms",
+"chapter": 48
+},
+{
+"seq": 411,
+"book": "Psalms",
+"chapter": 49
+},
+{
+"seq": 412,
+"book": "Psalms",
+"chapter": 50
+},
+{
+"seq": 413,
+"book": "Psalms",
+"chapter": 51
+},
+{
+"seq": 414,
+"book": "Psalms",
+"chapter": 52
+},
+{
+"seq": 415,
+"book": "Psalms",
+"chapter": 53
+},
+{
+"seq": 416,
+"book": "Psalms",
+"chapter": 54
+},
+{
+"seq": 417,
+"book": "Psalms",
+"chapter": 55
+},
+{
+"seq": 418,
+"book": "Psalms",
+"chapter": 56
+},
+{
+"seq": 419,
+"book": "Psalms",
+"chapter": 57
+},
+{
+"seq": 420,
+"book": "Psalms",
+"chapter": 58
+},
+{
+"seq": 421,
+"book": "Psalms",
+"chapter": 59
+},
+{
+"seq": 422,
+"book": "Psalms",
+"chapter": 60
+},
+{
+"seq": 423,
+"book": "Psalms",
+"chapter": 61
+},
+{
+"seq": 424,
+"book": "Psalms",
+"chapter": 62
+},
+{
+"seq": 425,
+"book": "Psalms",
+"chapter": 63
+},
+{
+"seq": 426,
+"book": "Psalms",
+"chapter": 64
+},
+{
+"seq": 427,
+"book": "Psalms",
+"chapter": 65
+},
+{
+"seq": 428,
+"book": "Psalms",
+"chapter": 66
+},
+{
+"seq": 429,
+"book": "Psalms",
+"chapter": 67
+},
+{
+"seq": 430,
+"book": "Psalms",
+"chapter": 68
+},
+{
+"seq": 431,
+"book": "Psalms",
+"chapter": 69
+},
+{
+"seq": 432,
+"book": "Psalms",
+"chapter": 70
+},
+{
+"seq": 433,
+"book": "Psalms",
+"chapter": 71
+},
+{
+"seq": 434,
+"book": "Psalms",
+"chapter": 72
+},
+{
+"seq": 435,
+"book": "Psalms",
+"chapter": 73
+},
+{
+"seq": 436,
+"book": "Psalms",
+"chapter": 74
+},
+{
+"seq": 437,
+"book": "Psalms",
+"chapter": 75
+},
+{
+"seq": 438,
+"book": "Psalms",
+"chapter": 76
+},
+{
+"seq": 439,
+"book": "Psalms",
+"chapter": 77
+},
+{
+"seq": 440,
+"book": "Psalms",
+"chapter": 78
+},
+{
+"seq": 441,
+"book": "Psalms",
+"chapter": 79
+},
+{
+"seq": 442,
+"book": "Psalms",
+"chapter": 80
+},
+{
+"seq": 443,
+"book": "Psalms",
+"chapter": 81
+},
+{
+"seq": 444,
+"book": "Psalms",
+"chapter": 82
+},
+{
+"seq": 445,
+"book": "Psalms",
+"chapter": 83
+},
+{
+"seq": 446,
+"book": "Psalms",
+"chapter": 84
+},
+{
+"seq": 447,
+"book": "Psalms",
+"chapter": 85
+},
+{
+"seq": 448,
+"book": "Psalms",
+"chapter": 86
+},
+{
+"seq": 449,
+"book": "Psalms",
+"chapter": 87
+},
+{
+"seq": 450,
+"book": "Psalms",
+"chapter": 88
+},
+{
+"seq": 451,
+"book": "Psalms",
+"chapter": 89
+},
+{
+"seq": 452,
+"book": "Psalms",
+"chapter": 90
+},
+{
+"seq": 453,
+"book": "Psalms",
+"chapter": 91
+},
+{
+"seq": 454,
+"book": "Psalms",
+"chapter": 92
+},
+{
+"seq": 455,
+"book": "Psalms",
+"chapter": 93
+},
+{
+"seq": 456,
+"book": "Psalms",
+"chapter": 94
+},
+{
+"seq": 457,
+"book": "Psalms",
+"chapter": 95
+},
+{
+"seq": 458,
+"book": "Psalms",
+"chapter": 96
+},
+{
+"seq": 459,
+"book": "Psalms",
+"chapter": 97
+},
+{
+"seq": 460,
+"book": "Psalms",
+"chapter": 98
+},
+{
+"seq": 461,
+"book": "Psalms",
+"chapter": 99
+},
+{
+"seq": 462,
+"book": "Psalms",
+"chapter": 100
+},
+{
+"seq": 463,
+"book": "Psalms",
+"chapter": 101
+},
+{
+"seq": 464,
+"book": "Psalms",
+"chapter": 102
+},
+{
+"seq": 465,
+"book": "Psalms",
+"chapter": 103
+},
+{
+"seq": 466,
+"book": "Psalms",
+"chapter": 104
+},
+{
+"seq": 467,
+"book": "Psalms",
+"chapter": 105
+},
+{
+"seq": 468,
+"book": "Psalms",
+"chapter": 106
+},
+{
+"seq": 469,
+"book": "Psalms",
+"chapter": 107
+},
+{
+"seq": 470,
+"book": "Psalms",
+"chapter": 108
+},
+{
+"seq": 471,
+"book": "Psalms",
+"chapter": 109
+},
+{
+"seq": 472,
+"book": "Psalms",
+"chapter": 110
+},
+{
+"seq": 473,
+"book": "Psalms",
+"chapter": 111
+},
+{
+"seq": 474,
+"book": "Psalms",
+"chapter": 112
+},
+{
+"seq": 475,
+"book": "Psalms",
+"chapter": 113
+},
+{
+"seq": 476,
+"book": "Psalms",
+"chapter": 114
+},
+{
+"seq": 477,
+"book": "Psalms",
+"chapter": 115
+},
+{
+"seq": 478,
+"book": "Psalms",
+"chapter": 116
+},
+{
+"seq": 479,
+"book": "Psalms",
+"chapter": 117
+},
+{
+"seq": 480,
+"book": "Psalms",
+"chapter": 118
+},
+{
+"seq": 481,
+"book": "Psalms",
+"chapter": 119
+},
+{
+"seq": 482,
+"book": "Psalms",
+"chapter": 120
+},
+{
+"seq": 483,
+"book": "Psalms",
+"chapter": 121
+},
+{
+"seq": 484,
+"book": "Psalms",
+"chapter": 122
+},
+{
+"seq": 485,
+"book": "Psalms",
+"chapter": 123
+},
+{
+"seq": 486,
+"book": "Psalms",
+"chapter": 124
+},
+{
+"seq": 487,
+"book": "Psalms",
+"chapter": 125
+},
+{
+"seq": 488,
+"book": "Psalms",
+"chapter": 126
+},
+{
+"seq": 489,
+"book": "Psalms",
+"chapter": 127
+},
+{
+"seq": 490,
+"book": "Psalms",
+"chapter": 128
+},
+{
+"seq": 491,
+"book": "Psalms",
+"chapter": 129
+},
+{
+"seq": 492,
+"book": "Psalms",
+"chapter": 130
+},
+{
+"seq": 493,
+"book": "Psalms",
+"chapter": 131
+},
+{
+"seq": 494,
+"book": "Psalms",
+"chapter": 132
+},
+{
+"seq": 495,
+"book": "Psalms",
+"chapter": 133
+},
+{
+"seq": 496,
+"book": "Psalms",
+"chapter": 134
+},
+{
+"seq": 497,
+"book": "Psalms",
+"chapter": 135
+},
+{
+"seq": 498,
+"book": "Psalms",
+"chapter": 136
+},
+{
+"seq": 499,
+"book": "Psalms",
+"chapter": 137
+},
+{
+"seq": 500,
+"book": "Psalms",
+"chapter": 138
+},
+{
+"seq": 501,
+"book": "Psalms",
+"chapter": 139
+},
+{
+"seq": 502,
+"book": "Psalms",
+"chapter": 140
+},
+{
+"seq": 503,
+"book": "Psalms",
+"chapter": 141
+},
+{
+"seq": 504,
+"book": "Psalms",
+"chapter": 142
+},
+{
+"seq": 505,
+"book": "Psalms",
+"chapter": 143
+},
+{
+"seq": 506,
+"book": "Psalms",
+"chapter": 144
+},
+{
+"seq": 507,
+"book": "Psalms",
+"chapter": 145
+},
+{
+"seq": 508,
+"book": "Psalms",
+"chapter": 146
+},
+{
+"seq": 509,
+"book": "Psalms",
+"chapter": 147
+},
+{
+"seq": 510,
+"book": "Psalms",
+"chapter": 148
+},
+{
+"seq": 511,
+"book": "Psalms",
+"chapter": 149
+},
+{
+"seq": 512,
+"book": "Psalms",
+"chapter": 150
+},
+{
+"seq": 513,
+"book": "1 Kings",
+"chapter": 1
+},
+{
+"seq": 514,
+"book": "1 Kings",
+"chapter": 2
+},
+{
+"seq": 515,
+"book": "1 Kings",
+"chapter": 3
+},
+{
+"seq": 516,
+"book": "1 Kings",
+"chapter": 4
+},
+{
+"seq": 517,
+"book": "1 Kings",
+"chapter": 5
+},
+{
+"seq": 518,
+"book": "1 Kings",
+"chapter": 6
+},
+{
+"seq": 519,
+"book": "1 Kings",
+"chapter": 7
+},
+{
+"seq": 520,
+"book": "1 Kings",
+"chapter": 8
+},
+{
+"seq": 521,
+"book": "1 Kings",
+"chapter": 9
+},
+{
+"seq": 522,
+"book": "1 Kings",
+"chapter": 10
+},
+{
+"seq": 523,
+"book": "1 Kings",
+"chapter": 11
+},
+{
+"seq": 524,
+"book": "2 Chronicles",
+"chapter": 1
+},
+{
+"seq": 525,
+"book": "2 Chronicles",
+"chapter": 2
+},
+{
+"seq": 526,
+"book": "2 Chronicles",
+"chapter": 3
+},
+{
+"seq": 527,
+"book": "2 Chronicles",
+"chapter": 4
+},
+{
+"seq": 528,
+"book": "2 Chronicles",
+"chapter": 5
+},
+{
+"seq": 529,
+"book": "2 Chronicles",
+"chapter": 6
+},
+{
+"seq": 530,
+"book": "2 Chronicles",
+"chapter": 7
+},
+{
+"seq": 531,
+"book": "2 Chronicles",
+"chapter": 8
+},
+{
+"seq": 532,
+"book": "2 Chronicles",
+"chapter": 9
+},
+{
+"seq": 533,
+"book": "Song of Solomon",
+"chapter": 1
+},
+{
+"seq": 534,
+"book": "Song of Solomon",
+"chapter": 2
+},
+{
+"seq": 535,
+"book": "Song of Solomon",
+"chapter": 3
+},
+{
+"seq": 536,
+"book": "Song of Solomon",
+"chapter": 4
+},
+{
+"seq": 537,
+"book": "Song of Solomon",
+"chapter": 5
+},
+{
+"seq": 538,
+"book": "Song of Solomon",
+"chapter": 6
+},
+{
+"seq": 539,
+"book": "Song of Solomon",
+"chapter": 7
+},
+{
+"seq": 540,
+"book": "Song of Solomon",
+"chapter": 8
+},
+{
+"seq": 541,
+"book": "Proverbs",
+"chapter": 1
+},
+{
+"seq": 542,
+"book": "Proverbs",
+"chapter": 2
+},
+{
+"seq": 543,
+"book": "Proverbs",
+"chapter": 3
+},
+{
+"seq": 544,
+"book": "Proverbs",
+"chapter": 4
+},
+{
+"seq": 545,
+"book": "Proverbs",
+"chapter": 5
+},
+{
+"seq": 546,
+"book": "Proverbs",
+"chapter": 6
+},
+{
+"seq": 547,
+"book": "Proverbs",
+"chapter": 7
+},
+{
+"seq": 548,
+"book": "Proverbs",
+"chapter": 8
+},
+{
+"seq": 549,
+"book": "Proverbs",
+"chapter": 9
+},
+{
+"seq": 550,
+"book": "Proverbs",
+"chapter": 10
+},
+{
+"seq": 551,
+"book": "Proverbs",
+"chapter": 11
+},
+{
+"seq": 552,
+"book": "Proverbs",
+"chapter": 12
+},
+{
+"seq": 553,
+"book": "Proverbs",
+"chapter": 13
+},
+{
+"seq": 554,
+"book": "Proverbs",
+"chapter": 14
+},
+{
+"seq": 555,
+"book": "Proverbs",
+"chapter": 15
+},
+{
+"seq": 556,
+"book": "Proverbs",
+"chapter": 16
+},
+{
+"seq": 557,
+"book": "Proverbs",
+"chapter": 17
+},
+{
+"seq": 558,
+"book": "Proverbs",
+"chapter": 18
+},
+{
+"seq": 559,
+"book": "Proverbs",
+"chapter": 19
+},
+{
+"seq": 560,
+"book": "Proverbs",
+"chapter": 20
+},
+{
+"seq": 561,
+"book": "Proverbs",
+"chapter": 21
+},
+{
+"seq": 562,
+"book": "Proverbs",
+"chapter": 22
+},
+{
+"seq": 563,
+"book": "Proverbs",
+"chapter": 23
+},
+{
+"seq": 564,
+"book": "Proverbs",
+"chapter": 24
+},
+{
+"seq": 565,
+"book": "Proverbs",
+"chapter": 25
+},
+{
+"seq": 566,
+"book": "Proverbs",
+"chapter": 26
+},
+{
+"seq": 567,
+"book": "Proverbs",
+"chapter": 27
+},
+{
+"seq": 568,
+"book": "Proverbs",
+"chapter": 28
+},
+{
+"seq": 569,
+"book": "Proverbs",
+"chapter": 29
+},
+{
+"seq": 570,
+"book": "Proverbs",
+"chapter": 30
+},
+{
+"seq": 571,
+"book": "Proverbs",
+"chapter": 31
+},
+{
+"seq": 572,
+"book": "Ecclesiastes",
+"chapter": 1
+},
+{
+"seq": 573,
+"book": "Ecclesiastes",
+"chapter": 2
+},
+{
+"seq": 574,
+"book": "Ecclesiastes",
+"chapter": 3
+},
+{
+"seq": 575,
+"book": "Ecclesiastes",
+"chapter": 4
+},
+{
+"seq": 576,
+"book": "Ecclesiastes",
+"chapter": 5
+},
+{
+"seq": 577,
+"book": "Ecclesiastes",
+"chapter": 6
+},
+{
+"seq": 578,
+"book": "Ecclesiastes",
+"chapter": 7
+},
+{
+"seq": 579,
+"book": "Ecclesiastes",
+"chapter": 8
+},
+{
+"seq": 580,
+"book": "Ecclesiastes",
+"chapter": 9
+},
+{
+"seq": 581,
+"book": "Ecclesiastes",
+"chapter": 10
+},
+{
+"seq": 582,
+"book": "Ecclesiastes",
+"chapter": 11
+},
+{
+"seq": 583,
+"book": "Ecclesiastes",
+"chapter": 12
+},
+{
+"seq": 584,
+"book": "1 Kings",
+"chapter": 12
+},
+{
+"seq": 585,
+"book": "1 Kings",
+"chapter": 13
+},
+{
+"seq": 586,
+"book": "1 Kings",
+"chapter": 14
+},
+{
+"seq": 587,
+"book": "1 Kings",
+"chapter": 15
+},
+{
+"seq": 588,
+"book": "1 Kings",
+"chapter": 16
+},
+{
+"seq": 589,
+"book": "1 Kings",
+"chapter": 17
+},
+{
+"seq": 590,
+"book": "1 Kings",
+"chapter": 18
+},
+{
+"seq": 591,
+"book": "1 Kings",
+"chapter": 19
+},
+{
+"seq": 592,
+"book": "1 Kings",
+"chapter": 20
+},
+{
+"seq": 593,
+"book": "1 Kings",
+"chapter": 21
+},
+{
+"seq": 594,
+"book": "1 Kings",
+"chapter": 22
+},
+{
+"seq": 595,
+"book": "2 Kings",
+"chapter": 1
+},
+{
+"seq": 596,
+"book": "2 Kings",
+"chapter": 2
+},
+{
+"seq": 597,
+"book": "2 Kings",
+"chapter": 3
+},
+{
+"seq": 598,
+"book": "2 Kings",
+"chapter": 4
+},
+{
+"seq": 599,
+"book": "2 Kings",
+"chapter": 5
+},
+{
+"seq": 600,
+"book": "2 Kings",
+"chapter": 6
+},
+{
+"seq": 601,
+"book": "2 Kings",
+"chapter": 7
+},
+{
+"seq": 602,
+"book": "2 Kings",
+"chapter": 8
+},
+{
+"seq": 603,
+"book": "2 Kings",
+"chapter": 9
+},
+{
+"seq": 604,
+"book": "2 Kings",
+"chapter": 10
+},
+{
+"seq": 605,
+"book": "2 Kings",
+"chapter": 11
+},
+{
+"seq": 606,
+"book": "2 Kings",
+"chapter": 12
+},
+{
+"seq": 607,
+"book": "2 Kings",
+"chapter": 13
+},
+{
+"seq": 608,
+"book": "2 Kings",
+"chapter": 14
+},
+{
+"seq": 609,
+"book": "2 Kings",
+"chapter": 15
+},
+{
+"seq": 610,
+"book": "2 Kings",
+"chapter": 16
+},
+{
+"seq": 611,
+"book": "2 Kings",
+"chapter": 17
+},
+{
+"seq": 612,
+"book": "2 Kings",
+"chapter": 18
+},
+{
+"seq": 613,
+"book": "2 Kings",
+"chapter": 19
+},
+{
+"seq": 614,
+"book": "2 Kings",
+"chapter": 20
+},
+{
+"seq": 615,
+"book": "2 Kings",
+"chapter": 21
+},
+{
+"seq": 616,
+"book": "2 Kings",
+"chapter": 22
+},
+{
+"seq": 617,
+"book": "2 Kings",
+"chapter": 23
+},
+{
+"seq": 618,
+"book": "2 Kings",
+"chapter": 24
+},
+{
+"seq": 619,
+"book": "2 Kings",
+"chapter": 25
+},
+{
+"seq": 620,
+"book": "2 Chronicles",
+"chapter": 10
+},
+{
+"seq": 621,
+"book": "2 Chronicles",
+"chapter": 11
+},
+{
+"seq": 622,
+"book": "2 Chronicles",
+"chapter": 12
+},
+{
+"seq": 623,
+"book": "2 Chronicles",
+"chapter": 13
+},
+{
+"seq": 624,
+"book": "2 Chronicles",
+"chapter": 14
+},
+{
+"seq": 625,
+"book": "2 Chronicles",
+"chapter": 15
+},
+{
+"seq": 626,
+"book": "2 Chronicles",
+"chapter": 16
+},
+{
+"seq": 627,
+"book": "2 Chronicles",
+"chapter": 17
+},
+{
+"seq": 628,
+"book": "2 Chronicles",
+"chapter": 18
+},
+{
+"seq": 629,
+"book": "2 Chronicles",
+"chapter": 19
+},
+{
+"seq": 630,
+"book": "2 Chronicles",
+"chapter": 20
+},
+{
+"seq": 631,
+"book": "2 Chronicles",
+"chapter": 21
+},
+{
+"seq": 632,
+"book": "2 Chronicles",
+"chapter": 22
+},
+{
+"seq": 633,
+"book": "2 Chronicles",
+"chapter": 23
+},
+{
+"seq": 634,
+"book": "2 Chronicles",
+"chapter": 24
+},
+{
+"seq": 635,
+"book": "2 Chronicles",
+"chapter": 25
+},
+{
+"seq": 636,
+"book": "2 Chronicles",
+"chapter": 26
+},
+{
+"seq": 637,
+"book": "2 Chronicles",
+"chapter": 27
+},
+{
+"seq": 638,
+"book": "2 Chronicles",
+"chapter": 28
+},
+{
+"seq": 639,
+"book": "2 Chronicles",
+"chapter": 29
+},
+{
+"seq": 640,
+"book": "2 Chronicles",
+"chapter": 30
+},
+{
+"seq": 641,
+"book": "2 Chronicles",
+"chapter": 31
+},
+{
+"seq": 642,
+"book": "2 Chronicles",
+"chapter": 32
+},
+{
+"seq": 643,
+"book": "2 Chronicles",
+"chapter": 33
+},
+{
+"seq": 644,
+"book": "2 Chronicles",
+"chapter": 34
+},
+{
+"seq": 645,
+"book": "2 Chronicles",
+"chapter": 35
+},
+{
+"seq": 646,
+"book": "2 Chronicles",
+"chapter": 36
+},
+{
+"seq": 647,
+"book": "Jonah",
+"chapter": 1
+},
+{
+"seq": 648,
+"book": "Jonah",
+"chapter": 2
+},
+{
+"seq": 649,
+"book": "Jonah",
+"chapter": 3
+},
+{
+"seq": 650,
+"book": "Jonah",
+"chapter": 4
+},
+{
+"seq": 651,
+"book": "Joel",
+"chapter": 1
+},
+{
+"seq": 652,
+"book": "Joel",
+"chapter": 2
+},
+{
+"seq": 653,
+"book": "Joel",
+"chapter": 3
+},
+{
+"seq": 654,
+"book": "Amos",
+"chapter": 1
+},
+{
+"seq": 655,
+"book": "Amos",
+"chapter": 2
+},
+{
+"seq": 656,
+"book": "Amos",
+"chapter": 3
+},
+{
+"seq": 657,
+"book": "Amos",
+"chapter": 4
+},
+{
+"seq": 658,
+"book": "Amos",
+"chapter": 5
+},
+{
+"seq": 659,
+"book": "Amos",
+"chapter": 6
+},
+{
+"seq": 660,
+"book": "Amos",
+"chapter": 7
+},
+{
+"seq": 661,
+"book": "Amos",
+"chapter": 8
+},
+{
+"seq": 662,
+"book": "Amos",
+"chapter": 9
+},
+{
+"seq": 663,
+"book": "Hosea",
+"chapter": 1
+},
+{
+"seq": 664,
+"book": "Hosea",
+"chapter": 2
+},
+{
+"seq": 665,
+"book": "Hosea",
+"chapter": 3
+},
+{
+"seq": 666,
+"book": "Hosea",
+"chapter": 4
+},
+{
+"seq": 667,
+"book": "Hosea",
+"chapter": 5
+},
+{
+"seq": 668,
+"book": "Hosea",
+"chapter": 6
+},
+{
+"seq": 669,
+"book": "Hosea",
+"chapter": 7
+},
+{
+"seq": 670,
+"book": "Hosea",
+"chapter": 8
+},
+{
+"seq": 671,
+"book": "Hosea",
+"chapter": 9
+},
+{
+"seq": 672,
+"book": "Hosea",
+"chapter": 10
+},
+{
+"seq": 673,
+"book": "Hosea",
+"chapter": 11
+},
+{
+"seq": 674,
+"book": "Hosea",
+"chapter": 12
+},
+{
+"seq": 675,
+"book": "Hosea",
+"chapter": 13
+},
+{
+"seq": 676,
+"book": "Hosea",
+"chapter": 14
+},
+{
+"seq": 677,
+"book": "Isaiah",
+"chapter": 1
+},
+{
+"seq": 678,
+"book": "Isaiah",
+"chapter": 2
+},
+{
+"seq": 679,
+"book": "Isaiah",
+"chapter": 3
+},
+{
+"seq": 680,
+"book": "Isaiah",
+"chapter": 4
+},
+{
+"seq": 681,
+"book": "Isaiah",
+"chapter": 5
+},
+{
+"seq": 682,
+"book": "Isaiah",
+"chapter": 6
+},
+{
+"seq": 683,
+"book": "Isaiah",
+"chapter": 7
+},
+{
+"seq": 684,
+"book": "Isaiah",
+"chapter": 8
+},
+{
+"seq": 685,
+"book": "Isaiah",
+"chapter": 9
+},
+{
+"seq": 686,
+"book": "Isaiah",
+"chapter": 10
+},
+{
+"seq": 687,
+"book": "Isaiah",
+"chapter": 11
+},
+{
+"seq": 688,
+"book": "Isaiah",
+"chapter": 12
+},
+{
+"seq": 689,
+"book": "Isaiah",
+"chapter": 13
+},
+{
+"seq": 690,
+"book": "Isaiah",
+"chapter": 14
+},
+{
+"seq": 691,
+"book": "Isaiah",
+"chapter": 15
+},
+{
+"seq": 692,
+"book": "Isaiah",
+"chapter": 16
+},
+{
+"seq": 693,
+"book": "Isaiah",
+"chapter": 17
+},
+{
+"seq": 694,
+"book": "Isaiah",
+"chapter": 18
+},
+{
+"seq": 695,
+"book": "Isaiah",
+"chapter": 19
+},
+{
+"seq": 696,
+"book": "Isaiah",
+"chapter": 20
+},
+{
+"seq": 697,
+"book": "Isaiah",
+"chapter": 21
+},
+{
+"seq": 698,
+"book": "Isaiah",
+"chapter": 22
+},
+{
+"seq": 699,
+"book": "Isaiah",
+"chapter": 23
+},
+{
+"seq": 700,
+"book": "Isaiah",
+"chapter": 24
+},
+{
+"seq": 701,
+"book": "Isaiah",
+"chapter": 25
+},
+{
+"seq": 702,
+"book": "Isaiah",
+"chapter": 26
+},
+{
+"seq": 703,
+"book": "Isaiah",
+"chapter": 27
+},
+{
+"seq": 704,
+"book": "Isaiah",
+"chapter": 28
+},
+{
+"seq": 705,
+"book": "Isaiah",
+"chapter": 29
+},
+{
+"seq": 706,
+"book": "Isaiah",
+"chapter": 30
+},
+{
+"seq": 707,
+"book": "Isaiah",
+"chapter": 31
+},
+{
+"seq": 708,
+"book": "Isaiah",
+"chapter": 32
+},
+{
+"seq": 709,
+"book": "Isaiah",
+"chapter": 33
+},
+{
+"seq": 710,
+"book": "Isaiah",
+"chapter": 34
+},
+{
+"seq": 711,
+"book": "Isaiah",
+"chapter": 35
+},
+{
+"seq": 712,
+"book": "Isaiah",
+"chapter": 36
+},
+{
+"seq": 713,
+"book": "Isaiah",
+"chapter": 37
+},
+{
+"seq": 714,
+"book": "Isaiah",
+"chapter": 38
+},
+{
+"seq": 715,
+"book": "Isaiah",
+"chapter": 39
+},
+{
+"seq": 716,
+"book": "Isaiah",
+"chapter": 40
+},
+{
+"seq": 717,
+"book": "Isaiah",
+"chapter": 41
+},
+{
+"seq": 718,
+"book": "Isaiah",
+"chapter": 42
+},
+{
+"seq": 719,
+"book": "Isaiah",
+"chapter": 43
+},
+{
+"seq": 720,
+"book": "Isaiah",
+"chapter": 44
+},
+{
+"seq": 721,
+"book": "Isaiah",
+"chapter": 45
+},
+{
+"seq": 722,
+"book": "Isaiah",
+"chapter": 46
+},
+{
+"seq": 723,
+"book": "Isaiah",
+"chapter": 47
+},
+{
+"seq": 724,
+"book": "Isaiah",
+"chapter": 48
+},
+{
+"seq": 725,
+"book": "Isaiah",
+"chapter": 49
+},
+{
+"seq": 726,
+"book": "Isaiah",
+"chapter": 50
+},
+{
+"seq": 727,
+"book": "Isaiah",
+"chapter": 51
+},
+{
+"seq": 728,
+"book": "Isaiah",
+"chapter": 52
+},
+{
+"seq": 729,
+"book": "Isaiah",
+"chapter": 53
+},
+{
+"seq": 730,
+"book": "Isaiah",
+"chapter": 54
+},
+{
+"seq": 731,
+"book": "Isaiah",
+"chapter": 55
+},
+{
+"seq": 732,
+"book": "Isaiah",
+"chapter": 56
+},
+{
+"seq": 733,
+"book": "Isaiah",
+"chapter": 57
+},
+{
+"seq": 734,
+"book": "Isaiah",
+"chapter": 58
+},
+{
+"seq": 735,
+"book": "Isaiah",
+"chapter": 59
+},
+{
+"seq": 736,
+"book": "Isaiah",
+"chapter": 60
+},
+{
+"seq": 737,
+"book": "Isaiah",
+"chapter": 61
+},
+{
+"seq": 738,
+"book": "Isaiah",
+"chapter": 62
+},
+{
+"seq": 739,
+"book": "Isaiah",
+"chapter": 63
+},
+{
+"seq": 740,
+"book": "Isaiah",
+"chapter": 64
+},
+{
+"seq": 741,
+"book": "Isaiah",
+"chapter": 65
+},
+{
+"seq": 742,
+"book": "Isaiah",
+"chapter": 66
+},
+{
+"seq": 743,
+"book": "Micah",
+"chapter": 1
+},
+{
+"seq": 744,
+"book": "Micah",
+"chapter": 2
+},
+{
+"seq": 745,
+"book": "Micah",
+"chapter": 3
+},
+{
+"seq": 746,
+"book": "Micah",
+"chapter": 4
+},
+{
+"seq": 747,
+"book": "Micah",
+"chapter": 5
+},
+{
+"seq": 748,
+"book": "Micah",
+"chapter": 6
+},
+{
+"seq": 749,
+"book": "Micah",
+"chapter": 7
+},
+{
+"seq": 750,
+"book": "Nahum",
+"chapter": 1
+},
+{
+"seq": 751,
+"book": "Nahum",
+"chapter": 2
+},
+{
+"seq": 752,
+"book": "Nahum",
+"chapter": 3
+},
+{
+"seq": 753,
+"book": "Zephaniah",
+"chapter": 1
+},
+{
+"seq": 754,
+"book": "Zephaniah",
+"chapter": 2
+},
+{
+"seq": 755,
+"book": "Zephaniah",
+"chapter": 3
+},
+{
+"seq": 756,
+"book": "Habakkuk",
+"chapter": 1
+},
+{
+"seq": 757,
+"book": "Habakkuk",
+"chapter": 2
+},
+{
+"seq": 758,
+"book": "Habakkuk",
+"chapter": 3
+},
+{
+"seq": 759,
+"book": "Jeremiah",
+"chapter": 1
+},
+{
+"seq": 760,
+"book": "Jeremiah",
+"chapter": 2
+},
+{
+"seq": 761,
+"book": "Jeremiah",
+"chapter": 3
+},
+{
+"seq": 762,
+"book": "Jeremiah",
+"chapter": 4
+},
+{
+"seq": 763,
+"book": "Jeremiah",
+"chapter": 5
+},
+{
+"seq": 764,
+"book": "Jeremiah",
+"chapter": 6
+},
+{
+"seq": 765,
+"book": "Jeremiah",
+"chapter": 7
+},
+{
+"seq": 766,
+"book": "Jeremiah",
+"chapter": 8
+},
+{
+"seq": 767,
+"book": "Jeremiah",
+"chapter": 9
+},
+{
+"seq": 768,
+"book": "Jeremiah",
+"chapter": 10
+},
+{
+"seq": 769,
+"book": "Jeremiah",
+"chapter": 11
+},
+{
+"seq": 770,
+"book": "Jeremiah",
+"chapter": 12
+},
+{
+"seq": 771,
+"book": "Jeremiah",
+"chapter": 13
+},
+{
+"seq": 772,
+"book": "Jeremiah",
+"chapter": 14
+},
+{
+"seq": 773,
+"book": "Jeremiah",
+"chapter": 15
+},
+{
+"seq": 774,
+"book": "Jeremiah",
+"chapter": 16
+},
+{
+"seq": 775,
+"book": "Jeremiah",
+"chapter": 17
+},
+{
+"seq": 776,
+"book": "Jeremiah",
+"chapter": 18
+},
+{
+"seq": 777,
+"book": "Jeremiah",
+"chapter": 19
+},
+{
+"seq": 778,
+"book": "Jeremiah",
+"chapter": 20
+},
+{
+"seq": 779,
+"book": "Jeremiah",
+"chapter": 21
+},
+{
+"seq": 780,
+"book": "Jeremiah",
+"chapter": 22
+},
+{
+"seq": 781,
+"book": "Jeremiah",
+"chapter": 23
+},
+{
+"seq": 782,
+"book": "Jeremiah",
+"chapter": 24
+},
+{
+"seq": 783,
+"book": "Jeremiah",
+"chapter": 25
+},
+{
+"seq": 784,
+"book": "Jeremiah",
+"chapter": 26
+},
+{
+"seq": 785,
+"book": "Jeremiah",
+"chapter": 27
+},
+{
+"seq": 786,
+"book": "Jeremiah",
+"chapter": 28
+},
+{
+"seq": 787,
+"book": "Jeremiah",
+"chapter": 29
+},
+{
+"seq": 788,
+"book": "Jeremiah",
+"chapter": 30
+},
+{
+"seq": 789,
+"book": "Jeremiah",
+"chapter": 31
+},
+{
+"seq": 790,
+"book": "Jeremiah",
+"chapter": 32
+},
+{
+"seq": 791,
+"book": "Jeremiah",
+"chapter": 33
+},
+{
+"seq": 792,
+"book": "Jeremiah",
+"chapter": 34
+},
+{
+"seq": 793,
+"book": "Jeremiah",
+"chapter": 35
+},
+{
+"seq": 794,
+"book": "Jeremiah",
+"chapter": 36
+},
+{
+"seq": 795,
+"book": "Jeremiah",
+"chapter": 37
+},
+{
+"seq": 796,
+"book": "Jeremiah",
+"chapter": 38
+},
+{
+"seq": 797,
+"book": "Jeremiah",
+"chapter": 39
+},
+{
+"seq": 798,
+"book": "Jeremiah",
+"chapter": 40
+},
+{
+"seq": 799,
+"book": "Jeremiah",
+"chapter": 41
+},
+{
+"seq": 800,
+"book": "Jeremiah",
+"chapter": 42
+},
+{
+"seq": 801,
+"book": "Jeremiah",
+"chapter": 43
+},
+{
+"seq": 802,
+"book": "Jeremiah",
+"chapter": 44
+},
+{
+"seq": 803,
+"book": "Jeremiah",
+"chapter": 45
+},
+{
+"seq": 804,
+"book": "Jeremiah",
+"chapter": 46
+},
+{
+"seq": 805,
+"book": "Jeremiah",
+"chapter": 47
+},
+{
+"seq": 806,
+"book": "Jeremiah",
+"chapter": 48
+},
+{
+"seq": 807,
+"book": "Jeremiah",
+"chapter": 49
+},
+{
+"seq": 808,
+"book": "Jeremiah",
+"chapter": 50
+},
+{
+"seq": 809,
+"book": "Jeremiah",
+"chapter": 51
+},
+{
+"seq": 810,
+"book": "Jeremiah",
+"chapter": 52
+},
+{
+"seq": 811,
+"book": "Lamentations",
+"chapter": 1
+},
+{
+"seq": 812,
+"book": "Lamentations",
+"chapter": 2
+},
+{
+"seq": 813,
+"book": "Lamentations",
+"chapter": 3
+},
+{
+"seq": 814,
+"book": "Lamentations",
+"chapter": 4
+},
+{
+"seq": 815,
+"book": "Lamentations",
+"chapter": 5
+},
+{
+"seq": 816,
+"book": "Obadiah",
+"chapter": 1
+},
+{
+"seq": 817,
+"book": "Ezekiel",
+"chapter": 1
+},
+{
+"seq": 818,
+"book": "Ezekiel",
+"chapter": 2
+},
+{
+"seq": 819,
+"book": "Ezekiel",
+"chapter": 3
+},
+{
+"seq": 820,
+"book": "Ezekiel",
+"chapter": 4
+},
+{
+"seq": 821,
+"book": "Ezekiel",
+"chapter": 5
+},
+{
+"seq": 822,
+"book": "Ezekiel",
+"chapter": 6
+},
+{
+"seq": 823,
+"book": "Ezekiel",
+"chapter": 7
+},
+{
+"seq": 824,
+"book": "Ezekiel",
+"chapter": 8
+},
+{
+"seq": 825,
+"book": "Ezekiel",
+"chapter": 9
+},
+{
+"seq": 826,
+"book": "Ezekiel",
+"chapter": 10
+},
+{
+"seq": 827,
+"book": "Ezekiel",
+"chapter": 11
+},
+{
+"seq": 828,
+"book": "Ezekiel",
+"chapter": 12
+},
+{
+"seq": 829,
+"book": "Ezekiel",
+"chapter": 13
+},
+{
+"seq": 830,
+"book": "Ezekiel",
+"chapter": 14
+},
+{
+"seq": 831,
+"book": "Ezekiel",
+"chapter": 15
+},
+{
+"seq": 832,
+"book": "Ezekiel",
+"chapter": 16
+},
+{
+"seq": 833,
+"book": "Ezekiel",
+"chapter": 17
+},
+{
+"seq": 834,
+"book": "Ezekiel",
+"chapter": 18
+},
+{
+"seq": 835,
+"book": "Ezekiel",
+"chapter": 19
+},
+{
+"seq": 836,
+"book": "Ezekiel",
+"chapter": 20
+},
+{
+"seq": 837,
+"book": "Ezekiel",
+"chapter": 21
+},
+{
+"seq": 838,
+"book": "Ezekiel",
+"chapter": 22
+},
+{
+"seq": 839,
+"book": "Ezekiel",
+"chapter": 23
+},
+{
+"seq": 840,
+"book": "Ezekiel",
+"chapter": 24
+},
+{
+"seq": 841,
+"book": "Ezekiel",
+"chapter": 25
+},
+{
+"seq": 842,
+"book": "Ezekiel",
+"chapter": 26
+},
+{
+"seq": 843,
+"book": "Ezekiel",
+"chapter": 27
+},
+{
+"seq": 844,
+"book": "Ezekiel",
+"chapter": 28
+},
+{
+"seq": 845,
+"book": "Ezekiel",
+"chapter": 29
+},
+{
+"seq": 846,
+"book": "Ezekiel",
+"chapter": 30
+},
+{
+"seq": 847,
+"book": "Ezekiel",
+"chapter": 31
+},
+{
+"seq": 848,
+"book": "Ezekiel",
+"chapter": 32
+},
+{
+"seq": 849,
+"book": "Ezekiel",
+"chapter": 33
+},
+{
+"seq": 850,
+"book": "Ezekiel",
+"chapter": 34
+},
+{
+"seq": 851,
+"book": "Ezekiel",
+"chapter": 35
+},
+{
+"seq": 852,
+"book": "Ezekiel",
+"chapter": 36
+},
+{
+"seq": 853,
+"book": "Ezekiel",
+"chapter": 37
+},
+{
+"seq": 854,
+"book": "Ezekiel",
+"chapter": 38
+},
+{
+"seq": 855,
+"book": "Ezekiel",
+"chapter": 39
+},
+{
+"seq": 856,
+"book": "Ezekiel",
+"chapter": 40
+},
+{
+"seq": 857,
+"book": "Ezekiel",
+"chapter": 41
+},
+{
+"seq": 858,
+"book": "Ezekiel",
+"chapter": 42
+},
+{
+"seq": 859,
+"book": "Ezekiel",
+"chapter": 43
+},
+{
+"seq": 860,
+"book": "Ezekiel",
+"chapter": 44
+},
+{
+"seq": 861,
+"book": "Ezekiel",
+"chapter": 45
+},
+{
+"seq": 862,
+"book": "Ezekiel",
+"chapter": 46
+},
+{
+"seq": 863,
+"book": "Ezekiel",
+"chapter": 47
+},
+{
+"seq": 864,
+"book": "Ezekiel",
+"chapter": 48
+},
+{
+"seq": 865,
+"book": "Daniel",
+"chapter": 1
+},
+{
+"seq": 866,
+"book": "Daniel",
+"chapter": 2
+},
+{
+"seq": 867,
+"book": "Daniel",
+"chapter": 3
+},
+{
+"seq": 868,
+"book": "Daniel",
+"chapter": 4
+},
+{
+"seq": 869,
+"book": "Daniel",
+"chapter": 5
+},
+{
+"seq": 870,
+"book": "Daniel",
+"chapter": 6
+},
+{
+"seq": 871,
+"book": "Daniel",
+"chapter": 7
+},
+{
+"seq": 872,
+"book": "Daniel",
+"chapter": 8
+},
+{
+"seq": 873,
+"book": "Daniel",
+"chapter": 9
+},
+{
+"seq": 874,
+"book": "Daniel",
+"chapter": 10
+},
+{
+"seq": 875,
+"book": "Daniel",
+"chapter": 11
+},
+{
+"seq": 876,
+"book": "Daniel",
+"chapter": 12
+},
+{
+"seq": 877,
+"book": "Ezra",
+"chapter": 1
+},
+{
+"seq": 878,
+"book": "Ezra",
+"chapter": 2
+},
+{
+"seq": 879,
+"book": "Ezra",
+"chapter": 3
+},
+{
+"seq": 880,
+"book": "Ezra",
+"chapter": 4
+},
+{
+"seq": 881,
+"book": "Ezra",
+"chapter": 5
+},
+{
+"seq": 882,
+"book": "Ezra",
+"chapter": 6
+},
+{
+"seq": 883,
+"book": "Ezra",
+"chapter": 7
+},
+{
+"seq": 884,
+"book": "Ezra",
+"chapter": 8
+},
+{
+"seq": 885,
+"book": "Ezra",
+"chapter": 9
+},
+{
+"seq": 886,
+"book": "Ezra",
+"chapter": 10
+},
+{
+"seq": 887,
+"book": "Haggai",
+"chapter": 1
+},
+{
+"seq": 888,
+"book": "Haggai",
+"chapter": 2
+},
+{
+"seq": 889,
+"book": "Zechariah",
+"chapter": 1
+},
+{
+"seq": 890,
+"book": "Zechariah",
+"chapter": 2
+},
+{
+"seq": 891,
+"book": "Zechariah",
+"chapter": 3
+},
+{
+"seq": 892,
+"book": "Zechariah",
+"chapter": 4
+},
+{
+"seq": 893,
+"book": "Zechariah",
+"chapter": 5
+},
+{
+"seq": 894,
+"book": "Zechariah",
+"chapter": 6
+},
+{
+"seq": 895,
+"book": "Zechariah",
+"chapter": 7
+},
+{
+"seq": 896,
+"book": "Zechariah",
+"chapter": 8
+},
+{
+"seq": 897,
+"book": "Zechariah",
+"chapter": 9
+},
+{
+"seq": 898,
+"book": "Zechariah",
+"chapter": 10
+},
+{
+"seq": 899,
+"book": "Zechariah",
+"chapter": 11
+},
+{
+"seq": 900,
+"book": "Zechariah",
+"chapter": 12
+},
+{
+"seq": 901,
+"book": "Zechariah",
+"chapter": 13
+},
+{
+"seq": 902,
+"book": "Zechariah",
+"chapter": 14
+},
+{
+"seq": 903,
+"book": "Esther",
+"chapter": 1
+},
+{
+"seq": 904,
+"book": "Esther",
+"chapter": 2
+},
+{
+"seq": 905,
+"book": "Esther",
+"chapter": 3
+},
+{
+"seq": 906,
+"book": "Esther",
+"chapter": 4
+},
+{
+"seq": 907,
+"book": "Esther",
+"chapter": 5
+},
+{
+"seq": 908,
+"book": "Esther",
+"chapter": 6
+},
+{
+"seq": 909,
+"book": "Esther",
+"chapter": 7
+},
+{
+"seq": 910,
+"book": "Esther",
+"chapter": 8
+},
+{
+"seq": 911,
+"book": "Esther",
+"chapter": 9
+},
+{
+"seq": 912,
+"book": "Esther",
+"chapter": 10
+},
+{
+"seq": 913,
+"book": "Nehemiah",
+"chapter": 1
+},
+{
+"seq": 914,
+"book": "Nehemiah",
+"chapter": 2
+},
+{
+"seq": 915,
+"book": "Nehemiah",
+"chapter": 3
+},
+{
+"seq": 916,
+"book": "Nehemiah",
+"chapter": 4
+},
+{
+"seq": 917,
+"book": "Nehemiah",
+"chapter": 5
+},
+{
+"seq": 918,
+"book": "Nehemiah",
+"chapter": 6
+},
+{
+"seq": 919,
+"book": "Nehemiah",
+"chapter": 7
+},
+{
+"seq": 920,
+"book": "Nehemiah",
+"chapter": 8
+},
+{
+"seq": 921,
+"book": "Nehemiah",
+"chapter": 9
+},
+{
+"seq": 922,
+"book": "Nehemiah",
+"chapter": 10
+},
+{
+"seq": 923,
+"book": "Nehemiah",
+"chapter": 11
+},
+{
+"seq": 924,
+"book": "Nehemiah",
+"chapter": 12
+},
+{
+"seq": 925,
+"book": "Nehemiah",
+"chapter": 13
+},
+{
+"seq": 926,
+"book": "Malachi",
+"chapter": 1
+},
+{
+"seq": 927,
+"book": "Malachi",
+"chapter": 2
+},
+{
+"seq": 928,
+"book": "Malachi",
+"chapter": 3
+},
+{
+"seq": 929,
+"book": "Malachi",
+"chapter": 4
+},
+{
+"seq": 930,
+"book": "Matthew",
+"chapter": 1
+},
+{
+"seq": 931,
+"book": "Matthew",
+"chapter": 2
+},
+{
+"seq": 932,
+"book": "Matthew",
+"chapter": 3
+},
+{
+"seq": 933,
+"book": "Matthew",
+"chapter": 4
+},
+{
+"seq": 934,
+"book": "Matthew",
+"chapter": 5
+},
+{
+"seq": 935,
+"book": "Matthew",
+"chapter": 6
+},
+{
+"seq": 936,
+"book": "Matthew",
+"chapter": 7
+},
+{
+"seq": 937,
+"book": "Matthew",
+"chapter": 8
+},
+{
+"seq": 938,
+"book": "Matthew",
+"chapter": 9
+},
+{
+"seq": 939,
+"book": "Matthew",
+"chapter": 10
+},
+{
+"seq": 940,
+"book": "Matthew",
+"chapter": 11
+},
+{
+"seq": 941,
+"book": "Matthew",
+"chapter": 12
+},
+{
+"seq": 942,
+"book": "Matthew",
+"chapter": 13
+},
+{
+"seq": 943,
+"book": "Matthew",
+"chapter": 14
+},
+{
+"seq": 944,
+"book": "Matthew",
+"chapter": 15
+},
+{
+"seq": 945,
+"book": "Matthew",
+"chapter": 16
+},
+{
+"seq": 946,
+"book": "Matthew",
+"chapter": 17
+},
+{
+"seq": 947,
+"book": "Matthew",
+"chapter": 18
+},
+{
+"seq": 948,
+"book": "Matthew",
+"chapter": 19
+},
+{
+"seq": 949,
+"book": "Matthew",
+"chapter": 20
+},
+{
+"seq": 950,
+"book": "Matthew",
+"chapter": 21
+},
+{
+"seq": 951,
+"book": "Matthew",
+"chapter": 22
+},
+{
+"seq": 952,
+"book": "Matthew",
+"chapter": 23
+},
+{
+"seq": 953,
+"book": "Matthew",
+"chapter": 24
+},
+{
+"seq": 954,
+"book": "Matthew",
+"chapter": 25
+},
+{
+"seq": 955,
+"book": "Matthew",
+"chapter": 26
+},
+{
+"seq": 956,
+"book": "Matthew",
+"chapter": 27
+},
+{
+"seq": 957,
+"book": "Matthew",
+"chapter": 28
+},
+{
+"seq": 958,
+"book": "Mark",
+"chapter": 1
+},
+{
+"seq": 959,
+"book": "Mark",
+"chapter": 2
+},
+{
+"seq": 960,
+"book": "Mark",
+"chapter": 3
+},
+{
+"seq": 961,
+"book": "Mark",
+"chapter": 4
+},
+{
+"seq": 962,
+"book": "Mark",
+"chapter": 5
+},
+{
+"seq": 963,
+"book": "Mark",
+"chapter": 6
+},
+{
+"seq": 964,
+"book": "Mark",
+"chapter": 7
+},
+{
+"seq": 965,
+"book": "Mark",
+"chapter": 8
+},
+{
+"seq": 966,
+"book": "Mark",
+"chapter": 9
+},
+{
+"seq": 967,
+"book": "Mark",
+"chapter": 10
+},
+{
+"seq": 968,
+"book": "Mark",
+"chapter": 11
+},
+{
+"seq": 969,
+"book": "Mark",
+"chapter": 12
+},
+{
+"seq": 970,
+"book": "Mark",
+"chapter": 13
+},
+{
+"seq": 971,
+"book": "Mark",
+"chapter": 14
+},
+{
+"seq": 972,
+"book": "Mark",
+"chapter": 15
+},
+{
+"seq": 973,
+"book": "Mark",
+"chapter": 16
+},
+{
+"seq": 974,
+"book": "Luke",
+"chapter": 1
+},
+{
+"seq": 975,
+"book": "Luke",
+"chapter": 2
+},
+{
+"seq": 976,
+"book": "Luke",
+"chapter": 3
+},
+{
+"seq": 977,
+"book": "Luke",
+"chapter": 4
+},
+{
+"seq": 978,
+"book": "Luke",
+"chapter": 5
+},
+{
+"seq": 979,
+"book": "Luke",
+"chapter": 6
+},
+{
+"seq": 980,
+"book": "Luke",
+"chapter": 7
+},
+{
+"seq": 981,
+"book": "Luke",
+"chapter": 8
+},
+{
+"seq": 982,
+"book": "Luke",
+"chapter": 9
+},
+{
+"seq": 983,
+"book": "Luke",
+"chapter": 10
+},
+{
+"seq": 984,
+"book": "Luke",
+"chapter": 11
+},
+{
+"seq": 985,
+"book": "Luke",
+"chapter": 12
+},
+{
+"seq": 986,
+"book": "Luke",
+"chapter": 13
+},
+{
+"seq": 987,
+"book": "Luke",
+"chapter": 14
+},
+{
+"seq": 988,
+"book": "Luke",
+"chapter": 15
+},
+{
+"seq": 989,
+"book": "Luke",
+"chapter": 16
+},
+{
+"seq": 990,
+"book": "Luke",
+"chapter": 17
+},
+{
+"seq": 991,
+"book": "Luke",
+"chapter": 18
+},
+{
+"seq": 992,
+"book": "Luke",
+"chapter": 19
+},
+{
+"seq": 993,
+"book": "Luke",
+"chapter": 20
+},
+{
+"seq": 994,
+"book": "Luke",
+"chapter": 21
+},
+{
+"seq": 995,
+"book": "Luke",
+"chapter": 22
+},
+{
+"seq": 996,
+"book": "Luke",
+"chapter": 23
+},
+{
+"seq": 997,
+"book": "Luke",
+"chapter": 24
+},
+{
+"seq": 998,
+"book": "John",
+"chapter": 1
+},
+{
+"seq": 999,
+"book": "John",
+"chapter": 2
+},
+{
+"seq": 1000,
+"book": "John",
+"chapter": 3
+},
+{
+"seq": 1001,
+"book": "John",
+"chapter": 4
+},
+{
+"seq": 1002,
+"book": "John",
+"chapter": 5
+},
+{
+"seq": 1003,
+"book": "John",
+"chapter": 6
+},
+{
+"seq": 1004,
+"book": "John",
+"chapter": 7
+},
+{
+"seq": 1005,
+"book": "John",
+"chapter": 8
+},
+{
+"seq": 1006,
+"book": "John",
+"chapter": 9
+},
+{
+"seq": 1007,
+"book": "John",
+"chapter": 10
+},
+{
+"seq": 1008,
+"book": "John",
+"chapter": 11
+},
+{
+"seq": 1009,
+"book": "John",
+"chapter": 12
+},
+{
+"seq": 1010,
+"book": "John",
+"chapter": 13
+},
+{
+"seq": 1011,
+"book": "John",
+"chapter": 14
+},
+{
+"seq": 1012,
+"book": "John",
+"chapter": 15
+},
+{
+"seq": 1013,
+"book": "John",
+"chapter": 16
+},
+{
+"seq": 1014,
+"book": "John",
+"chapter": 17
+},
+{
+"seq": 1015,
+"book": "John",
+"chapter": 18
+},
+{
+"seq": 1016,
+"book": "John",
+"chapter": 19
+},
+{
+"seq": 1017,
+"book": "John",
+"chapter": 20
+},
+{
+"seq": 1018,
+"book": "John",
+"chapter": 21
+},
+{
+"seq": 1019,
+"book": "Acts",
+"chapter": 1
+},
+{
+"seq": 1020,
+"book": "Acts",
+"chapter": 2
+},
+{
+"seq": 1021,
+"book": "Acts",
+"chapter": 3
+},
+{
+"seq": 1022,
+"book": "Acts",
+"chapter": 4
+},
+{
+"seq": 1023,
+"book": "Acts",
+"chapter": 5
+},
+{
+"seq": 1024,
+"book": "Acts",
+"chapter": 6
+},
+{
+"seq": 1025,
+"book": "Acts",
+"chapter": 7
+},
+{
+"seq": 1026,
+"book": "Acts",
+"chapter": 8
+},
+{
+"seq": 1027,
+"book": "Acts",
+"chapter": 9
+},
+{
+"seq": 1028,
+"book": "Acts",
+"chapter": 10
+},
+{
+"seq": 1029,
+"book": "Acts",
+"chapter": 11
+},
+{
+"seq": 1030,
+"book": "Acts",
+"chapter": 12
+},
+{
+"seq": 1031,
+"book": "Acts",
+"chapter": 13
+},
+{
+"seq": 1032,
+"book": "Acts",
+"chapter": 14
+},
+{
+"seq": 1033,
+"book": "Acts",
+"chapter": 15
+},
+{
+"seq": 1034,
+"book": "Acts",
+"chapter": 16
+},
+{
+"seq": 1035,
+"book": "Acts",
+"chapter": 17
+},
+{
+"seq": 1036,
+"book": "Acts",
+"chapter": 18
+},
+{
+"seq": 1037,
+"book": "Acts",
+"chapter": 19
+},
+{
+"seq": 1038,
+"book": "Acts",
+"chapter": 20
+},
+{
+"seq": 1039,
+"book": "Acts",
+"chapter": 21
+},
+{
+"seq": 1040,
+"book": "Acts",
+"chapter": 22
+},
+{
+"seq": 1041,
+"book": "Acts",
+"chapter": 23
+},
+{
+"seq": 1042,
+"book": "Acts",
+"chapter": 24
+},
+{
+"seq": 1043,
+"book": "Acts",
+"chapter": 25
+},
+{
+"seq": 1044,
+"book": "Acts",
+"chapter": 26
+},
+{
+"seq": 1045,
+"book": "Acts",
+"chapter": 27
+},
+{
+"seq": 1046,
+"book": "Acts",
+"chapter": 28
+},
+{
+"seq": 1047,
+"book": "James",
+"chapter": 1
+},
+{
+"seq": 1048,
+"book": "James",
+"chapter": 2
+},
+{
+"seq": 1049,
+"book": "James",
+"chapter": 3
+},
+{
+"seq": 1050,
+"book": "James",
+"chapter": 4
+},
+{
+"seq": 1051,
+"book": "James",
+"chapter": 5
+},
+{
+"seq": 1052,
+"book": "Galatians",
+"chapter": 1
+},
+{
+"seq": 1053,
+"book": "Galatians",
+"chapter": 2
+},
+{
+"seq": 1054,
+"book": "Galatians",
+"chapter": 3
+},
+{
+"seq": 1055,
+"book": "Galatians",
+"chapter": 4
+},
+{
+"seq": 1056,
+"book": "Galatians",
+"chapter": 5
+},
+{
+"seq": 1057,
+"book": "Galatians",
+"chapter": 6
+},
+{
+"seq": 1058,
+"book": "1 Thessalonians",
+"chapter": 1
+},
+{
+"seq": 1059,
+"book": "1 Thessalonians",
+"chapter": 2
+},
+{
+"seq": 1060,
+"book": "1 Thessalonians",
+"chapter": 3
+},
+{
+"seq": 1061,
+"book": "1 Thessalonians",
+"chapter": 4
+},
+{
+"seq": 1062,
+"book": "1 Thessalonians",
+"chapter": 5
+},
+{
+"seq": 1063,
+"book": "2 Thessalonians",
+"chapter": 1
+},
+{
+"seq": 1064,
+"book": "2 Thessalonians",
+"chapter": 2
+},
+{
+"seq": 1065,
+"book": "2 Thessalonians",
+"chapter": 3
+},
+{
+"seq": 1066,
+"book": "1 Corinthians",
+"chapter": 1
+},
+{
+"seq": 1067,
+"book": "1 Corinthians",
+"chapter": 2
+},
+{
+"seq": 1068,
+"book": "1 Corinthians",
+"chapter": 3
+},
+{
+"seq": 1069,
+"book": "1 Corinthians",
+"chapter": 4
+},
+{
+"seq": 1070,
+"book": "1 Corinthians",
+"chapter": 5
+},
+{
+"seq": 1071,
+"book": "1 Corinthians",
+"chapter": 6
+},
+{
+"seq": 1072,
+"book": "1 Corinthians",
+"chapter": 7
+},
+{
+"seq": 1073,
+"book": "1 Corinthians",
+"chapter": 8
+},
+{
+"seq": 1074,
+"book": "1 Corinthians",
+"chapter": 9
+},
+{
+"seq": 1075,
+"book": "1 Corinthians",
+"chapter": 10
+},
+{
+"seq": 1076,
+"book": "1 Corinthians",
+"chapter": 11
+},
+{
+"seq": 1077,
+"book": "1 Corinthians",
+"chapter": 12
+},
+{
+"seq": 1078,
+"book": "1 Corinthians",
+"chapter": 13
+},
+{
+"seq": 1079,
+"book": "1 Corinthians",
+"chapter": 14
+},
+{
+"seq": 1080,
+"book": "1 Corinthians",
+"chapter": 15
+},
+{
+"seq": 1081,
+"book": "1 Corinthians",
+"chapter": 16
+},
+{
+"seq": 1082,
+"book": "2 Corinthians",
+"chapter": 1
+},
+{
+"seq": 1083,
+"book": "2 Corinthians",
+"chapter": 2
+},
+{
+"seq": 1084,
+"book": "2 Corinthians",
+"chapter": 3
+},
+{
+"seq": 1085,
+"book": "2 Corinthians",
+"chapter": 4
+},
+{
+"seq": 1086,
+"book": "2 Corinthians",
+"chapter": 5
+},
+{
+"seq": 1087,
+"book": "2 Corinthians",
+"chapter": 6
+},
+{
+"seq": 1088,
+"book": "2 Corinthians",
+"chapter": 7
+},
+{
+"seq": 1089,
+"book": "2 Corinthians",
+"chapter": 8
+},
+{
+"seq": 1090,
+"book": "2 Corinthians",
+"chapter": 9
+},
+{
+"seq": 1091,
+"book": "2 Corinthians",
+"chapter": 10
+},
+{
+"seq": 1092,
+"book": "2 Corinthians",
+"chapter": 11
+},
+{
+"seq": 1093,
+"book": "2 Corinthians",
+"chapter": 12
+},
+{
+"seq": 1094,
+"book": "2 Corinthians",
+"chapter": 13
+},
+{
+"seq": 1095,
+"book": "Romans",
+"chapter": 1
+},
+{
+"seq": 1096,
+"book": "Romans",
+"chapter": 2
+},
+{
+"seq": 1097,
+"book": "Romans",
+"chapter": 3
+},
+{
+"seq": 1098,
+"book": "Romans",
+"chapter": 4
+},
+{
+"seq": 1099,
+"book": "Romans",
+"chapter": 5
+},
+{
+"seq": 1100,
+"book": "Romans",
+"chapter": 6
+},
+{
+"seq": 1101,
+"book": "Romans",
+"chapter": 7
+},
+{
+"seq": 1102,
+"book": "Romans",
+"chapter": 8
+},
+{
+"seq": 1103,
+"book": "Romans",
+"chapter": 9
+},
+{
+"seq": 1104,
+"book": "Romans",
+"chapter": 10
+},
+{
+"seq": 1105,
+"book": "Romans",
+"chapter": 11
+},
+{
+"seq": 1106,
+"book": "Romans",
+"chapter": 12
+},
+{
+"seq": 1107,
+"book": "Romans",
+"chapter": 13
+},
+{
+"seq": 1108,
+"book": "Romans",
+"chapter": 14
+},
+{
+"seq": 1109,
+"book": "Romans",
+"chapter": 15
+},
+{
+"seq": 1110,
+"book": "Romans",
+"chapter": 16
+},
+{
+"seq": 1111,
+"book": "Colossians",
+"chapter": 1
+},
+{
+"seq": 1112,
+"book": "Colossians",
+"chapter": 2
+},
+{
+"seq": 1113,
+"book": "Colossians",
+"chapter": 3
+},
+{
+"seq": 1114,
+"book": "Colossians",
+"chapter": 4
+},
+{
+"seq": 1115,
+"book": "Philemon",
+"chapter": 1
+},
+{
+"seq": 1116,
+"book": "Ephesians",
+"chapter": 1
+},
+{
+"seq": 1117,
+"book": "Ephesians",
+"chapter": 2
+},
+{
+"seq": 1118,
+"book": "Ephesians",
+"chapter": 3
+},
+{
+"seq": 1119,
+"book": "Ephesians",
+"chapter": 4
+},
+{
+"seq": 1120,
+"book": "Ephesians",
+"chapter": 5
+},
+{
+"seq": 1121,
+"book": "Ephesians",
+"chapter": 6
+},
+{
+"seq": 1122,
+"book": "Philippians",
+"chapter": 1
+},
+{
+"seq": 1123,
+"book": "Philippians",
+"chapter": 2
+},
+{
+"seq": 1124,
+"book": "Philippians",
+"chapter": 3
+},
+{
+"seq": 1125,
+"book": "Philippians",
+"chapter": 4
+},
+{
+"seq": 1126,
+"book": "Titus",
+"chapter": 1
+},
+{
+"seq": 1127,
+"book": "Titus",
+"chapter": 2
+},
+{
+"seq": 1128,
+"book": "Titus",
+"chapter": 3
+},
+{
+"seq": 1129,
+"book": "1 Timothy",
+"chapter": 1
+},
+{
+"seq": 1130,
+"book": "1 Timothy",
+"chapter": 2
+},
+{
+"seq": 1131,
+"book": "1 Timothy",
+"chapter": 3
+},
+{
+"seq": 1132,
+"book": "1 Timothy",
+"chapter": 4
+},
+{
+"seq": 1133,
+"book": "1 Timothy",
+"chapter": 5
+},
+{
+"seq": 1134,
+"book": "1 Timothy",
+"chapter": 6
+},
+{
+"seq": 1135,
+"book": "2 Timothy",
+"chapter": 1
+},
+{
+"seq": 1136,
+"book": "2 Timothy",
+"chapter": 2
+},
+{
+"seq": 1137,
+"book": "2 Timothy",
+"chapter": 3
+},
+{
+"seq": 1138,
+"book": "2 Timothy",
+"chapter": 4
+},
+{
+"seq": 1139,
+"book": "Hebrews",
+"chapter": 1
+},
+{
+"seq": 1140,
+"book": "Hebrews",
+"chapter": 2
+},
+{
+"seq": 1141,
+"book": "Hebrews",
+"chapter": 3
+},
+{
+"seq": 1142,
+"book": "Hebrews",
+"chapter": 4
+},
+{
+"seq": 1143,
+"book": "Hebrews",
+"chapter": 5
+},
+{
+"seq": 1144,
+"book": "Hebrews",
+"chapter": 6
+},
+{
+"seq": 1145,
+"book": "Hebrews",
+"chapter": 7
+},
+{
+"seq": 1146,
+"book": "Hebrews",
+"chapter": 8
+},
+{
+"seq": 1147,
+"book": "Hebrews",
+"chapter": 9
+},
+{
+"seq": 1148,
+"book": "Hebrews",
+"chapter": 10
+},
+{
+"seq": 1149,
+"book": "Hebrews",
+"chapter": 11
+},
+{
+"seq": 1150,
+"book": "Hebrews",
+"chapter": 12
+},
+{
+"seq": 1151,
+"book": "Hebrews",
+"chapter": 13
+},
+{
+"seq": 1152,
+"book": "1 Peter",
+"chapter": 1
+},
+{
+"seq": 1153,
+"book": "1 Peter",
+"chapter": 2
+},
+{
+"seq": 1154,
+"book": "1 Peter",
+"chapter": 3
+},
+{
+"seq": 1155,
+"book": "1 Peter",
+"chapter": 4
+},
+{
+"seq": 1156,
+"book": "1 Peter",
+"chapter": 5
+},
+{
+"seq": 1157,
+"book": "2 Peter",
+"chapter": 1
+},
+{
+"seq": 1158,
+"book": "2 Peter",
+"chapter": 2
+},
+{
+"seq": 1159,
+"book": "2 Peter",
+"chapter": 3
+},
+{
+"seq": 1160,
+"book": "Jude",
+"chapter": 1
+},
+{
+"seq": 1161,
+"book": "1 John",
+"chapter": 1
+},
+{
+"seq": 1162,
+"book": "1 John",
+"chapter": 2
+},
+{
+"seq": 1163,
+"book": "1 John",
+"chapter": 3
+},
+{
+"seq": 1164,
+"book": "1 John",
+"chapter": 4
+},
+{
+"seq": 1165,
+"book": "1 John",
+"chapter": 5
+},
+{
+"seq": 1166,
+"book": "2 John",
+"chapter": 1
+},
+{
+"seq": 1167,
+"book": "3 John",
+"chapter": 1
+},
+{
+"seq": 1168,
+"book": "Revelation",
+"chapter": 1
+},
+{
+"seq": 1169,
+"book": "Revelation",
+"chapter": 2
+},
+{
+"seq": 1170,
+"book": "Revelation",
+"chapter": 3
+},
+{
+"seq": 1171,
+"book": "Revelation",
+"chapter": 4
+},
+{
+"seq": 1172,
+"book": "Revelation",
+"chapter": 5
+},
+{
+"seq": 1173,
+"book": "Revelation",
+"chapter": 6
+},
+{
+"seq": 1174,
+"book": "Revelation",
+"chapter": 7
+},
+{
+"seq": 1175,
+"book": "Revelation",
+"chapter": 8
+},
+{
+"seq": 1176,
+"book": "Revelation",
+"chapter": 9
+},
+{
+"seq": 1177,
+"book": "Revelation",
+"chapter": 10
+},
+{
+"seq": 1178,
+"book": "Revelation",
+"chapter": 11
+},
+{
+"seq": 1179,
+"book": "Revelation",
+"chapter": 12
+},
+{
+"seq": 1180,
+"book": "Revelation",
+"chapter": 13
+},
+{
+"seq": 1181,
+"book": "Revelation",
+"chapter": 14
+},
+{
+"seq": 1182,
+"book": "Revelation",
+"chapter": 15
+},
+{
+"seq": 1183,
+"book": "Revelation",
+"chapter": 16
+},
+{
+"seq": 1184,
+"book": "Revelation",
+"chapter": 17
+},
+{
+"seq": 1185,
+"book": "Revelation",
+"chapter": 18
+},
+{
+"seq": 1186,
+"book": "Revelation",
+"chapter": 19
+},
+{
+"seq": 1187,
+"book": "Revelation",
+"chapter": 20
+},
+{
+"seq": 1188,
+"book": "Revelation",
+"chapter": 21
+},
+{
+"seq": 1189,
+"book": "Revelation",
+"chapter": 22
+}
+]
