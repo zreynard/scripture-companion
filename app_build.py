@@ -91,7 +91,7 @@ def main():
         t = re.sub(r"[^a-z0-9]+", " ", t.lower().replace("\u2019", "'")).strip()
         return re.sub(r"\bpart (\w+)\b", r"part \1", t)
     SRC_PREF = {"platt_messages": 0, "ptw": 0, "2819_podcast": 0, "secret_church_podcast": 0, "twr360_secret_church": 1,
-                "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3}
+                "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3, "radical_vimeo": 1, "street_preachers": 2}
     for k, lst in by_chapter.items():  # one teaching, one entry: keep the best form of same-titled items
         best = {}
         for i in lst:

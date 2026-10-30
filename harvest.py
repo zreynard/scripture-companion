@@ -358,12 +358,13 @@ def harvest_youtube_audio() -> list[dict]:
             continue
         d = v.get("upload_date") or ""
         pub = f"{d[:4]}-{d[4:6]}-{d[6:8]}" if re.fullmatch(r"\d{8}", d) else ""
-        url = f"https://www.youtube.com/watch?v={v['id']}"
+        url = v.get("page") or f"https://www.youtube.com/watch?v={v['id']}"
         if v["channel"] == "radical":
             e = make_entry(source="youtube_radical", source_url=config.YOUTUBE_CHANNELS["radical"][0], url=url,
                            title=v["title"], published=pub, duration=str(v.get("duration") or ""), era="platt",
                            channel_default="Platt")
             m = re.search(r"secret church\s*(\d+)", v["title"], re.I)
+            if v.get("page"): e["source"] = "radical_vimeo"
             sc = int(m.group(1)) if m else next((n for k, n in _SC_NAMES.items() if k in v["title"].lower()), None)
             e.update({"speaker": "Platt", "track": "overview", "sc_season": sc})
             mm = re.search(r"session\s*(\d+)", v["title"], re.I); e["sc_episode"] = int(mm.group(1)) if mm else 0
@@ -411,6 +412,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "radical": entries = harvest_radical(radical_limit)
             elif s == "secret_church_podcast": entries = harvest_itunes_podcast("secret_church_podcast", config.PODCAST_SEARCH_TERMS["secret_church"], r"secret church", "platt", channel_default="Platt")
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt")
+            elif s == "street_preachers": entries = [e for e in harvest_feed("street_preachers", "https://rss.buzzsprout.com/2524921.rss", era="pam-podcast")]
             elif s == "2819_podcast": entries = harvest_itunes_podcast("2819_podcast", config.PODCAST_SEARCH_TERMS["2819"], r"2819", "2819")
             elif s == "victory_podcast": entries = harvest_itunes_podcast("victory_podcast", config.PODCAST_SEARCH_TERMS["victory"], r"victory", "victory")
             elif s == "youtube_audio": entries = harvest_youtube_audio()

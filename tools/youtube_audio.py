@@ -29,6 +29,13 @@ CHANNELS = {  # key: (listing urls, catalog source)
 SC_RE = re.compile(r"secret church\s*(2[2-6])\b|secret church.*\b(jonah|ruth|elijah|who am i)\b|"
                    r"\b(jonah|ruth|elijah|who am i)\b.*secret church|secret church.*gospel of matthew", re.I)
 MIN_SECONDS = 15 * 60
+# Secret Church events whose full program Radical offers under "Downloads" on radical.net (Vimeo)
+VIMEO = [
+    (23, "Jonah", "https://vimeo.com/830346750/b5f0c1c9f1", "https://radical.net/secret_church/jonah/"),
+    (24, "Ruth", "https://vimeo.com/935931865/16148f16c1", "https://radical.net/secret_church/ruth/"),
+    (25, "The Gospel of Matthew", "https://vimeo.com/1086173271/51d8e239bd", "https://radical.net/secret_church/matthew/"),
+    (26, "Elijah", "https://vimeo.com/1192641519/b7054d872d", "https://radical.net/secret_church/elijah/"),
+]
 
 def log(m): print(f"[youtube] {m}", flush=True)
 
@@ -99,11 +106,18 @@ def release_tag(done: dict) -> str:
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--limit", type=int, default=120)
     ap.add_argument("--minutes", type=int, default=300, help="stop starting new downloads after this long")
+    ap.add_argument("--youtube", action="store_true", help="also try YouTube-only videos")
     a = ap.parse_args()
     t0 = time.time()
     done = json.load(open(MAP)) if os.path.exists(MAP) else {}
-    vids = list_channels()
-    targets = [v for v in choose(vids) if v["id"] not in done or not done[v["id"]].get("asset")]
+    targets = [{"id": f"vimeo-{u.split('/')[3]}", "title": f"Secret Church {n}: {name} (Full Program)", "channel": "radical",
+                "source": "youtube_radical", "duration": 0, "upload_date": "", "media": u, "page": page}
+               for n, name, u, page in VIMEO]
+    vids = []
+    if a.youtube:  # YouTube refuses downloads from GitHub's servers; off unless asked
+        vids = list_channels()
+        targets += choose(vids)
+    targets = [v for v in targets if not done.get(v["id"], {}).get("asset")]
     log(f"{len(vids)} videos listed; {len(targets)} need audio")
     repo = os.environ.get("GITHUB_REPOSITORY", "")
     os.makedirs("/tmp/yta", exist_ok=True)
@@ -114,7 +128,7 @@ def main():
         out = f"/tmp/yta/{v['id']}.mp3"
         p = ytdlp("-f", "bestaudio", "-x", "--audio-format", "mp3",
                   "--postprocessor-args", "ffmpeg:-ac 1 -b:a 40k -ar 22050",
-                  "-o", f"/tmp/yta/{v['id']}.%(ext)s", f"https://www.youtube.com/watch?v={v['id']}", timeout=2400)
+                  "-o", f"/tmp/yta/{v['id']}.%(ext)s", v.get("media") or f"https://www.youtube.com/watch?v={v['id']}", timeout=5400)
         if p.returncode != 0 or not os.path.exists(out):
             err = (p.stderr or "").strip().splitlines()[-1:] or ["no file"]
             done[v["id"]] = {**v, "error": err[0][:300], "tried": time.strftime("%Y-%m-%d")}
