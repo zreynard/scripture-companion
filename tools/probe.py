@@ -12,6 +12,11 @@ URLS = [
   "https://www.twr360.org/programs/ministry_id,2/series_id,48",
   "https://www.twr360.org/ministries/view/id,2",
 ]
+SAVE = [
+  "https://www.buzzsprout.com/112848/episodes",
+  "https://www.twr360.org/programs/ministry_id,2/series_id,48",
+  "https://www.buzzsprout.com/112848.js?container_id=buzzsprout-large-player&player=large",
+]
 H = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"}
 out = []
 for u in URLS + sys.argv[1:]:
@@ -30,4 +35,12 @@ for u in URLS + sys.argv[1:]:
     except Exception as e:
         out.append({"url": u, "error": f"{type(e).__name__}: {e}"})
 json.dump(out, open("probe.json", "w"), indent=1)
+# full bodies for pages listed in SAVE (written to pages/N.html)
+import os
+os.makedirs("pages", exist_ok=True)
+for i, u in enumerate(SAVE):
+    try:
+        open(f"pages/{i}.html", "w").write(f"<!-- {u} -->\n" + requests.get(u, headers=H, timeout=60).text)
+    except Exception as e:
+        open(f"pages/{i}.html", "w").write(f"<!-- {u} ERROR {e} -->")
 print(json.dumps([{k: v for k, v in o.items() if k != "snippet"} for o in out], indent=1))
