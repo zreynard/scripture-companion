@@ -958,5 +958,53 @@
 "upload_date": "",
 "error": "ERROR: [youtube] QzICW7dL_38: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://git",
 "tried": "2026-10-30"
+},
+"vimeo-830346750": {
+"id": "vimeo-830346750",
+"title": "Secret Church 23: Jonah (Full Program)",
+"channel": "radical",
+"source": "youtube_radical",
+"duration": 0,
+"upload_date": "",
+"media": "https://vimeo.com/830346750/b5f0c1c9f1",
+"page": "https://radical.net/secret_church/jonah/",
+"error": "ERROR: [vimeo] 830346750: The web client only works when logged-in. Use --cookies, --cookies-from-browser, --username and --password, --netrc-cmd, or --netrc (vimeo) to provide account credentials. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pa",
+"tried": "2026-10-30"
+},
+"vimeo-935931865": {
+"id": "vimeo-935931865",
+"title": "Secret Church 24: Ruth (Full Program)",
+"channel": "radical",
+"source": "youtube_radical",
+"duration": 0,
+"upload_date": "",
+"media": "https://vimeo.com/935931865/16148f16c1",
+"page": "https://radical.net/secret_church/ruth/",
+"error": "ERROR: [vimeo] 935931865: The web client only works when logged-in. Use --cookies, --cookies-from-browser, --username and --password, --netrc-cmd, or --netrc (vimeo) to provide account credentials. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pa",
+"tried": "2026-10-30"
+},
+"vimeo-1086173271": {
+"id": "vimeo-1086173271",
+"title": "Secret Church 25: The Gospel of Matthew (Full Program)",
+"channel": "radical",
+"source": "youtube_radical",
+"duration": 0,
+"upload_date": "",
+"media": "https://vimeo.com/1086173271/51d8e239bd",
+"page": "https://radical.net/secret_church/matthew/",
+"error": "ERROR: [vimeo] 1086173271: The web client only works when logged-in. Use --cookies, --cookies-from-browser, --username and --password, --netrc-cmd, or --netrc (vimeo) to provide account credentials. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually p",
+"tried": "2026-10-30"
+},
+"vimeo-1192641519": {
+"id": "vimeo-1192641519",
+"title": "Secret Church 26: Elijah (Full Program)",
+"channel": "radical",
+"source": "youtube_radical",
+"duration": 0,
+"upload_date": "",
+"media": "https://vimeo.com/1192641519/b7054d872d",
+"page": "https://radical.net/secret_church/elijah/",
+"error": "ERROR: [vimeo] 1192641519: The web client only works when logged-in. Use --cookies, --cookies-from-browser, --username and --password, --netrc-cmd, or --netrc (vimeo) to provide account credentials. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually p",
+"tried": "2026-10-30"
 }
 }
