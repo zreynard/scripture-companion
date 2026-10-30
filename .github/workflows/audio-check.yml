@@ -1,0 +1,27 @@
+# Request every audio file on the road; save the result to the "diag" branch (does not touch the catalog).
+name: Check audio files
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: audio-check
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt feedparser
+      - run: python app_build.py && python tools/check_audio.py | tee audio_check.txt
+      - if: always()
+        run: |
+          mkdir -p /tmp/d && cp audio_check.json audio_check.txt /tmp/d/ 2>/dev/null || true
+          cd /tmp/d && git init -q -b diag-audio && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "audio check" || true
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag-audio
