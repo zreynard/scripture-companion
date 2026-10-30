@@ -443,12 +443,43 @@ def run(sources: list[str], radical_limit: int | None = None):
                 for k, v in e.items():
                     if k in ("id", "url", "alt_urls"): continue
                     if v and not old_e.get(k): old_e[k] = v
+                # a partial date ("2021") gives way to the feed's full date
+                if e.get("published") and not re.search(r"\d{4}-\d{2}-\d{2}|\d{1,2} [A-Z][a-z]{2} \d{4}", old_e.get("published") or ""):
+                    old_e["published"] = e["published"]
                 # parser-mapped sources: take the fresh full description so the passage rules see all of it
                 if e.get("description") and len(e["description"]) > len(old_e.get("description") or ""):
                     old_e["description"] = e["description"]
                 merged += 1
         _log(f"{s}: {added} new, {merged} matched existing entries")
         report["sources"][s] = {"count": len(entries), "seconds": round(time.time() - t0, 1)}
+    # the same Buzzsprout episode under two link forms (/112848/2213660 and /112848/episodes/2213660-slug):
+    # keep the entry that shipped first (its id holds the listener's progress), fold the other into it
+    shipped = set()
+    try:
+        first = subprocess.run(["git", "-C", os.path.dirname(__file__) or ".", "rev-list", "--max-parents=0", "HEAD"],
+                               capture_output=True, text=True).stdout.split()[0]
+        for l in subprocess.run(["git", "-C", os.path.dirname(__file__) or ".", "show", f"{first}:data/catalog_verified.jsonl"],
+                                capture_output=True, text=True).stdout.splitlines():
+            shipped.add(json.loads(l)["id"])
+    except Exception:
+        pass
+    groups = {}
+    for u, e in existing.items():
+        m = re.search(r"buzzsprout\.com/\d+/(?:episodes/)?(\d+)", u)
+        if m: groups.setdefault(m.group(1), []).append(u)
+    folded = 0
+    for eid, urls in groups.items():
+        if len(urls) < 2: continue
+        urls.sort(key=lambda u: (existing[u]["id"] not in shipped, "/episodes/" not in u))
+        keep = existing[urls[0]]
+        for u in urls[1:]:
+            dup = existing.pop(u)
+            for k, v in dup.items():
+                if k in ("id", "url", "alt_urls"): continue
+                if v and not keep.get(k): keep[k] = v
+            if u not in keep.setdefault("alt_urls", []): keep["alt_urls"].append(u)
+            folded += 1
+    if folded: _log(f"folded {folded} duplicate Buzzsprout links into their shipped entries")
     # re-apply the passage rules to every parser-mapped entry (rules change; curated entries are untouched)
     from classify import remap
     for e in existing.values():

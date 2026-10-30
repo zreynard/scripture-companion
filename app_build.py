@@ -14,7 +14,7 @@ import config
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 24  # bump on every shipped build; also busts the service-worker cache
+VERSION = 25  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -32,6 +32,13 @@ def audio_url(e: dict) -> str | None:
             return f"https://www.buzzsprout.com/{m.group(1)}/{m.group(2)}.mp3"
     return None
 
+def _first_verse(d: dict) -> tuple:
+    """(chapter, verse) where a passage starts, for ordering a series that was posted on one day."""
+    for raw in d.get("raw", []):
+        m = re.search(r"(\d+):(\d+)", raw)
+        if m: return (int(m.group(1)), int(m.group(2)))
+    return (min(d.get("chapters") or [0]), 0)
+
 def iso_date(s) -> str:
     """'Sun, 04 Feb 2024 02:00:00 -0600' (RSS) or '2024-02-04…' -> '2024-02-04'."""
     s = (s or "").strip()
@@ -48,7 +55,7 @@ def main():
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
     usable = [e for e in entries if e["tier"] in ("V2", "V1") and (e["speaker"] in ("Platt", "PAM") or e["speaker"] in team)]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
-    item_books, title_states, ref_how, cited = {}, {}, {}, {}
+    item_books, title_states, ref_how, cited, first_verse = {}, {}, {}, {}, {}
     order = [b[0] for b in BOOKS]; OT = order[:39]; NT = order[39:]
     def span_label(bks):
         if set(bks) >= set(OT): return "the Old Testament"
@@ -67,6 +74,7 @@ def main():
               "sc": [e.get("sc_season"), e.get("sc_episode")] if e.get("sc_season") else None}
         items[it["id"]] = it
         item_books[it["id"]] = set(e["refs"])
+        first_verse[it["id"]] = {b: _first_verse(d) for b, d in e["refs"].items()}
         ref_how[it["id"]] = e.get("ref_how", "curated")
         cited[it["id"]] = len({(r.book, tuple(sorted(r.chapters))) for r in parse_refs(e.get("description", "")) if not r.whole_book})
         title_states[it["id"]] = bool(parse_refs(e["title"]))
@@ -167,6 +175,20 @@ def main():
         chs = []
         for c in range(1, n + 1):
             ids = sorted(set(by_chapter.get((name, c), [])), key=rank(name))
+            # keep each series together, in preaching order (date, then where its passage starts)
+            def run_of(i):  # (teacher, series, playable): a series groups only with its own kind
+                d = _day(i)
+                return (items[i]["who"], run_end.get((name, items[i]["who"], d)), bool(items[i]["audio"])) if items[i]["tr"] == "sermon" and d else None
+            out, done_runs = [], set()
+            for i in ids:
+                r = run_of(i)
+                if r is None or r[1] is None: out.append(i); continue
+                if r in done_runs: continue
+                done_runs.add(r)
+                out += sorted([j for j in ids if run_of(j) == r],
+                              key=lambda j: (_day(j), first_verse[j].get(name, (0, 0)), j))
+            out += [j for j in ids if j not in out]
+            ids = out
             chs.append({"c": c, "seq": narr[(name, c)], "ids": ids})
         ov = sorted(set(by_book_ov.get(name, [])), key=lambda i: (items[i]["sc"] or [99, 99], items[i]["date"], i))
         # drop a Secret Church event page when its podcast episodes or video sessions are present
@@ -277,7 +299,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 <script>
 const D=__DATA__,I=D.items;
 const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('sc:'+k,JSON.stringify(v))}catch(e){}}};
-let prog=S.get('prog',{}),read=S.get('read',{}),cfg=S.get('cfg',{order:'canon',who:''}),view=S.get('view','walk'),camp=S.get('camp',null);
+let prog=S.get('prog',{}),read=S.get('read',{}),cfg=Object.assign(S.get('cfg',{who:''}),{order:'canon'}),view=S.get('view','walk'),camp=S.get('camp',null);
 const okWho=id=>!cfg.who||I[id].who===cfg.who;
 // --- denser scenery: terrain everywhere, per-book motifs, more vignettes, celestial bodies, rivers ---
 const MOTIF={'The Law':'palm','History':'town','Wisdom & Song':'olive','Major Prophets':'cedar','Minor Prophets':'town','The Gospels':'olive','The Church Begins':'sail','Letters of Paul':'column','General Letters':'fire','The New Beginning':'tree'};
@@ -454,7 +476,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
 function go(i){camp=i;decorate.more=false;S.set('camp',camp);render()}
 function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(b=>b.ov.includes(i.id)||(b.spans||[]).some(x=>x.id===i.id)||b.ch.some(c=>c.ids.includes(i.id)))).length;const n=Object.keys(I).length,na=Object.values(I).filter(i=>i.audio).length;
  return `<div class="settings"><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
- <p><span class="btn" id="ord" style="display:inline-block;cursor:pointer">${cfg.order==='narr'?'Narrative order (your EPUB)':'Standard order'} — switch</span>
+ <p>
  <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who==='Platt'?'David Platt only':cfg.who==='PAM'?'Philip Anthony Mitchell only':'everyone'} — switch</span></p>
  <p class="note">Progress is stored on this device.</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>

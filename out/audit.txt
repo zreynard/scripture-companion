@@ -1,0 +1,47 @@
+
+== Canon and structure
+PASS  66 books in canonical order with standard chapter counts
+PASS  1,189 chapters, numbered 1..n in order inside every book
+PASS  app always walks in canonical order (no order switch left)
+
+== Placement (each teaching sits only where its stated passage is)
+PASS  every placement matches the teaching's passage
+PASS  every passage named in a title is on the road where it says
+PASS  no chapter outside its book
+PASS  each multi-book survey stands exactly once
+PASS  each survey stands at the first of its books in canonical order
+PASS  surveys are not repeated inside chapters
+PASS  a book overview is not repeated inside that book's chapters
+
+== Speakers
+PASS  only David Platt, PAM, Arik Hayes and Milton James on the road
+PASS  2819 teaching shows the preacher named in its title
+PASS  David Platt teaching comes only from Platt / Radical / McLean sources
+PASS  McLean episodes on the road name David Platt
+
+== Order inside each chapter
+PASS  sermons before Pray the Word in every chapter
+PASS  playable before 'audio soon' in every chapter
+PASS  a series inside a chapter plays in preaching order
+
+== Secret Church
+PASS  Secret Church list runs in event/session order
+PASS  no Secret Church podcast session listed twice
+PASS  Secret Church podcast sessions numbered without gaps
+
+== Audio, dates, ids, duplicates
+PASS  every audio link is https
+PASS  no audio file on the road twice under different entries
+PASS  no dates in the future
+FAIL  feed episodes on the road all carry a date  (1)
+        - 1.2 – The Story of the Old Testament (secret_church_podcast)
+PASS  every id is the hash of its link (progress keys stable)
+PASS  every shipped entry from the original catalog still exists (same id)
+PASS  nothing unverified (PENDING / FAIL) on the road
+PASS  no teaching twice in one chapter
+
+== Road rules
+PASS  nothing about women / mothers / womanhood on the road
+PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
+
+29 of 30 checks pass

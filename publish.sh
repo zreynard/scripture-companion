@@ -2,6 +2,8 @@
 # Build the app, save the catalog to main, and publish out/site to the gh-pages branch (GitHub Pages).
 set -euo pipefail
 python app_build.py
+python tools/audit.py > out/audit.txt 2>&1 || true   # full audit of every publish; report saved with the build
+tail -1 out/audit.txt
 python - <<'PY'
 import json, collections
 es = [json.loads(l) for l in open("data/catalog_verified.jsonl")]
