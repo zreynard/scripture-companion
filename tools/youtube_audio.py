@@ -43,7 +43,10 @@ def list_channels() -> list[dict]:
             if not p.stdout.strip():
                 log(f"{u}: nothing listed ({p.stderr.strip()[:200]})"); continue
             n = 0
-            for e in json.loads(p.stdout).get("entries") or []:
+            data = json.loads(p.stdout) or {}
+            if not data.get("entries"):
+                log(f"{u}: no videos (channel not found?)"); continue
+            for e in data["entries"]:
                 if e and e.get("id") and e["id"] not in vids:
                     vids[e["id"]] = {"id": e["id"], "title": e.get("title") or "", "channel": key, "source": src,
                                      "duration": int(e.get("duration") or 0), "upload_date": e.get("upload_date") or ""}
