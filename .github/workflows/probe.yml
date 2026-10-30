@@ -1,0 +1,22 @@
+# Diagnostics: fetch a few publisher URLs from GitHub's servers and save the results to the "diag" branch.
+name: Probe feeds
+on:
+  workflow_dispatch:
+    inputs:
+      extra:
+        description: "Extra URLs (space separated)"
+        default: ""
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests
+      - run: python tools/probe.py ${{ github.event.inputs.extra }}
+      - run: |
+          mkdir /tmp/d && cp probe.json /tmp/d/ && cd /tmp/d
+          git init -q -b diag && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m probe
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag

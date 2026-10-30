@@ -19,7 +19,8 @@ if [ "${REFRESH:-false}" = "true" ]; then
 fi
 REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 cd out/site && touch .nojekyll && rm -rf .git
-git init -q -b gh-pages && git add -A && git commit -q -m "$1 ($(date -u +%F))"
+git init -q -b gh-pages && git add -A
+git -c user.name="github-actions[bot]" -c user.email="41898+github-actions[bot]@users.noreply.github.com" commit -q -m "$1 ($(date -u +%F))"
 git push -q -f "$REMOTE" gh-pages
 rm -rf .git
 echo "published"

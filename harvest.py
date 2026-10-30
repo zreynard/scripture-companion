@@ -81,7 +81,12 @@ def harvest_itunes_podcast(key: str, term: str, must_match: str, era: str, chann
         return []
     out = []
     for it in parse_rss(r.text):
-        url = it.get("link") or it.get("enclosure")
+        url = it.get("link") or ""
+        if not url and re.search(r"buzzsprout\.com/\d+/(episodes/)?\d+", it.get("enclosure", "")):
+            url = re.sub(r"\.mp3(\?.*)?$", "", it["enclosure"])  # Buzzsprout: the episode page is the mp3 address minus .mp3
+            if "/episodes/" not in url:
+                url = re.sub(r"(buzzsprout\.com/\d+)/", r"\1/episodes/", url, count=1)
+        url = url or it.get("enclosure")
         if not url:
             continue
         e = make_entry(source=key, source_url=feed_url, url=url, title=it["title"],
@@ -350,7 +355,16 @@ def run(sources: list[str], radical_limit: int | None = None):
     # a placeholder retires once the real episode (same title) has been harvested
     _t = lambda t: re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
     found = {_t(e.get("title")) for e in existing.values()}
-    kept = [e for e in pending if _t(e.get("title")) not in found]
+    def _segs(e):  # "SERIES | Name | Passage | Speaker" -> name-like segments
+        return {_t(x) for x in (e.get("title") or "").split("|")[:-1] if _t(x) and not re.search(r"\d", x)}
+    _pk = lambda e: (e.get("source"), tuple(sorted((b, tuple(d["chapters"])) for b, d in (e.get("refs") or {}).items())))
+    by_pass = {}
+    for e in existing.values():
+        if e.get("refs"): by_pass.setdefault(_pk(e), []).append(_segs(e))
+    def _found(p):
+        if _t(p.get("title")) in found: return True
+        return bool(p.get("refs")) and any(_segs(p) & segs for segs in by_pass.get(_pk(p), []))
+    kept = [e for e in pending if not _found(e)]
     _log(f"placeholders: {len(pending)} -> {len(kept)} still waiting for a link")
     with open(CATALOG, "w", encoding="utf-8") as f:
         for e in list(existing.values()) + kept:
