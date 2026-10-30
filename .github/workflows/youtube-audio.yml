@@ -35,8 +35,16 @@ jobs:
       - run: pip install -r requirements.txt feedparser && pip install -U yt-dlp
       - run: sudo apt-get install -y ffmpeg >/dev/null || true
       - name: Download and host audio
-        run: python tools/youtube_audio.py --limit "${{ github.event.inputs.limit || '150' }}" --minutes 280
+        run: python tools/youtube_audio.py --limit "${{ github.event.inputs.limit || '150' }}" --minutes 280 2>&1 | tee yt.log; exit ${PIPESTATUS[0]}
+      - name: Save the log for diagnosis
+        if: always()
+        run: |
+          mkdir -p /tmp/d && cp yt.log /tmp/d/ 2>/dev/null; cp data/youtube_audio.json data/youtube_index.json /tmp/d/ 2>/dev/null || true
+          cd /tmp/d && git init -q -b diag && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "youtube log" || true
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" diag
       - name: Put it on the road and publish
+        if: always()
         run: |
           python run.py harvest --sources youtube_audio
           python run.py stamp
