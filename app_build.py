@@ -83,7 +83,10 @@ def main():
                     by_chapter[(book, c)].append(it["id"])
     def core(t):  # title without episode numbers, "| Speaker" tails, or (Bible reference) brackets
         t = re.sub(r"^\s*#?[\d,]+\s*[\u2013\u2014-]\s*", "", t or "")
-        t = re.sub(r"\s*\|.*$", "", t)
+        segs = [x.strip() for x in t.split("|")]
+        if len(segs) > 1:  # "SERIES | Name | Passage | Speaker": keep series + name, drop passage and speaker
+            segs = [x for x in segs[:-1] if x and not parse_refs(x)] or segs[:1]
+        t = " ".join(segs)
         t = re.sub(r"\(([^)]*)\)", lambda m: "" if parse_refs(m.group(1)) else " " + m.group(1), t)
         t = re.sub(r"[^a-z0-9]+", " ", t.lower().replace("\u2019", "'")).strip()
         return re.sub(r"\bpart (\w+)\b", r"part \1", t)
@@ -107,7 +110,10 @@ def main():
                     continue
                 try: gap = abs((_dd.fromisoformat(A["date"]) - _dd.fromisoformat(B["date"])).days)
                 except ValueError: continue
-                if gap <= 10 and SequenceMatcher(None, core(A["t"]), core(B["t"])).ratio() >= 0.75:
+                first = lambda t: core(re.split(r"\s*\|", t)[0])
+                sim = max(SequenceMatcher(None, core(A["t"]), core(B["t"])).ratio(),
+                          SequenceMatcher(None, first(A["t"]), first(B["t"])).ratio())
+                if gap <= 10 and sim >= 0.75:
                     sa = (not A["audio"], SRC_PREF.get(A["src"], 5)); sb = (not B["audio"], SRC_PREF.get(B["src"], 5))
                     drop.add(b if sa <= sb else a)
         lst[:] = [i for i in lst if i not in drop]
@@ -141,8 +147,21 @@ def main():
     for (book, c), lst in by_chapter.items():
         keep = [i for i in lst if on_road(i, book)]
         off_road |= set(lst) - set(keep); lst[:] = keep
-    rank = lambda book: (lambda i: (items[i]["tr"] != "sermon", not items[i]["audio"], -focus(i, book),
-                                    items[i]["who"] != "Platt", -(_day(i) or 0), i))
+    # a series (same teacher, same book, sermons no more than 45 days apart) plays in preaching order;
+    # the most recent series comes first
+    run_end = {}
+    for (book, who), days in by_book_sermons.items():
+        ds = sorted(set(days)); start = 0
+        for k in range(1, len(ds) + 1):
+            if k == len(ds) or ds[k] - ds[k - 1] > 45:
+                for x in ds[start:k]: run_end[(book, who, x)] = ds[k - 1]
+                start = k
+    def rank(book):
+        def key(i):
+            it, d, f = items[i], _day(i) or 0, focus(i, book)
+            series = (-run_end.get((book, it["who"], d), d), d) if f == 2 else (0, -d)
+            return (it["tr"] != "sermon", not it["audio"], -f, it["who"] != "Platt", series, i)
+        return key
     books = []
     for name, abbr, n, t, _a in BOOKS:
         chs = []
