@@ -53,4 +53,7 @@ jobs:
         run: |
           left=$(cat remaining.txt 2>/dev/null || echo 0)
           echo "remaining: $left"
-          if [ "$left" -gt 0 ]; then gh workflow run youtube-audio.yml --ref main; fi
+          got=$(grep -c "^\[youtube\] ok " yt.log || true)
+          echo "downloaded this run: $got"
+          # continue only while downloads are succeeding, so a block never loops
+          if [ "$left" -gt 0 ] && [ "$got" -gt 0 ]; then gh workflow run youtube-audio.yml --ref main; fi
