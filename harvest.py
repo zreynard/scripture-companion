@@ -344,6 +344,45 @@ def harvest_buzzsprout_archive(key: str, show_id: int, feed_url: str, era: str =
         page += 36; time.sleep(config.REQUEST_SLEEP)
     return out
 
+# ---------- YouTube-only teaching with audio hosted beside the app (tools/youtube_audio.py) ----------
+_SC_NAMES = {"who am i": 22, "jonah": 23, "ruth": 24, "matthew": 25, "elijah": 26}
+def harvest_youtube_audio() -> list[dict]:
+    path = os.path.join(DATA, "youtube_audio.json")
+    if not os.path.exists(path):
+        return []
+    from canon import CHAPTERS
+    from refs import parse_refs, merge_refs
+    out = []
+    for v in json.load(open(path, encoding="utf-8")).values():
+        if not v.get("asset"):
+            continue
+        d = v.get("upload_date") or ""
+        pub = f"{d[:4]}-{d[4:6]}-{d[6:8]}" if re.fullmatch(r"\d{8}", d) else ""
+        url = f"https://www.youtube.com/watch?v={v['id']}"
+        if v["channel"] == "radical":
+            e = make_entry(source="youtube_radical", source_url=config.YOUTUBE_CHANNELS["radical"][0], url=url,
+                           title=v["title"], published=pub, duration=str(v.get("duration") or ""), era="platt",
+                           channel_default="Platt")
+            m = re.search(r"secret church\s*(\d+)", v["title"], re.I)
+            sc = int(m.group(1)) if m else next((n for k, n in _SC_NAMES.items() if k in v["title"].lower()), None)
+            e.update({"speaker": "Platt", "track": "overview", "sc_season": sc})
+            mm = re.search(r"session\s*(\d+)", v["title"], re.I); e["sc_episode"] = int(mm.group(1)) if mm else 0
+            scope = next((x[3] for x in config.SECRET_CHURCH_EVENTS if x[0] == sc), "topical")
+            if scope != "topical" and not e["refs"]:  # the event's stated scope (Jonah, Ruth, Matthew, Elijah)
+                merged = merge_refs(parse_refs(scope)) or {scope: {"chapters": set(range(1, CHAPTERS[scope] + 1)),
+                                                                   "verse_level": False, "whole_book": True, "raw": [scope]}}
+                e["refs"] = {b: {"chapters": sorted(x["chapters"]), "verse_level": False,
+                                 "whole_book": len(x["chapters"]) == CHAPTERS[b], "raw": [scope]} for b, x in merged.items()}
+                e["refs_text"] = scope
+        else:
+            e = make_entry(source=v["source"], source_url="", url=url, title=v["title"], published=pub,
+                           duration=str(v.get("duration") or ""), era="2819" if v["channel"] == "2819" else "pam-channel",
+                           channel_default="PAM" if v["channel"] == "pam" else None)
+        e["audio_override"] = v["asset"]
+        out.append(e)
+    _log(f"youtube_audio: {len(out)} items with hosted audio")
+    return out
+
 # ---------- orchestration ----------
 ALL_SOURCES = ["ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
                "youtube_2819", "youtube_pam", "youtube_victory", "victory_podcast"]
@@ -374,6 +413,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt")
             elif s == "2819_podcast": entries = harvest_itunes_podcast("2819_podcast", config.PODCAST_SEARCH_TERMS["2819"], r"2819", "2819")
             elif s == "victory_podcast": entries = harvest_itunes_podcast("victory_podcast", config.PODCAST_SEARCH_TERMS["victory"], r"victory", "victory")
+            elif s == "youtube_audio": entries = harvest_youtube_audio()
             elif s.startswith("youtube_"): entries = harvest_youtube(s.split("_", 1)[1])
             else: _log(f"unknown source {s}")
         except Exception as e:  # keep going; report the failure

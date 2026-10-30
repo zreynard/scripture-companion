@@ -1,0 +1,48 @@
+# Pull audio for teaching that exists only on YouTube (Secret Church 22-26, older PAM / 2819 sermons),
+# host it as GitHub Release files, put it on the road, publish. Re-runs itself until nothing is left.
+name: YouTube audio
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Most downloads this run"
+        default: "150"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ github.token }}
+      REFRESH: "true"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt feedparser && pip install -U yt-dlp
+      - run: sudo apt-get install -y ffmpeg >/dev/null || true
+      - name: Download and host audio
+        run: python tools/youtube_audio.py --limit "${{ github.event.inputs.limit || '150' }}" --minutes 280
+      - name: Put it on the road and publish
+        run: |
+          python run.py harvest --sources youtube_audio
+          python run.py stamp
+          ./publish.sh "Publish app (YouTube audio)"
+      - name: Keep going if there is more
+        run: |
+          left=$(cat remaining.txt 2>/dev/null || echo 0)
+          echo "remaining: $left"
+          if [ "$left" -gt 0 ]; then gh workflow run youtube-audio.yml --ref main; fi
