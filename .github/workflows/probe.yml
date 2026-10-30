@@ -14,7 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install requests
-      - run: python tools/probe.py ${{ github.event.inputs.extra }}
+      - run: python tools/probe.py $EXTRA
+        env:
+          EXTRA: ${{ github.event.inputs.extra }}
       - run: |
           mkdir /tmp/d && cp -r probe.json pages /tmp/d/ && cd /tmp/d
           git init -q -b diag && git add -A
