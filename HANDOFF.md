@@ -5,15 +5,21 @@ A single-file web app in which you walk the Bible as one road — Genesis to Rev
 
 ## Files that matter
 - `out/site/` — **the app to deploy** (index.html + manifest + icons + service worker). Open in Safari from a web address, Add to Home Screen. Progress lives on the device (export/import under ⋯).
-- `out/scripture-companion-v20.html` — the same app as one file (no icon/offline).
+- `out/scripture-companion-v21.html` — the same app as one file (no icon/offline).
 - `pwa/` — home-screen pieces copied into `out/site/` on every build (manifest, `sw.js`, icons; `icon.svg` is the source).
 - `app_build.py` — regenerates the app from the catalog. All design code lives in its `TEMPLATE`. Bump `VERSION` on each shipped build (it also refreshes the offline cache).
 - `data/catalog_verified.jsonl` — the catalog (one JSON per line). Fields that matter: `id`, `url`, `primary_url`, `alt_urls`, `audio_override`, `title`, `speaker` (Platt/PAM/guest), `era` (platt/2819/victory), `track` (sermon/devotional/overview), `tier` (V2/V1/PENDING/FAIL), `refs` ({book: {chapters, whole_book}}), `refs_text`, `sc_season`, `sc_episode`, `verify_note`.
 - `config.py` — registered sources. `harvest.py` — harvesters incl. `harvest_twr360` (decodes the mediahit base64 → CloudFront MP3). `verify.py`, `refs.py`, `canon.py`, `data/narrative_order.json`.
 - `out/platt_pam_bible_companion.xlsx`, `out/roadmap.html` — the ledger workbook and roadmap (secondary; `python run.py build`).
 
-## Where the data stands
-319 road items, 200 with audio: Secret Church podcast 12.7–21.9 (82, Buzzsprout MP3), Secret Church 1 sessions 1–4 (TWR360 MP3), David Platt Messages 25 (Buzzsprout), Pray the Word ≈100, 2819 episodes 29 (Apple pages, no audio yet), McLean OCEANS videos (no audio; their podcast twins arrive with the Platt Messages feed). Missing until Claude Code runs: Secret Church 1.4–12.6 episodes, Secret Church 2–12 TWR360 sessions, all 2819 audio, the other ~3,000 Pray the Word episodes, the other ~545 Platt sermons.
+## Where the data stands (2026-10-30, after the first full pull)
+4,465 catalog entries; 4,376 Platt/PAM items in the app, 4,281 with in-app audio; 1,100 of 1,189 chapters have a voice.
+Pray the Word 3,397 (2017 to now; feed gives the newest 1,000, the rest come from Buzzsprout's load-more pages), David Platt Messages 528, Secret Church podcast 198, TWR360 Secret Church sessions 43 (events 1–12), 2819 PAM 121 (guests excluded), McLean OCEANS videos 76 (no audio; silent twins of playable items are hidden).
+497 items name no passage and stay off the road. Still missing: Secret Church 22–26 and PAM's pre-podcast years (YouTube only, Phase 4), link checking (Phase 3; runs weekly).
+
+## How it refreshes
+GitHub Actions (`.github/workflows/refresh.yml`) runs on GitHub's servers every Monday and on demand (Actions tab → Refresh and publish → Run workflow): pull feeds → `run.py stamp` → build → publish to the `gh-pages` branch → check links → publish again. The catalog is committed back to `main`. Live app: https://zreynard.github.io/scripture-companion/
+`tools/probe.py` (Actions → Probe feeds) fetches URLs from GitHub's servers and saves the results to the `diag` branch.
 
 ## Hosting in two minutes
 Drag the `out/site` folder onto app.netlify.com/drop (or serve it from GitHub Pages). Open the address on the phone in Safari → Share → Add to Home Screen. The Claude app's file viewer and iOS Quick Look block audio; Safari does not. A home-screen app keeps its own storage separate from Safari tabs, so move progress with export/import once after installing.

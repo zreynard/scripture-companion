@@ -12,7 +12,7 @@ import config
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 20  # bump on every shipped build; also busts the service-worker cache
+VERSION = 21  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -72,6 +72,13 @@ def main():
             else:
                 for c in d["chapters"]:
                     by_chapter[(book, c)].append(it["id"])
+    def core(t):  # title without episode numbers, "| Speaker" tails, or (passage) brackets
+        t = re.sub(r"^\s*#?[\d,]+\s*[\u2013\u2014-]\s*", "", t or "")
+        t = re.sub(r"\s*\|.*$", "", t); t = re.sub(r"\([^)]*\)", "", t)
+        return re.sub(r"[^a-z0-9]+", " ", t.lower().replace("\u2019", "'")).strip()
+    for k, lst in by_chapter.items():  # one episode, one playing form: drop a silent twin of a playable item
+        playable = {core(items[i]["t"]) for i in lst if items[i]["audio"]}
+        lst[:] = [i for i in lst if items[i]["audio"] or core(items[i]["t"]) not in playable]
     for k, lst in by_chapter.items():  # 2819 first; Victory-era only where 2819 has nothing
         if any(items[i]["who"] == "PAM" and items[i]["era"] == "2819" and items[i]["tr"] == "sermon" for i in lst):
             lst[:] = [i for i in lst if not (items[i]["who"] == "PAM" and items[i]["era"] != "2819")]
@@ -80,7 +87,7 @@ def main():
         chs = []
         for c in range(1, n + 1):
             ids = sorted(set(by_chapter.get((name, c), [])),
-                         key=lambda i: (items[i]["tr"] != "sermon", items[i]["who"] != "Platt", items[i]["date"], i))
+                         key=lambda i: (items[i]["tr"] != "sermon", not items[i]["audio"], items[i]["who"] != "Platt", items[i]["date"], i))
             chs.append({"c": c, "seq": narr[(name, c)], "ids": ids})
         ov = sorted(set(by_book_ov.get(name, [])), key=lambda i: (items[i]["sc"] or [99, 99], items[i]["date"], i))
         # drop a Secret Church event page when its podcast episodes or video sessions are present
