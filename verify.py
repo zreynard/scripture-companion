@@ -91,6 +91,7 @@ def run(force: bool = False, limit: int | None = None, sources: list[str] | None
     todo = []
     for e in entries:
         for u in [e["url"]] + e.get("alt_urls", []):
+            if not u: continue  # placeholder with no link yet
             rec = log.get(u)
             fresh = rec and datetime.fromisoformat(rec["checked_at"]) > ttl and rec["tier"] != "V1"
             if force or not fresh:
@@ -111,6 +112,9 @@ def run(force: bool = False, limit: int | None = None, sources: list[str] | None
     all_entries = [json.loads(l) for l in open(CATALOG, encoding="utf-8")]
     with open(VERIFIED, "w", encoding="utf-8") as f:
         for e in all_entries:
+            if not e.get("url"):  # placeholder: keep it PENDING, never shown on the road
+                e["tier"] = "PENDING"; e["primary_url"] = ""
+                f.write(json.dumps(e, ensure_ascii=False) + "\n"); continue
             main = log.get(e["url"], {"tier": "V1", "note": "unchecked"})
             e["tier"], e["verify_note"], e["verified_at"] = main["tier"], main.get("note", ""), main.get("checked_at", "")
             e["fetched_title"] = main.get("fetched_title", "")

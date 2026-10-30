@@ -1,0 +1,77 @@
+# Runs on GitHub's servers (which can reach the podcast feeds).
+# - Every push: rebuild the app and publish it to GitHub Pages.
+# - Weekly, or by hand from the Actions tab: pull new episodes, check links, rebuild, publish,
+#   and save the updated catalog back into the repo.
+name: Refresh and publish
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 9 * * 1"   # Mondays 09:17 UTC
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "Feeds to pull (comma list)"
+        default: "ptw,platt_messages,secret_church_podcast,twr360,2819_podcast"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt feedparser
+
+      - name: Pull episodes and check links
+        if: github.event_name != 'push'
+        env:
+          SOURCES: ${{ github.event.inputs.sources || 'ptw,platt_messages,secret_church_podcast,twr360,2819_podcast' }}
+        run: |
+          python run.py harvest --sources "$SOURCES"
+          python run.py verify
+          python - <<'PY'
+          import json, collections
+          es = [json.loads(l) for l in open("data/catalog_verified.jsonl")]
+          print("entries:", len(es))
+          print("by tier:", dict(collections.Counter(e["tier"] for e in es)))
+          print("by source:", dict(collections.Counter(e["source"] for e in es)))
+          PY
+
+      - name: Build app
+        run: python app_build.py
+
+      - name: Save updated catalog
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/ out/
+          git diff --cached --quiet || git commit -m "Refresh catalog ($(date -u +%F))"
+          git push
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -240,9 +240,16 @@ ALL_SOURCES = ["ptw", "platt_messages", "secret_church", "secret_church_podcast"
 def run(sources: list[str], radical_limit: int | None = None):
     os.makedirs(DATA, exist_ok=True)
     existing = {}
+    verified = os.path.join(DATA, "catalog_verified.jsonl")
+    if not os.path.exists(CATALOG) and os.path.exists(verified):
+        # first run on a fresh checkout: start from the shipped catalog so nothing already found is lost
+        import shutil; shutil.copy(verified, CATALOG); _log(f"seeded {CATALOG} from catalog_verified.jsonl")
+    pending = []  # placeholders: title known, link not captured yet (url == "")
     if os.path.exists(CATALOG):
         for line in open(CATALOG, encoding="utf-8"):
-            e = json.loads(line); existing[e["url"]] = e
+            e = json.loads(line)
+            if e.get("url"): existing[e["url"]] = e
+            else: pending.append(e)
     report = {"started": datetime.now(timezone.utc).isoformat(), "sources": {}}
     for s in sources:
         t0 = time.time(); entries = []
@@ -265,12 +272,17 @@ def run(sources: list[str], radical_limit: int | None = None):
         for e in entries:
             existing[e["url"]] = {**existing.get(e["url"], {}), **e}
         report["sources"][s] = {"count": len(entries), "seconds": round(time.time() - t0, 1)}
+    # a placeholder retires once the real episode (same title) has been harvested
+    _t = lambda t: re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
+    found = {_t(e.get("title")) for e in existing.values()}
+    kept = [e for e in pending if _t(e.get("title")) not in found]
+    _log(f"placeholders: {len(pending)} -> {len(kept)} still waiting for a link")
     with open(CATALOG, "w", encoding="utf-8") as f:
-        for e in existing.values():
+        for e in list(existing.values()) + kept:
             f.write(json.dumps(e, ensure_ascii=False) + "\n")
-    report["catalog_total"] = len(existing)
+    report["catalog_total"] = len(existing) + len(kept)
     json.dump(report, open(REPORT, "w"), indent=2)
-    _log(f"catalog: {len(existing)} entries -> {CATALOG}")
+    _log(f"catalog: {len(existing) + len(kept)} entries -> {CATALOG}")
     return report
 
 if __name__ == "__main__":
