@@ -1,0 +1,26 @@
+{
+  "started": "2026-10-30T15:26:16.301907+00:00",
+  "sources": {
+    "ptw": {
+      "count": 1000,
+      "seconds": 1.4
+    },
+    "platt_messages": {
+      "count": 571,
+      "seconds": 1.5
+    },
+    "secret_church_podcast": {
+      "count": 198,
+      "seconds": 0.5
+    },
+    "twr360": {
+      "count": 0,
+      "seconds": 1.6
+    },
+    "2819_podcast": {
+      "count": 147,
+      "seconds": 0.7
+    }
+  },
+  "catalog_total": 2057
+}
