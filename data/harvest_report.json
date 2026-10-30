@@ -1,34 +1,30 @@
 {
-  "started": "2026-10-30T15:54:09.525344+00:00",
+  "started": "2026-10-30T15:56:15.082014+00:00",
   "sources": {
     "ptw": {
       "count": 4371,
-      "seconds": 11.0
+      "seconds": 9.9
     },
     "platt_messages": {
       "count": 571,
-      "seconds": 0.9
+      "seconds": 0.8
     },
     "secret_church_podcast": {
       "count": 198,
-      "seconds": 0.6
+      "seconds": 0.4
     },
     "twr360": {
       "count": 43,
-      "seconds": 27.4
+      "seconds": 23.2
     },
     "2819_podcast": {
       "count": 147,
-      "seconds": 0.4
+      "seconds": 0.1
     },
     "mclean": {
       "count": 199,
-      "seconds": 1.6
-    },
-    "victory_podcast": {
-      "count": 202,
-      "seconds": 0.5
+      "seconds": 1.5
     }
   },
-  "catalog_total": 4849
+  "catalog_total": 4647
 }
