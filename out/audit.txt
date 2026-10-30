@@ -33,8 +33,7 @@ PASS  Secret Church podcast sessions numbered without gaps
 PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
 PASS  no dates in the future
-FAIL  feed episodes on the road all carry a date  (1)
-        - 1.2 – The Story of the Old Testament (secret_church_podcast)
+PASS  feed episodes on the road all carry a date
 PASS  every id is the hash of its link (progress keys stable)
 PASS  every shipped entry from the original catalog still exists (same id)
 PASS  nothing unverified (PENDING / FAIL) on the road
@@ -44,4 +43,4 @@ PASS  no teaching twice in one chapter
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-29 of 30 checks pass
+30 of 30 checks pass
