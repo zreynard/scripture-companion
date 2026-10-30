@@ -1,0 +1,30 @@
+# Open every link in the catalog (slow). Runs on its own so app updates are never queued behind it.
+name: Check links
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: links
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      REFRESH: "true"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt feedparser
+      - name: Check every link
+        run: |
+          [ -f data/catalog.jsonl ] || cp data/catalog_verified.jsonl data/catalog.jsonl
+          python run.py verify
+      - name: Publish with the results
+        run: ./publish.sh "Publish app (links checked)"
