@@ -30,7 +30,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .voice .tx{flex:1;min-width:0}.voice .who{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 .voice .ti{font-size:14px;line-height:1.25;margin:1px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.voice .ln{font-size:12px;color:var(--mute)}
 .voice.done .ti{color:var(--mute)}.voice .ck{flex:none;background:none;border:1px solid rgba(27,36,64,.15);color:var(--mute);width:30px;height:30px;border-radius:50%;font-size:14px}
-.voice.done .ck{background:var(--gold);color:#fff;border-color:var(--gold)}
+.voice.done .ck{background:var(--gold);color:#fff;border-color:var(--gold)}.voice .ck{display:flex;align-items:center;justify-content:center;box-sizing:border-box}
 .acts{display:flex;gap:10px;margin:12px 0 0}
 .acts button{font:inherit;border-radius:22px;padding:10px 18px;border:1px solid rgba(27,36,64,.15);background:rgba(255,255,255,.6);color:var(--ink)}
 .acts .go{background:var(--gold);color:#1b2440;border-color:var(--gold);font-weight:600}
@@ -165,14 +165,17 @@ const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>(
 const fmt=s=>{s=Math.max(0,Math.round(s||0));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(x).padStart(2,'0')};
 const mins=s=>s?Math.round(s/60)+' min':'';
 const isDone=id=>!!(prog[id]&&prog[id].done);
+// Listened = at least 70% of the teaching actually played (seconds heard, not where the slider sits)
+const DONE_AT=0.7,heardPct=id=>{const p=prog[id]||{};return p.dur&&p.heard?Math.min(100,Math.round(100*p.heard/p.dur)):0};
+let lastT=null;
 const LANDS=[['Genesis','The Law'],['Joshua','History'],['Job','Wisdom & Song'],['Isaiah','Major Prophets'],['Hosea','Minor Prophets'],['Matthew','The Gospels'],['Acts','The Church Begins'],['Romans','Letters of Paul'],['Hebrews','General Letters'],['Revelation','The End & the New Beginning']];
 function books(){const b=[...D.books];if(cfg.order==='narr')b.sort((x,y)=>Math.min(...x.ch.map(c=>c.seq))-Math.min(...y.ch.map(c=>c.seq)));return b}
 function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;for(const c of chs)w.push({b,c})}return w}
 function teacher(i){return i.by||(i.who==='PAM'?'Philip Anthony Mitchell':'David Platt')}
-function voiceHTML(id){const i=I[id],p=prog[id]||{},deg=p.dur&&!isDone(id)?Math.round(360*(p.pos||0)/p.dur):0,playing=cur===id&&!audio.paused;
+function voiceHTML(id){const i=I[id],p=prog[id]||{},hp=heardPct(id),deg=!isDone(id)?Math.round(3.6*hp):0,playing=cur===id&&!audio.paused;
  return `<div class="voice ${isDone(id)?'done':''}"><button class="pb ${i.audio?'':'off'} ${playing?'playing':''}" style="--p:${deg}deg;position:relative" data-play="${id}"><span style="color:${playing?'var(--gold2)':'var(--ink)'}">${icon(playing?'pause':'play',18,0,'currentColor')}</span></button>
- <div class="tx"><div class="who">${teacher(i)}${i.tr==='devotional'?' · Pray the Word':i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(i.t)}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}</div></div>
- <button class="ck" data-done="${id}">✓</button></div>`}
+ <div class="tx"><div class="who">${teacher(i)}${i.tr==='devotional'?' · Pray the Word':i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(i.t)}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}${hp&&!isDone(id)?' · '+hp+'% heard':''}</div></div>
+ <span class="ck" role="img" aria-label="${isDone(id)?'Listened':'Not yet listened'}">✓</span></div>`}
 let W=null; // cached world geometry
 function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsView();wire();return}
  const w=walk();let first=w.findIndex(x=>!read[x.b.abbr+x.c.c]);if(first<0)first=w.length-1;if(camp==null||camp>=w.length)camp=first;
@@ -253,9 +256,13 @@ function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;audio.src
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play(),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=15,'seekforward',()=>audio.currentTime+=30,'nexttrack',next].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  audio.paused?audio.play():audio.pause()}
 function next(){const seq=[];for(const b of books()){seq.push(...(b.spans||[]).map(x=>x.id),...b.ov);const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;chs.forEach(c=>seq.push(...c.ids))}const k=seq.indexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
-audio.addEventListener('timeupdate',()=>{if(!cur)return;const d=audio.duration||0;$('#seek').value=d?1000*audio.currentTime/d:0;$('#cur').textContent=fmt(audio.currentTime);$('#rem').textContent='-'+fmt(d-audio.currentTime);
- if(Math.floor(audio.currentTime)%5===0){prog[cur]=Object.assign(prog[cur]||{},{pos:audio.currentTime,dur:d,at:Date.now()});if(d&&audio.currentTime/d>0.9)prog[cur].done=true;S.set('prog',prog)}});
-audio.addEventListener('ended',()=>{prog[cur]=Object.assign(prog[cur]||{},{done:true,pos:0});S.set('prog',prog);render();next()});
+audio.addEventListener('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
+ const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
+ if(lastT!==null&&!audio.paused&&!audio.seeking){const dt=t-lastT;if(dt>0&&dt<4)p.heard=Math.min(d||Infinity,(p.heard||0)+dt)}lastT=t;
+ const wasDone=!!p.done;if(d&&p.heard>=DONE_AT*d)p.done=true;
+ if(Math.floor(t)%5===0||p.done!==wasDone){p.pos=t;p.at=Date.now();S.set('prog',prog);if(p.done!==wasDone)render()}});
+audio.addEventListener('seeking',()=>{lastT=null});audio.addEventListener('play',()=>{lastT=null});
+audio.addEventListener('ended',()=>{const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*p.dur)p.done=true;S.set('prog',prog);render();next()});
 const setPP=()=>{$('#pp').innerHTML=icon(audio.paused?'play':'pause',28,0,'#1b2440')};setPP();audio.addEventListener('play',()=>{setPP();render()});audio.addEventListener('pause',()=>{setPP();render()});
 audio.addEventListener('error',()=>{$('#np-s').textContent=(location.protocol==='file:'||window!==window.top)?'Audio is blocked in this viewer — open in Safari from a web address.':'This file did not load.'});
 $('#pp').onclick=()=>cur&&(audio.paused?audio.play():audio.pause());$('#bk').onclick=()=>audio.currentTime-=15;$('#fw').onclick=()=>audio.currentTime+=30;
@@ -266,7 +273,7 @@ $('#cls').onclick=()=>{audio.pause();audio.removeAttribute('src');audio.load();c
 $('#np').querySelector('.grab').onclick=()=>$('#np').classList.toggle('mini');$('#np-t').onclick=()=>$('#np').classList.toggle('mini');
 /* wiring */
 function wire(){document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();play(b.dataset.play)});
- document.querySelectorAll('[data-done]').forEach(b=>b.onclick=e=>{e.stopPropagation();const id=b.dataset.done;prog[id]=Object.assign(prog[id]||{},{done:!isDone(id),at:Date.now()});S.set('prog',prog);render()});
+ 
  document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{const was=!!read[b.dataset.read];read[b.dataset.read]=!was;S.set('read',read);if(!was)camp=Math.min(walk().length-1,camp+1);S.set('camp',camp);render()});
  document.querySelectorAll('.acts [data-camp], .nv[data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;go(+b.dataset.camp)});const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
  const g=$('#gear');g.onclick=()=>{view=view==='settings'?'walk':'settings';S.set('view',view);decorate.first=true;render();window.scrollTo(0,0)};
