@@ -8,6 +8,7 @@ import json, os, re
 from collections import defaultdict
 from canon import BOOKS, CHAPTERS, TESTAMENT
 from refs import parse_refs
+from datetime import date as _dd
 import config
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -92,6 +93,20 @@ def main():
             if key not in best or score < best[key][0]: best[key] = (score, i)
         keep = {v[1] for v in best.values()}
         lst[:] = [i for i in lst if i in keep]
+        # the same sermon posted by two feeds under slightly different titles, days apart
+        from difflib import SequenceMatcher
+        drop = set()
+        for a in lst:
+            for b in lst:
+                A, B = items[a], items[b]
+                if a >= b or a in drop or b in drop or A["src"] == B["src"] or A["who"] != B["who"] or A["tr"] != B["tr"]:
+                    continue
+                try: gap = abs((_dd.fromisoformat(A["date"]) - _dd.fromisoformat(B["date"])).days)
+                except ValueError: continue
+                if gap <= 10 and SequenceMatcher(None, core(A["t"]), core(B["t"])).ratio() >= 0.75:
+                    sa = (not A["audio"], SRC_PREF.get(A["src"], 5)); sb = (not B["audio"], SRC_PREF.get(B["src"], 5))
+                    drop.add(b if sa <= sb else a)
+        lst[:] = [i for i in lst if i not in drop]
     for k, lst in by_chapter.items():  # 2819 first; Victory-era only where 2819 has nothing
         if any(items[i]["who"] == "PAM" and items[i]["era"] == "2819" and items[i]["tr"] == "sermon" for i in lst):
             lst[:] = [i for i in lst if not (items[i]["who"] == "PAM" and items[i]["era"] != "2819")]
