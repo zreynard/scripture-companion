@@ -15,7 +15,7 @@ PY
 git config user.name "github-actions[bot]"
 git config user.email "41898+github-actions[bot]@users.noreply.github.com"
 if [ "${REFRESH:-false}" = "true" ]; then
-  git add data/ out/
+  git add data/ out/audit.txt out/off_road.json   # the built app lives on gh-pages; only the record is kept here
   git diff --cached --quiet || git commit -q -m "Refresh catalog ($(date -u +%F))"
   git pull -q --rebase origin main && git push -q origin HEAD:main
 fi

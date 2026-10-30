@@ -14,7 +14,7 @@ import config
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 25  # bump on every shipped build; also busts the service-worker cache
+VERSION = 26  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -488,7 +488,7 @@ function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;audio.src
   $('#np-t').textContent=i.t;$('#np-s').textContent=teacher(i)+' · '+where(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(false)}setPP();
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play(),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=15,'seekforward',()=>audio.currentTime+=30,'nexttrack',next].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  audio.paused?audio.play():audio.pause()}
-function next(){const seq=[];for(const b of books()){seq.push(...(b.spans||[]).map(x=>x.id),...b.ov);const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;chs.forEach(c=>seq.push(...c.ids))}const k=seq.indexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
+function next(){const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;if(x.c===x.b.ch[0])seq.push(...(x.b.spans||[]).map(s=>s.id),...x.b.ov);seq.push(...x.c.ids)});/* continue from where the listener stands: a teaching that spans chapters appears in each of them */let k=seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]);if(k<0)k=seq.lastIndexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
 audio.addEventListener('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
  const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
  if(lastT!==null&&!audio.paused&&!audio.seeking){const dt=t-lastT;if(dt>0&&dt<4)p.heard=Math.min(d||Infinity,(p.heard||0)+dt)}lastT=t;
