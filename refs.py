@@ -66,12 +66,12 @@ class Ref:
 
 def _canon(alias_text: str) -> str | None:
     t = re.sub(r"\.", "", alias_text).strip()
-    t = re.sub(r"^(I{1,3})\s*", lambda m: str(len(m.group(1))) + " ", t)
+    t = re.sub(r"^(I{1,3})(?:\s+|(?=[A-Z][a-z]))(?!saiah|sa\b|s\b)", lambda m: str(len(m.group(1))) + " ", t)
     t = re.sub(r"^(First|Second|Third)\s*", lambda m: {"first": "1", "second": "2", "third": "3"}[m.group(1).lower()] + " ", t, flags=re.I)
     t = re.sub(r"^([123])(?=[A-Za-z])", r"\1 ", t)
-    tl = t.lower()
+    tl = re.sub(r"\s+", "", t.lower())
     for a, name in _ALIASES:
-        if a.lower() == tl:
+        if re.sub(r"\s+", "", a.lower()) == tl:
             return name
     return None
 
@@ -121,7 +121,7 @@ def parse_refs(text: str) -> list[Ref]:
         if any(a <= m.start() < b for a, b in consumed):
             continue
         alias_text = m.group("book").rstrip(".")
-        if len(alias_text) <= 3 and not alias_text[0].isupper():
+        if len(alias_text) <= 3 and not (alias_text[0].isupper() or alias_text[0].isdigit()):
             continue  # "is 2", "am 2": short aliases must be capitalised
         book = _canon(m.group("book"))
         if not book:

@@ -57,11 +57,54 @@ def detect_track(source: str, title: str, description: str, merged_refs: dict) -
             return "overview"
     return "sermon"
 
+# Sources whose passages come from the parser (never hand-curated) — re-mapped whenever the rules change.
+REPARSE_SOURCES = {"ptw", "platt_messages", "2819_podcast", "victory_podcast", "mclean_podcast", "radical_message",
+                   "youtube_2819", "youtube_pam", "youtube_victory"}
+MAIN_TEXT_RE = re.compile(r"\b(?:message|sermon|episode|teaching|talk|study)\b[^.]{0,60}?"
+                          r"\b(?:from|on|through|in|of|unpacks|walks through|looks at|explores|expounds)\s+", re.I)
+
+def _first_ref(text: str) -> dict:
+    """The first chapter-level reference in text (by position), never a bare whole-book mention."""
+    found = [(text.find(r.raw), r) for r in parse_refs(text) if not r.whole_book]
+    found = [x for x in found if x[0] >= 0]
+    if not found:
+        return {}
+    found.sort(key=lambda x: x[0])
+    chain, end = [found[0][1]], found[0][0] + len(found[0][1].raw)
+    for p, r in found[1:]:  # "from Acts 2:42–47 and Acts 4:32–37": passages joined directly to the first
+        if p >= end and re.fullmatch(r"[\s,;&]*(?:and\s*)?", text[end:p]):
+            chain.append(r); end = p + len(r.raw)
+        elif p >= end:
+            break
+    return merge_refs(chain)
+
+def stated_refs(source: str, title: str, description: str, extra_ref_text: str = "") -> tuple[dict, str]:
+    """Which passage a teaching is ON, stated by the publisher — not every passage it mentions.
+    1. a passage in the title;  2. the passage the description names as the main text
+    ("In this message from Genesis 1, …");  3. otherwise the first passage the description cites.
+    Whole-book mentions ("the book of Romans") in a description never place a teaching."""
+    t = merge_refs(parse_refs(title))
+    if t:
+        return t, "title"
+    if extra_ref_text:
+        x = merge_refs(parse_refs(extra_ref_text))
+        if x:
+            return x, "stated"
+    if source not in REPARSE_SOURCES:  # curated / survey sources keep the full literal parse
+        return merge_refs(parse_refs(f"{title}\n{description}")), "full"
+    d = description or ""
+    for m in MAIN_TEXT_RE.finditer(d):
+        x = _first_ref(d[m.end():m.end() + 80])
+        if x and d[m.end():m.end() + 80].find(next(iter(x.values()))["raw"][0]) <= 12:
+            return x, "description-main-text"
+    x = _first_ref(d)
+    return (x, "description-first") if x else ({}, "none")
+
 def make_entry(*, source: str, source_url: str, url: str, title: str, description: str = "",
                published: str = "", duration: str = "", author: str = "", era: str = "",
                channel_default: str | None = None, series: str = "", alt_urls: list[str] | None = None,
                extra_ref_text: str = "") -> dict:
-    merged = merge_refs(parse_refs(f"{title}\n{description}\n{extra_ref_text}"))
+    merged, ref_how = stated_refs(source, title, description, extra_ref_text)
     speaker, how = detect_speaker(source, title, description, author, channel_default)
     track = detect_track(source, title, description, merged)
     if not era:
@@ -73,7 +116,7 @@ def make_entry(*, source: str, source_url: str, url: str, title: str, descriptio
         "url": url,
         "alt_urls": alt_urls or [],
         "title": title.strip(),
-        "description": (description or "").strip()[:600],
+        "description": (description or "").strip()[:4000],
         "published": published,
         "duration": duration,
         "author_raw": author,
@@ -85,4 +128,17 @@ def make_entry(*, source: str, source_url: str, url: str, title: str, descriptio
         "refs": {b: {"chapters": sorted(d["chapters"]), "verse_level": d["verse_level"],
                      "whole_book": d["whole_book"], "raw": d["raw"]} for b, d in merged.items()},
         "refs_text": refs_to_text(merged),
+        "ref_how": ref_how,
     }
+
+
+def remap(e: dict) -> dict:
+    """Re-apply the passage rules to a parser-mapped entry (keeps id/url/audio)."""
+    if e.get("source") not in REPARSE_SOURCES or not e.get("url"):
+        return e
+    merged, how = stated_refs(e["source"], e["title"], e.get("description", ""))
+    e["refs"] = {b: {"chapters": sorted(d["chapters"]), "verse_level": d["verse_level"],
+                     "whole_book": d["whole_book"], "raw": d["raw"]} for b, d in merged.items()}
+    e["refs_text"] = refs_to_text(merged); e["ref_how"] = how
+    e["track"] = detect_track(e["source"], e["title"], e.get("description", ""), merged)
+    return e

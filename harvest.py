@@ -401,9 +401,16 @@ def run(sources: list[str], radical_limit: int | None = None):
                 for k, v in e.items():
                     if k in ("id", "url", "alt_urls"): continue
                     if v and not old_e.get(k): old_e[k] = v
+                # parser-mapped sources: take the fresh full description so the passage rules see all of it
+                if e.get("description") and len(e["description"]) > len(old_e.get("description") or ""):
+                    old_e["description"] = e["description"]
                 merged += 1
         _log(f"{s}: {added} new, {merged} matched existing entries")
         report["sources"][s] = {"count": len(entries), "seconds": round(time.time() - t0, 1)}
+    # re-apply the passage rules to every parser-mapped entry (rules change; curated entries are untouched)
+    from classify import remap
+    for e in existing.values():
+        remap(e)
     # a placeholder retires once the real episode (same title) has been harvested
     _t = lambda t: re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
     found = {_t(e.get("title")) for e in existing.values()}

@@ -7,12 +7,13 @@ from __future__ import annotations
 import json, os, re
 from collections import defaultdict
 from canon import BOOKS, CHAPTERS, TESTAMENT
+from refs import parse_refs
 import config
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 21  # bump on every shipped build; also busts the service-worker cache
+VERSION = 22  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -45,6 +46,7 @@ def main():
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
     usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["speaker"] in ("Platt", "PAM")]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
+    item_books, title_states = {}, {}
     order = [b[0] for b in BOOKS]; OT = order[:39]; NT = order[39:]
     def span_label(bks):
         if set(bks) >= set(OT): return "the Old Testament"
@@ -61,6 +63,8 @@ def main():
               "date": iso_date(e.get("published")), "pass": e.get("refs_text", ""), "tier": e["tier"],
               "sc": [e.get("sc_season"), e.get("sc_episode")] if e.get("sc_season") else None}
         items[it["id"]] = it
+        item_books[it["id"]] = set(e["refs"])
+        title_states[it["id"]] = bool(parse_refs(e["title"]))
         ov_books = [b for b, d in e["refs"].items() if e["track"] == "overview" and (d["whole_book"] or len(d["chapters"]) / CHAPTERS[book] >= 0.6)] if False else \
                    [b for b, d in e["refs"].items() if e["track"] == "overview" and (d["whole_book"] or len(d["chapters"]) / CHAPTERS[b] >= 0.6)]
         if len(ov_books) > 1:
@@ -72,22 +76,47 @@ def main():
             else:
                 for c in d["chapters"]:
                     by_chapter[(book, c)].append(it["id"])
-    def core(t):  # title without episode numbers, "| Speaker" tails, or (passage) brackets
+    def core(t):  # title without episode numbers, "| Speaker" tails, or (Bible reference) brackets
         t = re.sub(r"^\s*#?[\d,]+\s*[\u2013\u2014-]\s*", "", t or "")
-        t = re.sub(r"\s*\|.*$", "", t); t = re.sub(r"\([^)]*\)", "", t)
-        return re.sub(r"[^a-z0-9]+", " ", t.lower().replace("\u2019", "'")).strip()
-    for k, lst in by_chapter.items():  # one episode, one playing form: drop a silent twin of a playable item
-        playable = {core(items[i]["t"]) for i in lst if items[i]["audio"]}
-        lst[:] = [i for i in lst if items[i]["audio"] or core(items[i]["t"]) not in playable]
+        t = re.sub(r"\s*\|.*$", "", t)
+        t = re.sub(r"\(([^)]*)\)", lambda m: "" if parse_refs(m.group(1)) else " " + m.group(1), t)
+        t = re.sub(r"[^a-z0-9]+", " ", t.lower().replace("\u2019", "'")).strip()
+        return re.sub(r"\bpart (\w+)\b", r"part \1", t)
+    SRC_PREF = {"platt_messages": 0, "ptw": 0, "2819_podcast": 0, "secret_church_podcast": 0, "twr360_secret_church": 1,
+                "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3}
+    for k, lst in by_chapter.items():  # one teaching, one entry: keep the best form of same-titled items
+        best = {}
+        for i in lst:
+            key = (core(items[i]["t"]), items[i]["who"])
+            score = (not items[i]["audio"], SRC_PREF.get(items[i]["src"], 5), i)
+            if key not in best or score < best[key][0]: best[key] = (score, i)
+        keep = {v[1] for v in best.values()}
+        lst[:] = [i for i in lst if i in keep]
     for k, lst in by_chapter.items():  # 2819 first; Victory-era only where 2819 has nothing
         if any(items[i]["who"] == "PAM" and items[i]["era"] == "2819" and items[i]["tr"] == "sermon" for i in lst):
             lst[:] = [i for i in lst if not (items[i]["who"] == "PAM" and items[i]["era"] != "2819")]
+    # Ranking inside a chapter: teaching from a run through this book first (a series), then teaching
+    # whose own title names the passage, then the rest; newest first within each.
+    from datetime import date as _d
+    def _day(i):
+        try: return _d.fromisoformat(items[i]["date"]).toordinal()
+        except ValueError: return None
+    by_book_sermons = defaultdict(list)
+    for i, it in items.items():
+        if it["tr"] == "sermon" and _day(i):
+            for b in item_books[i]: by_book_sermons[(b, it["who"])].append(_day(i))
+    def focus(i, book):
+        it, d = items[i], _day(i)
+        if it["tr"] == "sermon" and d and sum(1 for x in by_book_sermons[(book, it["who"])] if abs(x - d) <= 90) >= 3:
+            return 2
+        return 1 if title_states[i] else 0
+    rank = lambda book: (lambda i: (items[i]["tr"] != "sermon", not items[i]["audio"], -focus(i, book),
+                                    items[i]["who"] != "Platt", -(_day(i) or 0), i))
     books = []
     for name, abbr, n, t, _a in BOOKS:
         chs = []
         for c in range(1, n + 1):
-            ids = sorted(set(by_chapter.get((name, c), [])),
-                         key=lambda i: (items[i]["tr"] != "sermon", not items[i]["audio"], items[i]["who"] != "Platt", items[i]["date"], i))
+            ids = sorted(set(by_chapter.get((name, c), [])), key=rank(name))
             chs.append({"c": c, "seq": narr[(name, c)], "ids": ids})
         ov = sorted(set(by_book_ov.get(name, [])), key=lambda i: (items[i]["sc"] or [99, 99], items[i]["date"], i))
         # drop a Secret Church event page when its podcast episodes or video sessions are present
