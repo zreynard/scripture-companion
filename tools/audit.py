@@ -200,6 +200,14 @@ def main():
     bad = [f"{k[0]} {k[1]}: {I[v[0]]['t'][:50]}" for k, v in by.items() if len(set(v)) > 1]
     check("no teaching twice in one chapter", bad)
 
+    print("\n== Years")
+    import years as Y
+    check("every chapter carries its best-estimate year line",
+          [f"{b['name']} {c['c']}: {c.get('y')!r} (expected {Y.chapter_label(b['name'], c['c'])!r})" for b in B for c in b["ch"]
+           if not c.get("y") or c["y"] != Y.chapter_label(b["name"], c["c"])], 1189)
+    check("every book shows its years on the road", [b["name"] for b in B if not b.get("yr")], 66)
+    check("Genesis 1-11 is not given a year", [f"Genesis {c['c']}: {c.get('y')}" for c in B[0]["ch"][:11] if re.search(r"\d", c.get("y", ""))])
+
     print("\n== Road rules")
     NEVER, TOP = re.compile(config.NEVER_ON_ROAD_RE, re.I), re.compile(config.TOPICAL_TITLE_RE, re.I)
     check("nothing about women / mothers / womanhood on the road", [I[i]["t"][:70] for i in road if NEVER.search(I[i]["t"])])
