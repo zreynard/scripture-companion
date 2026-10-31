@@ -10,11 +10,13 @@ from canon import BOOKS, CHAPTERS, TESTAMENT
 from refs import parse_refs
 from datetime import date as _dd
 import config
+import years
+SHOW_YEARS = os.environ.get("YEARS", "0") == "1"  # best-estimate years on each stop and beside each book (mockup)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 28  # bump on every shipped build; also busts the service-worker cache
+VERSION = 29  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -189,7 +191,7 @@ def main():
                               key=lambda j: (_day(j), first_verse[j].get(name, (0, 0)), j))
             out += [j for j in ids if j not in out]
             ids = out
-            chs.append({"c": c, "seq": narr[(name, c)], "ids": ids})
+            chs.append({"c": c, "seq": narr[(name, c)], "ids": ids, **({"y": years.chapter_label(name, c)} if SHOW_YEARS else {})})
         ov = sorted(set(by_book_ov.get(name, [])), key=lambda i: (items[i]["sc"] or [99, 99], items[i]["date"], i))
         # drop a Secret Church event page when its podcast episodes or video sessions are present
         if any(items[i]["src"] in ("secret_church_podcast", "youtube_radical", "twr360_secret_church") for i in ov):
@@ -197,7 +199,7 @@ def main():
         sp = sorted(spans.get(name, []), key=lambda x: (x["label"], items[x["id"]]["sc"] or [99, 99]))
         if any(items[x["id"]]["src"] in ("secret_church_podcast", "youtube_radical", "twr360_secret_church") for x in sp):
             sp = [x for x in sp if items[x["id"]]["src"] != "secret_church"]
-        books.append({"name": name, "abbr": abbr, "n": n, "t": t, "ov": ov, "spans": sp, "ch": chs})
+        books.append({"name": name, "abbr": abbr, "n": n, "t": t, "ov": ov, "spans": sp, "ch": chs, **({"yr": years.BOOKS[name]} if SHOW_YEARS else {})})
     sc_events = [{"n": n, "title": title, "url": url, "scope": scope} for n, title, url, scope in config.SECRET_CHURCH_EVENTS]
     sc_items = sorted([i for i in items.values() if i["sc"]], key=lambda i: (i["sc"][0], i["sc"][1]))
     ptw = sorted([i for i in items.values() if i["tr"] == "devotional"], key=lambda i: i["date"])
@@ -262,6 +264,8 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .acts .bk{flex:0 0 40px;padding:10px 0;font-size:18px;line-height:1}.acts .bk:disabled{opacity:.3}
 .clearing .hd{display:flex;align-items:center;justify-content:space-between;gap:10px}.clearing .hd .ch{cursor:pointer}
 .clearing .fold{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid rgba(27,36,64,.15);background:rgba(255,255,255,.6);color:var(--ink);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
+.clearing .yr{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin:-2px 0 8px}.clearing.folded .yr{margin:-2px 0 4px}
+.byr{font:600 9px -apple-system,system-ui,sans-serif;letter-spacing:.14em;fill:rgba(168,129,42,.85);text-transform:uppercase}
 .clearing .sum{font-size:13px;color:var(--mute);margin:-4px 0 0}.clearing.folded .ch{font-size:24px;margin:2px 0 6px}.clearing.folded .acts{margin-top:10px}
 .acts .go{background:var(--gold);color:#1b2440;border-color:var(--gold);font-weight:600}
 .acts .read.on{background:rgba(201,162,74,.18);color:var(--gold2);border-color:var(--gold)}
@@ -417,8 +421,8 @@ let W=null; // cached world geometry
 function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsView();wire();return}
  const w=walk();let first=w.findIndex(x=>!read[x.b.abbr+x.c.c]);if(first<0)first=w.length-1;if(camp==null||camp>=w.length)camp=first;
  const rd=w.filter(x=>read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
- const rows=16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
- const POS=[];let acc=0;for(const b of books()){const wgt=6+2.2*Math.sqrt(b.n);const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;chs.forEach((c,k)=>POS.push(acc+wgt*(k+0.5)/b.n));acc+=wgt}
+ const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
+ const POS=[];let acc=0;for(const b of books()){const wgt=(D.books[0].yr?11:6)+2.2*Math.sqrt(b.n);const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;chs.forEach((c,k)=>POS.push(acc+wgt*(k+0.5)/b.n));acc+=wgt}
  render.POS=POS;render.TOT=acc;const fill=first>0?(POS[first-1]+POS[first])/2/acc:0;
  m.innerHTML=`<div class="world" id="world"><svg viewBox="0 0 390 ${H}" preserveAspectRatio="xMidYMin meet">
   <defs><radialGradient id="g"><stop offset="0" stop-color="#d9b15a" stop-opacity=".55"/><stop offset="1" stop-color="#d9b15a" stop-opacity="0"/></radialGradient>
@@ -437,14 +441,14 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  const labs=[];let lands='',idx=0,prevSide=null,prevShort=false;
  for(const b of books()){const mid=at(idx+b.n/2),st=at(idx);let side=mid.x<195?'L':'R';if(b.n<10&&prevShort&&side===prevSide)side=side==='L'?'R':'L';
   const land=cfg.order==='canon'?LANDS.find(l=>l[0]===b.name):null;
-  if(land){lands+=`<circle cx="${st.x}" cy="${st.y}" r="90" fill="url(#g)" class="glow"/>`;const txt=land[1].replace('The End & the New Beginning','The New Beginning');labs.push({kind:'land',side:st.x<195?'L':'R',x:st.x<195?st.x+40:st.x-40,y:st.y-48,txt})}
-  labs.push({kind:'book',side,x:side==='L'?Math.min(mid.x+30,250):Math.max(mid.x-30,140),y:mid.y+5,px:mid.x,py:mid.y,txt:b.name,big:b.n>=20,here:w[camp].b===b,idx});
+  if(land){lands+=`<circle cx="${st.x}" cy="${st.y}" r="90" fill="url(#g)" class="glow"/>`;const txt=land[1].replace('The End & the New Beginning','The New Beginning');labs.push({kind:'land',side:st.x<195?'L':'R',x:st.x<195?st.x+40:st.x-40,y:mid.y+5-0.5,txt})  /* heading sits right above its first book */}
+  labs.push({kind:'book',side,x:side==='L'?Math.min(mid.x+30,250):Math.max(mid.x-30,140),y:mid.y+5,px:mid.x,py:mid.y,txt:b.name,yr:b.yr||'',big:b.n>=20,here:w[camp].b===b,idx});
   prevSide=side;prevShort=b.n<10;idx+=b.n}
- labs.sort((a,b)=>a.y-b.y);const last={L:-1e9,R:-1e9};let lbl='';
- for(const l of labs){const gap=l.kind==='land'?30:24;const ref=l.kind==='land'?Math.max(last.L,last.R):last[l.side];if(l.y-ref<gap)l.y=ref+gap;if(l.kind==='land'){last.L=last.R=l.y}else last[l.side]=l.y;
+ labs.sort((a,b)=>a.y-b.y);const last={L:-1e9,R:-1e9};let lbl='';decorate.drift=labs;
+ for(const l of labs){const gap=l.kind==='land'?30:(D.books[0].yr?38:24);const ref=Math.max(last.L,last.R);  /* one column: labels on either side can reach the middle */if(l.y-ref<gap)l.y=ref+gap;if(l.kind==='land'){last.L=last.R=l.y}else last[l.side]=l.y;
   if(l.kind==='land'){lbl+=`<text x="${l.x}" y="${l.y}" text-anchor="${l.side==='L'?'start':'end'}" class="land">${l.txt}</text>`}
   else{const moved=Math.abs(l.y-5-l.py)>12;if(moved)lbl+=`<line x1="${l.px}" y1="${l.py}" x2="${l.side==='L'?l.x-6:l.x+6}" y2="${l.y-5}" stroke="rgba(241,237,228,.25)" stroke-width="1"/>`;
-   lbl+=`<text x="${l.x}" y="${l.y}" text-anchor="${l.side==='L'?'start':'end'}" class="bl ${l.big?'big':''} ${l.here?'here':''}" data-camp="${l.idx}">${l.txt}</text>`}}
+   lbl+=`<text x="${l.x}" y="${l.y}" text-anchor="${l.side==='L'?'start':'end'}" class="bl ${l.big?'big':''} ${l.here?'here':''}" data-camp="${l.idx}">${l.txt}</text>${l.yr?`<text x="${l.x}" y="${l.y+15}" text-anchor="${l.side==='L'?'start':'end'}" class="byr">${l.yr}</text>`:''}`}}
  // scenery: stars thin out toward the New Testament dawn; each land gets its horizon
  let sky='';const Hs=+svg.getAttribute('viewBox').split(' ')[3];HH=Hs;let seed=7;const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
  for(let i=0;i<140;i++){const yy=rnd()*Hs;if(rnd()<1-yy/Hs)sky+=`<circle cx="${(rnd()*390).toFixed(0)}" cy="${yy.toFixed(0)}" r="${(0.6+rnd()*1.2).toFixed(1)}" fill="rgba(168,129,42,${(0.12+rnd()*0.25).toFixed(2)})"/>`}
@@ -465,7 +469,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  let nextV=null;for(let i=camp+1;i<w.length;i++){if(w[i].c.ids.some(okWho)){nextV={i,x:w[i]};break}}
  cl.style.top=(m.y*sc+46)+'px';cl.style.right='auto';
  const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';
- const rdc=w.filter(x=>read[x.b.abbr+x.c.c]).length,lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${rdc} of 1,189</span></div><div class="hd"><div class="ch serif" id="chT">${b.name} ${c.c}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${fold?`<div class="sum">${ids.length?ids.length+' voice'+(ids.length>1?'s':''):'No voice here'}${nextV?' · next voice at '+nextV.x.b.name+' '+nextV.x.c.c:''}</div>`:''}<div class="body"${fold?' hidden':''}>${lm?`<div class="scene">${lm[1]}</div>`:''}
+ const rdc=w.filter(x=>read[x.b.abbr+x.c.c]).length,lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${rdc} of 1,189</span></div><div class="hd"><div class="ch serif" id="chT">${b.name} ${c.c}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${c.y?`<div class="yr">${c.y}</div>`:''}${fold?`<div class="sum">${ids.length?ids.length+' voice'+(ids.length>1?'s':''):'No voice here'}${nextV?' · next voice at '+nextV.x.b.name+' '+nextV.x.c.c:''}</div>`:''}<div class="body"${fold?' hidden':''}>${lm?`<div class="scene">${lm[1]}</div>`:''}
   ${(()=>{if(c!==b.ch[0])return '';const ord=books().map(x=>x.name);const groups={};(b.spans||[]).forEach(x=>{let lab=x.label;if(x.books&&!/Testament|Law|History|Wisdom|Prophets|Gospels|Church|Letters|Revelation/.test(lab)){const idxs=x.books.map(n=>ord.indexOf(n)).sort((p,q)=>p-q);const contig=idxs[idxs.length-1]-idxs[0]===idxs.length-1;lab=contig?`${ord[idxs[0]]}–${ord[idxs[idxs.length-1]]}`:x.books.join(', ')}(groups[lab]=groups[lab]||[]).push(x.id)});let h='';for(const [lab,ids2] of Object.entries(groups))h+=`<details class="enter"><summary>Entering ${lab} · ${ids2.length} survey${ids2.length>1?'s':''} ›</summary>${ids2.map(voiceHTML).join('')}</details>`;
    if(ov.length)h+=`<details class="enter"><summary>Enter ${b.name} with ${ov.length} overview${ov.length>1?'s':''} ›</summary>${ov.map(voiceHTML).join('')}</details>`;return h})()}
   ${(()=>{const all=[...ids.filter(i=>I[i].tr!=='devotional'),...ids.filter(i=>I[i].tr==='devotional')];const show=decorate.more?all:all.slice(0,3);return show.map(voiceHTML).join('')+(all.length>3&&!decorate.more?`<button class="more" id="more">${all.length-3} more voice${all.length-3>1?'s':''} on this stretch ›</button>`:'')})()}
