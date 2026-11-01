@@ -334,7 +334,7 @@ def harvest_brookhills() -> list[dict]:
         m_d = re.search(r'<time datetime="(\d\d)/(\d\d)/(\d{4})"', t)
         m_ser = re.search(r'<nav class="breadcrumb">.*?<a [^>]*>([^<]+)</a>', t, re.S)
         m_a = re.search(r'<div class="action audio"><a href="(https://[^"]+)"', t) or re.search(r'href="(https://[^"]+_AUD\.mp4)"', t)
-        refs = [html_unescape(x).strip() for x in re.findall(r'<h4 class="verse">\s*([^<]+?)\s*</h4>', t.split('<footer>')[0])]
+        refs = [re.sub(r"\s+", " ", html_unescape(x)).strip() for x in re.findall(r'<h4 class="verse">\s*([^<]+?)\s*</h4>', t.split('<footer>')[0])]
         if not (m_t and m_a and m_by and "Platt" in m_by.group(1)): _log(f"brookhills {slug}: skipped (title/audio/speaker missing)"); continue
         pub = f"{m_d.group(3)}-{m_d.group(1)}-{m_d.group(2)}" if m_d else ""
         e = make_entry(source="brookhills", source_url=f"{base}/media/sermons/category,Sermon/?speaker=David+Platt", url=url,

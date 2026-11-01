@@ -110,9 +110,9 @@ def main():
                 bad.append(f"{I[i]['t'][:70]} shown as {shown}")
     check("2819 teaching shows the preacher named in its title", bad)
     PLATT_SOURCES = {"ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360_secret_church", "radical_message",
-                     "youtube_radical", "radical_vimeo", "mclean_podcast", "mclean_oceans"}
+                     "youtube_radical", "radical_vimeo", "mclean_podcast", "mclean_oceans", "brookhills"}
     bad = [f"{I[i]['t'][:60]} from {E[i]['source']}" for i in road if I[i]["who"] == "Platt" and E[i]["source"] not in PLATT_SOURCES]
-    check("David Platt teaching comes only from Platt / Radical / McLean sources", bad)
+    check("David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources", bad)
     bad = [I[i]["t"][:70] for i in road if E[i]["source"] in ("mclean_podcast",) and not re.search(r"david\s+platt", I[i]["t"] + " " + E[i].get("description", ""), re.I)]
     check("McLean episodes on the road name David Platt", bad)
 
