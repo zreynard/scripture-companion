@@ -11,7 +11,15 @@ from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 D = os.path.join(HERE, "data", "people")
-NEVER_LINK = {"God", "Lord", "LORD", "Spirit", "Holy Spirit", "Christ", "Messiah", "Son", "King", "Father"}
+NEVER_LINK = {"God", "Lord", "LORD", "the LORD", "the Lord", "LORD God", "Lord God", "God Almighty", "the Most High", "Yahweh", "Spirit", "Holy Spirit", "Christ", "Messiah", "Son", "King", "Father"}
+# medallions: a few people get their own emblem; everyone else shows their role's
+SPECIAL = {"jesus_905": "christ", "noah_2210": "ark", "joseph_1710": "coat", "moses_2108": "tablets", "adam_78": "tree",
+           "eve_1231": "tree", "ruth_2450": "sheaf", "john_1676": "wave", "god_1324": "god", "holy_spirit_7400": "dove"}
+SPECIAL_LABEL = {"god": "God", "dove": "The Holy Spirit", "christ": "The Messiah"}
+ROLE_LABEL = {"patriarch": "Patriarch", "matriarch": "Matriarch", "king": "King", "queen": "Queen", "ruler": "Ruler", "official": "Official",
+              "prophet": "Prophet", "priest": "Priest", "levite": "Levite", "judge": "Judge", "warrior": "Warrior", "apostle": "Apostle",
+              "writer": "Writer", "faithful": "Faithful", "shepherd": "Shepherd", "craftsman": "Craftsman", "servant": "Servant",
+              "angel": "Angel", "family": "Family line", "false_god": "False god", "people": "People group", "christ": "The Messiah"}
 REF_SPAN = re.compile(r"\([^()]*\d[^()]*\)")
 REF_IN = re.compile(r"((?:[1-3] )?[A-Z][a-z]+(?: of [A-Z][a-z]+)?) (\d+)")
 # outside Genesis these words almost always mean the nation, kingdom or land, so they never link to the ancestor;
@@ -41,6 +49,9 @@ class Atlas:
         for f in sorted(glob.glob(os.path.join(D, "meanings", "*.json"))):
             try: self.mean.update(json.load(open(f, encoding="utf-8")))
             except Exception as e: print("atlas: skipped", os.path.basename(f), e)
+        self.roles = {}  # medallion role per person: data/people/roles/*.json
+        for f in sorted(glob.glob(os.path.join(D, "roles", "*.json"))):
+            self.roles.update(json.load(open(f, encoding="utf-8")))
         self.fix = {}  # reviewed link choices: data/people/link_fix/*.json, {ctx: {name: "p:slug" | "l:slug" | ""}}
         for f in sorted(glob.glob(os.path.join(D, "link_fix", "*.json"))):
             for ctx, m in json.load(open(f, encoding="utf-8")).items():
@@ -173,6 +184,18 @@ class Atlas:
         book = keys[0].rsplit(" ", 1)[0] if keys else ""
         return self._annotate(text, cands, book, me, ctx=f"card {me}")
 
+    def _era(self, v, chs):
+        """Which of the 14 journey legs a person's story starts in (the medallion ring's color)."""
+        import journey
+        ref = next(iter(self._card_chapters(v)), None)
+        b, c = (ref.rsplit(" ", 1)[0], int(ref.rsplit(" ", 1)[1])) if ref else (tuple(chs[0]) if chs else ("Genesis", 1))
+        legs = journey.BOOK_LEG.get(b, 0)
+        legs = legs if isinstance(legs, list) else [(1, legs)]
+        out = 0
+        for start, i in legs:
+            if c >= start: out = i
+        return out
+
     def _card_chapters(self, v):
         return [k for line in v.get("key", []) for k in self.cited(line)]
 
@@ -194,7 +217,8 @@ class Atlas:
                 if row: fam[k] = row
             m = self.mean.get(s, {})
             cc, fs = self._card_chapters(v), [x["s"] for row in fam.values() for x in row if x["s"]]
-            P[s] = {**({"lab": v["label"]} if v.get("label") else {}), "n": v["name"], "who": self.link_card(v["who"], s, cc, fs), "key": [self.link_card(k, s, cc, fs) for k in v.get("key", [])], "fam": fam, **where(src.get("ch", [])),
+            ic = SPECIAL.get(s) or self.roles.get(s) or ("false_god" if v.get("label") == "False god" else "people" if v.get("label") == "People group" else "family")
+            P[s] = {**({"lab": v["label"]} if v.get("label") else {}), "ic": ic, "role": SPECIAL_LABEL.get(ic) or ROLE_LABEL.get(self.roles.get(s) or ic, ""), "era": self._era(v, src.get("ch", [])), "n": v["name"], "who": self.link_card(v["who"], s, cc, fs), "key": [self.link_card(k, s, cc, fs) for k in v.get("key", [])], "fam": fam, **where(src.get("ch", [])),
                     **({"mean": m["meaning"]} if m.get("meaning") else {}), **({"why": self.link_card(m["why"], s, cc, fs)} if m.get("why") else {})}
         L = {}
         pr = self.map["proj"] if self.map else None

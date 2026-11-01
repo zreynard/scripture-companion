@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 48  # bump on every shipped build; also busts the service-worker cache
+VERSION = 49  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -325,6 +325,10 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .nm.l{text-decoration-style:dotted}
 .top{display:flex;gap:8px;align-items:center}.top #mapbtn{display:flex;align-items:center;justify-content:center;padding:6px 10px}
 span.nw{white-space:nowrap}
+.medal{flex:none;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#fbf5e6;border:2px solid var(--ring);box-shadow:inset 0 0 0 3px #fbf5e6,inset 0 0 0 4px rgba(201,162,74,.5);box-sizing:border-box;vertical-align:middle}
+#sheet .ph{display:flex;align-items:center;gap:14px;margin:2px 0 6px}#sheet .ph-t{min-width:0}#sheet .ph h3{margin:0}
+#sheet .ph-r{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:#6b7186;font-weight:600;margin-top:5px}
+#sheet .chip .medal{border-width:1.5px;box-shadow:inset 0 0 0 2px #fbf5e6;margin:-3px 6px -3px -4px}
 .unfold{display:block;width:100%;margin:10px 0 2px;padding:12px 14px;border-radius:14px;border:1px solid rgba(201,162,74,.45);background:#fbf3df;color:var(--ink);font:inherit;font-size:15px;font-weight:600;text-align:left;cursor:pointer}
 #sheetbg{position:fixed;inset:0;background:rgba(27,36,64,.28);z-index:20;touch-action:none}
 #sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;max-height:84vh;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#fbf8f1;border-radius:22px 22px 0 0;box-shadow:0 -12px 40px rgba(27,36,64,.18);padding:8px max(18px,env(safe-area-inset-right)) calc(24px + env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));transition:transform .25s cubic-bezier(.2,.8,.2,1)}
@@ -556,14 +560,48 @@ const DONE_AT=0.7,body=id=>{const p=prog[id]||{};return Math.max(1,(p.dur||0)-(I
 let lastT=null,ready=true;const OPEN=new Set();
 /* ---- the Bible text (Berean Standard Bible, public domain): one file per book, fetched once, then offline ---- */
 /* ---- people, places and the map (atlas.json, loaded on first use) ---- */
-let ATL=null;function atlas(){return ATL||(ATL=fetch('atlas.json').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(e=>{ATL=null;throw e}))}
+let ATL=null,ATL_D=null;function atlas(){return ATL||(ATL=fetch('atlas.json').then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>(ATL_D=d)).catch(e=>{ATL=null;throw e}))}
 function rich(t){return esc(t).replace(/⟦([pl]):([^|⟧]+)\|([^⟧]+)⟧((?:(?:&#39;|['’])s)?[.,;:!?)]*)/g,(m,k,sl,tx,tail)=>{const btn=`<button class="nm ${k}" data-nk="${k}" data-ns="${sl}">${tx}</button>`;return tail?`<span class="nw">${btn}${tail}</span>`:btn})}
 const SHEET=[];
 function bookNames(){return D.books.map(b=>b.name)}
 function refLinks(t){ /* "(Exodus 3)" -> a tap goes to that chapter; names become name buttons */
  return rich(t).replace(/\(([1-3]?\s?[A-Z][A-Za-z]+(?:\s(?:of\s)?[A-Z][a-z]+)?)\s(\d+)(?::[\d–\-, ]+)?\)/g,(m,bk,ch)=>{const nm=bk==='Psalm'?'Psalms':bk==='Song of Songs'?'Song of Solomon':bk;
   return bookNames().includes(nm)?`<span style="white-space:nowrap">(<button class="go" data-gob="${nm}" data-goc="${ch}">${bk} ${ch}</button>)</span>`:m})}
-function famRow(k,label,list){if(!list||!list.length)return'';return `<div class="k">${label}</div><div>${list.map(x=>x.s?`<button class="chip" data-nk="p" data-ns="${x.s}">${esc(x.n)}</button>`:`<span class="chip">${esc(x.n)}</span>`).join('')}</div>`}
+/* ---- medallions: one engraved emblem per role (a few people have their own); the ring's tint is the era ---- */
+const MEDAL_ICON={patriarch:'M8 38 L24 14 L40 38 Z M24 14 V38 M18 38 L24 29 L30 38 M10 10 l1.5 3 M15 6 l.8 2.4 M37 7 l-1 3 M41 12 l-2 2',
+ matriarch:'M12 22 H36 M14 22 V40 H34 V22 M18 22 V14 H30 V22 M24 14 V8 M20 8 H28 M14 31 H34',
+ king:'M10 34 L8 16 L17 24 L24 12 L31 24 L40 16 L38 34 Z M10 39 H38 M24 12 V9',
+ queen:'M12 33 L14 19 L20 26 L24 17 L28 26 L34 19 L36 33 Z M12 38 H36 M14 16 v.1 M24 14 v.1 M34 16 v.1 M18 30 h12',
+ ruler:'M14 40 V22 C14 13 34 13 34 22 V40 M10 40 H38 M18 23 H30 M24 7 V13 M20 9.5 H28',
+ official:'M24 9 a8 8 0 1 0 .1 0 Z M24 25 V40 M18 34 H30 M21 17 h6',
+ prophet:'M24 41 C14 39 12 29 18 22 C18 28 22 28 22 24 C22 18 26 14 26 7 C32 13 36 22 34 30 C33 37 29 41 24 41 Z',
+ priest:'M16 13 H32 V37 H16 Z M20 19 h2 M26 19 h2 M20 25 h2 M26 25 h2 M20 31 h2 M26 31 h2 M13 13 L24 6 L35 13',
+ levite:'M16 39 H32 M18 39 C13 30 13 18 18 9 M30 39 C35 30 35 18 30 9 M18 13 H30 M21 13 V36 M24 13 V36 M27 13 V36',
+ judge:'M9 31 C18 31 29 27 35 14 L40 16 C36 31 24 37 11 37 Z M11 31 V37 M35 14 L37 10',
+ warrior:'M24 5 L28 11 V31 H20 V11 Z M15 31 H33 M24 31 V40 M20.5 40.5 H27.5',
+ apostle:'M6 24 C14 14 30 14 38 24 C30 34 14 34 6 24 Z M38 24 L44 18 V30 Z M14 23 h.5',
+ writer:'M12 10 H32 C35 10 36 12 36 14 V38 H16 C13 38 12 36 12 34 Z M12 34 C12 31 14 30 16 30 H36 M18 16 H30 M18 21 H30 M18 26 H26',
+ faithful:'M14 30 C14 24 20 22 24 15 C28 22 34 24 34 30 C34 36 28 38 24 38 C20 38 14 36 14 30 Z M24 15 V9 M20 38 L18 42 H30 L28 38',
+ shepherd:'M28 41 V18 C28 9 17 9 17 17 C17 22 21 23 23 21',
+ craftsman:'M11 11 H29 V19 H11 Z M21 19 L33 41',
+ servant:'M16 13 H30 M18 13 C18 18 14 21 14 28 C14 36 18 40 24 40 C30 40 34 36 34 28 C34 21 30 18 30 13 M34 21 C40 21 40 32 34 32',
+ angel:'M24 18 C20 10 10 8 6 12 C10 14 12 18 12 22 C16 20 20 22 24 26 C28 22 32 20 36 22 C36 18 38 14 42 12 C38 8 28 10 24 18 Z M24 26 V40',
+ family:'M24 41 V12 M24 31 C18 29 14 25 14 19 M24 23 C30 21 34 17 34 11 M14 17 a2 2 0 1 0 .1 0 M34 9 a2 2 0 1 0 .1 0 M24 10 a2 2 0 1 0 .1 0',
+ false_god:'M18 40 H30 M20 40 V26 M28 40 V30 M20 26 L26 20 M28 30 L32 26 M19 14 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0 M30 18 L36 12',
+ people:'M5 38 L13 26 L21 38 Z M17 38 L25 21 L33 38 Z M27 38 L35 28 L43 38 Z',
+ christ:'M24 8 V41 M15 18 H33 M10 9 l3 3 M38 9 l-3 3 M24 3 v2.5 M7 22 h3 M38 22 h3',
+ ark:'M5 28 H43 L37 38 H11 Z M14 28 V20 H34 V28 M18 20 V15 H30 V20 M22 24 h4',
+ coat:'M18 8 L24 12 L30 8 L40 14 L36 22 L32 20 V40 H16 V20 L12 22 L8 14 Z M16 26 H32 M16 32 H32 M24 12 V40',
+ tablets:'M10 13 C10 8 22 8 22 13 V40 H10 Z M26 13 C26 8 38 8 38 13 V40 H26 Z M13 19 H19 M13 25 H19 M13 31 H19 M29 19 H35 M29 25 H35 M29 31 H35',
+ tree:'M24 41 V24 M24 29 L18 23 M24 27 L30 21 M24 24 C12 24 10 14 16 10 C18 4 30 4 32 10 C38 14 36 24 24 24 M18 41 H30',
+ sheaf:'M24 40 V16 M24 22 C20 20 18 16 18 12 C22 14 24 18 24 22 M24 22 C28 20 30 16 30 12 C26 14 24 18 24 22 M24 30 C19 28 16 24 16 19 C21 21 24 25 24 30 M24 30 C29 28 32 24 32 19 C27 21 24 25 24 30 M18 40 H30',
+ god:'M24 15 a9 9 0 1 0 .1 0 Z M24 4 V8 M24 40 V44 M4 24 H8 M40 24 H44 M10 10 l3 3 M35 35 l3 3 M38 10 l-3 3 M13 35 l-3 3',
+ dove:'M8 22 C14 22 18 20 22 16 C24 12 28 10 32 12 L38 10 L34 15 C34 24 28 30 18 30 L10 36 L12 30 C8 28 6 25 8 22 Z M30 14 h.5',
+ wave:'M24 7 C20 13 18 16 18 19 a6 6 0 0 0 12 0 C30 16 28 13 24 7 Z M8 31 C14 27 18 27 24 31 C30 35 34 35 40 31 M8 39 C14 35 18 35 24 39 C30 43 34 43 40 39'};
+const ERA_C=(()=>{const a=[217,180,90],b=[59,85,120];return Array.from({length:14},(_,i)=>{const t=i/13;return`rgb(${a.map((v,k)=>Math.round(v+(b[k]-v)*t)).join(',')})`})})();
+function medal(p,size){if(!p)return'';const d=MEDAL_ICON[p.ic]||MEDAL_ICON.family,c=ERA_C[Math.max(0,Math.min(13,p.era||0))];
+ return `<span class="medal" style="width:${size}px;height:${size}px;--ring:${c}"><svg viewBox="0 0 48 48" width="${Math.round(size*.58)}" height="${Math.round(size*.58)}" aria-hidden="true"><path d="${d}" fill="none" stroke="#1b2440" stroke-width="${size<30?2.4:1.8}" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`}
+function famRow(k,label,list){if(!list||!list.length)return'';return `<div class="k">${label}</div><div>${list.map(x=>x.s?`<button class="chip" data-nk="p" data-ns="${x.s}">${ATL_D?medal(ATL_D.p[x.s],22):''}${esc(x.n)}</button>`:`<span class="chip">${esc(x.n)}</span>`).join('')}</div>`}
 function miniMap(A,x,y,sl){const nm=sl&&A.l[sl]?A.l[sl].n:'';return mapSVG(A,x,y,46,[{x,y,n:nm,main:1}],{skip:sl})}
 /* a close map: territory names, waters, a nearby town or two, the marked places, and a tiny whole-world inset.
    marks: [{x,y,n,sl?,main?}] — main = the gold "here" dot; others = ink dots (tappable when sl is set); trail = dotted road */
@@ -601,7 +639,8 @@ function storyList(items){ /* key moments as a timeline, with where the reader s
 function sheetHTML(A,k,sl){
  if(k==='p'){const p=A.p[sl];if(!p)return '<p class="who">No profile yet.</p>';
   const f=p.fam||{};const fam=famRow('father','Father',f.father)+famRow('mother','Mother',f.mother)+famRow('spouses',(f.spouses||[]).length>1?'Spouses':'Spouse',f.spouses)+famRow('siblings','Siblings',f.siblings)+famRow('children','Children',f.children);
-  return `<h3>${esc(p.n)}</h3>${p.mean?`<div class="mean">${/^(possibly|meaning unknown)/i.test(p.mean)?esc(p.mean):'“'+esc(p.mean)+'”'}</div>`:''}${p.why?`<div class="why">${refLinks(p.why)}</div>`:''}<p class="who">${rich(p.who)}</p>${p.key&&p.key.length?`<div class="sec">Their story</div>${storyList(p.key)}`:''}${fam?`<div class="sec">Family</div><div class="fam">${fam}</div>`:''}<div class="meta">${p.nc?`Appears in ${p.nc===1?'1 chapter':p.nc+' chapters'}`:''}${p.first?` · ${refLinksPlain(p.first)}${p.last&&p.last!==p.first?' → '+refLinksPlain(p.last):''}`:''}</div>`}
+  const eraT0=!['god','dove','christ'].includes(p.ic)&&A.trip&&A.trip.legs[p.era]?A.trip.legs[p.era].t:'',eraT=/^(Abraham|Jacob|Joseph|Jesus)$/.test(eraT0)?'Age of '+eraT0:eraT0;
+  return `<div class="ph">${medal(p,76)}<div class="ph-t"><h3>${esc(p.n)}</h3>${p.mean?`<div class="mean">${/^(possibly|meaning unknown)/i.test(p.mean)?esc(p.mean):'“'+esc(p.mean)+'”'}</div>`:''}${p.role||eraT?`<div class="ph-r">${esc([p.role,eraT].filter(Boolean).join(' · '))}</div>`:''}</div></div>${p.why?`<div class="why">${refLinks(p.why)}</div>`:''}<p class="who">${rich(p.who)}</p>${p.key&&p.key.length?`<div class="sec">Their story</div>${storyList(p.key)}`:''}${fam?`<div class="sec">Family</div><div class="fam">${fam}</div>`:''}<div class="meta">${p.nc?`Appears in ${p.nc===1?'1 chapter':p.nc+' chapters'}`:''}${p.first?` · ${refLinksPlain(p.first)}${p.last&&p.last!==p.first?' → '+refLinksPlain(p.last):''}`:''}</div>`}
  const l=A.l[sl];if(!l)return '<p class="who">No profile yet.</p>';
  return `<h3>${esc(l.n)}</h3>${l.mean?`<div class="mean">${/^(possibly|meaning unknown)/i.test(l.mean)?esc(l.mean):'“'+esc(l.mean)+'”'}</div>`:''}${l.why?`<div class="why">${refLinks(l.why)}</div>`:''}${l.in?`<div class="within">${l.in.map(esc).join('<span> · </span>')}</div>`:''}${l.x!=null?miniMap(A,l.x,l.y,sl):''}<p class="who">${rich(l.what)}</p>${l.key&&l.key.length?`<div class="sec">What happens here</div>${storyList(l.key)}`:''}${l.today?`<div class="sec">Today</div><p class="who" style="margin:0">${esc(l.today)}</p>`:''}${l.x!=null?`<button class="go open" data-openmap="${sl}">Open the map ›</button>`:''}<div class="meta">${l.nc?`Named in ${l.nc===1?'1 chapter':l.nc+' chapters'}`:''}${l.first?` · ${refLinksPlain(l.first)}${l.last&&l.last!==l.first?' → '+refLinksPlain(l.last):''}`:''}</div>`}
 function refLinksPlain(r){const m=r.match(/^(.+) (\d+)$/);return m?`<button class="go" data-gob="${m[1]}" data-goc="${m[2]}">${esc(r)}</button>`:esc(r)}
