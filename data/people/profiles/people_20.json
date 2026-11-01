@@ -1,0 +1,633 @@
+{
+ "abihail_30": {
+  "name": "Abihail",
+  "aka": [],
+  "who": "A man of the tribe of Gad, son of Huri, whose seven sons headed Gadite families in Gilead and Bashan.",
+  "key": [
+   "Abihail son of Huri is traced back through Jaroah, Gilead, and Michael in Gad's genealogy (1 Chronicles 5).",
+   "His sons Michael, Meshullam, Sheba, Jorai, Jacan, Zia, and Eber headed their fathers' houses (1 Chronicles 5).",
+   "These Gadites were recorded in the days of Jotham of Judah and Jeroboam of Israel (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "huri_1576"
+   ],
+   "children": [
+    "michael_2059",
+    "meshullam_2022",
+    "sheba_2571",
+    "jorai_1704",
+    "jachan_678",
+    "zia_3059",
+    "heber_1472"
+   ]
+  },
+  "skip": false
+ },
+ "achaicus_60": {
+  "name": "Achaicus",
+  "aka": [],
+  "who": "A believer from Corinth who, with Stephanas and Fortunatus, visited Paul and refreshed his spirit.",
+  "key": [
+   "Paul rejoiced at the coming of Stephanas, Fortunatus, and Achaicus from the Corinthian church (1 Corinthians 16).",
+   "They made up for the Corinthians' absence and refreshed Paul's spirit (1 Corinthians 16).",
+   "Paul urged the church to give recognition to such men (1 Corinthians 16)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "alexander_187": {
+  "name": "Alexander",
+  "aka": [],
+  "who": "A member of the high-priestly family who sat with the council that questioned Peter and John.",
+  "key": [
+   "The day after Peter and John's arrest, rulers, elders, and scribes gathered in Jerusalem (Acts 4).",
+   "Alexander was there with Annas, Caiaphas, and John, all of the high-priestly family (Acts 4).",
+   "The council asked by what power or name the apostles had healed the lame man (Acts 4).",
+   "Unable to deny the miracle, they warned the apostles not to speak in Jesus' name (Acts 4)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "ananias_260": {
+  "name": "Ananias",
+  "aka": [],
+  "who": "The high priest who ordered Paul struck before the council and later accused him before Governor Felix.",
+  "key": [
+   "When Paul spoke before the council, Ananias commanded those near him to strike Paul on the mouth (Acts 23).",
+   "Paul answered that God would strike him, calling him a whitewashed wall (Acts 23).",
+   "Five days after Paul reached Caesarea, Ananias came down with elders and the lawyer Tertullus (Acts 24).",
+   "They laid their charges against Paul before Governor Felix (Acts 24)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "aner_266": {
+  "name": "Aner",
+  "aka": [],
+  "who": "An Amorite near Hebron, brother of Mamre and Eshcol, who was allied with Abram.",
+  "key": [
+   "Aner, Eshcol, and Mamre the Amorite were allies of Abram, who lived by the oaks of Mamre (Genesis 14).",
+   "They went with Abram when he pursued the kings who had captured Lot (Genesis 14).",
+   "Abram refused the king of Sodom's goods but let Aner, Eshcol, and Mamre take their share (Genesis 14)."
+  ],
+  "family": {
+   "siblings": [
+    "eshcol_1218",
+    "mamre_1923"
+   ]
+  },
+  "skip": false
+ },
+ "baanah_583": {
+  "name": "Baanah",
+  "aka": [],
+  "who": "A man of Netophah whose son Heleb was one of David's thirty mighty men.",
+  "key": [
+   "Heleb son of Baanah of Netophah is listed among David's thirty mighty men (2 Samuel 23).",
+   "Chronicles names the son Heled son of Baanah of Netophah among David's mighty men (1 Chronicles 11)."
+  ],
+  "family": {
+   "children": [
+    "heleb_1480"
+   ]
+  },
+  "skip": false
+ },
+ "chemosh_931": {
+  "name": "Chemosh",
+  "aka": [],
+  "who": "The national god of Moab, for whom King Solomon built a high place east of Jerusalem.",
+  "key": [
+   "An ancient song declared Moab undone, calling its people the people of Chemosh (Numbers 21).",
+   "Jephthah told the Ammonite king to keep what his god Chemosh had given him (Judges 11).",
+   "Solomon built a high place for Chemosh, the abomination of Moab, east of Jerusalem (1 Kings 11).",
+   "Josiah defiled the high places Solomon had built for Chemosh and other gods (2 Kings 23).",
+   "Jeremiah foretold that Chemosh would go into exile and Moab would be ashamed of him (Jeremiah 48)."
+  ],
+  "family": {},
+  "label": "False god",
+  "skip": false
+ },
+ "dagon_969": {
+  "name": "Dagon",
+  "aka": [],
+  "who": "A god of the Philistines, whose image fell broken before the ark of the LORD in Ashdod.",
+  "key": [
+   "The Philistine lords gathered to sacrifice to Dagon, crediting him with Samson's capture (Judges 16).",
+   "Samson pulled down the house of Dagon, dying with the Philistines inside (Judges 16).",
+   "The captured ark was set beside Dagon in Ashdod, and Dagon fell face down before it (1 Samuel 5).",
+   "The next morning Dagon lay fallen again, his head and hands broken off on the threshold (1 Samuel 5).",
+   "The Philistines fastened Saul's head in the temple of Dagon (1 Chronicles 10)."
+  ],
+  "family": {},
+  "label": "False god",
+  "skip": false
+ },
+ "damaris_972": {
+  "name": "Damaris",
+  "aka": [],
+  "who": "A woman in Athens who believed after hearing Paul's address at the Areopagus.",
+  "key": [
+   "Paul addressed the Areopagus in Athens, proclaiming the Creator who raised Jesus from the dead (Acts 17).",
+   "Some mocked, but some men joined Paul and believed (Acts 17).",
+   "Among those who believed were Dionysius the Areopagite and a woman named Damaris (Acts 17)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "dishon_1016": {
+  "name": "Dishon",
+  "aka": [],
+  "who": "A son of Seir the Horite and a chief among the Horites who lived in Seir before Esau's descendants.",
+  "key": [
+   "Dishon was one of the sons of Seir the Horite, the inhabitants of the land (Genesis 36).",
+   "His sons were Hemdan, Eshban, Ithran, and Cheran (Genesis 36).",
+   "He is listed among the chiefs of the Horites in the land of Seir (Genesis 36).",
+   "Chronicles repeats his name among the sons of Seir (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "seir_2485"
+   ],
+   "siblings": [
+    "lotan_1831",
+    "shobal_2719",
+    "zibeon_3062",
+    "anah_248",
+    "ezer_1238",
+    "dishan_1015",
+    "timna_2860"
+   ],
+   "children": [
+    "hemdan_1492",
+    "eshban_1217",
+    "ithran_653",
+    "cheran_937"
+   ]
+  },
+  "skip": false
+ },
+ "eker_1041": {
+  "name": "Eker",
+  "aka": [],
+  "who": "A man of Judah, son of Ram, the firstborn of Jerahmeel, named in Chronicles' genealogy of Judah.",
+  "key": [
+   "Eker was a son of Ram, the firstborn of Jerahmeel (1 Chronicles 2).",
+   "His brothers were Maaz and Jamin (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "ram_2392"
+   ],
+   "siblings": [
+    "maaz_1872",
+    "jamin_721"
+   ]
+  },
+  "skip": false
+ },
+ "elah_1047": {
+  "name": "Elah",
+  "aka": [],
+  "who": "A son of Caleb son of Jephunneh and father of Kenaz, named in the genealogy of Judah.",
+  "key": [
+   "Caleb son of Jephunneh had three sons: Iru, Elah, and Naam (1 Chronicles 4).",
+   "The son of Elah was Kenaz (1 Chronicles 4)."
+  ],
+  "family": {
+   "father": [
+    "caleb_537"
+   ],
+   "siblings": [
+    "iru_615",
+    "naam_2117",
+    "achsah_68"
+   ],
+   "children": [
+    "kenaz_1779"
+   ]
+  },
+  "skip": false
+ },
+ "eliezer_1114": {
+  "name": "Eliezer",
+  "aka": [],
+  "who": "The second son of Moses and Zipporah, whose descendants served among the Levites over the temple treasuries.",
+  "key": [
+   "Jethro brought Zipporah and her two sons, Gershom and Eliezer, to Moses in the wilderness (Exodus 18).",
+   "Moses named him Eliezer, saying the God of his father had been his help (Exodus 18).",
+   "Eliezer had only one son, Rehabiah, whose descendants were very many (1 Chronicles 23).",
+   "His descendant Shelomoth oversaw the treasuries of gifts dedicated by David and his commanders (1 Chronicles 26)."
+  ],
+  "family": {
+   "father": [
+    "moses_2108"
+   ],
+   "mother": [
+    "zipporah_3095"
+   ],
+   "siblings": [
+    "gershom_1302"
+   ],
+   "children": [
+    "rehabiah_2409"
+   ]
+  },
+  "skip": false
+ },
+ "gemariah_1296": {
+  "name": "Gemariah",
+  "aka": [],
+  "who": "A son of Shaphan the secretary, an official in whose chamber Baruch read Jeremiah's scroll.",
+  "key": [
+   "Baruch read Jeremiah's scroll to the people from the chamber of Gemariah son of Shaphan (Jeremiah 36).",
+   "Gemariah's son Micaiah heard the words and reported them to the officials (Jeremiah 36).",
+   "Gemariah sat with the officials when Baruch read the scroll to them (Jeremiah 36).",
+   "He urged King Jehoiakim not to burn the scroll, but the king would not listen (Jeremiah 36)."
+  ],
+  "family": {
+   "father": [
+    "shaphan_2550"
+   ],
+   "siblings": [
+    "ahikam_141"
+   ],
+   "children": [
+    "michaiah_2072"
+   ]
+  },
+  "skip": false
+ },
+ "hillel_1530": {
+  "name": "Hillel",
+  "aka": [],
+  "who": "A man of Pirathon in Ephraim, father of Abdon, who judged Israel eight years.",
+  "key": [
+   "Abdon son of Hillel the Pirathonite judged Israel after Elon (Judges 12).",
+   "Abdon had forty sons and thirty grandsons who rode on seventy donkeys (Judges 12).",
+   "Abdon son of Hillel died and was buried at Pirathon in the land of Ephraim (Judges 12)."
+  ],
+  "family": {
+   "children": [
+    "abdon_10"
+   ]
+  },
+  "skip": false
+ },
+ "irad_611": {
+  "name": "Irad",
+  "aka": [],
+  "who": "A descendant of Cain, son of Enoch and father of Mehujael.",
+  "key": [
+   "Irad was born to Enoch, the son of Cain after whom Cain named his city (Genesis 4).",
+   "Irad fathered Mehujael, continuing Cain's line toward Lamech (Genesis 4)."
+  ],
+  "family": {
+   "father": [
+    "enoch_1191"
+   ],
+   "children": [
+    "mehujael_1983"
+   ]
+  },
+  "skip": false
+ },
+ "ishmael_633": {
+  "name": "Ishmael",
+  "aka": [],
+  "who": "The father of Zebadiah, governor of the house of Judah under King Jehoshaphat.",
+  "key": [
+   "Jehoshaphat set Zebadiah son of Ishmael over all the king's matters (2 Chronicles 19).",
+   "Zebadiah served as governor of the house of Judah beside Amariah the chief priest (2 Chronicles 19)."
+  ],
+  "family": {
+   "children": [
+    "zebadiah_2994"
+   ]
+  },
+  "skip": false
+ },
+ "jaazaniah_668": {
+  "name": "Jaazaniah",
+  "aka": [],
+  "who": "A Rechabite, son of Jeremiah, whose family kept their ancestor's command to drink no wine.",
+  "key": [
+   "Jeremiah brought Jaazaniah and the whole house of the Rechabites into a temple chamber (Jeremiah 35).",
+   "Offered wine, they refused, citing the command of their ancestor Jonadab son of Rechab (Jeremiah 35).",
+   "The LORD contrasted their obedience with Judah's refusal to listen to him (Jeremiah 35).",
+   "He promised that Jonadab would never lack a man to stand before him (Jeremiah 35)."
+  ],
+  "family": {
+   "father": [
+    "jeremiah_855"
+   ]
+  },
+  "skip": false
+ },
+ "jabal_673": {
+  "name": "Jabal",
+  "aka": [],
+  "who": "A son of Lamech and Adah, the father of those who live in tents and keep livestock.",
+  "key": [
+   "Adah bore Jabal to Lamech, a descendant of Cain (Genesis 4).",
+   "He was the father of those who dwell in tents and have livestock (Genesis 4).",
+   "His brother Jubal was the father of those who play the lyre and pipe (Genesis 4)."
+  ],
+  "family": {
+   "father": [
+    "lamech_1808"
+   ],
+   "mother": [
+    "adah_69"
+   ],
+   "siblings": [
+    "jubal_1748",
+    "tubal-cain_2884",
+    "naamah_2118"
+   ]
+  },
+  "skip": false
+ },
+ "jubal_1748": {
+  "name": "Jubal",
+  "aka": [],
+  "who": "A son of Lamech and Adah, the father of all who play the lyre and pipe.",
+  "key": [
+   "Adah bore Jubal to Lamech, a descendant of Cain (Genesis 4).",
+   "He was the father of all those who play the lyre and pipe (Genesis 4).",
+   "His brother Jabal was the father of those who dwell in tents and have livestock (Genesis 4)."
+  ],
+  "family": {
+   "father": [
+    "lamech_1808"
+   ],
+   "mother": [
+    "adah_69"
+   ],
+   "siblings": [
+    "jabal_673",
+    "tubal-cain_2884",
+    "naamah_2118"
+   ]
+  },
+  "skip": false
+ },
+ "jekuthiel_836": {
+  "name": "Jekuthiel",
+  "aka": [],
+  "who": "A man of Judah, listed in Chronicles as the father, likely the founder, of the town of Zanoah.",
+  "key": [
+   "Chronicles names Jered, Heber, and Jekuthiel as sons borne by a Judahite wife (1 Chronicles 4).",
+   "Jekuthiel is called the father of Zanoah, a town of Judah (1 Chronicles 4)."
+  ],
+  "family": {
+   "siblings": [
+    "jered_846",
+    "heber_1471"
+   ]
+  },
+  "skip": false
+ },
+ "jeroham_877": {
+  "name": "Jeroham",
+  "aka": [],
+  "who": "A priest, father of Adaiah, whose family line traced back through Pashhur to Malchijah.",
+  "key": [
+   "Adaiah son of Jeroham, of Pashhur's line, lived in Jerusalem after the exile (1 Chronicles 9).",
+   "Nehemiah gives his line as Jeroham son of Pelaliah, descended from Pashhur and Malchijah (Nehemiah 11)."
+  ],
+  "family": {
+   "father": [
+    "pelaliah_2303"
+   ],
+   "children": [
+    "adaiah_72"
+   ]
+  },
+  "skip": false
+ },
+ "joed_1646": {
+  "name": "Joed",
+  "aka": [],
+  "who": "A Benjaminite, son of Pedaiah and father of Meshullam, in the ancestry of Sallu of Jerusalem.",
+  "key": [
+   "Sallu son of Meshullam, son of Joed, son of Pedaiah, settled in Jerusalem (Nehemiah 11).",
+   "Joed's line is traced back through Kolaiah, Maaseiah, Ithiel, and Jeshaiah (Nehemiah 11)."
+  ],
+  "family": {
+   "father": [
+    "pedaiah_2297"
+   ],
+   "children": [
+    "meshullam_2036"
+   ]
+  },
+  "skip": false
+ },
+ "kolaiah_1792": {
+  "name": "Kolaiah",
+  "aka": [],
+  "who": "The father of Ahab, a false prophet among the exiles in Babylon whom Jeremiah condemned.",
+  "key": [
+   "The LORD said Ahab son of Kolaiah was prophesying a lie in his name (Jeremiah 29).",
+   "He foretold that Nebuchadnezzar would kill Ahab and Zedekiah before the exiles' eyes (Jeremiah 29).",
+   "Their death by fire at the Babylonian king's hand would become a curse among the exiles (Jeremiah 29)."
+  ],
+  "family": {
+   "children": [
+    "ahab_114"
+   ]
+  },
+  "skip": false
+ },
+ "maaz_1872": {
+  "name": "Maaz",
+  "aka": [],
+  "who": "A man of Judah, son of Ram, the firstborn of Jerahmeel, named in Chronicles' genealogy of Judah.",
+  "key": [
+   "Maaz was a son of Ram, the firstborn of Jerahmeel (1 Chronicles 2).",
+   "His brothers were Jamin and Eker (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "ram_2392"
+   ],
+   "siblings": [
+    "jamin_721",
+    "eker_1041"
+   ]
+  },
+  "skip": false
+ },
+ "moza_2113": {
+  "name": "Moza",
+  "aka": [],
+  "who": "A man of Judah, son of Caleb by his concubine Ephah, named in Judah's genealogy.",
+  "key": [
+   "Ephah, Caleb's concubine, bore Haran, Moza, and Gazez (1 Chronicles 2).",
+   "His father Caleb was the brother of Jerahmeel, both sons of Hezron (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "caleb_538"
+   ],
+   "mother": [
+    "ephah_1198"
+   ],
+   "siblings": [
+    "haran_1408",
+    "gazez_1282"
+   ]
+  },
+  "skip": false
+ },
+ "ophrah_2254": {
+  "name": "Ophrah",
+  "aka": [],
+  "who": "A man of Judah, son of Meonothai, in the family line of Othniel, Israel's first judge.",
+  "key": [
+   "Meonothai, of Othniel's family, fathered Ophrah (1 Chronicles 4).",
+   "Ophrah is listed among the descendants of Kenaz, the father of Othniel (1 Chronicles 4)."
+  ],
+  "family": {
+   "father": [
+    "meonothai_1998"
+   ]
+  },
+  "skip": false
+ },
+ "pasach_2279": {
+  "name": "Pasach",
+  "aka": [],
+  "who": "A man of Asher, son of Japhlet, listed in the genealogy of the tribe of Asher.",
+  "key": [
+   "The sons of Japhlet were Pasach, Bimhal, and Ashvath (1 Chronicles 7).",
+   "Japhlet was a son of Heber, the son of Asher's son Beriah (1 Chronicles 7).",
+   "Asher's descendants were remembered as choice mighty warriors and chiefs (1 Chronicles 7)."
+  ],
+  "family": {
+   "father": [
+    "japhlet_729"
+   ],
+   "siblings": [
+    "bimhal_506",
+    "ashvath_343"
+   ]
+  },
+  "skip": false
+ },
+ "pethuel_2323": {
+  "name": "Pethuel",
+  "aka": [],
+  "who": "The father of Joel, the prophet who called Judah to repent after a locust plague.",
+  "key": [
+   "The word of the LORD came to Joel son of Pethuel (Joel 1).",
+   "His son Joel described a devastating locust plague and called Judah to lament (Joel 1)."
+  ],
+  "family": {
+   "children": [
+    "joel_1660"
+   ]
+  },
+  "skip": false
+ },
+ "puah_2373": {
+  "name": "Puah",
+  "aka": [],
+  "who": "A man of Issachar, son of Dodo and father of Tola, who judged Israel after Abimelech.",
+  "key": [
+   "Tola son of Puah, son of Dodo, a man of Issachar, arose to save Israel (Judges 10).",
+   "His son lived at Shamir in Ephraim's hill country and judged Israel twenty-three years (Judges 10)."
+  ],
+  "family": {
+   "father": [
+    "dodo_1020"
+   ],
+   "children": [
+    "tola_2879"
+   ]
+  },
+  "skip": false
+ },
+ "sopater_2770": {
+  "name": "Sopater",
+  "aka": [],
+  "who": "A believer from Berea, son of Pyrrhus, who accompanied Paul as he left Greece for Jerusalem.",
+  "key": [
+   "Sopater of Berea, son of Pyrrhus, accompanied Paul as he returned through Macedonia (Acts 20).",
+   "His companions included Aristarchus, Secundus, Gaius of Derbe, Timothy, Tychicus, and Trophimus (Acts 20).",
+   "Sosipater, a relative of Paul who sent greetings to Rome, may be the same man (Romans 16)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "tanhumeth_2824": {
+  "name": "Tanhumeth",
+  "aka": [],
+  "who": "The father of Seraiah, an army captain of Judah who came to Governor Gedaliah at Mizpah.",
+  "key": [
+   "Seraiah son of Tanhumeth was among the captains who came to Gedaliah at Mizpah (2 Kings 25).",
+   "Gedaliah swore to these captains that serving the king of Babylon would go well with them (Jeremiah 40)."
+  ],
+  "family": {
+   "children": [
+    "seraiah_2495"
+   ]
+  },
+  "skip": false
+ },
+ "timaeus_2858": {
+  "name": "Timaeus",
+  "aka": [],
+  "who": "The father of Bartimaeus, the blind beggar whom Jesus healed near Jericho.",
+  "key": [
+   "Bartimaeus, son of Timaeus, sat begging by the road as Jesus left Jericho (Mark 10).",
+   "Jesus restored his son's sight, and Bartimaeus followed him on the way (Mark 10)."
+  ],
+  "family": {
+   "children": [
+    "bartimaeus_406"
+   ]
+  },
+  "skip": false
+ },
+ "uriel_2900": {
+  "name": "Uriel",
+  "aka": [],
+  "who": "A Kohathite Levite, son of Tahath, named in Chronicles' genealogy of Kohath's descendants.",
+  "key": [
+   "Chronicles lists Tahath, Uriel, Uzziah, and Shaul in succession among Kohath's descendants (1 Chronicles 6).",
+   "Heman's ancestry in the same chapter names Zephaniah son of Tahath at this point instead (1 Chronicles 6)."
+  ],
+  "family": {
+   "father": [
+    "tahath_2814"
+   ],
+   "children": [
+    "azariah_2925"
+   ]
+  },
+  "skip": false
+ },
+ "zillah_3080": {
+  "name": "Zillah",
+  "aka": [],
+  "who": "One of the two wives of Lamech, Cain's descendant, and mother of Tubal-cain and Naamah.",
+  "key": [
+   "Lamech took two wives, Adah and Zillah (Genesis 4).",
+   "Zillah bore Tubal-cain, a forger of bronze and iron tools, and his sister Naamah (Genesis 4).",
+   "Lamech addressed his boastful song of vengeance to Adah and Zillah (Genesis 4)."
+  ],
+  "family": {
+   "spouses": [
+    "lamech_1808"
+   ],
+   "children": [
+    "tubal-cain_2884",
+    "naamah_2118"
+   ]
+  },
+  "skip": false
+ }
+}

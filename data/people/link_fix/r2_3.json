@@ -1,0 +1,398 @@
+{
+ "card nimrod_2206": {
+  "Accad": "l:accad_14"
+ },
+ "card ahitub_163": {
+  "Ahijah": ""
+ },
+ "Psalms 52": {
+  "Ahimelech": "p:ahimelech_126"
+ },
+ "card bashan_159": {
+  "Amos": "p:amos_238"
+ },
+ "card calno_270": {
+  "Amos": "p:amos_238"
+ },
+ "card hilkiah_1525": {
+  "Amzi": "p:amzi_245"
+ },
+ "card rehob_988": {
+  "Aphek": "l:aphek_71"
+ },
+ "card japhlet_729": {
+  "Ashvath": "p:ashvath_343"
+ },
+ "card seraiah_2499": {
+  "Azriel": "p:azriel_562"
+ },
+ "card merodach-baladan_483": {
+  "Baladan": "p:baladan_594"
+ },
+ "card jobab_1641": {
+  "Bela": "p:bela_434"
+ },
+ "card zerah_3044": {
+  "Bela": "p:bela_434"
+ },
+ "card gath-rimmon_445": {
+  "Bileam": "l:bileam_248"
+ },
+ "card ezekiel_1237": {
+  "Buzi": "p:buzi_531"
+ },
+ "Judges 3": {
+  "Cushan": ""
+ },
+ "card othniel_2259": {
+  "Cushan": ""
+ },
+ "card kenaz_1778": {
+  "Cushan": ""
+ },
+ "card mesopotamia_790": {
+  "Cushan": "",
+  "Haran": "l:haran_527"
+ },
+ "card zephaniah_3040": {
+  "Cushi": "p:cushi_966"
+ },
+ "Daniel 6": {
+  "Darius": "p:darius_980"
+ },
+ "card raamah_2380": {
+  "Dedan": "p:dedan_998"
+ },
+ "card sheba_2567": {
+  "Dedan": "p:dedan_998"
+ },
+ "card gomer_1329": {
+  "Diblaim": "p:diblaim_1009"
+ },
+ "Deuteronomy 2": {
+  "Edom": "l:edom_357"
+ },
+ "card arabah_79": {
+  "Edom": "l:edom_357"
+ },
+ "card ezion-geber_423": {
+  "Edom": "l:edom_357"
+ },
+ "card elath_366": {
+  "Edom": "l:edom_357"
+ },
+ "card sela_1044": {
+  "Edom": "l:edom_357"
+ },
+ "card put_962": {
+  "Egypt's": ""
+ },
+ "card pharaoh-nechoh_2337": {
+  "Eliakim": "p:jehoiakim_1085"
+ },
+ "card hierapolis_569": {
+  "Epaphras": "p:epaphras_1195"
+ },
+ "book Psalms": {
+  "Ethan": "p:ethan_1222",
+  "Heman": "p:heman_1488"
+ },
+ "Psalms 89": {
+  "Ethan": "p:ethan_1222"
+ },
+ "card heman_1490": {
+  "Ethan": "p:ethan_1622"
+ },
+ "card stephanas_2801": {
+  "Fortunatus": "p:fortunatus_1258"
+ },
+ "card seraiah_2497": {
+  "Gedor": "l:gedor_456"
+ },
+ "Judges 6": {
+  "Gideon": "p:gideon_1314"
+ },
+ "card hanun_1406": {
+  "Hananiah": "p:hananiah_1390",
+  "Shelemiah": "p:shelemiah_2596"
+ },
+ "card ephah_1198": {
+  "Haran": "p:haran_1408"
+ },
+ "card shelomith_2607": {
+  "Haran": "p:haran_1409",
+  "Haziel": "p:haziel_1467"
+ },
+ "card jordan_653": {
+  "Haran": "l:haran_527"
+ },
+ "Psalms 88": {
+  "Heman": "p:heman_1488"
+ },
+ "card shechem_2588": {
+  "Hivite": "p:hivite_1534"
+ },
+ "card hamor_1365": {
+  "Hivite": "p:hivite_1534"
+ },
+ "card aholibamah_1761": {
+  "Hivite": "p:hivite_1534"
+ },
+ "card anah_247": {
+  "Hivite": "p:hivite_1534"
+ },
+ "card zibeon_3061": {
+  "Hivite": "p:hivite_1534"
+ },
+ "card gibeon_470": {
+  "Hivite": "p:hivite_1534"
+ },
+ "card meshullam_2026": {
+  "Immer": "p:immer_598",
+  "Meshillemith": "p:meshillemith_2017"
+ },
+ "card serah_2492": {
+  "Imnah": "p:imnah_1616"
+ },
+ "card jezreel_643": {
+  "Issachar": "l:issachar_1288"
+ },
+ "1 Kings 7": {
+  "Jachin": ""
+ },
+ "2 Chronicles 3": {
+  "Jachin": ""
+ },
+ "card hiram_1533": {
+  "Jachin": ""
+ },
+ "card lahmi_1806": {
+  "Jair": "p:jair_664"
+ },
+ "card gilead_1319": {
+  "Jaroah": "p:jaroah_735"
+ },
+ "card gihon_473": {
+  "Jerusalem": "l:jerusalem_636"
+ },
+ "card ophel_910": {
+  "Jerusalem": "l:jerusalem_636"
+ },
+ "card abigail_27": {
+  "Jether": "p:jether_907"
+ },
+ "card toi_2877": {
+  "Joram": "p:joram_1705"
+ },
+ "card timnah_1165": {
+  "Kain": "l:kain_664"
+ },
+ "card zanoah_1240": {
+  "Kain": "l:kain_664"
+ },
+ "card ethan_1622": {
+  "Kishi": "p:kishi_1788"
+ },
+ "card nebajoth_2164": {
+  "Mahalath": ""
+ },
+ "card abihail_31": {
+  "Mahalath": "p:mahalath_1888"
+ },
+ "card martha_1937": {
+  "Mary": "p:mary_1939"
+ },
+ "card lazarus_1812": {
+  "Mary": "p:mary_1939"
+ },
+ "card bethany_186": {
+  "Mary": "p:mary_1939"
+ },
+ "card seraiah_2498": {
+  "Meraiah": "p:meraiah_2002"
+ },
+ "card ararat_86": {
+  "Minni": "l:minni_803"
+ },
+ "card bahurim_154": {
+  "Mount of Olives": "l:mount_of_olives_861"
+ },
+ "card hezekiah_1513": {
+  "Neariah": "p:neariah_2161"
+ },
+ "card tobiah_2872": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card artaxerxes_314": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card sanballat_2470": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card shallum_2519": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card adaiah_72": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card eliashib_1099": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card eliashib_1100": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card eliashib_1101": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card geshem_1307": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card malchijah_1909": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card meshullam_2036": {
+  "Nehemiah": "p:nehemiah_2172",
+  "Sallu": "p:sallu_2460"
+ },
+ "card shemaiah_2637": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card ashdod_101": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card river_244": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card ammon_58": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card ono_909": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card dung_gate_346": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card gate_of_the_fountain_428": {
+  "Nehemiah": "p:nehemiah_2172"
+ },
+ "card azariah_380": {
+  "Oded": "p:oded_2236"
+ },
+ "card michal_2073": {
+  "Palti": ""
+ },
+ "card laish_1807": {
+  "Palti": ""
+ },
+ "card zechariah_3017": {
+  "Parosh": "p:parosh_2274"
+ },
+ "card eleazar_1064": {
+  "Pas-dammim": "l:pas-dammim_923"
+ },
+ "Luke 6": {
+  "Plain": ""
+ },
+ "card og_2238": {
+  "Rephaim": "l:rephaim_995"
+ },
+ "card baanah_582": {
+  "Rimmon": "p:rimmon_2441"
+ },
+ "card rechab_2402": {
+  "Rimmon": "p:rimmon_2441"
+ },
+ "card meshullam_2024": {
+  "Sallu": "p:sallu_2459"
+ },
+ "card ophir_2253": {
+  "Sephar": "l:sephar_1048"
+ },
+ "card aphek_72": {
+  "Sharon": "l:saron_1063"
+ },
+ "card azekah_128": {
+  "Socoh": "l:socoh_1105"
+ },
+ "2 Samuel 12": {
+  "Solomon": "p:solomon_2762"
+ },
+ "card nathan_2153": {
+  "Solomon": "p:solomon_2762"
+ },
+ "card sea_of_tiberias_1034": {
+  "Tiberias": "l:tiberias_1161"
+ },
+ "card lamech_1808": {
+  "Tubal-cain": "p:tubal-cain_2884"
+ },
+ "2 Kings 15": {
+  "Zechariah": ""
+ },
+ "2 Chronicles 24": {
+  "Zechariah": ""
+ },
+ "card joshua_893": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card joash_1632": {
+  "Zechariah": ""
+ },
+ "card jeroboam_873": {
+  "Zechariah": ""
+ },
+ "card josedech_815": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card nathan_2152": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card judah_1755": {
+  "Zechariah": ""
+ },
+ "card shallum_2514": {
+  "Zechariah": ""
+ },
+ "card geba_447": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card mount_of_olives_861": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card river_1010": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card shinar_1084": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card corner_gate_307": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card gate_of_benjamin_175": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card rimmon_1004": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card tower_1177": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card hadrach_504": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card mount_of_olives_828": {
+  "Zechariah": "p:zechariah_3016"
+ },
+ "card azariah_2925": {
+  "Zephaniah": ""
+ },
+ "card cush_312": {
+  "Zephaniah": "p:zephaniah_3040"
+ },
+ "card judah_1753": {
+  "Zichri": "p:zichri_3075"
+ },
+ "card cozbi_959": {
+  "Zur": "p:zur_3109"
+ }
+}

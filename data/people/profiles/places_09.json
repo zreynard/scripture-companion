@@ -1,0 +1,128 @@
+{
+ "adummim_32": {
+  "name": "Adummim",
+  "aka": [],
+  "what": "An ascent on the road from Jericho up to Jerusalem, on the boundary between Judah and Benjamin.",
+  "today": "Likely Tal'at ed-Damm, near Ma'ale Adummim east of Jerusalem",
+  "key": [
+   "Judah's northern border turned toward Gilgal, opposite the ascent of Adummim (Joshua 15).",
+   "Benjamin's southern border also ran opposite the ascent of Adummim (Joshua 18)."
+  ],
+  "skip": false
+ },
+ "beth-haccherem_209": {
+  "name": "Beth-haccherem",
+  "aka": [],
+  "what": "A town of Judah near Jerusalem that served as a district center and a place for signal fires.",
+  "today": "Possibly Ramat Rahel, between Jerusalem and Bethlehem",
+  "key": [
+   "Malchijah son of Rechab, ruler of the district of Beth-haccherem, repaired the Dung Gate (Nehemiah 3).",
+   "Jeremiah called for a signal raised over Beth-haccherem as disaster came from the north (Jeremiah 6)."
+  ],
+  "skip": false
+ },
+ "bezek_245": {
+  "name": "Bezek",
+  "aka": [],
+  "what": "The place where Judah and Simeon defeated the Canaanites and Perizzites and captured Adoni-bezek.",
+  "today": "Exact site unknown; possibly Khirbet Bezqa near Gezer",
+  "key": [
+   "After Joshua's death, Judah and Simeon defeated ten thousand Canaanites and Perizzites at Bezek (Judges 1).",
+   "They fought Adoni-bezek there, pursued him, and cut off his thumbs and big toes (Judges 1)."
+  ],
+  "skip": false
+ },
+ "colossae_305": {
+  "name": "Colossae",
+  "aka": [],
+  "what": "A city in the Lycus Valley of Asia Minor, home of the church to which Paul wrote Colossians.",
+  "today": "Unexcavated mound near Honaz, Denizli Province, southwestern Turkey",
+  "key": [
+   "Paul and Timothy wrote to the saints and faithful brothers in Christ at Colossae (Colossians 1).",
+   "The Colossians had learned the gospel from Epaphras, Paul's beloved fellow servant (Colossians 1).",
+   "Paul sent Tychicus with Onesimus, one of their own, to tell them his news (Colossians 4).",
+   "He asked that the letter also be read in the church of the Laodiceans (Colossians 4)."
+  ],
+  "skip": false
+ },
+ "geruth_chimham_460": {
+  "name": "Geruth Chimham",
+  "aka": [],
+  "what": "A lodging place near Bethlehem where the remnant of Judah stopped on the way to Egypt.",
+  "today": "Exact site unknown; near Bethlehem",
+  "key": [
+   "After Gedaliah's murder, Johanan and the remnant stayed at Geruth Chimham near Bethlehem (Jeremiah 41).",
+   "They meant to go on to Egypt because they feared the Chaldeans (Jeremiah 41)."
+  ],
+  "skip": false
+ },
+ "hammon_519": {
+  "name": "Hammon",
+  "aka": [],
+  "what": "A town on the border of Asher's inheritance in the far north, toward Sidon.",
+  "today": "Possibly Umm el-Amed, near the coast of southern Lebanon",
+  "key": [
+   "Hammon is listed with Ebron, Rehob, and Kanah on the boundary of Asher (Joshua 19).",
+   "From these towns Asher's border reached as far as Sidon the Great (Joshua 19)."
+  ],
+  "skip": false
+ },
+ "kanah_667": {
+  "name": "Kanah",
+  "aka": [],
+  "what": "A town on the northern border of Asher's inheritance, toward Sidon.",
+  "today": "Likely Qana, southeast of Tyre in southern Lebanon",
+  "key": [
+   "Kanah is listed with Ebron, Rehob, and Hammon on the boundary of Asher (Joshua 19).",
+   "From these towns Asher's border reached as far as Sidon the Great (Joshua 19)."
+  ],
+  "skip": false
+ },
+ "nicopolis_894": {
+  "name": "Nicopolis",
+  "aka": [],
+  "what": "A city where Paul decided to spend the winter, asking Titus to join him there.",
+  "today": "Likely Nicopolis in Epirus, near Preveza, western Greece",
+  "key": [
+   "Paul told Titus to come to him at Nicopolis once Artemas or Tychicus arrived (Titus 3).",
+   "Paul had decided to spend the winter there (Titus 3)."
+  ],
+  "skip": false
+ },
+ "paphos_919": {
+  "name": "Paphos",
+  "aka": [],
+  "what": "A city on the southwest coast of Cyprus, seat of the Roman proconsul.",
+  "today": "Paphos (Kato Paphos), on the southwest coast of Cyprus",
+  "key": [
+   "Barnabas and Saul traveled through Cyprus from Salamis as far as Paphos (Acts 13).",
+   "There they met the magician Bar-Jesus and the proconsul Sergius Paulus (Acts 13).",
+   "When Elymas was struck blind, the proconsul believed (Acts 13).",
+   "From Paphos Paul and his companions set sail for Perga in Pamphylia (Acts 13)."
+  ],
+  "skip": false
+ },
+ "tower_1180": {
+  "name": "Tower of the Ovens",
+  "aka": [],
+  "what": "A tower on Jerusalem's wall, repaired in Nehemiah's day and passed by a choir at the wall's dedication.",
+  "today": "Exact site unknown; on the western side of ancient Jerusalem",
+  "key": [
+   "Malchijah son of Harim and Hasshub son of Pahath-moab repaired the Tower of the Ovens (Nehemiah 3).",
+   "At the wall's dedication, one thanksgiving choir passed the Tower of the Ovens to the Broad Wall (Nehemiah 12)."
+  ],
+  "skip": false
+ },
+ "zarethan_1243": {
+  "name": "Zarethan",
+  "aka": [],
+  "what": "A town in the Jordan Valley near Adam, where the Jordan's waters stopped for Israel's crossing.",
+  "today": "Exact site unknown; possibly Tell es-Saidiyeh, east of the Jordan",
+  "key": [
+   "The Jordan's waters stood in a heap at Adam, the city beside Zarethan, as Israel crossed (Joshua 3).",
+   "Baana's district under Solomon included Beth-shean, beside Zarethan (1 Kings 4).",
+   "Solomon's bronze temple furnishings were cast in clay ground between Succoth and Zarethan (1 Kings 7)."
+  ],
+  "skip": false
+ }
+}

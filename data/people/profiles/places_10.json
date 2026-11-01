@@ -1,0 +1,137 @@
+{
+ "accad_14": {
+  "name": "Accad",
+  "aka": [
+   "Akkad"
+  ],
+  "what": "One of the first cities of Nimrod's kingdom, in the land of Shinar in southern Mesopotamia.",
+  "today": "Akkad, in central Iraq; exact site unknown.",
+  "key": [
+   "Nimrod's kingdom began with Babel, Erech, Accad, and Calneh in the land of Shinar (Genesis 10).",
+   "From there he went into Assyria and built Nineveh and other cities (Genesis 10)."
+  ],
+  "skip": false
+ },
+ "aphek_71": {
+  "name": "Aphek",
+  "aka": [
+   "Aphik"
+  ],
+  "what": "A town in the territory of Asher whose Canaanite inhabitants Asher did not drive out.",
+  "today": "Likely Tel Afek (Tell Kurdaneh), southeast of Acco in northern Israel.",
+  "key": [
+   "Aphek is listed among the towns of Asher's inheritance, with Ummah and Rehob (Joshua 19).",
+   "Asher did not drive out the inhabitants of Aphik, so the Canaanites lived among them (Judges 1)."
+  ],
+  "skip": false
+ },
+ "bileam_248": {
+  "name": "Bileam",
+  "aka": [],
+  "what": "A Levitical town of western Manasseh given to Kohathite clans, probably the same town as Ibleam.",
+  "today": "Likely Khirbet Bel'ameh, just south of Jenin.",
+  "key": [
+   "From the half-tribe of Manasseh, Bileam with its pasturelands went to the rest of the Kohathite clans (1 Chronicles 6).",
+   "Joshua's parallel list names Gath-rimmon with Taanach from the half-tribe of Manasseh (Joshua 21)."
+  ],
+  "skip": false
+ },
+ "gedor_456": {
+  "name": "Gedor",
+  "aka": [],
+  "what": "A place in the south where Simeonite clans found rich pasture in King Hezekiah's day.",
+  "today": "Exact site unknown.",
+  "key": [
+   "Simeonite clans went to the entrance of Gedor, east of the valley, to seek pasture for their flocks (1 Chronicles 4).",
+   "They found rich, good pasture in a land that was very broad, quiet, and peaceful (1 Chronicles 4).",
+   "In Hezekiah's days they struck down the Meunim there and settled in their place (1 Chronicles 4)."
+  ],
+  "skip": false
+ },
+ "kain_664": {
+  "name": "Kain",
+  "aka": [],
+  "what": "A town in the hill country of Judah, listed near Zanoah, Gibeah, and Timnah.",
+  "today": "Possibly Khirbet Yaqin, southeast of Hebron.",
+  "key": [
+   "Kain is listed with Gibeah and Timnah among the hill-country towns of Judah (Joshua 15).",
+   "It belonged to a group of ten towns with their villages, including Maon, Carmel, and Ziph (Joshua 15)."
+  ],
+  "skip": false
+ },
+ "minni_803": {
+  "name": "Minni",
+  "aka": [],
+  "what": "A kingdom in the mountains north of Assyria, summoned with Ararat and Ashkenaz against Babylon.",
+  "today": "Likely the region south of Lake Urmia, northwestern Iran.",
+  "key": [
+   "Jeremiah summoned the kingdoms of Ararat, Minni, and Ashkenaz to war against Babylon (Jeremiah 51).",
+   "They were called up with the kings of the Medes as instruments of the LORD's judgment (Jeremiah 51)."
+  ],
+  "skip": false
+ },
+ "pas-dammim_923": {
+  "name": "Pas-dammim",
+  "aka": [
+   "Ephes-dammim"
+  ],
+  "what": "A place in Judah where the Philistines gathered for battle, called Ephes-dammim in the account of Goliath.",
+  "today": "In the Elah Valley southwest of Bethlehem; exact site unknown.",
+  "key": [
+   "Eleazar son of Dodo was with David at Pas-dammim when the Philistines gathered there for battle (1 Chronicles 11).",
+   "They took their stand in a barley field, defended it, and the LORD saved them by a great victory (1 Chronicles 11).",
+   "Before Goliath's challenge, the Philistines camped between Socoh and Azekah, in Ephes-dammim (1 Samuel 17)."
+  ],
+  "skip": false
+ },
+ "rephaim_995": {
+  "name": "Rephaim",
+  "aka": [],
+  "what": "An early people known for great stature, whose last king, Og, ruled Bashan east of the Jordan.",
+  "today": "No single site; their land included Bashan, in northern Jordan and southern Syria.",
+  "key": [
+   "The LORD promised Abraham's offspring the land of the Rephaim among other peoples (Genesis 15).",
+   "The Emim and Zamzummim, counted as Rephaim, were displaced by Moab and Ammon (Deuteronomy 2).",
+   "Og king of Bashan alone remained of the Rephaim; his iron bed was nine cubits long (Deuteronomy 3).",
+   "All Bashan, the region of Argob, was called the land of Rephaim (Deuteronomy 3)."
+  ],
+  "skip": false
+ },
+ "sephar_1048": {
+  "name": "Sephar",
+  "aka": [],
+  "what": "A place in the hill country of the east, marking the limit of the lands of Joktan's descendants.",
+  "today": "Possibly in southern Arabia; exact site unknown.",
+  "key": [
+   "Joktan's descendants lived from Mesha in the direction of Sephar (Genesis 10).",
+   "Sephar is described as the hill country of the east (Genesis 10)."
+  ],
+  "skip": false
+ },
+ "socoh_1105": {
+  "name": "Socoh",
+  "aka": [
+   "Soco"
+  ],
+  "what": "A town in Judah's lowland overlooking the Elah Valley, where the Philistines camped before Goliath's challenge.",
+  "today": "Likely Khirbet Abbad (Tel Socho), in the Elah Valley, Israel.",
+  "key": [
+   "Socoh is listed with Adullam and Azekah among the towns of Judah's lowland (Joshua 15).",
+   "The Philistines gathered at Socoh and camped between Socoh and Azekah before Goliath's challenge (1 Samuel 17).",
+   "Rehoboam fortified Soco among his cities for defense in Judah (2 Chronicles 11).",
+   "In Ahaz's day the Philistines captured Soco with its villages (2 Chronicles 28)."
+  ],
+  "skip": false
+ },
+ "tiberias_1161": {
+  "name": "Tiberias",
+  "aka": [],
+  "what": "A city on the western shore of the Sea of Galilee, which gave the lake one of its names.",
+  "today": "Tiberias, on the western shore of the Sea of Galilee, Israel.",
+  "key": [
+   "John names the lake as the Sea of Galilee, which is the Sea of Tiberias (John 6).",
+   "After Jesus fed the five thousand, boats from Tiberias came near the place where the crowd had eaten (John 6)."
+  ],
+  "skip": false
+ }
+}
