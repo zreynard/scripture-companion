@@ -1,0 +1,749 @@
+[
+{
+"slug": "jerusalem_636",
+"source_name": "Jerusalem",
+"type": "City",
+"lat": 31.7774,
+"lon": 35.2349,
+"verses": 754,
+"appears": "Joshua 10 → Revelation 21 (302 chapters; sample: Joshua 10, 2 Kings 19, 2 Chronicles 22, Psalms 79, Isaiah 51, Jeremiah 40, Micah 4, Luke 18)"
+},
+{
+"slug": "egypt_362",
+"source_name": "Egypt",
+"type": "Region",
+"lat": 30.1081,
+"lon": 31.3382,
+"verses": 564,
+"appears": "Genesis 12 → Revelation 11 (212 chapters; sample: Genesis 12, Exodus 10, Numbers 9, Deuteronomy 20, 1 Kings 4, 2 Chronicles 36, Jeremiah 9, Daniel 9)"
+},
+{
+"slug": "babylon_151",
+"source_name": "Babylon",
+"type": "City",
+"lat": 32.5365,
+"lon": 44.4209,
+"verses": 255,
+"appears": "2 Kings 17 → Revelation 18 (73 chapters; sample: 2 Kings 17, Ezra 5, Isaiah 21, Jeremiah 25, Jeremiah 38, Jeremiah 50, Ezekiel 29, Micah 4)"
+},
+{
+"slug": "jordan_653",
+"source_name": "Jordan",
+"type": "Water",
+"lat": 32.3091,
+"lon": 35.5599,
+"verses": 177,
+"appears": "Genesis 32 → John 10 (89 chapters; sample: Genesis 32, Deuteronomy 1, Joshua 1, Joshua 16, Judges 8, 2 Samuel 24, 1 Chronicles 19, Zechariah 11)"
+},
+{
+"slug": "moab_815",
+"source_name": "Moab",
+"type": "Region",
+"lat": 31.4968,
+"lon": 35.7828,
+"verses": 148,
+"appears": "Genesis 36 → Zephaniah 2 (57 chapters; sample: Genesis 36, Numbers 26, Deuteronomy 29, Judges 11, 2 Samuel 8, 1 Chronicles 4, Psalms 108, Jeremiah 27)"
+},
+{
+"slug": "zion_1263",
+"source_name": "Zion",
+"type": "Mountain",
+"lat": 31.7774,
+"lon": 35.2349,
+"verses": 140,
+"appears": "2 Samuel 5 → 1 Peter 2 (93 chapters; sample: 2 Samuel 5, Psalms 51, Psalms 126, Song of Solomon 3, Isaiah 31, Isaiah 59, Jeremiah 14, Joel 3)"
+},
+{
+"slug": "assyria_111",
+"source_name": "Assyria",
+"type": "Region",
+"lat": 36.3594,
+"lon": 43.1529,
+"verses": 116,
+"appears": "Genesis 2 → Zechariah 10 (45 chapters; sample: Genesis 2, 2 Kings 17, 1 Chronicles 5, Ezra 4, Isaiah 10, Isaiah 27, Jeremiah 50, Hosea 8)"
+},
+{
+"slug": "samaria_1022",
+"source_name": "Samaria",
+"type": "Region",
+"lat": 32.2802,
+"lon": 35.1979,
+"verses": 114,
+"appears": "1 Kings 13 → Acts 15 (51 chapters; sample: 1 Kings 13, 2 Kings 1, 2 Kings 10, 2 Kings 21, Ezra 4, Isaiah 36, Hosea 7, Amos 6)"
+},
+{
+"slug": "gilead_475",
+"source_name": "Gilead",
+"type": "Region",
+"lat": 32.0425,
+"lon": 35.7242,
+"verses": 80,
+"appears": "Genesis 31 → Zechariah 10 (46 chapters; sample: Genesis 31, Deuteronomy 4, Joshua 20, Judges 11, 2 Samuel 17, 2 Kings 15, 1 Chronicles 27, Jeremiah 8)"
+},
+{
+"slug": "edom_357",
+"source_name": "Edom",
+"type": "Region",
+"lat": 30.7347,
+"lon": 35.6063,
+"verses": 79,
+"appears": "Genesis 32 → Malachi 1 (46 chapters; sample: Genesis 32, Numbers 24, Judges 11, 1 Kings 22, 1 Chronicles 18, Psalms 83, Jeremiah 25, Ezekiel 25)"
+},
+{
+"slug": "canaan_272",
+"source_name": "Canaan",
+"type": "Region",
+"lat": 31.6935,
+"lon": 34.8439,
+"verses": 76,
+"appears": "Genesis 11 → Acts 13 (50 chapters; sample: Genesis 11, Genesis 31, Genesis 44, Genesis 50, Leviticus 25, Numbers 35, Joshua 24, Psalms 105)"
+},
+{
+"slug": "syria_1122",
+"source_name": "Syria",
+"type": "Region",
+"lat": 33.5193,
+"lon": 36.3134,
+"verses": 64,
+"appears": "Judges 10 → Galatians 1 (32 chapters; sample: Judges 10, 1 Kings 19, 2 Kings 6, 2 Kings 13, 2 Chronicles 16, Isaiah 7, Amos 1, Acts 18)"
+},
+{
+"slug": "galilee_433",
+"source_name": "Galilee",
+"type": "Region",
+"lat": 32.7067,
+"lon": 35.3015,
+"verses": 63,
+"appears": "Joshua 12 → Acts 13 (42 chapters; sample: Joshua 12, 1 Chronicles 6, Matthew 17, Matthew 28, Mark 14, Luke 3, Luke 23, John 7)"
+},
+{
+"slug": "bethel_202",
+"source_name": "Bethel",
+"type": "",
+"lat": 31.9305,
+"lon": 35.221,
+"verses": 62,
+"appears": "Genesis 12 → Zechariah 7 (36 chapters; sample: Genesis 12, Genesis 35, Joshua 16, Judges 20, 1 Samuel 13, 2 Kings 10, 2 Chronicles 13, Jeremiah 48)"
+},
+{
+"slug": "jericho_634",
+"source_name": "Jericho",
+"type": "City",
+"lat": 31.8706,
+"lon": 35.4439,
+"verses": 58,
+"appears": "Numbers 22 → Hebrews 11 (42 chapters; sample: Numbers 22, Numbers 35, Joshua 3, Joshua 8, Joshua 16, 1 Kings 16, 2 Chronicles 28, Jeremiah 52)"
+},
+{
+"slug": "hebron_551",
+"source_name": "Hebron",
+"type": "City",
+"lat": 31.5358,
+"lon": 35.0941,
+"verses": 56,
+"appears": "Genesis 13 → 2 Chronicles 11 (26 chapters; sample: Genesis 13, Numbers 13, Joshua 12, Joshua 20, Judges 16, 2 Samuel 3, 2 Samuel 15, 1 Chronicles 6)"
+},
+{
+"slug": "lebanon_720",
+"source_name": "Lebanon",
+"type": "Region",
+"lat": 33.7525,
+"lon": 35.5908,
+"verses": 56,
+"appears": "Deuteronomy 1 → Zechariah 11 (43 chapters; sample: Deuteronomy 1, Joshua 13, 2 Kings 14, Ezra 3, Song of Solomon 3, Isaiah 10, Isaiah 37, Ezekiel 17)"
+},
+{
+"slug": "damascus_322",
+"source_name": "Damascus",
+"type": "City",
+"lat": 33.5193,
+"lon": 36.3135,
+"verses": 55,
+"appears": "Genesis 14 → Galatians 1 (32 chapters; sample: Genesis 14, 1 Kings 15, 2 Kings 8, 2 Chronicles 16, Isaiah 7, Jeremiah 49, Amos 1, Acts 22)"
+},
+{
+"slug": "bashan_159",
+"source_name": "Bashan",
+"type": "Region",
+"lat": 32.8001,
+"lon": 35.9373,
+"verses": 52,
+"appears": "Numbers 21 → Zechariah 11 (34 chapters; sample: Numbers 21, Deuteronomy 4, Joshua 9, Joshua 20, 2 Kings 10, Psalms 22, Isaiah 2, Ezekiel 27)"
+},
+{
+"slug": "tyre_1184",
+"source_name": "Tyre",
+"type": "City",
+"lat": 33.2758,
+"lon": 35.1926,
+"verses": 52,
+"appears": "Joshua 19 → Acts 21 (30 chapters; sample: Joshua 19, 1 Kings 5, 1 Chronicles 14, Psalms 83, Jeremiah 25, Ezekiel 26, Ezekiel 29, Zechariah 9)"
+},
+{
+"slug": "sodom_1107",
+"source_name": "Sodom",
+"type": "City",
+"lat": 31.1966,
+"lon": 35.3965,
+"verses": 47,
+"appears": "Genesis 10 → Revelation 11 (25 chapters; sample: Genesis 10, Genesis 18, Deuteronomy 32, Isaiah 13, Jeremiah 50, Amos 4, Matthew 11, Romans 9)"
+},
+{
+"slug": "judea_657",
+"source_name": "Judea",
+"type": "Region",
+"lat": 31.7774,
+"lon": 35.2349,
+"verses": 44,
+"appears": "Ezra 9 → 1 Thessalonians 2 (36 chapters; sample: Ezra 9, Matthew 19, Mark 10, Luke 3, Luke 21, John 11, Acts 9, Acts 15)"
+},
+{
+"slug": "midian_796",
+"source_name": "Midian",
+"type": "Region",
+"lat": 28.9329,
+"lon": 34.9083,
+"verses": 44,
+"appears": "Genesis 36 → Habakkuk 3 (20 chapters; sample: Genesis 36, Exodus 3, Exodus 18, Numbers 25, Joshua 13, Judges 7, Judges 9, 1 Chronicles 1)"
+},
+{
+"slug": "gibeah_466",
+"source_name": "Gibeah",
+"type": "",
+"lat": 31.8238,
+"lon": 35.231,
+"verses": 41,
+"appears": "Joshua 18 → Hosea 10 (18 chapters; sample: Joshua 18, Judges 20, 1 Samuel 11, 1 Samuel 14, 1 Samuel 22, 1 Samuel 26, 2 Samuel 23, Isaiah 10)"
+},
+{
+"slug": "shechem_1069",
+"source_name": "Shechem",
+"type": "City",
+"lat": 32.2137,
+"lon": 35.2818,
+"verses": 40,
+"appears": "Genesis 12 → Jeremiah 41 (19 chapters; sample: Genesis 12, Genesis 34, Genesis 37, Joshua 20, Joshua 24, Judges 9, 1 Kings 12, 1 Chronicles 7)"
+},
+{
+"slug": "heshbon_565",
+"source_name": "Heshbon",
+"type": "City",
+"lat": 31.8005,
+"lon": 35.809,
+"verses": 37,
+"appears": "Numbers 21 → Jeremiah 49 (19 chapters; sample: Numbers 21, Deuteronomy 1, Deuteronomy 3, Deuteronomy 29, Joshua 12, Joshua 21, 1 Chronicles 6, Song of Solomon 7)"
+},
+{
+"slug": "negeb_885",
+"source_name": "Negeb",
+"type": "Region",
+"lat": 30.3,
+"lon": 34.2,
+"verses": 36,
+"appears": "Genesis 12 → Obadiah 1 (27 chapters; sample: Genesis 12, Genesis 24, Numbers 33, Joshua 10, Joshua 15, 1 Samuel 27, 2 Chronicles 28, Jeremiah 13)"
+},
+{
+"slug": "gibeon_470",
+"source_name": "Gibeon",
+"type": "City",
+"lat": 31.8468,
+"lon": 35.1849,
+"verses": 35,
+"appears": "Joshua 9 → Jeremiah 41 (21 chapters; sample: Joshua 9, Joshua 11, Joshua 21, 2 Samuel 3, 1 Kings 3, 1 Chronicles 8, 1 Chronicles 12, 1 Chronicles 16)"
+},
+{
+"slug": "gilgal_476",
+"source_name": "Gilgal",
+"type": "City",
+"lat": 31.8638,
+"lon": 35.5185,
+"verses": 35,
+"appears": "Deuteronomy 11 → Micah 6 (21 chapters; sample: Deuteronomy 11, Joshua 5, Joshua 10, Joshua 15, Judges 3, 1 Samuel 10, 1 Samuel 13, 2 Samuel 19)"
+},
+{
+"slug": "beersheba_170",
+"source_name": "Beersheba",
+"type": "City",
+"lat": 31.245,
+"lon": 34.8409,
+"verses": 32,
+"appears": "Genesis 21 → Amos 5 (24 chapters; sample: Genesis 21, Genesis 28, Joshua 19, 1 Samuel 8, 2 Samuel 24, 2 Kings 12, 1 Chronicles 21, 2 Chronicles 30)"
+},
+{
+"slug": "bethlehem_218",
+"source_name": "Bethlehem",
+"type": "City",
+"lat": 31.7054,
+"lon": 35.2103,
+"verses": 32,
+"appears": "Genesis 35 → Luke 2 (18 chapters; sample: Genesis 35, Judges 12, Ruth 2, 1 Samuel 16, 1 Samuel 20, 2 Samuel 23, 2 Chronicles 11, Nehemiah 7)"
+},
+{
+"slug": "euphrates_421",
+"source_name": "Euphrates",
+"type": "Water",
+"lat": 35.0906,
+"lon": 40.4278,
+"verses": 32,
+"appears": "Genesis 2 → Revelation 16 (26 chapters; sample: Genesis 2, Genesis 36, Deuteronomy 11, 2 Samuel 10, 2 Kings 23, 1 Chronicles 5, 2 Chronicles 9, Jeremiah 13)"
+},
+{
+"slug": "gath_442",
+"source_name": "Gath",
+"type": "City",
+"lat": 31.6935,
+"lon": 34.8439,
+"verses": 32,
+"appears": "Joshua 11 → Micah 1 (22 chapters; sample: Joshua 11, 1 Samuel 5, 1 Samuel 7, 1 Samuel 21, 2 Samuel 1, 2 Samuel 21, 2 Kings 12, 1 Chronicles 8)"
+},
+{
+"slug": "ai_36",
+"source_name": "Ai",
+"type": "City",
+"lat": 31.917,
+"lon": 35.2612,
+"verses": 31,
+"appears": "Genesis 12 → Nehemiah 7 (9 chapters; sample: Genesis 12, Genesis 13, Joshua 7, Joshua 8, Joshua 9, Joshua 10, Joshua 12, Ezra 2)"
+},
+{
+"slug": "mizpah_811",
+"source_name": "Mizpah",
+"type": "City",
+"lat": 31.8327,
+"lon": 35.1802,
+"verses": 30,
+"appears": "Judges 20 → Jeremiah 41 (9 chapters; sample: Judges 20, Judges 21, 1 Samuel 7, 1 Samuel 10, 2 Kings 25, 2 Chronicles 16, Nehemiah 3, Jeremiah 40)"
+},
+{
+"slug": "nile_895",
+"source_name": "Nile",
+"type": "Water",
+"lat": 30.0926,
+"lon": 31.231,
+"verses": 30,
+"appears": "Genesis 41 → Zechariah 10 (15 chapters; sample: Genesis 41, Exodus 1, Exodus 4, Exodus 7, Exodus 8, Exodus 17, 1 Chronicles 13, Isaiah 19)"
+},
+{
+"slug": "shiloh_1081",
+"source_name": "Shiloh",
+"type": "City",
+"lat": 32.0557,
+"lon": 35.2895,
+"verses": 30,
+"appears": "Joshua 18 → Jeremiah 41 (17 chapters; sample: Joshua 18, Joshua 21, Judges 18, 1 Samuel 1, 1 Samuel 3, 1 Samuel 14, 1 Kings 14, Jeremiah 7)"
+},
+{
+"slug": "sidon_1093",
+"source_name": "Sidon",
+"type": "City",
+"lat": 33.5632,
+"lon": 35.3663,
+"verses": 30,
+"appears": "Genesis 10 → Acts 27 (24 chapters; sample: Genesis 10, Judges 10, 1 Kings 17, Jeremiah 27, Ezekiel 28, Matthew 11, Mark 7, Luke 10)"
+},
+{
+"slug": "nazareth_878",
+"source_name": "Nazareth",
+"type": "City",
+"lat": 32.7067,
+"lon": 35.3015,
+"verses": 28,
+"appears": "Matthew 2 → Acts 26 (22 chapters; sample: Matthew 2, Matthew 21, Mark 1, Mark 16, Luke 2, Luke 18, John 1, John 19)"
+},
+{
+"slug": "red_sea_986",
+"source_name": "Red Sea",
+"type": "Water",
+"lat": 27.0885,
+"lon": 34.7717,
+"verses": 26,
+"appears": "Exodus 10 → Hebrews 11 (21 chapters; sample: Exodus 10, Exodus 15, Numbers 14, Numbers 33, Deuteronomy 2, Joshua 2, Joshua 24, 1 Kings 9)"
+},
+{
+"slug": "persia_938",
+"source_name": "Persia",
+"type": "Region",
+"lat": 34.7983,
+"lon": 48.515,
+"verses": 25,
+"appears": "2 Chronicles 36 → Daniel 11 (14 chapters; sample: 2 Chronicles 36, Ezra 1, Ezra 3, Ezra 4, Ezra 6, Ezra 7, Ezra 9, Esther 1)"
+},
+{
+"slug": "seir_1042",
+"source_name": "Seir",
+"type": "Region",
+"lat": 30.7347,
+"lon": 35.6063,
+"verses": 24,
+"appears": "Genesis 14 → Ezekiel 25 (16 chapters; sample: Genesis 14, Genesis 33, Numbers 24, Deuteronomy 2, Joshua 11, Joshua 24, 2 Chronicles 20, Isaiah 21)"
+},
+{
+"slug": "gomorrah_489",
+"source_name": "Gomorrah",
+"type": "City",
+"lat": 31.1572,
+"lon": 35.474,
+"verses": 23,
+"appears": "Genesis 10 → Jude 1 (18 chapters; sample: Genesis 10, Genesis 14, Genesis 19, Deuteronomy 32, Isaiah 13, Jeremiah 49, Amos 4, Matthew 10)"
+},
+{
+"slug": "hamath_516",
+"source_name": "Hamath",
+"type": "City",
+"lat": 35.1362,
+"lon": 36.7495,
+"verses": 23,
+"appears": "2 Samuel 8 → Zechariah 9 (20 chapters; sample: 2 Samuel 8, 2 Kings 17, 2 Kings 19, 2 Kings 25, 2 Chronicles 8, Isaiah 11, Isaiah 37, Jeremiah 49)"
+},
+{
+"slug": "carmel_278",
+"source_name": "Carmel",
+"type": "City",
+"lat": 31.4333,
+"lon": 35.1333,
+"verses": 22,
+"appears": "Joshua 12 → Nahum 1 (19 chapters; sample: Joshua 12, Joshua 19, 1 Samuel 25, 1 Samuel 30, 2 Samuel 3, 1 Chronicles 11, Isaiah 33, Jeremiah 46)"
+},
+{
+"slug": "jezreel_643",
+"source_name": "Jezreel",
+"type": "",
+"lat": 32.556,
+"lon": 35.3308,
+"verses": 22,
+"appears": "Joshua 19 → Hosea 2 (11 chapters; sample: Joshua 19, 2 Samuel 2, 1 Kings 4, 1 Kings 18, 1 Kings 21, 2 Kings 8, 2 Kings 9, 2 Kings 10)"
+},
+{
+"slug": "lachish_711",
+"source_name": "Lachish",
+"type": "City",
+"lat": 31.5649,
+"lon": 34.8467,
+"verses": 22,
+"appears": "Joshua 10 → Micah 1 (14 chapters; sample: Joshua 10, Joshua 12, Joshua 15, 2 Kings 14, 2 Kings 18, 2 Kings 19, 2 Chronicles 11, 2 Chronicles 25)"
+},
+{
+"slug": "gad_1286",
+"source_name": "Gad",
+"type": "Region",
+"lat": 32.047,
+"lon": 35.7458,
+"verses": 21,
+"appears": "Numbers 32 → Ezekiel 48 (12 chapters; sample: Numbers 32, Numbers 34, Deuteronomy 3, Deuteronomy 29, Joshua 1, Joshua 12, Joshua 13, Joshua 18)"
+},
+{
+"slug": "macedonia_747",
+"source_name": "Macedonia",
+"type": "Region",
+"lat": 40.6322,
+"lon": 22.9321,
+"verses": 21,
+"appears": "Acts 16 → 1 Timothy 1 (16 chapters; sample: Acts 16, Acts 19, Romans 15, 2 Corinthians 1, 2 Corinthians 7, 2 Corinthians 9, Philippians 4, 1 Thessalonians 4)"
+},
+{
+"slug": "mount_zion_860",
+"source_name": "Mount Zion",
+"type": "Mountain",
+"lat": 31.7774,
+"lon": 35.2349,
+"verses": 21,
+"appears": "2 Kings 19 → Revelation 14 (19 chapters; sample: 2 Kings 19, Psalms 74, Psalms 125, Isaiah 8, Isaiah 18, Isaiah 29, Isaiah 37, Joel 2)"
+},
+{
+"slug": "asher_1287",
+"source_name": "Asher",
+"type": "Region",
+"lat": 32.9145,
+"lon": 35.1581,
+"verses": 20,
+"appears": "Deuteronomy 33 → Ezekiel 48 (7 chapters; sample: Deuteronomy 33, Joshua 17, Joshua 19, Judges 1, Judges 5, 1 Kings 4, Ezekiel 48)"
+},
+{
+"slug": "dan_323",
+"source_name": "Dan",
+"type": "Region",
+"lat": 33.2487,
+"lon": 35.6525,
+"verses": 20,
+"appears": "Genesis 14 → Jeremiah 8 (17 chapters; sample: Genesis 14, Judges 18, 1 Samuel 3, 2 Samuel 17, 1 Kings 4, 1 Kings 15, 1 Chronicles 21, 2 Chronicles 30)"
+},
+{
+"slug": "ekron_364",
+"source_name": "Ekron",
+"type": "City",
+"lat": 31.7776,
+"lon": 34.8521,
+"verses": 20,
+"appears": "Joshua 13 → Zechariah 9 (13 chapters; sample: Joshua 13, Joshua 15, Joshua 19, Judges 1, 1 Samuel 5, 1 Samuel 6, 1 Samuel 7, 1 Samuel 17)"
+},
+{
+"slug": "mount_sinai_855",
+"source_name": "Mount Sinai",
+"type": "Mountain",
+"lat": 28.5397,
+"lon": 33.9733,
+"verses": 20,
+"appears": "Exodus 19 → Galatians 4 (12 chapters; sample: Exodus 19, Exodus 24, Exodus 31, Exodus 34, Leviticus 25, Leviticus 26, Leviticus 27, Numbers 3)"
+},
+{
+"slug": "ramoth-gilead_984",
+"source_name": "Ramoth-gilead",
+"type": "City",
+"lat": 32.5653,
+"lon": 36.0056,
+"verses": 20,
+"appears": "1 Kings 4 → 2 Chronicles 22 (6 chapters; sample: 1 Kings 4, 1 Kings 22, 2 Kings 8, 2 Kings 9, 2 Chronicles 18, 2 Chronicles 22)"
+},
+{
+"slug": "susa_1118",
+"source_name": "Susa",
+"type": "City",
+"lat": 32.1892,
+"lon": 48.2579,
+"verses": 20,
+"appears": "Ezra 4 → Daniel 8 (9 chapters; sample: Ezra 4, Nehemiah 1, Esther 1, Esther 2, Esther 3, Esther 4, Esther 8, Esther 9)"
+},
+{
+"slug": "tarshish_1139",
+"source_name": "Tarshish",
+"type": "",
+"lat": 36.953,
+"lon": -6.3793,
+"verses": 20,
+"appears": "1 Kings 10 → Jonah 4 (15 chapters; sample: 1 Kings 10, 1 Kings 22, 2 Chronicles 9, 2 Chronicles 20, Psalms 48, Psalms 72, Isaiah 2, Isaiah 23)"
+},
+{
+"slug": "ashdod_101",
+"source_name": "Ashdod",
+"type": "City",
+"lat": 31.803,
+"lon": 34.6351,
+"verses": 19,
+"appears": "Joshua 11 → Zechariah 9 (13 chapters; sample: Joshua 11, Joshua 13, Joshua 15, 1 Samuel 5, 1 Samuel 6, 2 Chronicles 26, Nehemiah 13, Isaiah 20)"
+},
+{
+"slug": "gaza_446",
+"source_name": "Gaza",
+"type": "City",
+"lat": 31.5248,
+"lon": 34.4334,
+"verses": 19,
+"appears": "Genesis 10 → Acts 8 (16 chapters; sample: Genesis 10, Joshua 11, Judges 1, Judges 16, 1 Kings 4, Jeremiah 25, Amos 1, Zechariah 9)"
+},
+{
+"slug": "west-manasseh_1291",
+"source_name": "West Manasseh",
+"type": "Region",
+"lat": 32.4819,
+"lon": 35.3101,
+"verses": 19,
+"appears": "Deuteronomy 33 → Ezekiel 48 (5 chapters; sample: Deuteronomy 33, Joshua 16, Joshua 17, Judges 1, Ezekiel 48)"
+},
+{
+"slug": "amalek_53",
+"source_name": "Amalek",
+"type": "Region",
+"lat": 30.6598,
+"lon": 34.8356,
+"verses": 18,
+"appears": "Exodus 17 → 1 Chronicles 18 (7 chapters; sample: Exodus 17, Numbers 24, Deuteronomy 25, 1 Samuel 15, 1 Samuel 28, 2 Samuel 8, 1 Chronicles 18)"
+},
+{
+"slug": "asia_108",
+"source_name": "Asia",
+"type": "Region",
+"lat": 39.23,
+"lon": 32.73,
+"verses": 18,
+"appears": "Acts 2 → Revelation 1 (14 chapters; sample: Acts 2, Acts 6, Acts 16, Acts 19, Acts 20, Acts 21, Acts 24, Acts 27)"
+},
+{
+"slug": "nineveh_899",
+"source_name": "Nineveh",
+"type": "City",
+"lat": 36.3594,
+"lon": 43.1529,
+"verses": 18,
+"appears": "Genesis 10 → Luke 11 (12 chapters; sample: Genesis 10, 2 Kings 19, Isaiah 37, Jonah 1, Jonah 3, Jonah 4, Nahum 1, Nahum 2)"
+},
+{
+"slug": "sinai_1098",
+"source_name": "Sinai",
+"type": "Region",
+"lat": 28.5397,
+"lon": 33.9733,
+"verses": 18,
+"appears": "Exodus 16 → Psalms 68 (12 chapters; sample: Exodus 16, Exodus 19, Leviticus 7, Numbers 1, Numbers 3, Numbers 9, Numbers 10, Numbers 26)"
+},
+{
+"slug": "beth-shemesh_234",
+"source_name": "Beth-shemesh",
+"type": "City",
+"lat": 31.7527,
+"lon": 34.9766,
+"verses": 17,
+"appears": "Joshua 15 → 2 Chronicles 28 (8 chapters; sample: Joshua 15, Joshua 21, 1 Samuel 6, 1 Kings 4, 2 Kings 14, 1 Chronicles 6, 2 Chronicles 25, 2 Chronicles 28)"
+},
+{
+"slug": "ephesus_400",
+"source_name": "Ephesus",
+"type": "City",
+"lat": 37.9533,
+"lon": 27.3678,
+"verses": 17,
+"appears": "Acts 18 → Revelation 2 (11 chapters; sample: Acts 18, Acts 19, Acts 20, 1 Corinthians 15, 1 Corinthians 16, Ephesians 1, 1 Timothy 1, 2 Timothy 1)"
+},
+{
+"slug": "ramah_972",
+"source_name": "Ramah",
+"type": "City",
+"lat": 31.8964,
+"lon": 35.2017,
+"verses": 17,
+"appears": "Joshua 18 → Hosea 5 (13 chapters; sample: Joshua 18, Joshua 19, Judges 4, Judges 19, 1 Kings 15, 2 Chronicles 16, Ezra 2, Nehemiah 7)"
+},
+{
+"slug": "sheba_1067",
+"source_name": "Sheba",
+"type": "Region",
+"lat": 9.0227,
+"lon": 38.7468,
+"verses": 17,
+"appears": "Joshua 19 → Ezekiel 38 (9 chapters; sample: Joshua 19, 1 Kings 10, 2 Chronicles 9, Job 6, Psalms 72, Isaiah 60, Jeremiah 6, Ezekiel 27)"
+},
+{
+"slug": "caesarea_266",
+"source_name": "Caesarea",
+"type": "City",
+"lat": 32.4995,
+"lon": 34.8922,
+"verses": 16,
+"appears": "Acts 8 → Acts 25 (9 chapters; sample: Acts 8, Acts 9, Acts 10, Acts 11, Acts 12, Acts 18, Acts 21, Acts 23)"
+},
+{
+"slug": "capernaum_274",
+"source_name": "Capernaum",
+"type": "City",
+"lat": 32.8806,
+"lon": 35.5752,
+"verses": 16,
+"appears": "Matthew 4 → John 6 (13 chapters; sample: Matthew 4, Matthew 8, Matthew 11, Matthew 17, Mark 1, Mark 2, Mark 9, Luke 4)"
+},
+{
+"slug": "cush_312",
+"source_name": "Cush",
+"type": "Region",
+"lat": 21.9598,
+"lon": 31.3436,
+"verses": 16,
+"appears": "2 Kings 19 → Zephaniah 3 (14 chapters; sample: 2 Kings 19, Psalms 68, Psalms 87, Isaiah 11, Isaiah 18, Isaiah 20, Isaiah 37, Isaiah 43)"
+},
+{
+"slug": "horeb_576",
+"source_name": "Horeb",
+"type": "",
+"lat": 28.5397,
+"lon": 33.9733,
+"verses": 16,
+"appears": "Exodus 3 → Malachi 4 (13 chapters; sample: Exodus 3, Exodus 17, Deuteronomy 1, Deuteronomy 4, Deuteronomy 5, Deuteronomy 9, Deuteronomy 18, Deuteronomy 29)"
+},
+{
+"slug": "naphtali_1284",
+"source_name": "Naphtali",
+"type": "Region",
+"lat": 33.0183,
+"lon": 35.5692,
+"verses": 16,
+"appears": "Deuteronomy 34 → Matthew 4 (8 chapters; sample: Deuteronomy 34, Joshua 19, Joshua 20, 1 Kings 4, 1 Kings 15, 2 Kings 15, Isaiah 9, Matthew 4)"
+},
+{
+"slug": "river_244",
+"source_name": "Beyond the River",
+"type": "Region",
+"lat": 31.7774,
+"lon": 35.2349,
+"verses": 16,
+"appears": "Ezra 4 → Nehemiah 3 (7 chapters; sample: Ezra 4, Ezra 5, Ezra 6, Ezra 7, Ezra 8, Nehemiah 2, Nehemiah 3)"
+},
+{
+"slug": "zebulun_1289",
+"source_name": "Zebulun",
+"type": "Region",
+"lat": 32.7149,
+"lon": 35.2396,
+"verses": 16,
+"appears": "Genesis 49 → Matthew 4 (5 chapters; sample: Genesis 49, Joshua 19, Isaiah 9, Ezekiel 48, Matthew 4)"
+},
+{
+"slug": "anathoth_63",
+"source_name": "Anathoth",
+"type": "City",
+"lat": 31.8129,
+"lon": 35.2635,
+"verses": 15,
+"appears": "Joshua 21 → Jeremiah 32 (12 chapters; sample: Joshua 21, 1 Kings 2, 1 Chronicles 6, 1 Chronicles 27, Ezra 2, Nehemiah 7, Nehemiah 11, Isaiah 10)"
+},
+{
+"slug": "arabah_79",
+"source_name": "Arabah",
+"type": "",
+"lat": 32.0297,
+"lon": 35.521,
+"verses": 15,
+"appears": "Deuteronomy 1 → Jeremiah 52 (14 chapters; sample: Deuteronomy 1, Deuteronomy 2, Deuteronomy 3, Deuteronomy 4, Joshua 8, Joshua 11, Joshua 12, Joshua 18)"
+},
+{
+"slug": "ephraim-territory_1292",
+"source_name": "Ephraim (Territory)",
+"type": "Region",
+"lat": 32.0163,
+"lon": 35.2328,
+"verses": 15,
+"appears": "Deuteronomy 33 → Joshua 19 (4 chapters; sample: Deuteronomy 33, Joshua 16, Joshua 17, Joshua 19)"
+},
+{
+"slug": "kadesh_661",
+"source_name": "Kadesh",
+"type": "",
+"lat": 30.6877,
+"lon": 34.4948,
+"verses": 15,
+"appears": "Genesis 14 → Psalms 29 (10 chapters; sample: Genesis 14, Genesis 16, Genesis 20, Numbers 13, Numbers 20, Numbers 27, Numbers 33, Deuteronomy 1)"
+},
+{
+"slug": "keilah_681",
+"source_name": "Keilah",
+"type": "City",
+"lat": 31.6142,
+"lon": 35.0028,
+"verses": 15,
+"appears": "Joshua 15 → Nehemiah 3 (3 chapters; sample: Joshua 15, 1 Samuel 23, Nehemiah 3)"
+},
+{
+"slug": "kiriath-jearim_701",
+"source_name": "Kiriath-jearim",
+"type": "City",
+"lat": 31.7711,
+"lon": 34.9938,
+"verses": 15,
+"appears": "Joshua 9 → Jeremiah 26 (10 chapters; sample: Joshua 9, Joshua 15, Joshua 18, Judges 18, 1 Samuel 6, 1 Samuel 7, 1 Chronicles 13, 2 Chronicles 1)"
+},
+{
+"slug": "libnah_728",
+"source_name": "Libnah",
+"type": "City",
+"lat": 31.5649,
+"lon": 34.8467,
+"verses": 15,
+"appears": "Joshua 10 → Jeremiah 52 (12 chapters; sample: Joshua 10, Joshua 12, Joshua 15, Joshua 21, 2 Kings 8, 2 Kings 19, 2 Kings 23, 2 Kings 24)"
+},
+{
+"slug": "antioch_68",
+"source_name": "Antioch",
+"type": "City",
+"lat": 36.2023,
+"lon": 36.1624,
+"verses": 14,
+"appears": "Acts 6 → Galatians 2 (7 chapters; sample: Acts 6, Acts 11, Acts 13, Acts 14, Acts 15, Acts 18, Galatians 2)"
+}
+]

@@ -1,0 +1,914 @@
+[
+{
+"slug": "nathanael_2158",
+"source_name": "Nathanael",
+"gender": "M",
+"verses": 6,
+"appears": "John 1 → John 21 (2 chapters; sample: John 1, John 21)",
+"family_in_source": {}
+},
+{
+"slug": "obadiah_2215",
+"source_name": "Obadiah",
+"gender": "M",
+"verses": 6,
+"appears": "1 Kings 18 → 1 Kings 18 (1 chapters; sample: 1 Kings 18)",
+"family_in_source": {}
+},
+{
+"slug": "obed_2228",
+"source_name": "Obed",
+"gender": "M",
+"verses": 6,
+"appears": "Ruth 4 → Luke 3 (4 chapters; sample: Ruth 4, 1 Chronicles 2, Matthew 1, Luke 3)",
+"family_in_source": {
+"f": [
+"Boaz [boaz_519]"
+],
+"m": [
+"Ruth [ruth_2450]"
+],
+"c": [
+"Jesse [jesse_903]"
+]
+}
+},
+{
+"slug": "onan_2250",
+"source_name": "Onan",
+"gender": "M",
+"verses": 6,
+"appears": "Genesis 38 → 1 Chronicles 2 (4 chapters; sample: Genesis 38, Genesis 46, Numbers 26, 1 Chronicles 2)",
+"family_in_source": {
+"f": [
+"Judah [judah_1751]"
+],
+"m": [
+"Daughter of Shuah [daughter_of_shuah_993]"
+],
+"s": [
+"Er [er_1209]",
+"Shelah [shelah_2593]",
+"Pharez [pharez_2338]",
+"Zerah [zerah_2984]"
+]
+}
+},
+{
+"slug": "othniel_2259",
+"source_name": "Othniel",
+"gender": "M",
+"verses": 6,
+"appears": "Joshua 15 → 1 Chronicles 27 (5 chapters; sample: Joshua 15, Judges 1, Judges 3, 1 Chronicles 4, 1 Chronicles 27)",
+"family_in_source": {
+"f": [
+"Kenaz [kenaz_1778]"
+],
+"s": [
+"Seraiah [seraiah_2496]"
+],
+"p": [
+"Achsah [achsah_68]"
+],
+"c": [
+"Meonothai [meonothai_1998]",
+"Hathath [hathath_1453]"
+]
+}
+},
+{
+"slug": "phinehas_2350",
+"source_name": "Phinehas",
+"gender": "M",
+"verses": 6,
+"appears": "1 Samuel 1 → 1 Samuel 14 (4 chapters; sample: 1 Samuel 1, 1 Samuel 2, 1 Samuel 4, 1 Samuel 14)",
+"family_in_source": {
+"f": [
+"Eli [eli_1072]"
+],
+"s": [
+"Hophni [hophni_1550]"
+],
+"c": [
+"Ichabod [ichabod_1589]",
+"Ahitub [ahitub_163]"
+]
+}
+},
+{
+"slug": "priscilla_2370",
+"source_name": "Priscilla",
+"gender": "F",
+"verses": 6,
+"appears": "Acts 18 → 2 Timothy 4 (4 chapters; sample: Acts 18, Romans 16, 1 Corinthians 16, 2 Timothy 4)",
+"family_in_source": {
+"p": [
+"Aquila [aquila_279]"
+]
+}
+},
+{
+"slug": "ram_2391",
+"source_name": "Ram",
+"gender": "M",
+"verses": 6,
+"appears": "Ruth 4 → Luke 3 (4 chapters; sample: Ruth 4, 1 Chronicles 2, Matthew 1, Luke 3)",
+"family_in_source": {
+"f": [
+"Hezron [hezron_1520]"
+],
+"s": [
+"Ashur [ashur_342]",
+"Caleb [caleb_538]",
+"Jerahmeel [jerahmeel_843]",
+"Segub [segub_2484]"
+],
+"c": [
+"Amminadab [amminadab_228]"
+]
+}
+},
+{
+"slug": "reu_2428",
+"source_name": "Reu",
+"gender": "M",
+"verses": 6,
+"appears": "Genesis 11 → Luke 3 (3 chapters; sample: Genesis 11, 1 Chronicles 1, Luke 3)",
+"family_in_source": {
+"f": [
+"Peleg [peleg_2308]"
+],
+"c": [
+"Serug [serug_2503]"
+]
+}
+},
+{
+"slug": "reuel_2430",
+"source_name": "Reuel",
+"gender": "M",
+"verses": 6,
+"appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+"family_in_source": {
+"f": [
+"Esau [esau_1216]"
+],
+"m": [
+"Bashemath [bashemath_1887]"
+],
+"s": [
+"Jaalam [jaalam_662]",
+"Jeush [jeush_913]",
+"Eliphaz [eliphaz_1144]",
+"Korah [korah_1793]"
+],
+"c": [
+"Zerah [zerah_3043]",
+"Shammah [shammah_2538]",
+"Mizzah [mizzah_2101]",
+"Nahath [nahath_2146]"
+]
+}
+},
+{
+"slug": "salmon_2463",
+"source_name": "Salmon",
+"gender": "M",
+"verses": 6,
+"appears": "Ruth 4 → Luke 3 (4 chapters; sample: Ruth 4, 1 Chronicles 2, Matthew 1, Luke 3)",
+"family_in_source": {
+"f": [
+"Nahshon [nahshon_2144]"
+],
+"c": [
+"Boaz [boaz_519]"
+]
+}
+},
+{
+"slug": "serug_2503",
+"source_name": "Serug",
+"gender": "M",
+"verses": 6,
+"appears": "Genesis 11 → Luke 3 (3 chapters; sample: Genesis 11, 1 Chronicles 1, Luke 3)",
+"family_in_source": {
+"f": [
+"Reu [reu_2428]"
+],
+"c": [
+"Nahor [nahor_2142]"
+]
+}
+},
+{
+"slug": "shishak_2712",
+"source_name": "Shishak",
+"gender": "M",
+"verses": 6,
+"appears": "1 Kings 11 → 2 Chronicles 12 (3 chapters; sample: 1 Kings 11, 1 Kings 14, 2 Chronicles 12)",
+"family_in_source": {}
+},
+{
+"slug": "tilgath-pilneser_2376",
+"source_name": "Tilgath-pilneser",
+"gender": "M",
+"verses": 6,
+"appears": "2 Kings 15 → Hosea 10 (5 chapters; sample: 2 Kings 15, 1 Chronicles 5, 2 Chronicles 28, Hosea 5, Hosea 10)",
+"family_in_source": {}
+},
+{
+"slug": "zechariah_3016",
+"source_name": "Zechariah",
+"gender": "M",
+"verses": 6,
+"appears": "Ezra 5 → Zechariah 7 (4 chapters; sample: Ezra 5, Ezra 6, Zechariah 1, Zechariah 7)",
+"family_in_source": {
+"f": [
+"Berechiah [berechiah_475]"
+]
+}
+},
+{
+"slug": "zephaniah_3039",
+"source_name": "Zephaniah",
+"gender": "M",
+"verses": 6,
+"appears": "2 Kings 25 → Jeremiah 52 (5 chapters; sample: 2 Kings 25, Jeremiah 21, Jeremiah 29, Jeremiah 37, Jeremiah 52)",
+"family_in_source": {
+"f": [
+"Maaseiah [maaseiah_1866]"
+]
+}
+},
+{
+"slug": "abidan_22",
+"source_name": "Abidan",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 1 → Numbers 10 (4 chapters; sample: Numbers 1, Numbers 2, Numbers 7, Numbers 10)",
+"family_in_source": {
+"f": [
+"Gideoni [gideoni_1315]"
+]
+}
+},
+{
+"slug": "abiel_23",
+"source_name": "Abiel",
+"gender": "M",
+"verses": 5,
+"appears": "1 Samuel 9 → 1 Chronicles 9 (4 chapters; sample: 1 Samuel 9, 1 Samuel 14, 1 Chronicles 8, 1 Chronicles 9)",
+"family_in_source": {
+"f": [
+"Zeror [zeror_3052]"
+],
+"p": [
+"Maachah [maachah_1844]"
+],
+"c": [
+"Ner [ner_2181]",
+"Mikloth [mikloth_2078]",
+"Gedor [gedor_1292]",
+"Zacher [zacher_2972]",
+"Kish [kish_1784]",
+"Ahio [ahio_156]",
+"Baal [baal_575]",
+"Abdon [abdon_12]",
+"Nadab [nadab_2131]",
+"Zur [zur_3111]"
+]
+}
+},
+{
+"slug": "abinadab_641",
+"source_name": "Abinadab",
+"gender": "M",
+"verses": 5,
+"appears": "1 Samuel 14 → 1 Chronicles 10 (5 chapters; sample: 1 Samuel 14, 1 Samuel 31, 1 Chronicles 8, 1 Chronicles 9, 1 Chronicles 10)",
+"family_in_source": {
+"f": [
+"Saul [saul_2478]"
+],
+"m": [
+"Ahinoam [ahinoam_152]"
+],
+"s": [
+"Ish-bosheth [ish-bosheth_622]",
+"Jonathan [jonathan_1692]",
+"Malchi-shua [malchi-shua_1990]",
+"Merab [merab_2001]",
+"Michal [michal_2073]",
+"Armoni [armoni_309]",
+"Mephibosheth [mephibosheth_2000]"
+]
+}
+},
+{
+"slug": "abishag_49",
+"source_name": "Abishag",
+"gender": "F",
+"verses": 5,
+"appears": "1 Kings 1 → 1 Kings 2 (2 chapters; sample: 1 Kings 1, 1 Kings 2)",
+"family_in_source": {}
+},
+{
+"slug": "adoniram_102",
+"source_name": "Adoniram",
+"gender": "M",
+"verses": 5,
+"appears": "2 Samuel 20 → 2 Chronicles 10 (5 chapters; sample: 2 Samuel 20, 1 Kings 4, 1 Kings 5, 1 Kings 12, 2 Chronicles 10)",
+"family_in_source": {
+"f": [
+"Abda [abda_4]"
+]
+}
+},
+{
+"slug": "agag_109",
+"source_name": "Agag",
+"gender": "M",
+"verses": 5,
+"appears": "1 Samuel 15 → 1 Samuel 15 (1 chapters; sample: 1 Samuel 15)",
+"family_in_source": {}
+},
+{
+"slug": "ahiezer_131",
+"source_name": "Ahiezer",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 1 → Numbers 10 (4 chapters; sample: Numbers 1, Numbers 2, Numbers 7, Numbers 10)",
+"family_in_source": {
+"f": [
+"Ammishaddai [ammishaddai_230]"
+]
+}
+},
+{
+"slug": "ahilud_142",
+"source_name": "Ahilud",
+"gender": "M",
+"verses": 5,
+"appears": "2 Samuel 8 → 1 Chronicles 18 (4 chapters; sample: 2 Samuel 8, 2 Samuel 20, 1 Kings 4, 1 Chronicles 18)",
+"family_in_source": {
+"c": [
+"Jehoshaphat [jehoshaphat_806]",
+"Baana [baana_580]"
+]
+}
+},
+{
+"slug": "ahira_157",
+"source_name": "Ahira",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 1 → Numbers 10 (4 chapters; sample: Numbers 1, Numbers 2, Numbers 7, Numbers 10)",
+"family_in_source": {
+"f": [
+"Enan [enan_1190]"
+]
+}
+},
+{
+"slug": "ahitub_163",
+"source_name": "Ahitub",
+"gender": "M",
+"verses": 5,
+"appears": "1 Samuel 14 → 1 Samuel 22 (2 chapters; sample: 1 Samuel 14, 1 Samuel 22)",
+"family_in_source": {
+"f": [
+"Phinehas [phinehas_2350]"
+],
+"s": [
+"Ichabod [ichabod_1589]"
+],
+"c": [
+"Ahimelech [ahimelech_126]"
+]
+}
+},
+{
+"slug": "ahitub_164",
+"source_name": "Ahitub",
+"gender": "M",
+"verses": 5,
+"appears": "2 Samuel 8 → 1 Chronicles 18 (3 chapters; sample: 2 Samuel 8, 1 Chronicles 6, 1 Chronicles 18)",
+"family_in_source": {
+"f": [
+"Amariah [amariah_198]"
+],
+"c": [
+"Zadok [zadok_2973]"
+]
+}
+},
+{
+"slug": "aholiab_170",
+"source_name": "Aholiab",
+"gender": "M",
+"verses": 5,
+"appears": "Exodus 31 → Exodus 38 (4 chapters; sample: Exodus 31, Exodus 35, Exodus 36, Exodus 38)",
+"family_in_source": {
+"f": [
+"Ahisamach [ahisamach_159]"
+]
+}
+},
+{
+"slug": "aholibah_171",
+"source_name": "Aholibah",
+"gender": "F",
+"verses": 5,
+"appears": "Ezekiel 23 → Ezekiel 23 (1 chapters; sample: Ezekiel 23)",
+"family_in_source": {
+"m": [
+"Mother of Aholah and Aholibah [mother_of_aholah_and_aholibah_2109]"
+],
+"s": [
+"Aholah [aholah_169]"
+]
+}
+},
+{
+"slug": "aholibamah_1761",
+"source_name": "Aholibamah",
+"gender": "F",
+"verses": 5,
+"appears": "Genesis 26 → Genesis 36 (2 chapters; sample: Genesis 26, Genesis 36)",
+"family_in_source": {
+"f": [
+"Beeri [beeri_432]"
+],
+"m": [
+"Anah [anah_247]"
+],
+"p": [
+"Esau [esau_1216]"
+],
+"c": [
+"Jeush [jeush_913]",
+"Jaalam [jaalam_662]",
+"Korah [korah_1793]"
+]
+}
+},
+{
+"slug": "akkub_181",
+"source_name": "Akkub",
+"gender": "M",
+"verses": 5,
+"appears": "1 Chronicles 9 → Nehemiah 12 (5 chapters; sample: 1 Chronicles 9, Ezra 2, Nehemiah 7, Nehemiah 11, Nehemiah 12)",
+"family_in_source": {}
+},
+{
+"slug": "ammishaddai_230",
+"source_name": "Ammishaddai",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 1 → Numbers 10 (4 chapters; sample: Numbers 1, Numbers 2, Numbers 7, Numbers 10)",
+"family_in_source": {
+"c": [
+"Ahiezer [ahiezer_131]"
+]
+}
+},
+{
+"slug": "anah_248",
+"source_name": "Anah",
+"gender": "M",
+"verses": 5,
+"appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+"family_in_source": {
+"f": [
+"Seir [seir_2485]"
+],
+"s": [
+"Dishan [dishan_1015]",
+"Dishon [dishon_1016]",
+"Ezer [ezer_1238]",
+"Lotan [lotan_1831]",
+"Shobal [shobal_2719]",
+"Timna [timna_2860]",
+"Zibeon [zibeon_3062]"
+],
+"c": [
+"Aholibamah [aholibamah_172]",
+"Dishon [dishon_1017]"
+]
+}
+},
+{
+"slug": "ananias_259",
+"source_name": "Ananias",
+"gender": "M",
+"verses": 5,
+"appears": "Acts 9 → Acts 22 (2 chapters; sample: Acts 9, Acts 22)",
+"family_in_source": {}
+},
+{
+"slug": "aristarchus_306",
+"source_name": "Aristarchus",
+"gender": "M",
+"verses": 5,
+"appears": "Acts 19 → Philemon 1 (5 chapters; sample: Acts 19, Acts 20, Acts 27, Colossians 4, Philemon 1)",
+"family_in_source": {}
+},
+{
+"slug": "asshur_349",
+"source_name": "Asshur",
+"gender": "M",
+"verses": 5,
+"appears": "Genesis 10 → 1 Chronicles 1 (3 chapters; sample: Genesis 10, Numbers 24, 1 Chronicles 1)",
+"family_in_source": {
+"f": [
+"Shem [shem_2613]"
+],
+"s": [
+"Aram [aram_285]",
+"Arphaxad [arphaxad_312]",
+"Elam [elam_1049]",
+"Lud [lud_1834]"
+]
+}
+},
+{
+"slug": "azariah_545",
+"source_name": "Azariah",
+"gender": "M",
+"verses": 5,
+"appears": "Daniel 1 → Daniel 2 (2 chapters; sample: Daniel 1, Daniel 2)",
+"family_in_source": {}
+},
+{
+"slug": "benaiah_442",
+"source_name": "Benaiah",
+"gender": "M",
+"verses": 5,
+"appears": "1 Chronicles 15 → 1 Chronicles 16 (2 chapters; sample: 1 Chronicles 15, 1 Chronicles 16)",
+"family_in_source": {}
+},
+{
+"slug": "beriah_478",
+"source_name": "Beriah",
+"gender": "M",
+"verses": 5,
+"appears": "Genesis 46 → 1 Chronicles 7 (3 chapters; sample: Genesis 46, Numbers 26, 1 Chronicles 7)",
+"family_in_source": {
+"f": [
+"Asher [asher_337]"
+],
+"s": [
+"Isuah [isuah_640]",
+"Isui [isui_648]",
+"Imnah [imnah_1616]",
+"Serah [serah_2492]"
+],
+"c": [
+"Malchiel [malchiel_1908]",
+"Heber [heber_1469]"
+]
+}
+},
+{
+"slug": "bildad_499",
+"source_name": "Bildad",
+"gender": "M",
+"verses": 5,
+"appears": "Job 2 → Job 42 (5 chapters; sample: Job 2, Job 8, Job 18, Job 25, Job 42)",
+"family_in_source": {}
+},
+{
+"slug": "chedorlaomer_926",
+"source_name": "Chedorlaomer",
+"gender": "M",
+"verses": 5,
+"appears": "Genesis 14 → Genesis 14 (1 chapters; sample: Genesis 14)",
+"family_in_source": {}
+},
+{
+"slug": "cushi_964",
+"source_name": "Cushi",
+"gender": "M",
+"verses": 5,
+"appears": "2 Samuel 18 → 2 Samuel 18 (1 chapters; sample: 2 Samuel 18)",
+"family_in_source": {}
+},
+{
+"slug": "daughter_of_pharaoh_989",
+"source_name": "Daughter of Pharaoh",
+"gender": "F",
+"verses": 5,
+"appears": "1 Kings 3 → 2 Chronicles 8 (5 chapters; sample: 1 Kings 3, 1 Kings 7, 1 Kings 9, 1 Kings 11, 2 Chronicles 8)",
+"family_in_source": {
+"f": [
+"Pharaoh [pharaoh_2332]"
+]
+}
+},
+{
+"slug": "diana_1008",
+"source_name": "Diana",
+"gender": "F",
+"verses": 5,
+"appears": "Acts 19 → Acts 19 (1 chapters; sample: Acts 19)",
+"family_in_source": {}
+},
+{
+"slug": "dishan_1015",
+"source_name": "Dishan",
+"gender": "M",
+"verses": 5,
+"appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+"family_in_source": {
+"f": [
+"Seir [seir_2485]"
+],
+"s": [
+"Anah [anah_248]",
+"Dishon [dishon_1016]",
+"Ezer [ezer_1238]",
+"Lotan [lotan_1831]",
+"Shobal [shobal_2719]",
+"Timna [timna_2860]",
+"Zibeon [zibeon_3062]"
+],
+"c": [
+"Aran [aran_288]",
+"Uz [uz_2909]"
+]
+}
+},
+{
+"slug": "ebed_1027",
+"source_name": "Ebed",
+"gender": "M",
+"verses": 5,
+"appears": "Judges 9 → Judges 9 (1 chapters; sample: Judges 9)",
+"family_in_source": {
+"c": [
+"Gaal [gaal_1259]"
+]
+}
+},
+{
+"slug": "ebiasaph_19",
+"source_name": "Ebiasaph",
+"gender": "M",
+"verses": 5,
+"appears": "Exodus 6 → 1 Chronicles 26 (4 chapters; sample: Exodus 6, 1 Chronicles 6, 1 Chronicles 9, 1 Chronicles 26)",
+"family_in_source": {
+"f": [
+"Korah [korah_1795]"
+],
+"s": [
+"Assir [assir_351]",
+"Elkanah [elkanah_1167]"
+],
+"c": [
+"Kore [kore_1797]",
+"Assir [assir_352]"
+]
+}
+},
+{
+"slug": "elam_1052",
+"source_name": "Elam",
+"gender": "M",
+"verses": 5,
+"appears": "Ezra 2 → Nehemiah 7 (4 chapters; sample: Ezra 2, Ezra 8, Ezra 10, Nehemiah 7)",
+"family_in_source": {}
+},
+{
+"slug": "eliab_1074",
+"source_name": "Eliab",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 16 → Deuteronomy 11 (3 chapters; sample: Numbers 16, Numbers 26, Deuteronomy 11)",
+"family_in_source": {
+"f": [
+"Pallu [pallu_2325]"
+],
+"c": [
+"Nemuel [nemuel_2177]",
+"Abiram [abiram_47]",
+"Dathan [dathan_982]"
+]
+}
+},
+{
+"slug": "eliab_1075",
+"source_name": "Eliab",
+"gender": "M",
+"verses": 5,
+"appears": "1 Samuel 16 → 2 Chronicles 11 (4 chapters; sample: 1 Samuel 16, 1 Samuel 17, 1 Chronicles 2, 2 Chronicles 11)",
+"family_in_source": {
+"f": [
+"Jesse [jesse_903]"
+],
+"s": [
+"Abinadab [abinadab_44]",
+"David [david_994]",
+"Elihu [elihu_1129]",
+"Nethaneel [nethaneel_2189]",
+"Ozem [ozem_2260]",
+"Raddai [raddai_2387]",
+"Shammah [shammah_2700]"
+],
+"c": [
+"Abihail [abihail_31]"
+]
+}
+},
+{
+"slug": "eliasaph_1091",
+"source_name": "Eliasaph",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 1 → Numbers 10 (4 chapters; sample: Numbers 1, Numbers 2, Numbers 7, Numbers 10)",
+"family_in_source": {
+"f": [
+"Jethro [jethro_2431]"
+],
+"s": [
+"Hobab [hobab_1537]",
+"Zipporah [zipporah_3095]"
+]
+}
+},
+{
+"slug": "elizaphan_1189",
+"source_name": "Elizaphan",
+"gender": "M",
+"verses": 5,
+"appears": "Exodus 6 → 2 Chronicles 29 (5 chapters; sample: Exodus 6, Leviticus 10, Numbers 3, 1 Chronicles 15, 2 Chronicles 29)",
+"family_in_source": {
+"f": [
+"Uzziel [uzziel_2929]"
+],
+"s": [
+"Isshiah [isshiah_901]",
+"Michah [michah_2052]",
+"Mishael [mishael_2090]",
+"Zithri [zithri_3096]"
+]
+}
+},
+{
+"slug": "elizur_1166",
+"source_name": "Elizur",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 1 → Numbers 10 (4 chapters; sample: Numbers 1, Numbers 2, Numbers 7, Numbers 10)",
+"family_in_source": {
+"f": [
+"Shedeur [shedeur_2591]"
+]
+}
+},
+{
+"slug": "enan_1190",
+"source_name": "Enan",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 1 → Numbers 10 (4 chapters; sample: Numbers 1, Numbers 2, Numbers 7, Numbers 10)",
+"family_in_source": {
+"c": [
+"Ahira [ahira_157]"
+]
+}
+},
+{
+"slug": "ezer_1238",
+"source_name": "Ezer",
+"gender": "M",
+"verses": 5,
+"appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+"family_in_source": {
+"f": [
+"Seir [seir_2485]"
+],
+"s": [
+"Anah [anah_248]",
+"Dishan [dishan_1015]",
+"Dishon [dishon_1016]",
+"Lotan [lotan_1831]",
+"Shobal [shobal_2719]",
+"Timna [timna_2860]",
+"Zibeon [zibeon_3062]"
+],
+"c": [
+"Akan [akan_179]",
+"Bilhan [bilhan_503]",
+"Zavan [zavan_2944]"
+]
+}
+},
+{
+"slug": "gamaliel_1276",
+"source_name": "Gamaliel",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 1 → Numbers 10 (4 chapters; sample: Numbers 1, Numbers 2, Numbers 7, Numbers 10)",
+"family_in_source": {
+"f": [
+"Pedahzur [pedahzur_2291]"
+]
+}
+},
+{
+"slug": "gershom_1302",
+"source_name": "Gershom",
+"gender": "M",
+"verses": 5,
+"appears": "Exodus 2 → 1 Chronicles 26 (4 chapters; sample: Exodus 2, Exodus 18, 1 Chronicles 23, 1 Chronicles 26)",
+"family_in_source": {
+"f": [
+"Moses [moses_2108]"
+],
+"m": [
+"Zipporah [zipporah_3095]"
+],
+"s": [
+"Eliezer [eliezer_1114]"
+],
+"c": [
+"Shubael [shubael_2579]"
+]
+}
+},
+{
+"slug": "gideoni_1315",
+"source_name": "Gideoni",
+"gender": "M",
+"verses": 5,
+"appears": "Numbers 1 → Numbers 10 (4 chapters; sample: Numbers 1, Numbers 2, Numbers 7, Numbers 10)",
+"family_in_source": {
+"c": [
+"Abidan [abidan_22]"
+]
+}
+},
+{
+"slug": "gomer_1328",
+"source_name": "Gomer",
+"gender": "M",
+"verses": 5,
+"appears": "Genesis 10 → Ezekiel 38 (3 chapters; sample: Genesis 10, 1 Chronicles 1, Ezekiel 38)",
+"family_in_source": {
+"f": [
+"Japheth [japheth_726]"
+],
+"s": [
+"Javan [javan_744]",
+"Madai [madai_1880]",
+"Magog [magog_1882]",
+"Meshech [meshech_2012]",
+"Tiras [tiras_2864]",
+"Tubal [tubal_2883]"
+],
+"c": [
+"Riphath [riphath_2443]",
+"Togarmah [togarmah_2875]",
+"Ashkenaz [ashkenaz_338]"
+]
+}
+},
+{
+"slug": "hadad_1339",
+"source_name": "Hadad",
+"gender": "M",
+"verses": 5,
+"appears": "1 Kings 11 → 1 Kings 11 (1 chapters; sample: 1 Kings 11)",
+"family_in_source": {
+"c": [
+"Genubath [genubath_1297]"
+]
+}
+},
+{
+"slug": "haggith_1353",
+"source_name": "Haggith",
+"gender": "F",
+"verses": 5,
+"appears": "2 Samuel 3 → 1 Chronicles 3 (4 chapters; sample: 2 Samuel 3, 1 Kings 1, 1 Kings 2, 1 Chronicles 3)",
+"family_in_source": {
+"p": [
+"David [david_994]"
+],
+"c": [
+"Adonijah [adonijah_97]"
+]
+}
+},
+{
+"slug": "hammedatha_1362",
+"source_name": "Hammedatha",
+"gender": "M",
+"verses": 5,
+"appears": "Esther 3 → Esther 9 (3 chapters; sample: Esther 3, Esther 8, Esther 9)",
+"family_in_source": {
+"c": [
+"Haman [haman_1360]"
+]
+}
+}
+]
