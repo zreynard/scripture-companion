@@ -1,0 +1,1281 @@
+{
+  "Psalms": {
+    "line": "Psalms is Israel's collection of 150 inspired songs and prayers, used in worship to praise, lament, confess, and trust God.",
+    "more": [
+      "It is arranged in five books: Psalms 1–41, 42–72, 73–89, 90–106, and 107–150.",
+      "Each book closes with a doxology, and Psalm 150 concludes the whole collection.",
+      "David wrote many psalms; others are credited to Asaph, the sons of Korah, Solomon, Moses, Heman, and Ethan.",
+      "Its kinds include laments, hymns, thanksgivings, royal psalms, wisdom psalms, and the Songs of Ascents.",
+      "Recurring themes include God's kingship, his steadfast love, his law, the coming Messiah, and the righteous and the wicked.",
+      "The New Testament quotes the Psalms often, especially as fulfilled in Christ."
+    ],
+    "chapters": {
+      "1": {
+        "line": "A wisdom psalm contrasting the blessed person who delights in God's law with the wicked, who will perish.",
+        "more": [
+          "The righteous person avoids the counsel and ways of the wicked.",
+          "He is like a fruitful tree planted by streams of water.",
+          "The wicked are like chaff, but the Lord watches over the way of the righteous."
+        ]
+      },
+      "2": {
+        "line": "A royal psalm in which God laughs at rebellious nations and installs his anointed King on Zion.",
+        "more": [
+          "The nations and their rulers plot against the Lord and his anointed.",
+          "God declares the king to be his Son and promises him the nations.",
+          "Rulers are warned to serve the Lord and honor the Son.",
+          "The New Testament applies this psalm to Jesus."
+        ]
+      },
+      "3": {
+        "line": "David's morning prayer of trust when he fled from his son Absalom, surrounded by many enemies.",
+        "more": [
+          "Many foes claim that God will not rescue him.",
+          "David calls the Lord his shield, and he lies down and sleeps in safety.",
+          "He asks God to strike his enemies and declares that salvation belongs to the Lord."
+        ]
+      },
+      "4": {
+        "line": "David's evening prayer asking God to answer him, expressing quiet confidence in the Lord.",
+        "more": [
+          "He rebukes those who love vain words and seek after lies.",
+          "He urges others to be angry without sinning and to trust the Lord.",
+          "God's gladness exceeds abundant harvests, and David lies down in peace and safety."
+        ]
+      },
+      "5": {
+        "line": "David's morning prayer asking God for guidance and protection against deceitful enemies.",
+        "more": [
+          "God does not delight in wickedness, and the boastful cannot stand before him.",
+          "By God's steadfast love David will enter his house to worship.",
+          "He asks God to hold the wicked guilty and to shelter all who take refuge in him."
+        ]
+      },
+      "6": {
+        "line": "David's lament in severe distress, pleading for mercy and healing as he weeps through the night.",
+        "more": [
+          "He asks God not to rebuke him in anger.",
+          "His bones are troubled and his bed is soaked with tears.",
+          "He ends confident that the Lord has heard him and his enemies will be ashamed.",
+          "It is traditionally counted the first of seven penitential psalms."
+        ]
+      },
+      "7": {
+        "line": "David's plea for justice against false accusers, concerning Cush the Benjaminite, appealing to God as righteous judge.",
+        "more": [
+          "David declares his innocence and invites judgment if he is guilty.",
+          "He asks God to rise up and judge the peoples.",
+          "The wicked fall into the pit they dug, and David praises the Lord's righteousness."
+        ]
+      },
+      "8": {
+        "line": "David's hymn praising God's majestic name and marveling that he crowned humanity with glory and dominion.",
+        "more": [
+          "God's glory is above the heavens, and he ordains praise from infants.",
+          "Considering the vast heavens, David wonders why God cares for human beings.",
+          "God made humans rulers over his works; Hebrews applies this to Christ."
+        ]
+      },
+      "9": {
+        "line": "David's thanksgiving for God's righteous judgment of the nations and his care for the oppressed.",
+        "more": [
+          "David praises God for turning back and defeating his enemies.",
+          "The Lord reigns forever, judges with justice, and is a stronghold for the oppressed.",
+          "He asks God to rise up so the nations know they are only human.",
+          "Psalms 9 and 10 together form a loose acrostic."
+        ]
+      },
+      "10": {
+        "line": "A lament asking why God seems distant while the arrogant wicked prey on the helpless.",
+        "more": [
+          "The wicked boast, ignore God, and ambush the innocent.",
+          "The psalmist asks God to rise up and break the arm of the wicked.",
+          "He ends confident that the Lord is King forever and hears the afflicted."
+        ]
+      },
+      "11": {
+        "line": "David's song of trust, refusing advice to flee because the Lord reigns from heaven and judges justly.",
+        "more": [
+          "Advisers urge him to fly like a bird to the mountains.",
+          "The Lord sees all people, tests the righteous, and hates the lover of violence.",
+          "He will punish the wicked, and the upright will see his face."
+        ]
+      },
+      "12": {
+        "line": "David's lament over widespread falsehood, contrasting flattering human lips with God's pure and reliable words.",
+        "more": [
+          "The godly seem to have vanished, and people speak with deceit.",
+          "The Lord promises to rise up for the poor and needy.",
+          "His words are like silver refined seven times."
+        ]
+      },
+      "13": {
+        "line": "David's brief lament asking how long God will hide his face, moving from anguish to trust.",
+        "more": [
+          "He feels forgotten and sorrowful while his enemy prevails.",
+          "He asks God to answer lest he sleep the sleep of death.",
+          "He ends trusting God's steadfast love and singing of his goodness."
+        ]
+      },
+      "14": {
+        "line": "David's reflection on universal human corruption, beginning with the fool who says there is no God.",
+        "more": [
+          "God looks down from heaven and finds no one who does good.",
+          "Evildoers will be terrified because God is with the righteous.",
+          "It closes longing for Israel's salvation to come from Zion; Psalm 53 is nearly identical."
+        ]
+      },
+      "15": {
+        "line": "David's wisdom psalm asking who may dwell with the Lord and describing the person of integrity.",
+        "more": [
+          "Such a person walks blamelessly, speaks truth, and does not slander.",
+          "He honors those who fear the Lord and keeps his word even when it hurts.",
+          "He lends without interest, refuses bribes, and will never be shaken."
+        ]
+      },
+      "16": {
+        "line": "David's song of trust declaring the Lord his only good, his portion, and his security even in death.",
+        "more": [
+          "He delights in God's people and rejects other gods.",
+          "The Lord gives him a pleasant inheritance and counsels him.",
+          "God will not abandon him to Sheol; Peter and Paul apply this to Christ's resurrection."
+        ]
+      },
+      "17": {
+        "line": "David's prayer for vindication and protection from ruthless enemies, appealing to his own integrity.",
+        "more": [
+          "He asks God to hear his just cause and test his heart.",
+          "He prays to be kept as the apple of God's eye.",
+          "The wicked are satisfied with this life, but David will be satisfied seeing God's face."
+        ]
+      },
+      "18": {
+        "line": "David's royal thanksgiving after God delivered him from all his enemies and from the hand of Saul.",
+        "more": [
+          "David calls the Lord his rock, fortress, and deliverer.",
+          "God descends in storm and earthquake to draw him out of deep waters.",
+          "God equips David for battle and gives him victory over nations.",
+          "The psalm also appears in 2 Samuel 22."
+        ]
+      },
+      "19": {
+        "line": "David's hymn praising God's glory revealed in the heavens and in his perfect law.",
+        "more": [
+          "The skies proclaim God's work without words, and the sun runs its course.",
+          "The law is perfect, sure, right, and more desirable than gold.",
+          "David asks forgiveness for hidden faults and that his words and thoughts please God."
+        ]
+      },
+      "20": {
+        "line": "David's royal prayer asking God to grant the king victory in battle.",
+        "more": [
+          "The people pray that God will answer the king and fulfill his plans.",
+          "Some trust in chariots and horses, but Israel trusts the Lord's name.",
+          "It ends with a plea for the Lord to save the king."
+        ]
+      },
+      "21": {
+        "line": "David's royal thanksgiving for victories God has granted the king, with confidence in future triumphs.",
+        "more": [
+          "The king rejoices in God's strength and has received long life and glory.",
+          "He trusts in the steadfast love of the Most High.",
+          "God's hand will find and defeat all his enemies."
+        ]
+      },
+      "22": {
+        "line": "David's lament that begins with feeling forsaken by God and ends in worldwide praise for his deliverance.",
+        "more": [
+          "He is mocked, surrounded by enemies, and his hands and feet are pierced.",
+          "Enemies divide his garments and cast lots for his clothing.",
+          "He vows praise, and all nations and future generations will worship the Lord.",
+          "Jesus quoted its opening cry from the cross."
+        ]
+      },
+      "23": {
+        "line": "David's song of trust portraying the Lord as a shepherd who provides, guides, and protects.",
+        "more": [
+          "The Lord leads him to green pastures, still waters, and right paths.",
+          "Even in the darkest valley he fears no evil.",
+          "God prepares a table before his enemies, and goodness and mercy follow him forever."
+        ]
+      },
+      "24": {
+        "line": "David's processional hymn celebrating the Lord as Creator and as the King of glory entering his gates.",
+        "more": [
+          "The earth and everything in it belong to the Lord.",
+          "Only those with clean hands and a pure heart may ascend his hill.",
+          "The ancient gates are called to lift up their heads for the King of glory."
+        ]
+      },
+      "25": {
+        "line": "David's acrostic prayer for guidance, forgiveness, and protection, trusting the Lord's steadfast love.",
+        "more": [
+          "He asks God to teach him his paths and remember his mercy.",
+          "He confesses the sins of his youth and asks pardon for his great guilt.",
+          "The Lord guides the humble and confides in those who fear him.",
+          "He ends praying for Israel's redemption from all its troubles."
+        ]
+      },
+      "26": {
+        "line": "David's plea for vindication based on his integrity and his love for God's house.",
+        "more": [
+          "He invites God to test his heart and mind.",
+          "He refuses to sit with deceitful and wicked people.",
+          "He washes his hands in innocence and will bless the Lord in the assembly."
+        ]
+      },
+      "27": {
+        "line": "David's song of confidence in the Lord as his light and salvation, followed by a plea for help.",
+        "more": [
+          "With God as his stronghold, he fears no army.",
+          "His one desire is to dwell in the Lord's house and gaze on his beauty.",
+          "He asks God not to forsake him and ends urging others to wait for the Lord."
+        ]
+      },
+      "28": {
+        "line": "David's prayer for help against the wicked, ending in praise because God has heard him.",
+        "more": [
+          "He asks not to be dragged away with evildoers.",
+          "He prays that God will repay the wicked for their deeds.",
+          "The Lord is his strength and shield and the shepherd of his people."
+        ]
+      },
+      "29": {
+        "line": "David's hymn calling heavenly beings to praise the Lord, whose voice thunders over waters and forests.",
+        "more": [
+          "The Lord's voice breaks cedars, shakes the wilderness, and strips forests bare.",
+          "In his temple all cry out, \"Glory.\"",
+          "The Lord sits enthroned as King forever and blesses his people with peace."
+        ]
+      },
+      "30": {
+        "line": "David's thanksgiving, sung at the dedication of the house, praising God for rescuing him from near death.",
+        "more": [
+          "God lifted him from the depths and healed him.",
+          "God's anger lasts a moment, but his favor lasts a lifetime.",
+          "David had grown self-confident, then cried out when God hid his face.",
+          "God turned his mourning into dancing."
+        ]
+      },
+      "31": {
+        "line": "David's prayer for refuge amid enemies and distress, moving from lament to praise for God's goodness.",
+        "more": [
+          "He commits his spirit into God's hands, words Jesus spoke on the cross.",
+          "He is grieving, weakened, and scorned by neighbors and plotters.",
+          "He trusts that his times are in God's hand.",
+          "He ends urging the faithful to be strong and love the Lord."
+        ]
+      },
+      "32": {
+        "line": "David's wisdom psalm describing the blessing of forgiveness after confessing sin he had concealed.",
+        "more": [
+          "While he kept silent, his body wasted away under God's heavy hand.",
+          "When he confessed, God forgave the guilt of his sin.",
+          "God promises instruction, so people should not be stubborn like a mule.",
+          "Paul cites it in Romans on justification by faith."
+        ]
+      },
+      "33": {
+        "line": "A hymn calling the righteous to praise the Lord as Creator and sovereign over the nations.",
+        "more": [
+          "God made the heavens by his word and gathers the seas.",
+          "His plans stand forever while the plans of the nations fail.",
+          "Armies and horses cannot save, but God watches those who hope in his love."
+        ]
+      },
+      "34": {
+        "line": "David's acrostic thanksgiving after he feigned madness before Abimelech and escaped, inviting others to taste God's goodness.",
+        "more": [
+          "The Lord delivered him from all his fears and troubles.",
+          "The angel of the Lord encamps around those who fear him.",
+          "He teaches the fear of the Lord: guard the tongue and pursue peace.",
+          "The Lord is near the brokenhearted and keeps the bones of the righteous."
+        ]
+      },
+      "35": {
+        "line": "David's plea for God to fight against those who repay his kindness with false accusation and malice.",
+        "more": [
+          "He asks the Lord to take up shield and spear against his attackers.",
+          "He had mourned and fasted for these people when they were sick.",
+          "He vows to praise God in the great congregation when vindicated."
+        ]
+      },
+      "36": {
+        "line": "David's reflection contrasting the wicked's lack of fear of God with the vast steadfast love of the Lord.",
+        "more": [
+          "The wicked flatter themselves and plot evil on their beds.",
+          "God's love reaches the heavens, and his faithfulness reaches the clouds.",
+          "In God's light people see light, and David prays for continued protection."
+        ]
+      },
+      "37": {
+        "line": "David's acrostic wisdom psalm urging patient trust in the Lord rather than envy of prospering evildoers.",
+        "more": [
+          "The wicked will soon wither like grass.",
+          "Those who delight in the Lord and wait for him will inherit the land.",
+          "David has never seen the righteous forsaken.",
+          "The Lord upholds the righteous, and their future is peace."
+        ]
+      },
+      "38": {
+        "line": "David's penitential lament describing bodily suffering and isolation that he links to his own sin.",
+        "more": [
+          "God's arrows have struck him, and his iniquities overwhelm him.",
+          "Friends stand far off while enemies seek his life.",
+          "He stays silent before accusers and waits for the Lord.",
+          "He confesses his sin and asks God to hurry to help him."
+        ]
+      },
+      "39": {
+        "line": "David's lament on the brevity of life, praying for understanding and relief from God's discipline.",
+        "more": [
+          "He tried to stay silent, but his distress grew.",
+          "Each life is a mere breath, and people heap up wealth in vain.",
+          "His hope is in God, and he asks for deliverance from his transgressions."
+        ]
+      },
+      "40": {
+        "line": "David's thanksgiving for past deliverance that turns into a fresh plea for help in present trouble.",
+        "more": [
+          "God drew him from the miry pit and put a new song in his mouth.",
+          "God desires an obedient heart more than sacrifice; Hebrews applies this to Christ.",
+          "He has proclaimed God's righteousness in the great congregation.",
+          "Its closing plea reappears as Psalm 70."
+        ]
+      },
+      "41": {
+        "line": "David's prayer for healing and help against enemies, closing Book One with a doxology.",
+        "more": [
+          "Blessed is the one who considers the poor; the Lord sustains him in sickness.",
+          "Enemies hope he will die, and even a close friend has turned against him.",
+          "Jesus applied this betrayal by a trusted friend to Judas.",
+          "He trusts God to uphold him in his integrity."
+        ]
+      },
+      "42": {
+        "line": "A lament of the sons of Korah, longing for God like a thirsty deer while far from the temple.",
+        "more": [
+          "He remembers leading festive processions to God's house.",
+          "Enemies taunt him, asking where his God is.",
+          "A refrain asks why his soul is downcast and urges hope in God.",
+          "It opens Book Two and shares its refrain with Psalm 43."
+        ]
+      },
+      "43": {
+        "line": "A plea for vindication against deceitful people and for God's light to lead the psalmist back to worship.",
+        "more": [
+          "He asks God why he seems rejected.",
+          "He prays for God's light and truth to bring him to the altar.",
+          "It repeats the refrain of Psalm 42, urging hope in God."
+        ]
+      },
+      "44": {
+        "line": "A communal lament of the sons of Korah, recalling past victories and protesting a defeat suffered despite faithfulness.",
+        "more": [
+          "God gave the ancestors the land by his power, not by their swords.",
+          "Now Israel has been defeated, scattered, and mocked among the nations.",
+          "The people insist they have not forgotten God's covenant.",
+          "They ask God to awake and redeem them; Paul quotes it in Romans."
+        ]
+      },
+      "45": {
+        "line": "A royal wedding song of the sons of Korah, praising the king and addressing his bride.",
+        "more": [
+          "The king is handsome, victorious, and loves righteousness.",
+          "He is addressed as God with an eternal throne; Hebrews applies this to Christ.",
+          "The princess is told to forget her people and honor the king.",
+          "His sons will be princes, and his name remembered forever."
+        ]
+      },
+      "46": {
+        "line": "A song of the sons of Korah declaring God a refuge and strength amid upheaval in nature and nations.",
+        "more": [
+          "Though the earth shakes and seas roar, God's people will not fear.",
+          "A river makes glad the city of God, which shall not be moved.",
+          "God ends wars and commands all to be still and know that he is God."
+        ]
+      },
+      "47": {
+        "line": "A hymn of the sons of Korah calling all peoples to praise God as the great King over all the earth.",
+        "more": [
+          "God subdued nations and chose Israel's inheritance.",
+          "God has gone up with a shout and the sound of a trumpet.",
+          "The princes of the peoples gather as the people of Abraham's God."
+        ]
+      },
+      "48": {
+        "line": "A song of Zion by the sons of Korah, celebrating Jerusalem as the city of God, protected by him.",
+        "more": [
+          "Mount Zion is beautiful, the joy of all the earth.",
+          "Kings assembled against it but fled in terror.",
+          "Worshipers ponder God's love and are invited to walk around its towers.",
+          "This God will guide his people forever."
+        ]
+      },
+      "49": {
+        "line": "A wisdom psalm of the sons of Korah teaching that wealth cannot rescue anyone from death.",
+        "more": [
+          "No one can pay God a ransom for another's life.",
+          "Wise and foolish alike die and leave their wealth to others.",
+          "God will redeem the psalmist's soul from the power of Sheol.",
+          "People should not envy the rich, whose glory does not follow them down."
+        ]
+      },
+      "50": {
+        "line": "A psalm of Asaph portraying God summoning his people to judgment over empty worship and hypocrisy.",
+        "more": [
+          "God shines from Zion and calls heaven and earth as witnesses.",
+          "He does not need animal sacrifices, since every creature already belongs to him.",
+          "He desires thanksgiving, kept vows, and calling on him in trouble.",
+          "He rebukes the wicked who recite his covenant yet hate discipline."
+        ]
+      },
+      "51": {
+        "line": "David's prayer of repentance after the prophet Nathan confronted him over his adultery with Bathsheba.",
+        "more": [
+          "He asks God to blot out his transgressions and wash him clean.",
+          "He confesses that he has sinned against God and was sinful from birth.",
+          "He asks for a clean heart and a renewed, steadfast spirit.",
+          "God desires a broken and contrite heart, and David prays for Zion."
+        ]
+      },
+      "52": {
+        "line": "David's rebuke of Doeg the Edomite, who told Saul that David had come to Ahimelech's house.",
+        "more": [
+          "The boastful man loves evil and uses his tongue like a sharp razor.",
+          "God will tear him down and uproot him.",
+          "David, like a green olive tree, trusts God's steadfast love forever."
+        ]
+      },
+      "53": {
+        "line": "David's reflection on human corruption, nearly identical to Psalm 14, beginning with the fool who denies God.",
+        "more": [
+          "God looks down and finds no one who does good.",
+          "It adds that God scattered the bones of those who besieged his people.",
+          "It longs for Israel's salvation to come out of Zion."
+        ]
+      },
+      "54": {
+        "line": "David's prayer for rescue after the Ziphites told Saul that David was hiding among them.",
+        "more": [
+          "He asks God to save him by his name and vindicate him.",
+          "Ruthless strangers seek his life without regard for God.",
+          "He vows a freewill offering, confident God has delivered him."
+        ]
+      },
+      "55": {
+        "line": "David's lament over oppression and betrayal by a close companion, ending with trust in God.",
+        "more": [
+          "He wishes he had wings like a dove to fly away.",
+          "Violence and strife fill the city.",
+          "A friend he once worshiped with has broken his covenant.",
+          "He urges casting one's burden on the Lord, who sustains the righteous."
+        ]
+      },
+      "56": {
+        "line": "David's prayer of trust when the Philistines seized him in Gath.",
+        "more": [
+          "Enemies twist his words and watch his steps.",
+          "A refrain says that, trusting God, he need not fear what mortals can do.",
+          "God keeps count of his tossings and stores his tears.",
+          "He vows thank offerings for deliverance from death."
+        ]
+      },
+      "57": {
+        "line": "David's prayer for refuge when he fled from Saul into the cave, moving to confident praise.",
+        "more": [
+          "He takes refuge in the shadow of God's wings until danger passes.",
+          "He lies among lions whose teeth are spears and arrows.",
+          "His heart is steadfast, and he will awaken the dawn with praise.",
+          "A refrain asks God to be exalted above the heavens."
+        ]
+      },
+      "58": {
+        "line": "David's denunciation of unjust rulers, asking God to break their power and bring judgment.",
+        "more": [
+          "The rulers devise wrongs, and the wicked go astray from birth.",
+          "They are like deaf serpents that ignore the charmer.",
+          "He asks God to break their teeth and make them vanish.",
+          "The righteous will see that there is a God who judges on earth."
+        ]
+      },
+      "59": {
+        "line": "David's prayer for deliverance when Saul sent men to watch his house in order to kill him.",
+        "more": [
+          "He protests his innocence against bloodthirsty men.",
+          "Enemies prowl the city at evening like howling dogs.",
+          "God laughs at them, and David asks that they be consumed.",
+          "He sings of God as his fortress each morning."
+        ]
+      },
+      "60": {
+        "line": "David's communal lament after a setback during wars with Aram and Edom, appealing to God's promises.",
+        "more": [
+          "God seemed to reject his people and shake the land.",
+          "God declares his rule over Shechem, Gilead, Ephraim, Judah, Moab, and Edom.",
+          "Human help is worthless, but with God they will do valiantly.",
+          "Its second half reappears in Psalm 108."
+        ]
+      },
+      "61": {
+        "line": "David's prayer from the end of the earth, asking God to lead him to the rock higher than himself.",
+        "more": [
+          "God has been his refuge and strong tower.",
+          "He longs to dwell in God's tent forever.",
+          "He prays for the king's long life and vows daily praise."
+        ]
+      },
+      "62": {
+        "line": "David's song of trust, declaring that his soul waits in silence for God alone.",
+        "more": [
+          "God alone is his rock, salvation, and fortress.",
+          "Enemies plot with lies to topple him.",
+          "Humans are only a breath, and riches should not be trusted.",
+          "Power and steadfast love belong to God, who repays everyone."
+        ]
+      },
+      "63": {
+        "line": "David's song of longing for God, written while he was in the wilderness of Judah.",
+        "more": [
+          "His soul thirsts for God like a dry and weary land.",
+          "God's steadfast love is better than life.",
+          "He meditates on God through the night and clings to him.",
+          "Those who seek his life will fall, but the king will rejoice in God."
+        ]
+      },
+      "64": {
+        "line": "David's prayer for protection from enemies who plot in secret and wound with words.",
+        "more": [
+          "They sharpen tongues like swords and aim bitter words like arrows.",
+          "God will shoot his arrow at them, and they will stumble.",
+          "All will fear, and the righteous will rejoice in the Lord."
+        ]
+      },
+      "65": {
+        "line": "David's hymn praising God, who forgives, hears prayer, and blesses the land with abundant harvests.",
+        "more": [
+          "Praise awaits God in Zion, and he atones for transgressions.",
+          "He stills the roaring seas and the tumult of the peoples.",
+          "He waters the earth, and meadows and valleys shout for joy."
+        ]
+      },
+      "66": {
+        "line": "A hymn of praise for God's awesome deeds, moving from communal celebration to personal thanksgiving.",
+        "more": [
+          "All the earth is called to sing the glory of God's name.",
+          "He turned the sea into dry land and tested his people through trials.",
+          "The psalmist fulfills his vows with burnt offerings.",
+          "God heard his prayer because he did not cherish iniquity."
+        ]
+      },
+      "67": {
+        "line": "A communal prayer that God would bless his people so all nations would know his salvation and praise him.",
+        "more": [
+          "It echoes the priestly blessing, asking God's face to shine on them.",
+          "God judges the peoples with equity and guides the nations.",
+          "The earth has yielded its harvest, a sign of God's blessing."
+        ]
+      },
+      "68": {
+        "line": "David's triumphant hymn celebrating God's march from Sinai to Zion as warrior and protector of the vulnerable.",
+        "more": [
+          "God scatters his enemies and is a father to the fatherless.",
+          "He led his people through the wilderness and gave victory over kings.",
+          "He ascended on high leading captives; Paul applies this to Christ.",
+          "The kingdoms of the earth are called to sing to God."
+        ]
+      },
+      "69": {
+        "line": "David's lament as one sinking in deep waters, suffering reproach for God's sake and asking for rescue.",
+        "more": [
+          "Those who hate him without cause outnumber the hairs of his head.",
+          "Zeal for God's house consumes him, and he is given sour wine to drink.",
+          "He asks God to judge his persecutors.",
+          "He ends vowing praise, which pleases God more than sacrifice."
+        ]
+      },
+      "70": {
+        "line": "David's short, urgent plea for God to hurry to help him, repeating the close of Psalm 40.",
+        "more": [
+          "He asks that those seeking his life be put to shame.",
+          "Those who seek God should rejoice and say that God is great.",
+          "He is poor and needy and asks God not to delay."
+        ]
+      },
+      "71": {
+        "line": "An older believer's prayer for continued refuge, recalling God's faithfulness since youth.",
+        "more": [
+          "God has been his hope and trust since birth.",
+          "Enemies say God has forsaken him, and he asks God not to be far.",
+          "He asks not to be abandoned in old age until he declares God's power to the next generation.",
+          "He promises to praise God with harp and lyre."
+        ]
+      },
+      "72": {
+        "line": "A royal prayer of Solomon for the king's just and enduring reign, closing Book Two.",
+        "more": [
+          "The king will defend the poor and crush the oppressor.",
+          "His dominion will extend from sea to sea, and kings will bring tribute.",
+          "All nations will be blessed in him.",
+          "A doxology closes Book Two, noting that the prayers of David are ended."
+        ]
+      },
+      "73": {
+        "line": "A wisdom psalm of Asaph, troubled by the prosperity of the wicked until he entered God's sanctuary.",
+        "more": [
+          "He nearly slipped, envying the arrogant who seem free from trouble.",
+          "In the sanctuary he understood their sudden end.",
+          "He realized that God holds him and is his portion forever.",
+          "This psalm opens Book Three."
+        ]
+      },
+      "74": {
+        "line": "A communal lament of Asaph over enemies' destruction of the sanctuary, asking God to act.",
+        "more": [
+          "Enemies have burned the sanctuary, and no prophet remains.",
+          "The psalmist recalls God's power in dividing the sea and ordering creation.",
+          "He asks God to remember his covenant and defend his own cause."
+        ]
+      },
+      "75": {
+        "line": "A psalm of Asaph thanking God as the judge who sets the time to humble the wicked and exalt the righteous.",
+        "more": [
+          "God holds the earth's pillars steady when it totters.",
+          "He warns the boastful not to lift up their horn.",
+          "The wicked must drink the cup of God's judgment."
+        ]
+      },
+      "76": {
+        "line": "A song of Asaph celebrating God, who dwells in Zion and shattered the weapons of his enemies.",
+        "more": [
+          "Mighty warriors lay stunned at God's rebuke.",
+          "God rises to judge and to save the humble of the earth.",
+          "Even human wrath will praise him, and kings should bring him gifts."
+        ]
+      },
+      "77": {
+        "line": "A lament of Asaph that turns from troubled questioning to remembering God's mighty deeds at the exodus.",
+        "more": [
+          "In distress he cannot sleep and asks whether God has rejected him forever.",
+          "He resolves to remember God's wonders of old.",
+          "God led his people through the sea by the hand of Moses and Aaron."
+        ]
+      },
+      "78": {
+        "line": "A long historical psalm of Asaph recounting Israel's repeated rebellion and God's patient faithfulness, warning the next generation.",
+        "more": [
+          "Parents must teach children God's works so they will not repeat past failures.",
+          "Despite the exodus, manna, and water from the rock, Israel tested God.",
+          "God rejected Shiloh and Ephraim and chose Judah and Mount Zion.",
+          "He chose David to shepherd his people."
+        ]
+      },
+      "79": {
+        "line": "A communal lament of Asaph after the nations defiled the temple and laid Jerusalem in ruins.",
+        "more": [
+          "The bodies of God's servants lie unburied, and neighbors mock.",
+          "The people ask God not to hold former iniquities against them.",
+          "They pray for help for the glory of God's name.",
+          "They vow to give thanks forever."
+        ]
+      },
+      "80": {
+        "line": "A communal lament of Asaph asking the Shepherd of Israel to restore his people.",
+        "more": [
+          "A refrain asks God to make his face shine so they may be saved.",
+          "Israel is pictured as a vine brought out of Egypt and planted.",
+          "Now its walls are broken down and wild boars ravage it.",
+          "They ask God to strengthen the man at his right hand."
+        ]
+      },
+      "81": {
+        "line": "A festival psalm of Asaph calling Israel to worship and recounting God's plea for their obedience.",
+        "more": [
+          "The people sing and blow the trumpet at the new moon and the feast.",
+          "God recalls freeing them from slavery and testing them at Meribah.",
+          "He wishes Israel would listen, so he could subdue their enemies and feed them."
+        ]
+      },
+      "82": {
+        "line": "A psalm of Asaph in which God judges unjust rulers, called gods, for failing the weak.",
+        "more": [
+          "God stands in the divine council and rebukes partial judgment.",
+          "Rulers must defend the poor, fatherless, and needy.",
+          "Though called gods, they will die like men; Jesus cited this.",
+          "The psalm asks God to rise and judge the earth."
+        ]
+      },
+      "83": {
+        "line": "A communal prayer of Asaph asking God to act against a coalition of nations conspiring to destroy Israel.",
+        "more": [
+          "Edom, Moab, Ammon, Philistia, Tyre, Assyria, and others have allied together.",
+          "He asks God to treat them as he did Midian, Sisera, and Jabin.",
+          "He prays they will be shamed so that they seek the Lord's name."
+        ]
+      },
+      "84": {
+        "line": "A song of the sons of Korah expressing deep longing for God's dwelling place and the joy of worship there.",
+        "more": [
+          "Even sparrows find a home near God's altars.",
+          "Pilgrims on the way to Zion go from strength to strength.",
+          "A day in God's courts is better than a thousand elsewhere.",
+          "The Lord withholds no good thing from those who walk uprightly."
+        ]
+      },
+      "85": {
+        "line": "A communal prayer of the sons of Korah asking God to revive his people as he restored them before.",
+        "more": [
+          "God once forgave their iniquity and turned from his anger.",
+          "They ask him to show steadfast love and grant salvation.",
+          "Steadfast love and faithfulness meet, and righteousness and peace kiss."
+        ]
+      },
+      "86": {
+        "line": "David's prayer for mercy and help in trouble, grounded in God's unique greatness and steadfast love.",
+        "more": [
+          "He calls himself poor and needy and asks God to preserve his life.",
+          "All nations will come and worship God, who alone is God.",
+          "He asks for an undivided heart to fear God's name.",
+          "He asks for a sign of favor against insolent men."
+        ]
+      },
+      "87": {
+        "line": "A song of the sons of Korah celebrating Zion as the city where even foreign peoples are counted as born.",
+        "more": [
+          "The Lord loves Zion's gates more than all Jacob's dwellings.",
+          "Egypt, Babylon, Philistia, Tyre, and Cush are registered among those born there.",
+          "Singers and dancers say all their springs are in Zion."
+        ]
+      },
+      "88": {
+        "line": "A lament of Heman the Ezrahite, crying out to God from lifelong affliction and nearness to death.",
+        "more": [
+          "He feels counted among those in the pit, cut off from God.",
+          "Friends have been taken from him, and he is a horror to them.",
+          "He asks whether the dead can praise God.",
+          "It ends without resolution, with darkness as his closest companion."
+        ]
+      },
+      "89": {
+        "line": "Ethan the Ezrahite's psalm celebrating God's covenant with David, then lamenting its apparent collapse, closing Book Three.",
+        "more": [
+          "God's steadfast love and faithfulness are praised in heaven and creation.",
+          "God promised David an everlasting throne and offspring.",
+          "Yet the king's crown is defiled and his enemies rejoice.",
+          "The psalmist asks how long and appeals to God's oath."
+        ]
+      },
+      "90": {
+        "line": "A prayer of Moses contrasting God's eternity with human frailty and asking God for wisdom and favor.",
+        "more": [
+          "A thousand years are like a day in God's sight.",
+          "Human life is brief, troubled, and under God's wrath because of sin.",
+          "He asks God to teach them to number their days.",
+          "He asks God to establish the work of their hands; it opens Book Four."
+        ]
+      },
+      "91": {
+        "line": "A song of trust describing the security of those who dwell in the shelter of the Most High.",
+        "more": [
+          "God protects them from snares, plague, and terror by night.",
+          "He commands his angels to guard them; Satan quoted this to Jesus.",
+          "God promises to rescue, honor, and satisfy the one who loves him."
+        ]
+      },
+      "92": {
+        "line": "A thanksgiving song for the Sabbath, praising God's works and the flourishing of the righteous.",
+        "more": [
+          "It is good to declare God's love in the morning and faithfulness at night.",
+          "The wicked sprout like grass but are destroyed forever.",
+          "The righteous flourish like palm trees and bear fruit in old age."
+        ]
+      },
+      "93": {
+        "line": "A hymn proclaiming that the Lord reigns, robed in majesty and mightier than the roaring floods.",
+        "more": [
+          "The world is established, and God's throne is from eternity.",
+          "The floods lift up their voice, but the Lord on high is mightier.",
+          "His decrees are trustworthy, and holiness befits his house."
+        ]
+      },
+      "94": {
+        "line": "A plea for God, the judge of the earth, to repay the proud who crush his people.",
+        "more": [
+          "The wicked kill the widow and assume God does not see.",
+          "The one who made the ear and eye surely hears and sees.",
+          "Blessed is the one God disciplines and teaches from his law.",
+          "When the psalmist's foot slipped, God's steadfast love held him up."
+        ]
+      },
+      "95": {
+        "line": "A call to worship the Lord as great King and Creator, with a warning against hardened hearts.",
+        "more": [
+          "The people are invited to sing, give thanks, and kneel before their Maker.",
+          "They are the people of his pasture and the sheep of his hand.",
+          "God warns them not to harden hearts as at Meribah; Hebrews expounds this."
+        ]
+      },
+      "96": {
+        "line": "A hymn calling all the earth to sing a new song to the Lord, who comes to judge.",
+        "more": [
+          "The gods of the nations are idols, but the Lord made the heavens.",
+          "The families of the peoples are called to bring offerings and worship.",
+          "Creation rejoices because God will judge the world in righteousness.",
+          "Much of it also appears in 1 Chronicles 16."
+        ]
+      },
+      "97": {
+        "line": "A hymn proclaiming the Lord's reign, revealed in fire and lightning, bringing joy to the righteous.",
+        "more": [
+          "Clouds, fire, and lightning surround him, and mountains melt like wax.",
+          "Worshipers of idols are put to shame.",
+          "God guards his faithful ones, and light dawns for the righteous."
+        ]
+      },
+      "98": {
+        "line": "A hymn calling for a new song because the Lord has made his salvation known to the nations.",
+        "more": [
+          "He has remembered his steadfast love and faithfulness to Israel.",
+          "The earth is called to praise with lyre, trumpets, and horn.",
+          "Seas, rivers, and hills rejoice before the Lord, who comes to judge."
+        ]
+      },
+      "99": {
+        "line": "A hymn exalting the Lord as holy King, enthroned above the cherubim.",
+        "more": [
+          "A refrain declares that he is holy.",
+          "He loves justice and has established equity in Jacob.",
+          "Moses, Aaron, and Samuel called on him, and he answered.",
+          "He forgave his people yet also avenged their wrongdoings."
+        ]
+      },
+      "100": {
+        "line": "A short thanksgiving hymn calling all the earth to serve the Lord with gladness.",
+        "more": [
+          "The Lord is God, who made his people the sheep of his pasture.",
+          "Worshipers enter his gates with thanksgiving and his courts with praise.",
+          "The Lord is good, and his love and faithfulness endure forever."
+        ]
+      },
+      "101": {
+        "line": "David's royal pledge to rule with integrity and to remove wickedness from his house and land.",
+        "more": [
+          "He resolves to walk blamelessly and set nothing worthless before him.",
+          "He will not tolerate slanderers or the proud.",
+          "He will favor the faithful in the land and cut off evildoers."
+        ]
+      },
+      "102": {
+        "line": "A prayer of an afflicted person pouring out his complaint, contrasting his fading life with God's eternal reign.",
+        "more": [
+          "His days vanish like smoke, and he is like a lonely bird.",
+          "God will arise and have pity on Zion, and nations will fear him.",
+          "The heavens will wear out, but God remains; Hebrews applies this to Christ."
+        ]
+      },
+      "103": {
+        "line": "David's hymn calling his soul to bless the Lord for his forgiveness, compassion, and steadfast love.",
+        "more": [
+          "God forgives iniquity, heals diseases, and redeems life from the pit.",
+          "He removes transgressions as far as the east is from the west.",
+          "Human days are like grass, but God's love endures.",
+          "Angels and all his works are called to bless the Lord."
+        ]
+      },
+      "104": {
+        "line": "A creation hymn praising the Lord for making and sustaining the world and all its creatures.",
+        "more": [
+          "God stretches out the heavens and sets the earth on its foundations.",
+          "He provides water, food, and seasons for animals and people.",
+          "All creatures look to him and depend on his breath.",
+          "The psalmist prays that sinners will vanish and blesses the Lord."
+        ]
+      },
+      "105": {
+        "line": "A historical hymn praising God's faithfulness to his covenant with Abraham, from the patriarchs to the conquest.",
+        "more": [
+          "God protected the patriarchs as they wandered among nations.",
+          "He sent Joseph ahead, then Moses and Aaron with plagues on Egypt.",
+          "He led Israel out and provided quail, bread from heaven, and water.",
+          "He gave them the land so they would keep his laws."
+        ]
+      },
+      "106": {
+        "line": "A historical psalm confessing Israel's persistent rebellion and God's mercy, closing Book Four.",
+        "more": [
+          "Israel forgot God's works at the sea and craved food in the wilderness.",
+          "They made a golden calf, joined Baal of Peor, and adopted Canaanite idolatry.",
+          "God disciplined them but remembered his covenant.",
+          "They pray to be gathered from the nations, and a doxology follows."
+        ]
+      },
+      "107": {
+        "line": "A thanksgiving psalm calling the redeemed to praise God for rescuing people from various kinds of distress.",
+        "more": [
+          "Wanderers, prisoners, the sick, and sailors cried out and were delivered.",
+          "Each scene closes with thanks for God's steadfast love and wonderful works.",
+          "God turns deserts into pools and lifts up the needy.",
+          "It opens Book Five."
+        ]
+      },
+      "108": {
+        "line": "David's song of praise and plea for victory, combining parts of Psalms 57 and 60.",
+        "more": [
+          "His heart is steadfast, and he will awaken the dawn.",
+          "God declares his rule over Israel's tribes and neighboring nations.",
+          "Human help is worthless, but with God they will do valiantly."
+        ]
+      },
+      "109": {
+        "line": "David's plea for God to judge a slanderous enemy who repaid his love with hatred.",
+        "more": [
+          "He calls for severe judgment on the accuser and his household.",
+          "Peter applied part of it to Judas.",
+          "He describes himself as poor, needy, and fading like a shadow.",
+          "He trusts God, who stands at the right hand of the needy."
+        ]
+      },
+      "110": {
+        "line": "David's royal psalm in which the Lord enthrones David's Lord as King and eternal priest like Melchizedek.",
+        "more": [
+          "The Lord tells David's Lord to sit at his right hand.",
+          "He will rule from Zion over his enemies with willing troops.",
+          "He will judge the nations and shatter kings.",
+          "Jesus and the book of Hebrews apply this psalm to Christ."
+        ]
+      },
+      "111": {
+        "line": "An acrostic hymn praising the Lord's great works, provision, and covenant faithfulness.",
+        "more": [
+          "His works are majestic, and his righteousness endures forever.",
+          "He provides food for those who fear him and sent redemption.",
+          "The fear of the Lord is the beginning of wisdom."
+        ]
+      },
+      "112": {
+        "line": "An acrostic wisdom psalm describing the blessings of the person who fears the Lord.",
+        "more": [
+          "His descendants will be mighty and his household prosperous.",
+          "He is gracious, generous, and just.",
+          "He does not fear bad news, but the wicked are vexed and vanish."
+        ]
+      },
+      "113": {
+        "line": "A hymn praising the Lord, who is exalted above the heavens yet stoops to lift the lowly.",
+        "more": [
+          "His name is praised from the rising of the sun to its setting.",
+          "He raises the poor from the dust to sit with princes.",
+          "He gives the barren woman a home; it begins the Hallel sung at Passover."
+        ]
+      },
+      "114": {
+        "line": "A hymn recalling the exodus, when sea, river, and mountains reacted to God's presence.",
+        "more": [
+          "Judah became God's sanctuary and Israel his dominion.",
+          "The sea fled, the Jordan turned back, and mountains skipped like rams.",
+          "The earth trembles before God, who turned rock into springs."
+        ]
+      },
+      "115": {
+        "line": "A hymn giving glory to God's name and contrasting the living Lord with lifeless idols.",
+        "more": [
+          "Idols have mouths, eyes, and ears but cannot speak, see, or hear.",
+          "Israel, Aaron's house, and all who fear the Lord are urged to trust him.",
+          "The Lord will bless his people, and they will praise him forever."
+        ]
+      },
+      "116": {
+        "line": "A personal thanksgiving for God's rescue from death, with vows to praise him publicly.",
+        "more": [
+          "The snares of death encompassed him, and he called on the Lord.",
+          "God delivered his soul from death and his eyes from tears.",
+          "The death of his faithful ones is precious to the Lord.",
+          "He will lift the cup of salvation and pay his vows in the temple."
+        ]
+      },
+      "117": {
+        "line": "The shortest psalm, calling all nations to praise the Lord.",
+        "more": [
+          "God's steadfast love toward his people is great, and his faithfulness endures forever.",
+          "Paul quotes it to show that Gentiles praise God."
+        ]
+      },
+      "118": {
+        "line": "A thanksgiving psalm celebrating God's enduring love and deliverance, sung in procession to the temple.",
+        "more": [
+          "Israel, Aaron's house, and all who fear God declare that his love endures forever.",
+          "Surrounded by nations, the psalmist was saved by the Lord's right hand.",
+          "The rejected stone has become the cornerstone; Jesus applied this to himself.",
+          "Crowds greeted Jesus with its words when he entered Jerusalem."
+        ]
+      },
+      "119": {
+        "line": "The longest psalm, an acrostic celebrating God's word as the source of life, guidance, and delight.",
+        "more": [
+          "Its 22 stanzas each have eight lines beginning with the same Hebrew letter.",
+          "Nearly every line names God's word with terms like law, statutes, precepts, and promise.",
+          "The psalmist faces affliction and scorn but clings to God's commands.",
+          "God's word is a lamp to his feet and a light to his path."
+        ]
+      },
+      "120": {
+        "line": "The first Song of Ascents, a lament of one living among deceitful and hostile people.",
+        "more": [
+          "He asks to be delivered from lying lips and a deceitful tongue.",
+          "He has dwelt too long among those who hate peace.",
+          "He is for peace, but they are for war."
+        ]
+      },
+      "121": {
+        "line": "A Song of Ascents affirming that the Lord, Maker of heaven and earth, keeps his people.",
+        "more": [
+          "The psalmist lifts his eyes to the hills and finds help from the Lord.",
+          "The Lord who keeps Israel neither slumbers nor sleeps.",
+          "He will keep their going out and coming in forever."
+        ]
+      },
+      "122": {
+        "line": "David's Song of Ascents expressing joy at going to Jerusalem and praying for its peace.",
+        "more": [
+          "Pilgrims rejoice to stand within Jerusalem's gates.",
+          "The tribes go up there to give thanks, and thrones of judgment are set there.",
+          "They pray for peace within its walls for the sake of God's house."
+        ]
+      },
+      "123": {
+        "line": "A Song of Ascents in which God's people look to him for mercy amid contempt.",
+        "more": [
+          "Their eyes look to God as servants look to their master's hand.",
+          "They have endured much scorn from the proud.",
+          "They plead repeatedly for God's mercy."
+        ]
+      },
+      "124": {
+        "line": "David's Song of Ascents thanking God that without the Lord on their side, Israel would have been destroyed.",
+        "more": [
+          "Enemies would have swallowed them alive like a flood.",
+          "They escaped like a bird from the fowler's snare.",
+          "Their help is in the name of the Lord, Maker of heaven and earth."
+        ]
+      },
+      "125": {
+        "line": "A Song of Ascents declaring that those who trust in the Lord are secure like Mount Zion.",
+        "more": [
+          "As mountains surround Jerusalem, the Lord surrounds his people.",
+          "The scepter of wickedness will not rest on the land of the righteous.",
+          "It asks God to do good to the upright and ends with peace on Israel."
+        ]
+      },
+      "126": {
+        "line": "A Song of Ascents recalling joy when God restored Zion's fortunes and praying for renewed restoration.",
+        "more": [
+          "Their mouths were filled with laughter, and the nations noticed God's work.",
+          "They ask God to restore them like streams in the Negev.",
+          "Those who sow in tears will reap with shouts of joy."
+        ]
+      },
+      "127": {
+        "line": "Solomon's Song of Ascents teaching that human labor is futile unless the Lord builds and guards.",
+        "more": [
+          "Rising early and toiling anxiously accomplish nothing without God.",
+          "He gives sleep to his beloved.",
+          "Children are a heritage from the Lord, like arrows in a warrior's hand."
+        ]
+      },
+      "128": {
+        "line": "A Song of Ascents describing the blessing on the household of one who fears the Lord.",
+        "more": [
+          "He will eat the fruit of his labor.",
+          "His wife will be like a fruitful vine and his children like olive shoots.",
+          "It closes with blessing from Zion and peace on Israel."
+        ]
+      },
+      "129": {
+        "line": "A Song of Ascents recalling Israel's long affliction and God's deliverance, praying for the defeat of its enemies.",
+        "more": [
+          "Oppressors plowed Israel's back but did not prevail.",
+          "The Lord has cut the cords of the wicked.",
+          "Those who hate Zion will wither like grass on rooftops."
+        ]
+      },
+      "130": {
+        "line": "A Song of Ascents crying to God from the depths for forgiveness and waiting in hope.",
+        "more": [
+          "If God kept a record of sins, no one could stand.",
+          "With him there is forgiveness, so that he may be feared.",
+          "The psalmist waits for the Lord more than watchmen wait for morning.",
+          "Israel is urged to hope in the Lord, who will redeem them."
+        ]
+      },
+      "131": {
+        "line": "David's short Song of Ascents expressing humble, quiet trust in the Lord.",
+        "more": [
+          "His heart is not proud, and he does not pursue things too great for him.",
+          "He has calmed his soul like a weaned child with its mother.",
+          "He calls Israel to hope in the Lord forever."
+        ]
+      },
+      "132": {
+        "line": "A Song of Ascents recalling David's devotion to God's dwelling and God's oath to David's dynasty.",
+        "more": [
+          "David vowed not to rest until he found a place for the Lord.",
+          "The ark is brought to its resting place in Zion.",
+          "God swore to set David's offspring on his throne.",
+          "God chose Zion and will make a horn sprout for David."
+        ]
+      },
+      "133": {
+        "line": "David's Song of Ascents celebrating the goodness of unity among God's people.",
+        "more": [
+          "Unity is like precious oil running down Aaron's beard.",
+          "It is like the dew of Hermon falling on the mountains of Zion.",
+          "There the Lord commanded the blessing of life forevermore."
+        ]
+      },
+      "134": {
+        "line": "The final Song of Ascents, calling the Lord's servants who serve in the temple at night to bless him.",
+        "more": [
+          "The servants lift their hands in the sanctuary and bless the Lord.",
+          "It ends with a blessing from the Lord, Maker of heaven and earth."
+        ]
+      },
+      "135": {
+        "line": "A hymn praising the Lord for choosing Israel, ruling creation, and surpassing all idols.",
+        "more": [
+          "God chose Jacob as his treasured possession.",
+          "He controls clouds, lightning, and wind.",
+          "He struck Egypt's firstborn and defeated kings to give Israel the land.",
+          "Idols are lifeless, but Israel blesses the Lord."
+        ]
+      },
+      "136": {
+        "line": "A litany of thanksgiving in which every line ends by declaring that God's steadfast love endures forever.",
+        "more": [
+          "It thanks God as Creator of the heavens, the great lights, and the earth.",
+          "It recounts the exodus, the Red Sea crossing, and the wilderness journey.",
+          "It recalls victories over Sihon and Og and the gift of the land.",
+          "God remembers the lowly and gives food to all flesh."
+        ]
+      },
+      "137": {
+        "line": "A lament of exiles by the rivers of Babylon, mourning Zion and calling for judgment on their oppressors.",
+        "more": [
+          "Captors demanded songs of Zion, and the exiles hung up their lyres.",
+          "The psalmist vows never to forget Jerusalem.",
+          "He asks God to remember Edom's role and pronounces judgment on Babylon."
+        ]
+      },
+      "138": {
+        "line": "David's wholehearted thanksgiving for God's answer to prayer and his faithful love.",
+        "more": [
+          "He praises God before the gods and bows toward the temple.",
+          "All the kings of the earth will praise the Lord.",
+          "God regards the lowly and will fulfill his purpose for David."
+        ]
+      },
+      "139": {
+        "line": "David's meditation on God's complete knowledge and presence, ending with a request to be searched.",
+        "more": [
+          "God knows his thoughts, words, and ways.",
+          "There is nowhere David can flee from God's presence.",
+          "God formed him in the womb and wrote his days in a book.",
+          "He rejects the wicked and asks God to lead him in the everlasting way."
+        ]
+      },
+      "140": {
+        "line": "David's prayer for deliverance from violent and slanderous men who set traps for him.",
+        "more": [
+          "Their tongues are sharp, and venom is under their lips.",
+          "He asks God to frustrate their plans.",
+          "The Lord upholds the cause of the afflicted."
+        ]
+      },
+      "141": {
+        "line": "David's evening prayer for help to resist evil in speech and companionship.",
+        "more": [
+          "He asks that his prayer rise like incense.",
+          "He asks God to guard his mouth and keep him from the feasts of evildoers.",
+          "He welcomes rebuke from the righteous and asks rescue from traps."
+        ]
+      },
+      "142": {
+        "line": "David's prayer when he was in the cave, crying out as one alone and pursued.",
+        "more": [
+          "No one cares for him, and he has no refuge.",
+          "The Lord is his refuge and portion in the land of the living.",
+          "He asks release from prison so he can praise God's name."
+        ]
+      },
+      "143": {
+        "line": "David's plea for mercy and guidance, asking God not to enter into judgment with him.",
+        "more": [
+          "No living person is righteous before God.",
+          "Enemies have crushed him, and he remembers God's past works.",
+          "He stretches out his hands like thirsty ground.",
+          "He asks God to teach him his will and lead him on level ground."
+        ]
+      },
+      "144": {
+        "line": "David's royal prayer praising God who trains him for battle and asking rescue, ending with national blessing.",
+        "more": [
+          "God is his rock, fortress, and shield.",
+          "Humans are like a breath, so he asks God to come down and rescue him.",
+          "He sings a new song to the God who gives victory to kings.",
+          "Blessed are the people whose God is the Lord."
+        ]
+      },
+      "145": {
+        "line": "David's acrostic hymn praising God's greatness, goodness, and everlasting kingdom.",
+        "more": [
+          "One generation commends God's works to another.",
+          "The Lord is gracious, merciful, slow to anger, and good to all.",
+          "His kingdom is everlasting, and he upholds all who fall.",
+          "He is near to all who call on him in truth."
+        ]
+      },
+      "146": {
+        "line": "A hymn urging trust in the Lord rather than mortal princes, opening the final five Hallelujah psalms.",
+        "more": [
+          "When rulers die, their plans perish with them.",
+          "The Lord made heaven and earth and keeps faith forever.",
+          "He frees prisoners, gives sight to the blind, and upholds the widow and orphan.",
+          "The Lord will reign forever."
+        ]
+      },
+      "147": {
+        "line": "A hymn praising God for restoring Jerusalem, caring for creation, and giving his word to Israel.",
+        "more": [
+          "He gathers exiles and heals the brokenhearted.",
+          "He counts the stars, sends rain, and feeds animals.",
+          "He delights in those who fear him, not in the strength of horses.",
+          "He has given his statutes to Israel alone."
+        ]
+      },
+      "148": {
+        "line": "A hymn summoning all creation, from the heavens to the earth, to praise the Lord.",
+        "more": [
+          "Angels, sun, moon, and stars praise him because he created them.",
+          "Sea creatures, weather, mountains, animals, kings, and peoples join the praise.",
+          "God has raised up a horn for his people Israel."
+        ]
+      },
+      "149": {
+        "line": "A hymn calling Israel to praise its King with song and dance and to carry out his judgment on the nations.",
+        "more": [
+          "The Lord takes pleasure in his people and adorns the humble with salvation.",
+          "The faithful have high praises of God in their mouths.",
+          "With swords in hand, they execute God's written judgment on kings and nations."
+        ]
+      },
+      "150": {
+        "line": "The concluding hymn of Psalms, calling everything that breathes to praise the Lord with every instrument.",
+        "more": [
+          "God is praised in his sanctuary and in his mighty heavens.",
+          "He is praised for his mighty deeds and surpassing greatness.",
+          "Trumpet, harp, lyre, tambourine, strings, pipe, and cymbals join the praise.",
+          "It closes Book Five and the whole book of Psalms."
+        ]
+      }
+    }
+  }
+}
