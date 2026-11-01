@@ -20,7 +20,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 36  # bump on every shipped build; also busts the service-worker cache
+VERSION = 37  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -218,7 +218,7 @@ def main():
     ptw = sorted([i for i in items.values() if i["tr"] == "devotional"], key=lambda i: i["date"])
     data = {"built": __import__("datetime").date.today().isoformat(), "items": items, "books": books,
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw]}
-    html = TEMPLATE.replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
+    html = TEMPLATE.replace("__VERSION__", str(VERSION)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
     n_audio = sum(1 for i in items.values() if i["audio"])
@@ -231,6 +231,7 @@ def write_site(html: str):
     import shutil
     os.makedirs(SITE, exist_ok=True)
     open(os.path.join(SITE, "index.html"), "w", encoding="utf-8").write(html)
+    open(os.path.join(SITE, "version.txt"), "w").write(str(VERSION))
     for f in os.listdir(PWA):
         if f == "sw.js":
             src = open(os.path.join(PWA, f), encoding="utf-8").read().replace("__VERSION__", str(VERSION))
@@ -564,6 +565,8 @@ function wire(){document.querySelectorAll('details[data-k]').forEach(d=>d.ontogg
 decorate.first=true;render();let lastW=innerWidth;window.addEventListener('resize',()=>{if(innerWidth===lastW)return;lastW=innerWidth;decorate.first=true;render()});
 /* home-screen app: offline shell + keep progress from being evicted */
 if('serviceWorker' in navigator&&isSecureContext)navigator.serviceWorker.register('sw.js').catch(()=>{});
+/* pick up new versions: check on open and whenever the app comes back to the front */
+const APPV=__VERSION__;function checkV(){fetch('version.txt?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.text():'').then(t=>{if(+t>APPV)location.reload()}).catch(()=>{})}checkV();document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkV()});
 if(navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(()=>{});
 </script></body></html>"""
 

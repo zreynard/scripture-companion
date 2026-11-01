@@ -13,8 +13,9 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const u = new URL(e.request.url);
   if (e.request.method !== 'GET' || u.origin !== location.origin) return; // audio + links: straight to network
+  if (u.pathname.endsWith('version.txt')) return;                          // version checks never come from cache
   if (e.request.mode === 'navigate') { // network first so new builds show up; cache when offline
-    e.respondWith(fetch(e.request).then(r => {
+    e.respondWith(fetch(e.request, { cache: 'no-store' }).then(r => {  // always the newest page when online
       const copy = r.clone(); caches.open(CACHE).then(c => c.put('index.html', copy)); return r;
     }).catch(() => caches.match('index.html')));
     return;

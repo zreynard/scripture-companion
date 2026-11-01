@@ -1,23 +1,20 @@
 #!/usr/bin/env bash
-# Build the app, save the catalog to main, and publish out/site to the gh-pages branch (GitHub Pages).
+# Save the catalog, build the app from the LATEST code, record the audit, and publish out/site to gh-pages.
+# A long job (the link check) started on older code, so everything is rebuilt from the newest main first.
 set -euo pipefail
-python app_build.py
-python tools/audit.py > out/audit.txt 2>&1 || true   # full audit of every publish; report saved with the build
-tail -1 out/audit.txt
-python - <<'PY'
-import json, collections
-es = [json.loads(l) for l in open("data/catalog_verified.jsonl")]
-road = [e for e in es if e["tier"] in ("V1", "V2") and e["speaker"] in ("Platt", "PAM", "Davey")]
-print("entries:", len(es), "| by tier:", dict(collections.Counter(e["tier"] for e in es)))
-print("by source:", dict(collections.Counter(e["source"] for e in es)))
-print("on the road (Platt/PAM/Davey):", len(road), "| with audio:", sum(1 for e in road if e.get("audio_override") or "buzzsprout.com" in e["url"]))
-PY
 git config user.name "github-actions[bot]"
 git config user.email "41898+github-actions[bot]@users.noreply.github.com"
 if [ "${REFRESH:-false}" = "true" ]; then
-  git add data/ out/audit.txt out/off_road.json   # the built app lives on gh-pages; only the record is kept here
+  git add data/
   git diff --cached --quiet || git commit -q -m "Refresh catalog ($(date -u +%F))"
-  git pull -q --rebase --autostash origin main   # rebuilt app files are not committed here; set them aside for the pull
+fi
+git pull -q --rebase --autostash origin main      # newest code and data before building
+python app_build.py
+python tools/audit.py > out/audit.txt 2>&1 || true   # full audit of every publish
+tail -1 out/audit.txt
+if [ "${REFRESH:-false}" = "true" ]; then
+  git add out/audit.txt out/off_road.json
+  git diff --cached --quiet || git commit -q -m "Audit record ($(date -u +%F))"
   git push -q origin HEAD:main                    # fails the step loudly if the catalog cannot be saved
 fi
 REMOTE="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"

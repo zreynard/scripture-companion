@@ -54,6 +54,21 @@ def check_url(url: str, claimed_title: str) -> dict:
             rec["tier"] = "FAIL"; rec["note"] = "video private/removed"; return rec
         else:
             rec["note"] = f"oembed {r.status} {r.note}"; return rec
+    elif re.search(r"\.(mp3|m4a|aac|wav)(\?|$)", url, re.I):
+        # a direct audio link has no page title to compare: it passes when it answers as audio (first bytes only)
+        import requests
+        try:
+            a = requests.get(url, headers={"Range": "bytes=0-1023", "User-Agent": "Mozilla/5.0"}, timeout=40, stream=True)
+            rec["status"], rec["final_url"] = a.status_code, a.url
+            if a.status_code in (200, 206) and a.headers.get("content-type", "").startswith(("audio", "application/octet-stream")):
+                rec["tier"] = "V2"; rec["note"] = "audio file answers"
+            elif a.status_code in (404, 410):
+                rec["tier"] = "FAIL"; rec["note"] = "gone"
+            else:
+                rec["note"] = f"audio not confirmed {a.status_code} {a.headers.get('content-type', '')}"
+        except Exception as ex:
+            rec["note"] = f"unreachable {type(ex).__name__}"
+        return rec
     else:
         r = get(url)
         rec["status"], rec["final_url"] = r.status, r.final_url
@@ -73,6 +88,20 @@ def check_url(url: str, claimed_title: str) -> dict:
     # passage visible on the fetched page? (informational; the title match already pins the item)
     fetched_refs = merge_refs(parse_refs(f"{rec['fetched_title']} {rec['fetched_desc']}"))
     rec["fetched_refs"] = "; ".join(sorted({raw for d in fetched_refs.values() for raw in d["raw"]}))
+    return reconsider(rec, claimed_title)
+
+def reconsider(rec: dict, claimed_title: str) -> dict:
+    """A title 'mismatch' where the live page names the same passage is the same episode under the
+    publisher's real title (our copy had a placeholder like 'Pray the Word on Jeremiah 18:6')."""
+    if rec.get("note") != "title mismatch" or not rec.get("fetched_title"):
+        return rec
+    if re.search(r"youtube\.com/watch|youtu\.be/", rec.get("url", "")) and re.search(r"^radical$|2819 church|philip anthony mitchell", rec.get("fetched_desc", ""), re.I):
+        rec["tier"] = "V2"; rec["note"] = "official channel video; its own title adopted"; rec["adopt_title"] = True
+        return rec
+    mine = {b: tuple(sorted(d["chapters"])) for b, d in merge_refs(parse_refs(claimed_title)).items()}
+    theirs = {b: tuple(sorted(d["chapters"])) for b, d in merge_refs(parse_refs(rec["fetched_title"])).items()}
+    if mine and mine == theirs:
+        rec["tier"] = "V2"; rec["note"] = "same passage; publisher's title adopted"; rec["adopt_title"] = True
     return rec
 
 def load_log() -> dict:
@@ -116,6 +145,11 @@ def run(force: bool = False, limit: int | None = None, sources: list[str] | None
                 e["tier"] = "PENDING"; e["primary_url"] = ""
                 f.write(json.dumps(e, ensure_ascii=False) + "\n"); continue
             main = log.get(e["url"], {"tier": "V1", "note": "unchecked"})
+            main = reconsider(dict(main), e["title"])
+            if main.get("note") == "title mismatch" and re.search(r"\.(mp3|m4a|aac|wav)(\?|$)", e["url"], re.I):
+                main.update({"tier": "V1", "note": "audio link: re-check as audio"})  # older check compared an mp3's 'title'
+            if main.get("adopt_title"):
+                e["title"] = re.sub(r"\s+-\s+(Pray the Word with David Platt|Wisdom for the Heart|YouTube)\s*$", "", main["fetched_title"]).strip()
             e["tier"], e["verify_note"], e["verified_at"] = main["tier"], main.get("note", ""), main.get("checked_at", "")
             e["fetched_title"] = main.get("fetched_title", "")
             # prefer a verified radical.net page over the Buzzsprout page for Pray the Word
