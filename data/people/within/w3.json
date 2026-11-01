@@ -1,0 +1,776 @@
+{
+ "mount_gilboa_837": [
+  "Southeast edge of Jezreel Valley",
+  "Northern Israel"
+ ],
+ "bezer_247": [
+  "Plateau east of Dead Sea",
+  "Reuben's territory",
+  "East of the Jordan"
+ ],
+ "gilboa_474": [
+  "Southeast edge of Jezreel Valley",
+  "Northern Israel"
+ ],
+ "taanach_1124": [
+  "Southern edge of Jezreel Valley",
+  "Manasseh's territory",
+  "Canaan"
+ ],
+ "aner_65": [
+  "Western half-tribe of Manasseh",
+  "Land of Israel"
+ ],
+ "babylon_151": [
+  "On the Euphrates River",
+  "Babylonia",
+  "Mesopotamia"
+ ],
+ "shinar_1084": [
+  "Southern Mesopotamia",
+  "Modern Iraq"
+ ],
+ "mesopotamia_790": [
+  "Modern Iraq and eastern Syria"
+ ],
+ "babylonia_152": [
+  "Southern Mesopotamia",
+  "Modern Iraq"
+ ],
+ "babel_150": [
+  "Plain of Shinar",
+  "Mesopotamia"
+ ],
+ "dura_347": [
+  "Near Babylon",
+  "Babylonia",
+  "Mesopotamia"
+ ],
+ "harod_529": [
+  "Foot of Mount Gilboa",
+  "Jezreel Valley",
+  "Canaan"
+ ],
+ "jezreel_643": [
+  "Jezreel Valley",
+  "Issachar's territory",
+  "Northern kingdom of Israel"
+ ],
+ "valley_of_jezreel_1211": [
+  "Between Galilee and Samaria",
+  "Northern Israel"
+ ],
+ "ramoth-gilead_984": [
+  "Northern Gilead",
+  "Gad's territory",
+  "East of the Jordan"
+ ],
+ "mizpah_809": [
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "ramoth_983": [
+  "Northern Gilead",
+  "Gad's territory",
+  "East of the Jordan"
+ ],
+ "megiddo_777": [
+  "Southwest edge of Jezreel Valley",
+  "Manasseh's territory",
+  "Land of Israel"
+ ],
+ "armageddon_91": [
+  "Likely near Megiddo",
+  "Jezreel Valley",
+  "Northern Israel"
+ ],
+ "shunem_1089": [
+  "Jezreel Valley",
+  "Issachar's territory",
+  "Northern kingdom of Israel"
+ ],
+ "ophrah_914": [
+  "Manasseh's territory",
+  "Canaan"
+ ],
+ "dor_341": [
+  "Coast south of Mount Carmel",
+  "Manasseh's territory",
+  "Canaan"
+ ],
+ "edrei_358": [
+  "Bashan",
+  "East of the Jordan"
+ ],
+ "en-dor_385": [
+  "South of Mount Tabor",
+  "Near the Jezreel Valley",
+  "Land of Israel"
+ ],
+ "saron_1063": [
+  "Central coastal plain",
+  "Land of Israel"
+ ],
+ "east-manasseh-half-tribe_1290": [
+  "East of the Jordan River",
+  "Land of Israel"
+ ],
+ "issachar_1288": [
+  "Northern part of Israel"
+ ],
+ "lo-debar_732": [
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "jokneam_649": [
+  "Northwest edge of Jezreel Valley",
+  "Zebulun's territory",
+  "Canaan"
+ ],
+ "tabor_1129": [
+  "Near Mount Tabor",
+  "Zebulun's territory",
+  "Land of Israel"
+ ],
+ "chisloth-tabor_297": [
+  "Near Mount Tabor",
+  "Zebulun's border",
+  "Canaan"
+ ],
+ "tabor_1128": [
+  "Northeast edge of Jezreel Valley",
+  "Lower Galilee",
+  "Land of Israel"
+ ],
+ "mount_tabor_857": [
+  "Northeast edge of Jezreel Valley",
+  "Lower Galilee",
+  "Canaan"
+ ],
+ "harosheth-hagoyim_530": [
+  "Likely near Kishon River",
+  "Northern Canaan"
+ ],
+ "daberath_319": [
+  "Western foot of Mount Tabor",
+  "Border of Zebulun and Issachar",
+  "Canaan"
+ ],
+ "galilee_433": [
+  "Northern part of Israel"
+ ],
+ "nazareth_878": [
+  "Hills above Jezreel Valley",
+  "Galilee",
+  "Land of Israel"
+ ],
+ "zebulun_1289": [
+  "Lower Galilee",
+  "Northern part of Israel"
+ ],
+ "mount_carmel_831": [
+  "Northwest of Jezreel Valley",
+  "Northern kingdom of Israel"
+ ],
+ "cana_271": [
+  "North of Nazareth",
+  "Galilee",
+  "Land of Israel"
+ ],
+ "kanah_667": [
+  "Southeast of Tyre",
+  "Asher's northern border",
+  "Canaan"
+ ],
+ "kishon_705": [
+  "Flows through Jezreel Valley",
+  "Northern Israel"
+ ],
+ "aphek_73": [
+  "East of Sea of Galilee",
+  "Bashan",
+  "East of the Jordan"
+ ],
+ "tiberias_1161": [
+  "Western shore, Sea of Galilee",
+  "Galilee",
+  "Land of Israel"
+ ],
+ "bashan_159": [
+  "North of Gilead",
+  "East of the Jordan"
+ ],
+ "golan_486": [
+  "Bashan",
+  "Eastern Manasseh's territory",
+  "East of the Jordan"
+ ],
+ "rephaim_995": [
+  "Mainly east of the Jordan"
+ ],
+ "sea_of_galilee_1032": [
+  "Borders Galilee and the Decapolis",
+  "Northern Jordan Valley",
+  "Land of Israel"
+ ],
+ "sea_of_tiberias_1034": [
+  "Borders Galilee and the Decapolis",
+  "Northern Jordan Valley",
+  "Land of Israel"
+ ],
+ "cyrene_317": [
+  "Libya",
+  "North Africa"
+ ],
+ "put_962": [
+  "Likely Libya, west of Egypt",
+  "North Africa"
+ ],
+ "libya_730": [
+  "West of Egypt",
+  "North Africa"
+ ],
+ "ashtaroth_106": [
+  "Bashan",
+  "East of the Jordan"
+ ],
+ "gennesaret_458": [
+  "Northwest shore, Sea of Galilee",
+  "Galilee",
+  "Land of Israel"
+ ],
+ "capernaum_274": [
+  "North shore, Sea of Galilee",
+  "Galilee",
+  "Land of Israel"
+ ],
+ "bethsaida_231": [
+  "North shore, Sea of Galilee",
+  "Land of Israel"
+ ],
+ "chorazin_299": [
+  "Hills north of Capernaum",
+  "Galilee",
+  "Land of Israel"
+ ],
+ "asher_1287": [
+  "Western Galilee and coast",
+  "Northern part of Israel"
+ ],
+ "acco_15": [
+  "Coast north of Mount Carmel",
+  "Asher's territory",
+  "Canaan"
+ ],
+ "achshaph_17": [
+  "Asher's territory",
+  "Northern Canaan"
+ ],
+ "rehob_989": [
+  "Western Galilee",
+  "Asher's territory",
+  "Canaan"
+ ],
+ "geshur_461": [
+  "East of Sea of Galilee",
+  "Northeast of Israel"
+ ],
+ "hazor_545": [
+  "North of Sea of Galilee",
+  "Naphtali's territory",
+  "Canaan"
+ ],
+ "tishbe_1171": [
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "naphtali_1284": [
+  "Galilee",
+  "Northern part of Israel"
+ ],
+ "merom_785": [
+  "Likely in Upper Galilee",
+  "Northern Canaan"
+ ],
+ "accad_14": [
+  "Land of Shinar",
+  "Mesopotamia"
+ ],
+ "kedesh_676": [
+  "Upper Galilee",
+  "Naphtali's territory",
+  "Canaan"
+ ],
+ "rehob_988": [
+  "Asher's northern border",
+  "Northern Canaan"
+ ],
+ "hammon_519": [
+  "Asher's northern border",
+  "Northern Canaan"
+ ],
+ "argob_88": [
+  "Bashan",
+  "East of the Jordan"
+ ],
+ "chebar_283": [
+  "Likely near Nippur",
+  "Babylonia",
+  "Mesopotamia"
+ ],
+ "maacah_743": [
+  "Near Mount Hermon",
+  "Aram (Syria)"
+ ],
+ "rehob_987": [
+  "Near Dan",
+  "Northern edge of Canaan"
+ ],
+ "great_sea_493": [
+  "Western border of Canaan"
+ ],
+ "caesarea_philippi_267": [
+  "Foot of Mount Hermon",
+  "North of Galilee"
+ ],
+ "dan_323": [
+  "Near the Jordan's sources",
+  "Northern edge of Israel"
+ ],
+ "laish_713": [
+  "Near the Jordan's sources",
+  "Northern edge of Canaan"
+ ],
+ "leshem_727": [
+  "Near the Jordan's sources",
+  "Northern edge of Canaan"
+ ],
+ "abel_4": [
+  "Near Dan",
+  "Naphtali's territory",
+  "Northern Israel"
+ ],
+ "abel-beth-maacah_5": [
+  "Near Dan",
+  "Naphtali's territory",
+  "Northern Israel"
+ ],
+ "beth-maacah_221": [
+  "Near Dan",
+  "Naphtali's territory",
+  "Northern Israel"
+ ],
+ "tyre_1184": [
+  "Mediterranean coast",
+  "Phoenicia",
+  "North of Israel"
+ ],
+ "ijon_594": [
+  "North of Dan",
+  "Northern kingdom of Israel"
+ ],
+ "hermon_564": [
+  "Southern Anti-Lebanon range",
+  "Northern border of Israel"
+ ],
+ "mount_hermon_841": [
+  "Southern Anti-Lebanon range",
+  "Northern border of Israel"
+ ],
+ "senir_1047": [
+  "Southern Anti-Lebanon range",
+  "Northern border of Israel"
+ ],
+ "baal-gad_140": [
+  "Below Mount Hermon",
+  "Valley of Lebanon",
+  "Northern edge of Canaan"
+ ],
+ "sirion_1101": [
+  "Southern Anti-Lebanon range",
+  "Northern border of Israel"
+ ],
+ "valley_of_lebanon_1212": [
+  "Between Lebanon and Anti-Lebanon",
+  "North of Canaan"
+ ],
+ "zarephath_1242": [
+  "Coast between Tyre and Sidon",
+  "Phoenicia",
+  "North of Israel"
+ ],
+ "syria_1122": [
+  "North of Israel"
+ ],
+ "decapolis_328": [
+  "Mostly east of the Jordan",
+  "Roman province of Syria"
+ ],
+ "hadrach_504": [
+  "Likely near Hamath",
+  "Syria"
+ ],
+ "damascus_322": [
+  "East of Mount Hermon",
+  "Aram (Syria)"
+ ],
+ "sidon_1093": [
+  "Mediterranean coast",
+  "Phoenicia",
+  "North of Israel"
+ ],
+ "philistia_943": [
+  "Southern coastal plain",
+  "Southwestern Canaan"
+ ],
+ "phenicia_944": [
+  "Coast north of Galilee",
+  "Roman province of Syria"
+ ],
+ "ahava_34": [
+  "Babylonia",
+  "Mesopotamia"
+ ],
+ "lebanon_720": [
+  "North of Israel"
+ ],
+ "sepharvaim_1050": [
+  "Within the Assyrian Empire"
+ ],
+ "aphek_71": [
+  "Plain southeast of Acco",
+  "Asher's territory",
+  "Canaan"
+ ],
+ "gebal_449": [
+  "Coast north of Sidon",
+  "Phoenicia",
+  "North of Israel"
+ ],
+ "hazar-enan_537": [
+  "Northeast corner of promised land"
+ ],
+ "zobah_1272": [
+  "North of Damascus",
+  "Aram (Syria)"
+ ],
+ "rimmon_1004": [
+  "Negev, north of Beersheba",
+  "Simeon's territory",
+  "Judah"
+ ],
+ "riblah_1001": [
+  "Orontes River, land of Hamath",
+  "Syria"
+ ],
+ "hena_560": [
+  "Within the Assyrian Empire"
+ ],
+ "ivvah_605": [
+  "Within the Assyrian Empire"
+ ],
+ "paphos_919": [
+  "Southwest coast",
+  "Cyprus",
+  "Eastern Mediterranean"
+ ],
+ "persia_938": [
+  "Modern Iran"
+ ],
+ "media_776": [
+  "Modern northwestern Iran"
+ ],
+ "ecbatana_353": [
+  "Media",
+  "Persian Empire"
+ ],
+ "aram_82": [
+  "North and northeast of Israel"
+ ],
+ "cyprus_316": [
+  "Eastern Mediterranean Sea"
+ ],
+ "euphrates_421": [
+  "Western edge of Mesopotamia",
+  "Modern Turkey, Syria, Iraq"
+ ],
+ "river_1010": [
+  "Western edge of Mesopotamia",
+  "Modern Turkey, Syria, Iraq"
+ ],
+ "hamath_516": [
+  "On the Orontes River",
+  "Syria",
+  "North of Israel"
+ ],
+ "lebo-hamath_723": [
+  "Northern boundary of promised land"
+ ],
+ "arpad_96": [
+  "North of Aleppo",
+  "Northern Syria"
+ ],
+ "casiphia_279": [
+  "Likely near Babylon",
+  "Babylonia",
+  "Mesopotamia"
+ ],
+ "crete_310": [
+  "South of Greece",
+  "Mediterranean Sea"
+ ],
+ "caphtor_275": [
+  "Likely Crete, south of Greece",
+  "Mediterranean Sea"
+ ],
+ "melita_761": [
+  "South of Sicily",
+  "Mediterranean Sea"
+ ],
+ "tigris_1163": [
+  "Eastern edge of Mesopotamia",
+  "Modern Turkey and Iraq"
+ ],
+ "antioch_68": [
+  "On the Orontes River",
+  "Roman province of Syria"
+ ],
+ "habor_499": [
+  "Gozan region",
+  "Upper Mesopotamia",
+  "Assyrian Empire"
+ ],
+ "halah_508": [
+  "Likely northeast of Nineveh",
+  "Assyria",
+  "Mesopotamia"
+ ],
+ "assyria_111": [
+  "Northern Mesopotamia",
+  "Modern Iraq"
+ ],
+ "nineveh_899": [
+  "On the Tigris River",
+  "Assyria",
+  "Mesopotamia"
+ ],
+ "asshur_109": [
+  "On the Tigris River",
+  "Assyria",
+  "Mesopotamia"
+ ],
+ "immer_596": [
+  "Babylonia",
+  "Mesopotamia"
+ ],
+ "pethor_939": [
+  "Near the Euphrates River",
+  "Upper Mesopotamia"
+ ],
+ "carchemish_277": [
+  "On the upper Euphrates",
+  "Northern Syria"
+ ],
+ "gozan_492": [
+  "On the Habor River",
+  "Upper Mesopotamia",
+  "Assyrian Empire"
+ ],
+ "haran_527": [
+  "Paddan-aram",
+  "Upper Mesopotamia"
+ ],
+ "paddan-aram_916": [
+  "Upper Mesopotamia"
+ ],
+ "cilicia_300": [
+  "Southeastern Asia Minor"
+ ],
+ "tarsus_1140": [
+  "Cilicia",
+  "Asia Minor"
+ ],
+ "tarshish_1139": [
+  "Likely western Mediterranean"
+ ],
+ "luz_738": [
+  "Land of the Hittites",
+  "North of Canaan"
+ ],
+ "pamphylia_918": [
+  "Southern coast of Asia Minor"
+ ],
+ "perga_936": [
+  "Pamphylia",
+  "Asia Minor"
+ ],
+ "patmos_926": [
+  "Aegean Sea",
+  "Roman province of Asia"
+ ],
+ "derbe_330": [
+  "Lycaonia",
+  "Roman province of Galatia",
+  "Asia Minor"
+ ],
+ "miletus_801": [
+  "Coast south of Ephesus",
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "galatia_431": [
+  "Central Asia Minor"
+ ],
+ "lystra_742": [
+  "Lycaonia",
+  "Roman province of Galatia",
+  "Asia Minor"
+ ],
+ "laodicea_716": [
+  "Lycus Valley",
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "phrygia_946": [
+  "West-central Asia Minor"
+ ],
+ "colossae_305": [
+  "Lycus Valley",
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "iconium_590": [
+  "Roman province of Galatia",
+  "Asia Minor"
+ ],
+ "lycaonia_739": [
+  "Roman province of Galatia",
+  "Asia Minor"
+ ],
+ "corinth_306": [
+  "Roman province of Achaia",
+  "Greece"
+ ],
+ "hierapolis_569": [
+  "Lycus Valley",
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "ephesus_400": [
+  "Aegean coast",
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "javan_627": [
+  "Lands around the Aegean Sea"
+ ],
+ "achaia_16": [
+  "Southern Greece"
+ ],
+ "athens_118": [
+  "Attica",
+  "Roman province of Achaia",
+  "Greece"
+ ],
+ "greece_495": [
+  "Southeastern Europe"
+ ],
+ "areopagus_87": [
+  "Northwest of the Acropolis",
+  "Athens",
+  "Greece"
+ ],
+ "antioch_69": [
+  "Pisidia",
+  "Roman province of Galatia",
+  "Asia Minor"
+ ],
+ "pisidia_952": [
+  "Southern Asia Minor"
+ ],
+ "philadelphia_941": [
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "smyrna_1103": [
+  "Aegean coast",
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "sardis_1027": [
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "thyatira_1160": [
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "nicopolis_894": [
+  "Likely Epirus",
+  "Western Greece"
+ ],
+ "pergamum_937": [
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "asia_108": [
+  "Western Asia Minor"
+ ],
+ "troas_1182": [
+  "Northwest coast",
+  "Roman province of Asia",
+  "Asia Minor"
+ ],
+ "ararat_86": [
+  "North of Assyria",
+  "Modern eastern Turkey, Armenia"
+ ],
+ "beth-togarmah_239": [
+  "Far north of Israel"
+ ],
+ "spain_1111": [
+  "Western end of the Mediterranean"
+ ],
+ "berea_177": [
+  "Roman province of Macedonia",
+  "Northern Greece"
+ ],
+ "minni_803": [
+  "Likely near Lake Urmia",
+  "Modern northwestern Iran"
+ ],
+ "macedonia_747": [
+  "Northern Greece"
+ ],
+ "thessalonica_1158": [
+  "Aegean coast",
+  "Roman province of Macedonia",
+  "Northern Greece"
+ ],
+ "tubal_1183": [
+  "Likely eastern Asia Minor",
+  "Modern Turkey"
+ ],
+ "pontus_956": [
+  "Northern Asia Minor"
+ ],
+ "philippi_942": [
+  "Inland from Neapolis",
+  "Roman province of Macedonia",
+  "Northern Greece"
+ ],
+ "rome_1013": [
+  "On the Tiber River",
+  "Italy"
+ ],
+ "italy_601": [
+  "Southern Europe"
+ ],
+ "meshech_788": [
+  "Likely eastern Asia Minor",
+  "Modern Turkey"
+ ],
+ "magog_754": [
+  "Far north of Israel"
+ ]
+}

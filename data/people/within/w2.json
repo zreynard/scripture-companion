@@ -1,0 +1,856 @@
+{
+ "zorah_1275": [
+  "Shephelah, west of Jerusalem",
+  "Dan's territory",
+  "Canaan"
+ ],
+ "pisgah_950": [
+  "Abarim mountains, near Mount Nebo",
+  "Moab",
+  "East of the Jordan"
+ ],
+ "peor_933": [
+  "Mountains near Mount Nebo",
+  "Moab",
+  "East of the Jordan"
+ ],
+ "baal-peor_145": [
+  "Plains of Moab, near Nebo",
+  "Moab",
+  "East of the Jordan"
+ ],
+ "en-rogel_395": [
+  "Just south of Jerusalem",
+  "Judah–Benjamin border",
+  "Land of Israel"
+ ],
+ "topheth_1176": [
+  "Valley of Hinnom",
+  "Jerusalem",
+  "Judah"
+ ],
+ "valley_of_the_son_of_hinnom_1226": [
+  "Just south of Jerusalem",
+  "Judah"
+ ],
+ "field_1229": [
+  "Just outside Jerusalem's walls",
+  "Judah"
+ ],
+ "valley_of_hinnom_1207": [
+  "South and west of Jerusalem",
+  "Judah"
+ ],
+ "valley_of_slaughter_1219": [
+  "Valley of Hinnom, Jerusalem",
+  "Judah"
+ ],
+ "kiriath-jearim_701": [
+  "Hills west of Jerusalem",
+  "Judah",
+  "Land of Israel"
+ ],
+ "baalah_135": [
+  "Hills west of Jerusalem",
+  "Judah",
+  "Land of Israel"
+ ],
+ "bethany_186": [
+  "Mount of Olives, near Jerusalem",
+  "Judea"
+ ],
+ "kidron_687": [
+  "East side of Jerusalem",
+  "Judah",
+  "Land of Israel"
+ ],
+ "valley_of_jehoshaphat_1209": [
+  "Likely the Kidron Valley",
+  "Jerusalem",
+  "Judah"
+ ],
+ "gihon_473": [
+  "Kidron Valley, City of David",
+  "Jerusalem",
+  "Judah"
+ ],
+ "dan_1283": [
+  "West of Benjamin, toward coast",
+  "Canaan"
+ ],
+ "judah-southern_1281": [
+  "South of the northern kingdom",
+  "Land of Israel"
+ ],
+ "beth-jeshimoth_215": [
+  "Plains of Moab, near Jordan",
+  "Reuben's territory",
+  "East of the Jordan"
+ ],
+ "jerusalem_636": [
+  "Hill country of Judah",
+  "Land of Israel"
+ ],
+ "zion_1263": [
+  "Jerusalem",
+  "Judah",
+  "Land of Israel"
+ ],
+ "judea_657": [
+  "Southern land of Israel",
+  "Roman Empire"
+ ],
+ "mount_zion_860": [
+  "Jerusalem",
+  "Judah",
+  "Land of Israel"
+ ],
+ "river_244": [
+  "West of the Euphrates",
+  "Persian Empire"
+ ],
+ "holy_place_575": [
+  "Temple in Jerusalem",
+  "Judah"
+ ],
+ "most_holy_place_827": [
+  "Temple in Jerusalem",
+  "Judah"
+ ],
+ "millo_802": [
+  "City of David",
+  "Jerusalem",
+  "Land of Israel"
+ ],
+ "corner_gate_307": [
+  "Northwest corner of the wall",
+  "Jerusalem",
+  "Judah"
+ ],
+ "jebus_629": [
+  "Hill country, Judah–Benjamin border",
+  "Canaan"
+ ],
+ "lebanon_585": [
+  "Solomon's palace complex",
+  "Jerusalem",
+  "Land of Israel"
+ ],
+ "ophel_910": [
+  "South of the temple mount",
+  "Jerusalem",
+  "Judah"
+ ],
+ "dung_gate_346": [
+  "Southern wall",
+  "Jerusalem",
+  "Judah"
+ ],
+ "gate_of_benjamin_175": [
+  "North wall",
+  "Jerusalem",
+  "Judah"
+ ],
+ "salem_1018": [
+  "Likely the site of Jerusalem",
+  "Canaan"
+ ],
+ "sheep_gate_1070": [
+  "North wall, near the temple",
+  "Jerusalem",
+  "Judah"
+ ],
+ "tower_1177": [
+  "North wall",
+  "Jerusalem",
+  "Judah"
+ ],
+ "water_gate_1230": [
+  "East wall, City of David",
+  "Jerusalem",
+  "Judah"
+ ],
+ "ariel_89": [
+  "Hill country of Judah",
+  "Land of Israel"
+ ],
+ "fish_gate_426": [
+  "North wall",
+  "Jerusalem",
+  "Judah"
+ ],
+ "gate_of_the_fountain_428": [
+  "Southeast wall, near Siloam",
+  "Jerusalem",
+  "Judah"
+ ],
+ "golgotha_487": [
+  "Just outside Jerusalem's walls",
+  "Judea"
+ ],
+ "siloam_1096": [
+  "South end of Jerusalem",
+  "Judea"
+ ],
+ "bethesda_205": [
+  "Near the Sheep Gate",
+  "Jerusalem",
+  "Judea"
+ ],
+ "gethsemane_462": [
+  "Mount of Olives",
+  "Just east of Jerusalem",
+  "Judea"
+ ],
+ "jebusite_630": [
+  "Above the Valley of Hinnom",
+  "Judah–Benjamin border",
+  "Canaan"
+ ],
+ "judgment_511": [
+  "Solomon's palace complex",
+  "Jerusalem",
+  "Land of Israel"
+ ],
+ "perez-uzzah_935": [
+  "Road from Kiriath-jearim to Jerusalem",
+  "Land of Israel"
+ ],
+ "place_954": [
+  "Just outside Jerusalem's walls",
+  "Judea"
+ ],
+ "pool_957": [
+  "Likely the Siloam area",
+  "Jerusalem",
+  "Judah"
+ ],
+ "way_of_holiness_1231": [
+  "Through the desert to Zion"
+ ],
+ "second_quarter_1040": [
+  "Likely the western hill",
+  "Jerusalem",
+  "Judah"
+ ],
+ "tower_1180": [
+  "Likely the western wall",
+  "Jerusalem",
+  "Judah"
+ ],
+ "gate_of_the_valley_1195": [
+  "Likely the southwest wall",
+  "Jerusalem",
+  "Judah"
+ ],
+ "ekron_364": [
+  "Edge of the coastal plain",
+  "Philistia",
+  "Canaan"
+ ],
+ "shephelah_1074": [
+  "West of Judah's hill country",
+  "Land of Israel"
+ ],
+ "moriah_821": [
+  "Likely site of Jerusalem's temple",
+  "Canaan"
+ ],
+ "mount_moriah_848": [
+  "North of City of David",
+  "Jerusalem",
+  "Land of Israel"
+ ],
+ "mount_of_olives_861": [
+  "Just east of Jerusalem",
+  "Judea"
+ ],
+ "olivet_907": [
+  "Just east of Jerusalem",
+  "Judea"
+ ],
+ "mount_of_olives_828": [
+  "Just east of Jerusalem",
+  "Judea"
+ ],
+ "eshtaol_411": [
+  "Shephelah, near Zorah",
+  "Dan's territory",
+  "Canaan"
+ ],
+ "timnah_1164": [
+  "Sorek Valley, Shephelah",
+  "Judah–Philistine border",
+  "Canaan"
+ ],
+ "bethphage_229": [
+  "Mount of Olives, near Bethany",
+  "Judea"
+ ],
+ "nob_900": [
+  "Just north of Jerusalem",
+  "Benjamin's territory",
+  "Land of Israel"
+ ],
+ "heshbon_565": [
+  "Plateau northeast of Dead Sea",
+  "Reuben's territory",
+  "East of the Jordan"
+ ],
+ "reuben_1282": [
+  "East of the Dead Sea",
+  "East of the Jordan"
+ ],
+ "ashdod_101": [
+  "Coastal plain",
+  "Philistia",
+  "Canaan"
+ ],
+ "ashan_100": [
+  "Southern Judah, likely",
+  "Simeon's territory",
+  "Canaan"
+ ],
+ "anathoth_63": [
+  "Just northeast of Jerusalem",
+  "Benjamin's territory",
+  "Judah"
+ ],
+ "elealeh_368": [
+  "Plateau near Heshbon",
+  "Reuben's territory, later Moab",
+  "East of the Jordan"
+ ],
+ "sibmah_1091": [
+  "Plateau near Heshbon",
+  "Reuben's territory, later Moab",
+  "East of the Jordan"
+ ],
+ "gallim_434": [
+  "North of Jerusalem",
+  "Benjamin's territory",
+  "Land of Israel"
+ ],
+ "debir_326": [
+  "Likely between Jerusalem and Jericho",
+  "Judah–Benjamin border",
+  "Canaan"
+ ],
+ "adummim_32": [
+  "Road from Jericho to Jerusalem",
+  "Judah–Benjamin border",
+  "Canaan"
+ ],
+ "gederah_452": [
+  "Shephelah",
+  "Judah",
+  "Land of Israel"
+ ],
+ "netaim_889": [
+  "Likely in the Shephelah",
+  "Judah",
+  "Land of Israel"
+ ],
+ "gedor_456": [
+  "Southern frontier of Judah"
+ ],
+ "gibeah_466": [
+  "Just north of Jerusalem",
+  "Benjamin's territory",
+  "Land of Israel"
+ ],
+ "bahurim_154": [
+  "Beyond the Mount of Olives",
+  "Benjamin's territory",
+  "Land of Israel"
+ ],
+ "valley_of_sorek_1220": [
+  "Shephelah, west of Judah's hills",
+  "Judah–Philistine borderland",
+  "Canaan"
+ ],
+ "mizpah_811": [
+  "North of Jerusalem",
+  "Benjamin's territory",
+  "Land of Israel"
+ ],
+ "ramah_975": [
+  "Likely north of Jerusalem",
+  "Hill country of Ephraim",
+  "Land of Israel"
+ ],
+ "naioth_873": [
+  "At Ramah",
+  "Hill country of Ephraim",
+  "Land of Israel"
+ ],
+ "arimathea_90": [
+  "Likely northwest of Jerusalem",
+  "Judea"
+ ],
+ "ebenezer_350": [
+  "Near Aphek",
+  "Western edge of Ephraim's hills",
+  "Land of Israel"
+ ],
+ "ramathaim-zophim_977": [
+  "Hill country of Ephraim",
+  "Land of Israel"
+ ],
+ "chephirah_285": [
+  "Hills west of Jerusalem",
+  "Benjamin's territory",
+  "Canaan"
+ ],
+ "valley_of_achor_1196": [
+  "Near Jericho",
+  "Judah's northern border",
+  "Canaan"
+ ],
+ "beth-hoglah_213": [
+  "Jordan Valley, near Jericho",
+  "Judah–Benjamin border",
+  "Canaan"
+ ],
+ "emmaus_382": [
+  "Likely west of Jerusalem",
+  "Judea"
+ ],
+ "aijalon_40": [
+  "Aijalon Valley, Shephelah",
+  "Dan's territory",
+  "Canaan"
+ ],
+ "beth-arabah_188": [
+  "Jordan Valley, near Jericho",
+  "Judah–Benjamin border",
+  "Canaan"
+ ],
+ "gibeon_470": [
+  "Hills northwest of Jerusalem",
+  "Benjamin's territory",
+  "Canaan"
+ ],
+ "geba_448": [
+  "Likely northwest of Jerusalem",
+  "Benjamin's territory",
+  "Land of Israel"
+ ],
+ "mephaath_780": [
+  "Tableland of Moab",
+  "Reuben's territory",
+  "East of the Jordan"
+ ],
+ "benjamin-territory_1293": [
+  "Hills between Judah and Ephraim",
+  "Canaan"
+ ],
+ "geba_447": [
+  "Northeast of Jerusalem",
+  "Benjamin's territory",
+  "Land of Israel"
+ ],
+ "shittim_1086": [
+  "Plains of Moab, opposite Jericho",
+  "East of the Jordan"
+ ],
+ "abel-shittim_10": [
+  "Plains of Moab, opposite Jericho",
+  "East of the Jordan"
+ ],
+ "gilgal_476": [
+  "Jordan Valley, near Jericho",
+  "Benjamin's territory",
+  "Canaan"
+ ],
+ "michmash_793": [
+  "Northeast of Jerusalem",
+  "Benjamin's territory",
+  "Land of Israel"
+ ],
+ "jericho_634": [
+  "Jordan Valley",
+  "Benjamin's territory",
+  "Canaan"
+ ],
+ "gezer_463": [
+  "Edge of the Shephelah",
+  "Ephraim's territory",
+  "Canaan"
+ ],
+ "gob_483": [
+  "Likely near Gezer",
+  "Land of Israel"
+ ],
+ "beth-horon_214": [
+  "Pass northwest of Jerusalem",
+  "Benjamin–Ephraim border",
+  "Canaan"
+ ],
+ "beth-horon_733": [
+  "Descent toward the coastal plain",
+  "Benjamin–Ephraim border",
+  "Canaan"
+ ],
+ "beth-aven_191": [
+  "Near Bethel and Ai",
+  "Benjamin's territory",
+  "Canaan"
+ ],
+ "ramah_972": [
+  "North of Jerusalem",
+  "Benjamin's territory",
+  "Land of Israel"
+ ],
+ "bezek_245": [
+  "Likely near Gezer",
+  "Canaan"
+ ],
+ "beeroth_168": [
+  "North of Jerusalem",
+  "Benjamin's territory",
+  "Canaan"
+ ],
+ "beer_165": [
+  "Canaan"
+ ],
+ "mount_zemaraim_859": [
+  "Near Bethel",
+  "Hill country of Ephraim",
+  "Land of Israel"
+ ],
+ "ai_36": [
+  "East of Bethel",
+  "Central hill country",
+  "Canaan"
+ ],
+ "bethel_202": [
+  "Hills north of Jerusalem",
+  "Benjamin–Ephraim border",
+  "Canaan"
+ ],
+ "luz_737": [
+  "Hills north of Jerusalem",
+  "Canaan"
+ ],
+ "bochim_252": [
+  "Likely near Bethel",
+  "Canaan"
+ ],
+ "rimmon_1003": [
+  "East of Bethel",
+  "Benjamin's territory",
+  "Canaan"
+ ],
+ "makkedah_760": [
+  "Shephelah",
+  "Judah's territory",
+  "Canaan"
+ ],
+ "jazer_628": [
+  "Southern Gilead",
+  "Gad's territory",
+  "East of the Jordan"
+ ],
+ "rabbah_966": [
+  "Ammon",
+  "East of the Jordan"
+ ],
+ "ammon_58": [
+  "Desert edge east of Gilead",
+  "East of the Jordan"
+ ],
+ "east_348": [
+  "Syrian-Arabian desert",
+  "East of Canaan"
+ ],
+ "lod_731": [
+  "Coastal plain, near Joppa",
+  "Judah",
+  "Persian Empire"
+ ],
+ "lud_735": [
+  "Distant land, site uncertain"
+ ],
+ "lydda_741": [
+  "Coastal plain, near Joppa",
+  "Judea"
+ ],
+ "aroer_94": [
+  "North rim of the Arnon",
+  "Reuben's territory",
+  "East of the Jordan"
+ ],
+ "hadid_503": [
+  "Near Lod",
+  "Judah",
+  "Persian Empire"
+ ],
+ "gibbethon_465": [
+  "Near Gezer, Philistine border",
+  "Dan's territory",
+  "Land of Israel"
+ ],
+ "ephraim-territory_1292": [
+  "Central hill country",
+  "Canaan"
+ ],
+ "ono_909": [
+  "Coastal plain, near Lod",
+  "Judah",
+  "Persian Empire"
+ ],
+ "arabah_79": [
+  "Eastern edge of Israel's land"
+ ],
+ "gilead_475": [
+  "East of the Jordan River"
+ ],
+ "havvoth-jair_535": [
+  "Gilead and Bashan",
+  "East Manasseh's territory",
+  "East of the Jordan"
+ ],
+ "kamon_665": [
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "gad_1286": [
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "ezem_422": [
+  "Negev",
+  "Simeon's territory, within Judah",
+  "Canaan"
+ ],
+ "bethel_203": [
+  "Hills north of Jerusalem",
+  "Benjamin–Ephraim border",
+  "Canaan"
+ ],
+ "joppa_652": [
+  "Mediterranean coast",
+  "Land of Israel"
+ ],
+ "shiloh_1081": [
+  "North of Bethel",
+  "Hill country of Ephraim",
+  "Canaan"
+ ],
+ "gath-rimmon_444": [
+  "Coastal plain",
+  "Dan's territory",
+  "Canaan"
+ ],
+ "adam_21": [
+  "Jordan Valley, near the Jabbok",
+  "East of the Jordan"
+ ],
+ "aphek_72": [
+  "Sharon plain",
+  "Land of Israel"
+ ],
+ "tappuah_1136": [
+  "South of Shechem",
+  "Ephraim–Manasseh border",
+  "Canaan"
+ ],
+ "gaash_429": [
+  "Near Timnath-serah",
+  "Hill country of Ephraim",
+  "Canaan"
+ ],
+ "timnath-serah_1167": [
+  "Northwest of Bethel",
+  "Hill country of Ephraim",
+  "Canaan"
+ ],
+ "calno_270": [
+  "Northern Syria",
+  "Assyrian Empire"
+ ],
+ "tel-abib_1143": [
+  "Chebar canal, near Nippur",
+  "Babylonia",
+  "Mesopotamia"
+ ],
+ "kanah_666": [
+  "West of Tappuah",
+  "Ephraim–Manasseh border",
+  "Canaan"
+ ],
+ "tiphsah_1169": [
+  "Likely near Tirzah",
+  "Northern kingdom of Israel"
+ ],
+ "penuel_931": [
+  "Jabbok River",
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "helam_552": [
+  "Likely toward Aram",
+  "East of the Jordan"
+ ],
+ "karkor_669": [
+  "Desert east of Gilead",
+  "East of the Jordan"
+ ],
+ "peniel_930": [
+  "Jabbok River",
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "susa_1118": [
+  "Elam, east of Babylonia",
+  "Persian Empire"
+ ],
+ "elam_365": [
+  "East of Babylonia",
+  "Southwestern Iran"
+ ],
+ "jabbok_609": [
+  "Flows west into the Jordan",
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "mount_gerizim_836": [
+  "Beside Shechem",
+  "Hill country of Ephraim",
+  "Canaan"
+ ],
+ "succoth_1113": [
+  "Jordan Valley, near the Jabbok",
+  "Gad's territory",
+  "East of the Jordan"
+ ],
+ "shechem_1069": [
+  "Between Mount Ebal and Gerizim",
+  "Hill country of Ephraim",
+  "Canaan"
+ ],
+ "shechem_1178": [
+  "Shechem",
+  "Hill country of Ephraim",
+  "Canaan"
+ ],
+ "mahanaim_756": [
+  "Near the Jabbok River",
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "rogelim_1012": [
+  "Gilead",
+  "East of the Jordan"
+ ],
+ "mount_ebal_832": [
+  "North of Shechem",
+  "Hill country of Ephraim",
+  "Canaan"
+ ],
+ "zeredah_1254": [
+  "Hill country of Ephraim",
+  "Land of Israel"
+ ],
+ "zarethan_1243": [
+  "Jordan Valley, near Adam",
+  "Land of Israel"
+ ],
+ "tirzah_1170": [
+  "Northeast of Shechem",
+  "Northern kingdom of Israel"
+ ],
+ "samaria_1022": [
+  "Hills northwest of Shechem",
+  "Northern kingdom of Israel"
+ ],
+ "pirathon_949": [
+  "Southwest of Shechem",
+  "Hill country of Ephraim",
+  "Canaan"
+ ],
+ "jordan_653": [
+  "Jordan Rift Valley",
+  "Eastern border of Canaan"
+ ],
+ "cherith_286": [
+  "Wadi near the Jordan",
+  "East of the Jordan"
+ ],
+ "plain_of_jordan_654": [
+  "North of the Dead Sea",
+  "Canaan"
+ ],
+ "erech_407": [
+  "Shinar, southern Babylonia",
+  "Mesopotamia"
+ ],
+ "thebez_1157": [
+  "Northeast of Shechem",
+  "Manasseh's territory",
+  "Canaan"
+ ],
+ "abel-meholah_8": [
+  "Jordan Valley, south of Beth-shean",
+  "Kingdom of Israel"
+ ],
+ "shamir_1061": [
+  "Hill country of Ephraim",
+  "Canaan"
+ ],
+ "jabesh-gilead_611": [
+  "Northern Gilead",
+  "East of the Jordan"
+ ],
+ "jabesh_610": [
+  "Northern Gilead",
+  "East of the Jordan"
+ ],
+ "dothan_342": [
+  "North of Shechem",
+  "Central hill country",
+  "Canaan"
+ ],
+ "ibleam_589": [
+  "South edge of Jezreel Valley",
+  "Manasseh's territory",
+  "Canaan"
+ ],
+ "gath-rimmon_445": [
+  "Likely near Ibleam",
+  "West Manasseh's territory",
+  "Canaan"
+ ],
+ "gur_497": [
+  "Near Ibleam",
+  "Northern hill country",
+  "Kingdom of Israel"
+ ],
+ "bileam_248": [
+  "South edge of Jezreel Valley",
+  "West Manasseh's territory",
+  "Land of Israel"
+ ],
+ "west-manasseh_1291": [
+  "North of Ephraim",
+  "Canaan"
+ ],
+ "salecah_1017": [
+  "Eastern edge of Bashan",
+  "East of the Jordan"
+ ],
+ "caesarea_266": [
+  "Mediterranean coast",
+  "Roman province of Judea"
+ ],
+ "beth-shean_233": [
+  "Where Jezreel meets Jordan Valley",
+  "Manasseh's territory",
+  "Canaan"
+ ],
+ "beth-shan_232": [
+  "Where Jezreel meets Jordan Valley",
+  "Land of Israel"
+ ]
+}

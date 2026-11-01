@@ -1,0 +1,212 @@
+{
+ "card ahaz_119": {
+  "Ahaz": "p:ahaz_119"
+ },
+ "card amaziah_217": {
+  "Amaziah": "p:amaziah_217"
+ },
+ "card hilkiah_1525": {
+  "Amaziah": ""
+ },
+ "card hazael_1463": {
+  "Ben-hadad": "p:ben-hadad_453"
+ },
+ "card aroer_93": {
+  "Aroer": "l:aroer_93",
+  "Reuben": "l:reuben_1282"
+ },
+ "card aroer_94": {
+  "Aroer": "l:aroer_94",
+  "Reuben": "l:reuben_1282"
+ },
+ "Psalms 7": {
+  "Cush": ""
+ },
+ "card gad_1262": {
+  "Gad": "p:gad_1262"
+ },
+ "card mahanaim_756": {
+  "Gad": "l:gad_1286"
+ },
+ "card ramoth_983": {
+  "Gad": "l:gad_1286"
+ },
+ "card succoth_1113": {
+  "Gad": "l:gad_1286"
+ },
+ "card hiram_1533": {
+  "Hiram": "p:hiram_1533"
+ },
+ "card issachar_645": {
+  "Issachar": "p:issachar_645"
+ },
+ "card gershon_1305": {
+  "Issachar": "l:issachar_1288"
+ },
+ "card jehoshaphat_807": {
+  "Issachar": "l:issachar_1288",
+  "Jehoshaphat": "p:jehoshaphat_807"
+ },
+ "card paruah_2278": {
+  "Issachar": "l:issachar_1288"
+ },
+ "card tabor_1128": {
+  "Issachar": "l:issachar_1288"
+ },
+ "card daberath_319": {
+  "Issachar": "l:issachar_1288"
+ },
+ "card shunem_1089": {
+  "Issachar": "l:issachar_1288"
+ },
+ "2 Kings 8": {
+  "Jehoram": "p:jehoram_803"
+ },
+ "card athaliah_359": {
+  "Jehoram": "p:jehoram_803"
+ },
+ "card libnah_728": {
+  "Jehoram": "p:jehoram_803"
+ },
+ "card jehoshaphat_806": {
+  "Jehoshaphat": "p:jehoshaphat_806"
+ },
+ "card jehoshaphat_809": {
+  "Jehoshaphat": "p:jehoshaphat_809"
+ },
+ "card issachar_1288": {
+  "Jehoshaphat": "p:jehoshaphat_807"
+ },
+ "card jotham_1735": {
+  "Judah": "l:judah-southern_1281"
+ },
+ "card hebron_551": {
+  "Judah": "l:judah_1280"
+ },
+ "card negeb_885": {
+  "Judah": "l:judah_1280"
+ },
+ "card bethlehem_218": {
+  "Judah": "l:judah_1280"
+ },
+ "card lachish_711": {
+  "Judah": "l:judah_1280"
+ },
+ "card kiriath-arba_697": {
+  "Judah": "l:judah_1280"
+ },
+ "card ephrath_403": {
+  "Judah": "l:judah_1280"
+ },
+ "card laish_713": {
+  "Laish": "l:laish_713"
+ },
+ "Genesis 18": {
+  "Mamre": "l:mamre_762"
+ },
+ "card manasseh_1930": {
+  "Manasseh": "p:manasseh_1930"
+ },
+ "card hivite_1534": {
+  "Mizpah": ""
+ },
+ "card mizpah_809": {
+  "Mizpah": "l:mizpah_809"
+ },
+ "Genesis 37": {
+  "Pharaoh": "p:pharaoh_2329"
+ },
+ "Song of Solomon 1": {
+  "Pharaoh": ""
+ },
+ "Jeremiah 43": {
+  "Pharaoh": ""
+ },
+ "Ezekiel 30": {
+  "Pharaoh": ""
+ },
+ "card pharaoh_2332": {
+  "Pharaoh": "p:pharaoh_2332"
+ },
+ "card pharaoh_2330": {
+  "Pharaoh": "p:pharaoh_2330"
+ },
+ "card jochebed_1645": {
+  "Pharaoh": "p:pharaoh_2330"
+ },
+ "card pharaoh_2328": {
+  "Pharaoh": "p:pharaoh_2328"
+ },
+ "card eliezer_1114": {
+  "Pharaoh": "p:pharaoh_2330"
+ },
+ "card midian_796": {
+  "Pharaoh": "p:pharaoh_2330"
+ },
+ "card nile_895": {
+  "Pharaoh": ""
+ },
+ "card tahpanhes_1133": {
+  "Pharaoh": ""
+ },
+ "card judgment_511": {
+  "Pharaoh": "p:pharaoh_2332"
+ },
+ "card jerahmeel_843": {
+  "Ram": "p:ram_2392"
+ },
+ "card ram_2392": {
+  "Ram": "p:ram_2392"
+ },
+ "card rehob_989": {
+  "Rehob": "l:rehob_989"
+ },
+ "card rehob_988": {
+  "Rehob": "l:rehob_988"
+ },
+ "card aphek_71": {
+  "Rehob": "l:rehob_989"
+ },
+ "card rehum_2416": {
+  "Rehum": "p:rehum_2416"
+ },
+ "card heshbon_565": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card river_of_arnon_1225": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card dibon_331": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card jabbok_609": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card kiriathaim_695": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card medeba_775": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card sibmah_1091": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card beth-jeshimoth_215": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card beth-peor_228": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card bezer_247": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card kedemoth_675": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card mephaath_780": {
+  "Reuben": "l:reuben_1282"
+ },
+ "card sea_of_tiberias_1034": {
+  "Sea of Tiberias": "l:sea_of_tiberias_1034"
+ }
+}
