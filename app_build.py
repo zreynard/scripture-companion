@@ -298,7 +298,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .acts{display:flex;gap:6px;margin:12px 0 0}
 .acts button{font:inherit;font-size:14px;white-space:nowrap;border-radius:22px;padding:10px 8px;flex:1 1 auto;min-width:0;border:1px solid rgba(27,36,64,.15);background:rgba(255,255,255,.6);color:var(--ink)}
 .acts .bk{flex:0 0 44px;padding:10px 0;font-size:18px;line-height:1}
-.myplace{background:none;border:0;padding:6px 0;font:inherit;font-size:12px;color:var(--gold2);text-decoration:underline;text-underline-offset:2px;cursor:pointer}.acts .bk:disabled{opacity:.3}
+.myplace{display:inline-flex;align-items:center;min-height:36px;vertical-align:middle;background:none;border:0;padding:0 2px;font:inherit;font-size:12px;color:var(--gold2);text-decoration:underline;text-underline-offset:2px;cursor:pointer}.acts .bk:disabled{opacity:.3}
 .clearing .hd{display:flex;align-items:center;justify-content:space-between;gap:10px}.clearing .hd .ch{cursor:pointer}
 .clearing .fold{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid rgba(27,36,64,.15);background:rgba(255,255,255,.6);color:var(--ink);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
 .clearing .yr{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin:-2px 0 8px}.clearing.folded .yr{margin:-2px 0 4px}
@@ -339,6 +339,15 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 #sheet .chip{display:inline-flex;align-items:center;min-height:36px;margin:0 6px 6px 0;padding:6px 12px;border-radius:14px;border:1px solid rgba(27,36,64,.14);background:#fff;font:inherit;font-size:14px;color:var(--ink)}
 #sheet button.chip{cursor:pointer;border-color:rgba(168,129,42,.5);color:var(--gold2)}
 #sheet .go{background:none;border:0;padding:0;font:inherit;color:var(--gold2);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+#sheet .mean{font:italic 18px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--gold2);margin:-2px 0 4px}
+#sheet .why{font-size:13px;color:var(--mute);margin:0 0 10px;line-height:1.4}
+#sheet ul.story{list-style:none;padding-left:0;margin:0;border-left:2px solid rgba(201,162,74,.35);margin-left:6px}
+#sheet ul.story li{position:relative;padding-left:16px;margin:8px 0}
+#sheet ul.story li::before{content:"";position:absolute;left:-6px;top:.45em;width:10px;height:10px;border-radius:50%;background:#fbf8f1;border:2px solid rgba(201,162,74,.8)}
+#sheet ul.story li.past{color:var(--mute)}#sheet ul.story li.past::before{background:rgba(201,162,74,.8)}
+#sheet ul.story li.now{font-weight:600}#sheet ul.story li.now::before{background:var(--gold);box-shadow:0 0 0 4px rgba(201,162,74,.25)}
+#sheet ul.story li.here{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);font-weight:600}
+#sheet ul.story li.here::before{left:-8px;width:14px;height:14px;background:var(--gold);border-color:#fff;box-shadow:0 0 0 3px rgba(201,162,74,.35)}
 #sheet .meta{font-size:13px;color:var(--mute);margin-top:12px}
 #sheet .mini{display:block;width:100%;height:auto;border-radius:14px;border:1px solid rgba(27,36,64,.1);margin:4px 0 10px;background:#dde6ea;cursor:pointer}
 #sheet .open{display:inline-block;margin-top:2px;font-size:14px}
@@ -509,12 +518,19 @@ function refLinks(t){ /* "(Exodus 3)" -> a tap goes to that chapter */
 function famRow(k,label,list){if(!list||!list.length)return'';return `<div class="k">${label}</div><div>${list.map(x=>x.s?`<button class="chip" data-nk="p" data-ns="${x.s}">${esc(x.n)}</button>`:`<span class="chip">${esc(x.n)}</span>`).join('')}</div>`}
 function miniMap(A,x,y){const M=A.map;if(!M)return'';const w=70,h=42;
  return `<svg class="mini" viewBox="${x-w/2} ${y-h/2} ${w} ${h}" data-mx="${x}" data-my="${y}"><rect x="-500" y="-500" width="2000" height="2000" fill="#cfdde3"/><path d="${M.land}" fill="#f4efe3" stroke="#b9a77a" stroke-width=".25"/>${M.lakes.map(l=>`<path d="${l.d}" fill="#bccdd5"/>`).join('')}${M.rivers.map(r=>`<path d="${r.d}" fill="none" stroke="#86a0ae" stroke-width=".4"/>`).join('')}<circle cx="${x}" cy="${y}" r="3.2" fill="rgba(201,162,74,.25)"/><circle cx="${x}" cy="${y}" r="1.3" fill="#a8812a" stroke="#fff" stroke-width=".4"/></svg>`}
+function storyList(items){ /* key moments as a timeline, with where the reader stands */
+ const order=D.books.map(b=>b.name),pos=(b,c)=>order.indexOf(b)*1000+c,w=walk()[camp||0],me=pos(w.b.name,w.c.c);let placed=false,h='';
+ for(const x of items){const m=x.match(/\(([1-3]?\s?[A-Z][A-Za-z]+(?:\s(?:of\s)?[A-Z][a-z]+)?)\s(\d+)/);const bk=m&&(m[1]==='Psalm'?'Psalms':m[1]==='Song of Songs'?'Song of Solomon':m[1]),p=m&&order.includes(bk)?pos(bk,+m[2]):null;
+  if(!placed&&p!=null&&p>me){h+=`<li class="here">You are here · ${esc(w.b.name)} ${w.c.c}</li>`;placed=true}
+  h+=`<li class="${p==null?'':p<me?'past':p===me?'now':''}">${refLinks(x)}</li>`}
+ if(!placed&&items.length)h+=`<li class="here">You are here · ${esc(w.b.name)} ${w.c.c}</li>`;
+ return `<ul class="story">${h}</ul>`}
 function sheetHTML(A,k,sl){
  if(k==='p'){const p=A.p[sl];if(!p)return '<p class="who">No profile yet.</p>';
   const f=p.fam||{};const fam=famRow('father','Father',f.father)+famRow('mother','Mother',f.mother)+famRow('spouses',(f.spouses||[]).length>1?'Spouses':'Spouse',f.spouses)+famRow('siblings','Siblings',f.siblings)+famRow('children','Children',f.children);
-  return `<h3>${esc(p.n)}</h3><p class="who">${esc(p.who)}</p>${fam?`<div class="sec">Family</div><div class="fam">${fam}</div>`:''}${p.key&&p.key.length?`<div class="sec">Key moments</div><ul>${p.key.map(x=>`<li>${refLinks(x)}</li>`).join('')}</ul>`:''}<div class="meta">${p.nc?`Appears in ${p.nc===1?'1 chapter':p.nc+' chapters'}`:''}${p.first?` · ${refLinksPlain(p.first)}${p.last&&p.last!==p.first?' → '+refLinksPlain(p.last):''}`:''}</div>`}
+  return `<h3>${esc(p.n)}</h3>${p.mean?`<div class="mean">${/^(possibly|meaning unknown)/i.test(p.mean)?esc(p.mean):'“'+esc(p.mean)+'”'}</div>`:''}${p.why?`<div class="why">${refLinks(p.why)}</div>`:''}<p class="who">${esc(p.who)}</p>${p.key&&p.key.length?`<div class="sec">Their story</div>${storyList(p.key)}`:''}${fam?`<div class="sec">Family</div><div class="fam">${fam}</div>`:''}<div class="meta">${p.nc?`Appears in ${p.nc===1?'1 chapter':p.nc+' chapters'}`:''}${p.first?` · ${refLinksPlain(p.first)}${p.last&&p.last!==p.first?' → '+refLinksPlain(p.last):''}`:''}</div>`}
  const l=A.l[sl];if(!l)return '<p class="who">No profile yet.</p>';
- return `<h3>${esc(l.n)}</h3>${l.x!=null?miniMap(A,l.x,l.y):''}<p class="who">${esc(l.what)}</p>${l.today?`<div class="sec">Today</div><p class="who" style="margin:0">${esc(l.today)}</p>`:''}${l.key&&l.key.length?`<div class="sec">What happens here</div><ul>${l.key.map(x=>`<li>${refLinks(x)}</li>`).join('')}</ul>`:''}${l.x!=null?`<button class="go open" data-openmap="${sl}">Open the map ›</button>`:''}<div class="meta">${l.nc?`Named in ${l.nc===1?'1 chapter':l.nc+' chapters'}`:''}${l.first?` · ${refLinksPlain(l.first)}${l.last&&l.last!==l.first?' → '+refLinksPlain(l.last):''}`:''}</div>`}
+ return `<h3>${esc(l.n)}</h3>${l.mean?`<div class="mean">${/^(possibly|meaning unknown)/i.test(l.mean)?esc(l.mean):'“'+esc(l.mean)+'”'}</div>`:''}${l.why?`<div class="why">${refLinks(l.why)}</div>`:''}${l.x!=null?miniMap(A,l.x,l.y):''}<p class="who">${esc(l.what)}</p>${l.key&&l.key.length?`<div class="sec">What happens here</div>${storyList(l.key)}`:''}${l.today?`<div class="sec">Today</div><p class="who" style="margin:0">${esc(l.today)}</p>`:''}${l.x!=null?`<button class="go open" data-openmap="${sl}">Open the map ›</button>`:''}<div class="meta">${l.nc?`Named in ${l.nc===1?'1 chapter':l.nc+' chapters'}`:''}${l.first?` · ${refLinksPlain(l.first)}${l.last&&l.last!==l.first?' → '+refLinksPlain(l.last):''}`:''}</div>`}
 function refLinksPlain(r){const m=r.match(/^(.+) (\d+)$/);return m?`<button class="go" data-gob="${m[1]}" data-goc="${m[2]}">${esc(r)}</button>`:esc(r)}
 function openSheet(k,sl,push=true){atlas().then(A=>{if(push)SHEET.push([k,sl]);const sh=$('#sheet');
   $('#shkind').textContent=k==='p'?'Person':'Place';$('#shback').hidden=SHEET.length<2;$('#shbody').innerHTML=sheetHTML(A,k,sl);
@@ -677,7 +693,7 @@ function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(
  return `<div class="settings"><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
  <p>
  <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who?NAMES[cfg.who]+' only':'everyone'} — switch</span></p>
- <p class="note">Progress is stored on this device.</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
+ <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).</p><p class="note">Progress is stored on this device.</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>
  <button class="btn" id="back">‹ Back to the road</button></div>`}
 /* player */
@@ -685,8 +701,8 @@ const audio=$('#audio');let cur=null,speed=S.get('speed',1);audio.playbackRate=s
 function where(id){for(const b of D.books){if(b.ov.includes(id)||(b.spans||[]).some(x=>x.id===id))return b.name;for(const c of b.ch)if(c.ids.includes(id))return b.name+' '+c.c}return ''}
 function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;ready=false;const p=prog[id]||{},saved=p.pos||0;audio.src=i.audio;audio.addEventListener('loadedmetadata',()=>{const st=i.s||0;if(saved&&saved>st&&saved<audio.duration-5)audio.currentTime=saved;else if(st&&st<audio.duration-30)audio.currentTime=st;ready=true},{once:true});  /* fresh plays start after the intro */
   $('#np-t').textContent=i.t;$('#np-s').textContent=teacher(i)+' · '+where(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(false)}setPP();
-  if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play(),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',next].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
- audio.paused?audio.play():audio.pause()}
+  if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',next].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
+ audio.paused?audio.play().catch(()=>{}):audio.pause()}
 function next(){const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;if(x.c===x.b.ch[0])seq.push(...(x.b.spans||[]).map(s=>s.id),...x.b.ov);seq.push(...x.c.ids)});/* continue from where the listener stands: a teaching that spans chapters appears in each of them */let k=seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]);if(k<0)k=seq.lastIndexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
 audio.addEventListener('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
  if(!ready)return;const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
@@ -697,7 +713,7 @@ audio.addEventListener('seeking',()=>{lastT=null});audio.addEventListener('play'
 audio.addEventListener('ended',()=>{const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*body(cur))p.done=true;S.set('prog',prog);render();next()});
 const setPP=()=>{$('#pp').innerHTML=icon(audio.paused?'play':'pause',28,0,'#1b2440')};setPP();audio.addEventListener('play',()=>{setPP();render()});audio.addEventListener('pause',()=>{setPP();render()});
 audio.addEventListener('error',()=>{$('#np-s').textContent=(location.protocol==='file:'||window!==window.top)?'Audio is blocked in this viewer — open in Safari from a web address.':'This file did not load.'});
-$('#pp').onclick=()=>cur&&(audio.paused?audio.play():audio.pause());$('#bk').onclick=()=>audio.currentTime-=10;$('#fw').onclick=()=>audio.currentTime+=10;
+$('#pp').onclick=()=>cur&&(audio.paused?audio.play().catch(()=>{}):audio.pause());$('#bk').onclick=()=>audio.currentTime-=10;$('#fw').onclick=()=>audio.currentTime+=10;
 $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.target.value/1000};
 $('#spd').onclick=()=>{const sp=[1,1.25,1.5,1.75,2];speed=sp[(sp.indexOf(speed)+1)%sp.length];audio.playbackRate=speed;$('#spd').textContent=speed+'×';S.set('speed',speed)};
 let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};

@@ -34,6 +34,10 @@ class Atlas:
         self.chap = json.load(open(os.path.join(D, "chapters.json"), encoding="utf-8"))
         self.prof_p = {s: v for s, v in _load("people_*.json").items() if not v.get("skip") and v.get("who")}
         self.prof_l = {s: v for s, v in _load("places_*.json").items() if not v.get("skip") and v.get("what")}
+        self.mean = {}
+        for f in sorted(glob.glob(os.path.join(D, "meanings", "*.json"))):
+            try: self.mean.update(json.load(open(f, encoding="utf-8")))
+            except Exception as e: print("atlas: skipped", os.path.basename(f), e)
         base = os.path.join(HERE, "data", "map", "base.json")
         self.map = json.load(open(base)) if os.path.exists(base) else None
         self.ok = bool(self.prof_p or self.prof_l)
@@ -105,7 +109,9 @@ class Atlas:
                     else:
                         row.append({"s": "", "n": it})
                 if row: fam[k] = row
-            P[s] = {"n": v["name"], "who": v["who"], "key": v.get("key", []), "fam": fam, **where(src.get("ch", []))}
+            m = self.mean.get(s, {})
+            P[s] = {"n": v["name"], "who": v["who"], "key": v.get("key", []), "fam": fam, **where(src.get("ch", [])),
+                    **({"mean": m["meaning"]} if m.get("meaning") else {}), **({"why": m["why"]} if m.get("why") else {})}
         L = {}
         pr = self.map["proj"] if self.map else None
         for s, v in self.prof_l.items():
@@ -113,6 +119,7 @@ class Atlas:
             pos = {}
             if pr and src.get("lat") is not None:
                 pos = {"x": round((src["lon"] - pr["lon0"]) * pr["kx"], 2), "y": round((pr["lat1"] - src["lat"]) * pr["ky"], 2)}
-            L[s] = {"n": v["name"], "what": v["what"], "today": v.get("today", ""), "key": v.get("key", []), **pos, **where(src.get("ch", []))}
+            m = self.mean.get(s, {})
+            L[s] = {**({"mean": m["meaning"]} if m.get("meaning") else {}), **({"why": m["why"]} if m.get("why") else {}), "n": v["name"], "what": v["what"], "today": v.get("today", ""), "key": v.get("key", []), **pos, **where(src.get("ch", []))}
         here = {k: [s for s in d["pl"] if s in L and "x" in L[s]][:8] for k, d in self.chap.items()}
         return {"p": P, "l": L, "map": self.map, "here": {k: v for k, v in here.items() if v}}
