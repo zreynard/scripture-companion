@@ -1,0 +1,683 @@
+{
+ "abinadab_44": {
+  "name": "Abinadab",
+  "aka": [],
+  "who": "The second son of Jesse and an older brother of King David.",
+  "key": [
+   "Jesse had Abinadab pass before Samuel, but the LORD had not chosen him (1 Samuel 16).",
+   "He was one of Jesse's three oldest sons who followed Saul to fight the Philistines (1 Samuel 17).",
+   "He is listed as Jesse's second son, after Eliab (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "jesse_903"
+   ],
+   "siblings": [
+    "eliab_1075",
+    "shammah_2700",
+    "nethaneel_2189",
+    "raddai_2387",
+    "ozem_2260",
+    "david_994"
+   ]
+  },
+  "skip": false
+ },
+ "adah_69": {
+  "name": "Adah",
+  "aka": [],
+  "who": "One of the two wives of Lamech, a descendant of Cain, and mother of Jabal and Jubal.",
+  "key": [
+   "Lamech took two wives, Adah and Zillah (Genesis 4).",
+   "Adah bore Jabal, father of those who live in tents and keep livestock (Genesis 4).",
+   "She also bore Jubal, father of all who play the lyre and pipe (Genesis 4).",
+   "Lamech addressed his boastful song of vengeance to Adah and Zillah (Genesis 4)."
+  ],
+  "family": {
+   "spouses": [
+    "lamech_1808"
+   ],
+   "children": [
+    "jabal_673",
+    "jubal_1748"
+   ]
+  },
+  "skip": false
+ },
+ "aiah_177": {
+  "name": "Aiah",
+  "aka": [],
+  "who": "The father of Rizpah, the concubine of King Saul.",
+  "key": [
+   "His daughter Rizpah was a concubine of King Saul (2 Samuel 3).",
+   "Ish-bosheth accused Abner of going in to Rizpah daughter of Aiah (2 Samuel 3).",
+   "Rizpah's two sons by Saul were handed over to the Gibeonites and put to death (2 Samuel 21).",
+   "David was told how Rizpah daughter of Aiah had guarded their bodies (2 Samuel 21)."
+  ],
+  "family": {
+   "children": [
+    "rizpah_2444"
+   ]
+  },
+  "skip": false
+ },
+ "anath_261": {
+  "name": "Anath",
+  "aka": [],
+  "who": "The father of Shamgar, the deliverer who struck down six hundred Philistines.",
+  "key": [
+   "Shamgar son of Anath killed six hundred Philistines with an oxgoad and saved Israel (Judges 3).",
+   "Deborah's song recalls that in the days of Shamgar son of Anath the highways were abandoned (Judges 5)."
+  ],
+  "family": {
+   "children": [
+    "shamgar_2534"
+   ]
+  },
+  "skip": false
+ },
+ "azbuk_550": {
+  "name": "Azbuk",
+  "aka": [],
+  "who": "The father of Nehemiah, the ruler of half of Beth-zur who helped rebuild Jerusalem's wall.",
+  "key": [
+   "His son Nehemiah ruled half the district of Beth-zur (Nehemiah 3).",
+   "Nehemiah son of Azbuk repaired the wall as far as the tombs of David (Nehemiah 3)."
+  ],
+  "family": {
+   "children": [
+    "nehemiah_2173"
+   ]
+  },
+  "skip": false
+ },
+ "baal_573": {
+  "name": "Baal",
+  "aka": [],
+  "who": "A Canaanite false god whose worship repeatedly led Israel into idolatry.",
+  "key": [
+   "At Shittim Israel yoked itself to Baal of Peor, and the LORD's anger brought a plague (Numbers 25).",
+   "Gideon tore down his father's altar to Baal and was called Jerubbaal (Judges 6).",
+   "King Ahab married Jezebel and built an altar and a house for Baal in Samaria (1 Kings 16).",
+   "On Mount Carmel the LORD answered Elijah with fire, and the prophets of Baal were killed (1 Kings 18).",
+   "Jehu gathered Baal's worshipers in his house, destroyed them, and wiped Baal out of Israel (2 Kings 10)."
+  ],
+  "label": "False god",
+  "skip": false
+ },
+ "baal-zebub_579": {
+  "name": "Baal-zebub",
+  "aka": [],
+  "who": "The god of the Philistine city of Ekron, consulted by King Ahaziah of Israel.",
+  "key": [
+   "After falling through a lattice, Ahaziah sent messengers to ask Baal-zebub whether he would recover (2 Kings 1).",
+   "The LORD's angel sent Elijah to ask if there was no God in Israel (2 Kings 1).",
+   "Ahaziah died according to the word of the LORD that Elijah had spoken (2 Kings 1)."
+  ],
+  "label": "False god",
+  "skip": false
+ },
+ "bebai_421": {
+  "name": "Bebai",
+  "aka": [],
+  "who": "The father, or family head, of Zechariah, who led twenty-eight men back from Babylon with Ezra.",
+  "key": [
+   "Zechariah son of Bebai returned from Babylon to Jerusalem in Ezra's company (Ezra 8).",
+   "Twenty-eight men of the family of Bebai were registered with him (Ezra 8)."
+  ],
+  "family": {
+   "children": [
+    "zechariah_3018"
+   ]
+  },
+  "skip": false
+ },
+ "benaiah_450": {
+  "name": "Benaiah",
+  "aka": [],
+  "who": "The father of Pelatiah, a leader of Jerusalem who died while Ezekiel prophesied.",
+  "key": [
+   "In a vision Ezekiel saw Pelatiah son of Benaiah among twenty-five men at the temple's east gate (Ezekiel 11).",
+   "As Ezekiel prophesied against them, Pelatiah son of Benaiah died (Ezekiel 11)."
+  ],
+  "family": {
+   "children": [
+    "pelatiah_2307"
+   ]
+  },
+  "skip": false
+ },
+ "beriah_480": {
+  "name": "Beriah",
+  "aka": [],
+  "who": "A Benjaminite family head in Aijalon who, with Shema, drove out the inhabitants of Gath.",
+  "key": [
+   "Beriah and Shema were heads of fathers' houses of the inhabitants of Aijalon (1 Chronicles 8).",
+   "They put to flight the inhabitants of Gath (1 Chronicles 8).",
+   "His sons, including Arad, Michael, Ispah, and Joha, are listed in Benjamin's genealogy (1 Chronicles 8)."
+  ],
+  "family": {
+   "father": [
+    "elpaal_1185"
+   ],
+   "children": [
+    "ahio_155",
+    "shashak_2561",
+    "jeremoth_856",
+    "zebadiah_2988",
+    "arad_281",
+    "ader_82",
+    "michael_2063",
+    "ispah_644",
+    "joha_1664"
+   ]
+  },
+  "skip": false
+ },
+ "bimhal_506": {
+  "name": "Bimhal",
+  "aka": [],
+  "who": "A man of the tribe of Asher, son of Japhlet, named in Asher's genealogy.",
+  "key": [
+   "Bimhal is named with Pasach and Ashvath as the sons of Japhlet (1 Chronicles 7).",
+   "Asher's descendants were heads of fathers' houses and mighty warriors (1 Chronicles 7)."
+  ],
+  "family": {
+   "father": [
+    "japhlet_729"
+   ],
+   "siblings": [
+    "pasach_2279",
+    "ashvath_343"
+   ]
+  },
+  "skip": false
+ },
+ "dodo_1021": {
+  "name": "Dodo",
+  "aka": [
+   "Dodai"
+  ],
+  "who": "An Ahohite, father of Eleazar, one of the three chief warriors among David's mighty men.",
+  "key": [
+   "His son Eleazar was one of the three mighty men who were with David (2 Samuel 23).",
+   "Eleazar son of Dodo stood with David against the Philistines at Pas-dammim (1 Chronicles 11).",
+   "Dodai the Ahohite, likely the same man, commanded the division for the second month (1 Chronicles 27)."
+  ],
+  "family": {
+   "children": [
+    "eleazar_1064"
+   ]
+  },
+  "skip": false
+ },
+ "elead_1059": {
+  "name": "Elead",
+  "aka": [],
+  "who": "A son of Ephraim, killed with Ezer by the men of Gath while raiding their livestock.",
+  "key": [
+   "Ezer and Elead were killed by the men of Gath when they came down to take their livestock (1 Chronicles 7).",
+   "Ephraim their father mourned many days, and his brothers came to comfort him (1 Chronicles 7)."
+  ],
+  "family": {
+   "father": [
+    "ephraim_1206"
+   ],
+   "siblings": [
+    "ezer_1240",
+    "beriah_479"
+   ]
+  },
+  "skip": false
+ },
+ "elioenai_1135": {
+  "name": "Elioenai",
+  "aka": [],
+  "who": "A descendant of David's royal line after the exile, son of Neariah and father of seven sons.",
+  "key": [
+   "He is listed as a son of Neariah, with his brothers Hizkiah and Azrikam (1 Chronicles 3).",
+   "His seven sons are named, including Hodaviah, Eliashib, Johanan, and Anani (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "neariah_2161"
+   ],
+   "siblings": [
+    "hezekiah_1513",
+    "azrikam_563"
+   ],
+   "children": [
+    "hodaiah_1539",
+    "eliashib_1093",
+    "pelaiah_2301",
+    "akkub_180",
+    "johanan_1668",
+    "dalaiah_970",
+    "anani_256"
+   ]
+  },
+  "skip": false
+ },
+ "gaham_1267": {
+  "name": "Gaham",
+  "aka": [],
+  "who": "A son of Nahor, Abraham's brother, by his concubine Reumah.",
+  "key": [
+   "Abraham heard news of the children born to his brother Nahor (Genesis 22).",
+   "Nahor's concubine Reumah bore Tebah, Gaham, Tahash, and Maacah (Genesis 22)."
+  ],
+  "family": {
+   "father": [
+    "nahor_2143"
+   ],
+   "mother": [
+    "reumah_2433"
+   ],
+   "siblings": [
+    "tebah_2832",
+    "thahash_2845",
+    "maachah_1840"
+   ]
+  },
+  "skip": false
+ },
+ "harbona_1410": {
+  "name": "Harbona",
+  "aka": [
+   "Harbonah"
+  ],
+  "who": "A eunuch of King Ahasuerus who told the king of the gallows Haman had built for Mordecai.",
+  "key": [
+   "He was one of seven eunuchs sent to bring Queen Vashti before the king (Esther 1).",
+   "He told the king that Haman had built a gallows fifty cubits high for Mordecai (Esther 7).",
+   "The king ordered Haman hanged on that gallows (Esther 7)."
+  ],
+  "skip": false
+ },
+ "hodaviah_1541": {
+  "name": "Hodaviah",
+  "aka": [],
+  "who": "A Benjaminite, son of Hassenuah, whose descendant Sallu lived in Jerusalem after the exile.",
+  "key": [
+   "He is listed as son of Hassenuah and father of Meshullam in a Benjaminite line (1 Chronicles 9).",
+   "His descendant Sallu son of Meshullam was among the Benjaminites living in Jerusalem (1 Chronicles 9)."
+  ],
+  "family": {
+   "father": [
+    "hasenuah_1427"
+   ],
+   "children": [
+    "meshullam_2024"
+   ]
+  },
+  "skip": false
+ },
+ "iddo_1596": {
+  "name": "Iddo",
+  "aka": [],
+  "who": "The leader at Casiphia in Babylonia, to whom Ezra sent for Levites to serve the temple.",
+  "key": [
+   "Finding no Levites among the returnees, Ezra sent men to Iddo, the leading man at Casiphia (Ezra 8).",
+   "Iddo's community sent Sherebiah, Hashabiah, and Jeshaiah with other Levites (Ezra 8).",
+   "They also sent 220 temple servants to join Ezra's journey (Ezra 8)."
+  ],
+  "skip": false
+ },
+ "iru_615": {
+  "name": "Iru",
+  "aka": [],
+  "who": "A son of Caleb son of Jephunneh, listed in the genealogy of Judah.",
+  "key": [
+   "Iru is named first among the sons of Caleb son of Jephunneh, with Elah and Naam (1 Chronicles 4).",
+   "His brother Elah was the father of Kenaz (1 Chronicles 4)."
+  ],
+  "family": {
+   "father": [
+    "caleb_537"
+   ],
+   "siblings": [
+    "elah_1047",
+    "naam_2117"
+   ]
+  },
+  "skip": false
+ },
+ "jabesh_674": {
+  "name": "Jabesh",
+  "aka": [],
+  "who": "The father of Shallum, who killed King Zechariah of Israel and reigned one month.",
+  "key": [
+   "Shallum son of Jabesh conspired against King Zechariah, killed him, and reigned in his place (2 Kings 15).",
+   "Shallum son of Jabesh reigned one month in Samaria (2 Kings 15).",
+   "Menahem struck down Shallum son of Jabesh and became king (2 Kings 15)."
+  ],
+  "family": {
+   "children": [
+    "shallum_2514"
+   ]
+  },
+  "skip": false
+ },
+ "jahdai_701": {
+  "name": "Jahdai",
+  "aka": [],
+  "who": "A man of Judah listed among Caleb's descendants, whose six sons are named in Chronicles.",
+  "key": [
+   "His sons were Regem, Jotham, Geshan, Pelet, Ephah, and Shaaph (1 Chronicles 2).",
+   "He appears in the genealogy of Caleb within the tribe of Judah (1 Chronicles 2)."
+  ],
+  "family": {
+   "children": [
+    "regem_2407",
+    "jotham_1736",
+    "gesham_1306",
+    "pelet_2309",
+    "ephah_1199",
+    "shaaph_2506"
+   ]
+  },
+  "skip": false
+ },
+ "jamin_721": {
+  "name": "Jamin",
+  "aka": [],
+  "who": "A man of Judah, son of Ram and grandson of Jerahmeel.",
+  "key": [
+   "Ram was the firstborn son of Jerahmeel (1 Chronicles 2).",
+   "The sons of Ram were Maaz, Jamin, and Eker (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "ram_2392"
+   ],
+   "siblings": [
+    "maaz_1872",
+    "eker_1041"
+   ]
+  },
+  "skip": false
+ },
+ "jebusite_748": {
+  "name": "Jebusites",
+  "aka": [
+   "Jebusite"
+  ],
+  "who": "A Canaanite people who held Jerusalem, then called Jebus, until David captured it.",
+  "key": [
+   "The Jebusites are listed among the peoples descended from Canaan (Genesis 10).",
+   "The people of Judah could not drive out the Jebusites living in Jerusalem (Joshua 15).",
+   "David captured the stronghold of Zion from the Jebusites, and it became the city of David (2 Samuel 5).",
+   "David built an altar on the threshing floor of Araunah the Jebusite (2 Samuel 24)."
+  ],
+  "family": {
+   "father": [
+    "canaan_914"
+   ]
+  },
+  "label": "People group",
+  "skip": false
+ },
+ "jerahmeel_844": {
+  "name": "Jerahmeel",
+  "aka": [],
+  "who": "A Merarite Levite, son of Kish, who headed a family in David's Levite divisions.",
+  "key": [
+   "Jerahmeel is listed as the son of Kish among the Merarite Levites (1 Chronicles 24).",
+   "These Levites cast lots before King David, Zadok, and Ahimelech, as their priestly brothers did (1 Chronicles 24)."
+  ],
+  "family": {
+   "father": [
+    "kish_1785"
+   ]
+  },
+  "skip": false
+ },
+ "jobab_1640": {
+  "name": "Jobab",
+  "aka": [],
+  "who": "A son of Joktan in Shem's line, named in the Table of Nations.",
+  "key": [
+   "Jobab is listed among the thirteen sons of Joktan, with Ophir and Havilah (Genesis 10).",
+   "Chronicles repeats him among the descendants of Shem through Eber (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "joktan_1686"
+   ],
+   "siblings": [
+    "almodad_191",
+    "sheleph_2602",
+    "hazarmaveth_1465",
+    "jerah_842",
+    "hadoram_1345",
+    "uzal_2911",
+    "diklah_1011",
+    "ebal_2227",
+    "abimael_39",
+    "sheba_2568",
+    "ophir_2253",
+    "havilah_1462"
+   ]
+  },
+  "skip": false
+ },
+ "johanan_1669": {
+  "name": "Johanan",
+  "aka": [],
+  "who": "A priest in Aaron's high priestly line, son of Azariah and father of Azariah.",
+  "key": [
+   "He is listed in the high priestly line as son of Azariah, grandson of Ahimaaz (1 Chronicles 6).",
+   "His son Azariah served as priest in the house Solomon built in Jerusalem (1 Chronicles 6)."
+  ],
+  "family": {
+   "father": [
+    "azariah_373"
+   ],
+   "children": [
+    "azariah_378"
+   ]
+  },
+  "skip": false
+ },
+ "joiada_1680": {
+  "name": "Joiada",
+  "aka": [],
+  "who": "A high priest after the exile, son of Eliashib, whose son married Sanballat's daughter.",
+  "key": [
+   "He is listed in the high priestly line as son of Eliashib and father of Jonathan (Nehemiah 12).",
+   "Levite family heads were recorded in the days of Eliashib, Joiada, Johanan, and Jaddua (Nehemiah 12).",
+   "One of his sons became son-in-law to Sanballat, and Nehemiah drove him away (Nehemiah 13)."
+  ],
+  "family": {
+   "father": [
+    "eliashib_1100"
+   ],
+   "children": [
+    "Jonathan"
+   ]
+  },
+  "skip": false
+ },
+ "michael_2060": {
+  "name": "Michael",
+  "aka": [],
+  "who": "A man of the tribe of Gad, son of Jeshishai, listed in the Gadite genealogy.",
+  "key": [
+   "He appears in the ancestry of Abihail's family as son of Jeshishai and father of Gilead (1 Chronicles 5).",
+   "These Gadites were recorded in genealogies in the days of Jotham of Judah and Jeroboam of Israel (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "jeshishai_890"
+   ],
+   "children": [
+    "gilead_1319"
+   ]
+  },
+  "skip": false
+ },
+ "molech_2104": {
+  "name": "Molech",
+  "aka": [],
+  "who": "A god of the Ammonites associated with child sacrifice, whose worship the LORD forbade.",
+  "key": [
+   "The law forbade Israel to give any of their children to Molech (Leviticus 18).",
+   "Anyone who gave a child to Molech was to be put to death (Leviticus 20).",
+   "Solomon built a high place for Molech, the abomination of the Ammonites (1 Kings 11).",
+   "Josiah defiled Topheth so that no one could burn a child as an offering to Molech (2 Kings 23).",
+   "Judah built high places in the Valley of Hinnom to offer children to Molech (Jeremiah 32)."
+  ],
+  "label": "False god",
+  "skip": false
+ },
+ "naam_2117": {
+  "name": "Naam",
+  "aka": [],
+  "who": "A son of Caleb son of Jephunneh, listed in the genealogy of Judah.",
+  "key": [
+   "Naam is named with Iru and Elah as the sons of Caleb son of Jephunneh (1 Chronicles 4).",
+   "His brother Elah was the father of Kenaz (1 Chronicles 4)."
+  ],
+  "family": {
+   "father": [
+    "caleb_537"
+   ],
+   "siblings": [
+    "iru_615",
+    "elah_1047"
+   ]
+  },
+  "skip": false
+ },
+ "nahash_2139": {
+  "name": "Nahash",
+  "aka": [],
+  "who": "An Ammonite of Rabbah, father of Shobi, probably the Ammonite king who had shown David kindness.",
+  "key": [
+   "His son Shobi came from Rabbah of the Ammonites to meet David at Mahanaim (2 Samuel 17).",
+   "Shobi brought beds, bowls, and food for David's people during Absalom's revolt (2 Samuel 17).",
+   "He is likely King Nahash, whose kindness David wished to repay to his son Hanun (2 Samuel 10)."
+  ],
+  "family": {
+   "children": [
+    "shobi_2722"
+   ]
+  },
+  "skip": false
+ },
+ "philetus_2343": {
+  "name": "Philetus",
+  "aka": [],
+  "who": "A false teacher whom Paul named with Hymenaeus for saying the resurrection had already happened.",
+  "key": [
+   "Paul warned that the talk of Hymenaeus and Philetus would spread like gangrene (2 Timothy 2).",
+   "They swerved from the truth, saying the resurrection had already happened (2 Timothy 2).",
+   "Their teaching was upsetting the faith of some (2 Timothy 2)."
+  ],
+  "skip": false
+ },
+ "shallum_2515": {
+  "name": "Shallum",
+  "aka": [],
+  "who": "The keeper of the wardrobe in King Josiah's day and husband of the prophetess Huldah.",
+  "key": [
+   "Hilkiah and the king's officials went to Huldah, wife of Shallum son of Tikvah, keeper of the wardrobe (2 Kings 22).",
+   "Chronicles also names Huldah as the wife of Shallum, keeper of the wardrobe (2 Chronicles 34)."
+  ],
+  "family": {
+   "father": [
+    "tikvah_2855"
+   ],
+   "spouses": [
+    "huldah_1567"
+   ]
+  },
+  "skip": false
+ },
+ "shimshai_2707": {
+  "name": "Shimshai",
+  "aka": [],
+  "who": "A scribe in the Persian province Beyond the River who, with Rehum, opposed the rebuilding of Jerusalem.",
+  "key": [
+   "Rehum the commander and Shimshai the scribe wrote to Artaxerxes against Jerusalem (Ezra 4).",
+   "Artaxerxes replied to Rehum and Shimshai, ordering the work on the city to stop (Ezra 4).",
+   "They hurried to Jerusalem and by force made the Jews stop building (Ezra 4)."
+  ],
+  "skip": false
+ },
+ "sosthenes_2772": {
+  "name": "Sosthenes",
+  "aka": [],
+  "who": "The ruler of the synagogue in Corinth who was beaten in front of Gallio's tribunal.",
+  "key": [
+   "After Gallio dismissed the case against Paul, the crowd seized Sosthenes, the synagogue ruler (Acts 18).",
+   "They beat him in front of the tribunal, but Gallio paid no attention (Acts 18).",
+   "A brother named Sosthenes, possibly the same man, joined Paul in writing to the Corinthians (1 Corinthians 1)."
+  ],
+  "skip": false
+ },
+ "tiria_2867": {
+  "name": "Tiria",
+  "aka": [],
+  "who": "A man of Judah, son of Jehallelel, named in the tribe's genealogy.",
+  "key": [
+   "Tiria is listed among the sons of Jehallelel, with Ziph, Ziphah, and Asarel (1 Chronicles 4).",
+   "His family appears among the clans of the tribe of Judah (1 Chronicles 4)."
+  ],
+  "family": {
+   "father": [
+    "jehaleleel_764"
+   ],
+   "siblings": [
+    "ziph_3091",
+    "ziphah_3092",
+    "asareel_333"
+   ]
+  },
+  "skip": false
+ },
+ "zabdi_2954": {
+  "name": "Zabdi",
+  "aka": [],
+  "who": "A man of Judah, of the clan of Zerah, and grandfather of Achan.",
+  "key": [
+   "Achan son of Carmi, son of Zabdi, took some of the devoted things at Jericho (Joshua 7).",
+   "When lots were cast, the household of Zabdi was taken, and then Achan (Joshua 7)."
+  ],
+  "family": {
+   "father": [
+    "zerah_2984"
+   ],
+   "children": [
+    "carmi_921"
+   ]
+  },
+  "skip": false
+ },
+ "zimran_3086": {
+  "name": "Zimran",
+  "aka": [],
+  "who": "A son of Abraham by Keturah, sent away to the east with his brothers.",
+  "key": [
+   "Keturah bore Abraham Zimran, Jokshan, Medan, Midian, Ishbak, and Shuah (Genesis 25).",
+   "Abraham gave gifts to these sons and sent them east, away from Isaac (Genesis 25).",
+   "Chronicles lists him first among the sons of Keturah (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "abraham_58"
+   ],
+   "mother": [
+    "keturah_1782"
+   ],
+   "siblings": [
+    "jokshan_1685",
+    "medan_1978",
+    "midian_2075",
+    "ishbak_620",
+    "shuah_2727"
+   ]
+  },
+  "skip": false
+ }
+}

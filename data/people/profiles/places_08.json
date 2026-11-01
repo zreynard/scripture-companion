@@ -1,0 +1,80 @@
+{
+ "beth-togarmah_239": {
+  "name": "Beth-togarmah",
+  "aka": [],
+  "what": "A people and land of the far north, named for Togarmah and known for trading horses and mules.",
+  "today": "Exact site unknown; possibly eastern Turkey or Armenia.",
+  "key": [
+   "Beth-togarmah traded horses, war horses, and mules for the wares of Tyre (Ezekiel 27).",
+   "Beth-togarmah from the uttermost parts of the north is named among the allies of Gog (Ezekiel 38)."
+  ],
+  "skip": false
+ },
+ "chisloth-tabor_297": {
+  "name": "Chisloth-tabor",
+  "aka": [],
+  "what": "A place on the border of Zebulun near Mount Tabor, on the way toward Daberath.",
+  "today": "Possibly Iksal, near Nazareth in northern Israel.",
+  "key": [
+   "Zebulun's boundary ran east from Sarid to the border of Chisloth-tabor (Joshua 19).",
+   "From there the boundary went on to Daberath and up to Japhia (Joshua 19)."
+  ],
+  "skip": false
+ },
+ "gallim_434": {
+  "name": "Gallim",
+  "aka": [],
+  "what": "A town in Benjamin north of Jerusalem, home of Palti, who was given David's wife Michal.",
+  "today": "Exact site unknown; north of Jerusalem.",
+  "key": [
+   "Saul gave his daughter Michal, David's wife, to Palti son of Laish, of Gallim (1 Samuel 25).",
+   "Isaiah calls the daughter of Gallim to cry aloud as the Assyrian army advances (Isaiah 10)."
+  ],
+  "skip": false
+ },
+ "gob_483": {
+  "name": "Gob",
+  "aka": [],
+  "what": "A battle site where David's men fought the Philistines and killed descendants of the giants.",
+  "today": "Exact site unknown.",
+  "key": [
+   "At Gob, Sibbecai the Hushathite struck down Saph, a descendant of the giants (2 Samuel 21).",
+   "In another battle at Gob, Elhanan of Bethlehem struck down a Philistine giant (2 Samuel 21)."
+  ],
+  "skip": false
+ },
+ "kamon_665": {
+  "name": "Kamon",
+  "aka": [],
+  "what": "A town in Gilead where Jair, a judge of Israel, was buried.",
+  "today": "Exact site unknown; in Gilead, in present-day northern Jordan.",
+  "key": [
+   "Jair the Gileadite judged Israel twenty-two years, and his sons had thirty cities in Gilead (Judges 10).",
+   "Jair died and was buried in Kamon (Judges 10)."
+  ],
+  "skip": false
+ },
+ "moserah_823": {
+  "name": "Moserah",
+  "aka": [],
+  "what": "A wilderness camp of Israel, where Deuteronomy records that Aaron died and was buried.",
+  "today": "Exact site unknown; near the border of Edom.",
+  "key": [
+   "Israel journeyed from Beeroth Bene-jaakan to Moserah, where Aaron died and was buried (Deuteronomy 10).",
+   "From there Israel journeyed to Gudgodah and then to Jotbathah (Deuteronomy 10)."
+  ],
+  "skip": false
+ },
+ "second_quarter_1040": {
+  "name": "Second Quarter",
+  "aka": [],
+  "what": "A newer district of Jerusalem where the prophetess Huldah lived in Josiah's day.",
+  "today": "Likely the western hill of Jerusalem's Old City.",
+  "key": [
+   "Huldah the prophetess lived in Jerusalem in the Second Quarter (2 Kings 22).",
+   "Chronicles also places Huldah's home in the Second Quarter (2 Chronicles 34).",
+   "Zephaniah foretold a wail from the Second Quarter on the day of the LORD (Zephaniah 1)."
+  ],
+  "skip": false
+ }
+}

@@ -208,6 +208,11 @@ class Atlas:
             L[s] = {**({"mean": m["meaning"]} if m.get("meaning") else {}), **({"why": self.link_card(m["why"], s, cc)} if m.get("why") else {}), "n": v["name"],
                     "what": self.link_card(v["what"], s, cc), "today": v.get("today", ""), "key": [self.link_card(k, s, cc) for k in v.get("key", [])], **pos, **where(src.get("ch", []))}
         here = {k: [s for s in d["pl"] if s in L and "x" in L[s]][:8] for k, d in self.chap.items()}
+        within = {}
+        for f in sorted(glob.glob(os.path.join(D, "within", "*.json"))):
+            within.update(json.load(open(f, encoding="utf-8")))
+        for sl, lv in within.items():
+            if sl in L and lv: L[sl]["in"] = lv[:3]
         base = {k: v for k, v in (self.map or {}).items() if k not in ("journey", "paul")} or None
         return {"p": P, "l": L, "map": base, "here": {k: v for k, v in here.items() if v}, "trip": self.trip(pr) if pr else None}
 
@@ -233,4 +238,8 @@ class Atlas:
         notes = {b: ([*place(s)[0], place(s)[1]] if s else None, line) for b, (s, line) in journey.NOTES.items()}
         reg = [[n, *xy(lon, lat), list(r) if r is not None else None] for n, lon, lat, r in journey.REGIONS]
         seas = [[n, *xy(lon, lat)] for n, lon, lat in journey.SEAS]
-        return {"legs": legs, "bl": bl, "notes": notes, "follow": sorted(journey.FOLLOW), "reg": reg, "seas": seas}
+        fine = [[n, *xy(lon, lat), list(r)] for n, lon, lat, r in journey.FINE]
+        waters = [[n, *xy(lon, lat)] for n, lon, lat in journey.WATERS]
+        anchors = [[s, *place(s)[0], place(s)[1]] for s in journey.ANCHORS]
+        return {"legs": legs, "bl": bl, "notes": notes, "follow": sorted(journey.FOLLOW), "reg": reg, "seas": seas,
+                "fine": fine, "waters": waters, "anchors": anchors}

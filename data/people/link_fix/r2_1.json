@@ -1,0 +1,401 @@
+{
+ "Psalms 34": {
+  "Abimelech": ""
+ },
+ "card thebez_1157": {
+  "Abimelech": "p:abimelech_41"
+ },
+ "card ozem_2260": {
+  "Abinadab": "p:abinadab_44"
+ },
+ "card lamech_1808": {
+  "Adah": "p:adah_69"
+ },
+ "card anah_249": {
+  "Aiah": ""
+ },
+ "card rizpah_2444": {
+  "Aiah": "p:aiah_177"
+ },
+ "card east_348": {
+  "Amalek": "l:amalek_53"
+ },
+ "card shamgar_2534": {
+  "Anath": "p:anath_261"
+ },
+ "card syria_1122": {
+  "Antioch": "l:antioch_68"
+ },
+ "card antioch_69": {
+  "Antioch": ""
+ },
+ "card damascus_322": {
+  "Aram": "l:aram_82"
+ },
+ "card nehemiah_2173": {
+  "Azbuk": "p:azbuk_550"
+ },
+ "card zechariah_3018": {
+  "Bebai": "p:bebai_421"
+ },
+ "card pelatiah_2307": {
+  "Benaiah": "p:benaiah_450"
+ },
+ "card arad_281": {
+  "Beriah": "p:beriah_480"
+ },
+ "card togarmah_2875": {
+  "Beth-togarmah": "l:beth-togarmah_239"
+ },
+ "card japhlet_729": {
+  "Bimhal": "p:bimhal_506"
+ },
+ "card tabor_1129": {
+  "Chisloth-tabor": "l:chisloth-tabor_297"
+ },
+ "card kiriath-sepher_703": {
+  "Debir": "l:debir_325"
+ },
+ "card eleazar_1064": {
+  "Dodo": "p:dodo_1021"
+ },
+ "card beriah_479": {
+  "Elead": "p:elead_1059"
+ },
+ "card hezekiah_1513": {
+  "Elioenai": "p:elioenai_1135"
+ },
+ "card hur_1571": {
+  "Ephrathah": ""
+ },
+ "card caleb_538": {
+  "Ephrathah": "",
+  "Maacah": ""
+ },
+ "card micah_2053": {
+  "Ephrathah": "l:ephrath_403"
+ },
+ "Esther 2": {
+  "Esther": "p:esther_1343"
+ },
+ "card reumah_2433": {
+  "Gaham": "p:gaham_1267",
+  "Maacah": ""
+ },
+ "card laish_1807": {
+  "Gallim": "l:gallim_434"
+ },
+ "card jonathan_1691": {
+  "Gershom": "p:gershom_1302"
+ },
+ "card elhanan_1070": {
+  "Gob": "l:gob_483"
+ },
+ "Esther 7": {
+  "Harbona": "p:harbona_1410"
+ },
+ "card arba_290": {
+  "Hebron": "l:hebron_551"
+ },
+ "card sheshai_2671": {
+  "Hebron": "l:hebron_551"
+ },
+ "card kiriath-arba_697": {
+  "Hebron": "l:hebron_551"
+ },
+ "card meshullam_2024": {
+  "Hodaviah": "p:hodaviah_1541"
+ },
+ "card lebanon_585": {
+  "House of the Forest": ""
+ },
+ "card zechariah_3019": {
+  "Iddo": "p:iddo_1596"
+ },
+ "card casiphia_279": {
+  "Iddo": "p:iddo_1596"
+ },
+ "card kenaz_1779": {
+  "Iru": "p:iru_615",
+  "Naam": "p:naam_2117"
+ },
+ "card shallum_2514": {
+  "Jabesh": "p:jabesh_674"
+ },
+ "book Genesis": {
+  "Jacob": ""
+ },
+ "Genesis 32": {
+  "Jacob": ""
+ },
+ "Genesis 35": {
+  "Jacob": ""
+ },
+ "card levi_1820": {
+  "Jacob": ""
+ },
+ "card serah_2492": {
+  "Jacob": ""
+ },
+ "card bethel_202": {
+  "Jacob": ""
+ },
+ "card paddan-aram_916": {
+  "Jacob": ""
+ },
+ "card peniel_930": {
+  "Jacob": ""
+ },
+ "card ephah_1199": {
+  "Jahdai": "p:jahdai_701"
+ },
+ "card ram_2392": {
+  "Jamin": "p:jamin_721"
+ },
+ "card ornan_289": {
+  "Jebusite": "p:jebusite_748"
+ },
+ "card gad_1263": {
+  "Jebusite": "p:jebusite_748"
+ },
+ "card jerusalem_636": {
+  "Jebusite": "p:jebusite_748"
+ },
+ "card jebus_629": {
+  "Jebusite": "p:jebusite_748"
+ },
+ "card kish_1785": {
+  "Jerahmeel": "p:jerahmeel_844"
+ },
+ "card havilah_1462": {
+  "Jobab": "p:jobab_1640"
+ },
+ "card azariah_373": {
+  "Johanan": "p:johanan_1669"
+ },
+ "card azariah_378": {
+  "Johanan": "p:johanan_1669"
+ },
+ "card eliashib_1099": {
+  "Joiada": "p:joiada_1680"
+ },
+ "card eliashib_1100": {
+  "Joiada": "p:joiada_1680"
+ },
+ "Daniel 1": {
+  "Judean": ""
+ },
+ "card daniel_975": {
+  "Judean": ""
+ },
+ "card meshach_2092": {
+  "Judean": ""
+ },
+ "card shadrach_1398": {
+  "Judean": ""
+ },
+ "card johanan_1666": {
+  "Judean": ""
+ },
+ "card tekoa_1142": {
+  "Judean": ""
+ },
+ "card tel-abib_1143": {
+  "Judean": ""
+ },
+ "card jair_709": {
+  "Kamon": "l:kamon_665"
+ },
+ "Jeremiah 21": {
+  "Malchiah": ""
+ },
+ "card gilead_1319": {
+  "Michael": "p:michael_2060"
+ },
+ "Leviticus 20": {
+  "Molech": "p:molech_2104"
+ },
+ "card topheth_1176": {
+  "Molech": "p:molech_2104"
+ },
+ "card valley_of_the_son_of_hinnom_1226": {
+  "Molech": "p:molech_2104",
+  "Baal": "p:baal_573"
+ },
+ "card hor-haggidgad_579": {
+  "Moserah": "l:moserah_823"
+ },
+ "card shobi_2722": {
+  "Nahash": "p:nahash_2139"
+ },
+ "2 Samuel 6": {
+  "Obed": ""
+ },
+ "1 Chronicles 13": {
+  "Obed": ""
+ },
+ "card bahurim_154": {
+  "Paltiel": ""
+ },
+ "card hymenaeus_1583": {
+  "Philetus": "p:philetus_2343"
+ },
+ "book Joshua": {
+  "Rahab": "p:rahab_2388"
+ },
+ "card salmon_2463": {
+  "Rahab": "p:rahab_2388"
+ },
+ "card baal_574": {
+  "Reaiah": ""
+ },
+ "card huldah_1567": {
+  "Second Quarter": "l:second_quarter_1040",
+  "Shallum": "p:shallum_2515"
+ },
+ "Ezra 10": {
+  "Shecaniah": ""
+ },
+ "card meshullam_2025": {
+  "Shephatiah": ""
+ },
+ "card artaxerxes_313": {
+  "Shimshai": "p:shimshai_2707"
+ },
+ "card sinai_1098": {
+  "Sin": "l:sin_1097"
+ },
+ "card elim_369": {
+  "Sin": "l:sin_1097"
+ },
+ "card sin_1097": {
+  "Sin": ""
+ },
+ "card gallio_1275": {
+  "Sosthenes": "p:sosthenes_2772"
+ },
+ "card ziph_3091": {
+  "Tiria": "p:tiria_2867"
+ },
+ "card azariah_385": {
+  "Uzziah": "p:uzziah_375"
+ },
+ "card carmi_921": {
+  "Zabdi": "p:zabdi_2954"
+ },
+ "card keturah_1782": {
+  "Zimran": "p:zimran_3086"
+ },
+ "2 Kings 1": {
+  "Baal-zebub": "p:baal-zebub_579"
+ },
+ "card ahaziah_120": {
+  "Baal-zebub": "p:baal-zebub_579",
+  "Baal": "p:baal_573"
+ },
+ "card ekron_364": {
+  "Baal-zebub": "p:baal-zebub_579"
+ },
+ "Numbers 25": {
+  "Baal": "p:baal_573"
+ },
+ "Judges 6": {
+  "Baal": "p:baal_573"
+ },
+ "Judges 8": {
+  "Baal": "p:baal_573"
+ },
+ "book 1 Kings": {
+  "Baal": "p:baal_573"
+ },
+ "1 Kings 16": {
+  "Baal": "p:baal_573"
+ },
+ "1 Kings 18": {
+  "Baal": "p:baal_573"
+ },
+ "1 Kings 19": {
+  "Baal": "p:baal_573"
+ },
+ "1 Kings 22": {
+  "Baal": "p:baal_573"
+ },
+ "book 2 Kings": {
+  "Baal": "p:baal_573"
+ },
+ "2 Kings 10": {
+  "Baal": "p:baal_573"
+ },
+ "2 Kings 11": {
+  "Baal": "p:baal_573"
+ },
+ "2 Kings 21": {
+  "Baal": "p:baal_573"
+ },
+ "2 Chronicles 23": {
+  "Baal": "p:baal_573"
+ },
+ "Psalms 106": {
+  "Baal": "p:baal_573"
+ },
+ "book Hosea": {
+  "Baal": "p:baal_573"
+ },
+ "Hosea 9": {
+  "Baal": "p:baal_573"
+ },
+ "Hosea 13": {
+  "Baal": "p:baal_573"
+ },
+ "Zephaniah 1": {
+  "Baal": "p:baal_573"
+ },
+ "card elijah_1131": {
+  "Baal": "p:baal_573"
+ },
+ "card ahab_113": {
+  "Baal": "p:baal_573"
+ },
+ "card gideon_1314": {
+  "Baal": "p:baal_573"
+ },
+ "card jehu_817": {
+  "Baal": "p:baal_573"
+ },
+ "card jehoiada_793": {
+  "Baal": "p:baal_573"
+ },
+ "card hilkiah_1524": {
+  "Baal": "p:baal_573"
+ },
+ "card jezebel_1605": {
+  "Baal": "p:baal_573"
+ },
+ "card jonadab_799": {
+  "Baal": "p:baal_573"
+ },
+ "card joash_1630": {
+  "Baal": "p:baal_573"
+ },
+ "card rechab_2403": {
+  "Baal": "p:baal_573"
+ },
+ "card kishon_705": {
+  "Baal": "p:baal_573"
+ },
+ "card mount_carmel_831": {
+  "Baal": "p:baal_573"
+ },
+ "card peor_933": {
+  "Baal": "p:baal_573"
+ },
+ "card shittim_1086": {
+  "Baal": "p:baal_573"
+ },
+ "card baal-peor_145": {
+  "Baal": "p:baal_573"
+ },
+ "card abel-shittim_10": {
+  "Baal": "p:baal_573"
+ }
+}

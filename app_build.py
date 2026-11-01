@@ -350,7 +350,11 @@ span.nw{white-space:nowrap}
 #sheet ul.story li.here{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);font-weight:600}
 #sheet ul.story li.here::before{left:-8px;width:14px;height:14px;background:var(--gold);border-color:#fff;box-shadow:0 0 0 3px rgba(201,162,74,.35)}
 #sheet .meta{font-size:13px;color:var(--mute);margin-top:12px}
-#sheet .mini{display:block;width:100%;height:auto;border-radius:14px;border:1px solid rgba(27,36,64,.1);margin:4px 0 10px;background:#dde6ea;cursor:pointer}
+#sheet .mini{position:relative;overflow:hidden;display:block;width:100%;border-radius:14px;border:1px solid rgba(27,36,64,.1);margin:4px 0 10px;background:#d6e4e3;cursor:pointer}
+#sheet .mini .mm{display:block;width:100%;height:auto}
+#sheet .mini .inset{position:absolute;right:8px;bottom:8px;width:96px;height:58px;border-radius:8px;border:1px solid rgba(27,36,64,.18);box-shadow:0 2px 8px rgba(27,36,64,.15);background:#d6e4e3}
+#sheet .within{font-size:14px;color:#5a6178;margin:2px 0 8px;line-height:1.4}
+#sheet .within span{color:#b59a5a}
 #sheet .open{display:inline-block;margin-top:2px;font-size:14px}
 #mapv{position:fixed;inset:0;z-index:22;background:#d6e4e3;overscroll-behavior:contain}
 #mapv::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 85% 70% at 50% 42%,rgba(255,250,235,0) 60%,rgba(110,90,50,.18) 100%)}
@@ -542,8 +546,27 @@ function refLinks(t){ /* "(Exodus 3)" -> a tap goes to that chapter; names becom
  return rich(t).replace(/\(([1-3]?\s?[A-Z][A-Za-z]+(?:\s(?:of\s)?[A-Z][a-z]+)?)\s(\d+)(?::[\d–\-, ]+)?\)/g,(m,bk,ch)=>{const nm=bk==='Psalm'?'Psalms':bk==='Song of Songs'?'Song of Solomon':bk;
   return bookNames().includes(nm)?`<span style="white-space:nowrap">(<button class="go" data-gob="${nm}" data-goc="${ch}">${bk} ${ch}</button>)</span>`:m})}
 function famRow(k,label,list){if(!list||!list.length)return'';return `<div class="k">${label}</div><div>${list.map(x=>x.s?`<button class="chip" data-nk="p" data-ns="${x.s}">${esc(x.n)}</button>`:`<span class="chip">${esc(x.n)}</span>`).join('')}</div>`}
-function miniMap(A,x,y){const M=A.map;if(!M)return'';const w=70,h=42;
- return `<svg class="mini" viewBox="${x-w/2} ${y-h/2} ${w} ${h}" data-mx="${x}" data-my="${y}"><rect x="-500" y="-500" width="2000" height="2000" fill="#cfdde3"/><path d="${M.land}" fill="#f4efe3" stroke="#b9a77a" stroke-width=".25"/>${M.lakes.map(l=>`<path d="${l.d}" fill="#bccdd5"/>`).join('')}${M.rivers.map(r=>`<path d="${r.d}" fill="none" stroke="#86a0ae" stroke-width=".4"/>`).join('')}<circle cx="${x}" cy="${y}" r="3.2" fill="rgba(201,162,74,.25)"/><circle cx="${x}" cy="${y}" r="1.3" fill="#a8812a" stroke="#fff" stroke-width=".4"/></svg>`}
+function miniMap(A,x,y,sl){const M=A.map,T=A.trip;if(!M)return'';
+ /* a close view that shows the territory around the place, plus a tiny whole-world inset */
+ const W=340,H=200,w=46,h=w*H/W,u=w/W,vx=x-w/2,vy=y-h/2,leg=T?standing(A).leg:0,lab=[],dots=[[x,y,7]];
+ const inV=(px,py)=>px>vx&&px<vx+w&&py>vy&&py<vy+h,rc='stroke-linecap="round" stroke-linejoin="round"';
+ let o=`<rect x="${vx-60}" y="${vy-60}" width="${w+120}" height="${h+120}" fill="#d6e4e3"/><path d="${M.land}" fill="none" stroke="#e8f0ee" stroke-width="${7*u}" ${rc}/><path d="${M.land}" fill="#f4ecda" stroke="#c6b186" stroke-width="${.9*u}" ${rc}/>`+
+  M.lakes.map(l=>`<path d="${l.d}" fill="#c8dad9"/>`).join('')+M.rivers.map(r=>`<path d="${r.d}" fill="none" stroke="#93b2b8" stroke-width="${1.3*u}" ${rc}/>`).join('');
+ if(T){T.anchors.filter(([s,ax,ay])=>s!==sl&&inV(ax,ay)&&Math.hypot(ax-x,ay-y)>1.2).sort((a,b)=>Math.hypot(a[1]-x,a[2]-y)-Math.hypot(b[1]-x,b[2]-y)).slice(0,2)
+   .forEach(([s,ax,ay,n])=>{o+=`<circle cx="${ax}" cy="${ay}" r="${2.6*u}" fill="#1b2440" stroke="#fff" stroke-width="${u}"/>`;dots.push([ax,ay,4]);lab.push({x:ax,y:ay,t:n,fs:11,col:'#1b2440',pri:1,r:4})});
+  T.fine.forEach(([n,fx,fy,legs])=>{if(legs.includes(leg)&&inV(fx,fy))lab.push({x:fx,y:fy,t:n.toUpperCase(),fs:9.5,col:'rgba(122,98,50,.62)',pri:3,ctr:1,up:1})});
+  T.reg.forEach(([n,rx,ry,legs])=>{if((!legs||legs.includes(leg))&&inV(rx,ry))lab.push({x:rx,y:ry,t:n.toUpperCase(),fs:10.5,col:'rgba(122,98,50,.5)',pri:4,ctr:1,up:1})});
+  T.waters.forEach(([n,wx,wy])=>{if(inV(wx,wy))lab.push({x:wx,y:wy,t:n,fs:10,col:'rgba(64,98,108,.7)',it:1,pri:5,ctr:1})})}
+ o+=`<circle cx="${x}" cy="${y}" r="${9*u}" fill="rgba(201,162,74,.28)"/><circle cx="${x}" cy="${y}" r="${3.8*u}" fill="#a8812a" stroke="#fff" stroke-width="${1.4*u}"/>`;
+ const nm=sl&&A.l[sl]?A.l[sl].n:'';if(nm)lab.push({x,y,t:nm,fs:12.5,col:'#3b2f12',b:1,pri:0,r:7});
+ const boxes=dots.map(([dx,dy,r])=>[dx-r*u,dy-r*u,dx+r*u,dy+r*u]),hit=b=>boxes.some(q=>b[0]<q[2]&&q[0]<b[2]&&b[1]<q[3]&&q[1]<b[3]),fits=b=>b[0]>=vx&&b[2]<=vx+w&&b[1]>=vy&&b[3]<=vy+h;
+ lab.sort((a,b)=>a.pri-b.pri).forEach(l=>{const fs=l.fs*u,tw=l.t.length*fs*(l.up?.86:.55),th=fs*1.2,g=(l.r||0)*u+3*u;
+  const c=l.ctr?[[l.x-tw/2,l.y-th/2]]:[[l.x+g,l.y-th/2],[l.x-g-tw,l.y-th/2],[l.x-tw/2,l.y-g-th],[l.x-tw/2,l.y+g*.8]];let ok=null;
+  for(const[cx,cy]of c){const b=[cx,cy,cx+tw,cy+th];if(fits(b)&&!hit(b)){ok=b;break}}if(!ok)return;boxes.push(ok);
+  o+=`<text x="${ok[0]}" y="${ok[1]+th*.8}" font-size="${fs}" font-family='${SERIF}' fill="${l.col}" ${l.b?'font-weight="700"':''} ${l.it?'font-style="italic"':''} ${l.up?`letter-spacing="${fs*.28}"`:''} ${l.ctr?'':`paint-order="stroke" stroke="#f7f0e1" stroke-width="${2.6*u}" stroke-linejoin="round"`}>${esc(l.t)}</text>`});
+ const V=M.view,iu=V[2]/96;
+ const inset=`<svg class="inset" viewBox="${V.join(' ')}" aria-hidden="true"><rect x="0" y="0" width="${V[2]}" height="${V[3]}" fill="#d6e4e3"/><path d="${M.land}" fill="#f1e8d4"/><rect x="${vx}" y="${vy}" width="${w}" height="${h}" fill="rgba(201,162,74,.25)" stroke="#a8812a" stroke-width="${1.6*iu}"/><circle cx="${x}" cy="${y}" r="${2.2*iu}" fill="#a8812a"/></svg>`;
+ return `<div class="mini" role="button" aria-label="Open the map"><svg class="mm" viewBox="${vx} ${vy} ${w} ${h}">${o}</svg>${inset}</div>`}
 function storyList(items){ /* key moments as a timeline, with where the reader stands */
  const order=D.books.map(b=>b.name),pos=(b,c)=>order.indexOf(b)*1000+c,w=walk()[camp||0],me=pos(w.b.name,w.c.c);let placed=false,h='';
  for(const x of items){const m=x.match(/\(([1-3]?\s?[A-Z][A-Za-z]+(?:\s(?:of\s)?[A-Z][a-z]+)?)\s(\d+)/);const bk=m&&(m[1]==='Psalm'?'Psalms':m[1]==='Song of Songs'?'Song of Solomon':m[1]),p=m&&order.includes(bk)?pos(bk,+m[2]):null;
@@ -556,7 +579,7 @@ function sheetHTML(A,k,sl){
   const f=p.fam||{};const fam=famRow('father','Father',f.father)+famRow('mother','Mother',f.mother)+famRow('spouses',(f.spouses||[]).length>1?'Spouses':'Spouse',f.spouses)+famRow('siblings','Siblings',f.siblings)+famRow('children','Children',f.children);
   return `<h3>${esc(p.n)}</h3>${p.mean?`<div class="mean">${/^(possibly|meaning unknown)/i.test(p.mean)?esc(p.mean):'“'+esc(p.mean)+'”'}</div>`:''}${p.why?`<div class="why">${refLinks(p.why)}</div>`:''}<p class="who">${rich(p.who)}</p>${p.key&&p.key.length?`<div class="sec">Their story</div>${storyList(p.key)}`:''}${fam?`<div class="sec">Family</div><div class="fam">${fam}</div>`:''}<div class="meta">${p.nc?`Appears in ${p.nc===1?'1 chapter':p.nc+' chapters'}`:''}${p.first?` · ${refLinksPlain(p.first)}${p.last&&p.last!==p.first?' → '+refLinksPlain(p.last):''}`:''}</div>`}
  const l=A.l[sl];if(!l)return '<p class="who">No profile yet.</p>';
- return `<h3>${esc(l.n)}</h3>${l.mean?`<div class="mean">${/^(possibly|meaning unknown)/i.test(l.mean)?esc(l.mean):'“'+esc(l.mean)+'”'}</div>`:''}${l.why?`<div class="why">${refLinks(l.why)}</div>`:''}${l.x!=null?miniMap(A,l.x,l.y):''}<p class="who">${rich(l.what)}</p>${l.key&&l.key.length?`<div class="sec">What happens here</div>${storyList(l.key)}`:''}${l.today?`<div class="sec">Today</div><p class="who" style="margin:0">${esc(l.today)}</p>`:''}${l.x!=null?`<button class="go open" data-openmap="${sl}">Open the map ›</button>`:''}<div class="meta">${l.nc?`Named in ${l.nc===1?'1 chapter':l.nc+' chapters'}`:''}${l.first?` · ${refLinksPlain(l.first)}${l.last&&l.last!==l.first?' → '+refLinksPlain(l.last):''}`:''}</div>`}
+ return `<h3>${esc(l.n)}</h3>${l.mean?`<div class="mean">${/^(possibly|meaning unknown)/i.test(l.mean)?esc(l.mean):'“'+esc(l.mean)+'”'}</div>`:''}${l.why?`<div class="why">${refLinks(l.why)}</div>`:''}${l.in?`<div class="within">${l.in.map(esc).join('<span> · </span>')}</div>`:''}${l.x!=null?miniMap(A,l.x,l.y,sl):''}<p class="who">${rich(l.what)}</p>${l.key&&l.key.length?`<div class="sec">What happens here</div>${storyList(l.key)}`:''}${l.today?`<div class="sec">Today</div><p class="who" style="margin:0">${esc(l.today)}</p>`:''}${l.x!=null?`<button class="go open" data-openmap="${sl}">Open the map ›</button>`:''}<div class="meta">${l.nc?`Named in ${l.nc===1?'1 chapter':l.nc+' chapters'}`:''}${l.first?` · ${refLinksPlain(l.first)}${l.last&&l.last!==l.first?' → '+refLinksPlain(l.last):''}`:''}</div>`}
 function refLinksPlain(r){const m=r.match(/^(.+) (\d+)$/);return m?`<button class="go" data-gob="${m[1]}" data-goc="${m[2]}">${esc(r)}</button>`:esc(r)}
 function openSheet(k,sl,push=true){atlas().then(A=>{if(push)SHEET.push([k,sl]);const sh=$('#sheet');
   $('#shkind').textContent=k==='p'?((A.p[sl]||{}).lab||'Person'):'Place';$('#shback').hidden=SHEET.length<2;$('#shbody').innerHTML=sheetHTML(A,k,sl);
@@ -615,6 +638,7 @@ function drawMap(A){const M=A.map,T=A.trip,st=standing(A),cur=st.leg,whole=MV.le
   labels.push({x:m.x,y:m.y,t:m.n,fs:15,col:'#3b2f12',b:1,pri:0,r:10})}
  T.reg.forEach(([n,x,y,legs])=>{if(!legs||legs.includes(hl))labels.push({x,y,t:n.toUpperCase(),fs:11.5,col:'rgba(122,98,50,.5)',pri:5,ctr:1,up:1})});
  T.seas.forEach(([n,x,y])=>labels.push({x,y,t:n,fs:13,col:'rgba(64,98,108,.55)',it:1,pri:6,ctr:1}));
+ if(MV.w<70){T.fine.forEach(([n,x,y,legs])=>{if(legs.includes(hl))labels.push({x,y,t:n.toUpperCase(),fs:10.5,col:'rgba(122,98,50,.55)',pri:4,ctr:1,up:1})});T.waters.forEach(([n,x,y])=>labels.push({x,y,t:n,fs:12,col:'rgba(64,98,108,.6)',it:1,pri:6,ctr:1}))}
  const boxes=dots.map(([x,y,r])=>[x-r*px,y-r*px,x+r*px,y+r*px]),hit=b=>boxes.some(o=>b[0]<o[2]&&o[0]<b[2]&&b[1]<o[3]&&o[1]<b[3]);
  labels.sort((a,b)=>a.pri-b.pri).forEach(l=>{if(l.x<MV.x||l.x>MV.x+MV.w||l.y<MV.y||l.y>MV.y+MV.h)return;const inV=b=>b[0]>=MV.x&&b[2]<=MV.x+MV.w&&b[1]>=MV.y&&b[3]<=MV.y+MV.h;
   const fs=l.fs*px,w=l.t.length*fs*(l.up?.86:.54),h=fs*1.2,g=(l.r||0)*px+3*px;

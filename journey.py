@@ -161,3 +161,26 @@ REGIONS = [
     ("Moab", 35.9, 31.35, range(5, 7)),
 ]
 SEAS = [("The Great Sea", 19.5, 34.4), ("Red Sea", 37.6, 23.3)]
+
+# finer regions, shown when the map is close in (small map on place cards, zoomed-in journey map).
+# (name, lon, lat, legs where the name fits the story's period)
+FINE = [
+    ("Galilee", 35.35, 32.9, range(6, 14)), ("Samaria", 35.2, 32.25, range(8, 14)),
+    ("Judah", 35.1, 31.5, range(6, 11)), ("Judea", 35.05, 31.5, range(11, 14)),
+    ("Negev", 34.8, 30.85, range(0, 14)), ("Philistia", 34.5, 31.55, range(1, 11)),
+    ("Phoenicia", 35.35, 33.65, range(11, 14)), ("Gilead", 35.8, 32.3, range(2, 11)),
+    ("Bashan", 36.05, 32.85, range(5, 11)), ("Moab", 35.75, 31.3, range(1, 11)),
+    ("Edom", 35.45, 30.45, range(2, 11)), ("Ammon", 35.95, 31.95, range(6, 11)),
+    ("Aram", 36.7, 33.75, range(2, 11)), ("Syria", 36.7, 33.75, range(11, 14)),
+    ("Canaan", 35.05, 31.9, range(0, 6)), ("Sinai", 33.9, 29.5, range(0, 14)),
+    ("Macedonia", 22.6, 40.8, range(12, 14)), ("Achaia", 22.3, 37.9, range(12, 14)),
+    ("Galatia", 32.6, 39.3, range(12, 14)), ("Asia", 28.3, 38.6, range(12, 14)),
+    ("Cappadocia", 35.2, 38.7, range(12, 14)), ("Cilicia", 35.2, 37.0, range(12, 14)),
+]
+WATERS = [("Dead Sea", 35.5, 31.45), ("Sea of Galilee", 35.59, 32.83), ("Great Sea", 34.05, 32.7), ("Great Sea", 31.0, 33.6),
+          ("Great Sea", 19.5, 34.4), ("Great Sea", 26.0, 34.4), ("Red Sea", 37.6, 23.3), ("Gulf of Aqaba", 34.75, 28.6),
+          ("Persian Gulf", 50.5, 27.5), ("Aegean Sea", 25.0, 38.8), ("Black Sea", 34.0, 43.2)]
+# anchor cities: one or two nearby ones help a reader place an unfamiliar town
+ANCHORS = ["jerusalem_636", "damascus_322", "babylon_151", "nineveh_899", "susa_1118", "rome_1013", "athens_118",
+           "ephesus_400", "antioch_68", "corinth_306", "samaria_1022", "jericho_634", "bethlehem_218", "nazareth_878",
+           "capernaum_274", "hebron_551", "beersheba_170", "tyre_1184", "sidon_1093"]
