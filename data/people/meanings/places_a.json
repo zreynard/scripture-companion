@@ -1,0 +1,777 @@
+{
+  "jerusalem_636": {
+    "meaning": "Possibly foundation of Shalem, or of peace"
+  },
+  "egypt_362": {
+    "meaning": "Possibly from house of the spirit of Ptah"
+  },
+  "babylon_151": {
+    "meaning": "Gate of god",
+    "why": "The Bible links the name Babel to the Lord confusing the language of all the earth there (Genesis 11)."
+  },
+  "jordan_653": {
+    "meaning": "The descender"
+  },
+  "moab_815": {
+    "meaning": "Possibly from father"
+  },
+  "zion_1263": {
+    "meaning": "Possibly fortress or dry place"
+  },
+  "assyria_111": {
+    "meaning": "Named for Ashur, chief god of Assyria"
+  },
+  "samaria_1022": {
+    "meaning": "Possibly watch post; linked to Shemer",
+    "why": "Omri bought the hill from Shemer and named the city Samaria after him (1 Kings 16)."
+  },
+  "gilead_475": {
+    "meaning": "Possibly rugged or rocky land"
+  },
+  "edom_357": {
+    "meaning": "Red",
+    "why": "Esau asked Jacob for the red stew, and so he was called Edom (Genesis 25)."
+  },
+  "canaan_272": {
+    "meaning": "Possibly lowland, or land of purple dye"
+  },
+  "syria_1122": {
+    "meaning": "Possibly from Assyria; Aram possibly means highland"
+  },
+  "galilee_433": {
+    "meaning": "Circle or district"
+  },
+  "bethel_202": {
+    "meaning": "House of God",
+    "why": "Jacob named it after God met him there in a dream of a stairway reaching to heaven (Genesis 28)."
+  },
+  "jericho_634": {
+    "meaning": "Possibly moon city, or fragrant place"
+  },
+  "hebron_551": {
+    "meaning": "Alliance or association"
+  },
+  "lebanon_720": {
+    "meaning": "White, probably from its snowy peaks"
+  },
+  "damascus_322": {
+    "meaning": "Meaning unknown"
+  },
+  "bashan_159": {
+    "meaning": "Possibly fertile or smooth land"
+  },
+  "tyre_1184": {
+    "meaning": "Rock"
+  },
+  "sodom_1107": {
+    "meaning": "Possibly burning"
+  },
+  "judea_657": {
+    "meaning": "Land of Judah; Judah means praise",
+    "why": "Named for Judah, whom Leah named saying, This time I will praise the Lord (Genesis 29)."
+  },
+  "midian_796": {
+    "meaning": "Possibly strife"
+  },
+  "gibeah_466": {
+    "meaning": "Hill"
+  },
+  "shechem_1069": {
+    "meaning": "Shoulder or ridge"
+  },
+  "heshbon_565": {
+    "meaning": "Reckoning"
+  },
+  "negeb_885": {
+    "meaning": "Dry land; came to mean the south"
+  },
+  "gibeon_470": {
+    "meaning": "Hill town"
+  },
+  "gilgal_476": {
+    "meaning": "Circle of stones; sounds like rolling",
+    "why": "God said he had rolled away the reproach of Egypt from Israel, so the place was called Gilgal (Joshua 5)."
+  },
+  "beersheba_170": {
+    "meaning": "Well of seven, or well of the oath",
+    "why": "Abraham and Abimelech swore an oath there over a well, sealed with seven lambs (Genesis 21)."
+  },
+  "bethlehem_218": {
+    "meaning": "House of bread"
+  },
+  "euphrates_421": {
+    "meaning": "Meaning unknown"
+  },
+  "gath_442": {
+    "meaning": "Winepress"
+  },
+  "ai_36": {
+    "meaning": "The ruin"
+  },
+  "mizpah_811": {
+    "meaning": "Watchtower or lookout"
+  },
+  "nile_895": {
+    "meaning": "Meaning unknown"
+  },
+  "shiloh_1081": {
+    "meaning": "Possibly place of rest"
+  },
+  "sidon_1093": {
+    "meaning": "Fishery"
+  },
+  "nazareth_878": {
+    "meaning": "Possibly branch, or watchtower"
+  },
+  "red_sea_986": {
+    "meaning": "In Hebrew, Sea of Reeds"
+  },
+  "persia_938": {
+    "meaning": "Meaning unknown"
+  },
+  "seir_1042": {
+    "meaning": "Hairy, probably meaning rugged or wooded"
+  },
+  "gomorrah_489": {
+    "meaning": "Possibly submersion"
+  },
+  "hamath_516": {
+    "meaning": "Fortress or citadel"
+  },
+  "carmel_278": {
+    "meaning": "Garden land or orchard"
+  },
+  "jezreel_643": {
+    "meaning": "God sows"
+  },
+  "lachish_711": {
+    "meaning": "Meaning unknown"
+  },
+  "gad_1286": {
+    "meaning": "Good fortune",
+    "why": "Named for Gad, whom Leah named saying, Good fortune has come (Genesis 30)."
+  },
+  "macedonia_747": {
+    "meaning": "Possibly highlanders, or tall ones"
+  },
+  "mount_zion_860": {
+    "meaning": "Possibly fortress or dry place"
+  },
+  "asher_1287": {
+    "meaning": "Happy or blessed",
+    "why": "Named for Asher, whom Leah named saying, Happy am I, for women will call me happy (Genesis 30)."
+  },
+  "dan_323": {
+    "meaning": "Judge",
+    "why": "The Danites captured Laish and renamed it Dan after their ancestor (Judges 18)."
+  },
+  "ekron_364": {
+    "meaning": "Possibly uprooted or barren"
+  },
+  "mount_sinai_855": {
+    "meaning": "Meaning unknown"
+  },
+  "ramoth-gilead_984": {
+    "meaning": "Heights of Gilead"
+  },
+  "susa_1118": {
+    "meaning": "Meaning unknown"
+  },
+  "tarshish_1139": {
+    "meaning": "Meaning unknown"
+  },
+  "ashdod_101": {
+    "meaning": "Possibly stronghold"
+  },
+  "gaza_446": {
+    "meaning": "Strong"
+  },
+  "west-manasseh_1291": {
+    "meaning": "Causing to forget",
+    "why": "Named for Manasseh; Joseph named him saying God had made him forget all his hardship (Genesis 41)."
+  },
+  "amalek_53": {
+    "meaning": "Meaning unknown"
+  },
+  "asia_108": {
+    "meaning": "Meaning unknown"
+  },
+  "nineveh_899": {
+    "meaning": "Meaning unknown"
+  },
+  "sinai_1098": {
+    "meaning": "Meaning unknown"
+  },
+  "beth-shemesh_234": {
+    "meaning": "House of the sun"
+  },
+  "ephesus_400": {
+    "meaning": "Meaning unknown"
+  },
+  "ramah_972": {
+    "meaning": "Height"
+  },
+  "sheba_1067": {
+    "meaning": "Meaning unknown"
+  },
+  "caesarea_266": {
+    "meaning": "City of Caesar, named for Augustus"
+  },
+  "capernaum_274": {
+    "meaning": "Village of Nahum"
+  },
+  "cush_312": {
+    "meaning": "Meaning unknown; Greek Ethiopia means burnt faces"
+  },
+  "horeb_576": {
+    "meaning": "Dry or desolate place"
+  },
+  "naphtali_1284": {
+    "meaning": "My wrestling",
+    "why": "Named for Naphtali; Rachel said, With mighty wrestlings I have wrestled with my sister and prevailed (Genesis 30)."
+  },
+  "river_244": {
+    "meaning": "Land beyond the Euphrates, seen from Persia"
+  },
+  "zebulun_1289": {
+    "meaning": "Possibly honor, or dwelling",
+    "why": "Named for Zebulun, whom Leah named saying, Now my husband will honor me (Genesis 30)."
+  },
+  "anathoth_63": {
+    "meaning": "Possibly linked to the goddess Anath"
+  },
+  "arabah_79": {
+    "meaning": "Desert plain"
+  },
+  "ephraim-territory_1292": {
+    "meaning": "Doubly fruitful",
+    "why": "Named for Ephraim; Joseph said God had made him fruitful in the land of his affliction (Genesis 41)."
+  },
+  "kadesh_661": {
+    "meaning": "Holy place"
+  },
+  "keilah_681": {
+    "meaning": "Meaning unknown"
+  },
+  "kiriath-jearim_701": {
+    "meaning": "City of forests"
+  },
+  "libnah_728": {
+    "meaning": "White"
+  },
+  "antioch_68": {
+    "meaning": "Named for Antiochus, a Seleucid king"
+  },
+  "benjamin-territory_1293": {
+    "meaning": "Son of the right hand",
+    "why": "Named for Benjamin; dying Rachel called him Ben-oni, but Jacob named him Benjamin (Genesis 35)."
+  },
+  "east-manasseh-half-tribe_1290": {
+    "meaning": "Causing to forget",
+    "why": "Named for Manasseh; Joseph named him saying God had made him forget all his hardship (Genesis 41)."
+  },
+  "elam_365": {
+    "meaning": "Possibly highland"
+  },
+  "geba_447": {
+    "meaning": "Hill"
+  },
+  "gezer_463": {
+    "meaning": "Possibly portion"
+  },
+  "holy_place_575": {
+    "meaning": "The holy, or set-apart, place"
+  },
+  "joppa_652": {
+    "meaning": "Beautiful"
+  },
+  "rabbah_966": {
+    "meaning": "Great"
+  },
+  "issachar_1288": {
+    "meaning": "Wages or reward",
+    "why": "Named for Issachar; Leah said, God has given me my wages (Genesis 30)."
+  },
+  "mahanaim_756": {
+    "meaning": "Two camps",
+    "why": "When angels of God met Jacob there, he said, This is God's camp, and named it Mahanaim (Genesis 32)."
+  },
+  "ramah_975": {
+    "meaning": "Height"
+  },
+  "tirzah_1170": {
+    "meaning": "Pleasant or delightful"
+  },
+  "ammon_58": {
+    "meaning": "Possibly kinsman; from Ben-ammi, son of my people"
+  },
+  "arnon_92": {
+    "meaning": "Possibly roaring or rushing stream"
+  },
+  "cyprus_316": {
+    "meaning": "Meaning unknown"
+  },
+  "great_sea_493": {
+    "meaning": "The great sea, the Mediterranean"
+  },
+  "jabesh-gilead_611": {
+    "meaning": "Dry place of Gilead"
+  },
+  "jazer_628": {
+    "meaning": "Possibly he helps"
+  },
+  "megiddo_777": {
+    "meaning": "Meaning unknown"
+  },
+  "most_holy_place_827": {
+    "meaning": "Holy of holies, the holiest place"
+  },
+  "reuben_1282": {
+    "meaning": "See, a son",
+    "why": "Named for Reuben, whom Leah named saying, The Lord has looked upon my affliction (Genesis 29)."
+  },
+  "ziklag_1259": {
+    "meaning": "Meaning unknown"
+  },
+  "ashkelon_103": {
+    "meaning": "Possibly place of weighing"
+  },
+  "bethany_186": {
+    "meaning": "Possibly house of figs, or of the poor"
+  },
+  "goshen_490": {
+    "meaning": "Meaning unknown"
+  },
+  "hazor_545": {
+    "meaning": "Enclosure or settlement"
+  },
+  "mount_of_olives_861": {
+    "meaning": "Hill of olive trees"
+  },
+  "riblah_1001": {
+    "meaning": "Meaning unknown"
+  },
+  "river_of_arnon_1225": {
+    "meaning": "Possibly roaring or rushing stream"
+  },
+  "zobah_1272": {
+    "meaning": "Meaning unknown"
+  },
+  "achaia_16": {
+    "meaning": "Land of the Achaeans, an early Greek people"
+  },
+  "haran_527": {
+    "meaning": "Road or caravan route"
+  },
+  "kadesh-barnea_663": {
+    "meaning": "Holy place of Barnea; Barnea's meaning unknown"
+  },
+  "lebo-hamath_723": {
+    "meaning": "Possibly entrance of Hamath"
+  },
+  "mount_hor_842": {
+    "meaning": "Mountain; literally Hor the mountain"
+  },
+  "mount_seir_852": {
+    "meaning": "Hairy, probably meaning rugged or wooded"
+  },
+  "ophir_911": {
+    "meaning": "Meaning unknown"
+  },
+  "paddan-aram_916": {
+    "meaning": "Plain or field of Aram"
+  },
+  "river_1010": {
+    "meaning": "Meaning unknown"
+  },
+  "succoth_1113": {
+    "meaning": "Booths or shelters",
+    "why": "Jacob built a house there and made booths for his livestock, so it was called Succoth (Genesis 33)."
+  },
+  "aijalon_40": {
+    "meaning": "Place of deer"
+  },
+  "aroer_93": {
+    "meaning": "Possibly juniper"
+  },
+  "chaldea_282": {
+    "meaning": "Land of the Chaldeans"
+  },
+  "dan_1283": {
+    "meaning": "Judge",
+    "why": "Named for Dan, whom Rachel named saying, God has judged me (Genesis 30)."
+  },
+  "debir_325": {
+    "meaning": "Possibly back or inner room"
+  },
+  "dibon_331": {
+    "meaning": "Meaning unknown"
+  },
+  "gerar_459": {
+    "meaning": "Possibly lodging place"
+  },
+  "geshur_461": {
+    "meaning": "Possibly bridge"
+  },
+  "hormah_580": {
+    "meaning": "Destruction, or devoted to destruction",
+    "why": "Israel devoted the Canaanites and their cities to destruction, so the place was called Hormah (Numbers 21)."
+  },
+  "kedar_674": {
+    "meaning": "Possibly dark"
+  },
+  "kedesh_676": {
+    "meaning": "Holy place or sanctuary"
+  },
+  "kidron_687": {
+    "meaning": "Dark or murky"
+  },
+  "michmash_793": {
+    "meaning": "Possibly hidden place"
+  },
+  "rome_1013": {
+    "meaning": "Meaning unknown"
+  },
+  "salt_sea_1021": {
+    "meaning": "Sea of salt"
+  },
+  "zoar_1271": {
+    "meaning": "Small",
+    "why": "Lot begged to flee to this little city, so it was called Zoar (Genesis 19)."
+  },
+  "zorah_1275": {
+    "meaning": "Possibly place of hornets"
+  },
+  "adullam_31": {
+    "meaning": "Possibly refuge or retreat"
+  },
+  "chebar_283": {
+    "meaning": "Possibly great canal"
+  },
+  "cilicia_300": {
+    "meaning": "Meaning unknown"
+  },
+  "edrei_358": {
+    "meaning": "Meaning unknown"
+  },
+  "eglon_361": {
+    "meaning": "Possibly calf-like"
+  },
+  "egypt_259": {
+    "meaning": "The wadi, or seasonal stream, of Egypt"
+  },
+  "jabesh_610": {
+    "meaning": "Dry"
+  },
+  "jezreel_642": {
+    "meaning": "God sows"
+  },
+  "judah-southern_1281": {
+    "meaning": "Praise",
+    "why": "Named for Judah, whom Leah named saying, This time I will praise the Lord (Genesis 29)."
+  },
+  "makkedah_760": {
+    "meaning": "Meaning unknown"
+  },
+  "media_776": {
+    "meaning": "Land of the Medes; meaning unknown"
+  },
+  "memphis_779": {
+    "meaning": "From Egyptian Men-nefer, enduring and beautiful"
+  },
+  "paran_921": {
+    "meaning": "Meaning unknown"
+  },
+  "shinar_1084": {
+    "meaning": "Meaning unknown"
+  },
+  "timnah_1164": {
+    "meaning": "Portion"
+  },
+  "topheth_1176": {
+    "meaning": "Possibly fireplace or hearth"
+  },
+  "valley_of_rephaim_1214": {
+    "meaning": "Valley of the Rephaim, an ancient tall people"
+  },
+  "valley_of_the_son_of_hinnom_1226": {
+    "meaning": "Valley of Hinnom's son; Hinnom's meaning unknown"
+  },
+  "azekah_128": {
+    "meaning": "Possibly tilled ground"
+  },
+  "beth-aven_191": {
+    "meaning": "House of wickedness"
+  },
+  "beth-horon_214": {
+    "meaning": "Possibly house of the hollow, or of Horon"
+  },
+  "bethsaida_231": {
+    "meaning": "House of fishing"
+  },
+  "bozrah_256": {
+    "meaning": "Fortress or enclosure"
+  },
+  "eshtaol_411": {
+    "meaning": "Possibly place of asking"
+  },
+  "ezion-geber_423": {
+    "meaning": "Meaning unknown"
+  },
+  "hermon_564": {
+    "meaning": "Sacred or set-apart place"
+  },
+  "jabbok_609": {
+    "meaning": "Possibly flowing or emptying"
+  },
+  "kiriath-arba_697": {
+    "meaning": "City of Arba, or city of four",
+    "why": "It was named after Arba, the greatest man among the Anakim (Joshua 14)."
+  },
+  "mesopotamia_790": {
+    "meaning": "Land between the rivers"
+  },
+  "mount_hermon_841": {
+    "meaning": "Sacred or set-apart place"
+  },
+  "nebo_883": {
+    "meaning": "Possibly named for the god Nabu"
+  },
+  "taanach_1124": {
+    "meaning": "Meaning unknown"
+  },
+  "tekoa_1142": {
+    "meaning": "Possibly trumpet blast"
+  },
+  "zin_1261": {
+    "meaning": "Meaning unknown"
+  },
+  "zoan_1270": {
+    "meaning": "Meaning unknown"
+  },
+  "ar_77": {
+    "meaning": "Possibly city"
+  },
+  "arabia_80": {
+    "meaning": "Possibly desert or steppe"
+  },
+  "aroer_94": {
+    "meaning": "Possibly juniper"
+  },
+  "arpad_96": {
+    "meaning": "Meaning unknown"
+  },
+  "ashtaroth_106": {
+    "meaning": "Named for Ashtoreth, a Canaanite goddess"
+  },
+  "babylonia_152": {
+    "meaning": "Land of Babylon, meaning gate of god"
+  },
+  "bahurim_154": {
+    "meaning": "Young men"
+  },
+  "beeroth_168": {
+    "meaning": "Wells"
+  },
+  "corinth_306": {
+    "meaning": "Meaning unknown"
+  },
+  "cyrene_317": {
+    "meaning": "Meaning unknown"
+  },
+  "dedan_329": {
+    "meaning": "Meaning unknown"
+  },
+  "east_348": {
+    "meaning": "The land toward the sunrise"
+  },
+  "engedi_389": {
+    "meaning": "Spring of the young goat"
+  },
+  "galatia_431": {
+    "meaning": "Land of the Gauls, a Celtic people"
+  },
+  "iconium_590": {
+    "meaning": "Meaning unknown"
+  },
+  "jarmuth_624": {
+    "meaning": "Possibly height"
+  },
+  "laodicea_716": {
+    "meaning": "Named for Laodice, a Seleucid queen"
+  },
+  "luz_737": {
+    "meaning": "Almond tree"
+  },
+  "lystra_742": {
+    "meaning": "Meaning unknown"
+  },
+  "machpelah_748": {
+    "meaning": "Possibly double"
+  },
+  "mamre_762": {
+    "meaning": "Meaning unknown"
+  },
+  "mareshah_767": {
+    "meaning": "Possibly hilltop"
+  },
+  "migdol_799": {
+    "meaning": "Tower"
+  },
+  "millo_802": {
+    "meaning": "Filling, an earthen fill"
+  },
+  "mizpah_809": {
+    "meaning": "Watchpost",
+    "why": "Laban said, The Lord watch between you and me, so the heap of stones was called Mizpah (Genesis 31)."
+  },
+  "netophah_890": {
+    "meaning": "Possibly dripping"
+  },
+  "nob_900": {
+    "meaning": "Possibly height"
+  },
+  "philistia_943": {
+    "meaning": "Land of the Philistines"
+  },
+  "saron_1063": {
+    "meaning": "Plain or level land"
+  },
+  "sepharvaim_1050": {
+    "meaning": "Meaning unknown"
+  },
+  "shephelah_1074": {
+    "meaning": "Lowland"
+  },
+  "shur_1090": {
+    "meaning": "Wall"
+  },
+  "teman_1150": {
+    "meaning": "South"
+  },
+  "thessalonica_1158": {
+    "meaning": "Named for Thessalonike, half-sister of Alexander the Great"
+  },
+  "troas_1182": {
+    "meaning": "Region of Troy"
+  },
+  "ziph_1266": {
+    "meaning": "Meaning unknown"
+  },
+  "abarim_2": {
+    "meaning": "Regions beyond, or crossings"
+  },
+  "admah_27": {
+    "meaning": "Possibly red earth"
+  },
+  "aram_82": {
+    "meaning": "Possibly highland"
+  },
+  "athens_118": {
+    "meaning": "Linked with the goddess Athena"
+  },
+  "beth-shean_233": {
+    "meaning": "Possibly house of rest"
+  },
+  "corner_gate_307": {
+    "meaning": "Gate at the corner"
+  },
+  "crete_310": {
+    "meaning": "Meaning unknown"
+  },
+  "elealeh_368": {
+    "meaning": "Possibly God has gone up"
+  },
+  "gibbethon_465": {
+    "meaning": "Hill or mound"
+  },
+  "gihon_473": {
+    "meaning": "Gushing forth"
+  },
+  "gozan_492": {
+    "meaning": "Meaning unknown"
+  },
+  "greece_495": {
+    "meaning": "Meaning unknown; Hebrew Javan comes from Ionia"
+  },
+  "hazeroth_544": {
+    "meaning": "Enclosures or settlements"
+  },
+  "jahaz_617": {
+    "meaning": "Meaning unknown"
+  },
+  "jebus_629": {
+    "meaning": "Place of the Jebusites"
+  },
+  "kibroth-hattaavah_685": {
+    "meaning": "Graves of craving",
+    "why": "There they buried the people who had craved meat, so it was called Kibroth-hattaavah (Numbers 11)."
+  },
+  "kir_693": {
+    "meaning": "Possibly wall"
+  },
+  "kiriathaim_695": {
+    "meaning": "Double city"
+  },
+  "kishon_705": {
+    "meaning": "Possibly winding"
+  },
+  "lebanon_585": {
+    "meaning": "Hall whose cedar pillars resembled Lebanon's forest"
+  },
+  "medeba_775": {
+    "meaning": "Meaning unknown"
+  },
+  "meshech_788": {
+    "meaning": "Meaning unknown"
+  },
+  "mount_carmel_831": {
+    "meaning": "Garden land or orchard"
+  },
+  "mount_ebal_832": {
+    "meaning": "Possibly bare or stony"
+  },
+  "mount_gilboa_837": {
+    "meaning": "Meaning unknown"
+  },
+  "naioth_873": {
+    "meaning": "Dwellings"
+  },
+  "ono_909": {
+    "meaning": "Meaning unknown"
+  },
+  "ophel_910": {
+    "meaning": "Hill or mound"
+  },
+  "ophrah_914": {
+    "meaning": "Possibly fawn"
+  },
+  "pamphylia_918": {
+    "meaning": "Of all tribes"
+  },
+  "pathros_925": {
+    "meaning": "The southern land"
+  },
+  "penuel_931": {
+    "meaning": "Face of God",
+    "why": "Jacob named it Peniel, saying, I have seen God face to face, and yet my life was spared (Genesis 32)."
+  },
+  "pisgah_950": {
+    "meaning": "Possibly cleft or peak"
+  },
+  "rephidim_996": {
+    "meaning": "Resting places"
+  },
+  "sea_of_galilee_1032": {
+    "meaning": "Lake of the Galilee region; Galilee means circle"
+  },
+  "sibmah_1091": {
+    "meaning": "Meaning unknown"
+  },
+  "tabor_1128": {
+    "meaning": "Possibly height"
+  },
+  "tahpanhes_1133": {
+    "meaning": "Meaning unknown"
+  }
+}
