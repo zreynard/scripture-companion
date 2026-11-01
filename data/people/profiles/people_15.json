@@ -1,0 +1,719 @@
+{
+  "ram_2392": {
+    "name": "Ram",
+    "aka": [],
+    "who": "A man of Judah, the firstborn son of Jerahmeel, named in Chronicles' genealogy of Judah.",
+    "key": [
+      "Ram is named as the firstborn of Jerahmeel, who was Hezron's firstborn son (1 Chronicles 2).",
+      "His sons were Maaz, Jamin, and Eker (1 Chronicles 2)."
+    ],
+    "family": {
+      "father": ["jerahmeel_843"],
+      "siblings": ["bunah_525", "oren_2256", "ozem_2261", "ahijah_137", "onam_2249"],
+      "children": ["maaz_1872", "jamin_721", "eker_1041"]
+    },
+    "skip": false
+  },
+  "rechab_2402": {
+    "name": "Rechab",
+    "aka": [],
+    "who": "A Benjaminite raiding captain from Beeroth who, with his brother Baanah, murdered Saul's son Ish-bosheth.",
+    "key": [
+      "Rechab and his brother Baanah, sons of Rimmon of Beeroth, led raiding bands for Ish-bosheth (2 Samuel 4).",
+      "They entered Ish-bosheth's house at midday, killed him on his bed, and beheaded him (2 Samuel 4).",
+      "They brought the head to David at Hebron, expecting a reward (2 Samuel 4).",
+      "David had them executed for killing a righteous man and hung their bodies beside the pool at Hebron (2 Samuel 4)."
+    ],
+    "family": {
+      "father": ["rimmon_2441"],
+      "siblings": ["baanah_582"]
+    },
+    "skip": false
+  },
+  "rechab_2404": {
+    "name": "Rechab",
+    "aka": [],
+    "who": "The father of Malchijah, the district ruler who repaired Jerusalem's Dung Gate in Nehemiah's day.",
+    "key": [
+      "His son Malchijah ruled the district of Beth-haccherem (Nehemiah 3).",
+      "Malchijah rebuilt the Dung Gate, setting its doors, bolts, and bars (Nehemiah 3)."
+    ],
+    "family": {
+      "children": ["malchiah_1904"]
+    },
+    "skip": false
+  },
+  "rehob_2410": {
+    "name": "Rehob",
+    "aka": [],
+    "who": "The father of Hadadezer, the king of Zobah in Syria whom David defeated.",
+    "key": [
+      "David defeated Rehob's son Hadadezer, king of Zobah, in battle (2 Samuel 8).",
+      "David took Hadadezer's gold shields and much bronze to Jerusalem (2 Samuel 8)."
+    ],
+    "family": {
+      "children": ["hadarezer_1340"]
+    },
+    "skip": false
+  },
+  "rehum_2416": {
+    "name": "Rehum",
+    "aka": [],
+    "who": "One of the chiefs of the people who set their seal on the covenant in Nehemiah's day.",
+    "key": [
+      "After confessing their sins, the returned exiles made a firm written covenant (Nehemiah 9).",
+      "Rehum was among the chiefs of the people who sealed it (Nehemiah 10).",
+      "The signers pledged to keep God's law, honor the Sabbath, and support the temple (Nehemiah 10)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "reumah_2433": {
+    "name": "Reumah",
+    "aka": [],
+    "who": "The concubine of Nahor, Abraham's brother, and mother of four of his sons.",
+    "key": [
+      "Abraham heard news of his brother Nahor's family, including his concubine Reumah (Genesis 22).",
+      "She bore Nahor four sons: Tebah, Gaham, Tahash, and Maacah (Genesis 22)."
+    ],
+    "family": {
+      "spouses": ["nahor_2143"],
+      "children": ["tebah_2832", "gaham_1267", "thahash_2845", "maachah_1840"]
+    },
+    "skip": false
+  },
+  "rezon_2437": {
+    "name": "Rezon",
+    "aka": [],
+    "who": "A Syrian leader who seized Damascus and became an adversary of Israel throughout Solomon's reign.",
+    "key": [
+      "Rezon son of Eliada fled from his master Hadadezer, king of Zobah (1 Kings 11).",
+      "After David defeated Zobah, he gathered men around him and led a raiding band (1 Kings 11).",
+      "His band went to Damascus, and he reigned there over Syria (1 Kings 11).",
+      "God raised him up as an adversary, and he troubled Israel all the days of Solomon (1 Kings 11)."
+    ],
+    "family": {
+      "father": ["eliadah_1080"]
+    },
+    "skip": false
+  },
+  "rhoda_2439": {
+    "name": "Rhoda",
+    "aka": [],
+    "who": "A servant girl in the Jerusalem house of Mary, mother of John Mark, who answered Peter's knock.",
+    "key": [
+      "After an angel freed Peter from prison, Rhoda came to answer his knock at the gate (Acts 12).",
+      "Recognizing Peter's voice, in her joy she ran in to tell the others without opening the gate (Acts 12).",
+      "The praying believers said she was out of her mind, but Peter kept knocking until they let him in (Acts 12)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "riphath_2443": {
+    "name": "Riphath",
+    "aka": [],
+    "who": "A grandson of Japheth through Gomer, named in the table of nations after the flood.",
+    "key": [
+      "Riphath is listed as a son of Gomer, son of Japheth, in the table of nations (Genesis 10).",
+      "Chronicles repeats him among Gomer's sons, with Ashkenaz and Togarmah (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["gomer_1328"],
+      "siblings": ["ashkenaz_338", "togarmah_2875"]
+    },
+    "skip": false
+  },
+  "rizpah_2444": {
+    "name": "Rizpah",
+    "aka": [],
+    "who": "A concubine of King Saul who kept watch over the bodies of her executed sons.",
+    "key": [
+      "Rizpah daughter of Aiah was a concubine of King Saul (2 Samuel 3).",
+      "Ish-bosheth accused Abner of sleeping with her, and the angry Abner turned to support David (2 Samuel 3).",
+      "Her sons Armoni and Mephibosheth were among seven of Saul's descendants given to the Gibeonites and killed (2 Samuel 21).",
+      "She spread sackcloth on a rock and guarded their bodies from birds and beasts until the rains came (2 Samuel 21).",
+      "Hearing of it, David buried the bones of Saul and Jonathan along with the seven (2 Samuel 21)."
+    ],
+    "family": {
+      "father": ["aiah_177"],
+      "spouses": ["saul_2478"],
+      "children": ["armoni_309", "mephibosheth_2000"]
+    },
+    "skip": false
+  },
+  "rufus_2448": {
+    "name": "Rufus",
+    "aka": [],
+    "who": "A son of Simon of Cyrene, the man compelled to carry Jesus' cross.",
+    "key": [
+      "Mark names Rufus and his brother Alexander as sons of Simon of Cyrene (Mark 15).",
+      "Their father Simon was forced by the soldiers to carry Jesus' cross (Mark 15)."
+    ],
+    "family": {
+      "father": ["simon_2749"],
+      "siblings": ["alexander_186"]
+    },
+    "skip": false
+  },
+  "sabtah_2451": {
+    "name": "Sabtah",
+    "aka": [],
+    "who": "A son of Cush and grandson of Ham, named in the table of nations after the flood.",
+    "key": [
+      "Sabtah is listed as a son of Cush, son of Ham, in the table of nations (Genesis 10).",
+      "Chronicles repeats him among the sons of Cush (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["cush_962"],
+      "siblings": ["seba_2481", "havilah_1461", "raamah_2380", "sabtecha_2452", "nimrod_2206"]
+    },
+    "skip": false
+  },
+  "sapphira_2472": {
+    "name": "Sapphira",
+    "aka": [],
+    "who": "Wife of Ananias in the early Jerusalem church; both died after lying about money from land they sold.",
+    "key": [
+      "With her husband Ananias she sold property and knowingly kept back part of the price (Acts 5).",
+      "About three hours after Ananias died, Peter asked her the sale price, and she lied (Acts 5).",
+      "Peter said they had agreed to test the Spirit of the Lord, and she fell down dead (Acts 5).",
+      "Young men buried her beside her husband, and great fear came on the whole church (Acts 5)."
+    ],
+    "family": {
+      "spouses": ["ananias_258"]
+    },
+    "skip": false
+  },
+  "sceva_2480": {
+    "name": "Sceva",
+    "aka": [],
+    "who": "A Jewish chief priest whose seven sons tried to cast out an evil spirit in Jesus' name at Ephesus.",
+    "key": [
+      "Sceva was a Jewish chief priest whose seven sons were traveling exorcists in Ephesus (Acts 19).",
+      "His sons tried to cast out an evil spirit in the name of the Jesus whom Paul preached (Acts 19).",
+      "The possessed man overpowered them, and they fled from the house naked and wounded (Acts 19).",
+      "The event became known throughout Ephesus, and the name of the Lord Jesus was honored (Acts 19)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "seba_2481": {
+    "name": "Seba",
+    "aka": [],
+    "who": "A son of Cush and grandson of Ham, named in the table of nations after the flood.",
+    "key": [
+      "Seba is listed first among the sons of Cush, son of Ham, in the table of nations (Genesis 10).",
+      "Chronicles repeats him among the sons of Cush (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["cush_962"],
+      "siblings": ["havilah_1461", "sabtah_2451", "raamah_2380", "sabtecha_2452", "nimrod_2206"]
+    },
+    "skip": false
+  },
+  "segub_2484": {
+    "name": "Segub",
+    "aka": [],
+    "who": "A man of Judah, son of Hezron by the daughter of Machir, and father of Jair of Gilead.",
+    "key": [
+      "At sixty, Hezron married the daughter of Machir, father of Gilead, and she bore Segub (1 Chronicles 2).",
+      "Segub fathered Jair, who held twenty-three cities in the land of Gilead (1 Chronicles 2)."
+    ],
+    "family": {
+      "father": ["hezron_1520"],
+      "mother": ["daughter_of_machir_986"],
+      "siblings": ["jerahmeel_843", "ram_2391", "caleb_538", "ashur_342"],
+      "children": ["jair_708"]
+    },
+    "skip": false
+  },
+  "seir_2485": {
+    "name": "Seir",
+    "aka": [],
+    "who": "Seir the Horite, ancestor of the people who lived in the land of Edom before Esau's descendants.",
+    "key": [
+      "Seir the Horite's sons are listed as the inhabitants of the land before Esau's descendants (Genesis 36).",
+      "His sons Lotan, Shobal, Zibeon, Anah, Dishon, Ezer, and Dishan became Horite chiefs (Genesis 36).",
+      "Chronicles repeats the list of his sons (1 Chronicles 1)."
+    ],
+    "family": {
+      "children": ["lotan_1831", "shobal_2719", "zibeon_3062", "anah_248", "dishon_1016", "ezer_1238", "dishan_1015", "timna_2860"]
+    },
+    "skip": false
+  },
+  "serah_2492": {
+    "name": "Serah",
+    "aka": [],
+    "who": "A daughter of Asher and granddaughter of Jacob, one of the few women named in Israel's genealogies.",
+    "key": [
+      "Serah, daughter of Asher, is listed among Jacob's family who went down to Egypt (Genesis 46).",
+      "She is named again in the census of Asher's clans on the plains of Moab (Numbers 26).",
+      "Chronicles lists her as the sister of Imnah, Ishvah, Ishvi, and Beriah (1 Chronicles 7)."
+    ],
+    "family": {
+      "father": ["asher_337"],
+      "siblings": ["imnah_1616", "isuah_640", "isui_648", "beriah_478"]
+    },
+    "skip": false
+  },
+  "seraiah_2495": {
+    "name": "Seraiah",
+    "aka": [],
+    "who": "An army captain of Judah, son of Tanhumeth, who joined Governor Gedaliah at Mizpah after Jerusalem fell.",
+    "key": [
+      "After Babylon destroyed Jerusalem, Seraiah son of Tanhumeth was among the captains still in the field (2 Kings 25).",
+      "He and other captains came to Gedaliah at Mizpah when Babylon appointed him governor (2 Kings 25).",
+      "Gedaliah assured them they could live safely in the land by serving the king of Babylon (Jeremiah 40)."
+    ],
+    "family": {
+      "father": ["tanhumeth_2824"]
+    },
+    "skip": false
+  },
+  "seraiah_2496": {
+    "name": "Seraiah",
+    "aka": [],
+    "who": "A man of Judah, son of Kenaz and brother of Othniel, Israel's first judge.",
+    "key": [
+      "Chronicles lists Othniel and Seraiah as the sons of Kenaz in Judah's genealogy (1 Chronicles 4).",
+      "Seraiah fathered Joab, the father of Ge-harashim, a settlement of craftsmen (1 Chronicles 4)."
+    ],
+    "family": {
+      "father": ["kenaz_1778"],
+      "siblings": ["othniel_2259"],
+      "children": ["joab_1618"]
+    },
+    "skip": false
+  },
+  "seraiah_2497": {
+    "name": "Seraiah",
+    "aka": [],
+    "who": "A man of the tribe of Simeon, son of Asiel, whose grandson Jehu was a clan chief.",
+    "key": [
+      "Seraiah son of Asiel is named in Simeon's genealogy as grandfather of Jehu, a chief (1 Chronicles 4).",
+      "In Hezekiah's days these Simeonite chiefs took pastureland near Gedor and settled there (1 Chronicles 4)."
+    ],
+    "family": {
+      "father": ["asiel_344"],
+      "children": ["josibiah_1732"]
+    },
+    "skip": false
+  },
+  "seraiah_2498": {
+    "name": "Seraiah",
+    "aka": [],
+    "who": "A priest who returned from exile with Zerubbabel and whose name was carried on by a priestly family.",
+    "key": [
+      "A Seraiah is named among the leaders who returned from Babylon with Zerubbabel (Ezra 2).",
+      "The name Seraiah heads the priests who sealed the covenant in Nehemiah's day (Nehemiah 10).",
+      "Seraiah is first among the priests who came up with Zerubbabel (Nehemiah 12).",
+      "In the days of the high priest Joiakim, Meraiah led the priestly house of Seraiah (Nehemiah 12)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "seraiah_2499": {
+    "name": "Seraiah",
+    "aka": [],
+    "who": "An officer of King Jehoiakim, son of Azriel, sent to arrest Jeremiah and Baruch.",
+    "key": [
+      "After burning Jeremiah's scroll, Jehoiakim ordered Seraiah son of Azriel and others to seize Baruch and Jeremiah (Jeremiah 36).",
+      "They could not find them, for the LORD had hidden them (Jeremiah 36)."
+    ],
+    "family": {
+      "father": ["azriel_562"]
+    },
+    "skip": false
+  },
+  "seraiah_2500": {
+    "name": "Seraiah",
+    "aka": [],
+    "who": "A royal staff officer, brother of Baruch, who carried Jeremiah's prophecy against Babylon to that city.",
+    "key": [
+      "Seraiah son of Neriah was quartermaster when he went with King Zedekiah to Babylon (Jeremiah 51).",
+      "Jeremiah gave him a book of the disasters coming on Babylon, to read aloud there (Jeremiah 51).",
+      "He was then to tie a stone to it and throw it into the Euphrates (Jeremiah 51).",
+      "The sinking book was a sign that Babylon would sink and rise no more (Jeremiah 51)."
+    ],
+    "family": {
+      "father": ["neriah_2186"],
+      "siblings": ["baruch_410"]
+    },
+    "skip": false
+  },
+  "sergius_2502": {
+    "name": "Sergius Paulus",
+    "aka": [],
+    "who": "The Roman proconsul of Cyprus who believed after hearing Barnabas and Saul preach.",
+    "key": [
+      "Sergius Paulus, an intelligent man, was proconsul of Cyprus at Paphos (Acts 13).",
+      "He summoned Barnabas and Saul because he wanted to hear the word of God (Acts 13).",
+      "The magician Elymas opposed them, and Paul declared he would be blind for a time (Acts 13).",
+      "Seeing this, the proconsul believed, astonished at the teaching of the Lord (Acts 13)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shallum_2514": {
+    "name": "Shallum",
+    "aka": [],
+    "who": "A king of Israel who seized the throne by assassination and reigned only one month.",
+    "key": [
+      "Shallum son of Jabesh conspired against King Zechariah of Israel, killed him, and took the throne (2 Kings 15).",
+      "Zechariah's death fulfilled the LORD's word that Jehu's dynasty would last four generations (2 Kings 15).",
+      "Shallum reigned one month in Samaria, in the thirty-ninth year of Uzziah king of Judah (2 Kings 15).",
+      "Menahem son of Gadi came from Tirzah, killed Shallum, and reigned in his place (2 Kings 15)."
+    ],
+    "family": {
+      "father": ["jabesh_674"]
+    },
+    "skip": false
+  },
+  "shallun_2527": {
+    "name": "Shallun",
+    "aka": [],
+    "who": "Ruler of the district of Mizpah who rebuilt Jerusalem's Fountain Gate in Nehemiah's day.",
+    "key": [
+      "Shallun son of Col-hozeh ruled the district of Mizpah when Jerusalem's wall was rebuilt (Nehemiah 3).",
+      "He rebuilt the Fountain Gate, roofing it and setting its doors, bolts, and bars (Nehemiah 3).",
+      "He also built the wall of the Pool of Shelah by the king's garden (Nehemiah 3)."
+    ],
+    "family": {
+      "father": ["col-hozeh_951"]
+    },
+    "skip": false
+  },
+  "shamgar_2534": {
+    "name": "Shamgar",
+    "aka": [],
+    "who": "A deliverer of Israel after Ehud, who struck down six hundred Philistines with an oxgoad.",
+    "key": [
+      "After Ehud, Shamgar son of Anath killed six hundred Philistines with an oxgoad (Judges 3).",
+      "By this he also saved Israel (Judges 3).",
+      "Deborah's song recalls that in his days the main roads were abandoned and travelers used byways (Judges 5)."
+    ],
+    "family": {
+      "father": ["anath_261"]
+    },
+    "skip": false
+  },
+  "shammah_2538": {
+    "name": "Shammah",
+    "aka": [],
+    "who": "A grandson of Esau through Reuel, and a chief among the Edomites.",
+    "key": [
+      "Shammah was a son of Reuel, Esau's son by Basemath (Genesis 36).",
+      "He became one of the chiefs of Edom descended from Reuel (Genesis 36).",
+      "Chronicles repeats him among Reuel's sons (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["reuel_2430"],
+      "siblings": ["nahath_2146", "zerah_3043", "mizzah_2101"]
+    },
+    "skip": false
+  },
+  "shammah_2539": {
+    "name": "Shammah",
+    "aka": [],
+    "who": "Son of Agee the Hararite, one of David's three foremost warriors, who held a lentil field against the Philistines.",
+    "key": [
+      "Shammah son of Agee the Hararite was one of David's three chief mighty men (2 Samuel 23).",
+      "When Israel's troops fled from the Philistines, he took his stand in a field full of lentils (2 Samuel 23).",
+      "He defended the field and struck down the Philistines, and the LORD brought about a great victory (2 Samuel 23)."
+    ],
+    "family": {
+      "father": ["agee_110"]
+    },
+    "skip": false
+  },
+  "shammah_2540": {
+    "name": "Shammah",
+    "aka": ["Shammoth"],
+    "who": "Shammah of Harod, one of David's thirty mighty men.",
+    "key": [
+      "Shammah of Harod is listed among David's thirty mighty men (2 Samuel 23).",
+      "Chronicles lists him as Shammoth of Harod among David's mighty men (1 Chronicles 11)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shaphat_2553": {
+    "name": "Shaphat",
+    "aka": [],
+    "who": "The father of the prophet Elisha, from Abel-meholah.",
+    "key": [
+      "God told Elijah to anoint Elisha son of Shaphat of Abel-meholah as prophet after him (1 Kings 19).",
+      "Elisha left his oxen, kissed his father and mother goodbye, and followed Elijah (1 Kings 19).",
+      "Elisha is identified as Shaphat's son when the kings of Israel, Judah, and Edom seek him (2 Kings 3).",
+      "During Samaria's siege, the king of Israel swore to behead Elisha son of Shaphat (2 Kings 6)."
+    ],
+    "family": {
+      "children": ["elisha_1153"]
+    },
+    "skip": false
+  },
+  "sheba_2567": {
+    "name": "Sheba",
+    "aka": [],
+    "who": "A son of Raamah and great-grandson of Ham, named in the table of nations after the flood.",
+    "key": [
+      "Sheba is listed as a son of Raamah, son of Cush, in the table of nations (Genesis 10).",
+      "Chronicles repeats him with his brother Dedan among Raamah's sons (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["raamah_2380"],
+      "siblings": ["dedan_998"]
+    },
+    "skip": false
+  },
+  "sheba_2568": {
+    "name": "Sheba",
+    "aka": [],
+    "who": "A son of Joktan in the line of Shem, named in the table of nations after the flood.",
+    "key": [
+      "Sheba is listed among the thirteen sons of Joktan, a descendant of Shem through Eber (Genesis 10).",
+      "Chronicles repeats him among Joktan's sons (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["joktan_1686"],
+      "siblings": ["almodad_191", "sheleph_2602", "hazarmaveth_1465", "jerah_842", "hadoram_1345", "uzal_2911", "diklah_1011", "ebal_2227", "abimael_39", "ophir_2253", "havilah_1462", "jobab_1640"]
+    },
+    "skip": false
+  },
+  "shebna_2578": {
+    "name": "Shebna",
+    "aka": [],
+    "who": "A steward over the royal household in Jerusalem whom Isaiah said God would remove and replace with Eliakim.",
+    "key": [
+      "Shebna was the steward over the royal household in Jerusalem (Isaiah 22).",
+      "Isaiah rebuked him for carving out a grand tomb for himself (Isaiah 22).",
+      "The LORD declared he would hurl Shebna away and give his office to Eliakim son of Hilkiah (Isaiah 22)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shechem_2589": {
+    "name": "Shechem",
+    "aka": [],
+    "who": "A descendant of Manasseh through Gilead and ancestor of the Shechemite clan.",
+    "key": [
+      "Shechem son of Gilead headed the clan of the Shechemites in Manasseh's census (Numbers 26).",
+      "His clan received an inheritance among the tribe of Manasseh west of the Jordan (Joshua 17)."
+    ],
+    "family": {
+      "father": ["gilead_1317"],
+      "siblings": ["abiezer_763", "helek_1481", "asriel_348", "shemida_2650", "hepher_1496"]
+    },
+    "skip": false
+  },
+  "shelomith_2607": {
+    "name": "Shelomoth",
+    "aka": [],
+    "who": "A Gershonite Levite, son of Shimei, listed among family heads when David organized the Levites.",
+    "key": [
+      "When David organized the Levites, Shelomoth was listed among the sons of Shimei (1 Chronicles 23).",
+      "He and his brothers Haziel and Haran were heads of fathers' houses of Ladan (1 Chronicles 23)."
+    ],
+    "family": {
+      "father": ["Shimei"],
+      "siblings": ["haziel_1467", "haran_1409"]
+    },
+    "skip": false
+  },
+  "shemaiah_2637": {
+    "name": "Shemaiah",
+    "aka": [],
+    "who": "A man hired by Nehemiah's enemies to frighten him into hiding in the temple.",
+    "key": [
+      "Nehemiah visited Shemaiah son of Delaiah, who was confined to his home (Nehemiah 6).",
+      "Shemaiah urged Nehemiah to hide in the temple, claiming men were coming to kill him (Nehemiah 6).",
+      "Nehemiah refused, realizing Tobiah and Sanballat had hired him to make Nehemiah sin (Nehemiah 6)."
+    ],
+    "family": {
+      "father": ["delaiah_1003"]
+    },
+    "skip": false
+  },
+  "shemaiah_2643": {
+    "name": "Shemaiah",
+    "aka": [],
+    "who": "Shemaiah of Nehelam, a false prophet among the exiles in Babylon who opposed Jeremiah.",
+    "key": [
+      "Shemaiah of Nehelam prophesied to the exiles in Babylon, though the LORD had not sent him (Jeremiah 29).",
+      "He wrote to the priest Zephaniah, urging him to put Jeremiah in the stocks (Jeremiah 29).",
+      "Zephaniah read the letter to Jeremiah (Jeremiah 29).",
+      "The LORD declared Shemaiah would have no descendant to see the good he would do for his people (Jeremiah 29)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shemeber_2648": {
+    "name": "Shemeber",
+    "aka": [],
+    "who": "The king of Zeboiim in Abraham's day, one of the kings of the valley who rebelled against Chedorlaomer.",
+    "key": [
+      "Shemeber king of Zeboiim joined the kings of the valley in rebelling against Chedorlaomer (Genesis 14).",
+      "The four eastern kings defeated them in the Valley of Siddim and carried off Lot from Sodom (Genesis 14)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shemer_2649": {
+    "name": "Shemer",
+    "aka": [],
+    "who": "The owner of the hill of Samaria, which King Omri bought to build Israel's new capital.",
+    "key": [
+      "King Omri bought the hill of Samaria from Shemer for two talents of silver (1 Kings 16).",
+      "Omri built a city on the hill and named it Samaria after Shemer (1 Kings 16)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shepho_2665": {
+    "name": "Shepho",
+    "aka": ["Shephi"],
+    "who": "A son of Shobal and grandson of Seir the Horite, named among the early inhabitants of Edom.",
+    "key": [
+      "Shepho is listed as a son of Shobal, son of Seir the Horite (Genesis 36).",
+      "Chronicles repeats him among Shobal's sons (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["shobal_2719"],
+      "siblings": ["alvan_195", "manahath_1927", "ebal_1026", "onam_2248"]
+    },
+    "skip": false
+  },
+  "sheshai_2671": {
+    "name": "Sheshai",
+    "aka": [],
+    "who": "One of the three sons of Anak, a clan of giants living at Hebron when Israel entered Canaan.",
+    "key": [
+      "The twelve spies saw Sheshai, Ahiman, and Talmai, descendants of Anak, at Hebron (Numbers 13).",
+      "Caleb drove the three sons of Anak out of Hebron (Joshua 15).",
+      "Judah defeated Sheshai, Ahiman, and Talmai at Hebron, formerly called Kiriath-arba (Judges 1)."
+    ],
+    "family": {
+      "father": ["anak_252"],
+      "siblings": ["ahiman_146", "talmai_2818"]
+    },
+    "skip": false
+  },
+  "shiphrah_2710": {
+    "name": "Shiphrah",
+    "aka": [],
+    "who": "One of two Hebrew midwives in Egypt who feared God and refused Pharaoh's order to kill Israelite baby boys.",
+    "key": [
+      "Pharaoh ordered Shiphrah and Puah, Hebrew midwives, to kill every Hebrew baby boy at birth (Exodus 1).",
+      "They feared God and let the boys live (Exodus 1).",
+      "Questioned by Pharaoh, they said Hebrew women gave birth before the midwives arrived (Exodus 1).",
+      "God dealt well with the midwives and gave them families (Exodus 1)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shitrai_2713": {
+    "name": "Shitrai",
+    "aka": [],
+    "who": "Shitrai of Sharon, the official in charge of King David's herds that grazed in Sharon.",
+    "key": [
+      "Shitrai the Sharonite was over the herds that pastured in Sharon (1 Chronicles 27).",
+      "He was among the stewards who managed King David's property (1 Chronicles 27)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shobi_2722": {
+    "name": "Shobi",
+    "aka": [],
+    "who": "An Ammonite from Rabbah, son of Nahash, who brought supplies to David during Absalom's revolt.",
+    "key": [
+      "Shobi son of Nahash came from Rabbah of the Ammonites (2 Samuel 17).",
+      "When David fled from Absalom to Mahanaim, Shobi, Machir, and Barzillai brought beds, utensils, and food (2 Samuel 17).",
+      "They provided for David's people, who were hungry, weary, and thirsty in the wilderness (2 Samuel 17)."
+    ],
+    "family": {
+      "father": ["nahash_2139"]
+    },
+    "skip": false
+  },
+  "shua_2726": {
+    "name": "Shua",
+    "aka": [],
+    "who": "A daughter of Heber in the tribe of Asher, named in Chronicles' genealogy.",
+    "key": [
+      "Shua was the daughter of Heber, a grandson of Asher (1 Chronicles 7).",
+      "She is named with her brothers Japhlet, Shomer, and Hotham (1 Chronicles 7)."
+    ],
+    "family": {
+      "father": ["heber_1469"],
+      "siblings": ["japhlet_729", "shamer_2725", "hotham_1562"]
+    },
+    "skip": false
+  },
+  "simeon_2742": {
+    "name": "Simeon",
+    "aka": [],
+    "who": "A righteous man in Jerusalem who held the infant Jesus in the temple and praised God for his salvation.",
+    "key": [
+      "Simeon was a righteous, devout man in Jerusalem, waiting for the consolation of Israel (Luke 2).",
+      "The Holy Spirit had revealed he would not die before seeing the Lord's Christ (Luke 2).",
+      "Led by the Spirit into the temple, he took the infant Jesus in his arms and praised God (Luke 2).",
+      "He blessed Joseph and Mary and told Mary a sword would pierce her own soul (Luke 2)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "simon_2746": {
+    "name": "Simon the Zealot",
+    "aka": ["Simon the Cananaean"],
+    "who": "One of the twelve apostles, called the Zealot or the Cananaean to distinguish him from Simon Peter.",
+    "key": [
+      "Matthew lists him among the twelve apostles as Simon the Cananaean (Matthew 10).",
+      "Mark also names him among the Twelve whom Jesus appointed (Mark 3).",
+      "Luke calls him Simon the Zealot in his list of the apostles (Luke 6).",
+      "After Jesus' ascension he was with the apostles praying in the upper room (Acts 1)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "simon_2747": {
+    "name": "Simon",
+    "aka": [],
+    "who": "One of the brothers of Jesus, named by the people of Nazareth when they took offense at him.",
+    "key": [
+      "The people of Nazareth named Simon among Jesus' brothers, with James, Joseph, and Judas (Matthew 13).",
+      "Knowing his family, they took offense at Jesus, who did few mighty works there (Mark 6)."
+    ],
+    "family": {
+      "father": ["joseph_1715"],
+      "mother": ["mary_1938"],
+      "siblings": ["jesus_905", "james_719", "joses_1721", "jude_1756"]
+    },
+    "skip": false
+  },
+  "simon_2748": {
+    "name": "Simon the leper",
+    "aka": [],
+    "who": "A man of Bethany, known as Simon the leper, at whose home Jesus was anointed shortly before his death.",
+    "key": [
+      "Shortly before the Passover, Jesus was at the home of Simon the leper in Bethany (Matthew 26).",
+      "There a woman poured costly ointment on Jesus, who said she had prepared his body for burial (Mark 14)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "simon_2749": {
+    "name": "Simon of Cyrene",
+    "aka": [],
+    "who": "A man from Cyrene whom Roman soldiers compelled to carry Jesus' cross to the crucifixion.",
+    "key": [
+      "As Jesus was led out to be crucified, soldiers compelled Simon of Cyrene to carry his cross (Matthew 27).",
+      "Mark notes he was coming in from the country and was the father of Alexander and Rufus (Mark 15).",
+      "Luke says they laid the cross on him to carry behind Jesus (Luke 23)."
+    ],
+    "family": {
+      "children": ["alexander_186", "rufus_2448"]
+    },
+    "skip": false
+  }
+}

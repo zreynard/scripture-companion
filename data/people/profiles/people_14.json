@@ -1,0 +1,870 @@
+{
+  "medad_1977": {
+    "name": "Medad",
+    "aka": [],
+    "who": "One of Israel's seventy elders who prophesied in the camp when the Spirit rested on him in the wilderness.",
+    "key": [
+      "Medad was registered among the seventy elders but remained in the camp instead of going to the tent (Numbers 11).",
+      "The Spirit rested on Medad and Eldad, and they prophesied in the camp (Numbers 11).",
+      "When Joshua urged Moses to stop them, Moses wished all the LORD's people were prophets (Numbers 11)."
+    ],
+    "skip": false
+  },
+  "melech_1993": {
+    "name": "Melech",
+    "aka": [],
+    "who": "A son of Micah and great-grandson of Jonathan, listed in the genealogy of King Saul's family.",
+    "key": [
+      "Melech is listed as a son of Micah, son of Merib-baal, in Saul's line through Jonathan (1 Chronicles 8).",
+      "The genealogy of Saul's descendants is repeated, again naming Melech among Micah's sons (1 Chronicles 9)."
+    ],
+    "family": {
+      "father": [
+        "micah_2055"
+      ],
+      "siblings": [
+        "pithon_2363",
+        "tahrea_2827",
+        "ahaz_119"
+      ]
+    },
+    "skip": false
+  },
+  "meonothai_1998": {
+    "name": "Meonothai",
+    "aka": [],
+    "who": "A son of Othniel, Israel's first judge, listed in the genealogy of the tribe of Judah.",
+    "key": [
+      "Meonothai is named with his brother Hathath as a son of Othniel (1 Chronicles 4).",
+      "He fathered Ophrah, continuing Othniel's family line in Judah (1 Chronicles 4)."
+    ],
+    "family": {
+      "father": [
+        "othniel_2259"
+      ],
+      "siblings": [
+        "hathath_1453"
+      ],
+      "children": [
+        "ophrah_2254"
+      ]
+    },
+    "skip": false
+  },
+  "merodach-baladan_483": {
+    "name": "Merodach-baladan",
+    "aka": [
+      "Berodach-baladan"
+    ],
+    "who": "A king of Babylon, son of Baladan, who sent envoys to King Hezekiah after Hezekiah recovered from illness.",
+    "key": [
+      "Hearing of Hezekiah's illness and recovery, he sent envoys with letters and a gift (Isaiah 39).",
+      "Hezekiah welcomed the envoys and showed them all the treasures in his storehouses (Isaiah 39).",
+      "Isaiah then foretold that everything Hezekiah had shown would be carried off to Babylon (Isaiah 39).",
+      "The same visit is recorded in the account of Hezekiah's reign (2 Kings 20)."
+    ],
+    "family": {
+      "father": [
+        "baladan_594"
+      ]
+    },
+    "skip": false
+  },
+  "mesha_2009": {
+    "name": "Mesha",
+    "aka": [],
+    "who": "A king of Moab, a sheep breeder who paid tribute to Israel and rebelled after Ahab's death.",
+    "key": [
+      "Mesha paid Israel's king a heavy yearly tribute of lambs and wool (2 Kings 3).",
+      "After Ahab died, Mesha rebelled, and the kings of Israel, Judah, and Edom marched against him (2 Kings 3).",
+      "His army was routed after mistaking water in the valley for blood (2 Kings 3).",
+      "Failing to break through, he offered his eldest son as a burnt offering on the city wall (2 Kings 3)."
+    ],
+    "skip": false
+  },
+  "meshullam_2024": {
+    "name": "Meshullam",
+    "aka": [],
+    "who": "A Benjaminite, son of Hodaviah, whose son Sallu lived in Jerusalem after the return from exile.",
+    "key": [
+      "Meshullam is listed as son of Hodaviah in the genealogy of the Benjaminites (1 Chronicles 9).",
+      "His son Sallu was among the Benjaminites who settled in Jerusalem after the exile (1 Chronicles 9)."
+    ],
+    "family": {
+      "father": [
+        "hodaviah_1541"
+      ],
+      "children": [
+        "sallu_2459"
+      ]
+    },
+    "skip": false
+  },
+  "meshullam_2025": {
+    "name": "Meshullam",
+    "aka": [],
+    "who": "A Benjaminite, son of Shephatiah, who was a head of a father's house living in Jerusalem after the exile.",
+    "key": [
+      "Meshullam son of Shephatiah is listed among the Benjaminites living in Jerusalem (1 Chronicles 9).",
+      "He was counted among the heads of fathers' houses in their families (1 Chronicles 9)."
+    ],
+    "family": {
+      "father": [
+        "shephathiah_2656"
+      ]
+    },
+    "skip": false
+  },
+  "meshullam_2026": {
+    "name": "Meshullam",
+    "aka": [],
+    "who": "A priest of the house of Immer, son of Meshillemith, named in the ancestry of a priest serving in Jerusalem.",
+    "key": [
+      "Meshullam son of Meshillemith appears in the ancestry of the priest Maasai, of the house of Immer (1 Chronicles 9).",
+      "His descendants were among the priests who lived in Jerusalem after the exile (1 Chronicles 9)."
+    ],
+    "family": {
+      "father": [
+        "meshillemith_2017"
+      ],
+      "children": [
+        "jahzerah_707"
+      ]
+    },
+    "skip": false
+  },
+  "meshullam_2036": {
+    "name": "Meshullam",
+    "aka": [],
+    "who": "A Benjaminite, son of Joed, whose son Sallu settled in Jerusalem in Nehemiah's day.",
+    "key": [
+      "Meshullam is listed as son of Joed in the line of the Benjaminites (Nehemiah 11).",
+      "His son Sallu was among the leaders of Benjamin who lived in Jerusalem (Nehemiah 11)."
+    ],
+    "family": {
+      "father": [
+        "joed_1646"
+      ],
+      "children": [
+        "sallu_2460"
+      ]
+    },
+    "skip": false
+  },
+  "micah_2053": {
+    "name": "Micah",
+    "aka": [],
+    "who": "A prophet from Moresheth who warned Samaria and Jerusalem of judgment and foretold a ruler from Bethlehem.",
+    "key": [
+      "Micah prophesied in the days of Jotham, Ahaz, and Hezekiah, concerning Samaria and Jerusalem (Micah 1).",
+      "He warned that because of corrupt leaders, Zion would be plowed as a field (Micah 3).",
+      "He foretold a ruler for Israel coming from Bethlehem Ephrathah (Micah 5).",
+      "He declared that the LORD requires justice, kindness, and walking humbly with God (Micah 6).",
+      "Years later, elders cited his warning to spare Jeremiah's life (Jeremiah 26)."
+    ],
+    "skip": false
+  },
+  "mishael_2090": {
+    "name": "Mishael",
+    "aka": [],
+    "who": "A Levite of the clan of Kohath, son of Uzziel and cousin of Moses and Aaron.",
+    "key": [
+      "Mishael is listed as a son of Uzziel, son of Kohath, with Elzaphan and Sithri (Exodus 6).",
+      "After Nadab and Abihu died, Moses had Mishael and Elzaphan carry their bodies out of the camp (Leviticus 10)."
+    ],
+    "family": {
+      "father": [
+        "uzziel_2929"
+      ],
+      "siblings": [
+        "elizaphan_1189",
+        "zithri_3096"
+      ]
+    },
+    "skip": false
+  },
+  "mizzah_2101": {
+    "name": "Mizzah",
+    "aka": [],
+    "who": "A grandson of Esau through his son Reuel, and a chief among the Edomites.",
+    "key": [
+      "Mizzah was a son of Reuel, Esau's son by Basemath (Genesis 36).",
+      "He is named among the chiefs of the sons of Reuel in Edom (Genesis 36).",
+      "His name is repeated in the genealogy of Esau's descendants (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "reuel_2430"
+      ],
+      "siblings": [
+        "nahath_2146",
+        "zerah_3043",
+        "shammah_2538"
+      ]
+    },
+    "skip": false
+  },
+  "nadab_2129": {
+    "name": "Nadab",
+    "aka": [],
+    "who": "A son of Jeroboam who reigned over Israel for two years before Baasha assassinated him.",
+    "key": [
+      "Nadab succeeded his father Jeroboam as king of Israel (1 Kings 14).",
+      "He reigned two years and did evil, walking in his father's sin (1 Kings 15).",
+      "Baasha conspired against him and killed him while Israel besieged Gibbethon (1 Kings 15).",
+      "Baasha then struck down Jeroboam's whole house, as the prophet Ahijah had foretold (1 Kings 15)."
+    ],
+    "family": {
+      "father": [
+        "jeroboam_872"
+      ],
+      "siblings": [
+        "abijah_35"
+      ]
+    },
+    "skip": false
+  },
+  "naharai_2135": {
+    "name": "Naharai",
+    "aka": [],
+    "who": "A man of Beeroth who served as armor-bearer to Joab and was listed among David's mighty men.",
+    "key": [
+      "Naharai of Beeroth, Joab's armor-bearer, is named among David's thirty mighty men (2 Samuel 23).",
+      "The parallel list of David's mighty men again names him as Joab's armor-bearer (1 Chronicles 11)."
+    ],
+    "skip": false
+  },
+  "nahash_2136": {
+    "name": "Nahash",
+    "aka": [],
+    "who": "A king of the Ammonites whose siege of Jabesh-gilead led to Saul's first victory as king.",
+    "key": [
+      "Nahash besieged Jabesh-gilead and demanded to gouge out every man's right eye as terms (1 Samuel 11).",
+      "The Spirit of God rushed on Saul, who rallied Israel and defeated the Ammonites (1 Samuel 11).",
+      "Samuel later recalled that Israel demanded a king when they saw Nahash coming against them (1 Samuel 12)."
+    ],
+    "skip": false
+  },
+  "nahash_2137": {
+    "name": "Nahash",
+    "aka": [],
+    "who": "A king of the Ammonites who showed kindness to David and was succeeded by his son Hanun.",
+    "key": [
+      "Nahash had dealt kindly with David, so David sent servants to console Hanun when Nahash died (2 Samuel 10).",
+      "Hanun shamed David's envoys, leading to war between Ammon and Israel (2 Samuel 10).",
+      "The same events are recorded in the account of David's wars (1 Chronicles 19)."
+    ],
+    "family": {
+      "children": [
+        "hanun_1404"
+      ]
+    },
+    "skip": false
+  },
+  "nahath_2146": {
+    "name": "Nahath",
+    "aka": [],
+    "who": "A grandson of Esau through his son Reuel, and a chief among the Edomites.",
+    "key": [
+      "Nahath was a son of Reuel, Esau's son by Basemath (Genesis 36).",
+      "He is named among the chiefs of the sons of Reuel in Edom (Genesis 36).",
+      "His name is repeated in the genealogy of Esau's descendants (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "reuel_2430"
+      ],
+      "siblings": [
+        "zerah_3043",
+        "shammah_2538",
+        "mizzah_2101"
+      ]
+    },
+    "skip": false
+  },
+  "nahum_2145": {
+    "name": "Nahum",
+    "aka": [],
+    "who": "A prophet from Elkosh whose book announces the LORD's judgment on Nineveh, the Assyrian capital.",
+    "key": [
+      "Nahum of Elkosh received a vision concerning Nineveh (Nahum 1).",
+      "He proclaimed the LORD slow to anger yet sure to punish the guilty (Nahum 1).",
+      "He announced good news of peace for Judah, whose Assyrian yoke would be broken (Nahum 1).",
+      "He described the attack on Nineveh and the plundering of the city (Nahum 2).",
+      "He compared Nineveh to Thebes, which also fell despite its defenses (Nahum 3)."
+    ],
+    "skip": false
+  },
+  "nathan_2154": {
+    "name": "Nathan",
+    "aka": [],
+    "who": "A man of Zobah whose son Igal and brother Joel are named among David's mighty men.",
+    "key": [
+      "Igal son of Nathan of Zobah is listed among David's thirty mighty men (2 Samuel 23).",
+      "The parallel list names Joel the brother of Nathan among David's mighty men (1 Chronicles 11)."
+    ],
+    "family": {
+      "siblings": [
+        "joel_1653"
+      ],
+      "children": [
+        "igal_1599"
+      ]
+    },
+    "skip": false
+  },
+  "nebo_2166": {
+    "name": "Nebo",
+    "aka": [],
+    "who": "A town in Judah whose people returned from exile, not an individual person.",
+    "key": [
+      "Men of Nebo are counted among the returning exiles (Ezra 2).",
+      "Some descendants of Nebo had married foreign women and agreed to put them away (Ezra 10)."
+    ],
+    "skip": true
+  },
+  "nehemiah_2171": {
+    "name": "Nehemiah",
+    "aka": [],
+    "who": "A leader who returned from Babylon with Zerubbabel, distinct from the later governor Nehemiah.",
+    "key": [
+      "Nehemiah is named among the leaders who came up from exile with Zerubbabel (Ezra 2).",
+      "Nehemiah's register of the first returnees lists him again among those leaders (Nehemiah 7)."
+    ],
+    "skip": false
+  },
+  "nehemiah_2173": {
+    "name": "Nehemiah",
+    "aka": [],
+    "who": "Son of Azbuk and ruler of half the district of Beth-zur, who helped rebuild Jerusalem's wall.",
+    "key": [
+      "As ruler of half the district of Beth-zur, he repaired a section of Jerusalem's wall (Nehemiah 3).",
+      "His work reached opposite David's tombs, the artificial pool, and the house of the mighty men (Nehemiah 3)."
+    ],
+    "family": {
+      "father": [
+        "azbuk_550"
+      ]
+    },
+    "skip": false
+  },
+  "nemuel_2177": {
+    "name": "Nemuel",
+    "aka": [],
+    "who": "A Reubenite, son of Eliab, and brother of Dathan and Abiram.",
+    "key": [
+      "Nemuel is listed as a son of Eliab, of Pallu's clan in the tribe of Reuben (Numbers 26).",
+      "His brothers Dathan and Abiram joined Korah's rebellion against Moses and perished (Numbers 26)."
+    ],
+    "family": {
+      "father": [
+        "eliab_1074"
+      ],
+      "siblings": [
+        "dathan_982",
+        "abiram_47"
+      ]
+    },
+    "skip": false
+  },
+  "nepheg_2178": {
+    "name": "Nepheg",
+    "aka": [],
+    "who": "A Levite of the clan of Kohath, son of Izhar and brother of Korah.",
+    "key": [
+      "Nepheg is listed as a son of Izhar, a grandson of Kohath, in the Levite genealogy (Exodus 6).",
+      "His brother Korah later led a rebellion against Moses and Aaron (Numbers 16)."
+    ],
+    "family": {
+      "father": [
+        "izhar_658"
+      ],
+      "siblings": [
+        "korah_1795",
+        "zichri_3065"
+      ]
+    },
+    "skip": false
+  },
+  "nimrod_2206": {
+    "name": "Nimrod",
+    "aka": [],
+    "who": "A son of Cush, the first mighty man on earth and a great hunter, who founded cities in Shinar and Assyria.",
+    "key": [
+      "Nimrod, son of Cush, became the first mighty man on earth, a mighty hunter before the LORD (Genesis 10).",
+      "His kingdom began with Babel, Erech, and Accad in the land of Shinar (Genesis 10).",
+      "From there he went into Assyria and built Nineveh and other cities (Genesis 10).",
+      "Micah later called Assyria the land of Nimrod (Micah 5)."
+    ],
+    "family": {
+      "father": [
+        "cush_962"
+      ],
+      "siblings": [
+        "seba_2481",
+        "havilah_1461",
+        "sabtah_2451",
+        "raamah_2380",
+        "sabtecha_2452"
+      ]
+    },
+    "skip": false
+  },
+  "noah_2211": {
+    "name": "Noah",
+    "aka": [],
+    "who": "One of the five daughters of Zelophehad, who asked Moses for their father's inheritance in Manasseh.",
+    "key": [
+      "Noah is listed among Zelophehad's daughters, since he had no sons (Numbers 26).",
+      "She and her sisters asked Moses for their father's inheritance, and the LORD granted it (Numbers 27).",
+      "As commanded, the sisters married within their father's clan so the land stayed in Manasseh (Numbers 36).",
+      "The sisters received their inheritance among the clans of Manasseh (Joshua 17)."
+    ],
+    "family": {
+      "father": [
+        "zelophehad_3035"
+      ],
+      "siblings": [
+        "mahlah_1895",
+        "hoglah_1548",
+        "milcah_2083",
+        "tirzah_2868"
+      ]
+    },
+    "skip": false
+  },
+  "obadiah_2226": {
+    "name": "Obadiah",
+    "aka": [],
+    "who": "A prophet whose short book, the shortest in the Old Testament, announces God's judgment on Edom.",
+    "key": [
+      "Obadiah's vision announces that proud Edom, secure in its rocky heights, will be brought down (Obadiah 1).",
+      "He condemns Edom for gloating and violence against its brother Jacob when Jerusalem fell (Obadiah 1).",
+      "He declares the day of the LORD near and that the kingdom will be the LORD's (Obadiah 1)."
+    ],
+    "skip": false
+  },
+  "oded_2237": {
+    "name": "Oded",
+    "aka": [],
+    "who": "A prophet in Samaria who persuaded Israel's army to free the captives taken from Judah under King Ahaz.",
+    "key": [
+      "Oded met Israel's army returning to Samaria with two hundred thousand captives from Judah (2 Chronicles 28).",
+      "He warned that God was angry and that the captives must be sent back (2 Chronicles 28).",
+      "Ephraimite leaders backed him, and the captives were clothed, fed, and returned to Jericho (2 Chronicles 28)."
+    ],
+    "skip": false
+  },
+  "omar_2242": {
+    "name": "Omar",
+    "aka": [],
+    "who": "A grandson of Esau through his son Eliphaz, and a chief among the Edomites.",
+    "key": [
+      "Omar was a son of Eliphaz, Esau's firstborn by Adah (Genesis 36).",
+      "He is named among the chiefs descended from Eliphaz in Edom (Genesis 36).",
+      "His name is repeated in the genealogy of Esau's descendants (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "eliphaz_1144"
+      ],
+      "siblings": [
+        "teman_2838",
+        "zepho_3042",
+        "gatam_1281",
+        "kenaz_1776",
+        "amalek_197"
+      ]
+    },
+    "skip": false
+  },
+  "onam_2248": {
+    "name": "Onam",
+    "aka": [],
+    "who": "A son of Shobal, of the Horite clans who lived in the land of Seir.",
+    "key": [
+      "Onam is listed among the sons of Shobal, a son of Seir the Horite (Genesis 36).",
+      "His name is repeated in the genealogy of the people of Seir (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "shobal_2719"
+      ],
+      "siblings": [
+        "alvan_195",
+        "manahath_1927",
+        "ebal_1026",
+        "shepho_2665"
+      ]
+    },
+    "skip": false
+  },
+  "onam_2249": {
+    "name": "Onam",
+    "aka": [],
+    "who": "A son of Jerahmeel and his wife Atarah, in the tribe of Judah.",
+    "key": [
+      "Onam was born to Jerahmeel by another wife, Atarah (1 Chronicles 2).",
+      "He fathered Shammai and Jada, through whom the Jerahmeelite line continues (1 Chronicles 2)."
+    ],
+    "family": {
+      "father": [
+        "jerahmeel_843"
+      ],
+      "mother": [
+        "atarah_354"
+      ],
+      "siblings": [
+        "ram_2392",
+        "bunah_525",
+        "oren_2256",
+        "ozem_2261",
+        "ahijah_137"
+      ],
+      "children": [
+        "shammai_2542",
+        "jada_684"
+      ]
+    },
+    "skip": false
+  },
+  "onesimus_2251": {
+    "name": "Onesimus",
+    "aka": [],
+    "who": "A slave of Philemon who became a Christian through Paul and was sent back as a brother.",
+    "key": [
+      "Onesimus came to faith through Paul while Paul was in prison (Philemon 1).",
+      "Paul sent him back to Philemon, once useless but now useful, as a beloved brother (Philemon 1).",
+      "Paul offered to repay anything Onesimus owed Philemon (Philemon 1).",
+      "Paul sent him with Tychicus to Colossae, calling him faithful and beloved (Colossians 4)."
+    ],
+    "skip": false
+  },
+  "onesiphorus_2252": {
+    "name": "Onesiphorus",
+    "aka": [],
+    "who": "A believer who often refreshed Paul and sought him out in Rome during his imprisonment.",
+    "key": [
+      "Unlike others who turned away, Onesiphorus was not ashamed of Paul's chains (2 Timothy 1).",
+      "He searched for Paul in Rome until he found him (2 Timothy 1).",
+      "Paul recalled his many services at Ephesus and prayed for mercy on his household (2 Timothy 1).",
+      "Paul asked Timothy to greet the household of Onesiphorus (2 Timothy 4)."
+    ],
+    "skip": false
+  },
+  "ophir_2253": {
+    "name": "Ophir",
+    "aka": [],
+    "who": "A son of Joktan in the line of Shem, listed in the Table of Nations.",
+    "key": [
+      "Ophir is named among the thirteen sons of Joktan, a descendant of Shem (Genesis 10).",
+      "Joktan's sons lived from Mesha toward Sephar, the hill country of the east (Genesis 10).",
+      "His name is repeated in the genealogy from Adam to Abraham (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "joktan_1686"
+      ],
+      "siblings": [
+        "almodad_191",
+        "sheleph_2602",
+        "hazarmaveth_1465",
+        "jerah_842",
+        "hadoram_1345",
+        "uzal_2911",
+        "diklah_1011",
+        "ebal_2227",
+        "abimael_39",
+        "sheba_2568",
+        "havilah_1462",
+        "jobab_1640"
+      ]
+    },
+    "skip": false
+  },
+  "oreb_2255": {
+    "name": "Oreb",
+    "aka": [],
+    "who": "A prince of Midian captured and killed by the Ephraimites during Gideon's victory over Midian.",
+    "key": [
+      "After Gideon's rout of Midian, the Ephraimites captured Oreb and killed him at the rock of Oreb (Judges 7).",
+      "They brought the heads of Oreb and Zeeb to Gideon across the Jordan (Judges 7).",
+      "Gideon calmed Ephraim's anger by noting God had given them Oreb and Zeeb (Judges 8).",
+      "Later psalmists and prophets recalled his defeat as a pattern of God's judgment (Psalm 83; Isaiah 10)."
+    ],
+    "skip": false
+  },
+  "oren_2256": {
+    "name": "Oren",
+    "aka": [],
+    "who": "A son of Jerahmeel, the firstborn of Hezron, in the tribe of Judah.",
+    "key": [
+      "Oren is listed among the sons of Jerahmeel in Judah's genealogy (1 Chronicles 2).",
+      "His brothers were Ram, Bunah, Ozem, and Ahijah, and his half-brother was Onam (1 Chronicles 2)."
+    ],
+    "family": {
+      "father": [
+        "jerahmeel_843"
+      ],
+      "siblings": [
+        "ram_2392",
+        "bunah_525",
+        "ozem_2261",
+        "ahijah_137",
+        "onam_2249"
+      ]
+    },
+    "skip": false
+  },
+  "orpah_2257": {
+    "name": "Orpah",
+    "aka": [],
+    "who": "A Moabite woman, daughter-in-law of Naomi, who returned to her own people instead of going to Bethlehem.",
+    "key": [
+      "Orpah married one of Naomi's sons while the family lived in Moab (Ruth 1).",
+      "After her husband died, she set out with Naomi and Ruth toward Judah (Ruth 1).",
+      "At Naomi's urging, Orpah kissed her goodbye and went back to her people and gods (Ruth 1)."
+    ],
+    "family": {
+      "spouses": [
+        "chilion_940"
+      ]
+    },
+    "skip": false
+  },
+  "ozem_2260": {
+    "name": "Ozem",
+    "aka": [],
+    "who": "The sixth son of Jesse and an older brother of King David.",
+    "key": [
+      "Ozem is named as Jesse's sixth son, with David listed as the seventh (1 Chronicles 2).",
+      "His brothers included Eliab, Abinadab, and Shimea, and his sisters were Zeruiah and Abigail (1 Chronicles 2)."
+    ],
+    "family": {
+      "father": [
+        "jesse_903"
+      ],
+      "siblings": [
+        "eliab_1075",
+        "abinadab_44",
+        "shammah_2700",
+        "nethaneel_2189",
+        "raddai_2387",
+        "david_994",
+        "zeruiah_3055",
+        "abigail_27"
+      ]
+    },
+    "skip": false
+  },
+  "ozem_2261": {
+    "name": "Ozem",
+    "aka": [],
+    "who": "A son of Jerahmeel, the firstborn of Hezron, in the tribe of Judah.",
+    "key": [
+      "Ozem is listed among the sons of Jerahmeel in Judah's genealogy (1 Chronicles 2).",
+      "His brothers were Ram, Bunah, Oren, and Ahijah, and his half-brother was Onam (1 Chronicles 2)."
+    ],
+    "family": {
+      "father": [
+        "jerahmeel_843"
+      ],
+      "siblings": [
+        "ram_2392",
+        "bunah_525",
+        "oren_2256",
+        "ahijah_137",
+        "onam_2249"
+      ]
+    },
+    "skip": false
+  },
+  "paruah_2278": {
+    "name": "Paruah",
+    "aka": [],
+    "who": "The father of Jehoshaphat, one of King Solomon's twelve district officers.",
+    "key": [
+      "Paruah is named as father of Jehoshaphat in the list of Solomon's officers (1 Kings 4).",
+      "His son Jehoshaphat supplied food for the king's household from Issachar (1 Kings 4)."
+    ],
+    "family": {
+      "children": [
+        "jehoshaphat_807"
+      ]
+    },
+    "skip": false
+  },
+  "pekahiah_2300": {
+    "name": "Pekahiah",
+    "aka": [],
+    "who": "A son of Menahem who reigned over Israel two years before his officer Pekah assassinated him.",
+    "key": [
+      "Pekahiah succeeded his father Menahem as king of Israel (2 Kings 15).",
+      "He reigned two years in Samaria and did evil, following Jeroboam's sins (2 Kings 15).",
+      "His captain Pekah son of Remaliah conspired with fifty Gileadites and killed him in the palace citadel (2 Kings 15)."
+    ],
+    "family": {
+      "father": [
+        "menahem_1996"
+      ]
+    },
+    "skip": false
+  },
+  "pelatiah_2307": {
+    "name": "Pelatiah",
+    "aka": [],
+    "who": "A son of Benaiah and leader in Jerusalem who died suddenly while Ezekiel prophesied against the city's wicked leaders.",
+    "key": [
+      "Ezekiel saw Pelatiah among twenty-five men at the temple gate giving wicked counsel (Ezekiel 11).",
+      "While Ezekiel prophesied, Pelatiah died, and Ezekiel fell on his face crying out to God (Ezekiel 11)."
+    ],
+    "family": {
+      "father": [
+        "benaiah_450"
+      ]
+    },
+    "skip": false
+  },
+  "peninnah_2313": {
+    "name": "Peninnah",
+    "aka": [],
+    "who": "A wife of Elkanah who had children and provoked his childless wife Hannah year after year.",
+    "key": [
+      "Elkanah had two wives, and Peninnah had children while Hannah had none (1 Samuel 1).",
+      "At the yearly sacrifice in Shiloh, Elkanah gave portions to Peninnah and her children (1 Samuel 1).",
+      "Peninnah provoked Hannah severely, so that Hannah wept and would not eat (1 Samuel 1)."
+    ],
+    "family": {
+      "spouses": [
+        "elkanah_1168"
+      ]
+    },
+    "skip": false
+  },
+  "pharaoh_2328": {
+    "name": "Pharaoh",
+    "aka": [],
+    "who": "The unnamed king of Egypt who took Sarai into his household when Abram went to Egypt during a famine.",
+    "key": [
+      "Pharaoh's officials praised Sarai, and she was taken into his house, believed to be Abram's sister (Genesis 12).",
+      "Pharaoh treated Abram well for her sake, giving him livestock and servants (Genesis 12).",
+      "The LORD struck Pharaoh's house with great plagues because of Sarai (Genesis 12).",
+      "Pharaoh rebuked Abram and sent him away with his wife and possessions (Genesis 12)."
+    ],
+    "skip": false
+  },
+  "pharaoh_2335": {
+    "name": "Pharaoh",
+    "aka": [],
+    "who": "The king of Egypt named among the rulers who must drink the cup of the LORD's wrath in Jeremiah's prophecy.",
+    "key": [
+      "Jeremiah's prophecy of the cup is dated to Jehoiakim's fourth year, Nebuchadnezzar's first (Jeremiah 25).",
+      "Pharaoh king of Egypt, his officials, and his people are named among the nations to drink it (Jeremiah 25).",
+      "In that same year Nebuchadnezzar defeated Pharaoh Neco's army at Carchemish (Jeremiah 46)."
+    ],
+    "skip": false
+  },
+  "philemon_2342": {
+    "name": "Philemon",
+    "aka": [],
+    "who": "A believer whose house hosted a church and to whom Paul wrote, appealing for his slave Onesimus.",
+    "key": [
+      "Paul greeted Philemon as a beloved fellow worker, with the church meeting in his house (Philemon 1).",
+      "Paul thanked God for Philemon's love and faith, which refreshed the hearts of the saints (Philemon 1).",
+      "Paul urged him to receive Onesimus back as a beloved brother, not merely a slave (Philemon 1).",
+      "Paul offered to repay any debt and asked Philemon to prepare him a guest room (Philemon 1)."
+    ],
+    "skip": false
+  },
+  "piram_2361": {
+    "name": "Piram",
+    "aka": [],
+    "who": "A king of Jarmuth who joined four other Amorite kings against Gibeon and was defeated by Joshua.",
+    "key": [
+      "Adoni-zedek of Jerusalem asked Piram to join an attack on Gibeon for making peace with Israel (Joshua 10).",
+      "Joshua defeated the five kings, who hid in a cave at Makkedah and were then executed (Joshua 10)."
+    ],
+    "skip": false
+  },
+  "pithon_2363": {
+    "name": "Pithon",
+    "aka": [],
+    "who": "A son of Micah and great-grandson of Jonathan, listed in the genealogy of King Saul's family.",
+    "key": [
+      "Pithon is listed first among the sons of Micah, son of Merib-baal, in Saul's line (1 Chronicles 8).",
+      "The genealogy of Saul's descendants is repeated, again naming Pithon (1 Chronicles 9)."
+    ],
+    "family": {
+      "father": [
+        "micah_2055"
+      ],
+      "siblings": [
+        "melech_1993",
+        "tahrea_2827",
+        "ahaz_119"
+      ]
+    },
+    "skip": false
+  },
+  "potiphar_2368": {
+    "name": "Potiphar",
+    "aka": [],
+    "who": "An Egyptian officer of Pharaoh, captain of the guard, who bought Joseph as a slave.",
+    "key": [
+      "Potiphar bought Joseph from the Ishmaelites who had brought him to Egypt (Genesis 39).",
+      "Seeing the LORD was with Joseph, he put him in charge of his whole household (Genesis 39).",
+      "The LORD blessed Potiphar's house for Joseph's sake (Genesis 39).",
+      "When his wife falsely accused Joseph, Potiphar put him in the king's prison (Genesis 39)."
+    ],
+    "skip": false
+  },
+  "puah_2372": {
+    "name": "Puah",
+    "aka": [],
+    "who": "A Hebrew midwife in Egypt who, with Shiphrah, feared God and refused Pharaoh's order to kill Hebrew baby boys.",
+    "key": [
+      "Pharaoh ordered Puah and Shiphrah to kill every Hebrew boy at birth (Exodus 1).",
+      "Fearing God, the midwives let the boys live and gave Pharaoh an explanation (Exodus 1).",
+      "God dealt well with the midwives and gave them families of their own (Exodus 1)."
+    ],
+    "skip": false
+  },
+  "publius_2374": {
+    "name": "Publius",
+    "aka": [],
+    "who": "The chief official of Malta, who welcomed Paul after his shipwreck and whose father Paul healed.",
+    "key": [
+      "Publius welcomed Paul and his companions and hosted them for three days (Acts 28).",
+      "Paul prayed for Publius's father, sick with fever and dysentery, and healed him (Acts 28).",
+      "Afterward the rest of the island's sick came and were cured (Acts 28)."
+    ],
+    "skip": false
+  },
+  "raamah_2380": {
+    "name": "Raamah",
+    "aka": [],
+    "who": "A son of Cush and grandson of Ham, whose sons Sheba and Dedan are listed in the Table of Nations.",
+    "key": [
+      "Raamah is named among the sons of Cush, son of Ham (Genesis 10).",
+      "He fathered Sheba and Dedan (Genesis 10).",
+      "Traders of Raamah later dealt in spices, precious stones, and gold with Tyre (Ezekiel 27)."
+    ],
+    "family": {
+      "father": [
+        "cush_962"
+      ],
+      "siblings": [
+        "seba_2481",
+        "havilah_1461",
+        "sabtah_2451",
+        "sabtecha_2452",
+        "nimrod_2206"
+      ],
+      "children": [
+        "sheba_2567",
+        "dedan_998"
+      ]
+    },
+    "skip": false
+  }
+}

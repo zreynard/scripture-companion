@@ -1,0 +1,760 @@
+{
+ "simon_2752": {
+  "name": "Simon",
+  "aka": [],
+  "who": "A magician in Samaria who believed Philip's preaching but tried to buy the power to give the Holy Spirit.",
+  "key": [
+   "Simon practiced magic in Samaria and amazed the people, who called him the great power of God (Acts 8).",
+   "Under Philip's preaching he believed, was baptized, and followed Philip, astonished at the signs (Acts 8).",
+   "He offered the apostles money for the power to give the Holy Spirit by laying on hands (Acts 8).",
+   "Peter sharply rebuked him and called him to repent, and Simon asked the apostles to pray for him (Acts 8)."
+  ],
+  "skip": false
+ },
+ "simon_2753": {
+  "name": "Simon",
+  "aka": [],
+  "who": "A tanner in Joppa whose house by the sea hosted the apostle Peter.",
+  "key": [
+   "Peter stayed many days in Joppa at the house of Simon the tanner (Acts 9).",
+   "An angel told Cornelius to send for Peter, who was lodging with Simon by the sea (Acts 10).",
+   "Cornelius's messengers arrived at Simon's gate and brought Peter back with them to Caesarea (Acts 10)."
+  ],
+  "skip": false
+ },
+ "sippai_2471": {
+  "name": "Sippai",
+  "aka": [
+   "Saph"
+  ],
+  "who": "A Philistine warrior descended from the giants, killed by Sibbecai in David's wars.",
+  "key": [
+   "Sippai, a descendant of the giants, fought for the Philistines against David's army (2 Samuel 21).",
+   "Sibbecai the Hushathite killed him at Gezer, and the Philistines were subdued (1 Chronicles 20)."
+  ],
+  "skip": false
+ },
+ "stephanas_2801": {
+  "name": "Stephanas",
+  "aka": [],
+  "who": "A believer in Corinth whose household were the first converts in Achaia and devoted themselves to serving the saints.",
+  "key": [
+   "Paul personally baptized the household of Stephanas in Corinth (1 Corinthians 1).",
+   "His household were the first converts in Achaia and devoted themselves to serving the saints (1 Corinthians 16).",
+   "Stephanas came to Paul with Fortunatus and Achaicus, refreshing him, and Paul urged the church to honor such workers (1 Corinthians 16)."
+  ],
+  "skip": false
+ },
+ "syntyche_2806": {
+  "name": "Syntyche",
+  "aka": [],
+  "who": "A Christian woman at Philippi who had labored beside Paul in the gospel.",
+  "key": [
+   "Paul urged Euodia and Syntyche to agree with each other in the Lord (Philippians 4).",
+   "He asked a true companion to help these women, who had contended at his side for the gospel (Philippians 4)."
+  ],
+  "skip": false
+ },
+ "tahpenes_2817": {
+  "name": "Tahpenes",
+  "aka": [],
+  "who": "A queen of Egypt, wife of the Pharaoh who sheltered Hadad the Edomite in Solomon's day.",
+  "key": [
+   "Pharaoh gave the sister of his wife Queen Tahpenes in marriage to Hadad the Edomite (1 Kings 11).",
+   "Tahpenes herself weaned Hadad's son Genubath, who grew up among Pharaoh's sons in the palace (1 Kings 11)."
+  ],
+  "family": {
+   "siblings": [
+    "sister_of_tahpenes_2759"
+   ],
+   "spouses": [
+    "pharaoh_2332"
+   ]
+  },
+  "skip": false
+ },
+ "talmai_2818": {
+  "name": "Talmai",
+  "aka": [],
+  "who": "One of the three sons of Anak, a giant clan living at Hebron when Israel entered Canaan.",
+  "key": [
+   "The twelve spies saw Ahiman, Sheshai, and Talmai, descendants of Anak, living at Hebron (Numbers 13).",
+   "Caleb drove the three sons of Anak, including Talmai, out of Hebron (Joshua 15).",
+   "The men of Judah struck down Sheshai, Ahiman, and Talmai at Hebron (Judges 1)."
+  ],
+  "family": {
+   "father": [
+    "anak_252"
+   ],
+   "siblings": [
+    "ahiman_146",
+    "sheshai_2671"
+   ]
+  },
+  "skip": false
+ },
+ "talmai_2819": {
+  "name": "Talmai",
+  "aka": [],
+  "who": "King of Geshur, father of David's wife Maacah and grandfather of Absalom.",
+  "key": [
+   "His daughter Maacah married David and bore Absalom at Hebron (2 Samuel 3).",
+   "After killing Amnon, Absalom fled to Talmai son of Ammihud, king of Geshur (2 Samuel 13).",
+   "Absalom stayed in Geshur three years before Joab brought him back to Jerusalem (2 Samuel 13)."
+  ],
+  "family": {
+   "father": [
+    "ammihud_226"
+   ],
+   "children": [
+    "maacah_1839"
+   ]
+  },
+  "skip": false
+ },
+ "tarshish_2828": {
+  "name": "Tarshish",
+  "aka": [],
+  "who": "A son of Javan and great-grandson of Noah through Japheth, listed in the Table of Nations.",
+  "key": [
+   "Tarshish is listed among the sons of Javan, from whom the coastland peoples spread (Genesis 10).",
+   "Chronicles repeats his name among the descendants of Japheth (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "javan_744"
+   ],
+   "siblings": [
+    "elishah_1154",
+    "kittim_1789",
+    "dodanim_1018"
+   ]
+  },
+  "skip": false
+ },
+ "teman_2838": {
+  "name": "Teman",
+  "aka": [],
+  "who": "Esau's grandson, the eldest son of Eliphaz, and a chief in Edom.",
+  "key": [
+   "Teman is listed first among the sons of Eliphaz, Esau's firstborn (Genesis 36).",
+   "He became one of the chiefs descended from Esau in the land of Edom (Genesis 36).",
+   "Chronicles repeats him among the sons of Eliphaz (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "eliphaz_1144"
+   ],
+   "siblings": [
+    "omar_2242",
+    "zepho_3042",
+    "gatam_1281",
+    "kenaz_1776",
+    "amalek_197"
+   ]
+  },
+  "skip": false
+ },
+ "teman_2839": {
+  "name": "Teman",
+  "aka": [],
+  "who": "A chief of Edom listed among Esau's chiefs by their clans and regions.",
+  "key": [
+   "Teman is named among the chiefs of Esau, listed by families and regions (Genesis 36).",
+   "Chronicles repeats him among the chiefs of Edom (1 Chronicles 1)."
+  ],
+  "skip": false
+ },
+ "tertullus_2844": {
+  "name": "Tertullus",
+  "aka": [],
+  "who": "A lawyer who brought the Jewish leaders' charges against Paul before Governor Felix.",
+  "key": [
+   "Tertullus came to Caesarea with the high priest Ananias and elders to accuse Paul (Acts 24).",
+   "He flattered Felix and charged Paul with stirring riots, leading the Nazarene sect, and profaning the temple (Acts 24).",
+   "Paul denied the charges, and Felix postponed his decision (Acts 24)."
+  ],
+  "skip": false
+ },
+ "theophilus_2849": {
+  "name": "Theophilus",
+  "aka": [],
+  "who": "The honored reader to whom Luke addressed both his Gospel and the book of Acts.",
+  "key": [
+   "Luke wrote an orderly account for most excellent Theophilus, so he might know the certainty of what he was taught (Luke 1).",
+   "Luke addressed Acts to Theophilus too, recalling his first book about all Jesus began to do and teach (Acts 1)."
+  ],
+  "skip": false
+ },
+ "timna_2860": {
+  "name": "Timna",
+  "aka": [],
+  "who": "The concubine of Esau's son Eliphaz and mother of Amalek, ancestor of the Amalekites.",
+  "key": [
+   "Timna, concubine of Esau's son Eliphaz, bore him Amalek (Genesis 36).",
+   "Chronicles also records Amalek as born to Eliphaz by Timna (1 Chronicles 1)."
+  ],
+  "family": {
+   "spouses": [
+    "eliphaz_1144"
+   ],
+   "children": [
+    "amalek_197"
+   ]
+  },
+  "skip": false
+ },
+ "tirhakah_2865": {
+  "name": "Tirhakah",
+  "aka": [],
+  "who": "King of Cush whose army marched out against the Assyrian king Sennacherib during Hezekiah's reign.",
+  "key": [
+   "Sennacherib heard that Tirhakah king of Cush had set out to fight against him (2 Kings 19).",
+   "Sennacherib then sent messengers again to threaten Hezekiah, and Hezekiah spread the letter before the LORD (Isaiah 37)."
+  ],
+  "skip": false
+ },
+ "togarmah_2875": {
+  "name": "Togarmah",
+  "aka": [],
+  "who": "A son of Gomer and descendant of Japheth, whose people became known for horses.",
+  "key": [
+   "Togarmah is listed among the sons of Gomer, son of Japheth (Genesis 10).",
+   "Beth-togarmah traded horses, war horses, and mules for the wares of Tyre (Ezekiel 27).",
+   "Beth-togarmah from the far north is named among the allies of Gog (Ezekiel 38)."
+  ],
+  "family": {
+   "father": [
+    "gomer_1328"
+   ],
+   "siblings": [
+    "ashkenaz_338",
+    "riphath_2443"
+   ]
+  },
+  "skip": false
+ },
+ "toi_2877": {
+  "name": "Toi",
+  "aka": [
+   "Tou"
+  ],
+  "who": "King of Hamath who sent gifts and congratulations to David after David defeated Hadadezer.",
+  "key": [
+   "Toi had been at war with Hadadezer king of Zobah, whom David defeated (2 Samuel 8).",
+   "He sent his son Joram to bless David, bringing articles of silver, gold, and bronze (2 Samuel 8).",
+   "David dedicated these gifts to the LORD with the silver and gold from other nations (2 Samuel 8)."
+  ],
+  "family": {
+   "children": [
+    "joram_1705"
+   ]
+  },
+  "skip": false
+ },
+ "tola_2879": {
+  "name": "Tola",
+  "aka": [],
+  "who": "A man of Issachar who judged Israel twenty-three years after the time of Abimelech.",
+  "key": [
+   "After Abimelech, Tola son of Puah rose to save Israel, living at Shamir in Ephraim's hill country (Judges 10).",
+   "He judged Israel twenty-three years, then died, was buried in Shamir, and Jair followed him (Judges 10)."
+  ],
+  "family": {
+   "father": [
+    "puah_2373"
+   ]
+  },
+  "skip": false
+ },
+ "trophimus_2880": {
+  "name": "Trophimus",
+  "aka": [],
+  "who": "A Gentile believer from Ephesus who traveled with Paul.",
+  "key": [
+   "Trophimus from the province of Asia accompanied Paul on his journey toward Jerusalem (Acts 20).",
+   "Jews who had seen him with Paul assumed Paul brought him into the temple, sparking a riot (Acts 21).",
+   "Paul later wrote that he had left Trophimus sick at Miletus (2 Timothy 4)."
+  ],
+  "skip": false
+ },
+ "uzzi_2917": {
+  "name": "Uzzi",
+  "aka": [],
+  "who": "A priest descended from Aaron, listed in the high-priestly line and among Ezra's ancestors.",
+  "key": [
+   "Uzzi son of Bukki is listed in the line of Aaron's son Eleazar, the father of Zerahiah (1 Chronicles 6).",
+   "Ezra's genealogy traces his priestly descent back through Uzzi to Aaron (Ezra 7)."
+  ],
+  "family": {
+   "father": [
+    "bukki_523"
+   ],
+   "children": [
+    "zerahiah_3047"
+   ]
+  },
+  "skip": false
+ },
+ "uzziel_2933": {
+  "name": "Uzziel",
+  "aka": [],
+  "who": "A Levite of Jeduthun's family who helped cleanse the temple under King Hezekiah.",
+  "key": [
+   "Uzziel of the Jeduthunites was among the Levites who rose to serve when Hezekiah reopened the temple (2 Chronicles 29).",
+   "These Levites consecrated themselves and cleansed the house of the LORD as the king commanded (2 Chronicles 29)."
+  ],
+  "skip": false
+ },
+ "zacchaeus_2961": {
+  "name": "Zacchaeus",
+  "aka": [],
+  "who": "A rich chief tax collector in Jericho who welcomed Jesus into his home and repented.",
+  "key": [
+   "Being short, Zacchaeus climbed a sycamore tree to see Jesus passing through Jericho (Luke 19).",
+   "Jesus called him down and stayed at his house, while the crowd grumbled (Luke 19).",
+   "Zacchaeus pledged half his goods to the poor and fourfold repayment to anyone he had defrauded (Luke 19).",
+   "Jesus declared salvation had come to his house, for he came to seek and save the lost (Luke 19)."
+  ],
+  "skip": false
+ },
+ "zadok_2975": {
+  "name": "Zadok",
+  "aka": [],
+  "who": "A later priest in Aaron's high-priestly line, son of Ahitub and father of Shallum, and an ancestor of Ezra.",
+  "key": [
+   "Zadok son of Ahitub is listed in the high-priestly line as the father of Shallum (1 Chronicles 6).",
+   "His descendant Azariah served as chief official of God's temple after the exile (1 Chronicles 9).",
+   "Ezra's genealogy traces his priestly descent through Zadok (Ezra 7).",
+   "His descendant Seraiah is named as chief official of the house of God in Jerusalem (Nehemiah 11)."
+  ],
+  "family": {
+   "father": [
+    "ahitub_165"
+   ],
+   "children": [
+    "shallum_2519"
+   ]
+  },
+  "skip": false
+ },
+ "zebadiah_2992": {
+  "name": "Zebadiah",
+  "aka": [],
+  "who": "The son of Asahel, who succeeded his father as commander of David's army division for the fourth month.",
+  "key": [
+   "His father Asahel, Joab's brother, commanded the division serving in the fourth month (1 Chronicles 27).",
+   "Zebadiah became commander of that division of 24,000 men after him (1 Chronicles 27)."
+  ],
+  "family": {
+   "father": [
+    "asahel_320"
+   ]
+  },
+  "skip": false
+ },
+ "zebadiah_2994": {
+  "name": "Zebadiah",
+  "aka": [],
+  "who": "Son of Ishmael and ruler of the house of Judah, appointed over the king's matters under Jehoshaphat.",
+  "key": [
+   "Jehoshaphat appointed judges in Jerusalem to decide disputes in the fear of the LORD (2 Chronicles 19).",
+   "Zebadiah was set over all matters of the king, while Amariah the chief priest handled the LORD's matters (2 Chronicles 19)."
+  ],
+  "family": {
+   "father": [
+    "ishmael_633"
+   ]
+  },
+  "skip": false
+ },
+ "zebadiah_2996": {
+  "name": "Zebadiah",
+  "aka": [],
+  "who": "A priest of the family of Immer who had married a foreign wife after the return from exile.",
+  "key": [
+   "Zebadiah is listed among the descendants of Immer who had married foreign women (Ezra 10).",
+   "Under Ezra's reform, such men agreed to separate from their foreign wives (Ezra 10)."
+  ],
+  "skip": false
+ },
+ "zechariah_3012": {
+  "name": "Zechariah",
+  "aka": [],
+  "who": "A man in Uzziah's day who instructed the king in the fear of God.",
+  "key": [
+   "Uzziah sought God during the days of Zechariah, who instructed him in the fear of God (2 Chronicles 26).",
+   "As long as Uzziah sought the LORD, God gave him success (2 Chronicles 26)."
+  ],
+  "skip": false
+ },
+ "zechariah_3017": {
+  "name": "Zechariah",
+  "aka": [],
+  "who": "A family head of the descendants of Parosh who returned from Babylon with Ezra.",
+  "key": [
+   "Zechariah of the descendants of Parosh was registered with 150 men in Ezra's company (Ezra 8).",
+   "The group traveled from Babylon to Jerusalem under God's protection (Ezra 8)."
+  ],
+  "skip": false
+ },
+ "zechariah_3018": {
+  "name": "Zechariah",
+  "aka": [],
+  "who": "The son of Bebai, a family head who returned from Babylon with Ezra.",
+  "key": [
+   "Zechariah son of Bebai was registered with 28 men in Ezra's company (Ezra 8).",
+   "The group traveled from Babylon to Jerusalem under God's protection (Ezra 8)."
+  ],
+  "family": {
+   "father": [
+    "bebai_421"
+   ]
+  },
+  "skip": false
+ },
+ "zechariah_3019": {
+  "name": "Zechariah",
+  "aka": [],
+  "who": "One of the leaders Ezra sent to recruit Levites for the journey from Babylon to Jerusalem.",
+  "key": [
+   "Finding no Levites in the camp at the Ahava canal, Ezra summoned Zechariah and other leaders (Ezra 8).",
+   "They were sent to Iddo at Casiphia, and Levites and temple servants were brought to join the return (Ezra 8)."
+  ],
+  "skip": false
+ },
+ "zechariah_3020": {
+  "name": "Zechariah",
+  "aka": [],
+  "who": "A descendant of Elam who had married a foreign wife after the return from exile.",
+  "key": [
+   "Zechariah is listed among the descendants of Elam who had married foreign women (Ezra 10).",
+   "Under Ezra's reform, such men agreed to separate from their foreign wives (Ezra 10)."
+  ],
+  "skip": false
+ },
+ "zedekiah_3031": {
+  "name": "Zedekiah",
+  "aka": [],
+  "who": "A false prophet among the exiles in Babylon, son of Maaseiah, condemned by Jeremiah.",
+  "key": [
+   "The LORD said Zedekiah and Ahab son of Kolaiah were prophesying lies in his name (Jeremiah 29).",
+   "God announced Nebuchadnezzar would kill them, and their fate would become a curse among the exiles (Jeremiah 29)."
+  ],
+  "family": {
+   "father": [
+    "maaseiah_1867"
+   ]
+  },
+  "skip": false
+ },
+ "zeeb_3033": {
+  "name": "Zeeb",
+  "aka": [],
+  "who": "One of the two Midianite princes captured and killed by the men of Ephraim during Gideon's victory.",
+  "key": [
+   "The Ephraimites captured and killed Zeeb at the winepress of Zeeb and brought his head to Gideon (Judges 7).",
+   "Gideon calmed Ephraim's anger, saying God had given Oreb and Zeeb into their hands (Judges 8).",
+   "A psalm asks God to make Israel's enemies like Oreb and Zeeb (Psalm 83)."
+  ],
+  "skip": false
+ },
+ "zephaniah_3040": {
+  "name": "Zephaniah",
+  "aka": [],
+  "who": "A prophet in the days of King Josiah who warned of the day of the LORD.",
+  "key": [
+   "Zephaniah son of Cushi, a descendant of Hezekiah, prophesied during Josiah's reign (Zephaniah 1).",
+   "He announced the coming day of the LORD against Judah's idolatry and complacency (Zephaniah 1).",
+   "He called the humble to seek the LORD and pronounced judgment on surrounding nations (Zephaniah 2).",
+   "He promised a purified remnant over whom the LORD would rejoice with singing (Zephaniah 3)."
+  ],
+  "family": {
+   "father": [
+    "cushi_966"
+   ]
+  },
+  "skip": false
+ },
+ "zepho_3042": {
+  "name": "Zepho",
+  "aka": [],
+  "who": "Esau's grandson, a son of Eliphaz, and a chief in Edom.",
+  "key": [
+   "Zepho is listed among the sons of Eliphaz, Esau's firstborn (Genesis 36).",
+   "He became one of the chiefs descended from Esau in Edom (Genesis 36)."
+  ],
+  "family": {
+   "father": [
+    "eliphaz_1144"
+   ],
+   "siblings": [
+    "teman_2838",
+    "omar_2242",
+    "gatam_1281",
+    "kenaz_1776",
+    "amalek_197"
+   ]
+  },
+  "skip": false
+ },
+ "zerah_3043": {
+  "name": "Zerah",
+  "aka": [],
+  "who": "Esau's grandson through Reuel and a chief in Edom.",
+  "key": [
+   "Zerah is listed among the sons of Reuel, Esau's son by Basemath (Genesis 36).",
+   "He became one of the chiefs descended from Reuel in the land of Edom (Genesis 36)."
+  ],
+  "family": {
+   "father": [
+    "reuel_2430"
+   ],
+   "siblings": [
+    "nahath_2146",
+    "shammah_2538",
+    "mizzah_2101"
+   ]
+  },
+  "skip": false
+ },
+ "zerah_3044": {
+  "name": "Zerah",
+  "aka": [],
+  "who": "A man of Bozrah whose son Jobab became king of Edom.",
+  "key": [
+   "When Bela died, Jobab son of Zerah from Bozrah reigned as king of Edom (Genesis 36).",
+   "Chronicles repeats the record of Jobab son of Zerah among Edom's kings (1 Chronicles 1)."
+  ],
+  "family": {
+   "children": [
+    "jobab_1641"
+   ]
+  },
+  "skip": false
+ },
+ "zerah_3046": {
+  "name": "Zerah",
+  "aka": [],
+  "who": "A Cushite commander whose vast army was defeated by King Asa of Judah.",
+  "key": [
+   "Zerah the Cushite marched against Judah with a huge army and chariots, reaching Mareshah (2 Chronicles 14).",
+   "Asa cried to the LORD for help, and the LORD struck down the Cushites, who fled toward Gerar (2 Chronicles 14)."
+  ],
+  "skip": false
+ },
+ "zerah_3102": {
+  "name": "Zerah",
+  "aka": [
+   "Zohar"
+  ],
+  "who": "A son of Simeon who went down to Egypt with Jacob and founded the Zerahite clan.",
+  "key": [
+   "Listed as Zohar, he went down to Egypt with Jacob among the sons of Simeon (Genesis 46).",
+   "He is named among the clans of Simeon in the genealogy of Moses and Aaron (Exodus 6).",
+   "The Zerahite clan of Simeon descended from him (Numbers 26)."
+  ],
+  "family": {
+   "father": [
+    "simeon_2741"
+   ],
+   "siblings": [
+    "jemuel_838",
+    "jamin_720",
+    "ohad_2239",
+    "jachin_679",
+    "shaul_2562"
+   ]
+  },
+  "skip": false
+ },
+ "zeresh_3049": {
+  "name": "Zeresh",
+  "aka": [],
+  "who": "The wife of Haman, who first urged him to build a gallows for Mordecai.",
+  "key": [
+   "Zeresh and Haman's friends advised building a gallows fifty cubits high to hang Mordecai (Esther 5).",
+   "After Haman's humiliation, she warned that he would surely fall before Mordecai the Jew (Esther 6)."
+  ],
+  "family": {
+   "spouses": [
+    "haman_1360"
+   ]
+  },
+  "skip": false
+ },
+ "zeror_3052": {
+  "name": "Zeror",
+  "aka": [],
+  "who": "A Benjaminite ancestor of King Saul, son of Becorath and father of Abiel.",
+  "key": [
+   "Zeror son of Becorath is named in the Benjaminite family line of Kish (1 Samuel 9).",
+   "His grandson Kish became the father of Saul, Israel's first king (1 Samuel 9)."
+  ],
+  "family": {
+   "father": [
+    "bechorath_425"
+   ],
+   "children": [
+    "abiel_23"
+   ]
+  },
+  "skip": false
+ },
+ "zeruah_3053": {
+  "name": "Zeruah",
+  "aka": [],
+  "who": "A widow of Ephraim, the mother of Jeroboam, the first king of the northern kingdom.",
+  "key": [
+   "Zeruah, a widow, was the mother of Jeroboam son of Nebat, an Ephraimite from Zeredah (1 Kings 11).",
+   "Her son rebelled against Solomon and later became king over the ten northern tribes (1 Kings 12)."
+  ],
+  "family": {
+   "spouses": [
+    "nebat_2165"
+   ],
+   "children": [
+    "jeroboam_872"
+   ]
+  },
+  "skip": false
+ },
+ "zetham_3056": {
+  "name": "Zetham",
+  "aka": [],
+  "who": "A Gershonite Levite of Ladan's family who helped oversee the temple treasuries.",
+  "key": [
+   "Zetham is listed among the sons of Ladan when David organized the Levites (1 Chronicles 23).",
+   "Zetham and his brother Joel were in charge of the treasuries of the house of the LORD (1 Chronicles 26)."
+  ],
+  "family": {
+   "siblings": [
+    "joel_1655"
+   ]
+  },
+  "skip": false
+ },
+ "zibeon_3061": {
+  "name": "Zibeon",
+  "aka": [],
+  "who": "A Hivite, grandfather of Esau's wife Oholibamah through his son Anah.",
+  "key": [
+   "Esau married Oholibamah, daughter of Anah and granddaughter of Zibeon the Hivite (Genesis 36).",
+   "Oholibamah bore Esau three sons, Jeush, Jalam, and Korah (Genesis 36)."
+  ],
+  "family": {
+   "children": [
+    "anah_247"
+   ]
+  },
+  "skip": false
+ },
+ "zichri_3065": {
+  "name": "Zichri",
+  "aka": [],
+  "who": "A Levite of the Kohathite clan, son of Izhar and brother of Korah.",
+  "key": [
+   "Zichri is listed among the sons of Izhar, a son of Kohath, in Levi's genealogy (Exodus 6).",
+   "His brother Korah later led a rebellion against Moses and Aaron (Numbers 16)."
+  ],
+  "family": {
+   "father": [
+    "izhar_658"
+   ],
+   "siblings": [
+    "korah_1795",
+    "nepheg_2178"
+   ]
+  },
+  "skip": false
+ },
+ "zimri_3087": {
+  "name": "Zimri",
+  "aka": [],
+  "who": "A Simeonite leader killed by Phinehas for flagrant sin with a Midianite woman during Israel's apostasy at Peor.",
+  "key": [
+   "Zimri brought the Midianite woman Cozbi into his family in the sight of Moses and the weeping assembly (Numbers 25).",
+   "Phinehas killed both Zimri and Cozbi, and the plague on Israel stopped (Numbers 25)."
+  ],
+  "family": {
+   "father": [
+    "salu_2465"
+   ]
+  },
+  "skip": false
+ },
+ "ziph_3091": {
+  "name": "Ziph",
+  "aka": [],
+  "who": "A man of Judah listed as a son of Jehallelel in the tribe's genealogy.",
+  "key": [
+   "Ziph is named first among the sons of Jehallelel, with Ziphah, Tiria, and Asarel (1 Chronicles 4).",
+   "Nothing more is recorded of him beyond Judah's genealogy (1 Chronicles 4)."
+  ],
+  "family": {
+   "father": [
+    "jehaleleel_764"
+   ],
+   "siblings": [
+    "ziphah_3092",
+    "tiria_2867",
+    "asareel_333"
+   ]
+  },
+  "skip": false
+ },
+ "zipporah_3095": {
+  "name": "Zipporah",
+  "aka": [],
+  "who": "The Midianite wife of Moses, daughter of the priest Reuel (Jethro), and mother of Gershom and Eliezer.",
+  "key": [
+   "After Moses defended Reuel's daughters at a well in Midian, Reuel gave him Zipporah as his wife (Exodus 2).",
+   "She bore Moses a son, Gershom (Exodus 2).",
+   "On the way to Egypt, Zipporah circumcised her son when the LORD sought to put Moses to death (Exodus 4).",
+   "Jethro brought Zipporah and her two sons to Moses in the wilderness near the mountain of God (Exodus 18)."
+  ],
+  "family": {
+   "father": [
+    "jethro_2431"
+   ],
+   "siblings": [
+    "hobab_1537"
+   ],
+   "spouses": [
+    "moses_2108"
+   ],
+   "children": [
+    "gershom_1302",
+    "eliezer_1114"
+   ]
+  },
+  "skip": false
+ },
+ "zohar_3101": {
+  "name": "Zohar",
+  "aka": [],
+  "who": "A Hittite, father of Ephron, who sold Abraham the cave of Machpelah.",
+  "key": [
+   "Abraham asked the Hittites to approach Ephron son of Zohar to sell him the cave of Machpelah (Genesis 23).",
+   "Isaac and Ishmael buried Abraham in that cave, in the field of Ephron son of Zohar (Genesis 25)."
+  ],
+  "family": {
+   "children": [
+    "ephron_1208"
+   ]
+  },
+  "skip": false
+ },
+ "zophar_3105": {
+  "name": "Zophar",
+  "aka": [],
+  "who": "Zophar the Naamathite, one of Job's three friends who came to comfort him and then accused him.",
+  "key": [
+   "Zophar came with Eliphaz and Bildad to comfort Job and sat silently with him seven days (Job 2).",
+   "He rebuked Job's claims of innocence, saying God exacts less than Job's guilt deserves (Job 11).",
+   "He insisted that the triumph of the wicked is brief and ends in God's anger (Job 20).",
+   "God rebuked the three friends, and Job prayed for them after they offered burnt offerings (Job 42)."
+  ],
+  "skip": false
+ }
+}

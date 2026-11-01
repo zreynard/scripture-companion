@@ -1,0 +1,602 @@
+{
+  "abda_4": {
+    "name": "Abda",
+    "aka": [],
+    "who": "The father of Adoniram, the official who oversaw forced labor in Solomon's kingdom.",
+    "key": [
+      "Abda is named as the father of Adoniram in the list of Solomon's high officials (1 Kings 4).",
+      "His son Adoniram was placed in charge of the forced labor for Solomon's building projects (1 Kings 4)."
+    ],
+    "family": {"children": ["adoniram_102"]},
+    "skip": false
+  },
+  "abdon_10": {
+    "name": "Abdon",
+    "aka": [],
+    "who": "A minor judge of Israel from Pirathon in Ephraim, son of Hillel, who judged Israel eight years.",
+    "key": [
+      "After Elon, Abdon son of Hillel the Pirathonite judged Israel (Judges 12).",
+      "He had forty sons and thirty grandsons who rode on seventy donkeys (Judges 12).",
+      "After judging Israel eight years, he died and was buried at Pirathon in Ephraim (Judges 12)."
+    ],
+    "family": {"father": ["hillel_1530"]},
+    "skip": false
+  },
+  "abida_21": {
+    "name": "Abida",
+    "aka": [],
+    "who": "A son of Midian and grandson of Abraham through Keturah.",
+    "key": [
+      "Abida is listed among the sons of Midian, Abraham's son by Keturah (Genesis 25).",
+      "Abraham sent Keturah's descendants away eastward, giving them gifts, while Isaac received his inheritance (Genesis 25).",
+      "Chronicles repeats Abida's name among Keturah's descendants (1 Chronicles 1)."
+    ],
+    "family": {"father": ["midian_2075"], "siblings": ["ephah_1197", "epher_1201", "henoch_1402", "eldaah_1057"]},
+    "skip": false
+  },
+  "abiezer_763": {
+    "name": "Abiezer",
+    "aka": ["Iezer"],
+    "who": "A descendant of Manasseh through Gilead whose clan, the Abiezrites, produced the judge Gideon.",
+    "key": [
+      "Iezer, ancestor of the clan of the Iezerites, is listed among the sons of Gilead (Numbers 26).",
+      "The clan of Abiezer received an allotment of land within the tribe of Manasseh (Joshua 17).",
+      "Gideon, son of Joash the Abiezrite, lived at Ophrah and rallied the Abiezrites to follow him (Judges 6).",
+      "Gideon calmed angry Ephraim by saying their gleanings outdid the vintage of Abiezer (Judges 8)."
+    ],
+    "family": {"father": ["gilead_1317"], "siblings": ["helek_1481", "asriel_348", "shechem_2589", "shemida_2650", "hepher_1496"]},
+    "skip": false
+  },
+  "abigail_27": {
+    "name": "Abigail",
+    "aka": ["Abigal"],
+    "who": "A sister of David and Zeruiah, and the mother of Amasa, commander of Absalom's army.",
+    "key": [
+      "She and Zeruiah are listed as sisters of David and his brothers (1 Chronicles 2).",
+      "She married Jether, also called Ithra, and bore him a son, Amasa (1 Chronicles 2).",
+      "Her son Amasa commanded Absalom's army during his revolt against David (2 Samuel 17)."
+    ],
+    "family": {"father": ["nahash_2138"], "siblings": ["zeruiah_3055", "david_994"], "spouses": ["jether_907"], "children": ["amasa_207"]},
+    "skip": false
+  },
+  "abihail_31": {
+    "name": "Abihail",
+    "aka": [],
+    "who": "A daughter of Eliab, David's eldest brother, named in the family line of King Rehoboam's wife Mahalath.",
+    "key": [
+      "Abihail was the daughter of Eliab son of Jesse, making her David's niece (2 Chronicles 11).",
+      "She is named in the parentage of Mahalath, who married Rehoboam and bore him three sons (2 Chronicles 11)."
+    ],
+    "family": {"father": ["eliab_1075"]},
+    "skip": false
+  },
+  "abijah_35": {
+    "name": "Abijah",
+    "aka": [],
+    "who": "A young son of King Jeroboam of Israel whose illness and death fulfilled the prophet Ahijah's word.",
+    "key": [
+      "When Abijah fell sick, Jeroboam sent his wife in disguise to the prophet Ahijah at Shiloh (1 Kings 14).",
+      "Ahijah said the child would die, the only one of Jeroboam's house to be properly buried (1 Kings 14).",
+      "Ahijah said something pleasing to the LORD was found in him alone of Jeroboam's house (1 Kings 14).",
+      "The child died as his mother entered the house in Tirzah, and all Israel mourned him (1 Kings 14)."
+    ],
+    "family": {"father": ["jeroboam_872"], "siblings": ["nadab_2129"]},
+    "skip": false
+  },
+  "abijah_36": {
+    "name": "Abijah",
+    "aka": [],
+    "who": "A priest of David's time whose family formed the eighth priestly division, to which Zechariah later belonged.",
+    "key": [
+      "When David organized the priests by lot, the eighth lot fell to Abijah (1 Chronicles 24).",
+      "Centuries later, Zechariah, father of John the Baptist, served as a priest of the division of Abijah (Luke 1)."
+    ],
+    "skip": false
+  },
+  "abinadab_43": {
+    "name": "Abinadab",
+    "aka": [],
+    "who": "A man of Kiriath-jearim who kept the ark of the covenant in his house for many years.",
+    "key": [
+      "After the Philistines returned the ark, it was brought to Abinadab's house on the hill (1 Samuel 7).",
+      "His son Eleazar was consecrated to keep the ark, which stayed there twenty years (1 Samuel 7).",
+      "David moved the ark from Abinadab's house on a new cart driven by his sons Uzzah and Ahio (2 Samuel 6).",
+      "Chronicles also records the ark being carried out from Abinadab's house (1 Chronicles 13)."
+    ],
+    "family": {"children": ["eleazar_1063", "uzzah_2916", "ahio_154"]},
+    "skip": false
+  },
+  "abinoam_46": {
+    "name": "Abinoam",
+    "aka": [],
+    "who": "The father of Barak, the commander from Kedesh in Naphtali who fought Sisera alongside Deborah.",
+    "key": [
+      "Deborah summoned his son Barak from Kedesh-naphtali to lead Israel against Sisera (Judges 4).",
+      "The Song of Deborah calls on Barak son of Abinoam to lead away his captives (Judges 5)."
+    ],
+    "family": {"children": ["barak_401"]},
+    "skip": false
+  },
+  "achsah_68": {
+    "name": "Achsah",
+    "aka": [],
+    "who": "The daughter of Caleb, given in marriage to Othniel after he captured Kiriath-sepher (Debir).",
+    "key": [
+      "Caleb promised his daughter Achsah to the man who captured Kiriath-sepher (Joshua 15).",
+      "Othniel son of Kenaz, Caleb's brother, captured the city and married Achsah (Joshua 15).",
+      "She asked Caleb for springs of water, and he gave her the upper and lower springs (Joshua 15).",
+      "The account of her marriage and request for springs is repeated after Joshua's death (Judges 1)."
+    ],
+    "family": {"father": ["caleb_537"], "siblings": ["iru_615", "elah_1047", "naam_2117"], "spouses": ["othniel_2259"]},
+    "skip": false
+  },
+  "adaiah_72": {
+    "name": "Adaiah",
+    "aka": [],
+    "who": "A priest descended from Pashhur, son of Jeroham, who lived in Jerusalem after the return from exile.",
+    "key": [
+      "Adaiah son of Jeroham is listed among the priests who settled in Jerusalem after the exile (1 Chronicles 9).",
+      "Nehemiah's list of Jerusalem's residents also names him among the priests serving there (Nehemiah 11)."
+    ],
+    "family": {"father": ["jeroham_877"]},
+    "skip": false
+  },
+  "adoni-bezek_96": {
+    "name": "Adoni-bezek",
+    "aka": [],
+    "who": "A Canaanite king at Bezek defeated by Judah and Simeon after Joshua's death.",
+    "key": [
+      "The men of Judah and Simeon defeated Adoni-bezek's forces at Bezek and captured him (Judges 1).",
+      "They cut off his thumbs and big toes, as he had done to seventy kings (Judges 1).",
+      "He acknowledged that God had repaid him, and he died after being brought to Jerusalem (Judges 1)."
+    ],
+    "skip": false
+  },
+  "adoni-zedek_101": {
+    "name": "Adoni-zedek",
+    "aka": [],
+    "who": "The Amorite king of Jerusalem who led a coalition of five kings against Gibeon and Joshua.",
+    "key": [
+      "Alarmed that Gibeon had made peace with Israel, he called four Amorite kings to attack Gibeon (Joshua 10).",
+      "Joshua defeated the coalition, and the LORD threw down great hailstones on the fleeing armies (Joshua 10).",
+      "The five kings hid in a cave at Makkedah, and Joshua later put them to death (Joshua 10)."
+    ],
+    "skip": false
+  },
+  "aeneas_106": {
+    "name": "Aeneas",
+    "aka": [],
+    "who": "A paralyzed man at Lydda, bedridden for eight years, whom Peter healed in the name of Jesus.",
+    "key": [
+      "Peter found Aeneas at Lydda, paralyzed and bedridden for eight years (Acts 9).",
+      "Peter told him Jesus Christ healed him, and Aeneas rose immediately (Acts 9).",
+      "All the residents of Lydda and Sharon saw him and turned to the Lord (Acts 9)."
+    ],
+    "skip": false
+  },
+  "agabus_107": {
+    "name": "Agabus",
+    "aka": [],
+    "who": "A Christian prophet from Judea who foretold a great famine and Paul's arrest in Jerusalem.",
+    "key": [
+      "Agabus came to Antioch and predicted by the Spirit a great famine over the world (Acts 11).",
+      "The famine came under Claudius, and the disciples sent relief to the believers in Judea (Acts 11).",
+      "At Caesarea he bound his own hands and feet with Paul's belt, foretelling Paul's arrest (Acts 21)."
+    ],
+    "skip": false
+  },
+  "agur_112": {
+    "name": "Agur",
+    "aka": [],
+    "who": "The son of Jakeh and author of the wise sayings collected in Proverbs 30.",
+    "key": [
+      "The sayings of Agur son of Jakeh open with his confession of limited understanding (Proverbs 30).",
+      "He affirms that every word of God proves true and must not be added to (Proverbs 30).",
+      "He asks God to give him neither poverty nor riches, only his daily bread (Proverbs 30).",
+      "He offers numerical sayings drawn from observing people, animals, and the natural world (Proverbs 30)."
+    ],
+    "family": {"father": ["jakeh_712"]},
+    "skip": false
+  },
+  "ahab_114": {
+    "name": "Ahab",
+    "aka": [],
+    "who": "A false prophet among the exiles in Babylon, son of Kolaiah, whom Jeremiah condemned for prophesying lies.",
+    "key": [
+      "Jeremiah declared that Ahab and Zedekiah were prophesying lies to the exiles in the LORD's name (Jeremiah 29).",
+      "The LORD said Nebuchadnezzar would kill them, and their fate would become a curse among the exiles (Jeremiah 29).",
+      "They were condemned for adultery with their neighbors' wives and for speaking words the LORD never gave (Jeremiah 29)."
+    ],
+    "family": {"father": ["kolaiah_1792"]},
+    "skip": false
+  },
+  "ahasbai_116": {
+    "name": "Ahasbai",
+    "aka": [],
+    "who": "A man of Maacah whose son Eliphelet was one of David's mighty men.",
+    "key": [
+      "Ahasbai is named as the father of Eliphelet in the list of David's mighty men (2 Samuel 23).",
+      "His son Eliphelet belonged to David's elite warriors known as the thirty (2 Samuel 23)."
+    ],
+    "family": {"children": ["eliphelet_1147"]},
+    "skip": false
+  },
+  "ahaz_119": {
+    "name": "Ahaz",
+    "aka": [],
+    "who": "A descendant of King Saul through Jonathan and Mephibosheth, listed in the genealogy of Benjamin.",
+    "key": [
+      "Ahaz was a son of Micah, the son of Merib-baal, Jonathan's son (1 Chronicles 8).",
+      "He fathered Jehoaddah, continuing Saul's family line through later generations (1 Chronicles 8).",
+      "The genealogy is repeated with his son named Jarah (1 Chronicles 9)."
+    ],
+    "family": {"father": ["micah_2055"], "siblings": ["pithon_2363", "melech_1993", "tahrea_2827"], "children": ["jarah_782"]},
+    "skip": false
+  },
+  "ahijah_136": {
+    "name": "Ahijah",
+    "aka": [],
+    "who": "A man of the tribe of Issachar, father of Baasha, who seized the throne of Israel.",
+    "key": [
+      "His son Baasha of Issachar killed King Nadab and struck down Jeroboam's whole house (1 Kings 15).",
+      "Baasha son of Ahijah reigned over Israel twenty-four years in Tirzah (1 Kings 15).",
+      "Elijah warned that Ahab's house would end like the house of Baasha son of Ahijah (1 Kings 21).",
+      "Jehu's anointing repeated that Ahab's house would become like Baasha's (2 Kings 9)."
+    ],
+    "family": {"children": ["baasha_589"]},
+    "skip": false
+  },
+  "ahijah_137": {
+    "name": "Ahijah",
+    "aka": [],
+    "who": "A son of Jerahmeel in the tribe of Judah, listed in the genealogy of Hezron's descendants.",
+    "key": [
+      "Ahijah is listed among the sons of Jerahmeel, the firstborn of Hezron (1 Chronicles 2).",
+      "Through Hezron and Perez, his family belonged to the tribe of Judah (1 Chronicles 2)."
+    ],
+    "family": {"father": ["jerahmeel_843"], "siblings": ["ram_2392", "bunah_525", "oren_2256", "ozem_2261"]},
+    "skip": false
+  },
+  "ahiman_146": {
+    "name": "Ahiman",
+    "aka": [],
+    "who": "One of the three sons of Anak, the giant Anakim living at Hebron when Israel entered Canaan.",
+    "key": [
+      "The twelve spies saw Ahiman, Sheshai, and Talmai, the descendants of Anak, at Hebron (Numbers 13).",
+      "Caleb drove out the three sons of Anak from Hebron (Joshua 15).",
+      "The men of Judah defeated Sheshai, Ahiman, and Talmai at Hebron (Judges 1)."
+    ],
+    "family": {"father": ["anak_252"], "siblings": ["sheshai_2671", "talmai_2818"]},
+    "skip": false
+  },
+  "ahio_154": {
+    "name": "Ahio",
+    "aka": [],
+    "who": "A son of Abinadab who helped drive the cart carrying the ark when David first tried to move it.",
+    "key": [
+      "Ahio walked before the ark while he and Uzzah drove the new cart from Abinadab's house (2 Samuel 6).",
+      "When the oxen stumbled, Uzzah took hold of the ark, and God struck him down (2 Samuel 6).",
+      "Chronicles also records Uzzah and Ahio driving the cart (1 Chronicles 13)."
+    ],
+    "family": {"father": ["abinadab_43"], "siblings": ["eleazar_1063", "uzzah_2916"]},
+    "skip": false
+  },
+  "ahisamach_159": {
+    "name": "Ahisamach",
+    "aka": [],
+    "who": "A man of the tribe of Dan, father of the craftsman Oholiab, who helped build the tabernacle.",
+    "key": [
+      "The LORD appointed his son Oholiab of Dan to work with Bezalel on the tabernacle (Exodus 31).",
+      "Moses announced that God had given Oholiab son of Ahisamach the ability to teach others (Exodus 35).",
+      "His son served as engraver, designer, and embroiderer for the tabernacle (Exodus 38)."
+    ],
+    "family": {"children": ["aholiab_170"]},
+    "skip": false
+  },
+  "akan_179": {
+    "name": "Akan",
+    "aka": [],
+    "who": "A Horite, son of the chief Ezer, among the early inhabitants of Seir.",
+    "key": [
+      "Akan is listed among the sons of Ezer, a descendant of Seir the Horite (Genesis 36).",
+      "Chronicles repeats his name in the Horite genealogy of Seir (1 Chronicles 1)."
+    ],
+    "family": {"father": ["ezer_1238"], "siblings": ["bilhan_503", "zavan_2944"]},
+    "skip": false
+  },
+  "akkub_182": {
+    "name": "Akkub",
+    "aka": [],
+    "who": "Ancestor of a family of temple servants whose descendants returned from Babylon with Zerubbabel.",
+    "key": [
+      "The sons of Akkub are listed among the temple servants who returned from exile (Ezra 2).",
+      "The temple servants and the sons of Solomon's servants numbered 392 in all (Ezra 2)."
+    ],
+    "skip": false
+  },
+  "alexander_186": {
+    "name": "Alexander",
+    "aka": [],
+    "who": "A son of Simon of Cyrene, the man compelled to carry Jesus' cross.",
+    "key": [
+      "Mark identifies Simon of Cyrene as the father of Alexander and Rufus (Mark 15).",
+      "His father, coming in from the country, was compelled by soldiers to carry Jesus' cross (Mark 15)."
+    ],
+    "family": {"father": ["simon_2749"], "siblings": ["rufus_2448"]},
+    "skip": false
+  },
+  "alexander_189": {
+    "name": "Alexander",
+    "aka": [],
+    "who": "A man who rejected faith and a good conscience, whom Paul handed over to Satan.",
+    "key": [
+      "Paul named Hymenaeus and Alexander as men who had made shipwreck of their faith (1 Timothy 1).",
+      "Paul handed them over to Satan so they would learn not to blaspheme (1 Timothy 1).",
+      "Paul warned Timothy about Alexander the coppersmith, who did him great harm, possibly the same man (2 Timothy 4)."
+    ],
+    "skip": false
+  },
+  "alphaeus_192": {
+    "name": "Alphaeus",
+    "aka": [],
+    "who": "The father of James, one of the twelve apostles chosen by Jesus.",
+    "key": [
+      "Jesus named James son of Alphaeus among the twelve apostles he sent out (Matthew 10).",
+      "Mark's list of the twelve also includes James son of Alphaeus (Mark 3).",
+      "Luke names James son of Alphaeus among those Jesus chose as apostles (Luke 6).",
+      "After the ascension, James son of Alphaeus prayed with the apostles in Jerusalem (Acts 1)."
+    ],
+    "family": {"children": ["james_718"]},
+    "skip": false
+  },
+  "alvan_195": {
+    "name": "Alvan",
+    "aka": [],
+    "who": "A Horite, son of Shobal, among the early inhabitants of Seir.",
+    "key": [
+      "Alvan is listed first among the sons of Shobal, son of Seir the Horite (Genesis 36).",
+      "Chronicles repeats his name in the genealogy of Seir's descendants (1 Chronicles 1)."
+    ],
+    "family": {"father": ["shobal_2719"], "siblings": ["manahath_1927", "ebal_1026", "shepho_2665", "onam_2248"]},
+    "skip": false
+  },
+  "amariah_198": {
+    "name": "Amariah",
+    "aka": [],
+    "who": "A priest in Aaron's line, son of Meraioth and grandfather of Zadok, high priest under David.",
+    "key": [
+      "Amariah son of Meraioth is listed in the priestly line from Aaron to the exile (1 Chronicles 6).",
+      "His son Ahitub was the father of Zadok, who served as priest under David (1 Chronicles 6)."
+    ],
+    "family": {"father": ["meraioth_2003"], "children": ["ahitub_164"]},
+    "skip": false
+  },
+  "amariah_199": {
+    "name": "Amariah",
+    "aka": [],
+    "who": "A priest in Aaron's line, son of Azariah and father of Ahitub, named among Ezra's ancestors.",
+    "key": [
+      "Amariah son of Azariah is listed in the high priestly line descended from Aaron (1 Chronicles 6).",
+      "Ezra's genealogy traces his ancestry back to Aaron through Amariah (Ezra 7)."
+    ],
+    "family": {"father": ["azariah_378"], "children": ["ahitub_165"]},
+    "skip": false
+  },
+  "amariah_200": {
+    "name": "Amariah",
+    "aka": [],
+    "who": "A Levite of Kohath's line, second son of Hebron, listed in David's organization of the Levites.",
+    "key": [
+      "Amariah is named as the second son of Hebron among the Levites David organized (1 Chronicles 23).",
+      "He appears again among the Levite family heads who cast lots like the priests (1 Chronicles 24)."
+    ],
+    "family": {"father": ["hebron_1475"], "siblings": ["jeriah_860", "jahaziel_698", "jekameam_834"]},
+    "skip": false
+  },
+  "amariah_201": {
+    "name": "Amariah",
+    "aka": [],
+    "who": "The chief priest under King Jehoshaphat, placed over all matters concerning the LORD.",
+    "key": [
+      "Jehoshaphat appointed judges in Jerusalem and charged them to serve in the fear of the LORD (2 Chronicles 19).",
+      "He set Amariah the chief priest over every matter of the LORD (2 Chronicles 19)."
+    ],
+    "skip": false
+  },
+  "amasai_210": {
+    "name": "Amasai",
+    "aka": [],
+    "who": "Chief of the thirty, who pledged loyalty to David when men of Benjamin and Judah joined him.",
+    "key": [
+      "Men of Benjamin and Judah came to David's stronghold, and David questioned their intentions (1 Chronicles 12).",
+      "The Spirit clothed Amasai, and he declared loyalty and peace to David and his helpers (1 Chronicles 12).",
+      "David received them and made them officers of his troops (1 Chronicles 12)."
+    ],
+    "skip": false
+  },
+  "amaziah_217": {
+    "name": "Amaziah",
+    "aka": [],
+    "who": "The priest of Bethel who opposed the prophet Amos during the reign of Jeroboam II.",
+    "key": [
+      "Amaziah reported to Jeroboam that Amos was conspiring against him in Israel (Amos 7).",
+      "He told Amos to flee to Judah and stop prophesying at Bethel, the king's sanctuary (Amos 7).",
+      "Amos answered that the LORD had called him from tending flocks to prophesy (Amos 7).",
+      "Amos then pronounced judgment on Amaziah and his family and foretold Israel's exile (Amos 7)."
+    ],
+    "skip": false
+  },
+  "amittai_219": {
+    "name": "Amittai",
+    "aka": [],
+    "who": "The father of the prophet Jonah, from Gath-hepher in Israel.",
+    "key": [
+      "His son Jonah of Gath-hepher prophesied that Jeroboam II would restore Israel's borders (2 Kings 14).",
+      "The word of the LORD came to Jonah son of Amittai to go to Nineveh (Jonah 1)."
+    ],
+    "family": {"children": ["jonah_1689"]},
+    "skip": false
+  },
+  "ammiel_221": {
+    "name": "Ammiel",
+    "aka": [],
+    "who": "The father of Machir of Lo-debar, who sheltered Mephibosheth and later supplied David.",
+    "key": [
+      "Mephibosheth was living in the house of Machir son of Ammiel at Lo-debar (2 Samuel 9).",
+      "Machir son of Ammiel brought supplies to David at Mahanaim while he fled from Absalom (2 Samuel 17)."
+    ],
+    "family": {"children": ["machir_1878"]},
+    "skip": false
+  },
+  "anah_247": {
+    "name": "Anah",
+    "aka": [],
+    "who": "The parent of Esau's wife Oholibamah, described as the daughter of Zibeon the Hivite.",
+    "key": [
+      "Esau married Oholibamah, the daughter of Anah, the daughter of Zibeon the Hivite (Genesis 36).",
+      "Her daughter Oholibamah bore Esau three sons: Jeush, Jalam, and Korah (Genesis 36)."
+    ],
+    "family": {"father": ["zibeon_3061"], "children": ["aholibamah_1761"]},
+    "skip": false
+  },
+  "anah_249": {
+    "name": "Anah",
+    "aka": [],
+    "who": "A Horite, son of Zibeon, remembered for finding hot springs in the wilderness.",
+    "key": [
+      "Anah and Aiah are listed as the sons of Zibeon in the line of Seir (Genesis 36).",
+      "He found the hot springs in the wilderness while pasturing his father's donkeys (Genesis 36).",
+      "Chronicles repeats his name among the sons of Zibeon (1 Chronicles 1)."
+    ],
+    "family": {"father": ["zibeon_3062"], "siblings": ["ajah_178"]},
+    "skip": false
+  },
+  "ananias_258": {
+    "name": "Ananias",
+    "aka": [],
+    "who": "A member of the Jerusalem church who died after lying to the Holy Spirit about a gift.",
+    "key": [
+      "With his wife Sapphira's knowledge, Ananias sold property and kept back part of the money (Acts 5).",
+      "He brought the rest to the apostles as if it were the full amount (Acts 5).",
+      "Peter said he had lied to God, and Ananias fell down and died (Acts 5).",
+      "About three hours later Sapphira told the same lie and also died, and great fear came on the church (Acts 5)."
+    ],
+    "family": {"spouses": ["sapphira_2472"]},
+    "skip": false
+  },
+  "anna_268": {
+    "name": "Anna",
+    "aka": [],
+    "who": "An elderly prophetess of the tribe of Asher who recognized the infant Jesus in the temple.",
+    "key": [
+      "Widowed after seven years of marriage, Anna worshiped in the temple with fasting and prayer night and day (Luke 2).",
+      "When Jesus was presented at the temple, she came up and gave thanks to God (Luke 2).",
+      "She spoke of the child to all who were waiting for the redemption of Jerusalem (Luke 2)."
+    ],
+    "family": {"father": ["phanuel_2327"]},
+    "skip": false
+  },
+  "annas_269": {
+    "name": "Annas",
+    "aka": [],
+    "who": "An influential Jewish high priest, father-in-law of Caiaphas, who questioned Jesus first after his arrest.",
+    "key": [
+      "God's word came to John the Baptist during the high priesthood of Annas and Caiaphas (Luke 3).",
+      "After his arrest, Jesus was taken first to Annas, the father-in-law of Caiaphas (John 18).",
+      "Annas questioned Jesus about his disciples and teaching, then sent him bound to Caiaphas (John 18).",
+      "Annas joined the rulers in questioning Peter and John after a lame man was healed (Acts 4)."
+    ],
+    "skip": false
+  },
+  "arad_281": {
+    "name": "Arad",
+    "aka": [],
+    "who": "A Benjaminite, son of Beriah, listed among the family heads in Benjamin's genealogy.",
+    "key": [
+      "Arad is listed among the sons of Beriah in the genealogy of Benjamin (1 Chronicles 8).",
+      "His father Beriah was a family head of Aijalon who drove out the inhabitants of Gath (1 Chronicles 8).",
+      "He is distinct from the Canaanite king of Arad who attacked Israel in the wilderness (Numbers 21)."
+    ],
+    "family": {"father": ["beriah_480"], "siblings": ["zebadiah_2988", "ader_82", "michael_2063", "ispah_644", "joha_1664"]},
+    "skip": false
+  },
+  "aran_288": {
+    "name": "Aran",
+    "aka": [],
+    "who": "A Horite, son of Dishan, among the early inhabitants of Seir.",
+    "key": [
+      "Aran and Uz are listed as the sons of Dishan, a Horite descendant of Seir (Genesis 36).",
+      "Chronicles repeats his name in the genealogy of Seir (1 Chronicles 1)."
+    ],
+    "family": {"father": ["dishan_1015"], "siblings": ["uz_2909"]},
+    "skip": false
+  },
+  "arba_290": {
+    "name": "Arba",
+    "aka": [],
+    "who": "The greatest man among the Anakim and father of Anak, after whom Kiriath-arba (Hebron) was named.",
+    "key": [
+      "Hebron was formerly called Kiriath-arba, after Arba, the greatest man among the Anakim (Joshua 14).",
+      "Caleb received Kiriath-arba as his portion; Arba was the father of Anak (Joshua 15).",
+      "Kiriath-arba, that is Hebron, was given to the priests as a city of refuge (Joshua 21)."
+    ],
+    "family": {"children": ["anak_252"]},
+    "skip": false
+  },
+  "archelaus_291": {
+    "name": "Archelaus",
+    "aka": [],
+    "who": "A son of Herod the Great who ruled Judea after his father's death.",
+    "key": [
+      "After Herod died, Archelaus reigned over Judea in place of his father (Matthew 2).",
+      "Joseph was afraid to settle there and, warned in a dream, withdrew to Nazareth in Galilee (Matthew 2)."
+    ],
+    "family": {"father": ["herod_1504"]},
+    "skip": false
+  },
+  "artaxerxes_313": {
+    "name": "Artaxerxes",
+    "aka": [],
+    "who": "The Persian king who, after receiving a letter against Jerusalem, ordered the Jews to stop rebuilding the city.",
+    "key": [
+      "Rehum, Shimshai, and their associates wrote to Artaxerxes, accusing Jerusalem of being rebellious (Ezra 4).",
+      "Artaxerxes had the records searched and found the city had a history of revolt (Ezra 4).",
+      "He ordered the rebuilding stopped, and his officials forced the Jews to cease work (Ezra 4)."
+    ],
+    "skip": false
+  },
+  "artemas_315": {
+    "name": "Artemas",
+    "aka": [],
+    "who": "A coworker of Paul whom he considered sending to Titus in Crete.",
+    "key": [
+      "Paul planned to send Artemas or Tychicus to Titus (Titus 3).",
+      "Once one arrived, Titus was to come quickly to Paul at Nicopolis for the winter (Titus 3)."
+    ],
+    "skip": false
+  },
+  "asaph_329": {
+    "name": "Asaph",
+    "aka": [],
+    "who": "The father of Joah, the recorder who served King Hezekiah during the Assyrian threat.",
+    "key": [
+      "His son Joah the recorder went with Eliakim and Shebna to meet the Assyrian Rabshakeh (2 Kings 18).",
+      "Joah son of Asaph returned with torn clothes and reported the Rabshakeh's words to Hezekiah (2 Kings 18).",
+      "Isaiah records the same meeting with Joah son of Asaph (Isaiah 36)."
+    ],
+    "family": {"children": ["joah_1621"]},
+    "skip": false
+  },
+  "asenath_335": {
+    "name": "Asenath",
+    "aka": [],
+    "who": "An Egyptian woman, daughter of Potiphera priest of On, who became Joseph's wife.",
+    "key": [
+      "Pharaoh gave Joseph Asenath, daughter of Potiphera priest of On, as his wife (Genesis 41).",
+      "Before the famine she bore Joseph two sons, Manasseh and Ephraim (Genesis 41).",
+      "Her sons are listed among Jacob's descendants born to Joseph in Egypt (Genesis 46)."
+    ],
+    "family": {"father": ["poti-pherah_2369"], "spouses": ["joseph_1710"], "children": ["manasseh_1928", "ephraim_1206"]},
+    "skip": false
+  }
+}

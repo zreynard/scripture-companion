@@ -1,0 +1,862 @@
+{
+  "john_1678": {
+    "name": "John",
+    "aka": [],
+    "who": "A member of the high priest's family who sat on the council that questioned Peter and John.",
+    "key": [
+      "He gathered with Annas, Caiaphas, and Alexander to question Peter and John after a lame man was healed (Acts 4).",
+      "The council, unable to deny the miracle, warned the apostles and released them (Acts 4)."
+    ],
+    "skip": false
+  },
+  "jonathan_1691": {
+    "name": "Jonathan",
+    "aka": [],
+    "who": "A grandson of Moses through Gershom who became priest to the tribe of Dan's carved image.",
+    "key": [
+      "He is apparently the young Levite whom Micah hired as priest for his household shrine (Judges 17).",
+      "The Danites took Micah's image and priest and set them up in their new city of Dan (Judges 18).",
+      "He and his sons served as priests to the Danites until the captivity of the land (Judges 18)."
+    ],
+    "family": {
+      "father": [
+        "gershom_1303"
+      ]
+    },
+    "skip": false
+  },
+  "jonathan_1694": {
+    "name": "Jonathan",
+    "aka": [],
+    "who": "One of David's mighty men, a son of Shagee the Hararite.",
+    "key": [
+      "He is listed among David's elite warriors known as the thirty (2 Samuel 23).",
+      "Chronicles names him Jonathan son of Shagee the Hararite among David's mighty men (1 Chronicles 11)."
+    ],
+    "family": {
+      "father": [
+        "shage_2541"
+      ]
+    },
+    "skip": false
+  },
+  "jonathan_1702": {
+    "name": "Jonathan",
+    "aka": [],
+    "who": "A son of Kareah and brother of Johanan, an army captain in Judah after Jerusalem fell.",
+    "key": [
+      "After Babylon took Jerusalem, he and Johanan came with their men to Gedaliah at Mizpah (Jeremiah 40).",
+      "Gedaliah urged these captains to serve the king of Babylon and settle in the land (Jeremiah 40)."
+    ],
+    "family": {
+      "father": [
+        "kareah_919"
+      ],
+      "siblings": [
+        "johanan_1666"
+      ]
+    },
+    "skip": false
+  },
+  "joseph_1711": {
+    "name": "Joseph",
+    "aka": [],
+    "who": "A man of the tribe of Issachar, father of Igal, one of the twelve spies.",
+    "key": [
+      "His son Igal represented Issachar among the twelve men Moses sent to spy out Canaan (Numbers 13).",
+      "Igal was among the spies who brought back a bad report of the land (Numbers 13)."
+    ],
+    "family": {
+      "children": [
+        "igal_1598"
+      ]
+    },
+    "skip": false
+  },
+  "jotham_1734": {
+    "name": "Jotham",
+    "aka": [],
+    "who": "The youngest son of Gideon, the only brother to escape Abimelech's massacre.",
+    "key": [
+      "He survived by hiding when Abimelech killed his seventy brothers on one stone (Judges 9).",
+      "From Mount Gerizim he told Shechem's leaders a fable about the trees choosing a king (Judges 9).",
+      "He warned that fire would consume both Abimelech and Shechem, then fled to Beer (Judges 9).",
+      "His curse came true when Shechem and Abimelech destroyed each other (Judges 9)."
+    ],
+    "family": {
+      "father": [
+        "gideon_1314"
+      ],
+      "siblings": [
+        "abimelech_41",
+        "jether_906"
+      ]
+    },
+    "skip": false
+  },
+  "jozabad_1737": {
+    "name": "Jozabad",
+    "aka": [],
+    "who": "One of two men named Jozabad among Manasseh's commanders who deserted to David.",
+    "key": [
+      "As David went to Ziklag, he joined David as a chief of thousands in Manasseh (1 Chronicles 12).",
+      "These men helped David against the band of raiders and became commanders in his army (1 Chronicles 12)."
+    ],
+    "skip": false
+  },
+  "jozabad_1738": {
+    "name": "Jozabad",
+    "aka": [],
+    "who": "One of two men named Jozabad among Manasseh's commanders who deserted to David.",
+    "key": [
+      "As David went to Ziklag, he joined David as a chief of thousands in Manasseh (1 Chronicles 12).",
+      "These men helped David against the band of raiders and became commanders in his army (1 Chronicles 12)."
+    ],
+    "skip": false
+  },
+  "judah_1752": {
+    "name": "Judah",
+    "aka": [],
+    "who": "A Levite in Ezra's day who had married a foreign woman after the return from exile.",
+    "key": [
+      "He is listed among the Levites who had married foreign women (Ezra 10).",
+      "The assembly agreed with Ezra to put away such marriages and keep the covenant (Ezra 10)."
+    ],
+    "skip": false
+  },
+  "judah_1753": {
+    "name": "Judah",
+    "aka": [],
+    "who": "A Benjaminite son of Hassenuah who was second in charge over Jerusalem after the exile.",
+    "key": [
+      "When the people resettled Jerusalem, he served as second over the city (Nehemiah 11).",
+      "He served with Joel son of Zichri, the overseer of the Benjaminites there (Nehemiah 11)."
+    ],
+    "family": {
+      "father": [
+        "senuah_2490"
+      ]
+    },
+    "skip": false
+  },
+  "judah_1754": {
+    "name": "Judah",
+    "aka": [],
+    "who": "A Levite who returned from exile with Zerubbabel and Jeshua.",
+    "key": [
+      "He is listed among the Levites who came up from Babylon with Zerubbabel (Nehemiah 12).",
+      "A Judah also walked with the leaders in the procession dedicating Jerusalem's wall (Nehemiah 12)."
+    ],
+    "skip": false
+  },
+  "judah_1755": {
+    "name": "Judah",
+    "aka": [],
+    "who": "A Levite musician, a kinsman of Zechariah, at the dedication of Jerusalem's wall.",
+    "key": [
+      "He played the musical instruments of David in the procession dedicating the wall (Nehemiah 12).",
+      "Ezra the scribe led his group along the wall toward the Fountain Gate (Nehemiah 12)."
+    ],
+    "skip": false
+  },
+  "jude_1756": {
+    "name": "Jude",
+    "aka": [],
+    "who": "A brother of Jesus and of James, who wrote the Letter of Jude.",
+    "key": [
+      "He is named among Jesus' brothers when Nazareth took offense at Jesus (Matthew 13).",
+      "During Jesus' ministry his brothers did not yet believe in him (John 7).",
+      "After the ascension, Jesus' brothers joined the apostles in prayer in Jerusalem (Acts 1).",
+      "Calling himself a servant of Jesus Christ, he urged believers to contend for the faith (Jude 1)."
+    ],
+    "family": {
+      "father": [
+        "joseph_1715"
+      ],
+      "mother": [
+        "mary_1938"
+      ],
+      "siblings": [
+        "jesus_905",
+        "james_719",
+        "joses_1721",
+        "simon_2747"
+      ]
+    },
+    "skip": false
+  },
+  "julius_1763": {
+    "name": "Julius",
+    "aka": [],
+    "who": "A Roman centurion of the Augustan Cohort who escorted Paul by sea to Rome.",
+    "key": [
+      "He was given charge of Paul and other prisoners sailing for Italy (Acts 27).",
+      "He treated Paul kindly, letting him visit friends at Sidon (Acts 27).",
+      "He followed the pilot and ship's owner rather than Paul's warning not to sail (Acts 27).",
+      "In the shipwreck he stopped the soldiers from killing the prisoners, wishing to save Paul (Acts 27)."
+    ],
+    "skip": false
+  },
+  "kenaz_1776": {
+    "name": "Kenaz",
+    "aka": [],
+    "who": "A grandson of Esau through Eliphaz who became a chief in Edom.",
+    "key": [
+      "He is listed among the sons of Eliphaz, Esau's firstborn (Genesis 36).",
+      "He was one of the chiefs descended from Esau in the land of Edom (Genesis 36).",
+      "Chronicles repeats him among Eliphaz's sons (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "eliphaz_1144"
+      ],
+      "siblings": [
+        "teman_2838",
+        "omar_2242",
+        "zepho_3042",
+        "gatam_1281",
+        "korah_1794",
+        "amalek_197"
+      ]
+    },
+    "skip": false
+  },
+  "kenaz_1777": {
+    "name": "Kenaz",
+    "aka": [],
+    "who": "A chief of Edom named in the later list of Esau's clan chiefs.",
+    "key": [
+      "He is listed among the chiefs of Edom by their clans and dwelling places (Genesis 36).",
+      "Chronicles repeats his name among the chiefs of Edom (1 Chronicles 1)."
+    ],
+    "skip": false
+  },
+  "kenaz_1779": {
+    "name": "Kenaz",
+    "aka": [],
+    "who": "A grandson of Caleb son of Jephunneh, listed in the genealogy of Judah.",
+    "key": [
+      "Chronicles lists him as the son of Elah, son of Caleb son of Jephunneh (1 Chronicles 4).",
+      "His father Elah was one of Caleb's three sons, with Iru and Naam (1 Chronicles 4)."
+    ],
+    "family": {
+      "father": [
+        "elah_1047"
+      ]
+    },
+    "skip": false
+  },
+  "keturah_1782": {
+    "name": "Keturah",
+    "aka": [],
+    "who": "A wife of Abraham whose sons were sent east and fathered peoples such as Midian.",
+    "key": [
+      "Abraham took another wife named Keturah (Genesis 25).",
+      "She bore him Zimran, Jokshan, Medan, Midian, Ishbak, and Shuah (Genesis 25).",
+      "Abraham gave her sons gifts and sent them east, away from Isaac (Genesis 25).",
+      "Chronicles calls her Abraham's concubine and lists her descendants (1 Chronicles 1)."
+    ],
+    "family": {
+      "spouses": [
+        "abraham_58"
+      ],
+      "children": [
+        "zimran_3086",
+        "jokshan_1685",
+        "medan_1978",
+        "midian_2075",
+        "ishbak_620",
+        "shuah_2727"
+      ]
+    },
+    "skip": false
+  },
+  "kish_1785": {
+    "name": "Kish",
+    "aka": [],
+    "who": "A Merarite Levite, son of Mahli, whose family served in David's Levite divisions.",
+    "key": [
+      "He is listed with his brother Eleazar as sons of Mahli in David's Levite divisions (1 Chronicles 23).",
+      "Eleazar had only daughters, and Kish's sons married them (1 Chronicles 23).",
+      "His son Jerahmeel headed a Levite family that cast lots for service (1 Chronicles 24)."
+    ],
+    "family": {
+      "father": [
+        "mahli_1889"
+      ],
+      "siblings": [
+        "eleazar_1065",
+        "libni_1824"
+      ],
+      "children": [
+        "jerahmeel_844"
+      ]
+    },
+    "skip": false
+  },
+  "kittim_1789": {
+    "name": "Kittim",
+    "aka": [],
+    "who": "A son of Javan in the Table of Nations, ancestor of a seafaring coastland people.",
+    "key": [
+      "He is listed among the sons of Javan, son of Japheth (Genesis 10).",
+      "From Javan's sons the coastland peoples spread out in their lands (Genesis 10).",
+      "Chronicles repeats him among Javan's sons (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "javan_744"
+      ],
+      "siblings": [
+        "elishah_1154",
+        "tarshish_2828",
+        "dodanim_1018"
+      ]
+    },
+    "skip": false
+  },
+  "korah_1793": {
+    "name": "Korah",
+    "aka": [],
+    "who": "A son of Esau by Oholibamah, born in Canaan, who became a chief in Edom.",
+    "key": [
+      "Oholibamah bore him to Esau in Canaan, with his brothers Jeush and Jalam (Genesis 36).",
+      "He became one of the chiefs descended from Esau (Genesis 36).",
+      "Chronicles repeats him among Esau's sons (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "esau_1216"
+      ],
+      "mother": [
+        "aholibamah_1761"
+      ],
+      "siblings": [
+        "jeush_913",
+        "jaalam_662",
+        "eliphaz_1144",
+        "reuel_2430"
+      ]
+    },
+    "skip": false
+  },
+  "korah_1794": {
+    "name": "Korah",
+    "aka": [],
+    "who": "An Edomite chief listed among the descendants of Eliphaz, Esau's firstborn.",
+    "key": [
+      "He is named among the chiefs of the sons of Eliphaz in Edom (Genesis 36).",
+      "These chiefs descended from Adah, Esau's wife and Eliphaz's mother (Genesis 36)."
+    ],
+    "family": {
+      "father": [
+        "eliphaz_1144"
+      ],
+      "siblings": [
+        "teman_2838",
+        "omar_2242",
+        "zepho_3042",
+        "kenaz_1776",
+        "gatam_1281",
+        "amalek_197"
+      ]
+    },
+    "skip": false
+  },
+  "kore_1797": {
+    "name": "Kore",
+    "aka": [],
+    "who": "A Korahite Levite, son of Ebiasaph, whose sons led the temple gatekeepers.",
+    "key": [
+      "His son Shallum and their kinsmen guarded the thresholds of the tent, as their fathers had (1 Chronicles 9).",
+      "His son Meshelemiah headed a family of gatekeepers in David's time (1 Chronicles 26)."
+    ],
+    "family": {
+      "father": [
+        "ebiasaph_19"
+      ],
+      "siblings": [
+        "assir_352"
+      ],
+      "children": [
+        "shallum_2520",
+        "meshelemiah_2013"
+      ]
+    },
+    "skip": false
+  },
+  "lahmi_1806": {
+    "name": "Lahmi",
+    "aka": [],
+    "who": "A Philistine warrior, brother of Goliath, killed by Elhanan in David's wars.",
+    "key": [
+      "In renewed war with the Philistines, Elhanan son of Jair struck him down (1 Chronicles 20).",
+      "He was among the descendants of the giants in Gath who fell to David's men (1 Chronicles 20)."
+    ],
+    "family": {
+      "siblings": [
+        "goliath_1327"
+      ]
+    },
+    "skip": false
+  },
+  "laish_1807": {
+    "name": "Laish",
+    "aka": [],
+    "who": "A man of Gallim, father of Palti, to whom Saul gave David's wife Michal.",
+    "key": [
+      "Saul gave Michal, David's wife, to his son Palti of Gallim (1 Samuel 25).",
+      "Later Ish-bosheth took Michal from his son and returned her to David (2 Samuel 3)."
+    ],
+    "family": {
+      "children": [
+        "phaltiel_2326"
+      ]
+    },
+    "skip": false
+  },
+  "lamech_1808": {
+    "name": "Lamech",
+    "aka": [],
+    "who": "A descendant of Cain who took two wives and boasted of avenging himself.",
+    "key": [
+      "He took two wives, Adah and Zillah (Genesis 4).",
+      "His sons Jabal, Jubal, and Tubal-cain began herding, music, and metalworking (Genesis 4).",
+      "He boasted to his wives that he had killed a man for wounding him (Genesis 4).",
+      "He claimed vengeance seventy-sevenfold, far beyond Cain's sevenfold (Genesis 4)."
+    ],
+    "family": {
+      "father": [
+        "methusael_2041"
+      ],
+      "spouses": [
+        "adah_69",
+        "zillah_3080"
+      ],
+      "children": [
+        "jabal_673",
+        "jubal_1748",
+        "tubal-cain_2884",
+        "naamah_2118"
+      ]
+    },
+    "skip": false
+  },
+  "lapidoth_1810": {
+    "name": "Lapidoth",
+    "aka": [],
+    "who": "The husband of Deborah, the prophetess who judged Israel.",
+    "key": [
+      "Deborah is introduced as a prophetess and the wife of Lapidoth (Judges 4).",
+      "In those days Deborah judged Israel and summoned Barak to fight Sisera (Judges 4)."
+    ],
+    "family": {
+      "spouses": [
+        "deborah_997"
+      ]
+    },
+    "skip": false
+  },
+  "lazarus_1811": {
+    "name": "Lazarus",
+    "aka": [],
+    "who": "The poor beggar in Jesus' story of the rich man and Lazarus.",
+    "key": [
+      "He lay covered with sores at a rich man's gate, longing for scraps (Luke 16).",
+      "When he died, angels carried him to Abraham's side, while the rich man suffered (Luke 16).",
+      "Abraham refused to send him to warn the rich man's five brothers (Luke 16)."
+    ],
+    "skip": false
+  },
+  "lemuel_1817": {
+    "name": "Lemuel",
+    "aka": [],
+    "who": "A king whose mother's teaching is recorded in the final chapter of Proverbs.",
+    "key": [
+      "Proverbs records the words his mother taught him as king (Proverbs 31).",
+      "She warned him against women and wine and urged him to defend the poor and needy (Proverbs 31)."
+    ],
+    "family": {
+      "mother": [
+        "mother_of_lemuel_2110"
+      ]
+    },
+    "skip": false
+  },
+  "lo-ammi_1827": {
+    "name": "Lo-ammi",
+    "aka": [
+      "Not My People"
+    ],
+    "who": "The third child of Gomer, Hosea's wife, whose name announced judgment on Israel.",
+    "key": [
+      "Gomer bore him after weaning her daughter Lo-ruhamah (Hosea 1).",
+      "God named him to declare that Israel was not his people (Hosea 1).",
+      "God promised that one day Israel would be called children of the living God (Hosea 1).",
+      "God later promises to say to Not My People, You are my people (Hosea 2)."
+    ],
+    "family": {
+      "mother": [
+        "gomer_1329"
+      ],
+      "siblings": [
+        "jezreel_1613",
+        "lo-ruhamah_1829"
+      ]
+    },
+    "skip": false
+  },
+  "lo-ruhamah_1829": {
+    "name": "Lo-ruhamah",
+    "aka": [
+      "No Mercy"
+    ],
+    "who": "The daughter of Gomer, Hosea's wife, whose name announced God's withdrawn mercy from Israel.",
+    "key": [
+      "Gomer bore a daughter after her son Jezreel (Hosea 1).",
+      "God named her to show he would no longer have mercy on Israel (Hosea 1).",
+      "God said he would still have mercy on Judah and save them himself (Hosea 1).",
+      "God later promises to have mercy on No Mercy (Hosea 2)."
+    ],
+    "family": {
+      "mother": [
+        "gomer_1329"
+      ],
+      "siblings": [
+        "jezreel_1613",
+        "lo-ammi_1827"
+      ]
+    },
+    "skip": false
+  },
+  "lois_1828": {
+    "name": "Lois",
+    "aka": [],
+    "who": "The grandmother of Timothy, whose sincere faith Paul remembered.",
+    "key": [
+      "Paul recalled the sincere faith that dwelt first in Timothy's grandmother Lois (2 Timothy 1).",
+      "That same faith lived in Timothy's mother Eunice and in Timothy himself (2 Timothy 1)."
+    ],
+    "skip": false
+  },
+  "lucius_1833": {
+    "name": "Lucius",
+    "aka": [],
+    "who": "A prophet and teacher from Cyrene in the church at Antioch.",
+    "key": [
+      "He was among the prophets and teachers at Antioch when the Spirit set apart Barnabas and Saul (Acts 13).",
+      "A Lucius, called Paul's kinsman, sent greetings to the church in Rome (Romans 16)."
+    ],
+    "skip": false
+  },
+  "lydia_1837": {
+    "name": "Lydia",
+    "aka": [],
+    "who": "A seller of purple goods from Thyatira, the first recorded believer in Philippi through Paul.",
+    "key": [
+      "A worshiper of God, she heard Paul speak by the riverside at Philippi (Acts 16).",
+      "The Lord opened her heart, and she and her household were baptized (Acts 16).",
+      "She urged Paul and his companions to stay at her house (Acts 16).",
+      "After their release from prison, Paul and Silas visited the believers at her house (Acts 16)."
+    ],
+    "skip": false
+  },
+  "maacah_1839": {
+    "name": "Maacah",
+    "aka": [],
+    "who": "A wife of David, daughter of King Talmai of Geshur, and mother of Absalom.",
+    "key": [
+      "She bore Absalom, David's third son, at Hebron (2 Samuel 3).",
+      "After killing Amnon, Absalom fled to her father Talmai in Geshur for three years (2 Samuel 13).",
+      "Chronicles lists her among the mothers of David's sons born at Hebron (1 Chronicles 3)."
+    ],
+    "family": {
+      "father": [
+        "talmai_2819"
+      ],
+      "spouses": [
+        "david_994"
+      ],
+      "children": [
+        "absalom_59"
+      ]
+    },
+    "skip": false
+  },
+  "maaseiah_1866": {
+    "name": "Maaseiah",
+    "aka": [],
+    "who": "Father of Zephaniah, a leading priest in Jerusalem during King Zedekiah's reign.",
+    "key": [
+      "His son Zephaniah was sent by Zedekiah to ask Jeremiah to inquire of the LORD (Jeremiah 21).",
+      "Shemaiah wrote from Babylon urging his son Zephaniah to restrain Jeremiah (Jeremiah 29).",
+      "His son again carried Zedekiah's request for Jeremiah to pray for the people (Jeremiah 37)."
+    ],
+    "family": {
+      "children": [
+        "zephaniah_3039"
+      ]
+    },
+    "skip": false
+  },
+  "maaseiah_1867": {
+    "name": "Maaseiah",
+    "aka": [],
+    "who": "Father of Zedekiah, a false prophet among the exiles in Babylon.",
+    "key": [
+      "His son Zedekiah prophesied lies in the LORD's name among the exiles (Jeremiah 29).",
+      "Jeremiah foretold that the king of Babylon would roast Zedekiah and Ahab in the fire (Jeremiah 29)."
+    ],
+    "family": {
+      "children": [
+        "zedekiah_3031"
+      ]
+    },
+    "skip": false
+  },
+  "machir_1878": {
+    "name": "Machir",
+    "aka": [],
+    "who": "A man of Lo-debar who sheltered Mephibosheth and later supplied David in exile.",
+    "key": [
+      "Mephibosheth was living in his house at Lo-debar when David sent for him (2 Samuel 9).",
+      "He brought beds, food, and supplies to David at Mahanaim during Absalom's revolt (2 Samuel 17)."
+    ],
+    "family": {
+      "father": [
+        "ammiel_221"
+      ]
+    },
+    "skip": false
+  },
+  "maharai_1890": {
+    "name": "Maharai",
+    "aka": [],
+    "who": "A Netophathite of the Zerahite clan, one of David's mighty men and a division commander.",
+    "key": [
+      "He is listed among David's thirty mighty men (2 Samuel 23).",
+      "He commanded the army division of 24,000 that served in the tenth month (1 Chronicles 27)."
+    ],
+    "skip": false
+  },
+  "maher-shalal-hash-baz_1894": {
+    "name": "Maher-shalal-hash-baz",
+    "aka": [],
+    "who": "A son of Isaiah whose name was a sign of Assyria's coming plunder of Damascus and Samaria.",
+    "key": [
+      "God told Isaiah to write the name on a large tablet before reliable witnesses (Isaiah 8).",
+      "The prophetess bore a son, and the LORD told Isaiah to give him this name (Isaiah 8).",
+      "Before he could say father or mother, Assyria would plunder Damascus and Samaria (Isaiah 8)."
+    ],
+    "family": {
+      "father": [
+        "isaiah_617"
+      ],
+      "siblings": [
+        "shear-jashub_2566"
+      ]
+    },
+    "skip": false
+  },
+  "mahli_1896": {
+    "name": "Mahli",
+    "aka": [],
+    "who": "A Merarite Levite, son of Mushi, whose family served in David's Levite divisions.",
+    "key": [
+      "He appears in the ancestry of Ethan, a Levite singer appointed in David's time (1 Chronicles 6).",
+      "He is listed with Eder and Jeremoth as sons of Mushi in David's Levite divisions (1 Chronicles 23).",
+      "His family is named again when the Levites cast lots for service (1 Chronicles 24)."
+    ],
+    "family": {
+      "father": [
+        "mushi_2116"
+      ],
+      "siblings": [
+        "eder_1035",
+        "jeremoth_857"
+      ],
+      "children": [
+        "shamer_2533"
+      ]
+    },
+    "skip": false
+  },
+  "malachi_1899": {
+    "name": "Malachi",
+    "aka": [],
+    "who": "The prophet whose book of the LORD's word to Israel closes the Old Testament.",
+    "key": [
+      "His book opens as the oracle of the LORD's word to Israel by Malachi (Malachi 1).",
+      "He rebuked the priests for offering blemished animals on the LORD's altar (Malachi 1).",
+      "He announced that the LORD would send his messenger to prepare the way (Malachi 3).",
+      "He foretold that Elijah would come before the great day of the LORD (Malachi 4)."
+    ],
+    "skip": false
+  },
+  "malchi-shua_1990": {
+    "name": "Malchi-shua",
+    "aka": [],
+    "who": "A son of King Saul who died with his father and brothers on Mount Gilboa.",
+    "key": [
+      "He is named with Jonathan and Ishvi among the sons of Saul (1 Samuel 14).",
+      "The Philistines killed him with Jonathan and Abinadab on Mount Gilboa (1 Samuel 31).",
+      "The men of Jabesh-gilead recovered the bodies of Saul and his sons and buried them (1 Samuel 31)."
+    ],
+    "family": {
+      "father": [
+        "saul_2478"
+      ],
+      "siblings": [
+        "jonathan_1692",
+        "abinadab_641",
+        "ish-bosheth_622",
+        "merab_2001",
+        "michal_2073",
+        "armoni_309",
+        "mephibosheth_2000"
+      ]
+    },
+    "skip": false
+  },
+  "malchiel_1908": {
+    "name": "Malchiel",
+    "aka": [],
+    "who": "A grandson of Asher who went down to Egypt with Jacob's family.",
+    "key": [
+      "He went down to Egypt with Jacob as a son of Beriah, son of Asher (Genesis 46).",
+      "He became the ancestor of the Malchielite clan in the tribe of Asher (Numbers 26).",
+      "Chronicles names him the father of Birzaith (1 Chronicles 7)."
+    ],
+    "family": {
+      "father": [
+        "beriah_478"
+      ],
+      "siblings": [
+        "heber_1469"
+      ],
+      "children": [
+        "birzavith_514"
+      ]
+    },
+    "skip": false
+  },
+  "malchijah_1909": {
+    "name": "Malchijah",
+    "aka": [],
+    "who": "A priest named in the ancestry of Adaiah, a priest who served in Jerusalem after the exile.",
+    "key": [
+      "Adaiah's line is traced through Jeroham and Pashhur back to Malchijah (1 Chronicles 9).",
+      "Nehemiah also records this priestly line among those living in Jerusalem (Nehemiah 11)."
+    ],
+    "family": {
+      "children": [
+        "pashur_2283"
+      ]
+    },
+    "skip": false
+  },
+  "malchijah_1911": {
+    "name": "Malchijah",
+    "aka": [],
+    "who": "A returned exile named in Ezra's list of men who had married foreign women.",
+    "key": [
+      "He is listed among the Israelites who had married foreign women (Ezra 10).",
+      "The assembly agreed with Ezra to put away such marriages (Ezra 10)."
+    ],
+    "skip": false
+  },
+  "malchijah_1912": {
+    "name": "Malchijah",
+    "aka": [],
+    "who": "A son of Harim who helped rebuild Jerusalem's wall under Nehemiah.",
+    "key": [
+      "He and Hasshub repaired a section of the wall and the Tower of the Ovens (Nehemiah 3).",
+      "The wall was finished in fifty-two days despite fierce opposition (Nehemiah 6)."
+    ],
+    "family": {
+      "father": [
+        "harim_1417"
+      ]
+    },
+    "skip": false
+  },
+  "mamre_1923": {
+    "name": "Mamre",
+    "aka": [],
+    "who": "An Amorite near Hebron, brother of Eshcol and Aner, and an ally of Abram.",
+    "key": [
+      "Abram lived by the oaks of Mamre the Amorite, who was allied with him (Genesis 14).",
+      "After Abram rescued Lot, he asked that Mamre receive his share of the spoil (Genesis 14).",
+      "Later the LORD appeared to Abraham by the oaks of Mamre (Genesis 18)."
+    ],
+    "family": {
+      "siblings": [
+        "eshcol_1218",
+        "aner_266"
+      ]
+    },
+    "skip": false
+  },
+  "manahath_1927": {
+    "name": "Manahath",
+    "aka": [],
+    "who": "A Horite descendant of Seir, son of Shobal, living in the land later called Edom.",
+    "key": [
+      "He is listed among the sons of Shobal, son of Seir the Horite (Genesis 36).",
+      "Chronicles repeats him among the descendants of Seir (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "shobal_2719"
+      ],
+      "siblings": [
+        "alvan_195",
+        "ebal_1026",
+        "shepho_2665",
+        "onam_2248"
+      ]
+    },
+    "skip": false
+  },
+  "mary_1941": {
+    "name": "Mary",
+    "aka": [],
+    "who": "The mother of John Mark, whose house in Jerusalem was a gathering place for the church.",
+    "key": [
+      "Many believers gathered at her house to pray while Peter was in prison (Acts 12).",
+      "Freed by an angel, Peter went to her house, where Rhoda answered his knock (Acts 12)."
+    ],
+    "family": {
+      "children": [
+        "mark_1679"
+      ]
+    },
+    "skip": false
+  },
+  "matthias_1972": {
+    "name": "Matthias",
+    "aka": [],
+    "who": "The disciple chosen by lot to replace Judas Iscariot among the twelve apostles.",
+    "key": [
+      "He had followed Jesus from John's baptism until the ascension (Acts 1).",
+      "He and Joseph called Barsabbas were put forward, and the apostles prayed (Acts 1).",
+      "The lot fell on him, and he was numbered with the eleven apostles (Acts 1)."
+    ],
+    "skip": false
+  },
+  "mattithiah_1973": {
+    "name": "Mattithiah",
+    "aka": [],
+    "who": "A Korahite Levite, firstborn of Shallum, in charge of baking the flat cakes.",
+    "key": [
+      "As Shallum's firstborn, he was trusted with making the flat cakes for the temple (1 Chronicles 9).",
+      "He served among the Levites who lived in Jerusalem after the return from exile (1 Chronicles 9)."
+    ],
+    "family": {
+      "father": [
+        "shallum_2520"
+      ]
+    },
+    "skip": false
+  }
+}

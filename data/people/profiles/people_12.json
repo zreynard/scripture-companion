@@ -1,0 +1,739 @@
+{
+  "havilah_1461": {
+    "name": "Havilah",
+    "aka": [],
+    "who": "A son of Cush, grandson of Ham, listed in the Table of Nations after the flood.",
+    "key": [
+      "Havilah is named among the sons of Cush, alongside Seba, Sabtah, Raamah, and Sabteca (Genesis 10).",
+      "Chronicles repeats him among Cush's sons in its genealogy from Adam (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["cush_962"],
+      "siblings": ["seba_2481", "sabtah_2451", "raamah_2380", "sabtecha_2452", "nimrod_2206"]
+    },
+    "skip": false
+  },
+  "havilah_1462": {
+    "name": "Havilah",
+    "aka": [],
+    "who": "A son of Joktan in Shem's line through Eber, listed in the Table of Nations.",
+    "key": [
+      "Havilah is named among the thirteen sons of Joktan, with Ophir and Jobab (Genesis 10).",
+      "Chronicles repeats him among Joktan's sons in the line of Shem (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["joktan_1686"],
+      "siblings": ["almodad_191", "sheleph_2602", "hazarmaveth_1465", "jerah_842", "hadoram_1345", "uzal_2911", "diklah_1011", "ebal_2227", "abimael_39", "sheba_2568", "ophir_2253", "jobab_1640"]
+    },
+    "skip": false
+  },
+  "heber_1470": {
+    "name": "Heber",
+    "aka": [],
+    "who": "A Kenite, descended from Moses' in-law Hobab, and the husband of Jael, who killed Sisera.",
+    "key": [
+      "Heber separated from the other Kenites and pitched his tent near Kedesh (Judges 4).",
+      "His household was at peace with Jabin king of Hazor (Judges 4).",
+      "So the fleeing Sisera came to the tent of Heber's wife Jael, who killed him (Judges 4).",
+      "Deborah's song blesses Jael, the wife of Heber the Kenite (Judges 5)."
+    ],
+    "family": {
+      "spouses": ["jael_689"]
+    },
+    "skip": false
+  },
+  "heleb_1480": {
+    "name": "Heleb",
+    "aka": ["Heled"],
+    "who": "A warrior from Netophah, son of Baanah, counted among David's mighty men.",
+    "key": [
+      "Heleb son of Baanah of Netophah is listed among David's thirty mighty men (2 Samuel 23).",
+      "Chronicles' list of David's mighty men names him Heled (1 Chronicles 11).",
+      "Heldai the Netophathite, probably the same man, commanded the army division for the twelfth month (1 Chronicles 27)."
+    ],
+    "family": {
+      "father": ["baanah_583"]
+    },
+    "skip": false
+  },
+  "herodias_1507": {
+    "name": "Herodias",
+    "aka": [],
+    "who": "Wife of Herod Antipas, formerly married to his brother Philip, who brought about John the Baptist's death.",
+    "key": [
+      "John the Baptist rebuked Herod for marrying Herodias, his brother Philip's wife (Luke 3).",
+      "Herod imprisoned John for her sake, and she held a grudge, wanting him killed (Mark 6).",
+      "When her daughter pleased Herod with a dance, Herodias told her to ask for John's head (Mark 6).",
+      "Herod reluctantly had John beheaded, and the head was brought to her (Matthew 14)."
+    ],
+    "family": {
+      "spouses": ["philip_2345", "herod_1505"],
+      "children": ["daughter_of_herodias_983"]
+    },
+    "skip": false
+  },
+  "hezekiah_1513": {
+    "name": "Hizkiah",
+    "aka": [],
+    "who": "A descendant of David's royal line after the exile, son of Neariah; not King Hezekiah.",
+    "key": [
+      "He is listed as a son of Neariah, with his brothers Elioenai and Azrikam (1 Chronicles 3).",
+      "His family belongs to the line of David's descendants recorded after the exile (1 Chronicles 3)."
+    ],
+    "family": {
+      "father": ["neariah_2161"],
+      "siblings": ["elioenai_1135", "azrikam_563"]
+    },
+    "skip": false
+  },
+  "hiel_1522": {
+    "name": "Hiel",
+    "aka": [],
+    "who": "A man of Bethel who rebuilt Jericho during King Ahab's reign, at the cost of two sons.",
+    "key": [
+      "In Ahab's days Hiel of Bethel rebuilt the city of Jericho (1 Kings 16).",
+      "He laid its foundation at the cost of his firstborn Abiram and set its gates at the cost of Segub (1 Kings 16).",
+      "This fulfilled the curse Joshua spoke over anyone who would rebuild Jericho (1 Kings 16; Joshua 6)."
+    ],
+    "family": {
+      "children": ["abiram_48", "segub_2483"]
+    },
+    "skip": false
+  },
+  "hilkiah_1525": {
+    "name": "Hilkiah",
+    "aka": [],
+    "who": "A Levite of the clan of Merari, ancestor of Ethan the singer; not the high priest Hilkiah.",
+    "key": [
+      "He is listed as son of Amzi and father of Amaziah in the Merarite line (1 Chronicles 6).",
+      "His descendant Ethan was among the singers David appointed for the house of the LORD (1 Chronicles 6)."
+    ],
+    "family": {
+      "father": ["amzi_245"],
+      "children": ["amaziah_216"]
+    },
+    "skip": false
+  },
+  "hobab_1537": {
+    "name": "Hobab",
+    "aka": [],
+    "who": "A Midianite, son of Reuel and relative of Moses by marriage, whom Moses asked to guide Israel.",
+    "key": [
+      "As Israel set out from Sinai, Moses invited Hobab to come and share the LORD's good (Numbers 10).",
+      "Hobab at first declined, wishing to return to his own land and kindred (Numbers 10).",
+      "Moses urged him to stay, since he knew where to camp and could serve as Israel's eyes (Numbers 10).",
+      "Later Heber the Kenite is described as a descendant of Hobab, Moses' in-law (Judges 4)."
+    ],
+    "family": {
+      "father": ["jethro_2431"],
+      "siblings": ["zipporah_3095"]
+    },
+    "skip": false
+  },
+  "horam_1551": {
+    "name": "Horam",
+    "aka": [],
+    "who": "A Canaanite king of Gezer defeated by Joshua during the southern campaign.",
+    "key": [
+      "Horam king of Gezer came up to help Lachish while Joshua was attacking it (Joshua 10).",
+      "Joshua struck him and his people until none remained (Joshua 10)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "hori_1552": {
+    "name": "Hori",
+    "aka": [],
+    "who": "A son of Lotan, from the Horite clans living in Seir, the land later held by Esau's descendants.",
+    "key": [
+      "Hori is listed with Hemam as the sons of Lotan, whose sister was Timna (Genesis 36).",
+      "Chronicles repeats him among the descendants of Seir (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["lotan_1831"],
+      "siblings": ["homam_1487"]
+    },
+    "skip": false
+  },
+  "hosea_1555": {
+    "name": "Hosea",
+    "aka": [],
+    "who": "A prophet to Israel's northern kingdom whose marriage to unfaithful Gomer pictured God's love for unfaithful Israel.",
+    "key": [
+      "He prophesied in the days of Uzziah through Hezekiah of Judah and Jeroboam of Israel (Hosea 1).",
+      "God commanded him to marry Gomer, a picture of Israel forsaking the LORD (Hosea 1).",
+      "Their children Jezreel, Lo-ruhamah, and Lo-ammi were given names announcing judgment on Israel (Hosea 1).",
+      "God told him to love his wife again, and he bought her back (Hosea 3).",
+      "Paul cites Hosea's promise that those not God's people would be called his people (Romans 9)."
+    ],
+    "family": {
+      "father": ["beeri_433"],
+      "spouses": ["gomer_1329"],
+      "children": ["jezreel_1613", "lo-ruhamah_1829", "lo-ammi_1827"]
+    },
+    "skip": false
+  },
+  "hotham_1562": {
+    "name": "Hotham",
+    "aka": [],
+    "who": "A man of the tribe of Asher, son of Heber and grandson of Beriah.",
+    "key": [
+      "He is listed with Japhlet, Shomer, and their sister Shua as the sons of Heber (1 Chronicles 7).",
+      "Asher's descendants were heads of fathers' houses, choice men, and mighty warriors (1 Chronicles 7)."
+    ],
+    "family": {
+      "father": ["heber_1469"],
+      "siblings": ["japhlet_729", "shamer_2725", "shua_2726"]
+    },
+    "skip": false
+  },
+  "huldah_1567": {
+    "name": "Huldah",
+    "aka": [],
+    "who": "A prophetess in Jerusalem whom King Josiah consulted after the Book of the Law was found.",
+    "key": [
+      "She lived in Jerusalem's Second Quarter and was the wife of Shallum, keeper of the wardrobe (2 Kings 22).",
+      "Josiah sent Hilkiah the priest and others to her to inquire about the newly found book (2 Kings 22).",
+      "She declared that the disaster written in the book would come upon Jerusalem (2 Kings 22).",
+      "Because Josiah humbled himself, she said he would not see the disaster himself (2 Kings 22).",
+      "Chronicles records the same message, after which Josiah led Judah in renewing the covenant (2 Chronicles 34)."
+    ],
+    "family": {
+      "spouses": ["shallum_2515"]
+    },
+    "skip": false
+  },
+  "hurai_1521": {
+    "name": "Hurai",
+    "aka": ["Hiddai"],
+    "who": "A warrior from the brooks of Gaash, counted among David's mighty men.",
+    "key": [
+      "Samuel's list of David's mighty men names him Hiddai of the brooks of Gaash (2 Samuel 23).",
+      "Chronicles' list of the same mighty men calls him Hurai (1 Chronicles 11)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "huram_1575": {
+    "name": "Huram",
+    "aka": [],
+    "who": "Dataset mis-entry from the KJV phrase 'Huram my father's'; modern Bibles read Huram-abi, the craftsman Hiram.",
+    "key": [],
+    "family": {},
+    "skip": true
+  },
+  "hymenaeus_1583": {
+    "name": "Hymenaeus",
+    "aka": [],
+    "who": "A false teacher in the church whom Paul warned Timothy about for abandoning the faith.",
+    "key": [
+      "Having rejected faith and a good conscience, he made shipwreck of his faith (1 Timothy 1).",
+      "Paul handed him and Alexander over to Satan so they would learn not to blaspheme (1 Timothy 1).",
+      "With Philetus he taught that the resurrection had already happened, upsetting some believers' faith (2 Timothy 2)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "ibzan_1588": {
+    "name": "Ibzan",
+    "aka": [],
+    "who": "A judge of Israel from Bethlehem who led Israel for seven years after Jephthah.",
+    "key": [
+      "Ibzan of Bethlehem judged Israel after Jephthah (Judges 12).",
+      "He had thirty sons and thirty daughters, arranging marriages for them outside his clan (Judges 12).",
+      "He judged Israel seven years, then died and was buried at Bethlehem (Judges 12)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "iddo_1595": {
+    "name": "Iddo",
+    "aka": [],
+    "who": "A priest who returned from exile, the grandfather of the prophet Zechariah.",
+    "key": [
+      "An Iddo is listed among the priests who came up from exile with Zerubbabel (Nehemiah 12).",
+      "Ezra calls the prophet Zechariah his son, naming him by his grandfather (Ezra 5).",
+      "Through the preaching of Zechariah the son of Iddo, the elders finished building the temple (Ezra 6).",
+      "Zechariah's book names him son of Berechiah, son of Iddo (Zechariah 1)."
+    ],
+    "family": {
+      "children": ["berechiah_475"]
+    },
+    "skip": false
+  },
+  "igal_1599": {
+    "name": "Igal",
+    "aka": [],
+    "who": "A warrior from Zobah, son of Nathan, counted among David's mighty men.",
+    "key": [
+      "Igal son of Nathan of Zobah is listed among David's thirty mighty men (2 Samuel 23).",
+      "Zobah was an Aramean kingdom that David had earlier defeated (2 Samuel 8)."
+    ],
+    "family": {
+      "father": ["nathan_2154"]
+    },
+    "skip": false
+  },
+  "iscah_618": {
+    "name": "Iscah",
+    "aka": [],
+    "who": "A daughter of Haran, niece of Abram, and sister of Lot and Milcah.",
+    "key": [
+      "She was a daughter of Haran, Abram's brother, who died in Ur (Genesis 11).",
+      "She is named when her uncle Nahor married her sister Milcah (Genesis 11)."
+    ],
+    "family": {
+      "father": ["haran_1407"],
+      "siblings": ["lot_1830", "milcah_2082"]
+    },
+    "skip": false
+  },
+  "ishbi-benob_621": {
+    "name": "Ishbi-benob",
+    "aka": [],
+    "who": "A Philistine warrior descended from the giants who tried to kill David in battle.",
+    "key": [
+      "Armed with a new sword and a heavy bronze spear, he thought to kill a weary David (2 Samuel 21).",
+      "Abishai son of Zeruiah came to David's aid and killed him (2 Samuel 21).",
+      "Afterward David's men swore he would no longer go out with them to battle (2 Samuel 21)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "jabez_675": {
+    "name": "Jabez",
+    "aka": [],
+    "who": "A man listed among Judah's descendants, more honorable than his brothers, whose prayer God answered.",
+    "key": [
+      "He was more honorable than his brothers, and his mother named him for bearing him in pain (1 Chronicles 4).",
+      "He called on God to bless him, enlarge his border, and keep him from harm (1 Chronicles 4).",
+      "God granted what he asked (1 Chronicles 4)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "jabin_676": {
+    "name": "Jabin",
+    "aka": [],
+    "who": "A Canaanite king of Hazor who led the northern kings against Joshua and was killed.",
+    "key": [
+      "Hearing of Israel's victories, Jabin summoned the kings of the north to fight Israel (Joshua 11).",
+      "Their great army, with many horses and chariots, camped at the waters of Merom (Joshua 11).",
+      "The LORD gave them into Israel's hand, and Joshua routed them (Joshua 11).",
+      "Joshua captured Hazor, struck its king with the sword, and burned the city (Joshua 11)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "jacob_683": {
+    "name": "Jacob",
+    "aka": [],
+    "who": "Son of Matthan and father of Joseph, Mary's husband, in Matthew's genealogy of Jesus; not the patriarch.",
+    "key": [
+      "Matthew lists him as son of Matthan in the royal line descended from David (Matthew 1).",
+      "He was the father of Joseph, the husband of Mary, of whom Jesus was born (Matthew 1)."
+    ],
+    "family": {
+      "father": ["matthan_1968"],
+      "children": ["joseph_1715"]
+    },
+    "skip": false
+  },
+  "jahaziel_698": {
+    "name": "Jahaziel",
+    "aka": [],
+    "who": "A Levite of the clan of Kohath, the third son of Hebron.",
+    "key": [
+      "He is listed as Hebron's third son in David's organization of the Levites (1 Chronicles 23).",
+      "His name appears again among the Levite families assigned by lot for service (1 Chronicles 24)."
+    ],
+    "family": {
+      "father": ["hebron_1475"],
+      "siblings": ["jeriah_860", "amariah_200", "jekameam_834"]
+    },
+    "skip": false
+  },
+  "jahaziel_699": {
+    "name": "Jahaziel",
+    "aka": [],
+    "who": "A Levite of the sons of Asaph who prophesied victory to King Jehoshaphat facing a vast invading army.",
+    "key": [
+      "As Judah gathered to pray, the Spirit of the LORD came upon Jahaziel in the assembly (2 Chronicles 20).",
+      "He told them not to fear, for the battle was not theirs but God's (2 Chronicles 20).",
+      "He said they would not need to fight, only stand firm and see the LORD's salvation (2 Chronicles 20).",
+      "Jehoshaphat and the people bowed in worship, and the next day the enemies destroyed one another (2 Chronicles 20)."
+    ],
+    "family": {
+      "father": ["zechariah_3009"]
+    },
+    "skip": false
+  },
+  "jair_708": {
+    "name": "Jair",
+    "aka": [],
+    "who": "A descendant of Manasseh who captured villages east of the Jordan and named them Havvoth-jair.",
+    "key": [
+      "Jair son of Manasseh captured villages in Gilead and called them Havvoth-jair (Numbers 32).",
+      "He took the whole region of Argob in Bashan and named it after himself (Deuteronomy 3).",
+      "Under Solomon, the villages of Jair in Gilead belonged to a district officer's territory (1 Kings 4).",
+      "Chronicles traces him through Segub, son of Hezron, and says he held twenty-three cities in Gilead (1 Chronicles 2)."
+    ],
+    "family": {
+      "father": ["segub_2484"]
+    },
+    "skip": false
+  },
+  "jair_709": {
+    "name": "Jair",
+    "aka": [],
+    "who": "A Gileadite who judged Israel for twenty-two years after Tola.",
+    "key": [
+      "After Tola, Jair the Gileadite judged Israel twenty-two years (Judges 10).",
+      "His thirty sons rode thirty donkeys and had thirty cities in Gilead called Havvoth-jair (Judges 10).",
+      "He died and was buried in Kamon (Judges 10)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "jairus_711": {
+    "name": "Jairus",
+    "aka": [],
+    "who": "A synagogue ruler whose twelve-year-old daughter Jesus raised from the dead.",
+    "key": [
+      "Jairus fell at Jesus' feet, begging him to come heal his dying daughter (Mark 5).",
+      "On the way, Jesus stopped to speak with a woman healed of a bleeding disorder (Mark 5).",
+      "When word came that the girl had died, Jesus told Jairus not to fear, only believe (Mark 5).",
+      "Jesus took her by the hand and she rose, and he told them to give her food (Luke 8)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "japhlet_729": {
+    "name": "Japhlet",
+    "aka": [],
+    "who": "A man of the tribe of Asher, son of Heber and grandson of Beriah.",
+    "key": [
+      "He is listed with Shomer, Hotham, and their sister Shua as the sons of Heber (1 Chronicles 7).",
+      "His sons were Pasach, Bimhal, and Ashvath (1 Chronicles 7)."
+    ],
+    "family": {
+      "father": ["heber_1469"],
+      "siblings": ["shamer_2725", "hotham_1562", "shua_2726"],
+      "children": ["pasach_2279", "bimhal_506", "ashvath_343"]
+    },
+    "skip": false
+  },
+  "jehiel_771": {
+    "name": "Jehiel",
+    "aka": [],
+    "who": "A Gershonite Levite, chief of the sons of Ladan, whose family oversaw the temple treasuries.",
+    "key": [
+      "He is named chief among the sons of Ladan in David's organization of the Levites (1 Chronicles 23).",
+      "His family was put in charge of the treasuries of the house of the LORD (1 Chronicles 26).",
+      "Leaders' gifts of precious stones were given into the treasury in the care of Jehiel the Gershonite (1 Chronicles 29)."
+    ],
+    "family": {
+      "father": ["laadan_1823"],
+      "siblings": ["zetham_3056", "joel_1655"]
+    },
+    "skip": false
+  },
+  "jehoiada_794": {
+    "name": "Jehoiada",
+    "aka": [],
+    "who": "Son of Benaiah, one of King David's counselors after Ahithophel.",
+    "key": [
+      "Jehoiada son of Benaiah succeeded Ahithophel as a counselor to King David (1 Chronicles 27).",
+      "He served alongside Abiathar, while Joab commanded the king's army (1 Chronicles 27)."
+    ],
+    "family": {
+      "father": ["benaiah_443"]
+    },
+    "skip": false
+  },
+  "jehoshabeath_811": {
+    "name": "Jehosheba",
+    "aka": ["Jehoshabeath"],
+    "who": "A daughter of King Jehoram and wife of the priest Jehoiada, who saved young Joash from Athaliah.",
+    "key": [
+      "When Athaliah destroyed the royal family, Jehosheba stole away her nephew Joash, son of Ahaziah (2 Kings 11).",
+      "She hid him and his nurse in a bedroom so he was not killed (2 Kings 11).",
+      "Joash stayed hidden with her in the house of the LORD for six years (2 Kings 11).",
+      "Chronicles adds that she was the wife of Jehoiada the priest (2 Chronicles 22)."
+    ],
+    "family": {
+      "father": ["jehoram_803"],
+      "siblings": ["ahaziah_121"],
+      "spouses": ["jehoiada_793"]
+    },
+    "skip": false
+  },
+  "jehoshaphat_806": {
+    "name": "Jehoshaphat",
+    "aka": [],
+    "who": "Son of Ahilud, the royal recorder under King David and King Solomon.",
+    "key": [
+      "Jehoshaphat son of Ahilud served as recorder among David's officials (2 Samuel 8).",
+      "He is again listed as recorder after David's return to Jerusalem (2 Samuel 20).",
+      "He continued as recorder among Solomon's high officials (1 Kings 4).",
+      "Chronicles lists him as recorder in David's reign (1 Chronicles 18)."
+    ],
+    "family": {
+      "father": ["ahilud_142"],
+      "siblings": ["baana_580"]
+    },
+    "skip": false
+  },
+  "jehoshaphat_807": {
+    "name": "Jehoshaphat",
+    "aka": [],
+    "who": "Son of Paruah, one of King Solomon's twelve district officers, over Issachar.",
+    "key": [
+      "Solomon's twelve officers each supplied food for the king's household one month a year (1 Kings 4).",
+      "Jehoshaphat son of Paruah served as the officer over Issachar (1 Kings 4)."
+    ],
+    "family": {
+      "father": ["paruah_2278"]
+    },
+    "skip": false
+  },
+  "jehoshaphat_809": {
+    "name": "Jehoshaphat",
+    "aka": [],
+    "who": "Son of Nimshi and father of Jehu, who became king of Israel.",
+    "key": [
+      "Elisha sent a young prophet to anoint Jehu son of Jehoshaphat, son of Nimshi (2 Kings 9).",
+      "His son Jehu conspired against King Joram and seized Israel's throne (2 Kings 9)."
+    ],
+    "family": {
+      "father": ["nimshi_2207"],
+      "children": ["jehu_817"]
+    },
+    "skip": false
+  },
+  "jekameam_834": {
+    "name": "Jekameam",
+    "aka": [],
+    "who": "A Levite of the clan of Kohath, the fourth son of Hebron.",
+    "key": [
+      "He is listed as Hebron's fourth son in David's organization of the Levites (1 Chronicles 23).",
+      "His name appears again among the Levite families assigned by lot for service (1 Chronicles 24)."
+    ],
+    "family": {
+      "father": ["hebron_1475"],
+      "siblings": ["jeriah_860", "amariah_200", "jahaziel_698"]
+    },
+    "skip": false
+  },
+  "jeremiah_848": {
+    "name": "Jeremiah",
+    "aka": [],
+    "who": "A man of Libnah, grandfather of Kings Jehoahaz and Zedekiah through his daughter Hamutal; not the prophet.",
+    "key": [
+      "His daughter Hamutal was the mother of King Jehoahaz of Judah (2 Kings 23).",
+      "Hamutal was also the mother of Zedekiah, Judah's last king (2 Kings 24).",
+      "The book of Jeremiah repeats that Zedekiah's mother was Hamutal, daughter of Jeremiah of Libnah (Jeremiah 52)."
+    ],
+    "family": {
+      "children": ["hamutal_1368"]
+    },
+    "skip": false
+  },
+  "jeremiah_855": {
+    "name": "Jeremiah",
+    "aka": [],
+    "who": "A Rechabite, son of Habazziniah and father of Jaazaniah; not the prophet Jeremiah.",
+    "key": [
+      "The prophet Jeremiah brought his son Jaazaniah and the Rechabites into the temple and offered them wine (Jeremiah 35).",
+      "They refused, obeying their ancestor Jonadab, and the LORD promised their line would endure (Jeremiah 35)."
+    ],
+    "family": {
+      "father": ["habaziniah_1335"],
+      "children": ["jaazaniah_668"]
+    },
+    "skip": false
+  },
+  "jeremoth_857": {
+    "name": "Jeremoth",
+    "aka": [],
+    "who": "A Levite of the clan of Merari, son of Mushi.",
+    "key": [
+      "He is listed with Mahli and Eder as the sons of Mushi in David's Levite organization (1 Chronicles 23).",
+      "His name appears again among the Levite families assigned by lot for service (1 Chronicles 24)."
+    ],
+    "family": {
+      "father": ["mushi_2116"],
+      "siblings": ["mahli_1896", "eder_1035"]
+    },
+    "skip": false
+  },
+  "jeriah_860": {
+    "name": "Jeriah",
+    "aka": [],
+    "who": "A Levite of the clan of Kohath, the chief among the sons of Hebron.",
+    "key": [
+      "He is listed as the chief of Hebron's sons in David's organization of the Levites (1 Chronicles 23).",
+      "His name appears again among the Levite families assigned by lot for service (1 Chronicles 24)."
+    ],
+    "family": {
+      "father": ["hebron_1475"],
+      "siblings": ["amariah_200", "jahaziel_698", "jekameam_834"]
+    },
+    "skip": false
+  },
+  "jeshua_894": {
+    "name": "Jeshua",
+    "aka": [],
+    "who": "Head of a family within the clan of Pahath-moab whose descendants returned from exile with Zerubbabel.",
+    "key": [
+      "His descendants, with Joab's, were counted among the sons of Pahath-moab, numbering 2,812 (Ezra 2).",
+      "Nehemiah's copy of the list gives 2,818 for the same families (Nehemiah 7)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "jeshua_898": {
+    "name": "Jeshua",
+    "aka": [],
+    "who": "A chief of the Levites after the exile, son of Kadmiel, who led praise and thanksgiving.",
+    "key": [
+      "Jeshua son of Kadmiel is named among the chiefs of the Levites (Nehemiah 12).",
+      "With their brothers they stood in sections to praise and give thanks, as David commanded (Nehemiah 12)."
+    ],
+    "family": {
+      "father": ["kadmiel_1767"]
+    },
+    "skip": false
+  },
+  "jeshua_899": {
+    "name": "Jeshua",
+    "aka": [],
+    "who": "The high priest, son of Jozadak, who returned from exile with Zerubbabel and helped rebuild the temple.",
+    "key": [
+      "He was among the leaders who returned from Babylon with Zerubbabel (Ezra 2).",
+      "He and his fellow priests rebuilt the altar and began laying the temple's foundation (Ezra 3).",
+      "With Zerubbabel he refused the adversaries' offer to help build (Ezra 4).",
+      "Called Joshua, he was stirred by Haggai's message to resume work on the temple (Haggai 1).",
+      "Some of his descendants later pledged to put away their foreign wives (Ezra 10)."
+    ],
+    "family": {
+      "father": ["jozadak_1747"],
+      "children": ["joiakim_1681"]
+    },
+    "skip": false
+  },
+  "jeush_913": {
+    "name": "Jeush",
+    "aka": [],
+    "who": "A son of Esau and Oholibamah, born in Canaan, who became a chief in Edom.",
+    "key": [
+      "Oholibamah bore Jeush to Esau in Canaan, along with Jalam and Korah (Genesis 36).",
+      "He became one of the chiefs descended from Esau (Genesis 36).",
+      "Chronicles repeats him among Esau's sons (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["esau_1216"],
+      "mother": ["aholibamah_1761"],
+      "siblings": ["jaalam_662", "korah_1793", "eliphaz_1144", "reuel_2430"]
+    },
+    "skip": false
+  },
+  "jezreel_1613": {
+    "name": "Jezreel",
+    "aka": [],
+    "who": "The first son of the prophet Hosea and Gomer, whose name announced judgment and later restoration.",
+    "key": [
+      "Gomer bore Hosea a son, and the LORD told him to name the boy Jezreel (Hosea 1).",
+      "The name announced punishment on Jehu's house for the blood shed at Jezreel (Hosea 1).",
+      "God promised a great day of Jezreel when Judah and Israel would be gathered together (Hosea 1).",
+      "The name later becomes a promise of blessing, as God sows his people in the land (Hosea 2)."
+    ],
+    "family": {
+      "father": ["hosea_1555"],
+      "mother": ["gomer_1329"],
+      "siblings": ["lo-ruhamah_1829", "lo-ammi_1827"]
+    },
+    "skip": false
+  },
+  "jobab_1641": {
+    "name": "Jobab",
+    "aka": [],
+    "who": "An early king of Edom, son of Zerah of Bozrah, who reigned before Israel had kings.",
+    "key": [
+      "Jobab son of Zerah of Bozrah reigned in Edom after Bela died (Genesis 36).",
+      "When Jobab died, Husham of the land of the Temanites reigned in his place (Genesis 36).",
+      "Chronicles repeats him in its list of Edom's kings (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": ["zerah_3044"]
+    },
+    "skip": false
+  },
+  "jochebed_1645": {
+    "name": "Jochebed",
+    "aka": [],
+    "who": "A daughter of Levi, wife of Amram, and mother of Aaron, Moses, and Miriam.",
+    "key": [
+      "As Moses' mother, she hid her baby for three months from Pharaoh's decree (Exodus 2).",
+      "She placed him in a basket among the reeds by the Nile (Exodus 2).",
+      "Pharaoh's daughter then paid her to nurse her own son (Exodus 2).",
+      "The genealogy names her Jochebed, Amram's wife and his father's sister (Exodus 6).",
+      "She is called Levi's daughter, born in Egypt, mother of Aaron, Moses, and Miriam (Numbers 26)."
+    ],
+    "family": {
+      "father": ["levi_1820"],
+      "siblings": ["gershon_1305", "kohath_1790", "merari_2004"],
+      "spouses": ["amram_242"],
+      "children": ["aaron_1", "moses_2108", "miriam_2087"]
+    },
+    "skip": false
+  },
+  "joel_1647": {
+    "name": "Joel",
+    "aka": [],
+    "who": "Samuel's firstborn son, a corrupt judge in Beersheba, and grandfather of the singer Heman's line.",
+    "key": [
+      "Samuel appointed his sons Joel and Abijah as judges in Beersheba (1 Samuel 8).",
+      "They turned aside after gain, took bribes, and perverted justice (1 Samuel 8).",
+      "Their corruption led Israel's elders to ask Samuel for a king (1 Samuel 8).",
+      "His son Heman became a leading singer when David organized worship (1 Chronicles 6).",
+      "Heman son of Joel sounded bronze cymbals when the ark was brought up (1 Chronicles 15)."
+    ],
+    "family": {
+      "father": ["samuel_2469"],
+      "siblings": ["abiah_15"],
+      "children": ["heman_1490"]
+    },
+    "skip": false
+  },
+  "joel_1655": {
+    "name": "Joel",
+    "aka": [],
+    "who": "A Gershonite Levite of the family of Ladan who helped oversee the temple treasuries.",
+    "key": [
+      "He is listed with Jehiel and Zetham among the sons of Ladan (1 Chronicles 23).",
+      "With his brother Zetham he was in charge of the treasuries of the house of the LORD (1 Chronicles 26)."
+    ],
+    "family": {
+      "father": ["laadan_1823"],
+      "siblings": ["jehiel_771", "zetham_3056"]
+    },
+    "skip": false
+  },
+  "joel_1660": {
+    "name": "Joel",
+    "aka": [],
+    "who": "A prophet, son of Pethuel, who used a locust plague to call Judah to repentance.",
+    "key": [
+      "The word of the LORD came to Joel son of Pethuel (Joel 1).",
+      "He called priests and people to mourn and fast after a devastating locust plague (Joel 1).",
+      "He warned of the day of the LORD and urged Judah to return with all their heart (Joel 2).",
+      "He announced God's promise to pour out his Spirit on all flesh (Joel 2).",
+      "At Pentecost, Peter declared that this outpouring fulfilled Joel's prophecy (Acts 2)."
+    ],
+    "family": {
+      "father": ["pethuel_2323"]
+    },
+    "skip": false
+  }
+}
