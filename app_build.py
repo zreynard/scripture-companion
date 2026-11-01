@@ -11,12 +11,16 @@ from refs import parse_refs
 from datetime import date as _dd
 import config
 import years
+import glob as _glob
+SUMMARIES = {}
+for _f in sorted(_glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "summaries", "g*.json"))):
+    SUMMARIES.update(json.load(open(_f, encoding="utf-8")))
 SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each stop and beside each book (YEARS=0 hides them)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 34  # bump on every shipped build; also busts the service-worker cache
+VERSION = 35  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -197,7 +201,9 @@ def main():
                               key=lambda j: (_day(j), first_verse[j].get(name, (0, 0)), j))
             out += [j for j in ids if j not in out]
             ids = out
-            chs.append({"c": c, "seq": narr[(name, c)], "ids": ids, **({"y": years.chapter_label(name, c)} if SHOW_YEARS else {})})
+            sm = SUMMARIES.get(name, {}).get("chapters", {}).get(str(c), {})
+            chs.append({"c": c, "seq": narr[(name, c)], "ids": ids, **({"y": years.chapter_label(name, c)} if SHOW_YEARS else {}),
+                        **({"sl": sm["line"], "sm": sm.get("more", [])} if sm.get("line") else {})})
         ov = sorted(set(by_book_ov.get(name, [])), key=lambda i: (items[i]["sc"] or [99, 99], items[i]["date"], i))
         # drop a Secret Church event page when its podcast episodes or video sessions are present
         if any(items[i]["src"] in ("secret_church_podcast", "youtube_radical", "twr360_secret_church") for i in ov):
@@ -205,7 +211,8 @@ def main():
         sp = sorted(spans.get(name, []), key=lambda x: (x["label"], items[x["id"]]["sc"] or [99, 99]))
         if any(items[x["id"]]["src"] in ("secret_church_podcast", "youtube_radical", "twr360_secret_church") for x in sp):
             sp = [x for x in sp if items[x["id"]]["src"] != "secret_church"]
-        books.append({"name": name, "abbr": abbr, "n": n, "t": t, "ov": ov, "spans": sp, "ch": chs, **({"yr": years.BOOKS[name]} if SHOW_YEARS else {})})
+        books.append({"name": name, "abbr": abbr, "n": n, "t": t, "ov": ov, "spans": sp, "ch": chs, **({"yr": years.BOOKS[name]} if SHOW_YEARS else {}),
+                      **({"bl": SUMMARIES[name]["line"], "bm": SUMMARIES[name].get("more", [])} if SUMMARIES.get(name, {}).get("line") else {})})
     sc_events = [{"n": n, "title": title, "url": url, "scope": scope} for n, title, url, scope in config.SECRET_CHURCH_EVENTS]
     sc_items = sorted([i for i in items.values() if i["sc"]], key=lambda i: (i["sc"][0], i["sc"][1]))
     ptw = sorted([i for i in items.values() if i["tr"] == "devotional"], key=lambda i: i["date"])
@@ -252,7 +259,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .you{filter:drop-shadow(0 0 12px rgba(201,162,74,.9))}
 .glow{filter:blur(28px);opacity:.55}
 /* clearing: the chapter where you stand, placed in the world */
-.clearing{position:absolute;width:min(340px,92vw);z-index:3;padding:14px 14px 16px;border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.92) 18%,rgba(255,255,255,.92) 85%,rgba(255,255,255,.55));backdrop-filter:blur(8px);box-shadow:0 10px 40px rgba(27,36,64,.10)}
+.clearing{position:relative;margin:0 auto;width:min(340px,92vw);z-index:3;padding:14px 14px 16px;border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.92) 18%,rgba(255,255,255,.92) 85%,rgba(255,255,255,.55));backdrop-filter:blur(8px);box-shadow:0 10px 40px rgba(27,36,64,.10)}
 .clearing .where{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .scene{font:italic 15px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--gold2);margin:-4px 0 10px;display:flex;align-items:center;gap:8px}
 .clearing .ch{font-size:30px;line-height:1.05;margin:2px 0 8px}
@@ -272,6 +279,12 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .clearing .fold{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid rgba(27,36,64,.15);background:rgba(255,255,255,.6);color:var(--ink);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
 .clearing .yr{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin:-2px 0 8px}.clearing.folded .yr{margin:-2px 0 4px}
 .byr{font:600 9px -apple-system,system-ui,sans-serif;letter-spacing:.14em;fill:rgba(168,129,42,.85);text-transform:uppercase}
+.clearing .sline{font-size:15px;line-height:1.4;color:var(--ink);margin:0 0 6px}
+.clearing .about{border-left:2px solid var(--gold);padding:2px 0 2px 10px;margin:4px 0 10px}.clearing .ab-t{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin-bottom:2px}
+.sum2{margin:0 0 8px}.sum2 summary{list-style:none;cursor:pointer;font-size:13px;color:var(--gold2)}.sum2 summary::-webkit-details-marker{display:none}
+.sum2 ul{margin:6px 0 0;padding-left:18px}.sum2 li{font-size:14px;line-height:1.4;color:var(--ink);margin:3px 0}
+#bookhd{position:fixed;left:14px;top:calc(10px + env(safe-area-inset-top));z-index:6;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid rgba(27,36,64,.12);color:var(--ink);border-radius:16px;padding:6px 14px;font:16px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;cursor:pointer}
+#bookhd:empty{display:none}
 .clearing .sum{font-size:13px;color:var(--mute);margin:-4px 0 0}.clearing.folded .ch{font-size:24px;margin:2px 0 6px}.clearing.folded .acts{margin-top:10px}
 .acts .go{background:var(--gold);color:#1b2440;border-color:var(--gold);font-weight:600}
 .acts .read.on{background:rgba(201,162,74,.18);color:var(--gold2);border-color:var(--gold)}
@@ -304,7 +317,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .settings .note{color:var(--mute);font-size:14px;line-height:1.5}textarea{width:100%;height:110px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;font:12px/1.4 ui-monospace,monospace}
 .btn{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 14px;font:inherit;margin:4px 6px 4px 0}
 </style></head><body>
-<div class="top"><span id="pct" style="display:none"></span><button id="gear">⋯</button></div>
+<button id="bookhd" aria-label="Go to chapter 1 of this book"></button><div class="top"><span id="pct" style="display:none"></span><button id="gear">⋯</button></div>
 <div id="main"></div>
 <div id="np"><div class="grab"></div><div class="t serif" id="np-t"></div><div class="s" id="np-s"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
@@ -414,7 +427,7 @@ const mins=s=>s?Math.round(s/60)+' min':'';
 const isDone=id=>!!(prog[id]&&prog[id].done);
 // Listened = at least 70% of the teaching actually played (seconds heard, not where the slider sits)
 const DONE_AT=0.7,body=id=>{const p=prog[id]||{};return Math.max(1,(p.dur||0)-(I[id].s||0))},heardPct=id=>{const p=prog[id]||{};return p.dur&&p.heard?Math.min(100,Math.round(100*p.heard/body(id))):0};
-let lastT=null,ready=true;  /* ready: the episode has loaded and jumped to its place, so positions can be saved */
+let lastT=null,ready=true;const OPEN=new Set();  /* summaries the listener opened stay open across redraws */  /* ready: the episode has loaded and jumped to its place, so positions can be saved */
 const LANDS=[['Genesis','The Law'],['Joshua','History'],['Job','Wisdom & Song'],['Isaiah','Major Prophets'],['Hosea','Minor Prophets'],['Matthew','The Gospels'],['Acts','The Church Begins'],['Romans','Letters of Paul'],['Hebrews','General Letters'],['Revelation','The End & the New Beginning']];
 function books(){const b=[...D.books];if(cfg.order==='narr')b.sort((x,y)=>Math.min(...x.ch.map(c=>c.seq))-Math.min(...y.ch.map(c=>c.seq)));return b}
 function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;for(const c of chs)w.push({b,c})}return w}
@@ -431,17 +444,18 @@ function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsV
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
  const POS=[];let acc=0;for(const b of books()){const wgt=(D.books[0].yr?11:6)+2.2*Math.sqrt(b.n);const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;chs.forEach((c,k)=>POS.push(acc+wgt*(k+0.5)/b.n));acc+=wgt}
  render.POS=POS;render.TOT=acc;const fill=first>0?(POS[first-1]+POS[first])/2/acc:0;
- m.innerHTML=`<div class="world" id="world"><svg viewBox="0 0 390 ${H}" preserveAspectRatio="xMidYMin meet">
+ m.innerHTML=`<div class="world" id="world"><svg id="w1" viewBox="0 0 390 ${H}" preserveAspectRatio="xMidYMin meet">
   <defs><radialGradient id="g"><stop offset="0" stop-color="#d9b15a" stop-opacity=".55"/><stop offset="1" stop-color="#d9b15a" stop-opacity="0"/></radialGradient>
   <radialGradient id="halo"><stop offset="0" stop-color="#e9c979" stop-opacity=".40"/><stop offset=".6" stop-color="#e9c979" stop-opacity=".10"/><stop offset="1" stop-color="#e9c979" stop-opacity="0"/></radialGradient>
   <radialGradient id="ember"><stop offset="0" stop-color="#e2a35a" stop-opacity=".30"/><stop offset="1" stop-color="#e2a35a" stop-opacity="0"/></radialGradient><radialGradient id="dawn"><stop offset="0" stop-color="#fff6d8" stop-opacity=".95"/><stop offset=".5" stop-color="#f6e7c0" stop-opacity=".35"/><stop offset="1" stop-color="#f6e7c0" stop-opacity="0"/></radialGradient><radialGradient id="glory"><stop offset="0" stop-color="#fffdf2" stop-opacity="1"/><stop offset=".35" stop-color="#fff3cc" stop-opacity=".85"/><stop offset=".7" stop-color="#f3dfa2" stop-opacity=".3"/><stop offset="1" stop-color="#f3dfa2" stop-opacity="0"/></radialGradient></defs>
-  <g id="sky"></g><g id="lands"></g>
+  <g id="scene"><g id="sky"></g><g id="lands"></g>
   <path id="road" d="${d}" fill="none" stroke="rgba(27,36,64,.10)" stroke-width="30" stroke-linecap="round"/>
   <path d="${d}" fill="none" stroke="var(--gold)" stroke-width="30" stroke-linecap="round" pathLength="1" stroke-dasharray="${fill} 1" opacity=".9"/>
   <path d="${d}" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="3" stroke-dasharray="3 14" stroke-linecap="round"/>
   <path id="hit" d="${d}" fill="none" stroke="transparent" stroke-width="70"/>
-  <g id="labels"></g><g id="marker" style="pointer-events:none"></g></svg>
-  <div class="clearing" id="clearing"></div></div>`;
+  <g id="labels"></g><g id="marker" style="pointer-events:none"></g></g></svg>
+  <div class="clearing" id="clearing"></div>
+  <svg id="w2" viewBox="0 0 390 ${H}" preserveAspectRatio="xMidYMin meet"><use href="#scene"/></svg></div>`;
  decorate(w,first);wire()}
 function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road.getTotalLength(),POS=render.POS,TOT=render.TOT,at=i=>road.getPointAtLength(L*POS[Math.max(0,Math.min(w.length-1,Math.round(i)))]/TOT);
  // labels with collision avoidance: short books alternate sides and get pushed apart, with leader lines back to the road
@@ -474,16 +488,20 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  // clearing placed in the world beside the marker
  const sc=svg.getBoundingClientRect().width/390,cl=$('#clearing');const x=w[camp],b=x.b,c=x.c,ids=c.ids.filter(okWho),r=!!read[b.abbr+c.c],ov=(c===b.ch[0]?b.ov:[]).filter(okWho);const fold=!!S.get('fold',false);cl.classList.toggle('folded',fold);
  let nextV=null;for(let i=camp+1;i<w.length;i++){if(w[i].c.ids.some(okWho)){nextV={i,x:w[i]};break}}
- cl.style.top=(m.y*sc+46)+'px';cl.style.right='auto';
+ {const cut=Math.min(Hs-20,m.y+44);svg.setAttribute('viewBox',`0 0 390 ${cut}`);$('#w2').setAttribute('viewBox',`0 ${cut} 390 ${Hs-cut}`)}
  const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';
- const rdc=w.filter(x=>read[x.b.abbr+x.c.c]).length,lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${rdc} of 1,189</span></div><div class="hd"><div class="ch serif" id="chT">${b.name} ${c.c}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${c.y?`<div class="yr">${c.y}</div>`:''}${fold?`<div class="sum">${ids.length?ids.length+' voice'+(ids.length>1?'s':''):'No voice here'}${nextV?' · next voice at '+nextV.x.b.name+' '+nextV.x.c.c:''}</div>`:''}<div class="body"${fold?' hidden':''}>${lm?`<div class="scene">${lm[1]}</div>`:''}
+ const rdc=w.filter(x=>read[x.b.abbr+x.c.c]).length,lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${rdc} of 1,189</span></div><div class="hd"><div class="ch serif" id="chT">${b.name} ${c.c}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${c.y?`<div class="yr">${c.y}</div>`:''}${c===b.ch[0]&&b.bl?`<div class="about"><div class="ab-t">About ${b.name}</div><div class="sline">${esc(b.bl)}</div>${b.bm&&b.bm.length?`<details class="sum2" data-k="b:${b.abbr}"${OPEN.has('b:'+b.abbr)?' open':''}><summary>More about the book ›</summary><ul>${b.bm.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`:''}</div>`:''}${c.sl?`<div class="sline">${esc(c.sl)}</div>${c.sm&&c.sm.length?`<details class="sum2" data-k="c:${b.abbr}${c.c}"${OPEN.has('c:'+b.abbr+c.c)?' open':''}><summary>Summary ›</summary><ul>${c.sm.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`:''}`:''}${fold?`<div class="sum">${ids.length?ids.length+' voice'+(ids.length>1?'s':''):'No voice here'}${nextV?' · next voice at '+nextV.x.b.name+' '+nextV.x.c.c:''}</div>`:''}<div class="body"${fold?' hidden':''}>${lm?`<div class="scene">${lm[1]}</div>`:''}
   ${(()=>{if(c!==b.ch[0])return '';const ord=books().map(x=>x.name);const groups={};(b.spans||[]).forEach(x=>{let lab=x.label;if(x.books&&!/Testament|Law|History|Wisdom|Prophets|Gospels|Church|Letters|Revelation/.test(lab)){const idxs=x.books.map(n=>ord.indexOf(n)).sort((p,q)=>p-q);const contig=idxs[idxs.length-1]-idxs[0]===idxs.length-1;lab=contig?`${ord[idxs[0]]}–${ord[idxs[idxs.length-1]]}`:x.books.join(', ')}(groups[lab]=groups[lab]||[]).push(x.id)});let h='';for(const [lab,ids2] of Object.entries(groups))h+=`<details class="enter"><summary>Entering ${lab} · ${ids2.length} survey${ids2.length>1?'s':''} ›</summary>${ids2.map(voiceHTML).join('')}</details>`;
    if(ov.length)h+=`<details class="enter"><summary>Enter ${b.name} with ${ov.length} overview${ov.length>1?'s':''} ›</summary>${ov.map(voiceHTML).join('')}</details>`;return h})()}
   ${(()=>{const all=[...ids.filter(i=>I[i].tr!=='devotional'),...ids.filter(i=>I[i].tr==='devotional')];const show=decorate.more?all:all.slice(0,3);return show.map(voiceHTML).join('')+(all.length>3&&!decorate.more?`<button class="more" id="more">${all.length-3} more voice${all.length-3>1?'s':''} on this stretch ›</button>`:'')})()}
   ${ids.length?'':'<div class="empty">No voice on this stretch — read it, mark it, walk on.</div>'}
   ${nextV?`<div class="empty" style="padding-top:2px">Next voice ahead: <b style="color:var(--gold2);cursor:pointer" data-camp="${nextV.i}" class="nv">${nextV.x.b.name} ${nextV.x.c.c}</b> · ${nextV.i-camp} stop${nextV.i-camp>1?'s':''} on</div>`:''}
   </div><div class="acts"><button class="bk" data-camp="${Math.max(0,camp-1)}" aria-label="Back a chapter"${camp===0?' disabled':''}>‹</button><button class="read ${r?'on':''}" data-read="${b.abbr+c.c}">${r?'Read ✓':'Mark read'}</button><button class="go" data-camp="${Math.min(w.length-1,camp+1)}">Walk on ›</button>${camp!==first?`<button data-camp="${first}">My place</button>`:''}</div>`;
- const cw=cl.offsetWidth;cl.style.left=Math.max(10,Math.min(window.innerWidth-cw-10,m.x*sc-cw/2))+'px';
+ /* the road below the stop: tap a book name or the road to go there */
+ $('#w2').onclick=e=>{const w2=$('#w2'),pt=w2.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(w2.getScreenCTM().inverse());
+  const lb=(decorate.drift||[]).find(l=>l.kind==='book'&&p.y>l.y-18&&p.y<l.y+(l.yr?20:8)&&(l.side==='L'?p.x>l.x-6&&p.x<l.x+150:p.x<l.x+6&&p.x>l.x-150));
+  if(lb){go(lb.idx);return}let best=0,bd=1e12;for(let i=0;i<w.length;i++){const q=at(i),dd=(q.x-p.x)**2+(q.y-p.y)**2;if(dd<bd){bd=dd;best=i}}if(bd<60*60)go(best)};
+ $('#bookhd').textContent=b.name;$('#bookhd').dataset.camp=w.findIndex(x=>x.b===b);
  // camera: keep you ~30% from top
  if(!decorate.moving&&(decorate.follow||decorate.first)){const y=m.y*sc+$('#world').offsetTop-window.innerHeight*0.30;window.scrollTo({top:Math.max(0,y),behavior:decorate.first?'auto':'smooth'})}decorate.first=false;decorate.follow=false
  $('#hit').onclick=e=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());let best=0,bd=1e12;for(let i=0;i<w.length;i++){const q=at(i),dd=(q.x-p.x)**2+(q.y-p.y)**2;if(dd<bd){bd=dd;best=i}}go(best)};
@@ -532,7 +550,8 @@ function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;r
  addEventListener('scroll',()=>{if(np.classList.contains('on')&&!np.classList.contains('mini')&&Math.abs(scrollY-fullAtScroll)>60)setMini(true)},{passive:true});
 })();
 /* wiring */
-function wire(){document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();play(b.dataset.play)});
+function wire(){document.querySelectorAll('details[data-k]').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.k):OPEN.delete(d.dataset.k)});
+ const bh=$('#bookhd');if(bh)bh.onclick=()=>{if(view!=='walk'){view='walk';S.set('view',view)}go(+bh.dataset.camp)};document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();play(b.dataset.play)});
  
  document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{const was=!!read[b.dataset.read];read[b.dataset.read]=!was;S.set('read',read);if(!was){camp=Math.min(walk().length-1,camp+1);decorate.follow=true}S.set('camp',camp);render()});
  document.querySelectorAll('.acts [data-camp], .nv[data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;go(+b.dataset.camp)});const fd=$('#fold');if(fd){fd.onclick=e=>{e&&e.stopPropagation();const f=!S.get('fold',false);S.set('fold',f);if(f&&NP().classList.contains('on'))setMini(true);decorate.moving=true;render();decorate.moving=false};const ct=$('#chT');if(ct)ct.onclick=fd.onclick}

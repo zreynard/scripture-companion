@@ -210,6 +210,16 @@ def main():
     check("every book shows its years on the road", [b["name"] for b in B if not b.get("yr")], 66)
     check("Genesis 1-11 is not given a year", [f"Genesis {c['c']}: {c.get('y')}" for c in B[0]["ch"][:11] if re.search(r"\d", c.get("y", ""))])
 
+    print("\n== Summaries")
+    words = lambda t: len(t.split())
+    check("every book has a one-sentence overview and 3-6 points",
+          [b["name"] for b in B if not b.get("bl") or not (3 <= len(b.get("bm", [])) <= 6)], 66)
+    check("every chapter has a one-sentence overview and 2-4 points",
+          [f"{b['name']} {c['c']}" for b in B for c in b["ch"] if not c.get("sl") or not (2 <= len(c.get("sm", [])) <= 4)], 1189)
+    check("overviews and points stay short (22 words or fewer)",
+          [f"{b['name']} {c['c']}: {t[:50]}" for b in B for c in b["ch"] for t in [c.get("sl", "")] + c.get("sm", []) if words(t) > 22] +
+          [f"{b['name']}: {t[:50]}" for b in B for t in [b.get("bl", "")] + b.get("bm", []) if words(t) > 22])
+
     print("\n== Road rules")
     NEVER, TOP = re.compile(config.NEVER_ON_ROAD_RE, re.I), re.compile(config.TOPICAL_TITLE_RE, re.I)
     check("nothing about women / mothers / womanhood on the road", [I[i]["t"][:70] for i in road if NEVER.search(I[i]["t"])])
