@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 42  # bump on every shipped build; also busts the service-worker cache
+VERSION = 43  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -324,8 +324,8 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .nm{background:none;border:0;padding:0;font:inherit;color:inherit;font-weight:650;text-decoration:underline;text-decoration-color:rgba(168,129,42,.7);text-decoration-thickness:1.5px;text-underline-offset:3px;cursor:pointer}
 .nm.l{text-decoration-style:dotted}
 .top{display:flex;gap:8px;align-items:center}.top #mapbtn{display:flex;align-items:center;justify-content:center;padding:6px 10px}
-#sheetbg{position:fixed;inset:0;background:rgba(27,36,64,.28);z-index:20}
-#sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;max-height:84vh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#fbf8f1;border-radius:22px 22px 0 0;box-shadow:0 -12px 40px rgba(27,36,64,.18);padding:8px max(18px,env(safe-area-inset-right)) calc(24px + env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+#sheetbg{position:fixed;inset:0;background:rgba(27,36,64,.28);z-index:20;touch-action:none}
+#sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;max-height:84vh;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#fbf8f1;border-radius:22px 22px 0 0;box-shadow:0 -12px 40px rgba(27,36,64,.18);padding:8px max(18px,env(safe-area-inset-right)) calc(24px + env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));transition:transform .25s cubic-bezier(.2,.8,.2,1)}
 #sheet .sh-grab{width:40px;height:4px;border-radius:2px;background:rgba(27,36,64,.2);margin:4px auto 6px}
 #sheet .sh-top{display:flex;align-items:center;gap:8px;position:sticky;top:-8px;background:#fbf8f1;padding:6px 0;z-index:2}
 #sheet .sh-top button{border:1px solid rgba(27,36,64,.15);background:#fff;border-radius:50%;width:36px;height:36px;font-size:18px;color:var(--ink);cursor:pointer}
@@ -567,7 +567,7 @@ function wireSheet(){$('#shbody').querySelectorAll('[data-nk]').forEach(b=>b.onc
  $('#shbody').querySelectorAll('.mini').forEach(m=>m.onclick=()=>openMap(SHEET[SHEET.length-1][1]))}
 (()=>{$('#shx').onclick=closeSheet;$('#sheetbg').onclick=closeSheet;$('#shback').onclick=()=>{SHEET.pop();const t=SHEET[SHEET.length-1];if(t)openSheet(t[0],t[1],false)};
  const sh=$('#sheet');let y0=null,dy=0;sh.addEventListener('touchstart',e=>{if(sh.scrollTop>0){y0=null;return}y0=e.touches[0].clientY;dy=0},{passive:true});
- sh.addEventListener('touchmove',e=>{if(y0===null)return;dy=e.touches[0].clientY-y0;if(dy>0)sh.style.transform=`translateY(${dy}px)`},{passive:true});
+ sh.addEventListener('touchmove',e=>{if(y0===null)return;dy=e.touches[0].clientY-y0;if(dy>0){e.preventDefault();sh.style.transform=`translateY(${dy}px)`}},{passive:false});
  sh.addEventListener('touchend',()=>{if(y0===null)return;if(dy>90)closeSheet();else sh.style.transform='';y0=null});
  addEventListener('keydown',e=>{if(e.key==='Escape'){closeSheet();closeMap()}})})();
 /* ---- the map: the Bible as one road in 14 legs; your leg walked in gold, the road ahead still dotted ---- */
@@ -770,11 +770,11 @@ function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;ready=fal
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',next].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  audio.paused?audio.play().catch(()=>{}):audio.pause()}
 function next(){const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;if(x.c===x.b.ch[0])seq.push(...(x.b.spans||[]).map(s=>s.id),...x.b.ov);seq.push(...x.c.ids)});/* continue from where the listener stands: a teaching that spans chapters appears in each of them */let k=seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]);if(k<0)k=seq.lastIndexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
-audio.addEventListener('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
+let saveSec=-1;audio.addEventListener('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
  if(!ready)return;const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
  if(lastT!==null&&!audio.paused&&!audio.seeking){const dt=t-lastT;if(dt>0&&dt<4)p.heard=Math.min(d||Infinity,(p.heard||0)+dt)}lastT=t;
- const wasDone=!!p.done;if(d&&p.heard>=DONE_AT*body(cur))p.done=true;
- if(Math.floor(t)%5===0||p.done!==wasDone){p.pos=t;p.at=Date.now();S.set('prog',prog);if(p.done!==wasDone)render()}});
+ const wasDone=!!p.done;if(d&&p.heard>=DONE_AT*body(cur))p.done=true;const nowDone=!!p.done,sec=Math.floor(t);
+ if((sec%5===0&&sec!==saveSec)||nowDone!==wasDone){saveSec=sec;p.pos=t;p.at=Date.now();S.set('prog',prog);if(nowDone!==wasDone)render()}});
 audio.addEventListener('seeking',()=>{lastT=null});audio.addEventListener('play',()=>{lastT=null});
 audio.addEventListener('ended',()=>{const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*body(cur))p.done=true;S.set('prog',prog);render();next()});
 const setPP=()=>{$('#pp').innerHTML=icon(audio.paused?'play':'pause',28,0,'#1b2440')};setPP();audio.addEventListener('play',()=>{setPP();render()});audio.addEventListener('pause',()=>{setPP();render()});
