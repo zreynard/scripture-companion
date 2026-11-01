@@ -133,7 +133,7 @@ INTRO_SKIP = {
     "mclean_podcast": 0,          # McLean Bible Church
     "2819_podcast": 0,            # 2819 Church (PAM)
     "street_preachers": 0,        # Street Preachers (PAM)
-    "davey_sermons": 0,           # Stephen Davey Sermons
-    "davey_wfth": 0,              # Wisdom for the Heart
-    "davey_journey": 0,           # The Wisdom Journey
+    "davey_sermons": 6,           # Stephen Davey Sermons
+    "davey_wfth": 6,              # Wisdom for the Heart
+    "davey_journey": 6,           # The Wisdom Journey
 }
