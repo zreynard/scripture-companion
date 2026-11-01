@@ -45,8 +45,13 @@ PASS  every chapter carries its best-estimate year line
 PASS  every book shows its years on the road
 PASS  Genesis 1-11 is not given a year
 
+== Summaries
+PASS  every book has a one-sentence overview and 3-6 points
+PASS  every chapter has a one-sentence overview and 2-4 points
+PASS  overviews and points stay short (22 words or fewer)
+
 == Road rules
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-34 of 34 checks pass
+37 of 37 checks pass
