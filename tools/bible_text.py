@@ -37,6 +37,7 @@ def parse(usfm: str):
     st = {"h": None, "p": False, "q": 0, "d": None, "brk": None}   # pending heading / paragraph / poetry / title / break
     def text_to_verse(t: str):
         t = re.sub(r"\\\+?[a-z]+\d*\*?", "", t)                   # character markers (\wj \add \nd \qs ...) keep their text
+        t = re.sub(r"\bvvv\s*", "", t)                           # stray "vvv" in the publisher's USFM (Genesis 35:18)
         t = re.sub(r"\s+", " ", t).strip()
         if not t or cur is None or not cur:
             return
@@ -50,6 +51,7 @@ def parse(usfm: str):
         line = strip_notes(raw.strip())
         if not line:
             continue
+        if not line.startswith("\\mr"): st["sub"] = None
         m = re.match(r"\\(\w+)\s?(.*)", line)
         tag = m.group(1) if m else None
         if tag == "c":
@@ -64,6 +66,8 @@ def parse(usfm: str):
             if not rest_line:
                 continue
             line = rest_line
+        elif tag == "mr":
+            st["sub"] = re.sub(r"\\\+?[a-z]+\d*\*?", "", m.group(2)).strip(); continue
         elif tag in HEADINGS or tag in ("id", "b", "ie", "ip", "is", "is1"):
             continue
         # tokenize the line on structural markers; text between them belongs to the current verse
@@ -87,6 +91,8 @@ def parse(usfm: str):
             if mp and mp.group(1) in PARAS:
                 st["q"] = 0; st["p"] = True; st["brk"] = "p"; continue
             text_to_verse(tok)
+    if st.get("sub") and chapters and chapters[-1]:   # only a closing line at the very end of the book is kept
+        chapters[-1][-1]["t"] += "\n" + st["sub"]
     return chapters
 
 def load(src):
@@ -110,7 +116,8 @@ def main():
     for line in load(txt_src).decode("utf-8-sig").splitlines():
         m = re.match(r"(.+?) (\d+):(\d+)\t(.*)", line)
         if m:
-            plain[(alias.get(m.group(1), m.group(1)), int(m.group(2)), int(m.group(3)))] = m.group(4).strip()
+            if m.group(4).strip():  # an empty line is a verse the BSB omits (e.g. Matthew 17:21)
+                plain[(alias.get(m.group(1), m.group(1)), int(m.group(2)), int(m.group(3)))] = m.group(4).strip()
     mine = {(b, ci, v["v"]): v["t"] for b, chs in books.items() for ci, ch in enumerate(chs, 1) for v in ch}
     norm = lambda t: re.sub(r"[^a-z0-9]", "", t.lower())
     missing = [k for k in plain if k not in mine]
