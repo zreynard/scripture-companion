@@ -16,7 +16,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 32  # bump on every shipped build; also busts the service-worker cache
+VERSION = 33  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -70,6 +70,7 @@ def main():
     for e in usable:
         it = {"id": e["id"], "t": e["title"], "who": "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Davey" if e["speaker"] == "Davey" else "Platt"),
               "show": config.SHOWS.get(e["source"]),
+              **({"s": config.INTRO_SKIP[e["source"]]} if config.INTRO_SKIP.get(e["source"]) else {}),
               "by": e["speaker"].split(":", 1)[1] if e["speaker"] in team else None,
               "era": e["era"], "tr": e["track"], "src": e["source"], "url": e.get("primary_url") or e["url"],
               "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() else 0,
@@ -412,8 +413,8 @@ const fmt=s=>{s=Math.max(0,Math.round(s||0));const h=Math.floor(s/3600),m=Math.f
 const mins=s=>s?Math.round(s/60)+' min':'';
 const isDone=id=>!!(prog[id]&&prog[id].done);
 // Listened = at least 70% of the teaching actually played (seconds heard, not where the slider sits)
-const DONE_AT=0.7,heardPct=id=>{const p=prog[id]||{};return p.dur&&p.heard?Math.min(100,Math.round(100*p.heard/p.dur)):0};
-let lastT=null;
+const DONE_AT=0.7,body=id=>{const p=prog[id]||{};return Math.max(1,(p.dur||0)-(I[id].s||0))},heardPct=id=>{const p=prog[id]||{};return p.dur&&p.heard?Math.min(100,Math.round(100*p.heard/body(id))):0};
+let lastT=null,ready=true;  /* ready: the episode has loaded and jumped to its place, so positions can be saved */
 const LANDS=[['Genesis','The Law'],['Joshua','History'],['Job','Wisdom & Song'],['Isaiah','Major Prophets'],['Hosea','Minor Prophets'],['Matthew','The Gospels'],['Acts','The Church Begins'],['Romans','Letters of Paul'],['Hebrews','General Letters'],['Revelation','The End & the New Beginning']];
 function books(){const b=[...D.books];if(cfg.order==='narr')b.sort((x,y)=>Math.min(...x.ch.map(c=>c.seq))-Math.min(...y.ch.map(c=>c.seq)));return b}
 function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;for(const c of chs)w.push({b,c})}return w}
@@ -498,18 +499,18 @@ function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(
 /* player */
 const audio=$('#audio');let cur=null,speed=S.get('speed',1);audio.playbackRate=speed;$('#spd').textContent=speed+'×';
 function where(id){for(const b of D.books){if(b.ov.includes(id)||(b.spans||[]).some(x=>x.id===id))return b.name;for(const c of b.ch)if(c.ids.includes(id))return b.name+' '+c.c}return ''}
-function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;audio.src=i.audio;const p=prog[id]||{};audio.addEventListener('loadedmetadata',()=>{if(p.pos&&p.pos<audio.duration-5)audio.currentTime=p.pos},{once:true});
+function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;ready=false;const p=prog[id]||{},saved=p.pos||0;audio.src=i.audio;audio.addEventListener('loadedmetadata',()=>{const st=i.s||0;if(saved&&saved>st&&saved<audio.duration-5)audio.currentTime=saved;else if(st&&st<audio.duration-30)audio.currentTime=st;ready=true},{once:true});  /* fresh plays start after the intro */
   $('#np-t').textContent=i.t;$('#np-s').textContent=teacher(i)+' · '+where(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(false)}setPP();
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play(),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',next].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  audio.paused?audio.play():audio.pause()}
 function next(){const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;if(x.c===x.b.ch[0])seq.push(...(x.b.spans||[]).map(s=>s.id),...x.b.ov);seq.push(...x.c.ids)});/* continue from where the listener stands: a teaching that spans chapters appears in each of them */let k=seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]);if(k<0)k=seq.lastIndexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
 audio.addEventListener('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
- const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
+ if(!ready)return;const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
  if(lastT!==null&&!audio.paused&&!audio.seeking){const dt=t-lastT;if(dt>0&&dt<4)p.heard=Math.min(d||Infinity,(p.heard||0)+dt)}lastT=t;
- const wasDone=!!p.done;if(d&&p.heard>=DONE_AT*d)p.done=true;
+ const wasDone=!!p.done;if(d&&p.heard>=DONE_AT*body(cur))p.done=true;
  if(Math.floor(t)%5===0||p.done!==wasDone){p.pos=t;p.at=Date.now();S.set('prog',prog);if(p.done!==wasDone)render()}});
 audio.addEventListener('seeking',()=>{lastT=null});audio.addEventListener('play',()=>{lastT=null});
-audio.addEventListener('ended',()=>{const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*p.dur)p.done=true;S.set('prog',prog);render();next()});
+audio.addEventListener('ended',()=>{const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*body(cur))p.done=true;S.set('prog',prog);render();next()});
 const setPP=()=>{$('#pp').innerHTML=icon(audio.paused?'play':'pause',28,0,'#1b2440')};setPP();audio.addEventListener('play',()=>{setPP();render()});audio.addEventListener('pause',()=>{setPP();render()});
 audio.addEventListener('error',()=>{$('#np-s').textContent=(location.protocol==='file:'||window!==window.top)?'Audio is blocked in this viewer — open in Safari from a web address.':'This file did not load.'});
 $('#pp').onclick=()=>cur&&(audio.paused?audio.play():audio.pause());$('#bk').onclick=()=>audio.currentTime-=10;$('#fw').onclick=()=>audio.currentTime+=10;
