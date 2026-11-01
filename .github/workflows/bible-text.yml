@@ -16,7 +16,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python tools/bible_text.py
+      - run: python tools/bible_text.py 2>&1 | tee bible.log; exit ${PIPESTATUS[0]}
+      - if: always()
+        run: |
+          mkdir -p /tmp/d && cp bible.log /tmp/d/ && cd /tmp/d && git init -q -b diag-bible && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m log
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag-bible
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
