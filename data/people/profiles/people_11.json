@@ -1,0 +1,592 @@
+{
+  "eleazar_1064": {
+    "name": "Eleazar",
+    "aka": [],
+    "who": "Son of Dodo the Ahohite and one of the three chief warriors among David's mighty men.",
+    "key": [
+      "He is named second among the three chief mighty men of David (2 Samuel 23).",
+      "He struck down Philistines until his hand clung to his sword, and the LORD brought a great victory (2 Samuel 23).",
+      "He stood with David at Pas-dammim, defending a barley field against the Philistines (1 Chronicles 11)."
+    ],
+    "family": {"father": ["dodo_1021"]},
+    "skip": false
+  },
+  "eleazar_1065": {
+    "name": "Eleazar",
+    "aka": [],
+    "who": "A Levite of the clan of Merari, son of Mahli, who died leaving daughters but no sons.",
+    "key": [
+      "He is listed among the Merarite Levites as a son of Mahli and brother of Kish (1 Chronicles 23).",
+      "He died without sons, and his daughters married their cousins, the sons of Kish (1 Chronicles 23).",
+      "His childless line is noted again when David organized the Levites (1 Chronicles 24)."
+    ],
+    "family": {"father": ["mahli_1889"], "siblings": ["kish_1785"]},
+    "skip": false
+  },
+  "eleazar_1066": {
+    "name": "Eleazar",
+    "aka": [],
+    "who": "Son of Phinehas who helped receive and weigh the temple treasures Ezra brought to Jerusalem.",
+    "key": [
+      "After Ezra's company reached Jerusalem, he joined Meremoth the priest in weighing the silver, gold, and vessels (Ezra 8).",
+      "Everything was counted and recorded, and the returned exiles offered burnt offerings to God (Ezra 8)."
+    ],
+    "family": {"father": ["phinehas_2351"]},
+    "skip": false
+  },
+  "elhanan_1070": {
+    "name": "Elhanan",
+    "aka": [],
+    "who": "A warrior of David from Bethlehem who killed Lahmi, the brother of Goliath.",
+    "key": [
+      "During David's wars with the Philistines, he fought in a battle at Gob (2 Samuel 21).",
+      "He struck down Lahmi, the brother of Goliath, whose spear shaft was like a weaver's beam (1 Chronicles 20).",
+      "He was among David's servants who killed the descendants of the giants of Gath (1 Chronicles 20)."
+    ],
+    "family": {"father": ["jair_664"]},
+    "skip": false
+  },
+  "eliashib_1099": {
+    "name": "Eliashib",
+    "aka": [],
+    "who": "High priest in Nehemiah's day who led the priests in rebuilding Jerusalem's Sheep Gate.",
+    "key": [
+      "He and his fellow priests rebuilt and consecrated the Sheep Gate and the nearby wall (Nehemiah 3).",
+      "Other builders repaired sections of the wall in front of his house (Nehemiah 3).",
+      "He is listed in the high priestly line as son of Joiakim and father of Joiada (Nehemiah 12).",
+      "One of his grandsons married Sanballat's daughter, so Nehemiah drove him away (Nehemiah 13)."
+    ],
+    "family": {"father": ["joiakim_1681"], "children": ["joiada_1680"]},
+    "skip": false
+  },
+  "eliashib_1100": {
+    "name": "Eliashib",
+    "aka": [],
+    "who": "High priest after the exile, grandson of Jeshua, who served while Nehemiah rebuilt Jerusalem.",
+    "key": [
+      "He led the priests in rebuilding and consecrating the Sheep Gate of Jerusalem's wall (Nehemiah 3).",
+      "He is listed in the high priestly line as son of Joiakim and father of Joiada (Nehemiah 12).",
+      "The heads of the Levite families were recorded from his days onward (Nehemiah 12).",
+      "One of his grandsons married Sanballat's daughter, so Nehemiah drove him away (Nehemiah 13)."
+    ],
+    "family": {"father": ["joiakim_1681"], "children": ["joiada_1680"]},
+    "skip": false
+  },
+  "eliashib_1101": {
+    "name": "Eliashib",
+    "aka": [],
+    "who": "A priest in charge of the temple storerooms who was related to Tobiah and gave him a room there.",
+    "key": [
+      "Appointed over the temple chambers, he prepared a large storeroom for his relative Tobiah (Nehemiah 13).",
+      "That room had held the grain offerings, frankincense, vessels, and tithes for the Levites and priests (Nehemiah 13).",
+      "Nehemiah returned, learned of this evil, threw out Tobiah's goods, and had the rooms cleansed (Nehemiah 13)."
+    ],
+    "skip": false
+  },
+  "eliel_1110": {
+    "name": "Eliel",
+    "aka": [],
+    "who": "Chief of the Levite clan of Hebron who helped bring the ark to Jerusalem under David.",
+    "key": [
+      "As chief of Hebron's descendants, he led eighty of his relatives in David's service (1 Chronicles 15).",
+      "David told him and the other Levite leaders to consecrate themselves and bring up the ark (1 Chronicles 15)."
+    ],
+    "skip": false
+  },
+  "eliezer_1118": {
+    "name": "Eliezer",
+    "aka": [],
+    "who": "A prophet from Mareshah, son of Dodavahu, who rebuked King Jehoshaphat's alliance with Ahaziah of Israel.",
+    "key": [
+      "He prophesied that the LORD would destroy Jehoshaphat's ships because he had joined with Ahaziah (2 Chronicles 20).",
+      "The ships built at Ezion-geber were wrecked and never sailed to Tarshish (2 Chronicles 20)."
+    ],
+    "family": {"father": ["dodavah_1019"]},
+    "skip": false
+  },
+  "eliphelet_1147": {
+    "name": "Eliphelet",
+    "aka": [],
+    "who": "Son of Ahasbai of Maacah, one of David's thirty mighty men.",
+    "key": [
+      "He is listed among the thirty, David's renowned mighty men (2 Samuel 23).",
+      "The list identifies him as the son of Ahasbai of Maacah (2 Samuel 23)."
+    ],
+    "family": {"father": ["ahasbai_116"]},
+    "skip": false
+  },
+  "elishah_1154": {
+    "name": "Elishah",
+    "aka": [],
+    "who": "A son of Javan and grandson of Japheth, listed in the table of nations after the flood.",
+    "key": [
+      "He is listed as a son of Javan, the son of Japheth (Genesis 10).",
+      "From Javan's descendants the coastland peoples spread out into their lands (Genesis 10).",
+      "He is named again among Javan's sons in the genealogies of Chronicles (1 Chronicles 1)."
+    ],
+    "family": {"father": ["javan_744"], "siblings": ["tarshish_2828", "kittim_1789", "dodanim_1018"]},
+    "skip": false
+  },
+  "elishama_1157": {
+    "name": "Elishama",
+    "aka": [],
+    "who": "A man of Judah's royal family, grandfather of Ishmael who assassinated the governor Gedaliah.",
+    "key": [
+      "He is named as the father of Nethaniah, of the royal family (2 Kings 25).",
+      "His grandson Ishmael murdered Gedaliah, the governor Babylon had appointed over Judah (Jeremiah 41)."
+    ],
+    "family": {"children": ["nethaniah_2198"]},
+    "skip": false
+  },
+  "elisheba_1162": {
+    "name": "Elisheba",
+    "aka": [],
+    "who": "Daughter of Amminadab of Judah and sister of Nahshon, who became the wife of Aaron.",
+    "key": [
+      "She married Aaron, the brother of Moses (Exodus 6).",
+      "She bore Aaron four sons: Nadab, Abihu, Eleazar, and Ithamar (Exodus 6)."
+    ],
+    "family": {"father": ["amminadab_228"], "siblings": ["nahshon_2144"], "spouses": ["aaron_1"], "children": ["nadab_2128", "abihu_33", "eleazar_1062", "ithamar_649"]},
+    "skip": false
+  },
+  "elon_1182": {
+    "name": "Elon",
+    "aka": [],
+    "who": "A Hittite whose daughter married Esau, to the grief of Isaac and Rebekah.",
+    "key": [
+      "Esau married his daughter, and the marriage made life bitter for Isaac and Rebekah (Genesis 26).",
+      "His daughter Adah is listed among Esau's wives as the mother of Eliphaz (Genesis 36)."
+    ],
+    "family": {"children": ["adah_414"]},
+    "skip": false
+  },
+  "elon_1184": {
+    "name": "Elon",
+    "aka": [],
+    "who": "A judge from the tribe of Zebulun who led Israel for ten years.",
+    "key": [
+      "After Ibzan, Elon the Zebulunite judged Israel for ten years (Judges 12).",
+      "He died and was buried at Aijalon in the land of Zebulun (Judges 12)."
+    ],
+    "skip": false
+  },
+  "enoch_1191": {
+    "name": "Enoch",
+    "aka": [],
+    "who": "The firstborn son of Cain, after whom Cain named the city he built.",
+    "key": [
+      "Born to Cain and his wife, he gave his name to the city Cain built (Genesis 4).",
+      "He became the father of Irad, continuing Cain's line down to Lamech (Genesis 4)."
+    ],
+    "family": {"father": ["cain_533"], "children": ["irad_611"]},
+    "skip": false
+  },
+  "epaphroditus_1196": {
+    "name": "Epaphroditus",
+    "aka": [],
+    "who": "A believer from Philippi whom Paul called his brother, fellow worker, and fellow soldier.",
+    "key": [
+      "The Philippian church sent him as their messenger to minister to Paul's needs (Philippians 2).",
+      "He delivered the Philippians' gifts, which Paul called a fragrant offering pleasing to God (Philippians 4).",
+      "While serving Paul he fell ill almost to death, but God had mercy on him (Philippians 2).",
+      "Paul sent him home to Philippi and urged the church to honor such men (Philippians 2)."
+    ],
+    "skip": false
+  },
+  "ephah_1197": {
+    "name": "Ephah",
+    "aka": [],
+    "who": "A son of Midian and grandson of Abraham through Keturah, ancestor of an Arabian people.",
+    "key": [
+      "He is listed as the firstborn son of Midian, Abraham's son by Keturah (Genesis 25).",
+      "He is named again among Midian's sons in the genealogies of Chronicles (1 Chronicles 1).",
+      "Isaiah foresaw camels of Midian and Ephah bringing gold and frankincense to Zion (Isaiah 60)."
+    ],
+    "family": {"father": ["midian_2075"], "siblings": ["epher_1201", "henoch_1402", "abida_21", "eldaah_1057"]},
+    "skip": false
+  },
+  "ephah_1198": {
+    "name": "Ephah",
+    "aka": [],
+    "who": "A concubine of Caleb listed in the genealogy of the tribe of Judah.",
+    "key": [
+      "She is named as a concubine of Caleb in Judah's family records (1 Chronicles 2).",
+      "She bore him Haran, Moza, and Gazez (1 Chronicles 2)."
+    ],
+    "family": {"spouses": ["caleb_538"], "children": ["haran_1408", "moza_2113", "gazez_1282"]},
+    "skip": false
+  },
+  "ephah_1199": {
+    "name": "Ephah",
+    "aka": [],
+    "who": "A son of Jahdai listed in the genealogy of Caleb's clan in the tribe of Judah.",
+    "key": [
+      "He is named among the six sons of Jahdai (1 Chronicles 2).",
+      "His family appears within the descendants of Caleb in Judah's genealogy (1 Chronicles 2)."
+    ],
+    "family": {"father": ["jahdai_701"], "siblings": ["regem_2407", "jotham_1736", "gesham_1306", "pelet_2309", "shaaph_2506"]},
+    "skip": false
+  },
+  "epher_1201": {
+    "name": "Epher",
+    "aka": [],
+    "who": "A son of Midian and grandson of Abraham through Keturah.",
+    "key": [
+      "He is listed among the sons of Midian, Abraham's son by Keturah (Genesis 25).",
+      "He is named again among Midian's sons in the genealogies of Chronicles (1 Chronicles 1)."
+    ],
+    "family": {"father": ["midian_2075"], "siblings": ["ephah_1197", "henoch_1402", "abida_21", "eldaah_1057"]},
+    "skip": false
+  },
+  "erastus_1213": {
+    "name": "Erastus",
+    "aka": [],
+    "who": "A helper of Paul who traveled with Timothy into Macedonia and later remained at Corinth.",
+    "key": [
+      "From Ephesus, Paul sent him and Timothy ahead into Macedonia (Acts 19).",
+      "Erastus, the city treasurer, sent greetings with Paul to the believers in Rome (Romans 16).",
+      "Paul told Timothy that Erastus had stayed behind at Corinth (2 Timothy 4)."
+    ],
+    "skip": false
+  },
+  "ethan_1622": {
+    "name": "Ethan",
+    "aka": [],
+    "who": "A Levite singer of the clan of Merari, appointed with Heman and Asaph to lead music under David.",
+    "key": [
+      "Ethan son of Kishi stood at Heman's left among the singers David appointed (1 Chronicles 6).",
+      "The Levites appointed him with Heman and Asaph when David brought up the ark (1 Chronicles 15).",
+      "He, Heman, and Asaph sounded bronze cymbals as the ark came to Jerusalem (1 Chronicles 15)."
+    ],
+    "family": {"father": ["Kishi"]},
+    "skip": false
+  },
+  "eunice_1228": {
+    "name": "Eunice",
+    "aka": [],
+    "who": "The Jewish believing mother of Timothy and daughter of Lois, known for her sincere faith.",
+    "key": [
+      "Timothy's mother was a Jewish believer, though his father was a Greek (Acts 16).",
+      "Paul recalled the sincere faith that lived first in Lois, then Eunice, and now Timothy (2 Timothy 1)."
+    ],
+    "family": {"mother": ["lois_1828"], "children": ["timotheus_2863"]},
+    "skip": false
+  },
+  "eutychus_1230": {
+    "name": "Eutychus",
+    "aka": [],
+    "who": "A young man at Troas who fell from a window during Paul's sermon and was restored to life.",
+    "key": [
+      "During Paul's long talk late into the night at Troas, he sank into deep sleep in a window (Acts 20).",
+      "He fell from the third story and was taken up dead (Acts 20).",
+      "Paul embraced him, and the believers took him home alive, greatly comforted (Acts 20)."
+    ],
+    "skip": false
+  },
+  "eve_1231": {
+    "name": "Eve",
+    "aka": [],
+    "who": "The first woman, made by God from Adam's rib, wife of Adam and mother of all the living.",
+    "key": [
+      "God made her from the man's rib and brought her to Adam as his partner (Genesis 2).",
+      "Deceived by the serpent, she ate the forbidden fruit and gave some to Adam (Genesis 3).",
+      "After God pronounced judgment, Adam named her Eve, and they were sent from Eden (Genesis 3).",
+      "She bore Cain and Abel, and after Abel's murder she bore Seth (Genesis 4).",
+      "Paul pointed to the serpent's deceiving of Eve as a warning to the church (2 Corinthians 11)."
+    ],
+    "family": {"spouses": ["adam_78"], "children": ["cain_533", "abel_13", "seth_2504"]},
+    "skip": false
+  },
+  "evil-merodach_1233": {
+    "name": "Evil-merodach",
+    "aka": [],
+    "who": "A king of Babylon who released King Jehoiachin of Judah from prison.",
+    "key": [
+      "In the year he began to reign, he released Jehoiachin from prison in the thirty-seventh year of exile (2 Kings 25).",
+      "He spoke kindly to Jehoiachin and gave him a seat above the other kings in Babylon (2 Kings 25).",
+      "Jehoiachin ate at the king's table and received a regular allowance for the rest of his life (Jeremiah 52)."
+    ],
+    "skip": false
+  },
+  "ezekiel_1237": {
+    "name": "Ezekiel",
+    "aka": [],
+    "who": "A priest, son of Buzi, taken into exile in Babylon and called there as God's prophet.",
+    "key": [
+      "By the Chebar canal in Babylon, he saw visions of God's glory above a throne (Ezekiel 1).",
+      "God appointed him a watchman to warn the house of Israel (Ezekiel 3).",
+      "When his wife died, God told him not to mourn, as a sign to the exiles (Ezekiel 24).",
+      "He saw a valley of dry bones come to life, picturing Israel's restoration (Ezekiel 37).",
+      "He was shown a vision of a new temple in the land of Israel (Ezekiel 40)."
+    ],
+    "family": {"father": ["buzi_531"]},
+    "skip": false
+  },
+  "ezra_1246": {
+    "name": "Ezra",
+    "aka": [],
+    "who": "A priest and scribe skilled in the Law of Moses who led exiles home and taught God's Law in Jerusalem.",
+    "key": [
+      "With the Persian king's letter, he led a company of exiles from Babylon to Jerusalem (Ezra 7).",
+      "Grieved that the people had intermarried with the peoples of the land, he prayed and confessed Israel's sin (Ezra 9).",
+      "He read the Book of the Law to the gathered people while Levites helped them understand (Nehemiah 8).",
+      "He went before one of the processions at the dedication of Jerusalem's rebuilt wall (Nehemiah 12)."
+    ],
+    "skip": false
+  },
+  "gabriel_1261": {
+    "name": "Gabriel",
+    "aka": [],
+    "who": "An angel who stands in God's presence and was sent with messages to Daniel, Zechariah, and Mary.",
+    "key": [
+      "He explained to Daniel the vision of the ram and the goat (Daniel 8).",
+      "While Daniel was praying, Gabriel came swiftly and revealed the seventy weeks (Daniel 9).",
+      "He announced John's birth to Zechariah and made him unable to speak for not believing (Luke 1).",
+      "He told Mary she would bear Jesus, the Son of the Most High (Luke 1)."
+    ],
+    "skip": false
+  },
+  "gadi_1266": {
+    "name": "Gadi",
+    "aka": [],
+    "who": "The father of Menahem, who seized the throne of the northern kingdom of Israel.",
+    "key": [
+      "His son Menahem came up from Tirzah, killed King Shallum in Samaria, and took the throne (2 Kings 15).",
+      "Menahem son of Gadi reigned ten years in Samaria and did evil in the LORD's sight (2 Kings 15)."
+    ],
+    "family": {"children": ["menahem_1996"]},
+    "skip": false
+  },
+  "gaius_1269": {
+    "name": "Gaius",
+    "aka": [],
+    "who": "A Macedonian traveling companion of Paul who was seized during the riot in Ephesus.",
+    "key": [
+      "He traveled with Paul as one of his Macedonian companions in Ephesus (Acts 19).",
+      "The rioting crowd seized him and Aristarchus and rushed together into the theater (Acts 19)."
+    ],
+    "skip": false
+  },
+  "gaius_1270": {
+    "name": "Gaius",
+    "aka": [],
+    "who": "A believer from Derbe who accompanied Paul on his journey toward Jerusalem.",
+    "key": [
+      "Gaius of Derbe was among those who accompanied Paul as he left Greece for Asia (Acts 20).",
+      "He and others went ahead and waited for Paul at Troas (Acts 20)."
+    ],
+    "skip": false
+  },
+  "gaius_1272": {
+    "name": "Gaius",
+    "aka": [],
+    "who": "A beloved believer to whom John wrote his third letter, commending his faithfulness and hospitality.",
+    "key": [
+      "The elder wrote to him, rejoicing to hear that he walked in the truth (3 John 1).",
+      "He was commended for faithfully welcoming traveling brothers, even those who were strangers (3 John 1).",
+      "John urged him to imitate good rather than evil, unlike Diotrephes, and commended Demetrius (3 John 1)."
+    ],
+    "skip": false
+  },
+  "gallio_1275": {
+    "name": "Gallio",
+    "aka": [],
+    "who": "The Roman proconsul of Achaia who dismissed the Jewish leaders' charges against Paul in Corinth.",
+    "key": [
+      "As proconsul of Achaia, he heard Jewish leaders accuse Paul before the tribunal in Corinth (Acts 18).",
+      "He refused to judge questions about words, names, and their own law, and drove them away (Acts 18).",
+      "When the crowd beat Sosthenes in front of the tribunal, Gallio paid no attention (Acts 18)."
+    ],
+    "skip": false
+  },
+  "gamaliel_1277": {
+    "name": "Gamaliel",
+    "aka": [],
+    "who": "A respected Pharisee and teacher of the law in Jerusalem, under whom Paul was educated.",
+    "key": [
+      "Honored by all the people, he stood up in the council when it wanted to kill the apostles (Acts 5).",
+      "He warned that if their work was from God, the council could not overthrow it (Acts 5).",
+      "The council took his advice, beat the apostles, and let them go (Acts 5).",
+      "Paul later said he had been educated at Gamaliel's feet in the law (Acts 22)."
+    ],
+    "skip": false
+  },
+  "gatam_1281": {
+    "name": "Gatam",
+    "aka": [],
+    "who": "A grandson of Esau through Eliphaz who became a chief in Edom.",
+    "key": [
+      "He was a son of Eliphaz, Esau's firstborn by Adah (Genesis 36).",
+      "He is listed among the chiefs of Edom descended from Eliphaz (Genesis 36).",
+      "He is named again among Eliphaz's sons in the genealogies of Chronicles (1 Chronicles 1)."
+    ],
+    "family": {"father": ["eliphaz_1144"], "siblings": ["teman_2838", "omar_2242", "zepho_3042", "kenaz_1776", "korah_1794", "amalek_197"]},
+    "skip": false
+  },
+  "genubath_1297": {
+    "name": "Genubath",
+    "aka": [],
+    "who": "Son of Hadad the Edomite, born in Egypt and raised in Pharaoh's household.",
+    "key": [
+      "He was born to Hadad the Edomite and the sister of Tahpenes, Pharaoh's queen (1 Kings 11).",
+      "Tahpenes weaned him in Pharaoh's house, where he lived among Pharaoh's sons (1 Kings 11)."
+    ],
+    "family": {"father": ["hadad_1339"], "mother": ["sister_of_tahpenes_2759"]},
+    "skip": false
+  },
+  "gera_1299": {
+    "name": "Gera",
+    "aka": [],
+    "who": "A Benjaminite of Saul's clan, known as the father of Shimei, who cursed King David.",
+    "key": [
+      "His son Shimei cursed David and threw stones as the king fled from Absalom (2 Samuel 16).",
+      "Shimei son of Gera later hurried to meet David and begged his pardon (2 Samuel 19).",
+      "David charged Solomon to deal with Shimei son of Gera (1 Kings 2)."
+    ],
+    "family": {"children": ["shimei_2684"]},
+    "skip": false
+  },
+  "geshem_1307": {
+    "name": "Geshem",
+    "aka": [],
+    "who": "An Arab leader who joined Sanballat and Tobiah in opposing Nehemiah's rebuilding of Jerusalem.",
+    "key": [
+      "With Sanballat and Tobiah, he mocked the builders and accused them of rebelling against the king (Nehemiah 2).",
+      "When the wall was nearly done, he and Sanballat invited Nehemiah to Ono, intending him harm (Nehemiah 6).",
+      "Sanballat's open letter claimed Geshem reported that Nehemiah planned to rebel and become king (Nehemiah 6)."
+    ],
+    "skip": false
+  },
+  "gilead_1318": {
+    "name": "Gilead",
+    "aka": [],
+    "who": "The father of the judge Jephthah, whose other sons drove Jephthah away.",
+    "key": [
+      "He fathered Jephthah, a mighty warrior, by a prostitute (Judges 11).",
+      "His wife's sons drove Jephthah out, refusing him an inheritance in their father's house (Judges 11)."
+    ],
+    "family": {"children": ["jephthah_839"]},
+    "skip": false
+  },
+  "gilead_1319": {
+    "name": "Gilead",
+    "aka": [],
+    "who": "A man of the tribe of Gad, son of Michael, listed in the Gadite genealogy.",
+    "key": [
+      "He is listed among the Gadites who lived east of the Jordan in Gilead and Bashan (1 Chronicles 5).",
+      "As father of Jaroah, he was an ancestor of the Gadite family of Abihail (1 Chronicles 5)."
+    ],
+    "family": {"father": ["michael_2060"], "children": ["jaroah_735"]},
+    "skip": false
+  },
+  "god_1324": {
+    "name": "God",
+    "aka": ["the LORD"],
+    "who": "The one eternal God, Creator of heaven and earth, who makes covenant with his people throughout Scripture.",
+    "key": [
+      "God created the heavens, the earth, and humanity in his own image (Genesis 1).",
+      "He called Abram and promised to bless all the families of the earth through him (Genesis 12).",
+      "From the burning bush he revealed his name to Moses and promised to rescue Israel (Exodus 3).",
+      "At Mount Sinai he gave Israel the Ten Commandments (Exodus 20).",
+      "He so loved the world that he gave his only Son (John 3)."
+    ],
+    "skip": false
+  },
+  "gomer_1329": {
+    "name": "Gomer",
+    "aka": [],
+    "who": "Daughter of Diblaim and wife of the prophet Hosea, whose marriage pictured Israel's unfaithfulness to God.",
+    "key": [
+      "God told Hosea to marry her, a wife of whoredom, picturing Israel forsaking the LORD (Hosea 1).",
+      "She bore Hosea a son, Jezreel, whose name announced judgment on the house of Jehu (Hosea 1).",
+      "She then bore a daughter, Lo-ruhamah, and a son, Lo-ammi, whose names signaled judgment on Israel (Hosea 1)."
+    ],
+    "family": {"father": ["diblaim_1009"], "spouses": ["hosea_1555"], "children": ["jezreel_1613", "lo-ruhamah_1829", "lo-ammi_1827"]},
+    "skip": false
+  },
+  "habakkuk_1334": {
+    "name": "Habakkuk",
+    "aka": [],
+    "who": "A prophet of Judah who questioned God about injustice and the coming Babylonian invasion.",
+    "key": [
+      "He complained to the LORD that violence and injustice in Judah went unpunished (Habakkuk 1).",
+      "God answered that he was raising up the Chaldeans to bring judgment (Habakkuk 1).",
+      "Waiting at his watchpost, he was told the righteous shall live by faith (Habakkuk 2).",
+      "He prayed and resolved to rejoice in God even if crops and flocks failed (Habakkuk 3)."
+    ],
+    "skip": false
+  },
+  "hanani_1381": {
+    "name": "Hanani",
+    "aka": [],
+    "who": "A priest of the family of Immer listed among those who had married foreign women in Ezra's day.",
+    "key": [
+      "The assembly in Jerusalem agreed to confess their unfaithfulness and put away their foreign wives (Ezra 10).",
+      "Hanani is listed with Zebadiah among the sons of Immer who had married foreign women (Ezra 10)."
+    ],
+    "skip": false
+  },
+  "hanani_1382": {
+    "name": "Hanani",
+    "aka": [],
+    "who": "A brother of Nehemiah who reported Jerusalem's ruin and later helped govern the city.",
+    "key": [
+      "He came from Judah to Susa and told Nehemiah of Jerusalem's broken wall and burned gates (Nehemiah 1).",
+      "After the wall was finished, Nehemiah put him in charge of Jerusalem with Hananiah (Nehemiah 7)."
+    ],
+    "family": {"father": ["hachaliah_1336"], "siblings": ["nehemiah_2172"]},
+    "skip": false
+  },
+  "hananiah_1391": {
+    "name": "Hananiah",
+    "aka": [],
+    "who": "The commander of Jerusalem's citadel in Nehemiah's day, known as faithful and God-fearing.",
+    "key": [
+      "He commanded the citadel and was a more faithful, God-fearing man than many (Nehemiah 7).",
+      "Nehemiah put him and Hanani in charge of Jerusalem, ordering the gates guarded and kept shut (Nehemiah 7)."
+    ],
+    "skip": false
+  },
+  "hanun_1405": {
+    "name": "Hanun",
+    "aka": [],
+    "who": "A leader who, with the people of Zanoah, rebuilt Jerusalem's Valley Gate under Nehemiah.",
+    "key": [
+      "He and the people of Zanoah rebuilt the Valley Gate and set its doors, bolts, and bars (Nehemiah 3).",
+      "They also repaired a thousand cubits of the wall, as far as the Dung Gate (Nehemiah 3)."
+    ],
+    "skip": false
+  },
+  "hanun_1406": {
+    "name": "Hanun",
+    "aka": [],
+    "who": "The sixth son of Zalaph, who helped repair Jerusalem's wall under Nehemiah.",
+    "key": [
+      "He repaired another section of Jerusalem's wall during Nehemiah's rebuilding (Nehemiah 3).",
+      "He shared this work with Hananiah the son of Shelemiah (Nehemiah 3)."
+    ],
+    "family": {"father": ["zalaph_2981"]},
+    "skip": false
+  },
+  "hassenaah_1449": {
+    "name": "Hassenaah",
+    "aka": [],
+    "who": "Ancestor of a family whose members rebuilt Jerusalem's Fish Gate under Nehemiah.",
+    "key": [
+      "His descendants rebuilt the Fish Gate, laying its beams and setting its doors, bolts, and bars (Nehemiah 3).",
+      "Next to them, Meremoth son of Uriah repaired the following section of the wall (Nehemiah 3)."
+    ],
+    "skip": false
+  },
+  "hathath_1453": {
+    "name": "Hathath",
+    "aka": [],
+    "who": "A son of Othniel, the first judge of Israel, listed in the genealogy of Judah.",
+    "key": [
+      "He is named as a son of Othniel in Judah's family records (1 Chronicles 4).",
+      "He is listed alongside his brother Meonothai (1 Chronicles 4)."
+    ],
+    "family": {"father": ["othniel_2259"], "siblings": ["meonothai_1998"]},
+    "skip": false
+  }
+}
