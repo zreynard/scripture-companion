@@ -1,0 +1,3578 @@
+[
+ {
+  "name": "Abihail",
+  "occurrences": [
+   {
+    "ctx": "card gilead_1319",
+    "sentence": "As father of Jaroah, he was an ancestor of the Gadite family of Abihail (1 Chronicles 5).",
+    "card_of": "Gilead: A man of the tribe of Gad, son of Michael, listed in the Gadite genealogy."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:abihail_32",
+    "src_name": "Abihail",
+    "verses": 2,
+    "appears": "Esther 2 → Esther 9 (2 ch; e.g. Esther 2, Esther 9)",
+    "family": {
+     "c": [
+      "Esther"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:abihail_28",
+    "src_name": "Abihail",
+    "verses": 1,
+    "appears": "Numbers 3 → Numbers 3 (1 ch; e.g. Numbers 3)",
+    "family": {
+     "c": [
+      "Zuriel"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:abihail_29",
+    "src_name": "Abihail",
+    "verses": 1,
+    "appears": "1 Chronicles 2 → 1 Chronicles 2 (1 ch; e.g. 1 Chronicles 2)",
+    "family": {
+     "p": [
+      "Abishur"
+     ],
+     "c": [
+      "Molid",
+      "Ahban"
+     ]
+    },
+    "gender": "F"
+   },
+   {
+    "id": "p:abihail_30",
+    "src_name": "Abihail",
+    "verses": 1,
+    "appears": "1 Chronicles 5 → 1 Chronicles 5 (1 ch; e.g. 1 Chronicles 5)",
+    "family": {
+     "f": [
+      "Huri"
+     ],
+     "c": [
+      "Jachan",
+      "Michael",
+      "Heber",
+      "Sheba",
+      "Meshullam",
+      "Jorai",
+      "Zia"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:abihail_31",
+    "src_name": "Abihail",
+    "verses": 1,
+    "appears": "2 Chronicles 11 → 2 Chronicles 11 (1 ch; e.g. 2 Chronicles 11)",
+    "family": {
+     "f": [
+      "Eliab"
+     ],
+     "p": [
+      "Rehoboam"
+     ],
+     "c": [
+      "Shamariah",
+      "Jeush",
+      "Zaham"
+     ]
+    },
+    "gender": "F",
+    "has_card": "A daughter of Eliab, David's eldest brother, named in the family line of King Rehoboam's wife Mahalath."
+   }
+  ]
+ },
+ {
+  "name": "Abijah",
+  "occurrences": [
+   {
+    "ctx": "card joel_1647",
+    "sentence": "Samuel appointed his sons Joel and Abijah as judges in Beersheba (1 Samuel 8).",
+    "card_of": "Joel: Samuel's firstborn son, a corrupt judge in Beersheba, and father of the singer Heman."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:abijah_38",
+    "src_name": "Abijah",
+    "verses": 20,
+    "appears": "1 Kings 14 → Matthew 1 (8 ch; e.g. 1 Kings 14, 1 Kings 15, 1 Chronicles 3, 2 Chronicles 11, 2 Chronicles 12, 2 Chronicles 13)",
+    "family": {
+     "f": [
+      "Rehoboam"
+     ],
+     "m": [
+      "Maachah"
+     ],
+     "s": [
+      "Attai",
+      "Shelomith",
+      "Ziza",
+      "Jeush",
+      "Shamariah",
+      "Zaham"
+     ],
+     "c": [
+      "Asa"
+     ]
+    },
+    "gender": "M",
+    "has_card": "King of Judah, son of Rehoboam, who reigned three years in Jerusalem."
+   },
+   {
+    "id": "p:abijah_37",
+    "src_name": "Abijah",
+    "verses": 3,
+    "appears": "Nehemiah 10 → Nehemiah 12 (2 ch; e.g. Nehemiah 10, Nehemiah 12)",
+    "gender": "M"
+   },
+   {
+    "id": "p:abijah_14",
+    "src_name": "Abijah",
+    "verses": 2,
+    "appears": "2 Kings 18 → 2 Chronicles 29 (2 ch; e.g. 2 Kings 18, 2 Chronicles 29)",
+    "family": {
+     "f": [
+      "Zechariah"
+     ],
+     "p": [
+      "Ahaz"
+     ],
+     "c": [
+      "Hezekiah"
+     ]
+    },
+    "gender": "F"
+   },
+   {
+    "id": "p:abijah_36",
+    "src_name": "Abijah",
+    "verses": 2,
+    "appears": "1 Chronicles 24 → Luke 1 (2 ch; e.g. 1 Chronicles 24, Luke 1)",
+    "gender": "M",
+    "has_card": "A priest of David's time whose family formed the eighth priestly division, to which Zechariah later belonged."
+   },
+   {
+    "id": "p:abijah_35",
+    "src_name": "Abijah",
+    "verses": 1,
+    "appears": "1 Kings 14 → 1 Kings 14 (1 ch; e.g. 1 Kings 14)",
+    "family": {
+     "f": [
+      "Jeroboam"
+     ],
+     "s": [
+      "Nadab"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A young son of King Jeroboam of Israel whose illness and death fulfilled the prophet Ahijah's word."
+   }
+  ]
+ },
+ {
+  "name": "Achaicus",
+  "occurrences": [
+   {
+    "ctx": "card stephanas_2801",
+    "sentence": "Stephanas came to Paul with Fortunatus and Achaicus, refreshing him, and Paul urged the church to honor such workers (1 Corinthians 16).",
+    "card_of": "Stephanas: A believer in Corinth whose household were the first converts in Achaia and devoted themselves to serving the saints."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:achaicus_60",
+    "src_name": "Achaicus",
+    "verses": 1,
+    "appears": "1 Corinthians 16 → 1 Corinthians 16 (1 ch; e.g. 1 Corinthians 16)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Ai ",
+  "occurrences": [
+   {
+    "ctx": "card ai_36",
+    "sentence": "Abram pitched his tent between Bethel and Ai (Genesis 12).",
+    "card_of": "Ai: A Canaanite town near Bethel, where Israel was defeated before capturing it."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:ai_37",
+    "src_name": "Ai ",
+    "verses": 1,
+    "appears": "Jeremiah 49 → Jeremiah 49 (1 ch; e.g. Jeremiah 49)",
+    "type": "City"
+   }
+  ]
+ },
+ {
+  "name": "Alexander",
+  "occurrences": [
+   {
+    "ctx": "card john_1678",
+    "sentence": "He gathered with Annas, Caiaphas, and Alexander to question Peter and John after a lame man was healed (Acts 4).",
+    "card_of": "John: A member of the high priest's family who sat on the council that questioned Peter and John."
+   },
+   {
+    "ctx": "card greece_495",
+    "sentence": "The land of the Greeks, which became a world empire under Alexander the Great.",
+    "card_of": "Greece: The land of the Greeks, which became a world empire under Alexander the Great."
+   },
+   {
+    "ctx": "card alexandria_46",
+    "sentence": "A great Egyptian seaport founded by Alexander the Great, a center of Jewish learning and grain shipping.",
+    "card_of": "Alexandria: A great Egyptian seaport founded by Alexander the Great, a center of Jewish learning and grain shipping."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:alexander_189",
+    "src_name": "Alexander",
+    "verses": 2,
+    "appears": "1 Timothy 1 → 2 Timothy 4 (2 ch; e.g. 1 Timothy 1, 2 Timothy 4)",
+    "gender": "M",
+    "has_card": "A man who rejected faith and a good conscience, whom Paul handed over to Satan."
+   },
+   {
+    "id": "p:alexander_186",
+    "src_name": "Alexander",
+    "verses": 1,
+    "appears": "Mark 15 → Mark 15 (1 ch; e.g. Mark 15)",
+    "family": {
+     "f": [
+      "Simon"
+     ],
+     "s": [
+      "Rufus"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A son of Simon of Cyrene, the man compelled to carry Jesus' cross."
+   },
+   {
+    "id": "p:alexander_187",
+    "src_name": "Alexander",
+    "verses": 1,
+    "appears": "Acts 4 → Acts 4 (1 ch; e.g. Acts 4)",
+    "gender": "M"
+   },
+   {
+    "id": "p:alexander_188",
+    "src_name": "Alexander",
+    "verses": 1,
+    "appears": "Acts 19 → Acts 19 (1 ch; e.g. Acts 19)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Ananias",
+  "occurrences": [
+   {
+    "ctx": "card tertullus_2844",
+    "sentence": "Tertullus came to Caesarea with the high priest Ananias and elders to accuse Paul (Acts 24).",
+    "card_of": "Tertullus: A lawyer who brought the Jewish leaders' charges against Paul before Governor Felix."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:ananias_259",
+    "src_name": "Ananias",
+    "verses": 5,
+    "appears": "Acts 9 → Acts 22 (2 ch; e.g. Acts 9, Acts 22)",
+    "gender": "M",
+    "has_card": "A disciple in Damascus whom the Lord sent to restore Saul's sight."
+   },
+   {
+    "id": "p:ananias_258",
+    "src_name": "Ananias",
+    "verses": 3,
+    "appears": "Acts 5 → Acts 5 (1 ch; e.g. Acts 5)",
+    "family": {
+     "p": [
+      "Sapphira"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A member of the Jerusalem church who died after lying to the Holy Spirit about a gift."
+   },
+   {
+    "id": "p:ananias_260",
+    "src_name": "Ananias",
+    "verses": 2,
+    "appears": "Acts 23 → Acts 24 (2 ch; e.g. Acts 23, Acts 24)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Aner",
+  "occurrences": [
+   {
+    "ctx": "card mamre_1923",
+    "sentence": "An Amorite near Hebron, brother of Eshcol and Aner, and an ally of Abram.",
+    "card_of": "Mamre: An Amorite near Hebron, brother of Eshcol and Aner, and an ally of Abram."
+   },
+   {
+    "ctx": "card gath-rimmon_445",
+    "sentence": "The parallel list of Levitical towns names Aner and Bileam from Manasseh instead (1 Chronicles 6).",
+    "card_of": "Gath-rimmon: A Levitical town listed from the western half-tribe of Manasseh, distinct from Dan's Gath-rimmon."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:aner_266",
+    "src_name": "Aner",
+    "verses": 2,
+    "appears": "Genesis 14 → Genesis 14 (1 ch; e.g. Genesis 14)",
+    "family": {
+     "s": [
+      "Eshcol",
+      "Mamre"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "l:aner_65",
+    "src_name": "Aner",
+    "verses": 1,
+    "appears": "1 Chronicles 6 → 1 Chronicles 6 (1 ch; e.g. 1 Chronicles 6)",
+    "type": "City"
+   }
+  ]
+ },
+ {
+  "name": "Arab",
+  "occurrences": [
+   {
+    "ctx": "card geshem_1307",
+    "sentence": "An Arab leader who joined Sanballat and Tobiah in opposing Nehemiah's rebuilding of Jerusalem.",
+    "card_of": "Geshem: An Arab leader who joined Sanballat and Tobiah in opposing Nehemiah's rebuilding of Jerusalem."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:arab_78",
+    "src_name": "Arab",
+    "verses": 1,
+    "appears": "Joshua 15 → Joshua 15 (1 ch; e.g. Joshua 15)",
+    "type": "City"
+   }
+  ]
+ },
+ {
+  "name": "Avvim",
+  "occurrences": [
+   {
+    "ctx": "card caphtor_275",
+    "sentence": "The Caphtorim, who came from Caphtor, destroyed the Avvim and settled in their place (Deuteronomy 2).",
+    "card_of": "Caphtor: The coastland from which the Philistines originally came, across the Mediterranean."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:avvim_124",
+    "src_name": "Avvim",
+    "verses": 1,
+    "appears": "Joshua 18 → Joshua 18 (1 ch; e.g. Joshua 18)",
+    "type": ""
+   }
+  ]
+ },
+ {
+  "name": "Baanah",
+  "occurrences": [
+   {
+    "ctx": "card heleb_1480",
+    "sentence": "A warrior from Netophah, son of Baanah, counted among David's mighty men.",
+    "card_of": "Heleb: A warrior from Netophah, son of Baanah, counted among David's mighty men."
+   },
+   {
+    "ctx": "card heleb_1480",
+    "sentence": "Heleb son of Baanah of Netophah is listed among David's thirty mighty men (2 Samuel 23).",
+    "card_of": "Heleb: A warrior from Netophah, son of Baanah, counted among David's mighty men."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:baanah_582",
+    "src_name": "Baanah",
+    "verses": 4,
+    "appears": "2 Samuel 4 → 2 Samuel 4 (1 ch; e.g. 2 Samuel 4)",
+    "family": {
+     "f": [
+      "Rimmon"
+     ],
+     "s": [
+      "Rechab"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A Benjaminite raiding captain who, with his brother Rechab, murdered Ish-bosheth, Saul's son."
+   },
+   {
+    "id": "p:baanah_583",
+    "src_name": "Baanah",
+    "verses": 2,
+    "appears": "2 Samuel 23 → 1 Chronicles 11 (2 ch; e.g. 2 Samuel 23, 1 Chronicles 11)",
+    "family": {
+     "c": [
+      "Heleb"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:baanah_585",
+    "src_name": "Baanah",
+    "verses": 2,
+    "appears": "Ezra 2 → Nehemiah 7 (2 ch; e.g. Ezra 2, Nehemiah 7)",
+    "gender": "M"
+   },
+   {
+    "id": "p:baanah_584",
+    "src_name": "Baanah",
+    "verses": 1,
+    "appears": "1 Kings 4 → 1 Kings 4 (1 ch; e.g. 1 Kings 4)",
+    "family": {
+     "f": [
+      "Hushai"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:baanah_586",
+    "src_name": "Baanah",
+    "verses": 1,
+    "appears": "Nehemiah 10 → Nehemiah 10 (1 ch; e.g. Nehemiah 10)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Babylonia",
+  "occurrences": [
+   {
+    "ctx": "card chebar_283",
+    "sentence": "A canal in Babylonia where Jewish exiles lived and Ezekiel received visions.",
+    "card_of": "Chebar: A canal in Babylonia where Jewish exiles lived and Ezekiel received visions."
+   },
+   {
+    "ctx": "card immer_596",
+    "sentence": "A settlement in Babylonia from which some exiles returned who could not prove their Israelite descent.",
+    "card_of": "Immer: A settlement in Babylonia from which some exiles returned who could not prove their Israelite descent."
+   },
+   {
+    "ctx": "card tel-abib_1143",
+    "sentence": "A settlement of Judean exiles by the Chebar canal in Babylonia, where Ezekiel lived.",
+    "card_of": "Tel-abib: A settlement of Judean exiles by the Chebar canal in Babylonia, where Ezekiel lived."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:chaldea_282",
+    "src_name": "Chaldea",
+    "verses": 9,
+    "appears": "Isaiah 48 → Ezekiel 23 (6 ch; e.g. Isaiah 48, Jeremiah 50, Jeremiah 51, Ezekiel 11, Ezekiel 16, Ezekiel 23)",
+    "type": "Region",
+    "has_card": "Southern Mesopotamia, the homeland of the Chaldeans who ruled Babylon."
+   },
+   {
+    "id": "l:shinar_1084",
+    "src_name": "Shinar",
+    "verses": 8,
+    "appears": "Genesis 10 → Zechariah 5 (7 ch; e.g. Genesis 10, Genesis 11, Genesis 14, Joshua 7, Isaiah 11, Daniel 1)",
+    "type": "Region",
+    "has_card": "The ancient name for the plain of southern Mesopotamia, where Babylon stood."
+   },
+   {
+    "id": "l:babylonia_152",
+    "src_name": "Babylonia",
+    "verses": 6,
+    "appears": "Ezra 1 → Ezra 8 (4 ch; e.g. Ezra 1, Ezra 6, Ezra 7, Ezra 8)",
+    "type": "Region",
+    "has_card": "The land of Babylon in southern Mesopotamia, where Judah's exiles lived after Jerusalem fell."
+   }
+  ]
+ },
+ {
+  "name": "Beer",
+  "occurrences": [
+   {
+    "ctx": "card jotham_1734",
+    "sentence": "He warned that fire would consume both Abimelech and Shechem, then fled to Beer (Judges 9).",
+    "card_of": "Jotham: The youngest son of Gideon, the only brother to escape Abimelech's massacre."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:beer_164",
+    "src_name": "Beer",
+    "verses": 1,
+    "appears": "Numbers 21 → Numbers 21 (1 ch; e.g. Numbers 21)",
+    "type": "",
+    "has_card": "A stopping place in Moab where God gave Israel water from a well during the wilderness journey."
+   },
+   {
+    "id": "l:beer_165",
+    "src_name": "Beer",
+    "verses": 1,
+    "appears": "Judges 9 → Judges 9 (1 ch; e.g. Judges 9)",
+    "type": "City"
+   }
+  ]
+ },
+ {
+  "name": "Bene-jaakan",
+  "occurrences": [
+   {
+    "ctx": "card hor-haggidgad_579",
+    "sentence": "One of Israel's campsites during the wilderness wanderings, between Bene-jaakan and Jotbathah.",
+    "card_of": "Hor-haggidgad: One of Israel's campsites during the wilderness wanderings, between Bene-jaakan and Jotbathah."
+   },
+   {
+    "ctx": "card hor-haggidgad_579",
+    "sentence": "Israel set out from Bene-jaakan and camped at Hor-haggidgad (Numbers 33).",
+    "card_of": "Hor-haggidgad: One of Israel's campsites during the wilderness wanderings, between Bene-jaakan and Jotbathah."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:bene-jaakan_174",
+    "src_name": "Bene-jaakan",
+    "verses": 2,
+    "appears": "Numbers 33 → Numbers 33 (1 ch; e.g. Numbers 33)",
+    "type": ""
+   }
+  ]
+ },
+ {
+  "name": "Bilhah",
+  "occurrences": [
+   {
+    "ctx": "card baalah_134",
+    "sentence": "Simeon's descendants lived in Bilhah and nearby towns until David's reign (1 Chronicles 4).",
+    "card_of": "Baalah: A town in Judah's far south toward Edom, later counted among Simeon's towns; not the Baalah that is Kiriath-jearim."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:bilhah_502",
+    "src_name": "Bilhah",
+    "verses": 10,
+    "appears": "Genesis 29 → 1 Chronicles 7 (6 ch; e.g. Genesis 29, Genesis 30, Genesis 35, Genesis 37, Genesis 46, 1 Chronicles 7)",
+    "family": {
+     "p": [
+      "Israel"
+     ],
+     "c": [
+      "Naphtali",
+      "Dan"
+     ]
+    },
+    "gender": "F",
+    "has_card": "Rachel's servant, given to Jacob as a wife, who bore him Dan and Naphtali."
+   },
+   {
+    "id": "l:baalah_134",
+    "src_name": "Baalah",
+    "verses": 1,
+    "appears": "Joshua 15 → Joshua 15 (1 ch; e.g. Joshua 15)",
+    "type": "City",
+    "has_card": "A town in Judah's far south toward Edom, later counted among Simeon's towns; not the Baalah that is Kiriath-jearim."
+   },
+   {
+    "id": "l:bilhah_249",
+    "src_name": "Bilhah",
+    "verses": 1,
+    "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 ch; e.g. 1 Chronicles 4)",
+    "type": ""
+   }
+  ]
+ },
+ {
+  "name": "Chemosh",
+  "occurrences": [
+   {
+    "ctx": "Jeremiah 48",
+    "sentence": "Jeremiah announces judgment on Moab for its pride and its trust in its works and its god Chemosh."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:chemosh_931",
+    "src_name": "Chemosh",
+    "verses": 8,
+    "appears": "Numbers 21 → Jeremiah 48 (5 ch; e.g. Numbers 21, Judges 11, 1 Kings 11, 2 Kings 23, Jeremiah 48)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Dagon",
+  "occurrences": [
+   {
+    "ctx": "Judges 16",
+    "sentence": "Delilah betrays Samson to the Philistines, but he dies destroying Dagon's temple and many Philistines."
+   },
+   {
+    "ctx": "1 Samuel 5",
+    "sentence": "The captured ark brings disaster on the Philistines, as their idol Dagon falls and tumors strike their cities."
+   },
+   {
+    "ctx": "1 Samuel 5",
+    "sentence": "Dagon's statue is found fallen before the ark, then found broken."
+   },
+   {
+    "ctx": "1 Chronicles 10",
+    "sentence": "The Philistines fasten Saul's head in the temple of Dagon."
+   },
+   {
+    "ctx": "card samson_2468",
+    "sentence": "He pulled down the temple of Dagon, dying with the Philistines inside (Judges 16).",
+    "card_of": "Samson: A Nazirite from the tribe of Dan whom God empowered to judge Israel against the Philistines."
+   },
+   {
+    "ctx": "card ashdod_101",
+    "sentence": "The captured ark was placed in Dagon's temple in Ashdod, and Dagon fell (1 Samuel 5).",
+    "card_of": "Ashdod: One of the five main Philistine cities, near the Mediterranean coast."
+   },
+   {
+    "ctx": "card gaza_446",
+    "sentence": "Samson died in Gaza, pulling down the temple of Dagon (Judges 16).",
+    "card_of": "Gaza: The southernmost of the five main Philistine cities, on the coastal road to Egypt."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:dagon_969",
+    "src_name": "Dagon",
+    "verses": 7,
+    "appears": "Judges 16 → 1 Chronicles 10 (3 ch; e.g. Judges 16, 1 Samuel 5, 1 Chronicles 10)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Damaris",
+  "occurrences": [
+   {
+    "ctx": "card dionysius_1013",
+    "sentence": "He joined Paul and believed, along with a woman named Damaris and others (Acts 17).",
+    "card_of": "Dionysius: A member of the Areopagus council in Athens who believed after hearing Paul."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:damaris_972",
+    "src_name": "Damaris",
+    "verses": 1,
+    "appears": "Acts 17 → Acts 17 (1 ch; e.g. Acts 17)",
+    "gender": "F"
+   }
+  ]
+ },
+ {
+  "name": "Dishon",
+  "occurrences": [
+   {
+    "ctx": "card seir_2485",
+    "sentence": "His sons Lotan, Shobal, Zibeon, Anah, Dishon, Ezer, and Dishan became Horite chiefs (Genesis 36).",
+    "card_of": "Seir: Seir the Horite, ancestor of the people who lived in the land of Edom before Esau's descendants."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:dishon_1016",
+    "src_name": "Dishon",
+    "verses": 4,
+    "appears": "Genesis 36 → 1 Chronicles 1 (2 ch; e.g. Genesis 36, 1 Chronicles 1)",
+    "family": {
+     "f": [
+      "Seir"
+     ],
+     "s": [
+      "Anah",
+      "Dishan",
+      "Ezer",
+      "Lotan",
+      "Shobal",
+      "Timna",
+      "Zibeon"
+     ],
+     "c": [
+      "Hemdan",
+      "Cheran",
+      "Ithran",
+      "Eshban"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:dishon_1017",
+    "src_name": "Dishon",
+    "verses": 2,
+    "appears": "Genesis 36 → 1 Chronicles 1 (2 ch; e.g. Genesis 36, 1 Chronicles 1)",
+    "family": {
+     "f": [
+      "Anah"
+     ],
+     "s": [
+      "Aholibamah"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "East",
+  "occurrences": [
+   {
+    "ctx": "Joshua 12",
+    "sentence": "East of the Jordan, Moses defeated Sihon and Og and gave their land to two and a half tribes."
+   },
+   {
+    "ctx": "card east_348",
+    "sentence": "The desert lands east of the Jordan, home of nomadic tribes the Bible calls the people of the East.",
+    "card_of": "The East: The desert lands east of the Jordan, home of nomadic tribes the Bible calls the people of the East."
+   },
+   {
+    "ctx": "card east_348",
+    "sentence": "The people of the East joined Midian and Amalek in raiding Israel's crops (Judges 6).",
+    "card_of": "The East: The desert lands east of the Jordan, home of nomadic tribes the Bible calls the people of the East."
+   },
+   {
+    "ctx": "card east_348",
+    "sentence": "Gideon's pursuit left 120,000 of the people of the East fallen (Judges 8).",
+    "card_of": "The East: The desert lands east of the Jordan, home of nomadic tribes the Bible calls the people of the East."
+   },
+   {
+    "ctx": "card east_348",
+    "sentence": "Ezekiel foretold that Ammon and Moab would be handed over to the people of the East (Ezekiel 25).",
+    "card_of": "The East: The desert lands east of the Jordan, home of nomadic tribes the Bible calls the people of the East."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:east_348",
+    "src_name": "East",
+    "verses": 6,
+    "appears": "Judges 6 → Ezekiel 25 (4 ch; e.g. Judges 6, Judges 7, Judges 8, Ezekiel 25)",
+    "type": "",
+    "has_card": "The desert lands east of the Jordan, home of nomadic tribes the Bible calls the people of the East."
+   }
+  ]
+ },
+ {
+  "name": "Eker",
+  "occurrences": [
+   {
+    "ctx": "card ram_2392",
+    "sentence": "His sons were Maaz, Jamin, and Eker (1 Chronicles 2).",
+    "card_of": "Ram: A man of Judah, the firstborn son of Jerahmeel, named in Chronicles' genealogy of Judah."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:eker_1041",
+    "src_name": "Eker",
+    "verses": 1,
+    "appears": "1 Chronicles 2 → 1 Chronicles 2 (1 ch; e.g. 1 Chronicles 2)",
+    "family": {
+     "f": [
+      "Ram"
+     ],
+     "s": [
+      "Jamin",
+      "Maaz"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Elah",
+  "occurrences": [
+   {
+    "ctx": "card kenaz_1779",
+    "sentence": "Chronicles lists him as the son of Elah, son of Caleb son of Jephunneh (1 Chronicles 4).",
+    "card_of": "Kenaz: A grandson of Caleb son of Jephunneh, listed in the genealogy of Judah."
+   },
+   {
+    "ctx": "card kenaz_1779",
+    "sentence": "His father Elah was one of Caleb's three sons, with Iru and Naam (1 Chronicles 4).",
+    "card_of": "Kenaz: A grandson of Caleb son of Jephunneh, listed in the genealogy of Judah."
+   },
+   {
+    "ctx": "card azekah_128",
+    "sentence": "A fortified town in the Shephelah overlooking the Elah Valley.",
+    "card_of": "Azekah: A fortified town in the Shephelah overlooking the Elah Valley."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:elah_1045",
+    "src_name": "Elah",
+    "verses": 4,
+    "appears": "1 Kings 16 → 1 Kings 16 (1 ch; e.g. 1 Kings 16)",
+    "family": {
+     "f": [
+      "Baasha"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A king of Israel, son of Baasha, who reigned two years before Zimri assassinated him."
+   },
+   {
+    "id": "p:elah_1046",
+    "src_name": "Elah",
+    "verses": 4,
+    "appears": "2 Kings 15 → 2 Kings 18 (3 ch; e.g. 2 Kings 15, 2 Kings 17, 2 Kings 18)",
+    "family": {
+     "c": [
+      "Hoshea"
+     ]
+    },
+    "gender": "M",
+    "has_card": "The father of Hoshea, the last king of the northern kingdom of Israel."
+   },
+   {
+    "id": "p:elah_1043",
+    "src_name": "Elah",
+    "verses": 2,
+    "appears": "Genesis 36 → 1 Chronicles 1 (2 ch; e.g. Genesis 36, 1 Chronicles 1)",
+    "gender": "M"
+   },
+   {
+    "id": "p:elah_1044",
+    "src_name": "Elah",
+    "verses": 1,
+    "appears": "1 Kings 4 → 1 Kings 4 (1 ch; e.g. 1 Kings 4)",
+    "family": {
+     "c": [
+      "Shimei"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:elah_1047",
+    "src_name": "Elah",
+    "verses": 1,
+    "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 ch; e.g. 1 Chronicles 4)",
+    "family": {
+     "f": [
+      "Caleb"
+     ],
+     "s": [
+      "Achsah",
+      "Iru",
+      "Naam"
+     ],
+     "c": [
+      "Kenaz"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:elah_1048",
+    "src_name": "Elah",
+    "verses": 1,
+    "appears": "1 Chronicles 9 → 1 Chronicles 9 (1 ch; e.g. 1 Chronicles 9)",
+    "family": {
+     "f": [
+      "Uzzi"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Eliezer",
+  "occurrences": [
+   {
+    "ctx": "card zipporah_3095",
+    "sentence": "The Midianite wife of Moses, daughter of the priest Reuel (Jethro), and mother of Gershom and Eliezer.",
+    "card_of": "Zipporah: The Midianite wife of Moses, daughter of the priest Reuel (Jethro), and mother of Gershom and Eliezer."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:eliezer_1114",
+    "src_name": "Eliezer",
+    "verses": 4,
+    "appears": "Exodus 18 → 1 Chronicles 26 (3 ch; e.g. Exodus 18, 1 Chronicles 23, 1 Chronicles 26)",
+    "family": {
+     "f": [
+      "Moses"
+     ],
+     "m": [
+      "Zipporah"
+     ],
+     "s": [
+      "Gershom"
+     ],
+     "c": [
+      "Rehabiah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:eliezer_1113",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "Genesis 15 → Genesis 15 (1 ch; e.g. Genesis 15)",
+    "gender": "M"
+   },
+   {
+    "id": "p:eliezer_1115",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "1 Chronicles 7 → 1 Chronicles 7 (1 ch; e.g. 1 Chronicles 7)",
+    "family": {
+     "f": [
+      "Becher"
+     ],
+     "s": [
+      "Abiah",
+      "Alameth",
+      "Anathoth",
+      "Jerimoth",
+      "Elioenai",
+      "Joash",
+      "Omri",
+      "Zemira"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:eliezer_1116",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "1 Chronicles 15 → 1 Chronicles 15 (1 ch; e.g. 1 Chronicles 15)",
+    "gender": "M"
+   },
+   {
+    "id": "p:eliezer_1117",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "1 Chronicles 27 → 1 Chronicles 27 (1 ch; e.g. 1 Chronicles 27)",
+    "family": {
+     "f": [
+      "Zichri"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:eliezer_1118",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "2 Chronicles 20 → 2 Chronicles 20 (1 ch; e.g. 2 Chronicles 20)",
+    "family": {
+     "f": [
+      "Dodavah"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A prophet from Mareshah, son of Dodavahu, who rebuked King Jehoshaphat's alliance with Ahaziah of Israel."
+   },
+   {
+    "id": "p:eliezer_1119",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "Ezra 8 → Ezra 8 (1 ch; e.g. Ezra 8)",
+    "gender": "M"
+   },
+   {
+    "id": "p:eliezer_1120",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "Ezra 10 → Ezra 10 (1 ch; e.g. Ezra 10)",
+    "gender": "M"
+   },
+   {
+    "id": "p:eliezer_1121",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "Ezra 10 → Ezra 10 (1 ch; e.g. Ezra 10)",
+    "gender": "M"
+   },
+   {
+    "id": "p:eliezer_1122",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "Ezra 10 → Ezra 10 (1 ch; e.g. Ezra 10)",
+    "gender": "M"
+   },
+   {
+    "id": "p:eliezer_1123",
+    "src_name": "Eliezer",
+    "verses": 1,
+    "appears": "Luke 3 → Luke 3 (1 ch; e.g. Luke 3)",
+    "family": {
+     "f": [
+      "Jorim"
+     ],
+     "c": [
+      "Jose"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Elkosh",
+  "occurrences": [
+   {
+    "ctx": "card nahum_2145",
+    "sentence": "A prophet from Elkosh whose book announces the LORD's judgment on Nineveh, the Assyrian capital.",
+    "card_of": "Nahum: A prophet from Elkosh whose book announces the LORD's judgment on Nineveh, the Assyrian capital."
+   },
+   {
+    "ctx": "card nahum_2145",
+    "sentence": "Nahum of Elkosh received a vision concerning Nineveh (Nahum 1).",
+    "card_of": "Nahum: A prophet from Elkosh whose book announces the LORD's judgment on Nineveh, the Assyrian capital."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:elkosh_371",
+    "src_name": "Elkosh",
+    "verses": 1,
+    "appears": "Nahum 1 → Nahum 1 (1 ch; e.g. Nahum 1)",
+    "type": ""
+   }
+  ]
+ },
+ {
+  "name": "Erech",
+  "occurrences": [
+   {
+    "ctx": "card nimrod_2206",
+    "sentence": "His kingdom began with Babel, Erech, and Accad in the land of Shinar (Genesis 10).",
+    "card_of": "Nimrod: A son of Cush, the first mighty man on earth and a great hunter, who founded cities in Shinar and Assyria."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:erech_407",
+    "src_name": "Erech",
+    "verses": 2,
+    "appears": "Genesis 10 → Ezra 4 (2 ch; e.g. Genesis 10, Ezra 4)",
+    "type": "City"
+   }
+  ]
+ },
+ {
+  "name": "Gad",
+  "occurrences": [
+   {
+    "ctx": "card ramoth_983",
+    "sentence": "Moses set apart Ramoth in Gilead as a city of refuge for Gad (Deuteronomy 4).",
+    "card_of": "Ramoth: A city in Gilead east of the Jordan, assigned to Gad as a city of refuge."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:gad_1262",
+    "src_name": "Gad",
+    "verses": 55,
+    "appears": "Genesis 30 → Revelation 7 (29 ch; e.g. Genesis 30, Exodus 1, Numbers 10, Numbers 34, Joshua 13, Joshua 22)",
+    "family": {
+     "f": [
+      "Israel"
+     ],
+     "m": [
+      "Zilpah"
+     ],
+     "s": [
+      "Asher",
+      "Benjamin",
+      "Issachar",
+      "Dan",
+      "Dinah",
+      "Joseph",
+      "Judah",
+      "Levi",
+      "Naphtali",
+      "Reuben",
+      "Simeon",
+      "Zebulun"
+     ],
+     "c": [
+      "Ozni",
+      "Zephon",
+      "Eri",
+      "Shuni",
+      "Areli",
+      "Arod",
+      "Haggi"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Son of Jacob by Leah's servant Zilpah, ancestor of the tribe of Gad."
+   },
+   {
+    "id": "l:gad_1286",
+    "src_name": "Gad",
+    "verses": 21,
+    "appears": "Numbers 32 → Ezekiel 48 (12 ch; e.g. Numbers 32, Deuteronomy 3, Joshua 1, Joshua 13, 2 Kings 10, Jeremiah 49)",
+    "type": "Region",
+    "has_card": "The tribal territory of Gad, east of the Jordan in the region of Gilead."
+   },
+   {
+    "id": "p:gad_1263",
+    "src_name": "Gad",
+    "verses": 13,
+    "appears": "1 Samuel 22 → 2 Chronicles 29 (5 ch; e.g. 1 Samuel 22, 2 Samuel 24, 1 Chronicles 21, 1 Chronicles 29, 2 Chronicles 29)",
+    "gender": "M",
+    "has_card": "A prophet and seer in David's service who delivered the Lord's messages to the king."
+   }
+  ]
+ },
+ {
+  "name": "Gemariah",
+  "occurrences": [
+   {
+    "ctx": "card shaphan_2550",
+    "sentence": "His sons Ahikam and Gemariah later supported Jeremiah (Jeremiah 26; Jeremiah 36).",
+    "card_of": "Shaphan: Secretary to King Josiah who read the newly found Book of the Law to the king."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:gemariah_1296",
+    "src_name": "Gemariah",
+    "verses": 4,
+    "appears": "Jeremiah 36 → Jeremiah 36 (1 ch; e.g. Jeremiah 36)",
+    "family": {
+     "f": [
+      "Shaphan"
+     ],
+     "s": [
+      "Ahikam",
+      "Elasah"
+     ],
+     "c": [
+      "Michaiah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:gemariah_1295",
+    "src_name": "Gemariah",
+    "verses": 1,
+    "appears": "Jeremiah 29 → Jeremiah 29 (1 ch; e.g. Jeremiah 29)",
+    "family": {
+     "f": [
+      "Hilkiah"
+     ],
+     "s": [
+      "Azariah"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Gihon",
+  "occurrences": [
+   {
+    "ctx": "card siloam_1096",
+    "sentence": "An area and pool at the southern end of ancient Jerusalem, fed by the Gihon spring.",
+    "card_of": "Siloam: An area and pool at the southern end of ancient Jerusalem, fed by the Gihon spring."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:gihon_473",
+    "src_name": "Gihon",
+    "verses": 5,
+    "appears": "1 Kings 1 → 2 Chronicles 33 (3 ch; e.g. 1 Kings 1, 2 Chronicles 32, 2 Chronicles 33)",
+    "type": "",
+    "has_card": "The main spring of ancient Jerusalem, in the Kidron Valley below the City of David."
+   },
+   {
+    "id": "l:gihon_472",
+    "src_name": "Gihon",
+    "verses": 1,
+    "appears": "Genesis 2 → Genesis 2 (1 ch; e.g. Genesis 2)",
+    "type": "Water",
+    "has_card": "One of the four rivers flowing out of Eden, said to wind through the land of Cush."
+   }
+  ]
+ },
+ {
+  "name": "Hanoch",
+  "occurrences": [
+   {
+    "ctx": "card midian_2075",
+    "sentence": "Midian's sons were Ephah, Epher, Hanoch, Abida, and Eldaah (1 Chronicles 1).",
+    "card_of": "Midian: A son of Abraham by Keturah and ancestor of the Midianites."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:hanoch_1403",
+    "src_name": "Hanoch",
+    "verses": 4,
+    "appears": "Genesis 46 → 1 Chronicles 5 (4 ch; e.g. Genesis 46, Exodus 6, Numbers 26, 1 Chronicles 5)",
+    "family": {
+     "f": [
+      "Reuben"
+     ],
+     "s": [
+      "Carmi",
+      "Hezron",
+      "Pallu"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Harod",
+  "occurrences": [
+   {
+    "ctx": "card shammah_2540",
+    "sentence": "Shammah of Harod, one of David's thirty mighty men.",
+    "card_of": "Shammah: Shammah of Harod, one of David's thirty mighty men."
+   },
+   {
+    "ctx": "card shammah_2540",
+    "sentence": "Shammah of Harod is listed among David's thirty mighty men (2 Samuel 23).",
+    "card_of": "Shammah: Shammah of Harod, one of David's thirty mighty men."
+   },
+   {
+    "ctx": "card shammah_2540",
+    "sentence": "Chronicles lists him as Shammoth of Harod among David's mighty men (1 Chronicles 11).",
+    "card_of": "Shammah: Shammah of Harod, one of David's thirty mighty men."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:harod_529",
+    "src_name": "Harod",
+    "verses": 2,
+    "appears": "Judges 7 → 2 Samuel 23 (2 ch; e.g. Judges 7, 2 Samuel 23)",
+    "type": ""
+   }
+  ]
+ },
+ {
+  "name": "Hermes",
+  "occurrences": [
+   {
+    "ctx": "card lycaonia_739",
+    "sentence": "The people called Barnabas Zeus and Paul Hermes and tried to offer sacrifices to them (Acts 14).",
+    "card_of": "Lycaonia: A region of south-central Asia Minor containing the cities of Lystra and Derbe."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:hermes_1502",
+    "src_name": "Hermes",
+    "verses": 1,
+    "appears": "Romans 16 → Romans 16 (1 ch; e.g. Romans 16)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Hillel",
+  "occurrences": [
+   {
+    "ctx": "card abdon_10",
+    "sentence": "A minor judge of Israel from Pirathon in Ephraim, son of Hillel, who judged Israel eight years.",
+    "card_of": "Abdon: A minor judge of Israel from Pirathon in Ephraim, son of Hillel, who judged Israel eight years."
+   },
+   {
+    "ctx": "card abdon_10",
+    "sentence": "After Elon, Abdon son of Hillel the Pirathonite judged Israel (Judges 12).",
+    "card_of": "Abdon: A minor judge of Israel from Pirathon in Ephraim, son of Hillel, who judged Israel eight years."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:hillel_1530",
+    "src_name": "Hillel",
+    "verses": 2,
+    "appears": "Judges 12 → Judges 12 (1 ch; e.g. Judges 12)",
+    "family": {
+     "c": [
+      "Abdon"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Irad",
+  "occurrences": [
+   {
+    "ctx": "card enoch_1191",
+    "sentence": "He became the father of Irad, continuing Cain's line down to Lamech (Genesis 4).",
+    "card_of": "Enoch: The firstborn son of Cain, after whom Cain named the city he built."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:irad_611",
+    "src_name": "Irad",
+    "verses": 1,
+    "appears": "Genesis 4 → Genesis 4 (1 ch; e.g. Genesis 4)",
+    "family": {
+     "f": [
+      "Enoch"
+     ],
+     "c": [
+      "Mehujael"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Ishmael",
+  "occurrences": [
+   {
+    "ctx": "card zebadiah_2994",
+    "sentence": "Son of Ishmael and ruler of the house of Judah, appointed over the king's matters under Jehoshaphat.",
+    "card_of": "Zebadiah: Son of Ishmael and ruler of the house of Judah, appointed over the king's matters under Jehoshaphat."
+   },
+   {
+    "ctx": "card kedar_674",
+    "sentence": "An Arabian desert people and region descended from Ishmael's son Kedar.",
+    "card_of": "Kedar: An Arabian desert people and region descended from Ishmael's son Kedar."
+   },
+   {
+    "ctx": "card paran_921",
+    "sentence": "Ishmael grew up in the wilderness of Paran (Genesis 21).",
+    "card_of": "Paran: A wilderness region between Sinai and Canaan, south of the Negev."
+   },
+   {
+    "ctx": "card tema_1149",
+    "sentence": "An oasis town in northern Arabia on major caravan routes, settled by descendants of Ishmael.",
+    "card_of": "Tema: An oasis town in northern Arabia on major caravan routes, settled by descendants of Ishmael."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:ishmael_631",
+    "src_name": "Ishmael",
+    "verses": 21,
+    "appears": "2 Kings 25 → Jeremiah 41 (3 ch; e.g. 2 Kings 25, Jeremiah 40, Jeremiah 41)",
+    "family": {
+     "f": [
+      "Nethaniah"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Son of Nethaniah, of the royal family of Judah, who murdered the governor Gedaliah."
+   },
+   {
+    "id": "p:ishmael_630",
+    "src_name": "Ishmael",
+    "verses": 18,
+    "appears": "Genesis 16 → 1 Chronicles 1 (6 ch; e.g. Genesis 16, Genesis 17, Genesis 25, Genesis 28, Genesis 36, 1 Chronicles 1)",
+    "family": {
+     "f": [
+      "Abraham"
+     ],
+     "m": [
+      "Hagar"
+     ],
+     "s": [
+      "Isaac",
+      "Ishbak",
+      "Jokshan",
+      "Medan",
+      "Midian",
+      "Shuah",
+      "Zimran"
+     ],
+     "c": [
+      "Nebajoth",
+      "Naphish",
+      "Kedar",
+      "Dumah",
+      "Jetur",
+      "Kedemah",
+      "Hadar",
+      "Massa",
+      "Tema",
+      "Mishma",
+      "Adbeel",
+      "Bashemath",
+      "Mibsam"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Son of Abraham by Hagar the Egyptian, and father of twelve tribal princes."
+   },
+   {
+    "id": "p:ishmael_632",
+    "src_name": "Ishmael",
+    "verses": 2,
+    "appears": "1 Chronicles 8 → 1 Chronicles 9 (2 ch; e.g. 1 Chronicles 8, 1 Chronicles 9)",
+    "family": {
+     "f": [
+      "Azel"
+     ],
+     "s": [
+      "Bocheru",
+      "Azrikam",
+      "Hanan",
+      "Obadiah",
+      "Sheariah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:ishmael_633",
+    "src_name": "Ishmael",
+    "verses": 1,
+    "appears": "2 Chronicles 19 → 2 Chronicles 19 (1 ch; e.g. 2 Chronicles 19)",
+    "family": {
+     "c": [
+      "Zebadiah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:ishmael_634",
+    "src_name": "Ishmael",
+    "verses": 1,
+    "appears": "2 Chronicles 23 → 2 Chronicles 23 (1 ch; e.g. 2 Chronicles 23)",
+    "family": {
+     "f": [
+      "Jehohanan"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:ishmael_635",
+    "src_name": "Ishmael",
+    "verses": 1,
+    "appears": "Ezra 10 → Ezra 10 (1 ch; e.g. Ezra 10)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Jaazaniah",
+  "occurrences": [
+   {
+    "ctx": "card jeremiah_855",
+    "sentence": "A Rechabite, son of Habazziniah and father of Jaazaniah; not the prophet Jeremiah.",
+    "card_of": "Jeremiah: A Rechabite, son of Habazziniah and father of Jaazaniah; not the prophet Jeremiah."
+   },
+   {
+    "ctx": "card jeremiah_855",
+    "sentence": "The prophet Jeremiah brought his son Jaazaniah and the Rechabites into the temple and offered them wine (Jeremiah 35).",
+    "card_of": "Jeremiah: A Rechabite, son of Habazziniah and father of Jaazaniah; not the prophet Jeremiah."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:jaazaniah_668",
+    "src_name": "Jaazaniah",
+    "verses": 1,
+    "appears": "Jeremiah 35 → Jeremiah 35 (1 ch; e.g. Jeremiah 35)",
+    "family": {
+     "f": [
+      "Jeremiah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:jaazaniah_669",
+    "src_name": "Jaazaniah",
+    "verses": 1,
+    "appears": "Ezekiel 8 → Ezekiel 8 (1 ch; e.g. Ezekiel 8)",
+    "family": {
+     "f": [
+      "Shaphan"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:jaazaniah_670",
+    "src_name": "Jaazaniah",
+    "verses": 1,
+    "appears": "Ezekiel 11 → Ezekiel 11 (1 ch; e.g. Ezekiel 11)",
+    "family": {
+     "f": [
+      "Azur"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Jabal",
+  "occurrences": [
+   {
+    "ctx": "card lamech_1808",
+    "sentence": "His sons Jabal, Jubal, and Tubal-cain began herding, music, and metalworking (Genesis 4).",
+    "card_of": "Lamech: A descendant of Cain who took two wives and boasted of avenging himself."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:jabal_673",
+    "src_name": "Jabal",
+    "verses": 1,
+    "appears": "Genesis 4 → Genesis 4 (1 ch; e.g. Genesis 4)",
+    "family": {
+     "f": [
+      "Lamech"
+     ],
+     "m": [
+      "Adah"
+     ],
+     "s": [
+      "Jubal",
+      "Naamah",
+      "Tubal-cain"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "James",
+  "occurrences": [
+   {
+    "ctx": "card rahab_2388",
+    "sentence": "James cites her as justified by works in receiving the messengers (James 2).",
+    "card_of": "Rahab: A prostitute of Jericho who hid Israel's spies and was spared when the city fell."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:james_717",
+    "src_name": "James",
+    "verses": 18,
+    "appears": "Matthew 4 → Acts 12 (15 ch; e.g. Matthew 4, Matthew 17, Mark 3, Mark 9, Mark 13, Luke 5)",
+    "family": {
+     "f": [
+      "Zebedee"
+     ],
+     "m": [
+      "Mother of Zebedees children"
+     ],
+     "s": [
+      "John"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Apostle of Jesus, son of Zebedee and brother of John, who was martyred by Herod."
+   },
+   {
+    "id": "p:james_719",
+    "src_name": "James",
+    "verses": 15,
+    "appears": "Matthew 13 → Jude 1 (14 ch; e.g. Matthew 13, Mark 6, Mark 16, Acts 12, Acts 21, Galatians 1)",
+    "family": {
+     "f": [
+      "Joseph"
+     ],
+     "m": [
+      "Mary"
+     ],
+     "s": [
+      "Jesus",
+      "Joses",
+      "Jude",
+      "Simon"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Brother of Jesus who became a leader of the Jerusalem church and wrote the letter of James."
+   },
+   {
+    "id": "p:james_718",
+    "src_name": "James",
+    "verses": 5,
+    "appears": "Matthew 10 → Acts 1 (4 ch; e.g. Matthew 10, Mark 3, Luke 6, Acts 1)",
+    "family": {
+     "f": [
+      "Alphaeus"
+     ],
+     "s": [
+      "Lebbaeus"
+     ]
+    },
+    "gender": "M",
+    "has_card": "The son of Alphaeus and one of the twelve apostles chosen by Jesus."
+   }
+  ]
+ },
+ {
+  "name": "Jekuthiel",
+  "occurrences": [
+   {
+    "ctx": "card zanoah_1240",
+    "sentence": "Jekuthiel is named as the father, likely the founder, of Zanoah (1 Chronicles 4).",
+    "card_of": "Zanoah: A town in the hill country of Judah, distinct from the Zanoah in the lowland."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:jekuthiel_836",
+    "src_name": "Jekuthiel",
+    "verses": 1,
+    "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 ch; e.g. 1 Chronicles 4)",
+    "family": {
+     "f": [
+      "Ishbah"
+     ],
+     "m": [
+      "Jehudijah"
+     ],
+     "s": [
+      "Jered",
+      "Heber"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Jeroham",
+  "occurrences": [
+   {
+    "ctx": "card adaiah_72",
+    "sentence": "A priest descended from Pashhur, son of Jeroham, who lived in Jerusalem after the return from exile.",
+    "card_of": "Adaiah: A priest descended from Pashhur, son of Jeroham, who lived in Jerusalem after the return from exile."
+   },
+   {
+    "ctx": "card adaiah_72",
+    "sentence": "Adaiah son of Jeroham is listed among the priests who settled in Jerusalem after the exile (1 Chronicles 9).",
+    "card_of": "Adaiah: A priest descended from Pashhur, son of Jeroham, who lived in Jerusalem after the return from exile."
+   },
+   {
+    "ctx": "card malchijah_1909",
+    "sentence": "Adaiah's line is traced through Jeroham and Pashhur back to Malchijah (1 Chronicles 9).",
+    "card_of": "Malchijah: A priest named in the ancestry of Adaiah, a priest who served in Jerusalem after the exile."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:jeroham_874",
+    "src_name": "Jeroham",
+    "verses": 3,
+    "appears": "1 Samuel 1 → 1 Chronicles 6 (2 ch; e.g. 1 Samuel 1, 1 Chronicles 6)",
+    "family": {
+     "f": [
+      "Elihu"
+     ],
+     "c": [
+      "Elkanah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:jeroham_877",
+    "src_name": "Jeroham",
+    "verses": 2,
+    "appears": "1 Chronicles 9 → Nehemiah 11 (2 ch; e.g. 1 Chronicles 9, Nehemiah 11)",
+    "family": {
+     "f": [
+      "Pelaliah"
+     ],
+     "c": [
+      "Adaiah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:jeroham_875",
+    "src_name": "Jeroham",
+    "verses": 1,
+    "appears": "1 Chronicles 8 → 1 Chronicles 8 (1 ch; e.g. 1 Chronicles 8)",
+    "family": {
+     "c": [
+      "Shamsherai",
+      "Eliah",
+      "Athaliah",
+      "Shehariah",
+      "Jaresiah",
+      "Zichri"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:jeroham_876",
+    "src_name": "Jeroham",
+    "verses": 1,
+    "appears": "1 Chronicles 9 → 1 Chronicles 9 (1 ch; e.g. 1 Chronicles 9)",
+    "family": {
+     "c": [
+      "Ibneiah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:jeroham_878",
+    "src_name": "Jeroham",
+    "verses": 1,
+    "appears": "1 Chronicles 12 → 1 Chronicles 12 (1 ch; e.g. 1 Chronicles 12)",
+    "family": {
+     "c": [
+      "Joelah",
+      "Zebadiah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:jeroham_879",
+    "src_name": "Jeroham",
+    "verses": 1,
+    "appears": "1 Chronicles 27 → 1 Chronicles 27 (1 ch; e.g. 1 Chronicles 27)",
+    "family": {
+     "c": [
+      "Azareel"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:jeroham_880",
+    "src_name": "Jeroham",
+    "verses": 1,
+    "appears": "2 Chronicles 23 → 2 Chronicles 23 (1 ch; e.g. 2 Chronicles 23)",
+    "family": {
+     "c": [
+      "Azariah"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Joash",
+  "occurrences": [
+   {
+    "ctx": "2 Chronicles 23",
+    "sentence": "The priest Jehoiada crowns young Joash king, Athaliah is executed, and the people renew their covenant with the LORD."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:joash_1633",
+    "src_name": "Joash",
+    "verses": 23,
+    "appears": "2 Kings 13 → Amos 1 (5 ch; e.g. 2 Kings 13, 2 Kings 14, 2 Chronicles 25, Hosea 1, Amos 1)",
+    "family": {
+     "f": [
+      "Jehoahaz"
+     ],
+     "c": [
+      "Jeroboam"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A king of Israel, son of Jehoahaz and father of Jeroboam II."
+   },
+   {
+    "id": "p:joash_1632",
+    "src_name": "Joash",
+    "verses": 19,
+    "appears": "2 Kings 11 → 2 Chronicles 24 (7 ch; e.g. 2 Kings 11, 2 Kings 12, 2 Kings 13, 2 Kings 14, 1 Chronicles 3, 2 Chronicles 22)",
+    "family": {
+     "f": [
+      "Ahaziah"
+     ],
+     "m": [
+      "Zibiah"
+     ],
+     "p": [
+      "Jehoaddan"
+     ],
+     "c": [
+      "Amaziah"
+     ]
+    },
+    "gender": "M",
+    "has_card": "King of Judah, rescued as an infant, who repaired the temple but later turned from the LORD."
+   },
+   {
+    "id": "p:joash_1630",
+    "src_name": "Joash",
+    "verses": 8,
+    "appears": "Judges 6 → Judges 8 (3 ch; e.g. Judges 6, Judges 7, Judges 8)",
+    "family": {
+     "c": [
+      "Gideon"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Abiezrite of Ophrah, father of Gideon, who defended his son after Gideon tore down Baal's altar."
+   },
+   {
+    "id": "p:joash_1631",
+    "src_name": "Joash",
+    "verses": 2,
+    "appears": "1 Kings 22 → 2 Chronicles 18 (2 ch; e.g. 1 Kings 22, 2 Chronicles 18)",
+    "family": {
+     "f": [
+      "Ahab"
+     ],
+     "s": [
+      "Ahaziah",
+      "Athaliah",
+      "Joram"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:joash_1634",
+    "src_name": "Joash",
+    "verses": 1,
+    "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 ch; e.g. 1 Chronicles 4)",
+    "family": {
+     "f": [
+      "Shelah"
+     ],
+     "s": [
+      "Er",
+      "Jokim",
+      "Laadah",
+      "Saraph"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:joash_1635",
+    "src_name": "Joash",
+    "verses": 1,
+    "appears": "1 Chronicles 7 → 1 Chronicles 7 (1 ch; e.g. 1 Chronicles 7)",
+    "family": {
+     "f": [
+      "Becher"
+     ],
+     "s": [
+      "Abiah",
+      "Alameth",
+      "Anathoth",
+      "Jerimoth",
+      "Eliezer",
+      "Elioenai",
+      "Omri",
+      "Zemira"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:joash_1636",
+    "src_name": "Joash",
+    "verses": 1,
+    "appears": "1 Chronicles 12 → 1 Chronicles 12 (1 ch; e.g. 1 Chronicles 12)",
+    "family": {
+     "f": [
+      "Shemaah"
+     ],
+     "s": [
+      "Ahiezer"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:joash_1637",
+    "src_name": "Joash",
+    "verses": 1,
+    "appears": "1 Chronicles 27 → 1 Chronicles 27 (1 ch; e.g. 1 Chronicles 27)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Joed",
+  "occurrences": [
+   {
+    "ctx": "card meshullam_2036",
+    "sentence": "A Benjaminite, son of Joed, whose son Sallu settled in Jerusalem in Nehemiah's day.",
+    "card_of": "Meshullam: A Benjaminite, son of Joed, whose son Sallu settled in Jerusalem in Nehemiah's day."
+   },
+   {
+    "ctx": "card meshullam_2036",
+    "sentence": "Meshullam is listed as son of Joed in the line of the Benjaminites (Nehemiah 11).",
+    "card_of": "Meshullam: A Benjaminite, son of Joed, whose son Sallu settled in Jerusalem in Nehemiah's day."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:joed_1646",
+    "src_name": "Joed",
+    "verses": 1,
+    "appears": "Nehemiah 11 → Nehemiah 11 (1 ch; e.g. Nehemiah 11)",
+    "family": {
+     "f": [
+      "Pedaiah"
+     ],
+     "c": [
+      "Meshullam"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "John",
+  "occurrences": [
+   {
+    "ctx": "book 1 John",
+    "sentence": "John writes so believers may know they have eternal life, shown by obedience, love, and right belief about Jesus."
+   },
+   {
+    "ctx": "1 John 1",
+    "sentence": "John proclaims the eternal Word of life he witnessed, so readers may share fellowship with God and one another."
+   },
+   {
+    "ctx": "1 John 2",
+    "sentence": "John teaches that knowing God is shown by keeping his commands and loving others, and warns against antichrists."
+   },
+   {
+    "ctx": "1 John 3",
+    "sentence": "John explains that God's children do not keep on sinning but practice righteousness and love one another."
+   },
+   {
+    "ctx": "1 John 4",
+    "sentence": "John tells readers to test the spirits and teaches that God is love, so believers must love one another."
+   },
+   {
+    "ctx": "1 John 5",
+    "sentence": "John teaches that faith in Jesus overcomes the world and assures believers that they have eternal life."
+   },
+   {
+    "ctx": "book 2 John",
+    "sentence": "John urges a chosen lady and her children to walk in truth and love and to reject deceivers."
+   },
+   {
+    "ctx": "book 2 John",
+    "sentence": "John rejoices that some of her children are walking in the truth."
+   },
+   {
+    "ctx": "2 John 1",
+    "sentence": "John hopes to visit and speak face to face."
+   },
+   {
+    "ctx": "book 3 John",
+    "sentence": "John commends Gaius for showing hospitality to traveling missionaries and contrasts him with the domineering Diotrephes."
+   },
+   {
+    "ctx": "book 3 John",
+    "sentence": "John rejoices that Gaius walks in the truth."
+   },
+   {
+    "ctx": "book 3 John",
+    "sentence": "He condemns Diotrephes for rejecting John's authority and refusing to welcome the brothers."
+   },
+   {
+    "ctx": "3 John 1",
+    "sentence": "John urges Gaius to imitate good, not evil."
+   },
+   {
+    "ctx": "card cain_533",
+    "sentence": "John says he was of the evil one and murdered his brother (1 John 3).",
+    "card_of": "Cain: Firstborn son of Adam and Eve, who murdered his brother Abel."
+   },
+   {
+    "ctx": "card thomas_2851",
+    "sentence": "John notes he was also called Didymus, the Greek word for 'twin' (John 11).",
+    "card_of": "Thomas: One of the twelve apostles, called the Twin, remembered for doubting and then confessing the risen Jesus."
+   },
+   {
+    "ctx": "card barabbas_399",
+    "sentence": "John identifies Barabbas as a robber (John 18).",
+    "card_of": "Barabbas: A notorious prisoner whom Pilate released at the crowd's demand instead of Jesus."
+   },
+   {
+    "ctx": "card caiaphas_532",
+    "sentence": "He said it was better for one man to die for the people, which John calls prophecy (John 11).",
+    "card_of": "Caiaphas: High priest during Jesus' ministry, son-in-law of Annas, who led the council's case against Jesus."
+   },
+   {
+    "ctx": "card demetrius_1007",
+    "sentence": "A different Demetrius, well spoken of by everyone, is commended by John (3 John 1).",
+    "card_of": "Demetrius: A silversmith of Ephesus who made silver shrines of Artemis and stirred up a riot against Paul."
+   },
+   {
+    "ctx": "card diotrephes_1014",
+    "sentence": "A church leader who loved to be first and refused to welcome John's messengers.",
+    "card_of": "Diotrephes: A church leader who loved to be first and refused to welcome John's messengers."
+   },
+   {
+    "ctx": "card diotrephes_1014",
+    "sentence": "John says he likes to put himself first and does not acknowledge John's authority (3 John 1).",
+    "card_of": "Diotrephes: A church leader who loved to be first and refused to welcome John's messengers."
+   },
+   {
+    "ctx": "card diotrephes_1014",
+    "sentence": "John said he would bring up what Diotrephes was doing when he came (3 John 1).",
+    "card_of": "Diotrephes: A church leader who loved to be first and refused to welcome John's messengers."
+   },
+   {
+    "ctx": "card gaius_1272",
+    "sentence": "A beloved believer to whom John wrote his third letter, commending his faithfulness and hospitality.",
+    "card_of": "Gaius: A beloved believer to whom John wrote his third letter, commending his faithfulness and hospitality."
+   },
+   {
+    "ctx": "card gaius_1272",
+    "sentence": "John urged him to imitate good rather than evil, unlike Diotrephes, and commended Demetrius (3 John 1).",
+    "card_of": "Gaius: A beloved believer to whom John wrote his third letter, commending his faithfulness and hospitality."
+   },
+   {
+    "ctx": "card babylon_151",
+    "sentence": "John saw the fall of Babylon the great, the city opposed to God (Revelation 18).",
+    "card_of": "Babylon: The capital of the Babylonian Empire on the Euphrates, where Judah was taken into exile."
+   },
+   {
+    "ctx": "card mount_zion_860",
+    "sentence": "John saw the Lamb standing on Mount Zion with the 144,000 (Revelation 14).",
+    "card_of": "Mount Zion: The hill of Jerusalem where God dwelt in his temple, also a picture of the heavenly city."
+   },
+   {
+    "ctx": "card armageddon_91",
+    "sentence": "The place where, in John's vision, the kings of the earth assemble for battle on the great day of God.",
+    "card_of": "Armageddon: The place where, in John's vision, the kings of the earth assemble for battle on the great day of God."
+   },
+   {
+    "ctx": "card gethsemane_462",
+    "sentence": "John notes the garden lay across the Kidron, where Jesus often met with his disciples (John 18).",
+    "card_of": "Gethsemane: A garden or olive grove on the Mount of Olives where Jesus prayed and was arrested."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:john_1676",
+    "src_name": "John",
+    "verses": 89,
+    "appears": "Matthew 3 → Acts 19 (32 ch; e.g. Matthew 3, Matthew 16, Mark 6, Luke 5, Luke 20, John 10)",
+    "family": {
+     "f": [
+      "Zacharias"
+     ],
+     "m": [
+      "Elisabeth"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Prophet, son of Zechariah and Elizabeth, who prepared the way for Jesus and baptized him."
+   },
+   {
+    "id": "p:john_1677",
+    "src_name": "John",
+    "verses": 35,
+    "appears": "Matthew 4 → Revelation 22 (24 ch; e.g. Matthew 4, Mark 3, Mark 13, Luke 8, Acts 3, Galatians 2)",
+    "family": {
+     "f": [
+      "Zebedee"
+     ],
+     "m": [
+      "Mother of Zebedees children"
+     ],
+     "s": [
+      "James"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A fisherman, son of Zebedee and brother of James, who became one of Jesus' twelve apostles."
+   },
+   {
+    "id": "p:mark_1679",
+    "src_name": "John",
+    "verses": 10,
+    "appears": "Acts 12 → 1 Peter 5 (7 ch; e.g. Acts 12, Acts 13, Acts 15, Colossians 4, 2 Timothy 4, Philemon 1)",
+    "family": {
+     "m": [
+      "Mary"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Early Christian worker, cousin of Barnabas, who served alongside Paul, Barnabas, and Peter."
+   },
+   {
+    "id": "p:john_1678",
+    "src_name": "John",
+    "verses": 1,
+    "appears": "Acts 4 → Acts 4 (1 ch; e.g. Acts 4)",
+    "gender": "M",
+    "has_card": "A member of the high priest's family who sat on the council that questioned Peter and John."
+   }
+  ]
+ },
+ {
+  "name": "Jubal",
+  "occurrences": [
+   {
+    "ctx": "card lamech_1808",
+    "sentence": "His sons Jabal, Jubal, and Tubal-cain began herding, music, and metalworking (Genesis 4).",
+    "card_of": "Lamech: A descendant of Cain who took two wives and boasted of avenging himself."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:jubal_1748",
+    "src_name": "Jubal",
+    "verses": 1,
+    "appears": "Genesis 4 → Genesis 4 (1 ch; e.g. Genesis 4)",
+    "family": {
+     "f": [
+      "Lamech"
+     ],
+     "m": [
+      "Adah"
+     ],
+     "s": [
+      "Jabal",
+      "Naamah",
+      "Tubal-cain"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Judas",
+  "occurrences": [
+   {
+    "ctx": "Psalms 41",
+    "sentence": "Jesus applied this betrayal by a trusted friend to Judas."
+   },
+   {
+    "ctx": "Psalms 109",
+    "sentence": "Peter applied part of it to Judas."
+   },
+   {
+    "ctx": "Matthew 26",
+    "sentence": "The chief priests plot to kill Jesus, and Judas agrees to betray him for thirty pieces of silver."
+   },
+   {
+    "ctx": "Matthew 27",
+    "sentence": "Judas regrets his betrayal, returns the silver, and hangs himself."
+   },
+   {
+    "ctx": "Mark 14",
+    "sentence": "Judas agrees to betray Jesus, who institutes the Lord's Supper with bread and cup."
+   },
+   {
+    "ctx": "Luke 22",
+    "sentence": "Jesus shares the Last Supper, prays on the Mount of Olives, is betrayed by Judas, and is denied by Peter."
+   },
+   {
+    "ctx": "Luke 22",
+    "sentence": "Judas agrees with the chief priests to hand Jesus over."
+   },
+   {
+    "ctx": "John 12",
+    "sentence": "Judas objects to the costly perfume, and the leaders plot against Lazarus too."
+   },
+   {
+    "ctx": "John 13",
+    "sentence": "At supper Jesus washes his disciples' feet, foretells Judas' betrayal, and gives a new commandment to love."
+   },
+   {
+    "ctx": "John 13",
+    "sentence": "Judas receives the morsel and goes out into the night."
+   },
+   {
+    "ctx": "Acts 1",
+    "sentence": "Jesus promises the Holy Spirit, ascends to heaven, and the apostles choose Matthias to replace Judas."
+   },
+   {
+    "ctx": "card satan_2476",
+    "sentence": "He entered Judas, who then betrayed Jesus (Luke 22).",
+    "card_of": "Satan: The adversary of God and his people, who tempts, accuses, and deceives, and whose final defeat Scripture foretells."
+   },
+   {
+    "ctx": "card judas_1760",
+    "sentence": "Jesus chose Judas Iscariot as one of the twelve apostles (Matthew 10; Luke 6).",
+    "card_of": "Judas Iscariot: One of the twelve apostles, son of Simon Iscariot, who betrayed Jesus."
+   },
+   {
+    "ctx": "card simon_2750",
+    "sentence": "Jesus said one of the Twelve was a devil, meaning Judas the son of Simon Iscariot (John 6).",
+    "card_of": "Simon Iscariot: Father of Judas Iscariot, the disciple who betrayed Jesus; he is known only through his son."
+   },
+   {
+    "ctx": "card simon_2750",
+    "sentence": "The devil put it into the heart of Judas, Simon's son, to betray Jesus (John 13).",
+    "card_of": "Simon Iscariot: Father of Judas Iscariot, the disciple who betrayed Jesus; he is known only through his son."
+   },
+   {
+    "ctx": "card simon_2750",
+    "sentence": "Jesus gave a morsel of bread to Judas, the son of Simon Iscariot, identifying the betrayer (John 13).",
+    "card_of": "Simon Iscariot: Father of Judas Iscariot, the disciple who betrayed Jesus; he is known only through his son."
+   },
+   {
+    "ctx": "card joses_1721",
+    "sentence": "One of the brothers of Jesus, named with James, Simon, and Judas by the people of Nazareth.",
+    "card_of": "Joses: One of the brothers of Jesus, named with James, Simon, and Judas by the people of Nazareth."
+   },
+   {
+    "ctx": "card joses_1721",
+    "sentence": "Mark also lists Joses with James, Judas, and Simon as brothers of Jesus (Mark 6).",
+    "card_of": "Joses: One of the brothers of Jesus, named with James, Simon, and Judas by the people of Nazareth."
+   },
+   {
+    "ctx": "card lebbaeus_1815",
+    "sentence": "One of the twelve apostles, called Thaddaeus in Matthew and Mark and Judas son of James in Luke and Acts.",
+    "card_of": "Thaddaeus: One of the twelve apostles, called Thaddaeus in Matthew and Mark and Judas son of James in Luke and Acts."
+   },
+   {
+    "ctx": "card lebbaeus_1815",
+    "sentence": "Luke lists this apostle as Judas son of James, distinct from Judas Iscariot (Luke 6).",
+    "card_of": "Thaddaeus: One of the twelve apostles, called Thaddaeus in Matthew and Mark and Judas son of James in Luke and Acts."
+   },
+   {
+    "ctx": "card simon_2747",
+    "sentence": "The people of Nazareth named Simon among Jesus' brothers, with James, Joseph, and Judas (Matthew 13).",
+    "card_of": "Simon: One of the brothers of Jesus, named by the people of Nazareth when they took offense at him."
+   },
+   {
+    "ctx": "card gethsemane_462",
+    "sentence": "Judas arrived with an armed crowd, identified Jesus with a kiss, and Jesus was arrested (Matthew 26).",
+    "card_of": "Gethsemane: A garden or olive grove on the Mount of Olives where Jesus prayed and was arrested."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:judas_1760",
+    "src_name": "Judas",
+    "verses": 23,
+    "appears": "Matthew 10 → Acts 1 (13 ch; e.g. Matthew 10, Matthew 27, Mark 14, Luke 22, John 12, John 14)",
+    "gender": "M",
+    "has_card": "One of the twelve apostles, son of Simon Iscariot, who betrayed Jesus."
+   },
+   {
+    "id": "p:judas_1759",
+    "src_name": "Judas",
+    "verses": 3,
+    "appears": "Acts 15 → Acts 15 (1 ch; e.g. Acts 15)",
+    "gender": "M"
+   },
+   {
+    "id": "p:judas_1757",
+    "src_name": "Judas",
+    "verses": 1,
+    "appears": "Acts 5 → Acts 5 (1 ch; e.g. Acts 5)",
+    "gender": "M"
+   },
+   {
+    "id": "p:judas_1758",
+    "src_name": "Judas",
+    "verses": 1,
+    "appears": "Acts 9 → Acts 9 (1 ch; e.g. Acts 9)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Kolaiah",
+  "occurrences": [
+   {
+    "ctx": "card ahab_114",
+    "sentence": "A false prophet among the exiles in Babylon, son of Kolaiah, whom Jeremiah condemned for prophesying lies.",
+    "card_of": "Ahab: A false prophet among the exiles in Babylon, son of Kolaiah, whom Jeremiah condemned for prophesying lies."
+   },
+   {
+    "ctx": "card zedekiah_3031",
+    "sentence": "The LORD said Zedekiah and Ahab son of Kolaiah were prophesying lies in his name (Jeremiah 29).",
+    "card_of": "Zedekiah: A false prophet among the exiles in Babylon, son of Maaseiah, condemned by Jeremiah."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:kolaiah_1791",
+    "src_name": "Kolaiah",
+    "verses": 1,
+    "appears": "Nehemiah 11 → Nehemiah 11 (1 ch; e.g. Nehemiah 11)",
+    "family": {
+     "f": [
+      "Maaseiah"
+     ],
+     "c": [
+      "Pedaiah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:kolaiah_1792",
+    "src_name": "Kolaiah",
+    "verses": 1,
+    "appears": "Jeremiah 29 → Jeremiah 29 (1 ch; e.g. Jeremiah 29)",
+    "family": {
+     "c": [
+      "Ahab"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Maaz",
+  "occurrences": [
+   {
+    "ctx": "card ram_2392",
+    "sentence": "His sons were Maaz, Jamin, and Eker (1 Chronicles 2).",
+    "card_of": "Ram: A man of Judah, the firstborn son of Jerahmeel, named in Chronicles' genealogy of Judah."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:maaz_1872",
+    "src_name": "Maaz",
+    "verses": 1,
+    "appears": "1 Chronicles 2 → 1 Chronicles 2 (1 ch; e.g. 1 Chronicles 2)",
+    "family": {
+     "f": [
+      "Ram"
+     ],
+     "s": [
+      "Jamin",
+      "Eker"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Mesha",
+  "occurrences": [
+   {
+    "ctx": "card ophir_2253",
+    "sentence": "Joktan's sons lived from Mesha toward Sephar, the hill country of the east (Genesis 10).",
+    "card_of": "Ophir: A son of Joktan in the line of Shem, listed in the Table of Nations."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:mesha_2009",
+    "src_name": "Mesha",
+    "verses": 1,
+    "appears": "2 Kings 3 → 2 Kings 3 (1 ch; e.g. 2 Kings 3)",
+    "gender": "M",
+    "has_card": "A king of Moab, a sheep breeder who paid tribute to Israel and rebelled after Ahab's death."
+   },
+   {
+    "id": "p:mesha_2010",
+    "src_name": "Mesha",
+    "verses": 1,
+    "appears": "1 Chronicles 2 → 1 Chronicles 2 (1 ch; e.g. 1 Chronicles 2)",
+    "family": {
+     "f": [
+      "Caleb"
+     ],
+     "s": [
+      "Achsa",
+      "Ardon",
+      "Jahdai",
+      "Jesher",
+      "Gazez",
+      "Haran",
+      "Hur",
+      "Moza",
+      "Shaaph",
+      "Sheber",
+      "Sheva",
+      "Shobab",
+      "Tirhanah"
+     ],
+     "c": [
+      "Hebron"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:mesha_2011",
+    "src_name": "Mesha",
+    "verses": 1,
+    "appears": "1 Chronicles 8 → 1 Chronicles 8 (1 ch; e.g. 1 Chronicles 8)",
+    "family": {
+     "f": [
+      "Shaharaim"
+     ],
+     "m": [
+      "Hodesh"
+     ],
+     "s": [
+      "Jeuz",
+      "Jobab",
+      "Malcham",
+      "Mirma",
+      "Shachia",
+      "Zibia",
+      "Abitub",
+      "Elpaal"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "l:mesha_787",
+    "src_name": "Mesha",
+    "verses": 1,
+    "appears": "Genesis 10 → Genesis 10 (1 ch; e.g. Genesis 10)",
+    "type": "City"
+   }
+  ]
+ },
+ {
+  "name": "Micah",
+  "occurrences": [
+   {
+    "ctx": "book Judges",
+    "sentence": "The book closes with Micah's idol, Dan's migration, and an outrage at Gibeah leading to war against Benjamin."
+   },
+   {
+    "ctx": "card omri_2243",
+    "sentence": "Micah condemned Israel for keeping the statutes of Omri (Micah 6).",
+    "card_of": "Omri: An army commander who became king of Israel, founded Samaria as its capital, and was father of Ahab."
+   },
+   {
+    "ctx": "card miriam_2087",
+    "sentence": "Micah recalled that God sent Moses, Aaron, and Miriam before his people (Micah 6).",
+    "card_of": "Miriam: A prophetess, sister of Moses and Aaron, who led Israel's women in praise after the Red Sea crossing."
+   },
+   {
+    "ctx": "card nimrod_2206",
+    "sentence": "Micah later called Assyria the land of Nimrod (Micah 5).",
+    "card_of": "Nimrod: A son of Cush, the first mighty man on earth and a great hunter, who founded cities in Shinar and Assyria."
+   },
+   {
+    "ctx": "card shittim_1086",
+    "sentence": "Micah calls Israel to remember what happened from Shittim to Gilgal (Micah 6).",
+    "card_of": "Shittim: Israel's final camp on the plains of Moab before crossing the Jordan."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:micah_2049",
+    "src_name": "Micah",
+    "verses": 17,
+    "appears": "Judges 17 → Judges 18 (2 ch; e.g. Judges 17, Judges 18)",
+    "gender": "F",
+    "has_card": "Man of the hill country of Ephraim who set up a household shrine with idols in the time of the judges."
+   },
+   {
+    "id": "p:micah_2055",
+    "src_name": "Micah",
+    "verses": 8,
+    "appears": "Judges 18 → 1 Chronicles 9 (4 ch; e.g. Judges 18, 2 Samuel 9, 1 Chronicles 8, 1 Chronicles 9)",
+    "family": {
+     "f": [
+      "Mephibosheth"
+     ],
+     "c": [
+      "Ahaz",
+      "Pithon",
+      "Melech",
+      "Tahrea"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Son of Mephibosheth and great-grandson of Saul, through whom Saul's family line continued."
+   },
+   {
+    "id": "p:micah_2053",
+    "src_name": "Micah",
+    "verses": 2,
+    "appears": "Jeremiah 26 → Micah 1 (2 ch; e.g. Jeremiah 26, Micah 1)",
+    "gender": "F",
+    "has_card": "A prophet from Moresheth who warned Samaria and Jerusalem of judgment and foretold a ruler from Bethlehem."
+   },
+   {
+    "id": "p:micah_2050",
+    "src_name": "Micah",
+    "verses": 1,
+    "appears": "1 Chronicles 5 → 1 Chronicles 5 (1 ch; e.g. 1 Chronicles 5)",
+    "family": {
+     "f": [
+      "Shimei"
+     ],
+     "c": [
+      "Reaia"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Miriam",
+  "occurrences": [
+   {
+    "ctx": "book Numbers",
+    "sentence": "During the wandering, rebellions break out, Miriam and Aaron die, and Moses is barred from entering the land."
+   },
+   {
+    "ctx": "card kohath_1790",
+    "sentence": "The second son of Levi and grandfather of Moses, Aaron, and Miriam.",
+    "card_of": "Kohath: The second son of Levi and grandfather of Moses, Aaron, and Miriam."
+   },
+   {
+    "ctx": "card daughter_of_pharaoh_988",
+    "sentence": "At Miriam's suggestion, she paid Moses' own mother to nurse him (Exodus 2).",
+    "card_of": "Pharaoh's daughter: The Egyptian princess who found the infant Moses in the Nile and raised him as her son."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:miriam_2087",
+    "src_name": "Miriam",
+    "verses": 12,
+    "appears": "Exodus 15 → Micah 6 (7 ch; e.g. Exodus 15, Numbers 12, Numbers 20, Numbers 26, Deuteronomy 24, 1 Chronicles 6)",
+    "family": {
+     "f": [
+      "Amram"
+     ],
+     "m": [
+      "Jochebed"
+     ],
+     "s": [
+      "Aaron",
+      "Moses"
+     ]
+    },
+    "gender": "F",
+    "has_card": "A prophetess, sister of Moses and Aaron, who led Israel's women in praise after the Red Sea crossing."
+   },
+   {
+    "id": "p:miriam_2088",
+    "src_name": "Miriam",
+    "verses": 1,
+    "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 ch; e.g. 1 Chronicles 4)",
+    "family": {
+     "f": [
+      "Mered"
+     ],
+     "m": [
+      "Bithiah"
+     ],
+     "s": [
+      "Ishbah",
+      "Shammai",
+      "Eshtemoa",
+      "Garmite"
+     ]
+    },
+    "gender": "F"
+   }
+  ]
+ },
+ {
+  "name": "Moab",
+  "occurrences": [
+   {
+    "ctx": "card baal-peor_145",
+    "sentence": "A site in Moab where Israel worshiped the local god Baal and fell into sexual immorality.",
+    "card_of": "Baal-peor: A site in Moab where Israel worshiped the local god Baal and fell into sexual immorality."
+   },
+   {
+    "ctx": "card nebo_884",
+    "sentence": "A town in Judah whose people returned from exile, distinct from Mount Nebo in Moab.",
+    "card_of": "Nebo: A town in Judah whose people returned from exile, distinct from Mount Nebo in Moab."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:moab_2103",
+    "src_name": "Moab",
+    "verses": 149,
+    "appears": "Genesis 19 → Zephaniah 2 (56 ch; e.g. Genesis 19, Numbers 31, Joshua 13, 1 Samuel 14, 1 Chronicles 8, Isaiah 25)",
+    "family": {
+     "f": [
+      "Lot"
+     ],
+     "m": [
+      "Daughter of Lot - Older"
+     ],
+     "s": [
+      "Ben-ammi",
+      "Daughter of Lot - Younger",
+      "Daughter of Lot - Older"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Son of Lot by his older daughter and ancestor of the Moabites, the nation east of the Dead Sea."
+   },
+   {
+    "id": "l:moab_815",
+    "src_name": "Moab",
+    "verses": 148,
+    "appears": "Genesis 36 → Zephaniah 2 (57 ch; e.g. Genesis 36, Numbers 33, Joshua 24, 1 Samuel 22, 1 Chronicles 8, Isaiah 16)",
+    "type": "Region",
+    "has_card": "A kingdom east of the Dead Sea, descended from Lot and often hostile to Israel."
+   }
+  ]
+ },
+ {
+  "name": "Moresheth",
+  "occurrences": [
+   {
+    "ctx": "card micah_2053",
+    "sentence": "A prophet from Moresheth who warned Samaria and Jerusalem of judgment and foretold a ruler from Bethlehem.",
+    "card_of": "Micah: A prophet from Moresheth who warned Samaria and Jerusalem of judgment and foretold a ruler from Bethlehem."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:moresheth_819",
+    "src_name": "Moresheth",
+    "verses": 2,
+    "appears": "Jeremiah 26 → Micah 1 (2 ch; e.g. Jeremiah 26, Micah 1)",
+    "type": ""
+   }
+  ]
+ },
+ {
+  "name": "Moza",
+  "occurrences": [
+   {
+    "ctx": "card ephah_1198",
+    "sentence": "She bore him Haran, Moza, and Gazez (1 Chronicles 2).",
+    "card_of": "Ephah: A concubine of Caleb listed in the genealogy of the tribe of Judah."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:moza_2114",
+    "src_name": "Moza",
+    "verses": 4,
+    "appears": "1 Chronicles 8 → 1 Chronicles 9 (2 ch; e.g. 1 Chronicles 8, 1 Chronicles 9)",
+    "family": {
+     "f": [
+      "Zimri"
+     ],
+     "c": [
+      "Binea"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:moza_2113",
+    "src_name": "Moza",
+    "verses": 1,
+    "appears": "1 Chronicles 2 → 1 Chronicles 2 (1 ch; e.g. 1 Chronicles 2)",
+    "family": {
+     "f": [
+      "Caleb"
+     ],
+     "m": [
+      "Ephah"
+     ],
+     "s": [
+      "Achsa",
+      "Ardon",
+      "Jahdai",
+      "Jesher",
+      "Gazez",
+      "Haran",
+      "Mesha",
+      "Shobab",
+      "Hur",
+      "Shaaph",
+      "Sheber",
+      "Sheva",
+      "Tirhanah"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Nehelam",
+  "occurrences": [
+   {
+    "ctx": "card shemaiah_2643",
+    "sentence": "Shemaiah of Nehelam, a false prophet among the exiles in Babylon who opposed Jeremiah.",
+    "card_of": "Shemaiah: Shemaiah of Nehelam, a false prophet among the exiles in Babylon who opposed Jeremiah."
+   },
+   {
+    "ctx": "card shemaiah_2643",
+    "sentence": "Shemaiah of Nehelam prophesied to the exiles in Babylon, though the LORD had not sent him (Jeremiah 29).",
+    "card_of": "Shemaiah: Shemaiah of Nehelam, a false prophet among the exiles in Babylon who opposed Jeremiah."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:nehelam_886",
+    "src_name": "Nehelam",
+    "verses": 3,
+    "appears": "Jeremiah 29 → Jeremiah 29 (1 ch; e.g. Jeremiah 29)",
+    "type": ""
+   }
+  ]
+ },
+ {
+  "name": "Ophrah",
+  "occurrences": [
+   {
+    "ctx": "card meonothai_1998",
+    "sentence": "He fathered Ophrah, continuing Othniel's family line in Judah (1 Chronicles 4).",
+    "card_of": "Meonothai: A son of Othniel, Israel's first judge, listed in the genealogy of the tribe of Judah."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:ophrah_914",
+    "src_name": "Ophrah",
+    "verses": 5,
+    "appears": "Judges 6 → Judges 9 (3 ch; e.g. Judges 6, Judges 8, Judges 9)",
+    "type": "City",
+    "has_card": "Gideon's hometown, belonging to the clan of Abiezer in Manasseh."
+   },
+   {
+    "id": "l:ophrah_913",
+    "src_name": "Ophrah",
+    "verses": 2,
+    "appears": "Joshua 18 → 1 Samuel 13 (2 ch; e.g. Joshua 18, 1 Samuel 13)",
+    "type": ""
+   },
+   {
+    "id": "p:ophrah_2254",
+    "src_name": "Ophrah",
+    "verses": 1,
+    "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 ch; e.g. 1 Chronicles 4)",
+    "family": {
+     "f": [
+      "Meonothai"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Pasach",
+  "occurrences": [
+   {
+    "ctx": "card japhlet_729",
+    "sentence": "His sons were Pasach, Bimhal, and Ashvath (1 Chronicles 7).",
+    "card_of": "Japhlet: A man of the tribe of Asher, son of Heber and grandson of Beriah."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:pasach_2279",
+    "src_name": "Pasach",
+    "verses": 1,
+    "appears": "1 Chronicles 7 → 1 Chronicles 7 (1 ch; e.g. 1 Chronicles 7)",
+    "family": {
+     "f": [
+      "Japhlet"
+     ],
+     "s": [
+      "Ashvath",
+      "Bimhal"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Pethuel",
+  "occurrences": [
+   {
+    "ctx": "card joel_1660",
+    "sentence": "A prophet, son of Pethuel, who used a locust plague to call Judah to repentance.",
+    "card_of": "Joel: A prophet, son of Pethuel, who used a locust plague to call Judah to repentance."
+   },
+   {
+    "ctx": "card joel_1660",
+    "sentence": "The word of the LORD came to Joel son of Pethuel (Joel 1).",
+    "card_of": "Joel: A prophet, son of Pethuel, who used a locust plague to call Judah to repentance."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:pethuel_2323",
+    "src_name": "Pethuel",
+    "verses": 1,
+    "appears": "Joel 1 → Joel 1 (1 ch; e.g. Joel 1)",
+    "family": {
+     "c": [
+      "Joel"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Pharaoh",
+  "occurrences": [
+   {
+    "ctx": "Ezekiel 29",
+    "sentence": "Ezekiel prophesies against Pharaoh, the great dragon of the Nile, announcing Egypt's desolation and lowly restoration."
+   },
+   {
+    "ctx": "Ezekiel 31",
+    "sentence": "Pharaoh is compared to Assyria, a towering cedar cut down for its pride and sent down to Sheol."
+   },
+   {
+    "ctx": "Ezekiel 31",
+    "sentence": "Pharaoh and his multitude will share its fate."
+   },
+   {
+    "ctx": "Ezekiel 32",
+    "sentence": "Ezekiel laments Pharaoh as a sea monster caught in a net and describes Egypt joining the slain in the pit."
+   },
+   {
+    "ctx": "Ezekiel 32",
+    "sentence": "Pharaoh will be comforted only by seeing them."
+   },
+   {
+    "ctx": "card pharaoh_2336",
+    "sentence": "Jeremiah announced that Pharaoh Hophra would be given into his enemies' hands (Jeremiah 44).",
+    "card_of": "Pharaoh Hophra: The king of Egypt in Zedekiah's day, named Hophra by Jeremiah, whose downfall Jeremiah and Ezekiel announced."
+   },
+   {
+    "ctx": "card pharaoh_2336",
+    "sentence": "Ezekiel likened Pharaoh to a great monster claiming the Nile as his own (Ezekiel 29).",
+    "card_of": "Pharaoh Hophra: The king of Egypt in Zedekiah's day, named Hophra by Jeremiah, whose downfall Jeremiah and Ezekiel announced."
+   },
+   {
+    "ctx": "card pharaoh_2336",
+    "sentence": "Ezekiel raised a lament over Pharaoh, foretelling his fall among the slain (Ezekiel 32).",
+    "card_of": "Pharaoh Hophra: The king of Egypt in Zedekiah's day, named Hophra by Jeremiah, whose downfall Jeremiah and Ezekiel announced."
+   },
+   {
+    "ctx": "card nile_895",
+    "sentence": "God judged Pharaoh, who claimed to have made the Nile for himself (Ezekiel 29).",
+    "card_of": "Nile: The great river of Egypt, the source of the country's life and farming."
+   },
+   {
+    "ctx": "card thebes_1156",
+    "sentence": "The Lord announces he will punish Amon of Thebes along with Pharaoh and Egypt (Jeremiah 46).",
+    "card_of": "Thebes: A great ancient capital of Upper Egypt and center of the worship of the god Amon."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:pharaoh_2331",
+    "src_name": "Pharaoh",
+    "verses": 138,
+    "appears": "Genesis 12 → Hebrews 11 (41 ch; e.g. Genesis 12, Exodus 4, Exodus 10, Exodus 18, 1 Samuel 2, 2 Kings 17)",
+    "gender": "M",
+    "has_card": "The king of Egypt at the exodus, who refused to free Israel until God struck Egypt with plagues."
+   },
+   {
+    "id": "p:pharaoh_2329",
+    "src_name": "Pharaoh",
+    "verses": 63,
+    "appears": "Genesis 39 → Acts 7 (10 ch; e.g. Genesis 39, Genesis 40, Genesis 41, Genesis 42, Genesis 44, Genesis 45)",
+    "gender": "M",
+    "has_card": "The king of Egypt in Joseph's day, who made Joseph ruler over Egypt and welcomed Jacob's family."
+   },
+   {
+    "id": "p:pharaoh_2336",
+    "src_name": "Pharaoh",
+    "verses": 12,
+    "appears": "Jeremiah 44 → Ezekiel 32 (6 ch; e.g. Jeremiah 44, Ezekiel 17, Ezekiel 29, Ezekiel 30, Ezekiel 31, Ezekiel 32)",
+    "gender": "M",
+    "has_card": "The king of Egypt in Zedekiah's day, named Hophra by Jeremiah, whose downfall Jeremiah and Ezekiel announced."
+   },
+   {
+    "id": "p:pharaoh_2332",
+    "src_name": "Pharaoh",
+    "verses": 9,
+    "appears": "1 Kings 3 → 2 Chronicles 8 (4 ch; e.g. 1 Kings 3, 1 Kings 9, 1 Kings 11, 2 Chronicles 8)",
+    "family": {
+     "p": [
+      "Tahpenes"
+     ],
+     "c": [
+      "Daughter of Pharaoh"
+     ]
+    },
+    "gender": "M",
+    "has_card": "King of Egypt in Solomon's day, who gave his daughter to Solomon in marriage."
+   },
+   {
+    "id": "p:pharaoh_2330",
+    "src_name": "Pharaoh",
+    "verses": 5,
+    "appears": "Exodus 1 → Exodus 2 (2 ch; e.g. Exodus 1, Exodus 2)",
+    "family": {
+     "c": [
+      "Daughter of Pharaoh"
+     ]
+    },
+    "gender": "M",
+    "has_card": "The king of Egypt who enslaved the Israelites and ordered their newborn sons to be killed."
+   },
+   {
+    "id": "p:pharaoh_2333",
+    "src_name": "Pharaoh",
+    "verses": 5,
+    "appears": "2 Kings 18 → Isaiah 36 (4 ch; e.g. 2 Kings 18, Isaiah 19, Isaiah 30, Isaiah 36)",
+    "gender": "M",
+    "has_card": "The king of Egypt in Hezekiah's day, whose help Judah sought against the Assyrians."
+   },
+   {
+    "id": "p:pharaoh_2328",
+    "src_name": "Pharaoh",
+    "verses": 4,
+    "appears": "Genesis 12 → Genesis 12 (1 ch; e.g. Genesis 12)",
+    "gender": "M",
+    "has_card": "The unnamed king of Egypt who took Sarai into his household when Abram went to Egypt during a famine."
+   },
+   {
+    "id": "p:pharaoh_2334",
+    "src_name": "Pharaoh",
+    "verses": 1,
+    "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 ch; e.g. 1 Chronicles 4)",
+    "family": {
+     "c": [
+      "Bithiah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:pharaoh_2335",
+    "src_name": "Pharaoh",
+    "verses": 1,
+    "appears": "Jeremiah 25 → Jeremiah 25 (1 ch; e.g. Jeremiah 25)",
+    "gender": "M",
+    "has_card": "The king of Egypt named among the rulers who must drink the cup of the LORD's wrath in Jeremiah's prophecy."
+   }
+  ]
+ },
+ {
+  "name": "Puah",
+  "occurrences": [
+   {
+    "ctx": "card tola_2879",
+    "sentence": "After Abimelech, Tola son of Puah rose to save Israel, living at Shamir in Ephraim's hill country (Judges 10).",
+    "card_of": "Tola: A man of Issachar who judged Israel twenty-three years after the time of Abimelech."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:puah_2355",
+    "src_name": "Puah",
+    "verses": 3,
+    "appears": "Genesis 46 → 1 Chronicles 7 (3 ch; e.g. Genesis 46, Numbers 26, 1 Chronicles 7)",
+    "family": {
+     "f": [
+      "Issachar"
+     ],
+     "s": [
+      "Jashub",
+      "Shimron",
+      "Tola"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:puah_2372",
+    "src_name": "Puah",
+    "verses": 1,
+    "appears": "Exodus 1 → Exodus 1 (1 ch; e.g. Exodus 1)",
+    "gender": "M",
+    "has_card": "A Hebrew midwife in Egypt who, with Shiphrah, feared God and refused Pharaoh's order to kill Hebrew baby boys."
+   },
+   {
+    "id": "p:puah_2373",
+    "src_name": "Puah",
+    "verses": 1,
+    "appears": "Judges 10 → Judges 10 (1 ch; e.g. Judges 10)",
+    "family": {
+     "f": [
+      "Dodo"
+     ],
+     "c": [
+      "Tola"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Reuel",
+  "occurrences": [
+   {
+    "ctx": "card zipporah_3095",
+    "sentence": "The Midianite wife of Moses, daughter of the priest Reuel (Jethro), and mother of Gershom and Eliezer.",
+    "card_of": "Zipporah: The Midianite wife of Moses, daughter of the priest Reuel (Jethro), and mother of Gershom and Eliezer."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:jethro_2431",
+    "src_name": "Jethro",
+    "verses": 16,
+    "appears": "Exodus 2 → Numbers 10 (8 ch; e.g. Exodus 2, Exodus 3, Exodus 4, Exodus 18, Numbers 1, Numbers 2)",
+    "family": {
+     "c": [
+      "Eliasaph",
+      "Zipporah",
+      "Hobab"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Priest of Midian and father-in-law of Moses, who gave Moses wise counsel in the wilderness."
+   },
+   {
+    "id": "p:reuel_2430",
+    "src_name": "Reuel",
+    "verses": 6,
+    "appears": "Genesis 36 → 1 Chronicles 1 (2 ch; e.g. Genesis 36, 1 Chronicles 1)",
+    "family": {
+     "f": [
+      "Esau"
+     ],
+     "m": [
+      "Bashemath"
+     ],
+     "s": [
+      "Jaalam",
+      "Jeush",
+      "Eliphaz",
+      "Korah"
+     ],
+     "c": [
+      "Zerah",
+      "Shammah",
+      "Mizzah",
+      "Nahath"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A son of Esau by Basemath and ancestor of chiefs in Edom."
+   },
+   {
+    "id": "p:reuel_2432",
+    "src_name": "Reuel",
+    "verses": 1,
+    "appears": "1 Chronicles 9 → 1 Chronicles 9 (1 ch; e.g. 1 Chronicles 9)",
+    "family": {
+     "f": [
+      "Ibnijah"
+     ],
+     "c": [
+      "Shephathiah"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Sergius",
+  "occurrences": [
+   {
+    "ctx": "card sergius_2502",
+    "sentence": "Sergius Paulus, an intelligent man, was proconsul of Cyprus at Paphos (Acts 13).",
+    "card_of": "Sergius Paulus: The Roman proconsul of Cyprus who believed after hearing Barnabas and Saul preach."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:sergius_2502",
+    "src_name": "Sergius",
+    "verses": 1,
+    "appears": "Acts 13 → Acts 13 (1 ch; e.g. Acts 13)",
+    "gender": "M",
+    "has_card": "The Roman proconsul of Cyprus who believed after hearing Barnabas and Saul preach."
+   }
+  ]
+ },
+ {
+  "name": "Shamir",
+  "occurrences": [
+   {
+    "ctx": "card tola_2879",
+    "sentence": "After Abimelech, Tola son of Puah rose to save Israel, living at Shamir in Ephraim's hill country (Judges 10).",
+    "card_of": "Tola: A man of Issachar who judged Israel twenty-three years after the time of Abimelech."
+   },
+   {
+    "ctx": "card tola_2879",
+    "sentence": "He judged Israel twenty-three years, then died, was buried in Shamir, and Jair followed him (Judges 10).",
+    "card_of": "Tola: A man of Issachar who judged Israel twenty-three years after the time of Abimelech."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:shamir_1061",
+    "src_name": "Shamir",
+    "verses": 2,
+    "appears": "Judges 10 → Judges 10 (1 ch; e.g. Judges 10)",
+    "type": ""
+   },
+   {
+    "id": "p:shamir_2536",
+    "src_name": "Shamir",
+    "verses": 1,
+    "appears": "1 Chronicles 24 → 1 Chronicles 24 (1 ch; e.g. 1 Chronicles 24)",
+    "family": {
+     "f": [
+      "Michah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "l:shamir_1060",
+    "src_name": "Shamir",
+    "verses": 1,
+    "appears": "Joshua 15 → Joshua 15 (1 ch; e.g. Joshua 15)",
+    "type": "City"
+   }
+  ]
+ },
+ {
+  "name": "Sheba",
+  "occurrences": [
+   {
+    "ctx": "book 2 Samuel",
+    "sentence": "Amnon's crime, Absalom's revolt, and Sheba's rebellion follow, but David is restored to the throne."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:sheba_1067",
+    "src_name": "Sheba",
+    "verses": 17,
+    "appears": "Joshua 19 → Ezekiel 38 (9 ch; e.g. Joshua 19, 1 Kings 10, 2 Chronicles 9, Job 6, Psalms 72, Isaiah 60)",
+    "type": "Region",
+    "has_card": "A wealthy kingdom in southern Arabia, known for gold, spices, and incense."
+   },
+   {
+    "id": "p:sheba_2570",
+    "src_name": "Sheba",
+    "verses": 8,
+    "appears": "2 Samuel 20 → 2 Samuel 20 (1 ch; e.g. 2 Samuel 20)",
+    "family": {
+     "f": [
+      "Bichri"
+     ]
+    },
+    "gender": "M",
+    "has_card": "Benjaminite son of Bichri who led a revolt against King David and was beheaded at Abel of Beth-maacah."
+   },
+   {
+    "id": "p:sheba_2567",
+    "src_name": "Sheba",
+    "verses": 2,
+    "appears": "Genesis 10 → 1 Chronicles 1 (2 ch; e.g. Genesis 10, 1 Chronicles 1)",
+    "family": {
+     "f": [
+      "Raamah"
+     ],
+     "s": [
+      "Dedan"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A son of Raamah and great-grandson of Ham, named in the table of nations after the flood."
+   },
+   {
+    "id": "p:sheba_2568",
+    "src_name": "Sheba",
+    "verses": 2,
+    "appears": "Genesis 10 → 1 Chronicles 1 (2 ch; e.g. Genesis 10, 1 Chronicles 1)",
+    "family": {
+     "f": [
+      "Joktan"
+     ],
+     "s": [
+      "Abimael",
+      "Almodad",
+      "Jerah",
+      "Diklah",
+      "Hadoram",
+      "Havilah",
+      "Hazarmaveth",
+      "Jobab",
+      "Ebal",
+      "Ophir",
+      "Sheleph",
+      "Uzal"
+     ]
+    },
+    "gender": "M",
+    "has_card": "A son of Joktan in the line of Shem, named in the table of nations after the flood."
+   },
+   {
+    "id": "p:sheba_2569",
+    "src_name": "Sheba",
+    "verses": 2,
+    "appears": "Genesis 25 → 1 Chronicles 1 (2 ch; e.g. Genesis 25, 1 Chronicles 1)",
+    "family": {
+     "f": [
+      "Jokshan"
+     ],
+     "s": [
+      "Dedan"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:sheba_2571",
+    "src_name": "Sheba",
+    "verses": 1,
+    "appears": "1 Chronicles 5 → 1 Chronicles 5 (1 ch; e.g. 1 Chronicles 5)",
+    "family": {
+     "f": [
+      "Abihail"
+     ],
+     "s": [
+      "Jachan",
+      "Heber",
+      "Jorai",
+      "Meshullam",
+      "Michael",
+      "Zia"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Shelomith",
+  "occurrences": [
+   {
+    "ctx": "card izhar_658",
+    "sentence": "David organized his descendants, led by Shelomith, among the Levites (1 Chronicles 23).",
+    "card_of": "Izhar: Levite son of Kohath and father of Korah, ancestor of the Izharite clan."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:shelomith_2609",
+    "src_name": "Shelomith",
+    "verses": 3,
+    "appears": "1 Chronicles 26 → 1 Chronicles 26 (1 ch; e.g. 1 Chronicles 26)",
+    "family": {
+     "f": [
+      "Zichri"
+     ]
+    },
+    "gender": "F"
+   },
+   {
+    "id": "p:shelomith_2605",
+    "src_name": "Shelomith",
+    "verses": 1,
+    "appears": "Leviticus 24 → Leviticus 24 (1 ch; e.g. Leviticus 24)",
+    "family": {
+     "f": [
+      "Dibri"
+     ]
+    },
+    "gender": "F"
+   },
+   {
+    "id": "p:shelomith_2606",
+    "src_name": "Shelomith",
+    "verses": 1,
+    "appears": "1 Chronicles 3 → 1 Chronicles 3 (1 ch; e.g. 1 Chronicles 3)",
+    "family": {
+     "f": [
+      "Zerubbabel"
+     ],
+     "s": [
+      "Abiud",
+      "Berechiah",
+      "Hananiah",
+      "Hasadiah",
+      "Hashubah",
+      "Jushab-hesed",
+      "Meshullam",
+      "Ohel"
+     ]
+    },
+    "gender": "F"
+   },
+   {
+    "id": "p:shelomith_2607",
+    "src_name": "Shelomith",
+    "verses": 1,
+    "appears": "1 Chronicles 23 → 1 Chronicles 23 (1 ch; e.g. 1 Chronicles 23)",
+    "family": {
+     "s": [
+      "Haran",
+      "Haziel"
+     ]
+    },
+    "gender": "F",
+    "has_card": "A Gershonite Levite, son of Shimei, listed among family heads when David organized the Levites."
+   },
+   {
+    "id": "p:shelomith_2610",
+    "src_name": "Shelomith",
+    "verses": 1,
+    "appears": "2 Chronicles 11 → 2 Chronicles 11 (1 ch; e.g. 2 Chronicles 11)",
+    "family": {
+     "f": [
+      "Rehoboam"
+     ],
+     "m": [
+      "Maachah"
+     ],
+     "s": [
+      "Abijah",
+      "Attai",
+      "Ziza",
+      "Jeush",
+      "Shamariah",
+      "Zaham"
+     ]
+    },
+    "gender": "F"
+   },
+   {
+    "id": "p:shelomith_2611",
+    "src_name": "Shelomith",
+    "verses": 1,
+    "appears": "Ezra 8 → Ezra 8 (1 ch; e.g. Ezra 8)",
+    "gender": "F"
+   }
+  ]
+ },
+ {
+  "name": "Sopater",
+  "occurrences": [
+   {
+    "ctx": "card berea_177",
+    "sentence": "Sopater of Berea traveled with Paul toward Jerusalem (Acts 20).",
+    "card_of": "Berea: A city in Macedonia where the Jews eagerly examined the Scriptures after hearing Paul preach."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:sopater_2770",
+    "src_name": "Sopater",
+    "verses": 2,
+    "appears": "Acts 20 → Romans 16 (2 ch; e.g. Acts 20, Romans 16)",
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Tanhumeth",
+  "occurrences": [
+   {
+    "ctx": "card seraiah_2495",
+    "sentence": "An army captain of Judah, son of Tanhumeth, who joined Governor Gedaliah at Mizpah after Jerusalem fell.",
+    "card_of": "Seraiah: An army captain of Judah, son of Tanhumeth, who joined Governor Gedaliah at Mizpah after Jerusalem fell."
+   },
+   {
+    "ctx": "card seraiah_2495",
+    "sentence": "After Babylon destroyed Jerusalem, Seraiah son of Tanhumeth was among the captains still in the field (2 Kings 25).",
+    "card_of": "Seraiah: An army captain of Judah, son of Tanhumeth, who joined Governor Gedaliah at Mizpah after Jerusalem fell."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:tanhumeth_2824",
+    "src_name": "Tanhumeth",
+    "verses": 2,
+    "appears": "2 Kings 25 → Jeremiah 40 (2 ch; e.g. 2 Kings 25, Jeremiah 40)",
+    "family": {
+     "c": [
+      "Seraiah"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Timaeus",
+  "occurrences": [
+   {
+    "ctx": "card bartimaeus_406",
+    "sentence": "A blind beggar near Jericho, son of Timaeus, whom Jesus healed on his way to Jerusalem.",
+    "card_of": "Bartimaeus: A blind beggar near Jericho, son of Timaeus, whom Jesus healed on his way to Jerusalem."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:timaeus_2858",
+    "src_name": "Timaeus",
+    "verses": 1,
+    "appears": "Mark 10 → Mark 10 (1 ch; e.g. Mark 10)",
+    "family": {
+     "c": [
+      "Bartimaeus"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Uriel",
+  "occurrences": [
+   {
+    "ctx": "card azariah_2925",
+    "sentence": "The parallel list of Kohath's descendants appears to call him Uzziah son of Uriel (1 Chronicles 6).",
+    "card_of": "Azariah: A Kohathite Levite listed among the ancestors of Heman, David's temple singer."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:uriel_2900",
+    "src_name": "Uriel",
+    "verses": 2,
+    "appears": "1 Chronicles 6 → 1 Chronicles 6 (1 ch; e.g. 1 Chronicles 6)",
+    "family": {
+     "f": [
+      "Tahath"
+     ],
+     "c": [
+      "Azariah"
+     ]
+    },
+    "gender": "M"
+   },
+   {
+    "id": "p:uriel_2901",
+    "src_name": "Uriel",
+    "verses": 2,
+    "appears": "1 Chronicles 15 → 1 Chronicles 15 (1 ch; e.g. 1 Chronicles 15)",
+    "gender": "M"
+   },
+   {
+    "id": "p:uriel_2902",
+    "src_name": "Uriel",
+    "verses": 1,
+    "appears": "2 Chronicles 13 → 2 Chronicles 13 (1 ch; e.g. 2 Chronicles 13)",
+    "family": {
+     "p": [
+      "Tamar"
+     ],
+     "c": [
+      "Maachah"
+     ]
+    },
+    "gender": "M"
+   }
+  ]
+ },
+ {
+  "name": "Valley Gate",
+  "occurrences": [
+   {
+    "ctx": "card hanun_1405",
+    "sentence": "A leader who, with the people of Zanoah, rebuilt Jerusalem's Valley Gate under Nehemiah.",
+    "card_of": "Hanun: A leader who, with the people of Zanoah, rebuilt Jerusalem's Valley Gate under Nehemiah."
+   },
+   {
+    "ctx": "card hanun_1405",
+    "sentence": "He and the people of Zanoah rebuilt the Valley Gate and set its doors, bolts, and bars (Nehemiah 3).",
+    "card_of": "Hanun: A leader who, with the people of Zanoah, rebuilt Jerusalem's Valley Gate under Nehemiah."
+   },
+   {
+    "ctx": "card zanoah_1239",
+    "sentence": "Hanun and the people of Zanoah repaired Jerusalem's Valley Gate (Nehemiah 3).",
+    "card_of": "Zanoah: A town in the lowland of Judah, resettled after the exile."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "l:gate_of_the_valley_1195",
+    "src_name": "Valley Gate",
+    "verses": 2,
+    "appears": "Nehemiah 2 → Nehemiah 2 (1 ch; e.g. Nehemiah 2)",
+    "type": "Landmark"
+   }
+  ]
+ },
+ {
+  "name": "Zillah",
+  "occurrences": [
+   {
+    "ctx": "card lamech_1808",
+    "sentence": "He took two wives, Adah and Zillah (Genesis 4).",
+    "card_of": "Lamech: A descendant of Cain who took two wives and boasted of avenging himself."
+   }
+  ],
+  "candidates": [
+   {
+    "id": "p:zillah_3080",
+    "src_name": "Zillah",
+    "verses": 3,
+    "appears": "Genesis 4 → Genesis 4 (1 ch; e.g. Genesis 4)",
+    "family": {
+     "p": [
+      "Lamech"
+     ],
+     "c": [
+      "Naamah",
+      "Tubal-cain"
+     ]
+    },
+    "gender": "F"
+   }
+  ]
+ }
+]
