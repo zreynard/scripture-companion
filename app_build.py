@@ -621,7 +621,25 @@ h1{font:400 30px "Iowan Old Style",Palatino,Georgia,serif;margin:0 0 4px}p{color
 .v{background:rgba(255,255,255,.8);border:1px solid rgba(27,36,64,.08);border-radius:16px;padding:12px 14px;margin:10px 0}
 .n{font:20px "Iowan Old Style",Palatino,Georgia,serif;margin-bottom:6px}.n span{font:12px -apple-system,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-left:10px}
 audio{width:100%}
-</style></head><body><h1>Choose the narrator</h1><p>Psalm 23 from the Berean Standard Bible, read by each British voice. Pick the one you want reading the whole Bible.</p>__ROWS__</body></html>"""
+.speed{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(244,239,227,.94);backdrop-filter:blur(8px);padding:10px 0 12px;margin:0 0 6px;border-bottom:1px solid rgba(27,36,64,.1)}
+.speed .lab{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}
+.speed .ctl{display:flex;align-items:center;gap:10px}
+.speed button{width:46px;height:46px;border-radius:50%;border:1px solid rgba(27,36,64,.18);background:#fff;font:22px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}
+.speed button:active{background:rgba(201,162,74,.25)}
+.speed .val{font:600 24px -apple-system,system-ui,sans-serif;min-width:3.6em;text-align:center;font-variant-numeric:tabular-nums}
+.speed .reset{width:auto;height:auto;border-radius:14px;padding:6px 12px;font-size:13px}
+</style></head><body><h1>Choose the narrator</h1><p>Psalm 23 from the Berean Standard Bible, read by each British voice. Pick the one you want reading the whole Bible. Change the speed to hear each voice faster or slower.</p>
+<div class="speed"><span class="lab">Speed</span><div class="ctl"><button id="dn" aria-label="Slower">−</button><span class="val" id="sv">1.00×</span><button id="up" aria-label="Faster">+</button></div><button class="reset" id="rs">Reset</button></div>
+__ROWS__
+<script>
+let rate=1;try{rate=+localStorage.getItem('voiceRate')||1}catch(e){}
+const A=[...document.querySelectorAll('audio')];
+function apply(){rate=Math.round(Math.min(2,Math.max(0.5,rate))*100)/100;document.getElementById('sv').textContent=rate.toFixed(2)+'×';
+ A.forEach(a=>{a.preservesPitch=true;a.playbackRate=rate});try{localStorage.setItem('voiceRate',rate)}catch(e){}}
+document.getElementById('up').onclick=()=>{rate+=0.05;apply()};document.getElementById('dn').onclick=()=>{rate-=0.05;apply()};document.getElementById('rs').onclick=()=>{rate=1;apply()};
+A.forEach(a=>{a.addEventListener('play',()=>{A.forEach(b=>{if(b!==a)b.pause()});a.playbackRate=rate});a.addEventListener('loadedmetadata',()=>{a.playbackRate=rate})});
+apply();
+</script></body></html>"""
 
 if __name__ == "__main__":
     main()
