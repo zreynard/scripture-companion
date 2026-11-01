@@ -131,6 +131,7 @@ INTRO_SKIP = {
     "secret_church_podcast": 0,   # Secret Church podcast
     "twr360_secret_church": 0,    # Secret Church sessions (TWR360)
     "mclean_podcast": 0,          # McLean Bible Church
+    "brookhills": 0,              # The Church at Brook Hills (Platt 2013-2014)
     "2819_podcast": 0,            # 2819 Church (PAM)
     "street_preachers": 0,        # Street Preachers (PAM)
     "davey_sermons": 6,           # Stephen Davey Sermons

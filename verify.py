@@ -54,13 +54,13 @@ def check_url(url: str, claimed_title: str) -> dict:
             rec["tier"] = "FAIL"; rec["note"] = "video private/removed"; return rec
         else:
             rec["note"] = f"oembed {r.status} {r.note}"; return rec
-    elif re.search(r"\.(mp3|m4a|aac|wav)(\?|$)", url, re.I):
+    elif re.search(r"\.(mp3|m4a|mp4|aac|wav)(\?|$)", url, re.I):
         # a direct audio link has no page title to compare: it passes when it answers as audio (first bytes only)
         import requests
         try:
             a = requests.get(url, headers={"Range": "bytes=0-1023", "User-Agent": "Mozilla/5.0"}, timeout=40, stream=True)
             rec["status"], rec["final_url"] = a.status_code, a.url
-            if a.status_code in (200, 206) and a.headers.get("content-type", "").startswith(("audio", "application/octet-stream")):
+            if a.status_code in (200, 206) and (a.headers.get("content-type", "").startswith(("audio", "application/octet-stream")) or (url.lower().endswith(".mp4") and a.headers.get("content-type", "").startswith("video/mp4"))):
                 rec["tier"] = "V2"; rec["note"] = "audio file answers"
             elif a.status_code in (404, 410):
                 rec["tier"] = "FAIL"; rec["note"] = "gone"

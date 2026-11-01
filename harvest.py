@@ -310,6 +310,41 @@ def harvest_twr360() -> list[dict]:
     _log(f"twr360: {len(out)} sessions, {sum(1 for e in out if e['audio_override'])} with audio")
     return out
 
+# ---------- The Church at Brook Hills: David Platt's sermons there (2013-2014) ----------
+def harvest_brookhills() -> list[dict]:
+    """The church's media archive, filtered to David Platt. Each sermon page states its title, date, series,
+    passage(s) and an audio download, so nothing here is guessed."""
+    base = "https://www.brookhills.org"
+    slugs = []
+    for page in range(1, 20):
+        u = f"{base}/media/sermons/" + (f"page,{page}/" if page > 1 else "category,Sermon/") + "?speaker=David+Platt&category=Sermon"
+        r = get(u)
+        if not r.ok: _log(f"brookhills list page {page}: {r.status}"); break
+        new = [x for x in dict.fromkeys(re.findall(r'href="/media/sermons/([a-z0-9-]+)"', r.text)) if not x.startswith(("page,", "category")) and x not in slugs]
+        if not new: break
+        slugs += new; time.sleep(config.REQUEST_SLEEP)
+    out = []
+    for slug in slugs:
+        url = f"{base}/media/sermons/{slug}"
+        r = get(url)
+        if not r.ok: _log(f"brookhills {slug}: {r.status}"); continue
+        t = r.text
+        m_t = re.search(r'</nav>\s*<h1>(.*?)</h1>', t, re.S) or re.search(r'<h1>(.*?)</h1>', t, re.S)
+        m_by = re.search(r'<div class="speakers">\s*By\s+([^<]+?)\s*</div>', t)
+        m_d = re.search(r'<time datetime="(\d\d)/(\d\d)/(\d{4})"', t)
+        m_ser = re.search(r'<nav class="breadcrumb">.*?<a [^>]*>([^<]+)</a>', t, re.S)
+        m_a = re.search(r'<div class="action audio"><a href="(https://[^"]+)"', t) or re.search(r'href="(https://[^"]+_AUD\.mp4)"', t)
+        refs = [html_unescape(x).strip() for x in re.findall(r'<h4 class="verse">\s*([^<]+?)\s*</h4>', t.split('<footer>')[0])]
+        if not (m_t and m_a and m_by and "Platt" in m_by.group(1)): _log(f"brookhills {slug}: skipped (title/audio/speaker missing)"); continue
+        pub = f"{m_d.group(3)}-{m_d.group(1)}-{m_d.group(2)}" if m_d else ""
+        e = make_entry(source="brookhills", source_url=f"{base}/media/sermons/category,Sermon/?speaker=David+Platt", url=url,
+                       title=html_unescape(re.sub(r"<[^>]+>", "", m_t.group(1))).strip(), published=pub, author="David Platt", era="platt",
+                       series=html_unescape(m_ser.group(1)).strip() if m_ser else "", extra_ref_text="; ".join(refs))
+        e["speaker"] = "Platt"; e["speaker_evidence"] = "page-byline"; e["audio_override"] = m_a.group(1)
+        out.append(e); time.sleep(config.REQUEST_SLEEP)
+    _log(f"brookhills: {len(out)} Platt sermons, {sum(1 for e in out if e['refs'])} with a passage")
+    return out
+
 # ---------- Buzzsprout archive: episodes older than the feed's newest 1,000 ----------
 def harvest_buzzsprout_archive(key: str, show_id: int, feed_url: str, era: str = "platt") -> list[dict]:
     """The RSS feed stops at 1,000 items. The show's 'load more' pages (episodes.turbo_stream?page=N)
@@ -386,7 +421,7 @@ def harvest_youtube_audio() -> list[dict]:
     return out
 
 # ---------- orchestration ----------
-ALL_SOURCES = ["davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
+ALL_SOURCES = ["brookhills", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
                "youtube_2819", "youtube_pam", "youtube_victory", "victory_podcast"]
 
 def run(sources: list[str], radical_limit: int | None = None):
@@ -410,6 +445,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "platt_messages": entries = harvest_feed("platt_messages", config.PLATT_MESSAGES_FEED)
             elif s == "secret_church": entries = harvest_secret_church()
             elif s == "twr360": entries = harvest_twr360()
+            elif s == "brookhills": entries = harvest_brookhills()
             elif s == "radical": entries = harvest_radical(radical_limit)
             elif s == "secret_church_podcast": entries = harvest_itunes_podcast("secret_church_podcast", config.PODCAST_SEARCH_TERMS["secret_church"], r"secret church", "platt", channel_default="Platt")
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt")
