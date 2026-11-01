@@ -1,0 +1,2691 @@
+[
+ {
+  "slug": "mount_gilboa_837",
+  "name": "Mount Gilboa",
+  "what": "A mountain ridge at the eastern end of the Jezreel Valley.",
+  "today": "The Gilboa ridge in northern Israel.",
+  "lat": 32.5098,
+  "lon": 35.4084,
+  "type": "Mountain",
+  "key": [
+   "Saul and his sons died on Mount Gilboa fighting the Philistines (1 Samuel 31).",
+   "David's lament asked that no dew or rain fall on Gilboa (2 Samuel 1).",
+   "Chronicles records Saul's death on Mount Gilboa (1 Chronicles 10)."
+  ]
+ },
+ {
+  "slug": "bezer_247",
+  "name": "Bezer",
+  "what": "A city of refuge on the tableland east of the Jordan in the territory of Reuben.",
+  "today": "Exact site uncertain; possibly Umm el-Amad, near Madaba, Jordan.",
+  "lat": 32.5161,
+  "lon": 36.4883,
+  "type": "City",
+  "key": [
+   "Moses sets apart Bezer as a city of refuge for Reuben (Deuteronomy 4).",
+   "Bezer is confirmed as one of the six cities of refuge (Joshua 20).",
+   "Bezer is given to the Levites of the clan of Merari (Joshua 21).",
+   "Bezer is listed again among the Merarite Levitical cities (1 Chronicles 6)."
+  ]
+ },
+ {
+  "slug": "gilboa_474",
+  "name": "Gilboa",
+  "what": "A mountain ridge at the southeastern edge of the Jezreel Valley, where Saul died.",
+  "today": "Mount Gilboa, in northern Israel near Beit She'an.",
+  "lat": 32.5167,
+  "lon": 35.4,
+  "type": "Region",
+  "key": [
+   "Saul gathered Israel at Gilboa, facing the Philistine army camped at Shunem (1 Samuel 28).",
+   "In his lament, David asked that no dew or rain fall on Gilboa (2 Samuel 1).",
+   "The Philistines had killed Saul on Gilboa, and David later reburied his bones (2 Samuel 21)."
+  ]
+ },
+ {
+  "slug": "taanach_1124",
+  "name": "Taanach",
+  "what": "A Canaanite city on the southern edge of the Jezreel Valley, near Megiddo.",
+  "today": "Tell Ta'annek, near Jenin in the northern West Bank.",
+  "lat": 32.5172,
+  "lon": 35.2163,
+  "type": "City",
+  "key": [
+   "Joshua defeated the king of Taanach (Joshua 12).",
+   "Manasseh received Taanach but did not drive out its Canaanites (Judges 1).",
+   "Taanach was given to the Levites of Kohath's clan (Joshua 21).",
+   "Deborah's song says the kings of Canaan fought at Taanach (Judges 5).",
+   "It belonged to one of Solomon's administrative districts (1 Kings 4)."
+  ]
+ },
+ {
+  "slug": "aner_65",
+  "name": "Aner",
+  "what": "A Levitical town in the western half-tribe of Manasseh, given to the Kohathite clans.",
+  "today": "Exact site unknown; possibly the same as Taanach in northern Israel.",
+  "lat": 32.5172,
+  "lon": 35.2163,
+  "type": "City",
+  "key": [
+   "From the half-tribe of Manasseh, Aner and Bileam went to the remaining Kohathite clans (1 Chronicles 6).",
+   "Joshua's parallel list names Taanach and Gath-rimmon from western Manasseh instead (Joshua 21)."
+  ]
+ },
+ {
+  "slug": "babylon_151",
+  "name": "Babylon",
+  "what": "The capital of the Babylonian Empire on the Euphrates, where Judah was taken into exile.",
+  "today": "Ruins near Hillah, Iraq",
+  "lat": 32.5365,
+  "lon": 44.4209,
+  "type": "City",
+  "key": [
+   "Hezekiah showed all his treasures to envoys from Babylon (2 Kings 20).",
+   "Nebuchadnezzar took Jerusalem and carried its king and people to Babylon (2 Kings 24).",
+   "Jeremiah wrote to the exiles, telling them to seek the welfare of Babylon (Jeremiah 29).",
+   "Daniel read the writing on the wall the night Babylon fell (Daniel 5).",
+   "John saw the fall of Babylon the great, the city opposed to God (Revelation 18)."
+  ]
+ },
+ {
+  "slug": "shinar_1084",
+  "name": "Shinar",
+  "what": "The ancient name for the plain of southern Mesopotamia, where Babylon stood.",
+  "today": "Southern Iraq.",
+  "lat": 32.5365,
+  "lon": 44.4209,
+  "type": "Region",
+  "key": [
+   "Nimrod's kingdom began with Babel and other cities in Shinar (Genesis 10).",
+   "People settled on a plain in Shinar and built the tower of Babel (Genesis 11).",
+   "Achan coveted and stole a beautiful cloak from Shinar (Joshua 7).",
+   "Nebuchadnezzar carried temple vessels to the land of Shinar (Daniel 1).",
+   "Zechariah saw wickedness carried in a basket to Shinar (Zechariah 5)."
+  ]
+ },
+ {
+  "slug": "mesopotamia_790",
+  "name": "Mesopotamia",
+  "what": "The land between the Tigris and Euphrates rivers, homeland of Abraham's family.",
+  "today": "Mainly modern Iraq, with parts of Syria and Turkey.",
+  "lat": 32.5365,
+  "lon": 44.4209,
+  "type": "Region",
+  "key": [
+   "Abraham's servant traveled to Mesopotamia to find a wife for Isaac (Genesis 24).",
+   "Balaam was hired from Pethor in Mesopotamia to curse Israel (Deuteronomy 23).",
+   "Othniel delivered Israel from Cushan-rishathaim, king of Mesopotamia (Judges 3).",
+   "Jews and converts from Mesopotamia heard the apostles at Pentecost (Acts 2).",
+   "Stephen recalled that God appeared to Abraham in Mesopotamia before Haran (Acts 7)."
+  ]
+ },
+ {
+  "slug": "babylonia_152",
+  "name": "Babylonia",
+  "what": "The land of Babylon in southern Mesopotamia, where Judah's exiles lived after Jerusalem fell.",
+  "today": "Southern Iraq.",
+  "lat": 32.5365,
+  "lon": 44.4209,
+  "type": "Region",
+  "key": [
+   "Sheshbazzar brought the temple vessels from Babylonia to Jerusalem (Ezra 1).",
+   "Darius found Cyrus's decree in the archives in Babylonia (Ezra 6).",
+   "Artaxerxes let Ezra take silver and gold gathered in Babylonia (Ezra 7).",
+   "Family heads went up with Ezra from Babylonia (Ezra 8)."
+  ]
+ },
+ {
+  "slug": "babel_150",
+  "name": "Babel",
+  "what": "An ancient city in the land of Shinar where people built a tower and God confused their language.",
+  "today": "The ruins of Babylon, near Hillah, Iraq.",
+  "lat": 32.5365,
+  "lon": 44.4209,
+  "type": "City",
+  "key": [
+   "Nimrod's kingdom began with Babel and other cities in the land of Shinar (Genesis 10).",
+   "People settled in Shinar and began building a city and a tower to make a name for themselves (Genesis 11).",
+   "The Lord confused their language and scattered them over the face of all the earth (Genesis 11)."
+  ]
+ },
+ {
+  "slug": "dura_347",
+  "name": "Dura",
+  "what": "A plain in the province of Babylon where Nebuchadnezzar set up his golden image.",
+  "today": "Exact site unknown; near Babylon, Iraq.",
+  "lat": 32.5365,
+  "lon": 44.4209,
+  "type": "",
+  "key": [
+   "Nebuchadnezzar set up a golden image ninety feet high on the plain of Dura (Daniel 3).",
+   "Shadrach, Meshach, and Abednego refused to bow and were thrown into the furnace, but God delivered them (Daniel 3)."
+  ]
+ },
+ {
+  "slug": "harod_529",
+  "name": "Harod",
+  "what": "A spring near Mount Gilboa where Gideon camped; two of David's mighty men were called men of Harod.",
+  "today": "Likely Ain Jalud at the foot of Mount Gilboa, northern Israel.",
+  "lat": 32.5496,
+  "lon": 35.3556,
+  "type": "",
+  "key": [
+   "Gideon and his army camped beside the spring of Harod, with Midian's camp to the north (Judges 7).",
+   "There the LORD reduced Gideon's army, sending home the fearful and testing the rest at the water (Judges 7).",
+   "Shammah of Harod and Elika of Harod are listed among David's thirty mighty men (2 Samuel 23)."
+  ]
+ },
+ {
+  "slug": "jezreel_643",
+  "name": "Jezreel",
+  "what": "A town in Issachar overlooking the Jezreel Valley, a royal residence of King Ahab.",
+  "today": "Tel Jezreel, near Afula, northern Israel",
+  "lat": 32.556,
+  "lon": 35.3308,
+  "type": "",
+  "key": [
+   "Elijah ran ahead of Ahab's chariot to Jezreel (1 Kings 18).",
+   "Jezebel had Naboth killed so Ahab could take his vineyard in Jezreel (1 Kings 21).",
+   "Jehu killed King Joram, and Jezebel was thrown from a window in Jezreel (2 Kings 9).",
+   "Hosea named his son Jezreel as a sign of judgment on Jehu's house (Hosea 1)."
+  ]
+ },
+ {
+  "slug": "valley_of_jezreel_1211",
+  "name": "Valley of Jezreel",
+  "what": "A broad, fertile valley in northern Israel, a frequent battlefield and route for armies.",
+  "today": "The Jezreel Valley, in northern Israel between Galilee and Samaria.",
+  "lat": 32.556,
+  "lon": 35.3308,
+  "type": "Valley",
+  "key": [
+   "Canaanites in the Valley of Jezreel had iron chariots, troubling the tribe of Joseph (Joshua 17).",
+   "Midianites and Amalekites crossed the Jordan and camped in the Valley of Jezreel against Gideon (Judges 6).",
+   "God says he will break the bow of Israel in the Valley of Jezreel (Hosea 1)."
+  ]
+ },
+ {
+  "slug": "ramoth-gilead_984",
+  "name": "Ramoth-gilead",
+  "what": "A fortified city in Gilead east of the Jordan, often contested between Israel and Syria.",
+  "today": "Likely Tell er-Rumeith, northern Jordan",
+  "lat": 32.5653,
+  "lon": 36.0056,
+  "type": "City",
+  "key": [
+   "Ramoth-gilead was the center of one of Solomon's administrative districts (1 Kings 4).",
+   "Ahab was killed by a random arrow fighting the Syrians at Ramoth-gilead (1 Kings 22).",
+   "King Joram was wounded fighting Hazael at Ramoth-gilead (2 Kings 8).",
+   "Elisha's servant anointed Jehu king of Israel at Ramoth-gilead (2 Kings 9)."
+  ]
+ },
+ {
+  "slug": "mizpah_809",
+  "name": "Mizpah",
+  "what": "A town in Gilead east of the Jordan, named for the watchpost set up by Jacob and Laban.",
+  "today": "Exact site unknown; somewhere in Gilead, Jordan.",
+  "lat": 32.5653,
+  "lon": 36.0056,
+  "type": "",
+  "key": [
+   "Jacob and Laban made a covenant heap called Mizpah as a witness between them (Genesis 31).",
+   "Israel camped at Mizpah to face the Ammonites (Judges 10).",
+   "Jephthah's daughter came out to meet him at his home in Mizpah (Judges 11).",
+   "Hosea rebuked Israel's leaders as a snare at Mizpah (Hosea 5)."
+  ]
+ },
+ {
+  "slug": "ramoth_983",
+  "name": "Ramoth",
+  "what": "A city in Gilead east of the Jordan, assigned to Gad as a city of refuge.",
+  "today": "Likely Tell er-Rumeith, in northern Jordan near the Syrian border.",
+  "lat": 32.5653,
+  "lon": 36.0056,
+  "type": "City",
+  "key": [
+   "Moses set apart Ramoth in Gilead as a city of refuge for Gad (Deuteronomy 4).",
+   "Joshua confirmed Ramoth in Gilead among the cities of refuge (Joshua 20).",
+   "Ramoth in Gilead was given to the Merarite Levites from Gad's territory (Joshua 21)."
+  ]
+ },
+ {
+  "slug": "megiddo_777",
+  "name": "Megiddo",
+  "what": "A fortified city guarding a key pass into the Jezreel Valley.",
+  "today": "Tel Megiddo in the Jezreel Valley, northern Israel.",
+  "lat": 32.5842,
+  "lon": 35.1823,
+  "type": "City",
+  "key": [
+   "Manasseh did not drive out the Canaanites of Megiddo (Judges 1).",
+   "Deborah's song recalls the kings of Canaan fighting by the waters of Megiddo (Judges 5).",
+   "Solomon rebuilt Megiddo with forced labor (1 Kings 9).",
+   "King Ahaziah of Judah fled from Jehu and died at Megiddo (2 Kings 9).",
+   "King Josiah was killed at Megiddo by Pharaoh Neco (2 Kings 23)."
+  ]
+ },
+ {
+  "slug": "armageddon_91",
+  "name": "Armageddon",
+  "what": "The place where, in John's vision, the kings of the earth assemble for battle on the great day of God.",
+  "today": "Commonly linked with Megiddo and the Jezreel Valley, northern Israel.",
+  "lat": 32.5842,
+  "lon": 35.1823,
+  "type": "",
+  "key": [
+   "The sixth bowl dries up the Euphrates to prepare the way for the kings from the east (Revelation 16).",
+   "Demonic spirits gather the kings of the whole world for battle on the great day of God (Revelation 16).",
+   "The kings are assembled at the place called in Hebrew Armageddon (Revelation 16)."
+  ]
+ },
+ {
+  "slug": "shunem_1089",
+  "name": "Shunem",
+  "what": "A town in the Jezreel Valley in Issachar, home of the Shunammite woman Elisha helped.",
+  "today": "Modern Sulam, near Afula in northern Israel.",
+  "lat": 32.6056,
+  "lon": 35.3343,
+  "type": "City",
+  "key": [
+   "Shunem is listed among the towns of Issachar (Joshua 19).",
+   "The Philistines camped at Shunem before the battle in which Saul died (1 Samuel 28).",
+   "A woman of Shunem hosted Elisha, who later raised her son to life (2 Kings 4)."
+  ]
+ },
+ {
+  "slug": "ophrah_914",
+  "name": "Ophrah",
+  "what": "Gideon's hometown, belonging to the clan of Abiezer in Manasseh.",
+  "today": "Exact site unknown; possibly near Afula in the Jezreel Valley, Israel.",
+  "lat": 32.6087,
+  "lon": 35.2883,
+  "type": "City",
+  "key": [
+   "The angel of the LORD called Gideon at Ophrah, where he built an altar (Judges 6).",
+   "Gideon made a gold ephod at Ophrah, which became a snare to Israel (Judges 8).",
+   "Gideon was buried at Ophrah (Judges 8).",
+   "Abimelech killed his seventy brothers on one stone at Ophrah (Judges 9)."
+  ]
+ },
+ {
+  "slug": "dor_341",
+  "name": "Dor",
+  "what": "A Canaanite port city on the Mediterranean coast south of Mount Carmel.",
+  "today": "Tel Dor, on the coast south of Haifa, Israel.",
+  "lat": 32.6132,
+  "lon": 34.9189,
+  "type": "City",
+  "key": [
+   "The king of Dor is listed among the kings Joshua defeated (Joshua 12).",
+   "Dor is given to Manasseh, but the Canaanites remain there (Joshua 17).",
+   "Manasseh fails to drive out the inhabitants of Dor (Judges 1).",
+   "Dor is listed among the towns held by the descendants of Joseph (1 Chronicles 7)."
+  ]
+ },
+ {
+  "slug": "edrei_358",
+  "name": "Edrei",
+  "what": "A royal city of Og king of Bashan, east of the Jordan.",
+  "today": "Daraa, in southern Syria near the Jordanian border.",
+  "lat": 32.6241,
+  "lon": 36.099,
+  "type": "City",
+  "key": [
+   "Og king of Bashan came out to fight Israel at Edrei and was defeated (Numbers 21).",
+   "God told Moses not to fear Og, and Israel struck him down (Deuteronomy 3).",
+   "Og had reigned in Ashtaroth and Edrei (Joshua 12).",
+   "Edrei was allotted to the half-tribe of Manasseh (Joshua 13)."
+  ]
+ },
+ {
+  "slug": "en-dor_385",
+  "name": "En-dor",
+  "what": "A town south of Mount Tabor, best known as the home of the medium Saul consulted.",
+  "today": "Likely near the village of Indur, south of Mount Tabor, Israel.",
+  "lat": 32.6257,
+  "lon": 35.3857,
+  "type": "",
+  "key": [
+   "En-dor was assigned to Manasseh, though it lay within Issachar and Asher (Joshua 17).",
+   "On the eve of battle, a disguised Saul consulted a medium at En-dor (1 Samuel 28).",
+   "The psalmist recalls Sisera and Jabin, who perished at En-dor (Psalms 83)."
+  ]
+ },
+ {
+  "slug": "saron_1063",
+  "name": "Sharon",
+  "what": "The fertile coastal plain of Israel between Joppa and Mount Carmel.",
+  "today": "The Sharon Plain along Israel's central Mediterranean coast.",
+  "lat": 32.6391,
+  "lon": 34.9459,
+  "type": "Region",
+  "key": [
+   "David's herds grazed in Sharon under Shitrai (1 Chronicles 27).",
+   "The bride calls herself a rose of Sharon (Song of Solomon 2).",
+   "Isaiah foretold that the splendor of Sharon would be given to the wilderness (Isaiah 35).",
+   "God promised Sharon would become a pasture for his people (Isaiah 65).",
+   "Residents of Lydda and Sharon turned to the Lord after Aeneas was healed (Acts 9)."
+  ]
+ },
+ {
+  "slug": "east-manasseh-half-tribe_1290",
+  "name": "East Manasseh",
+  "what": "The territory east of the Jordan given to half the tribe of Manasseh, covering northern Gilead and Bashan.",
+  "today": "Northern Jordan and southern Syria, including the Golan Heights area.",
+  "lat": 32.6411,
+  "lon": 36.0715,
+  "type": "Region",
+  "key": [
+   "Moses gave Gilead and the former kingdom of Og to the half-tribe of Manasseh (Numbers 32).",
+   "Jair son of Manasseh took the region of Argob and named its villages after himself (Deuteronomy 3).",
+   "Moses' allotment to the half-tribe stretched from Mahanaim through all Bashan (Joshua 13).",
+   "Because of their unfaithfulness, the Assyrian king Tiglath-pileser carried the half-tribe into exile (1 Chronicles 5).",
+   "Manasseh receives a portion in Ezekiel's vision of the restored land (Ezekiel 48)."
+  ]
+ },
+ {
+  "slug": "issachar_1288",
+  "name": "Issachar",
+  "what": "The tribal territory of Issachar, centered on the fertile Jezreel Valley in northern Israel.",
+  "today": "The eastern Jezreel Valley and lower Galilee in northern Israel.",
+  "lat": 32.6485,
+  "lon": 35.4203,
+  "type": "Region",
+  "key": [
+   "Manasseh held some towns within Issachar, such as Beth-shean (Joshua 17).",
+   "Issachar received the fourth lot, including Jezreel and Shunem (Joshua 19).",
+   "Jehoshaphat son of Paruah served as Solomon's district officer in Issachar (1 Kings 4).",
+   "Issachar receives a portion in Ezekiel's vision of the restored land (Ezekiel 48)."
+  ]
+ },
+ {
+  "slug": "lo-debar_732",
+  "name": "Lo-debar",
+  "what": "A town in Gilead east of the Jordan, home of Machir son of Ammiel.",
+  "today": "Exact site unknown; in Gilead in northern Jordan.",
+  "lat": 32.6625,
+  "lon": 35.7836,
+  "type": "City",
+  "key": [
+   "David found Mephibosheth living in Machir's house at Lo-debar and showed him kindness (2 Samuel 9).",
+   "Machir of Lo-debar brought food and supplies to David during Absalom's revolt (2 Samuel 17)."
+  ]
+ },
+ {
+  "slug": "jokneam_649",
+  "name": "Jokneam",
+  "what": "A Canaanite town near Mount Carmel, later a Levitical city in Zebulun.",
+  "today": "Tel Yoqneam, at the northwestern edge of the Jezreel Valley, Israel.",
+  "lat": 32.6645,
+  "lon": 35.1089,
+  "type": "City",
+  "key": [
+   "The king of Jokneam in Carmel was among the kings Joshua defeated (Joshua 12).",
+   "Zebulun's border reached the brook east of Jokneam (Joshua 19).",
+   "Jokneam was given from Zebulun to the Merarite Levites (Joshua 21)."
+  ]
+ },
+ {
+  "slug": "tabor_1129",
+  "name": "Tabor",
+  "what": "A town in Zebulun near Mount Tabor, given to the Merarite Levites.",
+  "today": "Exact site unknown; near Mount Tabor in northern Israel.",
+  "lat": 32.6832,
+  "lon": 35.3247,
+  "type": "City",
+  "key": [
+   "Zebulun's border ran by Chisloth-tabor, possibly the same town (Joshua 19).",
+   "Tabor and its pasturelands were given from Zebulun to the Merarite Levites (1 Chronicles 6)."
+  ]
+ },
+ {
+  "slug": "chisloth-tabor_297",
+  "name": "Chisloth-tabor",
+  "what": "A place on the border of Zebulun near Mount Tabor, on the way toward Daberath.",
+  "today": "Possibly Iksal, near Nazareth in northern Israel.",
+  "lat": 32.6832,
+  "lon": 35.3247,
+  "type": "",
+  "key": [
+   "Zebulun's boundary ran east from Sarid to the border of Chisloth-tabor (Joshua 19).",
+   "From there the boundary went on to Daberath and up to Japhia (Joshua 19)."
+  ]
+ },
+ {
+  "slug": "tabor_1128",
+  "name": "Tabor",
+  "what": "A rounded mountain rising from the Jezreel Valley in Lower Galilee.",
+  "today": "Mount Tabor, in northern Israel.",
+  "lat": 32.687,
+  "lon": 35.3909,
+  "type": "Mountain",
+  "key": [
+   "Tabor marked the border of Issachar (Joshua 19).",
+   "Gideon asked Zebah and Zalmunna about the men they killed at Tabor (Judges 8).",
+   "The psalmist says Tabor and Hermon praise God's name (Psalms 89).",
+   "Hosea accused Israel's leaders of being a net spread on Tabor (Hosea 5)."
+  ]
+ },
+ {
+  "slug": "mount_tabor_857",
+  "name": "Mount Tabor",
+  "what": "A prominent rounded mountain at the northeastern edge of the Jezreel Valley.",
+  "today": "Mount Tabor, east of Nazareth in northern Israel.",
+  "lat": 32.687,
+  "lon": 35.3909,
+  "type": "Mountain",
+  "key": [
+   "Deborah told Barak to gather ten thousand men at Mount Tabor (Judges 4).",
+   "Barak went down from Mount Tabor and the LORD routed Sisera's army (Judges 4)."
+  ]
+ },
+ {
+  "slug": "harosheth-hagoyim_530",
+  "name": "Harosheth-hagoyim",
+  "what": "The home base of Sisera, commander of the Canaanite king Jabin's army.",
+  "today": "Exact site uncertain; probably near the Kishon River in northern Israel.",
+  "lat": 32.6912,
+  "lon": 35.11,
+  "type": "City",
+  "key": [
+   "Sisera, commander of Jabin's army, lived in Harosheth-hagoyim (Judges 4).",
+   "Barak pursued Sisera's chariots and army all the way to Harosheth-hagoyim (Judges 4)."
+  ]
+ },
+ {
+  "slug": "daberath_319",
+  "name": "Daberath",
+  "what": "A town near Mount Tabor on the border of Zebulun, later given to the Levites.",
+  "today": "Likely Daburiyya, at the western foot of Mount Tabor, Israel.",
+  "lat": 32.6917,
+  "lon": 35.3717,
+  "type": "City",
+  "key": [
+   "Daberath is named on the boundary of Zebulun's territory (Joshua 19).",
+   "Daberath was given from Issachar's land to the Gershonite Levites (Joshua 21).",
+   "The Chronicler lists Daberath again among the Levites' towns (1 Chronicles 6)."
+  ]
+ },
+ {
+  "slug": "galilee_433",
+  "name": "Galilee",
+  "what": "The northern region of Israel around the Sea of Galilee, where Jesus grew up and did most of his ministry.",
+  "today": "Northern Israel",
+  "lat": 32.7067,
+  "lon": 35.3015,
+  "type": "Region",
+  "key": [
+   "Kedesh in Galilee was set apart as a city of refuge (Joshua 20).",
+   "Isaiah foretold a great light for Galilee of the nations (Isaiah 9).",
+   "Jesus began preaching and calling disciples in Galilee (Matthew 4).",
+   "At a wedding in Cana in Galilee, Jesus turned water into wine (John 2).",
+   "The risen Jesus met the eleven on a mountain in Galilee and sent them out (Matthew 28)."
+  ]
+ },
+ {
+  "slug": "nazareth_878",
+  "name": "Nazareth",
+  "what": "A small town in Galilee where Jesus was raised.",
+  "today": "Nazareth, northern Israel",
+  "lat": 32.7067,
+  "lon": 35.3015,
+  "type": "City",
+  "key": [
+   "The angel Gabriel announced Jesus' birth to Mary in Nazareth (Luke 1).",
+   "Joseph settled the family in Nazareth after returning from Egypt (Matthew 2).",
+   "Jesus was rejected in the synagogue of his hometown, Nazareth (Luke 4).",
+   "Nathanael asked if anything good could come out of Nazareth (John 1).",
+   "Peter healed a lame man in the name of Jesus Christ of Nazareth (Acts 3)."
+  ]
+ },
+ {
+  "slug": "zebulun_1289",
+  "name": "Zebulun",
+  "what": "The tribal territory of Zebulun in lower Galilee, between the Sea of Galilee and the Mediterranean.",
+  "today": "Lower Galilee, northern Israel",
+  "lat": 32.7149,
+  "lon": 35.2396,
+  "type": "Region",
+  "key": [
+   "Jacob said Zebulun would dwell at the shore of the sea (Genesis 49).",
+   "Joshua assigned Zebulun its inheritance in Galilee (Joshua 19).",
+   "Isaiah foresaw honor coming to the land of Zebulun and Naphtali (Isaiah 9).",
+   "Jesus' ministry in Capernaum fulfilled Isaiah's word about Zebulun (Matthew 4)."
+  ]
+ },
+ {
+  "slug": "mount_carmel_831",
+  "name": "Mount Carmel",
+  "what": "A wooded mountain ridge on Israel's northern coast, overlooking the Jezreel Valley.",
+  "today": "The Carmel ridge near Haifa, Israel.",
+  "lat": 32.7294,
+  "lon": 35.0498,
+  "type": "Mountain",
+  "key": [
+   "Elijah defeated the prophets of Baal on Mount Carmel when God sent fire (1 Kings 18).",
+   "Elisha went to Mount Carmel after leaving Bethel (2 Kings 2).",
+   "The Shunammite woman found Elisha at Mount Carmel after her son died (2 Kings 4)."
+  ]
+ },
+ {
+  "slug": "cana_271",
+  "name": "Cana",
+  "what": "A village in Galilee where Jesus performed his first sign, turning water into wine.",
+  "today": "Likely Khirbet Qana, north of Nazareth, Israel.",
+  "lat": 32.747,
+  "lon": 35.3388,
+  "type": "City",
+  "key": [
+   "Jesus turns water into wine at a wedding, his first sign (John 2).",
+   "At Cana Jesus heals an official's son who lies sick in Capernaum (John 4).",
+   "Nathanael of Cana is among the disciples who meet the risen Jesus (John 21)."
+  ]
+ },
+ {
+  "slug": "kanah_667",
+  "name": "Kanah",
+  "what": "A town on the northern border of Asher's inheritance, toward Sidon.",
+  "today": "Likely Qana, southeast of Tyre in southern Lebanon",
+  "lat": 32.747,
+  "lon": 35.3388,
+  "type": "City",
+  "key": [
+   "Kanah is listed with Ebron, Rehob, and Hammon on the boundary of Asher (Joshua 19).",
+   "From these towns Asher's border reached as far as Sidon the Great (Joshua 19)."
+  ]
+ },
+ {
+  "slug": "kishon_705",
+  "name": "Kishon",
+  "what": "A river flowing through the Jezreel Valley to the Mediterranean near Mount Carmel.",
+  "today": "The Kishon River (Nahal Kishon), in northern Israel.",
+  "lat": 32.7619,
+  "lon": 35.0641,
+  "type": "Water",
+  "key": [
+   "Sisera gathered his chariots at the Kishon to fight Barak (Judges 4).",
+   "Deborah's song says the torrent Kishon swept the enemy away (Judges 5).",
+   "Elijah executed the prophets of Baal at the brook Kishon (1 Kings 18).",
+   "The psalmist asks God to deal with enemies as with Sisera at the Kishon (Psalms 83)."
+  ]
+ },
+ {
+  "slug": "aphek_73",
+  "name": "Aphek",
+  "what": "A town east of the Sea of Galilee where Israel defeated the Syrians.",
+  "today": "Likely near Afik, east of the Sea of Galilee, Golan Heights.",
+  "lat": 32.7783,
+  "lon": 35.6987,
+  "type": "City",
+  "key": [
+   "Ben-hadad attacks at Aphek, Israel defeats Syria, and a wall falls on survivors (1 Kings 20).",
+   "Elisha's arrow of victory promises that Joash will defeat the Syrians in Aphek (2 Kings 13)."
+  ]
+ },
+ {
+  "slug": "tiberias_1161",
+  "name": "Tiberias",
+  "what": "A city on the western shore of the Sea of Galilee, which gave the lake one of its names.",
+  "today": "Tiberias, on the western shore of the Sea of Galilee, Israel.",
+  "lat": 32.7955,
+  "lon": 35.5292,
+  "type": "City",
+  "key": [
+   "John names the lake as the Sea of Galilee, which is the Sea of Tiberias (John 6).",
+   "After Jesus fed the five thousand, boats from Tiberias came near the place where the crowd had eaten (John 6)."
+  ]
+ },
+ {
+  "slug": "bashan_159",
+  "name": "Bashan",
+  "what": "A fertile highland east of the Sea of Galilee, known for its cattle and oaks.",
+  "today": "Golan Heights and southern Syria",
+  "lat": 32.8001,
+  "lon": 35.9373,
+  "type": "Region",
+  "key": [
+   "Israel defeated Og king of Bashan at Edrei (Numbers 21).",
+   "Moses gave Bashan to the half-tribe of Manasseh (Deuteronomy 3).",
+   "The psalmist describes his enemies as strong bulls of Bashan (Psalms 22).",
+   "Amos rebuked the women of Samaria as cows of Bashan (Amos 4)."
+  ]
+ },
+ {
+  "slug": "golan_486",
+  "name": "Golan",
+  "what": "A city of refuge in Bashan, east of the Sea of Galilee, in the territory of Manasseh.",
+  "today": "Possibly Sahem el-Jolan, southern Syria; it gave its name to the Golan Heights.",
+  "lat": 32.8001,
+  "lon": 35.9373,
+  "type": "City",
+  "key": [
+   "Moses sets apart Golan in Bashan as a city of refuge for Manasseh (Deuteronomy 4).",
+   "Golan is confirmed as one of the six cities of refuge (Joshua 20).",
+   "Golan is given to the Gershonite Levites (Joshua 21).",
+   "Golan is listed again among the Gershonite Levitical cities (1 Chronicles 6)."
+  ]
+ },
+ {
+  "slug": "rephaim_995",
+  "name": "Rephaim",
+  "what": "An early people known for great stature, whose last king, Og, ruled Bashan east of the Jordan.",
+  "today": "No single site; their land included Bashan, in northern Jordan and southern Syria.",
+  "lat": 32.8001,
+  "lon": 35.9373,
+  "type": "",
+  "key": [
+   "The LORD promised Abraham's offspring the land of the Rephaim among other peoples (Genesis 15).",
+   "The Emim and Zamzummim, counted as Rephaim, were displaced by Moab and Ammon (Deuteronomy 2).",
+   "Og king of Bashan alone remained of the Rephaim; his iron bed was nine cubits long (Deuteronomy 3).",
+   "All Bashan, the region of Argob, was called the land of Rephaim (Deuteronomy 3)."
+  ]
+ },
+ {
+  "slug": "sea_of_galilee_1032",
+  "name": "Sea of Galilee",
+  "what": "A freshwater lake in northern Israel, center of much of Jesus' ministry.",
+  "today": "Lake Kinneret, in northern Israel.",
+  "lat": 32.8068,
+  "lon": 35.5894,
+  "type": "Water",
+  "key": [
+   "Jesus called Peter and Andrew by the Sea of Galilee (Matthew 4).",
+   "Jesus healed many by the Sea of Galilee and fed four thousand (Matthew 15).",
+   "Jesus healed a deaf man in the region by the Sea of Galilee (Mark 7).",
+   "Jesus crossed the Sea of Galilee and fed five thousand (John 6)."
+  ]
+ },
+ {
+  "slug": "sea_of_tiberias_1034",
+  "name": "Sea of Tiberias",
+  "what": "Another name for the Sea of Galilee, taken from the city of Tiberias on its western shore.",
+  "today": "Lake Kinneret (the Sea of Galilee), northern Israel.",
+  "lat": 32.8068,
+  "lon": 35.5894,
+  "type": "Water",
+  "key": [
+   "Jesus crossed the Sea of Galilee, also called the Sea of Tiberias, and fed five thousand (John 6).",
+   "The risen Jesus appeared by the Sea of Tiberias and gave the disciples a great catch (John 21).",
+   "After breakfast on the shore, Jesus three times asked Peter whether he loved him (John 21)."
+  ]
+ },
+ {
+  "slug": "cyrene_317",
+  "name": "Cyrene",
+  "what": "A Greek city on the coast of North Africa with a large Jewish community.",
+  "today": "Ruins at Shahhat, in eastern Libya.",
+  "lat": 32.825,
+  "lon": 21.8583,
+  "type": "City",
+  "key": [
+   "Simon of Cyrene was compelled to carry Jesus' cross (Matthew 27).",
+   "Mark names Simon of Cyrene as the father of Alexander and Rufus (Mark 15).",
+   "Visitors from the parts of Libya near Cyrene heard the gospel at Pentecost (Acts 2).",
+   "Men of Cyprus and Cyrene preached the Lord Jesus to Greeks at Antioch (Acts 11).",
+   "Lucius of Cyrene was a prophet and teacher in the church at Antioch (Acts 13)."
+  ]
+ },
+ {
+  "slug": "put_962",
+  "name": "Put",
+  "what": "An African nation west of Egypt whose soldiers fought as Egypt's allies.",
+  "today": "Likely Libya, west of Egypt.",
+  "lat": 32.825,
+  "lon": 21.8583,
+  "type": "",
+  "key": [
+   "Men of Put carrying shields marched in Egypt's army against Babylon (Jeremiah 46).",
+   "Ezekiel foretells that Put will fall by the sword along with Egypt (Ezekiel 30).",
+   "Nahum names Put among the helpers of Thebes, which still fell (Nahum 3)."
+  ]
+ },
+ {
+  "slug": "libya_730",
+  "name": "Libya",
+  "what": "The North African region west of Egypt, including the area around Cyrene.",
+  "today": "Eastern Libya (Cyrenaica), North Africa.",
+  "lat": 32.825,
+  "lon": 21.8583,
+  "type": "Region",
+  "key": [
+   "Ezekiel listed Libya among Egypt's allies who would fall by the sword (Ezekiel 30).",
+   "Visitors from the parts of Libya near Cyrene heard the gospel in their own language at Pentecost (Acts 2)."
+  ]
+ },
+ {
+  "slug": "ashtaroth_106",
+  "name": "Ashtaroth",
+  "what": "A royal city of Bashan east of the Sea of Galilee, home of King Og.",
+  "today": "Tell Ashtara, in southern Syria.",
+  "lat": 32.8333,
+  "lon": 36.0167,
+  "type": "City",
+  "key": [
+   "Og king of Bashan lived at Ashtaroth when Israel defeated him (Deuteronomy 1).",
+   "The Gibeonites cited Israel's victory over Og at Ashtaroth (Joshua 9).",
+   "Ashtaroth was allotted to the half-tribe of Manasseh (Joshua 13).",
+   "It was given to the Levites of Gershon's clan (1 Chronicles 6)."
+  ]
+ },
+ {
+  "slug": "gennesaret_458",
+  "name": "Gennesaret",
+  "what": "A fertile plain on the northwest shore of the Sea of Galilee, which also lent the lake its name.",
+  "today": "The plain of Ginosar, on the northwest shore of the Sea of Galilee, Israel.",
+  "lat": 32.8594,
+  "lon": 35.5099,
+  "type": "City",
+  "key": [
+   "After crossing the lake, Jesus landed at Gennesaret, and all who touched his garment were healed (Matthew 14).",
+   "Mark records people bringing the sick on mats as soon as Jesus reached Gennesaret (Mark 6).",
+   "By the lake of Gennesaret, Jesus taught from Peter's boat and called him after a great catch (Luke 5)."
+  ]
+ },
+ {
+  "slug": "capernaum_274",
+  "name": "Capernaum",
+  "what": "A fishing town on the north shore of the Sea of Galilee, Jesus' base of ministry.",
+  "today": "Ruins on the north shore of the Sea of Galilee, Israel",
+  "lat": 32.8806,
+  "lon": 35.5752,
+  "type": "City",
+  "key": [
+   "Jesus left Nazareth and made his home in Capernaum (Matthew 4).",
+   "Jesus healed a centurion's servant at Capernaum (Matthew 8).",
+   "Jesus healed a paralyzed man lowered through a roof in Capernaum (Mark 2).",
+   "Jesus warned Capernaum for not repenting despite his mighty works (Matthew 11).",
+   "Jesus taught that he is the bread of life in the synagogue at Capernaum (John 6)."
+  ]
+ },
+ {
+  "slug": "bethsaida_231",
+  "name": "Bethsaida",
+  "what": "A fishing town near the north shore of the Sea of Galilee.",
+  "today": "Likely et-Tell or el-Araj, near the north shore of the Sea of Galilee.",
+  "lat": 32.9078,
+  "lon": 35.627,
+  "type": "City",
+  "key": [
+   "Philip, Andrew, and Peter were from Bethsaida (John 1).",
+   "Jesus fed the five thousand near Bethsaida (Luke 9).",
+   "Jesus healed a blind man at Bethsaida in two stages (Mark 8).",
+   "Jesus pronounced woe on Bethsaida for not repenting despite his mighty works (Matthew 11).",
+   "Greeks wishing to see Jesus approached Philip of Bethsaida (John 12)."
+  ]
+ },
+ {
+  "slug": "chorazin_299",
+  "name": "Chorazin",
+  "what": "A Galilean town near Capernaum that saw Jesus' mighty works but did not repent.",
+  "today": "Korazim (Khirbet Karazeh), north of the Sea of Galilee, Israel.",
+  "lat": 32.9091,
+  "lon": 35.5529,
+  "type": "City",
+  "key": [
+   "Jesus pronounced woe on Chorazin and Bethsaida for not repenting despite his mighty works (Matthew 11).",
+   "He said Tyre and Sidon would have repented long ago had they seen such works (Matthew 11).",
+   "Jesus repeated the warning to Chorazin when sending out the seventy-two (Luke 10)."
+  ]
+ },
+ {
+  "slug": "asher_1287",
+  "name": "Asher",
+  "what": "The tribal territory of Asher along the Mediterranean coast in northern Israel.",
+  "today": "Coastal Galilee, northern Israel, into southern Lebanon",
+  "lat": 32.9145,
+  "lon": 35.1581,
+  "type": "Region",
+  "key": [
+   "Moses blessed Asher with plenty and favor among his brothers (Deuteronomy 33).",
+   "Joshua assigned the coastal lands of the north to Asher (Joshua 19).",
+   "Asher failed to drive out the people of Acco and Sidon (Judges 1).",
+   "Asher stayed by the coast rather than join Deborah's battle (Judges 5)."
+  ]
+ },
+ {
+  "slug": "acco_15",
+  "name": "Acco",
+  "what": "A Mediterranean port city north of Mount Carmel, in the territory assigned to Asher.",
+  "today": "Acre (Akko), on the coast of northern Israel.",
+  "lat": 32.9276,
+  "lon": 35.0816,
+  "type": "City",
+  "key": [
+   "Asher failed to drive out the inhabitants of Acco and Sidon (Judges 1).",
+   "Sailing from Tyre, Paul landed at Ptolemais and stayed a day with the believers there (Acts 21)."
+  ]
+ },
+ {
+  "slug": "achshaph_17",
+  "name": "Achshaph",
+  "what": "A Canaanite royal city in northern Canaan, later on the border of Asher.",
+  "today": "Exact site uncertain; possibly Tell Keisan, near Acco, Israel.",
+  "lat": 32.9518,
+  "lon": 35.1738,
+  "type": "City",
+  "key": [
+   "Jabin king of Hazor summons the king of Achshaph to fight Israel (Joshua 11).",
+   "The king of Achshaph is listed among the kings Joshua defeated (Joshua 12).",
+   "Achshaph lies on the boundary of Asher's territory (Joshua 19)."
+  ]
+ },
+ {
+  "slug": "rehob_989",
+  "name": "Rehob",
+  "what": "A town in the territory of Asher, later given to the Levites.",
+  "today": "Exact site uncertain; in western Galilee near Acco, Israel.",
+  "lat": 32.9554,
+  "lon": 35.212,
+  "type": "City",
+  "key": [
+   "Rehob is listed within the territory of Asher (Joshua 19).",
+   "Rehob is given to the Gershonite Levites (Joshua 21).",
+   "Asher fails to drive out the inhabitants of Rehob (Judges 1).",
+   "Rehob is listed again among the Levitical cities (1 Chronicles 6)."
+  ]
+ },
+ {
+  "slug": "geshur_461",
+  "name": "Geshur",
+  "what": "A small Aramean kingdom east of the Sea of Galilee.",
+  "today": "The Golan Heights region, east of the Sea of Galilee.",
+  "lat": 33.0,
+  "lon": 36.4167,
+  "type": "Region",
+  "key": [
+   "Israel did not drive out the Geshurites (Joshua 13).",
+   "David married Maacah, daughter of Talmai king of Geshur, the mother of Absalom (2 Samuel 3).",
+   "Absalom fled to Geshur for three years after killing Amnon (2 Samuel 13).",
+   "Joab brought Absalom back from Geshur to Jerusalem (2 Samuel 14)."
+  ]
+ },
+ {
+  "slug": "hazor_545",
+  "name": "Hazor",
+  "what": "A major Canaanite city north of the Sea of Galilee.",
+  "today": "Tel Hazor, north of the Sea of Galilee in Israel.",
+  "lat": 33.0172,
+  "lon": 35.568,
+  "type": "City",
+  "key": [
+   "Jabin king of Hazor led a northern coalition, and Joshua burned the city (Joshua 11).",
+   "Later, Jabin king of Canaan reigned in Hazor and oppressed Israel through Sisera (Judges 4).",
+   "Samuel recalled how God sold Israel into the hand of Sisera of Hazor (1 Samuel 12).",
+   "Solomon rebuilt Hazor with forced labor (1 Kings 9).",
+   "The Assyrian king Tiglath-pileser captured Hazor and exiled its people (2 Kings 15)."
+  ]
+ },
+ {
+  "slug": "tishbe_1171",
+  "name": "Tishbe",
+  "what": "The hometown of the prophet Elijah, who is called the Tishbite.",
+  "today": "Exact site unknown; traditionally in Gilead, northern Jordan.",
+  "lat": 33.0172,
+  "lon": 35.568,
+  "type": "",
+  "key": [
+   "Elijah the Tishbite, of Tishbe in Gilead, announced a drought to King Ahab (1 Kings 17).",
+   "God sent Elijah the Tishbite to confront Ahab over Naboth's vineyard (1 Kings 21).",
+   "King Ahaziah recognized from a description that the prophet was Elijah the Tishbite (2 Kings 1)."
+  ]
+ },
+ {
+  "slug": "naphtali_1284",
+  "name": "Naphtali",
+  "what": "The tribal territory of Naphtali in Galilee, west and north of the Sea of Galilee.",
+  "today": "Eastern Galilee, northern Israel",
+  "lat": 33.0183,
+  "lon": 35.5692,
+  "type": "Region",
+  "key": [
+   "Moses viewed all Naphtali from Mount Nebo before he died (Deuteronomy 34).",
+   "Kedesh in Naphtali was set apart as a city of refuge (Joshua 20).",
+   "Tiglath-pileser of Assyria captured Naphtali and carried its people away (2 Kings 15).",
+   "Jesus settled in Capernaum, fulfilling Isaiah's word about Naphtali (Matthew 4)."
+  ]
+ },
+ {
+  "slug": "merom_785",
+  "name": "Merom",
+  "what": "Waters in upper Galilee where Joshua defeated the northern Canaanite kings led by Jabin of Hazor.",
+  "today": "Exact site uncertain; likely springs in upper Galilee, northern Israel.",
+  "lat": 33.0753,
+  "lon": 35.6055,
+  "type": "Water",
+  "key": [
+   "Jabin of Hazor and his allies camped together at the waters of Merom to fight Israel (Joshua 11).",
+   "Joshua attacked them suddenly at Merom, and the Lord gave them into Israel's hand (Joshua 11).",
+   "Israel hamstrung the enemy's horses and burned their chariots as the Lord had commanded (Joshua 11)."
+  ]
+ },
+ {
+  "slug": "accad_14",
+  "name": "Accad",
+  "what": "One of the first cities of Nimrod's kingdom, in the land of Shinar in southern Mesopotamia.",
+  "today": "Akkad, in central Iraq; exact site unknown.",
+  "lat": 33.092,
+  "lon": 44.1292,
+  "type": "City",
+  "key": [
+   "Nimrod's kingdom began with Babel, Erech, Accad, and Calneh in the land of Shinar (Genesis 10).",
+   "From there he went into Assyria and built Nineveh and other cities (Genesis 10)."
+  ]
+ },
+ {
+  "slug": "kedesh_676",
+  "name": "Kedesh",
+  "what": "A fortified city of Naphtali in Upper Galilee and a city of refuge.",
+  "today": "Tel Kedesh, northwest of Lake Hula in northern Israel.",
+  "lat": 33.113,
+  "lon": 35.5336,
+  "type": "City",
+  "key": [
+   "Kedesh was allotted to Naphtali (Joshua 19).",
+   "Kedesh in Galilee was set apart as a city of refuge (Joshua 20).",
+   "Barak came from Kedesh, and Deborah went there with him to gather troops (Judges 4).",
+   "Tiglath-pileser captured Kedesh and exiled its people to Assyria (2 Kings 15)."
+  ]
+ },
+ {
+  "slug": "rehob_988",
+  "name": "Rehob",
+  "what": "A town on the northern border of Asher's territory, listed toward Sidon.",
+  "today": "Exact site unknown; in upper Galilee or southern Lebanon.",
+  "lat": 33.1258,
+  "lon": 35.165,
+  "type": "City",
+  "key": [
+   "Rehob is listed on Asher's border with Hammon and Kanah, as far as Sidon (Joshua 19).",
+   "A second Rehob in Asher appears a few verses later near Aphek (Joshua 19)."
+  ]
+ },
+ {
+  "slug": "hammon_519",
+  "name": "Hammon",
+  "what": "A town on the border of Asher's inheritance in the far north, toward Sidon.",
+  "today": "Possibly Umm el-Amed, near the coast of southern Lebanon",
+  "lat": 33.1258,
+  "lon": 35.165,
+  "type": "City",
+  "key": [
+   "Hammon is listed with Ebron, Rehob, and Kanah on the boundary of Asher (Joshua 19).",
+   "From these towns Asher's border reached as far as Sidon the Great (Joshua 19)."
+  ]
+ },
+ {
+  "slug": "argob_88",
+  "name": "Argob",
+  "what": "A region of Bashan with sixty fortified cities, taken from Og king of Bashan.",
+  "today": "In Bashan, southern Syria; exact extent uncertain.",
+  "lat": 33.144,
+  "lon": 36.136,
+  "type": "Region",
+  "key": [
+   "Israel captures the sixty cities of Argob from Og king of Bashan (Deuteronomy 3).",
+   "Jair of Manasseh takes the region of Argob and names it after himself (Deuteronomy 3).",
+   "Argob falls within the district of Solomon's officer Ben-geber (1 Kings 4)."
+  ]
+ },
+ {
+  "slug": "chebar_283",
+  "name": "Chebar",
+  "what": "A canal in Babylonia where Jewish exiles lived and Ezekiel received visions.",
+  "today": "Exact site unknown; likely a canal near Nippur in southern Iraq.",
+  "lat": 33.1591,
+  "lon": 44.0629,
+  "type": "Water",
+  "key": [
+   "Among the exiles by the Chebar canal, Ezekiel saw visions of God (Ezekiel 1).",
+   "Ezekiel came to the exiles at Tel-abib by the Chebar canal (Ezekiel 3).",
+   "Ezekiel recognized the cherubim as the creatures he saw by the Chebar canal (Ezekiel 10).",
+   "God's glory returning to the temple looked like the vision by the Chebar canal (Ezekiel 43)."
+  ]
+ },
+ {
+  "slug": "maacah_743",
+  "name": "Maacah",
+  "what": "A small Aramean kingdom north of Bashan, near the slopes of Mount Hermon.",
+  "today": "Around the northern Golan Heights and southern Lebanon.",
+  "lat": 33.2,
+  "lon": 36.5,
+  "type": "Region",
+  "key": [
+   "The Ammonites hire the king of Maacah and his men to fight David (2 Samuel 10).",
+   "Eliphelet son of Ahasbai of Maacah is among David's mighty men (2 Samuel 23).",
+   "Chronicles records the king of Maacah and his troops joining the Ammonites (1 Chronicles 19)."
+  ]
+ },
+ {
+  "slug": "rehob_987",
+  "name": "Rehob",
+  "what": "An Aramean town and district in the far north of Israel, near Dan and Lebo-hamath.",
+  "today": "Exact site unknown; near Dan in far northern Israel or southern Lebanon.",
+  "lat": 33.2194,
+  "lon": 35.5441,
+  "type": "",
+  "key": [
+   "The spies explored the land from the wilderness of Zin to Rehob, near Lebo-hamath (Numbers 13).",
+   "Laish, later Dan, lay in the valley belonging to Beth-rehob (Judges 18).",
+   "The Ammonites hired Syrians of Beth-rehob and Zobah to fight against David (2 Samuel 10)."
+  ]
+ },
+ {
+  "slug": "great_sea_493",
+  "name": "Great Sea",
+  "what": "The Mediterranean Sea, forming the western border of the Promised Land.",
+  "today": "The Mediterranean Sea.",
+  "lat": 33.24,
+  "lon": 33.47,
+  "type": "Water",
+  "key": [
+   "God set the Great Sea as the western boundary of Canaan (Numbers 34).",
+   "God promised Joshua land stretching to the Great Sea toward the sunset (Joshua 1).",
+   "Kings along the coast of the Great Sea gathered to fight Israel (Joshua 9).",
+   "In Ezekiel's vision, the river from the temple makes the Dead Sea teem with fish like the Great Sea (Ezekiel 47)."
+  ]
+ },
+ {
+  "slug": "caesarea_philippi_267",
+  "name": "Caesarea Philippi",
+  "what": "A Roman city at the foot of Mount Hermon, near the sources of the Jordan River.",
+  "today": "Banias, at the foot of Mount Hermon in the Golan Heights.",
+  "lat": 33.2481,
+  "lon": 35.6946,
+  "type": "City",
+  "key": [
+   "Near Caesarea Philippi, Jesus asked who people said he was, and Peter confessed him as the Christ (Matthew 16).",
+   "From then on Jesus began to show that he must suffer, be killed, and be raised (Matthew 16).",
+   "Mark records Peter's confession on the way to the villages of Caesarea Philippi (Mark 8)."
+  ]
+ },
+ {
+  "slug": "dan_323",
+  "name": "Dan",
+  "what": "A city at Israel's northern edge, formerly Laish, captured and renamed by the tribe of Dan.",
+  "today": "Tel Dan, northern Israel",
+  "lat": 33.2487,
+  "lon": 35.6525,
+  "type": "Region",
+  "key": [
+   "Abram pursued the kings who captured Lot as far as Dan (Genesis 14).",
+   "The Danites captured Laish, renamed it Dan, and set up a carved image (Judges 18).",
+   "All Israel from Dan to Beersheba recognized Samuel as a prophet (1 Samuel 3).",
+   "Jeroboam placed a golden calf at Dan (1 Kings 12).",
+   "Ben-hadad of Syria conquered Dan at King Asa's request (1 Kings 15)."
+  ]
+ },
+ {
+  "slug": "laish_713",
+  "name": "Laish",
+  "what": "A quiet, isolated city in the far north captured by the tribe of Dan and renamed Dan.",
+  "today": "Tel Dan, in northern Israel.",
+  "lat": 33.2487,
+  "lon": 35.6525,
+  "type": "City",
+  "key": [
+   "Danite spies find the people of Laish quiet, unsuspecting, and far from help (Judges 18).",
+   "The Danites strike Laish and burn it (Judges 18).",
+   "The Danites rebuild the city and rename Laish as Dan (Judges 18)."
+  ]
+ },
+ {
+  "slug": "leshem_727",
+  "name": "Leshem",
+  "what": "A city in the far north captured by the tribe of Dan and renamed Dan.",
+  "today": "Tel Dan, in northern Israel.",
+  "lat": 33.2487,
+  "lon": 35.6525,
+  "type": "",
+  "key": [
+   "When their territory proved too small, the Danites captured Leshem and renamed it Dan (Joshua 19).",
+   "Judges tells the fuller story, calling the city Laish and describing its capture and renaming (Judges 18)."
+  ]
+ },
+ {
+  "slug": "abel_4",
+  "name": "Abel",
+  "what": "A fortified town in the far north of Israel where the rebel Sheba took refuge.",
+  "today": "Tel Abel Beth Maacah, near Metula, northern Israel.",
+  "lat": 33.2685,
+  "lon": 35.578,
+  "type": "",
+  "key": [
+   "Sheba son of Bichri flees to Abel, and Joab besieges the city (2 Samuel 20).",
+   "A wise woman of Abel persuades the city to throw Sheba's head to Joab, saving it (2 Samuel 20)."
+  ]
+ },
+ {
+  "slug": "abel-beth-maacah_5",
+  "name": "Abel-beth-maacah",
+  "what": "A fortified town in the far north of Israel, near Dan, repeatedly struck by invading armies.",
+  "today": "Tel Abel Beth Maacah, near Metula, northern Israel.",
+  "lat": 33.2685,
+  "lon": 35.578,
+  "type": "City",
+  "key": [
+   "Joab besieged the rebel Sheba in Abel of Beth-maacah until a wise woman had his head thrown out (2 Samuel 20).",
+   "Ben-hadad of Syria attacked Israelite cities including Ijon, Dan, and Abel-beth-maacah (1 Kings 15).",
+   "Tiglath-pileser of Assyria captured Abel-beth-maacah and carried its people into exile (2 Kings 15)."
+  ]
+ },
+ {
+  "slug": "beth-maacah_221",
+  "name": "Beth-maacah",
+  "what": "The district of a far-northern town, Abel of Beth-maacah, where the rebel Sheba took refuge from Joab.",
+  "today": "Tel Abel Beth Maacah, near Metula, northern Israel.",
+  "lat": 33.2685,
+  "lon": 35.578,
+  "type": "City",
+  "key": [
+   "Sheba son of Bichri passed through all the tribes and reached Abel of Beth-maacah (2 Samuel 20).",
+   "Joab besieged the city and built a siege mound against its wall (2 Samuel 20).",
+   "A wise woman persuaded the city to throw Sheba's head to Joab, and the siege ended (2 Samuel 20)."
+  ]
+ },
+ {
+  "slug": "tyre_1184",
+  "name": "Tyre",
+  "what": "A wealthy Phoenician port city on the Mediterranean coast north of Israel.",
+  "today": "Tyre (Sur), southern Lebanon",
+  "lat": 33.2758,
+  "lon": 35.1926,
+  "type": "City",
+  "key": [
+   "Hiram king of Tyre sent cedar and craftsmen to build David's house (2 Samuel 5).",
+   "Hiram supplied timber for Solomon's temple in exchange for food (1 Kings 5).",
+   "Ezekiel prophesied that Tyre would become a bare rock for drying nets (Ezekiel 26).",
+   "Jesus healed the daughter of a Gentile woman in the region of Tyre (Mark 7).",
+   "Paul stayed seven days with disciples at Tyre (Acts 21)."
+  ]
+ },
+ {
+  "slug": "ijon_594",
+  "name": "Ijon",
+  "what": "A town in the far north of Israel, repeatedly taken by invading armies.",
+  "today": "Likely Tell ed-Dibbin, in the Marjayoun valley of southern Lebanon.",
+  "lat": 33.328,
+  "lon": 35.6119,
+  "type": "City",
+  "key": [
+   "At King Asa's request, Ben-hadad of Syria conquered Ijon (1 Kings 15).",
+   "Tiglath-pileser of Assyria captured Ijon and deported its people (2 Kings 15).",
+   "The Chronicler repeats Ben-hadad's attack on Ijon (2 Chronicles 16)."
+  ]
+ },
+ {
+  "slug": "hermon_564",
+  "name": "Hermon",
+  "what": "The tallest mountain in the region, marking the northern limit of Israel's conquest.",
+  "today": "Mount Hermon, on the border of Lebanon and Syria, above the Golan Heights.",
+  "lat": 33.4162,
+  "lon": 35.8573,
+  "type": "Mountain",
+  "key": [
+   "Israel took the land east of the Jordan as far as Mount Hermon (Deuteronomy 3).",
+   "Joshua's conquest reached Baal-gad below Mount Hermon (Joshua 11).",
+   "The psalmist remembers God from the land of Jordan and Hermon (Psalm 42).",
+   "Brothers dwelling in unity are like the dew of Hermon (Psalm 133).",
+   "The bride is called to come from the peaks of Senir and Hermon (Song of Solomon 4)."
+  ]
+ },
+ {
+  "slug": "mount_hermon_841",
+  "name": "Mount Hermon",
+  "what": "The highest mountain in the region, marking the northern limit of Israel's conquests east of the Jordan.",
+  "today": "Mount Hermon, on the border of Syria and Lebanon above the Golan Heights.",
+  "lat": 33.4162,
+  "lon": 35.8573,
+  "type": "Mountain",
+  "key": [
+   "Moses noted that Sidonians called Hermon Sirion and Amorites called it Senir (Deuteronomy 3).",
+   "Joshua's conquest reached the valley of Lebanon below Mount Hermon (Joshua 11).",
+   "Og king of Bashan had ruled as far as Mount Hermon (Joshua 12).",
+   "The half-tribe of Manasseh settled from Bashan to Mount Hermon (1 Chronicles 5)."
+  ]
+ },
+ {
+  "slug": "senir_1047",
+  "name": "Senir",
+  "what": "The Amorite name for Mount Hermon or part of its range.",
+  "today": "Mount Hermon, on the Lebanon-Syria border.",
+  "lat": 33.4162,
+  "lon": 35.8573,
+  "type": "",
+  "key": [
+   "Moses notes that the Amorites call Mount Hermon Senir (Deuteronomy 3).",
+   "The half-tribe of Manasseh settles from Bashan to Senir and Mount Hermon (1 Chronicles 5).",
+   "The bride is called to come down from the peaks of Senir and Hermon (Song of Solomon 4).",
+   "Tyre's ship planks are made of fir trees from Senir (Ezekiel 27)."
+  ]
+ },
+ {
+  "slug": "baal-gad_140",
+  "name": "Baal-gad",
+  "what": "A town in the Valley of Lebanon below Mount Hermon, marking the northern limit of Joshua's conquest.",
+  "today": "Exact site unknown; likely in southern Lebanon near the foot of Mount Hermon.",
+  "lat": 33.4162,
+  "lon": 35.8573,
+  "type": "City",
+  "key": [
+   "Joshua's conquest reached from Mount Halak in the south to Baal-gad in the north (Joshua 11).",
+   "Baal-gad is named again as the northern edge of the land Joshua took (Joshua 12).",
+   "God lists the region from Baal-gad toward Lebanon as land still to be possessed (Joshua 13)."
+  ]
+ },
+ {
+  "slug": "sirion_1101",
+  "name": "Sirion",
+  "what": "The Sidonian name for Mount Hermon, the highest mountain on Israel's northern border.",
+  "today": "Mount Hermon, on the border of Lebanon, Syria, and the Golan Heights.",
+  "lat": 33.4162,
+  "lon": 35.8573,
+  "type": "",
+  "key": [
+   "Moses notes that the Sidonians call Hermon Sirion (Deuteronomy 3).",
+   "The psalmist says the LORD's voice makes Sirion leap like a young wild ox (Psalms 29).",
+   "Jeremiah asks whether the snow ever leaves the crags of Sirion, contrasting Israel's unfaithfulness (Jeremiah 18)."
+  ]
+ },
+ {
+  "slug": "valley_of_lebanon_1212",
+  "name": "Valley of Lebanon",
+  "what": "The broad valley between the Lebanon and Anti-Lebanon ranges, below Mount Hermon.",
+  "today": "The Beqaa Valley, Lebanon.",
+  "lat": 33.4162,
+  "lon": 35.8573,
+  "type": "Valley",
+  "key": [
+   "Baal-gad in the Valley of Lebanon below Mount Hermon marked the northern limit of Joshua's conquest (Joshua 11).",
+   "The valley is named again in the summary of kings Joshua defeated (Joshua 12)."
+  ]
+ },
+ {
+  "slug": "zarephath_1242",
+  "name": "Zarephath",
+  "what": "A Phoenician town near Sidon where Elijah stayed with a widow during the drought.",
+  "today": "Sarafand, on the coast of southern Lebanon between Tyre and Sidon.",
+  "lat": 33.4333,
+  "lon": 35.3,
+  "type": "",
+  "key": [
+   "God sends Elijah to a widow in Zarephath, whose flour and oil do not run out (1 Kings 17).",
+   "Elijah raises the widow's son to life (1 Kings 17).",
+   "Obadiah foresees Israelite exiles possessing the land as far as Zarephath (Obadiah 1).",
+   "Jesus notes Elijah was sent only to a widow of Zarephath in Sidon (Luke 4)."
+  ]
+ },
+ {
+  "slug": "syria_1122",
+  "name": "Syria",
+  "what": "The Aramean kingdom north of Israel centered on Damascus; later a Roman province including Antioch.",
+  "today": "Modern Syria",
+  "lat": 33.5193,
+  "lon": 36.3134,
+  "type": "Region",
+  "key": [
+   "Ahab was killed in battle against the Syrians at Ramoth-gilead (1 Kings 22).",
+   "Naaman, commander of Syria's army, came to Elisha to be healed (2 Kings 5).",
+   "Syria and Israel joined against Ahaz, and Isaiah gave the Immanuel sign (Isaiah 7).",
+   "Quirinius was governor of Syria at the time of Jesus' birth (Luke 2).",
+   "After his conversion, Paul went into the regions of Syria and Cilicia (Galatians 1)."
+  ]
+ },
+ {
+  "slug": "decapolis_328",
+  "name": "Decapolis",
+  "what": "A region of ten Greek-influenced cities, mostly east and southeast of the Sea of Galilee.",
+  "today": "Parts of northern Jordan, southern Syria, and northern Israel.",
+  "lat": 33.5193,
+  "lon": 36.3134,
+  "type": "Region",
+  "key": [
+   "Great crowds from the Decapolis followed Jesus early in his ministry (Matthew 4).",
+   "The man freed from many demons proclaimed in the Decapolis what Jesus had done (Mark 5).",
+   "Jesus passed through the Decapolis region and healed a deaf man with a speech impediment (Mark 7)."
+  ]
+ },
+ {
+  "slug": "hadrach_504",
+  "name": "Hadrach",
+  "what": "A region in Syria named first in Zechariah's oracle of judgment on Israel's northern neighbors.",
+  "today": "Likely the region of Hatarikka, near Hama, Syria.",
+  "lat": 33.5193,
+  "lon": 36.3134,
+  "type": "Region",
+  "key": [
+   "The word of the Lord is against the land of Hadrach, and Damascus is its resting place (Zechariah 9).",
+   "The oracle continues with judgment on Hamath, Tyre, Sidon, and the Philistine cities (Zechariah 9).",
+   "Zion's king then comes, humble and riding on a donkey (Zechariah 9)."
+  ]
+ },
+ {
+  "slug": "damascus_322",
+  "name": "Damascus",
+  "what": "An ancient city northeast of Israel, the capital of Syria (Aram).",
+  "today": "Damascus, Syria",
+  "lat": 33.5193,
+  "lon": 36.3135,
+  "type": "City",
+  "key": [
+   "Abram pursued the captors of Lot as far as north of Damascus (Genesis 14).",
+   "Naaman boasted that the rivers of Damascus were better than the Jordan (2 Kings 5).",
+   "King Ahaz copied an altar he saw in Damascus for the temple (2 Kings 16).",
+   "Saul met the risen Jesus on the road to Damascus (Acts 9).",
+   "Paul escaped Damascus by being lowered over the wall in a basket (2 Corinthians 11)."
+  ]
+ },
+ {
+  "slug": "sidon_1093",
+  "name": "Sidon",
+  "what": "An ancient Phoenician port city north of Tyre on the Mediterranean coast.",
+  "today": "Sidon (Saida), Lebanon",
+  "lat": 33.5632,
+  "lon": 35.3663,
+  "type": "City",
+  "key": [
+   "Israel served the gods of Sidon and other nations (Judges 10).",
+   "Elijah was sent to a widow in Zarephath, a town belonging to Sidon (1 Kings 17).",
+   "Ezekiel prophesied judgment against Sidon (Ezekiel 28).",
+   "Jesus passed through Sidon on his way back to the Sea of Galilee (Mark 7).",
+   "On the voyage to Rome, Paul was allowed to visit friends at Sidon (Acts 27)."
+  ]
+ },
+ {
+  "slug": "philistia_943",
+  "name": "Philistia",
+  "what": "The coastal land of the Philistines in southwestern Canaan, with five major cities.",
+  "today": "The southern coastal plain of Israel and the Gaza Strip.",
+  "lat": 33.5632,
+  "lon": 35.3663,
+  "type": "Region",
+  "key": [
+   "Moses sang that terror gripped the inhabitants of Philistia (Exodus 15).",
+   "God declares that he shouts in triumph over Philistia (Psalms 60).",
+   "Philistia is named among nations counted as born in Zion (Psalms 87).",
+   "Isaiah warned Philistia not to rejoice at its oppressor's fall (Isaiah 14)."
+  ]
+ },
+ {
+  "slug": "phenicia_944",
+  "name": "Phoenicia",
+  "what": "The coastal region north of Israel that included the cities of Tyre and Sidon.",
+  "today": "The coast of modern Lebanon and parts of northern Israel and Syria.",
+  "lat": 33.5632,
+  "lon": 35.3663,
+  "type": "Region",
+  "key": [
+   "Believers scattered after Stephen's death traveled as far as Phoenicia, preaching to Jews (Acts 11).",
+   "Passing through Phoenicia, Paul and Barnabas reported the Gentiles' conversion, bringing great joy (Acts 15).",
+   "Paul boarded a ship crossing to Phoenicia on his way to Jerusalem (Acts 21)."
+  ]
+ },
+ {
+  "slug": "ahava_34",
+  "name": "Ahava",
+  "what": "A river or canal in Babylonia where Ezra gathered the returning exiles before traveling to Jerusalem.",
+  "today": "Exact site unknown; in Babylonia, modern Iraq.",
+  "lat": 33.6252,
+  "lon": 42.7866,
+  "type": "Water",
+  "key": [
+   "Ezra gathers the exiles by the river that runs to Ahava and finds no Levites (Ezra 8).",
+   "Ezra proclaims a fast at the river Ahava to seek a safe journey from God (Ezra 8).",
+   "The company departs from the river Ahava, and God protects them on the way (Ezra 8)."
+  ]
+ },
+ {
+  "slug": "lebanon_720",
+  "name": "Lebanon",
+  "what": "The mountain range north of Israel, famous for its cedar forests.",
+  "today": "Lebanon mountains, modern Lebanon",
+  "lat": 33.7525,
+  "lon": 35.5908,
+  "type": "Region",
+  "key": [
+   "God promised Israel territory from the wilderness to Lebanon (Joshua 1).",
+   "Hiram of Tyre supplied cedars of Lebanon for Solomon's temple (1 Kings 5).",
+   "Cedars from Lebanon were brought for rebuilding the temple after the exile (Ezra 3).",
+   "The righteous are said to grow like a cedar in Lebanon (Psalms 92)."
+  ]
+ },
+ {
+  "slug": "sepharvaim_1050",
+  "name": "Sepharvaim",
+  "what": "A city conquered by Assyria, whose people were resettled in Samaria.",
+  "today": "Exact site unknown; possibly in Syria or Mesopotamia.",
+  "lat": 33.7897,
+  "lon": 44.4594,
+  "type": "City",
+  "key": [
+   "Assyria resettled people from Sepharvaim in Samaria, where they burned their children to their gods (2 Kings 17).",
+   "The Assyrian commander asked where the gods of Sepharvaim were (2 Kings 18).",
+   "Sennacherib's letter boasted of the fallen king of Sepharvaim (2 Kings 19).",
+   "Isaiah records the same Assyrian taunts against Hezekiah (Isaiah 37)."
+  ]
+ },
+ {
+  "slug": "aphek_71",
+  "name": "Aphek",
+  "what": "A town in the territory of Asher whose Canaanite inhabitants Asher did not drive out.",
+  "today": "Likely Tel Afek (Tell Kurdaneh), southeast of Acco in northern Israel.",
+  "lat": 34.0661,
+  "lon": 35.8658,
+  "type": "City",
+  "key": [
+   "Aphek is listed among the towns of Asher's inheritance, with Ummah and Rehob (Joshua 19).",
+   "Asher did not drive out the inhabitants of Aphik, so the Canaanites lived among them (Judges 1)."
+  ]
+ },
+ {
+  "slug": "gebal_449",
+  "name": "Gebal",
+  "what": "An ancient Phoenician port city on the Mediterranean coast, north of Sidon.",
+  "today": "Byblos (Jbeil), on the coast of Lebanon north of Beirut.",
+  "lat": 34.1191,
+  "lon": 35.6461,
+  "type": "City",
+  "key": [
+   "Men of Gebal helped prepare timber and stone for Solomon's temple (1 Kings 5).",
+   "Gebal is named among the nations conspiring against God's people (Psalms 83).",
+   "Gebal's skilled elders repaired the seams of Tyre's ships (Ezekiel 27)."
+  ]
+ },
+ {
+  "slug": "hazar-enan_537",
+  "name": "Hazar-enan",
+  "what": "A town marking the northeastern corner of the boundary of the promised land.",
+  "today": "Exact site unknown; possibly in central Syria.",
+  "lat": 34.2295,
+  "lon": 37.2401,
+  "type": "City",
+  "key": [
+   "The Lord sets Hazar-enan as the end of Israel's northern boundary (Numbers 34).",
+   "Ezekiel names Hazar-enan on the northern boundary of the restored land (Ezekiel 47).",
+   "Ezekiel again names Hazar-enan at the northern limit of Dan's portion (Ezekiel 48)."
+  ]
+ },
+ {
+  "slug": "zobah_1272",
+  "name": "Zobah",
+  "what": "An Aramean kingdom north of Damascus.",
+  "today": "Likely the Beqaa Valley of Lebanon and neighboring parts of Syria.",
+  "lat": 34.3126,
+  "lon": 36.9255,
+  "type": "Region",
+  "key": [
+   "Saul fought against the kings of Zobah (1 Samuel 14).",
+   "David defeated Hadadezer king of Zobah near the Euphrates (2 Samuel 8).",
+   "The Ammonites hired Syrians of Zobah to fight David, but Joab routed them (2 Samuel 10).",
+   "Igal of Zobah was among David's mighty men (2 Samuel 23).",
+   "Rezon fled from Hadadezer of Zobah and became Solomon's adversary in Damascus (1 Kings 11)."
+  ]
+ },
+ {
+  "slug": "rimmon_1004",
+  "name": "Rimmon",
+  "what": "A town in the far south of Judah, later allotted to Simeon.",
+  "today": "Possibly Khirbet Umm er-Ramamin, north of Beersheba, Israel.",
+  "lat": 34.3531,
+  "lon": 36.3857,
+  "type": "",
+  "key": [
+   "Rimmon is listed among the southernmost towns of Judah (Joshua 15).",
+   "Rimmon is allotted to the tribe of Simeon (Joshua 19).",
+   "Rimmon appears among the towns where Simeon's descendants lived (1 Chronicles 4).",
+   "Zechariah foresees the land leveled from Geba to Rimmon, south of Jerusalem (Zechariah 14)."
+  ]
+ },
+ {
+  "slug": "riblah_1001",
+  "name": "Riblah",
+  "what": "A town in Syria used as a military headquarters by Egyptian and Babylonian kings.",
+  "today": "Ribleh, on the Orontes River south of Homs, Syria.",
+  "lat": 34.4317,
+  "lon": 36.5453,
+  "type": "City",
+  "key": [
+   "Pharaoh Neco imprisoned King Jehoahaz of Judah at Riblah (2 Kings 23).",
+   "At Riblah, Nebuchadnezzar killed Zedekiah's sons before his eyes and blinded him (2 Kings 25).",
+   "Nebuchadnezzar also executed the nobles of Judah at Riblah (Jeremiah 39).",
+   "Judah's chief priest and officials were executed at Riblah (Jeremiah 52)."
+  ]
+ },
+ {
+  "slug": "hena_560",
+  "name": "Hena",
+  "what": "A city conquered by Assyria, cited by Sennacherib's officials as proof that no god could resist them.",
+  "today": "Exact site unknown; possibly along the middle Euphrates.",
+  "lat": 34.4677,
+  "lon": 41.965,
+  "type": "City",
+  "key": [
+   "The Rabshakeh asked where the gods of Hena were, to shake Jerusalem's trust in God (2 Kings 18).",
+   "Sennacherib's letter to Hezekiah again asked what became of the king of Hena (2 Kings 19).",
+   "Isaiah records the same boast about Hena, before God delivered Jerusalem (Isaiah 37)."
+  ]
+ },
+ {
+  "slug": "ivvah_605",
+  "name": "Ivvah",
+  "what": "A city conquered by Assyria, cited by Sennacherib's officials as proof of their power.",
+  "today": "Exact site unknown; possibly in Syria or Mesopotamia.",
+  "lat": 34.4677,
+  "lon": 41.965,
+  "type": "City",
+  "key": [
+   "The Rabshakeh asked where the gods of Ivvah were, to frighten Jerusalem (2 Kings 18).",
+   "Sennacherib's letter to Hezekiah again named the king of Ivvah (2 Kings 19).",
+   "Isaiah records the same boast about Ivvah, before God struck the Assyrian army (Isaiah 37)."
+  ]
+ },
+ {
+  "slug": "paphos_919",
+  "name": "Paphos",
+  "what": "A city on the southwest coast of Cyprus, seat of the Roman proconsul.",
+  "today": "Paphos (Kato Paphos), on the southwest coast of Cyprus",
+  "lat": 34.7541,
+  "lon": 32.4002,
+  "type": "City",
+  "key": [
+   "Barnabas and Saul traveled through Cyprus from Salamis as far as Paphos (Acts 13).",
+   "There they met the magician Bar-Jesus and the proconsul Sergius Paulus (Acts 13).",
+   "When Elymas was struck blind, the proconsul believed (Acts 13).",
+   "From Paphos Paul and his companions set sail for Perga in Pamphylia (Acts 13)."
+  ]
+ },
+ {
+  "slug": "persia_938",
+  "name": "Persia",
+  "what": "The empire that conquered Babylon and allowed the Jewish exiles to return home.",
+  "today": "Iran",
+  "lat": 34.7983,
+  "lon": 48.515,
+  "type": "Region",
+  "key": [
+   "Cyrus king of Persia decreed that the exiles could rebuild the temple (2 Chronicles 36).",
+   "Opponents hired counselors to frustrate the rebuilding through the reign of Cyrus of Persia (Ezra 4).",
+   "King Ahasuerus held a great feast for the officials of Persia and Media (Esther 1).",
+   "Daniel's vision of a ram represented the kings of Media and Persia (Daniel 8).",
+   "An angel told Daniel the prince of Persia had withstood him (Daniel 10)."
+  ]
+ },
+ {
+  "slug": "media_776",
+  "name": "Media",
+  "what": "The land of the Medes, northwest of Persia, later joined with Persia in one empire.",
+  "today": "Northwestern Iran, around Hamadan.",
+  "lat": 34.7983,
+  "lon": 48.515,
+  "type": "Region",
+  "key": [
+   "Cyrus' decree for rebuilding the temple was found at Ecbatana in Media (Ezra 6).",
+   "Ahasuerus feasted with the army chiefs of Persia and Media (Esther 1).",
+   "Isaiah called Elam and Media to besiege Babylon (Isaiah 21).",
+   "Daniel's vision showed a two-horned ram representing the kings of Media and Persia (Daniel 8)."
+  ]
+ },
+ {
+  "slug": "ecbatana_353",
+  "name": "Ecbatana",
+  "what": "The capital of Media and a summer residence of Persian kings, where royal records were kept.",
+  "today": "Hamadan, in western Iran.",
+  "lat": 34.7983,
+  "lon": 48.515,
+  "type": "",
+  "key": [
+   "Darius searched the royal archives, and Cyrus's decree to rebuild the temple was found at Ecbatana (Ezra 6).",
+   "Darius then ordered the rebuilding to continue, with costs paid from the royal revenue (Ezra 6)."
+  ]
+ },
+ {
+  "slug": "aram_82",
+  "name": "Aram",
+  "what": "The land of the Arameans north and northeast of Israel, centered on Damascus.",
+  "today": "Mainly modern Syria.",
+  "lat": 34.85,
+  "lon": 39.12,
+  "type": "",
+  "key": [
+   "Balaam said Balak had brought him from Aram (Numbers 23).",
+   "David put garrisons in Aram of Damascus (2 Samuel 8).",
+   "Absalom made a vow while living at Geshur in Aram (2 Samuel 15).",
+   "Hosea recalled that Jacob fled to the land of Aram (Hosea 12)."
+  ]
+ },
+ {
+  "slug": "cyprus_316",
+  "name": "Cyprus",
+  "what": "A large island in the eastern Mediterranean Sea.",
+  "today": "The island of Cyprus.",
+  "lat": 35.0183,
+  "lon": 33.2077,
+  "type": "Island",
+  "key": [
+   "The prophets mention Cyprus as a distant coastland trading with Tyre (Ezekiel 27).",
+   "Barnabas, a Levite native of Cyprus, sold a field and gave the money to the apostles (Acts 4).",
+   "Believers scattered after Stephen's death spread the word as far as Cyprus (Acts 11).",
+   "Barnabas and Saul preached across Cyprus, where the proconsul Sergius Paulus believed (Acts 13).",
+   "Barnabas took Mark and sailed to Cyprus after parting with Paul (Acts 15)."
+  ]
+ },
+ {
+  "slug": "euphrates_421",
+  "name": "Euphrates",
+  "what": "The great river of Mesopotamia, often named as the far boundary of the promised land.",
+  "today": "Euphrates River, through Turkey, Syria, and Iraq",
+  "lat": 35.0906,
+  "lon": 40.4278,
+  "type": "Water",
+  "key": [
+   "The Euphrates is named as one of the four rivers of Eden (Genesis 2).",
+   "God promised Abram land from the river of Egypt to the Euphrates (Genesis 15).",
+   "Josiah was killed opposing Pharaoh Neco, who was marching to the Euphrates (2 Kings 23).",
+   "Jeremiah hid a linen loincloth by the Euphrates as a sign (Jeremiah 13).",
+   "The sixth bowl dries up the Euphrates for the kings from the east (Revelation 16)."
+  ]
+ },
+ {
+  "slug": "river_1010",
+  "name": "Euphrates River",
+  "what": "The Euphrates, often called simply the River, the great river of Mesopotamia.",
+  "today": "The Euphrates River, flowing through Turkey, Syria, and Iraq.",
+  "lat": 35.0906,
+  "lon": 40.4278,
+  "type": "Water",
+  "key": [
+   "Balak sent for Balaam at Pethor, near the River (Numbers 22).",
+   "God promised Israel territory reaching to the River (Deuteronomy 11).",
+   "Joshua reminded Israel that their fathers served other gods beyond the River (Joshua 24).",
+   "Isaiah warned that the Lord would use the king of Assyria from beyond the River (Isaiah 7).",
+   "Zechariah foresaw the coming king ruling from the River to the ends of the earth (Zechariah 9)."
+  ]
+ },
+ {
+  "slug": "hamath_516",
+  "name": "Hamath",
+  "what": "A city-kingdom on the Orontes River in Syria, marking Israel's ideal northern border.",
+  "today": "Hama, Syria",
+  "lat": 35.1362,
+  "lon": 36.7495,
+  "type": "City",
+  "key": [
+   "Toi king of Hamath sent his son to congratulate David on his victory (2 Samuel 8).",
+   "Jeroboam II restored Israel's border as far as Hamath (2 Kings 14).",
+   "People from Hamath were resettled in Samaria by the Assyrians (2 Kings 17).",
+   "Zedekiah's sons were killed before him at Riblah in the land of Hamath (2 Kings 25)."
+  ]
+ },
+ {
+  "slug": "lebo-hamath_723",
+  "name": "Lebo-hamath",
+  "what": "A place in the north marking the ideal northern border of Israel's land.",
+  "today": "Possibly Lebweh in the northern Beqaa Valley of Lebanon.",
+  "lat": 35.1362,
+  "lon": 36.7495,
+  "type": "",
+  "key": [
+   "The twelve spies explored the land as far north as Lebo-hamath (Numbers 13).",
+   "God set Lebo-hamath on the northern boundary of the land (Numbers 34).",
+   "All Israel from Lebo-hamath to the Brook of Egypt celebrated the temple's dedication (1 Kings 8).",
+   "Jeroboam II restored Israel's border from Lebo-hamath to the Sea of the Arabah (2 Kings 14)."
+  ]
+ },
+ {
+  "slug": "arpad_96",
+  "name": "Arpad",
+  "what": "An Aramean city-state in northern Syria conquered by Assyria.",
+  "today": "Tell Rifaat, north of Aleppo, Syria.",
+  "lat": 35.1362,
+  "lon": 36.7495,
+  "type": "City",
+  "key": [
+   "The Assyrian commander mocked Jerusalem by asking where the gods of Arpad were (2 Kings 18).",
+   "Sennacherib's letter to Hezekiah named the fallen king of Arpad (2 Kings 19).",
+   "God described Assyria boasting that Calno, Hamath, and Arpad had all fallen (Isaiah 10).",
+   "Jeremiah foretold that Hamath and Arpad would be confounded at bad news (Jeremiah 49)."
+  ]
+ },
+ {
+  "slug": "casiphia_279",
+  "name": "Casiphia",
+  "what": "A place in Babylonia where a community of Levites and temple servants lived during the exile.",
+  "today": "Exact site unknown; in Babylonia, likely near Babylon, Iraq.",
+  "lat": 35.1362,
+  "lon": 36.7495,
+  "type": "",
+  "key": [
+   "Finding no Levites among the returnees, Ezra sent men to Iddo, the leader at Casiphia (Ezra 8).",
+   "Iddo's community sent Sherebiah and other Levites, along with 220 temple servants, to join Ezra (Ezra 8)."
+  ]
+ },
+ {
+  "slug": "crete_310",
+  "name": "Crete",
+  "what": "A large island in the Mediterranean Sea south of Greece.",
+  "today": "Crete, Greece.",
+  "lat": 35.1712,
+  "lon": 25.0072,
+  "type": "Island",
+  "key": [
+   "Paul's ship sailed along Crete, and leaving it led to a fierce storm (Acts 27).",
+   "Paul left Titus in Crete to appoint elders in every town (Titus 1)."
+  ]
+ },
+ {
+  "slug": "caphtor_275",
+  "name": "Caphtor",
+  "what": "The coastland from which the Philistines originally came, across the Mediterranean.",
+  "today": "Likely the island of Crete.",
+  "lat": 35.1712,
+  "lon": 25.0072,
+  "type": "",
+  "key": [
+   "The Caphtorim, who came from Caphtor, destroyed the Avvim and settled in their place (Deuteronomy 2).",
+   "Jeremiah calls the Philistines the remnant of the coastland of Caphtor (Jeremiah 47).",
+   "God says he brought the Philistines from Caphtor, as he brought Israel from Egypt (Amos 9)."
+  ]
+ },
+ {
+  "slug": "melita_761",
+  "name": "Malta",
+  "what": "A Mediterranean island south of Sicily where Paul was shipwrecked on his voyage to Rome.",
+  "today": "Malta, an island nation south of Sicily.",
+  "lat": 35.8528,
+  "lon": 14.5324,
+  "type": "Island",
+  "key": [
+   "The ship carrying Paul ran aground, and all on board reached land safely (Acts 27).",
+   "The islanders showed unusual kindness, and Paul survived a viper's bite unharmed (Acts 28).",
+   "Paul healed the father of Publius, the island's chief man, and others who were sick (Acts 28).",
+   "After three months the travelers sailed on an Alexandrian ship that had wintered there (Acts 28)."
+  ]
+ },
+ {
+  "slug": "tigris_1163",
+  "name": "Tigris",
+  "what": "One of the two great rivers of Mesopotamia, named among the rivers flowing from Eden.",
+  "today": "The Tigris River, flowing through Turkey and Iraq.",
+  "lat": 35.9833,
+  "lon": 43.3465,
+  "type": "Water",
+  "key": [
+   "The Tigris is the third river from Eden, flowing east of Assyria (Genesis 2).",
+   "Standing beside the Tigris, Daniel saw a glorious man clothed in linen (Daniel 10)."
+  ]
+ },
+ {
+  "slug": "antioch_68",
+  "name": "Antioch",
+  "what": "A great city of Roman Syria where believers were first called Christians.",
+  "today": "Antakya, southern Turkey",
+  "lat": 36.2023,
+  "lon": 36.1624,
+  "type": "City",
+  "key": [
+   "Nicolaus, a convert from Antioch, was chosen as one of the seven (Acts 6).",
+   "Disciples in Antioch were first called Christians (Acts 11).",
+   "The church at Antioch sent Barnabas and Saul on their first mission (Acts 13).",
+   "Paul and Barnabas brought the Jerusalem council's letter to Antioch (Acts 15).",
+   "Paul opposed Peter at Antioch for withdrawing from Gentile believers (Galatians 2)."
+  ]
+ },
+ {
+  "slug": "habor_499",
+  "name": "Habor",
+  "what": "A river in upper Mesopotamia, the river of Gozan, where Assyria resettled exiled Israelites.",
+  "today": "The Khabur River in northeastern Syria.",
+  "lat": 36.345,
+  "lon": 40.7893,
+  "type": "Water",
+  "key": [
+   "After Samaria fell, the king of Assyria placed Israelites by the Habor, the river of Gozan (2 Kings 17).",
+   "The account of Israel's exile to the Habor is repeated in Hezekiah's reign (2 Kings 18).",
+   "Reubenites, Gadites, and half of Manasseh were exiled to Habor and nearby places (1 Chronicles 5)."
+  ]
+ },
+ {
+  "slug": "halah_508",
+  "name": "Halah",
+  "what": "A district in Assyria where the king resettled Israelites exiled from Samaria.",
+  "today": "Exact site uncertain; likely in northern Iraq, northeast of Nineveh.",
+  "lat": 36.345,
+  "lon": 40.7893,
+  "type": "Region",
+  "key": [
+   "The king of Assyria carried Israel away and placed them in Halah (2 Kings 17).",
+   "Halah is named again in the account of Samaria's fall during Hezekiah's reign (2 Kings 18).",
+   "Exiles from Reuben, Gad, and half of Manasseh were taken to Halah (1 Chronicles 5)."
+  ]
+ },
+ {
+  "slug": "assyria_111",
+  "name": "Assyria",
+  "what": "A powerful Mesopotamian empire on the upper Tigris that conquered the northern kingdom of Israel.",
+  "today": "Northern Iraq",
+  "lat": 36.3594,
+  "lon": 43.1529,
+  "type": "Region",
+  "key": [
+   "The Tigris is described as flowing east of Assyria (Genesis 2).",
+   "The king of Assyria captured Samaria and deported Israel because of their sin (2 Kings 17).",
+   "Sennacherib invaded Judah, but the angel of the LORD struck his army (2 Kings 19).",
+   "God calls Assyria the rod of his anger against a godless nation (Isaiah 10).",
+   "Nahum announced the downfall of Assyria's capital, Nineveh (Nahum 3)."
+  ]
+ },
+ {
+  "slug": "nineveh_899",
+  "name": "Nineveh",
+  "what": "The great capital of the Assyrian Empire on the Tigris River.",
+  "today": "Ruins at Mosul, northern Iraq",
+  "lat": 36.3594,
+  "lon": 43.1529,
+  "type": "City",
+  "key": [
+   "Nineveh was built in the land of Assyria (Genesis 10).",
+   "Sennacherib returned to Nineveh and was killed by his sons (2 Kings 19).",
+   "The people of Nineveh repented at Jonah's preaching, and God relented (Jonah 3).",
+   "Nahum announced the destruction of Nineveh, the bloody city (Nahum 3).",
+   "Jesus said the men of Nineveh will rise up at the judgment (Matthew 12)."
+  ]
+ },
+ {
+  "slug": "asshur_109",
+  "name": "Asshur",
+  "what": "The ancient heartland of Assyria and its first capital, often standing for the Assyrian nation.",
+  "today": "Qal'at Sherqat, on the Tigris River in northern Iraq.",
+  "lat": 36.3594,
+  "lon": 43.1529,
+  "type": "City",
+  "key": [
+   "Balaam foretells that Asshur will take the Kenites captive and later be afflicted (Numbers 24).",
+   "The psalmist names Asshur among nations conspiring against God's people (Psalms 83).",
+   "Merchants of Asshur trade fine garments with Tyre (Ezekiel 27)."
+  ]
+ },
+ {
+  "slug": "immer_596",
+  "name": "Immer",
+  "what": "A settlement in Babylonia from which some exiles returned who could not prove their Israelite descent.",
+  "today": "Exact site unknown; in Babylonia, Iraq.",
+  "lat": 36.3594,
+  "lon": 43.1529,
+  "type": "",
+  "key": [
+   "Returnees from Immer and nearby places could not prove their families belonged to Israel (Ezra 2).",
+   "Nehemiah's copy of the list records the same returnees from Immer (Nehemiah 7)."
+  ]
+ },
+ {
+  "slug": "pethor_939",
+  "name": "Pethor",
+  "what": "Balaam's hometown near the Euphrates River in upper Mesopotamia.",
+  "today": "Likely ancient Pitru, near Carchemish in northern Syria.",
+  "lat": 36.6546,
+  "lon": 38.0689,
+  "type": "",
+  "key": [
+   "King Balak of Moab sent messengers to Balaam at Pethor to curse Israel (Numbers 22).",
+   "Moses recalls that Balaam son of Beor was hired from Pethor to curse Israel (Deuteronomy 23)."
+  ]
+ },
+ {
+  "slug": "carchemish_277",
+  "name": "Carchemish",
+  "what": "A major city on the upper Euphrates, site of a decisive battle between Egypt and Babylon.",
+  "today": "Ruins at Karkamis on the Turkey–Syria border, near Jarabulus.",
+  "lat": 36.8293,
+  "lon": 38.0158,
+  "type": "City",
+  "key": [
+   "King Josiah was killed opposing Pharaoh Neco on his way to fight at Carchemish (2 Chronicles 35).",
+   "Assyria boasts that conquered cities, including Carchemish, show its power is unstoppable (Isaiah 10).",
+   "Nebuchadnezzar defeated Neco's army at Carchemish by the Euphrates (Jeremiah 46)."
+  ]
+ },
+ {
+  "slug": "gozan_492",
+  "name": "Gozan",
+  "what": "A region on the Habor River in upper Mesopotamia, where Assyria resettled exiled Israelites.",
+  "today": "Tell Halaf area, in northeastern Syria.",
+  "lat": 36.84,
+  "lon": 40.0689,
+  "type": "Region",
+  "key": [
+   "Assyria exiled Israelites to the Habor, the river of Gozan (2 Kings 17).",
+   "Sennacherib boasted that the gods of Gozan had not saved it (2 Kings 19).",
+   "Reuben, Gad, and half of Manasseh were taken to Gozan (1 Chronicles 5)."
+  ]
+ },
+ {
+  "slug": "haran_527",
+  "name": "Haran",
+  "what": "A city in upper Mesopotamia where Abraham's family settled and Laban lived.",
+  "today": "Harran, in southeastern Turkey near the Syrian border.",
+  "lat": 36.8639,
+  "lon": 39.0322,
+  "type": "City",
+  "key": [
+   "Terah settled in Haran with Abram and died there (Genesis 11).",
+   "Abram left Haran for Canaan at the Lord's call, aged seventy-five (Genesis 12).",
+   "Rebekah sent Jacob to her brother Laban in Haran to escape Esau (Genesis 27).",
+   "Jacob met Rachel by a well near Haran (Genesis 29).",
+   "Sennacherib boasted that Assyria had destroyed Haran (2 Kings 19)."
+  ]
+ },
+ {
+  "slug": "paddan-aram_916",
+  "name": "Paddan-aram",
+  "what": "The region of upper Mesopotamia around Haran, home of Abraham's relatives.",
+  "today": "The area around Harran in southeastern Turkey and northern Syria.",
+  "lat": 36.8639,
+  "lon": 39.0322,
+  "type": "",
+  "key": [
+   "Isaac married Rebekah, daughter of Bethuel the Aramean of Paddan-aram (Genesis 25).",
+   "Isaac sent Jacob to Paddan-aram to take a wife from Laban's daughters (Genesis 28).",
+   "Jacob left Paddan-aram with the livestock he had gained there (Genesis 31).",
+   "God appeared to Jacob again after he came from Paddan-aram and renamed him Israel (Genesis 35)."
+  ]
+ },
+ {
+  "slug": "cilicia_300",
+  "name": "Cilicia",
+  "what": "A region in southeastern Asia Minor whose chief city was Tarsus, Paul's birthplace.",
+  "today": "The southern coastal region of Turkey around Tarsus and Adana.",
+  "lat": 36.918,
+  "lon": 34.8915,
+  "type": "Region",
+  "key": [
+   "Men from Cilicia disputed with Stephen (Acts 6).",
+   "The Jerusalem council sent its letter to Gentile believers in Syria and Cilicia (Acts 15).",
+   "Paul identified himself as a Jew from Tarsus in Cilicia (Acts 21).",
+   "Paul sailed past Cilicia on his voyage toward Rome (Acts 27).",
+   "After his conversion, Paul went into the regions of Syria and Cilicia (Galatians 1)."
+  ]
+ },
+ {
+  "slug": "tarsus_1140",
+  "name": "Tarsus",
+  "what": "A major city of Cilicia in Asia Minor and the birthplace of the apostle Paul.",
+  "today": "Tarsus, in south-central Turkey.",
+  "lat": 36.918,
+  "lon": 34.8915,
+  "type": "City",
+  "key": [
+   "The Lord tells Ananias to seek a man of Tarsus named Saul (Acts 9).",
+   "Believers send Saul away to Tarsus after Jews in Jerusalem seek to kill him (Acts 9).",
+   "Barnabas goes to Tarsus to find Saul and brings him to Antioch (Acts 11).",
+   "Paul tells the Roman tribune he is a citizen of Tarsus, no obscure city (Acts 21).",
+   "Paul tells the Jerusalem crowd he was born in Tarsus but raised in Jerusalem (Acts 22)."
+  ]
+ },
+ {
+  "slug": "tarshish_1139",
+  "name": "Tarshish",
+  "what": "A distant trading port, probably in the western Mediterranean, known for its large seagoing ships.",
+  "today": "Possibly Tartessus in southern Spain; exact site unknown",
+  "lat": 36.953,
+  "lon": -6.3793,
+  "type": "",
+  "key": [
+   "Solomon's fleet of Tarshish ships brought gold, silver, and ivory every three years (1 Kings 10).",
+   "Jehoshaphat's ships built to sail to Tarshish were wrecked (2 Chronicles 20).",
+   "The psalmist prays that the kings of Tarshish will bring tribute (Psalms 72).",
+   "Jonah boarded a ship bound for Tarshish to flee from the LORD (Jonah 1)."
+  ]
+ },
+ {
+  "slug": "luz_738",
+  "name": "Luz",
+  "what": "A city built in the land of the Hittites by a man spared when Joseph's tribes captured Bethel.",
+  "today": "Exact site unknown; in the land of the Hittites, north of Israel.",
+  "lat": 37.0,
+  "lon": 36.57,
+  "type": "",
+  "key": [
+   "A man of Luz showed Joseph's spies the way into the city, and he and his family were spared (Judges 1).",
+   "He went to the land of the Hittites, built a city, and named it Luz (Judges 1)."
+  ]
+ },
+ {
+  "slug": "pamphylia_918",
+  "name": "Pamphylia",
+  "what": "A coastal region of southern Asia Minor, with Perga as a main city.",
+  "today": "The Antalya region of southern Turkey.",
+  "lat": 37.0052,
+  "lon": 30.9049,
+  "type": "Region",
+  "key": [
+   "Visitors from Pamphylia heard the gospel at Pentecost (Acts 2).",
+   "John Mark left Paul and Barnabas at Perga in Pamphylia (Acts 13).",
+   "Paul and Barnabas passed through Pamphylia on their return (Acts 14).",
+   "Paul refused to take Mark because he had withdrawn in Pamphylia (Acts 15).",
+   "Paul's ship sailed past Cilicia and Pamphylia toward Rome (Acts 27)."
+  ]
+ },
+ {
+  "slug": "perga_936",
+  "name": "Perga",
+  "what": "A city in Pamphylia on the southern coast of Asia Minor, visited on Paul's first journey.",
+  "today": "Ruins near Aksu, east of Antalya in southern Turkey.",
+  "lat": 37.0052,
+  "lon": 30.9049,
+  "type": "City",
+  "key": [
+   "At Perga, John Mark left Paul and Barnabas and returned to Jerusalem (Acts 13).",
+   "On their return, Paul and Barnabas spoke the word in Perga before sailing home (Acts 14)."
+  ]
+ },
+ {
+  "slug": "patmos_926",
+  "name": "Patmos",
+  "what": "A small rocky island in the Aegean Sea where John received the book of Revelation.",
+  "today": "Patmos, a Greek island in the Dodecanese, Aegean Sea.",
+  "lat": 37.3075,
+  "lon": 26.5483,
+  "type": "Island",
+  "key": [
+   "John was on Patmos because of the word of God and the testimony of Jesus (Revelation 1).",
+   "In the Spirit on the Lord's day, John was told to write to seven churches (Revelation 1).",
+   "John saw the glorified Christ standing among seven golden lampstands (Revelation 1)."
+  ]
+ },
+ {
+  "slug": "derbe_330",
+  "name": "Derbe",
+  "what": "A city of Lycaonia in Asia Minor where Paul preached on his missionary journeys.",
+  "today": "Likely Kerti Huyuk, near Karaman, south-central Turkey.",
+  "lat": 37.3509,
+  "lon": 33.2714,
+  "type": "City",
+  "key": [
+   "Paul and Barnabas preach in Derbe and make many disciples after Paul is stoned (Acts 14).",
+   "Paul returns to Derbe and Lystra, where he meets Timothy (Acts 16).",
+   "Gaius of Derbe travels with Paul toward Jerusalem (Acts 20)."
+  ]
+ },
+ {
+  "slug": "miletus_801",
+  "name": "Miletus",
+  "what": "A port city on the western coast of Asia Minor, south of Ephesus.",
+  "today": "Ruins near the village of Balat in western Turkey.",
+  "lat": 37.5,
+  "lon": 27.3,
+  "type": "City",
+  "key": [
+   "Paul sent for the Ephesian elders to meet him at Miletus and gave them a farewell charge (Acts 20).",
+   "Paul tells Timothy he left Trophimus ill at Miletus (2 Timothy 4)."
+  ]
+ },
+ {
+  "slug": "galatia_431",
+  "name": "Galatia",
+  "what": "A Roman province in central Asia Minor where Paul planted churches.",
+  "today": "Central Turkey, around Ankara and Konya.",
+  "lat": 37.5781,
+  "lon": 32.4532,
+  "type": "Region",
+  "key": [
+   "Paul and Silas traveled through the region of Phrygia and Galatia (Acts 16).",
+   "Paul went through Galatia again, strengthening the disciples (Acts 18).",
+   "Paul directed the churches of Galatia about the collection for the saints (1 Corinthians 16).",
+   "Paul wrote his letter to the churches of Galatia (Galatians 1).",
+   "Peter addressed his first letter to believers scattered in Galatia and nearby provinces (1 Peter 1)."
+  ]
+ },
+ {
+  "slug": "lystra_742",
+  "name": "Lystra",
+  "what": "A Roman colony in Lycaonia in south-central Asia Minor, hometown of Timothy.",
+  "today": "Ruins near Hatunsaray, south of Konya, Turkey.",
+  "lat": 37.5781,
+  "lon": 32.4532,
+  "type": "City",
+  "key": [
+   "Paul healed a lame man at Lystra, and the crowds hailed him and Barnabas as gods (Acts 14).",
+   "Paul was stoned at Lystra and left for dead, but rose and went on (Acts 14).",
+   "Paul met Timothy at Lystra and took him along (Acts 16).",
+   "Paul reminded Timothy of the persecutions he endured at Lystra (2 Timothy 3)."
+  ]
+ },
+ {
+  "slug": "laodicea_716",
+  "name": "Laodicea",
+  "what": "A prosperous city in the Lycus Valley of Asia Minor, near Colossae and Hierapolis.",
+  "today": "Ruins near Denizli, in southwestern Turkey.",
+  "lat": 37.7699,
+  "lon": 29.0645,
+  "type": "City",
+  "key": [
+   "Paul told the Colossians he was struggling for those at Laodicea (Colossians 2).",
+   "Paul asked that his letters be exchanged between Colossae and Laodicea (Colossians 4).",
+   "Laodicea was one of the seven churches to receive John's message (Revelation 1).",
+   "Jesus rebuked the Laodicean church as lukewarm and called it to repent (Revelation 3)."
+  ]
+ },
+ {
+  "slug": "phrygia_946",
+  "name": "Phrygia",
+  "what": "A region in the interior of Asia Minor, west of Galatia.",
+  "today": "West-central Turkey.",
+  "lat": 37.7699,
+  "lon": 29.0645,
+  "type": "Region",
+  "key": [
+   "Jews from Phrygia were among those who heard the apostles at Pentecost (Acts 2).",
+   "Paul and his companions went through Phrygia and Galatia, kept from preaching in Asia (Acts 16).",
+   "Paul traveled through Phrygia strengthening all the disciples (Acts 18)."
+  ]
+ },
+ {
+  "slug": "colossae_305",
+  "name": "Colossae",
+  "what": "A city in the Lycus Valley of Asia Minor, home of the church to which Paul wrote Colossians.",
+  "today": "Unexcavated mound near Honaz, Denizli Province, southwestern Turkey",
+  "lat": 37.7833,
+  "lon": 29.25,
+  "type": "City",
+  "key": [
+   "Paul and Timothy wrote to the saints and faithful brothers in Christ at Colossae (Colossians 1).",
+   "The Colossians had learned the gospel from Epaphras, Paul's beloved fellow servant (Colossians 1).",
+   "Paul sent Tychicus with Onesimus, one of their own, to tell them his news (Colossians 4).",
+   "He asked that the letter also be read in the church of the Laodiceans (Colossians 4)."
+  ]
+ },
+ {
+  "slug": "iconium_590",
+  "name": "Iconium",
+  "what": "A city in south-central Asia Minor visited by Paul on his missionary journeys.",
+  "today": "Konya, in central Turkey.",
+  "lat": 37.8835,
+  "lon": 32.4943,
+  "type": "City",
+  "key": [
+   "Paul and Barnabas shook the dust off their feet at Antioch and went to Iconium (Acts 13).",
+   "Many believed at Iconium, but a plot to stone the apostles forced them to flee (Acts 14).",
+   "The believers at Lystra and Iconium spoke well of Timothy (Acts 16).",
+   "Paul reminded Timothy of the persecutions he endured at Iconium (2 Timothy 3)."
+  ]
+ },
+ {
+  "slug": "lycaonia_739",
+  "name": "Lycaonia",
+  "what": "A region of south-central Asia Minor containing the cities of Lystra and Derbe.",
+  "today": "The Konya plain in south-central Turkey.",
+  "lat": 37.8835,
+  "lon": 32.4943,
+  "type": "Region",
+  "key": [
+   "Driven from Iconium, Paul and Barnabas fled to Lystra and Derbe, cities of Lycaonia (Acts 14).",
+   "After Paul healed a lame man, the crowd shouted in Lycaonian that the gods had come down (Acts 14).",
+   "The people called Barnabas Zeus and Paul Hermes and tried to offer sacrifices to them (Acts 14)."
+  ]
+ },
+ {
+  "slug": "corinth_306",
+  "name": "Corinth",
+  "what": "A wealthy Greek port city and capital of the Roman province of Achaia.",
+  "today": "Ruins near modern Corinth, Greece.",
+  "lat": 37.906,
+  "lon": 22.8779,
+  "type": "City",
+  "key": [
+   "Paul stayed in Corinth a year and a half with Aquila and Priscilla (Acts 18).",
+   "Apollos ministered at Corinth while Paul was in Ephesus (Acts 19).",
+   "Paul wrote to the church of God in Corinth (1 Corinthians 1).",
+   "Paul explained he had spared the Corinthians by not returning yet (2 Corinthians 1).",
+   "Erastus remained at Corinth (2 Timothy 4)."
+  ]
+ },
+ {
+  "slug": "hierapolis_569",
+  "name": "Hierapolis",
+  "what": "A city in the Lycus Valley of Asia Minor, near Laodicea and Colossae.",
+  "today": "Pamukkale, near Denizli, Turkey.",
+  "lat": 37.9245,
+  "lon": 29.1245,
+  "type": "City",
+  "key": [
+   "Epaphras of Colossae worked hard in prayer for the believers in Laodicea and Hierapolis (Colossians 4).",
+   "Paul names Hierapolis with Laodicea and Colossae, neighboring cities where believers gathered (Colossians 4)."
+  ]
+ },
+ {
+  "slug": "ephesus_400",
+  "name": "Ephesus",
+  "what": "A major port city in the Roman province of Asia where Paul ministered for over two years.",
+  "today": "Ruins near Selçuk, western Turkey",
+  "lat": 37.9533,
+  "lon": 27.3678,
+  "type": "City",
+  "key": [
+   "Paul left Priscilla and Aquila at Ephesus (Acts 18).",
+   "A riot broke out in Ephesus over the goddess Artemis (Acts 19).",
+   "Paul said farewell to the elders of the church at Ephesus (Acts 20).",
+   "Paul urged Timothy to remain at Ephesus and correct false teachers (1 Timothy 1).",
+   "Christ told the church in Ephesus it had abandoned its first love (Revelation 2)."
+  ]
+ },
+ {
+  "slug": "javan_627",
+  "name": "Javan",
+  "what": "The Hebrew name for the Greek peoples, especially the Ionians of western Asia Minor and the Aegean.",
+  "today": "Greece and the western coast of Turkey.",
+  "lat": 37.9533,
+  "lon": 27.3678,
+  "type": "",
+  "key": [
+   "Javan is listed as a son of Japheth, ancestor of the coastland peoples (Genesis 10).",
+   "Javan is named among distant nations who will hear of the Lord's glory (Isaiah 66).",
+   "Javan traded slaves and bronze vessels with the city of Tyre (Ezekiel 27).",
+   "In Daniel's vision, the shaggy goat represents the king of Greece (Daniel 8)."
+  ]
+ },
+ {
+  "slug": "achaia_16",
+  "name": "Achaia",
+  "what": "The Roman province of southern Greece, with Corinth as its capital.",
+  "today": "Southern Greece, including Corinth and Athens.",
+  "lat": 37.9833,
+  "lon": 23.7333,
+  "type": "Region",
+  "key": [
+   "Gallio, proconsul of Achaia, dismissed the Jews' charges against Paul in Corinth (Acts 18).",
+   "Paul resolved to pass through Macedonia and Achaia before going to Jerusalem (Acts 19).",
+   "Believers in Achaia gave a contribution for the poor saints in Jerusalem (Romans 15).",
+   "Stephanas' household were the first converts in Achaia (1 Corinthians 16).",
+   "The faith of the Thessalonians became an example to believers in Achaia (1 Thessalonians 1)."
+  ]
+ },
+ {
+  "slug": "athens_118",
+  "name": "Athens",
+  "what": "The leading city of ancient Greece, famed for its philosophy and temples.",
+  "today": "Athens, Greece.",
+  "lat": 37.9833,
+  "lon": 23.7333,
+  "type": "City",
+  "key": [
+   "Paul preached at the Areopagus in Athens, and some believed (Acts 17).",
+   "Paul left Athens and went to Corinth (Acts 18).",
+   "Paul stayed alone in Athens and sent Timothy to Thessalonica (1 Thessalonians 3)."
+  ]
+ },
+ {
+  "slug": "greece_495",
+  "name": "Greece",
+  "what": "The land of the Greeks, which became a world empire under Alexander the Great.",
+  "today": "Greece.",
+  "lat": 37.9833,
+  "lon": 23.7333,
+  "type": "Region",
+  "key": [
+   "Daniel's vision of a goat represented the king of Greece (Daniel 8).",
+   "An angel spoke of the coming prince of Greece (Daniel 10).",
+   "A Persian king would stir up all against the kingdom of Greece (Daniel 11).",
+   "God promised to rouse Zion's sons against the sons of Greece (Zechariah 9).",
+   "Paul spent three months in Greece (Acts 20)."
+  ]
+ },
+ {
+  "slug": "areopagus_87",
+  "name": "Areopagus",
+  "what": "A rocky hill in Athens and the name of the council that met there.",
+  "today": "A hill northwest of the Acropolis in Athens, Greece.",
+  "lat": 37.9833,
+  "lon": 23.7333,
+  "type": "Landmark",
+  "key": [
+   "Athenian philosophers bring Paul to the Areopagus to hear his new teaching (Acts 17).",
+   "Paul proclaims the unknown god as the Creator who raised Jesus from the dead (Acts 17).",
+   "Dionysius the Areopagite and others believe (Acts 17)."
+  ]
+ },
+ {
+  "slug": "antioch_69",
+  "name": "Pisidian Antioch",
+  "what": "A Roman colony in the region of Pisidia in Asia Minor, visited by Paul on his first missionary journey.",
+  "today": "Ruins near Yalvac, in west-central Turkey.",
+  "lat": 38.3164,
+  "lon": 31.1795,
+  "type": "City",
+  "key": [
+   "Paul preaches in the synagogue, and many Gentiles believe, but Jews drive him out (Acts 13).",
+   "Jews from Antioch stir up crowds in Lystra, who stone Paul (Acts 14).",
+   "Paul and Barnabas return to strengthen the disciples in Antioch (Acts 14).",
+   "Paul reminds Timothy of the persecutions he endured at Antioch (2 Timothy 3)."
+  ]
+ },
+ {
+  "slug": "pisidia_952",
+  "name": "Pisidia",
+  "what": "A mountainous region of southern Asia Minor visited by Paul on his first missionary journey.",
+  "today": "The Taurus Mountains region of south-central Turkey.",
+  "lat": 38.3164,
+  "lon": 31.1795,
+  "type": "Region",
+  "key": [
+   "Paul and Barnabas came to Antioch in Pisidia, and Paul preached in the synagogue (Acts 13).",
+   "Returning from Lystra and Iconium, they passed through Pisidia and came to Pamphylia (Acts 14)."
+  ]
+ },
+ {
+  "slug": "philadelphia_941",
+  "name": "Philadelphia",
+  "what": "A city in the Roman province of Asia, home of one of the seven churches of Revelation.",
+  "today": "Alaşehir, western Turkey.",
+  "lat": 38.349,
+  "lon": 28.5195,
+  "type": "City",
+  "key": [
+   "Philadelphia is one of seven churches John is told to write to (Revelation 1).",
+   "Christ says the church has kept his word and gives it an open door (Revelation 3).",
+   "He promises to keep them from the hour of trial coming on the world (Revelation 3).",
+   "The one who conquers will be made a pillar in the temple of God (Revelation 3)."
+  ]
+ },
+ {
+  "slug": "smyrna_1103",
+  "name": "Smyrna",
+  "what": "A port city of the Roman province of Asia, home of one of the seven churches of Revelation.",
+  "today": "İzmir, western Turkey.",
+  "lat": 38.452,
+  "lon": 27.1619,
+  "type": "City",
+  "key": [
+   "Smyrna is one of seven churches John is told to write to (Revelation 1).",
+   "Christ knows the church's tribulation and poverty, yet says it is rich (Revelation 2).",
+   "He tells them to be faithful unto death and promises the crown of life (Revelation 2)."
+  ]
+ },
+ {
+  "slug": "sardis_1027",
+  "name": "Sardis",
+  "what": "A wealthy city in western Asia Minor, home to one of the seven churches of Revelation.",
+  "today": "Ruins near Sart, east of Izmir in western Turkey.",
+  "lat": 38.4768,
+  "lon": 28.1141,
+  "type": "City",
+  "key": [
+   "Sardis is one of seven cities whose churches John is told to write to (Revelation 1).",
+   "Christ tells Sardis it has a reputation for being alive but is dead (Revelation 3).",
+   "A few in Sardis have not soiled their garments and will walk with Christ in white (Revelation 3)."
+  ]
+ },
+ {
+  "slug": "thyatira_1160",
+  "name": "Thyatira",
+  "what": "A trading city in the Roman province of Asia, home of one of the seven churches of Revelation.",
+  "today": "Akhisar, in western Turkey.",
+  "lat": 38.9258,
+  "lon": 27.8566,
+  "type": "City",
+  "key": [
+   "Lydia, a seller of purple goods from Thyatira, believes Paul's message in Philippi (Acts 16).",
+   "Thyatira is named among the seven churches receiving John's book (Revelation 1).",
+   "Jesus commends Thyatira's love and service but rebukes its tolerance of Jezebel (Revelation 2)."
+  ]
+ },
+ {
+  "slug": "nicopolis_894",
+  "name": "Nicopolis",
+  "what": "A city where Paul decided to spend the winter, asking Titus to join him there.",
+  "today": "Likely Nicopolis in Epirus, near Preveza, western Greece",
+  "lat": 39.024,
+  "lon": 20.7357,
+  "type": "City",
+  "key": [
+   "Paul told Titus to come to him at Nicopolis once Artemas or Tychicus arrived (Titus 3).",
+   "Paul had decided to spend the winter there (Titus 3)."
+  ]
+ },
+ {
+  "slug": "pergamum_937",
+  "name": "Pergamum",
+  "what": "A leading city of the Roman province of Asia, home of one of the seven churches of Revelation.",
+  "today": "Ruins beside Bergama, western Turkey.",
+  "lat": 39.1189,
+  "lon": 27.1651,
+  "type": "City",
+  "key": [
+   "Pergamum is one of seven churches John is told to write to (Revelation 1).",
+   "Christ says the church lives where Satan's throne is, yet held fast when Antipas was killed (Revelation 2).",
+   "He rebukes some there for holding the teaching of Balaam and the Nicolaitans (Revelation 2).",
+   "He promises the one who conquers hidden manna and a white stone (Revelation 2)."
+  ]
+ },
+ {
+  "slug": "asia_108",
+  "name": "Asia",
+  "what": "The Roman province in western Asia Minor, with Ephesus as its leading city.",
+  "today": "Western Turkey",
+  "lat": 39.23,
+  "lon": 32.73,
+  "type": "Region",
+  "key": [
+   "People from Asia were in Jerusalem at Pentecost (Acts 2).",
+   "The Holy Spirit kept Paul from speaking the word in Asia at first (Acts 16).",
+   "During Paul's two years in Ephesus, all the residents of Asia heard the word (Acts 19).",
+   "Paul reminded the Ephesian elders how he had lived among them in Asia (Acts 20).",
+   "John wrote to the seven churches in Asia (Revelation 1)."
+  ]
+ },
+ {
+  "slug": "troas_1182",
+  "name": "Troas",
+  "what": "A Roman port city on the northwest coast of Asia Minor, near ancient Troy.",
+  "today": "Ruins of Alexandria Troas, in northwestern Turkey.",
+  "lat": 39.5066,
+  "lon": 26.0806,
+  "type": "City",
+  "key": [
+   "At Troas Paul saw a vision of a man of Macedonia calling for help (Acts 16).",
+   "Paul raised Eutychus after he fell from a window at Troas (Acts 20).",
+   "A door opened for the gospel at Troas, but Paul left without finding Titus (2 Corinthians 2).",
+   "Paul had left his cloak with Carpus at Troas (2 Timothy 4)."
+  ]
+ },
+ {
+  "slug": "ararat_86",
+  "name": "Ararat",
+  "what": "A mountainous land north of Assyria where Noah's ark came to rest after the flood.",
+  "today": "Eastern Turkey and Armenia, the region of the ancient kingdom of Urartu.",
+  "lat": 39.7029,
+  "lon": 44.2982,
+  "type": "Region",
+  "key": [
+   "As the flood waters receded, the ark came to rest on the mountains of Ararat (Genesis 8).",
+   "After killing their father Sennacherib, his sons escaped to the land of Ararat (2 Kings 19).",
+   "Jeremiah summoned the kingdoms of Ararat, Minni, and Ashkenaz against Babylon (Jeremiah 51)."
+  ]
+ },
+ {
+  "slug": "beth-togarmah_239",
+  "name": "Beth-togarmah",
+  "what": "A people and land of the far north, named for Togarmah and known for trading horses and mules.",
+  "today": "Exact site unknown; possibly eastern Turkey or Armenia.",
+  "lat": 40.0655,
+  "lon": 45.0363,
+  "type": "Region",
+  "key": [
+   "Beth-togarmah traded horses, war horses, and mules for the wares of Tyre (Ezekiel 27).",
+   "Beth-togarmah from the uttermost parts of the north is named among the allies of Gog (Ezekiel 38)."
+  ]
+ },
+ {
+  "slug": "spain_1111",
+  "name": "Spain",
+  "what": "The Roman lands of the Iberian Peninsula at the western end of the Mediterranean.",
+  "today": "Spain and Portugal, on the Iberian Peninsula.",
+  "lat": 40.4814,
+  "lon": -3.1753,
+  "type": "Region",
+  "key": [
+   "Paul hoped to visit the Roman believers on his way to Spain (Romans 15).",
+   "After delivering the gift to Jerusalem, Paul planned to go by way of Rome to Spain (Romans 15)."
+  ]
+ },
+ {
+  "slug": "berea_177",
+  "name": "Berea",
+  "what": "A city in Macedonia where the Jews eagerly examined the Scriptures after hearing Paul preach.",
+  "today": "Veria, in northern Greece.",
+  "lat": 40.5167,
+  "lon": 22.2,
+  "type": "City",
+  "key": [
+   "After the riot in Thessalonica, believers sent Paul and Silas away by night to Berea (Acts 17).",
+   "The Bereans examined the Scriptures daily to check Paul's teaching, and many believed (Acts 17).",
+   "Jews from Thessalonica stirred up the crowds, so Paul left while Silas and Timothy remained (Acts 17).",
+   "Sopater of Berea traveled with Paul toward Jerusalem (Acts 20)."
+  ]
+ },
+ {
+  "slug": "minni_803",
+  "name": "Minni",
+  "what": "A kingdom in the mountains north of Assyria, summoned with Ararat and Ashkenaz against Babylon.",
+  "today": "Likely the region south of Lake Urmia, northwestern Iran.",
+  "lat": 40.6,
+  "lon": 44.6,
+  "type": "",
+  "key": [
+   "Jeremiah summoned the kingdoms of Ararat, Minni, and Ashkenaz to war against Babylon (Jeremiah 51).",
+   "They were called up with the kings of the Medes as instruments of the LORD's judgment (Jeremiah 51)."
+  ]
+ },
+ {
+  "slug": "macedonia_747",
+  "name": "Macedonia",
+  "what": "The Roman province in northern Greece, including Philippi, Thessalonica, and Berea.",
+  "today": "Northern Greece and North Macedonia",
+  "lat": 40.6322,
+  "lon": 22.9321,
+  "type": "Region",
+  "key": [
+   "Paul saw a vision of a man of Macedonia pleading for help (Acts 16).",
+   "Paul passed through Macedonia encouraging the churches (Acts 20).",
+   "The churches of Macedonia gave generously despite deep poverty (2 Corinthians 8).",
+   "The Philippians supported Paul when he left Macedonia (Philippians 4).",
+   "The word of the Lord sounded forth from the Thessalonians in Macedonia (1 Thessalonians 1)."
+  ]
+ },
+ {
+  "slug": "thessalonica_1158",
+  "name": "Thessalonica",
+  "what": "The chief city of the Roman province of Macedonia, on the Aegean coast.",
+  "today": "Thessaloniki, Greece.",
+  "lat": 40.6322,
+  "lon": 22.9321,
+  "type": "City",
+  "key": [
+   "Paul preached three Sabbaths in Thessalonica before a mob forced him out (Acts 17).",
+   "Aristarchus, a Macedonian from Thessalonica, sailed with Paul to Rome (Acts 27).",
+   "The Philippians sent help to Paul more than once in Thessalonica (Philippians 4).",
+   "Demas deserted Paul and went to Thessalonica (2 Timothy 4)."
+  ]
+ },
+ {
+  "slug": "tubal_1183",
+  "name": "Tubal",
+  "what": "A distant nation descended from Japheth, often paired with Meshech, known for trading slaves and bronze.",
+  "today": "Likely central or eastern Anatolia, in modern Turkey.",
+  "lat": 40.9052,
+  "lon": 37.8,
+  "type": "Region",
+  "key": [
+   "God will send survivors to distant nations, including Tubal, to declare his glory (Isaiah 66).",
+   "Tubal traded slaves and bronze vessels with the merchants of Tyre (Ezekiel 27).",
+   "Gog is called chief prince of Meshech and Tubal, and God declares himself against him (Ezekiel 38).",
+   "God promises to defeat Gog, prince of Meshech and Tubal, on the mountains of Israel (Ezekiel 39)."
+  ]
+ },
+ {
+  "slug": "pontus_956",
+  "name": "Pontus",
+  "what": "A region of northern Asia Minor along the southern shore of the Black Sea.",
+  "today": "The Black Sea coast of northern Turkey.",
+  "lat": 40.9052,
+  "lon": 37.8,
+  "type": "Region",
+  "key": [
+   "Jews from Pontus were present in Jerusalem at Pentecost (Acts 2).",
+   "Paul met Aquila, a Jew native to Pontus, in Corinth (Acts 18).",
+   "Peter addressed his first letter to God's scattered people in Pontus and nearby regions (1 Peter 1)."
+  ]
+ },
+ {
+  "slug": "philippi_942",
+  "name": "Philippi",
+  "what": "A leading Roman colony in Macedonia and the first place in Europe where Paul planted a church.",
+  "today": "Ruins near Krinides, northeastern Greece.",
+  "lat": 41.012,
+  "lon": 24.2862,
+  "type": "City",
+  "key": [
+   "Lydia believes, a slave girl is freed, and a jailer is converted (Acts 16).",
+   "Paul sails from Philippi after the days of Unleavened Bread (Acts 20).",
+   "Paul writes to the saints at Philippi with their overseers and deacons (Philippians 1).",
+   "Paul recalls being shamefully treated at Philippi before coming to Thessalonica (1 Thessalonians 2)."
+  ]
+ },
+ {
+  "slug": "rome_1013",
+  "name": "Rome",
+  "what": "The capital city of the Roman Empire.",
+  "today": "Rome, the capital of Italy.",
+  "lat": 41.9,
+  "lon": 12.4833,
+  "type": "City",
+  "key": [
+   "Visitors from Rome heard the apostles at Pentecost (Acts 2).",
+   "Aquila and Priscilla had left Rome when Claudius expelled the Jews (Acts 18).",
+   "The Lord told Paul he must testify about him in Rome (Acts 23).",
+   "Paul lived in Rome under guard for two years, proclaiming the kingdom of God (Acts 28).",
+   "Paul wrote to all God's beloved in Rome, eager to preach the gospel there (Romans 1)."
+  ]
+ },
+ {
+  "slug": "italy_601",
+  "name": "Italy",
+  "what": "The Roman peninsula, home of the imperial capital Rome.",
+  "today": "Italy.",
+  "lat": 41.9,
+  "lon": 12.4833,
+  "type": "Region",
+  "key": [
+   "Aquila and Priscilla have recently come from Italy after Claudius expelled the Jews from Rome (Acts 18).",
+   "Paul sails for Italy as a prisoner under the centurion Julius (Acts 27).",
+   "Those from Italy send greetings to the letter's readers (Hebrews 13)."
+  ]
+ },
+ {
+  "slug": "meshech_788",
+  "name": "Meshech",
+  "what": "A distant northern people and land, often named with Tubal.",
+  "today": "Likely in central or eastern Turkey.",
+  "lat": 46.0,
+  "lon": 47.0,
+  "type": "",
+  "key": [
+   "The psalmist laments living as a sojourner in Meshech (Psalms 120).",
+   "Meshech traded slaves and bronze with Tyre (Ezekiel 27).",
+   "Ezekiel prophesied against Gog, chief prince of Meshech and Tubal (Ezekiel 38).",
+   "God declared he would turn Gog of Meshech back and defeat him (Ezekiel 39)."
+  ]
+ },
+ {
+  "slug": "magog_754",
+  "name": "Magog",
+  "what": "A distant northern land, home of Gog, who leads the nations against God's people.",
+  "today": "Exact site unknown; a remote northern region, possibly in Asia Minor.",
+  "lat": 46.0,
+  "lon": 47.0,
+  "type": "Region",
+  "key": [
+   "Ezekiel prophesies against Gog of the land of Magog, chief prince of Meshech and Tubal (Ezekiel 38).",
+   "God promises to send fire on Magog and make his holy name known (Ezekiel 39).",
+   "After the thousand years, Satan gathers Gog and Magog for a final battle (Revelation 20)."
+  ]
+ }
+]

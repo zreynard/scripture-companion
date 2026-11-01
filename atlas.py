@@ -93,23 +93,23 @@ class Atlas:
         taken = [m.span() for m in REF_SPAN.finditer(text)]  # never inside "(Genesis 39)"
         used, out = set(), []
         for n, kind, slug, _ in table:
-            if (kind, slug) in used:
-                continue
-            for m in re.finditer(r"(?<![\w'’])" + re.escape(n) + r"(?![\w])", text):
+            if (kind, slug, n) in used or any(u[2] == n for u in used):
+                continue  # each name once per passage; a person's other name (Jacob / Israel) links too
+            for m in re.finditer(r"(?<![\w'’-])" + re.escape(n) + r"(?![\w]|-\w)", text):
                 a, b = m.span()
                 if any(a < y and x < b for x, y in taken):
                     continue
-                taken.append((a, b)); used.add((kind, slug)); out.append((a, b, kind, slug))
+                taken.append((a, b)); used.add((kind, slug, n)); out.append((a, b, kind, slug))
                 break
         # a name that belongs to only one person or place in the whole Bible links even when that chapter's data misses it
         for n, (kind, slug) in sorted(self._unique().items(), key=lambda kv: -len(kv[0])):
-            if (kind, slug) in used or slug == me or n in fx or (n in TRIBAL and kind == "p" and book != "Genesis") or n not in text:
+            if any(u[2] == n for u in used) or slug == me or n in fx or (n in TRIBAL and kind == "p" and book != "Genesis") or n not in text:
                 continue
-            for m in re.finditer(r"(?<![\w'’])" + re.escape(n) + r"(?![\w])", text):
+            for m in re.finditer(r"(?<![\w'’-])" + re.escape(n) + r"(?![\w]|-\w)", text):
                 a, b = m.span()
                 if any(a < y and x < b for x, y in taken):
                     continue
-                taken.append((a, b)); used.add((kind, slug)); out.append((a, b, kind, slug))
+                taken.append((a, b)); used.add((kind, slug, n)); out.append((a, b, kind, slug))
                 break
         for a, b, kind, slug in sorted(out, reverse=True):
             text = text[:a] + f"⟦{kind}:{slug}|{text[a:b]}⟧" + text[b:]

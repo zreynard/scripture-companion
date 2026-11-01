@@ -1,0 +1,8 @@
+{
+ "zachariah_2969": {"name": "Zechariah", "aka": [], "who": "King of Israel, son of Jeroboam II and last of Jehu's dynasty, who reigned six months in Samaria.",
+  "key": ["He succeeded his father Jeroboam II as king of Israel (2 Kings 14).", "He did evil in the LORD's sight, as his fathers had done (2 Kings 15).", "Shallum son of Jabesh conspired against him and killed him after six months (2 Kings 15).", "His death fulfilled God's word that Jehu's sons would rule for four generations (2 Kings 15)."],
+  "family": {"father": ["jeroboam_873"]}, "skip": false},
+ "zacharias_3011": {"name": "Zechariah", "aka": [], "who": "Priest, son of Jehoiada, stoned in the temple court at King Joash's command for speaking God's word.",
+  "key": ["The Spirit of God came on him, and he warned Judah for forsaking the LORD (2 Chronicles 24).", "At King Joash's command the people stoned him in the court of the LORD's house (2 Chronicles 24).", "As he died, he asked the LORD to see and avenge (2 Chronicles 24).", "Jesus spoke of Zechariah's blood shed between the altar and the sanctuary, likely meaning him (Luke 11)."],
+  "family": {"father": ["jehoiada_793"]}, "skip": false}
+}

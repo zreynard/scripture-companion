@@ -1,0 +1,2723 @@
+[
+ {
+  "slug": "eden_354",
+  "name": "Eden",
+  "what": "The region where God planted a garden and placed the first man and woman.",
+  "today": "Exact location unknown; Genesis links it with the Tigris and Euphrates rivers.",
+  "lat": null,
+  "lon": null,
+  "type": "Region",
+  "key": [
+   "God planted a garden in Eden and put the man there to work it and keep it (Genesis 2).",
+   "After they sinned, God sent Adam and Eve out of Eden and placed cherubim to guard the way (Genesis 3).",
+   "God promised to make Zion's wilderness like Eden (Isaiah 51).",
+   "Ezekiel described the king of Tyre as having been in Eden, the garden of God (Ezekiel 28).",
+   "Joel pictured the land as Eden before the invading army and a desolate wilderness behind it (Joel 2)."
+  ]
+ },
+ {
+  "slug": "gihon_472",
+  "name": "Gihon",
+  "what": "One of the four rivers flowing out of Eden, said to wind through the land of Cush.",
+  "today": "Exact location unknown; one of the rivers of Eden.",
+  "lat": null,
+  "lon": null,
+  "type": "Water",
+  "key": [
+   "A river flowed out of Eden to water the garden and divided into four rivers (Genesis 2).",
+   "The second river, the Gihon, flows around the whole land of Cush (Genesis 2)."
+  ]
+ },
+ {
+  "slug": "gomer_488",
+  "name": "Gomer",
+  "what": "A distant northern people and land descended from Japheth, named among Gog's allies.",
+  "today": "Likely central Turkey, home of the ancient Cimmerians.",
+  "lat": null,
+  "lon": null,
+  "type": "",
+  "key": [
+   "Gomer is listed as the first son of Japheth, ancestor of a northern people (Genesis 10).",
+   "Gomer and all its hordes are named among Gog's allies from the far north (Ezekiel 38)."
+  ]
+ },
+ {
+  "slug": "hazor_549",
+  "name": "Hazor",
+  "what": "A group of Arabian desert settlements, named with Kedar in Jeremiah's oracles; not the Canaanite city.",
+  "today": "Exact site unknown; in the Arabian desert east of Israel.",
+  "lat": null,
+  "lon": null,
+  "type": "",
+  "key": [
+   "Jeremiah announced that Nebuchadnezzar would strike Kedar and the kingdoms of Hazor (Jeremiah 49).",
+   "The people of Hazor were told to flee far away and hide (Jeremiah 49).",
+   "Hazor would become a haunt of jackals, desolate forever (Jeremiah 49)."
+  ]
+ },
+ {
+  "slug": "holy_place_574",
+  "name": "Holy Place",
+  "what": "The outer room of the tabernacle, in front of the veil that screened off the Most Holy Place.",
+  "today": "The tabernacle was a portable tent; it no longer exists.",
+  "lat": null,
+  "lon": null,
+  "type": "",
+  "key": [
+   "The veil divided the Holy Place from the Most Holy Place, with the table and lampstand outside it (Exodus 26).",
+   "Golden bells on Aaron's robe sounded whenever he entered the Holy Place before the Lord (Exodus 28).",
+   "The incense altar stood before the veil, and Aaron burned incense there every morning (Exodus 30).",
+   "Moses placed the table, lampstand, and golden altar in the tent before the veil (Exodus 40)."
+  ]
+ },
+ {
+  "slug": "judah_1280",
+  "name": "Judah",
+  "what": "The territory of the tribe of Judah, including its hill country, wilderness, and Negeb south of Jerusalem.",
+  "today": "The southern West Bank and southern Israel, around Bethlehem and Hebron.",
+  "lat": null,
+  "lon": null,
+  "type": "Region",
+  "key": [
+   "Joshua wiped out the Anakim from the hill country of Judah (Joshua 11).",
+   "Judah's boundaries and towns were set out by lot (Joshua 15).",
+   "Men of Judah bound Samson and handed him over to the Philistines (Judges 15).",
+   "The prophet Gad told David to leave his stronghold and go into the land of Judah (1 Samuel 22).",
+   "David wrote a psalm of longing for God while in the wilderness of Judah (Psalm 63)."
+  ]
+ },
+ {
+  "slug": "most_holy_place_826",
+  "name": "Most Holy Place",
+  "what": "The innermost room of the tabernacle, and later of the temple, where the ark of the covenant stood.",
+  "today": "No longer exists; the temple stood on the Temple Mount, Jerusalem.",
+  "lat": null,
+  "lon": null,
+  "type": "",
+  "key": [
+   "A veil separated the Holy Place from the Most Holy Place, where the ark was placed (Exodus 26).",
+   "The high priest entered behind the veil only once a year, on the Day of Atonement (Leviticus 16).",
+   "Solomon built the temple's Most Holy Place and overlaid it with fine gold (2 Chronicles 3).",
+   "When Jesus died, the temple curtain was torn in two from top to bottom (Matthew 27).",
+   "Christ entered the holy places once for all by his own blood (Hebrews 9)."
+  ]
+ },
+ {
+  "slug": "elkosh_371",
+  "name": "Elkosh",
+  "what": "The hometown of the prophet Nahum, who is called the Elkoshite.",
+  "today": "Exact site unknown.",
+  "lat": null,
+  "lon": null,
+  "type": "",
+  "key": [
+   "The book of Nahum is the vision of Nahum of Elkosh concerning Nineveh (Nahum 1).",
+   "Nahum announced that the LORD would make a complete end of Nineveh (Nahum 1)."
+  ]
+ },
+ {
+  "slug": "nehelam_886",
+  "name": "Nehelam",
+  "what": "The home or family of Shemaiah, a false prophet among the exiles in Babylon.",
+  "today": "Exact site unknown.",
+  "lat": null,
+  "lon": null,
+  "type": "",
+  "key": [
+   "The LORD gave Jeremiah a message for Shemaiah of Nehelam among the exiles (Jeremiah 29).",
+   "Shemaiah had written to the priest Zephaniah, urging him to confine Jeremiah (Jeremiah 29).",
+   "The LORD said Shemaiah prophesied unsent and would have no descendant among the people (Jeremiah 29)."
+  ]
+ },
+ {
+  "slug": "sheba_1067",
+  "name": "Sheba",
+  "what": "A wealthy kingdom in southern Arabia, known for gold, spices, and incense.",
+  "today": "Likely Yemen, southwestern Arabia",
+  "lat": 9.0227,
+  "lon": 38.7468,
+  "type": "Region",
+  "key": [
+   "The queen of Sheba visited Solomon to test him with hard questions (1 Kings 10).",
+   "The psalmist prays that the kings of Sheba will bring gifts (Psalms 72).",
+   "Isaiah foresaw people from Sheba bringing gold and frankincense (Isaiah 60).",
+   "Merchants of Sheba traded spices, gems, and gold with Tyre (Ezekiel 27)."
+  ]
+ },
+ {
+  "slug": "sephar_1048",
+  "name": "Sephar",
+  "what": "A place in the hill country of the east, marking the limit of the lands of Joktan's descendants.",
+  "today": "Possibly in southern Arabia; exact site unknown.",
+  "lat": 14.5502,
+  "lon": 44.3926,
+  "type": "Mountain",
+  "key": [
+   "Joktan's descendants lived from Mesha in the direction of Sephar (Genesis 10).",
+   "Sephar is described as the hill country of the east (Genesis 10)."
+  ]
+ },
+ {
+  "slug": "cush_312",
+  "name": "Cush",
+  "what": "The land south of Egypt along the upper Nile.",
+  "today": "Sudan and southern Egypt (ancient Nubia)",
+  "lat": 21.9598,
+  "lon": 31.3436,
+  "type": "Region",
+  "key": [
+   "Tirhakah king of Cush marched out against Sennacherib (2 Kings 19).",
+   "The psalmist says Cush will stretch out its hands to God (Psalms 68).",
+   "Isaiah walked barefoot as a sign against Egypt and Cush (Isaiah 20).",
+   "Zephaniah foresaw worshipers bringing offerings from beyond the rivers of Cush (Zephaniah 3)."
+  ]
+ },
+ {
+  "slug": "ethiopia_419",
+  "name": "Cush",
+  "what": "An ancient land south of Egypt, marking the far edge of the known world in biblical times.",
+  "today": "Mainly modern Sudan, south of Egypt; not modern Ethiopia.",
+  "lat": 21.9598,
+  "lon": 31.3436,
+  "type": "Region",
+  "key": [
+   "The river Gihon flows around the whole land of Cush (Genesis 2).",
+   "King Ahasuerus rules 127 provinces from India to Cush (Esther 1).",
+   "Mordecai's decree goes to every province from India to Cush (Esther 8).",
+   "Job says the topaz of Cush cannot equal the worth of wisdom (Job 28)."
+  ]
+ },
+ {
+  "slug": "ophir_911",
+  "name": "Ophir",
+  "what": "A distant land famous for its fine gold, reached by ship.",
+  "today": "Exact site unknown; possibly southern Arabia, East Africa, or India.",
+  "lat": 22.0,
+  "lon": 77.0,
+  "type": "Region",
+  "key": [
+   "Solomon's fleet with Hiram's sailors brought gold from Ophir (1 Kings 9).",
+   "Hiram's ships also brought almug wood and precious stones from Ophir (1 Kings 10).",
+   "Jehoshaphat's ships bound for Ophir were wrecked at Ezion-geber (1 Kings 22).",
+   "David gave gold of Ophir for building the temple (1 Chronicles 29).",
+   "Job says wisdom cannot be bought with the gold of Ophir (Job 28)."
+  ]
+ },
+ {
+  "slug": "india_597",
+  "name": "India",
+  "what": "The eastern edge of the Persian Empire, along the Indus River valley.",
+  "today": "The Indus Valley region, in modern Pakistan and northwestern India.",
+  "lat": 22.0,
+  "lon": 77.0,
+  "type": "",
+  "key": [
+   "King Ahasuerus ruled 127 provinces from India to Cush (Esther 1).",
+   "Mordecai's decree allowing the Jews to defend themselves went to every province from India to Cush (Esther 8)."
+  ]
+ },
+ {
+  "slug": "syene_1120",
+  "name": "Syene",
+  "what": "A town at Egypt's southern frontier on the Nile, marking the far limit of Egypt.",
+  "today": "Aswan, in southern Egypt.",
+  "lat": 24.0662,
+  "lon": 32.8959,
+  "type": "City",
+  "key": [
+   "Isaiah foresees God's people gathering from distant places, including the land of Syene (Isaiah 49).",
+   "God promises to make Egypt desolate from Migdol to Syene (Ezekiel 29).",
+   "Ezekiel says Egypt's helpers will fall by the sword from Migdol to Syene (Ezekiel 30)."
+  ]
+ },
+ {
+  "slug": "thebes_1156",
+  "name": "Thebes",
+  "what": "A great ancient capital of Upper Egypt and center of the worship of the god Amon.",
+  "today": "Luxor, in southern Egypt.",
+  "lat": 25.7,
+  "lon": 32.6394,
+  "type": "",
+  "key": [
+   "The Lord announces he will punish Amon of Thebes along with Pharaoh and Egypt (Jeremiah 46).",
+   "Ezekiel prophesies that God will execute judgments on Thebes and cut off its multitude (Ezekiel 30).",
+   "Nahum warns Nineveh that mighty Thebes was still carried into exile (Nahum 3)."
+  ]
+ },
+ {
+  "slug": "dedan_329",
+  "name": "Dedan",
+  "what": "An Arabian trading people and oasis region southeast of Edom.",
+  "today": "The al-Ula area of northwestern Saudi Arabia.",
+  "lat": 26.6251,
+  "lon": 37.9197,
+  "type": "",
+  "key": [
+   "Dedan was among the nations made to drink the cup of God's wrath (Jeremiah 25).",
+   "Jeremiah warned the people of Dedan to flee from Edom's disaster (Jeremiah 49).",
+   "Ezekiel foretold Edom's ruin from Teman even to Dedan (Ezekiel 25).",
+   "Dedan traded saddlecloths with Tyre (Ezekiel 27).",
+   "Sheba and Dedan question Gog's plan to plunder (Ezekiel 38)."
+  ]
+ },
+ {
+  "slug": "red_sea_986",
+  "name": "Red Sea",
+  "what": "The sea between Egypt and Arabia that God parted for Israel to escape Pharaoh.",
+  "today": "Red Sea, including the Gulfs of Suez and Aqaba; exact crossing site debated",
+  "lat": 27.0885,
+  "lon": 34.7717,
+  "type": "Water",
+  "key": [
+   "God drove the locusts of the eighth plague into the Red Sea (Exodus 10).",
+   "Pharaoh's chariots and army were drowned in the Red Sea (Exodus 15).",
+   "Rahab told the spies that Jericho had heard how God dried up the Red Sea (Joshua 2).",
+   "Solomon built a fleet at Ezion-geber on the shore of the Red Sea (1 Kings 9).",
+   "By faith Israel crossed the Red Sea as on dry land (Hebrews 11)."
+  ]
+ },
+ {
+  "slug": "kedar_674",
+  "name": "Kedar",
+  "what": "An Arabian desert people and region descended from Ishmael's son Kedar.",
+  "today": "The north Arabian desert, in modern Saudi Arabia and Jordan.",
+  "lat": 27.4,
+  "lon": 37.7,
+  "type": "",
+  "key": [
+   "The psalmist laments dwelling among the tents of Kedar (Psalm 120).",
+   "The bride compares herself to the dark tents of Kedar (Song of Solomon 1).",
+   "Isaiah foresaw the flocks of Kedar gathered to Zion (Isaiah 60).",
+   "Jeremiah announced that Nebuchadnezzar would strike Kedar (Jeremiah 49).",
+   "Kedar's princes traded lambs, rams, and goats with Tyre (Ezekiel 27)."
+  ]
+ },
+ {
+  "slug": "arabia_80",
+  "name": "Arabia",
+  "what": "The desert lands east and south of Israel, home to nomadic tribes and trading peoples.",
+  "today": "The Arabian Peninsula; in Galatians likely the Nabatean region of Jordan and northwestern Saudi Arabia.",
+  "lat": 27.4,
+  "lon": 37.7,
+  "type": "Region",
+  "key": [
+   "The kings of Arabia brought gold and silver to Solomon (2 Chronicles 9).",
+   "Isaiah delivered an oracle concerning Arabia (Isaiah 21).",
+   "Arabia and Kedar traded lambs, rams, and goats with Tyre (Ezekiel 27).",
+   "After his conversion Paul went away into Arabia (Galatians 1).",
+   "Paul wrote that Mount Sinai is in Arabia (Galatians 4)."
+  ]
+ },
+ {
+  "slug": "dumah_345",
+  "name": "Dumah",
+  "what": "An oasis region in northern Arabia, the subject of a brief oracle in Isaiah.",
+  "today": "Likely Dumat al-Jandal (al-Jawf), northern Saudi Arabia.",
+  "lat": 27.4,
+  "lon": 37.7,
+  "type": "",
+  "key": [
+   "Dumah is named as a son of Ishmael, whose descendants likely gave the oasis its name (Genesis 25).",
+   "In an oracle concerning Dumah, someone calls from Seir asking the watchman about the night (Isaiah 21).",
+   "The watchman answers that morning comes, and also the night (Isaiah 21)."
+  ]
+ },
+ {
+  "slug": "tema_1149",
+  "name": "Tema",
+  "what": "An oasis town in northern Arabia on major caravan routes, settled by descendants of Ishmael.",
+  "today": "Tayma, in northwestern Saudi Arabia.",
+  "lat": 27.6332,
+  "lon": 38.5541,
+  "type": "",
+  "key": [
+   "Job compares his friends to dry streams that disappoint the caravans of Tema (Job 6).",
+   "The inhabitants of Tema are told to bring water and bread to fugitives (Isaiah 21).",
+   "Tema is among the nations made to drink the cup of God's wrath (Jeremiah 25)."
+  ]
+ },
+ {
+  "slug": "pathros_925",
+  "name": "Pathros",
+  "what": "Upper Egypt, the southern part of the Nile Valley.",
+  "today": "Upper (southern) Egypt, along the Nile.",
+  "lat": 28.3224,
+  "lon": 30.6923,
+  "type": "Region",
+  "key": [
+   "Isaiah foretold God gathering his remnant from Pathros (Isaiah 11).",
+   "Jeremiah rebuked the Jews living in Pathros for idolatry (Jeremiah 44).",
+   "Ezekiel foretold Egypt's return to Pathros, their land of origin (Ezekiel 29).",
+   "Ezekiel announced that Pathros would be made desolate (Ezekiel 30)."
+  ]
+ },
+ {
+  "slug": "mount_sinai_855",
+  "name": "Mount Sinai",
+  "what": "The mountain in the wilderness where God gave Israel his law and made his covenant with them.",
+  "today": "Traditionally Jebel Musa, southern Sinai Peninsula, Egypt; exact site debated",
+  "lat": 28.5397,
+  "lon": 33.9733,
+  "type": "Mountain",
+  "key": [
+   "The LORD descended on Mount Sinai in fire as Israel trembled below (Exodus 19).",
+   "Moses stayed on the mountain forty days and forty nights (Exodus 24).",
+   "God gave Moses the two tablets of the testimony on Mount Sinai (Exodus 31).",
+   "Moses came down with new tablets, his face shining (Exodus 34).",
+   "Paul compares Hagar to Mount Sinai, representing the old covenant (Galatians 4)."
+  ]
+ },
+ {
+  "slug": "sinai_1098",
+  "name": "Sinai",
+  "what": "The wilderness around Mount Sinai, where Israel camped for about a year after the exodus.",
+  "today": "Southern Sinai Peninsula, Egypt",
+  "lat": 28.5397,
+  "lon": 33.9733,
+  "type": "Region",
+  "key": [
+   "Israel traveled through the wilderness of Sin, between Elim and Sinai (Exodus 16).",
+   "Israel arrived in the wilderness of Sinai and camped before the mountain (Exodus 19).",
+   "Moses counted the men of Israel in the wilderness of Sinai (Numbers 1).",
+   "Israel kept the Passover in the wilderness of Sinai (Numbers 9).",
+   "The cloud lifted, and Israel set out from the wilderness of Sinai (Numbers 10)."
+  ]
+ },
+ {
+  "slug": "horeb_576",
+  "name": "Horeb",
+  "what": "Another name for Mount Sinai, the mountain of God where the LORD made his covenant with Israel.",
+  "today": "Traditionally Jebel Musa, southern Sinai Peninsula, Egypt; exact site debated",
+  "lat": 28.5397,
+  "lon": 33.9733,
+  "type": "",
+  "key": [
+   "God spoke to Moses from a burning bush at Horeb (Exodus 3).",
+   "Moses struck the rock at Horeb, and water came out for the people (Exodus 17).",
+   "The LORD made his covenant with Israel at Horeb (Deuteronomy 5).",
+   "Elijah fled to Horeb and heard the LORD in a low whisper (1 Kings 19).",
+   "Malachi called Israel to remember the law given at Horeb (Malachi 4)."
+  ]
+ },
+ {
+  "slug": "rephidim_996",
+  "name": "Rephidim",
+  "what": "An Israelite camp in the wilderness shortly before Mount Sinai.",
+  "today": "Exact site unknown; possibly Wadi Feiran in southern Sinai.",
+  "lat": 28.7311,
+  "lon": 33.8417,
+  "type": "",
+  "key": [
+   "God gave water from the rock at Rephidim, and Israel defeated Amalek (Exodus 17).",
+   "Israel set out from Rephidim and came to the wilderness of Sinai (Exodus 19).",
+   "Rephidim appears in the list of wilderness stages (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "massah_771",
+  "name": "Massah",
+  "what": "A place near Rephidim where Israel tested the Lord by demanding water.",
+  "today": "Near Rephidim in the Sinai Peninsula; exact site unknown.",
+  "lat": 28.7311,
+  "lon": 33.8417,
+  "type": "",
+  "key": [
+   "Israel quarrels and tests the Lord over water, so Moses names the place Massah and Meribah (Exodus 17).",
+   "Moses warns Israel not to put the Lord to the test as at Massah (Deuteronomy 6).",
+   "Moses recalls that Israel provoked the Lord at Massah (Deuteronomy 9).",
+   "Moses' blessing on Levi recalls God testing him at Massah (Deuteronomy 33)."
+  ]
+ },
+ {
+  "slug": "meribah_783",
+  "name": "Meribah",
+  "what": "A place near Rephidim where Israel quarreled with Moses and tested the Lord over water.",
+  "today": "Near Rephidim in the Sinai Peninsula; exact site unknown.",
+  "lat": 28.7311,
+  "lon": 33.8417,
+  "type": "Landmark",
+  "key": [
+   "God brought water from the rock at Horeb, and Moses named the place Massah and Meribah (Exodus 17).",
+   "Moses' blessing on Levi recalls God contending with him at the waters of Meribah (Deuteronomy 33)."
+  ]
+ },
+ {
+  "slug": "sin_1097",
+  "name": "Wilderness of Sin",
+  "what": "A wilderness between Elim and Mount Sinai where God first gave Israel manna and quail.",
+  "today": "Likely in the southwestern Sinai Peninsula, Egypt; exact site uncertain.",
+  "lat": 28.8388,
+  "lon": 33.4206,
+  "type": "Region",
+  "key": [
+   "Israel grumbles in the wilderness of Sin, and God provides quail and manna (Exodus 16).",
+   "Israel moves on from the wilderness of Sin to Rephidim (Exodus 17).",
+   "The wilderness of Sin is recorded among Israel's camps (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "mesha_787",
+  "name": "Mesha",
+  "what": "A place marking one end of the territory where the descendants of Joktan lived.",
+  "today": "Exact site unknown; possibly in Arabia.",
+  "lat": 28.8573,
+  "lon": 34.8591,
+  "type": "City",
+  "key": [
+   "Joktan's sons lived from Mesha in the direction of Sephar, the hill country of the east (Genesis 10).",
+   "Joktan, a descendant of Shem through Eber, had thirteen sons, including Sheba, Ophir, and Havilah (Genesis 10)."
+  ]
+ },
+ {
+  "slug": "hazeroth_544",
+  "name": "Hazeroth",
+  "what": "An Israelite camp in the Sinai wilderness after leaving Mount Sinai.",
+  "today": "Exact site unknown; possibly 'Ain Khadra in eastern Sinai.",
+  "lat": 28.9167,
+  "lon": 34.5,
+  "type": "",
+  "key": [
+   "Israel traveled from Kibroth-hattaavah to Hazeroth (Numbers 11).",
+   "At Hazeroth Miriam and Aaron spoke against Moses, and Miriam became leprous (Numbers 12).",
+   "Hazeroth appears in the list of wilderness stages (Numbers 33).",
+   "Moses' final speeches name Hazeroth as a landmark (Deuteronomy 1)."
+  ]
+ },
+ {
+  "slug": "kibroth-hattaavah_685",
+  "name": "Kibroth-hattaavah",
+  "what": "A wilderness camp whose name means graves of craving, where Israel craved meat.",
+  "today": "Exact site unknown; in the Sinai wilderness.",
+  "lat": 28.9167,
+  "lon": 34.5,
+  "type": "",
+  "key": [
+   "God sent quail and then a plague on those who craved meat (Numbers 11).",
+   "Kibroth-hattaavah appears in the list of wilderness stages (Numbers 33).",
+   "Moses recalled Israel provoking the LORD there (Deuteronomy 9)."
+  ]
+ },
+ {
+  "slug": "taberah_1127",
+  "name": "Taberah",
+  "what": "A wilderness camp where fire from the Lord burned among the complaining Israelites.",
+  "today": "Exact site unknown; in the wilderness between Mount Sinai and Kadesh.",
+  "lat": 28.9167,
+  "lon": 34.5,
+  "type": "",
+  "key": [
+   "When the people complained, fire from the Lord burned the outskirts of the camp (Numbers 11).",
+   "Moses prayed, the fire died down, and the place was named Taberah (Numbers 11).",
+   "Moses reminds Israel that they provoked the Lord at Taberah, Massah, and Kibroth-hattaavah (Deuteronomy 9)."
+  ]
+ },
+ {
+  "slug": "midian_796",
+  "name": "Midian",
+  "what": "The desert homeland of the Midianites, east of the Gulf of Aqaba.",
+  "today": "Likely northwestern Saudi Arabia",
+  "lat": 28.9329,
+  "lon": 34.9083,
+  "type": "Region",
+  "key": [
+   "Moses fled from Pharaoh to the land of Midian (Exodus 2).",
+   "Moses tended the flock of Jethro, the priest of Midian (Exodus 3).",
+   "Phinehas killed an Israelite man and a Midianite woman, stopping the plague (Numbers 25).",
+   "Gideon and three hundred men routed the Midianite army (Judges 7)."
+  ]
+ },
+ {
+  "slug": "paran_921",
+  "name": "Paran",
+  "what": "A wilderness region between Sinai and Canaan, south of the Negev.",
+  "today": "The east-central Sinai Peninsula, Egypt.",
+  "lat": 29.1517,
+  "lon": 33.5419,
+  "type": "",
+  "key": [
+   "Ishmael grew up in the wilderness of Paran (Genesis 21).",
+   "Leaving Sinai, the cloud settled in the wilderness of Paran (Numbers 10).",
+   "Moses sent the twelve spies from the wilderness of Paran (Numbers 13).",
+   "After Samuel's death, David went down to the wilderness of Paran (1 Samuel 25).",
+   "Hadad the Edomite passed through Paran while fleeing to Egypt (1 Kings 11)."
+  ]
+ },
+ {
+  "slug": "elim_369",
+  "name": "Elim",
+  "what": "An oasis in the wilderness with twelve springs and seventy palm trees, where Israel camped after the Red Sea.",
+  "today": "Possibly Wadi Gharandel, in western Sinai, Egypt.",
+  "lat": 29.3062,
+  "lon": 32.9809,
+  "type": "",
+  "key": [
+   "Israel camps at Elim beside twelve springs and seventy palm trees (Exodus 15).",
+   "Israel sets out from Elim into the wilderness of Sin (Exodus 16).",
+   "Elim is recorded among Israel's wilderness camps (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "marah_765",
+  "name": "Marah",
+  "what": "A place in the wilderness of Shur whose name means bitter, for its undrinkable water.",
+  "today": "Exact site unknown; possibly Ain Hawarah in western Sinai.",
+  "lat": 29.35,
+  "lon": 32.9333,
+  "type": "",
+  "key": [
+   "At Marah the water was bitter until the LORD showed Moses a log that made it sweet (Exodus 15).",
+   "Marah is listed as Israel's campsite after three days in the wilderness (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "elath_366",
+  "name": "Elath",
+  "what": "A port town at the northern tip of the Gulf of Aqaba, contested between Judah and Edom.",
+  "today": "Near modern Eilat, Israel, and Aqaba, Jordan.",
+  "lat": 29.5285,
+  "lon": 35.0057,
+  "type": "City",
+  "key": [
+   "Israel passed by Elath and Ezion-geber on its way around Edom (Deuteronomy 2).",
+   "King Azariah rebuilt Elath and restored it to Judah (2 Kings 14).",
+   "In Ahaz's day Rezin recovered Elath for Edom and drove out the people of Judah (2 Kings 16)."
+  ]
+ },
+ {
+  "slug": "eloth_375",
+  "name": "Eloth",
+  "what": "Another spelling of Elath, a port on the Gulf of Aqaba near Ezion-geber.",
+  "today": "Near modern Eilat, Israel, and Aqaba, Jordan.",
+  "lat": 29.5285,
+  "lon": 35.0057,
+  "type": "",
+  "key": [
+   "Solomon built a fleet of ships at Ezion-geber near Eloth on the Red Sea (1 Kings 9).",
+   "The Chronicler repeats that Solomon went to Ezion-geber and Eloth by the sea (2 Chronicles 8).",
+   "King Uzziah rebuilt Eloth and restored it to Judah (2 Chronicles 26)."
+  ]
+ },
+ {
+  "slug": "ezion-geber_423",
+  "name": "Ezion-geber",
+  "what": "A port at the northern tip of the Gulf of Aqaba, on the Red Sea.",
+  "today": "Near Eilat and Aqaba; possibly Tell el-Kheleifeh.",
+  "lat": 29.758,
+  "lon": 35.0306,
+  "type": "City",
+  "key": [
+   "Israel camped at Ezion-geber during the wilderness journey (Numbers 33).",
+   "Israel passed by Elath and Ezion-geber, going around Edom (Deuteronomy 2).",
+   "Solomon built a fleet of ships at Ezion-geber (1 Kings 9).",
+   "Jehoshaphat's ships were wrecked at Ezion-geber, as Eliezer had prophesied (2 Chronicles 20)."
+  ]
+ },
+ {
+  "slug": "jotbathah_656",
+  "name": "Jotbathah",
+  "what": "A campsite of Israel in the wilderness, described as a land with brooks of water.",
+  "today": "Exact site unknown; possibly near the Gulf of Aqaba.",
+  "lat": 29.758,
+  "lon": 35.0306,
+  "type": "",
+  "key": [
+   "Israel set out from Hor-haggidgad and camped at Jotbathah (Numbers 33).",
+   "Moses recalls Jotbathah as a land with brooks of water (Deuteronomy 10)."
+  ]
+ },
+ {
+  "slug": "memphis_779",
+  "name": "Memphis",
+  "what": "An ancient royal city of Egypt near the head of the Nile Delta.",
+  "today": "Ruins at Mit Rahina, south of Cairo, Egypt.",
+  "lat": 29.8496,
+  "lon": 31.254,
+  "type": "City",
+  "key": [
+   "Isaiah said the princes of Memphis were deluded (Isaiah 19).",
+   "Jeremiah addressed Judeans who had fled to Egypt and were living in Memphis (Jeremiah 44).",
+   "Jeremiah warned that Memphis would become a waste (Jeremiah 46).",
+   "Ezekiel announced that God would destroy the idols of Memphis (Ezekiel 30).",
+   "Hosea warned that Memphis would bury Israelites who fled to Egypt (Hosea 9)."
+  ]
+ },
+ {
+  "slug": "baal-zephon_149",
+  "name": "Baal-zephon",
+  "what": "A landmark in Egypt near the sea, where Israel camped just before crossing the Red Sea.",
+  "today": "Exact site unknown; in northeastern Egypt near the Red Sea crossing.",
+  "lat": 29.9384,
+  "lon": 32.3955,
+  "type": "City",
+  "key": [
+   "God told Israel to camp facing Baal-zephon, and Pharaoh's army overtook them there by the sea (Exodus 14).",
+   "Baal-zephon is listed on Moses' record of Israel's journey out of Egypt (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "pi-hahiroth_948",
+  "name": "Pi-hahiroth",
+  "what": "A campsite in Egypt between Migdol and the sea, where Israel stopped before crossing.",
+  "today": "Exact site unknown; in northeastern Egypt near the Red Sea crossing.",
+  "lat": 29.9466,
+  "lon": 32.4251,
+  "type": "",
+  "key": [
+   "God had Israel camp before Pi-hahiroth, where Pharaoh's army overtook them (Exodus 14).",
+   "From Pi-hahiroth Israel passed through the sea into the wilderness (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "migdol_799",
+  "name": "Migdol",
+  "what": "A fortified place on Egypt's northeastern frontier, named in the exodus and later a home of Jewish refugees.",
+  "today": "Likely in the northeastern Nile Delta near Sinai; exact site uncertain.",
+  "lat": 30.0203,
+  "lon": 32.3722,
+  "type": "",
+  "key": [
+   "God told Israel to camp between Migdol and the sea before crossing (Exodus 14).",
+   "Israel's camp near Migdol appears in the list of wilderness stages (Numbers 33).",
+   "Jeremiah addressed Jews living in Migdol and other Egyptian towns (Jeremiah 44).",
+   "Ezekiel foretold Egypt's desolation from Migdol to Syene (Ezekiel 29)."
+  ]
+ },
+ {
+  "slug": "uz_1190",
+  "name": "Uz",
+  "what": "The land where Job lived, apparently east of Israel and associated with Edom.",
+  "today": "Exact site unknown; likely east or southeast of the Dead Sea.",
+  "lat": 30.0334,
+  "lon": 36.4484,
+  "type": "Region",
+  "key": [
+   "Job, a blameless man who feared God, lived in the land of Uz (Job 1).",
+   "The kings of the land of Uz are among those made to drink God's cup of wrath (Jeremiah 25).",
+   "Lamentations addresses Edom as dwelling in the land of Uz, warning that judgment will reach her (Lamentations 4)."
+  ]
+ },
+ {
+  "slug": "nile_895",
+  "name": "Nile",
+  "what": "The great river of Egypt, the source of the country's life and farming.",
+  "today": "Nile River, Egypt",
+  "lat": 30.0926,
+  "lon": 31.231,
+  "type": "Water",
+  "key": [
+   "Pharaoh dreamed of seven cows coming up out of the Nile (Genesis 41).",
+   "Pharaoh ordered every newborn Hebrew boy thrown into the Nile (Exodus 1).",
+   "Moses struck the Nile, and its water turned to blood (Exodus 7).",
+   "Frogs came up from the Nile and covered Egypt (Exodus 8).",
+   "God judged Pharaoh, who claimed to have made the Nile for himself (Ezekiel 29)."
+  ]
+ },
+ {
+  "slug": "egypt_362",
+  "name": "Egypt",
+  "what": "The great kingdom of the Nile valley, where Israel grew into a nation and was later enslaved.",
+  "today": "Egypt",
+  "lat": 30.1081,
+  "lon": 31.3382,
+  "type": "Region",
+  "key": [
+   "Abram went down to Egypt during a famine in Canaan (Genesis 12).",
+   "Joseph, sold by his brothers, rose to rule over all Egypt under Pharaoh (Genesis 41).",
+   "Jacob and his whole family moved to Egypt and settled in Goshen (Genesis 46).",
+   "After the tenth plague, the LORD brought Israel out of Egypt on Passover night (Exodus 12).",
+   "Joseph took Mary and the child Jesus to Egypt to escape Herod (Matthew 2)."
+  ]
+ },
+ {
+  "slug": "on_908",
+  "name": "On",
+  "what": "An ancient Egyptian city and center of sun worship, home of Joseph's father-in-law.",
+  "today": "Heliopolis, in northeastern Cairo, Egypt.",
+  "lat": 30.1081,
+  "lon": 31.3382,
+  "type": "City",
+  "key": [
+   "Pharaoh gives Joseph Asenath, daughter of Potiphera priest of On, as his wife (Genesis 41).",
+   "Asenath of On bears Joseph's sons Manasseh and Ephraim (Genesis 46).",
+   "Ezekiel foretells that the young men of On will fall by the sword (Ezekiel 30)."
+  ]
+ },
+ {
+  "slug": "rahab_969",
+  "name": "Rahab",
+  "what": "A poetic name for Egypt, also used of a sea monster symbolizing forces God subdues.",
+  "today": "Egypt, used as a poetic name.",
+  "lat": 30.1081,
+  "lon": 31.3382,
+  "type": "",
+  "key": [
+   "God lists Rahab, meaning Egypt, among nations whose people will be counted in Zion (Psalms 87).",
+   "The psalmist praises God, who crushed Rahab and scattered his enemies (Psalms 89).",
+   "Isaiah recalls the LORD's arm that cut Rahab in pieces, recalling the exodus (Isaiah 51)."
+  ]
+ },
+ {
+  "slug": "havilah_534",
+  "name": "Havilah",
+  "what": "A desert region at the eastern edge of the Ishmaelite and Amalekite lands, toward Arabia.",
+  "today": "Exact location unknown; likely in northwestern Arabia.",
+  "lat": 30.14,
+  "lon": 35.22,
+  "type": "Region",
+  "key": [
+   "Ishmael's descendants settled from Havilah to Shur, east of Egypt (Genesis 25).",
+   "Saul defeated the Amalekites from Havilah as far as Shur (1 Samuel 15)."
+  ]
+ },
+ {
+  "slug": "teman_1150",
+  "name": "Teman",
+  "what": "A region or town in Edom, known for its wise men and warriors.",
+  "today": "Southern Jordan, in ancient Edom; exact site unknown.",
+  "lat": 30.2038,
+  "lon": 35.7326,
+  "type": "Region",
+  "key": [
+   "Jeremiah asked whether wisdom was gone from Teman (Jeremiah 49).",
+   "Ezekiel foretold desolation from Teman to Dedan (Ezekiel 25).",
+   "Amos announced fire on Teman (Amos 1).",
+   "Obadiah warned that Teman's mighty men would be dismayed (Obadiah 1).",
+   "Habakkuk saw God coming from Teman in glory (Habakkuk 3)."
+  ]
+ },
+ {
+  "slug": "shur_1090",
+  "name": "Shur",
+  "what": "A desert region in northwestern Sinai along Egypt's eastern frontier.",
+  "today": "Northwestern Sinai, east of the Suez region of Egypt.",
+  "lat": 30.2354,
+  "lon": 33.247,
+  "type": "",
+  "key": [
+   "The angel of the LORD found Hagar by a spring on the way to Shur (Genesis 16).",
+   "Abraham lived between Kadesh and Shur and sojourned in Gerar (Genesis 20).",
+   "After crossing the Red Sea, Israel went three days into the wilderness of Shur (Exodus 15).",
+   "Saul defeated the Amalekites from Havilah as far as Shur (1 Samuel 15).",
+   "David raided peoples living toward Shur while among the Philistines (1 Samuel 27)."
+  ]
+ },
+ {
+  "slug": "negeb_885",
+  "name": "Negeb",
+  "what": "The dry southern region of Judah, stretching south from Hebron toward the Sinai.",
+  "today": "Negev desert, southern Israel",
+  "lat": 30.3,
+  "lon": 34.2,
+  "type": "Region",
+  "key": [
+   "Abram journeyed by stages toward the Negeb (Genesis 12).",
+   "Isaac was living in the Negeb when Rebekah arrived (Genesis 24).",
+   "Moses told the spies to go up into the Negeb and the hill country (Numbers 13).",
+   "Joshua struck the whole land, including the Negeb (Joshua 10).",
+   "David told Achish he had raided the Negeb of Judah (1 Samuel 27)."
+  ]
+ },
+ {
+  "slug": "mount_hor_842",
+  "name": "Mount Hor",
+  "what": "A mountain on the border of Edom where Aaron died.",
+  "today": "Exact site unknown; traditionally Jebel Harun near Petra, Jordan.",
+  "lat": 30.3174,
+  "lon": 35.4072,
+  "type": "Mountain",
+  "key": [
+   "Aaron died on Mount Hor after his garments were placed on his son Eleazar (Numbers 20).",
+   "Israel set out from Mount Hor to go around Edom (Numbers 21).",
+   "Aaron died on Mount Hor at age 123, in the fortieth year after the exodus (Numbers 33).",
+   "God told Moses he would die on Nebo as Aaron died on Mount Hor (Deuteronomy 32)."
+  ]
+ },
+ {
+  "slug": "moserah_823",
+  "name": "Moserah",
+  "what": "A wilderness camp of Israel, where Deuteronomy records that Aaron died and was buried.",
+  "today": "Exact site unknown; near the border of Edom.",
+  "lat": 30.3174,
+  "lon": 35.4072,
+  "type": "",
+  "key": [
+   "Israel journeyed from Beeroth Bene-jaakan to Moserah, where Aaron died and was buried (Deuteronomy 10).",
+   "From there Israel journeyed to Gudgodah and then to Jotbathah (Deuteronomy 10)."
+  ]
+ },
+ {
+  "slug": "bene-jaakan_174",
+  "name": "Bene-jaakan",
+  "what": "A wilderness campsite of Israel, also called the wells of the Bene-jaakan, near Moserah.",
+  "today": "Exact site unknown; in the wilderness south of Canaan.",
+  "lat": 30.3174,
+  "lon": 35.4072,
+  "type": "",
+  "key": [
+   "Israel set out from Moseroth and camped at Bene-jaakan (Numbers 33).",
+   "From Bene-jaakan they moved on and camped at Hor-haggidgad (Numbers 33).",
+   "Moses recalled Israel journeying from Beeroth Bene-jaakan to Moserah, where Aaron died (Deuteronomy 10)."
+  ]
+ },
+ {
+  "slug": "sela_1044",
+  "name": "Sela",
+  "what": "A rocky stronghold in Edom; the name means rock.",
+  "today": "Possibly Petra or nearby as-Sela in southern Jordan.",
+  "lat": 30.3224,
+  "lon": 35.4563,
+  "type": "City",
+  "key": [
+   "The border of the Amorites ran from the ascent of Akrabbim, from Sela upward (Judges 1).",
+   "Moab's refugees are told to send lambs to Zion from Sela (Isaiah 16).",
+   "Isaiah calls the inhabitants of Sela to sing for joy to the LORD (Isaiah 42)."
+  ]
+ },
+ {
+  "slug": "nebaioth_881",
+  "name": "Nebaioth",
+  "what": "The desert territory of an Arabian tribe descended from Ishmael's firstborn son Nebaioth.",
+  "today": "Northern Arabia; exact area uncertain.",
+  "lat": 30.3224,
+  "lon": 35.4563,
+  "type": "",
+  "key": [
+   "Nebaioth, Ishmael's firstborn son, gave his name to the tribe (Genesis 25).",
+   "Isaiah foresees the rams of Nebaioth accepted on God's altar (Isaiah 60)."
+  ]
+ },
+ {
+  "slug": "hor-haggidgad_579",
+  "name": "Hor-haggidgad",
+  "what": "One of Israel's campsites during the wilderness wanderings, between Bene-jaakan and Jotbathah.",
+  "today": "Exact site unknown; in the wilderness south of the Dead Sea, possibly in the Arabah.",
+  "lat": 30.3583,
+  "lon": 35.1903,
+  "type": "",
+  "key": [
+   "Israel set out from Bene-jaakan and camped at Hor-haggidgad (Numbers 33).",
+   "From Hor-haggidgad they moved on and camped at Jotbathah (Numbers 33).",
+   "Moses recalled the journey from Moserah to Gudgodah and on to Jotbathah (Deuteronomy 10)."
+  ]
+ },
+ {
+  "slug": "etham_417",
+  "name": "Etham",
+  "what": "A camp on the edge of the wilderness on Israel's route out of Egypt.",
+  "today": "Exact site unknown; on the eastern edge of the Nile Delta, Egypt.",
+  "lat": 30.4675,
+  "lon": 32.2828,
+  "type": "",
+  "key": [
+   "Israel moves from Succoth and camps at Etham, on the edge of the wilderness (Exodus 13).",
+   "Israel camps at Etham and later travels three days in the wilderness of Etham (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "succoth_1114",
+  "name": "Succoth",
+  "what": "The first camp of Israel after leaving Rameses at the exodus.",
+  "today": "Likely Tell el-Maskhuta, in the eastern Nile Delta, Egypt.",
+  "lat": 30.6208,
+  "lon": 32.2587,
+  "type": "",
+  "key": [
+   "About six hundred thousand men on foot journey from Rameses to Succoth (Exodus 12).",
+   "Israel sets out from Succoth and camps at Etham (Exodus 13).",
+   "Succoth is recorded as Israel's first camp after Rameses (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "amalek_53",
+  "name": "Amalek",
+  "what": "The territory of the Amalekites, a nomadic people of the Negeb and Sinai who attacked Israel.",
+  "today": "Negev and northern Sinai, approximately",
+  "lat": 30.6598,
+  "lon": 34.8356,
+  "type": "Region",
+  "key": [
+   "Israel defeated Amalek at Rephidim while Moses' hands were held up (Exodus 17).",
+   "Moses commanded Israel to blot out the memory of Amalek (Deuteronomy 25).",
+   "Saul defeated Amalek but spared King Agag and the best livestock (1 Samuel 15).",
+   "David dedicated to the LORD the spoil taken from Amalek (2 Samuel 8)."
+  ]
+ },
+ {
+  "slug": "kadesh_661",
+  "name": "Kadesh",
+  "what": "An oasis in the wilderness south of Canaan, where Israel camped for many years.",
+  "today": "Likely Ein el-Qudeirat, northeastern Sinai, Egypt",
+  "lat": 30.6877,
+  "lon": 34.4948,
+  "type": "",
+  "key": [
+   "Abraham lived for a time between Kadesh and Shur (Genesis 20).",
+   "The twelve spies returned to Moses at Kadesh with their report (Numbers 13).",
+   "Miriam died at Kadesh, and Moses struck the rock for water (Numbers 20).",
+   "Israel remained at Kadesh many days after refusing to enter the land (Deuteronomy 1)."
+  ]
+ },
+ {
+  "slug": "kadesh-barnea_663",
+  "name": "Kadesh-barnea",
+  "what": "An oasis on the southern edge of Canaan where Israel camped during the wilderness years.",
+  "today": "Likely Ein el-Qudeirat in northeastern Sinai, Egypt.",
+  "lat": 30.6877,
+  "lon": 34.4948,
+  "type": "",
+  "key": [
+   "Moses sent the spies from Kadesh-barnea to see the land (Numbers 32).",
+   "Kadesh-barnea marked the southern boundary of the Promised Land (Numbers 34).",
+   "Israel rebelled at Kadesh-barnea, refusing to go up into the land (Deuteronomy 9).",
+   "Joshua struck down cities from Kadesh-barnea to Gaza (Joshua 10).",
+   "Caleb recalled being sent from Kadesh-barnea as a spy at age forty (Joshua 14)."
+  ]
+ },
+ {
+  "slug": "zin_1261",
+  "name": "Zin",
+  "what": "A desert region south of Canaan around Kadesh, where Israel wandered and camped.",
+  "today": "The desert of southern Israel and northeastern Sinai, near Kadesh-barnea.",
+  "lat": 30.6877,
+  "lon": 34.4948,
+  "type": "Region",
+  "key": [
+   "The twelve spies began exploring Canaan from the wilderness of Zin (Numbers 13).",
+   "Miriam died at Kadesh in Zin, and Moses struck the rock at Meribah (Numbers 20).",
+   "God reminded Moses that he had rebelled in the wilderness of Zin (Numbers 27).",
+   "Zin marked the southern border of Canaan and of Judah (Numbers 34).",
+   "Judah's southern boundary passed along the wilderness of Zin (Joshua 15)."
+  ]
+ },
+ {
+  "slug": "meribah_782",
+  "name": "Meribah",
+  "what": "The waters at Kadesh where Moses struck the rock and Israel quarreled with the Lord.",
+  "today": "Near Kadesh-barnea, in the northeastern Sinai Peninsula.",
+  "lat": 30.6877,
+  "lon": 34.4948,
+  "type": "Landmark",
+  "key": [
+   "Moses strikes the rock, and the waters are named Meribah because Israel quarreled (Numbers 20).",
+   "God recalls that Moses and Aaron rebelled at the waters of Meribah of Kadesh (Numbers 27).",
+   "God recalls testing Israel at the waters of Meribah (Psalms 81)."
+  ]
+ },
+ {
+  "slug": "meribah-kadesh_784",
+  "name": "Meribah-kadesh",
+  "what": "The waters at Kadesh where Moses and Aaron failed to honor God before Israel.",
+  "today": "Likely near Kadesh-barnea, at Ain el-Qudeirat in northeastern Sinai.",
+  "lat": 30.6877,
+  "lon": 34.4948,
+  "type": "",
+  "key": [
+   "God told Moses he would not enter the land because he broke faith at Meribah-kadesh (Deuteronomy 32).",
+   "In Ezekiel's vision, Meribah-kadesh marks the southern border of the restored land (Ezekiel 47).",
+   "The southern boundary of the tribal allotments again runs to Meribah-kadesh (Ezekiel 48)."
+  ]
+ },
+ {
+  "slug": "zin_1262",
+  "name": "Zin",
+  "what": "A desert region south of Canaan around Kadesh, forming the southern border of the land.",
+  "today": "The desert of southern Israel and northeastern Sinai, near Kadesh-barnea.",
+  "lat": 30.6877,
+  "lon": 34.4948,
+  "type": "",
+  "key": [
+   "The twelve spies began exploring Canaan from the wilderness of Zin (Numbers 13).",
+   "Miriam died at Kadesh in Zin, and Moses struck the rock at Meribah (Numbers 20).",
+   "Zin marked the southern border of Canaan and of Judah (Numbers 34).",
+   "Judah's southern boundary passed along the wilderness of Zin (Joshua 15)."
+  ]
+ },
+ {
+  "slug": "akrabbim_44",
+  "name": "Akrabbim",
+  "what": "A steep ascent marking the southern border of the promised land and of Judah.",
+  "today": "Likely Ma'ale Akrabim (Scorpion Pass), in the Negev, southern Israel.",
+  "lat": 30.6883,
+  "lon": 35.2632,
+  "type": "Region",
+  "key": [
+   "The southern boundary of the land runs south of the ascent of Akrabbim (Numbers 34).",
+   "Judah's southern boundary passes south of the ascent of Akrabbim (Joshua 15).",
+   "The Amorites' border runs from the ascent of Akrabbim (Judges 1)."
+  ]
+ },
+ {
+  "slug": "goshen_490",
+  "name": "Goshen",
+  "what": "A fertile region of Egypt where Jacob's family settled.",
+  "today": "The eastern Nile Delta of Egypt, likely around Wadi Tumilat.",
+  "lat": 30.7285,
+  "lon": 31.8047,
+  "type": "Region",
+  "key": [
+   "Joseph invited his father to live in Goshen, near him (Genesis 45).",
+   "Joseph met his father Jacob in Goshen (Genesis 46).",
+   "Pharaoh granted Jacob's family the land of Goshen for their flocks (Genesis 47).",
+   "God kept the swarms of flies out of Goshen, where Israel lived (Exodus 8).",
+   "Hail struck Egypt, but not the land of Goshen (Exodus 9)."
+  ]
+ },
+ {
+  "slug": "edom_357",
+  "name": "Edom",
+  "what": "The land of Esau's descendants, south and southeast of the Dead Sea.",
+  "today": "Southern Jordan",
+  "lat": 30.7347,
+  "lon": 35.6063,
+  "type": "Region",
+  "key": [
+   "Esau, also called Edom, settled in the hill country of Seir (Genesis 36).",
+   "The king of Edom refused to let Israel pass through his land (Numbers 20).",
+   "David put garrisons throughout Edom, and the Edomites became his servants (2 Samuel 8).",
+   "Edom revolted from Judah and set up its own king (2 Kings 8).",
+   "Obadiah announced judgment on Edom for its violence against Jacob (Obadiah 1)."
+  ]
+ },
+ {
+  "slug": "seir_1042",
+  "name": "Seir",
+  "what": "The mountainous land south of the Dead Sea where Esau's descendants, the Edomites, lived.",
+  "today": "Mountains of southern Jordan, east of the Arabah",
+  "lat": 30.7347,
+  "lon": 35.6063,
+  "type": "Region",
+  "key": [
+   "Jacob sent messengers to his brother Esau in the land of Seir (Genesis 32).",
+   "After meeting Jacob, Esau returned to Seir (Genesis 33).",
+   "God gave Mount Seir to Esau and told Israel not to fight them (Deuteronomy 2).",
+   "Men of Mount Seir were destroyed when their allies turned on them (2 Chronicles 20)."
+  ]
+ },
+ {
+  "slug": "mount_seir_852",
+  "name": "Mount Seir",
+  "what": "The mountainous region of Edom, given to Esau's descendants.",
+  "today": "The mountains of southern Jordan, east of the Arabah valley.",
+  "lat": 30.7347,
+  "lon": 35.6063,
+  "type": "Mountain",
+  "key": [
+   "Israel traveled around Mount Seir for many days (Deuteronomy 2).",
+   "God gave Mount Seir to Esau and forbade Israel to take it (Deuteronomy 2).",
+   "Simeonites went to Mount Seir and destroyed the remaining Amalekites (1 Chronicles 4).",
+   "Men of Mount Seir joined an attack on Judah but were destroyed (2 Chronicles 20).",
+   "Ezekiel prophesied that Mount Seir would become desolate (Ezekiel 35)."
+  ]
+ },
+ {
+  "slug": "bozrah_256",
+  "name": "Bozrah",
+  "what": "A leading city of Edom, south of the Dead Sea.",
+  "today": "Buseirah, in southern Jordan.",
+  "lat": 30.7347,
+  "lon": 35.6063,
+  "type": "City",
+  "key": [
+   "Jobab of Bozrah reigned as an early king of Edom (Genesis 36).",
+   "Isaiah announced that the Lord has a sacrifice in Bozrah (Isaiah 34).",
+   "Isaiah pictured the Lord coming from Bozrah in crimsoned garments (Isaiah 63).",
+   "Jeremiah warned that Bozrah would become a horror and a waste (Jeremiah 49).",
+   "Amos announced fire on the strongholds of Bozrah (Amos 1)."
+  ]
+ },
+ {
+  "slug": "mount_of_esau_835",
+  "name": "Mount Esau",
+  "what": "The mountainous homeland of Edom, the nation descended from Esau.",
+  "today": "The highlands of Edom, southern Jordan.",
+  "lat": 30.7347,
+  "lon": 35.6063,
+  "type": "Mountain",
+  "key": [
+   "God declares he will destroy understanding from Mount Esau (Obadiah 1).",
+   "Everyone from Mount Esau will be cut off by slaughter (Obadiah 1).",
+   "Saviors will go up to Mount Zion to rule Mount Esau, and the kingdom will be the Lord's (Obadiah 1)."
+  ]
+ },
+ {
+  "slug": "esau_408",
+  "name": "Esau",
+  "what": "The land of Esau's descendants, Edom, sometimes called simply Esau or Mount Esau.",
+  "today": "Southern Jordan, south and east of the Dead Sea.",
+  "lat": 30.7347,
+  "lon": 35.6063,
+  "type": "",
+  "key": [
+   "Esau, also called Edom, settled with his descendants in the hill country of Seir (Genesis 36).",
+   "Jeremiah announces that God will bring calamity on Esau and strip him bare (Jeremiah 49).",
+   "Obadiah foretells judgment on Mount Esau for its violence against Judah (Obadiah 1)."
+  ]
+ },
+ {
+  "slug": "rameses_980",
+  "name": "Rameses",
+  "what": "A city and district in the eastern Nile Delta, where Israel lived and from which the exodus began.",
+  "today": "Likely Qantir, in the eastern Nile Delta, Egypt.",
+  "lat": 30.7994,
+  "lon": 31.8342,
+  "type": "City",
+  "key": [
+   "Joseph settles his family in the best of the land, the land of Rameses (Genesis 47).",
+   "Israel journeys from Rameses to Succoth at the exodus (Exodus 12).",
+   "Israel sets out from Rameses the day after the Passover (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "tahpanhes_1133",
+  "name": "Tahpanhes",
+  "what": "An Egyptian frontier city in the eastern Nile Delta, where Jeremiah was taken.",
+  "today": "Tell Defenneh, in the northeastern Nile Delta, Egypt.",
+  "lat": 30.8606,
+  "lon": 32.1714,
+  "type": "",
+  "key": [
+   "Judah's remnant took Jeremiah to Tahpanhes, where he hid stones at Pharaoh's palace (Jeremiah 43).",
+   "Jeremiah addressed the Jews living in Tahpanhes (Jeremiah 44).",
+   "Jeremiah told Tahpanhes to prepare for Babylon's attack (Jeremiah 46)."
+  ]
+ },
+ {
+  "slug": "hormah_580",
+  "name": "Hormah",
+  "what": "A Canaanite town in the Negev whose name recalls its devotion to destruction.",
+  "today": "Exact site uncertain; possibly Tel Masos, east of Beersheba.",
+  "lat": 30.8809,
+  "lon": 34.6306,
+  "type": "",
+  "key": [
+   "Israel presumed to attack without God and was beaten back as far as Hormah (Numbers 14).",
+   "Israel devoted the Canaanite cities to destruction and named the place Hormah (Numbers 21).",
+   "Judah and Simeon destroyed Zephath and called it Hormah (Judges 1).",
+   "David sent plunder from the Amalekites to Hormah (1 Samuel 30)."
+  ]
+ },
+ {
+  "slug": "zephath_1251",
+  "name": "Zephath",
+  "what": "A Canaanite town in the Negev that Judah and Simeon destroyed and renamed Hormah.",
+  "today": "Exact site uncertain; in the northern Negev near Beersheba, Israel.",
+  "lat": 30.8809,
+  "lon": 34.6306,
+  "type": "City",
+  "key": [
+   "Judah and Simeon struck the Canaanites in Zephath and devoted it to destruction (Judges 1).",
+   "The city was then called Hormah (Judges 1)."
+  ]
+ },
+ {
+  "slug": "mount_halak_839",
+  "name": "Mount Halak",
+  "what": "A bare mountain in the south rising toward Seir, the southern limit of Joshua's conquest.",
+  "today": "Likely Jebel Halaq in the northern Negev, southern Israel.",
+  "lat": 30.9167,
+  "lon": 34.8333,
+  "type": "Mountain",
+  "key": [
+   "Joshua's conquest reached from Mount Halak in the south to Baal-gad in the north (Joshua 11).",
+   "Mount Halak is named again as the southern edge of the land whose kings Joshua defeated (Joshua 12)."
+  ]
+ },
+ {
+  "slug": "zoar_1271",
+  "name": "Zoar",
+  "what": "A small city near the southern end of the Dead Sea, spared when Sodom was destroyed.",
+  "today": "Likely near Safi, southeast of the Dead Sea in Jordan.",
+  "lat": 30.9265,
+  "lon": 35.4191,
+  "type": "City",
+  "key": [
+   "Lot chose the well-watered Jordan Valley stretching toward Zoar (Genesis 13).",
+   "The king of Bela, that is, Zoar, fought against the four kings (Genesis 14).",
+   "Lot fled to Zoar, which God spared, before fire fell on Sodom (Genesis 19).",
+   "From Mount Nebo, Moses viewed the land as far as Zoar (Deuteronomy 34).",
+   "Isaiah pictured Moab's fugitives fleeing to Zoar (Isaiah 15)."
+  ]
+ },
+ {
+  "slug": "bela_172",
+  "name": "Bela",
+  "what": "The earlier name of Zoar, a small city near the southern end of the Dead Sea.",
+  "today": "Likely near Safi, southeast of the Dead Sea in Jordan.",
+  "lat": 30.9265,
+  "lon": 35.4191,
+  "type": "City",
+  "key": [
+   "The king of Bela, that is, Zoar, joined Sodom's alliance against Chedorlaomer and his allies (Genesis 14).",
+   "The five kings were defeated in the Valley of Siddim, and Lot was taken captive (Genesis 14).",
+   "Lot fled to Zoar, which God spared when fire fell on Sodom (Genesis 19)."
+  ]
+ },
+ {
+  "slug": "azmon_130",
+  "name": "Azmon",
+  "what": "A place on the southern border of the promised land, near the Brook of Egypt.",
+  "today": "Exact site unknown; possibly in the northeastern Sinai Peninsula.",
+  "lat": 30.9585,
+  "lon": 34.3805,
+  "type": "",
+  "key": [
+   "The southern boundary turns from Azmon to the Brook of Egypt (Numbers 34).",
+   "Judah's southern boundary passes along to Azmon (Joshua 15)."
+  ]
+ },
+ {
+  "slug": "chaldea_282",
+  "name": "Chaldea",
+  "what": "Southern Mesopotamia, the homeland of the Chaldeans who ruled Babylon.",
+  "today": "Southern Iraq.",
+  "lat": 30.9621,
+  "lon": 46.1037,
+  "type": "Region",
+  "key": [
+   "Isaiah called the exiles to go out from Babylon and flee from Chaldea (Isaiah 48).",
+   "Jeremiah announced that Chaldea would be plundered (Jeremiah 50).",
+   "The Spirit brought Ezekiel in a vision to the exiles in Chaldea (Ezekiel 11).",
+   "Ezekiel rebuked Jerusalem for seeking alliances with Chaldea (Ezekiel 23)."
+  ]
+ },
+ {
+  "slug": "ur_1189",
+  "name": "Ur",
+  "what": "A city in southern Mesopotamia, the original home of Abraham's family.",
+  "today": "Tell el-Muqayyar, in southern Iraq.",
+  "lat": 30.9621,
+  "lon": 46.1037,
+  "type": "City",
+  "key": [
+   "Haran dies in Ur, and Terah takes Abram from Ur toward Canaan (Genesis 11).",
+   "The Lord reminds Abram that he brought him out from Ur of the Chaldeans (Genesis 15).",
+   "The Levites praise God for choosing Abram and bringing him out of Ur (Nehemiah 9)."
+  ]
+ },
+ {
+  "slug": "zoan_1270",
+  "name": "Zoan",
+  "what": "An ancient royal city in the northeastern Nile Delta of Egypt.",
+  "today": "San el-Hagar (ancient Tanis), in the northeastern Nile Delta, Egypt.",
+  "lat": 30.9746,
+  "lon": 31.8842,
+  "type": "City",
+  "key": [
+   "Hebron was built seven years before Zoan in Egypt (Numbers 13).",
+   "God worked his wonders against Egypt in the fields of Zoan (Psalms 78).",
+   "Isaiah called the princes of Zoan foolish counselors (Isaiah 19).",
+   "Judah's envoys went to Zoan seeking Egypt's help (Isaiah 30).",
+   "Ezekiel foretold that God would set fire to Zoan (Ezekiel 30)."
+  ]
+ },
+ {
+  "slug": "beer_164",
+  "name": "Beer",
+  "what": "A stopping place in Moab where God gave Israel water from a well during the wilderness journey.",
+  "today": "Exact site unknown; north of the Arnon River in Jordan.",
+  "lat": 30.9981,
+  "lon": 35.4985,
+  "type": "",
+  "key": [
+   "The Lord told Moses to gather the people at Beer so he could give them water (Numbers 21).",
+   "Israel sang a song to the well that the princes and nobles had dug (Numbers 21)."
+  ]
+ },
+ {
+  "slug": "egypt_259",
+  "name": "Brook of Egypt",
+  "what": "A seasonal stream marking the southwestern border of the Promised Land.",
+  "today": "Likely Wadi el-Arish in northern Sinai, Egypt.",
+  "lat": 31.032,
+  "lon": 33.855,
+  "type": "Water",
+  "key": [
+   "The Brook of Egypt formed the southern boundary of the land (Numbers 34).",
+   "Judah's border ended at the Brook of Egypt (Joshua 15).",
+   "All Israel from Lebo-hamath to the Brook of Egypt celebrated the temple's dedication (1 Kings 8).",
+   "Babylon took all Egypt's territory from the Brook of Egypt to the Euphrates (2 Kings 24).",
+   "Ezekiel's restored land extends to the Brook of Egypt (Ezekiel 47)."
+  ]
+ },
+ {
+  "slug": "valley_of_salt_1215",
+  "name": "Valley of Salt",
+  "what": "A valley in the south, near Edom's border, where Judah's armies defeated the Edomites.",
+  "today": "Exact site uncertain; possibly south of the Dead Sea.",
+  "lat": 31.0873,
+  "lon": 35.3837,
+  "type": "Valley",
+  "key": [
+   "David strikes down eighteen thousand Edomites in the Valley of Salt (2 Samuel 8).",
+   "Amaziah strikes down ten thousand Edomites in the Valley of Salt (2 Kings 14).",
+   "Abishai strikes down eighteen thousand Edomites in the Valley of Salt (1 Chronicles 18).",
+   "Amaziah leads his people to the Valley of Salt and defeats the men of Seir (2 Chronicles 25)."
+  ]
+ },
+ {
+  "slug": "admah_27",
+  "name": "Admah",
+  "what": "One of the cities of the valley destroyed with Sodom and Gomorrah.",
+  "today": "Exact site unknown; likely near the southern Dead Sea.",
+  "lat": 31.1194,
+  "lon": 35.4125,
+  "type": "City",
+  "key": [
+   "Admah marked part of the territory of the Canaanites (Genesis 10).",
+   "The king of Admah joined the cities of the valley in war (Genesis 14).",
+   "Moses recalled that God overthrew Admah with Sodom in his anger (Deuteronomy 29).",
+   "God asked how he could make Israel like Admah (Hosea 11)."
+  ]
+ },
+ {
+  "slug": "zeboiim_1244",
+  "name": "Zeboiim",
+  "what": "One of the cities of the plain near Sodom and Gomorrah, destroyed in God's judgment.",
+  "today": "Exact site unknown; probably near the southern Dead Sea.",
+  "lat": 31.1194,
+  "lon": 35.4125,
+  "type": "City",
+  "key": [
+   "Zeboiim is listed near Sodom and Gomorrah on the edge of Canaanite territory (Genesis 10).",
+   "Shemeber king of Zeboiim joins the kings of the valley against Chedorlaomer (Genesis 14).",
+   "Moses warns that disobedience could leave the land like Zeboiim, which the Lord overthrew (Deuteronomy 29).",
+   "God asks how he could make Israel like Zeboiim, showing his compassion (Hosea 11)."
+  ]
+ },
+ {
+  "slug": "gomorrah_489",
+  "name": "Gomorrah",
+  "what": "A city near Sodom destroyed by God with fire for its wickedness.",
+  "today": "Exact site unknown; probably near the Dead Sea",
+  "lat": 31.1572,
+  "lon": 35.474,
+  "type": "City",
+  "key": [
+   "The king of Gomorrah was defeated in the war of the kings (Genesis 14).",
+   "The LORD rained sulfur and fire on Sodom and Gomorrah (Genesis 19).",
+   "Isaiah compared the rulers of Judah to the rulers of Gomorrah (Isaiah 1).",
+   "Jude cites Sodom and Gomorrah as an example of eternal fire (Jude 1)."
+  ]
+ },
+ {
+  "slug": "moladah_816",
+  "name": "Moladah",
+  "what": "A town in the Negev of Judah, later allotted to Simeon and resettled after the exile.",
+  "today": "Exact site uncertain; in the Negev east of Beersheba, Israel.",
+  "lat": 31.1623,
+  "lon": 35.0571,
+  "type": "City",
+  "key": [
+   "Moladah is listed among the southern towns of Judah (Joshua 15).",
+   "Moladah is allotted to the tribe of Simeon (Joshua 19).",
+   "Moladah appears among the towns where Simeon's descendants lived (1 Chronicles 4).",
+   "Men of Judah live in Moladah after the return from exile (Nehemiah 11)."
+  ]
+ },
+ {
+  "slug": "ziph_1267",
+  "name": "Ziph",
+  "what": "A town in the Negev of Judah toward Edom, distinct from Ziph near Hebron.",
+  "today": "Exact site unknown; in the Negev of southern Israel.",
+  "lat": 31.1623,
+  "lon": 35.0571,
+  "type": "City",
+  "key": [
+   "Ziph is listed among Judah's southernmost towns toward the border of Edom (Joshua 15).",
+   "A different Ziph appears later in the same list among the hill-country towns (Joshua 15)."
+  ]
+ },
+ {
+  "slug": "kir_693",
+  "name": "Kir",
+  "what": "A distant land, probably in Mesopotamia, from which the Arameans came and to which Assyria exiled them.",
+  "today": "Exact site unknown; likely in Mesopotamia.",
+  "lat": 31.1813,
+  "lon": 35.7021,
+  "type": "",
+  "key": [
+   "Assyria captured Damascus and carried its people to Kir (2 Kings 16).",
+   "Isaiah also names Kir of Moab, a separate Moabite city (Isaiah 15).",
+   "Kir took up the shield against Jerusalem (Isaiah 22).",
+   "Amos foretold that Aram's people would go into exile to Kir (Amos 1).",
+   "God reminded Israel that he brought the Arameans from Kir (Amos 9)."
+  ]
+ },
+ {
+  "slug": "kabzeel_660",
+  "name": "Kabzeel",
+  "what": "A town in the Negev of southern Judah, home of David's mighty man Benaiah.",
+  "today": "Exact site unknown; in the Negev of southern Israel.",
+  "lat": 31.1858,
+  "lon": 34.9674,
+  "type": "City",
+  "key": [
+   "Kabzeel is listed among Judah's southernmost towns toward Edom (Joshua 15).",
+   "Benaiah of Kabzeel, one of David's mighty men, struck down two champions of Moab (2 Samuel 23).",
+   "The Chronicler repeats Benaiah's deeds and his hometown of Kabzeel (1 Chronicles 11)."
+  ]
+ },
+ {
+  "slug": "sodom_1107",
+  "name": "Sodom",
+  "what": "A city in the Jordan valley destroyed by God for its great wickedness.",
+  "today": "Exact site unknown; probably near the Dead Sea",
+  "lat": 31.1966,
+  "lon": 35.3965,
+  "type": "City",
+  "key": [
+   "Lot chose the Jordan valley and moved his tent as far as Sodom (Genesis 13).",
+   "Abraham pleaded with the LORD to spare Sodom for the sake of the righteous (Genesis 18).",
+   "The LORD rained sulfur and fire on Sodom after rescuing Lot (Genesis 19).",
+   "Jesus said judgment would be more bearable for Sodom than for unrepentant towns (Matthew 11).",
+   "Peter cites Sodom's destruction as an example of God's judgment (2 Peter 2)."
+  ]
+ },
+ {
+  "slug": "hazar-shual_539",
+  "name": "Hazar-shual",
+  "what": "A town in the Negev of Judah, later allotted to Simeon and resettled after the exile.",
+  "today": "Exact site unknown; in the Negev near Beersheba, Israel.",
+  "lat": 31.2154,
+  "lon": 34.943,
+  "type": "City",
+  "key": [
+   "Hazar-shual is listed among the southern towns of Judah (Joshua 15).",
+   "Hazar-shual is allotted to the tribe of Simeon (Joshua 19).",
+   "Hazar-shual appears among the towns where Simeon's descendants lived (1 Chronicles 4).",
+   "Men of Judah live in Hazar-shual after the return from exile (Nehemiah 11)."
+  ]
+ },
+ {
+  "slug": "alexandria_46",
+  "name": "Alexandria",
+  "what": "A great Egyptian seaport founded by Alexander the Great, a center of Jewish learning and grain shipping.",
+  "today": "Alexandria, on the Mediterranean coast of Egypt.",
+  "lat": 31.2278,
+  "lon": 29.9569,
+  "type": "City",
+  "key": [
+   "Apollos, a native of Alexandria, comes to Ephesus (Acts 18).",
+   "Paul's centurion finds an Alexandrian ship sailing for Italy and puts them aboard (Acts 27).",
+   "After the shipwreck, Paul sails on an Alexandrian ship that wintered at Malta (Acts 28)."
+  ]
+ },
+ {
+  "slug": "vale_of_siddim_1218",
+  "name": "Valley of Siddim",
+  "what": "A valley by the Salt Sea where four kings defeated the five kings of the plain.",
+  "today": "Likely near the southern end of the Dead Sea; exact site unknown.",
+  "lat": 31.2353,
+  "lon": 35.5176,
+  "type": "Valley",
+  "key": [
+   "The five kings, including those of Sodom and Gomorrah, joined forces in the Valley of Siddim (Genesis 14).",
+   "The valley was full of bitumen pits, and fleeing kings fell into them (Genesis 14)."
+  ]
+ },
+ {
+  "slug": "beersheba_170",
+  "name": "Beersheba",
+  "what": "A town in the Negeb at the southern edge of Israel, linked with the patriarchs.",
+  "today": "Tel Beersheba, near Beersheba, Israel",
+  "lat": 31.245,
+  "lon": 34.8409,
+  "type": "City",
+  "key": [
+   "Abraham made a covenant with Abimelech over a well at Beersheba (Genesis 21).",
+   "The LORD appeared to Isaac at Beersheba and renewed his promise (Genesis 26).",
+   "Jacob offered sacrifices at Beersheba on his way to Egypt (Genesis 46).",
+   "All Israel from Dan to Beersheba knew Samuel was a prophet (1 Samuel 3).",
+   "Elijah fled to Beersheba to escape Jezebel (1 Kings 19)."
+  ]
+ },
+ {
+  "slug": "baalah_134",
+  "name": "Baalah",
+  "what": "A town in Judah's far south toward Edom, later counted among Simeon's towns; not the Baalah that is Kiriath-jearim.",
+  "today": "Exact site unknown; in the Negeb near Beersheba, southern Israel.",
+  "lat": 31.245,
+  "lon": 34.8409,
+  "type": "City",
+  "key": [
+   "Baalah is listed among Judah's southernmost towns in the Negeb toward Edom (Joshua 15).",
+   "Balah, likely the same town, was included in Simeon's inheritance within Judah (Joshua 19).",
+   "Simeon's descendants lived in Bilhah and nearby towns until David's reign (1 Chronicles 4)."
+  ]
+ },
+ {
+  "slug": "arad_81",
+  "name": "Arad",
+  "what": "A Canaanite royal city in the Negev whose king attacked Israel in the wilderness.",
+  "today": "Tel Arad, in the northeastern Negev, Israel.",
+  "lat": 31.281,
+  "lon": 35.1264,
+  "type": "City",
+  "key": [
+   "The king of Arad attacks Israel, and Israel devotes his cities to destruction (Numbers 21).",
+   "The Canaanite king of Arad hears that Israel is coming (Numbers 33).",
+   "The king of Arad is listed among the kings Joshua defeated (Joshua 12).",
+   "The Kenites settle among the people in the Negev near Arad (Judges 1)."
+  ]
+ },
+ {
+  "slug": "horonaim_581",
+  "name": "Horonaim",
+  "what": "A town of Moab named in prophecies of Moab's destruction.",
+  "today": "Exact site unknown; in Moab, Jordan.",
+  "lat": 31.2881,
+  "lon": 35.515,
+  "type": "City",
+  "key": [
+   "Isaiah describes a cry of destruction on the road to Horonaim (Isaiah 15).",
+   "Jeremiah foretells the cry of desolation and great destruction from Horonaim (Jeremiah 48)."
+  ]
+ },
+ {
+  "slug": "zanoah_1240",
+  "name": "Zanoah",
+  "what": "A town in the hill country of Judah, distinct from the Zanoah in the lowland.",
+  "today": "Likely Khirbet Zanuta, southwest of Hebron, West Bank.",
+  "lat": 31.3667,
+  "lon": 35.0,
+  "type": "City",
+  "key": [
+   "Zanoah is listed among Judah's towns in the hill country, near Jezreel and Kain (Joshua 15).",
+   "Jekuthiel is named as the father, likely the founder, of Zanoah (1 Chronicles 4)."
+  ]
+ },
+ {
+  "slug": "ain_42",
+  "name": "Ain",
+  "what": "A town in the far south of Judah, later assigned to Simeon and listed as a Levitical city.",
+  "today": "Exact site unknown; in the Negev near Rimmon, southern Israel.",
+  "lat": 31.3708,
+  "lon": 34.8607,
+  "type": "",
+  "key": [
+   "Ain is listed among the southernmost towns of Judah (Joshua 15).",
+   "Ain is allotted to the tribe of Simeon within Judah's territory (Joshua 19).",
+   "Ain is given to the Levites as one of their cities (Joshua 21).",
+   "Ain appears among the towns where the descendants of Simeon lived (1 Chronicles 4)."
+  ]
+ },
+ {
+  "slug": "eshtemoa_412",
+  "name": "Eshtemoa",
+  "what": "A town in the hill country of Judah south of Hebron, given to the priests.",
+  "today": "Modern as-Samu, south of Hebron.",
+  "lat": 31.3735,
+  "lon": 35.0746,
+  "type": "City",
+  "key": [
+   "Eshtemoa was given to the descendants of Aaron the priest (Joshua 21).",
+   "David sent some of the Amalekite spoil to the elders of Eshtemoa (1 Samuel 30).",
+   "Eshtemoa appears again among the priests' towns (1 Chronicles 6)."
+  ]
+ },
+ {
+  "slug": "ziklag_1259",
+  "name": "Ziklag",
+  "what": "A town in the Negev given to David by the Philistine king Achish.",
+  "today": "Possibly Tel Sera or Tel Halif in the northwestern Negev, Israel.",
+  "lat": 31.3776,
+  "lon": 34.8736,
+  "type": "City",
+  "key": [
+   "Ziklag was allotted to Judah and then to Simeon (Joshua 19).",
+   "Achish king of Gath gave Ziklag to David as he fled from Saul (1 Samuel 27).",
+   "Amalekites burned Ziklag, and David pursued them and recovered everything (1 Samuel 30).",
+   "At Ziklag, David received news of Saul's death (2 Samuel 1).",
+   "Mighty men came to join David at Ziklag (1 Chronicles 12)."
+  ]
+ },
+ {
+  "slug": "gerar_459",
+  "name": "Gerar",
+  "what": "A town in the western Negev ruled by Abimelech in the patriarchs' time.",
+  "today": "Likely Tel Haror, between Gaza and Beersheba in Israel.",
+  "lat": 31.3913,
+  "lon": 34.5606,
+  "type": "City",
+  "key": [
+   "The Canaanites' territory extended toward Gerar (Genesis 10).",
+   "Abraham called Sarah his sister to Abimelech king of Gerar, and God protected her (Genesis 20).",
+   "Isaac lived in Gerar during a famine and reopened wells amid disputes (Genesis 26).",
+   "Asa pursued the defeated Ethiopians as far as Gerar (2 Chronicles 14)."
+  ]
+ },
+ {
+  "slug": "besor_181",
+  "name": "Besor",
+  "what": "A brook in southwestern Judah that David's men crossed while pursuing the Amalekite raiders.",
+  "today": "Likely Nahal Besor (Wadi Ghazzeh), flowing toward the coast near Gaza.",
+  "lat": 31.3981,
+  "lon": 34.4367,
+  "type": "Valley",
+  "key": [
+   "Two hundred of David's men were too exhausted to cross the brook Besor and stayed behind (1 Samuel 30).",
+   "After the victory, David ruled that those who stayed by the baggage would share equally in the spoil (1 Samuel 30)."
+  ]
+ },
+ {
+  "slug": "jattir_626",
+  "name": "Jattir",
+  "what": "A town in the hill country of Judah given to the priests.",
+  "today": "Khirbet Attir, south of Hebron, West Bank.",
+  "lat": 31.4014,
+  "lon": 35.0694,
+  "type": "City",
+  "key": [
+   "Jattir is listed among the towns of the hill country of Judah (Joshua 15).",
+   "Jattir is given to the descendants of Aaron (Joshua 21).",
+   "David sends spoil from the Amalekites to the elders of Jattir (1 Samuel 30).",
+   "Jattir is listed again among the priests' cities (1 Chronicles 6)."
+  ]
+ },
+ {
+  "slug": "debir_325",
+  "name": "Debir",
+  "what": "A Canaanite city in the hill country of Judah, southwest of Hebron.",
+  "today": "Possibly Khirbet Rabud, southwest of Hebron in the West Bank.",
+  "lat": 31.4167,
+  "lon": 34.9667,
+  "type": "",
+  "key": [
+   "Joshua captured Debir and struck down its king (Joshua 10).",
+   "Joshua cut off the Anakim from Debir (Joshua 11).",
+   "Othniel captured Debir and received Caleb's daughter Achsah as his wife (Joshua 15).",
+   "Debir was given to the priests as a Levitical city (Joshua 21)."
+  ]
+ },
+ {
+  "slug": "kiriath-sepher_703",
+  "name": "Kiriath-sepher",
+  "what": "The earlier name of Debir, a town in Judah captured by Othniel.",
+  "today": "Debir, possibly Khirbet Rabud, southwest of Hebron, West Bank.",
+  "lat": 31.4167,
+  "lon": 34.9667,
+  "type": "",
+  "key": [
+   "Caleb offers his daughter Achsah to whoever captures Kiriath-sepher (Joshua 15).",
+   "Othniel captures Kiriath-sepher and marries Achsah (Joshua 15).",
+   "Judges retells Othniel's capture of Kiriath-sepher, formerly the name of Debir (Judges 1)."
+  ]
+ },
+ {
+  "slug": "maon_764",
+  "name": "Maon",
+  "what": "A town in the hill country of Judah with a nearby wilderness where David hid from Saul.",
+  "today": "Khirbet Ma'in, south of Hebron, West Bank.",
+  "lat": 31.4167,
+  "lon": 35.1167,
+  "type": "City",
+  "key": [
+   "Maon is listed among the towns of the hill country of Judah (Joshua 15).",
+   "Saul pursues David in the wilderness of Maon (1 Samuel 23).",
+   "Nabal, Abigail's husband, lives in Maon (1 Samuel 25)."
+  ]
+ },
+ {
+  "slug": "rock_1011",
+  "name": "Rock of Escape",
+  "what": "A rock in the wilderness of Maon where David narrowly escaped Saul.",
+  "today": "Exact site unknown; in the wilderness of Maon, south of Hebron.",
+  "lat": 31.4167,
+  "lon": 35.1167,
+  "type": "",
+  "key": [
+   "David goes down to the rock in the wilderness of Maon as Saul closes in (1 Samuel 23).",
+   "Saul breaks off pursuit to face a Philistine raid, so the place is called the Rock of Escape (1 Samuel 23)."
+  ]
+ },
+ {
+  "slug": "arnon_92",
+  "name": "Arnon",
+  "what": "A deep river gorge flowing into the Dead Sea, forming Moab's northern border.",
+  "today": "Wadi Mujib in Jordan, east of the Dead Sea.",
+  "lat": 31.4288,
+  "lon": 35.677,
+  "type": "Water",
+  "key": [
+   "Israel camped beyond the Arnon, the boundary between Moab and the Amorites (Numbers 21).",
+   "Balak met Balaam at a city on the Arnon (Numbers 22).",
+   "Jephthah reminded the Ammonites that Israel had never crossed the Arnon into Moab (Judges 11).",
+   "Jeremiah announced Moab's destruction to be proclaimed by the Arnon (Jeremiah 48)."
+  ]
+ },
+ {
+  "slug": "river_of_arnon_1225",
+  "name": "Valley of the Arnon",
+  "what": "The deep gorge of the Arnon River, forming the southern border of Israel's land east of the Jordan.",
+  "today": "Wadi Mujib in Jordan, east of the Dead Sea.",
+  "lat": 31.4288,
+  "lon": 35.677,
+  "type": "Water",
+  "key": [
+   "God told Israel to cross the Valley of the Arnon and fight Sihon (Deuteronomy 2).",
+   "Israel took the land from the Valley of the Arnon to Mount Hermon (Deuteronomy 3).",
+   "Reuben's territory began at Aroer on the edge of the Valley of the Arnon (Joshua 13).",
+   "Hazael of Syria struck Israel's land as far as the Valley of the Arnon (2 Kings 10)."
+  ]
+ },
+ {
+  "slug": "carmel_278",
+  "name": "Carmel",
+  "what": "A town in the hill country of Judah, south of Hebron, home of Nabal and Abigail.",
+  "today": "Likely Khirbet el-Kirmil, south of Hebron, West Bank",
+  "lat": 31.4333,
+  "lon": 35.1333,
+  "type": "City",
+  "key": [
+   "Saul set up a monument for himself at Carmel (1 Samuel 15).",
+   "Nabal, a wealthy man of Carmel, refused David's request, and Abigail intervened (1 Samuel 25).",
+   "Abigail, widow of Nabal of Carmel, went with David to Hebron (2 Samuel 2).",
+   "Hezro of Carmel was one of David's mighty men (2 Samuel 23)."
+  ]
+ },
+ {
+  "slug": "ar_77",
+  "name": "Ar",
+  "what": "A chief city of Moab near the Arnon River, given by God to the descendants of Lot.",
+  "today": "Exact site unknown; likely near the Arnon in Jordan.",
+  "lat": 31.4498,
+  "lon": 35.594,
+  "type": "",
+  "key": [
+   "The Amorites' victory song says fire consumed Ar of Moab (Numbers 21).",
+   "God told Israel not to harass Moab, for he had given Ar to Lot's descendants (Deuteronomy 2).",
+   "Isaiah lamented that Ar of Moab was laid waste in a night (Isaiah 15)."
+  ]
+ },
+ {
+  "slug": "goshen_491",
+  "name": "Goshen",
+  "what": "A district and town in the southern hill country of Judah, distinct from Goshen in Egypt.",
+  "today": "Exact site unknown; in the hill country south of Hebron.",
+  "lat": 31.45,
+  "lon": 34.9167,
+  "type": "Region",
+  "key": [
+   "Joshua struck the land from Kadesh-barnea to Gaza and all the country of Goshen (Joshua 10).",
+   "Goshen is listed among the regions Joshua took in the south (Joshua 11).",
+   "A town named Goshen appears among Judah's hill-country towns (Joshua 15)."
+  ]
+ },
+ {
+  "slug": "horesh_578",
+  "name": "Horesh",
+  "what": "A place in the wilderness of Ziph where David hid from Saul.",
+  "today": "Possibly Khirbet Khoreisa, south of Hebron, West Bank.",
+  "lat": 31.4511,
+  "lon": 35.0884,
+  "type": "",
+  "key": [
+   "David hides at Horesh in the wilderness of Ziph while Saul seeks his life (1 Samuel 23).",
+   "Jonathan meets David at Horesh and strengthens his hand in God (1 Samuel 23).",
+   "The Ziphites tell Saul that David is hiding at Horesh (1 Samuel 23)."
+  ]
+ },
+ {
+  "slug": "sela-hammahlekoth_1297",
+  "name": "Rock of Escape",
+  "what": "A rocky place in the Wilderness of Maon where Saul nearly caught David.",
+  "today": "Exact site unknown; in the Wilderness of Maon south of Hebron, West Bank.",
+  "lat": 31.4515,
+  "lon": 35.2329,
+  "type": "Mountain",
+  "key": [
+   "Saul's men were closing in on David on the other side of the mountain (1 Samuel 23).",
+   "Saul broke off pursuit to face a Philistine raid, so the place is called the Rock of Escape (1 Samuel 23)."
+  ]
+ },
+ {
+  "slug": "engedi_389",
+  "name": "En-gedi",
+  "what": "A spring-fed oasis on the western shore of the Dead Sea in the wilderness of Judah.",
+  "today": "Ein Gedi, on the western shore of the Dead Sea, Israel.",
+  "lat": 31.4615,
+  "lon": 35.3924,
+  "type": "City",
+  "key": [
+   "En-gedi was one of Judah's towns in the wilderness (Joshua 15).",
+   "David hid in the strongholds of En-gedi while fleeing Saul (1 Samuel 23).",
+   "David spared Saul's life in a cave at En-gedi (1 Samuel 24).",
+   "Moabite and Ammonite armies gathered at Hazazon-tamar, that is, En-gedi (2 Chronicles 20).",
+   "Ezekiel saw fishermen standing beside the healed sea from En-gedi (Ezekiel 47)."
+  ]
+ },
+ {
+  "slug": "jeshimon_639",
+  "name": "Jeshimon",
+  "what": "A barren wasteland in Judah, near which David hid from Saul.",
+  "today": "The Judean wilderness west of the Dead Sea, West Bank.",
+  "lat": 31.4615,
+  "lon": 35.3924,
+  "type": "",
+  "key": [
+   "The Ziphites say David hides on the hill of Hachilah, south of Jeshimon (1 Samuel 23).",
+   "David stays in the wilderness of Maon, south of Jeshimon (1 Samuel 23).",
+   "Saul camps on the hill of Hachilah beside Jeshimon while hunting David (1 Samuel 26)."
+  ]
+ },
+ {
+  "slug": "hazazon-tamar_542",
+  "name": "Hazazon-tamar",
+  "what": "An oasis on the western shore of the Dead Sea, identified in Chronicles with En-gedi.",
+  "today": "En-gedi, on the western shore of the Dead Sea, Israel.",
+  "lat": 31.4615,
+  "lon": 35.3924,
+  "type": "",
+  "key": [
+   "Chedorlaomer and his allies defeated the Amorites living in Hazazon-tamar (Genesis 14).",
+   "A Moabite and Ammonite army gathered at Hazazon-tamar, that is, En-gedi, against Jehoshaphat (2 Chronicles 20).",
+   "After Jehoshaphat sought the Lord, the invading armies turned and destroyed one another (2 Chronicles 20)."
+  ]
+ },
+ {
+  "slug": "hachilah_500",
+  "name": "Hachilah",
+  "what": "A hill in the wilderness near Ziph where David hid from Saul.",
+  "today": "Exact site unknown; in the Judean wilderness southeast of Hebron.",
+  "lat": 31.4666,
+  "lon": 35.2167,
+  "type": "Mountain",
+  "key": [
+   "The Ziphites told Saul that David was hiding on the hill of Hachilah (1 Samuel 23).",
+   "Saul camped on the hill of Hachilah, and David spared his life while he slept (1 Samuel 26)."
+  ]
+ },
+ {
+  "slug": "aroer_93",
+  "name": "Aroer",
+  "what": "A town on the north rim of the Arnon gorge east of the Dead Sea.",
+  "today": "Khirbet Ara'ir, on the northern edge of Wadi Mujib, Jordan.",
+  "lat": 31.4711,
+  "lon": 35.822,
+  "type": "City",
+  "key": [
+   "Israel took every city from Aroer on the edge of the Arnon to Gilead (Deuteronomy 2).",
+   "Aroer marked the southern edge of Reuben's territory (Joshua 13).",
+   "Jephthah said Israel had lived in Aroer for three hundred years (Judges 11).",
+   "Hazael of Syria struck Israel as far as Aroer (2 Kings 10).",
+   "Jeremiah told the people of Aroer to watch for Moab's fleeing refugees (Jeremiah 48)."
+  ]
+ },
+ {
+  "slug": "ziph_1266",
+  "name": "Ziph",
+  "what": "A town in the hill country of Judah, southeast of Hebron, beside a wilderness.",
+  "today": "Tell Zif, southeast of Hebron in the West Bank.",
+  "lat": 31.4833,
+  "lon": 35.1333,
+  "type": "City",
+  "key": [
+   "Ziph was allotted to Judah in the hill country (Joshua 15).",
+   "Jonathan strengthened David in the wilderness of Ziph, but Ziphites betrayed him (1 Samuel 23).",
+   "David took Saul's spear and water jar in the wilderness of Ziph (1 Samuel 26).",
+   "Rehoboam fortified Ziph (2 Chronicles 11)."
+  ]
+ },
+ {
+  "slug": "moab_815",
+  "name": "Moab",
+  "what": "A kingdom east of the Dead Sea, descended from Lot and often hostile to Israel.",
+  "today": "West-central Jordan, east of the Dead Sea",
+  "lat": 31.4968,
+  "lon": 35.7828,
+  "type": "Region",
+  "key": [
+   "Balak king of Moab hired Balaam to curse Israel, but he blessed them instead (Numbers 22).",
+   "Moses died in the land of Moab after viewing the promised land (Deuteronomy 34).",
+   "Ehud killed Eglon king of Moab and freed Israel (Judges 3).",
+   "Ruth the Moabite returned with Naomi to Bethlehem (Ruth 1).",
+   "Mesha king of Moab rebelled against Israel after Ahab died (2 Kings 3)."
+  ]
+ },
+ {
+  "slug": "dibon_331",
+  "name": "Dibon",
+  "what": "A Moabite town north of the Arnon, later held by Israel.",
+  "today": "Dhiban, in central Jordan north of Wadi Mujib.",
+  "lat": 31.4968,
+  "lon": 35.7828,
+  "type": "City",
+  "key": [
+   "Israel's victory over Sihon brought Heshbon's land as far as Dibon (Numbers 21).",
+   "The Gadites rebuilt Dibon (Numbers 32).",
+   "Moses allotted Dibon to Reuben (Joshua 13).",
+   "Isaiah pictured Dibon going up to its high places to weep (Isaiah 15).",
+   "Jeremiah announced Dibon's humiliation in Moab's judgment (Jeremiah 48)."
+  ]
+ },
+ {
+  "slug": "oboth_906",
+  "name": "Oboth",
+  "what": "A stopping place of Israel near the border of Moab during the wilderness journey.",
+  "today": "Exact site unknown; south or east of the Dead Sea, Jordan.",
+  "lat": 31.4968,
+  "lon": 35.7828,
+  "type": "",
+  "key": [
+   "After the bronze serpent, Israel sets out and camps at Oboth (Numbers 21).",
+   "Oboth is recorded among Israel's wilderness camps (Numbers 33)."
+  ]
+ },
+ {
+  "slug": "valley_of_hamongog_1205",
+  "name": "Valley of Hamon-gog",
+  "what": "A valley in Ezekiel's prophecy where the armies of Gog will be buried.",
+  "today": "A prophetic location east of the sea; no known site.",
+  "lat": 31.4968,
+  "lon": 35.7828,
+  "type": "Valley",
+  "key": [
+   "God gives Gog a burial place in the Valley of the Travelers, renamed Hamon-gog (Ezekiel 39).",
+   "Israel will spend seven months burying the dead to cleanse the land (Ezekiel 39).",
+   "Searchers mark any bone they find so buriers can carry it to the valley (Ezekiel 39)."
+  ]
+ },
+ {
+  "slug": "eglon_361",
+  "name": "Eglon",
+  "what": "A Canaanite city in the Shephelah of southern Judah.",
+  "today": "Exact site uncertain; possibly Tell Aitun or Tel Hesi in southern Israel.",
+  "lat": 31.5,
+  "lon": 34.7667,
+  "type": "City",
+  "key": [
+   "Debir king of Eglon joined four other Amorite kings against Gibeon (Joshua 10).",
+   "Joshua captured Eglon and devoted it to destruction (Joshua 10).",
+   "The king of Eglon is listed among the kings Joshua defeated (Joshua 12).",
+   "Eglon was allotted to Judah (Joshua 15)."
+  ]
+ },
+ {
+  "slug": "kain_664",
+  "name": "Kain",
+  "what": "A town in the hill country of Judah, listed near Zanoah, Gibeah, and Timnah.",
+  "today": "Possibly Khirbet Yaqin, southeast of Hebron.",
+  "lat": 31.5,
+  "lon": 35.1667,
+  "type": "City",
+  "key": [
+   "Kain is listed with Gibeah and Timnah among the hill-country towns of Judah (Joshua 15).",
+   "It belonged to a group of ten towns with their villages, including Maon, Carmel, and Ziph (Joshua 15)."
+  ]
+ },
+ {
+  "slug": "jahaz_617",
+  "name": "Jahaz",
+  "what": "A town on the plateau east of the Dead Sea where Israel defeated Sihon.",
+  "today": "Exact site uncertain; possibly Khirbet el-Medeiyineh, Jordan.",
+  "lat": 31.501,
+  "lon": 35.9206,
+  "type": "City",
+  "key": [
+   "Sihon king of the Amorites fought Israel at Jahaz and was defeated (Numbers 21).",
+   "Moses recalled the victory over Sihon at Jahaz (Deuteronomy 2).",
+   "Jephthah reminded the Ammonites of Sihon's defeat at Jahaz (Judges 11).",
+   "Jeremiah named Jahaz among the Moabite cities facing judgment (Jeremiah 48)."
+  ]
+ },
+ {
+  "slug": "machpelah_748",
+  "name": "Machpelah",
+  "what": "A field and cave near Mamre that Abraham bought as a family burial place.",
+  "today": "Traditionally the Cave of the Patriarchs in Hebron.",
+  "lat": 31.5246,
+  "lon": 35.1107,
+  "type": "Landmark",
+  "key": [
+   "Abraham bought the field and cave of Machpelah from Ephron the Hittite to bury Sarah (Genesis 23).",
+   "Isaac and Ishmael buried Abraham in the cave of Machpelah (Genesis 25).",
+   "Jacob asked to be buried there with Abraham, Sarah, Isaac, Rebekah, and Leah (Genesis 49).",
+   "Jacob's sons carried his body from Egypt and buried him at Machpelah (Genesis 50)."
+  ]
+ },
+ {
+  "slug": "gaza_446",
+  "name": "Gaza",
+  "what": "The southernmost of the five main Philistine cities, on the coastal road to Egypt.",
+  "today": "Gaza City, Gaza Strip",
+  "lat": 31.5248,
+  "lon": 34.4334,
+  "type": "City",
+  "key": [
+   "Gaza marked the southwestern border of the Canaanites (Genesis 10).",
+   "Samson carried off the doors of Gaza's city gate (Judges 16).",
+   "Samson died in Gaza, pulling down the temple of Dagon (Judges 16).",
+   "Amos announced judgment on Gaza for selling captives to Edom (Amos 1).",
+   "Philip met an Ethiopian official on the road from Jerusalem to Gaza (Acts 8)."
+  ]
+ },
+ {
+  "slug": "hebron_551",
+  "name": "Hebron",
+  "what": "An ancient city in the hill country of Judah, linked with Abraham and David's early reign.",
+  "today": "Hebron, West Bank",
+  "lat": 31.5358,
+  "lon": 35.0941,
+  "type": "City",
+  "key": [
+   "Abraham buried Sarah in the cave of Machpelah near Hebron (Genesis 23).",
+   "Caleb received Hebron as his inheritance (Joshua 14).",
+   "David was anointed king over Judah at Hebron (2 Samuel 2).",
+   "All the tribes came to Hebron and anointed David king over Israel (2 Samuel 5).",
+   "Absalom began his rebellion against David at Hebron (2 Samuel 15)."
+  ]
+ },
+ {
+  "slug": "jezreel_642",
+  "name": "Jezreel",
+  "what": "A town in the hill country of Judah, home of David's wife Ahinoam.",
+  "today": "Exact site unknown; in the hill country south of Hebron.",
+  "lat": 31.5358,
+  "lon": 35.0941,
+  "type": "City",
+  "key": [
+   "Jezreel was a town in the hill country of Judah (Joshua 15).",
+   "David married Ahinoam of Jezreel (1 Samuel 25).",
+   "Ahinoam of Jezreel was among David's wives captured at Ziklag (1 Samuel 30).",
+   "Amnon, David's firstborn, was son of Ahinoam of Jezreel (2 Samuel 3)."
+  ]
+ },
+ {
+  "slug": "kiriath-arba_697",
+  "name": "Kiriath-arba",
+  "what": "The older name of Hebron, a city in the hill country of Judah named after Arba of the Anakim.",
+  "today": "Hebron, in the southern West Bank.",
+  "lat": 31.5358,
+  "lon": 35.0941,
+  "type": "",
+  "key": [
+   "Sarah died at Kiriath-arba, and Abraham mourned for her (Genesis 23).",
+   "Jacob returned to his father Isaac at Kiriath-arba, where Isaac died (Genesis 35).",
+   "Joshua gave Hebron, formerly Kiriath-arba, to Caleb as his inheritance (Joshua 14).",
+   "Judah defeated Sheshai, Ahiman, and Talmai there (Judges 1).",
+   "Some people of Judah lived in Kiriath-arba after the exile (Nehemiah 11)."
+  ]
+ },
+ {
+  "slug": "salt_sea_1021",
+  "name": "Salt Sea",
+  "what": "The Dead Sea, the salty lake at the lowest point of the Jordan Valley.",
+  "today": "The Dead Sea, between Israel, the West Bank, and Jordan.",
+  "lat": 31.5386,
+  "lon": 35.4823,
+  "type": "Water",
+  "key": [
+   "Four kings fought five kings in the Valley of Siddim, that is, the Salt Sea (Genesis 14).",
+   "The Salt Sea formed part of the eastern boundary of the land (Numbers 34).",
+   "When Israel crossed the Jordan, the waters flowing to the Salt Sea were cut off (Joshua 3).",
+   "Judah's boundary began at the southern end of the Salt Sea (Joshua 15)."
+  ]
+ },
+ {
+  "slug": "sea_of_the_plain_1035",
+  "name": "Sea of the Arabah",
+  "what": "The salt lake at the south end of the Jordan Valley, today called the Dead Sea.",
+  "today": "The Dead Sea, between Israel, the West Bank, and Jordan.",
+  "lat": 31.5386,
+  "lon": 35.4823,
+  "type": "Water",
+  "key": [
+   "Waters flowing toward the Sea of the Arabah were cut off as Israel crossed the Jordan (Joshua 3).",
+   "Jeroboam II restored Israel's border from Lebo-hamath to the Sea of the Arabah, as Jonah foretold (2 Kings 14)."
+  ]
+ },
+ {
+  "slug": "mamre_762",
+  "name": "Mamre",
+  "what": "A place near Hebron where Abraham lived, facing the cave of Machpelah.",
+  "today": "Near Hebron; possibly Ramat el-Khalil, just north of the city.",
+  "lat": 31.5491,
+  "lon": 35.0936,
+  "type": "",
+  "key": [
+   "The cave of Machpelah that Abraham bought lay east of Mamre (Genesis 23).",
+   "Abraham was buried in the cave east of Mamre (Genesis 25).",
+   "Jacob came home to Isaac at Mamre, where Isaac died (Genesis 35).",
+   "Jacob was buried in the field east of Mamre (Genesis 50)."
+  ]
+ },
+ {
+  "slug": "brook_eshcol_1202",
+  "name": "Valley of Eshcol",
+  "what": "A valley near Hebron where the twelve spies cut a huge cluster of grapes.",
+  "today": "Near Hebron, West Bank; exact site unknown.",
+  "lat": 31.5491,
+  "lon": 35.0936,
+  "type": "Valley",
+  "key": [
+   "The spies cut a cluster of grapes so large two men carry it on a pole (Numbers 13).",
+   "Moses recalls that the spies saw Eshcol yet discouraged Israel from entering the land (Numbers 32).",
+   "Moses retells how the spies reached the Valley of Eshcol and brought back fruit (Deuteronomy 1)."
+  ]
+ },
+ {
+  "slug": "lachish_711",
+  "name": "Lachish",
+  "what": "A major fortified city in the lowlands of Judah, southwest of Jerusalem.",
+  "today": "Tel Lachish, Israel",
+  "lat": 31.5649,
+  "lon": 34.8467,
+  "type": "City",
+  "key": [
+   "Joshua captured Lachish after defeating its king and his allies (Joshua 10).",
+   "King Amaziah fled to Lachish and was killed there (2 Kings 14).",
+   "Hezekiah sent tribute to Sennacherib, who was at Lachish (2 Kings 18).",
+   "Lachish and Azekah were the last fortified cities of Judah left against Babylon (Jeremiah 34)."
+  ]
+ },
+ {
+  "slug": "libnah_728",
+  "name": "Libnah",
+  "what": "A fortified town in the lowlands of Judah, southwest of Jerusalem.",
+  "today": "Exact site uncertain; possibly Tel Burna, Israel",
+  "lat": 31.5649,
+  "lon": 34.8467,
+  "type": "City",
+  "key": [
+   "Joshua captured Libnah during his southern campaign (Joshua 10).",
+   "Libnah was given to the priests as a Levitical city (Joshua 21).",
+   "Libnah revolted against King Jehoram of Judah (2 Kings 8).",
+   "Sennacherib's army was fighting against Libnah when he sent threats to Hezekiah (2 Kings 19)."
+  ]
+ },
+ {
+  "slug": "kiriathaim_695",
+  "name": "Kiriathaim",
+  "what": "A town on the plateau east of the Dead Sea, built up by Reuben and later held by Moab.",
+  "today": "Exact site uncertain; possibly Khirbet el-Qureiyat, Jordan.",
+  "lat": 31.5833,
+  "lon": 35.7,
+  "type": "City",
+  "key": [
+   "The Reubenites rebuilt Kiriathaim (Numbers 32).",
+   "It was allotted to Reuben (Joshua 13).",
+   "Jeremiah announced that Kiriathaim would be shamed and captured (Jeremiah 48).",
+   "Ezekiel named Kiriathaim among the glorious cities of Moab facing judgment (Ezekiel 25)."
+  ]
+ },
+ {
+  "slug": "beth-zur_242",
+  "name": "Beth-zur",
+  "what": "A town in the hill country of Judah, north of Hebron, guarding the southern approach to Jerusalem.",
+  "today": "Khirbet et-Tubeiqah, about four miles north of Hebron.",
+  "lat": 31.5961,
+  "lon": 35.1026,
+  "type": "",
+  "key": [
+   "Beth-zur is listed among the towns of Judah's hill country (Joshua 15).",
+   "King Rehoboam fortified Beth-zur as one of Judah's defensive cities (2 Chronicles 11).",
+   "A ruler of half the district of Beth-zur helped repair Jerusalem's wall (Nehemiah 3)."
+  ]
+ },
+ {
+  "slug": "mareshah_767",
+  "name": "Mareshah",
+  "what": "A town in the lowland of Judah, southwest of Jerusalem.",
+  "today": "Tel Maresha, near Beit Guvrin, Israel.",
+  "lat": 31.6039,
+  "lon": 34.9024,
+  "type": "City",
+  "key": [
+   "Mareshah was allotted to Judah in the lowland (Joshua 15).",
+   "Rehoboam fortified Mareshah (2 Chronicles 11).",
+   "Asa defeated Zerah the Cushite's vast army near Mareshah (2 Chronicles 14).",
+   "Eliezer of Mareshah prophesied against Jehoshaphat's alliance with Ahaziah (2 Chronicles 20).",
+   "Micah warned that a conqueror would come against Mareshah (Micah 1)."
+  ]
+ },
+ {
+  "slug": "moresheth_819",
+  "name": "Moresheth",
+  "what": "A town in Judah's lowland, the hometown of the prophet Micah.",
+  "today": "Likely Tell el-Judeideh, near Beit Guvrin in the Shephelah, Israel.",
+  "lat": 31.6039,
+  "lon": 34.9024,
+  "type": "",
+  "key": [
+   "The word of the LORD came to Micah of Moresheth in the days of Jotham, Ahaz, and Hezekiah (Micah 1).",
+   "In his lament over Judah's towns, Micah named Moresheth-gath (Micah 1).",
+   "Elders recalled Micah of Moresheth, whose warning moved Hezekiah to seek the LORD (Jeremiah 26)."
+  ]
+ },
+ {
+  "slug": "nebo_884",
+  "name": "Nebo",
+  "what": "A town in Judah whose people returned from exile, distinct from Mount Nebo in Moab.",
+  "today": "Exact site uncertain; possibly modern Nuba, northwest of Hebron.",
+  "lat": 31.6063,
+  "lon": 35.0374,
+  "type": "",
+  "key": [
+   "The men of Nebo are counted among the exiles returning from Babylon (Ezra 2).",
+   "Some descendants of Nebo had married foreign women and agreed to put them away (Ezra 10).",
+   "Nehemiah's list counts the men of the other Nebo among the returnees (Nehemiah 7)."
+  ]
+ },
+ {
+  "slug": "valley_of_beracah_1200",
+  "name": "Valley of Beracah",
+  "what": "A valley near Tekoa where Judah praised God after he defeated the invading armies.",
+  "today": "Likely Wadi Berekut, near Tekoa south of Bethlehem, West Bank.",
+  "lat": 31.6106,
+  "lon": 35.1656,
+  "type": "Valley",
+  "key": [
+   "Jehoshaphat led Judah in prayer, and God made the invading armies destroy one another (2 Chronicles 20).",
+   "After three days of gathering spoil, Judah assembled in the valley and blessed the Lord (2 Chronicles 20)."
+  ]
+ },
+ {
+  "slug": "keilah_681",
+  "name": "Keilah",
+  "what": "A fortified town in the lowlands of Judah, northwest of Hebron.",
+  "today": "Khirbet Qila, southwest of Bethlehem, West Bank",
+  "lat": 31.6142,
+  "lon": 35.0028,
+  "type": "City",
+  "key": [
+   "David rescued Keilah from the Philistines but fled when its people might betray him (1 Samuel 23).",
+   "Rulers of the district of Keilah helped repair Jerusalem's wall (Nehemiah 3)."
+  ]
+ },
+ {
+  "slug": "giloh_479",
+  "name": "Giloh",
+  "what": "A town in the hill country of Judah, home of David's counselor Ahithophel.",
+  "today": "Exact site unknown; in the hill country of Judah, possibly near Hebron, West Bank.",
+  "lat": 31.6167,
+  "lon": 35.0833,
+  "type": "City",
+  "key": [
+   "Giloh is listed among the towns in the hill country of Judah (Joshua 15).",
+   "Absalom sent for Ahithophel from his city Giloh to join the conspiracy against David (2 Samuel 15).",
+   "When his advice was rejected, Ahithophel went home to his city and hanged himself (2 Samuel 17)."
+  ]
+ },
+ {
+  "slug": "tekoa_1142",
+  "name": "Tekoa",
+  "what": "A town in the Judean hills south of Bethlehem, on the edge of the wilderness.",
+  "today": "Khirbet Tequ', south of Bethlehem in the West Bank.",
+  "lat": 31.6362,
+  "lon": 35.2141,
+  "type": "",
+  "key": [
+   "Joab brought a wise woman from Tekoa to persuade David to recall Absalom (2 Samuel 14).",
+   "Rehoboam fortified Tekoa as a defensive city of Judah (2 Chronicles 11).",
+   "Jehoshaphat's army marched into the wilderness of Tekoa and God gave victory (2 Chronicles 20).",
+   "Jeremiah called for a trumpet blast in Tekoa as disaster approached (Jeremiah 6).",
+   "Amos was among the shepherds of Tekoa when he prophesied (Amos 1)."
+  ]
+ },
+ {
+  "slug": "kedemoth_675",
+  "name": "Kedemoth",
+  "what": "A town and wilderness east of the Dead Sea, later given to Reuben and the Levites.",
+  "today": "Exact site uncertain; east of the Dead Sea, Jordan.",
+  "lat": 31.6461,
+  "lon": 35.8945,
+  "type": "City",
+  "key": [
+   "Moses sends messengers from the wilderness of Kedemoth to Sihon asking for passage (Deuteronomy 2).",
+   "Kedemoth is allotted to the tribe of Reuben (Joshua 13).",
+   "Kedemoth is given to the Merarite Levites (Joshua 21).",
+   "Kedemoth is listed again among the Levitical cities (1 Chronicles 6)."
+  ]
+ },
+ {
+  "slug": "adullam_31",
+  "name": "Adullam",
+  "what": "A town in the Shephelah of Judah, known for a nearby cave where David hid.",
+  "today": "Tel Adullam, in the Shephelah southwest of Bethlehem, Israel.",
+  "lat": 31.65,
+  "lon": 35.0,
+  "type": "City",
+  "key": [
+   "The king of Adullam was among the kings Joshua defeated (Joshua 12).",
+   "David escaped to the cave of Adullam, where about four hundred men joined him (1 Samuel 22).",
+   "Three of David's mighty men came to him at the cave of Adullam (2 Samuel 23).",
+   "Rehoboam fortified Adullam (2 Chronicles 11).",
+   "Micah foresaw Israel's glory fleeing to Adullam in judgment (Micah 1)."
+  ]
+ },
+ {
+  "slug": "beth-peor_228",
+  "name": "Beth-peor",
+  "what": "A town in Moab near Mount Nebo, opposite the valley where Israel camped and Moses was buried.",
+  "today": "Exact site unknown; near Mount Nebo in Jordan.",
+  "lat": 31.6561,
+  "lon": 35.7119,
+  "type": "",
+  "key": [
+   "Israel remains in the valley opposite Beth-peor (Deuteronomy 3).",
+   "Moses sets the law before Israel in the valley opposite Beth-peor (Deuteronomy 4).",
+   "God buries Moses in a valley opposite Beth-peor, and his grave remains unknown (Deuteronomy 34).",
+   "Beth-peor is allotted to the tribe of Reuben (Joshua 13)."
+  ]
+ },
+ {
+  "slug": "ashkelon_103",
+  "name": "Ashkelon",
+  "what": "One of the five chief cities of the Philistines, on the Mediterranean coast.",
+  "today": "Tel Ashkelon, within the modern city of Ashkelon, Israel.",
+  "lat": 31.6624,
+  "lon": 34.5472,
+  "type": "City",
+  "key": [
+   "Judah captured Ashkelon after Joshua's death (Judges 1).",
+   "Samson killed thirty men of Ashkelon to pay a lost wager (Judges 14).",
+   "The Philistines sent a guilt offering to Israel for Ashkelon after taking the ark (1 Samuel 6).",
+   "David lamented Saul and Jonathan, urging that the news not reach Ashkelon (2 Samuel 1).",
+   "Several prophets announced judgment on Ashkelon (Zephaniah 2)."
+  ]
+ },
+ {
+  "slug": "beth-haccherem_209",
+  "name": "Beth-haccherem",
+  "what": "A town of Judah near Jerusalem that served as a district center and a place for signal fires.",
+  "today": "Possibly Ramat Rahel, between Jerusalem and Bethlehem",
+  "lat": 31.6659,
+  "lon": 35.2415,
+  "type": "",
+  "key": [
+   "Malchijah son of Rechab, ruler of the district of Beth-haccherem, repaired the Dung Gate (Nehemiah 3).",
+   "Jeremiah called for a signal raised over Beth-haccherem as disaster came from the north (Jeremiah 6)."
+  ]
+ },
+ {
+  "slug": "baal-meon_144",
+  "name": "Baal-meon",
+  "what": "A town east of the Dead Sea, settled by Reuben and later held by Moab.",
+  "today": "Likely modern Ma'in, southwest of Madaba in Jordan.",
+  "lat": 31.6795,
+  "lon": 35.7349,
+  "type": "City",
+  "key": [
+   "The Reubenites rebuilt Baal-meon and gave it a new name (Numbers 32).",
+   "Reubenite clans lived in the area from Aroer to Nebo and Baal-meon (1 Chronicles 5).",
+   "Ezekiel names Baal-meon among Moab's prized cities that God would open to invaders (Ezekiel 25)."
+  ]
+ },
+ {
+  "slug": "socoh_1105",
+  "name": "Socoh",
+  "what": "A town in Judah's lowland overlooking the Elah Valley, where the Philistines camped before Goliath's challenge.",
+  "today": "Likely Khirbet Abbad (Tel Socho), in the Elah Valley, Israel.",
+  "lat": 31.6812,
+  "lon": 34.9764,
+  "type": "",
+  "key": [
+   "Socoh is listed with Adullam and Azekah among the towns of Judah's lowland (Joshua 15).",
+   "The Philistines gathered at Socoh and camped between Socoh and Azekah before Goliath's challenge (1 Samuel 17).",
+   "Rehoboam fortified Soco among his cities for defense in Judah (2 Chronicles 11).",
+   "In Ahaz's day the Philistines captured Soco with its villages (2 Chronicles 28)."
+  ]
+ },
+ {
+  "slug": "valley_of_elah_1201",
+  "name": "Valley of Elah",
+  "what": "A valley in the Shephelah of Judah where David fought Goliath.",
+  "today": "The Elah Valley, west of Bethlehem near Azekah, Israel.",
+  "lat": 31.6906,
+  "lon": 34.9631,
+  "type": "Valley",
+  "key": [
+   "Saul's army camped in the Valley of Elah facing the Philistines, and David killed Goliath (1 Samuel 17).",
+   "At Nob the priest gave David the sword of Goliath, killed in the Valley of Elah (1 Samuel 21)."
+  ]
+ },
+ {
+  "slug": "pas-dammim_923",
+  "name": "Pas-dammim",
+  "what": "A place in Judah where the Philistines gathered for battle, called Ephes-dammim in the account of Goliath.",
+  "today": "In the Elah Valley southwest of Bethlehem; exact site unknown.",
+  "lat": 31.6912,
+  "lon": 34.9445,
+  "type": "",
+  "key": [
+   "Eleazar son of Dodo was with David at Pas-dammim when the Philistines gathered there for battle (1 Chronicles 11).",
+   "They took their stand in a barley field, defended it, and the LORD saved them by a great victory (1 Chronicles 11).",
+   "Before Goliath's challenge, the Philistines camped between Socoh and Azekah, in Ephes-dammim (1 Samuel 17)."
+  ]
+ },
+ {
+  "slug": "canaan_272",
+  "name": "Canaan",
+  "what": "The land between the Jordan River and the Mediterranean that God promised to Abraham's offspring.",
+  "today": "Roughly modern Israel, the Palestinian territories, and Lebanon",
+  "lat": 31.6935,
+  "lon": 34.8439,
+  "type": "Region",
+  "key": [
+   "Abram arrived in Canaan, and the LORD promised the land to his offspring (Genesis 12).",
+   "God promised all the land of Canaan as an everlasting possession (Genesis 17).",
+   "During a famine, Jacob sent his sons from Canaan to buy grain in Egypt (Genesis 42).",
+   "Moses sent twelve spies to explore the land of Canaan (Numbers 13).",
+   "Joshua and Eleazar distributed Canaan to the tribes of Israel (Joshua 14)."
+  ]
+ },
+ {
+  "slug": "gath_442",
+  "name": "Gath",
+  "what": "One of the five main Philistine cities, hometown of Goliath.",
+  "today": "Likely Tell es-Safi (Tel Zafit), Israel",
+  "lat": 31.6935,
+  "lon": 34.8439,
+  "type": "City",
+  "key": [
+   "The ark was moved to Gath, and the LORD struck the city with tumors (1 Samuel 5).",
+   "Goliath of Gath challenged the armies of Israel (1 Samuel 17).",
+   "David pretended to be insane before Achish king of Gath (1 Samuel 21).",
+   "David lived among the Philistines under Achish of Gath (1 Samuel 27).",
+   "David lamented Saul and Jonathan, saying not to tell it in Gath (2 Samuel 1)."
+  ]
+ },
+ {
+  "slug": "timnah_1165",
+  "name": "Timnah",
+  "what": "A town in the hill country of Judah, distinct from the Timnah on Judah's northern border.",
+  "today": "Exact site uncertain; in the hill country of Judah, West Bank.",
+  "lat": 31.6993,
+  "lon": 35.0404,
+  "type": "City",
+  "key": [
+   "Possibly the Timnah where Judah went up to shear his sheep and met Tamar (Genesis 38).",
+   "Timnah is listed with Kain and Gibeah among the hill-country towns of Judah (Joshua 15)."
+  ]
+ },
+ {
+  "slug": "chezib_291",
+  "name": "Chezib",
+  "what": "A town in the lowlands of Judah where Judah's son Shelah was born.",
+  "today": "Exact site unknown; in the Shephelah of Judah, Israel.",
+  "lat": 31.7,
+  "lon": 35.0,
+  "type": "City",
+  "key": [
+   "Judah's Canaanite wife bore his son Shelah while Judah was at Chezib (Genesis 38).",
+   "Achzib, likely the same town, was listed among Judah's lowland towns (Joshua 15).",
+   "Micah warned that the houses of Achzib would prove deceptive to Israel's kings (Micah 1)."
+  ]
+ },
+ {
+  "slug": "azekah_128",
+  "name": "Azekah",
+  "what": "A fortified town in the Shephelah overlooking the Elah Valley.",
+  "today": "Tel Azekah, above the Elah Valley in Israel.",
+  "lat": 31.7006,
+  "lon": 34.9362,
+  "type": "City",
+  "key": [
+   "God threw down great hailstones on the fleeing Amorites as far as Azekah (Joshua 10).",
+   "The Philistines camped between Socoh and Azekah when Goliath challenged Israel (1 Samuel 17).",
+   "Rehoboam fortified Azekah (2 Chronicles 11).",
+   "Lachish and Azekah were Judah's last fortified cities resisting Babylon (Jeremiah 34)."
+  ]
+ },
+ {
+  "slug": "bethlehem_218",
+  "name": "Bethlehem",
+  "what": "A town in Judah south of Jerusalem, the hometown of David and birthplace of Jesus.",
+  "today": "Bethlehem, West Bank",
+  "lat": 31.7054,
+  "lon": 35.2103,
+  "type": "City",
+  "key": [
+   "Rachel died and was buried on the way to Bethlehem (Genesis 35).",
+   "Naomi returned to Bethlehem with Ruth at the barley harvest (Ruth 1).",
+   "Samuel anointed David, Jesse's youngest son, in Bethlehem (1 Samuel 16).",
+   "Wise men came to Bethlehem to worship the newborn king (Matthew 2).",
+   "Angels announced Jesus' birth to shepherds near Bethlehem (Luke 2)."
+  ]
+ },
+ {
+  "slug": "ephrath_403",
+  "name": "Ephrath",
+  "what": "An older name for Bethlehem in Judah, near where Rachel died and was buried.",
+  "today": "Bethlehem, south of Jerusalem.",
+  "lat": 31.7054,
+  "lon": 35.2103,
+  "type": "",
+  "key": [
+   "Rachel died giving birth to Benjamin on the way to Ephrath, that is, Bethlehem (Genesis 35).",
+   "Jacob tells Joseph he buried Rachel on the way to Ephrath (Genesis 48)."
+  ]
+ },
+ {
+  "slug": "geruth_chimham_460",
+  "name": "Geruth Chimham",
+  "what": "A lodging place near Bethlehem where the remnant of Judah stopped on the way to Egypt.",
+  "today": "Exact site unknown; near Bethlehem",
+  "lat": 31.7054,
+  "lon": 35.2103,
+  "type": "",
+  "key": [
+   "After Gedaliah's murder, Johanan and the remnant stayed at Geruth Chimham near Bethlehem (Jeremiah 41).",
+   "They meant to go on to Egypt because they feared the Chaldeans (Jeremiah 41)."
+  ]
+ },
+ {
+  "slug": "jarmuth_624",
+  "name": "Jarmuth",
+  "what": "A Canaanite city in the lowland of Judah, west of Bethlehem.",
+  "today": "Tel Yarmut, near Beit Shemesh, Israel.",
+  "lat": 31.7093,
+  "lon": 34.97,
+  "type": "City",
+  "key": [
+   "Piram king of Jarmuth joined four other kings against Gibeon and was defeated (Joshua 10).",
+   "Jarmuth's king appears in the list of kings Joshua defeated (Joshua 12).",
+   "Jarmuth was allotted to Judah in the lowland (Joshua 15).",
+   "People of Judah resettled Jarmuth after the exile (Nehemiah 11)."
+  ]
+ },
+ {
+  "slug": "zanoah_1239",
+  "name": "Zanoah",
+  "what": "A town in the lowland of Judah, resettled after the exile.",
+  "today": "Likely Khirbet Zanu, near Beth-shemesh, Israel.",
+  "lat": 31.7167,
+  "lon": 35.0,
+  "type": "City",
+  "key": [
+   "Zanoah is listed among Judah's towns, both in the lowland and the hill country (Joshua 15).",
+   "Hanun and the people of Zanoah repaired Jerusalem's Valley Gate (Nehemiah 3).",
+   "Returning exiles from Judah settled in Zanoah and its villages (Nehemiah 11)."
+  ]
+ },
+ {
+  "slug": "medeba_775",
+  "name": "Medeba",
+  "what": "A town on the plateau east of the Dead Sea, south of Heshbon.",
+  "today": "Madaba, Jordan.",
+  "lat": 31.7205,
+  "lon": 35.792,
+  "type": "City",
+  "key": [
+   "The Amorites' victory song mentions Medeba (Numbers 21).",
+   "The plain of Medeba was allotted to Reuben (Joshua 13).",
+   "Ammon's hired Aramean forces camped before Medeba against David's army (1 Chronicles 19).",
+   "Isaiah pictured Moab wailing over Medeba (Isaiah 15)."
+  ]
+ },
+ {
+  "slug": "netophah_890",
+  "name": "Netophah",
+  "what": "A village near Bethlehem in Judah, home of several of David's warriors.",
+  "today": "Possibly Khirbet Bedd Faluh, southeast of Bethlehem.",
+  "lat": 31.7355,
+  "lon": 35.2205,
+  "type": "City",
+  "key": [
+   "Maharai and Heleb of Netophah were among David's mighty men (2 Samuel 23).",
+   "Maharai and Heldai of Netophah led monthly divisions of David's army (1 Chronicles 27).",
+   "Men of Netophah returned from exile with Zerubbabel (Ezra 2)."
+  ]
+ },
+ {
+  "slug": "nebo_883",
+  "name": "Nebo",
+  "what": "A town east of the Jordan near Mount Nebo, built up by Reuben and later held by Moab.",
+  "today": "Likely Khirbet al-Mukhayyat, near Mount Nebo in Jordan.",
+  "lat": 31.748,
+  "lon": 35.7433,
+  "type": "",
+  "key": [
+   "The Reubenites rebuilt Nebo and settled there (Numbers 32).",
+   "Israel camped in the mountains of Abarim before Nebo (Numbers 33).",
+   "Reubenite clans lived from Aroer to Nebo and Baal-meon (1 Chronicles 5).",
+   "Isaiah pictured Moab wailing over Nebo (Isaiah 15).",
+   "Jeremiah announced judgment on Nebo among the cities of Moab (Jeremiah 48)."
+  ]
+ },
+ {
+  "slug": "minnith_804",
+  "name": "Minnith",
+  "what": "An Ammonite town east of the Jordan, the limit of Jephthah's victory and known for its wheat.",
+  "today": "Exact site unknown; east of the Jordan near Heshbon, Jordan.",
+  "lat": 31.75,
+  "lon": 35.85,
+  "type": "",
+  "key": [
+   "Jephthah struck the Ammonites from Aroer to the neighborhood of Minnith, taking twenty cities (Judges 11).",
+   "Judah and Israel traded wheat of Minnith with Tyre (Ezekiel 27)."
+  ]
+ },
+ {
+  "slug": "beth-shemesh_234",
+  "name": "Beth-shemesh",
+  "what": "A Levitical town on Judah's border with the Philistines, west of Jerusalem.",
+  "today": "Tel Beth-Shemesh, west of Jerusalem, Israel",
+  "lat": 31.7527,
+  "lon": 34.9766,
+  "type": "City",
+  "key": [
+   "Beth-shemesh was given to the priests as a Levitical city (Joshua 21).",
+   "The ark returned on a cart to Beth-shemesh, where some men looked into it (1 Samuel 6).",
+   "Jehoash of Israel defeated and captured Amaziah of Judah at Beth-shemesh (2 Kings 14).",
+   "The Philistines captured Beth-shemesh during King Ahaz's reign (2 Chronicles 28)."
+  ]
+ },
+ {
+  "slug": "lehi_726",
+  "name": "Lehi",
+  "what": "A place in Judah where Samson killed a thousand Philistines with a donkey's jawbone.",
+  "today": "Exact site unknown; in Judah near the Philistine border.",
+  "lat": 31.7527,
+  "lon": 34.9766,
+  "type": "",
+  "key": [
+   "The Philistines camped at Lehi, and Samson killed a thousand men with a fresh jawbone (Judges 15).",
+   "When Samson grew thirsty, God split open a hollow at Lehi and water came out (Judges 15)."
+  ]
+ },
+ {
+  "slug": "valley_of_rephaim_1214",
+  "name": "Valley of Rephaim",
+  "what": "A broad valley southwest of Jerusalem on the border of Judah and Benjamin.",
+  "today": "Southwest of Jerusalem's Old City, in Jerusalem.",
+  "lat": 31.7563,
+  "lon": 35.2231,
+  "type": "Valley",
+  "key": [
+   "The valley marked part of the boundary between Judah and Benjamin (Joshua 15).",
+   "David twice defeated the Philistines who spread out in the Valley of Rephaim (2 Samuel 5).",
+   "Philistines camped there when three mighty men brought David water from Bethlehem (2 Samuel 23).",
+   "Isaiah compared Israel's judgment to gleaning ears in the Valley of Rephaim (Isaiah 17)."
+  ]
+ },
+ {
+  "slug": "abarim_2",
+  "name": "Abarim",
+  "what": "A mountain range east of the Dead Sea, including Mount Nebo.",
+  "today": "The highlands east of the Dead Sea in Jordan.",
+  "lat": 31.7614,
+  "lon": 35.7461,
+  "type": "Region",
+  "key": [
+   "God told Moses to climb a mountain of Abarim and view the land (Numbers 27).",
+   "Israel camped in the mountains of Abarim before Nebo (Numbers 33).",
+   "God sent Moses up Mount Nebo in the Abarim range to die (Deuteronomy 32).",
+   "Jeremiah told Jerusalem to cry out from Abarim (Jeremiah 22)."
+  ]
+ },
+ {
+  "slug": "mount_nebo_849",
+  "name": "Mount Nebo",
+  "what": "A mountain in Moab east of the Jordan, from which Moses viewed the promised land before he died.",
+  "today": "Jebel Nebo, northwest of Madaba, Jordan.",
+  "lat": 31.7614,
+  "lon": 35.7461,
+  "type": "Mountain",
+  "key": [
+   "God told Moses to climb Mount Nebo, view Canaan, and die there on the mountain (Deuteronomy 32).",
+   "Moses climbed Nebo to the top of Pisgah, and the Lord showed him the whole land (Deuteronomy 34).",
+   "Moses died in Moab, and God buried him in a grave no one knows (Deuteronomy 34)."
+  ]
+ }
+]

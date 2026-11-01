@@ -26,7 +26,7 @@ def main():
     names = {v["n"] for v in A.src_p.values() if v.get("n")} | {v["n"] for v in A.src_l.values() if v.get("n")}
     names = {n for n in names if n and len(n) > 2 and n[0].isupper() and n not in NEVER_LINK and n not in
              {"Israel", "Judah", "The", "Son", "King", "Most High", "Satan", "Devil", "Lord", "River", "Sea", "Great Sea"}}
-    pat = re.compile(r"(?<![\w'’])(" + "|".join(sorted(map(re.escape, names), key=len, reverse=True)) + r")(?![\w])")
+    pat = re.compile(r"(?<![\w'’-])(" + "|".join(sorted(map(re.escape, names), key=len, reverse=True)) + r")(?![\w]|-\w)")
     miss, where = Counter(), {}
     for w, t in texts:
         plain = re.sub(r"⟦[pl]:[^|⟧]+\|[^⟧]+⟧", lambda m: " " * len(m.group(0)), t)
