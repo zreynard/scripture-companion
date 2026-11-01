@@ -1,0 +1,902 @@
+{
+  "Mark": {
+    "line": "Mark presents Jesus as the Son of God, whose powerful ministry leads to his death and resurrection.",
+    "more": [
+      "John the Baptist prepares the way, and Jesus begins preaching the kingdom of God in Galilee.",
+      "Jesus heals, casts out demons, teaches in parables, and calls twelve disciples while opposition grows.",
+      "At Caesarea Philippi Peter confesses him as the Christ, and Jesus begins predicting his suffering.",
+      "Jesus travels to Jerusalem, enters the city, cleanses the temple, and debates the religious leaders.",
+      "He is betrayed, tried, and crucified, and on the third day his tomb is found empty."
+    ],
+    "chapters": {
+      "1": {
+        "line": "John baptizes Jesus, who is tempted in the wilderness, then begins preaching, calling disciples, and healing in Galilee.",
+        "more": [
+          "John the Baptist preaches repentance and points to one mightier than himself.",
+          "The Spirit descends on Jesus, and a voice from heaven calls him the beloved Son.",
+          "Jesus calls Simon, Andrew, James, and John, then casts out demons and heals many, including a leper."
+        ]
+      },
+      "2": {
+        "line": "Jesus forgives and heals a paralyzed man, calls Levi, and answers objections about fasting and the Sabbath.",
+        "more": [
+          "Friends lower the paralytic through a roof, and Jesus shows his authority to forgive sins.",
+          "Jesus eats with tax collectors and sinners, saying he came to call sinners.",
+          "He declares that the Son of Man is lord even of the Sabbath."
+        ]
+      },
+      "3": {
+        "line": "Jesus heals on the Sabbath, appoints the twelve apostles, and rebukes scribes who say he works by Beelzebul.",
+        "more": [
+          "After he heals a withered hand, Pharisees and Herodians plot to destroy him.",
+          "Jesus warns that blasphemy against the Holy Spirit will never be forgiven.",
+          "He says that whoever does God's will is his brother, sister, and mother."
+        ]
+      },
+      "4": {
+        "line": "Jesus teaches the crowds in parables about the kingdom, then calms a storm on the Sea of Galilee.",
+        "more": [
+          "The parable of the sower shows different responses to God's word.",
+          "Parables of the lamp, the growing seed, and the mustard seed describe the kingdom's growth.",
+          "When he stills the wind and waves, the frightened disciples ask who he is."
+        ]
+      },
+      "5": {
+        "line": "Jesus frees a man possessed by many demons, heals a bleeding woman, and raises Jairus' daughter from death.",
+        "more": [
+          "In the region of the Gerasenes, the demons called Legion enter a herd of pigs.",
+          "The healed man is sent home to tell what the Lord has done for him.",
+          "A woman touching his garment is healed, and Jesus then raises the synagogue ruler's daughter."
+        ]
+      },
+      "6": {
+        "line": "Rejected at Nazareth, Jesus sends out the twelve, feeds five thousand, and walks on the sea.",
+        "more": [
+          "Herod Antipas has John the Baptist beheaded at the request of Herodias' daughter.",
+          "Jesus feeds a great crowd with five loaves and two fish.",
+          "He walks on the water to his disciples and heals many at Gennesaret."
+        ]
+      },
+      "7": {
+        "line": "Jesus rebukes the Pharisees' human traditions, teaches that defilement comes from the heart, and heals Gentiles.",
+        "more": [
+          "He says they set aside God's commandment to keep their own traditions.",
+          "A Syrophoenician woman's persistent faith leads Jesus to free her daughter from a demon.",
+          "In the Decapolis he heals a deaf man with a speech impediment."
+        ]
+      },
+      "8": {
+        "line": "Jesus feeds four thousand, Peter confesses him as the Christ, and Jesus foretells his death and resurrection.",
+        "more": [
+          "Jesus refuses the Pharisees a sign and warns his disciples about their leaven.",
+          "He heals a blind man at Bethsaida in two stages.",
+          "Jesus rebukes Peter and teaches that followers must deny themselves and take up their cross."
+        ]
+      },
+      "9": {
+        "line": "Jesus is transfigured before three disciples, heals a demon-possessed boy, and teaches about true greatness.",
+        "more": [
+          "On the mountain Moses and Elijah appear, and God's voice says to listen to his Son.",
+          "Jesus again predicts his death, but the disciples argue about who is greatest.",
+          "He teaches that the first must be servant of all and warns against causing others to sin."
+        ]
+      },
+      "10": {
+        "line": "On the way to Jerusalem, Jesus teaches about marriage, wealth, and servanthood, then heals blind Bartimaeus.",
+        "more": [
+          "Jesus blesses children and tells a rich man to sell his possessions and follow him.",
+          "After a third prediction of his death, James and John ask for places of honor.",
+          "Jesus says the Son of Man came to serve and give his life as a ransom."
+        ]
+      },
+      "11": {
+        "line": "Jesus enters Jerusalem on a colt, curses a fig tree, cleanses the temple, and is questioned about his authority.",
+        "more": [
+          "Crowds spread cloaks and branches, shouting Hosanna as he enters the city.",
+          "He drives out the money-changers, calling the temple a house of prayer for all nations.",
+          "The withered fig tree prompts teaching on faith, prayer, and forgiveness."
+        ]
+      },
+      "12": {
+        "line": "In the temple Jesus answers challenges from religious leaders and teaches about God's commandments and his own identity.",
+        "more": [
+          "The parable of the wicked tenants exposes the leaders' rejection of God's Son.",
+          "He answers questions about taxes to Caesar, the resurrection, and the greatest commandment.",
+          "Jesus warns against the scribes and praises a poor widow's gift of two small coins."
+        ]
+      },
+      "13": {
+        "line": "On the Mount of Olives, Jesus foretells the temple's destruction, coming troubles, and his return.",
+        "more": [
+          "He warns of false christs, wars, persecution, and the abomination of desolation.",
+          "The Son of Man will come in clouds and gather his elect.",
+          "Since no one knows the day or hour, his followers must stay awake."
+        ]
+      },
+      "14": {
+        "line": "Jesus is anointed, shares the Passover with his disciples, prays in Gethsemane, is arrested, and is tried.",
+        "more": [
+          "Judas agrees to betray Jesus, who institutes the Lord's Supper with bread and cup.",
+          "In Gethsemane Jesus submits to the Father's will while the disciples sleep.",
+          "The council condemns him for claiming to be the Christ, and Peter denies him three times."
+        ]
+      },
+      "15": {
+        "line": "Pilate hands Jesus over to be crucified, and he dies on the cross and is buried.",
+        "more": [
+          "The crowd chooses Barabbas, and soldiers mock Jesus as King of the Jews.",
+          "At Golgotha he is crucified between two robbers, and the temple curtain is torn.",
+          "A centurion calls him the Son of God, and Joseph of Arimathea buries him."
+        ]
+      },
+      "16": {
+        "line": "Women find Jesus' tomb empty and are told by a young man that Jesus has risen.",
+        "more": [
+          "They are told to tell the disciples and Peter that Jesus goes ahead to Galilee.",
+          "The women flee from the tomb, trembling and afraid.",
+          "The longer ending found in many Bibles records resurrection appearances, a commission, and the ascension."
+        ]
+      }
+    }
+  },
+  "Luke": {
+    "line": "Luke gives an orderly account of Jesus' life, showing him as the Savior who seeks and saves the lost.",
+    "more": [
+      "Luke writes to Theophilus, beginning with the births of John the Baptist and Jesus.",
+      "Jesus ministers in Galilee, teaching, healing, and calling disciples, with special concern for outsiders and the poor.",
+      "A long journey to Jerusalem contains many of his parables and teachings on discipleship.",
+      "In Jerusalem he is rejected, crucified, and buried.",
+      "He rises, appears to his disciples, explains the Scriptures, and ascends to heaven."
+    ],
+    "chapters": {
+      "1": {
+        "line": "The angel Gabriel announces the births of John the Baptist and Jesus, and John is born.",
+        "more": [
+          "Luke explains he is writing an orderly account for Theophilus.",
+          "Zechariah doubts Gabriel's message and is struck mute, while Mary accepts the news humbly.",
+          "Mary visits Elizabeth and praises God, and Zechariah prophesies at John's birth."
+        ]
+      },
+      "2": {
+        "line": "Jesus is born in Bethlehem, presented at the temple, and at twelve years old remains among the teachers there.",
+        "more": [
+          "A Roman census brings Joseph and Mary to Bethlehem, where Jesus is laid in a manger.",
+          "Angels announce the birth to shepherds, who come and spread the news.",
+          "Simeon and Anna recognize the infant as the promised Savior in the temple."
+        ]
+      },
+      "3": {
+        "line": "John the Baptist preaches repentance, Jesus is baptized, and Jesus' genealogy is traced back to Adam.",
+        "more": [
+          "John calls the crowds to bear fruit fitting repentance and announces a coming mightier one.",
+          "Herod imprisons John for rebuking him.",
+          "At Jesus' baptism the Spirit descends and the Father's voice calls him beloved Son."
+        ]
+      },
+      "4": {
+        "line": "Jesus resists the devil's temptations, is rejected at Nazareth, and heals and preaches in Galilee.",
+        "more": [
+          "In the Nazareth synagogue he reads Isaiah and declares it fulfilled, and the people try to kill him.",
+          "In Capernaum he casts out a demon and heals Simon's mother-in-law and many others.",
+          "He continues preaching the kingdom of God in the synagogues."
+        ]
+      },
+      "5": {
+        "line": "Jesus calls his first disciples after a miraculous catch of fish and heals a leper and a paralyzed man.",
+        "more": [
+          "Simon, James, and John leave everything to follow him.",
+          "Jesus forgives the paralytic's sins, provoking objections from scribes and Pharisees.",
+          "He calls Levi the tax collector and teaches about fasting and new wine."
+        ]
+      },
+      "6": {
+        "line": "Jesus defends his Sabbath actions, chooses the twelve apostles, and delivers the Sermon on the Plain.",
+        "more": [
+          "Jesus heals a withered hand on the Sabbath, angering the scribes and Pharisees.",
+          "He pronounces blessings on the poor and woes on the rich and satisfied.",
+          "He teaches love for enemies, not judging others, and building on obedience to his words."
+        ]
+      },
+      "7": {
+        "line": "Jesus heals a centurion's servant, raises a widow's son, answers John's question, and forgives a sinful woman.",
+        "more": [
+          "Jesus marvels at the Gentile centurion's faith.",
+          "He tells John's messengers to report the healings and good news to the poor.",
+          "At a Pharisee's house a sinful woman anoints his feet, and he says her faith has saved her."
+        ]
+      },
+      "8": {
+        "line": "Jesus teaches in parables, calms a storm, frees a demon-possessed man, and heals a woman and Jairus' daughter.",
+        "more": [
+          "Several women, including Mary Magdalene, support his ministry.",
+          "The parable of the sower explains different responses to God's word.",
+          "He says his family are those who hear God's word and do it."
+        ]
+      },
+      "9": {
+        "line": "Jesus sends out the twelve, feeds five thousand, is confessed as the Christ, and is transfigured.",
+        "more": [
+          "He foretells his death and teaches that disciples must take up their cross daily.",
+          "After the transfiguration he heals a boy and warns again of his betrayal.",
+          "He sets his face toward Jerusalem and describes the cost of following him."
+        ]
+      },
+      "10": {
+        "line": "Jesus sends out seventy-two messengers, tells the parable of the Good Samaritan, and visits Martha and Mary.",
+        "more": [
+          "The seventy-two return rejoicing, and Jesus tells them to rejoice that their names are in heaven.",
+          "A lawyer's question about eternal life leads to the parable of a merciful Samaritan.",
+          "Jesus commends Mary for listening to his teaching while Martha is distracted with serving."
+        ]
+      },
+      "11": {
+        "line": "Jesus teaches about prayer, answers the charge of casting out demons by Beelzebul, and denounces the Pharisees.",
+        "more": [
+          "He gives the Lord's Prayer and encourages persistent asking.",
+          "He says this generation will receive only the sign of Jonah.",
+          "Jesus pronounces woes on Pharisees and lawyers for hypocrisy, and they begin to oppose him fiercely."
+        ]
+      },
+      "12": {
+        "line": "Jesus warns against hypocrisy and greed, tells the parable of the rich fool, and urges readiness for his return.",
+        "more": [
+          "He tells his disciples to fear God rather than people.",
+          "He teaches them not to be anxious but to seek God's kingdom.",
+          "He warns that he brings division and that people must read the signs of the times."
+        ]
+      },
+      "13": {
+        "line": "Jesus calls people to repent, heals a disabled woman on the Sabbath, and laments over Jerusalem.",
+        "more": [
+          "The parable of the barren fig tree warns that time to bear fruit is limited.",
+          "Parables of the mustard seed and leaven describe the kingdom's growth.",
+          "He urges people to enter by the narrow door before it is shut."
+        ]
+      },
+      "14": {
+        "line": "At a Pharisee's dinner Jesus heals on the Sabbath and teaches about humility, hospitality, and the cost of discipleship.",
+        "more": [
+          "He tells guests to take the lowest seat and hosts to invite the poor.",
+          "The parable of the great banquet shows invited guests refusing and outsiders brought in.",
+          "Disciples must count the cost and put Jesus above everything else."
+        ]
+      },
+      "15": {
+        "line": "Answering Pharisees who grumble about his welcome of sinners, Jesus tells three parables about the lost being found.",
+        "more": [
+          "A shepherd finds a lost sheep, and a woman finds a lost coin, and both rejoice.",
+          "A father welcomes home his wasteful younger son with a celebration.",
+          "The older son resents the welcome, and the father urges him to rejoice."
+        ]
+      },
+      "16": {
+        "line": "Jesus teaches about the faithful use of money and tells the story of the rich man and Lazarus.",
+        "more": [
+          "The parable of the dishonest manager leads to teaching that no one can serve God and money.",
+          "Jesus rebukes the money-loving Pharisees and affirms the lasting authority of the law.",
+          "After death the rich man suffers while Lazarus is comforted beside Abraham."
+        ]
+      },
+      "17": {
+        "line": "Jesus teaches about forgiveness, faith, and duty, heals ten lepers, and speaks of the coming of the Son of Man.",
+        "more": [
+          "He warns against causing others to sin and calls for repeated forgiveness.",
+          "Only one of the ten healed lepers, a Samaritan, returns to thank him.",
+          "The Son of Man's day will come suddenly, as in the days of Noah and Lot."
+        ]
+      },
+      "18": {
+        "line": "Jesus teaches about prayer and humility, speaks with a rich ruler, foretells his death, and heals a blind beggar.",
+        "more": [
+          "A persistent widow and a humble tax collector illustrate prayer that God hears.",
+          "Jesus welcomes children and warns that riches make entering the kingdom difficult.",
+          "Near Jericho a blind man calls to him and receives his sight."
+        ]
+      },
+      "19": {
+        "line": "Jesus saves Zacchaeus, tells the parable of the minas, enters Jerusalem, weeps over it, and cleanses the temple.",
+        "more": [
+          "The tax collector Zacchaeus repents, and Jesus says he came to seek and save the lost.",
+          "The parable of the minas teaches faithful service until the king returns.",
+          "Disciples praise him on the descent from the Mount of Olives, and he foretells Jerusalem's destruction."
+        ]
+      },
+      "20": {
+        "line": "In the temple religious leaders challenge Jesus' authority and try to trap him with questions.",
+        "more": [
+          "The parable of the wicked tenants condemns the leaders who reject God's Son.",
+          "He answers questions about paying taxes to Caesar and about the resurrection.",
+          "Jesus asks how the Christ can be David's son and warns against the scribes."
+        ]
+      },
+      "21": {
+        "line": "Jesus praises a widow's offering and foretells the temple's destruction, coming distress, and his return.",
+        "more": [
+          "He warns of false messiahs, wars, persecution, and Jerusalem surrounded by armies.",
+          "The Son of Man will come in a cloud with power and great glory.",
+          "He tells his disciples to stay awake and pray."
+        ]
+      },
+      "22": {
+        "line": "Jesus shares the Last Supper, prays on the Mount of Olives, is betrayed by Judas, and is denied by Peter.",
+        "more": [
+          "Judas agrees with the chief priests to hand Jesus over.",
+          "Jesus gives bread and cup as a new covenant in his blood and rebukes the disciples' quarrel about greatness.",
+          "After his arrest he is mocked, and the council questions him about being the Son of God."
+        ]
+      },
+      "23": {
+        "line": "Jesus is tried before Pilate and Herod, crucified between two criminals, dies, and is buried.",
+        "more": [
+          "Pilate finds no guilt in Jesus but yields to the crowd and releases Barabbas.",
+          "Jesus prays for forgiveness for his executioners and promises paradise to a repentant criminal.",
+          "Joseph of Arimathea lays his body in a new tomb."
+        ]
+      },
+      "24": {
+        "line": "Jesus rises from the dead, appears to his disciples, explains the Scriptures, and ascends to heaven.",
+        "more": [
+          "Women find the tomb empty, and angels tell them Jesus has risen.",
+          "On the road to Emmaus, Jesus explains how the Scriptures point to him.",
+          "He commissions the disciples to proclaim repentance and forgiveness and to wait for power from on high."
+        ]
+      }
+    }
+  },
+  "John": {
+    "line": "John presents Jesus as the eternal Word made flesh, so that readers may believe he is the Christ.",
+    "more": [
+      "John opens by declaring that the Word who was God became flesh.",
+      "Jesus performs signs and gives discourses revealing who he is, provoking both belief and opposition.",
+      "The raising of Lazarus leads the leaders to plan Jesus' death.",
+      "On his last night Jesus washes his disciples' feet, teaches them, and prays for them.",
+      "He is crucified, rises from the dead, and appears to his disciples."
+    ],
+    "chapters": {
+      "1": {
+        "line": "The eternal Word becomes flesh, John the Baptist testifies about him, and Jesus calls his first disciples.",
+        "more": [
+          "The Word was with God, was God, and made all things.",
+          "John the Baptist identifies Jesus as the Lamb of God who takes away sin.",
+          "Andrew, Peter, Philip, and Nathanael begin following Jesus."
+        ]
+      },
+      "2": {
+        "line": "Jesus turns water into wine at a wedding in Cana and drives the money-changers from the temple.",
+        "more": [
+          "The Cana miracle is his first sign, and his disciples believe in him.",
+          "He tells the Jews that if this temple is destroyed he will raise it in three days.",
+          "After his resurrection the disciples understand he spoke of his body."
+        ]
+      },
+      "3": {
+        "line": "Jesus tells Nicodemus that one must be born again, and John the Baptist testifies that Jesus must increase.",
+        "more": [
+          "Jesus explains that birth by the Spirit is needed to enter God's kingdom.",
+          "God gave his Son so that whoever believes in him has eternal life.",
+          "John the Baptist calls himself the friend of the bridegroom."
+        ]
+      },
+      "4": {
+        "line": "Jesus offers living water to a Samaritan woman, many Samaritans believe, and he heals an official's son.",
+        "more": [
+          "Jesus reveals knowledge of the woman's life and declares himself the Messiah.",
+          "He teaches that true worshipers worship the Father in spirit and truth.",
+          "In Cana he heals the official's son at a distance, his second sign."
+        ]
+      },
+      "5": {
+        "line": "Jesus heals a disabled man on the Sabbath and defends his authority as the Son equal with the Father.",
+        "more": [
+          "The man had been ill thirty-eight years and lay by the pool of Bethesda.",
+          "Jewish leaders seek to kill Jesus for calling God his own Father.",
+          "Jesus cites the witness of John, his works, the Father, and Moses' writings."
+        ]
+      },
+      "6": {
+        "line": "Jesus feeds five thousand, walks on the sea, and teaches that he is the bread of life.",
+        "more": [
+          "The crowd wants to make him king, but he withdraws.",
+          "He says those who eat his flesh and drink his blood have eternal life.",
+          "Many disciples leave, but Peter says Jesus has the words of eternal life."
+        ]
+      },
+      "7": {
+        "line": "At the Feast of Booths Jesus teaches in the temple, causing division over who he is.",
+        "more": [
+          "His brothers do not believe in him, and he goes up to the feast privately.",
+          "He invites the thirsty to come to him and promises rivers of living water.",
+          "Officers sent to arrest him return without him, and Nicodemus urges a fair hearing."
+        ]
+      },
+      "8": {
+        "line": "Jesus declares he is the light of the world and claims existence before Abraham, and opponents try to stone him.",
+        "more": [
+          "The account of a woman caught in adultery, bracketed in many Bibles, appears at the chapter's opening.",
+          "Jesus says the truth will set free those who abide in his word.",
+          "He tells his opponents they act as children of the devil, not of Abraham."
+        ]
+      },
+      "9": {
+        "line": "Jesus heals a man born blind, and the Pharisees investigate and expel the man from the synagogue.",
+        "more": [
+          "Jesus says the man's blindness was so God's works might be displayed.",
+          "The man's parents fear the leaders, but the man boldly defends Jesus.",
+          "Jesus reveals himself to the man, who worships him, and speaks of spiritual blindness."
+        ]
+      },
+      "10": {
+        "line": "Jesus calls himself the good shepherd who lays down his life, and at the Feast of Dedication claims oneness with the Father.",
+        "more": [
+          "His sheep hear his voice, and no one can snatch them from his hand.",
+          "His opponents try to stone him for blasphemy and then to arrest him.",
+          "He withdraws across the Jordan, where many believe in him."
+        ]
+      },
+      "11": {
+        "line": "Jesus raises Lazarus from the dead, and the Jewish council resolves to put Jesus to death.",
+        "more": [
+          "Jesus tells Martha he is the resurrection and the life.",
+          "He weeps at the tomb and calls Lazarus out after four days.",
+          "Caiaphas says one man should die for the people, and the council plots."
+        ]
+      },
+      "12": {
+        "line": "Mary anoints Jesus at Bethany, he enters Jerusalem in triumph, and he speaks of his coming death.",
+        "more": [
+          "Judas objects to the costly perfume, and the leaders plot against Lazarus too.",
+          "When Greeks seek him, Jesus compares his death to a grain of wheat that dies.",
+          "Many still do not believe, fulfilling Isaiah's words, though some leaders believe secretly."
+        ]
+      },
+      "13": {
+        "line": "At supper Jesus washes his disciples' feet, foretells Judas' betrayal, and gives a new commandment to love.",
+        "more": [
+          "Jesus tells them to wash one another's feet, following his example.",
+          "Judas receives the morsel and goes out into the night.",
+          "Jesus foretells that Peter will deny him three times."
+        ]
+      },
+      "14": {
+        "line": "Jesus comforts his disciples, declaring he is the way to the Father and promising the Holy Spirit.",
+        "more": [
+          "He goes to prepare a place for them and will come again.",
+          "Whoever has seen Jesus has seen the Father.",
+          "Those who love him will keep his commandments, and he leaves them his peace."
+        ]
+      },
+      "15": {
+        "line": "Jesus calls himself the true vine, commands his disciples to love one another, and warns of the world's hatred.",
+        "more": [
+          "Branches that abide in him bear much fruit, while fruitless branches are removed.",
+          "No one has greater love than one who lays down his life for friends.",
+          "The Spirit and the disciples will bear witness about him."
+        ]
+      },
+      "16": {
+        "line": "Jesus explains the Spirit's coming work and foretells that the disciples' sorrow will turn to joy.",
+        "more": [
+          "The Spirit will convict the world and guide the disciples into all truth.",
+          "After a little while they will see him again.",
+          "He tells them they will have tribulation, but he has overcome the world."
+        ]
+      },
+      "17": {
+        "line": "Jesus prays to the Father for his own glorification, for his disciples, and for all future believers.",
+        "more": [
+          "He has finished the work the Father gave him and asks to be glorified.",
+          "He asks the Father to keep the disciples and sanctify them in the truth.",
+          "He prays that all believers may be one so the world may believe."
+        ]
+      },
+      "18": {
+        "line": "Jesus is arrested, questioned before Annas and Caiaphas, denied by Peter, and examined by Pilate.",
+        "more": [
+          "In the garden Peter cuts off the ear of the high priest's servant.",
+          "Jesus tells Pilate his kingdom is not of this world.",
+          "Pilate finds no guilt, but the crowd demands Barabbas instead."
+        ]
+      },
+      "19": {
+        "line": "Pilate hands Jesus over, and he is crucified, dies, and is buried by Joseph and Nicodemus.",
+        "more": [
+          "Soldiers flog Jesus and crown him with thorns, and the crowd shouts for crucifixion.",
+          "On the cross he entrusts his mother to the beloved disciple and declares it finished.",
+          "A soldier pierces his side, and his legs are not broken, fulfilling Scripture."
+        ]
+      },
+      "20": {
+        "line": "Jesus' tomb is found empty, and the risen Jesus appears to Mary Magdalene, the disciples, and Thomas.",
+        "more": [
+          "Peter and the beloved disciple run to the tomb and see the grave cloths.",
+          "Jesus breathes on the disciples and says to receive the Holy Spirit.",
+          "Thomas confesses him as Lord and God, and John states his purpose in writing."
+        ]
+      },
+      "21": {
+        "line": "The risen Jesus appears by the Sea of Tiberias, provides a great catch, and restores Peter.",
+        "more": [
+          "The disciples catch one hundred fifty-three fish and share breakfast with Jesus.",
+          "Three times Jesus asks Peter if he loves him and tells him to feed his sheep.",
+          "Jesus foretells Peter's death, and the beloved disciple is identified as the book's witness."
+        ]
+      }
+    }
+  },
+  "Acts": {
+    "line": "Acts records how the apostles, empowered by the Holy Spirit, spread the gospel from Jerusalem to Rome.",
+    "more": [
+      "Jesus ascends, and the Spirit comes at Pentecost, birthing the church in Jerusalem.",
+      "Persecution after Stephen's death scatters believers, and the gospel reaches Samaria.",
+      "Saul is converted, and Peter's visit to Cornelius opens the church to Gentiles.",
+      "Paul's missionary journeys plant churches across Asia Minor and Greece.",
+      "Paul is arrested in Jerusalem, appeals to Caesar, and preaches in Rome under guard."
+    ],
+    "chapters": {
+      "1": {
+        "line": "Jesus promises the Holy Spirit, ascends to heaven, and the apostles choose Matthias to replace Judas.",
+        "more": [
+          "Jesus appears to the apostles for forty days, speaking about God's kingdom.",
+          "They will be his witnesses in Jerusalem, Judea, Samaria, and to the end of the earth.",
+          "The believers pray together, and lots fall on Matthias."
+        ]
+      },
+      "2": {
+        "line": "At Pentecost the Holy Spirit fills the believers, Peter preaches, and about three thousand are baptized.",
+        "more": [
+          "The disciples speak in other languages, and visitors hear God's works in their own tongues.",
+          "Peter proclaims that God raised Jesus and made him Lord and Christ.",
+          "The believers devote themselves to teaching, fellowship, breaking bread, prayer, and sharing."
+        ]
+      },
+      "3": {
+        "line": "Peter and John heal a lame man at the temple gate, and Peter preaches to the gathered crowd.",
+        "more": [
+          "The man walks and leaps, praising God, and the people are astonished.",
+          "Peter credits faith in Jesus' name for the healing.",
+          "He calls the people to repent so that their sins may be blotted out."
+        ]
+      },
+      "4": {
+        "line": "Peter and John are arrested, boldly testify before the council, and are released with warnings.",
+        "more": [
+          "Peter declares there is salvation in no other name than Jesus.",
+          "The believers pray for boldness, and the place where they gather is shaken.",
+          "They share possessions, and Barnabas sells a field and gives the money."
+        ]
+      },
+      "5": {
+        "line": "Ananias and Sapphira die for lying to the Holy Spirit, and the apostles are imprisoned, freed, and beaten.",
+        "more": [
+          "Many signs and healings are done through the apostles.",
+          "An angel frees them, and they resume teaching in the temple.",
+          "Gamaliel advises the council to leave them alone, and they rejoice after being flogged."
+        ]
+      },
+      "6": {
+        "line": "Seven men are chosen to serve the widows, and Stephen is seized and falsely accused.",
+        "more": [
+          "Hellenist believers complain their widows are neglected in the daily distribution.",
+          "The apostles devote themselves to prayer and the ministry of the word.",
+          "Stephen does great wonders, and opponents charge him with blasphemy against Moses and the temple."
+        ]
+      },
+      "7": {
+        "line": "Stephen recounts Israel's history before the council and is stoned to death.",
+        "more": [
+          "He describes how Israel repeatedly resisted God's messengers, from Joseph to Moses.",
+          "He accuses his hearers of resisting the Holy Spirit and killing the Righteous One.",
+          "He sees Jesus at God's right hand, prays for his killers, and Saul approves."
+        ]
+      },
+      "8": {
+        "line": "Persecution scatters the church, and Philip preaches in Samaria and to an Ethiopian official.",
+        "more": [
+          "Saul ravages the church, entering houses and dragging believers to prison.",
+          "Samaritans believe, and Peter and John come so they receive the Spirit.",
+          "Simon the magician tries to buy the Spirit's power and is rebuked."
+        ]
+      },
+      "9": {
+        "line": "The risen Jesus confronts Saul on the Damascus road, and Saul is converted and begins preaching.",
+        "more": [
+          "Saul is blinded, and Ananias lays hands on him so he regains sight.",
+          "Saul escapes a plot by being lowered in a basket, and Barnabas vouches for him.",
+          "Peter heals Aeneas at Lydda and raises Tabitha at Joppa."
+        ]
+      },
+      "10": {
+        "line": "God leads Peter to the Roman centurion Cornelius, and the Holy Spirit falls on Gentiles who hear the gospel.",
+        "more": [
+          "An angel tells Cornelius to send for Peter.",
+          "Peter's vision of unclean animals teaches him not to call people unclean.",
+          "Peter preaches that God shows no partiality, and the Gentile believers are baptized."
+        ]
+      },
+      "11": {
+        "line": "Peter explains Gentile conversion to the Jerusalem church, and a church grows in Antioch.",
+        "more": [
+          "The Jerusalem believers glorify God that Gentiles have been granted repentance.",
+          "Barnabas brings Saul to Antioch, where disciples are first called Christians.",
+          "The Antioch church sends famine relief to Judea."
+        ]
+      },
+      "12": {
+        "line": "Herod kills James and imprisons Peter, but an angel frees Peter, and Herod later dies.",
+        "more": [
+          "The church prays earnestly while Peter is in prison.",
+          "Peter arrives at Mary's house, and Rhoda is too excited to open the gate.",
+          "Herod accepts praise as a god and is struck down, while the word spreads."
+        ]
+      },
+      "13": {
+        "line": "The Antioch church sends Barnabas and Saul on mission to Cyprus and Pisidian Antioch.",
+        "more": [
+          "On Cyprus a sorcerer is blinded, and the proconsul believes.",
+          "Paul preaches in the synagogue that forgiveness comes through the risen Jesus.",
+          "When Jews oppose them, they turn to the Gentiles and are driven out."
+        ]
+      },
+      "14": {
+        "line": "Paul and Barnabas preach in Iconium, Lystra, and Derbe, then return to strengthen the churches.",
+        "more": [
+          "At Lystra Paul heals a lame man, and the crowd tries to worship them as gods.",
+          "Opponents stone Paul and leave him for dead, but he rises and continues.",
+          "They appoint elders and report to Antioch how God opened a door to Gentiles."
+        ]
+      },
+      "15": {
+        "line": "The Jerusalem council decides Gentile believers need not be circumcised, and Paul and Barnabas separate.",
+        "more": [
+          "Peter testifies that God saves Jews and Gentiles alike by grace.",
+          "James proposes a few requirements, sent by letter to the Gentile churches.",
+          "Paul and Barnabas disagree over John Mark, and Paul departs with Silas."
+        ]
+      },
+      "16": {
+        "line": "Paul is called to Macedonia, where Lydia believes and a Philippian jailer is saved after an earthquake.",
+        "more": [
+          "Timothy joins Paul, and a vision of a Macedonian man directs their route.",
+          "Paul casts a spirit out of a slave girl, and her owners have him and Silas beaten and jailed.",
+          "Paul and Silas, as Roman citizens, receive a public apology before leaving."
+        ]
+      },
+      "17": {
+        "line": "Paul preaches in Thessalonica, Berea, and Athens, where he addresses the Areopagus.",
+        "more": [
+          "In Thessalonica jealous Jews start a riot and drag Jason before the authorities.",
+          "The Bereans examine the Scriptures daily to test Paul's message.",
+          "In Athens Paul proclaims the unknown God as Creator and Judge who raised Jesus."
+        ]
+      },
+      "18": {
+        "line": "Paul ministers in Corinth for eighteen months, then returns to Antioch, while Apollos teaches in Ephesus.",
+        "more": [
+          "Paul works with Aquila and Priscilla as a tentmaker and preaches in the synagogue.",
+          "The Lord tells Paul in a vision not to fear, and Gallio dismisses charges against him.",
+          "Priscilla and Aquila explain the way of God more accurately to Apollos."
+        ]
+      },
+      "19": {
+        "line": "Paul ministers two years in Ephesus, the word spreads widely, and a riot breaks out over the goddess Artemis.",
+        "more": [
+          "Disciples who knew only John's baptism are baptized in Jesus' name and receive the Spirit.",
+          "After the sons of Sceva are overpowered by a demon, many burn their magic books.",
+          "The silversmith Demetrius incites the crowd, but the town clerk disperses it."
+        ]
+      },
+      "20": {
+        "line": "Paul travels through Macedonia and Greece, raises Eutychus at Troas, and bids farewell to the Ephesian elders.",
+        "more": [
+          "Eutychus falls from a window during Paul's long sermon and is restored to life.",
+          "At Miletus Paul recounts his ministry and warns of false teachers.",
+          "He charges the elders to shepherd the church, and they weep at parting."
+        ]
+      },
+      "21": {
+        "line": "Despite warnings, Paul goes to Jerusalem, where he is seized in the temple and arrested by Roman soldiers.",
+        "more": [
+          "Agabus binds his own hands and feet with Paul's belt to foretell Paul's arrest.",
+          "James and the elders ask Paul to join others in a purification rite.",
+          "Jews from Asia stir up the crowd, and the tribune rescues Paul from being killed."
+        ]
+      },
+      "22": {
+        "line": "Paul tells the Jerusalem crowd of his conversion, and his Roman citizenship spares him from flogging.",
+        "more": [
+          "He describes his zeal, his encounter with Jesus, and Ananias' role.",
+          "The crowd erupts when Paul says the Lord sent him to the Gentiles.",
+          "The tribune brings Paul before the council to learn the charges."
+        ]
+      },
+      "23": {
+        "line": "Paul divides the council, a plot against his life is uncovered, and he is sent to Governor Felix.",
+        "more": [
+          "Paul declares he is on trial for the hope of the resurrection, splitting Pharisees and Sadducees.",
+          "The Lord tells Paul he must testify in Rome.",
+          "Paul's nephew reports the plot, and soldiers escort Paul to Caesarea by night."
+        ]
+      },
+      "24": {
+        "line": "Paul defends himself before Felix, who delays a decision and keeps him in custody for two years.",
+        "more": [
+          "The lawyer Tertullus accuses Paul of stirring riots and profaning the temple.",
+          "Paul denies the charges and affirms his hope in the resurrection.",
+          "Felix hears Paul speak on righteousness and judgment but hopes for a bribe."
+        ]
+      },
+      "25": {
+        "line": "Before the new governor Festus, Paul appeals to Caesar, and King Agrippa arrives to hear his case.",
+        "more": [
+          "Jewish leaders press charges they cannot prove.",
+          "Paul refuses to be tried in Jerusalem and appeals to Caesar.",
+          "Festus seeks Agrippa's help in stating charges for Rome."
+        ]
+      },
+      "26": {
+        "line": "Paul recounts his conversion and commission to King Agrippa, who judges him innocent.",
+        "more": [
+          "Jesus sent Paul to open the Gentiles' eyes and turn them from darkness to light.",
+          "Festus calls Paul mad, and Paul urges Agrippa to believe.",
+          "Agrippa says Paul could have been freed had he not appealed to Caesar."
+        ]
+      },
+      "27": {
+        "line": "Paul sails as a prisoner toward Rome, and after a violent storm the ship wrecks but all survive.",
+        "more": [
+          "Paul warns against sailing, but the centurion follows the pilot and owner.",
+          "An angel assures Paul that everyone aboard will be saved.",
+          "The ship runs aground near an island, and all 276 people reach land."
+        ]
+      },
+      "28": {
+        "line": "On Malta Paul survives a viper's bite and heals the sick, then reaches Rome and preaches there.",
+        "more": [
+          "Paul heals the father of Publius, the island's chief official, and others.",
+          "In Rome he explains the kingdom and Jesus to Jewish leaders, some of whom believe.",
+          "For two years under guard he preaches boldly and without hindrance."
+        ]
+      }
+    }
+  },
+  "Romans": {
+    "line": "Paul's letter to the church in Rome explains the gospel of God's righteousness received by faith in Jesus Christ.",
+    "more": [
+      "Paul shows that all people, Jews and Gentiles, are under sin and condemned.",
+      "God justifies sinners freely by grace through faith in Christ, as he did Abraham.",
+      "Believers are freed from sin's dominion and live by the Spirit with sure hope.",
+      "Paul explains God's faithfulness to Israel and his plan for Jews and Gentiles.",
+      "He describes how the gospel shapes life together and closes with plans and greetings."
+    ],
+    "chapters": {
+      "1": {
+        "line": "Paul introduces the gospel as God's power for salvation and shows God's wrath against humanity's rejection of him.",
+        "more": [
+          "Paul greets the Roman believers and expresses his longing to visit them.",
+          "In the gospel God's righteousness is revealed by faith.",
+          "People suppress the truth and worship idols, so God gives them over to sin."
+        ]
+      },
+      "2": {
+        "line": "Paul argues that those who judge others, including Jews with the law, are also guilty before God.",
+        "more": [
+          "God judges everyone impartially according to their deeds.",
+          "Having the law does not save those who break it.",
+          "True circumcision is a matter of the heart, by the Spirit."
+        ]
+      },
+      "3": {
+        "line": "All people are under sin, but God's righteousness is given through faith in Christ apart from the law.",
+        "more": [
+          "Jews were entrusted with God's words, yet God remains faithful despite their unfaithfulness.",
+          "Scripture shows that no one is righteous, and the law brings knowledge of sin.",
+          "God justifies freely by grace through Christ's sacrifice as a propitiation, excluding boasting."
+        ]
+      },
+      "4": {
+        "line": "Paul shows that Abraham was counted righteous through faith, not works or circumcision.",
+        "more": [
+          "David also speaks of the blessing of sins forgiven apart from works.",
+          "Abraham was counted righteous before he was circumcised, making him father of all who believe.",
+          "Righteousness will be counted to all who believe in God who raised Jesus."
+        ]
+      },
+      "5": {
+        "line": "Justified by faith, believers have peace with God, and Christ's obedience overcomes the sin brought by Adam.",
+        "more": [
+          "Believers rejoice in hope, even in suffering, because God's love is poured into their hearts.",
+          "Christ died for the ungodly while they were still sinners.",
+          "Sin and death came through Adam, but grace and life abound through Christ."
+        ]
+      },
+      "6": {
+        "line": "Paul argues that believers, united with Christ in his death and resurrection, must no longer live in sin.",
+        "more": [
+          "Baptism into Christ signifies dying to sin and rising to new life.",
+          "Believers are to present themselves to God as instruments of righteousness.",
+          "The wages of sin is death, but God's gift is eternal life."
+        ]
+      },
+      "7": {
+        "line": "Paul explains that believers are released from the law, which is holy but cannot overcome sin.",
+        "more": [
+          "As death ends a marriage, death with Christ frees believers to belong to him.",
+          "Sin uses the commandment to produce death, though the law itself is good.",
+          "Paul describes an inner struggle of wanting to do good yet doing evil, and thanks God for deliverance."
+        ]
+      },
+      "8": {
+        "line": "There is no condemnation for those in Christ, who live by the Spirit and are secure in God's love.",
+        "more": [
+          "The Spirit gives life and testifies that believers are God's adopted children.",
+          "Creation groans awaiting redemption, and the Spirit intercedes for believers in weakness.",
+          "God works all things for good, and nothing can separate believers from his love."
+        ]
+      },
+      "9": {
+        "line": "Grieving over Israel's unbelief, Paul explains that God's promises depend on his sovereign mercy, not human descent.",
+        "more": [
+          "Not all descended from Israel belong to Israel; God chose Isaac and Jacob.",
+          "God has mercy on whom he wills, as with Pharaoh and the potter's clay.",
+          "Gentiles attain righteousness by faith, while Israel stumbles by pursuing it through works."
+        ]
+      },
+      "10": {
+        "line": "Paul explains that righteousness comes by faith in Christ, and Israel has heard the message but not believed.",
+        "more": [
+          "Israel sought to establish its own righteousness, but Christ is the end of the law for righteousness.",
+          "Everyone who confesses Jesus as Lord and believes God raised him will be saved.",
+          "People must hear to believe, so preachers must be sent."
+        ]
+      },
+      "11": {
+        "line": "God has not rejected Israel; their stumbling brings salvation to Gentiles, and all Israel will be saved.",
+        "more": [
+          "A remnant of Israel is chosen by grace, as in Elijah's day.",
+          "Gentiles are like wild branches grafted into an olive tree and must not be proud.",
+          "Paul closes with praise for the depth of God's wisdom and knowledge."
+        ]
+      },
+      "12": {
+        "line": "Paul urges believers to offer themselves to God as living sacrifices and to live in sincere love.",
+        "more": [
+          "Believers are to be transformed by the renewal of their minds.",
+          "As one body, they use their different gifts to serve one another.",
+          "They are to bless persecutors, avoid revenge, and overcome evil with good."
+        ]
+      },
+      "13": {
+        "line": "Paul instructs believers to submit to governing authorities and to love others, since salvation is near.",
+        "more": [
+          "Rulers are instituted by God, so believers pay taxes and give respect.",
+          "Love fulfills the law because it does no wrong to a neighbor.",
+          "Believers are to cast off works of darkness and put on the Lord Jesus Christ."
+        ]
+      },
+      "14": {
+        "line": "Paul teaches believers who differ over food and special days not to judge one another or cause stumbling.",
+        "more": [
+          "Each believer lives to the Lord and will give account to God.",
+          "The kingdom of God is about righteousness, peace, and joy, not food and drink.",
+          "The strong should give up their liberty rather than harm a weaker believer."
+        ]
+      },
+      "15": {
+        "line": "Paul calls believers to welcome one another as Christ welcomed them, and shares his ministry and travel plans.",
+        "more": [
+          "Christ served the Jews so that Gentiles also might glorify God for his mercy.",
+          "Paul describes his calling to preach where Christ has not been named.",
+          "He plans to deliver aid to Jerusalem, then visit Rome on his way to Spain."
+        ]
+      },
+      "16": {
+        "line": "Paul commends Phoebe, greets many believers in Rome, warns against divisive teachers, and closes with praise to God.",
+        "more": [
+          "He sends greetings to Prisca, Aquila, and many other coworkers and friends.",
+          "He urges the church to avoid those who cause divisions contrary to sound teaching.",
+          "Timothy and others send greetings, and Paul ends with a doxology."
+        ]
+      }
+    }
+  }
+}
