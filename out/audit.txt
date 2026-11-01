@@ -14,7 +14,8 @@ PASS  surveys are not repeated inside chapters
 PASS  a book overview is not repeated inside that book's chapters
 
 == Speakers
-PASS  only David Platt, PAM, Arik Hayes and Milton James on the road
+PASS  only David Platt, PAM (with Arik Hayes, Milton James) and Stephen Davey on the road
+PASS  Stephen Davey teaching comes only from his own feeds, and his feeds only from him
 PASS  2819 teaching shows the preacher named in its title
 PASS  David Platt teaching comes only from Platt / Radical / McLean sources
 PASS  McLean episodes on the road name David Platt
@@ -39,8 +40,13 @@ PASS  every shipped entry from the original catalog still exists (same id)
 PASS  nothing unverified (PENDING / FAIL) on the road
 PASS  no teaching twice in one chapter
 
+== Years
+PASS  every chapter carries its best-estimate year line
+PASS  every book shows its years on the road
+PASS  Genesis 1-11 is not given a year
+
 == Road rules
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-30 of 30 checks pass
+34 of 34 checks pass

@@ -1,25 +1,25 @@
 {
-  "started": "2026-10-30T17:07:05.130922+00:00",
+  "started": "2026-11-01T06:00:25.968860+00:00",
   "sources": {
     "ptw": {
-      "count": 4371,
-      "seconds": 9.8
+      "count": 4372,
+      "seconds": 10.4
     },
     "platt_messages": {
       "count": 571,
-      "seconds": 0.6
+      "seconds": 0.8
     },
     "secret_church_podcast": {
       "count": 198,
-      "seconds": 0.3
+      "seconds": 0.5
     },
     "twr360": {
       "count": 43,
-      "seconds": 28.4
+      "seconds": 26.6
     },
     "2819_podcast": {
       "count": 147,
-      "seconds": 0.2
+      "seconds": 0.5
     },
     "mclean": {
       "count": 199,
@@ -28,7 +28,19 @@
     "street_preachers": {
       "count": 36,
       "seconds": 0.1
+    },
+    "davey_sermons": {
+      "count": 167,
+      "seconds": 2.8
+    },
+    "davey_wfth": {
+      "count": 1138,
+      "seconds": 15.5
+    },
+    "davey_journey": {
+      "count": 1149,
+      "seconds": 13.1
     }
   },
-  "catalog_total": 4660
+  "catalog_total": 5895
 }
