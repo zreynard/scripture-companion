@@ -122,4 +122,29 @@ class Atlas:
             m = self.mean.get(s, {})
             L[s] = {**({"mean": m["meaning"]} if m.get("meaning") else {}), **({"why": m["why"]} if m.get("why") else {}), "n": v["name"], "what": v["what"], "today": v.get("today", ""), "key": v.get("key", []), **pos, **where(src.get("ch", []))}
         here = {k: [s for s in d["pl"] if s in L and "x" in L[s]][:8] for k, d in self.chap.items()}
-        return {"p": P, "l": L, "map": self.map, "here": {k: v for k, v in here.items() if v}}
+        base = {k: v for k, v in (self.map or {}).items() if k not in ("journey", "paul")} or None
+        return {"p": P, "l": L, "map": base, "here": {k: v for k, v in here.items() if v}, "trip": self.trip(pr) if pr else None}
+
+    def trip(self, pr):
+        """The journey map's legs (journey.py) with each stop placed on the map."""
+        import journey
+        def xy(lon, lat): return [round((lon - pr["lon0"]) * pr["kx"], 2), round((pr["lat1"] - lat) * pr["ky"], 2)]
+        def place(slug):
+            src = self.src_l.get(slug)
+            if not src or src.get("lat") is None:
+                raise SystemExit(f"journey: place {slug} has no position")
+            return xy(src["lon"], src["lat"]), (self.prof_l.get(slug) or {}).get("name") or src["n"]
+        legs = []
+        for leg in journey.LEGS:
+            stops = []
+            for slug, book, ch, beat, o in leg["stops"]:
+                (x, y), name = place(slug)
+                stops.append({"x": x, "y": y, "n": o.get("lab") or name, "sl": slug if slug in self.prof_l else "", "b": book, "c": ch,
+                              "beat": beat, "t": o.get("t", "a"), **({"np": 1} if o.get("np") else {})})
+            home = place(leg["home"]) if leg.get("home") else None
+            legs.append({"t": leg["t"], "s": leg["s"], "stops": stops, **({"home": [*home[0], home[1]]} if home else {})})
+        bl = {b: (v if isinstance(v, list) else [(1, v)]) for b, v in journey.BOOK_LEG.items()}
+        notes = {b: ([*place(s)[0], place(s)[1]] if s else None, line) for b, (s, line) in journey.NOTES.items()}
+        reg = [[n, *xy(lon, lat), list(r) if r is not None else None] for n, lon, lat, r in journey.REGIONS]
+        seas = [[n, *xy(lon, lat)] for n, lon, lat in journey.SEAS]
+        return {"legs": legs, "bl": bl, "notes": notes, "follow": sorted(journey.FOLLOW), "reg": reg, "seas": seas}

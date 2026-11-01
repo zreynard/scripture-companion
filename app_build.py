@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 40  # bump on every shipped build; also busts the service-worker cache
+VERSION = 41  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -351,16 +351,41 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 #sheet .meta{font-size:13px;color:var(--mute);margin-top:12px}
 #sheet .mini{display:block;width:100%;height:auto;border-radius:14px;border:1px solid rgba(27,36,64,.1);margin:4px 0 10px;background:#dde6ea;cursor:pointer}
 #sheet .open{display:inline-block;margin-top:2px;font-size:14px}
-#mapv{position:fixed;inset:0;z-index:22;background:#dfe7eb}
-#mapsvg{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}
-#mapv .mv-top{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) 10px max(14px,env(safe-area-inset-left));background:linear-gradient(rgba(251,248,241,.95),rgba(251,248,241,0))}
-#mapv .mv-title{font:20px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--ink)}
-#mapv button{border:1px solid rgba(27,36,64,.15);background:rgba(255,255,255,.92);border-radius:18px;padding:8px 12px;font:inherit;font-size:14px;color:var(--ink);cursor:pointer}
-#mapv #mvx{border-radius:50%;width:38px;height:38px;padding:0;font-size:17px}
-#mapv .mv-ctl{position:absolute;left:0;right:0;bottom:0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:12px max(14px,env(safe-area-inset-right)) calc(14px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left))}
-#mapv #mvin,#mapv #mvout{width:40px;padding:8px 0;font-size:18px}
-#mapv .mv-cap{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(70px + env(safe-area-inset-bottom));background:rgba(251,248,241,.95);border-radius:14px;padding:8px 12px;font-size:14px;color:var(--ink);box-shadow:0 4px 16px rgba(27,36,64,.12);max-width:86vw;text-align:center}
-#mapv .mv-cap:empty{display:none}
+#mapv{position:fixed;inset:0;z-index:22;background:#d6e4e3;overscroll-behavior:contain}
+#mapv::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 85% 70% at 50% 42%,rgba(255,250,235,0) 60%,rgba(110,90,50,.18) 100%)}
+#mapsvg{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
+#mapsvg [data-pl]{cursor:pointer}
+#mapsvg .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:mvdraw 1.7s cubic-bezier(.45,0,.2,1) .1s forwards}
+@keyframes mvdraw{to{stroke-dashoffset:0}}
+#mapsvg .fade{opacity:0;animation:mvfade .7s ease 1.3s forwards}
+@keyframes mvfade{to{opacity:1}}
+#mapsvg .pulse{transform-box:fill-box;transform-origin:center;animation:mvpulse 2.6s ease-in-out infinite}
+@keyframes mvpulse{0%,100%{transform:scale(.7);opacity:.95}50%{transform:scale(1.25);opacity:.35}}
+@media (prefers-reduced-motion:reduce){#mapsvg .draw{animation:none;stroke-dasharray:none;stroke-dashoffset:0}#mapsvg .fade{animation:none;opacity:1}#mapsvg .pulse{animation:none}}
+#mapv .mv-top{position:absolute;left:0;right:0;top:0;z-index:2;display:flex;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) 18px max(14px,env(safe-area-inset-left));background:linear-gradient(rgba(251,248,241,.94),rgba(251,248,241,0));pointer-events:none}
+#mapv .mv-top>*{pointer-events:auto}
+#mapv .mv-title{font:21px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--ink)}
+#mapv #mvx{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(27,36,64,.15);background:rgba(255,255,255,.94);font:inherit;font-size:17px;color:var(--ink);cursor:pointer}
+#mapv .mv-panel{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px 0 calc(10px + env(safe-area-inset-bottom));background:linear-gradient(rgba(246,241,230,0),rgba(246,241,230,.92) 30px)}
+#mapv .mv-card{margin:0 max(12px,env(safe-area-inset-left)) 10px;background:#fbf8f1;border-radius:18px;padding:13px 16px 12px;box-shadow:0 8px 28px rgba(70,52,16,.16);border:1px solid rgba(170,138,70,.2)}
+#mapv .mv-k{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:#a8812a;font-weight:650}
+#mapv .mv-t{font:24px/1.15 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--ink);margin:3px 0 4px}
+#mapv .mv-s{font-size:14.5px;line-height:1.42;color:#4b5266}
+#mapv .mv-here{display:flex;gap:9px;align-items:flex-start;margin-top:9px;padding-top:9px;border-top:1px solid rgba(27,36,64,.08);font-size:14px;line-height:1.42;color:var(--ink)}
+#mapv .mv-here i{flex:none;width:10px;height:10px;border-radius:50%;background:#c9a24a;box-shadow:0 0 0 4px rgba(201,162,74,.25);margin-top:5px}
+#mapv .mv-here.ink i{background:#fff;border:2px solid #1b2440;box-shadow:none;width:9px;height:9px}
+#mapv .mv-ref{color:#7a8094;white-space:nowrap}
+#mapv .mv-legs{display:flex;gap:8px;overflow-x:auto;padding:2px max(12px,env(safe-area-inset-left)) 4px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+#mapv .mv-legs::-webkit-scrollbar{display:none}
+#mapv .mv-legs button{flex:none;scroll-snap-align:center;min-height:40px;display:flex;align-items:center;gap:7px;white-space:nowrap;border-radius:20px;padding:8px 14px;border:1px solid rgba(27,36,64,.14);background:rgba(255,255,255,.92);font:inherit;font-size:14px;color:var(--ink);cursor:pointer}
+#mapv .mv-legs button span{font-size:11.5px;font-weight:700;color:#a8812a}
+#mapv .mv-legs .walked{background:#f5ead0;border-color:rgba(201,162,74,.4)}
+#mapv .mv-legs .now{background:#1b2440;border-color:#1b2440;color:#fff}
+#mapv .mv-legs .now span{color:#e9c76f}
+#mapv .mv-legs .ahead{background:rgba(255,255,255,.62);color:rgba(27,36,64,.6)}
+#mapv .mv-legs .sel{box-shadow:0 0 0 2.5px #c9a24a}
+body.mapopen #sheetbg{z-index:23}
+body.mapopen #sheet{z-index:24}
 .clearing .sum{font-size:13px;color:var(--mute);margin:-4px 0 0}.clearing.folded .ch{font-size:24px;margin:2px 0 6px}.clearing.folded .acts{margin-top:10px}
 .acts .go{background:var(--gold);color:#1b2440;border-color:var(--gold);font-weight:600}
 .acts .read.on{background:rgba(201,162,74,.18);color:var(--gold2);border-color:var(--gold)}
@@ -395,7 +420,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 </style></head><body>
 <button id="bookhd" aria-label="Go to chapter 1 of this book"></button><div class="top"><span id="pct" style="display:none"></span><button id="mapbtn" aria-label="Map of the journey"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Zm0 0v13m6-10.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button><button id="gear">⋯</button></div>
 <div id="sheetbg" hidden></div><div id="sheet" role="dialog" aria-modal="true" hidden><div class="sh-grab"></div><div class="sh-top"><button id="shback" aria-label="Back" hidden>‹</button><span class="sh-kind" id="shkind"></span><button id="shx" aria-label="Close">✕</button></div><div id="shbody"></div></div>
-<div id="mapv" role="dialog" aria-modal="true" hidden><svg id="mapsvg" preserveAspectRatio="xMidYMid meet"></svg><div class="mv-top"><button id="mvx" aria-label="Close map">✕</button><div class="mv-title" id="mvtitle">The journey</div></div><div class="mv-ctl"><button id="mvall">Whole journey</button><button id="mvhere">Where I am</button><button id="mvin" aria-label="Zoom in">+</button><button id="mvout" aria-label="Zoom out">−</button></div><div class="mv-cap" id="mvcap"></div></div>
+<div id="mapv" role="dialog" aria-modal="true" aria-label="Map of the journey" hidden><svg id="mapsvg" preserveAspectRatio="xMidYMid meet"></svg><div class="mv-top"><button id="mvx" aria-label="Close map">✕</button><div class="mv-title" id="mvtitle">Your journey</div></div><div class="mv-panel" id="mvpanel"><div class="mv-card" id="mvcard"></div><div class="mv-legs" id="mvlegs" aria-label="Legs of the journey"></div></div></div>
 <div id="main"></div>
 <div id="np"><div class="grab"></div><div class="t serif" id="np-t"></div><div class="s" id="np-s"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
@@ -545,51 +570,92 @@ function wireSheet(){$('#shbody').querySelectorAll('[data-nk]').forEach(b=>b.onc
  sh.addEventListener('touchmove',e=>{if(y0===null)return;dy=e.touches[0].clientY-y0;if(dy>0)sh.style.transform=`translateY(${dy}px)`},{passive:true});
  sh.addEventListener('touchend',()=>{if(y0===null)return;if(dy>90)closeSheet();else sh.style.transform='';y0=null});
  addEventListener('keydown',e=>{if(e.key==='Escape'){closeSheet();closeMap()}})})();
-/* ---- the map: the whole journey, walked in gold up to where you stand ---- */
+/* ---- the map: the Bible as one road in 14 legs; your leg walked in gold, the road ahead still dotted ---- */
 let MV=null;
-function journeyIndex(A){const w=walk(),here=w[Math.max(0,Math.min(w.length-1,camp||0))];const order=D.books.map(b=>b.name),pos=(b,c)=>order.indexOf(b)*1000+c,me=pos(here.b.name,here.c.c),J=A.map.journey;
- let k=-1;J.forEach((s,i)=>{if(pos(s.b,s.c)<=me)k=i});
- /* the Gospels retell one life four times and the prophets sit inside the kings: stand at the stop nearest
-    to this chapter's own places, among stops not later in the Bible than this chapter */
- const pl=(A.here[here.b.name+' '+here.c.c]||[]).map(s=>A.l[s]).filter(l=>l&&l.x!=null);
- if(pl.length&&k>=0){const t=pl[0];let best=k,bd=1e9;for(let i=0;i<=k;i++){const d=Math.hypot(J[i].x-t.x,J[i].y-t.y);if(d<=bd+0.01){bd=d;best=i}}if(bd<25)k=best}
- return k}
-function drawMap(A,focus){const M=A.map,J=M.journey,k=journeyIndex(A),w=walk()[camp||0],here=(A.here[w.b.name+' '+w.c.c]||[]).map(s=>[s,A.l[s]]).filter(x=>x[1]&&x[1].x!=null);
- const fs=Math.max(1.4,MV.w/48);const pts=a=>a.map(s=>`${s.x},${s.y}`).join(' ');
- const done=J.slice(0,Math.max(1,k+1)),ahead=J.slice(Math.max(0,k)),recent=J.slice(Math.max(0,k-3),Math.max(1,k+1));
- let svg=`<rect x="-2000" y="-2000" width="5000" height="5000" fill="#dfe7eb"/><path d="${M.land}" fill="#f4efe3" stroke="#bfae84" stroke-width="${MV.w/600}"/>`+
-  M.lakes.map(l=>`<path d="${l.d}" fill="#c6d5dc"/>`).join('')+M.rivers.map(r=>`<path d="${r.d}" fill="none" stroke="#88a3b1" stroke-width="${MV.w/320}"/>`).join('')+
-  `<polyline points="${pts(ahead)}" fill="none" stroke="rgba(27,36,64,.28)" stroke-width="${MV.w/260}" stroke-dasharray="${MV.w/120} ${MV.w/160}" stroke-linejoin="round"/>`+
-  `<polyline points="${pts(done)}" fill="none" stroke="rgba(201,162,74,.45)" stroke-width="${MV.w/240}" stroke-linejoin="round" stroke-linecap="round"/>`+
-  `<polyline points="${pts(recent)}" fill="none" stroke="#c9a24a" stroke-width="${MV.w/150}" stroke-linejoin="round" stroke-linecap="round"/>`+
-  J.map((s,i)=>`<circle cx="${s.x}" cy="${s.y}" r="${MV.w/(i<=k?220:300)}" fill="${i<=k?'#a8812a':'rgba(27,36,64,.4)'}" data-ji="${i}"/>`).join('');
- const lab=[];J.forEach((s,i)=>{if(i===k||MV.w<140)lab.push([s.x,s.y,s.cap,i<=k?'#5d4a1c':'rgba(27,36,64,.6)',i===k])});
- lab.sort((a,b)=>b[4]-a[4]);  /* the stop where you stand is labelled first */
- const seen=here.map(([sl,l])=>[l.x,l.y]);  /* the chapter's own places keep their labels clear */svg+=lab.filter(([x,y])=>{if(seen.some(([a,b])=>Math.abs(a-x)<fs*3&&Math.abs(b-y)<fs*1.2))return false;seen.push([x,y]);return true}).map(([x,y,c,col,me])=>`<text x="${x+fs*.6}" y="${y-fs*.5}" font-size="${fs}" fill="${col}" font-family="-apple-system,system-ui,sans-serif" ${me?'font-weight="700"':''} paint-order="stroke" stroke="#f4efe3" stroke-width="${fs/4}">${esc(c)}</text>`).join('');
- if(k>=0){const s=J[k];svg+=`<circle cx="${s.x}" cy="${s.y}" r="${MV.w/60}" fill="rgba(201,162,74,.25)"/><circle cx="${s.x}" cy="${s.y}" r="${MV.w/140}" fill="#c9a24a" stroke="#fff" stroke-width="${MV.w/500}"/>`}
- svg+=here.map(([sl,l])=>`<g data-pl="${sl}" style="cursor:pointer"><circle cx="${l.x}" cy="${l.y}" r="${MV.w/150}" fill="${sl===focus?'#b23a2a':'#1b2440'}" stroke="#fff" stroke-width="${MV.w/600}"/><text x="${l.x+fs*.6}" y="${l.y+fs*.35}" font-size="${fs*1.05}" font-weight="650" fill="#1b2440" font-family="-apple-system,system-ui,sans-serif" paint-order="stroke" stroke="#f4efe3" stroke-width="${fs/4}">${esc(l.n)}</text></g>`).join('');
- if(focus&&A.l[focus]&&!here.some(([s])=>s===focus)){const l=A.l[focus];svg+=`<g data-pl="${focus}"><circle cx="${l.x}" cy="${l.y}" r="${MV.w/130}" fill="#b23a2a" stroke="#fff" stroke-width="${MV.w/500}"/><text x="${l.x+fs*.6}" y="${l.y+fs*.35}" font-size="${fs*1.1}" font-weight="700" fill="#1b2440" font-family="-apple-system,system-ui,sans-serif" paint-order="stroke" stroke="#f4efe3" stroke-width="${fs/4}">${esc(l.n)}</text></g>`}
- const el=$('#mapsvg');el.setAttribute('viewBox',`${MV.x} ${MV.y} ${MV.w} ${MV.h}`);el.innerHTML=svg;
- el.querySelectorAll('[data-pl]').forEach(g=>g.onclick=e=>{e.stopPropagation();openSheet('l',g.dataset.pl)});
- $('#mvcap').textContent=k>=0?`You are here: ${J[k].cap} · ${w.b.name} ${w.c.c}`:`${w.b.name} ${w.c.c}`}
-function fitMap(A,cx,cy,width){const el=$('#mapsvg'),ar=(el.clientHeight||600)/(el.clientWidth||390);MV={x:cx-width/2,y:cy-width*ar/2,w:width,h:width*ar,focus:MV&&MV.focus}}
-function openMap(focus){atlas().then(A=>{if(!A.map)return;$('#mapv').hidden=false;const k=journeyIndex(A),J=A.map.journey;
-  const f=focus&&A.l[focus]&&A.l[focus].x!=null?A.l[focus]:null;const c=f||J[Math.max(0,k)]||J[0];
-  fitMap(A,c.x,c.y,f?70:120);MV.focus=focus||null;$('#mvtitle').textContent=f?f.n:'The journey';drawMap(A,MV.focus)})}
-function closeMap(){$('#mapv').hidden=true}
-(()=>{const el=$('#mapsvg'),P=new Map();let start=null;
- const toMap=(cx,cy)=>{const r=el.getBoundingClientRect(),s=Math.max(MV.w/r.width,MV.h/r.height);return[MV.x+(cx-r.left-(r.width-MV.w/s)/2)*s,MV.y+(cy-r.top-(r.height-MV.h/s)/2)*s,s]};
- const zoom=(f,cx,cy)=>{atlas().then(A=>{const[mx,my]=toMap(cx,cy);const nw=Math.min(420,Math.max(14,MV.w*f)),k=nw/MV.w;MV.x=mx-(mx-MV.x)*k;MV.y=my-(my-MV.y)*k;MV.w=nw;MV.h*=k;drawMap(A,MV.focus)})};
- el.addEventListener('pointerdown',e=>{el.setPointerCapture(e.pointerId);P.set(e.pointerId,[e.clientX,e.clientY]);start={x:MV.x,y:MV.y,pts:new Map(P),w:MV.w,h:MV.h}});
- el.addEventListener('pointermove',e=>{if(!P.has(e.pointerId)||!start)return;P.set(e.pointerId,[e.clientX,e.clientY]);const r=el.getBoundingClientRect(),s=Math.max(start.w/r.width,start.h/r.height);
-  if(P.size===1){const[a]=[...start.pts.values()],[b]=[...P.values()];MV.x=start.x-(b[0]-a[0])*s;MV.y=start.y-(b[1]-a[1])*s;$('#mapsvg').setAttribute('viewBox',`${MV.x} ${MV.y} ${MV.w} ${MV.h}`)}
-  else if(P.size===2&&start.pts.size===2){const[a1,a2]=[...start.pts.values()],[b1,b2]=[...P.values()];const d0=Math.hypot(a1[0]-a2[0],a1[1]-a2[1]),d1=Math.hypot(b1[0]-b2[0],b1[1]-b2[1]);if(d0>10){const f=d0/d1;MV.w=Math.min(420,Math.max(14,start.w*f));MV.h=start.h*MV.w/start.w;const cx=(a1[0]+a2[0])/2,cy=(a1[1]+a2[1])/2;const mx=start.x+(cx-r.left)*s,my=start.y+(cy-r.top)*s;const k=MV.w/start.w;MV.x=mx-(mx-start.x)*k;MV.y=my-(my-start.y)*k;$('#mapsvg').setAttribute('viewBox',`${MV.x} ${MV.y} ${MV.w} ${MV.h}`)}}});
- const end=e=>{P.delete(e.pointerId);if(!P.size){start=null;atlas().then(A=>drawMap(A,MV.focus))}else start={x:MV.x,y:MV.y,pts:new Map(P),w:MV.w,h:MV.h}};
+const SERIF='"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif';
+function legOf(T,b,c){let L=0;for(const[s,i]of(T.bl[b]||[[1,0]]))if(c>=s)L=i;return L}
+function bkey(b,c){return D.books.findIndex(x=>x.name===b)*1000+c}
+function standing(A){const T=A.trip,W=walk(),w=W[Math.max(0,Math.min(W.length-1,camp||0))],b=w.b.name,c=w.c.c,leg=legOf(T,b,c),L=T.legs[leg];
+ const places=(A.here[b+' '+c]||[]).map(s=>[s,A.l[s]]).filter(x=>x[1]&&x[1].x!=null);
+ const r={leg,b,c,idx:-1,mark:null,line:'',places},note=T.notes[b],me=bkey(b,c);L.stops.forEach((s,i)=>{if(!s.np&&bkey(s.b,s.c)<=me)r.idx=i});
+ if(note){if(note[0])r.mark={x:note[0][0],y:note[0][1],n:note[0][2]};r.line=note[1];return r}
+ if(L.stops.some(s=>s.b===b&&!s.np)||T.follow.includes(b)){if(r.idx>=0){const s=L.stops[r.idx];r.mark={x:s.x,y:s.y,n:s.n};r.line=s.beat}else{const n=L.stops.find(s=>!s.np&&s.beat);if(n)r.line='Up next: '+n.beat}return r}
+ r.ch=1;
+ if(places.length)r.line='In this chapter: '+places.slice(0,3).map(([,l])=>l.n).join(', ');
+ return r}
+function curve(p){p=p.filter((q,i)=>!i||q[0]!==p[i-1][0]||q[1]!==p[i-1][1]);if(p.length<2)return'';
+ if(p.length===2){const[a,b]=p,dx=b[0]-a[0],dy=b[1]-a[1];return`M${a} Q${(a[0]+b[0])/2-dy*.16},${(a[1]+b[1])/2+dx*.16} ${b}`}
+ let d=`M${p[0]}`;for(let i=0;i<p.length-1;i++){const p0=p[i-1]||p[i],p1=p[i],p2=p[i+1],p3=p[i+2]||p2;
+  d+=` C${p1[0]+(p2[0]-p0[0])/6},${p1[1]+(p2[1]-p0[1])/6} ${p2[0]-(p3[0]-p1[0])/6},${p2[1]-(p3[1]-p1[1])/6} ${p2}`}return d}
+function trails(L){const g={};L.stops.forEach((s,i)=>{if(s.t==null)return;(g[s.t]=g[s.t]||[]).push([s,i])});return Object.values(g)}
+function drawMap(A){const M=A.map,T=A.trip,st=standing(A),cur=st.leg,whole=MV.leg<0,hl=whole?cur:MV.leg,el=$('#mapsvg'),px=MV.w/(el.clientWidth||390),gold='#c9a24a';
+ const out=[],labels=[],dots=[],P=a=>a.map(([s])=>[s.x,s.y]),rc=`stroke-linecap="round" stroke-linejoin="round" fill="none"`;
+ out.push(`<rect x="-3000" y="-3000" width="7000" height="7000" fill="#d6e4e3"/>`,`<path d="${M.land}" fill="none" stroke="#e8f0ee" stroke-width="${10*px}" stroke-linejoin="round"/>`,
+  `<path d="${M.land}" fill="#f4ecda" stroke="#c6b186" stroke-width="${1.1*px}" stroke-linejoin="round"/>`,...M.lakes.map(l=>`<path d="${l.d}" fill="#c8dad9"/>`),
+  ...M.rivers.map(r=>`<path d="${r.d}" ${rc} stroke="#93b2b8" stroke-width="${1.4*px}"/>`));
+ {const[,,VW,VH]=M.view,e=16,pc='#efe7d3';out.push(`<defs>${['T:0,0,0,1','B:0,1,0,0','L:0,0,1,0','R:1,0,0,0'].map(g=>{const[n,v]=g.split(':'),[a,b,c2,d]=v.split(',');return`<linearGradient id="pf${n}" x1="${a}" y1="${b}" x2="${c2}" y2="${d}"><stop offset="0" stop-color="${pc}"/><stop offset="1" stop-color="${pc}" stop-opacity="0"/></linearGradient>`}).join('')}</defs>`,
+  `<path fill-rule="evenodd" fill="${pc}" d="M-3000,-3000H4000V4000H-3000Z M0,0V${VH}H${VW}V0Z"/>`,`<rect x="0" y="0" width="${VW}" height="${e}" fill="url(#pfT)"/>`,`<rect x="0" y="${VH-e}" width="${VW}" height="${e}" fill="url(#pfB)"/>`,
+  `<rect x="0" y="0" width="${e}" height="${VH}" fill="url(#pfL)"/>`,`<rect x="${VW-e}" y="0" width="${e}" height="${VH}" fill="url(#pfR)"/>`)}
+ T.legs.forEach((L,i)=>{if(i===hl||i>cur||(!whole&&i!==hl-1))return;trails(L).forEach(t=>out.push(`<path d="${curve(P(t))}" ${rc} stroke="rgba(201,162,74,.42)" stroke-width="${2*px}"/>`))});
+ const L=T.legs[hl],now=hl===cur,ahead=hl>cur,idx=now?st.idx:(ahead?-1:1e9),an=MV.anim?' class="draw" pathLength="1"':'';
+ trails(L).forEach(t=>{const w=t.filter(([,i])=>i<=idx),rest=w.length?t.slice(w.length-1):t;
+  if(w.length>1){const d=curve(P(w));out.push(`<path d="${d}"${an} ${rc} stroke="#fffaf0" stroke-opacity=".95" stroke-width="${8*px}"/>`,`<path d="${d}"${an} ${rc} stroke="${gold}" stroke-width="${3.6*px}"/>`)}
+  if(rest.length>1)out.push(`<path d="${curve(P(rest))}"${MV.anim?' class="fade"':''} ${rc} stroke="${ahead?'rgba(27,36,64,.4)':'rgba(176,138,52,.8)'}" stroke-width="${3.4*px}" stroke-dasharray="0 ${7.5*px}"/>`)});
+ const seen=new Set();L.stops.forEach((s,i)=>{const k=s.x+','+s.y;if(seen.has(k))return;seen.add(k);const done=!ahead&&(i<=idx&&!s.np||!now);
+  out.push(`<circle cx="${s.x}" cy="${s.y}" r="${4.6*px}" fill="${done?gold:'#fffaf0'}" stroke="${done?'#fff':gold}" stroke-width="${1.6*px}"${s.sl?` data-pl="${s.sl}"`:''}/>`);dots.push([s.x,s.y,6]);
+  if(!whole)labels.push({x:s.x,y:s.y,t:s.n,fs:14,col:done?'#4a3b17':'#7d6c49',pri:2,r:6,sl:s.sl})});
+ if(!whole&&now)st.places.forEach(([sl,l])=>{if(dots.some(([x,y])=>Math.hypot(x-l.x,y-l.y)<2.5*px))return;
+  out.push(`<circle cx="${l.x}" cy="${l.y}" r="${3.2*px}" fill="#1b2440" stroke="#fff" stroke-width="${1.2*px}" data-pl="${sl}"/>`);dots.push([l.x,l.y,5]);
+  labels.push({x:l.x,y:l.y,t:l.n,fs:12.5,col:'#1b2440',it:1,pri:3,r:5,sl})});
+ const f=MV.focus&&A.l[MV.focus];if(f&&f.x!=null){out.push(`<circle cx="${f.x}" cy="${f.y}" r="${6*px}" fill="#b23a2a" stroke="#fff" stroke-width="${2*px}" data-pl="${MV.focus}"/>`);dots.push([f.x,f.y,8]);
+  labels.push({x:f.x,y:f.y,t:f.n,fs:15,col:'#1b2440',b:1,pri:1,r:8,sl:MV.focus})}
+ if(st.mark&&(now||whole)){const m=st.mark;for(let i=labels.length-1;i>=0;i--)if(Math.hypot(labels[i].x-m.x,labels[i].y-m.y)<.01&&labels[i].pri===2)labels.splice(i,1);
+  out.push(`<circle class="pulse" cx="${m.x}" cy="${m.y}" r="${15*px}" fill="rgba(201,162,74,.28)"/>`,`<circle cx="${m.x}" cy="${m.y}" r="${6.5*px}" fill="${gold}" stroke="#fff" stroke-width="${2.6*px}"/>`);dots.push([m.x,m.y,9]);
+  labels.push({x:m.x,y:m.y,t:m.n,fs:15,col:'#3b2f12',b:1,pri:0,r:10})}
+ T.reg.forEach(([n,x,y,legs])=>{if(!legs||legs.includes(hl))labels.push({x,y,t:n.toUpperCase(),fs:11.5,col:'rgba(122,98,50,.5)',pri:5,ctr:1,up:1})});
+ T.seas.forEach(([n,x,y])=>labels.push({x,y,t:n,fs:13,col:'rgba(64,98,108,.55)',it:1,pri:6,ctr:1}));
+ const boxes=dots.map(([x,y,r])=>[x-r*px,y-r*px,x+r*px,y+r*px]),hit=b=>boxes.some(o=>b[0]<o[2]&&o[0]<b[2]&&b[1]<o[3]&&o[1]<b[3]);
+ labels.sort((a,b)=>a.pri-b.pri).forEach(l=>{if(l.x<MV.x||l.x>MV.x+MV.w||l.y<MV.y||l.y>MV.y+MV.h)return;const inV=b=>b[0]>=MV.x&&b[2]<=MV.x+MV.w&&b[1]>=MV.y&&b[3]<=MV.y+MV.h;
+  const fs=l.fs*px,w=l.t.length*fs*(l.up?.86:.54),h=fs*1.2,g=(l.r||0)*px+3*px;
+  const c=l.ctr?[[l.x-w/2,l.y-h/2]]:[[l.x+g,l.y-h/2],[l.x-g-w,l.y-h/2],[l.x-w/2,l.y-g-h],[l.x-w/2,l.y+g*.8]];
+  let ok=null;for(const[x,y]of c){const b=[x,y,x+w,y+h];if(inV(b)&&!hit(b)){ok=b;break}}if(!ok&&l.pri===0)for(const[x,y]of c){const b=[x,y,x+w,y+h];if(inV(b)){ok=b;break}}if(!ok&&l.pri===0)ok=[c[0][0],c[0][1],c[0][0]+w,c[0][1]+h];if(!ok)return;boxes.push(ok);
+  const halo=l.ctr?'':`paint-order="stroke" stroke="#f7f0e1" stroke-width="${3.2*px}" stroke-linejoin="round"`;
+  out.push(`<text x="${ok[0]}" y="${ok[1]+h*.8}" font-size="${fs}" font-family='${SERIF}' fill="${l.col}" ${l.b?'font-weight="700"':''} ${l.it?'font-style="italic"':''} ${l.up?`letter-spacing="${fs*.28}"`:''} ${halo}${l.sl?` data-pl="${l.sl}"`:''}>${esc(l.t)}</text>`)});
+ el.setAttribute('viewBox',`${MV.x} ${MV.y} ${MV.w} ${MV.h}`);el.innerHTML=out.join('');MV.anim=false}
+function mvCard(A){const T=A.trip,st=standing(A),cur=st.leg,i=MV.leg,L=T.legs[i<0?cur:i];
+ const nm=st.mark&&!st.line.toLowerCase().includes(st.mark.n.toLowerCase())?st.mark.n:'',here=`<div class="mv-here${st.mark?'':' ink'}"><i></i><div>${nm?`<b>${esc(nm)}</b>${st.line?' · ':''}`:''}${esc(st.line)}<span class="mv-ref">${st.line||st.mark?' · ':''}${esc(st.b)} ${st.c}</span></div></div>`;
+ $('#mvcard').innerHTML=i<0?`<div class="mv-k">The whole story</div><div class="mv-t">Genesis to Revelation</div><div class="mv-s">One road in 14 legs. You are on leg ${cur+1}: ${esc(T.legs[cur].t)}.</div>${here}`:
+  `<div class="mv-k">Leg ${i+1} of 14 · ${i===cur?'You are here':i<cur?'Walked':'The road ahead'}</div><div class="mv-t">${esc(L.t)}</div><div class="mv-s">${esc(L.s)}</div>${i===cur?here:''}`}
+function mvStrip(A,smooth){const T=A.trip,cur=standing(A).leg,box=$('#mvlegs');
+ box.innerHTML=`<button data-leg="-1" class="all${MV.leg<0?' sel':''}">Whole story</button>`+T.legs.map((L,i)=>`<button data-leg="${i}" class="${i<cur?'walked':i===cur?'now':'ahead'}${i===MV.leg?' sel':''}"><span>${i+1}</span>${esc(L.t)}</button>`).join('');
+ box.querySelectorAll('button').forEach(b=>b.onclick=()=>pickLeg(A,+b.dataset.leg));
+ const on=box.querySelector('.sel');if(on)box.scrollTo({left:on.offsetLeft-box.clientWidth/2+on.offsetWidth/2,behavior:smooth?'smooth':'auto'})}
+function boxView(x0,y0,x1,y1,minW,pad){const el=$('#mapsvg'),W=el.clientWidth||390,H=el.clientHeight||700,top=$('#mapv .mv-top').offsetHeight||64,bot=$('#mvpanel').offsetHeight||230;
+ const aw=W-(pad==null?150:pad),ah=Math.max(140,H-top-bot-40),s=Math.max((x1-x0)/aw,(y1-y0)/ah,(minW||40)/W),cx=(x0+x1)/2,cy=(y0+y1)/2;return{x:cx-W/2*s,y:cy-(top+20+ah/2)*s,w:W*s,h:H*s}}
+function bbox(pts,minW,pad){const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);return boxView(Math.min(...xs),Math.min(...ys),Math.max(...xs),Math.max(...ys),minW,pad)}
+function legBox(A,i){const st=standing(A),p=A.trip.legs[i].stops.map(s=>[s.x,s.y]);if(i===st.leg){if(st.mark)p.push([st.mark.x,st.mark.y]);st.places.slice(0,4).forEach(([,l])=>p.push([l.x,l.y]))}return bbox(p,26)}
+function wholeBox(A){return bbox(A.trip.legs.flatMap(L=>L.stops.map(s=>[s.x,s.y])),100,24)}
+function fly(A,t){const el=$('#mapsvg'),f={x:MV.x,y:MV.y,w:MV.w,h:MV.h},t0=performance.now(),dur=matchMedia('(prefers-reduced-motion: reduce)').matches?0:700;cancelAnimationFrame(MV.raf);
+ const step=now=>{const k=dur?Math.min(1,(now-t0)/dur):1,e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+  MV.w=Math.exp(Math.log(f.w)+(Math.log(t.w)-Math.log(f.w))*e);MV.h=MV.w*t.h/t.w;
+  const cx=f.x+f.w/2+(t.x+t.w/2-f.x-f.w/2)*e,cy=f.y+f.h/2+(t.y+t.h/2-f.y-f.h/2)*e;MV.x=cx-MV.w/2;MV.y=cy-MV.h/2;el.setAttribute('viewBox',`${MV.x} ${MV.y} ${MV.w} ${MV.h}`);
+  if(k<1)MV.raf=requestAnimationFrame(step);else{Object.assign(MV,t);MV.anim=true;drawMap(A)}};MV.raf=requestAnimationFrame(step)}
+function pickLeg(A,i){MV.leg=i;MV.focus=null;$('#mvtitle').textContent='Your journey';mvStrip(A,true);mvCard(A);fly(A,i<0?wholeBox(A):legBox(A,i))}
+function openMap(focus){atlas().then(A=>{if(!A.map||!A.trip)return;if(SHEET.length)closeSheet();$('#mapv').hidden=false;document.body.classList.add('mapopen');const st=standing(A);
+  const f=focus&&A.l[focus]&&A.l[focus].x!=null?A.l[focus]:null;MV={x:0,y:0,w:100,h:100,leg:st.leg,focus:f?focus:null,anim:true};
+  $('#mvtitle').textContent=f?f.n:'Your journey';mvStrip(A);mvCard(A);Object.assign(MV,f?boxView(f.x-10,f.y-10,f.x+10,f.y+10,60):legBox(A,st.leg));drawMap(A)})}
+function closeMap(){$('#mapv').hidden=true;document.body.classList.remove('mapopen')}
+(()=>{const el=$('#mapsvg'),P=new Map();let start=null,moved=0;
+ const zoom=(f,cx,cy)=>{atlas().then(A=>{const r=el.getBoundingClientRect(),s=MV.w/r.width,mx=MV.x+(cx-r.left)*s,my=MV.y+(cy-r.top)*s,nw=Math.min(420,Math.max(14,MV.w*f)),k=nw/MV.w;MV.x=mx-(mx-MV.x)*k;MV.y=my-(my-MV.y)*k;MV.w=nw;MV.h*=k;drawMap(A)})};
+ el.addEventListener('pointerdown',e=>{el.setPointerCapture(e.pointerId);P.set(e.pointerId,[e.clientX,e.clientY]);if(P.size===1)moved=0;cancelAnimationFrame(MV.raf);start={x:MV.x,y:MV.y,pts:new Map(P),w:MV.w,h:MV.h}});
+ el.addEventListener('pointermove',e=>{if(!P.has(e.pointerId)||!start)return;P.set(e.pointerId,[e.clientX,e.clientY]);const r=el.getBoundingClientRect(),s=start.w/r.width;
+  if(P.size===1){const[a]=[...start.pts.values()],[b]=[...P.values()];moved=Math.max(moved,Math.hypot(b[0]-a[0],b[1]-a[1]));MV.x=start.x-(b[0]-a[0])*s;MV.y=start.y-(b[1]-a[1])*s;el.setAttribute('viewBox',`${MV.x} ${MV.y} ${MV.w} ${MV.h}`)}
+  else if(P.size===2&&start.pts.size===2){moved=99;const[a1,a2]=[...start.pts.values()],[b1,b2]=[...P.values()];const d0=Math.hypot(a1[0]-a2[0],a1[1]-a2[1]),d1=Math.hypot(b1[0]-b2[0],b1[1]-b2[1]);if(d0>10&&d1>10){MV.w=Math.min(420,Math.max(14,start.w*d0/d1));MV.h=start.h*MV.w/start.w;const cx=(a1[0]+a2[0])/2,cy=(a1[1]+a2[1])/2,mx=start.x+(cx-r.left)*s,my=start.y+(cy-r.top)*s,k=MV.w/start.w,nx=(b1[0]+b2[0])/2,ny=(b1[1]+b2[1])/2;MV.x=mx-(nx-r.left)*s*k;MV.y=my-(ny-r.top)*s*k;el.setAttribute('viewBox',`${MV.x} ${MV.y} ${MV.w} ${MV.h}`)}}});
+ const end=e=>{const pt=P.get(e.pointerId);P.delete(e.pointerId);if(P.size){start={x:MV.x,y:MV.y,pts:new Map(P),w:MV.w,h:MV.h};return}start=null;
+  if(moved<8&&pt&&e.type==='pointerup'){const t=document.elementFromPoint(pt[0],pt[1]);const g=t&&t.closest&&t.closest('[data-pl]');if(g)openSheet('l',g.dataset.pl);return}
+  atlas().then(A=>drawMap(A))};
  el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
  el.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY>0?1.15:1/1.15,e.clientX,e.clientY)},{passive:false});
- $('#mvin').onclick=()=>{const r=el.getBoundingClientRect();zoom(1/1.5,r.left+r.width/2,r.top+r.height/2)};$('#mvout').onclick=()=>{const r=el.getBoundingClientRect();zoom(1.5,r.left+r.width/2,r.top+r.height/2)};
- $('#mvall').onclick=()=>atlas().then(A=>{const v=A.map.view,el=$('#mapsvg'),ar=(el.clientHeight||600)/(el.clientWidth||390);const wv=Math.min(v[2],v[3]/ar*1.0);fitMap(A,v[2]*0.52,v[3]*0.5,Math.max(wv,v[2]*0.62));drawMap(A,MV.focus)});
- $('#mvhere').onclick=()=>atlas().then(A=>{const J=A.map.journey,s=J[Math.max(0,journeyIndex(A))];fitMap(A,s.x,s.y,100);drawMap(A,MV.focus)});
  $('#mvx').onclick=closeMap;$('#mapbtn').onclick=()=>openMap(null)})();
 const BIBLE={};let HL=null;  /* HL = {book, ch, from, to}: verses to highlight */
 function loadBook(book){return BIBLE[book]||(BIBLE[book]=fetch('bible/'+encodeURIComponent(book)+'.json').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(e=>{delete BIBLE[book];throw e}))}
