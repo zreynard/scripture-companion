@@ -1,0 +1,1050 @@
+{
+  "jesus_905": {
+    "name": "Jesus",
+    "aka": ["Jesus Christ", "Christ", "Jesus of Nazareth"],
+    "who": "The Son of God and promised Messiah, born of Mary, who died for sinners and rose again.",
+    "key": [
+      "He was born of the virgin Mary in Bethlehem and laid in a manger (Luke 2).",
+      "He was baptized by John and then tempted by the devil in the wilderness (Matthew 3–4).",
+      "He preached the kingdom of God, called disciples, taught, and healed many throughout Galilee (Mark 1).",
+      "He was crucified under Pontius Pilate and buried in a new tomb (John 19).",
+      "He rose from the dead on the third day and later ascended into heaven (Luke 24)."
+    ],
+    "family": {
+      "father": ["joseph_1715"],
+      "mother": ["mary_1938"],
+      "siblings": ["james_719", "joses_1721", "jude_1756", "simon_2747"]
+    },
+    "skip": false
+  },
+  "israel_682": {
+    "name": "Jacob",
+    "aka": ["Israel"],
+    "who": "Son of Isaac and Rebekah, renamed Israel by God, whose twelve sons became the tribes of Israel.",
+    "key": [
+      "He was born holding Esau's heel and later bought Esau's birthright for stew (Genesis 25).",
+      "He deceived his blind father Isaac to receive the blessing meant for Esau (Genesis 27).",
+      "Fleeing Esau, he dreamed of a ladder to heaven and received God's promise at Bethel (Genesis 28).",
+      "He served Laban and married Leah and Rachel (Genesis 29).",
+      "He wrestled with God at Peniel and was renamed Israel (Genesis 32)."
+    ],
+    "family": {
+      "father": ["isaac_616"],
+      "mother": ["rebekah_2401"],
+      "siblings": ["esau_1216"],
+      "spouses": ["leah_1813", "rachel_2386", "bilhah_502", "zilpah_3081"],
+      "children": ["reuben_2429", "simeon_2741", "levi_1820", "judah_1751", "dan_973", "naphtali_2149", "gad_1262", "asher_337", "issachar_645", "zebulun_3002", "dinah_1012", "joseph_1710", "benjamin_463"]
+    },
+    "skip": false
+  },
+  "david_994": {
+    "name": "David",
+    "aka": [],
+    "who": "Shepherd from Bethlehem who became Israel's greatest king, a psalmist, and ancestor of the Messiah.",
+    "key": [
+      "Samuel anointed the young shepherd David as the next king of Israel (1 Samuel 16).",
+      "He killed the Philistine giant Goliath with a sling and a stone (1 Samuel 17).",
+      "He became king over all Israel and made Jerusalem his capital (2 Samuel 5).",
+      "God promised that David's throne and dynasty would be established forever (2 Samuel 7).",
+      "He committed adultery with Bathsheba and arranged Uriah's death, then was confronted by Nathan (2 Samuel 11–12)."
+    ],
+    "family": {
+      "father": ["jesse_903"],
+      "siblings": ["eliab_1075", "abinadab_44", "shammah_2700", "nethaneel_2189", "raddai_2387", "ozem_2260", "elihu_1129", "zeruiah_3055", "abigail_27"],
+      "spouses": ["michal_2073", "abigail_26", "ahinoam_153", "maacah_1839", "haggith_1353", "abital_54", "eglah_1036", "bathsheba_416"],
+      "children": ["amnon_232", "daniel_939", "absalom_59", "adonijah_97", "shephatiah_2657", "ithream_655", "shammua_2547", "shobab_2715", "nathan_2152", "solomon_2762", "ibhar_1584", "elishua_1163", "elpalet_1148", "nogah_2213", "nepheg_2179", "japhia_728", "elishama_1156", "eliada_1078", "eliphalet_1143", "jerimoth_869", "tamar_2822"]
+    },
+    "skip": false
+  },
+  "moses_2108": {
+    "name": "Moses",
+    "aka": [],
+    "who": "Hebrew prophet and lawgiver whom God used to lead Israel out of Egypt and give the law at Sinai.",
+    "key": [
+      "As a baby he was hidden in a basket and adopted by Pharaoh's daughter (Exodus 2).",
+      "God called him from a burning bush to deliver Israel from Egypt (Exodus 3).",
+      "He led the Israelites through the Red Sea on dry ground (Exodus 14).",
+      "He received the Ten Commandments and the law from God on Mount Sinai (Exodus 20).",
+      "Barred from entering Canaan, he viewed the land from Mount Nebo and died there (Deuteronomy 34)."
+    ],
+    "family": {
+      "father": ["amram_242"],
+      "mother": ["jochebed_1645"],
+      "siblings": ["aaron_1", "miriam_2087"],
+      "spouses": ["zipporah_3095"],
+      "children": ["gershom_1302", "eliezer_1114"]
+    },
+    "skip": false
+  },
+  "aaron_1": {
+    "name": "Aaron",
+    "aka": [],
+    "who": "Older brother of Moses, his spokesman before Pharaoh, and the first high priest of Israel.",
+    "key": [
+      "God appointed Aaron to speak for Moses and sent him to meet his brother (Exodus 4).",
+      "Before Pharaoh, Aaron's staff became a serpent and swallowed the magicians' staffs (Exodus 7).",
+      "While Moses was on Mount Sinai, Aaron made the golden calf for the people (Exodus 32).",
+      "He and his sons were consecrated as Israel's priests (Leviticus 8).",
+      "He died on Mount Hor, and his son Eleazar succeeded him as priest (Numbers 20)."
+    ],
+    "family": {
+      "father": ["amram_242"],
+      "mother": ["jochebed_1645"],
+      "siblings": ["moses_2108", "miriam_2087"],
+      "spouses": ["elisheba_1162"],
+      "children": ["nadab_2128", "abihu_33", "eleazar_1062", "ithamar_649"]
+    },
+    "skip": false
+  },
+  "abraham_58": {
+    "name": "Abraham",
+    "aka": ["Abram"],
+    "who": "Patriarch called by God to go to Canaan, with whom God made a covenant to bless all nations.",
+    "key": [
+      "God called Abram to leave his country and promised to make him a great nation (Genesis 12).",
+      "He believed the Lord, and God counted it to him as righteousness (Genesis 15).",
+      "God renamed him Abraham and gave circumcision as the sign of the covenant (Genesis 17).",
+      "In his old age, Sarah bore him the promised son Isaac (Genesis 21).",
+      "He obeyed God's command to offer Isaac, and God provided a ram instead (Genesis 22)."
+    ],
+    "family": {
+      "father": ["terah_2841"],
+      "siblings": ["nahor_2143", "haran_1407"],
+      "spouses": ["sarah_2473", "hagar_1348", "keturah_1782"],
+      "children": ["ishmael_630", "isaac_616", "zimran_3086", "jokshan_1685", "medan_1978", "midian_2075", "ishbak_620", "shuah_2727"]
+    },
+    "skip": false
+  },
+  "solomon_2762": {
+    "name": "Solomon",
+    "aka": ["Jedidiah"],
+    "who": "Son of David and Bathsheba who succeeded David as king, famed for wisdom and for building the temple.",
+    "key": [
+      "Born to David and Bathsheba, he was also named Jedidiah by the Lord through Nathan (2 Samuel 12).",
+      "He was anointed king to succeed his father David (1 Kings 1).",
+      "He asked God for wisdom, and God also gave him riches and honor (1 Kings 3).",
+      "He built the temple in Jerusalem and dedicated it with prayer (1 Kings 8).",
+      "His many foreign wives turned his heart to other gods, so the kingdom was divided after him (1 Kings 11)."
+    ],
+    "family": {
+      "father": ["david_994"],
+      "mother": ["bathsheba_416"],
+      "siblings": ["amnon_232", "daniel_939", "absalom_59", "adonijah_97", "shephatiah_2657", "ithream_655", "shammua_2547", "shobab_2715", "nathan_2152", "ibhar_1584", "elishua_1163", "elpalet_1148", "nogah_2213", "nepheg_2179", "japhia_728", "elishama_1156", "eliada_1078", "eliphalet_1143", "jerimoth_869", "tamar_2822"],
+      "spouses": ["naamah_2119"],
+      "children": ["rehoboam_2412", "taphath_2825", "basmath_415"]
+    },
+    "skip": false
+  },
+  "saul_2478": {
+    "name": "Saul",
+    "aka": [],
+    "who": "Son of Kish from the tribe of Benjamin, anointed by Samuel as Israel's first king.",
+    "key": [
+      "Samuel anointed Saul, who was later chosen by lot as king (1 Samuel 10).",
+      "He offered a sacrifice himself instead of waiting for Samuel, and was rebuked (1 Samuel 13).",
+      "He spared King Agag and the best livestock, and God rejected him as king (1 Samuel 15).",
+      "Jealous of David, he repeatedly tried to kill him (1 Samuel 18–26).",
+      "He consulted a medium at En-dor, then died in battle on Mount Gilboa (1 Samuel 28–31)."
+    ],
+    "family": {
+      "father": ["kish_1784"],
+      "spouses": ["ahinoam_152", "rizpah_2444"],
+      "children": ["jonathan_1692", "abinadab_641", "malchi-shua_1990", "ish-bosheth_622", "merab_2001", "michal_2073", "armoni_309", "mephibosheth_2000"]
+    },
+    "skip": false
+  },
+  "holy_spirit_7400": {
+    "name": "Holy Spirit",
+    "aka": ["Spirit of God", "the Spirit", "Helper"],
+    "who": "The Spirit of God, the third person of the Trinity, active in creation, inspiring prophets, and indwelling believers.",
+    "key": [
+      "The Spirit of God hovered over the waters at creation (Genesis 1).",
+      "The Spirit came upon judges, kings, and prophets to empower them for God's work (Judges 6).",
+      "The Spirit descended on Jesus like a dove at his baptism (Matthew 3).",
+      "Jesus promised to send the Spirit as Helper to teach and guide his disciples (John 14).",
+      "The Spirit was poured out on the believers at Pentecost (Acts 2)."
+    ],
+    "skip": false
+  },
+  "judah_1751": {
+    "name": "Judah",
+    "aka": [],
+    "who": "Fourth son of Jacob and Leah, ancestor of the tribe of Judah and of King David.",
+    "key": [
+      "He was born to Leah, who named him in praise of the Lord (Genesis 29).",
+      "He proposed selling his brother Joseph to traders rather than killing him (Genesis 37).",
+      "He fathered the twins Perez and Zerah by his daughter-in-law Tamar (Genesis 38).",
+      "In Egypt he offered himself as a slave in place of Benjamin (Genesis 44).",
+      "Jacob blessed him, saying the scepter would not depart from Judah (Genesis 49)."
+    ],
+    "family": {
+      "father": ["israel_682"],
+      "mother": ["leah_1813"],
+      "siblings": ["reuben_2429", "simeon_2741", "levi_1820", "issachar_645", "zebulun_3002", "dinah_1012", "dan_973", "naphtali_2149", "gad_1262", "asher_337", "joseph_1710", "benjamin_463"],
+      "children": ["er_1209", "onan_2250", "shelah_2593", "pharez_2338", "zerah_2984"]
+    },
+    "skip": false
+  },
+  "joseph_1710": {
+    "name": "Joseph",
+    "aka": [],
+    "who": "Favored son of Jacob and Rachel, sold into slavery by his brothers, who rose to rule Egypt.",
+    "key": [
+      "Jacob's favorite, he dreamed of ruling his brothers, who sold him into slavery (Genesis 37).",
+      "Falsely accused by Potiphar's wife, he was thrown into prison (Genesis 39).",
+      "He interpreted Pharaoh's dreams and was made ruler over Egypt (Genesis 41).",
+      "He revealed himself to his brothers and brought Jacob's family to Egypt (Genesis 45).",
+      "He told his brothers that God meant their evil for good, then died in Egypt (Genesis 50)."
+    ],
+    "family": {
+      "father": ["israel_682"],
+      "mother": ["rachel_2386"],
+      "siblings": ["benjamin_463", "reuben_2429", "simeon_2741", "levi_1820", "judah_1751", "issachar_645", "zebulun_3002", "dinah_1012", "dan_973", "naphtali_2149", "gad_1262", "asher_337"],
+      "spouses": ["asenath_335"],
+      "children": ["manasseh_1928", "ephraim_1206"]
+    },
+    "skip": false
+  },
+  "joshua_1727": {
+    "name": "Joshua",
+    "aka": ["Hoshea"],
+    "who": "Son of Nun, Moses' assistant and successor, who led Israel into the Promised Land.",
+    "key": [
+      "He led Israel's army to victory over Amalek while Moses held up his hands (Exodus 17).",
+      "With Caleb, he was one of two spies who urged Israel to trust God (Numbers 13–14).",
+      "He was commissioned to succeed Moses as Israel's leader (Deuteronomy 31).",
+      "He led Israel across the Jordan and conquered Jericho (Joshua 3–6).",
+      "Before his death, he called Israel to serve the Lord alone (Joshua 24)."
+    ],
+    "family": {
+      "father": ["nun_2214"]
+    },
+    "skip": false
+  },
+  "paul_2479": {
+    "name": "Paul",
+    "aka": ["Saul", "Saul of Tarsus"],
+    "who": "Pharisee from Tarsus who persecuted the church, then became an apostle to the Gentiles and wrote many New Testament letters.",
+    "key": [
+      "As a young man named Saul, he approved of the stoning of Stephen (Acts 7).",
+      "The risen Jesus appeared to him on the road to Damascus, and he was converted (Acts 9).",
+      "Sent out with Barnabas, he preached the gospel to Jews and Gentiles in many cities (Acts 13–14).",
+      "He was arrested in Jerusalem and appealed to Caesar (Acts 21–25).",
+      "After a shipwreck, he reached Rome and preached there under house arrest (Acts 27–28)."
+    ],
+    "skip": false
+  },
+  "peter_2745": {
+    "name": "Peter",
+    "aka": ["Simon Peter", "Simon", "Cephas"],
+    "who": "Galilean fisherman, brother of Andrew, who became a leading apostle of Jesus and preached at Pentecost.",
+    "key": [
+      "Jesus called him from his fishing nets to follow him (Matthew 4).",
+      "He confessed Jesus as the Christ, the Son of the living God (Matthew 16).",
+      "He denied knowing Jesus three times on the night of Jesus' arrest (Mark 14).",
+      "The risen Jesus restored him and told him to feed his sheep (John 21).",
+      "He preached at Pentecost and later brought the gospel to the Gentile Cornelius (Acts 2; Acts 10)."
+    ],
+    "family": {
+      "father": ["jonas_1687"],
+      "siblings": ["andrew_264"]
+    },
+    "skip": false
+  },
+  "ephraim_1206": {
+    "name": "Ephraim",
+    "aka": [],
+    "who": "Younger son of Joseph born in Egypt, ancestor of the tribe of Ephraim, a leading northern tribe.",
+    "key": [
+      "Joseph named him Ephraim because God had made him fruitful in Egypt (Genesis 41).",
+      "Jacob crossed his hands and blessed Ephraim above his older brother Manasseh (Genesis 48).",
+      "After some of his sons were killed by men of Gath, he mourned many days (1 Chronicles 7)."
+    ],
+    "family": {
+      "father": ["joseph_1710"],
+      "mother": ["asenath_335"],
+      "siblings": ["manasseh_1928"],
+      "children": ["shuthelah_2734", "becher_424", "tahan_2812", "ezer_1240", "elead_1059", "beriah_479"]
+    },
+    "skip": false
+  },
+  "benjamin_463": {
+    "name": "Benjamin",
+    "aka": ["Ben-oni"],
+    "who": "Youngest son of Jacob and Rachel, ancestor of the tribe of Benjamin.",
+    "key": [
+      "Rachel died giving birth to him; she named him Ben-oni, but Jacob called him Benjamin (Genesis 35).",
+      "Jacob kept him home when his brothers first went to Egypt for grain (Genesis 42).",
+      "Joseph's silver cup was planted in his sack to test the brothers (Genesis 44).",
+      "Jacob blessed him as a ravenous wolf (Genesis 49)."
+    ],
+    "family": {
+      "father": ["israel_682"],
+      "mother": ["rachel_2386"],
+      "siblings": ["joseph_1710", "reuben_2429", "simeon_2741", "levi_1820", "judah_1751", "issachar_645", "zebulun_3002", "dinah_1012", "dan_973", "naphtali_2149", "gad_1262", "asher_337"],
+      "children": ["bela_436", "becher_423", "ashbel_336", "gera_1298", "jediael_757", "ahiram_158", "shupham_2115", "huram_1569", "ehi_1038", "nohah_2120", "rapha_2447", "ard_293"]
+    },
+    "skip": false
+  },
+  "esau_1216": {
+    "name": "Esau",
+    "aka": ["Edom"],
+    "who": "Older twin brother of Jacob, son of Isaac and Rebekah, and ancestor of the Edomites.",
+    "key": [
+      "Born first of twins, he later sold his birthright to Jacob for a meal (Genesis 25).",
+      "Jacob received Isaac's blessing instead of him, and Esau planned to kill Jacob (Genesis 27).",
+      "Years later he ran to meet Jacob and embraced him in reconciliation (Genesis 33).",
+      "He settled in the hill country of Seir and became the father of the Edomites (Genesis 36)."
+    ],
+    "family": {
+      "father": ["isaac_616"],
+      "mother": ["rebekah_2401"],
+      "siblings": ["israel_682"],
+      "spouses": ["adah_414", "aholibamah_1761", "bashemath_1887"],
+      "children": ["eliphaz_1144", "reuel_2430", "jeush_913", "jaalam_662", "korah_1793"]
+    },
+    "skip": false
+  },
+  "moab_2103": {
+    "name": "Moab",
+    "aka": [],
+    "who": "Son of Lot by his older daughter and ancestor of the Moabites, the nation east of the Dead Sea.",
+    "key": [
+      "He was born to Lot's older daughter after she made her father drunk in a cave (Genesis 19).",
+      "His descendants, the Moabites, became a nation that often opposed Israel (Numbers 22).",
+      "Ruth, an ancestor of David, came from the land of Moab (Ruth 1)."
+    ],
+    "family": {
+      "father": ["lot_1830"],
+      "mother": ["daughter_of_lot_older_985"],
+      "siblings": ["ben-ammi_451"]
+    },
+    "skip": false
+  },
+  "pharaoh_2331": {
+    "name": "Pharaoh",
+    "aka": [],
+    "who": "The king of Egypt at the exodus, who refused to free Israel until God struck Egypt with plagues.",
+    "key": [
+      "When Moses and Aaron asked him to let Israel go, he made their labor harder (Exodus 5).",
+      "He hardened his heart as God sent plague after plague on Egypt (Exodus 7–10).",
+      "After the death of Egypt's firstborn, he told the Israelites to leave (Exodus 12).",
+      "He pursued Israel, and his army drowned in the Red Sea (Exodus 14).",
+      "Paul says God raised him up to display divine power (Romans 9)."
+    ],
+    "skip": false
+  },
+  "jeremiah_853": {
+    "name": "Jeremiah",
+    "aka": [],
+    "who": "Prophet from a priestly family who warned Judah of judgment before and during Babylon's conquest of Jerusalem.",
+    "key": [
+      "God called him as a prophet while he was still young (Jeremiah 1).",
+      "Pashhur the priest beat him and put him in the stocks (Jeremiah 20).",
+      "During the siege of Jerusalem, he bought a field as a sign of future restoration (Jeremiah 32).",
+      "He was thrown into a muddy cistern and rescued by Ebed-melech (Jeremiah 38).",
+      "After Jerusalem fell, he was taken to Egypt against his warning (Jeremiah 43)."
+    ],
+    "family": {
+      "father": ["hilkiah_1529"]
+    },
+    "skip": false
+  },
+  "isaac_616": {
+    "name": "Isaac",
+    "aka": [],
+    "who": "The promised son of Abraham and Sarah, father of Jacob and Esau, and heir of God's covenant.",
+    "key": [
+      "He was born to Abraham and Sarah in their old age, as God had promised (Genesis 21).",
+      "Abraham bound him on an altar, but God provided a ram in his place (Genesis 22).",
+      "He married Rebekah, whom Abraham's servant brought from his relatives (Genesis 24).",
+      "Old and blind, he was deceived into blessing Jacob instead of Esau (Genesis 27).",
+      "He died at an old age and was buried by Esau and Jacob (Genesis 35)."
+    ],
+    "family": {
+      "father": ["abraham_58"],
+      "mother": ["sarah_2473"],
+      "siblings": ["ishmael_630", "zimran_3086", "jokshan_1685", "medan_1978", "midian_2075", "ishbak_620", "shuah_2727"],
+      "spouses": ["rebekah_2401"],
+      "children": ["esau_1216", "israel_682"]
+    },
+    "skip": false
+  },
+  "samuel_2469": {
+    "name": "Samuel",
+    "aka": [],
+    "who": "Prophet, priest, and last judge of Israel, who anointed both Saul and David as king.",
+    "key": [
+      "Born in answer to Hannah's prayer, he was dedicated to serve the Lord at Shiloh (1 Samuel 1).",
+      "As a boy, he heard the Lord call him by name at night (1 Samuel 3).",
+      "He led Israel in repentance, and God routed the Philistines at Mizpah (1 Samuel 7).",
+      "He anointed Saul as Israel's first king (1 Samuel 10).",
+      "He anointed the young David as king in Bethlehem (1 Samuel 16)."
+    ],
+    "family": {
+      "father": ["elkanah_1168"],
+      "mother": ["hannah_1400"],
+      "children": ["joel_1647", "abiah_15"]
+    },
+    "skip": false
+  },
+  "joab_1617": {
+    "name": "Joab",
+    "aka": [],
+    "who": "Son of David's sister Zeruiah and the commander of David's army.",
+    "key": [
+      "He led the attack on Jerusalem and became chief commander (1 Chronicles 11).",
+      "He murdered Abner in revenge for his brother Asahel's death (2 Samuel 3).",
+      "At David's order, he placed Uriah where he would be killed in battle (2 Samuel 11).",
+      "He killed Absalom against David's orders (2 Samuel 18).",
+      "After supporting Adonijah, he was executed at Solomon's command (1 Kings 2)."
+    ],
+    "family": {
+      "mother": ["zeruiah_3055"],
+      "siblings": ["abishai_50", "asahel_320"]
+    },
+    "skip": false
+  },
+  "hezekiah_1512": {
+    "name": "Hezekiah",
+    "aka": [],
+    "who": "Faithful king of Judah, son of Ahaz, who trusted the Lord when Assyria threatened Jerusalem.",
+    "key": [
+      "He removed idols and broke the bronze serpent Moses had made (2 Kings 18).",
+      "He invited all Israel to Jerusalem to keep a great Passover (2 Chronicles 30).",
+      "When Sennacherib threatened Jerusalem, he prayed, and an angel struck the Assyrian army (2 Kings 19).",
+      "When he was deathly ill, God added fifteen years to his life (2 Kings 20).",
+      "He showed his treasures to Babylonian envoys, and Isaiah foretold exile to Babylon (Isaiah 39)."
+    ],
+    "family": {
+      "father": ["ahaz_118"],
+      "mother": ["abijah_14"],
+      "spouses": ["hephzi-bah_1499"],
+      "children": ["manasseh_1930"]
+    },
+    "skip": false
+  },
+  "manasseh_1928": {
+    "name": "Manasseh",
+    "aka": [],
+    "who": "Firstborn son of Joseph born in Egypt, ancestor of the tribe of Manasseh.",
+    "key": [
+      "Joseph named him Manasseh because God had made him forget his hardship (Genesis 41).",
+      "Jacob blessed him but placed his younger brother Ephraim ahead of him (Genesis 48).",
+      "His descendants received land on both sides of the Jordan (Joshua 17)."
+    ],
+    "family": {
+      "father": ["joseph_1710"],
+      "mother": ["asenath_335"],
+      "siblings": ["ephraim_1206"],
+      "children": ["machir_1877", "ashriel_340"]
+    },
+    "skip": false
+  },
+  "elijah_1131": {
+    "name": "Elijah",
+    "aka": [],
+    "who": "Prophet from Tishbe who confronted King Ahab and Baal worship in Israel and was taken up to heaven.",
+    "key": [
+      "He announced a drought, was fed by ravens, and raised a widow's son (1 Kings 17).",
+      "On Mount Carmel, God answered his prayer with fire, defeating the prophets of Baal (1 Kings 18).",
+      "He confronted Ahab for seizing Naboth's vineyard (1 Kings 21).",
+      "He was taken up to heaven in a whirlwind as Elisha watched (2 Kings 2).",
+      "He appeared with Moses at Jesus' transfiguration (Luke 9)."
+    ],
+    "skip": false
+  },
+  "absalom_59": {
+    "name": "Absalom",
+    "aka": [],
+    "who": "Son of David by Maacah who rebelled against his father and tried to seize the throne.",
+    "key": [
+      "He killed his half-brother Amnon for violating his sister Tamar, then fled (2 Samuel 13).",
+      "Joab arranged his return to Jerusalem and reconciliation with David (2 Samuel 14).",
+      "He won the hearts of Israel and declared himself king at Hebron (2 Samuel 15).",
+      "Caught by his head in an oak tree, he was killed by Joab (2 Samuel 18).",
+      "David mourned him deeply, crying out for his son (2 Samuel 18)."
+    ],
+    "family": {
+      "father": ["david_994"],
+      "mother": ["maacah_1839"],
+      "siblings": ["amnon_232", "daniel_939", "adonijah_97", "shephatiah_2657", "ithream_655", "shammua_2547", "shobab_2715", "nathan_2152", "solomon_2762", "ibhar_1584", "elishua_1163", "elpalet_1148", "nogah_2213", "nepheg_2179", "japhia_728", "elishama_1156", "eliada_1078", "eliphalet_1143", "jerimoth_869", "tamar_2822"],
+      "children": ["tamar_2823"]
+    },
+    "skip": false
+  },
+  "john_1676": {
+    "name": "John the Baptist",
+    "aka": ["John"],
+    "who": "Prophet, son of Zechariah and Elizabeth, who prepared the way for Jesus and baptized him.",
+    "key": [
+      "An angel announced his birth to his father Zechariah in the temple (Luke 1).",
+      "He preached repentance in the wilderness and baptized people in the Jordan (Matthew 3).",
+      "He baptized Jesus and pointed to him as the Lamb of God (John 1).",
+      "From prison he sent disciples to ask Jesus if he was the coming one (Luke 7).",
+      "Herod had him beheaded at the request of Herodias's daughter (Mark 6)."
+    ],
+    "family": {
+      "father": ["zacharias_2971"],
+      "mother": ["elisabeth_1152"]
+    },
+    "skip": false
+  },
+  "nebuchadnezzar_2167": {
+    "name": "Nebuchadnezzar",
+    "aka": ["Nebuchadrezzar"],
+    "who": "King of Babylon who conquered Judah, destroyed Jerusalem, and was humbled by the God of Israel.",
+    "key": [
+      "He besieged Jerusalem and carried King Jehoiachin and many others to Babylon (2 Kings 24).",
+      "His army burned the temple and Jerusalem after a long siege (2 Kings 25).",
+      "Daniel interpreted his dream of a great statue (Daniel 2).",
+      "He threw three Jewish men into a fiery furnace, but God delivered them (Daniel 3).",
+      "Humbled to live like an animal, he later praised the Most High God (Daniel 4)."
+    ],
+    "family": {
+      "children": ["belshazzar_437"]
+    },
+    "skip": false
+  },
+  "canaan_914": {
+    "name": "Canaan",
+    "aka": [],
+    "who": "Son of Ham and grandson of Noah, ancestor of the Canaanite peoples whose land bore his name.",
+    "key": [
+      "Noah cursed Canaan after Ham saw his father's nakedness (Genesis 9).",
+      "His descendants included Sidon, Heth, the Jebusites, the Amorites, and other peoples (Genesis 10).",
+      "God promised the land of Canaan to Abraham's offspring (Genesis 17)."
+    ],
+    "family": {
+      "father": ["ham_1359"],
+      "siblings": ["cush_962", "mizraim_2100", "phut_2354"],
+      "children": ["zidon_2738", "heth_1510"]
+    },
+    "skip": false
+  },
+  "jonathan_1692": {
+    "name": "Jonathan",
+    "aka": [],
+    "who": "Eldest son of King Saul, a brave warrior, and David's loyal friend.",
+    "key": [
+      "With only his armor-bearer, he attacked a Philistine garrison, and God gave victory (1 Samuel 14).",
+      "He made a covenant with David and gave him his robe and weapons (1 Samuel 18).",
+      "He warned David of Saul's intent to kill him using arrows as a signal (1 Samuel 20).",
+      "He was killed with his father in battle on Mount Gilboa (1 Samuel 31).",
+      "David mourned him in a lament for Saul and Jonathan (2 Samuel 1)."
+    ],
+    "family": {
+      "father": ["saul_2478"],
+      "mother": ["ahinoam_152"],
+      "siblings": ["abinadab_641", "malchi-shua_1990", "ish-bosheth_622", "merab_2001", "michal_2073", "armoni_309", "mephibosheth_2000"],
+      "children": ["mephibosheth_1999"]
+    },
+    "skip": false
+  },
+  "jeroboam_872": {
+    "name": "Jeroboam",
+    "aka": [],
+    "who": "Son of Nebat and first king of the northern kingdom of Israel, who led it into idolatry.",
+    "key": [
+      "The prophet Ahijah tore his cloak and promised Jeroboam ten tribes (1 Kings 11).",
+      "When the northern tribes rejected Rehoboam, they made Jeroboam king (1 Kings 12).",
+      "He set up golden calves at Bethel and Dan to keep people from Jerusalem (1 Kings 12).",
+      "A man of God denounced his altar at Bethel, and Jeroboam's hand withered (1 Kings 13).",
+      "Ahijah foretold the destruction of his house because of his sin (1 Kings 14)."
+    ],
+    "family": {
+      "father": ["nebat_2165"],
+      "mother": ["zeruah_3053"],
+      "children": ["abijah_35", "nadab_2129"]
+    },
+    "skip": false
+  },
+  "ahab_113": {
+    "name": "Ahab",
+    "aka": [],
+    "who": "Son of Omri and king of Israel who, with his wife Jezebel, promoted Baal worship and opposed Elijah.",
+    "key": [
+      "He married Jezebel and built an altar and temple for Baal in Samaria (1 Kings 16).",
+      "Elijah defeated the prophets of Baal before him on Mount Carmel (1 Kings 18).",
+      "God gave him victories over Ben-hadad of Syria (1 Kings 20).",
+      "Jezebel had Naboth killed so Ahab could take his vineyard (1 Kings 21).",
+      "He disguised himself in battle at Ramoth-gilead but was killed by a random arrow (1 Kings 22)."
+    ],
+    "family": {
+      "father": ["omri_2243"],
+      "spouses": ["jezebel_1605"],
+      "children": ["ahaziah_120", "joram_804", "athaliah_359"]
+    },
+    "skip": false
+  },
+  "daniel_975": {
+    "name": "Daniel",
+    "aka": ["Belteshazzar"],
+    "who": "Young Judean taken to Babylon who served faithfully in royal courts and received visions from God.",
+    "key": [
+      "Taken to Babylon, he refused the king's food and was renamed Belteshazzar (Daniel 1).",
+      "God revealed to him Nebuchadnezzar's dream and its meaning (Daniel 2).",
+      "He interpreted the handwriting on the wall for Belshazzar (Daniel 5).",
+      "Thrown into the lions' den for praying to God, he was kept safe (Daniel 6).",
+      "He received visions of four beasts and the Son of Man (Daniel 7)."
+    ],
+    "skip": false
+  },
+  "reuben_2429": {
+    "name": "Reuben",
+    "aka": [],
+    "who": "Firstborn son of Jacob and Leah, ancestor of the tribe of Reuben.",
+    "key": [
+      "He was born to Leah, the first of Jacob's sons (Genesis 29).",
+      "He slept with his father's concubine Bilhah (Genesis 35).",
+      "He persuaded his brothers not to kill Joseph and planned to rescue him (Genesis 37).",
+      "He offered his own sons as a pledge for Benjamin's safe return (Genesis 42).",
+      "Jacob said he would lose his preeminence because he defiled his father's bed (Genesis 49)."
+    ],
+    "family": {
+      "father": ["israel_682"],
+      "mother": ["leah_1813"],
+      "siblings": ["simeon_2741", "levi_1820", "judah_1751", "issachar_645", "zebulun_3002", "dinah_1012", "dan_973", "naphtali_2149", "gad_1262", "asher_337", "joseph_1710", "benjamin_463"],
+      "children": ["hanoch_1403", "pallu_2325", "hezron_1519", "carmi_920"]
+    },
+    "skip": false
+  },
+  "jehoshaphat_808": {
+    "name": "Jehoshaphat",
+    "aka": [],
+    "who": "Son of Asa and a godly king of Judah who sought the Lord and taught his law.",
+    "key": [
+      "He sent officials and Levites to teach the Book of the Law in Judah (2 Chronicles 17).",
+      "He allied with Ahab at Ramoth-gilead and narrowly escaped death (1 Kings 22).",
+      "He appointed judges and urged them to judge in the fear of the Lord (2 Chronicles 19).",
+      "Facing a vast army, he prayed, and God gave victory as Judah sang praises (2 Chronicles 20).",
+      "He joined Israel's king against Moab and sought counsel from Elisha (2 Kings 3)."
+    ],
+    "family": {
+      "father": ["asa_318"],
+      "mother": ["azubah_567"],
+      "children": ["jehoram_803", "azariah_381", "jehiel_773", "zechariah_3010", "azariah_382", "michael_2066", "shephatiah_2660"]
+    },
+    "skip": false
+  },
+  "levi_1820": {
+    "name": "Levi",
+    "aka": [],
+    "who": "Third son of Jacob and Leah, ancestor of the Levites, Israel's priestly tribe.",
+    "key": [
+      "He was born to Leah, who hoped her husband would now be attached to her (Genesis 29).",
+      "With Simeon, he killed the men of Shechem to avenge their sister Dinah (Genesis 34).",
+      "Jacob rebuked Levi and Simeon for their violent anger (Genesis 49).",
+      "His descendants were set apart to serve at the tabernacle (Numbers 3)."
+    ],
+    "family": {
+      "father": ["israel_682"],
+      "mother": ["leah_1813"],
+      "siblings": ["reuben_2429", "simeon_2741", "judah_1751", "issachar_645", "zebulun_3002", "dinah_1012", "dan_973", "naphtali_2149", "gad_1262", "asher_337", "joseph_1710", "benjamin_463"],
+      "children": ["gershon_1305", "kohath_1790", "merari_2004", "jochebed_1645"]
+    },
+    "skip": false
+  },
+  "dan_973": {
+    "name": "Dan",
+    "aka": [],
+    "who": "Son of Jacob by Rachel's servant Bilhah, ancestor of the tribe of Dan.",
+    "key": [
+      "Rachel named him Dan, saying God had judged her and given her a son (Genesis 30).",
+      "Jacob blessed him, saying Dan would judge his people (Genesis 49).",
+      "His tribe later moved north, captured Laish, and renamed it Dan (Judges 18)."
+    ],
+    "family": {
+      "father": ["israel_682"],
+      "mother": ["bilhah_502"],
+      "siblings": ["naphtali_2149", "reuben_2429", "simeon_2741", "levi_1820", "judah_1751", "issachar_645", "zebulun_3002", "dinah_1012", "gad_1262", "asher_337", "joseph_1710", "benjamin_463"],
+      "children": ["hushim_1579"]
+    },
+    "skip": false
+  },
+  "pharaoh_2329": {
+    "name": "Pharaoh",
+    "aka": [],
+    "who": "The king of Egypt in Joseph's day, who made Joseph ruler over Egypt and welcomed Jacob's family.",
+    "key": [
+      "He imprisoned his chief cupbearer and baker, who met Joseph in prison (Genesis 40).",
+      "Joseph interpreted his dreams, and he set Joseph over all Egypt (Genesis 41).",
+      "He invited Joseph's family to come and live in Egypt (Genesis 45).",
+      "He gave Jacob's family the land of Goshen, and Jacob blessed him (Genesis 47)."
+    ],
+    "skip": false
+  },
+  "eleazar_1062": {
+    "name": "Eleazar",
+    "aka": [],
+    "who": "Son of Aaron who succeeded his father as Israel's high priest.",
+    "key": [
+      "He was placed over the leaders of the Levites and the care of the sanctuary (Numbers 3).",
+      "On Mount Hor, Aaron's priestly garments were put on him before Aaron died (Numbers 20).",
+      "He commissioned Joshua with Moses before the congregation (Numbers 27).",
+      "With Joshua, he distributed the land of Canaan among the tribes (Joshua 14).",
+      "He died and was buried in the hill country of Ephraim (Joshua 24)."
+    ],
+    "family": {
+      "father": ["aaron_1"],
+      "mother": ["elisheba_1162"],
+      "siblings": ["nadab_2128", "abihu_33", "ithamar_649"],
+      "children": ["phinehas_2349"]
+    },
+    "skip": false
+  },
+  "balaam_593": {
+    "name": "Balaam",
+    "aka": [],
+    "who": "Son of Beor, a diviner hired by King Balak of Moab to curse Israel.",
+    "key": [
+      "Balak summoned him to curse Israel, and his donkey spoke to stop him (Numbers 22).",
+      "Instead of cursing Israel, he blessed them three times (Numbers 23–24).",
+      "His advice led Israel into sin with Midian, and he was killed in battle (Numbers 31).",
+      "The New Testament names him as an example of greed and false teaching (Revelation 2)."
+    ],
+    "family": {
+      "father": ["beor_466"]
+    },
+    "skip": false
+  },
+  "gad_1262": {
+    "name": "Gad",
+    "aka": [],
+    "who": "Son of Jacob by Leah's servant Zilpah, ancestor of the tribe of Gad.",
+    "key": [
+      "Leah named him Gad, saying good fortune had come (Genesis 30).",
+      "He went down to Egypt with Jacob and his sons (Genesis 46).",
+      "Jacob blessed him, saying raiders would attack him but he would strike back (Genesis 49).",
+      "His tribe settled east of the Jordan, with livestock land in Gilead (Numbers 32)."
+    ],
+    "family": {
+      "father": ["israel_682"],
+      "mother": ["zilpah_3081"],
+      "siblings": ["asher_337", "reuben_2429", "simeon_2741", "levi_1820", "judah_1751", "issachar_645", "zebulun_3002", "dinah_1012", "dan_973", "naphtali_2149", "joseph_1710", "benjamin_463"],
+      "children": ["zephon_3093", "haggi_1351", "shuni_2731", "ozni_1235", "eri_1214", "arod_311", "areli_296"]
+    },
+    "skip": false
+  },
+  "satan_2476": {
+    "name": "Satan",
+    "aka": ["the devil"],
+    "who": "The adversary of God and his people, who tempts, accuses, and deceives, and whose final defeat Scripture foretells.",
+    "key": [
+      "He accused Job before the Lord and was allowed to test him (Job 1–2).",
+      "He incited David to take a census of Israel (1 Chronicles 21).",
+      "He tempted Jesus in the wilderness, and Jesus resisted him with Scripture (Matthew 4).",
+      "He entered Judas, who then betrayed Jesus (Luke 22).",
+      "He will be thrown into the lake of fire forever (Revelation 20)."
+    ],
+    "skip": false
+  },
+  "pilate_2365": {
+    "name": "Pontius Pilate",
+    "aka": ["Pilate"],
+    "who": "Roman governor of Judea who sentenced Jesus to be crucified.",
+    "key": [
+      "He governed Judea when John the Baptist began his ministry (Luke 3).",
+      "He questioned Jesus about being king of the Jews and found no guilt in him (John 18).",
+      "He sent Jesus to Herod, then released Barabbas at the crowd's demand (Luke 23).",
+      "He washed his hands before the crowd and handed Jesus over to be crucified (Matthew 27).",
+      "He allowed Joseph of Arimathea to take Jesus' body for burial (Mark 15)."
+    ],
+    "skip": false
+  },
+  "abner_57": {
+    "name": "Abner",
+    "aka": [],
+    "who": "Son of Ner, Saul's relative and the commander of Saul's army.",
+    "key": [
+      "He was commander of King Saul's army (1 Samuel 14).",
+      "After David killed Goliath, Abner brought him to Saul (1 Samuel 17).",
+      "He made Saul's son Ish-bosheth king and killed Asahel in battle (2 Samuel 2).",
+      "He agreed to bring Israel over to David but was murdered by Joab (2 Samuel 3)."
+    ],
+    "family": {
+      "father": ["ner_2181"],
+      "children": ["jaasiel_666"]
+    },
+    "skip": false
+  },
+  "asa_318": {
+    "name": "Asa",
+    "aka": [],
+    "who": "King of Judah, son of Abijah, who removed idols and relied on the Lord for much of his reign.",
+    "key": [
+      "He removed idols and deposed his grandmother Maacah as queen mother (1 Kings 15).",
+      "He relied on the Lord and defeated Zerah the Ethiopian's huge army (2 Chronicles 14).",
+      "Encouraged by the prophet Azariah, he led Judah to renew the covenant (2 Chronicles 15).",
+      "He paid Ben-hadad to attack Israel and was rebuked by Hanani the seer (2 Chronicles 16).",
+      "Diseased in his feet, he sought physicians rather than the Lord (2 Chronicles 16)."
+    ],
+    "family": {
+      "father": ["abijah_38"],
+      "spouses": ["azubah_567"],
+      "children": ["jehoshaphat_808"]
+    },
+    "skip": false
+  },
+  "elisha_1153": {
+    "name": "Elisha",
+    "aka": [],
+    "who": "Son of Shaphat, Elijah's successor as prophet in Israel, known for many miracles.",
+    "key": [
+      "Elijah threw his cloak on Elisha while he was plowing, and he followed him (1 Kings 19).",
+      "He received a double portion of Elijah's spirit when Elijah was taken up (2 Kings 2).",
+      "He multiplied a widow's oil and raised the Shunammite woman's son (2 Kings 4).",
+      "He told Naaman the Syrian to wash in the Jordan, and Naaman was healed (2 Kings 5).",
+      "At Dothan, God opened his servant's eyes to see an army of fiery chariots (2 Kings 6)."
+    ],
+    "family": {
+      "father": ["shaphat_2553"]
+    },
+    "skip": false
+  },
+  "isaiah_617": {
+    "name": "Isaiah",
+    "aka": [],
+    "who": "Son of Amoz and prophet in Jerusalem who foretold judgment and the coming Messiah.",
+    "key": [
+      "He saw the Lord enthroned in the temple and was sent to prophesy (Isaiah 6).",
+      "He gave King Ahaz the sign of a virgin bearing a son, Immanuel (Isaiah 7).",
+      "He assured Hezekiah that God would defend Jerusalem from Assyria (Isaiah 37).",
+      "He told the ill Hezekiah God would add fifteen years to his life (Isaiah 38).",
+      "He foretold that Hezekiah's treasures would be carried to Babylon (Isaiah 39)."
+    ],
+    "family": {
+      "father": ["amoz_240"],
+      "children": ["shear-jashub_2566", "maher-shalal-hash-baz_1894"]
+    },
+    "skip": false
+  },
+  "job_1639": {
+    "name": "Job",
+    "aka": [],
+    "who": "A blameless and upright man from Uz who suffered great loss yet did not curse God.",
+    "key": [
+      "Satan was allowed to test him, and he lost his livestock, servants, and children (Job 1).",
+      "Struck with painful sores, he refused to curse God (Job 2).",
+      "His three friends insisted he must have sinned, and he defended his innocence (Job 4–31).",
+      "The Lord answered him out of the whirlwind (Job 38).",
+      "He repented, prayed for his friends, and God restored him twice over (Job 42)."
+    ],
+    "family": {
+      "children": ["jemima_837", "kezia_1783", "keren-happuch_1780"]
+    },
+    "skip": false
+  },
+  "baal_573": {
+    "name": "Baal",
+    "aka": [],
+    "who": "A Canaanite false god whose worship repeatedly led Israel into idolatry.",
+    "key": [],
+    "skip": true
+  },
+  "zedekiah_1950": {
+    "name": "Zedekiah",
+    "aka": ["Mattaniah"],
+    "who": "Son of Josiah and the last king of Judah before Babylon destroyed Jerusalem.",
+    "key": [
+      "Nebuchadnezzar made him king and changed his name from Mattaniah to Zedekiah (2 Kings 24).",
+      "He and Jerusalem's leaders broke their covenant to free their Hebrew slaves (Jeremiah 34).",
+      "He secretly consulted Jeremiah but did not obey the word of the Lord (Jeremiah 37–38).",
+      "After Jerusalem fell, his sons were killed, and he was blinded and taken to Babylon (Jeremiah 39)."
+    ],
+    "family": {
+      "father": ["josiah_1730"],
+      "mother": ["hamutal_1368"],
+      "siblings": ["jehoahaz_2516", "jehoiakim_1085", "johanan_1667"]
+    },
+    "skip": false
+  },
+  "mordecai_2107": {
+    "name": "Mordecai",
+    "aka": [],
+    "who": "Jewish exile of the tribe of Benjamin in Susa who raised his cousin Esther and helped save his people.",
+    "key": [
+      "He raised his orphaned cousin Esther and uncovered a plot against King Ahasuerus (Esther 2).",
+      "He refused to bow to Haman, who then plotted to destroy all the Jews (Esther 3).",
+      "He urged Esther to plead with the king for her people (Esther 4).",
+      "The king honored him for saving his life, with Haman leading the procession (Esther 6).",
+      "He was made second to the king and established the feast of Purim (Esther 9–10)."
+    ],
+    "family": {
+      "father": ["jair_710"]
+    },
+    "skip": false
+  },
+  "gideon_1314": {
+    "name": "Gideon",
+    "aka": ["Jerubbaal"],
+    "who": "Son of Joash and judge of Israel whom God used to deliver Israel from Midian.",
+    "key": [
+      "The angel of the Lord called him while he threshed wheat in a winepress (Judges 6).",
+      "He tore down his father's Baal altar and was named Jerubbaal (Judges 6).",
+      "He asked God for signs with a fleece before going to battle (Judges 6).",
+      "With three hundred men, trumpets, and torches, he routed the Midianite army (Judges 7).",
+      "He refused to be king but made a gold ephod that became a snare (Judges 8)."
+    ],
+    "family": {
+      "father": ["joash_1630"],
+      "children": ["jether_906", "jotham_1734", "abimelech_41"]
+    },
+    "skip": false
+  },
+  "josiah_1730": {
+    "name": "Josiah",
+    "aka": [],
+    "who": "Godly king of Judah, son of Amon, who led sweeping reforms after the Book of the Law was found.",
+    "key": [
+      "A man of God foretold by name that Josiah would destroy the altar at Bethel (1 Kings 13).",
+      "He became king at eight, and the Book of the Law was found during temple repairs (2 Kings 22).",
+      "He renewed the covenant and destroyed idols and high places throughout the land (2 Kings 23).",
+      "He kept a great Passover in Jerusalem (2 Chronicles 35).",
+      "He was killed fighting Pharaoh Neco at Megiddo (2 Chronicles 35)."
+    ],
+    "family": {
+      "father": ["amon_236"],
+      "mother": ["jedidah_761"],
+      "spouses": ["hamutal_1368", "zebudah_3000"],
+      "children": ["johanan_1667", "jehoiakim_1085", "zedekiah_1950", "jehoahaz_2516"]
+    },
+    "skip": false
+  },
+  "naphtali_2149": {
+    "name": "Naphtali",
+    "aka": [],
+    "who": "Son of Jacob by Rachel's servant Bilhah, ancestor of the tribe of Naphtali in Galilee.",
+    "key": [
+      "Rachel named him Naphtali after her struggles with her sister (Genesis 30).",
+      "Jacob blessed him as a doe let loose (Genesis 49).",
+      "His tribe's land in Galilee became a place of Jesus' ministry (Matthew 4)."
+    ],
+    "family": {
+      "father": ["israel_682"],
+      "mother": ["bilhah_502"],
+      "siblings": ["dan_973", "reuben_2429", "simeon_2741", "levi_1820", "judah_1751", "issachar_645", "zebulun_3002", "dinah_1012", "gad_1262", "asher_337", "joseph_1710", "benjamin_463"],
+      "children": ["jahzeel_706", "guni_1330", "jezer_1606", "shillem_2677"]
+    },
+    "skip": false
+  },
+  "sarah_2473": {
+    "name": "Sarah",
+    "aka": ["Sarai"],
+    "who": "Wife of Abraham who, though barren into old age, bore the promised son Isaac.",
+    "key": [
+      "Abram's wife Sarai was barren and had no child (Genesis 11).",
+      "She gave her servant Hagar to Abram to bear a child for her (Genesis 16).",
+      "God renamed her Sarah and promised she would bear a son (Genesis 17).",
+      "She laughed when she heard she would have a son in her old age (Genesis 18).",
+      "At ninety she gave birth to Isaac, as God had promised (Genesis 21)."
+    ],
+    "family": {
+      "father": ["terah_2841"],
+      "spouses": ["abraham_58"],
+      "children": ["isaac_616"]
+    },
+    "skip": false
+  },
+  "jehu_817": {
+    "name": "Jehu",
+    "aka": [],
+    "who": "Army commander anointed king of Israel to destroy the house of Ahab and Baal worship.",
+    "key": [
+      "God told Elijah to anoint Jehu king over Israel (1 Kings 19).",
+      "Anointed by a young prophet sent by Elisha, he killed Kings Joram and Ahaziah (2 Kings 9).",
+      "At his command, Jezebel was thrown from a window and died (2 Kings 9).",
+      "He wiped out Ahab's family and Baal's worshipers but kept Jeroboam's golden calves (2 Kings 10)."
+    ],
+    "family": {
+      "father": ["jehoshaphat_809"],
+      "children": ["jehoahaz_784"]
+    },
+    "skip": false
+  },
+  "noah_2210": {
+    "name": "Noah",
+    "aka": [],
+    "who": "Righteous man who built the ark and, with his family, survived the flood.",
+    "key": [
+      "In a corrupt world, Noah found favor with the Lord and was told to build an ark (Genesis 6).",
+      "He entered the ark with his family and the animals before the flood came (Genesis 7).",
+      "After the waters receded, he built an altar and offered sacrifices to the Lord (Genesis 8).",
+      "God made a covenant with him, sealed by the rainbow (Genesis 9).",
+      "After becoming drunk, he cursed Canaan and blessed Shem and Japheth (Genesis 9)."
+    ],
+    "family": {
+      "father": ["lamech_1809"],
+      "children": ["shem_2613", "ham_1359", "japheth_726"]
+    },
+    "skip": false
+  },
+  "esther_1343": {
+    "name": "Esther",
+    "aka": ["Hadassah"],
+    "who": "Jewish orphan raised by Mordecai who became queen of Persia and saved her people from destruction.",
+    "key": [
+      "Raised by her cousin Mordecai, she was chosen queen by King Ahasuerus (Esther 2).",
+      "Learning of Haman's plot, she asked the Jews to fast before she approached the king (Esther 4).",
+      "The king welcomed her, and she invited him and Haman to a banquet (Esther 5).",
+      "At a second banquet she exposed Haman's plot, and he was hanged (Esther 7).",
+      "She obtained a royal decree allowing the Jews to defend themselves (Esther 8)."
+    ],
+    "family": {
+      "father": ["abihail_32"]
+    },
+    "skip": false
+  },
+  "laban_1803": {
+    "name": "Laban",
+    "aka": [],
+    "who": "Rebekah's brother in Haran, father of Leah and Rachel, and Jacob's uncle and father-in-law.",
+    "key": [
+      "He welcomed Abraham's servant and agreed to Rebekah's marriage to Isaac (Genesis 24).",
+      "He gave Leah to Jacob in place of Rachel, then gave Rachel for seven more years (Genesis 29).",
+      "He repeatedly changed Jacob's wages while Jacob's flocks increased (Genesis 30–31).",
+      "He pursued Jacob, then made a covenant with him at Mizpah (Genesis 31)."
+    ],
+    "family": {
+      "father": ["bethuel_487"],
+      "siblings": ["rebekah_2401"],
+      "children": ["leah_1813", "rachel_2386"]
+    },
+    "skip": false
+  },
+  "zebulun_3002": {
+    "name": "Zebulun",
+    "aka": [],
+    "who": "Sixth son of Jacob and Leah, ancestor of the tribe of Zebulun.",
+    "key": [
+      "He was born to Leah, who hoped her husband would now honor her (Genesis 30).",
+      "Jacob blessed him, saying he would dwell at the shore of the sea (Genesis 49).",
+      "His tribe was praised for risking their lives in battle under Deborah and Barak (Judges 5)."
+    ],
+    "family": {
+      "father": ["israel_682"],
+      "mother": ["leah_1813"],
+      "siblings": ["reuben_2429", "simeon_2741", "levi_1820", "judah_1751", "issachar_645", "dinah_1012", "dan_973", "naphtali_2149", "gad_1262", "asher_337", "joseph_1710", "benjamin_463"],
+      "children": ["sered_2501", "elon_1183", "jahleel_704"]
+    },
+    "skip": false
+  },
+  "haman_1360": {
+    "name": "Haman",
+    "aka": [],
+    "who": "Son of Hammedatha the Agagite, a Persian official who plotted to destroy the Jews.",
+    "key": [
+      "Promoted by King Ahasuerus, he plotted to kill all Jews when Mordecai would not bow (Esther 3).",
+      "On his wife's advice he built a gallows for Mordecai (Esther 5).",
+      "The king made him lead Mordecai through the city in honor (Esther 6).",
+      "Esther exposed his plot, and he was hanged on the gallows he built (Esther 7).",
+      "His ten sons were killed when the Jews defended themselves (Esther 9)."
+    ],
+    "family": {
+      "father": ["hammedatha_1362"],
+      "spouses": ["zeresh_3049"],
+      "children": ["parshandatha_2277", "dalphon_971", "aspatha_347", "poratha_2366", "adalia_77", "aridatha_300", "parmashta_2271", "arisai_305", "aridai_299", "vajezatha_2935"]
+    },
+    "skip": false
+  }
+}

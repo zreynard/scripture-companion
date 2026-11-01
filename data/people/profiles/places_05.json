@@ -1,0 +1,985 @@
+{
+  "baal-gad_140": {
+    "name": "Baal-gad",
+    "aka": [],
+    "what": "A town in the Valley of Lebanon below Mount Hermon, marking the northern limit of Joshua's conquest.",
+    "today": "Exact site unknown; likely in southern Lebanon near the foot of Mount Hermon.",
+    "key": [
+      "Joshua's conquest reached from Mount Halak in the south to Baal-gad in the north (Joshua 11).",
+      "Baal-gad is named again as the northern edge of the land Joshua took (Joshua 12).",
+      "God lists the region from Baal-gad toward Lebanon as land still to be possessed (Joshua 13)."
+    ],
+    "skip": false
+  },
+  "baal-meon_144": {
+    "name": "Baal-meon",
+    "aka": [
+      "Beth-baal-meon",
+      "Beth-meon"
+    ],
+    "what": "A town east of the Dead Sea, settled by Reuben and later held by Moab.",
+    "today": "Likely modern Ma'in, southwest of Madaba in Jordan.",
+    "key": [
+      "The Reubenites rebuilt Baal-meon and gave it a new name (Numbers 32).",
+      "Reubenite clans lived in the area from Aroer to Nebo and Baal-meon (1 Chronicles 5).",
+      "Ezekiel names Baal-meon among Moab's prized cities that God would open to invaders (Ezekiel 25)."
+    ],
+    "skip": false
+  },
+  "baal-peor_145": {
+    "name": "Baal-peor",
+    "aka": [
+      "Peor"
+    ],
+    "what": "A site in Moab where Israel worshiped the local god Baal and fell into sexual immorality.",
+    "today": "Exact site unknown; in the plains of Moab near Mount Nebo, Jordan.",
+    "key": [
+      "Moses reminds Israel that the LORD destroyed everyone who followed the Baal of Peor (Deuteronomy 4).",
+      "The psalmist recalls how Israel joined the Baal of Peor and provoked God's anger (Psalms 106).",
+      "Hosea points back to Baal-peor as the place Israel first devoted itself to shameful idolatry (Hosea 9)."
+    ],
+    "skip": false
+  },
+  "baal-zephon_149": {
+    "name": "Baal-zephon",
+    "aka": [],
+    "what": "A landmark in Egypt near the sea, where Israel camped just before crossing the Red Sea.",
+    "today": "Exact site unknown; in northeastern Egypt near the Red Sea crossing.",
+    "key": [
+      "God told Israel to camp facing Baal-zephon, and Pharaoh's army overtook them there by the sea (Exodus 14).",
+      "Baal-zephon is listed on Moses' record of Israel's journey out of Egypt (Numbers 33)."
+    ],
+    "skip": false
+  },
+  "baalah_135": {
+    "name": "Baalah",
+    "aka": [
+      "Kiriath-jearim",
+      "Kiriath-baal",
+      "Baale-judah"
+    ],
+    "what": "Another name for Kiriath-jearim, a town on Judah's northern border where the ark rested for years.",
+    "today": "Kiriath-jearim, likely at Deir el-Azar near Abu Ghosh, west of Jerusalem.",
+    "key": [
+      "Baalah, identified as Kiriath-jearim, marks part of Judah's northern boundary (Joshua 15).",
+      "David and all Israel went to Baalah to bring the ark of God up from there (1 Chronicles 13)."
+    ],
+    "skip": false
+  },
+  "besor_181": {
+    "name": "Besor",
+    "aka": [
+      "Brook Besor"
+    ],
+    "what": "A brook in southwestern Judah that David's men crossed while pursuing the Amalekite raiders.",
+    "today": "Likely Nahal Besor (Wadi Ghazzeh), flowing toward the coast near Gaza.",
+    "key": [
+      "Two hundred of David's men were too exhausted to cross the brook Besor and stayed behind (1 Samuel 30).",
+      "After the victory, David ruled that those who stayed by the baggage would share equally in the spoil (1 Samuel 30)."
+    ],
+    "skip": false
+  },
+  "beth-arabah_188": {
+    "name": "Beth-arabah",
+    "aka": [],
+    "what": "A town in the Jordan Valley on the border between Judah and Benjamin.",
+    "today": "Exact site uncertain; likely near the Jordan River southeast of Jericho.",
+    "key": [
+      "Beth-arabah lies on Judah's northern boundary and is listed among Judah's wilderness towns (Joshua 15).",
+      "Beth-arabah also appears among the towns allotted to the tribe of Benjamin (Joshua 18)."
+    ],
+    "skip": false
+  },
+  "beth-hoglah_213": {
+    "name": "Beth-hoglah",
+    "aka": [],
+    "what": "A border town near the Jordan River between the territories of Judah and Benjamin.",
+    "today": "Likely near Ein Hajla, southeast of Jericho.",
+    "key": [
+      "Judah's northern boundary went up to Beth-hoglah from the mouth of the Jordan (Joshua 15).",
+      "Beth-hoglah is named on Benjamin's border and among Benjamin's towns (Joshua 18)."
+    ],
+    "skip": false
+  },
+  "beth-shan_232": {
+    "name": "Beth-shan",
+    "aka": [
+      "Beth-shean"
+    ],
+    "what": "A fortified city at the junction of the Jezreel and Jordan valleys.",
+    "today": "Tel Beit She'an, beside the modern town of Beit She'an, Israel.",
+    "key": [
+      "The Philistines fastened the bodies of Saul and his sons to the wall of Beth-shan (1 Samuel 31).",
+      "Men of Jabesh-gilead traveled by night to take the bodies down and bury them (1 Samuel 31).",
+      "David later recovered the bones of Saul and Jonathan, taken from Beth-shan's square (2 Samuel 21)."
+    ],
+    "skip": false
+  },
+  "beth-zur_242": {
+    "name": "Beth-zur",
+    "aka": [],
+    "what": "A town in the hill country of Judah, north of Hebron, guarding the southern approach to Jerusalem.",
+    "today": "Khirbet et-Tubeiqah, about four miles north of Hebron.",
+    "key": [
+      "Beth-zur is listed among the towns of Judah's hill country (Joshua 15).",
+      "King Rehoboam fortified Beth-zur as one of Judah's defensive cities (2 Chronicles 11).",
+      "A ruler of half the district of Beth-zur helped repair Jerusalem's wall (Nehemiah 3)."
+    ],
+    "skip": false
+  },
+  "bethphage_229": {
+    "name": "Bethphage",
+    "aka": [],
+    "what": "A village on the Mount of Olives near Bethany, just east of Jerusalem.",
+    "today": "Likely on the eastern slope of the Mount of Olives, near modern et-Tur.",
+    "key": [
+      "Near Bethphage, Jesus sent two disciples to bring a donkey and her colt (Matthew 21).",
+      "Mark records Jesus nearing Bethphage and Bethany before entering Jerusalem (Mark 11).",
+      "From near Bethphage Jesus began his royal entry as disciples praised God (Luke 19)."
+    ],
+    "skip": false
+  },
+  "caphtor_275": {
+    "name": "Caphtor",
+    "aka": [],
+    "what": "The coastland from which the Philistines originally came, across the Mediterranean.",
+    "today": "Likely the island of Crete.",
+    "key": [
+      "The Caphtorim, who came from Caphtor, destroyed the Avvim and settled in their place (Deuteronomy 2).",
+      "Jeremiah calls the Philistines the remnant of the coastland of Caphtor (Jeremiah 47).",
+      "God says he brought the Philistines from Caphtor, as he brought Israel from Egypt (Amos 9)."
+    ],
+    "skip": false
+  },
+  "carchemish_277": {
+    "name": "Carchemish",
+    "aka": [],
+    "what": "A major city on the upper Euphrates, site of a decisive battle between Egypt and Babylon.",
+    "today": "Ruins at Karkamis on the Turkey–Syria border, near Jarabulus.",
+    "key": [
+      "King Josiah was killed opposing Pharaoh Neco on his way to fight at Carchemish (2 Chronicles 35).",
+      "Assyria boasts that conquered cities, including Carchemish, show its power is unstoppable (Isaiah 10).",
+      "Nebuchadnezzar defeated Neco's army at Carchemish by the Euphrates (Jeremiah 46)."
+    ],
+    "skip": false
+  },
+  "daberath_319": {
+    "name": "Daberath",
+    "aka": [],
+    "what": "A town near Mount Tabor on the border of Zebulun, later given to the Levites.",
+    "today": "Likely Daburiyya, at the western foot of Mount Tabor, Israel.",
+    "key": [
+      "Daberath is named on the boundary of Zebulun's territory (Joshua 19).",
+      "Daberath was given from Issachar's land to the Gershonite Levites (Joshua 21).",
+      "The Chronicler lists Daberath again among the Levites' towns (1 Chronicles 6)."
+    ],
+    "skip": false
+  },
+  "decapolis_328": {
+    "name": "Decapolis",
+    "aka": [],
+    "what": "A region of ten Greek-influenced cities, mostly east and southeast of the Sea of Galilee.",
+    "today": "Parts of northern Jordan, southern Syria, and northern Israel.",
+    "key": [
+      "Great crowds from the Decapolis followed Jesus early in his ministry (Matthew 4).",
+      "The man freed from many demons proclaimed in the Decapolis what Jesus had done (Mark 5).",
+      "Jesus passed through the Decapolis region and healed a deaf man with a speech impediment (Mark 7)."
+    ],
+    "skip": false
+  },
+  "ebenezer_350": {
+    "name": "Ebenezer",
+    "aka": [],
+    "what": "A place near Aphek where Israel lost the ark to the Philistines, and later a memorial stone.",
+    "today": "Exact site uncertain; possibly Izbet Sartah, near Aphek east of Tel Aviv.",
+    "key": [
+      "Israel camped at Ebenezer and was defeated by the Philistines, who captured the ark (1 Samuel 4).",
+      "The Philistines carried the ark from Ebenezer to Ashdod (1 Samuel 5).",
+      "After victory, Samuel set up a stone named Ebenezer, saying the LORD had helped them (1 Samuel 7)."
+    ],
+    "skip": false
+  },
+  "elath_366": {
+    "name": "Elath",
+    "aka": [
+      "Eloth"
+    ],
+    "what": "A port town at the northern tip of the Gulf of Aqaba, contested between Judah and Edom.",
+    "today": "Near modern Eilat, Israel, and Aqaba, Jordan.",
+    "key": [
+      "Israel passed by Elath and Ezion-geber on its way around Edom (Deuteronomy 2).",
+      "King Azariah rebuilt Elath and restored it to Judah (2 Kings 14).",
+      "In Ahaz's day Rezin recovered Elath for Edom and drove out the people of Judah (2 Kings 16)."
+    ],
+    "skip": false
+  },
+  "eloth_375": {
+    "name": "Eloth",
+    "aka": [
+      "Elath"
+    ],
+    "what": "Another spelling of Elath, a port on the Gulf of Aqaba near Ezion-geber.",
+    "today": "Near modern Eilat, Israel, and Aqaba, Jordan.",
+    "key": [
+      "Solomon built a fleet of ships at Ezion-geber near Eloth on the Red Sea (1 Kings 9).",
+      "The Chronicler repeats that Solomon went to Ezion-geber and Eloth by the sea (2 Chronicles 8).",
+      "King Uzziah rebuilt Eloth and restored it to Judah (2 Chronicles 26)."
+    ],
+    "skip": false
+  },
+  "en-dor_385": {
+    "name": "En-dor",
+    "aka": [],
+    "what": "A town south of Mount Tabor, best known as the home of the medium Saul consulted.",
+    "today": "Likely near the village of Indur, south of Mount Tabor, Israel.",
+    "key": [
+      "En-dor was assigned to Manasseh, though it lay within Issachar and Asher (Joshua 17).",
+      "On the eve of battle, a disguised Saul consulted a medium at En-dor (1 Samuel 28).",
+      "The psalmist recalls Sisera and Jabin, who perished at En-dor (Psalms 83)."
+    ],
+    "skip": false
+  },
+  "ephrath_403": {
+    "name": "Ephrath",
+    "aka": [
+      "Ephrathah",
+      "Bethlehem"
+    ],
+    "what": "An older name for Bethlehem in Judah, near where Rachel died and was buried.",
+    "today": "Bethlehem, south of Jerusalem.",
+    "key": [
+      "Rachel died giving birth to Benjamin on the way to Ephrath, that is, Bethlehem (Genesis 35).",
+      "Jacob tells Joseph he buried Rachel on the way to Ephrath (Genesis 48)."
+    ],
+    "skip": false
+  },
+  "esau_408": {
+    "name": "Esau",
+    "aka": [
+      "Edom",
+      "Mount Esau"
+    ],
+    "what": "The land of Esau's descendants, Edom, sometimes called simply Esau or Mount Esau.",
+    "today": "Southern Jordan, south and east of the Dead Sea.",
+    "key": [
+      "Esau, also called Edom, settled with his descendants in the hill country of Seir (Genesis 36).",
+      "Jeremiah announces that God will bring calamity on Esau and strip him bare (Jeremiah 49).",
+      "Obadiah foretells judgment on Mount Esau for its violence against Judah (Obadiah 1)."
+    ],
+    "skip": false
+  },
+  "eshtemoa_412": {
+    "name": "Eshtemoa",
+    "aka": [
+      "Eshtemoh"
+    ],
+    "what": "A town in the hill country of Judah south of Hebron, given to the priests.",
+    "today": "Modern as-Samu, south of Hebron.",
+    "key": [
+      "Eshtemoa was given to the descendants of Aaron the priest (Joshua 21).",
+      "David sent some of the Amalekite spoil to the elders of Eshtemoa (1 Samuel 30).",
+      "Eshtemoa appears again among the priests' towns (1 Chronicles 6)."
+    ],
+    "skip": false
+  },
+  "ezem_422": {
+    "name": "Ezem",
+    "aka": [],
+    "what": "A town in the Negev of southern Judah, later counted among Simeon's towns.",
+    "today": "Exact site unknown; in the Negev of southern Israel.",
+    "key": [
+      "Ezem is listed among Judah's southernmost towns in the Negev (Joshua 15).",
+      "Ezem was included in the inheritance of Simeon within Judah's territory (Joshua 19).",
+      "The Chronicler names Ezem among the towns where Simeon's clans lived (1 Chronicles 4)."
+    ],
+    "skip": false
+  },
+  "field_1229": {
+    "name": "Washer's Field",
+    "aka": [
+      "Fuller's Field"
+    ],
+    "what": "A field outside Jerusalem's walls by the conduit of the upper pool, where cloth was washed.",
+    "today": "Exact site unknown; just outside ancient Jerusalem's walls.",
+    "key": [
+      "Assyria's officials stood by the Washer's Field to demand Jerusalem's surrender (2 Kings 18).",
+      "Isaiah met King Ahaz by the conduit on the highway to the Washer's Field (Isaiah 7).",
+      "Isaiah records the Rabshakeh's arrival at the same spot during Hezekiah's reign (Isaiah 36)."
+    ],
+    "skip": false
+  },
+  "fish_gate_426": {
+    "name": "Fish Gate",
+    "aka": [],
+    "what": "A gate in Jerusalem's northern wall, probably named for the fish market nearby.",
+    "today": "Exact site unknown; on the north side of ancient Jerusalem.",
+    "key": [
+      "Manasseh built an outer wall for Jerusalem around to the Fish Gate (2 Chronicles 33).",
+      "The sons of Hassenaah rebuilt the Fish Gate with its beams, doors, and bars (Nehemiah 3).",
+      "Zephaniah warns that a cry will rise from the Fish Gate on the day of the LORD (Zephaniah 1)."
+    ],
+    "skip": false
+  },
+  "gate_of_the_fountain_428": {
+    "name": "Fountain Gate",
+    "aka": [],
+    "what": "A gate at the southeast corner of Jerusalem's wall, near the Pool of Siloam.",
+    "today": "Exact site unknown; near the southern end of the City of David, Jerusalem.",
+    "key": [
+      "During his night inspection, Nehemiah reached the Fountain Gate but could not pass through (Nehemiah 2).",
+      "Shallun rebuilt the Fountain Gate and the wall of the Pool of Shelah (Nehemiah 3).",
+      "At the wall's dedication, a procession went up by the Fountain Gate to the City of David (Nehemiah 12)."
+    ],
+    "skip": false
+  },
+  "gath-rimmon_444": {
+    "name": "Gath-rimmon",
+    "aka": [],
+    "what": "A town on the coastal plain allotted to Dan and given to the Levites.",
+    "today": "Exact site uncertain; possibly Tell Jerisheh near Tel Aviv.",
+    "key": [
+      "Gath-rimmon is listed in the inheritance of the tribe of Dan (Joshua 19).",
+      "Gath-rimmon was given from Dan's land to the Kohathite Levites (Joshua 21).",
+      "The Chronicler lists Gath-rimmon among the Levites' towns (1 Chronicles 6)."
+    ],
+    "skip": false
+  },
+  "gebal_449": {
+    "name": "Gebal",
+    "aka": [
+      "Byblos"
+    ],
+    "what": "An ancient Phoenician port city on the Mediterranean coast, north of Sidon.",
+    "today": "Byblos (Jbeil), on the coast of Lebanon north of Beirut.",
+    "key": [
+      "Men of Gebal helped prepare timber and stone for Solomon's temple (1 Kings 5).",
+      "Gebal is named among the nations conspiring against God's people (Psalms 83).",
+      "Gebal's skilled elders repaired the seams of Tyre's ships (Ezekiel 27)."
+    ],
+    "skip": false
+  },
+  "gederah_452": {
+    "name": "Gederah",
+    "aka": [],
+    "what": "A town in the lowland (Shephelah) of Judah.",
+    "today": "Exact site uncertain; in the Shephelah of Judah.",
+    "key": [
+      "Gederah is listed among the towns of Judah's lowland (Joshua 15).",
+      "Potters who worked for the king lived at Netaim and Gederah (1 Chronicles 4).",
+      "Jozabad of Gederah joined David's mighty men at Ziklag (1 Chronicles 12)."
+    ],
+    "skip": false
+  },
+  "gennesaret_458": {
+    "name": "Gennesaret",
+    "aka": [],
+    "what": "A fertile plain on the northwest shore of the Sea of Galilee, which also lent the lake its name.",
+    "today": "The plain of Ginosar, on the northwest shore of the Sea of Galilee, Israel.",
+    "key": [
+      "After crossing the lake, Jesus landed at Gennesaret, and all who touched his garment were healed (Matthew 14).",
+      "Mark records people bringing the sick on mats as soon as Jesus reached Gennesaret (Mark 6).",
+      "By the lake of Gennesaret, Jesus taught from Peter's boat and called him after a great catch (Luke 5)."
+    ],
+    "skip": false
+  },
+  "gilboa_474": {
+    "name": "Gilboa",
+    "aka": [
+      "Mount Gilboa"
+    ],
+    "what": "A mountain ridge at the southeastern edge of the Jezreel Valley, where Saul died.",
+    "today": "Mount Gilboa, in northern Israel near Beit She'an.",
+    "key": [
+      "Saul gathered Israel at Gilboa, facing the Philistine army camped at Shunem (1 Samuel 28).",
+      "In his lament, David asked that no dew or rain fall on Gilboa (2 Samuel 1).",
+      "The Philistines had killed Saul on Gilboa, and David later reburied his bones (2 Samuel 21)."
+    ],
+    "skip": false
+  },
+  "golgotha_487": {
+    "name": "Golgotha",
+    "aka": [
+      "Calvary",
+      "The Skull"
+    ],
+    "what": "The place just outside Jerusalem where Jesus was crucified, meaning Place of a Skull.",
+    "today": "Traditionally at the Church of the Holy Sepulchre, Jerusalem.",
+    "key": [
+      "Soldiers brought Jesus to Golgotha and offered him wine mixed with gall (Matthew 27).",
+      "Mark explains that Golgotha means Place of a Skull, where Jesus was crucified (Mark 15).",
+      "Jesus carried his own cross to Golgotha, where he was crucified between two others (John 19)."
+    ],
+    "skip": false
+  },
+  "goshen_491": {
+    "name": "Goshen",
+    "aka": [],
+    "what": "A district and town in the southern hill country of Judah, distinct from Goshen in Egypt.",
+    "today": "Exact site unknown; in the hill country south of Hebron.",
+    "key": [
+      "Joshua struck the land from Kadesh-barnea to Gaza and all the country of Goshen (Joshua 10).",
+      "Goshen is listed among the regions Joshua took in the south (Joshua 11).",
+      "A town named Goshen appears among Judah's hill-country towns (Joshua 15)."
+    ],
+    "skip": false
+  },
+  "habor_499": {
+    "name": "Habor",
+    "aka": [],
+    "what": "A river in upper Mesopotamia, the river of Gozan, where Assyria resettled exiled Israelites.",
+    "today": "The Khabur River in northeastern Syria.",
+    "key": [
+      "After Samaria fell, the king of Assyria placed Israelites by the Habor, the river of Gozan (2 Kings 17).",
+      "The account of Israel's exile to the Habor is repeated in Hezekiah's reign (2 Kings 18).",
+      "Reubenites, Gadites, and half of Manasseh were exiled to Habor and nearby places (1 Chronicles 5)."
+    ],
+    "skip": false
+  },
+  "hachilah_500": {
+    "name": "Hachilah",
+    "aka": [],
+    "what": "A hill in the wilderness near Ziph where David hid from Saul.",
+    "today": "Exact site unknown; in the Judean wilderness southeast of Hebron.",
+    "key": [
+      "The Ziphites told Saul that David was hiding on the hill of Hachilah (1 Samuel 23).",
+      "Saul camped on the hill of Hachilah, and David spared his life while he slept (1 Samuel 26)."
+    ],
+    "skip": false
+  },
+  "hadid_503": {
+    "name": "Hadid",
+    "aka": [],
+    "what": "A town near Lod in the lowlands, resettled by returning exiles.",
+    "today": "Likely el-Haditheh, near Lod, Israel.",
+    "key": [
+      "People of Lod, Hadid, and Ono were among those returning from Babylon (Ezra 2).",
+      "Nehemiah's list repeats the returnees from Lod, Hadid, and Ono (Nehemiah 7).",
+      "Members of the tribe of Benjamin settled in Hadid (Nehemiah 11)."
+    ],
+    "skip": false
+  },
+  "halah_508": {
+    "name": "Halah",
+    "aka": [],
+    "what": "A district in Assyria where the king resettled Israelites exiled from Samaria.",
+    "today": "Exact site uncertain; likely in northern Iraq, northeast of Nineveh.",
+    "key": [
+      "The king of Assyria carried Israel away and placed them in Halah (2 Kings 17).",
+      "Halah is named again in the account of Samaria's fall during Hezekiah's reign (2 Kings 18).",
+      "Exiles from Reuben, Gad, and half of Manasseh were taken to Halah (1 Chronicles 5)."
+    ],
+    "skip": false
+  },
+  "harosheth-hagoyim_530": {
+    "name": "Harosheth-hagoyim",
+    "aka": [],
+    "what": "The home base of Sisera, commander of the Canaanite king Jabin's army.",
+    "today": "Exact site uncertain; probably near the Kishon River in northern Israel.",
+    "key": [
+      "Sisera, commander of Jabin's army, lived in Harosheth-hagoyim (Judges 4).",
+      "Barak pursued Sisera's chariots and army all the way to Harosheth-hagoyim (Judges 4)."
+    ],
+    "skip": false
+  },
+  "hena_560": {
+    "name": "Hena",
+    "aka": [],
+    "what": "A city conquered by Assyria, cited by Sennacherib's officials as proof that no god could resist them.",
+    "today": "Exact site unknown; possibly along the middle Euphrates.",
+    "key": [
+      "The Rabshakeh asked where the gods of Hena were, to shake Jerusalem's trust in God (2 Kings 18).",
+      "Sennacherib's letter to Hezekiah again asked what became of the king of Hena (2 Kings 19).",
+      "Isaiah records the same boast about Hena, before God delivered Jerusalem (Isaiah 37)."
+    ],
+    "skip": false
+  },
+  "ibleam_589": {
+    "name": "Ibleam",
+    "aka": [],
+    "what": "A Canaanite town in the northern hill country, allotted to Manasseh.",
+    "today": "Khirbet Bel'ameh, just south of Jenin.",
+    "key": [
+      "Ibleam was assigned to Manasseh, though it lay within Issachar and Asher (Joshua 17).",
+      "Manasseh failed to drive out the Canaanites living in Ibleam (Judges 1).",
+      "Jehu's men wounded King Ahaziah at the ascent of Gur, near Ibleam (2 Kings 9)."
+    ],
+    "skip": false
+  },
+  "ijon_594": {
+    "name": "Ijon",
+    "aka": [],
+    "what": "A town in the far north of Israel, repeatedly taken by invading armies.",
+    "today": "Likely Tell ed-Dibbin, in the Marjayoun valley of southern Lebanon.",
+    "key": [
+      "At King Asa's request, Ben-hadad of Syria conquered Ijon (1 Kings 15).",
+      "Tiglath-pileser of Assyria captured Ijon and deported its people (2 Kings 15).",
+      "The Chronicler repeats Ben-hadad's attack on Ijon (2 Chronicles 16)."
+    ],
+    "skip": false
+  },
+  "ivvah_605": {
+    "name": "Ivvah",
+    "aka": [],
+    "what": "A city conquered by Assyria, cited by Sennacherib's officials as proof of their power.",
+    "today": "Exact site unknown; possibly in Syria or Mesopotamia.",
+    "key": [
+      "The Rabshakeh asked where the gods of Ivvah were, to frighten Jerusalem (2 Kings 18).",
+      "Sennacherib's letter to Hezekiah again named the king of Ivvah (2 Kings 19).",
+      "Isaiah records the same boast about Ivvah, before God struck the Assyrian army (Isaiah 37)."
+    ],
+    "skip": false
+  },
+  "jokneam_649": {
+    "name": "Jokneam",
+    "aka": [],
+    "what": "A Canaanite town near Mount Carmel, later a Levitical city in Zebulun.",
+    "today": "Tel Yoqneam, at the northwestern edge of the Jezreel Valley, Israel.",
+    "key": [
+      "The king of Jokneam in Carmel was among the kings Joshua defeated (Joshua 12).",
+      "Zebulun's border reached the brook east of Jokneam (Joshua 19).",
+      "Jokneam was given from Zebulun to the Merarite Levites (Joshua 21)."
+    ],
+    "skip": false
+  },
+  "jotbathah_656": {
+    "name": "Jotbathah",
+    "aka": [],
+    "what": "A campsite of Israel in the wilderness, described as a land with brooks of water.",
+    "today": "Exact site unknown; possibly near the Gulf of Aqaba.",
+    "key": [
+      "Israel set out from Hor-haggidgad and camped at Jotbathah (Numbers 33).",
+      "Moses recalls Jotbathah as a land with brooks of water (Deuteronomy 10)."
+    ],
+    "skip": false
+  },
+  "kabzeel_660": {
+    "name": "Kabzeel",
+    "aka": [],
+    "what": "A town in the Negev of southern Judah, home of David's mighty man Benaiah.",
+    "today": "Exact site unknown; in the Negev of southern Israel.",
+    "key": [
+      "Kabzeel is listed among Judah's southernmost towns toward Edom (Joshua 15).",
+      "Benaiah of Kabzeel, one of David's mighty men, struck down two champions of Moab (2 Samuel 23).",
+      "The Chronicler repeats Benaiah's deeds and his hometown of Kabzeel (1 Chronicles 11)."
+    ],
+    "skip": false
+  },
+  "lehi_726": {
+    "name": "Lehi",
+    "aka": [
+      "Ramath-lehi"
+    ],
+    "what": "A place in Judah where Samson killed a thousand Philistines with a donkey's jawbone.",
+    "today": "Exact site unknown; in Judah near the Philistine border.",
+    "key": [
+      "The Philistines camped at Lehi, and Samson killed a thousand men with a fresh jawbone (Judges 15).",
+      "When Samson grew thirsty, God split open a hollow at Lehi and water came out (Judges 15)."
+    ],
+    "skip": false
+  },
+  "lo-debar_732": {
+    "name": "Lo-debar",
+    "aka": [],
+    "what": "A town in Gilead east of the Jordan, home of Machir son of Ammiel.",
+    "today": "Exact site unknown; in Gilead in northern Jordan.",
+    "key": [
+      "David found Mephibosheth living in Machir's house at Lo-debar and showed him kindness (2 Samuel 9).",
+      "Machir of Lo-debar brought food and supplies to David during Absalom's revolt (2 Samuel 17)."
+    ],
+    "skip": false
+  },
+  "lydda_741": {
+    "name": "Lydda",
+    "aka": [
+      "Lod"
+    ],
+    "what": "A town on the coastal plain near Joppa, where Peter healed a paralyzed man.",
+    "today": "Modern Lod, Israel, near Ben Gurion Airport.",
+    "key": [
+      "At Lydda Peter healed Aeneas, bedridden eight years, and residents turned to the Lord (Acts 9).",
+      "Disciples from nearby Joppa sent to Lydda for Peter after Tabitha died (Acts 9)."
+    ],
+    "skip": false
+  },
+  "magog_754": {
+    "name": "Magog",
+    "aka": [],
+    "what": "A distant northern land, home of Gog, who leads the nations against God's people.",
+    "today": "Exact site unknown; a remote northern region, possibly in Asia Minor.",
+    "key": [
+      "Ezekiel prophesies against Gog of the land of Magog, chief prince of Meshech and Tubal (Ezekiel 38).",
+      "God promises to send fire on Magog and make his holy name known (Ezekiel 39).",
+      "After the thousand years, Satan gathers Gog and Magog for a final battle (Revelation 20)."
+    ],
+    "skip": false
+  },
+  "marah_765": {
+    "name": "Marah",
+    "aka": [],
+    "what": "A place in the wilderness of Shur whose name means bitter, for its undrinkable water.",
+    "today": "Exact site unknown; possibly Ain Hawarah in western Sinai.",
+    "key": [
+      "At Marah the water was bitter until the LORD showed Moses a log that made it sweet (Exodus 15).",
+      "Marah is listed as Israel's campsite after three days in the wilderness (Numbers 33)."
+    ],
+    "skip": false
+  },
+  "meribah-kadesh_784": {
+    "name": "Meribah-kadesh",
+    "aka": [
+      "Meribah"
+    ],
+    "what": "The waters at Kadesh where Moses and Aaron failed to honor God before Israel.",
+    "today": "Likely near Kadesh-barnea, at Ain el-Qudeirat in northeastern Sinai.",
+    "key": [
+      "God told Moses he would not enter the land because he broke faith at Meribah-kadesh (Deuteronomy 32).",
+      "In Ezekiel's vision, Meribah-kadesh marks the southern border of the restored land (Ezekiel 47).",
+      "The southern boundary of the tribal allotments again runs to Meribah-kadesh (Ezekiel 48)."
+    ],
+    "skip": false
+  },
+  "miletus_801": {
+    "name": "Miletus",
+    "aka": [],
+    "what": "A port city on the western coast of Asia Minor, south of Ephesus.",
+    "today": "Ruins near the village of Balat in western Turkey.",
+    "key": [
+      "Paul sent for the Ephesian elders to meet him at Miletus and gave them a farewell charge (Acts 20).",
+      "Paul tells Timothy he left Trophimus ill at Miletus (2 Timothy 4)."
+    ],
+    "skip": false
+  },
+  "mount_tabor_857": {
+    "name": "Mount Tabor",
+    "aka": [
+      "Tabor"
+    ],
+    "what": "A prominent rounded mountain at the northeastern edge of the Jezreel Valley.",
+    "today": "Mount Tabor, east of Nazareth in northern Israel.",
+    "key": [
+      "Deborah told Barak to gather ten thousand men at Mount Tabor (Judges 4).",
+      "Barak went down from Mount Tabor and the LORD routed Sisera's army (Judges 4)."
+    ],
+    "skip": false
+  },
+  "nebo_884": {
+    "name": "Nebo",
+    "aka": [],
+    "what": "A town in Judah whose people returned from exile, distinct from Mount Nebo in Moab.",
+    "today": "Exact site uncertain; possibly modern Nuba, northwest of Hebron.",
+    "key": [
+      "The men of Nebo are counted among the exiles returning from Babylon (Ezra 2).",
+      "Some descendants of Nebo had married foreign women and agreed to put them away (Ezra 10).",
+      "Nehemiah's list counts the men of the other Nebo among the returnees (Nehemiah 7)."
+    ],
+    "skip": false
+  },
+  "olivet_907": {
+    "name": "Olivet",
+    "aka": [
+      "Mount of Olives"
+    ],
+    "what": "The Mount of Olives, a ridge east of Jerusalem across the Kidron Valley.",
+    "today": "The Mount of Olives, east of the Old City of Jerusalem.",
+    "key": [
+      "Jesus approached Jerusalem from the mount called Olivet and sent for a colt (Luke 19).",
+      "During his final week Jesus taught in the temple and lodged nightly on Olivet (Luke 21).",
+      "After Jesus ascended, the apostles returned to Jerusalem from the mount called Olivet (Acts 1)."
+    ],
+    "skip": false
+  },
+  "perga_936": {
+    "name": "Perga",
+    "aka": [],
+    "what": "A city in Pamphylia on the southern coast of Asia Minor, visited on Paul's first journey.",
+    "today": "Ruins near Aksu, east of Antalya in southern Turkey.",
+    "key": [
+      "At Perga, John Mark left Paul and Barnabas and returned to Jerusalem (Acts 13).",
+      "On their return, Paul and Barnabas spoke the word in Perga before sailing home (Acts 14)."
+    ],
+    "skip": false
+  },
+  "phenicia_944": {
+    "name": "Phoenicia",
+    "aka": [],
+    "what": "The coastal region north of Israel that included the cities of Tyre and Sidon.",
+    "today": "The coast of modern Lebanon and parts of northern Israel and Syria.",
+    "key": [
+      "Believers scattered after Stephen's death traveled as far as Phoenicia, preaching to Jews (Acts 11).",
+      "Passing through Phoenicia, Paul and Barnabas reported the Gentiles' conversion, bringing great joy (Acts 15).",
+      "Paul boarded a ship crossing to Phoenicia on his way to Jerusalem (Acts 21)."
+    ],
+    "skip": false
+  },
+  "phrygia_946": {
+    "name": "Phrygia",
+    "aka": [],
+    "what": "A region in the interior of Asia Minor, west of Galatia.",
+    "today": "West-central Turkey.",
+    "key": [
+      "Jews from Phrygia were among those who heard the apostles at Pentecost (Acts 2).",
+      "Paul and his companions went through Phrygia and Galatia, kept from preaching in Asia (Acts 16).",
+      "Paul traveled through Phrygia strengthening all the disciples (Acts 18)."
+    ],
+    "skip": false
+  },
+  "pi-hahiroth_948": {
+    "name": "Pi-hahiroth",
+    "aka": [],
+    "what": "A campsite in Egypt between Migdol and the sea, where Israel stopped before crossing.",
+    "today": "Exact site unknown; in northeastern Egypt near the Red Sea crossing.",
+    "key": [
+      "God had Israel camp before Pi-hahiroth, where Pharaoh's army overtook them (Exodus 14).",
+      "From Pi-hahiroth Israel passed through the sea into the wilderness (Numbers 33)."
+    ],
+    "skip": false
+  },
+  "pontus_956": {
+    "name": "Pontus",
+    "aka": [],
+    "what": "A region of northern Asia Minor along the southern shore of the Black Sea.",
+    "today": "The Black Sea coast of northern Turkey.",
+    "key": [
+      "Jews from Pontus were present in Jerusalem at Pentecost (Acts 2).",
+      "Paul met Aquila, a Jew native to Pontus, in Corinth (Acts 18).",
+      "Peter addressed his first letter to God's scattered people in Pontus and nearby regions (1 Peter 1)."
+    ],
+    "skip": false
+  },
+  "put_962": {
+    "name": "Put",
+    "aka": [],
+    "what": "An African nation west of Egypt whose soldiers fought as Egypt's allies.",
+    "today": "Likely Libya, west of Egypt.",
+    "key": [
+      "Men of Put carrying shields marched in Egypt's army against Babylon (Jeremiah 46).",
+      "Ezekiel foretells that Put will fall by the sword along with Egypt (Ezekiel 30).",
+      "Nahum names Put among the helpers of Thebes, which still fell (Nahum 3)."
+    ],
+    "skip": false
+  },
+  "rahab_969": {
+    "name": "Rahab",
+    "aka": [],
+    "what": "A poetic name for Egypt, also used of a sea monster symbolizing forces God subdues.",
+    "today": "Egypt, used as a poetic name.",
+    "key": [
+      "God lists Rahab, meaning Egypt, among nations whose people will be counted in Zion (Psalms 87).",
+      "The psalmist praises God, who crushed Rahab and scattered his enemies (Psalms 89).",
+      "Isaiah recalls the LORD's arm that cut Rahab in pieces, recalling the exodus (Isaiah 51)."
+    ],
+    "skip": false
+  },
+  "ramoth_983": {
+    "name": "Ramoth",
+    "aka": [
+      "Ramoth-gilead",
+      "Ramoth in Gilead"
+    ],
+    "what": "A city in Gilead east of the Jordan, assigned to Gad as a city of refuge.",
+    "today": "Likely Tell er-Rumeith, in northern Jordan near the Syrian border.",
+    "key": [
+      "Moses set apart Ramoth in Gilead as a city of refuge for Gad (Deuteronomy 4).",
+      "Joshua confirmed Ramoth in Gilead among the cities of refuge (Joshua 20).",
+      "Ramoth in Gilead was given to the Merarite Levites from Gad's territory (Joshua 21)."
+    ],
+    "skip": false
+  },
+  "rimmon_1003": {
+    "name": "Rimmon",
+    "aka": [
+      "Rock of Rimmon"
+    ],
+    "what": "A rocky stronghold in Benjamin where survivors of the tribe took refuge.",
+    "today": "Likely near the village of Rammun, east of Bethel.",
+    "key": [
+      "After the battle at Gibeah, six hundred Benjaminites fled to the rock of Rimmon (Judges 20).",
+      "Israel sent word of peace to the Benjaminites at the rock of Rimmon (Judges 21)."
+    ],
+    "skip": false
+  },
+  "sardis_1027": {
+    "name": "Sardis",
+    "aka": [],
+    "what": "A wealthy city in western Asia Minor, home to one of the seven churches of Revelation.",
+    "today": "Ruins near Sart, east of Izmir in western Turkey.",
+    "key": [
+      "Sardis is one of seven cities whose churches John is told to write to (Revelation 1).",
+      "Christ tells Sardis it has a reputation for being alive but is dead (Revelation 3).",
+      "A few in Sardis have not soiled their garments and will walk with Christ in white (Revelation 3)."
+    ],
+    "skip": false
+  },
+  "sela_1044": {
+    "name": "Sela",
+    "aka": [],
+    "what": "A rocky stronghold in Edom; the name means rock.",
+    "today": "Possibly Petra or nearby as-Sela in southern Jordan.",
+    "key": [
+      "The border of the Amorites ran from the ascent of Akrabbim, from Sela upward (Judges 1).",
+      "Moab's refugees are told to send lambs to Zion from Sela (Isaiah 16).",
+      "Isaiah calls the inhabitants of Sela to sing for joy to the LORD (Isaiah 42)."
+    ],
+    "skip": false
+  },
+  "shechem_1178": {
+    "name": "Tower of Shechem",
+    "aka": [],
+    "what": "A fortified stronghold of Shechem, connected with the temple of El-berith.",
+    "today": "Likely at Tell Balata, on the eastern edge of Nablus.",
+    "key": [
+      "The leaders of the Tower of Shechem took refuge in the stronghold of the house of El-berith (Judges 9).",
+      "Abimelech set the stronghold on fire, and about a thousand people of the Tower of Shechem died (Judges 9)."
+    ],
+    "skip": false
+  },
+  "shunem_1089": {
+    "name": "Shunem",
+    "aka": [],
+    "what": "A town in the Jezreel Valley in Issachar, home of the Shunammite woman Elisha helped.",
+    "today": "Modern Sulam, near Afula in northern Israel.",
+    "key": [
+      "Shunem is listed among the towns of Issachar (Joshua 19).",
+      "The Philistines camped at Shunem before the battle in which Saul died (1 Samuel 28).",
+      "A woman of Shunem hosted Elisha, who later raised her son to life (2 Kings 4)."
+    ],
+    "skip": false
+  },
+  "siloam_1096": {
+    "name": "Siloam",
+    "aka": [
+      "Pool of Siloam"
+    ],
+    "what": "An area and pool at the southern end of ancient Jerusalem, fed by the Gihon spring.",
+    "today": "Pool remains excavated in the City of David, south of Jerusalem's Old City.",
+    "key": [
+      "Jesus asked whether eighteen killed when the tower in Siloam fell were worse sinners (Luke 13).",
+      "Jesus sent a man born blind to wash in the pool of Siloam, and he came back seeing (John 9)."
+    ],
+    "skip": false
+  },
+  "sirion_1101": {
+    "name": "Sirion",
+    "aka": [
+      "Mount Hermon"
+    ],
+    "what": "The Sidonian name for Mount Hermon, the highest mountain on Israel's northern border.",
+    "today": "Mount Hermon, on the border of Lebanon, Syria, and the Golan Heights.",
+    "key": [
+      "Moses notes that the Sidonians call Hermon Sirion (Deuteronomy 3).",
+      "The psalmist says the LORD's voice makes Sirion leap like a young wild ox (Psalms 29).",
+      "Jeremiah asks whether the snow ever leaves the crags of Sirion, contrasting Israel's unfaithfulness (Jeremiah 18)."
+    ],
+    "skip": false
+  },
+  "syene_1120": {
+    "name": "Syene",
+    "aka": [
+      "Aswan"
+    ],
+    "what": "A town at Egypt's southern frontier on the Nile, marking the far limit of Egypt.",
+    "today": "Aswan, in southern Egypt.",
+    "key": [
+      "Isaiah foresees God's people gathering from distant places, including the land of Syene (Isaiah 49).",
+      "God promises to make Egypt desolate from Migdol to Syene (Ezekiel 29).",
+      "Ezekiel says Egypt's helpers will fall by the sword from Migdol to Syene (Ezekiel 30)."
+    ],
+    "skip": false
+  },
+  "tappuah_1136": {
+    "name": "Tappuah",
+    "aka": [],
+    "what": "A Canaanite town on the border between Ephraim and Manasseh.",
+    "today": "Likely Sheikh Abu Zarad, south of Nablus.",
+    "key": [
+      "The king of Tappuah was among the kings Joshua defeated (Joshua 12).",
+      "Ephraim's border went west from Tappuah to the brook Kanah (Joshua 16).",
+      "The land of Tappuah belonged to Manasseh, but the town itself belonged to Ephraim (Joshua 17)."
+    ],
+    "skip": false
+  },
+  "tema_1149": {
+    "name": "Tema",
+    "aka": [],
+    "what": "An oasis town in northern Arabia on major caravan routes, settled by descendants of Ishmael.",
+    "today": "Tayma, in northwestern Saudi Arabia.",
+    "key": [
+      "Job compares his friends to dry streams that disappoint the caravans of Tema (Job 6).",
+      "The inhabitants of Tema are told to bring water and bread to fugitives (Isaiah 21).",
+      "Tema is among the nations made to drink the cup of God's wrath (Jeremiah 25)."
+    ],
+    "skip": false
+  },
+  "uz_1190": {
+    "name": "Uz",
+    "aka": [],
+    "what": "The land where Job lived, apparently east of Israel and associated with Edom.",
+    "today": "Exact site unknown; likely east or southeast of the Dead Sea.",
+    "key": [
+      "Job, a blameless man who feared God, lived in the land of Uz (Job 1).",
+      "The kings of the land of Uz are among those made to drink God's cup of wrath (Jeremiah 25).",
+      "Lamentations addresses Edom as dwelling in the land of Uz, warning that judgment will reach her (Lamentations 4)."
+    ],
+    "skip": false
+  },
+  "vale_of_siddim_1218": {
+    "name": "Valley of Siddim",
+    "aka": [],
+    "what": "A valley by the Salt Sea where four kings defeated the five kings of the plain.",
+    "today": "Likely near the southern end of the Dead Sea; exact site unknown.",
+    "key": [
+      "The five kings, including those of Sodom and Gomorrah, joined forces in the Valley of Siddim (Genesis 14).",
+      "The valley was full of bitumen pits, and fleeing kings fell into them (Genesis 14)."
+    ],
+    "skip": false
+  },
+  "valley_of_elah_1201": {
+    "name": "Valley of Elah",
+    "aka": [],
+    "what": "A valley in the Shephelah of Judah where David fought Goliath.",
+    "today": "The Elah Valley, west of Bethlehem near Azekah, Israel.",
+    "key": [
+      "Saul's army camped in the Valley of Elah facing the Philistines, and David killed Goliath (1 Samuel 17).",
+      "At Nob the priest gave David the sword of Goliath, killed in the Valley of Elah (1 Samuel 21)."
+    ],
+    "skip": false
+  },
+  "valley_of_hinnom_1207": {
+    "name": "Valley of Hinnom",
+    "aka": [
+      "Valley of the Son of Hinnom"
+    ],
+    "what": "A valley along the south and west sides of Jerusalem, later notorious for idolatrous child sacrifice.",
+    "today": "Ge Hinnom, below the south and west walls of Jerusalem's Old City.",
+    "key": [
+      "Judah's northern boundary ran through the Valley of Hinnom, south of the Jebusite city (Joshua 15).",
+      "Benjamin's southern boundary went down the Valley of Hinnom (Joshua 18).",
+      "After the exile, people of Judah settled from Beersheba as far as the Valley of Hinnom (Nehemiah 11)."
+    ],
+    "skip": false
+  },
+  "valley_of_jezreel_1211": {
+    "name": "Valley of Jezreel",
+    "aka": [],
+    "what": "A broad, fertile valley in northern Israel, a frequent battlefield and route for armies.",
+    "today": "The Jezreel Valley, in northern Israel between Galilee and Samaria.",
+    "key": [
+      "Canaanites in the Valley of Jezreel had iron chariots, troubling the tribe of Joseph (Joshua 17).",
+      "Midianites and Amalekites crossed the Jordan and camped in the Valley of Jezreel against Gideon (Judges 6).",
+      "God says he will break the bow of Israel in the Valley of Jezreel (Hosea 1)."
+    ],
+    "skip": false
+  },
+  "zanoah_1239": {
+    "name": "Zanoah",
+    "aka": [],
+    "what": "A town in the lowland of Judah, resettled after the exile.",
+    "today": "Likely Khirbet Zanu, near Beth-shemesh, Israel.",
+    "key": [
+      "Zanoah is listed among Judah's towns, both in the lowland and the hill country (Joshua 15).",
+      "Hanun and the people of Zanoah repaired Jerusalem's Valley Gate (Nehemiah 3).",
+      "Returning exiles from Judah settled in Zanoah and its villages (Nehemiah 11)."
+    ],
+    "skip": false
+  }
+}

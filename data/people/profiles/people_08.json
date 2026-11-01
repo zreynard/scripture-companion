@@ -1,0 +1,1093 @@
+{
+  "hanani_1379": {
+    "name": "Hanani",
+    "aka": [],
+    "who": "A seer in Judah who rebuked King Asa and was the father of the prophet Jehu.",
+    "key": [
+      "His son Jehu brought the Lord's word of judgment against King Baasha of Israel (1 Kings 16).",
+      "Hanani rebuked King Asa for relying on the king of Syria instead of the Lord (2 Chronicles 16).",
+      "Asa grew angry at Hanani and put him in the stocks in prison (2 Chronicles 16).",
+      "His son Jehu later rebuked King Jehoshaphat for helping Ahab (2 Chronicles 19)."
+    ],
+    "family": {
+      "children": [
+        "jehu_816"
+      ]
+    },
+    "skip": false
+  },
+  "haran_1407": {
+    "name": "Haran",
+    "aka": [],
+    "who": "A son of Terah, brother of Abram and Nahor, and father of Lot, Milcah, and Iscah.",
+    "key": [
+      "Haran was born to Terah, along with his brothers Abram and Nahor (Genesis 11).",
+      "He fathered Lot, as well as daughters Milcah and Iscah (Genesis 11).",
+      "He died in Ur of the Chaldeans while his father Terah was still living (Genesis 11).",
+      "His daughter Milcah married his brother Nahor, and Terah took Lot toward Canaan (Genesis 11)."
+    ],
+    "family": {
+      "father": [
+        "terah_2841"
+      ],
+      "siblings": [
+        "abraham_58",
+        "nahor_2143"
+      ],
+      "children": [
+        "lot_1830",
+        "milcah_2082",
+        "iscah_618"
+      ]
+    },
+    "skip": false
+  },
+  "harim_1416": {
+    "name": "Harim",
+    "aka": [],
+    "who": "A priest in David's time whose family became the third of the priestly divisions and later returned from exile.",
+    "key": [
+      "Harim's family received the third lot among the priestly divisions under David (1 Chronicles 24).",
+      "More than a thousand priests descended from Harim returned from Babylon with Zerubbabel (Ezra 2).",
+      "Several priests of Harim's line were listed among those who had married foreign wives (Ezra 10).",
+      "Nehemiah's register again records the priestly family of Harim among the returned exiles (Nehemiah 7)."
+    ],
+    "skip": false
+  },
+  "helon_1486": {
+    "name": "Helon",
+    "aka": [],
+    "who": "A man of Zebulun whose son Eliab led the tribe during Israel's wilderness journey.",
+    "key": [
+      "His son Eliab was named to help Moses take the census for Zebulun (Numbers 1).",
+      "Eliab son of Helon led Zebulun's camp on the east side of the tabernacle (Numbers 2).",
+      "Eliab brought Zebulun's offering on the third day of the altar's dedication (Numbers 7).",
+      "Eliab commanded Zebulun's company when Israel set out from Sinai (Numbers 10)."
+    ],
+    "family": {
+      "children": [
+        "eliab_1073"
+      ]
+    },
+    "skip": false
+  },
+  "hepher_1496": {
+    "name": "Hepher",
+    "aka": [],
+    "who": "A son of Gilead in the tribe of Manasseh and the grandfather of Zelophehad's five daughters.",
+    "key": [
+      "Hepher was a son of Gilead and head of the Hepherite clan of Manasseh (Numbers 26).",
+      "His son Zelophehad had no sons, only five daughters (Numbers 26).",
+      "Zelophehad's daughters asked Moses for an inheritance, and the Lord granted it (Numbers 27).",
+      "Hepher's clan received its portion within Manasseh's allotment of land (Joshua 17)."
+    ],
+    "family": {
+      "father": [
+        "gilead_1317"
+      ],
+      "siblings": [
+        "abiezer_763",
+        "asriel_348",
+        "helek_1481",
+        "shechem_2589",
+        "shemida_2650"
+      ],
+      "children": [
+        "zelophehad_3035"
+      ]
+    },
+    "skip": false
+  },
+  "hezron_1519": {
+    "name": "Hezron",
+    "aka": [],
+    "who": "A son of Reuben and the founder of the Hezronite clan in the tribe of Reuben.",
+    "key": [
+      "Hezron went down to Egypt with Jacob's family as one of Reuben's sons (Genesis 46).",
+      "He is listed among the heads of the fathers' houses of Reuben (Exodus 6).",
+      "His descendants formed the clan of the Hezronites at the second census (Numbers 26).",
+      "Chronicles again lists him among the sons of Reuben, Israel's firstborn (1 Chronicles 5)."
+    ],
+    "family": {
+      "father": [
+        "reuben_2429"
+      ],
+      "siblings": [
+        "hanoch_1403",
+        "pallu_2325",
+        "carmi_920"
+      ]
+    },
+    "skip": false
+  },
+  "hilkiah_1523": {
+    "name": "Hilkiah",
+    "aka": [],
+    "who": "The father of Eliakim, who was over the royal household under King Hezekiah of Judah.",
+    "key": [
+      "His son Eliakim went out to meet the Assyrian field commander at Jerusalem (2 Kings 18).",
+      "Isaiah prophesied that God would call Eliakim son of Hilkiah to replace Shebna (Isaiah 22).",
+      "Eliakim reported the Assyrian commander's threats to Hezekiah with torn clothes (Isaiah 36)."
+    ],
+    "family": {
+      "children": [
+        "eliakim_1084"
+      ]
+    },
+    "skip": false
+  },
+  "hiram_1533": {
+    "name": "Hiram",
+    "aka": [
+      "Huram",
+      "Huram-abi"
+    ],
+    "who": "A skilled bronze worker from Tyre who made the bronze pillars and furnishings for Solomon's temple.",
+    "key": [
+      "Solomon brought Hiram from Tyre; his mother was a widow of the tribe of Naphtali (1 Kings 7).",
+      "He cast the two bronze pillars, Jachin and Boaz, for the temple porch (1 Kings 7).",
+      "He made the bronze sea, the stands, the basins, and other temple vessels (1 Kings 7).",
+      "He finished the work he did for King Solomon on the house of God (2 Chronicles 4)."
+    ],
+    "skip": false
+  },
+  "hophni_1550": {
+    "name": "Hophni",
+    "aka": [],
+    "who": "A son of the priest Eli who served at Shiloh and treated the Lord's offerings with contempt.",
+    "key": [
+      "Hophni and his brother Phinehas served as priests of the Lord at Shiloh (1 Samuel 1).",
+      "They abused the sacrifices and ignored their father's warnings (1 Samuel 2).",
+      "A man of God foretold that both brothers would die on the same day (1 Samuel 2).",
+      "Hophni was killed by the Philistines in the battle where the ark was captured (1 Samuel 4)."
+    ],
+    "family": {
+      "father": [
+        "eli_1072"
+      ],
+      "siblings": [
+        "phinehas_2350"
+      ]
+    },
+    "skip": false
+  },
+  "immer_599": {
+    "name": "Immer",
+    "aka": [],
+    "who": "A priest whose family became the sixteenth priestly division and returned from exile in Babylon.",
+    "key": [
+      "Immer's family drew the sixteenth lot among the priestly divisions under David (1 Chronicles 24).",
+      "More than a thousand priests of Immer's line returned from Babylon with Zerubbabel (Ezra 2).",
+      "Two of his descendants, Hanani and Zebadiah, had married foreign wives (Ezra 10).",
+      "Pashhur son of Immer, chief officer in the temple, beat Jeremiah and put him in stocks (Jeremiah 20)."
+    ],
+    "skip": false
+  },
+  "james_718": {
+    "name": "James",
+    "aka": [],
+    "who": "The son of Alphaeus and one of the twelve apostles chosen by Jesus.",
+    "key": [
+      "Jesus named James son of Alphaeus among the twelve apostles he sent out (Matthew 10).",
+      "Mark lists him among the Twelve appointed to preach and cast out demons (Mark 3).",
+      "Luke names him among the apostles Jesus chose after a night of prayer (Luke 6).",
+      "He was with the apostles praying in the upper room after Jesus' ascension (Acts 1)."
+    ],
+    "family": {
+      "father": [
+        "alphaeus_192"
+      ]
+    },
+    "skip": false
+  },
+  "jason_742": {
+    "name": "Jason",
+    "aka": [],
+    "who": "A believer in Thessalonica who hosted Paul and Silas and was dragged before the city authorities.",
+    "key": [
+      "A mob attacked Jason's house while searching for Paul and Silas (Acts 17).",
+      "They dragged Jason before the city authorities, accusing him of harboring the missionaries (Acts 17).",
+      "The authorities released Jason and the others after taking money as security (Acts 17).",
+      "Paul's letter to Rome includes greetings from a Jason, one of his kinsmen (Romans 16)."
+    ],
+    "skip": false
+  },
+  "jehu_816": {
+    "name": "Jehu",
+    "aka": [],
+    "who": "A prophet, son of Hanani the seer, who announced judgment on King Baasha and rebuked King Jehoshaphat.",
+    "key": [
+      "Jehu announced that the Lord would sweep away Baasha's house for his sins (1 Kings 16).",
+      "Zimri destroyed Baasha's whole house, fulfilling the word spoken through Jehu (1 Kings 16).",
+      "He rebuked Jehoshaphat for helping wicked Ahab, while noting good in him (2 Chronicles 19).",
+      "He wrote a record of Jehoshaphat's acts, included in the Book of the Kings of Israel (2 Chronicles 20)."
+    ],
+    "family": {
+      "father": [
+        "hanani_1379"
+      ]
+    },
+    "skip": false
+  },
+  "joses_1721": {
+    "name": "Joses",
+    "aka": [
+      "Joseph"
+    ],
+    "who": "One of the brothers of Jesus, named with James, Simon, and Judas by the people of Nazareth.",
+    "key": [
+      "The people of Nazareth named Joses among Jesus' brothers when they took offense at him (Matthew 13).",
+      "Mark also lists Joses with James, Judas, and Simon as brothers of Jesus (Mark 6)."
+    ],
+    "family": {
+      "mother": [
+        "mary_1938"
+      ],
+      "siblings": [
+        "jesus_905",
+        "james_719",
+        "simon_2747",
+        "jude_1756"
+      ]
+    },
+    "skip": false
+  },
+  "kenaz_1778": {
+    "name": "Kenaz",
+    "aka": [],
+    "who": "A man of Judah, father of Othniel, Israel's first judge, and of Seraiah.",
+    "key": [
+      "His son Othniel captured Debir and received Caleb's daughter Achsah as his wife (Joshua 15).",
+      "Judges again records Othniel son of Kenaz taking Debir (Judges 1).",
+      "The Lord raised up Othniel son of Kenaz to deliver Israel from Cushan-rishathaim (Judges 3).",
+      "Chronicles lists Othniel and Seraiah as the sons of Kenaz (1 Chronicles 4)."
+    ],
+    "family": {
+      "children": [
+        "othniel_2259",
+        "seraiah_2496"
+      ]
+    },
+    "skip": false
+  },
+  "lebbaeus_1815": {
+    "name": "Thaddaeus",
+    "aka": [
+      "Lebbaeus",
+      "Judas son of James",
+      "Judas (not Iscariot)"
+    ],
+    "who": "One of the twelve apostles, called Thaddaeus in Matthew and Mark and Judas son of James in Luke and Acts.",
+    "key": [
+      "Jesus named Thaddaeus among the twelve apostles he sent out (Matthew 10).",
+      "Luke lists this apostle as Judas son of James, distinct from Judas Iscariot (Luke 6).",
+      "At the Last Supper he asked why Jesus would reveal himself to them and not the world (John 14).",
+      "He joined the other apostles in prayer in the upper room after the ascension (Acts 1)."
+    ],
+    "skip": false
+  },
+  "lotan_1831": {
+    "name": "Lotan",
+    "aka": [],
+    "who": "A son of Seir the Horite and one of the Horite chiefs in the land of Seir.",
+    "key": [
+      "Lotan is listed among the sons of Seir the Horite, the inhabitants of the land (Genesis 36).",
+      "His sons were Hori and Hemam, and his sister was Timna (Genesis 36).",
+      "He was one of the chiefs of the Horites in the land of Seir (Genesis 36).",
+      "Chronicles repeats his family line among the descendants of Seir (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "seir_2485"
+      ],
+      "siblings": [
+        "shobal_2719",
+        "zibeon_3062",
+        "anah_248",
+        "dishon_1016",
+        "ezer_1238",
+        "dishan_1015",
+        "timna_2860"
+      ],
+      "children": [
+        "hori_1552",
+        "homam_1487"
+      ]
+    },
+    "skip": false
+  },
+  "magog_1882": {
+    "name": "Magog",
+    "aka": [],
+    "who": "A son of Japheth in the table of nations, whose name later designates a distant northern land and people.",
+    "key": [
+      "Magog is listed among the sons of Japheth, son of Noah (Genesis 10).",
+      "Chronicles repeats his name among Japheth's descendants (1 Chronicles 1).",
+      "Ezekiel names Magog as the land of Gog, who would come against Israel (Ezekiel 38).",
+      "God declared he would send fire on Magog and make his name known (Ezekiel 39).",
+      "Revelation names Gog and Magog among nations Satan gathers for battle (Revelation 20)."
+    ],
+    "family": {
+      "father": [
+        "japheth_726"
+      ],
+      "siblings": [
+        "gomer_1328",
+        "madai_1880",
+        "javan_744",
+        "tubal_2883",
+        "meshech_2012",
+        "tiras_2864"
+      ]
+    },
+    "skip": false
+  },
+  "mattithiah_1974": {
+    "name": "Mattithiah",
+    "aka": [],
+    "who": "A Levite musician, son of Jeduthun, who played the lyre in worship before the ark under David.",
+    "key": [
+      "Mattithiah was appointed among the Levites to play lyres when the ark was brought up (1 Chronicles 15).",
+      "He served under Asaph with harps and lyres before the ark of the Lord (1 Chronicles 16).",
+      "He was one of the sons of Jeduthun who prophesied with the lyre (1 Chronicles 25).",
+      "He received the fourteenth lot for service among the temple musicians (1 Chronicles 25)."
+    ],
+    "family": {
+      "father": [
+        "jeduthun_1224"
+      ],
+      "siblings": [
+        "gedaliah_1288",
+        "izri_3051",
+        "jeshaiah_885",
+        "shimei_2233",
+        "hashabiah_1430"
+      ]
+    },
+    "skip": false
+  },
+  "meshelemiah_2013": {
+    "name": "Meshelemiah",
+    "aka": [
+      "Shelemiah"
+    ],
+    "who": "A Korahite Levite, son of Kore, who headed a family of gatekeepers in David's time.",
+    "key": [
+      "His son Zechariah was gatekeeper at the entrance of the tent of meeting (1 Chronicles 9).",
+      "Meshelemiah son of Kore was a Korahite gatekeeper with seven sons (1 Chronicles 26).",
+      "His sons and brothers numbered eighteen able men (1 Chronicles 26).",
+      "The lot for the east gate fell to him, there called Shelemiah (1 Chronicles 26)."
+    ],
+    "family": {
+      "father": [
+        "kore_1797"
+      ],
+      "children": [
+        "zechariah_3004",
+        "jediael_760",
+        "zebadiah_2991",
+        "jathniel_743",
+        "elam_1051",
+        "jehohanan_785",
+        "elioenai_1138"
+      ]
+    },
+    "skip": false
+  },
+  "michael_2068": {
+    "name": "Michael",
+    "aka": [],
+    "who": "An archangel, described as a chief prince who stands guard over God's people.",
+    "key": [
+      "Michael, one of the chief princes, came to help against the prince of Persia (Daniel 10).",
+      "He is called the great prince who protects Daniel's people in a time of trouble (Daniel 12).",
+      "Jude says the archangel Michael disputed with the devil about the body of Moses (Jude 1).",
+      "Michael and his angels fought against the dragon, and the dragon was thrown down (Revelation 12)."
+    ],
+    "skip": false
+  },
+  "nathan_2152": {
+    "name": "Nathan",
+    "aka": [],
+    "who": "A son of David and Bathsheba, born in Jerusalem, through whom Luke traces Jesus' genealogy.",
+    "key": [
+      "Nathan was one of the sons born to David in Jerusalem (2 Samuel 5).",
+      "Chronicles names him among four sons Bathsheba bore to David, including Solomon (1 Chronicles 3).",
+      "Zechariah foresees the family of the house of Nathan mourning by itself (Zechariah 12).",
+      "Luke traces Jesus' genealogy back through Nathan the son of David (Luke 3)."
+    ],
+    "family": {
+      "father": [
+        "david_994"
+      ],
+      "mother": [
+        "bathsheba_416"
+      ],
+      "siblings": [
+        "shammua_2547",
+        "shobab_2715",
+        "solomon_2762",
+        "amnon_232",
+        "daniel_939",
+        "absalom_59",
+        "adonijah_97",
+        "shephatiah_2657",
+        "ithream_655",
+        "ibhar_1584",
+        "elishua_1163",
+        "elpalet_1148",
+        "nogah_2213",
+        "nepheg_2179",
+        "japhia_728",
+        "elishama_1156",
+        "eliada_1078",
+        "eliphalet_1143",
+        "jerimoth_869",
+        "tamar_2822"
+      ],
+      "children": [
+        "mattatha_1961"
+      ]
+    },
+    "skip": false
+  },
+  "nebajoth_2164": {
+    "name": "Nebaioth",
+    "aka": [],
+    "who": "The firstborn son of Ishmael, whose descendants became one of the twelve Ishmaelite tribes.",
+    "key": [
+      "Nebaioth was the firstborn of Ishmael's twelve sons, each a tribal prince (Genesis 25).",
+      "Esau married Mahalath, Ishmael's daughter and the sister of Nebaioth (Genesis 28).",
+      "Basemath, another of Esau's wives, is also called Nebaioth's sister (Genesis 36).",
+      "Isaiah foresees the rams of Nebaioth accepted on God's altar (Isaiah 60)."
+    ],
+    "family": {
+      "father": [
+        "ishmael_630"
+      ],
+      "siblings": [
+        "kedar_1769",
+        "adbeel_79",
+        "mibsam_2046",
+        "mishma_2094",
+        "dumah_1025",
+        "massa_1945",
+        "hadar_1341",
+        "tema_2837",
+        "jetur_911",
+        "naphish_2148",
+        "kedemah_1770",
+        "bashemath_1887",
+        "Mahalath"
+      ]
+    },
+    "skip": false
+  },
+  "nehemiah_2172": {
+    "name": "Nehemiah",
+    "aka": [],
+    "who": "Son of Hacaliah, cupbearer to King Artaxerxes, who became governor of Judah and rebuilt Jerusalem's walls.",
+    "key": [
+      "Hearing that Jerusalem's walls lay broken, Nehemiah wept, fasted, and prayed (Nehemiah 1).",
+      "King Artaxerxes granted his request and sent him to rebuild the city (Nehemiah 2).",
+      "Despite opposition, the wall was finished in fifty-two days (Nehemiah 6).",
+      "He stood with Ezra as the Law was read and explained to the people (Nehemiah 8).",
+      "Returning to Jerusalem, he corrected abuses in the temple, the Sabbath, and marriages (Nehemiah 13)."
+    ],
+    "family": {
+      "father": [
+        "hachaliah_1336"
+      ],
+      "siblings": [
+        "hanani_1382"
+      ]
+    },
+    "skip": false
+  },
+  "nethaneel_2188": {
+    "name": "Nethanel",
+    "aka": [],
+    "who": "The son of Zuar and chief of the tribe of Issachar during the wilderness years.",
+    "key": [
+      "Nethanel was appointed to help Moses take the census for Issachar (Numbers 1).",
+      "He led Issachar's camp on the east side of the tabernacle (Numbers 2).",
+      "He presented Issachar's offering on the second day of the altar's dedication (Numbers 7).",
+      "He commanded Issachar's company when Israel set out from Sinai (Numbers 10)."
+    ],
+    "family": {
+      "father": [
+        "zuar_3107"
+      ]
+    },
+    "skip": false
+  },
+  "nicodemus_2204": {
+    "name": "Nicodemus",
+    "aka": [],
+    "who": "A Pharisee and ruler of the Jews who came to Jesus by night and later helped bury him.",
+    "key": [
+      "Nicodemus came to Jesus by night, and Jesus taught him about being born again (John 3).",
+      "He urged the Pharisees not to condemn Jesus without first giving him a hearing (John 7).",
+      "With Joseph of Arimathea, he brought myrrh and aloes and buried Jesus' body (John 19)."
+    ],
+    "skip": false
+  },
+  "nimshi_2207": {
+    "name": "Nimshi",
+    "aka": [],
+    "who": "The grandfather of King Jehu of Israel, who is often called Jehu son of Nimshi.",
+    "key": [
+      "The Lord told Elijah to anoint Jehu son of Nimshi as king over Israel (1 Kings 19).",
+      "Elisha sent a prophet to anoint Jehu, son of Jehoshaphat, son of Nimshi (2 Kings 9).",
+      "The watchman recognized Jehu son of Nimshi by his furious driving (2 Kings 9).",
+      "God anointed Jehu son of Nimshi to destroy the house of Ahab (2 Chronicles 22)."
+    ],
+    "family": {
+      "children": [
+        "jehoshaphat_809"
+      ]
+    },
+    "skip": false
+  },
+  "ocran_2235": {
+    "name": "Ochran",
+    "aka": [],
+    "who": "A man of Asher whose son Pagiel led the tribe during Israel's wilderness journey.",
+    "key": [
+      "His son Pagiel was named to help Moses take the census for Asher (Numbers 1).",
+      "Pagiel son of Ochran led Asher's camp on the north side of the tabernacle (Numbers 2).",
+      "Pagiel brought Asher's offering on the eleventh day of the altar's dedication (Numbers 7).",
+      "Pagiel commanded Asher's company when Israel set out from Sinai (Numbers 10)."
+    ],
+    "family": {
+      "children": [
+        "pagiel_2264"
+      ]
+    },
+    "skip": false
+  },
+  "pagiel_2264": {
+    "name": "Pagiel",
+    "aka": [],
+    "who": "The son of Ochran and chief of the tribe of Asher during the wilderness years.",
+    "key": [
+      "Pagiel was appointed to help Moses take the census for Asher (Numbers 1).",
+      "He led Asher's camp on the north side of the tabernacle (Numbers 2).",
+      "He presented Asher's offering on the eleventh day of the altar's dedication (Numbers 7).",
+      "He commanded Asher's company when Israel set out from Sinai (Numbers 10)."
+    ],
+    "family": {
+      "father": [
+        "ocran_2235"
+      ]
+    },
+    "skip": false
+  },
+  "pallu_2325": {
+    "name": "Pallu",
+    "aka": [],
+    "who": "A son of Reuben, founder of the Palluite clan and ancestor of Dathan and Abiram.",
+    "key": [
+      "Pallu went down to Egypt with Jacob's family as one of Reuben's sons (Genesis 46).",
+      "He is listed among the heads of the fathers' houses of Reuben (Exodus 6).",
+      "His son Eliab was the father of Dathan and Abiram, who rebelled against Moses (Numbers 26).",
+      "Chronicles again lists him among the sons of Reuben (1 Chronicles 5)."
+    ],
+    "family": {
+      "father": [
+        "reuben_2429"
+      ],
+      "siblings": [
+        "hanoch_1403",
+        "hezron_1519",
+        "carmi_920"
+      ],
+      "children": [
+        "eliab_1074"
+      ]
+    },
+    "skip": false
+  },
+  "pashur_2283": {
+    "name": "Pashhur",
+    "aka": [],
+    "who": "A priest, son of Malchijah, whose large family of descendants returned from exile and served in Jerusalem.",
+    "key": [
+      "Pashhur appears as an ancestor of Adaiah, a priest living in Jerusalem (1 Chronicles 9).",
+      "More than twelve hundred of Pashhur's descendants returned from Babylon with Zerubbabel (Ezra 2).",
+      "Six priests descended from Pashhur had married foreign wives (Ezra 10).",
+      "Priests of Pashhur's line served in the house of God after the return (Nehemiah 11)."
+    ],
+    "family": {
+      "father": [
+        "malchijah_1909"
+      ],
+      "children": [
+        "zechariah_3024"
+      ]
+    },
+    "skip": false
+  },
+  "pedahzur_2291": {
+    "name": "Pedahzur",
+    "aka": [],
+    "who": "A man of Manasseh whose son Gamaliel led the tribe during Israel's wilderness journey.",
+    "key": [
+      "His son Gamaliel was named to help Moses take the census for Manasseh (Numbers 1).",
+      "Gamaliel son of Pedahzur led Manasseh's camp on the west side of the tabernacle (Numbers 2).",
+      "Gamaliel brought Manasseh's offering on the eighth day of the altar's dedication (Numbers 7).",
+      "Gamaliel commanded Manasseh's company when Israel set out from Sinai (Numbers 10)."
+    ],
+    "family": {
+      "children": [
+        "gamaliel_1276"
+      ]
+    },
+    "skip": false
+  },
+  "pharaoh_2330": {
+    "name": "Pharaoh",
+    "aka": [],
+    "who": "The king of Egypt who enslaved the Israelites and ordered their newborn sons to be killed.",
+    "key": [
+      "A new king who did not know Joseph enslaved Israel with hard labor (Exodus 1).",
+      "He ordered the Hebrew midwives to kill newborn boys, but they feared God (Exodus 1).",
+      "He commanded that every Hebrew son be thrown into the Nile (Exodus 1).",
+      "His daughter found the baby Moses in the river and raised him as her son (Exodus 2).",
+      "When Moses killed an Egyptian, Pharaoh sought to kill him, and Moses fled (Exodus 2)."
+    ],
+    "family": {
+      "children": [
+        "daughter_of_pharaoh_988"
+      ]
+    },
+    "skip": false
+  },
+  "pharaoh_2333": {
+    "name": "Pharaoh",
+    "aka": [],
+    "who": "The king of Egypt in Hezekiah's day, whose help Judah sought against the Assyrians.",
+    "key": [
+      "The Assyrian commander mocked trust in Pharaoh as leaning on a broken reed (2 Kings 18).",
+      "Isaiah declared that the wise counselors of Pharaoh gave foolish counsel (Isaiah 19).",
+      "Isaiah warned that seeking Pharaoh's protection would bring Judah shame (Isaiah 30).",
+      "The Assyrian commander repeated that Pharaoh fails all who rely on him (Isaiah 36)."
+    ],
+    "skip": false
+  },
+  "rehum_2413": {
+    "name": "Rehum",
+    "aka": [],
+    "who": "A leader among the exiles who returned from Babylon to Judah with Zerubbabel.",
+    "key": [
+      "Rehum was among the leaders who returned from Babylon with Zerubbabel (Ezra 2).",
+      "A Rehum was among the chiefs of the people who sealed the covenant (Nehemiah 10).",
+      "A Rehum is also listed among those who came up with Zerubbabel and Jeshua (Nehemiah 12)."
+    ],
+    "skip": false
+  },
+  "seraiah_2494": {
+    "name": "Seraiah",
+    "aka": [],
+    "who": "The chief priest of Judah when Jerusalem fell, executed by the king of Babylon at Riblah.",
+    "key": [
+      "Nebuzaradan took Seraiah the chief priest captive when Jerusalem fell (2 Kings 25).",
+      "He was brought to the king of Babylon at Riblah and put to death (2 Kings 25).",
+      "Chronicles lists him as son of Azariah and father of Jehozadak, who went into exile (1 Chronicles 6).",
+      "Ezra the scribe traced his priestly descent through Seraiah back to Aaron (Ezra 7)."
+    ],
+    "family": {
+      "father": [
+        "azariah_379"
+      ],
+      "children": [
+        "josedech_815"
+      ]
+    },
+    "skip": false
+  },
+  "shallum_2519": {
+    "name": "Shallum",
+    "aka": [
+      "Meshullam"
+    ],
+    "who": "A priest in Zadok's line and father of Hilkiah, the high priest in King Josiah's day.",
+    "key": [
+      "Chronicles places Shallum between Zadok and Hilkiah in the high-priestly line (1 Chronicles 6).",
+      "He is called Meshullam in the list of priests who lived in Jerusalem (1 Chronicles 9).",
+      "Ezra's priestly genealogy runs through Shallum son of Zadok (Ezra 7).",
+      "Nehemiah lists him as Meshullam among the ancestors of a temple official (Nehemiah 11)."
+    ],
+    "family": {
+      "father": [
+        "zadok_2975"
+      ],
+      "children": [
+        "hilkiah_1524"
+      ]
+    },
+    "skip": false
+  },
+  "shallum_2520": {
+    "name": "Shallum",
+    "aka": [],
+    "who": "A Korahite Levite, son of Kore, who was chief of the gatekeepers at the house of the Lord.",
+    "key": [
+      "Shallum was chief of the gatekeepers stationed at the king's gate on the east (1 Chronicles 9).",
+      "He and his Korahite kinsmen guarded the thresholds of the tent (1 Chronicles 9).",
+      "His firstborn Mattithiah was in charge of making the flat cakes (1 Chronicles 9).",
+      "His descendants were among the gatekeepers who returned from exile (Ezra 2)."
+    ],
+    "family": {
+      "father": [
+        "kore_1797"
+      ],
+      "children": [
+        "mattithiah_1973"
+      ]
+    },
+    "skip": false
+  },
+  "shammah_2700": {
+    "name": "Shammah",
+    "aka": [
+      "Shimeah",
+      "Shimea",
+      "Shimei"
+    ],
+    "who": "The third son of Jesse and an older brother of King David.",
+    "key": [
+      "Samuel saw Shammah, but the Lord had not chosen him as king (1 Samuel 16).",
+      "He followed Saul to battle against the Philistines with his two older brothers (1 Samuel 17).",
+      "His son Jonadab, a very crafty man, advised Amnon in his scheme against Tamar (2 Samuel 13).",
+      "Chronicles lists him as Jesse's third son, there called Shimea (1 Chronicles 2)."
+    ],
+    "family": {
+      "father": [
+        "jesse_903"
+      ],
+      "siblings": [
+        "eliab_1075",
+        "abinadab_44",
+        "nethaneel_2189",
+        "raddai_2387",
+        "ozem_2260",
+        "david_994",
+        "elihu_1129",
+        "Zeruiah",
+        "Abigail"
+      ],
+      "children": [
+        "jonadab_1688",
+        "Jonathan"
+      ]
+    },
+    "skip": false
+  },
+  "shedeur_2591": {
+    "name": "Shedeur",
+    "aka": [],
+    "who": "A man of Reuben whose son Elizur led the tribe during Israel's wilderness journey.",
+    "key": [
+      "His son Elizur was named to help Moses take the census for Reuben (Numbers 1).",
+      "Elizur son of Shedeur led Reuben's camp on the south side of the tabernacle (Numbers 2).",
+      "Elizur brought Reuben's offering on the fourth day of the altar's dedication (Numbers 7).",
+      "Elizur commanded Reuben's company when Israel set out from Sinai (Numbers 10)."
+    ],
+    "family": {
+      "children": [
+        "elizur_1166"
+      ]
+    },
+    "skip": false
+  },
+  "shelumiel_2612": {
+    "name": "Shelumiel",
+    "aka": [],
+    "who": "The son of Zurishaddai and chief of the tribe of Simeon during the wilderness years.",
+    "key": [
+      "Shelumiel was appointed to help Moses take the census for Simeon (Numbers 1).",
+      "He led Simeon's camp on the south side of the tabernacle (Numbers 2).",
+      "He presented Simeon's offering on the fifth day of the altar's dedication (Numbers 7).",
+      "He commanded Simeon's company when Israel set out from Sinai (Numbers 10)."
+    ],
+    "family": {
+      "father": [
+        "zurishaddai_3113"
+      ]
+    },
+    "skip": false
+  },
+  "shemaiah_2619": {
+    "name": "Shemaiah",
+    "aka": [],
+    "who": "A man of God and prophet in Judah during the reign of King Rehoboam.",
+    "key": [
+      "Shemaiah told Rehoboam not to fight against Israel, and the people obeyed (1 Kings 12).",
+      "Chronicles repeats this word of the Lord forbidding war with their brothers (2 Chronicles 11).",
+      "When Shishak invaded, he told Judah's leaders they had abandoned the Lord (2 Chronicles 12).",
+      "After they humbled themselves, he announced God would not destroy them completely (2 Chronicles 12)."
+    ],
+    "skip": false
+  },
+  "sherebiah_2667": {
+    "name": "Sherebiah",
+    "aka": [],
+    "who": "A Levite of good understanding who returned with Ezra and helped teach the Law to the people.",
+    "key": [
+      "Sherebiah, a man of discretion, joined Ezra's group with his sons and kinsmen (Ezra 8).",
+      "Ezra entrusted him with others to carry the silver and gold for the temple (Ezra 8).",
+      "He helped the people understand the Law as it was read (Nehemiah 8).",
+      "He stood with other Levites leading the people in confession and praise (Nehemiah 9)."
+    ],
+    "skip": false
+  },
+  "shobal_2719": {
+    "name": "Shobal",
+    "aka": [],
+    "who": "A son of Seir the Horite and one of the Horite chiefs in the land of Seir.",
+    "key": [
+      "Shobal is listed among the sons of Seir the Horite, the inhabitants of the land (Genesis 36).",
+      "His sons were Alvan, Manahath, Ebal, Shepho, and Onam (Genesis 36).",
+      "He was one of the chiefs of the Horites in the land of Seir (Genesis 36).",
+      "Chronicles repeats his family line among the descendants of Seir (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "seir_2485"
+      ],
+      "siblings": [
+        "lotan_1831",
+        "zibeon_3062",
+        "anah_248",
+        "dishon_1016",
+        "ezer_1238",
+        "dishan_1015",
+        "timna_2860"
+      ],
+      "children": [
+        "alvan_195",
+        "manahath_1927",
+        "ebal_1026",
+        "shepho_2665",
+        "onam_2248"
+      ]
+    },
+    "skip": false
+  },
+  "sibbechai_2737": {
+    "name": "Sibbecai",
+    "aka": [],
+    "who": "A Hushathite warrior among David's mighty men who killed a descendant of the giants.",
+    "key": [
+      "Sibbecai the Hushathite struck down Saph, a descendant of the giants (2 Samuel 21).",
+      "He is listed among the mighty men of David's army (1 Chronicles 11).",
+      "Chronicles records that he killed Sippai at Gezer, subduing the Philistines (1 Chronicles 20).",
+      "He commanded the division of 24,000 men serving in the eighth month (1 Chronicles 27)."
+    ],
+    "skip": false
+  },
+  "talmon_2820": {
+    "name": "Talmon",
+    "aka": [],
+    "who": "A Levite gatekeeper whose family guarded the gates of the house of God before and after the exile.",
+    "key": [
+      "Talmon was among the gatekeepers who lived in Jerusalem (1 Chronicles 9).",
+      "His descendants were among the gatekeepers who returned from Babylon (Ezra 2).",
+      "Talmon and his brothers guarded the gates, numbering 172 men (Nehemiah 11).",
+      "He was among the gatekeepers guarding the storehouses of the gates (Nehemiah 12)."
+    ],
+    "skip": false
+  },
+  "tirzah_2868": {
+    "name": "Tirzah",
+    "aka": [],
+    "who": "One of the five daughters of Zelophehad of Manasseh, who inherited land because their father had no sons.",
+    "key": [
+      "Tirzah was one of Zelophehad's five daughters, since he had no sons (Numbers 26).",
+      "With her sisters she asked Moses for their father's inheritance, and the Lord granted it (Numbers 27).",
+      "The sisters married within their father's clan so the inheritance stayed in the tribe (Numbers 36).",
+      "They received their inheritance among the clans of Manasseh, as the Lord commanded (Joshua 17)."
+    ],
+    "family": {
+      "father": [
+        "zelophehad_3035"
+      ],
+      "siblings": [
+        "mahlah_1895",
+        "noah_2211",
+        "hoglah_1548",
+        "milcah_2083"
+      ]
+    },
+    "skip": false
+  },
+  "tychicus_2885": {
+    "name": "Tychicus",
+    "aka": [],
+    "who": "A believer from Asia who traveled with Paul and carried his letters and news to the churches.",
+    "key": [
+      "Tychicus of Asia accompanied Paul on his journey through Macedonia (Acts 20).",
+      "Paul sent him, a beloved brother and faithful minister, to share news with the Ephesians (Ephesians 6).",
+      "He carried Paul's news to the Colossians, together with Onesimus (Colossians 4).",
+      "Paul wrote that he had sent Tychicus to Ephesus (2 Timothy 4).",
+      "Paul planned to send Artemas or Tychicus to Titus in Crete (Titus 3)."
+    ],
+    "skip": false
+  },
+  "uri_2895": {
+    "name": "Uri",
+    "aka": [],
+    "who": "A man of Judah, son of Hur, whose son Bezalel was the chief craftsman of the tabernacle.",
+    "key": [
+      "The Lord called Bezalel son of Uri by name to make the tabernacle (Exodus 31).",
+      "Moses announced that God had filled Uri's son Bezalel with skill (Exodus 35).",
+      "Bezalel son of Uri made all that the Lord commanded Moses (Exodus 38).",
+      "Chronicles lists Uri as son of Hur and father of Bezalel in Judah's line (1 Chronicles 2).",
+      "The bronze altar made by Uri's son Bezalel still stood at Gibeon in Solomon's day (2 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "hur_1571"
+      ],
+      "siblings": [
+        "shobal_2720",
+        "salma_2462",
+        "hareph_1412",
+        "jezreel_1612",
+        "ishma_629",
+        "idbash_1590",
+        "hazelelponi_1466",
+        "penuel_2314",
+        "ezer_1239"
+      ],
+      "children": [
+        "bezaleel_490"
+      ]
+    },
+    "skip": false
+  },
+  "urijah_2903": {
+    "name": "Uriah",
+    "aka": [],
+    "who": "A priest in Jerusalem under King Ahaz who built an altar from a pattern sent from Damascus.",
+    "key": [
+      "Uriah built an altar copied from the model King Ahaz sent from Damascus (2 Kings 16).",
+      "At Ahaz's command he offered the regular sacrifices on the new altar (2 Kings 16).",
+      "Isaiah took Uriah the priest as a reliable witness to his written prophecy (Isaiah 8)."
+    ],
+    "skip": false
+  },
+  "zebul_3001": {
+    "name": "Zebul",
+    "aka": [],
+    "who": "The ruler of the city of Shechem under Abimelech, who exposed Gaal's revolt.",
+    "key": [
+      "Zebul, Abimelech's officer, governed the city of Shechem (Judges 9).",
+      "Angered by Gaal's boasting, he secretly sent messengers to warn Abimelech (Judges 9).",
+      "He advised Abimelech to lie in wait in the field by night (Judges 9).",
+      "He challenged Gaal to fight, then drove Gaal and his relatives out of Shechem (Judges 9)."
+    ],
+    "skip": false
+  },
+  "zedekiah_3029": {
+    "name": "Zedekiah",
+    "aka": [],
+    "who": "A false prophet, son of Chenaanah, who urged Ahab to battle and struck the prophet Micaiah.",
+    "key": [
+      "Zedekiah made iron horns and prophesied that Ahab would push back the Syrians (1 Kings 22).",
+      "He struck Micaiah on the cheek for prophesying disaster (1 Kings 22).",
+      "Micaiah said Zedekiah would see the truth when he hid in an inner chamber (1 Kings 22).",
+      "Chronicles retells his false prophecy and his striking of Micaiah (2 Chronicles 18)."
+    ],
+    "family": {
+      "father": [
+        "chenaanah_932"
+      ]
+    },
+    "skip": false
+  },
+  "zerahiah_3047": {
+    "name": "Zerahiah",
+    "aka": [],
+    "who": "A priest descended from Aaron through Eleazar and Phinehas, listed in the high-priestly genealogy.",
+    "key": [
+      "Chronicles lists Zerahiah son of Uzzi in the line from Aaron to the exile (1 Chronicles 6).",
+      "His line continued through his son Meraioth toward Zadok (1 Chronicles 6).",
+      "Ezra the scribe traced his own priestly descent through Zerahiah (Ezra 7)."
+    ],
+    "family": {
+      "father": [
+        "uzzi_2917"
+      ],
+      "children": [
+        "meraioth_2003"
+      ]
+    },
+    "skip": false
+  },
+  "zibeon_3062": {
+    "name": "Zibeon",
+    "aka": [],
+    "who": "A son of Seir the Horite, one of the Horite chiefs, and the grandfather of Esau's wife Oholibamah.",
+    "key": [
+      "Esau's wife Oholibamah was the daughter of Anah, the daughter of Zibeon (Genesis 36).",
+      "Zibeon is listed among the sons of Seir the Horite, the inhabitants of the land (Genesis 36).",
+      "His son Anah found the hot springs while pasturing Zibeon's donkeys (Genesis 36).",
+      "Chronicles repeats his family line among the descendants of Seir (1 Chronicles 1)."
+    ],
+    "family": {
+      "father": [
+        "seir_2485"
+      ],
+      "siblings": [
+        "lotan_1831",
+        "shobal_2719",
+        "anah_248",
+        "dishon_1016",
+        "ezer_1238",
+        "dishan_1015",
+        "timna_2860"
+      ],
+      "children": [
+        "ajah_178",
+        "anah_249"
+      ]
+    },
+    "skip": false
+  },
+  "zuar_3107": {
+    "name": "Zuar",
+    "aka": [],
+    "who": "A man of Issachar whose son Nethanel led the tribe during Israel's wilderness journey.",
+    "key": [
+      "His son Nethanel was named to help Moses take the census for Issachar (Numbers 1).",
+      "Nethanel son of Zuar led Issachar's camp on the east side of the tabernacle (Numbers 2).",
+      "Nethanel brought Issachar's offering on the second day of the altar's dedication (Numbers 7).",
+      "Nethanel commanded Issachar's company when Israel set out from Sinai (Numbers 10)."
+    ],
+    "family": {
+      "children": [
+        "nethaneel_2188"
+      ]
+    },
+    "skip": false
+  },
+  "zurishaddai_3113": {
+    "name": "Zurishaddai",
+    "aka": [],
+    "who": "A man of Simeon whose son Shelumiel led the tribe during Israel's wilderness journey.",
+    "key": [
+      "His son Shelumiel was named to help Moses take the census for Simeon (Numbers 1).",
+      "Shelumiel son of Zurishaddai led Simeon's camp on the south side of the tabernacle (Numbers 2).",
+      "Shelumiel brought Simeon's offering on the fifth day of the altar's dedication (Numbers 7).",
+      "Shelumiel commanded Simeon's company when Israel set out from Sinai (Numbers 10)."
+    ],
+    "family": {
+      "children": [
+        "shelumiel_2612"
+      ]
+    },
+    "skip": false
+  }
+}

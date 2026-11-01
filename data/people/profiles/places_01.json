@@ -1,0 +1,1187 @@
+{
+  "jerusalem_636": {
+    "name": "Jerusalem",
+    "aka": [
+      "Zion",
+      "City of David",
+      "Salem",
+      "Jebus"
+    ],
+    "what": "The city David made Israel's capital, site of God's temple and of Jesus' death and resurrection.",
+    "today": "Jerusalem, Israel",
+    "key": [
+      "David captured the Jebusite stronghold and made Jerusalem his royal city (2 Samuel 5).",
+      "Solomon dedicated the temple, and the glory of the LORD filled it (1 Kings 8).",
+      "The Babylonians burned the temple and the city and carried the people into exile (2 Kings 25).",
+      "Jesus was crucified just outside the city and laid in a nearby tomb (Luke 23).",
+      "The Holy Spirit came upon the disciples at Pentecost, and about three thousand believed (Acts 2)."
+    ],
+    "skip": false
+  },
+  "egypt_362": {
+    "name": "Egypt",
+    "aka": [],
+    "what": "The great kingdom of the Nile valley, where Israel grew into a nation and was later enslaved.",
+    "today": "Egypt",
+    "key": [
+      "Abram went down to Egypt during a famine in Canaan (Genesis 12).",
+      "Joseph, sold by his brothers, rose to rule over all Egypt under Pharaoh (Genesis 41).",
+      "Jacob and his whole family moved to Egypt and settled in Goshen (Genesis 46).",
+      "After the tenth plague, the LORD brought Israel out of Egypt on Passover night (Exodus 12).",
+      "Joseph took Mary and the child Jesus to Egypt to escape Herod (Matthew 2)."
+    ],
+    "skip": false
+  },
+  "babylon_151": {
+    "name": "Babylon",
+    "aka": [],
+    "what": "The capital of the Babylonian Empire on the Euphrates, where Judah was taken into exile.",
+    "today": "Ruins near Hillah, Iraq",
+    "key": [
+      "Hezekiah showed all his treasures to envoys from Babylon (2 Kings 20).",
+      "Nebuchadnezzar took Jerusalem and carried its king and people to Babylon (2 Kings 24).",
+      "Jeremiah wrote to the exiles, telling them to seek the welfare of Babylon (Jeremiah 29).",
+      "Daniel read the writing on the wall the night Babylon fell (Daniel 5).",
+      "John saw the fall of Babylon the great, the city opposed to God (Revelation 18)."
+    ],
+    "skip": false
+  },
+  "jordan_653": {
+    "name": "Jordan",
+    "aka": [],
+    "what": "The river flowing from the Sea of Galilee to the Dead Sea, the eastern boundary of Canaan.",
+    "today": "Jordan River, between Israel, the West Bank, and Jordan",
+    "key": [
+      "Jacob crossed the Jordan with only his staff on his way to Haran (Genesis 32).",
+      "The waters stopped when the priests' feet touched them, and Israel crossed on dry ground (Joshua 3).",
+      "Elijah struck the water with his cloak, and he and Elisha crossed over (2 Kings 2).",
+      "Naaman washed seven times in the Jordan and was healed of leprosy (2 Kings 5).",
+      "Jesus was baptized by John in the Jordan (Matthew 3)."
+    ],
+    "skip": false
+  },
+  "moab_815": {
+    "name": "Moab",
+    "aka": [],
+    "what": "A kingdom east of the Dead Sea, descended from Lot and often hostile to Israel.",
+    "today": "West-central Jordan, east of the Dead Sea",
+    "key": [
+      "Balak king of Moab hired Balaam to curse Israel, but he blessed them instead (Numbers 22).",
+      "Moses died in the land of Moab after viewing the promised land (Deuteronomy 34).",
+      "Ehud killed Eglon king of Moab and freed Israel (Judges 3).",
+      "Ruth the Moabite returned with Naomi to Bethlehem (Ruth 1).",
+      "Mesha king of Moab rebelled against Israel after Ahab died (2 Kings 3)."
+    ],
+    "skip": false
+  },
+  "zion_1263": {
+    "name": "Zion",
+    "aka": [
+      "Mount Zion",
+      "City of David"
+    ],
+    "what": "The hill in Jerusalem David captured; the name extends to the temple mount, the city, and God's people.",
+    "today": "Jerusalem, Israel",
+    "key": [
+      "David captured the stronghold of Zion and called it the city of David (2 Samuel 5).",
+      "Solomon brought the ark up from Zion into the new temple (1 Kings 8).",
+      "God declares that he has set his King on Zion, his holy hill (Psalms 2).",
+      "Isaiah foresaw the law going out from Zion to the nations (Isaiah 2).",
+      "Peter applies Isaiah's cornerstone laid in Zion to Christ (1 Peter 2)."
+    ],
+    "skip": false
+  },
+  "assyria_111": {
+    "name": "Assyria",
+    "aka": [],
+    "what": "A powerful Mesopotamian empire on the upper Tigris that conquered the northern kingdom of Israel.",
+    "today": "Northern Iraq",
+    "key": [
+      "The Tigris is described as flowing east of Assyria (Genesis 2).",
+      "The king of Assyria captured Samaria and deported Israel because of their sin (2 Kings 17).",
+      "Sennacherib invaded Judah, but the angel of the LORD struck his army (2 Kings 19).",
+      "God calls Assyria the rod of his anger against a godless nation (Isaiah 10).",
+      "Nahum announced the downfall of Assyria's capital, Nineveh (Nahum 3)."
+    ],
+    "skip": false
+  },
+  "samaria_1022": {
+    "name": "Samaria",
+    "aka": [],
+    "what": "The capital of the northern kingdom of Israel, and later the hill region between Galilee and Judea.",
+    "today": "Sebastia, near Nablus, West Bank (the city); central hill country (the region)",
+    "key": [
+      "King Omri bought the hill of Samaria and built his capital there (1 Kings 16).",
+      "During a severe siege, four lepers found the Syrian camp deserted (2 Kings 7).",
+      "Samaria fell to Assyria, and Israel was carried into exile (2 Kings 17).",
+      "Jesus spoke with a Samaritan woman at Jacob's well (John 4).",
+      "Philip preached Christ in Samaria, and many believed and were baptized (Acts 8)."
+    ],
+    "skip": false
+  },
+  "gilead_475": {
+    "name": "Gilead",
+    "aka": [],
+    "what": "A fertile, hilly region east of the Jordan River, settled by Reuben, Gad, and half of Manasseh.",
+    "today": "Northwestern Jordan, east of the Jordan River",
+    "key": [
+      "Jacob and Laban made a covenant in the hill country of Gilead (Genesis 31).",
+      "Reuben and Gad asked for Gilead because it suited their livestock (Numbers 32).",
+      "Jephthah the Gileadite led Israel against the Ammonites (Judges 11).",
+      "Elijah the Tishbite, from Gilead, announced a drought to Ahab (1 Kings 17).",
+      "Jeremiah lamented, asking whether there was no balm in Gilead (Jeremiah 8)."
+    ],
+    "skip": false
+  },
+  "edom_357": {
+    "name": "Edom",
+    "aka": [
+      "Seir",
+      "Idumea"
+    ],
+    "what": "The land of Esau's descendants, south and southeast of the Dead Sea.",
+    "today": "Southern Jordan",
+    "key": [
+      "Esau, also called Edom, settled in the hill country of Seir (Genesis 36).",
+      "The king of Edom refused to let Israel pass through his land (Numbers 20).",
+      "David put garrisons throughout Edom, and the Edomites became his servants (2 Samuel 8).",
+      "Edom revolted from Judah and set up its own king (2 Kings 8).",
+      "Obadiah announced judgment on Edom for its violence against Jacob (Obadiah 1)."
+    ],
+    "skip": false
+  },
+  "canaan_272": {
+    "name": "Canaan",
+    "aka": [],
+    "what": "The land between the Jordan River and the Mediterranean that God promised to Abraham's offspring.",
+    "today": "Roughly modern Israel, the Palestinian territories, and Lebanon",
+    "key": [
+      "Abram arrived in Canaan, and the LORD promised the land to his offspring (Genesis 12).",
+      "God promised all the land of Canaan as an everlasting possession (Genesis 17).",
+      "During a famine, Jacob sent his sons from Canaan to buy grain in Egypt (Genesis 42).",
+      "Moses sent twelve spies to explore the land of Canaan (Numbers 13).",
+      "Joshua and Eleazar distributed Canaan to the tribes of Israel (Joshua 14)."
+    ],
+    "skip": false
+  },
+  "syria_1122": {
+    "name": "Syria",
+    "aka": [
+      "Aram"
+    ],
+    "what": "The Aramean kingdom north of Israel centered on Damascus; later a Roman province including Antioch.",
+    "today": "Modern Syria",
+    "key": [
+      "Ahab was killed in battle against the Syrians at Ramoth-gilead (1 Kings 22).",
+      "Naaman, commander of Syria's army, came to Elisha to be healed (2 Kings 5).",
+      "Syria and Israel joined against Ahaz, and Isaiah gave the Immanuel sign (Isaiah 7).",
+      "Quirinius was governor of Syria at the time of Jesus' birth (Luke 2).",
+      "After his conversion, Paul went into the regions of Syria and Cilicia (Galatians 1)."
+    ],
+    "skip": false
+  },
+  "galilee_433": {
+    "name": "Galilee",
+    "aka": [],
+    "what": "The northern region of Israel around the Sea of Galilee, where Jesus grew up and did most of his ministry.",
+    "today": "Northern Israel",
+    "key": [
+      "Kedesh in Galilee was set apart as a city of refuge (Joshua 20).",
+      "Isaiah foretold a great light for Galilee of the nations (Isaiah 9).",
+      "Jesus began preaching and calling disciples in Galilee (Matthew 4).",
+      "At a wedding in Cana in Galilee, Jesus turned water into wine (John 2).",
+      "The risen Jesus met the eleven on a mountain in Galilee and sent them out (Matthew 28)."
+    ],
+    "skip": false
+  },
+  "bethel_202": {
+    "name": "Bethel",
+    "aka": [
+      "Luz"
+    ],
+    "what": "A town north of Jerusalem where God met Jacob, later a center of idolatrous worship in Israel.",
+    "today": "Likely Beitin, north of Jerusalem, West Bank",
+    "key": [
+      "Abram built an altar between Bethel and Ai (Genesis 12).",
+      "Jacob dreamed of a ladder to heaven and named the place Bethel (Genesis 28).",
+      "Jeroboam set up a golden calf at Bethel for the northern tribes (1 Kings 12).",
+      "Josiah tore down the altar at Bethel, fulfilling an earlier prophecy (2 Kings 23).",
+      "Amaziah the priest of Bethel ordered Amos to leave (Amos 7)."
+    ],
+    "skip": false
+  },
+  "jericho_634": {
+    "name": "Jericho",
+    "aka": [],
+    "what": "An ancient oasis city near the Jordan River, the first city Israel conquered in Canaan.",
+    "today": "Tell es-Sultan, near Jericho, West Bank",
+    "key": [
+      "Rahab hid the two Israelite spies in Jericho (Joshua 2).",
+      "The walls fell after Israel marched around the city for seven days (Joshua 6).",
+      "Hiel rebuilt Jericho at the cost of his sons, as Joshua had warned (1 Kings 16).",
+      "Elisha healed Jericho's bad spring with a bowl of salt (2 Kings 2).",
+      "Jesus called Zacchaeus down from a tree in Jericho (Luke 19)."
+    ],
+    "skip": false
+  },
+  "hebron_551": {
+    "name": "Hebron",
+    "aka": [
+      "Kiriath-arba"
+    ],
+    "what": "An ancient city in the hill country of Judah, linked with Abraham and David's early reign.",
+    "today": "Hebron, West Bank",
+    "key": [
+      "Abraham buried Sarah in the cave of Machpelah near Hebron (Genesis 23).",
+      "Caleb received Hebron as his inheritance (Joshua 14).",
+      "David was anointed king over Judah at Hebron (2 Samuel 2).",
+      "All the tribes came to Hebron and anointed David king over Israel (2 Samuel 5).",
+      "Absalom began his rebellion against David at Hebron (2 Samuel 15)."
+    ],
+    "skip": false
+  },
+  "lebanon_720": {
+    "name": "Lebanon",
+    "aka": [],
+    "what": "The mountain range north of Israel, famous for its cedar forests.",
+    "today": "Lebanon mountains, modern Lebanon",
+    "key": [
+      "God promised Israel territory from the wilderness to Lebanon (Joshua 1).",
+      "Hiram of Tyre supplied cedars of Lebanon for Solomon's temple (1 Kings 5).",
+      "Cedars from Lebanon were brought for rebuilding the temple after the exile (Ezra 3).",
+      "The righteous are said to grow like a cedar in Lebanon (Psalms 92)."
+    ],
+    "skip": false
+  },
+  "damascus_322": {
+    "name": "Damascus",
+    "aka": [],
+    "what": "An ancient city northeast of Israel, the capital of Syria (Aram).",
+    "today": "Damascus, Syria",
+    "key": [
+      "Abram pursued the captors of Lot as far as north of Damascus (Genesis 14).",
+      "Naaman boasted that the rivers of Damascus were better than the Jordan (2 Kings 5).",
+      "King Ahaz copied an altar he saw in Damascus for the temple (2 Kings 16).",
+      "Saul met the risen Jesus on the road to Damascus (Acts 9).",
+      "Paul escaped Damascus by being lowered over the wall in a basket (2 Corinthians 11)."
+    ],
+    "skip": false
+  },
+  "bashan_159": {
+    "name": "Bashan",
+    "aka": [],
+    "what": "A fertile highland east of the Sea of Galilee, known for its cattle and oaks.",
+    "today": "Golan Heights and southern Syria",
+    "key": [
+      "Israel defeated Og king of Bashan at Edrei (Numbers 21).",
+      "Moses gave Bashan to the half-tribe of Manasseh (Deuteronomy 3).",
+      "The psalmist describes his enemies as strong bulls of Bashan (Psalms 22).",
+      "Amos rebuked the women of Samaria as cows of Bashan (Amos 4)."
+    ],
+    "skip": false
+  },
+  "tyre_1184": {
+    "name": "Tyre",
+    "aka": [],
+    "what": "A wealthy Phoenician port city on the Mediterranean coast north of Israel.",
+    "today": "Tyre (Sur), southern Lebanon",
+    "key": [
+      "Hiram king of Tyre sent cedar and craftsmen to build David's house (2 Samuel 5).",
+      "Hiram supplied timber for Solomon's temple in exchange for food (1 Kings 5).",
+      "Ezekiel prophesied that Tyre would become a bare rock for drying nets (Ezekiel 26).",
+      "Jesus healed the daughter of a Gentile woman in the region of Tyre (Mark 7).",
+      "Paul stayed seven days with disciples at Tyre (Acts 21)."
+    ],
+    "skip": false
+  },
+  "sodom_1107": {
+    "name": "Sodom",
+    "aka": [],
+    "what": "A city in the Jordan valley destroyed by God for its great wickedness.",
+    "today": "Exact site unknown; probably near the Dead Sea",
+    "key": [
+      "Lot chose the Jordan valley and moved his tent as far as Sodom (Genesis 13).",
+      "Abraham pleaded with the LORD to spare Sodom for the sake of the righteous (Genesis 18).",
+      "The LORD rained sulfur and fire on Sodom after rescuing Lot (Genesis 19).",
+      "Jesus said judgment would be more bearable for Sodom than for unrepentant towns (Matthew 11).",
+      "Peter cites Sodom's destruction as an example of God's judgment (2 Peter 2)."
+    ],
+    "skip": false
+  },
+  "judea_657": {
+    "name": "Judea",
+    "aka": [
+      "Judah"
+    ],
+    "what": "The southern region around Jerusalem, the former territory of Judah, a Roman district in New Testament times.",
+    "today": "Southern Israel and the West Bank around Jerusalem",
+    "key": [
+      "Jesus was born in Bethlehem of Judea (Matthew 2).",
+      "John the Baptist preached in the wilderness of Judea (Matthew 3).",
+      "Jesus returned to Judea to raise Lazarus (John 11).",
+      "Jesus sent his disciples to be witnesses in Judea, Samaria, and beyond (Acts 1).",
+      "Men from Judea taught that Gentiles must be circumcised, prompting the Jerusalem council (Acts 15)."
+    ],
+    "skip": false
+  },
+  "midian_796": {
+    "name": "Midian",
+    "aka": [],
+    "what": "The desert homeland of the Midianites, east of the Gulf of Aqaba.",
+    "today": "Likely northwestern Saudi Arabia",
+    "key": [
+      "Moses fled from Pharaoh to the land of Midian (Exodus 2).",
+      "Moses tended the flock of Jethro, the priest of Midian (Exodus 3).",
+      "Phinehas killed an Israelite man and a Midianite woman, stopping the plague (Numbers 25).",
+      "Gideon and three hundred men routed the Midianite army (Judges 7)."
+    ],
+    "skip": false
+  },
+  "gibeah_466": {
+    "name": "Gibeah",
+    "aka": [],
+    "what": "A town of Benjamin north of Jerusalem, King Saul's hometown and capital.",
+    "today": "Likely Tell el-Ful, on Jerusalem's northern edge",
+    "key": [
+      "Men of Gibeah abused and killed a Levite's concubine (Judges 19).",
+      "Israel's tribes went to war against Gibeah and Benjamin (Judges 20).",
+      "Saul returned home to Gibeah after being chosen king (1 Samuel 10).",
+      "Seven of Saul's descendants were put to death at Gibeah of Saul (2 Samuel 21)."
+    ],
+    "skip": false
+  },
+  "shechem_1069": {
+    "name": "Shechem",
+    "aka": [],
+    "what": "An ancient city in the hill country of Ephraim, between Mount Ebal and Mount Gerizim.",
+    "today": "Tell Balata, Nablus, West Bank",
+    "key": [
+      "Abram built his first altar in Canaan at Shechem (Genesis 12).",
+      "Simeon and Levi killed the men of Shechem after Dinah was violated (Genesis 34).",
+      "Joshua renewed Israel's covenant at Shechem and Joseph's bones were buried there (Joshua 24).",
+      "Abimelech made himself king at Shechem and later destroyed the city (Judges 9).",
+      "Israel rejected Rehoboam at Shechem, and the kingdom divided (1 Kings 12)."
+    ],
+    "skip": false
+  },
+  "heshbon_565": {
+    "name": "Heshbon",
+    "aka": [],
+    "what": "A city east of the Jordan, the capital of Sihon king of the Amorites.",
+    "today": "Tell Hesban, Jordan",
+    "key": [
+      "Israel defeated Sihon and took Heshbon, his royal city (Numbers 21).",
+      "Moses gave Heshbon to the tribe of Reuben (Joshua 13).",
+      "Heshbon was assigned to the Levites (Joshua 21).",
+      "Isaiah lamented over Heshbon in his oracle against Moab (Isaiah 15)."
+    ],
+    "skip": false
+  },
+  "negeb_885": {
+    "name": "Negeb",
+    "aka": [
+      "Negev"
+    ],
+    "what": "The dry southern region of Judah, stretching south from Hebron toward the Sinai.",
+    "today": "Negev desert, southern Israel",
+    "key": [
+      "Abram journeyed by stages toward the Negeb (Genesis 12).",
+      "Isaac was living in the Negeb when Rebekah arrived (Genesis 24).",
+      "Moses told the spies to go up into the Negeb and the hill country (Numbers 13).",
+      "Joshua struck the whole land, including the Negeb (Joshua 10).",
+      "David told Achish he had raided the Negeb of Judah (1 Samuel 27)."
+    ],
+    "skip": false
+  },
+  "gibeon_470": {
+    "name": "Gibeon",
+    "aka": [],
+    "what": "A Hivite city northwest of Jerusalem that made a treaty with Israel by deception.",
+    "today": "El-Jib, northwest of Jerusalem, West Bank",
+    "key": [
+      "The Gibeonites tricked Joshua into making a peace treaty (Joshua 9).",
+      "The sun stood still while Joshua defended Gibeon against five kings (Joshua 10).",
+      "David's and Ish-bosheth's men fought beside the pool of Gibeon (2 Samuel 2).",
+      "God appeared to Solomon in a dream at Gibeon and offered him wisdom (1 Kings 3).",
+      "The tabernacle remained at the high place at Gibeon (1 Chronicles 16)."
+    ],
+    "skip": false
+  },
+  "gilgal_476": {
+    "name": "Gilgal",
+    "aka": [],
+    "what": "Israel's first camp west of the Jordan near Jericho, later a place of worship and assembly.",
+    "today": "Near Jericho, West Bank; exact site unknown",
+    "key": [
+      "Joshua set up twelve stones from the Jordan at Gilgal (Joshua 4).",
+      "Israel was circumcised and kept the Passover at Gilgal, and the manna ceased (Joshua 5).",
+      "The people made Saul king before the LORD at Gilgal (1 Samuel 11).",
+      "Saul offered a burnt offering at Gilgal without waiting for Samuel (1 Samuel 13).",
+      "Samuel rebuked Saul at Gilgal for sparing Agag and the Amalekite spoil (1 Samuel 15)."
+    ],
+    "skip": false
+  },
+  "beersheba_170": {
+    "name": "Beersheba",
+    "aka": [],
+    "what": "A town in the Negeb at the southern edge of Israel, linked with the patriarchs.",
+    "today": "Tel Beersheba, near Beersheba, Israel",
+    "key": [
+      "Abraham made a covenant with Abimelech over a well at Beersheba (Genesis 21).",
+      "The LORD appeared to Isaac at Beersheba and renewed his promise (Genesis 26).",
+      "Jacob offered sacrifices at Beersheba on his way to Egypt (Genesis 46).",
+      "All Israel from Dan to Beersheba knew Samuel was a prophet (1 Samuel 3).",
+      "Elijah fled to Beersheba to escape Jezebel (1 Kings 19)."
+    ],
+    "skip": false
+  },
+  "bethlehem_218": {
+    "name": "Bethlehem",
+    "aka": [
+      "Ephrath",
+      "Ephrathah"
+    ],
+    "what": "A town in Judah south of Jerusalem, the hometown of David and birthplace of Jesus.",
+    "today": "Bethlehem, West Bank",
+    "key": [
+      "Rachel died and was buried on the way to Bethlehem (Genesis 35).",
+      "Naomi returned to Bethlehem with Ruth at the barley harvest (Ruth 1).",
+      "Samuel anointed David, Jesse's youngest son, in Bethlehem (1 Samuel 16).",
+      "Wise men came to Bethlehem to worship the newborn king (Matthew 2).",
+      "Angels announced Jesus' birth to shepherds near Bethlehem (Luke 2)."
+    ],
+    "skip": false
+  },
+  "euphrates_421": {
+    "name": "Euphrates",
+    "aka": [
+      "the River"
+    ],
+    "what": "The great river of Mesopotamia, often named as the far boundary of the promised land.",
+    "today": "Euphrates River, through Turkey, Syria, and Iraq",
+    "key": [
+      "The Euphrates is named as one of the four rivers of Eden (Genesis 2).",
+      "God promised Abram land from the river of Egypt to the Euphrates (Genesis 15).",
+      "Josiah was killed opposing Pharaoh Neco, who was marching to the Euphrates (2 Kings 23).",
+      "Jeremiah hid a linen loincloth by the Euphrates as a sign (Jeremiah 13).",
+      "The sixth bowl dries up the Euphrates for the kings from the east (Revelation 16)."
+    ],
+    "skip": false
+  },
+  "gath_442": {
+    "name": "Gath",
+    "aka": [],
+    "what": "One of the five main Philistine cities, hometown of Goliath.",
+    "today": "Likely Tell es-Safi (Tel Zafit), Israel",
+    "key": [
+      "The ark was moved to Gath, and the LORD struck the city with tumors (1 Samuel 5).",
+      "Goliath of Gath challenged the armies of Israel (1 Samuel 17).",
+      "David pretended to be insane before Achish king of Gath (1 Samuel 21).",
+      "David lived among the Philistines under Achish of Gath (1 Samuel 27).",
+      "David lamented Saul and Jonathan, saying not to tell it in Gath (2 Samuel 1)."
+    ],
+    "skip": false
+  },
+  "ai_36": {
+    "name": "Ai",
+    "aka": [],
+    "what": "A Canaanite town near Bethel, where Israel was defeated before capturing it.",
+    "today": "Possibly et-Tell or Khirbet el-Maqatir, near Bethel, West Bank",
+    "key": [
+      "Abram pitched his tent between Bethel and Ai (Genesis 12).",
+      "Israel was routed at Ai because Achan had taken devoted things (Joshua 7).",
+      "Joshua captured and burned Ai using an ambush (Joshua 8).",
+      "Men of Bethel and Ai returned from exile with Zerubbabel (Ezra 2)."
+    ],
+    "skip": false
+  },
+  "mizpah_811": {
+    "name": "Mizpah",
+    "aka": [],
+    "what": "A town of Benjamin north of Jerusalem where Israel often assembled.",
+    "today": "Likely Tell en-Nasbeh, north of Jerusalem, West Bank",
+    "key": [
+      "Israel gathered at Mizpah before going to war against Benjamin (Judges 20).",
+      "Samuel led Israel in repentance at Mizpah, and God routed the Philistines (1 Samuel 7).",
+      "Saul was chosen king by lot at Mizpah (1 Samuel 10).",
+      "King Asa built up Mizpah with stones taken from Ramah (2 Chronicles 16).",
+      "Gedaliah governed Judah from Mizpah until Ishmael murdered him (Jeremiah 41)."
+    ],
+    "skip": false
+  },
+  "nile_895": {
+    "name": "Nile",
+    "aka": [],
+    "what": "The great river of Egypt, the source of the country's life and farming.",
+    "today": "Nile River, Egypt",
+    "key": [
+      "Pharaoh dreamed of seven cows coming up out of the Nile (Genesis 41).",
+      "Pharaoh ordered every newborn Hebrew boy thrown into the Nile (Exodus 1).",
+      "Moses struck the Nile, and its water turned to blood (Exodus 7).",
+      "Frogs came up from the Nile and covered Egypt (Exodus 8).",
+      "God judged Pharaoh, who claimed to have made the Nile for himself (Ezekiel 29)."
+    ],
+    "skip": false
+  },
+  "shiloh_1081": {
+    "name": "Shiloh",
+    "aka": [],
+    "what": "A town in Ephraim where the tabernacle stood during the time of the judges.",
+    "today": "Tel Shiloh (Khirbet Seilun), West Bank",
+    "key": [
+      "Israel set up the tent of meeting at Shiloh, and Joshua cast lots for the land (Joshua 18).",
+      "Hannah prayed for a son at the house of the LORD in Shiloh (1 Samuel 1).",
+      "The LORD called the boy Samuel at Shiloh (1 Samuel 3).",
+      "The ark was taken from Shiloh into battle and captured by the Philistines (1 Samuel 4).",
+      "Jeremiah warned Judah to remember what God did to Shiloh (Jeremiah 7)."
+    ],
+    "skip": false
+  },
+  "sidon_1093": {
+    "name": "Sidon",
+    "aka": [],
+    "what": "An ancient Phoenician port city north of Tyre on the Mediterranean coast.",
+    "today": "Sidon (Saida), Lebanon",
+    "key": [
+      "Israel served the gods of Sidon and other nations (Judges 10).",
+      "Elijah was sent to a widow in Zarephath, a town belonging to Sidon (1 Kings 17).",
+      "Ezekiel prophesied judgment against Sidon (Ezekiel 28).",
+      "Jesus passed through Sidon on his way back to the Sea of Galilee (Mark 7).",
+      "On the voyage to Rome, Paul was allowed to visit friends at Sidon (Acts 27)."
+    ],
+    "skip": false
+  },
+  "nazareth_878": {
+    "name": "Nazareth",
+    "aka": [],
+    "what": "A small town in Galilee where Jesus was raised.",
+    "today": "Nazareth, northern Israel",
+    "key": [
+      "The angel Gabriel announced Jesus' birth to Mary in Nazareth (Luke 1).",
+      "Joseph settled the family in Nazareth after returning from Egypt (Matthew 2).",
+      "Jesus was rejected in the synagogue of his hometown, Nazareth (Luke 4).",
+      "Nathanael asked if anything good could come out of Nazareth (John 1).",
+      "Peter healed a lame man in the name of Jesus Christ of Nazareth (Acts 3)."
+    ],
+    "skip": false
+  },
+  "red_sea_986": {
+    "name": "Red Sea",
+    "aka": [],
+    "what": "The sea between Egypt and Arabia that God parted for Israel to escape Pharaoh.",
+    "today": "Red Sea, including the Gulfs of Suez and Aqaba; exact crossing site debated",
+    "key": [
+      "God drove the locusts of the eighth plague into the Red Sea (Exodus 10).",
+      "Pharaoh's chariots and army were drowned in the Red Sea (Exodus 15).",
+      "Rahab told the spies that Jericho had heard how God dried up the Red Sea (Joshua 2).",
+      "Solomon built a fleet at Ezion-geber on the shore of the Red Sea (1 Kings 9).",
+      "By faith Israel crossed the Red Sea as on dry land (Hebrews 11)."
+    ],
+    "skip": false
+  },
+  "persia_938": {
+    "name": "Persia",
+    "aka": [],
+    "what": "The empire that conquered Babylon and allowed the Jewish exiles to return home.",
+    "today": "Iran",
+    "key": [
+      "Cyrus king of Persia decreed that the exiles could rebuild the temple (2 Chronicles 36).",
+      "Opponents hired counselors to frustrate the rebuilding through the reign of Cyrus of Persia (Ezra 4).",
+      "King Ahasuerus held a great feast for the officials of Persia and Media (Esther 1).",
+      "Daniel's vision of a ram represented the kings of Media and Persia (Daniel 8).",
+      "An angel told Daniel the prince of Persia had withstood him (Daniel 10)."
+    ],
+    "skip": false
+  },
+  "seir_1042": {
+    "name": "Seir",
+    "aka": [
+      "Mount Seir",
+      "Edom"
+    ],
+    "what": "The mountainous land south of the Dead Sea where Esau's descendants, the Edomites, lived.",
+    "today": "Mountains of southern Jordan, east of the Arabah",
+    "key": [
+      "Jacob sent messengers to his brother Esau in the land of Seir (Genesis 32).",
+      "After meeting Jacob, Esau returned to Seir (Genesis 33).",
+      "God gave Mount Seir to Esau and told Israel not to fight them (Deuteronomy 2).",
+      "Men of Mount Seir were destroyed when their allies turned on them (2 Chronicles 20)."
+    ],
+    "skip": false
+  },
+  "gomorrah_489": {
+    "name": "Gomorrah",
+    "aka": [],
+    "what": "A city near Sodom destroyed by God with fire for its wickedness.",
+    "today": "Exact site unknown; probably near the Dead Sea",
+    "key": [
+      "The king of Gomorrah was defeated in the war of the kings (Genesis 14).",
+      "The LORD rained sulfur and fire on Sodom and Gomorrah (Genesis 19).",
+      "Isaiah compared the rulers of Judah to the rulers of Gomorrah (Isaiah 1).",
+      "Jude cites Sodom and Gomorrah as an example of eternal fire (Jude 1)."
+    ],
+    "skip": false
+  },
+  "hamath_516": {
+    "name": "Hamath",
+    "aka": [],
+    "what": "A city-kingdom on the Orontes River in Syria, marking Israel's ideal northern border.",
+    "today": "Hama, Syria",
+    "key": [
+      "Toi king of Hamath sent his son to congratulate David on his victory (2 Samuel 8).",
+      "Jeroboam II restored Israel's border as far as Hamath (2 Kings 14).",
+      "People from Hamath were resettled in Samaria by the Assyrians (2 Kings 17).",
+      "Zedekiah's sons were killed before him at Riblah in the land of Hamath (2 Kings 25)."
+    ],
+    "skip": false
+  },
+  "carmel_278": {
+    "name": "Carmel",
+    "aka": [],
+    "what": "A town in the hill country of Judah, south of Hebron, home of Nabal and Abigail.",
+    "today": "Likely Khirbet el-Kirmil, south of Hebron, West Bank",
+    "key": [
+      "Saul set up a monument for himself at Carmel (1 Samuel 15).",
+      "Nabal, a wealthy man of Carmel, refused David's request, and Abigail intervened (1 Samuel 25).",
+      "Abigail, widow of Nabal of Carmel, went with David to Hebron (2 Samuel 2).",
+      "Hezro of Carmel was one of David's mighty men (2 Samuel 23)."
+    ],
+    "skip": false
+  },
+  "jezreel_643": {
+    "name": "Jezreel",
+    "aka": [],
+    "what": "A town in Issachar overlooking the Jezreel Valley, a royal residence of King Ahab.",
+    "today": "Tel Jezreel, near Afula, northern Israel",
+    "key": [
+      "Elijah ran ahead of Ahab's chariot to Jezreel (1 Kings 18).",
+      "Jezebel had Naboth killed so Ahab could take his vineyard in Jezreel (1 Kings 21).",
+      "Jehu killed King Joram, and Jezebel was thrown from a window in Jezreel (2 Kings 9).",
+      "Hosea named his son Jezreel as a sign of judgment on Jehu's house (Hosea 1)."
+    ],
+    "skip": false
+  },
+  "lachish_711": {
+    "name": "Lachish",
+    "aka": [],
+    "what": "A major fortified city in the lowlands of Judah, southwest of Jerusalem.",
+    "today": "Tel Lachish, Israel",
+    "key": [
+      "Joshua captured Lachish after defeating its king and his allies (Joshua 10).",
+      "King Amaziah fled to Lachish and was killed there (2 Kings 14).",
+      "Hezekiah sent tribute to Sennacherib, who was at Lachish (2 Kings 18).",
+      "Lachish and Azekah were the last fortified cities of Judah left against Babylon (Jeremiah 34)."
+    ],
+    "skip": false
+  },
+  "gad_1286": {
+    "name": "Gad",
+    "aka": [],
+    "what": "The tribal territory of Gad, east of the Jordan in the region of Gilead.",
+    "today": "Western Jordan, east of the Jordan River",
+    "key": [
+      "Gad and Reuben asked to settle east of the Jordan because of their livestock (Numbers 32).",
+      "Gad's fighting men crossed the Jordan to help conquer Canaan (Joshua 1).",
+      "Moses' allotment of land to the tribe of Gad is described (Joshua 13).",
+      "Hazael of Syria struck the land of Gad east of the Jordan (2 Kings 10)."
+    ],
+    "skip": false
+  },
+  "macedonia_747": {
+    "name": "Macedonia",
+    "aka": [],
+    "what": "The Roman province in northern Greece, including Philippi, Thessalonica, and Berea.",
+    "today": "Northern Greece and North Macedonia",
+    "key": [
+      "Paul saw a vision of a man of Macedonia pleading for help (Acts 16).",
+      "Paul passed through Macedonia encouraging the churches (Acts 20).",
+      "The churches of Macedonia gave generously despite deep poverty (2 Corinthians 8).",
+      "The Philippians supported Paul when he left Macedonia (Philippians 4).",
+      "The word of the Lord sounded forth from the Thessalonians in Macedonia (1 Thessalonians 1)."
+    ],
+    "skip": false
+  },
+  "mount_zion_860": {
+    "name": "Mount Zion",
+    "aka": [
+      "Zion"
+    ],
+    "what": "The hill of Jerusalem where God dwelt in his temple, also a picture of the heavenly city.",
+    "today": "Jerusalem, Israel",
+    "key": [
+      "God promised Hezekiah that a remnant would go out from Mount Zion (2 Kings 19).",
+      "Mount Zion is praised as the city of the great King (Psalms 48).",
+      "Those who trust in the LORD are like Mount Zion, which cannot be moved (Psalms 125).",
+      "Believers have come to Mount Zion, the heavenly Jerusalem (Hebrews 12).",
+      "John saw the Lamb standing on Mount Zion with the 144,000 (Revelation 14)."
+    ],
+    "skip": false
+  },
+  "asher_1287": {
+    "name": "Asher",
+    "aka": [],
+    "what": "The tribal territory of Asher along the Mediterranean coast in northern Israel.",
+    "today": "Coastal Galilee, northern Israel, into southern Lebanon",
+    "key": [
+      "Moses blessed Asher with plenty and favor among his brothers (Deuteronomy 33).",
+      "Joshua assigned the coastal lands of the north to Asher (Joshua 19).",
+      "Asher failed to drive out the people of Acco and Sidon (Judges 1).",
+      "Asher stayed by the coast rather than join Deborah's battle (Judges 5)."
+    ],
+    "skip": false
+  },
+  "dan_323": {
+    "name": "Dan",
+    "aka": [
+      "Laish"
+    ],
+    "what": "A city at Israel's northern edge, formerly Laish, captured and renamed by the tribe of Dan.",
+    "today": "Tel Dan, northern Israel",
+    "key": [
+      "Abram pursued the kings who captured Lot as far as Dan (Genesis 14).",
+      "The Danites captured Laish, renamed it Dan, and set up a carved image (Judges 18).",
+      "All Israel from Dan to Beersheba recognized Samuel as a prophet (1 Samuel 3).",
+      "Jeroboam placed a golden calf at Dan (1 Kings 12).",
+      "Ben-hadad of Syria conquered Dan at King Asa's request (1 Kings 15)."
+    ],
+    "skip": false
+  },
+  "ekron_364": {
+    "name": "Ekron",
+    "aka": [],
+    "what": "The northernmost of the five main Philistine cities.",
+    "today": "Tel Miqne, Israel",
+    "key": [
+      "Ekron is listed among the five Philistine cities still unconquered (Joshua 13).",
+      "When the ark reached Ekron, its people cried out in panic (1 Samuel 5).",
+      "Israel chased the Philistines to Ekron after Goliath fell (1 Samuel 17).",
+      "King Ahaziah sent to inquire of Baal-zebub, the god of Ekron (2 Kings 1)."
+    ],
+    "skip": false
+  },
+  "mount_sinai_855": {
+    "name": "Mount Sinai",
+    "aka": [
+      "Horeb",
+      "mountain of God"
+    ],
+    "what": "The mountain in the wilderness where God gave Israel his law and made his covenant with them.",
+    "today": "Traditionally Jebel Musa, southern Sinai Peninsula, Egypt; exact site debated",
+    "key": [
+      "The LORD descended on Mount Sinai in fire as Israel trembled below (Exodus 19).",
+      "Moses stayed on the mountain forty days and forty nights (Exodus 24).",
+      "God gave Moses the two tablets of the testimony on Mount Sinai (Exodus 31).",
+      "Moses came down with new tablets, his face shining (Exodus 34).",
+      "Paul compares Hagar to Mount Sinai, representing the old covenant (Galatians 4)."
+    ],
+    "skip": false
+  },
+  "ramoth-gilead_984": {
+    "name": "Ramoth-gilead",
+    "aka": [
+      "Ramoth in Gilead"
+    ],
+    "what": "A fortified city in Gilead east of the Jordan, often contested between Israel and Syria.",
+    "today": "Likely Tell er-Rumeith, northern Jordan",
+    "key": [
+      "Ramoth-gilead was the center of one of Solomon's administrative districts (1 Kings 4).",
+      "Ahab was killed by a random arrow fighting the Syrians at Ramoth-gilead (1 Kings 22).",
+      "King Joram was wounded fighting Hazael at Ramoth-gilead (2 Kings 8).",
+      "Elisha's servant anointed Jehu king of Israel at Ramoth-gilead (2 Kings 9)."
+    ],
+    "skip": false
+  },
+  "susa_1118": {
+    "name": "Susa",
+    "aka": [
+      "Shushan"
+    ],
+    "what": "A royal capital of the Persian Empire, with a fortified citadel.",
+    "today": "Shush, southwestern Iran",
+    "key": [
+      "Nehemiah was in the citadel of Susa when he heard of Jerusalem's ruin (Nehemiah 1).",
+      "King Ahasuerus reigned from Susa and held a great feast there (Esther 1).",
+      "Haman's decree to destroy the Jews was issued in Susa (Esther 3).",
+      "The Jews of Susa defended themselves against their enemies for two days (Esther 9).",
+      "Daniel saw a vision of a ram and a goat while in Susa (Daniel 8)."
+    ],
+    "skip": false
+  },
+  "tarshish_1139": {
+    "name": "Tarshish",
+    "aka": [],
+    "what": "A distant trading port, probably in the western Mediterranean, known for its large seagoing ships.",
+    "today": "Possibly Tartessus in southern Spain; exact site unknown",
+    "key": [
+      "Solomon's fleet of Tarshish ships brought gold, silver, and ivory every three years (1 Kings 10).",
+      "Jehoshaphat's ships built to sail to Tarshish were wrecked (2 Chronicles 20).",
+      "The psalmist prays that the kings of Tarshish will bring tribute (Psalms 72).",
+      "Jonah boarded a ship bound for Tarshish to flee from the LORD (Jonah 1)."
+    ],
+    "skip": false
+  },
+  "ashdod_101": {
+    "name": "Ashdod",
+    "aka": [
+      "Azotus"
+    ],
+    "what": "One of the five main Philistine cities, near the Mediterranean coast.",
+    "today": "Tel Ashdod, near Ashdod, Israel",
+    "key": [
+      "Some of the Anakim remained in Ashdod after Joshua's campaigns (Joshua 11).",
+      "The captured ark was placed in Dagon's temple in Ashdod, and Dagon fell (1 Samuel 5).",
+      "King Uzziah broke down the wall of Ashdod (2 Chronicles 26).",
+      "Isaiah walked barefoot as a sign when the Assyrians captured Ashdod (Isaiah 20).",
+      "Nehemiah rebuked Jews whose children spoke the language of Ashdod (Nehemiah 13)."
+    ],
+    "skip": false
+  },
+  "gaza_446": {
+    "name": "Gaza",
+    "aka": [],
+    "what": "The southernmost of the five main Philistine cities, on the coastal road to Egypt.",
+    "today": "Gaza City, Gaza Strip",
+    "key": [
+      "Gaza marked the southwestern border of the Canaanites (Genesis 10).",
+      "Samson carried off the doors of Gaza's city gate (Judges 16).",
+      "Samson died in Gaza, pulling down the temple of Dagon (Judges 16).",
+      "Amos announced judgment on Gaza for selling captives to Edom (Amos 1).",
+      "Philip met an Ethiopian official on the road from Jerusalem to Gaza (Acts 8)."
+    ],
+    "skip": false
+  },
+  "west-manasseh_1291": {
+    "name": "West Manasseh",
+    "aka": [],
+    "what": "The territory of the half-tribe of Manasseh west of the Jordan, north of Ephraim.",
+    "today": "Northern West Bank and north-central Israel",
+    "key": [
+      "Moses blessed Joseph's tribes, including the thousands of Manasseh (Deuteronomy 33).",
+      "Manasseh received land west of the Jordan, including for Zelophehad's daughters (Joshua 17).",
+      "Manasseh failed to drive out the Canaanites from Beth-shean and other towns (Judges 1).",
+      "Ezekiel's vision gives Manasseh a portion in the restored land (Ezekiel 48)."
+    ],
+    "skip": false
+  },
+  "amalek_53": {
+    "name": "Amalek",
+    "aka": [],
+    "what": "The territory of the Amalekites, a nomadic people of the Negeb and Sinai who attacked Israel.",
+    "today": "Negev and northern Sinai, approximately",
+    "key": [
+      "Israel defeated Amalek at Rephidim while Moses' hands were held up (Exodus 17).",
+      "Moses commanded Israel to blot out the memory of Amalek (Deuteronomy 25).",
+      "Saul defeated Amalek but spared King Agag and the best livestock (1 Samuel 15).",
+      "David dedicated to the LORD the spoil taken from Amalek (2 Samuel 8)."
+    ],
+    "skip": false
+  },
+  "asia_108": {
+    "name": "Asia",
+    "aka": [],
+    "what": "The Roman province in western Asia Minor, with Ephesus as its leading city.",
+    "today": "Western Turkey",
+    "key": [
+      "People from Asia were in Jerusalem at Pentecost (Acts 2).",
+      "The Holy Spirit kept Paul from speaking the word in Asia at first (Acts 16).",
+      "During Paul's two years in Ephesus, all the residents of Asia heard the word (Acts 19).",
+      "Paul reminded the Ephesian elders how he had lived among them in Asia (Acts 20).",
+      "John wrote to the seven churches in Asia (Revelation 1)."
+    ],
+    "skip": false
+  },
+  "nineveh_899": {
+    "name": "Nineveh",
+    "aka": [],
+    "what": "The great capital of the Assyrian Empire on the Tigris River.",
+    "today": "Ruins at Mosul, northern Iraq",
+    "key": [
+      "Nineveh was built in the land of Assyria (Genesis 10).",
+      "Sennacherib returned to Nineveh and was killed by his sons (2 Kings 19).",
+      "The people of Nineveh repented at Jonah's preaching, and God relented (Jonah 3).",
+      "Nahum announced the destruction of Nineveh, the bloody city (Nahum 3).",
+      "Jesus said the men of Nineveh will rise up at the judgment (Matthew 12)."
+    ],
+    "skip": false
+  },
+  "sinai_1098": {
+    "name": "Sinai",
+    "aka": [
+      "wilderness of Sinai"
+    ],
+    "what": "The wilderness around Mount Sinai, where Israel camped for about a year after the exodus.",
+    "today": "Southern Sinai Peninsula, Egypt",
+    "key": [
+      "Israel traveled through the wilderness of Sin, between Elim and Sinai (Exodus 16).",
+      "Israel arrived in the wilderness of Sinai and camped before the mountain (Exodus 19).",
+      "Moses counted the men of Israel in the wilderness of Sinai (Numbers 1).",
+      "Israel kept the Passover in the wilderness of Sinai (Numbers 9).",
+      "The cloud lifted, and Israel set out from the wilderness of Sinai (Numbers 10)."
+    ],
+    "skip": false
+  },
+  "beth-shemesh_234": {
+    "name": "Beth-shemesh",
+    "aka": [],
+    "what": "A Levitical town on Judah's border with the Philistines, west of Jerusalem.",
+    "today": "Tel Beth-Shemesh, west of Jerusalem, Israel",
+    "key": [
+      "Beth-shemesh was given to the priests as a Levitical city (Joshua 21).",
+      "The ark returned on a cart to Beth-shemesh, where some men looked into it (1 Samuel 6).",
+      "Jehoash of Israel defeated and captured Amaziah of Judah at Beth-shemesh (2 Kings 14).",
+      "The Philistines captured Beth-shemesh during King Ahaz's reign (2 Chronicles 28)."
+    ],
+    "skip": false
+  },
+  "ephesus_400": {
+    "name": "Ephesus",
+    "aka": [],
+    "what": "A major port city in the Roman province of Asia where Paul ministered for over two years.",
+    "today": "Ruins near Selçuk, western Turkey",
+    "key": [
+      "Paul left Priscilla and Aquila at Ephesus (Acts 18).",
+      "A riot broke out in Ephesus over the goddess Artemis (Acts 19).",
+      "Paul said farewell to the elders of the church at Ephesus (Acts 20).",
+      "Paul urged Timothy to remain at Ephesus and correct false teachers (1 Timothy 1).",
+      "Christ told the church in Ephesus it had abandoned its first love (Revelation 2)."
+    ],
+    "skip": false
+  },
+  "ramah_972": {
+    "name": "Ramah",
+    "aka": [],
+    "what": "A town of Benjamin north of Jerusalem, near the border with the northern kingdom.",
+    "today": "Er-Ram, north of Jerusalem, West Bank",
+    "key": [
+      "Deborah judged Israel between Ramah and Bethel (Judges 4).",
+      "King Baasha of Israel fortified Ramah to block access to Judah (1 Kings 15).",
+      "Jeremiah described Rachel weeping for her children in Ramah (Jeremiah 31).",
+      "Jeremiah was released from his chains at Ramah after Jerusalem fell (Jeremiah 40)."
+    ],
+    "skip": false
+  },
+  "sheba_1067": {
+    "name": "Sheba",
+    "aka": [],
+    "what": "A wealthy kingdom in southern Arabia, known for gold, spices, and incense.",
+    "today": "Likely Yemen, southwestern Arabia",
+    "key": [
+      "The queen of Sheba visited Solomon to test him with hard questions (1 Kings 10).",
+      "The psalmist prays that the kings of Sheba will bring gifts (Psalms 72).",
+      "Isaiah foresaw people from Sheba bringing gold and frankincense (Isaiah 60).",
+      "Merchants of Sheba traded spices, gems, and gold with Tyre (Ezekiel 27)."
+    ],
+    "skip": false
+  },
+  "caesarea_266": {
+    "name": "Caesarea",
+    "aka": [],
+    "what": "A Roman port city on the Mediterranean, the seat of the Roman governors of Judea.",
+    "today": "Caesarea, on the coast of Israel",
+    "key": [
+      "Philip preached in all the towns until he came to Caesarea (Acts 8).",
+      "Peter preached to the centurion Cornelius in Caesarea, and Gentiles received the Spirit (Acts 10).",
+      "Herod Agrippa was struck down by an angel at Caesarea (Acts 12).",
+      "Paul stayed with Philip the evangelist in Caesarea (Acts 21).",
+      "Paul was held in Caesarea and appealed to Caesar before Festus (Acts 25)."
+    ],
+    "skip": false
+  },
+  "capernaum_274": {
+    "name": "Capernaum",
+    "aka": [],
+    "what": "A fishing town on the north shore of the Sea of Galilee, Jesus' base of ministry.",
+    "today": "Ruins on the north shore of the Sea of Galilee, Israel",
+    "key": [
+      "Jesus left Nazareth and made his home in Capernaum (Matthew 4).",
+      "Jesus healed a centurion's servant at Capernaum (Matthew 8).",
+      "Jesus healed a paralyzed man lowered through a roof in Capernaum (Mark 2).",
+      "Jesus warned Capernaum for not repenting despite his mighty works (Matthew 11).",
+      "Jesus taught that he is the bread of life in the synagogue at Capernaum (John 6)."
+    ],
+    "skip": false
+  },
+  "cush_312": {
+    "name": "Cush",
+    "aka": [
+      "Ethiopia"
+    ],
+    "what": "The land south of Egypt along the upper Nile.",
+    "today": "Sudan and southern Egypt (ancient Nubia)",
+    "key": [
+      "Tirhakah king of Cush marched out against Sennacherib (2 Kings 19).",
+      "The psalmist says Cush will stretch out its hands to God (Psalms 68).",
+      "Isaiah walked barefoot as a sign against Egypt and Cush (Isaiah 20).",
+      "Zephaniah foresaw worshipers bringing offerings from beyond the rivers of Cush (Zephaniah 3)."
+    ],
+    "skip": false
+  },
+  "horeb_576": {
+    "name": "Horeb",
+    "aka": [
+      "Mount Sinai",
+      "mountain of God"
+    ],
+    "what": "Another name for Mount Sinai, the mountain of God where the LORD made his covenant with Israel.",
+    "today": "Traditionally Jebel Musa, southern Sinai Peninsula, Egypt; exact site debated",
+    "key": [
+      "God spoke to Moses from a burning bush at Horeb (Exodus 3).",
+      "Moses struck the rock at Horeb, and water came out for the people (Exodus 17).",
+      "The LORD made his covenant with Israel at Horeb (Deuteronomy 5).",
+      "Elijah fled to Horeb and heard the LORD in a low whisper (1 Kings 19).",
+      "Malachi called Israel to remember the law given at Horeb (Malachi 4)."
+    ],
+    "skip": false
+  },
+  "naphtali_1284": {
+    "name": "Naphtali",
+    "aka": [],
+    "what": "The tribal territory of Naphtali in Galilee, west and north of the Sea of Galilee.",
+    "today": "Eastern Galilee, northern Israel",
+    "key": [
+      "Moses viewed all Naphtali from Mount Nebo before he died (Deuteronomy 34).",
+      "Kedesh in Naphtali was set apart as a city of refuge (Joshua 20).",
+      "Tiglath-pileser of Assyria captured Naphtali and carried its people away (2 Kings 15).",
+      "Jesus settled in Capernaum, fulfilling Isaiah's word about Naphtali (Matthew 4)."
+    ],
+    "skip": false
+  },
+  "river_244": {
+    "name": "Beyond the River",
+    "aka": [
+      "Trans-Euphrates"
+    ],
+    "what": "The Persian province west of the Euphrates River, which included Judah.",
+    "today": "Modern Syria, Lebanon, Israel, the Palestinian territories, and Jordan",
+    "key": [
+      "Officials of the province Beyond the River wrote to Artaxerxes against Jerusalem (Ezra 4).",
+      "Tattenai, governor of the province Beyond the River, questioned the temple rebuilding (Ezra 5).",
+      "Darius ordered the province's treasury to pay for the temple work (Ezra 6).",
+      "Nehemiah carried the king's letters to the governors of the province Beyond the River (Nehemiah 2)."
+    ],
+    "skip": false
+  },
+  "zebulun_1289": {
+    "name": "Zebulun",
+    "aka": [],
+    "what": "The tribal territory of Zebulun in lower Galilee, between the Sea of Galilee and the Mediterranean.",
+    "today": "Lower Galilee, northern Israel",
+    "key": [
+      "Jacob said Zebulun would dwell at the shore of the sea (Genesis 49).",
+      "Joshua assigned Zebulun its inheritance in Galilee (Joshua 19).",
+      "Isaiah foresaw honor coming to the land of Zebulun and Naphtali (Isaiah 9).",
+      "Jesus' ministry in Capernaum fulfilled Isaiah's word about Zebulun (Matthew 4)."
+    ],
+    "skip": false
+  },
+  "anathoth_63": {
+    "name": "Anathoth",
+    "aka": [],
+    "what": "A Levitical town in Benjamin just northeast of Jerusalem, the hometown of Jeremiah.",
+    "today": "Likely near Anata, northeast of Jerusalem, West Bank",
+    "key": [
+      "Anathoth was given to the priests as a Levitical city (Joshua 21).",
+      "Solomon banished the priest Abiathar to his estate at Anathoth (1 Kings 2).",
+      "Jeremiah was from the priests of Anathoth (Jeremiah 1).",
+      "Men of Anathoth plotted to kill Jeremiah (Jeremiah 11).",
+      "Jeremiah bought a field at Anathoth as a sign of future restoration (Jeremiah 32)."
+    ],
+    "skip": false
+  },
+  "arabah_79": {
+    "name": "Arabah",
+    "aka": [],
+    "what": "The deep rift valley running from the Sea of Galilee through the Dead Sea to the Gulf of Aqaba.",
+    "today": "Jordan Rift Valley, Israel and Jordan",
+    "key": [
+      "Moses spoke to Israel beyond the Jordan in the Arabah (Deuteronomy 1).",
+      "Israel traveled along the Arabah road away from Edom (Deuteronomy 2).",
+      "The Dead Sea is called the Sea of the Arabah (Deuteronomy 3).",
+      "King Zedekiah fled toward the Arabah when Jerusalem fell (Jeremiah 52)."
+    ],
+    "skip": false
+  },
+  "ephraim-territory_1292": {
+    "name": "Ephraim",
+    "aka": [],
+    "what": "The tribal territory of Ephraim in the central hill country of Canaan.",
+    "today": "Central West Bank, around Shiloh and Bethel",
+    "key": [
+      "Moses blessed Joseph's tribes, including the ten thousands of Ephraim (Deuteronomy 33).",
+      "Ephraim received its inheritance but did not drive out the Canaanites in Gezer (Joshua 16).",
+      "Joshua told Ephraim and Manasseh to clear the forested hill country (Joshua 17).",
+      "Joshua received Timnath-serah in the hill country of Ephraim (Joshua 19)."
+    ],
+    "skip": false
+  },
+  "kadesh_661": {
+    "name": "Kadesh",
+    "aka": [
+      "Kadesh-barnea",
+      "En-mishpat"
+    ],
+    "what": "An oasis in the wilderness south of Canaan, where Israel camped for many years.",
+    "today": "Likely Ein el-Qudeirat, northeastern Sinai, Egypt",
+    "key": [
+      "Abraham lived for a time between Kadesh and Shur (Genesis 20).",
+      "The twelve spies returned to Moses at Kadesh with their report (Numbers 13).",
+      "Miriam died at Kadesh, and Moses struck the rock for water (Numbers 20).",
+      "Israel remained at Kadesh many days after refusing to enter the land (Deuteronomy 1)."
+    ],
+    "skip": false
+  },
+  "keilah_681": {
+    "name": "Keilah",
+    "aka": [],
+    "what": "A fortified town in the lowlands of Judah, northwest of Hebron.",
+    "today": "Khirbet Qila, southwest of Bethlehem, West Bank",
+    "key": [
+      "David rescued Keilah from the Philistines but fled when its people might betray him (1 Samuel 23).",
+      "Rulers of the district of Keilah helped repair Jerusalem's wall (Nehemiah 3)."
+    ],
+    "skip": false
+  },
+  "kiriath-jearim_701": {
+    "name": "Kiriath-jearim",
+    "aka": [
+      "Baalah",
+      "Kiriath-baal"
+    ],
+    "what": "A Gibeonite town west of Jerusalem where the ark of the covenant stayed for twenty years.",
+    "today": "Likely Tel Kiriath-jearim, near Abu Ghosh, west of Jerusalem",
+    "key": [
+      "Kiriath-jearim was one of the Gibeonite cities that made peace with Israel (Joshua 9).",
+      "The ark was brought to the house of Abinadab in Kiriath-jearim (1 Samuel 7).",
+      "David brought the ark up from Kiriath-jearim (1 Chronicles 13).",
+      "The prophet Uriah of Kiriath-jearim was executed by King Jehoiakim (Jeremiah 26)."
+    ],
+    "skip": false
+  },
+  "libnah_728": {
+    "name": "Libnah",
+    "aka": [],
+    "what": "A fortified town in the lowlands of Judah, southwest of Jerusalem.",
+    "today": "Exact site uncertain; possibly Tel Burna, Israel",
+    "key": [
+      "Joshua captured Libnah during his southern campaign (Joshua 10).",
+      "Libnah was given to the priests as a Levitical city (Joshua 21).",
+      "Libnah revolted against King Jehoram of Judah (2 Kings 8).",
+      "Sennacherib's army was fighting against Libnah when he sent threats to Hezekiah (2 Kings 19)."
+    ],
+    "skip": false
+  },
+  "antioch_68": {
+    "name": "Antioch",
+    "aka": [],
+    "what": "A great city of Roman Syria where believers were first called Christians.",
+    "today": "Antakya, southern Turkey",
+    "key": [
+      "Nicolaus, a convert from Antioch, was chosen as one of the seven (Acts 6).",
+      "Disciples in Antioch were first called Christians (Acts 11).",
+      "The church at Antioch sent Barnabas and Saul on their first mission (Acts 13).",
+      "Paul and Barnabas brought the Jerusalem council's letter to Antioch (Acts 15).",
+      "Paul opposed Peter at Antioch for withdrawing from Gentile believers (Galatians 2)."
+    ],
+    "skip": false
+  }
+}

@@ -1,0 +1,1020 @@
+{
+  "jehoiachin_791": {
+    "name": "Jehoiachin",
+    "aka": ["Jeconiah", "Coniah"],
+    "who": "King of Judah who reigned three months before being taken captive to Babylon by Nebuchadnezzar.",
+    "key": [
+      "He became king at eighteen and did evil in the sight of the LORD (2 Kings 24).",
+      "He surrendered to Nebuchadnezzar and was exiled to Babylon with his family and officials (2 Kings 24).",
+      "Jeremiah declared that none of his offspring would sit on David's throne (Jeremiah 22).",
+      "In his thirty-seventh year of exile, Evil-merodach released him and gave him a place at his table (2 Kings 25).",
+      "He is listed as Jechoniah in the genealogy of Jesus (Matthew 1)."
+    ],
+    "family": {
+      "father": ["jehoiakim_1085"],
+      "mother": ["nehushta_2174"],
+      "children": ["shealtiel_2456", "malchiram_1915", "pedaiah_2293", "shenazar_2655", "jecamiah_749", "hoshama_1558", "nedabiah_2170"]
+    },
+    "skip": false
+  },
+  "jehoiada_792": {
+    "name": "Jehoiada",
+    "aka": [],
+    "who": "Father of Benaiah, the valiant man from Kabzeel who commanded David's bodyguard and later Solomon's army.",
+    "key": [
+      "His son Benaiah was placed over David's Cherethites and Pelethites (2 Samuel 8).",
+      "A Jehoiada led 3,700 men of the house of Aaron to David at Hebron (1 Chronicles 12).",
+      "His son Benaiah is listed among David's mighty men for his heroic deeds (2 Samuel 23).",
+      "Benaiah helped make Solomon king and later replaced Joab as army commander (1 Kings 2)."
+    ],
+    "family": {
+      "children": ["benaiah_439"]
+    },
+    "skip": false
+  },
+  "joshua_893": {
+    "name": "Joshua",
+    "aka": ["Jeshua"],
+    "who": "High priest who returned from Babylon with Zerubbabel and helped lead the rebuilding of the temple.",
+    "key": [
+      "He returned from exile with Zerubbabel among the first group of exiles (Ezra 2).",
+      "He and Zerubbabel rebuilt the altar and laid the temple's foundation (Ezra 3).",
+      "Stirred by Haggai's preaching, he resumed work on the house of the LORD (Haggai 1).",
+      "In Zechariah's vision his filthy garments were replaced with clean ones (Zechariah 3).",
+      "Zechariah was told to set a crown on his head as a sign (Zechariah 6)."
+    ],
+    "family": {
+      "father": ["josedech_815"],
+      "children": ["joiakim_1681"]
+    },
+    "skip": false
+  },
+  "mary_1938": {
+    "name": "Mary",
+    "aka": [],
+    "who": "The virgin from Nazareth, betrothed to Joseph, who gave birth to Jesus the Messiah.",
+    "key": [
+      "The angel Gabriel told her she would conceive by the Holy Spirit and bear Jesus (Luke 1).",
+      "She visited Elizabeth and praised God in a song of thanksgiving (Luke 1).",
+      "She gave birth to Jesus in Bethlehem and laid him in a manger (Luke 2).",
+      "At the cross Jesus entrusted her to the care of the beloved disciple (John 19).",
+      "After the ascension she devoted herself to prayer with the disciples in Jerusalem (Acts 1)."
+    ],
+    "family": {
+      "spouses": ["joseph_1715"],
+      "children": ["jesus_905", "james_719", "joses_1721", "simon_2747", "jude_1756"]
+    },
+    "skip": false
+  },
+  "abijah_38": {
+    "name": "Abijah",
+    "aka": ["Abijam"],
+    "who": "King of Judah, son of Rehoboam, who reigned three years in Jerusalem.",
+    "key": [
+      "Rehoboam appointed him chief prince among his brothers, intending to make him king (2 Chronicles 11).",
+      "He became king and walked in all the sins of his father (1 Kings 15).",
+      "From Mount Zemaraim he rebuked Jeroboam and Israel for forsaking the LORD (2 Chronicles 13).",
+      "Judah defeated Israel because they relied on the LORD, the God of their fathers (2 Chronicles 13).",
+      "He died, and his son Asa reigned in his place (2 Chronicles 14)."
+    ],
+    "family": {
+      "father": ["rehoboam_2412"],
+      "mother": ["maachah_1841"],
+      "siblings": ["attai_365", "ziza_3098", "shelomith_2610", "jeush_1603", "shamariah_2531", "zaham_2980"],
+      "children": ["asa_318"]
+    },
+    "skip": false
+  },
+  "achish_66": {
+    "name": "Achish",
+    "aka": [],
+    "who": "Philistine king of Gath who sheltered David while David was fleeing from Saul.",
+    "key": [
+      "David pretended to be insane before him in order to escape (1 Samuel 21).",
+      "He later received David and his men and gave him the town of Ziklag (1 Samuel 27).",
+      "He planned to bring David with him to fight against Israel (1 Samuel 28).",
+      "When the Philistine commanders objected, he sent David back home (1 Samuel 29).",
+      "Shimei's runaway servants fled to him, and Shimei's pursuit led to his execution (1 Kings 2)."
+    ],
+    "family": {
+      "father": ["maachah_1934"]
+    },
+    "skip": false
+  },
+  "ahikam_141": {
+    "name": "Ahikam",
+    "aka": [],
+    "who": "Royal official under King Josiah, son of Shaphan, who protected the prophet Jeremiah.",
+    "key": [
+      "Josiah sent him with others to inquire of the prophetess Huldah about the Book of the Law (2 Kings 22).",
+      "He protected Jeremiah so that he was not handed over to be put to death (Jeremiah 26).",
+      "His son Gedaliah was appointed governor of Judah by the Babylonians (2 Kings 25).",
+      "Jeremiah was entrusted to Gedaliah son of Ahikam after Jerusalem fell (Jeremiah 39)."
+    ],
+    "family": {
+      "father": ["shaphan_2550"],
+      "siblings": ["elasah_1056", "gemariah_1296"],
+      "children": ["gedaliah_1287"]
+    },
+    "skip": false
+  },
+  "hilkiah_1524": {
+    "name": "Hilkiah",
+    "aka": [],
+    "who": "High priest during King Josiah's reign who found the Book of the Law in the temple.",
+    "key": [
+      "While the temple was being repaired, he found the Book of the Law (2 Kings 22).",
+      "He went with other officials to inquire of the prophetess Huldah (2 Kings 22).",
+      "At Josiah's command he removed the vessels made for Baal from the temple (2 Kings 23).",
+      "He gave thousands of animals to the priests for Josiah's Passover (2 Chronicles 35).",
+      "He is listed among the ancestors of Ezra the priest (Ezra 7)."
+    ],
+    "family": {
+      "father": ["shallum_2519"],
+      "children": ["azariah_379"]
+    },
+    "skip": false
+  },
+  "ithamar_649": {
+    "name": "Ithamar",
+    "aka": [],
+    "who": "Youngest son of Aaron, ordained as a priest and overseer of Levite duties at the tabernacle.",
+    "key": [
+      "He was set apart with his father and brothers to serve as a priest (Exodus 28).",
+      "He directed the Levites' accounting of the materials used for the tabernacle (Exodus 38).",
+      "After Nadab and Abihu died, Moses told him and Eleazar not to mourn publicly (Leviticus 10).",
+      "He supervised the Gershonites and Merarites in carrying the tabernacle (Numbers 4).",
+      "His descendants formed eight of the priestly divisions in David's time (1 Chronicles 24)."
+    ],
+    "family": {
+      "father": ["aaron_1"],
+      "mother": ["elisheba_1162"],
+      "siblings": ["nadab_2128", "abihu_33", "eleazar_1062"]
+    },
+    "skip": false
+  },
+  "jezebel_1605": {
+    "name": "Jezebel",
+    "aka": [],
+    "who": "Sidonian princess who married King Ahab of Israel and promoted Baal worship.",
+    "key": [
+      "Ahab married her and began to serve and worship Baal (1 Kings 16).",
+      "She killed the prophets of the LORD and supported hundreds of Baal's prophets (1 Kings 18).",
+      "After Mount Carmel she vowed to kill Elijah, and he fled (1 Kings 19).",
+      "She arranged false charges against Naboth so Ahab could take his vineyard (1 Kings 21).",
+      "At Jehu's order she was thrown from a window, and dogs ate her body (2 Kings 9)."
+    ],
+    "family": {
+      "father": ["ethbaal_1225"],
+      "spouses": ["ahab_113"],
+      "children": ["joram_804"]
+    },
+    "skip": false
+  },
+  "jotham_1735": {
+    "name": "Jotham",
+    "aka": [],
+    "who": "King of Judah, son of Uzziah, who did what was right and grew strong.",
+    "key": [
+      "He governed the people while his father Uzziah lived in isolation with leprosy (2 Kings 15).",
+      "He became king at twenty-five and reigned sixteen years in Jerusalem (2 Chronicles 27).",
+      "He built the upper gate of the house of the LORD (2 Kings 15).",
+      "He defeated the Ammonites, who paid him tribute for three years (2 Chronicles 27).",
+      "He grew mighty because he ordered his ways before the LORD his God (2 Chronicles 27)."
+    ],
+    "family": {
+      "father": ["uzziah_375"],
+      "mother": ["jerushah_882"],
+      "children": ["ahaz_118"]
+    },
+    "skip": false
+  },
+  "naomi_2147": {
+    "name": "Naomi",
+    "aka": ["Mara"],
+    "who": "Woman of Bethlehem, mother-in-law of Ruth, who returned home from Moab after losing her family.",
+    "key": [
+      "During a famine she moved to Moab, where her husband and both sons died (Ruth 1).",
+      "She returned to Bethlehem with Ruth and asked to be called Mara (Ruth 1).",
+      "She recognized Boaz as one of their redeemers (Ruth 2).",
+      "She instructed Ruth to go to Boaz at the threshing floor (Ruth 3).",
+      "She cared for Ruth's son Obed, and the women praised the LORD (Ruth 4)."
+    ],
+    "family": {
+      "spouses": ["elimelech_1134"],
+      "children": ["mahlon_1897", "chilion_940"]
+    },
+    "skip": false
+  },
+  "cyrus_968": {
+    "name": "Cyrus",
+    "aka": [],
+    "who": "King of Persia who allowed the Jewish exiles to return and rebuild the temple in Jerusalem.",
+    "key": [
+      "Isaiah named him as the LORD's shepherd who would order Jerusalem rebuilt (Isaiah 44).",
+      "The LORD called him his anointed, whose right hand he had grasped (Isaiah 45).",
+      "In his first year he decreed that the house of the LORD be rebuilt (Ezra 1).",
+      "He returned the temple vessels Nebuchadnezzar had taken from Jerusalem (Ezra 1).",
+      "Daniel received a great vision in the third year of his reign (Daniel 10)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "joash_1632": {
+    "name": "Joash",
+    "aka": ["Jehoash"],
+    "who": "King of Judah, rescued as an infant, who repaired the temple but later turned from the LORD.",
+    "key": [
+      "His aunt Jehosheba hid him in the temple for six years from Athaliah (2 Kings 11).",
+      "At age seven he was crowned king by the priest Jehoiada (2 Kings 11).",
+      "He collected money and repaired the house of the LORD (2 Kings 12).",
+      "After Jehoiada died, he served idols and had Zechariah son of Jehoiada stoned (2 Chronicles 24).",
+      "His own servants conspired against him and killed him (2 Chronicles 24)."
+    ],
+    "family": {
+      "father": ["ahaziah_121"],
+      "mother": ["zibiah_3064"],
+      "spouses": ["jehoaddan_783"],
+      "children": ["amaziah_214"]
+    },
+    "skip": false
+  },
+  "joram_804": {
+    "name": "Joram",
+    "aka": ["Jehoram"],
+    "who": "King of Israel, son of Ahab and Jezebel, who was killed by Jehu.",
+    "key": [
+      "He became king of Israel after his brother Ahaziah died without a son (2 Kings 1).",
+      "With Jehoshaphat he fought Moab, and Elisha foretold God's supply of water (2 Kings 3).",
+      "Wounded by the Syrians, he returned to Jezreel to recover (2 Kings 8).",
+      "Jehu shot him with an arrow, and his body was thrown on Naboth's land (2 Kings 9)."
+    ],
+    "family": {
+      "father": ["ahab_113"],
+      "mother": ["jezebel_1605"],
+      "siblings": ["ahaziah_120", "athaliah_359"]
+    },
+    "skip": false
+  },
+  "ben-hadad_452": {
+    "name": "Ben-hadad",
+    "aka": [],
+    "who": "King of Syria in Damascus, son of Tabrimmon, who attacked Israel at the request of King Asa.",
+    "key": [
+      "Asa of Judah sent him silver and gold to break his treaty with Baasha (1 Kings 15).",
+      "He attacked Israelite cities including Ijon, Dan, and Abel-beth-maacah (1 Kings 15).",
+      "The seer Hanani rebuked Asa for relying on him rather than the LORD (2 Chronicles 16).",
+      "A Syrian king named Ben-hadad besieged Samaria in Ahab's day and was defeated (1 Kings 20).",
+      "Jeremiah foretold fire devouring the strongholds of Ben-hadad in Damascus (Jeremiah 49)."
+    ],
+    "family": {
+      "father": ["tabrimon_2811"]
+    },
+    "skip": false
+  },
+  "hadarezer_1340": {
+    "name": "Hadadezer",
+    "aka": [],
+    "who": "Son of Rehob and king of Zobah in Syria, defeated in battle by David.",
+    "key": [
+      "David defeated him as he went to restore his power at the Euphrates (2 Samuel 8).",
+      "David took the gold shields of his servants to Jerusalem (2 Samuel 8).",
+      "He sent Syrian forces from beyond the Euphrates against Israel, but they were defeated (2 Samuel 10).",
+      "His vassal kings made peace with Israel and served them (2 Samuel 10).",
+      "Rezon, who later troubled Solomon, had fled from him (1 Kings 11)."
+    ],
+    "family": {
+      "father": ["rehob_2410"]
+    },
+    "skip": false
+  },
+  "ishmael_630": {
+    "name": "Ishmael",
+    "aka": [],
+    "who": "Son of Abraham by Hagar the Egyptian, and father of twelve tribal princes.",
+    "key": [
+      "The angel of the LORD told Hagar to name her son Ishmael (Genesis 16).",
+      "He was circumcised at thirteen, and God promised to make him a great nation (Genesis 17).",
+      "He and Hagar were sent away, and God provided water in the wilderness (Genesis 21).",
+      "He and Isaac buried Abraham, and he died at 137 years old (Genesis 25).",
+      "Esau married his daughter to please his father Isaac (Genesis 28)."
+    ],
+    "family": {
+      "father": ["abraham_58"],
+      "mother": ["hagar_1348"],
+      "siblings": ["isaac_616", "zimran_3086", "jokshan_1685", "medan_1978", "midian_2075", "ishbak_620", "shuah_2727"],
+      "children": ["nebajoth_2164", "kedar_1769", "adbeel_79", "mibsam_2046", "mishma_2094", "dumah_1025", "massa_1945", "hadar_1341", "tema_2837", "jetur_911", "naphish_2148", "kedemah_1770", "bashemath_1887"]
+    },
+    "skip": false
+  },
+  "james_717": {
+    "name": "James",
+    "aka": [],
+    "who": "Apostle of Jesus, son of Zebedee and brother of John, who was martyred by Herod.",
+    "key": [
+      "Jesus called him and John from mending nets with their father (Matthew 4).",
+      "He was appointed one of the Twelve, and Jesus called the brothers Boanerges (Mark 3).",
+      "He witnessed Jesus' transfiguration with Peter and John (Matthew 17).",
+      "He and John asked to sit at Jesus' right and left in glory (Mark 10).",
+      "Herod Agrippa had him killed with the sword (Acts 12)."
+    ],
+    "family": {
+      "father": ["zebedee_2998"],
+      "mother": ["mother_of_zebedees_children_2112"],
+      "siblings": ["john_1677"]
+    },
+    "skip": false
+  },
+  "meshach_2092": {
+    "name": "Meshach",
+    "aka": ["Mishael"],
+    "who": "One of Daniel's three Judean friends in Babylon, kept safe by God in the fiery furnace.",
+    "key": [
+      "Taken to Babylon, he was renamed Meshach and avoided the king's food (Daniel 1).",
+      "He prayed with Daniel for God to reveal the king's dream (Daniel 2).",
+      "Nebuchadnezzar appointed him over the affairs of the province of Babylon (Daniel 2).",
+      "He refused to worship the golden image and was thrown into the furnace (Daniel 3).",
+      "He came out unharmed, and the king praised their God (Daniel 3)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "micaiah_2054": {
+    "name": "Micaiah",
+    "aka": [],
+    "who": "Prophet of the LORD, son of Imlah, who foretold King Ahab's defeat and death in battle.",
+    "key": [
+      "Ahab hated him because he never prophesied good concerning him (1 Kings 22).",
+      "He saw Israel scattered on the mountains like sheep without a shepherd (1 Kings 22).",
+      "He described a lying spirit in the mouths of Ahab's prophets (1 Kings 22).",
+      "Zedekiah struck him, and Ahab had him imprisoned on bread and water (1 Kings 22).",
+      "The same account is recorded in the history of Jehoshaphat (2 Chronicles 18)."
+    ],
+    "family": {
+      "father": ["imla_597"]
+    },
+    "skip": false
+  },
+  "nabal_2126": {
+    "name": "Nabal",
+    "aka": [],
+    "who": "Wealthy but harsh Calebite of Maon, the first husband of Abigail.",
+    "key": [
+      "He insulted David's men and refused them provisions at sheep-shearing time (1 Samuel 25).",
+      "His wife Abigail brought food to David without telling him (1 Samuel 25).",
+      "Hearing what happened, his heart failed, and the LORD struck him ten days later (1 Samuel 25).",
+      "Abigail, the widow of Nabal, went with David to Hebron (2 Samuel 2)."
+    ],
+    "family": {
+      "spouses": ["abigail_26"]
+    },
+    "skip": false
+  },
+  "naboth_2127": {
+    "name": "Naboth",
+    "aka": [],
+    "who": "Man of Jezreel who was killed through Jezebel's plot after refusing to sell his vineyard to Ahab.",
+    "key": [
+      "He refused to give King Ahab his family inheritance (1 Kings 21).",
+      "Jezebel arranged false witnesses, and he was stoned to death (1 Kings 21).",
+      "Elijah announced the LORD's judgment on Ahab for taking his vineyard (1 Kings 21).",
+      "Jehu had King Joram's body thrown onto Naboth's plot of ground (2 Kings 9)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shadrach_1398": {
+    "name": "Shadrach",
+    "aka": ["Hananiah"],
+    "who": "One of Daniel's three Judean friends in Babylon, kept safe by God in the fiery furnace.",
+    "key": [
+      "Taken to Babylon, he was renamed Shadrach and avoided the king's food (Daniel 1).",
+      "He prayed with Daniel for God to reveal the king's dream (Daniel 2).",
+      "Nebuchadnezzar appointed him over the affairs of the province of Babylon (Daniel 2).",
+      "He refused to worship the golden image and was thrown into the furnace (Daniel 3).",
+      "He came out unharmed, and the king praised their God (Daniel 3)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "ahithophel_162": {
+    "name": "Ahithophel",
+    "aka": [],
+    "who": "David's trusted counselor from Giloh who joined Absalom's rebellion.",
+    "key": [
+      "He joined Absalom's conspiracy, and David prayed his counsel would become foolishness (2 Samuel 15).",
+      "He advised Absalom to go in to his father's concubines publicly (2 Samuel 16).",
+      "His counsel was esteemed as if one consulted the word of God (2 Samuel 16).",
+      "When Hushai's advice was followed instead, he went home and hanged himself (2 Samuel 17).",
+      "He is listed as the king's counselor in David's administration (1 Chronicles 27)."
+    ],
+    "family": {
+      "children": ["eliam_1090"]
+    },
+    "skip": false
+  },
+  "machir_1877": {
+    "name": "Machir",
+    "aka": [],
+    "who": "Son of Manasseh and grandson of Joseph, ancestor of the Machirite clan and father of Gilead.",
+    "key": [
+      "His children were born on Joseph's knees (Genesis 50).",
+      "He was the father of Gilead and head of the Machirite clan (Numbers 26).",
+      "His descendants took Gilead, and Moses gave it to them (Numbers 32).",
+      "Hezron married his daughter, who bore him Segub (1 Chronicles 2)."
+    ],
+    "family": {
+      "father": ["manasseh_1928"],
+      "mother": ["concubine_the_aramitess_954"],
+      "siblings": ["ashriel_340"],
+      "spouses": ["maachah_1843"],
+      "children": ["gilead_1317", "peresh_2316", "sheresh_2669", "daughter_of_machir_986"]
+    },
+    "skip": false
+  },
+  "micah_2049": {
+    "name": "Micah",
+    "aka": [],
+    "who": "Man of the hill country of Ephraim who set up a household shrine with idols in the time of the judges.",
+    "key": [
+      "He returned stolen silver to his mother, who had an idol made from it (Judges 17).",
+      "He made a shrine with an ephod and household gods and installed his son as priest (Judges 17).",
+      "He hired a wandering Levite to serve as his priest (Judges 17).",
+      "The Danites took his idols and his priest, and he could not stop them (Judges 18)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "ornan_289": {
+    "name": "Ornan",
+    "aka": ["Araunah"],
+    "who": "Jebusite whose threshing floor in Jerusalem David bought, later the site of Solomon's temple.",
+    "key": [
+      "The angel bringing plague stopped beside his threshing floor (2 Samuel 24).",
+      "He saw the angel while threshing wheat and hid with his sons (1 Chronicles 21).",
+      "He offered David the floor freely, but David insisted on paying full price (1 Chronicles 21).",
+      "Solomon built the temple on his threshing floor on Mount Moriah (2 Chronicles 3)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shem_2613": {
+    "name": "Shem",
+    "aka": [],
+    "who": "Son of Noah who survived the flood and became ancestor of Abraham and the Israelites.",
+    "key": [
+      "He entered the ark with Noah and his family (Genesis 7).",
+      "He and Japheth covered their father's nakedness and were blessed by Noah (Genesis 9).",
+      "His descendants are listed in the table of nations (Genesis 10).",
+      "He fathered Arpachshad two years after the flood and lived 600 years (Genesis 11).",
+      "He is named in the genealogy of Jesus (Luke 3)."
+    ],
+    "family": {
+      "father": ["noah_2210"],
+      "siblings": ["ham_1359", "japheth_726"],
+      "children": ["elam_1049", "asshur_349", "arphaxad_312", "lud_1834", "aram_285"]
+    },
+    "skip": false
+  },
+  "silas_2740": {
+    "name": "Silas",
+    "aka": ["Silvanus"],
+    "who": "Leader in the Jerusalem church who became Paul's missionary companion.",
+    "key": [
+      "He was chosen to carry the Jerusalem council's letter to Antioch, then joined Paul (Acts 15).",
+      "He and Paul were beaten and jailed in Philippi, then freed by an earthquake (Acts 16).",
+      "He preached with Paul in Thessalonica and Berea (Acts 17).",
+      "He is named with Paul and Timothy in greeting the Thessalonians (1 Thessalonians 1).",
+      "Peter wrote his first letter with the help of Silvanus (1 Peter 5)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "sisera_2757": {
+    "name": "Sisera",
+    "aka": [],
+    "who": "Commander of King Jabin's Canaanite army, defeated by Barak and killed by Jael.",
+    "key": [
+      "With 900 iron chariots he oppressed Israel for twenty years (Judges 4).",
+      "The LORD routed his army before Barak, and he fled on foot (Judges 4).",
+      "Jael killed him with a tent peg while he slept in her tent (Judges 4).",
+      "Deborah's song describes his death and his mother waiting at the window (Judges 5).",
+      "Samuel recalled that God sold Israel into his hand when they forgot the LORD (1 Samuel 12)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "cain_533": {
+    "name": "Cain",
+    "aka": [],
+    "who": "Firstborn son of Adam and Eve, who murdered his brother Abel.",
+    "key": [
+      "A farmer, he brought an offering the LORD did not regard with favor (Genesis 4).",
+      "He killed his brother Abel in the field (Genesis 4).",
+      "The LORD cursed him to be a wanderer but put a mark on him for protection (Genesis 4).",
+      "He built a city and named it after his son Enoch (Genesis 4).",
+      "John says he was of the evil one and murdered his brother (1 John 3)."
+    ],
+    "family": {
+      "father": ["adam_78"],
+      "mother": ["eve_1231"],
+      "siblings": ["abel_13", "seth_2504"],
+      "children": ["enoch_1191"]
+    },
+    "skip": false
+  },
+  "darius_978": {
+    "name": "Darius",
+    "aka": [],
+    "who": "King of Persia during whose reign the second temple in Jerusalem was rebuilt and completed.",
+    "key": [
+      "Work on the temple stopped until the second year of his reign (Ezra 4).",
+      "Haggai prophesied in his second year, urging the people to rebuild (Haggai 1).",
+      "The governor Tattenai wrote to him questioning the temple's rebuilding (Ezra 5).",
+      "He found Cyrus's decree and ordered the work supported from royal revenue (Ezra 6).",
+      "The temple was finished in the sixth year of his reign (Ezra 6)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "jehoram_803": {
+    "name": "Jehoram",
+    "aka": ["Joram"],
+    "who": "King of Judah, son of Jehoshaphat, who married Ahab's daughter and followed the ways of Israel's kings.",
+    "key": [
+      "When he became king, he killed all his brothers with the sword (2 Chronicles 21).",
+      "He walked in the way of Ahab's house, for Ahab's daughter was his wife (2 Kings 8).",
+      "Edom and Libnah revolted from Judah's rule during his reign (2 Kings 8).",
+      "A letter from Elijah warned him of judgment for his sins (2 Chronicles 21).",
+      "He died of a painful bowel disease, and no one regretted his death (2 Chronicles 21)."
+    ],
+    "family": {
+      "father": ["jehoshaphat_808"],
+      "siblings": ["azariah_381", "jehiel_773", "zechariah_3010", "azariah_382", "michael_2066", "shephatiah_2660"],
+      "spouses": ["athaliah_359"],
+      "children": ["ahaziah_121", "jehoshabeath_811"]
+    },
+    "skip": false
+  },
+  "jethro_2431": {
+    "name": "Jethro",
+    "aka": ["Reuel"],
+    "who": "Priest of Midian and father-in-law of Moses, who gave Moses wise counsel in the wilderness.",
+    "key": [
+      "Moses helped his daughters at a well and later married his daughter Zipporah (Exodus 2).",
+      "Moses was keeping his flock when God spoke from the burning bush (Exodus 3).",
+      "Moses asked his permission to return to Egypt (Exodus 4).",
+      "He rejoiced at the LORD's deliverance of Israel and offered sacrifices to God (Exodus 18).",
+      "He advised Moses to appoint capable men to judge the people (Exodus 18)."
+    ],
+    "family": {
+      "children": ["zipporah_3095", "hobab_1537"]
+    },
+    "skip": false
+  },
+  "michal_2073": {
+    "name": "Michal",
+    "aka": [],
+    "who": "Younger daughter of King Saul and the first wife of David.",
+    "key": [
+      "She loved David, and Saul gave her to him as wife (1 Samuel 18).",
+      "She helped David escape through a window and deceived Saul's messengers (1 Samuel 19).",
+      "Saul gave her to Palti son of Laish while David was a fugitive (1 Samuel 25).",
+      "David demanded her return, and her husband followed her weeping (2 Samuel 3).",
+      "She despised David for dancing before the ark and had no child (2 Samuel 6)."
+    ],
+    "family": {
+      "father": ["saul_2478"],
+      "mother": ["ahinoam_152"],
+      "siblings": ["jonathan_1692", "abinadab_641", "malchi-shua_1990", "ish-bosheth_622", "merab_2001", "armoni_309", "mephibosheth_2000"],
+      "spouses": ["david_994", "phaltiel_2326"]
+    },
+    "skip": false
+  },
+  "nethaniah_2198": {
+    "name": "Nethaniah",
+    "aka": [],
+    "who": "Son of Elishama of the royal family, known as the father of Ishmael who assassinated Gedaliah.",
+    "key": [
+      "His son Ishmael killed Gedaliah, the governor appointed by Babylon (2 Kings 25).",
+      "Johanan warned Gedaliah that Ishmael son of Nethaniah planned to kill him (Jeremiah 40).",
+      "Ishmael son of Nethaniah murdered Gedaliah and others at Mizpah (Jeremiah 41)."
+    ],
+    "family": {
+      "father": ["elishama_1157"],
+      "children": ["ishmael_631"]
+    },
+    "skip": false
+  },
+  "philip_2347": {
+    "name": "Philip",
+    "aka": [],
+    "who": "One of the seven chosen to serve the Jerusalem church, later known as Philip the evangelist.",
+    "key": [
+      "He was chosen as one of the seven to oversee the daily distribution (Acts 6).",
+      "He proclaimed Christ in Samaria, and many believed and were baptized (Acts 8).",
+      "He explained Isaiah to an Ethiopian official and baptized him (Acts 8).",
+      "He hosted Paul in Caesarea, where his four unmarried daughters prophesied (Acts 21)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "phinehas_2349": {
+    "name": "Phinehas",
+    "aka": [],
+    "who": "Priest, son of Eleazar and grandson of Aaron, known for his zeal for the LORD.",
+    "key": [
+      "He killed Zimri and Cozbi, stopping the plague, and received a covenant of perpetual priesthood (Numbers 25).",
+      "He went with Israel's army against Midian, carrying the holy vessels and trumpets (Numbers 31).",
+      "He led the delegation questioning the altar built by the eastern tribes (Joshua 22).",
+      "He inquired of the LORD at Bethel during the war with Benjamin (Judges 20).",
+      "The psalmist says his deed was counted to him as righteousness (Psalms 106)."
+    ],
+    "family": {
+      "father": ["eleazar_1062"],
+      "mother": ["daughter_of_putiel_990"],
+      "children": ["abishua_51"]
+    },
+    "skip": false
+  },
+  "rabshakeh_2384": {
+    "name": "Rabshakeh",
+    "aka": [],
+    "who": "High-ranking Assyrian official sent by Sennacherib to demand Jerusalem's surrender.",
+    "key": [
+      "Sennacherib sent him with a great army to King Hezekiah at Jerusalem (2 Kings 18).",
+      "He mocked Judah's trust in the LORD and in Egypt (2 Kings 18).",
+      "He refused to speak Aramaic and shouted to the people in Hebrew (2 Kings 18).",
+      "He returned to find the king of Assyria fighting against Libnah (2 Kings 19).",
+      "Isaiah records the same confrontation at Jerusalem (Isaiah 36)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "amon_236": {
+    "name": "Amon",
+    "aka": [],
+    "who": "King of Judah, son of Manasseh and father of Josiah, who did evil and was assassinated.",
+    "key": [
+      "He became king at twenty-two and reigned two years, doing evil like Manasseh (2 Kings 21).",
+      "He did not humble himself before the LORD as his father had (2 Chronicles 33).",
+      "His servants conspired and killed him in his house (2 Kings 21).",
+      "The people killed the conspirators and made his son Josiah king (2 Kings 21).",
+      "He is listed in the genealogy of Jesus (Matthew 1)."
+    ],
+    "family": {
+      "father": ["manasseh_1930"],
+      "mother": ["meshullemeth_2040"],
+      "spouses": ["jedidah_761"],
+      "children": ["josiah_1730"]
+    },
+    "skip": false
+  },
+  "athaliah_359": {
+    "name": "Athaliah",
+    "aka": [],
+    "who": "Daughter of Ahab who seized the throne of Judah and ruled six years.",
+    "key": [
+      "She was the wife of King Jehoram of Judah (2 Kings 8).",
+      "She counseled her son King Ahaziah to act wickedly (2 Chronicles 22).",
+      "After Ahaziah died, she destroyed the royal family and ruled the land (2 Kings 11).",
+      "The priest Jehoiada crowned young Joash, and she was put to death (2 Kings 11).",
+      "Her sons had broken into the temple and used its holy things for the Baals (2 Chronicles 24)."
+    ],
+    "family": {
+      "father": ["ahab_113"],
+      "siblings": ["ahaziah_120", "joram_804"],
+      "spouses": ["jehoram_803"],
+      "children": ["ahaziah_121"]
+    },
+    "skip": false
+  },
+  "james_719": {
+    "name": "James",
+    "aka": [],
+    "who": "Brother of Jesus who became a leader of the Jerusalem church and wrote the letter of James.",
+    "key": [
+      "He is named among Jesus' brothers by the people of Nazareth (Matthew 13).",
+      "Peter sent word to him after being freed from prison (Acts 12).",
+      "He spoke at the Jerusalem council and proposed its decision (Acts 15).",
+      "The risen Jesus appeared to him (1 Corinthians 15).",
+      "Paul calls him a pillar of the Jerusalem church (Galatians 2)."
+    ],
+    "family": {
+      "father": ["joseph_1715"],
+      "mother": ["mary_1938"],
+      "siblings": ["jesus_905", "joses_1721", "simon_2747", "jude_1756"]
+    },
+    "skip": false
+  },
+  "jephunneh_840": {
+    "name": "Jephunneh",
+    "aka": [],
+    "who": "Kenizzite of the tribe of Judah, known as the father of Caleb, one of the two faithful spies.",
+    "key": [
+      "His son Caleb represented Judah among the twelve spies sent into Canaan (Numbers 13).",
+      "The LORD promised that Caleb son of Jephunneh would enter the land (Numbers 14).",
+      "Caleb is called the son of Jephunneh the Kenizzite (Numbers 32).",
+      "Joshua gave Hebron to Caleb son of Jephunneh as an inheritance (Joshua 14)."
+    ],
+    "family": {
+      "children": ["caleb_537"]
+    },
+    "skip": false
+  },
+  "johanan_1666": {
+    "name": "Johanan",
+    "aka": [],
+    "who": "Son of Kareah and a Judean army captain who led the remnant to Egypt after Jerusalem fell.",
+    "key": [
+      "He warned Governor Gedaliah that Ishmael planned to kill him (Jeremiah 40).",
+      "He rescued the captives Ishmael had taken from Mizpah (Jeremiah 41).",
+      "He asked Jeremiah to seek the LORD's guidance and promised to obey (Jeremiah 42).",
+      "He rejected the LORD's word and took the remnant, including Jeremiah, to Egypt (Jeremiah 43)."
+    ],
+    "family": {
+      "father": ["kareah_919"],
+      "siblings": ["jonathan_1702"]
+    },
+    "skip": false
+  },
+  "joseph_1715": {
+    "name": "Joseph",
+    "aka": [],
+    "who": "Carpenter of Nazareth from David's line, husband of Mary and legal father of Jesus.",
+    "key": [
+      "An angel told him in a dream to take Mary as his wife (Matthew 1).",
+      "He went to Bethlehem for the census, where Jesus was born (Luke 2).",
+      "Warned in a dream, he fled with Mary and Jesus to Egypt (Matthew 2).",
+      "He returned and settled the family in Nazareth (Matthew 2).",
+      "He and Mary found twelve-year-old Jesus in the temple (Luke 2)."
+    ],
+    "family": {
+      "father": ["jacob_683"],
+      "spouses": ["mary_1938"],
+      "children": ["jesus_905", "james_719", "joses_1721", "simon_2747", "jude_1756"]
+    },
+    "skip": false
+  },
+  "nebuzar-adan_2169": {
+    "name": "Nebuzaradan",
+    "aka": [],
+    "who": "Captain of Nebuchadnezzar's guard who burned Jerusalem and carried its people into exile.",
+    "key": [
+      "He burned the temple, the king's house, and the houses of Jerusalem (2 Kings 25).",
+      "He carried the people into exile, leaving some of the poorest behind (2 Kings 25).",
+      "He freed Jeremiah from chains and let him stay with Gedaliah (Jeremiah 40).",
+      "He took 745 more Judeans into exile in Nebuchadnezzar's twenty-third year (Jeremiah 52)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "pharez_2338": {
+    "name": "Perez",
+    "aka": [],
+    "who": "Son of Judah and Tamar, twin of Zerah, and ancestor of King David and Jesus.",
+    "key": [
+      "He was born a twin, breaking out ahead of his brother Zerah (Genesis 38).",
+      "He went down to Egypt with Jacob's household (Genesis 46).",
+      "He was the head of the clan of the Perezites (Numbers 26).",
+      "The elders blessed Boaz's house to be like the house of Perez (Ruth 4).",
+      "He is listed in the genealogy of Jesus (Matthew 1)."
+    ],
+    "family": {
+      "father": ["judah_1751"],
+      "mother": ["tamar_2821"],
+      "siblings": ["zerah_2984", "er_1209", "onan_2250", "shelah_2593"],
+      "children": ["hezron_1520", "hamul_1367"]
+    },
+    "skip": false
+  },
+  "philip_2344": {
+    "name": "Philip",
+    "aka": [],
+    "who": "One of the twelve apostles, from Bethsaida, who brought Nathanael to Jesus.",
+    "key": [
+      "Jesus called him to follow, and he brought Nathanael to Jesus (John 1).",
+      "He is listed among the twelve apostles (Matthew 10).",
+      "Jesus tested him by asking where to buy bread for the crowd (John 6).",
+      "Some Greeks came to him asking to see Jesus (John 12).",
+      "He asked Jesus to show them the Father (John 14)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "shechem_2588": {
+    "name": "Shechem",
+    "aka": [],
+    "who": "Hivite prince, son of Hamor, who violated Jacob's daughter Dinah.",
+    "key": [
+      "Jacob bought land near the city from the sons of Hamor (Genesis 33).",
+      "He seized and violated Dinah, then asked to marry her (Genesis 34).",
+      "He agreed that his city's men would be circumcised (Genesis 34).",
+      "Simeon and Levi killed him, his father, and the men of the city (Genesis 34).",
+      "Joseph's bones were buried on land bought from the sons of Hamor (Joshua 24)."
+    ],
+    "family": {
+      "father": ["hamor_1365"]
+    },
+    "skip": false
+  },
+  "shimei_2684": {
+    "name": "Shimei",
+    "aka": [],
+    "who": "Benjaminite of Saul's clan, son of Gera, who cursed David during Absalom's rebellion.",
+    "key": [
+      "He cursed David and threw stones as David fled Jerusalem (2 Samuel 16).",
+      "David refused to let Abishai kill him (2 Samuel 16).",
+      "He begged forgiveness when David returned, and David spared him (2 Samuel 19).",
+      "David charged Solomon not to leave him unpunished (1 Kings 2).",
+      "He broke his oath to stay in Jerusalem and was executed (1 Kings 2)."
+    ],
+    "family": {
+      "father": ["gera_1299"]
+    },
+    "skip": false
+  },
+  "abigail_26": {
+    "name": "Abigail",
+    "aka": [],
+    "who": "Wise and discerning wife of Nabal who later became a wife of David.",
+    "key": [
+      "She brought provisions to David and kept him from taking vengeance (1 Samuel 25).",
+      "After Nabal died, David sent for her and she became his wife (1 Samuel 25).",
+      "She lived with David among the Philistines at Gath (1 Samuel 27).",
+      "Amalekites captured her at Ziklag, and David rescued her (1 Samuel 30).",
+      "She bore David's second son at Hebron (2 Samuel 3)."
+    ],
+    "family": {
+      "spouses": ["nabal_2126", "david_994"],
+      "children": ["daniel_939"]
+    },
+    "skip": false
+  },
+  "asahel_320": {
+    "name": "Asahel",
+    "aka": [],
+    "who": "Swift-footed nephew of David and brother of Joab, killed by Abner in battle.",
+    "key": [
+      "Fast as a wild gazelle, he chased Abner after the battle at Gibeon (2 Samuel 2).",
+      "Abner warned him repeatedly, then killed him with the butt of his spear (2 Samuel 2).",
+      "Joab killed Abner at Hebron to avenge Asahel's death (2 Samuel 3).",
+      "He is listed among David's thirty mighty men (2 Samuel 23).",
+      "He commanded the fourth month's division, followed by his son Zebadiah (1 Chronicles 27)."
+    ],
+    "family": {
+      "mother": ["zeruiah_3055"],
+      "siblings": ["joab_1617", "abishai_50"],
+      "children": ["zebadiah_2992"]
+    },
+    "skip": false
+  },
+  "ham_1359": {
+    "name": "Ham",
+    "aka": [],
+    "who": "Son of Noah who survived the flood and became ancestor of Egypt, Cush, Put, and Canaan.",
+    "key": [
+      "He entered the ark with Noah and his family (Genesis 7).",
+      "He saw his father's nakedness and told his brothers, and Noah cursed Canaan (Genesis 9).",
+      "His descendants, including Cush, Egypt, Put, and Canaan, are listed (Genesis 10).",
+      "The psalmist calls Egypt the land of Ham (Psalms 105)."
+    ],
+    "family": {
+      "father": ["noah_2210"],
+      "siblings": ["shem_2613", "japheth_726"],
+      "children": ["cush_962", "mizraim_2100", "phut_2354", "canaan_914"]
+    },
+    "skip": false
+  },
+  "jehoahaz_784": {
+    "name": "Jehoahaz",
+    "aka": [],
+    "who": "King of Israel, son of Jehu, who reigned seventeen years in Samaria.",
+    "key": [
+      "He succeeded his father Jehu as king of Israel (2 Kings 10).",
+      "He did evil, so the LORD gave Israel into the hand of Hazael of Syria (2 Kings 13).",
+      "He sought the LORD, who gave Israel a savior (2 Kings 13).",
+      "His army was reduced to fifty horsemen, ten chariots, and ten thousand soldiers (2 Kings 13).",
+      "His son Joash reigned in his place (2 Kings 13)."
+    ],
+    "family": {
+      "father": ["jehu_817"],
+      "children": ["joash_1633"]
+    },
+    "skip": false
+  },
+  "jeroboam_873": {
+    "name": "Jeroboam",
+    "aka": [],
+    "who": "King of Israel, son of Joash, who restored Israel's borders; often called Jeroboam II.",
+    "key": [
+      "He reigned forty-one years in Samaria and did evil in the LORD's sight (2 Kings 14).",
+      "He restored Israel's border as the LORD spoke through Jonah (2 Kings 14).",
+      "Hosea prophesied during his reign (Hosea 1).",
+      "Amos prophesied in his days, and Amaziah the priest reported Amos to him (Amos 7).",
+      "His son Zechariah succeeded him and reigned six months (2 Kings 15)."
+    ],
+    "family": {
+      "father": ["joash_1633"],
+      "children": ["zachariah_2969"]
+    },
+    "skip": false
+  },
+  "kareah_919": {
+    "name": "Kareah",
+    "aka": [],
+    "who": "Father of Johanan and Jonathan, army captains in Judah after the fall of Jerusalem.",
+    "key": [
+      "His son Johanan came to Governor Gedaliah at Mizpah (2 Kings 25).",
+      "Johanan and Jonathan, his sons, joined Gedaliah with their men (Jeremiah 40).",
+      "Johanan son of Kareah rescued captives from Ishmael (Jeremiah 41).",
+      "Johanan son of Kareah led the remnant to Egypt against the LORD's word (Jeremiah 43)."
+    ],
+    "family": {
+      "children": ["johanan_1666", "jonathan_1702"]
+    },
+    "skip": false
+  },
+  "manoah_1933": {
+    "name": "Manoah",
+    "aka": [],
+    "who": "Danite from Zorah and father of Samson.",
+    "key": [
+      "The angel of the LORD told his barren wife she would bear a son (Judges 13).",
+      "He prayed that the man of God would return to teach them (Judges 13).",
+      "The angel ascended in the flame of his offering (Judges 13).",
+      "His parents went with Samson to Timnah about a Philistine wife (Judges 14).",
+      "Samson was buried in Manoah's tomb between Zorah and Eshtaol (Judges 16)."
+    ],
+    "family": {
+      "children": ["samson_2468"]
+    },
+    "skip": false
+  },
+  "mary_1943": {
+    "name": "Mary Magdalene",
+    "aka": [],
+    "who": "Follower of Jesus, freed from seven demons, who first saw the risen Lord.",
+    "key": [
+      "Jesus cast seven demons from her, and she supported his ministry (Luke 8).",
+      "She stood near the cross with Jesus' mother (John 19).",
+      "She watched where Jesus' body was laid in the tomb (Mark 15).",
+      "She came early to the tomb and found it empty (Mark 16).",
+      "The risen Jesus appeared to her, and she told the disciples (John 20)."
+    ],
+    "family": {},
+    "skip": false
+  },
+  "mephibosheth_1999": {
+    "name": "Mephibosheth",
+    "aka": ["Merib-baal"],
+    "who": "Son of Jonathan and grandson of Saul, lame in both feet, shown kindness by David.",
+    "key": [
+      "He became lame at five when his nurse fell while fleeing (2 Samuel 4).",
+      "David restored Saul's land to him and he ate at the king's table (2 Samuel 9).",
+      "Ziba claimed he stayed in Jerusalem hoping to regain the kingdom (2 Samuel 16).",
+      "He met David returning, having not cared for his feet or beard (2 Samuel 19).",
+      "David spared him because of his oath to Jonathan (2 Samuel 21)."
+    ],
+    "family": {
+      "father": ["jonathan_1692"],
+      "children": ["micah_2055"]
+    },
+    "skip": false
+  },
+  "ner_2181": {
+    "name": "Ner",
+    "aka": [],
+    "who": "Benjaminite, son of Abiel, uncle of Saul, and father of Saul's army commander Abner.",
+    "key": [
+      "His son Abner was commander of Saul's army (1 Samuel 14).",
+      "Abner son of Ner lay beside Saul when David entered the camp (1 Samuel 26).",
+      "Abner son of Ner made Ish-bosheth king over Israel (2 Samuel 2).",
+      "Joab killed Abner son of Ner at Hebron (2 Samuel 3).",
+      "He appears in the family line of Saul (1 Chronicles 9)."
+    ],
+    "family": {
+      "father": ["abiel_23"],
+      "mother": ["maachah_1844"],
+      "siblings": ["kish_1784", "abdon_12", "zur_3111", "baal_575", "nadab_2131", "gedor_1292", "ahio_156", "zacher_2972", "mikloth_2078"],
+      "children": ["abner_57"]
+    },
+    "skip": false
+  },
+  "sennacherib_2489": {
+    "name": "Sennacherib",
+    "aka": [],
+    "who": "King of Assyria who invaded Judah and besieged Jerusalem during Hezekiah's reign.",
+    "key": [
+      "He captured Judah's fortified cities, and Hezekiah paid him tribute (2 Kings 18).",
+      "He sent the Rabshakeh to demand Jerusalem's surrender (2 Kings 18).",
+      "Hezekiah spread his threatening letter before the LORD and prayed (2 Kings 19).",
+      "The angel of the LORD struck 185,000 in his camp (2 Kings 19).",
+      "His sons killed him while he worshiped in the house of Nisroch (2 Kings 19)."
+    ],
+    "family": {
+      "children": ["adrammelech_104", "sharezer_2559", "esar-haddon_1215"]
+    },
+    "skip": false
+  }
+}
