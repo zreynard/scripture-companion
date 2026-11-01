@@ -16,7 +16,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 30  # bump on every shipped build; also busts the service-worker cache
+VERSION = 31  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -55,7 +55,7 @@ def main():
     entries = [json.loads(l) for l in open(VERIFIED, encoding="utf-8")]
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
-    usable = [e for e in entries if e["tier"] in ("V2", "V1") and (e["speaker"] in ("Platt", "PAM") or e["speaker"] in team)]
+    usable = [e for e in entries if e["tier"] in ("V2", "V1") and (e["speaker"] in ("Platt", "PAM", "Davey") or e["speaker"] in team)]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
     item_books, title_states, ref_how, cited, first_verse = {}, {}, {}, {}, {}
     order = [b[0] for b in BOOKS]; OT = order[:39]; NT = order[39:]
@@ -68,7 +68,8 @@ def main():
         idx = sorted(order.index(b) for b in bks)
         return f"{order[idx[0]]}–{order[idx[-1]]}" if idx[-1]-idx[0] == len(idx)-1 else ", ".join(bks)
     for e in usable:
-        it = {"id": e["id"], "t": e["title"], "who": "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else "Platt",
+        it = {"id": e["id"], "t": e["title"], "who": "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Davey" if e["speaker"] == "Davey" else "Platt"),
+              "show": config.SHOWS.get(e["source"]),
               "by": e["speaker"].split(":", 1)[1] if e["speaker"] in team else None,
               "era": e["era"], "tr": e["track"], "src": e["source"], "url": e.get("primary_url") or e["url"],
               "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() else 0,
@@ -101,7 +102,8 @@ def main():
         t = re.sub(r"[^a-z0-9]+", " ", t.lower().replace("\u2019", "'")).strip()
         return re.sub(r"\bpart (\w+)\b", r"part \1", t)
     SRC_PREF = {"platt_messages": 0, "ptw": 0, "2819_podcast": 0, "secret_church_podcast": 0, "twr360_secret_church": 1,
-                "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3, "radical_vimeo": 1, "street_preachers": 2}
+                "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3, "radical_vimeo": 1, "street_preachers": 2,
+                "davey_sermons": 0, "davey_wfth": 1, "davey_journey": 0}
     for k, lst in by_chapter.items():  # one teaching, one entry: keep the best form of same-titled items
         best = {}
         for i in lst:
@@ -110,6 +112,9 @@ def main():
             if key not in best or score < best[key][0]: best[key] = (score, i)
         keep = {v[1] for v in best.values()}
         lst[:] = [i for i in lst if i in keep]
+        whole = {(core(items[i]["t"]), items[i]["who"]) for i in lst if items[i]["audio"] and not re.search(r"\bpart \d+\b", core(items[i]["t"]))}
+        lst[:] = [i for i in lst if not (re.search(r"\bpart \d+\b", core(items[i]["t"])) and items[i]["src"] == "davey_wfth"
+                                         and (re.sub(r"\s*\bpart \d+\b", "", core(items[i]["t"])).strip(), items[i]["who"]) in whole)]
         # the same sermon posted by two feeds under slightly different titles, days apart
         from difflib import SequenceMatcher
         drop = set()
@@ -157,13 +162,13 @@ def main():
     for (book, c), lst in by_chapter.items():
         keep = [i for i in lst if on_road(i, book)]
         off_road |= set(lst) - set(keep); lst[:] = keep
-    # a series (same teacher, same book, sermons no more than 45 days apart) plays in preaching order;
+    # a series (same teacher, same book, sermons no more than 90 days apart (a summer break stays inside a series)) plays in preaching order;
     # the most recent series comes first
     run_end = {}
     for (book, who), days in by_book_sermons.items():
         ds = sorted(set(days)); start = 0
         for k in range(1, len(ds) + 1):
-            if k == len(ds) or ds[k] - ds[k - 1] > 45:
+            if k == len(ds) or ds[k] - ds[k - 1] > 90:
                 for x in ds[start:k]: run_end[(book, who, x)] = ds[k - 1]
                 start = k
     def rank(book):
@@ -412,10 +417,11 @@ let lastT=null;
 const LANDS=[['Genesis','The Law'],['Joshua','History'],['Job','Wisdom & Song'],['Isaiah','Major Prophets'],['Hosea','Minor Prophets'],['Matthew','The Gospels'],['Acts','The Church Begins'],['Romans','Letters of Paul'],['Hebrews','General Letters'],['Revelation','The End & the New Beginning']];
 function books(){const b=[...D.books];if(cfg.order==='narr')b.sort((x,y)=>Math.min(...x.ch.map(c=>c.seq))-Math.min(...y.ch.map(c=>c.seq)));return b}
 function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;for(const c of chs)w.push({b,c})}return w}
-function teacher(i){return i.by||(i.who==='PAM'?'Philip Anthony Mitchell':'David Platt')}
+const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Davey'};
+function teacher(i){return i.by||NAMES[i.who]}
 function voiceHTML(id){const i=I[id],p=prog[id]||{},hp=heardPct(id),deg=!isDone(id)?Math.round(3.6*hp):0,playing=cur===id&&!audio.paused;
  return `<div class="voice ${isDone(id)?'done':''}"><button class="pb ${i.audio?'':'off'} ${playing?'playing':''}" style="--p:${deg}deg;position:relative" data-play="${id}"><span style="color:${playing?'var(--gold2)':'var(--ink)'}">${icon(playing?'pause':'play',18,0,'currentColor')}</span></button>
- <div class="tx"><div class="who">${teacher(i)}${i.tr==='devotional'?' · Pray the Word':i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(i.t)}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}${hp&&!isDone(id)?' · '+hp+'% heard':''}</div></div>
+ <div class="tx"><div class="who">${teacher(i)}${i.show?' · '+i.show:i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(i.t)}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}${hp&&!isDone(id)?' · '+hp+'% heard':''}</div></div>
  <span class="ck" role="img" aria-label="${isDone(id)?'Listened':'Not yet listened'}">✓</span></div>`}
 let W=null; // cached world geometry
 function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsView();wire();return}
@@ -485,7 +491,7 @@ function go(i){camp=i;decorate.more=false;decorate.follow=true;S.set('camp',camp
 function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(b=>b.ov.includes(i.id)||(b.spans||[]).some(x=>x.id===i.id)||b.ch.some(c=>c.ids.includes(i.id)))).length;const n=Object.keys(I).length,na=Object.values(I).filter(i=>i.audio).length;
  return `<div class="settings"><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
  <p>
- <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who==='Platt'?'David Platt only':cfg.who==='PAM'?'Philip Anthony Mitchell only':'everyone'} — switch</span></p>
+ <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who?NAMES[cfg.who]+' only':'everyone'} — switch</span></p>
  <p class="note">Progress is stored on this device.</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>
  <button class="btn" id="back">‹ Back to the road</button></div>`}
@@ -531,7 +537,7 @@ function wire(){document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=
  document.querySelectorAll('.acts [data-camp], .nv[data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;go(+b.dataset.camp)});const fd=$('#fold');if(fd){fd.onclick=e=>{e&&e.stopPropagation();const f=!S.get('fold',false);S.set('fold',f);if(f&&NP().classList.contains('on'))setMini(true);decorate.moving=true;render();decorate.moving=false};const ct=$('#chT');if(ct)ct.onclick=fd.onclick}
  const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
  const g=$('#gear');g.onclick=()=>{view=view==='settings'?'walk':'settings';S.set('view',view);decorate.first=true;render();window.scrollTo(0,0)};
- const back=$('#back');if(back)back.onclick=g.onclick;const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const wh=$('#who');if(wh)wh.onclick=()=>{cfg.who=cfg.who===''?'Platt':cfg.who==='Platt'?'PAM':'';S.set('cfg',cfg);render()};
+ const back=$('#back');if(back)back.onclick=g.onclick;const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
  const io=$('#io');if(io){$('#exp').onclick=()=>io.value=JSON.stringify({prog,read,cfg});$('#imp').onclick=()=>{try{const v=JSON.parse(io.value);prog=v.prog||prog;read=v.read||read;S.set('prog',prog);S.set('read',read);render()}catch(e){io.value='Could not read that JSON.'}};
   $('#reset').onclick=()=>{if(confirm('Erase all progress on this device?')){prog={};read={};camp=null;S.set('prog',prog);S.set('read',read);S.set('camp',null);render()}};
   $('#atest').onclick=()=>{const o=$('#atest-out');o.textContent=' testing…';const a=new Audio();a.src=Object.values(I).find(i=>i.audio).audio;a.addEventListener('loadedmetadata',()=>o.textContent=' ✓ streams ('+fmt(a.duration)+')');a.addEventListener('error',()=>o.textContent=' ✗ blocked here');a.load()}}}

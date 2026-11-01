@@ -341,7 +341,8 @@ def harvest_buzzsprout_archive(key: str, show_id: int, feed_url: str, era: str =
             out.append(e)
         _log(f"{key} archive page {page}: +{new} (total {len(out)})")
         if new == 0: break
-        page += 36; time.sleep(config.REQUEST_SLEEP)
+        # Pray the Word's pages are 1,000-episode windows (step 36); most shows page 25 at a time (step 1)
+        page += 36 if new >= 500 else 1; time.sleep(config.REQUEST_SLEEP)
     return out
 
 # ---------- YouTube-only teaching with audio hosted beside the app (tools/youtube_audio.py) ----------
@@ -385,7 +386,7 @@ def harvest_youtube_audio() -> list[dict]:
     return out
 
 # ---------- orchestration ----------
-ALL_SOURCES = ["ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
+ALL_SOURCES = ["davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
                "youtube_2819", "youtube_pam", "youtube_victory", "victory_podcast"]
 
 def run(sources: list[str], radical_limit: int | None = None):
@@ -412,6 +413,9 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "radical": entries = harvest_radical(radical_limit)
             elif s == "secret_church_podcast": entries = harvest_itunes_podcast("secret_church_podcast", config.PODCAST_SEARCH_TERMS["secret_church"], r"secret church", "platt", channel_default="Platt")
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt")
+            elif s in config.DAVEY_FEEDS:
+                sid, feed = config.DAVEY_FEEDS[s]
+                entries = harvest_feed(s, feed, era="davey") + harvest_buzzsprout_archive(s, sid, feed, era="davey")
             elif s == "street_preachers": entries = [e for e in harvest_feed("street_preachers", "https://rss.buzzsprout.com/2524921.rss", era="pam-podcast")]
             elif s == "2819_podcast": entries = harvest_itunes_podcast("2819_podcast", config.PODCAST_SEARCH_TERMS["2819"], r"2819", "2819")
             elif s == "victory_podcast": entries = harvest_itunes_podcast("victory_podcast", config.PODCAST_SEARCH_TERMS["victory"], r"victory", "victory")

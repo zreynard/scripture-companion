@@ -96,8 +96,10 @@ def main():
 
     print("\n== Speakers")
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
-    bad = [f"{I[i]['t'][:60]} speaker={E[i]['speaker']}" for i in road if E[i]["speaker"] not in ("Platt", "PAM") and E[i]["speaker"] not in team]
-    check("only David Platt, PAM, Arik Hayes and Milton James on the road", bad, len(road))
+    bad = [f"{I[i]['t'][:60]} speaker={E[i]['speaker']}" for i in road if E[i]["speaker"] not in ("Platt", "PAM", "Davey") and E[i]["speaker"] not in team]
+    check("only David Platt, PAM (with Arik Hayes, Milton James) and Stephen Davey on the road", bad, len(road))
+    bad = [f"{I[i]['t'][:60]} from {E[i]['source']}" for i in road if (I[i]["who"] == "Davey") != E[i]["source"].startswith("davey_")]
+    check("Stephen Davey teaching comes only from his own feeds, and his feeds only from him", bad)
     bad = []
     for i in road:
         segs = [x.strip() for x in I[i]["t"].split("|")]
@@ -128,7 +130,7 @@ def main():
                 grp = [i for i in ids if (I[i]["tr"] != "sermon") == tr]
                 au = [not I[i]["audio"] for i in grp]
                 if au != sorted(au): bad_audio.append(f"{b['name']} {c['c']}")
-            # a series: same teacher, sermons in this book <= 45 days apart, all sitting in this chapter
+            # a series: same teacher, sermons in this book <= 90 days apart, all sitting in this chapter
             ser = [i for i in ids if I[i]["tr"] == "sermon" and I[i]["audio"] and day(i)]
             byw = defaultdict(list)
             for i in ser: byw[I[i]["who"]].append(i)
@@ -137,7 +139,7 @@ def main():
                 ds = sorted(lst, key=day)
                 runs, cur = [], [ds[0]]
                 for i in ds[1:]:
-                    if day(i) - day(cur[-1]) <= 45: cur.append(i)
+                    if day(i) - day(cur[-1]) <= 90: cur.append(i)
                     else: runs.append(cur); cur = [i]
                 runs.append(cur)
                 for r in runs:

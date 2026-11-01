@@ -41,6 +41,8 @@ def detect_speaker(source: str, title: str, description: str, author: str, chann
         if channel_default == "PAM":
             return "PAM", "channel-default"
         return "unknown", "no-name"
+    if source.startswith("davey_"):  # his own feeds
+        return "Davey", "feed-owner"
     if source == "street_preachers":  # PAM's own podcast (with Tim Timberlake)
         return "PAM", "feed-owner"
     if source in ("mclean_podcast", "mclean_oceans"):
@@ -50,7 +52,7 @@ def detect_speaker(source: str, title: str, description: str, author: str, chann
     return "unknown", "none"
 
 def detect_track(source: str, title: str, description: str, merged_refs: dict) -> str:
-    if source == "ptw":
+    if source in ("ptw", "davey_journey"):
         return "devotional"
     if source == "secret_church":
         return "overview"
@@ -65,7 +67,8 @@ def detect_track(source: str, title: str, description: str, merged_refs: dict) -
     return "sermon"
 
 # Sources whose passages come from the parser (never hand-curated) — re-mapped whenever the rules change.
-REPARSE_SOURCES = {"ptw", "platt_messages", "2819_podcast", "street_preachers", "mclean_oceans", "victory_podcast", "mclean_podcast", "radical_message",
+REPARSE_SOURCES = {"ptw", "platt_messages", "2819_podcast", "street_preachers", "mclean_oceans",
+                   "davey_sermons", "davey_wfth", "davey_journey", "victory_podcast", "mclean_podcast", "radical_message",
                    "youtube_2819", "youtube_pam", "youtube_victory"}
 MAIN_TEXT_RE = re.compile(r"\b(?:message|sermon|episode|teaching|talk|study)\b[^.]{0,60}?"
                           r"\b(?:from|on|through|in|of|unpacks|walks through|looks at|explores|expounds)\s+", re.I)

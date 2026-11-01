@@ -111,3 +111,12 @@ NEVER_ON_ROAD_RE = r"\bwom[ae]n\b|womanhood|\bmoms?\b|mother'?s day|\bladies\b"
 
 # 2819 Church preachers who teach inside PAM's series; they ride the road with PAM's voices, under their own name.
 PAM_CHURCH_PREACHERS = ["Arik Hayes", "Milton James"]
+
+# ---- Stephen Davey (Wisdom for the Heart / The Shepherd's Church) ----
+# Every feed he publishes on Buzzsprout (wisdomonline.org itself sits behind a bot check and is not crawled).
+DAVEY_FEEDS = {
+    "davey_sermons": (2353448, "https://rss.buzzsprout.com/2353448.rss"),   # Stephen Davey Sermons (full Sunday sermons)
+    "davey_wfth": (2545810, "https://rss.buzzsprout.com/2545810.rss"),      # Wisdom for the Heart (sermons broadcast in parts)
+    "davey_journey": (2545807, "https://rss.buzzsprout.com/2545807.rss"),   # The Wisdom Journey (daily walk through the Bible)
+}
+SHOWS = {"ptw": "Pray the Word", "davey_wfth": "Wisdom for the Heart", "davey_journey": "The Wisdom Journey"}
