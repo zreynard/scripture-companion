@@ -20,7 +20,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 37  # bump on every shipped build; also busts the service-worker cache
+VERSION = 38  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -232,6 +232,11 @@ def write_site(html: str):
     os.makedirs(SITE, exist_ok=True)
     open(os.path.join(SITE, "index.html"), "w", encoding="utf-8").write(html)
     open(os.path.join(SITE, "version.txt"), "w").write(str(VERSION))
+    bdir = os.path.join(HERE, "data", "bible")
+    if os.path.isdir(bdir):  # Berean Standard Bible, one file per book, loaded when a chapter is opened
+        os.makedirs(os.path.join(SITE, "bible"), exist_ok=True)
+        for f in os.listdir(bdir):
+            shutil.copy(os.path.join(bdir, f), os.path.join(SITE, "bible", f))
     for f in os.listdir(PWA):
         if f == "sw.js":
             src = open(os.path.join(PWA, f), encoding="utf-8").read().replace("__VERSION__", str(VERSION))
@@ -286,6 +291,15 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .sum2 ul{margin:6px 0 0;padding-left:18px}.sum2 li{font-size:14px;line-height:1.4;color:var(--ink);margin:3px 0}
 #bookhd{position:fixed;left:14px;top:calc(10px + env(safe-area-inset-top));z-index:6;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border:1px solid rgba(27,36,64,.12);color:var(--ink);border-radius:16px;padding:6px 14px;font:16px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;cursor:pointer}
 #bookhd:empty{display:none}
+.readx{margin:0 0 10px}.readx summary{list-style:none;cursor:pointer;font-size:13px;color:var(--gold2)}.readx summary::-webkit-details-marker{display:none}
+.txt{font:17px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--ink);margin-top:8px;max-height:60vh;overflow-y:auto;padding-right:4px;-webkit-overflow-scrolling:touch}
+.txt h4{font:600 11px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin:14px 0 4px}
+.txt p{margin:0 0 10px}.txt p.poem{padding-left:1.2em;text-indent:-1.2em}.txt p.q2{padding-left:2.2em}
+.txt .ptitle{font-style:italic;color:var(--mute);margin:4px 0 8px;font-size:15px}
+.txt sup{font:600 10px -apple-system,system-ui,sans-serif;color:var(--gold2);margin-right:3px;vertical-align:super}
+.txt .hl{background:rgba(201,162,74,.22);border-radius:3px;box-shadow:0 0 0 2px rgba(201,162,74,.22)}
+.txt .src{font:11px -apple-system,system-ui,sans-serif;color:var(--mute);margin-top:6px}
+.pref{background:none;border:0;padding:0;font:inherit;color:var(--gold2);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
 .clearing .sum{font-size:13px;color:var(--mute);margin:-4px 0 0}.clearing.folded .ch{font-size:24px;margin:2px 0 6px}.clearing.folded .acts{margin-top:10px}
 .acts .go{background:var(--gold);color:#1b2440;border-color:var(--gold);font-weight:600}
 .acts .read.on{background:rgba(201,162,74,.18);color:var(--gold2);border-color:var(--gold)}
@@ -428,7 +442,23 @@ const mins=s=>s?Math.round(s/60)+' min':'';
 const isDone=id=>!!(prog[id]&&prog[id].done);
 // Listened = at least 70% of the teaching actually played (seconds heard, not where the slider sits)
 const DONE_AT=0.7,body=id=>{const p=prog[id]||{};return Math.max(1,(p.dur||0)-(I[id].s||0))},heardPct=id=>{const p=prog[id]||{};return p.dur&&p.heard?Math.min(100,Math.round(100*p.heard/body(id))):0};
-let lastT=null,ready=true;const OPEN=new Set();  /* summaries the listener opened stay open across redraws */  /* ready: the episode has loaded and jumped to its place, so positions can be saved */
+let lastT=null,ready=true;const OPEN=new Set();
+/* ---- the Bible text (Berean Standard Bible, public domain): one file per book, fetched once, then offline ---- */
+const BIBLE={};let HL=null;  /* HL = {book, ch, from, to}: verses to highlight */
+function loadBook(book){return BIBLE[book]||(BIBLE[book]=fetch('bible/'+encodeURIComponent(book)+'.json').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(e=>{delete BIBLE[book];throw e}))}
+function shortPass(p){return p.split(';')[0].trim()}
+function versesFor(pass,book,ch){ /* the verse range a passage names inside this chapter, or null for the whole chapter */
+ const esc2=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');const re=new RegExp(esc2(book).replace(/^Psalms$/,'Psalms?')+'\\s+(\\d+)(?::(\\d+)(?:\\s*[–-]\\s*(?:(\\d+):)?(\\d+))?)?','i');
+ for(const part of pass.split(/;/)){const m=part.match(re);if(!m||+m[1]!==ch)continue;if(!m[2])return null;const a=+m[2];const b=m[3]&&+m[3]!==ch?999:(m[4]?+m[4]:a);return{from:a,to:b}}return null}
+function chapterHTML(data,c,hl){const vs=data.chapters[c-1]||[];let h='',open=false;
+ for(const v of vs){if(v.h){if(open){h+='</p>';open=false}h+=`<h4>${esc(v.h)}</h4>`}if(v.d)h+=`<div class="ptitle">${esc(v.d)}</div>`;
+  if(v.p||!open){if(open)h+='</p>';h+=`<p class="${v.q?'poem q'+v.q:''}">`;open=true}
+  const on=hl&&v.v>=hl.from&&v.v<=hl.to;h+=`<span class="vs${on?' hl':''}" data-v="${v.v}"><sup>${v.v}</sup>${esc(v.t).replace(/\n/g,'<br>')}</span> `}
+ if(open)h+='</p>';return h+'<div class="src">Berean Standard Bible · public domain</div>'}
+function fillReaders(){document.querySelectorAll('details.readx[open] .txt').forEach(el=>{const book=el.dataset.book,c=+el.dataset.ch;
+ if(el.dataset.done==='1')return;el.dataset.done='1';el.textContent='Opening '+book+' '+c+'…';
+ loadBook(book).then(d=>{const hl=HL&&HL.book===book&&HL.ch===c?HL:null;el.innerHTML=chapterHTML(d,c,hl);
+  if(hl){const t=el.querySelector('.hl');if(t)el.scrollTop=t.offsetTop-el.offsetTop-12}}).catch(()=>{el.dataset.done='';el.textContent='This book could not be opened. Check the connection and try again.'})})}  /* summaries the listener opened stay open across redraws */  /* ready: the episode has loaded and jumped to its place, so positions can be saved */
 const LANDS=[['Genesis','The Law'],['Joshua','History'],['Job','Wisdom & Song'],['Isaiah','Major Prophets'],['Hosea','Minor Prophets'],['Matthew','The Gospels'],['Acts','The Church Begins'],['Romans','Letters of Paul'],['Hebrews','General Letters'],['Revelation','The End & the New Beginning']];
 function books(){const b=[...D.books];if(cfg.order==='narr')b.sort((x,y)=>Math.min(...x.ch.map(c=>c.seq))-Math.min(...y.ch.map(c=>c.seq)));return b}
 function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;for(const c of chs)w.push({b,c})}return w}
@@ -436,7 +466,7 @@ const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Da
 function teacher(i){return i.by||NAMES[i.who]}
 function voiceHTML(id){const i=I[id],p=prog[id]||{},hp=heardPct(id),deg=!isDone(id)?Math.round(3.6*hp):0,playing=cur===id&&!audio.paused;
  return `<div class="voice ${isDone(id)?'done':''}"><button class="pb ${i.audio?'':'off'} ${playing?'playing':''}" style="--p:${deg}deg;position:relative" data-play="${id}"><span style="color:${playing?'var(--gold2)':'var(--ink)'}">${icon(playing?'pause':'play',18,0,'currentColor')}</span></button>
- <div class="tx"><div class="who">${teacher(i)}${i.show?' · '+i.show:i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(i.t)}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}${hp&&!isDone(id)?' · '+hp+'% heard':''}</div></div>
+ <div class="tx"><div class="who">${teacher(i)}${i.show?' · '+i.show:i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(i.t)}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}${hp&&!isDone(id)?' · '+hp+'% heard':''}${i.pass&&!/^All \d|survey/i.test(i.pass)?` · <button class="pref" data-pass="${esc(i.pass)}">${esc(shortPass(i.pass))}</button>`:''}</div></div>
  <span class="ck" role="img" aria-label="${isDone(id)?'Listened':'Not yet listened'}">✓</span></div>`}
 let W=null; // cached world geometry
 function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsView();wire();return}
@@ -491,7 +521,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  let nextV=null;for(let i=camp+1;i<w.length;i++){if(w[i].c.ids.some(okWho)){nextV={i,x:w[i]};break}}
  {const cut=Math.min(Hs-20,m.y+44);svg.setAttribute('viewBox',`0 0 390 ${cut}`);$('#w2').setAttribute('viewBox',`0 ${cut} 390 ${Hs-cut}`)}
  const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';
- const rdc=w.filter(x=>read[x.b.abbr+x.c.c]).length,lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${rdc} of 1,189</span></div><div class="hd"><div class="ch serif" id="chT">${b.name} ${c.c}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c===b.ch[0]&&b.bl?`<div class="about"><div class="ab-t">About ${b.name}</div><div class="sline">${esc(b.bl)}</div>${b.bm&&b.bm.length?`<details class="sum2" data-k="b:${b.abbr}"${OPEN.has('b:'+b.abbr)?' open':''}><summary>More about the book ›</summary><ul>${b.bm.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`:''}</div>`:''}${c.sl?`<div class="sline">${esc(c.sl)}</div>${c.sm&&c.sm.length?`<details class="sum2" data-k="c:${b.abbr}${c.c}"${OPEN.has('c:'+b.abbr+c.c)?' open':''}><summary>Summary ›</summary><ul>${c.sm.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`:''}`:''}${fold?`<div class="sum">${ids.length?ids.length+' voice'+(ids.length>1?'s':''):'No voice here'}${nextV?' · next voice at '+nextV.x.b.name+' '+nextV.x.c.c:''}</div>`:''}<div class="body"${fold?' hidden':''}>
+ const rdc=w.filter(x=>read[x.b.abbr+x.c.c]).length,lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${rdc} of 1,189</span></div><div class="hd"><div class="ch serif" id="chT">${b.name} ${c.c}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c===b.ch[0]&&b.bl?`<div class="about"><div class="ab-t">About ${b.name}</div><div class="sline">${esc(b.bl)}</div>${b.bm&&b.bm.length?`<details class="sum2" data-k="b:${b.abbr}"${OPEN.has('b:'+b.abbr)?' open':''}><summary>More about the book ›</summary><ul>${b.bm.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`:''}</div>`:''}${c.sl?`<div class="sline">${esc(c.sl)}</div>${c.sm&&c.sm.length?`<details class="sum2" data-k="c:${b.abbr}${c.c}"${OPEN.has('c:'+b.abbr+c.c)?' open':''}><summary>Summary ›</summary><ul>${c.sm.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`:''}`:''}<details class="readx" data-k="r:${b.abbr}${c.c}"${OPEN.has('r:'+b.abbr+c.c)?' open':''}><summary>Read ${b.name} ${c.c} ›</summary><div class="txt" data-book="${b.name}" data-ch="${c.c}"></div></details>${fold?`<div class="sum">${ids.length?ids.length+' voice'+(ids.length>1?'s':''):'No voice here'}${nextV?' · next voice at '+nextV.x.b.name+' '+nextV.x.c.c:''}</div>`:''}<div class="body"${fold?' hidden':''}>
   ${(()=>{if(c!==b.ch[0])return '';const ord=books().map(x=>x.name);const groups={};(b.spans||[]).forEach(x=>{let lab=x.label;if(x.books&&!/Testament|Law|History|Wisdom|Prophets|Gospels|Church|Letters|Revelation/.test(lab)){const idxs=x.books.map(n=>ord.indexOf(n)).sort((p,q)=>p-q);const contig=idxs[idxs.length-1]-idxs[0]===idxs.length-1;lab=contig?`${ord[idxs[0]]}–${ord[idxs[idxs.length-1]]}`:x.books.join(', ')}(groups[lab]=groups[lab]||[]).push(x.id)});let h='';for(const [lab,ids2] of Object.entries(groups))h+=`<details class="enter"><summary>Entering ${lab} · ${ids2.length} survey${ids2.length>1?'s':''} ›</summary>${ids2.map(voiceHTML).join('')}</details>`;
    if(ov.length)h+=`<details class="enter"><summary>Enter ${b.name} with ${ov.length} overview${ov.length>1?'s':''} ›</summary>${ov.map(voiceHTML).join('')}</details>`;return h})()}
   ${(()=>{const all=[...ids.filter(i=>I[i].tr!=='devotional'),...ids.filter(i=>I[i].tr==='devotional')];const show=decorate.more?all:all.slice(0,3);return show.map(voiceHTML).join('')+(all.length>3&&!decorate.more?`<button class="more" id="more">${all.length-3} more voice${all.length-3>1?'s':''} on this stretch ›</button>`:'')})()}
@@ -551,7 +581,11 @@ function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;r
  addEventListener('scroll',()=>{if(np.classList.contains('on')&&!np.classList.contains('mini')&&Math.abs(scrollY-fullAtScroll)>60)setMini(true)},{passive:true});
 })();
 /* wiring */
-function wire(){document.querySelectorAll('details[data-k]').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.k):OPEN.delete(d.dataset.k)});
+function wire(){document.querySelectorAll('details[data-k]').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.k):OPEN.delete(d.dataset.k);if(d.classList.contains('readx'))fillReaders()});
+ fillReaders();
+ document.querySelectorAll('.pref').forEach(b=>b.onclick=e=>{e.stopPropagation();const x=walk()[camp];const r=versesFor(b.dataset.pass,x.b.name,x.c.c);
+  HL=r?{book:x.b.name,ch:x.c.c,...r}:null;OPEN.add('r:'+x.b.abbr+x.c.c);decorate.moving=true;render();decorate.moving=false;
+  const d=document.querySelector('details.readx');if(d)setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'start'}),60)});
  const bh=$('#bookhd');if(bh)bh.onclick=()=>{if(view!=='walk'){view='walk';S.set('view',view)}go(+bh.dataset.camp)};document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();play(b.dataset.play)});
  
  document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{const was=!!read[b.dataset.read];read[b.dataset.read]=!was;S.set('read',read);if(!was){camp=Math.min(walk().length-1,camp+1);decorate.follow=true}S.set('camp',camp);render()});

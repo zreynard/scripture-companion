@@ -7,7 +7,7 @@ self.addEventListener('install', e => {
 });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys()
-    .then(ks => Promise.all(ks.filter(k => k.startsWith('sc-') && k !== CACHE).map(k => caches.delete(k))))
+    .then(ks => Promise.all(ks.filter(k => k.startsWith('sc-') && k !== CACHE && k !== 'sc-bible-1').map(k => caches.delete(k))))
     .then(() => self.clients.claim()));
 });
 self.addEventListener('fetch', e => {
@@ -18,6 +18,10 @@ self.addEventListener('fetch', e => {
     e.respondWith(fetch(e.request, { cache: 'no-store' }).then(r => {  // always the newest page when online
       const copy = r.clone(); caches.open(CACHE).then(c => c.put('index.html', copy)); return r;
     }).catch(() => caches.match('index.html')));
+    return;
+  }
+  if (u.pathname.includes('/bible/')) {  // Bible books: kept once downloaded, across app versions
+    e.respondWith(caches.open('sc-bible-1').then(c => c.match(e.request).then(r => r || fetch(e.request).then(res => { if (res.ok) c.put(e.request, res.clone()); return res; }))));
     return;
   }
   e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
