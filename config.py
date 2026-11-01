@@ -107,7 +107,10 @@ TOPICAL_TITLE_RE = (r"\bwom[ae]n|womanhood|manhood|\bmoms?\b|mother|ladies|elect
                     r"baptism|membership|\belders?\b|deacons?|christmas|thanksgiving|new year|generosity|giving|\bmoney\b|"
                     r"abortion|justice|racializ|sexuality|special needs|\bvision\b|south by southwest|panel|q ?& ?a|interview")
 # Never on the road, series or not.
-NEVER_ON_ROAD_RE = r"\bwom[ae]n\b|womanhood|\bmoms?\b|mother'?s day|\bladies\b"
+# (narratives about women in Scripture - the woman at the well, the women at the tomb - stay on the road)
+NEVER_ON_ROAD_RE = (r"womanhood|\bmoms?\b|mother'?s day|\bladies\b|godly wom[ae]n|married wom[ae]n|rare wom[ae]n|"
+                    r"wom[ae]n who (?:fear|are)|wom[ae]n in the church|men and women|word of god to women|about women|"
+                    r"\bfor women\b|\bwomen'?s\b")
 
 # 2819 Church preachers who teach inside PAM's series; they ride the road with PAM's voices, under their own name.
 PAM_CHURCH_PREACHERS = ["Arik Hayes", "Milton James"]

@@ -16,7 +16,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 31  # bump on every shipped build; also busts the service-worker cache
+VERSION = 32  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -155,7 +155,7 @@ def main():
         it = items[i]
         if NEVER.search(it["t"]): return False
         if it["tr"] != "sermon": return True
-        if ref_how[i] == "description-first" and cited[i] > 1: return False  # several passages cited, none named the text
+        if ref_how[i] == "description-first" and cited[i] > 1 and focus(i, book) < 2: return False  # several passages, none named the text, not in a series
         if TOPICAL.search(it["t"]) and focus(i, book) < 2: return False  # one-off topical message
         return True
     off_road = set()
@@ -174,7 +174,7 @@ def main():
     def rank(book):
         def key(i):
             it, d, f = items[i], _day(i) or 0, focus(i, book)
-            series = (-run_end.get((book, it["who"], d), d), d) if f == 2 else (0, -d)
+            series = (-run_end.get((book, it["who"], d), d), d) if f == 2 else ((0, d) if it["src"] == "davey_journey" else (0, -d))  # the Journey walks forward day by day
             return (it["tr"] != "sermon", not it["audio"], -f, it["who"] != "Platt", series, i)
         return key
     books = []
