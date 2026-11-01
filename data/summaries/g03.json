@@ -1,0 +1,684 @@
+{
+  "1 Samuel": {
+    "line": "Israel moves from the judges to kingship through Samuel the prophet, the failed reign of Saul, and the rise of David.",
+    "more": [
+      "Hannah prays for a son, and God gives her Samuel, who grows up serving at the tabernacle in Shiloh.",
+      "Eli's corrupt house falls, the Philistines capture the ark, and Samuel leads Israel as judge and prophet.",
+      "Israel demands a king, and Samuel anoints Saul, who soon disobeys God and is rejected.",
+      "God chooses young David, who kills Goliath and becomes a hero but is hunted by the jealous Saul.",
+      "David spares Saul twice while living as a fugitive, and Saul finally dies in battle against the Philistines."
+    ],
+    "chapters": {
+      "1": {"line": "Barren Hannah prays at Shiloh for a son, and God gives her Samuel, whom she gives back to the LORD.", "more": [
+        "Hannah is one of Elkanah's two wives and is taunted by Peninnah, who has children.",
+        "Eli the priest first thinks she is drunk, then blesses her request.",
+        "After weaning Samuel, Hannah brings him to Eli to serve the LORD for life."
+      ]},
+      "2": {"line": "Hannah praises God in a song, while Eli's sons sin openly and a prophet announces judgment on Eli's house.", "more": [
+        "Hannah's song celebrates God humbling the proud and lifting up the lowly.",
+        "Hophni and Phinehas take the best of the sacrifices by force and sleep with women serving at the tabernacle.",
+        "Young Samuel grows in favor, and a man of God says both of Eli's sons will die on one day."
+      ]},
+      "3": {"line": "God calls the boy Samuel by name at night and reveals that judgment is coming on Eli's family.", "more": [
+        "Samuel thinks Eli is calling him until Eli realizes the LORD is speaking.",
+        "Eli accepts the message, and all Israel comes to recognize Samuel as a prophet."
+      ]},
+      "4": {"line": "The Philistines defeat Israel, capture the ark of God, and kill Eli's sons, and Eli dies on hearing the news.", "more": [
+        "Israel brings the ark into battle hoping it will save them, but suffers a heavy defeat.",
+        "Eli falls backward and breaks his neck when told the ark is taken.",
+        "Phinehas's wife dies in childbirth, naming her son Ichabod because the glory has departed."
+      ]},
+      "5": {"line": "The captured ark brings disaster on the Philistines, as their idol Dagon falls and tumors strike their cities.", "more": [
+        "Dagon's statue is found fallen before the ark, then found broken.",
+        "The ark is moved from Ashdod to Gath to Ekron, and plague follows it everywhere."
+      ]},
+      "6": {"line": "The Philistines send the ark back on a cart with guilt offerings, and it returns to Israel at Beth-shemesh.", "more": [
+        "Two milk cows pull the cart straight to Israel's border without a driver.",
+        "Some men of Beth-shemesh look into the ark and are struck down.",
+        "The ark is then sent on to Kiriath-jearim."
+      ]},
+      "7": {"line": "Samuel calls Israel to repent and put away idols, and God routs the Philistines at Mizpah.", "more": [
+        "The ark remains at Kiriath-jearim for twenty years.",
+        "God thunders against the Philistines while Samuel offers a sacrifice, and Samuel sets up a stone named Ebenezer.",
+        "Samuel judges Israel all his life, traveling a yearly circuit."
+      ]},
+      "8": {"line": "Israel demands a king like the other nations, and God tells Samuel to grant it after warning them.", "more": [
+        "Samuel's sons take bribes, prompting the elders' request.",
+        "God says the people are rejecting him as king, not Samuel.",
+        "Samuel warns that a king will take their sons, land, and goods, but they insist."
+      ]},
+      "9": {"line": "While searching for lost donkeys, Saul meets Samuel, whom God has told to anoint him as Israel's leader.", "more": [
+        "Saul is a tall, handsome Benjaminite, the son of Kish.",
+        "Samuel honors Saul at a feast and keeps him overnight."
+      ]},
+      "10": {"line": "Samuel anoints Saul privately, signs confirm it, and Saul is then publicly chosen king by lot at Mizpah.", "more": [
+        "God gives Saul another heart, and he prophesies with a group of prophets.",
+        "At Mizpah Saul is found hiding among the baggage.",
+        "Some worthless men despise him, but Saul keeps silent."
+      ]},
+      "11": {"line": "Saul rescues Jabesh-gilead from the Ammonites, and the people renew his kingship at Gilgal.", "more": [
+        "Nahash the Ammonite threatens to gouge out the right eye of every man in Jabesh.",
+        "The Spirit of God rushes on Saul, and he rallies Israel to a decisive victory.",
+        "Saul refuses to punish those who had doubted him."
+      ]},
+      "12": {"line": "Samuel gives a farewell speech, defends his integrity, and urges Israel and its king to fear and serve the LORD.", "more": [
+        "Samuel reviews God's faithfulness from Egypt through the judges.",
+        "God sends thunder and rain at wheat harvest, and the people confess that asking for a king was evil.",
+        "Samuel promises to keep praying for them and warns that persistent wickedness will bring ruin."
+      ]},
+      "13": {"line": "Facing the Philistines at Gilgal, Saul offers a sacrifice himself instead of waiting for Samuel and loses his dynasty.", "more": [
+        "Jonathan attacks a Philistine garrison, and the Philistines gather a huge army.",
+        "Samuel says God will seek a man after his own heart.",
+        "Israel has almost no swords, because the Philistines control metalworking."
+      ]},
+      "14": {"line": "Jonathan and his armor-bearer attack a Philistine outpost, God sends panic, and Israel wins a great victory.", "more": [
+        "Saul's rash oath forbids eating, and Jonathan unknowingly tastes honey.",
+        "The hungry troops eat meat with the blood, and Saul builds an altar.",
+        "The people save Jonathan from Saul's death sentence, and Saul fights enemies on every side."
+      ]},
+      "15": {"line": "Saul spares King Agag and the best Amalekite livestock against God's command, and God rejects him as king.", "more": [
+        "Saul claims the animals were kept for sacrifice, but Samuel says obedience is better than sacrifice.",
+        "Saul tears Samuel's robe, and Samuel says the kingdom has been torn from Saul.",
+        "Samuel kills Agag, departs, and grieves over Saul."
+      ]},
+      "16": {"line": "God sends Samuel to Bethlehem to anoint David, Jesse's youngest son, and David enters Saul's service as a musician.", "more": [
+        "God tells Samuel that he looks on the heart, not outward appearance.",
+        "The Spirit rushes on David and departs from Saul, and a harmful spirit torments Saul.",
+        "David's lyre playing brings Saul relief, and he becomes Saul's armor-bearer."
+      ]},
+      "17": {"line": "The young shepherd David kills the Philistine giant Goliath with a sling and stone, and Israel routs the Philistines.", "more": [
+        "Goliath defies Israel's army for forty days, and Saul's soldiers are afraid.",
+        "David, bringing food to his brothers, volunteers, trusting the LORD who saved him from lion and bear.",
+        "He refuses Saul's armor and cuts off Goliath's head with the giant's own sword."
+      ]},
+      "18": {"line": "Jonathan loves David as himself, but Saul grows jealous of David's success and tries to kill him.", "more": [
+        "Women sing that Saul has killed thousands but David tens of thousands.",
+        "Saul hurls a spear at David and sends him into dangerous battles.",
+        "David marries Saul's daughter Michal after killing two hundred Philistines as the bride-price."
+      ]},
+      "19": {"line": "Saul openly seeks to kill David, who escapes with help from Jonathan and Michal and flees to Samuel.", "more": [
+        "Jonathan briefly reconciles them, but Saul throws a spear at David again.",
+        "Michal lets David down through a window and puts an idol in his bed.",
+        "At Ramah, Saul's messengers and Saul himself are overcome by the Spirit and prophesy."
+      ]},
+      "20": {"line": "Jonathan confirms Saul's intent to kill David, and the two friends part after renewing their covenant.", "more": [
+        "David misses the new moon feast, and Saul angrily throws a spear at Jonathan.",
+        "Jonathan signals David with arrows in the field, as agreed.",
+        "They weep and swear loyalty to each other's descendants."
+      ]},
+      "21": {"line": "Fleeing, David gets holy bread and Goliath's sword from the priest at Nob, then pretends to be insane in Gath.", "more": [
+        "Ahimelech the priest gives David the consecrated bread.",
+        "Doeg the Edomite, Saul's servant, witnesses this.",
+        "King Achish of Gath dismisses David as a madman."
+      ]},
+      "22": {"line": "David gathers men at the cave of Adullam, while Saul has Doeg slaughter the priests of Nob.", "more": [
+        "About four hundred distressed, indebted, and bitter men join David.",
+        "David places his parents under the protection of the king of Moab.",
+        "Only Abiathar escapes the massacre and joins David."
+      ]},
+      "23": {"line": "David rescues Keilah from the Philistines, then barely escapes Saul in the wilderness.", "more": [
+        "David inquires of God through the ephod and learns Keilah would hand him over.",
+        "Jonathan visits David at Horesh and strengthens his hand in God.",
+        "Saul nearly traps David but leaves to fight a Philistine raid."
+      ]},
+      "24": {"line": "David spares Saul in a cave at En-gedi, cutting off a corner of his robe instead of killing him.", "more": [
+        "David refuses to harm the LORD's anointed.",
+        "Saul weeps, admits David is more righteous, and asks him to spare his descendants."
+      ]},
+      "25": {"line": "Wise Abigail keeps David from taking revenge on her foolish husband Nabal, who then dies, and she marries David.", "more": [
+        "Samuel dies and all Israel mourns him.",
+        "Nabal rudely refuses provisions to David's men, who had protected his shepherds.",
+        "About ten days later the LORD strikes Nabal and he dies."
+      ]},
+      "26": {"line": "David again spares Saul, taking his spear and water jar while Saul sleeps in the camp.", "more": [
+        "Abishai offers to kill Saul, but David refuses.",
+        "From a distance David rebukes Abner for failing to guard the king.",
+        "Saul confesses his wrong and blesses David, and they part."
+      ]},
+      "27": {"line": "Despairing of escaping Saul, David settles among the Philistines and receives the town of Ziklag from Achish.", "more": [
+        "Saul stops pursuing him.",
+        "David raids Israel's enemies but tells Achish he is raiding Judah.",
+        "He leaves no survivors so the truth will not reach Achish."
+      ]},
+      "28": {"line": "With the Philistines gathering, Saul consults a medium at En-dor, and Samuel announces Saul's defeat and death.", "more": [
+        "God no longer answers Saul by dreams, Urim, or prophets.",
+        "Saul had earlier banished mediums from the land.",
+        "Samuel says Saul and his sons will die the next day."
+      ]},
+      "29": {"line": "The Philistine commanders distrust David, so Achish sends him back from the battle against Israel.", "more": [
+        "They fear David will turn against them in battle.",
+        "Achish insists David has been loyal but yields to them."
+      ]},
+      "30": {"line": "David finds Ziklag burned and families taken by Amalekites, then pursues them and recovers everything.", "more": [
+        "David's men talk of stoning him, but he strengthens himself in the LORD.",
+        "An abandoned Egyptian servant leads David to the raiders.",
+        "David rules that those guarding supplies share equally, and he sends spoil to Judah's elders."
+      ]},
+      "31": {"line": "Saul and three of his sons, including Jonathan, die in battle with the Philistines on Mount Gilboa.", "more": [
+        "Badly wounded, Saul falls on his own sword.",
+        "The Philistines fasten the bodies to the wall of Beth-shan.",
+        "Men of Jabesh-gilead recover the bodies and bury them."
+      ]}
+    }
+  },
+  "2 Samuel": {
+    "line": "David becomes king over Judah and then all Israel, receives God's covenant promise, but sins grievously and faces family turmoil.",
+    "more": [
+      "David mourns Saul and Jonathan and is anointed king of Judah at Hebron.",
+      "After war with Saul's house, he rules all Israel, captures Jerusalem, and brings the ark there.",
+      "God promises David a house and a kingdom that will last forever.",
+      "David commits adultery with Bathsheba and arranges Uriah's death, and Nathan announces trouble within his house.",
+      "Amnon's crime, Absalom's revolt, and Sheba's rebellion follow, but David is restored to the throne.",
+      "The book closes with accounts of a famine, warriors, songs, and a census followed by plague."
+    ],
+    "chapters": {
+      "1": {"line": "An Amalekite reports Saul's death and claims credit, and David has him executed and laments Saul and Jonathan.", "more": [
+        "The Amalekite brings Saul's crown and armlet to David at Ziklag.",
+        "David's lament, the Song of the Bow, mourns how the mighty have fallen."
+      ]},
+      "2": {"line": "David is anointed king of Judah at Hebron, while Abner makes Saul's son Ish-bosheth king over Israel.", "more": [
+        "David thanks the men of Jabesh-gilead for burying Saul.",
+        "At Gibeon, Joab's men defeat Abner's men.",
+        "Abner kills Joab's brother Asahel, who was chasing him."
+      ]},
+      "3": {"line": "Abner breaks with Ish-bosheth and joins David, but Joab murders him in revenge, and David mourns Abner publicly.", "more": [
+        "David's house grows stronger while Saul's grows weaker, and sons are born to David in Hebron.",
+        "Abner quarrels with Ish-bosheth over Saul's concubine and offers Israel to David.",
+        "David demands Michal's return and curses Joab's house for the killing."
+      ]},
+      "4": {"line": "Two captains murder Ish-bosheth in his bed and bring his head to David, who executes them.", "more": [
+        "Jonathan's son Mephibosheth had been crippled in a fall as a child.",
+        "Rechab and Baanah expect a reward but are punished for killing a righteous man."
+      ]},
+      "5": {"line": "David is anointed king over all Israel, captures Jerusalem from the Jebusites, and defeats the Philistines twice.", "more": [
+        "David reigns forty years, seven and a half in Hebron and thirty-three in Jerusalem.",
+        "Hiram king of Tyre builds David a palace.",
+        "David inquires of the LORD before each battle and follows his instructions."
+      ]},
+      "6": {"line": "David brings the ark to Jerusalem after Uzzah dies for touching it, and Michal despises David's dancing.", "more": [
+        "The ark stays three months with Obed-edom, whose household is blessed.",
+        "David dances before the LORD with all his might, wearing a linen ephod.",
+        "Michal has no child to the day of her death."
+      ]},
+      "7": {"line": "God declines David's plan to build him a house, instead promising David an everlasting house, kingdom, and throne.", "more": [
+        "The prophet Nathan delivers the message.",
+        "David's son will build the temple, and God will be a father to him.",
+        "David responds with a humble prayer of thanks."
+      ]},
+      "8": {"line": "David defeats surrounding nations, including Philistia, Moab, Zobah, Syria, and Edom, as the LORD gives him victory everywhere.", "more": [
+        "David dedicates the plunder to the LORD.",
+        "He administers justice and equity, and his officials are listed."
+      ]},
+      "9": {"line": "David shows kindness to Jonathan's son Mephibosheth, restoring Saul's land and giving him a place at the king's table.", "more": [
+        "David asks whether anyone of Saul's house remains, for Jonathan's sake.",
+        "Ziba, Saul's servant, is assigned to farm the land for Mephibosheth."
+      ]},
+      "10": {"line": "The Ammonites humiliate David's envoys and hire Syrian troops, and Joab and David defeat both.", "more": [
+        "King Hanun shaves half the envoys' beards and cuts their garments.",
+        "Joab and Abishai split the army to face the Syrians and Ammonites.",
+        "David defeats Hadadezer's forces at Helam, and the Syrians make peace."
+      ]},
+      "11": {"line": "David commits adultery with Bathsheba and, when she becomes pregnant, has her husband Uriah killed in battle.", "more": [
+        "David stays in Jerusalem while the army besieges Rabbah.",
+        "Uriah refuses to go home to his wife while the army is in the field.",
+        "David marries Bathsheba, but what he has done displeases the LORD."
+      ]},
+      "12": {"line": "Nathan confronts David with a parable, David repents, and the child dies, but Solomon is later born.", "more": [
+        "Nathan says the sword will never depart from David's house.",
+        "God names Solomon Jedidiah, meaning beloved of the LORD.",
+        "David completes the capture of Rabbah."
+      ]},
+      "13": {"line": "Amnon rapes his half-sister Tamar, and her brother Absalom has him killed two years later and flees.", "more": [
+        "Jonadab helps Amnon plan the deception.",
+        "David is angry but does not punish Amnon.",
+        "Absalom flees to Geshur and stays three years."
+      ]},
+      "14": {"line": "Joab uses a wise woman from Tekoa to persuade David to bring Absalom home.", "more": [
+        "Absalom lives in Jerusalem two years without seeing the king.",
+        "He sets Joab's field on fire to get his attention.",
+        "David finally receives Absalom and kisses him."
+      ]},
+      "15": {"line": "Absalom wins the people's hearts and declares himself king in Hebron, and David flees Jerusalem.", "more": [
+        "Ittai the Gittite insists on going with David.",
+        "David sends the ark back with Zadok and Abiathar.",
+        "Hushai returns to Jerusalem to counter Ahithophel's advice."
+      ]},
+      "16": {"line": "As David flees, Ziba slanders Mephibosheth, Shimei curses David, and Absalom sleeps with his father's concubines.", "more": [
+        "David gives Ziba all of Mephibosheth's property.",
+        "David forbids Abishai to kill Shimei, saying the LORD may have told him to curse.",
+        "Hushai gains Absalom's trust, and Absalom follows Ahithophel's counsel."
+      ]},
+      "17": {"line": "Hushai's counsel defeats Ahithophel's, giving David time to escape across the Jordan, and Ahithophel hangs himself.", "more": [
+        "Ahithophel had urged an immediate attack on the weary king.",
+        "Jonathan and Ahimaaz carry warnings to David, hiding in a well along the way.",
+        "Barzillai and others bring supplies to David at Mahanaim."
+      ]},
+      "18": {"line": "David's forces defeat Absalom's army, and Joab kills Absalom after he is caught in a tree.", "more": [
+        "David orders his commanders to deal gently with Absalom.",
+        "Absalom's head catches in an oak as his mule runs on.",
+        "David weeps bitterly at the news, crying out for his son."
+      ]},
+      "19": {"line": "Joab rebukes David's grief, and David returns to Jerusalem, pardoning Shimei, while Israel and Judah quarrel over the king.", "more": [
+        "David replaces Joab with Amasa as commander.",
+        "Mephibosheth explains his absence, and David divides the land between him and Ziba.",
+        "Aged Barzillai declines to come to Jerusalem and sends Chimham instead."
+      ]},
+      "20": {"line": "Sheba son of Bichri leads a rebellion, and Joab murders Amasa, then ends the revolt at Abel.", "more": [
+        "A wise woman of Abel persuades the town to throw Sheba's head over the wall.",
+        "David's officials are listed again."
+      ]},
+      "21": {"line": "David avenges Saul's killing of the Gibeonites to end a famine, and his warriors defeat Philistine giants.", "more": [
+        "Seven of Saul's descendants are handed over and put to death.",
+        "Rizpah guards their bodies, and David buries the bones of Saul and Jonathan.",
+        "Abishai saves an exhausted David, and David's men kill four giants of Gath."
+      ]},
+      "22": {"line": "David sings a song of praise to the LORD for rescuing him from all his enemies and from Saul.", "more": [
+        "God is pictured as his rock, fortress, and deliverer.",
+        "The song closely parallels Psalm 18.",
+        "It closes with God's steadfast love to David and his offspring forever."
+      ]},
+      "23": {"line": "David's last words praise God's everlasting covenant, followed by a list of his mighty men and their deeds.", "more": [
+        "The three chief warriors are Josheb-basshebeth, Eleazar, and Shammah.",
+        "Three men break through Philistine lines for water from Bethlehem, which David pours out.",
+        "Uriah the Hittite is listed among the thirty."
+      ]},
+      "24": {"line": "David sinfully takes a census, God sends a plague, and David buys Araunah's threshing floor and sacrifices there.", "more": [
+        "David chooses to fall into God's hands rather than man's.",
+        "Seventy thousand die before the angel is stopped at Jerusalem.",
+        "David refuses to offer the LORD what costs him nothing."
+      ]}
+    }
+  },
+  "1 Kings": {
+    "line": "Solomon's glorious reign and temple give way to a divided kingdom, as most kings of Israel and Judah turn from the LORD.",
+    "more": [
+      "Solomon secures the throne, asks God for wisdom, and builds and dedicates the temple in Jerusalem.",
+      "His many foreign wives turn his heart to idols, and God promises to tear away most of the kingdom.",
+      "Under Rehoboam the ten northern tribes split off and follow Jeroboam, who sets up golden calves.",
+      "A series of kings follows, each judged by whether he did right or evil in the LORD's sight.",
+      "Elijah confronts King Ahab and Baal worship, and Ahab dies in battle as prophesied."
+    ],
+    "chapters": {
+      "1": {"line": "As David ages, Adonijah claims the throne, but Nathan and Bathsheba persuade David to make Solomon king.", "more": [
+        "Abishag is brought to care for the elderly David.",
+        "Joab and Abiathar support Adonijah, while Zadok, Nathan, and Benaiah support Solomon.",
+        "Solomon is anointed at Gihon, and Adonijah's guests scatter in fear."
+      ]},
+      "2": {"line": "David charges Solomon to obey God and dies, and Solomon secures his throne by removing Adonijah, Joab, and Shimei.", "more": [
+        "Adonijah asks for Abishag, which Solomon treats as a bid for the throne.",
+        "Abiathar is removed from the priesthood and sent to Anathoth.",
+        "Shimei breaks his oath by leaving Jerusalem and is executed."
+      ]},
+      "3": {"line": "God offers Solomon whatever he asks, Solomon asks for wisdom, and he shows it by settling two prostitutes' dispute.", "more": [
+        "Solomon marries Pharaoh's daughter, and the people sacrifice at high places.",
+        "God also promises riches and honor.",
+        "Solomon orders the baby divided, revealing the true mother by her response."
+      ]},
+      "4": {"line": "Solomon's officials and district governors are listed, and his kingdom is described as prosperous and peaceful.", "more": [
+        "Judah and Israel are as many as the sand and eat and drink happily.",
+        "Solomon's wisdom surpasses all others, and he speaks thousands of proverbs and songs."
+      ]},
+      "5": {"line": "Solomon arranges with Hiram of Tyre for cedar and cypress timber and organizes laborers to build the temple.", "more": [
+        "David could not build because of constant wars.",
+        "Solomon pays Hiram yearly in wheat and oil.",
+        "Large stones are cut and prepared for the foundation."
+      ]},
+      "6": {"line": "Solomon builds the temple over seven years, with its structure, cedar paneling, gold overlay, and Most Holy Place described.", "more": [
+        "Construction begins 480 years after the exodus, in Solomon's fourth year.",
+        "God promises to dwell among Israel if Solomon obeys.",
+        "Two olivewood cherubim stand in the inner sanctuary."
+      ]},
+      "7": {"line": "Solomon builds his palace complex, and Hiram the craftsman makes the bronze pillars, sea, stands, and temple furnishings.", "more": [
+        "The palace takes thirteen years to build.",
+        "The two pillars are named Jachin and Boaz.",
+        "Solomon brings in the silver and gold David had dedicated."
+      ]},
+      "8": {"line": "The ark is brought into the temple, God's glory fills it, and Solomon offers a long prayer of dedication.", "more": [
+        "Solomon asks God to hear prayers made toward this house, even from exile.",
+        "He blesses the people and offers huge sacrifices.",
+        "The celebration lasts fourteen days."
+      ]},
+      "9": {"line": "God answers Solomon's prayer, warning that disobedience will bring the temple's destruction, and Solomon's other achievements are described.", "more": [
+        "Hiram is displeased with the twenty cities Solomon gives him.",
+        "Solomon uses forced labor, builds cities, and launches a fleet of ships."
+      ]},
+      "10": {"line": "The queen of Sheba visits and marvels at Solomon's wisdom and wealth, which are described in detail.", "more": [
+        "She tests him with hard questions and praises the LORD.",
+        "Silver becomes as common as stone in Jerusalem.",
+        "Solomon gathers many chariots and horses, including from Egypt."
+      ]},
+      "11": {"line": "Solomon's foreign wives turn his heart to other gods, and God raises adversaries and promises ten tribes to Jeroboam.", "more": [
+        "Solomon has seven hundred wives and three hundred concubines.",
+        "Hadad of Edom and Rezon of Damascus oppose him.",
+        "The prophet Ahijah tears a cloak into twelve pieces, and Solomon dies after reigning forty years."
+      ]},
+      "12": {"line": "Rehoboam rejects the people's plea for relief, the ten northern tribes make Jeroboam king, and Jeroboam sets up golden calves.", "more": [
+        "Rehoboam follows the young men's harsh advice instead of the elders'.",
+        "A prophet forbids Rehoboam to fight Israel.",
+        "Jeroboam places calves at Bethel and Dan and appoints priests who are not Levites."
+      ]},
+      "13": {"line": "A man of God from Judah condemns Jeroboam's altar at Bethel, but later disobeys God and is killed by a lion.", "more": [
+        "He predicts a king named Josiah will burn priests' bones on it.",
+        "Jeroboam's hand withers and the altar splits apart.",
+        "An old prophet deceives him into eating, and Jeroboam continues his evil ways."
+      ]},
+      "14": {"line": "Ahijah foretells disaster on Jeroboam's house, and Rehoboam's Judah falls into idolatry and is plundered by Shishak of Egypt.", "more": [
+        "Jeroboam's wife visits Ahijah in disguise, and their son dies as foretold.",
+        "Judah does evil, with high places, pillars, and male cult prostitutes.",
+        "Shishak takes the temple treasures, including Solomon's gold shields."
+      ]},
+      "15": {"line": "Abijam does evil and Asa does right in Judah, while Nadab and Baasha do evil in Israel.", "more": [
+        "Asa removes cult prostitutes and idols and deposes his grandmother Maacah.",
+        "Asa pays Ben-hadad of Syria to attack Baasha.",
+        "Baasha kills Nadab and wipes out Jeroboam's house."
+      ]},
+      "16": {"line": "Israel's kings Elah, Zimri, Omri, and Ahab do evil, with Ahab marrying Jezebel and promoting Baal worship.", "more": [
+        "Zimri kills Elah but reigns only seven days.",
+        "Omri buys the hill of Samaria and builds his capital there.",
+        "Hiel rebuilds Jericho at the cost of his sons, as Joshua had said."
+      ]},
+      "17": {"line": "Elijah announces a drought to Ahab, and God provides for Elijah through ravens and a widow at Zarephath.", "more": [
+        "Elijah drinks from the brook Cherith until it dries up.",
+        "The widow's flour and oil do not run out.",
+        "Elijah raises the widow's son from the dead."
+      ]},
+      "18": {"line": "Elijah defeats the prophets of Baal on Mount Carmel when God sends fire, and then the drought ends.", "more": [
+        "Obadiah had hidden a hundred prophets from Jezebel.",
+        "Elijah challenges the people to stop wavering between two opinions.",
+        "The prophets of Baal are killed, and Elijah prays for rain."
+      ]},
+      "19": {"line": "Elijah flees Jezebel to Horeb, where God speaks in a low whisper and sends him to anoint successors.", "more": [
+        "An angel feeds Elijah in the wilderness.",
+        "God says seven thousand in Israel have not bowed to Baal.",
+        "Elijah calls Elisha, who leaves his oxen to follow him."
+      ]},
+      "20": {"line": "God gives Ahab two victories over Ben-hadad of Syria, but a prophet condemns Ahab for sparing him.", "more": [
+        "The Syrians claim the LORD is a god of the hills only.",
+        "Ahab makes a treaty with Ben-hadad and lets him go.",
+        "Ahab goes home sullen and angry."
+      ]},
+      "21": {"line": "Jezebel arranges Naboth's murder so Ahab can take his vineyard, and Elijah pronounces doom on Ahab's house.", "more": [
+        "Naboth refuses to sell his family inheritance.",
+        "Elijah says dogs will lick Ahab's blood and eat Jezebel.",
+        "Ahab humbles himself, so God delays the disaster until his son's days."
+      ]},
+      "22": {"line": "Ignoring Micaiah's warning, Ahab dies in battle at Ramoth-gilead, while Jehoshaphat reigns in Judah and does right.", "more": [
+        "Ahab's four hundred prophets promise victory, but Micaiah foresees defeat.",
+        "Ahab disguises himself, but a randomly shot arrow kills him.",
+        "Ahaziah succeeds Ahab in Israel and does evil, serving Baal."
+      ]}
+    }
+  },
+  "2 Kings": {
+    "line": "Israel and Judah decline under mostly evil kings until Assyria destroys Israel and Babylon destroys Jerusalem and exiles Judah.",
+    "more": [
+      "Elijah is taken to heaven, and Elisha performs many miracles in Israel.",
+      "Jehu wipes out Ahab's house and Baal worship, but Israel keeps Jeroboam's golden calves.",
+      "Assyria conquers Samaria and exiles Israel because of persistent idolatry.",
+      "In Judah, Hezekiah trusts God against Assyria, but Manasseh's great evil seals Judah's fate.",
+      "Josiah's reforms do not avert judgment, and Babylon destroys Jerusalem and the temple.",
+      "The book ends with exiled King Jehoiachin released from prison in Babylon."
+    ],
+    "chapters": {
+      "1": {"line": "King Ahaziah of Israel consults Baal-zebub after a fall, and Elijah announces he will die.", "more": [
+        "Fire from heaven consumes two captains and their fifty men sent to seize Elijah.",
+        "The third captain pleads for mercy, and Elijah goes with him.",
+        "Ahaziah dies, and his brother Jehoram succeeds him."
+      ]},
+      "2": {"line": "Elijah is taken up to heaven in a whirlwind, and Elisha receives a double portion of his spirit.", "more": [
+        "Elijah strikes the Jordan with his cloak, and they cross on dry ground.",
+        "Elisha heals Jericho's water with salt.",
+        "Bears maul boys who jeer at Elisha near Bethel."
+      ]},
+      "3": {"line": "Israel, Judah, and Edom march against rebellious Moab, and God provides water and victory through Elisha.", "more": [
+        "Jehoram of Israel does evil, though not as much as Ahab.",
+        "Elisha helps for the sake of Jehoshaphat of Judah.",
+        "The king of Moab sacrifices his son on the wall, and Israel withdraws."
+      ]},
+      "4": {"line": "Elisha multiplies a widow's oil, raises the Shunammite woman's son, purifies poisoned stew, and feeds a hundred men.", "more": [
+        "The oil fills every borrowed jar, paying the widow's debt.",
+        "The Shunammite had been promised a son for her hospitality.",
+        "Twenty loaves feed a hundred men with food left over."
+      ]},
+      "5": {"line": "Naaman the Syrian commander is healed of leprosy by washing in the Jordan, and Gehazi is struck with it for greed.", "more": [
+        "A captive Israelite girl tells Naaman's wife about the prophet in Samaria.",
+        "Naaman washes seven times and confesses that Israel's God is the only God.",
+        "Gehazi secretly takes silver and clothing from Naaman and lies to Elisha."
+      ]},
+      "6": {"line": "Elisha makes an axe head float and blinds a Syrian army, and Samaria later suffers famine under siege.", "more": [
+        "Elisha reveals Syria's plans, and his servant sees horses and chariots of fire.",
+        "Elisha leads the blinded army into Samaria and has them fed and released.",
+        "Mothers resort to eating their children, and the king blames Elisha."
+      ]},
+      "7": {"line": "God scatters the Syrian army besieging Samaria, and lepers discover the abandoned camp, ending the famine.", "more": [
+        "Elisha predicts food will be cheap by the next day.",
+        "God makes the Syrians hear the sound of a great army, and they flee.",
+        "The officer who doubted is trampled at the gate."
+      ]},
+      "8": {"line": "The Shunammite's land is restored, Hazael murders Ben-hadad and becomes king, and evil kings reign in Judah.", "more": [
+        "Elisha weeps, foreseeing the harm Hazael will do to Israel.",
+        "Jehoram of Judah marries Ahab's daughter and does evil, and Edom revolts.",
+        "His son Ahaziah also does evil."
+      ]},
+      "9": {"line": "Elisha has Jehu anointed king, and Jehu kills King Joram of Israel, King Ahaziah of Judah, and Jezebel.", "more": [
+        "Jehu is commissioned to strike down Ahab's house.",
+        "Joram's body is thrown onto Naboth's plot of ground.",
+        "Jezebel is thrown from a window, and dogs eat her as Elijah foretold."
+      ]},
+      "10": {"line": "Jehu destroys Ahab's descendants and the worshipers of Baal, but keeps Jeroboam's golden calves.", "more": [
+        "Seventy sons of Ahab are killed in Samaria.",
+        "Jehu gathers Baal's worshipers in their temple and has them killed.",
+        "God begins to cut off parts of Israel through Hazael."
+      ]},
+      "11": {"line": "Athaliah seizes Judah's throne by killing the royal family, but the priest Jehoiada crowns the hidden child Joash.", "more": [
+        "Jehosheba hides Joash in the temple for six years.",
+        "Athaliah is executed, and the house of Baal is torn down.",
+        "Jehoiada makes a covenant between the LORD, the king, and the people."
+      ]},
+      "12": {"line": "Joash does right while Jehoiada instructs him and repairs the temple, but pays off Hazael with its treasures.", "more": [
+        "Offerings are collected in a chest beside the altar.",
+        "The high places are not removed.",
+        "Joash is killed by his servants."
+      ]},
+      "13": {"line": "Jehoahaz and Jehoash of Israel do evil, and the dying Elisha promises limited victories over Syria.", "more": [
+        "God gives Israel a savior from Syrian oppression.",
+        "Jehoash strikes the ground only three times with arrows.",
+        "A dead man touches Elisha's bones and comes back to life."
+      ]},
+      "14": {"line": "Amaziah of Judah does right but foolishly challenges Israel, while Jeroboam II restores Israel's borders.", "more": [
+        "Amaziah defeats Edom, then Jehoash of Israel defeats him and breaks Jerusalem's wall.",
+        "Amaziah is assassinated, and his son Azariah succeeds him.",
+        "Jeroboam II does evil, yet God saves Israel through him, as Jonah prophesied."
+      ]},
+      "15": {"line": "Azariah reigns long in Judah, while Israel suffers rapid assassinations and Assyrian invasion under evil kings.", "more": [
+        "Azariah does right but is struck with leprosy.",
+        "Zechariah, Shallum, Menahem, Pekahiah, and Pekah reign in Israel.",
+        "Tiglath-pileser takes territory and exiles people, and Jotham does right in Judah."
+      ]},
+      "16": {"line": "Ahaz of Judah does evil, burns his son as an offering, and seeks Assyria's help, copying a foreign altar.", "more": [
+        "Syria and Israel attack Jerusalem but cannot conquer it.",
+        "Ahaz pays tribute to Tiglath-pileser, who captures Damascus.",
+        "Uriah the priest builds a copy of the altar Ahaz saw in Damascus."
+      ]},
+      "17": {"line": "Assyria captures Samaria and exiles Israel, because the people persistently worshiped other gods and rejected God's prophets.", "more": [
+        "Hoshea, Israel's last king, seeks help from Egypt and is imprisoned.",
+        "Assyria resettles foreigners in Samaria, who mix worship of the LORD with their own gods.",
+        "The text lists Israel's sins and God's repeated warnings."
+      ]},
+      "18": {"line": "Hezekiah does right and trusts the LORD, but Assyria invades Judah and its envoy mocks God at Jerusalem.", "more": [
+        "Hezekiah removes high places and breaks the bronze serpent.",
+        "He pays Sennacherib tribute, but Assyria still sends an army.",
+        "The Rabshakeh urges the people not to trust Hezekiah or the LORD."
+      ]},
+      "19": {"line": "Hezekiah prays, Isaiah promises deliverance, and the angel of the LORD strikes down the Assyrian army.", "more": [
+        "Sennacherib sends a threatening letter, which Hezekiah spreads before the LORD.",
+        "God says Assyria's pride will be punished and Jerusalem defended.",
+        "Sennacherib returns home and is killed by his sons."
+      ]},
+      "20": {"line": "God heals Hezekiah and adds fifteen years, but Isaiah foretells Babylonian exile after Hezekiah shows envoys his treasures.", "more": [
+        "The shadow moves back ten steps as a sign.",
+        "Hezekiah is relieved there will be peace in his own days.",
+        "Hezekiah dies, and his son Manasseh succeeds him."
+      ]},
+      "21": {"line": "Manasseh and his son Amon do great evil, and God declares that Jerusalem will be destroyed for it.", "more": [
+        "Manasseh rebuilds high places, builds altars for Baal and the stars, and burns his son.",
+        "He sheds much innocent blood in Jerusalem.",
+        "Amon is assassinated after two years, and Josiah becomes king."
+      ]},
+      "22": {"line": "Josiah does right and repairs the temple, the Book of the Law is found, and Huldah the prophetess confirms coming judgment.", "more": [
+        "Josiah tears his clothes on hearing the law read.",
+        "Huldah says disaster will come, but not in Josiah's lifetime because he humbled himself."
+      ]},
+      "23": {"line": "Josiah renews the covenant and purges idolatry but dies at Megiddo, and Judah's next kings do evil.", "more": [
+        "He destroys high places, including Jeroboam's altar at Bethel, as prophesied.",
+        "Judah keeps a Passover unlike any since the days of the judges.",
+        "Pharaoh Neco kills Josiah, deposes Jehoahaz, and installs Jehoiakim."
+      ]},
+      "24": {"line": "Babylon subdues Judah, and Nebuchadnezzar takes King Jehoiachin, the treasures, and leading people into exile.", "more": [
+        "Jehoiakim does evil and rebels against Babylon.",
+        "God sends raiders against Judah for the sins of Manasseh.",
+        "Zedekiah is made king, does evil, and rebels."
+      ]},
+      "25": {"line": "Babylon destroys Jerusalem and the temple, exiles the people, and later releases Jehoiachin from prison.", "more": [
+        "Zedekiah is captured, his sons are killed, and he is blinded.",
+        "Gedaliah is appointed governor but is assassinated, and many flee to Egypt.",
+        "Evil-merodach gives Jehoiachin a regular place at his table."
+      ]}
+    }
+  },
+  "1 Chronicles": {
+    "line": "This book traces Israel's genealogies from Adam and retells David's reign, highlighting the ark, God's covenant, and temple preparations.",
+    "more": [
+      "Chapters 1–9 trace genealogies from Adam through Israel's tribes, centering on Judah, David, and Levi.",
+      "Saul's death leads to David's anointing over all Israel and the capture of Jerusalem.",
+      "David brings the ark to Jerusalem with joyful worship, and God promises him a lasting dynasty.",
+      "After victories and a sinful census, David chooses the site for the temple.",
+      "David gathers materials, organizes priests, Levites, musicians, and officials, and charges Solomon to build the temple."
+    ],
+    "chapters": {
+      "1": {"line": "Genealogies trace humanity from Adam through Noah's sons to Abraham, then Ishmael, Esau, and Edom's kings.", "more": [
+        "The list sets Israel within the wider family of nations.",
+        "It narrows from all peoples to Abraham's line through Isaac."
+      ]},
+      "2": {"line": "The genealogy of Israel's sons begins, focusing on Judah's line, including Jesse and his son David.", "more": [
+        "Israel's twelve sons are named first.",
+        "Judah's descendants include Perez, Hezron, Ram, and Caleb.",
+        "Achar is noted for breaking faith over devoted things."
+      ]},
+      "3": {"line": "David's sons are listed, followed by the kings of Judah from Solomon to the exile and beyond.", "more": [
+        "Sons born at Hebron and Jerusalem are named.",
+        "The royal line continues through Jehoiachin to Zerubbabel and later descendants."
+      ]},
+      "4": {"line": "Further descendants of Judah and the tribe of Simeon are listed, with brief notes on their towns and conquests.", "more": [
+        "Jabez prays for blessing, and God grants his request.",
+        "Simeonites take new pastureland and defeat remaining Amalekites."
+      ]},
+      "5": {"line": "Reuben, Gad, and half of Manasseh, the tribes east of the Jordan, are listed, along with their exile by Assyria.", "more": [
+        "Reuben lost his birthright for defiling his father's bed, and it passed to Joseph.",
+        "They won battles when they cried to God, but later were unfaithful."
+      ]},
+      "6": {"line": "Levi's descendants are listed, including the high priests, temple musicians, and the cities given to the Levites.", "more": [
+        "The high priestly line runs from Aaron to the exile.",
+        "David appointed Heman, Asaph, and Ethan to lead music.",
+        "Only Aaron's descendants offer sacrifices and make atonement."
+      ]},
+      "7": {"line": "The genealogies of Issachar, Benjamin, Naphtali, the other half of Manasseh, Ephraim, and Asher are listed.", "more": [
+        "Many entries count mighty warriors for military service.",
+        "Ephraim's line leads to Joshua son of Nun."
+      ]},
+      "8": {"line": "Benjamin's genealogy is given in more detail, leading to the family of King Saul.", "more": [
+        "Saul's line is traced through Jonathan and his descendants.",
+        "Many Benjaminites lived in Jerusalem."
+      ]},
+      "9": {"line": "The people who resettled Jerusalem after exile are listed, including priests, Levites, and gatekeepers, followed by Saul's genealogy again.", "more": [
+        "Judah had been exiled to Babylon for unfaithfulness.",
+        "Gatekeepers and Levites guard the temple and care for its utensils and bread.",
+        "Saul's line is repeated to introduce the narrative that follows."
+      ]},
+      "10": {"line": "Saul and his sons die on Mount Gilboa, and the LORD turns the kingdom over to David.", "more": [
+        "The Philistines fasten Saul's head in the temple of Dagon.",
+        "Saul died for his unfaithfulness and for consulting a medium instead of the LORD."
+      ]},
+      "11": {"line": "David is anointed king over all Israel at Hebron, captures Jerusalem, and his mighty men are listed.", "more": [
+        "Joab becomes chief by leading the attack on the Jebusites.",
+        "Three warriors bring David water from Bethlehem, which he pours out to the LORD."
+      ]},
+      "12": {"line": "Warriors from every tribe join David, first at Ziklag and then at Hebron, to make him king.", "more": [
+        "Benjaminites, Gadites, and men of Judah join him while he hides from Saul.",
+        "Clothed by the Spirit, Amasai declares peace to David and his helpers.",
+        "Israel feasts three days at Hebron with great joy."
+      ]},
+      "13": {"line": "David tries to bring the ark to Jerusalem on a cart, but Uzzah dies for touching it.", "more": [
+        "All the assembly agrees to bring up the ark.",
+        "David leaves it with Obed-edom, whose household is blessed."
+      ]},
+      "14": {"line": "Hiram builds David a palace, David's family grows, and God gives him victory over the Philistines twice.", "more": [
+        "David inquires of God before each battle.",
+        "David's fame spreads, and the LORD brings fear of him on the nations."
+      ]},
+      "15": {"line": "David brings the ark to Jerusalem properly, with Levites carrying it and singers and musicians celebrating.", "more": [
+        "David says the earlier failure came from not seeking God as prescribed.",
+        "Michal despises David as he dances."
+      ]},
+      "16": {"line": "David places the ark in its tent, appoints Levites for worship, and a song of thanks is sung.", "more": [
+        "Asaph and his brothers lead the praise.",
+        "The song draws on several psalms, calling the nations to give thanks.",
+        "Zadok serves at the tabernacle in Gibeon."
+      ]},
+      "17": {"line": "God tells David through Nathan that his son will build the temple, and promises David an everlasting dynasty.", "more": [
+        "David may not build the house himself.",
+        "David humbly thanks God for his promise."
+      ]},
+      "18": {"line": "David defeats the Philistines, Moab, Zobah, Syria, and Edom, and his officials are listed.", "more": [
+        "David dedicates the spoils to the LORD.",
+        "He administers justice and equity to all his people."
+      ]},
+      "19": {"line": "The Ammonites humiliate David's envoys and hire Syrian forces, and Joab and David defeat them.", "more": [
+        "Hanun shaves the envoys and cuts their garments.",
+        "The Syrians make peace and stop helping the Ammonites."
+      ]},
+      "20": {"line": "Joab captures Rabbah, and David's men kill several Philistine giants from Gath.", "more": [
+        "David takes the crown of the Ammonite king.",
+        "Elhanan kills Lahmi, the brother of Goliath."
+      ]},
+      "21": {"line": "Satan incites David to number Israel, God sends a plague, and David buys Ornan's threshing floor for an altar.", "more": [
+        "Joab objects but obeys, though he leaves out Levi and Benjamin.",
+        "God answers David's sacrifice with fire from heaven.",
+        "The place becomes the site for the temple."
+      ]},
+      "22": {"line": "David gathers materials for the temple and charges Solomon and Israel's leaders to build it.", "more": [
+        "David may not build because he shed much blood.",
+        "Solomon will be a man of rest and peace."
+      ]},
+      "23": {"line": "In his old age David makes Solomon king and organizes the Levites by clans and duties.", "more": [
+        "The Levites are counted and assigned to temple service, officials, gatekeeping, and music.",
+        "Their work shifts from carrying the tabernacle to serving in the temple."
+      ]},
+      "24": {"line": "The priests descended from Aaron are divided by lot into twenty-four divisions, and the remaining Levites are also assigned.", "more": [
+        "Both Eleazar's and Ithamar's lines are included.",
+        "Lots are cast equally for family heads and younger brothers."
+      ]},
+      "25": {"line": "David appoints the sons of Asaph, Heman, and Jeduthun to prophesy with music in twenty-four divisions.", "more": [
+        "Two hundred eighty-eight trained musicians are counted.",
+        "Lots are cast for duties, small and great alike."
+      ]},
+      "26": {"line": "The gatekeepers, treasurers, and Levitical officials outside the temple are assigned their posts.", "more": [
+        "Gates are assigned by lot.",
+        "Some Levites oversee dedicated treasures, and others serve as officers and judges."
+      ]},
+      "27": {"line": "Israel's military divisions, tribal leaders, and David's royal officials are listed.", "more": [
+        "Twelve divisions of twenty-four thousand each serve one month a year.",
+        "David did not count those under twenty, and Joab's census was not finished."
+      ]},
+      "28": {"line": "David assembles Israel's leaders, charges Solomon to obey God and build the temple, and gives him the plans.", "more": [
+        "David says God chose Solomon to sit on the throne.",
+        "David says the plans came to him in writing from the LORD."
+      ]},
+      "29": {"line": "David and the people give generously for the temple, David praises God, Solomon is made king, and David dies.", "more": [
+        "David acknowledges that everything comes from God.",
+        "Solomon is anointed a second time, and Zadok as priest.",
+        "David reigned forty years over Israel."
+      ]}
+    }
+  }
+}
