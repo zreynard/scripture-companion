@@ -1,0 +1,125 @@
+{
+ "broad_wall_258": {
+  "name": "Broad Wall",
+  "aka": [],
+  "what": "A thick section of Jerusalem's wall, restored in Nehemiah's day and passed by a choir at the wall's dedication.",
+  "today": "Likely the thick wall uncovered in the Jewish Quarter of Jerusalem's Old City.",
+  "key": [
+   "The builders restored Jerusalem as far as the Broad Wall (Nehemiah 3).",
+   "At the wall's dedication, one thanksgiving choir passed the Tower of the Ovens to the Broad Wall (Nehemiah 12)."
+  ],
+  "skip": false
+ },
+ "calneh_269": {
+  "name": "Calneh",
+  "aka": [],
+  "what": "A city named in Nimrod's kingdom in Shinar, and a city Amos held up as a warning to complacent Israel.",
+  "today": "Exact site unknown; Amos's Calneh was likely in northern Syria.",
+  "key": [
+   "Nimrod's kingdom began with Babel, Erech, Accad, and Calneh in the land of Shinar (Genesis 10).",
+   "Amos told Israel's complacent leaders to look at Calneh, Hamath, and Gath and compare their kingdoms (Amos 6).",
+   "Isaiah names Calno, likely the same northern city, among Assyria's conquests (Isaiah 10)."
+  ],
+  "skip": false
+ },
+ "dinhabah_337": {
+  "name": "Dinhabah",
+  "aka": [],
+  "what": "The royal city of Bela son of Beor, the first king listed as reigning in Edom.",
+  "today": "Exact site unknown; in ancient Edom, in southern Jordan.",
+  "key": [
+   "Bela son of Beor reigned in Edom, and the name of his city was Dinhabah (Genesis 36).",
+   "Chronicles repeats that Bela's city was Dinhabah (1 Chronicles 1)."
+  ],
+  "skip": false
+ },
+ "ebron_352": {
+  "name": "Ebron",
+  "aka": [],
+  "what": "A town on the boundary of Asher's inheritance in the far north, toward Sidon.",
+  "today": "Exact site unknown; in western Galilee or southern Lebanon.",
+  "key": [
+   "Asher's boundary included Ebron, Rehob, Hammon, and Kanah, as far as Sidon the Great (Joshua 19).",
+   "The boundary then turned to Ramah and the fortified city of Tyre (Joshua 19)."
+  ],
+  "skip": false
+ },
+ "gath-hepher_443": {
+  "name": "Gath-hepher",
+  "aka": [],
+  "what": "A town in Zebulun's territory in lower Galilee, hometown of the prophet Jonah son of Amittai.",
+  "today": "Likely Tel Gat Hefer, near Mashhad, northeast of Nazareth, Israel.",
+  "key": [
+   "Zebulun's boundary passed eastward to Gath-hepher (Joshua 19).",
+   "Jonah son of Amittai, the prophet from Gath-hepher, foretold that Jeroboam II would restore Israel's border (2 Kings 14)."
+  ],
+  "skip": false
+ },
+ "gudgodah_496": {
+  "name": "Gudgodah",
+  "aka": [],
+  "what": "A stopping place of Israel in the wilderness, between Moserah and Jotbathah.",
+  "today": "Exact site unknown; likely the same camp as Hor-haggidgad.",
+  "key": [
+   "From Moserah Israel journeyed to Gudgodah, and from Gudgodah to Jotbathah, a land of brooks (Deuteronomy 10).",
+   "At that time the LORD set apart the tribe of Levi to carry the ark of the covenant (Deuteronomy 10)."
+  ],
+  "skip": false
+ },
+ "japhia_623": {
+  "name": "Japhia",
+  "aka": [],
+  "what": "A town on the border of Zebulun's inheritance, near Daberath in lower Galilee.",
+  "today": "Likely Yafa, just southwest of Nazareth, Israel.",
+  "key": [
+   "From Chisloth-tabor the boundary went on to Daberath and up to Japhia (Joshua 19).",
+   "From there it passed eastward to Gath-hepher (Joshua 19)."
+  ],
+  "skip": false
+ },
+ "moseroth_824": {
+  "name": "Moseroth",
+  "aka": [],
+  "what": "A wilderness campsite of Israel, listed between Hashmonah and Bene-jaakan.",
+  "today": "Exact site unknown; likely the same place as Moserah.",
+  "key": [
+   "Israel set out from Hashmonah and camped at Moseroth (Numbers 33).",
+   "They set out from Moseroth and camped at Bene-jaakan (Numbers 33)."
+  ],
+  "skip": false
+ },
+ "salamis_1016": {
+  "name": "Salamis",
+  "aka": [],
+  "what": "A major city on the east coast of Cyprus, where Barnabas and Saul began preaching on their first missionary journey.",
+  "today": "Ruins near Famagusta, on the east coast of Cyprus.",
+  "key": [
+   "At Salamis they proclaimed the word of God in the synagogues of the Jews (Acts 13).",
+   "John was with them to assist them (Acts 13).",
+   "They went through the whole island as far as Paphos (Acts 13)."
+  ],
+  "skip": false
+ },
+ "sarid_1028": {
+  "name": "Sarid",
+  "aka": [],
+  "what": "A town marking the southern boundary of Zebulun's inheritance.",
+  "today": "Possibly Tel Shadud, at the northern edge of the Jezreel Valley, Israel.",
+  "key": [
+   "The territory of Zebulun reached as far as Sarid (Joshua 19).",
+   "From Sarid the boundary ran eastward toward Chisloth-tabor (Joshua 19)."
+  ],
+  "skip": false
+ },
+ "ummah_1186": {
+  "name": "Ummah",
+  "aka": [],
+  "what": "A town listed in the inheritance of the tribe of Asher.",
+  "today": "Exact site unknown; in Asher's territory in northern Israel.",
+  "key": [
+   "Ummah, Aphek, and Rehob are listed among Asher's twenty-two cities with their villages (Joshua 19).",
+   "This was the inheritance of the tribe of Asher according to its clans (Joshua 19)."
+  ],
+  "skip": false
+ }
+}

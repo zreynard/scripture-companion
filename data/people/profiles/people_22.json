@@ -1,0 +1,2019 @@
+{
+ "abihail_29": {
+  "name": "Abihail",
+  "aka": [],
+  "who": "Wife of Abishur in Judah's line of Jerahmeel, and mother of Ahban and Molid.",
+  "key": [
+   "Abishur's wife was named Abihail (1 Chronicles 2).",
+   "She bore him Ahban and Molid (1 Chronicles 2)."
+  ],
+  "family": {
+   "spouses": [
+    "abishur_53"
+   ],
+   "children": [
+    "ahban_122",
+    "molid_2105"
+   ]
+  },
+  "skip": false
+ },
+ "abishur_53": {
+  "name": "Abishur",
+  "aka": [],
+  "who": "A man of Judah in Jerahmeel's line, son of Shammai, husband of Abihail, and father of Ahban and Molid.",
+  "key": [
+   "Shammai's sons were Nadab and Abishur (1 Chronicles 2).",
+   "Abishur's wife Abihail bore him Ahban and Molid (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "shammai_2542"
+   ],
+   "siblings": [
+    "nadab_2130"
+   ],
+   "spouses": [
+    "abihail_29"
+   ],
+   "children": [
+    "ahban_122",
+    "molid_2105"
+   ]
+  },
+  "skip": false
+ },
+ "ahban_122": {
+  "name": "Ahban",
+  "aka": [],
+  "who": "A man of Judah in Jerahmeel's line, son of Abishur and his wife Abihail.",
+  "key": [
+   "Abishur's wife Abihail bore him Ahban and Molid (1 Chronicles 2).",
+   "He is listed among the descendants of Jerahmeel, son of Hezron (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "abishur_53"
+   ],
+   "mother": [
+    "abihail_29"
+   ],
+   "siblings": [
+    "molid_2105"
+   ]
+  },
+  "skip": false
+ },
+ "molid_2105": {
+  "name": "Molid",
+  "aka": [],
+  "who": "A man of Judah in Jerahmeel's line, son of Abishur and his wife Abihail.",
+  "key": [
+   "Abishur's wife Abihail bore him Ahban and Molid (1 Chronicles 2).",
+   "He is listed among the descendants of Jerahmeel, son of Hezron (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "abishur_53"
+   ],
+   "mother": [
+    "abihail_29"
+   ],
+   "siblings": [
+    "ahban_122"
+   ]
+  },
+  "skip": false
+ },
+ "nadab_2130": {
+  "name": "Nadab",
+  "aka": [],
+  "who": "A man of Judah in Jerahmeel's line, son of Shammai and father of Seled and Appaim.",
+  "key": [
+   "The sons of Shammai were Nadab and Abishur (1 Chronicles 2).",
+   "The sons of Nadab were Seled and Appaim; Seled died childless (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "shammai_2542"
+   ],
+   "siblings": [
+    "abishur_53"
+   ],
+   "children": [
+    "seled_2486",
+    "appaim_277"
+   ]
+  },
+  "skip": false
+ },
+ "peleth_2312": {
+  "name": "Peleth",
+  "aka": [],
+  "who": "A man of Judah, son of Jonathan, in the line of Jerahmeel.",
+  "key": [
+   "The sons of Jonathan were Peleth and Zaza (1 Chronicles 2).",
+   "These were the descendants of Jerahmeel (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "jonathan_1695"
+   ],
+   "siblings": [
+    "zaza_2987"
+   ]
+  },
+  "skip": false
+ },
+ "zaza_2987": {
+  "name": "Zaza",
+  "aka": [],
+  "who": "A man of Judah, son of Jonathan, in the line of Jerahmeel.",
+  "key": [
+   "The sons of Jonathan were Peleth and Zaza (1 Chronicles 2).",
+   "These were the descendants of Jerahmeel (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "jonathan_1695"
+   ],
+   "siblings": [
+    "peleth_2312"
+   ]
+  },
+  "skip": false
+ },
+ "regem_2407": {
+  "name": "Regem",
+  "aka": [],
+  "who": "A man of Judah, son of Jahdai, listed among the descendants of Caleb.",
+  "key": [
+   "The sons of Jahdai were Regem, Jotham, Geshan, Pelet, Ephah, and Shaaph (1 Chronicles 2).",
+   "Jahdai's family is listed among the descendants of Caleb, brother of Jerahmeel (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "jahdai_701"
+   ],
+   "siblings": [
+    "jotham_1736",
+    "gesham_1306",
+    "pelet_2309",
+    "ephah_1199",
+    "shaaph_2506"
+   ]
+  },
+  "skip": false
+ },
+ "pelet_2309": {
+  "name": "Pelet",
+  "aka": [],
+  "who": "A man of Judah, son of Jahdai, listed among the descendants of Caleb.",
+  "key": [
+   "The sons of Jahdai were Regem, Jotham, Geshan, Pelet, Ephah, and Shaaph (1 Chronicles 2).",
+   "Jahdai's family is listed among the descendants of Caleb, brother of Jerahmeel (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "jahdai_701"
+   ],
+   "siblings": [
+    "regem_2407",
+    "jotham_1736",
+    "gesham_1306",
+    "ephah_1199",
+    "shaaph_2506"
+   ]
+  },
+  "skip": false
+ },
+ "shaaph_2506": {
+  "name": "Shaaph",
+  "aka": [],
+  "who": "A man of Judah, son of Jahdai, listed among the descendants of Caleb.",
+  "key": [
+   "The sons of Jahdai were Regem, Jotham, Geshan, Pelet, Ephah, and Shaaph (1 Chronicles 2).",
+   "Jahdai's family is listed among the descendants of Caleb, brother of Jerahmeel (1 Chronicles 2)."
+  ],
+  "family": {
+   "father": [
+    "jahdai_701"
+   ],
+   "siblings": [
+    "regem_2407",
+    "jotham_1736",
+    "gesham_1306",
+    "pelet_2309",
+    "ephah_1199"
+   ]
+  },
+  "skip": false
+ },
+ "maachah_1842": {
+  "name": "Maacah",
+  "aka": [],
+  "who": "A concubine of Caleb son of Hezron, and mother of sons who fathered towns in Judah.",
+  "key": [
+   "Maacah, Caleb's concubine, bore Sheber and Tirhanah (1 Chronicles 2).",
+   "She also bore Shaaph the father of Madmannah, and Sheva the father of Machbenah and Gibea (1 Chronicles 2)."
+  ],
+  "family": {
+   "spouses": [
+    "caleb_538"
+   ],
+   "children": [
+    "sheber_2576",
+    "tirhanah_2866",
+    "shaaph_2507",
+    "sheva_2675"
+   ]
+  },
+  "skip": false
+ },
+ "ephratah_1207": {
+  "name": "Ephrathah",
+  "aka": [
+   "Ephrath"
+  ],
+  "who": "A wife of Caleb son of Hezron and mother of Hur, from whose line came the founder of Bethlehem.",
+  "key": [
+   "After Azubah died, Caleb married Ephrath, who bore him Hur (1 Chronicles 2).",
+   "The sons of Hur, her firstborn, included Salma the father of Bethlehem (1 Chronicles 2).",
+   "Hur, the firstborn of Ephrathah, is called the father of Bethlehem (1 Chronicles 4)."
+  ],
+  "family": {
+   "spouses": [
+    "caleb_538"
+   ],
+   "children": [
+    "hur_1571"
+   ]
+  },
+  "skip": false
+ },
+ "jered_846": {
+  "name": "Jered",
+  "aka": [],
+  "who": "A man of Judah named in Chronicles as the father, likely the founder, of the town of Gedor.",
+  "key": [
+   "A Judahite wife bore Jered father of Gedor, Heber father of Soco, and Jekuthiel father of Zanoah (1 Chronicles 4).",
+   "He and his brothers are listed among the clans of Judah (1 Chronicles 4)."
+  ],
+  "family": {
+   "siblings": [
+    "heber_1471",
+    "jekuthiel_836"
+   ]
+  },
+  "skip": false
+ },
+ "heber_1471": {
+  "name": "Heber",
+  "aka": [],
+  "who": "A man of Judah named in Chronicles as the father, likely the founder, of the town of Soco.",
+  "key": [
+   "A Judahite wife bore Jered father of Gedor, Heber father of Soco, and Jekuthiel father of Zanoah (1 Chronicles 4).",
+   "He and his brothers are listed among the clans of Judah (1 Chronicles 4)."
+  ],
+  "family": {
+   "siblings": [
+    "jered_846",
+    "jekuthiel_836"
+   ]
+  },
+  "skip": false
+ },
+ "hodaiah_1539": {
+  "name": "Hodaviah",
+  "aka": [
+   "Hodaiah"
+  ],
+  "who": "A descendant of David's royal line after the exile, one of the seven sons of Elioenai.",
+  "key": [
+   "The sons of Elioenai were Hodaviah, Eliashib, Pelaiah, Akkub, Johanan, Delaiah, and Anani, seven (1 Chronicles 3).",
+   "His family belonged to the royal line of Zerubbabel and King Jehoiachin (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "elioenai_1135"
+   ],
+   "siblings": [
+    "eliashib_1093",
+    "pelaiah_2301",
+    "akkub_180",
+    "johanan_1668",
+    "dalaiah_970",
+    "anani_256"
+   ]
+  },
+  "skip": false
+ },
+ "eliashib_1093": {
+  "name": "Eliashib",
+  "aka": [],
+  "who": "A descendant of David's royal line after the exile, one of the seven sons of Elioenai.",
+  "key": [
+   "The sons of Elioenai were Hodaviah, Eliashib, Pelaiah, Akkub, Johanan, Delaiah, and Anani, seven (1 Chronicles 3).",
+   "His family belonged to the royal line of Zerubbabel and King Jehoiachin (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "elioenai_1135"
+   ],
+   "siblings": [
+    "hodaiah_1539",
+    "pelaiah_2301",
+    "akkub_180",
+    "johanan_1668",
+    "dalaiah_970",
+    "anani_256"
+   ]
+  },
+  "skip": false
+ },
+ "johanan_1668": {
+  "name": "Johanan",
+  "aka": [],
+  "who": "A descendant of David's royal line after the exile, one of the seven sons of Elioenai.",
+  "key": [
+   "The sons of Elioenai were Hodaviah, Eliashib, Pelaiah, Akkub, Johanan, Delaiah, and Anani, seven (1 Chronicles 3).",
+   "His family belonged to the royal line of Zerubbabel and King Jehoiachin (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "elioenai_1135"
+   ],
+   "siblings": [
+    "hodaiah_1539",
+    "eliashib_1093",
+    "pelaiah_2301",
+    "akkub_180",
+    "dalaiah_970",
+    "anani_256"
+   ]
+  },
+  "skip": false
+ },
+ "anani_256": {
+  "name": "Anani",
+  "aka": [],
+  "who": "A descendant of David's royal line after the exile, one of the seven sons of Elioenai.",
+  "key": [
+   "The sons of Elioenai were Hodaviah, Eliashib, Pelaiah, Akkub, Johanan, Delaiah, and Anani, seven (1 Chronicles 3).",
+   "His family belonged to the royal line of Zerubbabel and King Jehoiachin (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "elioenai_1135"
+   ],
+   "siblings": [
+    "hodaiah_1539",
+    "eliashib_1093",
+    "pelaiah_2301",
+    "akkub_180",
+    "johanan_1668",
+    "dalaiah_970"
+   ]
+  },
+  "skip": false
+ },
+ "hattush_1457": {
+  "name": "Hattush",
+  "aka": [],
+  "who": "A descendant of David's royal line after the exile, one of the sons of Shemaiah.",
+  "key": [
+   "The sons of Shemaiah were Hattush, Igal, Bariah, Neariah, and Shaphat, six (1 Chronicles 3).",
+   "Shemaiah was the son of Shecaniah, in the royal line of Zerubbabel (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "shemaiah_2620"
+   ],
+   "siblings": [
+    "igeal_595",
+    "bariah_402",
+    "neariah_2161",
+    "shaphat_2554"
+   ]
+  },
+  "skip": false
+ },
+ "igeal_595": {
+  "name": "Igal",
+  "aka": [],
+  "who": "A descendant of David's royal line after the exile, one of the sons of Shemaiah.",
+  "key": [
+   "The sons of Shemaiah were Hattush, Igal, Bariah, Neariah, and Shaphat, six (1 Chronicles 3).",
+   "Shemaiah was the son of Shecaniah, in the royal line of Zerubbabel (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "shemaiah_2620"
+   ],
+   "siblings": [
+    "hattush_1457",
+    "bariah_402",
+    "neariah_2161",
+    "shaphat_2554"
+   ]
+  },
+  "skip": false
+ },
+ "bariah_402": {
+  "name": "Bariah",
+  "aka": [],
+  "who": "A descendant of David's royal line after the exile, one of the sons of Shemaiah.",
+  "key": [
+   "The sons of Shemaiah were Hattush, Igal, Bariah, Neariah, and Shaphat, six (1 Chronicles 3).",
+   "Shemaiah was the son of Shecaniah, in the royal line of Zerubbabel (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "shemaiah_2620"
+   ],
+   "siblings": [
+    "hattush_1457",
+    "igeal_595",
+    "neariah_2161",
+    "shaphat_2554"
+   ]
+  },
+  "skip": false
+ },
+ "shaphat_2554": {
+  "name": "Shaphat",
+  "aka": [],
+  "who": "A descendant of David's royal line after the exile, one of the sons of Shemaiah.",
+  "key": [
+   "The sons of Shemaiah were Hattush, Igal, Bariah, Neariah, and Shaphat, six (1 Chronicles 3).",
+   "Shemaiah was the son of Shecaniah, in the royal line of Zerubbabel (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "shemaiah_2620"
+   ],
+   "siblings": [
+    "hattush_1457",
+    "igeal_595",
+    "bariah_402",
+    "neariah_2161"
+   ]
+  },
+  "skip": false
+ },
+ "shemaiah_2620": {
+  "name": "Shemaiah",
+  "aka": [],
+  "who": "A descendant of David's royal line after the exile, son of Shecaniah and father of Neariah and his brothers.",
+  "key": [
+   "The son of Shecaniah was Shemaiah (1 Chronicles 3).",
+   "The sons of Shemaiah were Hattush, Igal, Bariah, Neariah, and Shaphat, six (1 Chronicles 3)."
+  ],
+  "family": {
+   "father": [
+    "shechaniah_2583"
+   ],
+   "children": [
+    "hattush_1457",
+    "igeal_595",
+    "bariah_402",
+    "neariah_2161",
+    "shaphat_2554"
+   ]
+  },
+  "skip": false
+ },
+ "shemaiah_2622": {
+  "name": "Shemaiah",
+  "aka": [],
+  "who": "A Reubenite in the line of Joel, son of Joel and father of Gog.",
+  "key": [
+   "The sons of Joel are traced through Shemaiah, Gog, Shimei, Micah, Reaiah, and Baal (1 Chronicles 5).",
+   "The line continued to Beerah, a Reubenite chief whom Tiglath-pileser of Assyria carried into exile (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "joel_1649"
+   ],
+   "children": [
+    "gog_1325"
+   ]
+  },
+  "skip": false
+ },
+ "gog_1325": {
+  "name": "Gog",
+  "aka": [],
+  "who": "A Reubenite in the line of Joel, son of Shemaiah and father of Shimei.",
+  "key": [
+   "The sons of Joel are traced through Shemaiah, Gog, Shimei, Micah, Reaiah, and Baal (1 Chronicles 5).",
+   "The line continued to Beerah, a Reubenite chief whom Tiglath-pileser of Assyria carried into exile (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "shemaiah_2622"
+   ],
+   "children": [
+    "shimei_2688"
+   ]
+  },
+  "skip": false
+ },
+ "shimei_2688": {
+  "name": "Shimei",
+  "aka": [],
+  "who": "A Reubenite in the line of Joel, son of Gog and father of Micah.",
+  "key": [
+   "The sons of Joel are traced through Shemaiah, Gog, Shimei, Micah, Reaiah, and Baal (1 Chronicles 5).",
+   "The line continued to Beerah, a Reubenite chief whom Tiglath-pileser of Assyria carried into exile (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "gog_1325"
+   ],
+   "children": [
+    "micah_2050"
+   ]
+  },
+  "skip": false
+ },
+ "micah_2050": {
+  "name": "Micah",
+  "aka": [],
+  "who": "A Reubenite in the line of Joel, son of Shimei and father of Reaiah.",
+  "key": [
+   "The sons of Joel are traced through Shemaiah, Gog, Shimei, Micah, Reaiah, and Baal (1 Chronicles 5).",
+   "The line continued to Beerah, a Reubenite chief whom Tiglath-pileser of Assyria carried into exile (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "shimei_2688"
+   ],
+   "children": [
+    "reaia_2398"
+   ]
+  },
+  "skip": false
+ },
+ "reaia_2398": {
+  "name": "Reaiah",
+  "aka": [],
+  "who": "A Reubenite in the line of Joel, son of Micah and father of Baal.",
+  "key": [
+   "The sons of Joel are traced through Shemaiah, Gog, Shimei, Micah, Reaiah, and Baal (1 Chronicles 5).",
+   "The line continued to Beerah, a Reubenite chief whom Tiglath-pileser of Assyria carried into exile (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "micah_2050"
+   ],
+   "children": [
+    "baal_574"
+   ]
+  },
+  "skip": false
+ },
+ "meshullam_2022": {
+  "name": "Meshullam",
+  "aka": [],
+  "who": "A Gadite, one of the seven sons of Abihail who headed fathers' houses in Gilead and Bashan.",
+  "key": [
+   "Abihail's sons Michael, Meshullam, Sheba, Jorai, Jacan, Zia, and Eber headed their fathers' houses (1 Chronicles 5).",
+   "These Gadites lived in Gilead, in Bashan and its towns, and in the pasturelands of Sharon (1 Chronicles 5).",
+   "They were recorded in the days of Jotham king of Judah and Jeroboam king of Israel (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "abihail_30"
+   ],
+   "siblings": [
+    "michael_2059",
+    "sheba_2571",
+    "jorai_1704",
+    "jachan_678",
+    "zia_3059",
+    "heber_1472"
+   ]
+  },
+  "skip": false
+ },
+ "sheba_2571": {
+  "name": "Sheba",
+  "aka": [],
+  "who": "A Gadite, one of the seven sons of Abihail who headed fathers' houses in Gilead and Bashan.",
+  "key": [
+   "Abihail's sons Michael, Meshullam, Sheba, Jorai, Jacan, Zia, and Eber headed their fathers' houses (1 Chronicles 5).",
+   "These Gadites lived in Gilead, in Bashan and its towns, and in the pasturelands of Sharon (1 Chronicles 5).",
+   "They were recorded in the days of Jotham king of Judah and Jeroboam king of Israel (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "abihail_30"
+   ],
+   "siblings": [
+    "michael_2059",
+    "meshullam_2022",
+    "jorai_1704",
+    "jachan_678",
+    "zia_3059",
+    "heber_1472"
+   ]
+  },
+  "skip": false
+ },
+ "jorai_1704": {
+  "name": "Jorai",
+  "aka": [],
+  "who": "A Gadite, one of the seven sons of Abihail who headed fathers' houses in Gilead and Bashan.",
+  "key": [
+   "Abihail's sons Michael, Meshullam, Sheba, Jorai, Jacan, Zia, and Eber headed their fathers' houses (1 Chronicles 5).",
+   "These Gadites lived in Gilead, in Bashan and its towns, and in the pasturelands of Sharon (1 Chronicles 5).",
+   "They were recorded in the days of Jotham king of Judah and Jeroboam king of Israel (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "abihail_30"
+   ],
+   "siblings": [
+    "michael_2059",
+    "meshullam_2022",
+    "sheba_2571",
+    "jachan_678",
+    "zia_3059",
+    "heber_1472"
+   ]
+  },
+  "skip": false
+ },
+ "zia_3059": {
+  "name": "Zia",
+  "aka": [],
+  "who": "A Gadite, one of the seven sons of Abihail who headed fathers' houses in Gilead and Bashan.",
+  "key": [
+   "Abihail's sons Michael, Meshullam, Sheba, Jorai, Jacan, Zia, and Eber headed their fathers' houses (1 Chronicles 5).",
+   "These Gadites lived in Gilead, in Bashan and its towns, and in the pasturelands of Sharon (1 Chronicles 5).",
+   "They were recorded in the days of Jotham king of Judah and Jeroboam king of Israel (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "abihail_30"
+   ],
+   "siblings": [
+    "michael_2059",
+    "meshullam_2022",
+    "sheba_2571",
+    "jorai_1704",
+    "jachan_678",
+    "heber_1472"
+   ]
+  },
+  "skip": false
+ },
+ "heber_1472": {
+  "name": "Eber",
+  "aka": [],
+  "who": "A Gadite, one of the seven sons of Abihail who headed fathers' houses in Gilead and Bashan.",
+  "key": [
+   "Abihail's sons Michael, Meshullam, Sheba, Jorai, Jacan, Zia, and Eber headed their fathers' houses (1 Chronicles 5).",
+   "These Gadites lived in Gilead, in Bashan and its towns, and in the pasturelands of Sharon (1 Chronicles 5).",
+   "They were recorded in the days of Jotham king of Judah and Jeroboam king of Israel (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "abihail_30"
+   ],
+   "siblings": [
+    "michael_2059",
+    "meshullam_2022",
+    "sheba_2571",
+    "jorai_1704",
+    "jachan_678",
+    "zia_3059"
+   ]
+  },
+  "skip": false
+ },
+ "huri_1576": {
+  "name": "Huri",
+  "aka": [],
+  "who": "A Gadite, son of Jaroah and father of Abihail, whose sons headed families in Gilead and Bashan.",
+  "key": [
+   "Abihail son of Huri, son of Jaroah, is traced back to Buz in Gad's genealogy (1 Chronicles 5).",
+   "Huri's grandsons headed Gadite fathers' houses in Gilead and Bashan (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "jaroah_735"
+   ],
+   "children": [
+    "abihail_30"
+   ]
+  },
+  "skip": false
+ },
+ "jeshishai_890": {
+  "name": "Jeshishai",
+  "aka": [],
+  "who": "A Gadite, son of Jahdo and father of Michael, in the ancestry of Abihail's family.",
+  "key": [
+   "Abihail's line runs through Michael son of Jeshishai, son of Jahdo, son of Buz (1 Chronicles 5).",
+   "These Gadites lived in Gilead, in Bashan, and in the pasturelands of Sharon (1 Chronicles 5)."
+  ],
+  "family": {
+   "father": [
+    "jahdo_703"
+   ],
+   "children": [
+    "michael_2060"
+   ]
+  },
+  "skip": false
+ },
+ "tahath_2814": {
+  "name": "Tahath",
+  "aka": [],
+  "who": "A Kohathite Levite, son of Assir and father of Uriel, in the ancestry of the singer Heman.",
+  "key": [
+   "Chronicles lists Assir, Tahath, and Uriel in succession among Kohath's descendants (1 Chronicles 6).",
+   "Heman's ancestry names Zephaniah son of Tahath, son of Assir (1 Chronicles 6)."
+  ],
+  "family": {
+   "father": [
+    "assir_352"
+   ],
+   "children": [
+    "uriel_2900"
+   ]
+  },
+  "skip": false
+ },
+ "shaul_2563": {
+  "name": "Shaul",
+  "aka": [],
+  "who": "A Kohathite Levite, son of Uzziah, named in Chronicles' genealogy of Kohath's descendants.",
+  "key": [
+   "Chronicles lists Tahath, Uriel, Uzziah, and Shaul in succession among Kohath's descendants (1 Chronicles 6).",
+   "Kohath's line produced Heman, a singer David put in charge of the service of song (1 Chronicles 6)."
+  ],
+  "family": {
+   "father": [
+    "Uzziah"
+   ]
+  },
+  "skip": false
+ },
+ "bani_389": {
+  "name": "Bani",
+  "aka": [],
+  "who": "A Levite of Merari's clan, son of Shemer, in the ancestry of Ethan, a singer appointed by David.",
+  "key": [
+   "Ethan's ancestry runs through Amzi son of Bani, son of Shemer (1 Chronicles 6).",
+   "Ethan and his Merarite brothers stood at Heman's left hand in the service of song (1 Chronicles 6)."
+  ],
+  "family": {
+   "father": [
+    "shamer_2533"
+   ],
+   "children": [
+    "amzi_245"
+   ]
+  },
+  "skip": false
+ },
+ "abishua_51": {
+  "name": "Abishua",
+  "aka": [],
+  "who": "A priest descended from Aaron, son of Phinehas and father of Bukki, in the high-priestly line.",
+  "key": [
+   "Phinehas son of Eleazar fathered Abishua, and Abishua fathered Bukki (1 Chronicles 6).",
+   "He is named again among Aaron's descendants through Eleazar (1 Chronicles 6).",
+   "Ezra's ancestry is traced back through Abishua to Phinehas, Eleazar, and Aaron (Ezra 7)."
+  ],
+  "family": {
+   "father": [
+    "phinehas_2349"
+   ],
+   "children": [
+    "bukki_523"
+   ]
+  },
+  "skip": false
+ },
+ "abiah_15": {
+  "name": "Abijah",
+  "aka": [
+   "Abiah"
+  ],
+  "who": "Samuel's second son, who judged in Beersheba with his brother Joel but took bribes and perverted justice.",
+  "key": [
+   "Samuel made his sons Joel and Abijah judges in Beersheba (1 Samuel 8).",
+   "They turned aside after gain, took bribes, and perverted justice (1 Samuel 8).",
+   "Their conduct led Israel's elders to ask Samuel for a king (1 Samuel 8).",
+   "Chronicles names Joel as Samuel's firstborn and Abijah as the second (1 Chronicles 6)."
+  ],
+  "family": {
+   "father": [
+    "samuel_2469"
+   ],
+   "siblings": [
+    "joel_1647"
+   ]
+  },
+  "skip": false
+ },
+ "jediael_757": {
+  "name": "Jediael",
+  "aka": [],
+  "who": "A son of Benjamin whose descendants through Bilhan were mighty warriors and heads of fathers' houses.",
+  "key": [
+   "The sons of Benjamin were Bela, Becher, and Jediael, three (1 Chronicles 7).",
+   "Jediael's son was Bilhan, whose seven sons are named (1 Chronicles 7).",
+   "His descendants, heads of fathers' houses, numbered 17,200 mighty warriors ready for war (1 Chronicles 7)."
+  ],
+  "family": {
+   "father": [
+    "benjamin_463"
+   ],
+   "siblings": [
+    "bela_436",
+    "becher_423"
+   ],
+   "children": [
+    "bilhan_504"
+   ]
+  },
+  "skip": false
+ },
+ "jeush_1601": {
+  "name": "Jeush",
+  "aka": [],
+  "who": "A Benjaminite, son of Bilhan, whose family was counted among Benjamin's mighty warriors.",
+  "key": [
+   "The sons of Bilhan were Jeush, Benjamin, Ehud, Chenaanah, Zethan, Tarshish, and Ahishahar (1 Chronicles 7).",
+   "They were heads of fathers' houses, mighty warriors, 17,200 able to go to war (1 Chronicles 7)."
+  ],
+  "family": {
+   "father": [
+    "bilhan_504"
+   ],
+   "siblings": [
+    "benjamin_458",
+    "ehud_1040",
+    "chenaanah_933",
+    "zethan_3057",
+    "tharshish_2847",
+    "ahishahar_160"
+   ]
+  },
+  "skip": false
+ },
+ "ehud_1040": {
+  "name": "Ehud",
+  "aka": [],
+  "who": "A Benjaminite, son of Bilhan, whose family was counted among Benjamin's mighty warriors.",
+  "key": [
+   "The sons of Bilhan were Jeush, Benjamin, Ehud, Chenaanah, Zethan, Tarshish, and Ahishahar (1 Chronicles 7).",
+   "They were heads of fathers' houses, mighty warriors, 17,200 able to go to war (1 Chronicles 7)."
+  ],
+  "family": {
+   "father": [
+    "bilhan_504"
+   ],
+   "siblings": [
+    "jeush_1601",
+    "benjamin_458",
+    "chenaanah_933",
+    "zethan_3057",
+    "tharshish_2847",
+    "ahishahar_160"
+   ]
+  },
+  "skip": false
+ },
+ "chenaanah_933": {
+  "name": "Chenaanah",
+  "aka": [],
+  "who": "A Benjaminite, son of Bilhan, whose family was counted among Benjamin's mighty warriors.",
+  "key": [
+   "The sons of Bilhan were Jeush, Benjamin, Ehud, Chenaanah, Zethan, Tarshish, and Ahishahar (1 Chronicles 7).",
+   "They were heads of fathers' houses, mighty warriors, 17,200 able to go to war (1 Chronicles 7)."
+  ],
+  "family": {
+   "father": [
+    "bilhan_504"
+   ],
+   "siblings": [
+    "jeush_1601",
+    "benjamin_458",
+    "ehud_1040",
+    "zethan_3057",
+    "tharshish_2847",
+    "ahishahar_160"
+   ]
+  },
+  "skip": false
+ },
+ "zethan_3057": {
+  "name": "Zethan",
+  "aka": [],
+  "who": "A Benjaminite, son of Bilhan, whose family was counted among Benjamin's mighty warriors.",
+  "key": [
+   "The sons of Bilhan were Jeush, Benjamin, Ehud, Chenaanah, Zethan, Tarshish, and Ahishahar (1 Chronicles 7).",
+   "They were heads of fathers' houses, mighty warriors, 17,200 able to go to war (1 Chronicles 7)."
+  ],
+  "family": {
+   "father": [
+    "bilhan_504"
+   ],
+   "siblings": [
+    "jeush_1601",
+    "benjamin_458",
+    "ehud_1040",
+    "chenaanah_933",
+    "tharshish_2847",
+    "ahishahar_160"
+   ]
+  },
+  "skip": false
+ },
+ "ahishahar_160": {
+  "name": "Ahishahar",
+  "aka": [],
+  "who": "A Benjaminite, son of Bilhan, whose family was counted among Benjamin's mighty warriors.",
+  "key": [
+   "The sons of Bilhan were Jeush, Benjamin, Ehud, Chenaanah, Zethan, Tarshish, and Ahishahar (1 Chronicles 7).",
+   "They were heads of fathers' houses, mighty warriors, 17,200 able to go to war (1 Chronicles 7)."
+  ],
+  "family": {
+   "father": [
+    "bilhan_504"
+   ],
+   "siblings": [
+    "jeush_1601",
+    "benjamin_458",
+    "ehud_1040",
+    "chenaanah_933",
+    "zethan_3057",
+    "tharshish_2847"
+   ]
+  },
+  "skip": false
+ },
+ "michael_2063": {
+  "name": "Michael",
+  "aka": [],
+  "who": "A Benjaminite, son of Beriah, named among the family heads of Benjamin who lived in Jerusalem.",
+  "key": [
+   "Michael, Ispah, and Joha are named among the sons of Beriah (1 Chronicles 8).",
+   "Beriah and Shema, heads in Aijalon, had put the inhabitants of Gath to flight (1 Chronicles 8).",
+   "These heads of fathers' houses, chief men, lived in Jerusalem (1 Chronicles 8)."
+  ],
+  "family": {
+   "father": [
+    "beriah_480"
+   ],
+   "siblings": [
+    "zebadiah_2988",
+    "arad_281",
+    "ader_82",
+    "ispah_644",
+    "joha_1664",
+    "ahio_155",
+    "shashak_2561",
+    "jeremoth_856"
+   ]
+  },
+  "skip": false
+ },
+ "ispah_644": {
+  "name": "Ispah",
+  "aka": [
+   "Ishpah"
+  ],
+  "who": "A Benjaminite, son of Beriah, named among the family heads of Benjamin who lived in Jerusalem.",
+  "key": [
+   "Michael, Ispah, and Joha are named among the sons of Beriah (1 Chronicles 8).",
+   "Beriah and Shema, heads in Aijalon, had put the inhabitants of Gath to flight (1 Chronicles 8).",
+   "These heads of fathers' houses, chief men, lived in Jerusalem (1 Chronicles 8)."
+  ],
+  "family": {
+   "father": [
+    "beriah_480"
+   ],
+   "siblings": [
+    "zebadiah_2988",
+    "arad_281",
+    "ader_82",
+    "michael_2063",
+    "joha_1664",
+    "ahio_155",
+    "shashak_2561",
+    "jeremoth_856"
+   ]
+  },
+  "skip": false
+ },
+ "joha_1664": {
+  "name": "Joha",
+  "aka": [],
+  "who": "A Benjaminite, son of Beriah, named among the family heads of Benjamin who lived in Jerusalem.",
+  "key": [
+   "Michael, Ispah, and Joha are named among the sons of Beriah (1 Chronicles 8).",
+   "Beriah and Shema, heads in Aijalon, had put the inhabitants of Gath to flight (1 Chronicles 8).",
+   "These heads of fathers' houses, chief men, lived in Jerusalem (1 Chronicles 8)."
+  ],
+  "family": {
+   "father": [
+    "beriah_480"
+   ],
+   "siblings": [
+    "zebadiah_2988",
+    "arad_281",
+    "ader_82",
+    "michael_2063",
+    "ispah_644",
+    "ahio_155",
+    "shashak_2561",
+    "jeremoth_856"
+   ]
+  },
+  "skip": false
+ },
+ "shema_2616": {
+  "name": "Shema",
+  "aka": [],
+  "who": "A Benjaminite family head in Aijalon who, with Beriah, put the inhabitants of Gath to flight.",
+  "key": [
+   "Beriah and Shema were heads of fathers' houses of the inhabitants of Aijalon (1 Chronicles 8).",
+   "They caused the inhabitants of Gath to flee (1 Chronicles 8)."
+  ],
+  "family": {
+   "father": [
+    "elpaal_1185"
+   ],
+   "siblings": [
+    "eber_1031",
+    "misham_2093",
+    "shamed_2532",
+    "beriah_480"
+   ]
+  },
+  "skip": false
+ },
+ "alemeth_185": {
+  "name": "Alemeth",
+  "aka": [],
+  "who": "A Benjaminite descendant of King Saul through Jonathan, son of Jarah, also called Jehoaddah.",
+  "key": [
+   "Jehoaddah fathered Alemeth, Azmaveth, and Zimri, in the line of Saul through Jonathan (1 Chronicles 8).",
+   "The genealogy repeated before Saul's death calls their father Jarah (1 Chronicles 9)."
+  ],
+  "family": {
+   "father": [
+    "jarah_782"
+   ],
+   "siblings": [
+    "azmaveth_556",
+    "zimri_3089"
+   ]
+  },
+  "skip": false
+ },
+ "azmaveth_556": {
+  "name": "Azmaveth",
+  "aka": [],
+  "who": "A Benjaminite descendant of King Saul through Jonathan, son of Jarah, also called Jehoaddah.",
+  "key": [
+   "Jehoaddah fathered Alemeth, Azmaveth, and Zimri, in the line of Saul through Jonathan (1 Chronicles 8).",
+   "The genealogy repeated before Saul's death calls their father Jarah (1 Chronicles 9)."
+  ],
+  "family": {
+   "father": [
+    "jarah_782"
+   ],
+   "siblings": [
+    "alemeth_185",
+    "zimri_3089"
+   ]
+  },
+  "skip": false
+ },
+ "zimri_3089": {
+  "name": "Zimri",
+  "aka": [],
+  "who": "A Benjaminite descendant of King Saul through Jonathan, son of Jarah, also called Jehoaddah.",
+  "key": [
+   "Jehoaddah fathered Alemeth, Azmaveth, and Zimri, in the line of Saul through Jonathan (1 Chronicles 8).",
+   "Zimri fathered Moza, continuing the line of Saul's descendants (1 Chronicles 8).",
+   "The genealogy repeated before Saul's death calls their father Jarah (1 Chronicles 9)."
+  ],
+  "family": {
+   "father": [
+    "jarah_782"
+   ],
+   "siblings": [
+    "alemeth_185",
+    "azmaveth_556"
+   ],
+   "children": [
+    "moza_2114"
+   ]
+  },
+  "skip": false
+ },
+ "shephathiah_2656": {
+  "name": "Shephatiah",
+  "aka": [],
+  "who": "A Benjaminite, son of Reuel, whose son Meshullam headed a father's house in Jerusalem after the exile.",
+  "key": [
+   "Meshullam son of Shephatiah, son of Reuel, son of Ibnijah, is listed among Jerusalem's Benjaminites (1 Chronicles 9).",
+   "All these men were heads of fathers' houses (1 Chronicles 9)."
+  ],
+  "family": {
+   "father": [
+    "reuel_2432"
+   ],
+   "children": [
+    "meshullam_2025"
+   ]
+  },
+  "skip": false
+ },
+ "rehabiah_2409": {
+  "name": "Rehabiah",
+  "aka": [],
+  "who": "A Levite, the only son of Moses' son Eliezer, whose descendants became very numerous.",
+  "key": [
+   "Eliezer had no other sons, but the sons of Rehabiah were very many (1 Chronicles 23).",
+   "Isshiah was the chief among the sons of Rehabiah (1 Chronicles 24).",
+   "His descendants included Shelomoth, who oversaw the treasuries of dedicated gifts (1 Chronicles 26)."
+  ],
+  "family": {
+   "father": [
+    "eliezer_1114"
+   ],
+   "children": [
+    "jeshaiah_647"
+   ]
+  },
+  "skip": false
+ },
+ "shelomith_2609": {
+  "name": "Shelomoth",
+  "aka": [
+   "Shelomith"
+  ],
+  "who": "A Levite descended from Moses' son Eliezer, who oversaw the treasuries of gifts dedicated to the LORD.",
+  "key": [
+   "Eliezer's line ran through Rehabiah, Jeshaiah, Joram, and Zichri to Shelomoth (1 Chronicles 26).",
+   "Shelomoth and his brothers oversaw the gifts dedicated by David and his army commanders (1 Chronicles 26).",
+   "Gifts dedicated by Samuel, Saul, Abner, and Joab were also in their care (1 Chronicles 26)."
+  ],
+  "family": {
+   "father": [
+    "zichri_3070"
+   ]
+  },
+  "skip": false
+ },
+ "shelomoth_2608": {
+  "name": "Shelomith",
+  "aka": [
+   "Shelomoth"
+  ],
+  "who": "A Levite, chief of the sons of Izhar, listed when David organized the Levites.",
+  "key": [
+   "The sons of Izhar were led by Shelomith the chief (1 Chronicles 23).",
+   "Among the Izharites, Shelomoth is listed with his son Jahath (1 Chronicles 24)."
+  ],
+  "family": {
+   "father": [
+    "izhar_658"
+   ],
+   "children": [
+    "jahath_693"
+   ]
+  },
+  "skip": false
+ },
+ "jesaiah_884": {
+  "name": "Jeshaiah",
+  "aka": [],
+  "who": "A Benjaminite, father of Ithiel and earliest named ancestor of Sallu, who settled in Jerusalem after the exile.",
+  "key": [
+   "Sallu son of Meshullam is traced through Joed, Pedaiah, Kolaiah, Maaseiah, and Ithiel to Jeshaiah (Nehemiah 11).",
+   "These Benjaminites were among the people who lived in Jerusalem, the holy city (Nehemiah 11)."
+  ],
+  "family": {
+   "children": [
+    "ithiel_650"
+   ]
+  },
+  "skip": false
+ },
+ "ithiel_650": {
+  "name": "Ithiel",
+  "aka": [],
+  "who": "A Benjaminite, son of Jeshaiah and father of Maaseiah, in the ancestry of Sallu of Jerusalem.",
+  "key": [
+   "Sallu son of Meshullam is traced through Joed, Pedaiah, Kolaiah, Maaseiah, and Ithiel to Jeshaiah (Nehemiah 11).",
+   "These Benjaminites were among the people who lived in Jerusalem, the holy city (Nehemiah 11)."
+  ],
+  "family": {
+   "father": [
+    "jesaiah_884"
+   ],
+   "children": [
+    "maaseiah_1863"
+   ]
+  },
+  "skip": false
+ },
+ "maaseiah_1863": {
+  "name": "Maaseiah",
+  "aka": [],
+  "who": "A Benjaminite, son of Ithiel and father of Kolaiah, in the ancestry of Sallu of Jerusalem.",
+  "key": [
+   "Sallu son of Meshullam is traced through Joed, Pedaiah, Kolaiah, Maaseiah, and Ithiel to Jeshaiah (Nehemiah 11).",
+   "These Benjaminites were among the people who lived in Jerusalem, the holy city (Nehemiah 11)."
+  ],
+  "family": {
+   "father": [
+    "ithiel_650"
+   ],
+   "children": [
+    "kolaiah_1791"
+   ]
+  },
+  "skip": false
+ },
+ "kolaiah_1791": {
+  "name": "Kolaiah",
+  "aka": [],
+  "who": "A Benjaminite, son of Maaseiah and father of Pedaiah, in the ancestry of Sallu of Jerusalem.",
+  "key": [
+   "Sallu son of Meshullam is traced through Joed, Pedaiah, Kolaiah, Maaseiah, and Ithiel to Jeshaiah (Nehemiah 11).",
+   "These Benjaminites were among the people who lived in Jerusalem, the holy city (Nehemiah 11)."
+  ],
+  "family": {
+   "father": [
+    "maaseiah_1863"
+   ],
+   "children": [
+    "pedaiah_2297"
+   ]
+  },
+  "skip": false
+ },
+ "pedaiah_2297": {
+  "name": "Pedaiah",
+  "aka": [],
+  "who": "A Benjaminite, son of Kolaiah and father of Joed, in the ancestry of Sallu of Jerusalem.",
+  "key": [
+   "Sallu son of Meshullam is traced through Joed, Pedaiah, Kolaiah, Maaseiah, and Ithiel to Jeshaiah (Nehemiah 11).",
+   "These Benjaminites were among the people who lived in Jerusalem, the holy city (Nehemiah 11)."
+  ],
+  "family": {
+   "father": [
+    "kolaiah_1791"
+   ],
+   "children": [
+    "joed_1646"
+   ]
+  },
+  "skip": false
+ },
+ "joel_1659": {
+  "name": "Joel",
+  "aka": [],
+  "who": "A Benjaminite, son of Zichri, overseer of the Benjaminites who settled in Jerusalem after the exile.",
+  "key": [
+   "Gabbai and Sallai and 928 Benjaminites lived in Jerusalem (Nehemiah 11).",
+   "Joel son of Zichri was their overseer, and Judah son of Hassenuah was second over the city (Nehemiah 11)."
+  ],
+  "family": {
+   "father": [
+    "zichri_3075"
+   ]
+  },
+  "skip": false
+ },
+ "pelaliah_2303": {
+  "name": "Pelaliah",
+  "aka": [],
+  "who": "A priest in the ancestry of Adaiah, who served in the house of the LORD after the exile.",
+  "key": [
+   "Adaiah son of Jeroham, son of Pelaliah, son of Amzi, is listed among the priests in Jerusalem (Nehemiah 11).",
+   "His line is traced back through Zechariah and Pashhur to Malchijah (Nehemiah 11)."
+  ],
+  "family": {
+   "father": [
+    "amzi_246"
+   ],
+   "children": [
+    "jeroham_877"
+   ]
+  },
+  "skip": false
+ },
+ "hashabiah_1434": {
+  "name": "Hashabiah",
+  "aka": [],
+  "who": "A Levite of Merari's line who came to Ezra from Casiphia and helped carry the temple offerings to Jerusalem.",
+  "key": [
+   "From Iddo's community at Casiphia came Hashabiah, with Jeshaiah of the sons of Merari (Ezra 8).",
+   "Ezra set apart Sherebiah, Hashabiah, and ten kinsmen to carry the silver, gold, and vessels (Ezra 8).",
+   "A Levite named Hashabiah sealed the covenant in Nehemiah's day (Nehemiah 10).",
+   "Hashabiah and Sherebiah are named among the chiefs of the Levites who led praise and thanksgiving (Nehemiah 12)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "jeshaiah_887": {
+  "name": "Jeshaiah",
+  "aka": [],
+  "who": "A Levite of the sons of Merari who came with Hashabiah from Casiphia to join Ezra's return.",
+  "key": [
+   "Ezra sent to Iddo at Casiphia for ministers for the house of God (Ezra 8).",
+   "Hashabiah came, and with him Jeshaiah of the sons of Merari, with twenty of their kinsmen (Ezra 8)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "zerahiah_3048": {
+  "name": "Zerahiah",
+  "aka": [],
+  "who": "Father of Eliehoenai, who led two hundred men of the family of Pahath-moab back with Ezra.",
+  "key": [
+   "Of the sons of Pahath-moab, Eliehoenai son of Zerahiah came with two hundred men (Ezra 8).",
+   "They returned from Babylonia with Ezra in the reign of King Artaxerxes (Ezra 8)."
+  ],
+  "family": {
+   "children": [
+    "elihoenai_1124"
+   ]
+  },
+  "skip": false
+ },
+ "shechaniah_2586": {
+  "name": "Shecaniah",
+  "aka": [],
+  "who": "A man of the family of Elam, son of Jehiel, who urged Ezra to lead the people in a covenant of repentance.",
+  "key": [
+   "Shecaniah son of Jehiel confessed that the people had broken faith by marrying foreign women (Ezra 10).",
+   "He said there was still hope for Israel and proposed a covenant with God (Ezra 10).",
+   "He urged Ezra to arise and act, promising that the people were with him (Ezra 10)."
+  ],
+  "family": {
+   "father": [
+    "jehiel_778"
+   ]
+  },
+  "skip": false
+ },
+ "hashub_1442": {
+  "name": "Hasshub",
+  "aka": [],
+  "who": "A descendant of Pahath-moab who repaired a section of Jerusalem's wall and the Tower of the Ovens.",
+  "key": [
+   "Malchijah son of Harim and Hasshub son of Pahath-moab repaired another section and the Tower of the Ovens (Nehemiah 3).",
+   "He was one of many who rebuilt the wall section by section in Nehemiah's day (Nehemiah 3)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "hashub_1443": {
+  "name": "Hasshub",
+  "aka": [],
+  "who": "A man of Jerusalem who, with Benjamin, repaired the wall opposite his house in Nehemiah's day.",
+  "key": [
+   "Benjamin and Hasshub repaired the wall opposite their house (Nehemiah 3).",
+   "After them Azariah son of Maaseiah repaired beside his own house (Nehemiah 3)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "mehetabeel_1979": {
+  "name": "Mehetabel",
+  "aka": [],
+  "who": "Named in Nehemiah as the parent of Delaiah, whose son Shemaiah was hired to frighten Nehemiah.",
+  "key": [
+   "Nehemiah went to the house of Shemaiah son of Delaiah, son of Mehetabel (Nehemiah 6).",
+   "Nehemiah perceived that Tobiah and Sanballat had hired Shemaiah against him (Nehemiah 6)."
+  ],
+  "family": {
+   "children": [
+    "delaiah_1003"
+   ]
+  },
+  "skip": false
+ },
+ "johanan_1698": {
+  "name": "Johanan",
+  "aka": [],
+  "who": "A high priest after the exile, named in the high-priestly succession between Joiada and Jaddua.",
+  "key": [
+   "Levite family heads were recorded in the days of Eliashib, Joiada, Johanan, and Jaddua (Nehemiah 12).",
+   "The Levites' heads were written in the Book of the Chronicles until the days of Johanan son of Eliashib (Nehemiah 12)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "jaddua_687": {
+  "name": "Jaddua",
+  "aka": [],
+  "who": "A high priest after the exile, the last in the line of high priests listed in Nehemiah.",
+  "key": [
+   "The high-priestly line runs from Jeshua through Joiakim, Eliashib, Joiada, and Jonathan to Jaddua (Nehemiah 12).",
+   "Levite family heads were recorded in the days of Eliashib, Joiada, Johanan, and Jaddua (Nehemiah 12)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "zechariah_3026": {
+  "name": "Zechariah",
+  "aka": [],
+  "who": "A descendant of Asaph, son of Jonathan, who blew a trumpet at the dedication of Jerusalem's rebuilt wall.",
+  "key": [
+   "Zechariah son of Jonathan, descended from Asaph, was among the priests' sons with trumpets (Nehemiah 12).",
+   "His kinsmen, including Shemaiah, Judah, and Hanani, played the musical instruments of David (Nehemiah 12).",
+   "Ezra the scribe went before them as the procession moved along the wall (Nehemiah 12)."
+  ],
+  "family": {
+   "father": [
+    "jonathan_1700"
+   ]
+  },
+  "skip": false
+ },
+ "jerimoth_869": {
+  "name": "Jerimoth",
+  "aka": [],
+  "who": "A son of David whose daughter Mahalath became a wife of King Rehoboam.",
+  "key": [
+   "Rehoboam took as wife Mahalath, the daughter of Jerimoth son of David (2 Chronicles 11).",
+   "Mahalath bore Rehoboam three sons, Jeush, Shemariah, and Zaham (2 Chronicles 11)."
+  ],
+  "family": {
+   "father": [
+    "david_994"
+   ],
+   "children": [
+    "mahalath_1888"
+   ]
+  },
+  "skip": false
+ },
+ "jeush_1603": {
+  "name": "Jeush",
+  "aka": [],
+  "who": "A son of King Rehoboam by Mahalath, a granddaughter of David.",
+  "key": [
+   "Mahalath bore Rehoboam sons: Jeush, Shemariah, and Zaham (2 Chronicles 11).",
+   "Rehoboam later made Maacah's son Abijah chief prince among his brothers (2 Chronicles 11)."
+  ],
+  "family": {
+   "father": [
+    "rehoboam_2412"
+   ],
+   "mother": [
+    "mahalath_1888"
+   ],
+   "siblings": [
+    "shamariah_2531",
+    "zaham_2980"
+   ]
+  },
+  "skip": false
+ },
+ "shamariah_2531": {
+  "name": "Shemariah",
+  "aka": [],
+  "who": "A son of King Rehoboam by Mahalath, a granddaughter of David.",
+  "key": [
+   "Mahalath bore Rehoboam sons: Jeush, Shemariah, and Zaham (2 Chronicles 11).",
+   "Rehoboam later made Maacah's son Abijah chief prince among his brothers (2 Chronicles 11)."
+  ],
+  "family": {
+   "father": [
+    "rehoboam_2412"
+   ],
+   "mother": [
+    "mahalath_1888"
+   ],
+   "siblings": [
+    "jeush_1603",
+    "zaham_2980"
+   ]
+  },
+  "skip": false
+ },
+ "zaham_2980": {
+  "name": "Zaham",
+  "aka": [],
+  "who": "A son of King Rehoboam by Mahalath, a granddaughter of David.",
+  "key": [
+   "Mahalath bore Rehoboam sons: Jeush, Shemariah, and Zaham (2 Chronicles 11).",
+   "Rehoboam later made Maacah's son Abijah chief prince among his brothers (2 Chronicles 11)."
+  ],
+  "family": {
+   "father": [
+    "rehoboam_2412"
+   ],
+   "mother": [
+    "mahalath_1888"
+   ],
+   "siblings": [
+    "jeush_1603",
+    "shamariah_2531"
+   ]
+  },
+  "skip": false
+ },
+ "elika_1133": {
+  "name": "Elika",
+  "aka": [],
+  "who": "A man of Harod, listed among David's thirty mighty men.",
+  "key": [
+   "Shammah of Harod and Elika of Harod are listed among the thirty (2 Samuel 23).",
+   "The thirty also included Asahel the brother of Joab and Elhanan son of Dodo of Bethlehem (2 Samuel 23)."
+  ],
+  "family": {},
+  "skip": false
+ },
+ "phaltiel_2326": {
+  "name": "Palti",
+  "aka": [
+   "Paltiel"
+  ],
+  "who": "Son of Laish of Gallim, to whom Saul gave David's wife Michal, and who wept when she was taken back.",
+  "key": [
+   "Saul gave his daughter Michal, David's wife, to Palti son of Laish, of Gallim (1 Samuel 25).",
+   "Ish-bosheth took Michal from her husband Paltiel son of Laish at David's demand (2 Samuel 3).",
+   "Her husband followed her, weeping, as far as Bahurim, until Abner told him to return (2 Samuel 3)."
+  ],
+  "family": {
+   "father": [
+    "laish_1807"
+   ],
+   "spouses": [
+    "michal_2073"
+   ]
+  },
+  "skip": false
+ },
+ "eliadah_1080": {
+  "name": "Eliada",
+  "aka": [],
+  "who": "Father of Rezon, the Syrian leader who seized Damascus and became an adversary of Solomon.",
+  "key": [
+   "God raised up Rezon son of Eliada as an adversary to Solomon (1 Kings 11).",
+   "Rezon had fled from his master Hadadezer king of Zobah and gathered a band of men (1 Kings 11)."
+  ],
+  "family": {
+   "children": [
+    "rezon_2437"
+   ]
+  },
+  "skip": false
+ },
+ "chalcol_924": {
+  "name": "Calcol",
+  "aka": [],
+  "who": "A famous wise man, a son of Mahol, whose wisdom Solomon surpassed.",
+  "key": [
+   "Solomon was wiser than Ethan the Ezrahite and Heman, Calcol, and Darda, the sons of Mahol (1 Kings 4).",
+   "Solomon's fame spread to all the surrounding nations (1 Kings 4)."
+  ],
+  "family": {
+   "father": [
+    "mahol_1898"
+   ],
+   "siblings": [
+    "heman_1488",
+    "darda_977"
+   ]
+  },
+  "skip": false
+ },
+ "darda_977": {
+  "name": "Darda",
+  "aka": [],
+  "who": "A famous wise man, a son of Mahol, whose wisdom Solomon surpassed.",
+  "key": [
+   "Solomon was wiser than Ethan the Ezrahite and Heman, Calcol, and Darda, the sons of Mahol (1 Kings 4).",
+   "Solomon's fame spread to all the surrounding nations (1 Kings 4)."
+  ],
+  "family": {
+   "father": [
+    "mahol_1898"
+   ],
+   "siblings": [
+    "heman_1488",
+    "chalcol_924"
+   ]
+  },
+  "skip": false
+ },
+ "mahol_1898": {
+  "name": "Mahol",
+  "aka": [],
+  "who": "Father of the wise men Heman, Calcol, and Darda, whose wisdom Solomon surpassed.",
+  "key": [
+   "Solomon was wiser than Heman, Calcol, and Darda, the sons of Mahol (1 Kings 4).",
+   "Solomon's wisdom surpassed the wisdom of all the people of the east and of Egypt (1 Kings 4)."
+  ],
+  "family": {
+   "children": [
+    "heman_1488",
+    "chalcol_924",
+    "darda_977"
+   ]
+  },
+  "skip": false
+ },
+ "melchiah_1989": {
+  "name": "Malchiah",
+  "aka": [],
+  "who": "Father of Pashhur, an official of King Zedekiah who sought Jeremiah's death.",
+  "key": [
+   "King Zedekiah sent Pashhur son of Malchiah to Jeremiah to inquire of the LORD (Jeremiah 21).",
+   "Pashhur son of Malchiah was among the officials who heard Jeremiah and urged that he be put to death (Jeremiah 38)."
+  ],
+  "family": {
+   "children": [
+    "pashur_2286"
+   ]
+  },
+  "skip": false
+ },
+ "tikvah_2855": {
+  "name": "Tikvah",
+  "aka": [
+   "Tokhath"
+  ],
+  "who": "Father of Shallum, keeper of the wardrobe and husband of the prophetess Huldah in Josiah's day.",
+  "key": [
+   "Josiah's officials went to Huldah, wife of Shallum son of Tikvah, son of Harhas (2 Kings 22).",
+   "Chronicles calls him Tokhath son of Hasrah (2 Chronicles 34)."
+  ],
+  "family": {
+   "father": [
+    "hasrah_1414"
+   ],
+   "children": [
+    "shallum_2515"
+   ]
+  },
+  "skip": false
+ },
+ "amariah_206": {
+  "name": "Amariah",
+  "aka": [],
+  "who": "An ancestor of the prophet Zephaniah, son of Hezekiah and father of Gedaliah.",
+  "key": [
+   "Zephaniah was son of Cushi, son of Gedaliah, son of Amariah, son of Hezekiah (Zephaniah 1).",
+   "The word of the LORD came to his descendant Zephaniah in the days of Josiah king of Judah (Zephaniah 1)."
+  ],
+  "family": {
+   "father": [
+    "hizkiah_1535"
+   ],
+   "children": [
+    "gedaliah_1291"
+   ]
+  },
+  "skip": false
+ },
+ "dodo_1020": {
+  "name": "Dodo",
+  "aka": [],
+  "who": "A man of Issachar, father of Puah and grandfather of Tola, who judged Israel after Abimelech.",
+  "key": [
+   "Tola son of Puah, son of Dodo, a man of Issachar, arose to save Israel (Judges 10).",
+   "Tola judged Israel twenty-three years and was buried at Shamir (Judges 10)."
+  ],
+  "family": {
+   "children": [
+    "puah_2373"
+   ]
+  },
+  "skip": false
+ },
+ "mehujael_1983": {
+  "name": "Mehujael",
+  "aka": [],
+  "who": "A descendant of Cain, son of Irad and father of Methushael, in the line leading to Lamech.",
+  "key": [
+   "Irad fathered Mehujael, and Mehujael fathered Methushael (Genesis 4).",
+   "Methushael fathered Lamech, who took two wives, Adah and Zillah (Genesis 4)."
+  ],
+  "family": {
+   "father": [
+    "irad_611"
+   ],
+   "children": [
+    "methusael_2041"
+   ]
+  },
+  "skip": false
+ },
+ "naamah_2118": {
+  "name": "Naamah",
+  "aka": [],
+  "who": "Daughter of Lamech and Zillah in Cain's line, and sister of Tubal-cain.",
+  "key": [
+   "Lamech took two wives, Adah and Zillah (Genesis 4).",
+   "Zillah bore Tubal-cain, and the sister of Tubal-cain was Naamah (Genesis 4)."
+  ],
+  "family": {
+   "father": [
+    "lamech_1808"
+   ],
+   "mother": [
+    "zillah_3080"
+   ],
+   "siblings": [
+    "tubal-cain_2884",
+    "jabal_673",
+    "jubal_1748"
+   ]
+  },
+  "skip": false
+ },
+ "maachah_1840": {
+  "name": "Maacah",
+  "aka": [],
+  "who": "A child of Nahor, Abraham's brother, by his concubine Reumah.",
+  "key": [
+   "Abraham was told that Nahor's concubine Reumah bore Tebah, Gaham, Tahash, and Maacah (Genesis 22).",
+   "This news of Nahor's family came after God provided a ram in place of Isaac (Genesis 22)."
+  ],
+  "family": {
+   "father": [
+    "nahor_2143"
+   ],
+   "mother": [
+    "reumah_2433"
+   ],
+   "siblings": [
+    "tebah_2832",
+    "gaham_1267",
+    "thahash_2845"
+   ]
+  },
+  "skip": false
+ },
+ "dedan_999": {
+  "name": "Dedan",
+  "aka": [],
+  "who": "A grandson of Abraham and Keturah, son of Jokshan, whose descendants included the Asshurim, Letushim, and Leummim.",
+  "key": [
+   "Jokshan fathered Sheba and Dedan (Genesis 25).",
+   "The sons of Dedan were Asshurim, Letushim, and Leummim (Genesis 25).",
+   "Chronicles repeats Dedan among the descendants of Keturah (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "jokshan_1685"
+   ],
+   "siblings": [
+    "sheba_2569"
+   ],
+   "children": [
+    "asshurim_350",
+    "letushim_1818",
+    "leummim_1819"
+   ]
+  },
+  "skip": false
+ },
+ "sheba_2569": {
+  "name": "Sheba",
+  "aka": [],
+  "who": "A grandson of Abraham and Keturah, son of Jokshan and brother of Dedan.",
+  "key": [
+   "Jokshan fathered Sheba and Dedan (Genesis 25).",
+   "Abraham gave gifts to his sons by his concubines and sent them east, away from Isaac (Genesis 25).",
+   "Chronicles repeats Sheba among the descendants of Keturah (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "jokshan_1685"
+   ],
+   "siblings": [
+    "dedan_999"
+   ]
+  },
+  "skip": false
+ },
+ "asshurim_350": {
+  "name": "Asshurim",
+  "aka": [],
+  "who": "An Arabian people descended from Dedan, a grandson of Abraham and Keturah.",
+  "key": [
+   "The sons of Dedan were Asshurim, Letushim, and Leummim (Genesis 25).",
+   "Abraham gave gifts to his sons by his concubines and sent them east, away from Isaac (Genesis 25)."
+  ],
+  "family": {
+   "father": [
+    "dedan_999"
+   ]
+  },
+  "label": "People group",
+  "skip": false
+ },
+ "letushim_1818": {
+  "name": "Letushim",
+  "aka": [],
+  "who": "An Arabian people descended from Dedan, a grandson of Abraham and Keturah.",
+  "key": [
+   "The sons of Dedan were Asshurim, Letushim, and Leummim (Genesis 25).",
+   "Abraham gave gifts to his sons by his concubines and sent them east, away from Isaac (Genesis 25)."
+  ],
+  "family": {
+   "father": [
+    "dedan_999"
+   ]
+  },
+  "label": "People group",
+  "skip": false
+ },
+ "henoch_1402": {
+  "name": "Hanoch",
+  "aka": [],
+  "who": "A son of Midian and grandson of Abraham by Keturah.",
+  "key": [
+   "Midian's sons were Ephah, Epher, Hanoch, Abida, and Eldaah, all descendants of Keturah (Genesis 25).",
+   "Chronicles repeats Midian's sons, including Hanoch (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "midian_2075"
+   ],
+   "siblings": [
+    "ephah_1197",
+    "epher_1201",
+    "abida_21",
+    "eldaah_1057"
+   ]
+  },
+  "skip": false
+ },
+ "ajah_178": {
+  "name": "Aiah",
+  "aka": [],
+  "who": "A Horite, son of Zibeon and brother of Anah, among the clans of Seir in Edom.",
+  "key": [
+   "The sons of Zibeon were Aiah and Anah, the Anah who found the hot springs (Genesis 36).",
+   "Chronicles repeats the sons of Zibeon as Aiah and Anah (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "zibeon_3062"
+   ],
+   "siblings": [
+    "anah_249"
+   ]
+  },
+  "skip": false
+ },
+ "hemdan_1492": {
+  "name": "Hemdan",
+  "aka": [],
+  "who": "A Horite, son of Dishon, among the clans of Seir who lived in the land before Esau's descendants.",
+  "key": [
+   "The sons of Dishon were Hemdan, Eshban, Ithran, and Cheran (Genesis 36).",
+   "Chronicles repeats these sons of Dishon among the descendants of Seir (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "dishon_1016"
+   ],
+   "siblings": [
+    "eshban_1217",
+    "ithran_653",
+    "cheran_937"
+   ]
+  },
+  "skip": false
+ },
+ "eshban_1217": {
+  "name": "Eshban",
+  "aka": [],
+  "who": "A Horite, son of Dishon, among the clans of Seir who lived in the land before Esau's descendants.",
+  "key": [
+   "The sons of Dishon were Hemdan, Eshban, Ithran, and Cheran (Genesis 36).",
+   "Chronicles repeats these sons of Dishon among the descendants of Seir (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "dishon_1016"
+   ],
+   "siblings": [
+    "hemdan_1492",
+    "ithran_653",
+    "cheran_937"
+   ]
+  },
+  "skip": false
+ },
+ "ithran_653": {
+  "name": "Ithran",
+  "aka": [],
+  "who": "A Horite, son of Dishon, among the clans of Seir who lived in the land before Esau's descendants.",
+  "key": [
+   "The sons of Dishon were Hemdan, Eshban, Ithran, and Cheran (Genesis 36).",
+   "Chronicles repeats these sons of Dishon among the descendants of Seir (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "dishon_1016"
+   ],
+   "siblings": [
+    "hemdan_1492",
+    "eshban_1217",
+    "cheran_937"
+   ]
+  },
+  "skip": false
+ },
+ "cheran_937": {
+  "name": "Cheran",
+  "aka": [],
+  "who": "A Horite, son of Dishon, among the clans of Seir who lived in the land before Esau's descendants.",
+  "key": [
+   "The sons of Dishon were Hemdan, Eshban, Ithran, and Cheran (Genesis 36).",
+   "Chronicles repeats these sons of Dishon among the descendants of Seir (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "dishon_1016"
+   ],
+   "siblings": [
+    "hemdan_1492",
+    "eshban_1217",
+    "ithran_653"
+   ]
+  },
+  "skip": false
+ },
+ "beor_465": {
+  "name": "Beor",
+  "aka": [],
+  "who": "Father of Bela, the first king listed as reigning in Edom before Israel had kings.",
+  "key": [
+   "Bela son of Beor reigned in Edom, and the name of his city was Dinhabah (Genesis 36).",
+   "Chronicles begins its list of Edom's kings with Bela son of Beor (1 Chronicles 1)."
+  ],
+  "family": {
+   "children": [
+    "bela_434"
+   ]
+  },
+  "skip": false
+ },
+ "bedad_426": {
+  "name": "Bedad",
+  "aka": [],
+  "who": "Father of Hadad, a king of Edom who defeated Midian in the country of Moab.",
+  "key": [
+   "After Husham died, Hadad son of Bedad reigned in Edom (Genesis 36).",
+   "Chronicles repeats Hadad son of Bedad among Edom's kings (1 Chronicles 1)."
+  ],
+  "family": {
+   "children": [
+    "hadad_1338"
+   ]
+  },
+  "skip": false
+ },
+ "hadad_1338": {
+  "name": "Hadad",
+  "aka": [],
+  "who": "A king of Edom, son of Bedad, who defeated Midian in the country of Moab and reigned from Avith.",
+  "key": [
+   "After Husham died, Hadad son of Bedad reigned in Edom (Genesis 36).",
+   "He defeated Midian in the country of Moab, and the name of his city was Avith (Genesis 36).",
+   "When Hadad died, Samlah of Masrekah reigned in his place (Genesis 36).",
+   "Chronicles repeats this list of Edom's kings (1 Chronicles 1)."
+  ],
+  "family": {
+   "father": [
+    "bedad_426"
+   ]
+  },
+  "skip": false
+ },
+ "secundus_2482": {
+  "name": "Secundus",
+  "aka": [],
+  "who": "A believer from Thessalonica who accompanied Paul as he left Greece for Jerusalem.",
+  "key": [
+   "Aristarchus and Secundus of the Thessalonians were among Paul's travel companions (Acts 20).",
+   "These companions went on ahead and waited for Paul at Troas (Acts 20)."
+  ],
+  "family": {},
+  "skip": false
+ }
+}
