@@ -54,14 +54,20 @@ def parse(usfm: str):
         tag = m.group(1) if m else None
         if tag == "c":
             cur = []; chapters.append(cur); st.update(h=None, p=True, q=0, d=None, brk=None); continue
-        if tag in ("s", "s1", "s2", "s3", "ms", "ms1", "ms2"):
+        if tag in ("s", "s1", "s2", "s3", "ms", "ms1", "ms2", "qa"):   # qa = acrostic letter heading (Psalm 119)
             st["h"] = re.sub(r"\\\+?[a-z]+\d*\*?", "", m.group(2)).strip() or st["h"]; continue
         if tag == "d":
-            st["d"] = re.sub(r"\\\+?[a-z]+\d*\*?", "", m.group(2)).strip(); continue
-        if tag in HEADINGS or tag in ("id", "b", "ie", "ip", "is", "is1"):
+            # a psalm title; the first verse may follow on the same line
+            mm = re.search(r"\\(?:v \d|q\d?\b)", m.group(2))
+            title, rest_line = (m.group(2)[:mm.start()], m.group(2)[mm.start():]) if mm else (m.group(2), "")
+            st["d"] = re.sub(r"\\\+?[a-z]+\d*\*?", "", title).strip()
+            if not rest_line:
+                continue
+            line = rest_line
+        elif tag in HEADINGS or tag in ("id", "b", "ie", "ip", "is", "is1"):
             continue
         # tokenize the line on structural markers; text between them belongs to the current verse
-        for tok in re.split(r"(\\(?:v \d+(?:-\d+)?|q\d?|qm\d?|qc|qr|qa|" + "|".join(sorted(PARAS, key=len, reverse=True)) + r")\b\s?)", line):
+        for tok in re.split(r"(\\(?:v \d+(?:-\d+)?|q\d?|qm\d?|qc|qr|" + "|".join(sorted(PARAS, key=len, reverse=True)) + r")\b\s?)", line):
             if not tok:
                 continue
             mv = re.match(r"\\v (\d+)(?:-\d+)?\s?$", tok)
@@ -90,14 +96,14 @@ def main():
     usfm_src = sys.argv[1] if len(sys.argv) > 1 else USFM_URL
     txt_src = sys.argv[2] if len(sys.argv) > 2 else TXT_URL
     z = zipfile.ZipFile(io.BytesIO(load(usfm_src)))
-    books = {}
+    books, raw = {}, {}
     for name in z.namelist():
         if not name.lower().endswith((".usfm", ".sfm")):
             continue
         text = z.read(name).decode("utf-8-sig")
         code = re.search(r"\\id (\w+)", text).group(1).upper()
         if code in NAME:
-            books[NAME[code]] = parse(text)
+            books[NAME[code]] = parse(text); raw[NAME[code]] = text
     # check against the official plain text, word for word
     plain = {}
     alias = {"Psalm": "Psalms", "Song of Songs": "Song of Solomon"}
@@ -115,6 +121,9 @@ def main():
     for k in (missing[:5] + extra[:5]): print("   ", k)
     for k in differ[:5]: print("   ", k, "\n      official:", plain[k][:110], "\n      built   :", mine[k][:110])
     for c in counts: print("   ", c)
+    for k in (missing[:2] + differ[:3]):  # the raw USFM around a problem verse, to fix the parser exactly
+        b, c, v = k; t = raw.get(b, ""); i = t.find(f"\\c {c}\n"); j = t.find(f"\\v {v} ", i); j = j if j >= 0 else i
+        print(f"   raw {b} {c}:{v} ->", repr(t[max(0, j - 250): j + 300]))
     if len(books) != 66 or missing or extra or differ or counts:
         sys.exit("not written: the build does not match the official text")
     os.makedirs(OUT, exist_ok=True)
