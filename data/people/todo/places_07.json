@@ -1,0 +1,701 @@
+[
+ {
+  "slug": "lycaonia_739",
+  "source_name": "Lycaonia",
+  "type": "Region",
+  "lat": 37.8835,
+  "lon": 32.4943,
+  "verses": 1,
+  "appears": "Acts 14 → Acts 14 (1 chapters; sample: Acts 14)",
+  "mentioned_in_app": [
+   "card of Lystra: \"A Roman colony in Lycaonia in south-central Asia Minor, hometown of Timothy.\"",
+   "card of Derbe: \"A city of Lycaonia in Asia Minor where Paul preached on his missionary journeys.\""
+  ]
+ },
+ {
+  "slug": "melita_761",
+  "source_name": "Malta",
+  "type": "Island",
+  "lat": 35.8528,
+  "lon": 14.5324,
+  "verses": 1,
+  "appears": "Acts 28 → Acts 28 (1 chapters; sample: Acts 28)",
+  "mentioned_in_app": [
+   "Acts 28 summary: \"On Malta Paul survives a viper's bite and heals the sick, then reaches Rome and preaches there. Paul heals the father of Publius, the island's chief official, and others. In Rome he explains the kingd\"",
+   "card of Alexandria: \"After the shipwreck, Paul sails on an Alexandrian ship that wintered at Malta (Acts 28).\""
+  ]
+ },
+ {
+  "slug": "meribah_783",
+  "source_name": "Meribah",
+  "type": "Landmark",
+  "lat": 28.7311,
+  "lon": 33.8417,
+  "verses": 2,
+  "appears": "Exodus 17 → Deuteronomy 33 (2 chapters; sample: Exodus 17, Deuteronomy 33)",
+  "mentioned_in_app": [
+   "Exodus 17 summary: \"God brings water from a rock at Horeb, and Israel defeats the Amalekites while Moses holds up his hands. The place is named Massah and Meribah because the people tested God. Aaron and Hur support Mose\"",
+   "card of Massah: \"Israel quarrels and tests the Lord over water, so Moses names the place Massah and Meribah (Exodus 17).\""
+  ]
+ },
+ {
+  "slug": "merom_785",
+  "source_name": "Merom",
+  "type": "Water",
+  "lat": 33.0753,
+  "lon": 35.6055,
+  "verses": 2,
+  "appears": "Joshua 11 → Joshua 11 (1 chapters; sample: Joshua 11)",
+  "mentioned_in_app": [
+   "Joshua 11 summary: \"Joshua defeats a northern coalition led by Jabin of Hazor and completes the main conquest of Canaan. At the waters of Merom, Israel routs them, hamstrings their horses, and burns their chariots. Hazor\""
+  ]
+ },
+ {
+  "slug": "minnith_804",
+  "source_name": "Minnith",
+  "type": "",
+  "lat": 31.75,
+  "lon": 35.85,
+  "verses": 2,
+  "appears": "Judges 11 → Ezekiel 27 (2 chapters; sample: Judges 11, Ezekiel 27)",
+  "mentioned_in_app": [
+   "card of Aroer: \"Jephthah struck the Ammonites from Aroer to Minnith (Judges 11).\""
+  ]
+ },
+ {
+  "slug": "moriah_821",
+  "source_name": "Moriah",
+  "type": "",
+  "lat": 31.7776,
+  "lon": 35.2353,
+  "verses": 1,
+  "appears": "Genesis 22 → Genesis 22 (1 chapters; sample: Genesis 22)",
+  "mentioned_in_app": [
+   "Genesis 22 summary: \"God tests Abraham by commanding him to sacrifice Isaac, then stops him and provides a ram instead. Abraham takes Isaac to a mountain in Moriah and binds him on the altar. The angel of the Lord stops h\""
+  ]
+ },
+ {
+  "slug": "most_holy_825",
+  "source_name": "Most Holy",
+  "type": "",
+  "lat": null,
+  "lon": null,
+  "verses": 1,
+  "appears": "Exodus 26 → Exodus 26 (1 chapters; sample: Exodus 26)",
+  "mentioned_in_app": [
+   "Exodus 26 summary: \"God gives instructions for the tabernacle's curtains, coverings, frames, and the veil that separates the Most Holy Place. Ten linen curtains embroidered with cherubim form the inner covering. Goat hai\""
+  ]
+ },
+ {
+  "slug": "most_holy_place_826",
+  "source_name": "Most Holy Place",
+  "type": "",
+  "lat": null,
+  "lon": null,
+  "verses": 1,
+  "appears": "Exodus 26 → Exodus 26 (1 chapters; sample: Exodus 26)",
+  "mentioned_in_app": [
+   "Exodus 26 summary: \"God gives instructions for the tabernacle's curtains, coverings, frames, and the veil that separates the Most Holy Place. Ten linen curtains embroidered with cherubim form the inner covering. Goat hai\""
+  ]
+ },
+ {
+  "slug": "mount_halak_839",
+  "source_name": "Mount Halak",
+  "type": "Mountain",
+  "lat": 30.9167,
+  "lon": 34.8333,
+  "verses": 2,
+  "appears": "Joshua 11 → Joshua 12 (2 chapters; sample: Joshua 11, Joshua 12)",
+  "mentioned_in_app": [
+   "card of Baal-gad: \"Joshua's conquest reached from Mount Halak in the south to Baal-gad in the north (Joshua 11).\""
+  ]
+ },
+ {
+  "slug": "mount_moriah_848",
+  "source_name": "Mount Moriah",
+  "type": "Mountain",
+  "lat": 31.7776,
+  "lon": 35.2353,
+  "verses": 1,
+  "appears": "2 Chronicles 3 → 2 Chronicles 3 (1 chapters; sample: 2 Chronicles 3)",
+  "mentioned_in_app": [
+   "2 Chronicles 3 summary: \"Solomon begins building the temple on Mount Moriah, overlaying it with gold and adorning the Most Holy Place. The site is Ornan's threshing floor, where the LORD had appeared to David. Two large golde\"",
+   "card of Ornan: \"Solomon built the temple on his threshing floor on Mount Moriah (2 Chronicles 3).\""
+  ]
+ },
+ {
+  "slug": "mount_nebo_849",
+  "source_name": "Mount Nebo",
+  "type": "Mountain",
+  "lat": 31.7614,
+  "lon": 35.7461,
+  "verses": 2,
+  "appears": "Deuteronomy 32 → Deuteronomy 34 (2 chapters; sample: Deuteronomy 32, Deuteronomy 34)",
+  "mentioned_in_app": [
+   "Deuteronomy: \"On the plains of Moab, Moses reviews Israel's history and God's law, renewing the covenant before the new generation enters Canaan. Moses recounts the journey from Horeb, Israel's failures, and God's \"",
+   "Deuteronomy 32 summary: \"Moses recites a song recounting God's faithfulness, Israel's rebellion, and God's judgment and vindication. God is the perfect Rock who cared for Israel, but Israel grew fat and turned to idols. God w\"",
+   "Deuteronomy 34 summary: \"Moses views the promised land from Mount Nebo, dies in Moab, and is succeeded by Joshua. God buries him in Moab, and no one knows the location of his grave. He dies at 120 with undimmed eyes, and Isra\""
+  ]
+ },
+ {
+  "slug": "mount_of_olives_828",
+  "source_name": "Mount of Olives",
+  "type": "Mountain",
+  "lat": 31.7781,
+  "lon": 35.2472,
+  "verses": 1,
+  "appears": "Zechariah 14 → Zechariah 14 (1 chapters; sample: Zechariah 14)",
+  "mentioned_in_app": [
+   "Zechariah 14 summary: \"On the day of the LORD, nations attack Jerusalem, the LORD fights for it, and he becomes king over all the earth. The LORD will stand on the Mount of Olives, and it will split in two. Living waters wi\"",
+   "card of Mount of Olives: \"Zechariah foresaw the Lord standing on the Mount of Olives as it splits in two (Zechariah 14).\""
+  ]
+ },
+ {
+  "slug": "mount_zemaraim_859",
+  "source_name": "Mount Zemaraim",
+  "type": "Mountain",
+  "lat": 31.911,
+  "lon": 35.4573,
+  "verses": 1,
+  "appears": "2 Chronicles 13 → 2 Chronicles 13 (1 chapters; sample: 2 Chronicles 13)",
+  "mentioned_in_app": [
+   "card of Abijah: \"From Mount Zemaraim he rebuked Jeroboam and Israel for forsaking the LORD (2 Chronicles 13).\""
+  ]
+ },
+ {
+  "slug": "nebaioth_881",
+  "source_name": "Nebaioth",
+  "type": "",
+  "lat": 30.3224,
+  "lon": 35.4563,
+  "verses": 1,
+  "appears": "Isaiah 60 → Isaiah 60 (1 chapters; sample: Isaiah 60)",
+  "mentioned_in_app": [
+   "card of Nebaioth: \"Isaiah foresees the rams of Nebaioth accepted on God's altar (Isaiah 60).\""
+  ]
+ },
+ {
+  "slug": "netaim_889",
+  "source_name": "Netaim",
+  "type": "",
+  "lat": 31.8233,
+  "lon": 34.7778,
+  "verses": 1,
+  "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 chapters; sample: 1 Chronicles 4)",
+  "mentioned_in_app": [
+   "card of Gederah: \"Potters who worked for the king lived at Netaim and Gederah (1 Chronicles 4).\""
+  ]
+ },
+ {
+  "slug": "patmos_926",
+  "source_name": "Patmos",
+  "type": "Island",
+  "lat": 37.3075,
+  "lon": 26.5483,
+  "verses": 1,
+  "appears": "Revelation 1 → Revelation 1 (1 chapters; sample: Revelation 1)",
+  "mentioned_in_app": [
+   "Revelation 1 summary: \"John, exiled on Patmos, sees a vision of the glorified Christ standing among seven golden lampstands. The book is a revelation from Jesus Christ, with a blessing for those who read it. Christ appears \"",
+   "card of John: \"On the island of Patmos, he received the revelation of Jesus Christ (Revelation 1).\""
+  ]
+ },
+ {
+  "slug": "peniel_930",
+  "source_name": "Peniel",
+  "type": "",
+  "lat": 32.1844,
+  "lon": 35.7029,
+  "verses": 1,
+  "appears": "Genesis 32 → Genesis 32 (1 chapters; sample: Genesis 32)",
+  "mentioned_in_app": [
+   "Genesis 32 summary: \"Jacob fearfully prepares to meet Esau, sends gifts ahead, and wrestles with God, who renames him Israel. Hearing that Esau is coming with four hundred men, Jacob divides his camp and prays. Jacob wres\"",
+   "card of Penuel: \"Jacob named the place Peniel, saying he had seen God face to face (Genesis 32).\"",
+   "card of Jacob: \"He wrestled with God at Peniel and was renamed Israel (Genesis 32).\""
+  ]
+ },
+ {
+  "slug": "perez-uzzah_935",
+  "source_name": "Perez-uzzah",
+  "type": "",
+  "lat": 31.7774,
+  "lon": 35.2349,
+  "verses": 1,
+  "appears": "2 Samuel 6 → 2 Samuel 6 (1 chapters; sample: 2 Samuel 6)",
+  "mentioned_in_app": [
+   "card of Uzzah: \"David was angry and afraid, and named the place Perez-uzzah (2 Samuel 6).\""
+  ]
+ },
+ {
+  "slug": "pergamum_937",
+  "source_name": "Pergamum",
+  "type": "City",
+  "lat": 39.1189,
+  "lon": 27.1651,
+  "verses": 2,
+  "appears": "Revelation 1 → Revelation 2 (2 chapters; sample: Revelation 1, Revelation 2)",
+  "mentioned_in_app": [
+   "Revelation 2 summary: \"Christ sends messages to the churches in Ephesus, Smyrna, Pergamum, and Thyatira, commending and rebuking them. Ephesus has abandoned the love it had at first. Smyrna is told to be faithful unto death\""
+  ]
+ },
+ {
+  "slug": "pethor_939",
+  "source_name": "Pethor",
+  "type": "",
+  "lat": 36.6546,
+  "lon": 38.0689,
+  "verses": 2,
+  "appears": "Numbers 22 → Deuteronomy 23 (2 chapters; sample: Numbers 22, Deuteronomy 23)",
+  "mentioned_in_app": [
+   "card of Mesopotamia: \"Balaam was hired from Pethor in Mesopotamia to curse Israel (Deuteronomy 23).\"",
+   "card of Euphrates River: \"Balak sent for Balaam at Pethor, near the River (Numbers 22).\""
+  ]
+ },
+ {
+  "slug": "philadelphia_941",
+  "source_name": "Philadelphia",
+  "type": "City",
+  "lat": 38.349,
+  "lon": 28.5195,
+  "verses": 2,
+  "appears": "Revelation 1 → Revelation 3 (2 chapters; sample: Revelation 1, Revelation 3)",
+  "mentioned_in_app": [
+   "Revelation 3 summary: \"Christ sends messages to the churches in Sardis, Philadelphia, and Laodicea. Sardis has a reputation for being alive but is dead. Philadelphia has kept Christ's word and is given an open door. Laodice\""
+  ]
+ },
+ {
+  "slug": "pisidia_952",
+  "source_name": "Pisidia",
+  "type": "Region",
+  "lat": 38.3164,
+  "lon": 31.1795,
+  "verses": 2,
+  "appears": "Acts 13 → Acts 14 (2 chapters; sample: Acts 13, Acts 14)",
+  "mentioned_in_app": [
+   "card of Pisidian Antioch: \"A Roman colony in the region of Pisidia in Asia Minor, visited by Paul on his first missionary journey.\""
+  ]
+ },
+ {
+  "slug": "place_954",
+  "source_name": "Place of a Skull",
+  "type": "",
+  "lat": 31.7774,
+  "lon": 35.2349,
+  "verses": 2,
+  "appears": "Matthew 27 → Mark 15 (2 chapters; sample: Matthew 27, Mark 15)",
+  "mentioned_in_app": [
+   "card of Golgotha: \"Mark explains that Golgotha means Place of a Skull, where Jesus was crucified (Mark 15).\"",
+   "card of Golgotha: \"The place just outside Jerusalem where Jesus was crucified, meaning Place of a Skull.\""
+  ]
+ },
+ {
+  "slug": "plain_of_jordan_654",
+  "source_name": "Jordan Valley",
+  "type": "",
+  "lat": 32.3091,
+  "lon": 35.5599,
+  "verses": 2,
+  "appears": "Genesis 13 → Genesis 13 (1 chapters; sample: Genesis 13)",
+  "mentioned_in_app": [
+   "Genesis 13 summary: \"Abram and Lot separate because their herds are too large, and God renews his promise of land to Abram. Lot chooses the well-watered Jordan Valley and settles near wicked Sodom. God tells Abram his off\"",
+   "card of Zoar: \"Lot chose the well-watered Jordan Valley stretching toward Zoar (Genesis 13).\""
+  ]
+ },
+ {
+  "slug": "pool_957",
+  "source_name": "Pool of Shelah",
+  "type": "Landmark",
+  "lat": 31.7774,
+  "lon": 35.2349,
+  "verses": 1,
+  "appears": "Nehemiah 3 → Nehemiah 3 (1 chapters; sample: Nehemiah 3)",
+  "mentioned_in_app": [
+   "card of Fountain Gate: \"Shallun rebuilt the Fountain Gate and the wall of the Pool of Shelah (Nehemiah 3).\""
+  ]
+ },
+ {
+  "slug": "ramathaim-zophim_977",
+  "source_name": "Ramathaim-zophim",
+  "type": "City",
+  "lat": 31.8327,
+  "lon": 35.1802,
+  "verses": 1,
+  "appears": "1 Samuel 1 → 1 Samuel 1 (1 chapters; sample: 1 Samuel 1)",
+  "mentioned_in_app": [
+   "card of Elkanah: \"An Ephraimite of Ramathaim-zophim, husband of Hannah and Peninnah, and father of the prophet Samuel.\""
+  ]
+ },
+ {
+  "slug": "rehob_987",
+  "source_name": "Rehob",
+  "type": "",
+  "lat": 33.2194,
+  "lon": 35.5441,
+  "verses": 2,
+  "appears": "Numbers 13 → 2 Samuel 10 (2 chapters; sample: Numbers 13, 2 Samuel 10)",
+  "mentioned_in_app": [
+   "card of Hadadezer: \"Son of Rehob and king of Zobah in Syria, defeated in battle by David.\""
+  ]
+ },
+ {
+  "slug": "rehob_988",
+  "source_name": "Rehob",
+  "type": "City",
+  "lat": 33.1258,
+  "lon": 35.165,
+  "verses": 1,
+  "appears": "Joshua 19 → Joshua 19 (1 chapters; sample: Joshua 19)",
+  "mentioned_in_app": [
+   "card of Rehob: \"Rehob is listed within the territory of Asher (Joshua 19).\""
+  ]
+ },
+ {
+  "slug": "rephaim_995",
+  "source_name": "Rephaim",
+  "type": "",
+  "lat": 32.8001,
+  "lon": 35.9373,
+  "verses": 1,
+  "appears": "Deuteronomy 3 → Deuteronomy 3 (1 chapters; sample: Deuteronomy 3)",
+  "mentioned_in_app": [
+   "card of Og: \"The Amorite king of Bashan, the last of the Rephaim, defeated by Israel.\""
+  ]
+ },
+ {
+  "slug": "rogelim_1012",
+  "source_name": "Rogelim",
+  "type": "City",
+  "lat": 32.2147,
+  "lon": 35.6329,
+  "verses": 2,
+  "appears": "2 Samuel 17 → 2 Samuel 19 (2 chapters; sample: 2 Samuel 17, 2 Samuel 19)",
+  "mentioned_in_app": [
+   "card of Barzillai: \"A wealthy elderly Gileadite of Rogelim who supplied David during Absalom's rebellion.\""
+  ]
+ },
+ {
+  "slug": "sea_of_the_plain_1035",
+  "source_name": "Sea of the Arabah",
+  "type": "Water",
+  "lat": 31.5386,
+  "lon": 35.4823,
+  "verses": 2,
+  "appears": "Joshua 3 → 2 Kings 14 (2 chapters; sample: Joshua 3, 2 Kings 14)",
+  "mentioned_in_app": [
+   "card of Lebo-hamath: \"Jeroboam II restored Israel's border from Lebo-hamath to the Sea of the Arabah (2 Kings 14).\""
+  ]
+ },
+ {
+  "slug": "sea_of_tiberias_1034",
+  "source_name": "Sea of Tiberias",
+  "type": "Water",
+  "lat": 32.8068,
+  "lon": 35.5894,
+  "verses": 2,
+  "appears": "John 6 → John 21 (2 chapters; sample: John 6, John 21)",
+  "mentioned_in_app": [
+   "John 21 summary: \"The risen Jesus appears by the Sea of Tiberias, provides a great catch, and restores Peter. The disciples catch one hundred fifty-three fish and share breakfast with Jesus. Three times Jesus asks Pete\"",
+   "card of Thomas: \"He was with the disciples when the risen Jesus appeared at the Sea of Tiberias (John 21).\"",
+   "card of Nathanael: \"He was fishing with other disciples when the risen Jesus appeared at the Sea of Tiberias (John 21).\""
+  ]
+ },
+ {
+  "slug": "sela-hammahlekoth_1297",
+  "source_name": "Rock of Escape",
+  "type": "Mountain",
+  "lat": 31.4515,
+  "lon": 35.2329,
+  "verses": 2,
+  "appears": "1 Samuel 23 → 1 Samuel 23 (1 chapters; sample: 1 Samuel 23)",
+  "mentioned_in_app": [
+   "card of Rock of Escape: \"Saul breaks off pursuit to face a Philistine raid, so the place is called the Rock of Escape (1 Samuel 23).\""
+  ]
+ },
+ {
+  "slug": "smyrna_1103",
+  "source_name": "Smyrna",
+  "type": "City",
+  "lat": 38.452,
+  "lon": 27.1619,
+  "verses": 2,
+  "appears": "Revelation 1 → Revelation 2 (2 chapters; sample: Revelation 1, Revelation 2)",
+  "mentioned_in_app": [
+   "Revelation 2 summary: \"Christ sends messages to the churches in Ephesus, Smyrna, Pergamum, and Thyatira, commending and rebuking them. Ephesus has abandoned the love it had at first. Smyrna is told to be faithful unto death\""
+  ]
+ },
+ {
+  "slug": "spain_1111",
+  "source_name": "Spain",
+  "type": "Region",
+  "lat": 40.4814,
+  "lon": -3.1753,
+  "verses": 2,
+  "appears": "Romans 15 → Romans 15 (1 chapters; sample: Romans 15)",
+  "mentioned_in_app": [
+   "Romans 15 summary: \"Paul calls believers to welcome one another as Christ welcomed them, and shares his ministry and travel plans. Christ served the Jews so that Gentiles also might glorify God for his mercy. Paul descri\""
+  ]
+ },
+ {
+  "slug": "taberah_1127",
+  "source_name": "Taberah",
+  "type": "",
+  "lat": 28.9167,
+  "lon": 34.5,
+  "verses": 2,
+  "appears": "Numbers 11 → Deuteronomy 9 (2 chapters; sample: Numbers 11, Deuteronomy 9)",
+  "mentioned_in_app": [
+   "Numbers 11 summary: \"The people complain about hardship and the manna, and God sends judgment, shares Moses' burden, and provides quail. At Taberah, fire from the LORD burns the edge of the camp until Moses prays. Overwhe\"",
+   "Deuteronomy 9 summary: \"Moses warns that Israel receives the land because of the nations' wickedness, not Israel's righteousness. He recalls the golden calf at Horeb and breaking the tablets. He lay before the LORD forty day\""
+  ]
+ },
+ {
+  "slug": "tabor_1129",
+  "source_name": "Tabor",
+  "type": "City",
+  "lat": 32.6832,
+  "lon": 35.3247,
+  "verses": 1,
+  "appears": "1 Chronicles 6 → 1 Chronicles 6 (1 chapters; sample: 1 Chronicles 6)",
+  "mentioned_in_app": [
+   "card of Daberath: \"A town near Mount Tabor on the border of Zebulun, later given to the Levites.\""
+  ]
+ },
+ {
+  "slug": "tel-abib_1143",
+  "source_name": "Tel-abib",
+  "type": "",
+  "lat": 32.1272,
+  "lon": 45.23,
+  "verses": 1,
+  "appears": "Ezekiel 3 → Ezekiel 3 (1 chapters; sample: Ezekiel 3)",
+  "mentioned_in_app": [
+   "Ezekiel 3 summary: \"Ezekiel eats the scroll, is appointed a watchman over Israel, and is made mute except when God speaks. The scroll tastes as sweet as honey. God makes his forehead hard against Israel's stubbornness. A\"",
+   "card of Chebar: \"Ezekiel came to the exiles at Tel-abib by the Chebar canal (Ezekiel 3).\""
+  ]
+ },
+ {
+  "slug": "thebez_1157",
+  "source_name": "Thebez",
+  "type": "",
+  "lat": 32.3241,
+  "lon": 35.3683,
+  "verses": 2,
+  "appears": "Judges 9 → 2 Samuel 11 (2 chapters; sample: Judges 9, 2 Samuel 11)",
+  "mentioned_in_app": [
+   "Judges 9 summary: \"Gideon's son Abimelech murders his brothers, rules Shechem for three years, and dies violently. Abimelech kills seventy brothers, but Jotham escapes and tells a parable of the trees. Shechem later rev\"",
+   "card of Abimelech: \"At Thebez a woman dropped a millstone on him, and his armor-bearer killed him (Judges 9).\""
+  ]
+ },
+ {
+  "slug": "tigris_1163",
+  "source_name": "Tigris",
+  "type": "Water",
+  "lat": 35.9833,
+  "lon": 43.3465,
+  "verses": 2,
+  "appears": "Genesis 2 → Daniel 10 (2 chapters; sample: Genesis 2, Daniel 10)",
+  "mentioned_in_app": [
+   "Daniel 10 summary: \"After three weeks of mourning, Daniel sees a glorious heavenly messenger who comes to explain what will happen to his people. In Cyrus's third year, Daniel fasts and then stands beside the Tigris Rive\"",
+   "card of Assyria: \"The Tigris is described as flowing east of Assyria (Genesis 2).\"",
+   "card of Assyria: \"A powerful Mesopotamian empire on the upper Tigris that conquered the northern kingdom of Israel.\""
+  ]
+ },
+ {
+  "slug": "timnah_1165",
+  "source_name": "Timnah",
+  "type": "City",
+  "lat": 31.6993,
+  "lon": 35.0404,
+  "verses": 1,
+  "appears": "Joshua 15 → Joshua 15 (1 chapters; sample: Joshua 15)",
+  "mentioned_in_app": [
+   "card of Timnah: \"Timnah lay on Judah's northern boundary (Joshua 15).\""
+  ]
+ },
+ {
+  "slug": "timnath-serah_1167",
+  "source_name": "Timnath-serah",
+  "type": "City",
+  "lat": 32.1215,
+  "lon": 35.1504,
+  "verses": 2,
+  "appears": "Joshua 19 → Joshua 24 (2 chapters; sample: Joshua 19, Joshua 24)",
+  "mentioned_in_app": [
+   "Joshua 19 summary: \"The last six tribes receive their land, and Joshua receives his own town. Simeon's inheritance lies within Judah because Judah's portion was too large. Zebulun, Issachar, Asher, Naphtali, and Dan rece\"",
+   "card of Ephraim: \"Joshua received Timnath-serah in the hill country of Ephraim (Joshua 19).\"",
+   "card of Gaash: \"Joshua is buried at Timnath-serah, north of the mountain of Gaash (Joshua 24).\""
+  ]
+ },
+ {
+  "slug": "tiphsah_1169",
+  "source_name": "Tiphsah",
+  "type": "",
+  "lat": 32.1667,
+  "lon": 35.1667,
+  "verses": 1,
+  "appears": "2 Kings 15 → 2 Kings 15 (1 chapters; sample: 2 Kings 15)",
+  "mentioned_in_app": [
+   "card of Menahem: \"He attacked Tiphsah brutally because it would not open its gates to him (2 Kings 15).\""
+  ]
+ },
+ {
+  "slug": "tishbe_1171",
+  "source_name": "Tishbe",
+  "type": "",
+  "lat": 33.0172,
+  "lon": 35.568,
+  "verses": 1,
+  "appears": "1 Kings 17 → 1 Kings 17 (1 chapters; sample: 1 Kings 17)",
+  "mentioned_in_app": [
+   "card of Elijah: \"Prophet from Tishbe who confronted King Ahab and Baal worship in Israel and was taken up to heaven.\""
+  ]
+ },
+ {
+  "slug": "valley_of_beracah_1200",
+  "source_name": "Valley of Beracah",
+  "type": "Valley",
+  "lat": 31.6106,
+  "lon": 35.1656,
+  "verses": 1,
+  "appears": "2 Chronicles 20 → 2 Chronicles 20 (1 chapters; sample: 2 Chronicles 20)",
+  "mentioned_in_app": [
+   "2 Chronicles 20 summary: \"Facing a vast invading army, Jehoshaphat leads Judah in prayer, and God makes the enemies destroy one another. Jehoshaphat proclaims a fast and prays, confessing they do not know what to do. Jahaziel \""
+  ]
+ },
+ {
+  "slug": "valley_of_hamongog_1205",
+  "source_name": "Valley of Hamon-gog",
+  "type": "Valley",
+  "lat": 31.4968,
+  "lon": 35.7828,
+  "verses": 2,
+  "appears": "Ezekiel 39 → Ezekiel 39 (1 chapters; sample: Ezekiel 39)",
+  "mentioned_in_app": [
+   "Ezekiel 39 summary: \"Gog's army falls on Israel's mountains, its weapons are burned, and God promises to restore Israel and pour out his Spirit. Israel burns the weapons as fuel for seven years. Burying the dead takes sev\""
+  ]
+ },
+ {
+  "slug": "valley_of_jehoshaphat_1209",
+  "source_name": "Valley of Jehoshaphat",
+  "type": "Valley",
+  "lat": 31.7721,
+  "lon": 35.2366,
+  "verses": 2,
+  "appears": "Joel 3 → Joel 3 (1 chapters; sample: Joel 3)",
+  "mentioned_in_app": [
+   "Joel: \"Joel uses a devastating locust plague to call Judah to repentance and to announce the coming day of the LORD. A locust invasion has stripped the land, and Joel calls everyone to mourn and seek God. He\"",
+   "Joel 3 summary: \"God will gather the nations for judgment in the Valley of Jehoshaphat and dwell in Zion with his restored people. He will judge the nations for scattering Israel and dividing his land. Tyre, Sidon, an\""
+  ]
+ },
+ {
+  "slug": "valley_of_lebanon_1212",
+  "source_name": "Valley of Lebanon",
+  "type": "Valley",
+  "lat": 33.4162,
+  "lon": 35.8573,
+  "verses": 2,
+  "appears": "Joshua 11 → Joshua 12 (2 chapters; sample: Joshua 11, Joshua 12)",
+  "mentioned_in_app": [
+   "card of Baal-gad: \"A town in the Valley of Lebanon below Mount Hermon, marking the northern limit of Joshua's conquest.\""
+  ]
+ },
+ {
+  "slug": "valley_of_slaughter_1219",
+  "source_name": "Valley of Slaughter",
+  "type": "Valley",
+  "lat": 31.7691,
+  "lon": 35.228,
+  "verses": 2,
+  "appears": "Jeremiah 7 → Jeremiah 19 (2 chapters; sample: Jeremiah 7, Jeremiah 19)",
+  "mentioned_in_app": [
+   "Jeremiah 7 summary: \"At the temple gate Jeremiah warns that trusting in the temple cannot save people who persist in sin. God will do to the temple what he did to Shiloh. Jeremiah is told not to pray for people who worshi\"",
+   "card of Topheth: \"Jeremiah condemned Topheth and said it would be called the Valley of Slaughter (Jeremiah 7).\"",
+   "card of Valley of the Son of Hinnom: \"Jeremiah said the valley would be renamed the Valley of Slaughter (Jeremiah 7).\""
+  ]
+ },
+ {
+  "slug": "valley_of_sorek_1220",
+  "source_name": "Valley of Sorek",
+  "type": "Valley",
+  "lat": 31.8257,
+  "lon": 34.989,
+  "verses": 1,
+  "appears": "Judges 16 → Judges 16 (1 chapters; sample: Judges 16)",
+  "mentioned_in_app": [
+   "card of Delilah: \"Samson loved Delilah, who lived in the Valley of Sorek (Judges 16).\"",
+   "card of Delilah: \"A woman of the Valley of Sorek whom Samson loved and who betrayed him to the Philistines.\""
+  ]
+ },
+ {
+  "slug": "way_of_holiness_1231",
+  "source_name": "Way of Holiness",
+  "type": "Path",
+  "lat": 31.7774,
+  "lon": 35.2349,
+  "verses": 1,
+  "appears": "Isaiah 35 → Isaiah 35 (1 chapters; sample: Isaiah 35)",
+  "mentioned_in_app": [
+   "Isaiah 35 summary: \"The desert will bloom, the weak will be strengthened, and the redeemed will return to Zion on the Way of Holiness. The glory of the LORD will be seen in the wilderness. The blind will see, the deaf he\""
+  ]
+ },
+ {
+  "slug": "zanoah_1240",
+  "source_name": "Zanoah",
+  "type": "City",
+  "lat": 31.3667,
+  "lon": 35.0,
+  "verses": 1,
+  "appears": "Joshua 15 → Joshua 15 (1 chapters; sample: Joshua 15)",
+  "mentioned_in_app": [
+   "card of Zanoah: \"Zanoah is listed among Judah's towns, both in the lowland and the hill country (Joshua 15).\""
+  ]
+ },
+ {
+  "slug": "zephath_1251",
+  "source_name": "Zephath",
+  "type": "City",
+  "lat": 30.8809,
+  "lon": 34.6306,
+  "verses": 1,
+  "appears": "Judges 1 → Judges 1 (1 chapters; sample: Judges 1)",
+  "mentioned_in_app": [
+   "card of Hormah: \"Judah and Simeon destroyed Zephath and called it Hormah (Judges 1).\""
+  ]
+ },
+ {
+  "slug": "zeredah_1254",
+  "source_name": "Zeredah",
+  "type": "City",
+  "lat": 32.2329,
+  "lon": 35.273,
+  "verses": 1,
+  "appears": "1 Kings 11 → 1 Kings 11 (1 chapters; sample: 1 Kings 11)",
+  "mentioned_in_app": [
+   "card of Nebat: \"An Ephraimite of Zeredah, father of Jeroboam the first king of northern Israel.\""
+  ]
+ },
+ {
+  "slug": "zin_1262",
+  "source_name": "Zin",
+  "type": "",
+  "lat": 30.6877,
+  "lon": 34.4948,
+  "verses": 2,
+  "appears": "Numbers 34 → Joshua 15 (2 chapters; sample: Numbers 34, Joshua 15)",
+  "mentioned_in_app": [
+   "card of Zin: \"Zin marked the southern border of Canaan and of Judah (Numbers 34).\"",
+   "card of Zin: \"Judah's southern boundary passed along the wilderness of Zin (Joshua 15).\""
+  ]
+ },
+ {
+  "slug": "ziph_1267",
+  "source_name": "Ziph",
+  "type": "City",
+  "lat": 31.1623,
+  "lon": 35.0571,
+  "verses": 1,
+  "appears": "Joshua 15 → Joshua 15 (1 chapters; sample: Joshua 15)",
+  "mentioned_in_app": [
+   "card of Ziph: \"Ziph was allotted to Judah in the hill country (Joshua 15).\""
+  ]
+ }
+]

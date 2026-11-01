@@ -1,0 +1,882 @@
+[
+ {
+  "slug": "abda_4",
+  "source_name": "Abda",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Kings 4 → 1 Kings 4 (1 chapters; sample: 1 Kings 4)",
+  "family_in_source": {
+   "c": [
+    "Adoniram [adoniram_102]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Adoniram: \"The son of Abda who oversaw forced labor under David, Solomon, and Rehoboam.\""
+  ]
+ },
+ {
+  "slug": "abdon_10",
+  "source_name": "Abdon",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Judges 12 → Judges 12 (1 chapters; sample: Judges 12)",
+  "family_in_source": {
+   "f": [
+    "Hillel [hillel_1530]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Judges 12 summary: \"Jephthah defeats the tribe of Ephraim, and three more minor judges lead Israel. Gileadites identify fleeing Ephraimites by their pronunciation of Shibboleth, and 42,000 die. Jephthah judges six years \"",
+   "card of Pirathon: \"Abdon the Pirathonite judges Israel and is buried at Pirathon (Judges 12).\"",
+   "card of Pirathon: \"A town in the hill country of Ephraim, home of the judge Abdon and David's warrior Benaiah.\""
+  ]
+ },
+ {
+  "slug": "abida_21",
+  "source_name": "Abida",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 25 → 1 Chronicles 1 (2 chapters; sample: Genesis 25, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Midian [midian_2075]"
+   ],
+   "s": [
+    "Eldaah [eldaah_1057]",
+    "Ephah [ephah_1197]",
+    "Epher [epher_1201]",
+    "Henoch [henoch_1402]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Midian: \"Midian's sons were Ephah, Epher, Hanoch, Abida, and Eldaah (1 Chronicles 1).\""
+  ]
+ },
+ {
+  "slug": "abiezer_763",
+  "source_name": "Abiezer",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Numbers 26 → Judges 8 (4 chapters; sample: Numbers 26, Joshua 17, Judges 6, Judges 8)",
+  "family_in_source": {
+   "f": [
+    "Gilead [gilead_1317]"
+   ],
+   "s": [
+    "Asriel [asriel_348]",
+    "Helek [helek_1481]",
+    "Hepher [hepher_1496]",
+    "Shechem [shechem_2589]",
+    "Shemida [shemida_2650]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ophrah: \"Gideon's hometown, belonging to the clan of Abiezer in Manasseh.\""
+  ]
+ },
+ {
+  "slug": "abigail_27",
+  "source_name": "Abigail",
+  "gender": "F",
+  "verses": 3,
+  "appears": "2 Samuel 17 → 1 Chronicles 2 (2 chapters; sample: 2 Samuel 17, 1 Chronicles 2)",
+  "family_in_source": {
+   "f": [
+    "Nahash [nahash_2138]"
+   ],
+   "s": [
+    "Zeruiah [zeruiah_3055]",
+    "David [david_994]"
+   ],
+   "p": [
+    "Jether [jether_907]"
+   ],
+   "c": [
+    "Amasa [amasa_207]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Amasa: \"A nephew of David, son of Abigail, who commanded Absalom's army and later David's, until Joab killed him.\"",
+   "card of Zeruiah: \"Zeruiah and Abigail are listed as sisters of David and his brothers (1 Chronicles 2).\""
+  ]
+ },
+ {
+  "slug": "abihail_31",
+  "source_name": "Abihail",
+  "gender": "F",
+  "verses": 1,
+  "appears": "2 Chronicles 11 → 2 Chronicles 11 (1 chapters; sample: 2 Chronicles 11)",
+  "family_in_source": {
+   "f": [
+    "Eliab [eliab_1075]"
+   ],
+   "p": [
+    "Rehoboam [rehoboam_2412]"
+   ],
+   "c": [
+    "Shamariah [shamariah_2531]",
+    "Jeush [jeush_1603]",
+    "Zaham [zaham_2980]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Eliab: \"His daughter Abihail was the mother of one of Rehoboam's wives (2 Chronicles 11).\""
+  ]
+ },
+ {
+  "slug": "abijah_35",
+  "source_name": "Abijah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Kings 14 → 1 Kings 14 (1 chapters; sample: 1 Kings 14)",
+  "family_in_source": {
+   "f": [
+    "Jeroboam [jeroboam_872]"
+   ],
+   "s": [
+    "Nadab [nadab_2129]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Rehoboam: \"He reigned seventeen years in Jerusalem, and his son Abijah succeeded him (1 Kings 14).\""
+  ]
+ },
+ {
+  "slug": "abijah_36",
+  "source_name": "Abijah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 24 → Luke 1 (2 chapters; sample: 1 Chronicles 24, Luke 1)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Zechariah: \"He was a righteous priest of the division of Abijah, and his wife Elizabeth was barren (Luke 1).\""
+  ]
+ },
+ {
+  "slug": "abinadab_43",
+  "source_name": "Abinadab",
+  "gender": "M",
+  "verses": 4,
+  "appears": "1 Samuel 7 → 1 Chronicles 13 (3 chapters; sample: 1 Samuel 7, 2 Samuel 6, 1 Chronicles 13)",
+  "family_in_source": {
+   "c": [
+    "Uzzah [uzzah_2916]",
+    "Eleazar [eleazar_1063]",
+    "Ahio [ahio_154]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Kiriath-jearim: \"The ark was brought to the house of Abinadab in Kiriath-jearim (1 Samuel 7).\"",
+   "card of Uzzah: \"He and his brother Ahio drove the new cart carrying the ark from Abinadab's house (2 Samuel 6).\"",
+   "card of Uzzah: \"A son of Abinadab who died when he touched the ark of God as David moved it.\""
+  ]
+ },
+ {
+  "slug": "abinoam_46",
+  "source_name": "Abinoam",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Judges 4 → Judges 5 (2 chapters; sample: Judges 4, Judges 5)",
+  "family_in_source": {
+   "c": [
+    "Barak [barak_401]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Barak: \"The son of Abinoam from Kedesh in Naphtali who led Israel's army against Sisera at Deborah's summons.\""
+  ]
+ },
+ {
+  "slug": "achsah_68",
+  "source_name": "Achsah",
+  "gender": "F",
+  "verses": 4,
+  "appears": "Joshua 15 → Judges 1 (2 chapters; sample: Joshua 15, Judges 1)",
+  "family_in_source": {
+   "f": [
+    "Caleb [caleb_537]"
+   ],
+   "s": [
+    "Iru [iru_615]",
+    "Elah [elah_1047]",
+    "Naam [naam_2117]"
+   ],
+   "p": [
+    "Othniel [othniel_2259]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Joshua 15 summary: \"Judah's boundaries and towns are described, along with Caleb's conquest of Hebron and Debir. Caleb drives out the three sons of Anak from Hebron. Othniel captures Debir and marries Caleb's daughter Ac\"",
+   "Judges 1 summary: \"After Joshua's death, the tribes fight the Canaanites but largely fail to drive them out. Judah and Simeon defeat Adoni-bezek and take several cities. Othniel captures Debir and marries Caleb's daught\"",
+   "card of Kiriath-sepher: \"Caleb offers his daughter Achsah to whoever captures Kiriath-sepher (Joshua 15).\""
+  ]
+ },
+ {
+  "slug": "adaiah_72",
+  "source_name": "Adaiah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 9 → Nehemiah 11 (2 chapters; sample: 1 Chronicles 9, Nehemiah 11)",
+  "family_in_source": {
+   "f": [
+    "Jeroham [jeroham_877]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Pashhur: \"Pashhur appears as an ancestor of Adaiah, a priest living in Jerusalem (1 Chronicles 9).\""
+  ]
+ },
+ {
+  "slug": "adoni-bezek_96",
+  "source_name": "Adoni-bezek",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Judges 1 → Judges 1 (1 chapters; sample: Judges 1)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Judges 1 summary: \"After Joshua's death, the tribes fight the Canaanites but largely fail to drive them out. Judah and Simeon defeat Adoni-bezek and take several cities. Othniel captures Debir and marries Caleb's daught\""
+  ]
+ },
+ {
+  "slug": "adoni-zedek_101",
+  "source_name": "Adoni-zedek",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Joshua 10 → Joshua 10 (1 chapters; sample: Joshua 10)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Joshua 10 summary: \"Joshua defeats five Amorite kings who attack Gibeon, then conquers the southern cities of Canaan. Adoni-zedek of Jerusalem leads the coalition, and God sends great hailstones on them. At Joshua's pray\""
+  ]
+ },
+ {
+  "slug": "aeneas_106",
+  "source_name": "Aeneas",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Acts 9 → Acts 9 (1 chapters; sample: Acts 9)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Acts 9 summary: \"The risen Jesus confronts Saul on the Damascus road, and Saul is converted and begins preaching. Saul is blinded, and Ananias lays hands on him so he regains sight. Saul escapes a plot by being lowere\"",
+   "card of Sharon: \"Residents of Lydda and Sharon turned to the Lord after Aeneas was healed (Acts 9).\"",
+   "card of Lydda: \"At Lydda Peter healed Aeneas, bedridden eight years, and residents turned to the Lord (Acts 9).\""
+  ]
+ },
+ {
+  "slug": "agabus_107",
+  "source_name": "Agabus",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Acts 11 → Acts 21 (2 chapters; sample: Acts 11, Acts 21)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Acts 21 summary: \"Despite warnings, Paul goes to Jerusalem, where he is seized in the temple and arrested by Roman soldiers. Agabus binds his own hands and feet with Paul's belt to foretell Paul's arrest. James and the\""
+  ]
+ },
+ {
+  "slug": "agur_112",
+  "source_name": "Agur",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Proverbs 30 → Proverbs 30 (1 chapters; sample: Proverbs 30)",
+  "family_in_source": {
+   "f": [
+    "Jakeh [jakeh_712]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Proverbs: \"Proverbs gathers wise sayings, mostly from Solomon, teaching that the fear of the LORD is the beginning of wisdom. Chapters 1–9 are a father's appeals to his son to embrace wisdom and avoid folly and \"",
+   "Proverbs 30 summary: \"Agur confesses his limited understanding, prays for neither poverty nor riches, and gives numerical sayings about the world. Every word of God proves true, and nothing should be added to his words. Ag\""
+  ]
+ },
+ {
+  "slug": "ahab_114",
+  "source_name": "Ahab",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Jeremiah 29 → Jeremiah 29 (1 chapters; sample: Jeremiah 29)",
+  "family_in_source": {
+   "f": [
+    "Kolaiah [kolaiah_1792]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Jeremiah 29 summary: \"Jeremiah writes to the exiles in Babylon to settle down, seek the city's welfare, and await restoration after seventy years. They are to build houses, marry, and pray for Babylon. God has plans for th\""
+  ]
+ },
+ {
+  "slug": "ahasbai_116",
+  "source_name": "Ahasbai",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Samuel 23 → 2 Samuel 23 (1 chapters; sample: 2 Samuel 23)",
+  "family_in_source": {
+   "c": [
+    "Eliphelet [eliphelet_1147]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Maacah: \"Eliphelet son of Ahasbai of Maacah is among David's mighty men (2 Samuel 23).\""
+  ]
+ },
+ {
+  "slug": "ahaz_119",
+  "source_name": "Ahaz",
+  "gender": "M",
+  "verses": 4,
+  "appears": "1 Chronicles 8 → 1 Chronicles 9 (2 chapters; sample: 1 Chronicles 8, 1 Chronicles 9)",
+  "family_in_source": {
+   "f": [
+    "Micah [micah_2055]"
+   ],
+   "s": [
+    "Melech [melech_1993]",
+    "Pithon [pithon_2363]",
+    "Tahrea [tahrea_2827]"
+   ],
+   "c": [
+    "Jarah [jarah_782]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Micah: \"As son of Merib-baal, he fathered Pithon, Melech, Tarea, and Ahaz (1 Chronicles 8).\""
+  ]
+ },
+ {
+  "slug": "ahijah_136",
+  "source_name": "Ahijah",
+  "gender": "M",
+  "verses": 4,
+  "appears": "1 Kings 15 → 2 Kings 9 (3 chapters; sample: 1 Kings 15, 1 Kings 21, 2 Kings 9)",
+  "family_in_source": {
+   "c": [
+    "Baasha [baasha_589]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ahijah: \"Baasha destroyed Jeroboam's whole house, according to the word spoken by Ahijah (1 Kings 15).\""
+  ]
+ },
+ {
+  "slug": "ahijah_137",
+  "source_name": "Ahijah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 2 → 1 Chronicles 2 (1 chapters; sample: 1 Chronicles 2)",
+  "family_in_source": {
+   "f": [
+    "Jerahmeel [jerahmeel_843]"
+   ],
+   "s": [
+    "Bunah [bunah_525]",
+    "Onam [onam_2249]",
+    "Oren [oren_2256]",
+    "Ozem [ozem_2261]",
+    "Ram [ram_2392]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Jerahmeel: \"His sons were Ram, Bunah, Oren, Ozem, and Ahijah (1 Chronicles 2).\""
+  ]
+ },
+ {
+  "slug": "ahiman_146",
+  "source_name": "Ahiman",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Numbers 13 → Judges 1 (3 chapters; sample: Numbers 13, Joshua 15, Judges 1)",
+  "family_in_source": {
+   "f": [
+    "Anak [anak_252]"
+   ],
+   "s": [
+    "Sheshai [sheshai_2671]",
+    "Talmai [talmai_2818]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Kiriath-arba: \"Judah defeated Sheshai, Ahiman, and Talmai there (Judges 1).\"",
+   "card of Anak: \"Caleb drove out the three sons of Anak, Sheshai, Ahiman, and Talmai, from Hebron (Joshua 15).\""
+  ]
+ },
+ {
+  "slug": "ahio_154",
+  "source_name": "Ahio",
+  "gender": "M",
+  "verses": 3,
+  "appears": "2 Samuel 6 → 1 Chronicles 13 (2 chapters; sample: 2 Samuel 6, 1 Chronicles 13)",
+  "family_in_source": {
+   "f": [
+    "Abinadab [abinadab_43]"
+   ],
+   "s": [
+    "Eleazar [eleazar_1063]",
+    "Uzzah [uzzah_2916]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Uzzah: \"He and his brother Ahio drove the new cart carrying the ark from Abinadab's house (2 Samuel 6).\""
+  ]
+ },
+ {
+  "slug": "ahisamach_159",
+  "source_name": "Ahisamach",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Exodus 31 → Exodus 38 (3 chapters; sample: Exodus 31, Exodus 35, Exodus 38)",
+  "family_in_source": {
+   "c": [
+    "Aholiab [aholiab_170]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Oholiab: \"The Lord appointed him, son of Ahisamach, to work with Bezalel (Exodus 31).\""
+  ]
+ },
+ {
+  "slug": "akan_179",
+  "source_name": "Akan",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Ezer [ezer_1238]"
+   ],
+   "s": [
+    "Bilhan [bilhan_503]",
+    "Zavan [zavan_2944]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ezer: \"His sons Bilhan, Zaavan, and Akan are named, and he was a Horite chief (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "akkub_182",
+  "source_name": "Akkub",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Ezra 2 → Ezra 2 (1 chapters; sample: Ezra 2)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Akkub: \"The sons of Akkub were among the gatekeepers who returned from exile (Ezra 2).\""
+  ]
+ },
+ {
+  "slug": "alexander_186",
+  "source_name": "Alexander",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Mark 15 → Mark 15 (1 chapters; sample: Mark 15)",
+  "family_in_source": {
+   "f": [
+    "Simon [simon_2749]"
+   ],
+   "s": [
+    "Rufus [rufus_2448]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Cyrene: \"Mark names Simon of Cyrene as the father of Alexander and Rufus (Mark 15).\""
+  ]
+ },
+ {
+  "slug": "alexander_189",
+  "source_name": "Alexander",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Timothy 1 → 2 Timothy 4 (2 chapters; sample: 1 Timothy 1, 2 Timothy 4)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "1 Timothy 1 summary: \"Paul charges Timothy to confront false teachers and recalls how Christ showed him mercy as the foremost sinner. Some were devoted to myths and endless genealogies. The law is good when used lawfully a\""
+  ]
+ },
+ {
+  "slug": "alphaeus_192",
+  "source_name": "Alphaeus",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Matthew 10 → Acts 1 (4 chapters; sample: Matthew 10, Mark 3, Luke 6, Acts 1)",
+  "family_in_source": {
+   "c": [
+    "James [james_718]",
+    "Lebbaeus [lebbaeus_1815]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of James: \"Jesus named James son of Alphaeus among the twelve apostles he sent out (Matthew 10).\"",
+   "card of James: \"The son of Alphaeus and one of the twelve apostles chosen by Jesus.\""
+  ]
+ },
+ {
+  "slug": "alvan_195",
+  "source_name": "Alvan",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Shobal [shobal_2719]"
+   ],
+   "s": [
+    "Ebal [ebal_1026]",
+    "Manahath [manahath_1927]",
+    "Onam [onam_2248]",
+    "Shepho [shepho_2665]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Shobal: \"His sons were Alvan, Manahath, Ebal, Shepho, and Onam (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "amariah_198",
+  "source_name": "Amariah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 6 → 1 Chronicles 6 (1 chapters; sample: 1 Chronicles 6)",
+  "family_in_source": {
+   "f": [
+    "Meraioth [meraioth_2003]"
+   ],
+   "c": [
+    "Ahitub [ahitub_164]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Meraioth: \"He was the son of Zerahiah and father of Amariah in Aaron's line (1 Chronicles 6).\"",
+   "card of Ahitub: \"A priest descended from Aaron, the son of Amariah and father of Zadok.\""
+  ]
+ },
+ {
+  "slug": "amariah_199",
+  "source_name": "Amariah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 6 → Ezra 7 (2 chapters; sample: 1 Chronicles 6, Ezra 7)",
+  "family_in_source": {
+   "f": [
+    "Azariah [azariah_378]"
+   ],
+   "c": [
+    "Ahitub [ahitub_165]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Meraioth: \"He was the son of Zerahiah and father of Amariah in Aaron's line (1 Chronicles 6).\"",
+   "card of Ahitub: \"A priest descended from Aaron, the son of Amariah and father of Zadok.\""
+  ]
+ },
+ {
+  "slug": "amariah_200",
+  "source_name": "Amariah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 23 → 1 Chronicles 24 (2 chapters; sample: 1 Chronicles 23, 1 Chronicles 24)",
+  "family_in_source": {
+   "f": [
+    "Hebron [hebron_1475]"
+   ],
+   "s": [
+    "Jahaziel [jahaziel_698]",
+    "Jekameam [jekameam_834]",
+    "Jeriah [jeriah_860]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Hebron: \"His sons Jeriah, Amariah, Jahaziel, and Jekameam are listed in David's Levite divisions (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "amariah_201",
+  "source_name": "Amariah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Chronicles 19 → 2 Chronicles 19 (1 chapters; sample: 2 Chronicles 19)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "2 Chronicles 19 summary: \"Rebuked for helping Ahab, Jehoshaphat brings the people back to the LORD and appoints judges throughout Judah. Jehu the seer says wrath is on him, yet some good is found in him. Jehoshaphat charges ju\""
+  ]
+ },
+ {
+  "slug": "amasai_210",
+  "source_name": "Amasai",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 12 → 1 Chronicles 12 (1 chapters; sample: 1 Chronicles 12)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "1 Chronicles 12 summary: \"Warriors from every tribe join David, first at Ziklag and then at Hebron, to make him king. Benjaminites, Gadites, and men of Judah join him while he hides from Saul. Clothed by the Spirit, Amasai dec\""
+  ]
+ },
+ {
+  "slug": "amaziah_217",
+  "source_name": "Amaziah",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Amos 7 → Amos 7 (1 chapters; sample: Amos 7)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Amos: \"Amos, a shepherd from Tekoa, warns prosperous Israel that God will judge their injustice, empty worship, and complacency. Amos prophesies in the reigns of Uzziah of Judah and Jeroboam II of Israel. He\"",
+   "Amos 7 summary: \"Amos sees visions of locusts, fire, and a plumb line, and the priest Amaziah orders him to leave Bethel. Amos intercedes after the locust and fire visions, and the LORD relents. The plumb line shows G\"",
+   "card of Bethel: \"Amaziah the priest of Bethel ordered Amos to leave (Amos 7).\""
+  ]
+ },
+ {
+  "slug": "amittai_219",
+  "source_name": "Amittai",
+  "gender": "M",
+  "verses": 2,
+  "appears": "2 Kings 14 → Jonah 1 (2 chapters; sample: 2 Kings 14, Jonah 1)",
+  "family_in_source": {
+   "c": [
+    "Jonah [jonah_1689]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Jonah: \"A prophet of Israel, son of Amittai, sent by God to preach to Nineveh.\""
+  ]
+ },
+ {
+  "slug": "ammiel_221",
+  "source_name": "Ammiel",
+  "gender": "M",
+  "verses": 3,
+  "appears": "2 Samuel 9 → 2 Samuel 17 (2 chapters; sample: 2 Samuel 9, 2 Samuel 17)",
+  "family_in_source": {
+   "c": [
+    "Machir [machir_1878]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Lo-debar: \"A town in Gilead east of the Jordan, home of Machir son of Ammiel.\""
+  ]
+ },
+ {
+  "slug": "anah_247",
+  "source_name": "Anah",
+  "gender": "F",
+  "verses": 3,
+  "appears": "Genesis 36 → Genesis 36 (1 chapters; sample: Genesis 36)",
+  "family_in_source": {
+   "f": [
+    "Zibeon [zibeon_3061]"
+   ],
+   "p": [
+    "Beeri [beeri_432]"
+   ],
+   "c": [
+    "Aholibamah [aholibamah_1761]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Zibeon: \"Esau's wife Oholibamah was the daughter of Anah, the daughter of Zibeon (Genesis 36).\"",
+   "card of Zibeon: \"His son Anah found the hot springs while pasturing Zibeon's donkeys (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "anah_249",
+  "source_name": "Anah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Zibeon [zibeon_3062]"
+   ],
+   "s": [
+    "Ajah [ajah_178]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Zibeon: \"Esau's wife Oholibamah was the daughter of Anah, the daughter of Zibeon (Genesis 36).\"",
+   "card of Zibeon: \"His son Anah found the hot springs while pasturing Zibeon's donkeys (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "ananias_258",
+  "source_name": "Ananias",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Acts 5 → Acts 5 (1 chapters; sample: Acts 5)",
+  "family_in_source": {
+   "p": [
+    "Sapphira [sapphira_2472]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Acts 5 summary: \"Ananias and Sapphira die for lying to the Holy Spirit, and the apostles are imprisoned, freed, and beaten. Many signs and healings are done through the apostles. An angel frees them, and they resume t\""
+  ]
+ },
+ {
+  "slug": "anna_268",
+  "source_name": "Anna",
+  "gender": "F",
+  "verses": 1,
+  "appears": "Luke 2 → Luke 2 (1 chapters; sample: Luke 2)",
+  "family_in_source": {
+   "f": [
+    "Phanuel [phanuel_2327]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Luke 2 summary: \"Jesus is born in Bethlehem, presented at the temple, and at twelve years old remains among the teachers there. A Roman census brings Joseph and Mary to Bethlehem, where Jesus is laid in a manger. Ange\""
+  ]
+ },
+ {
+  "slug": "annas_269",
+  "source_name": "Annas",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Luke 3 → Acts 4 (3 chapters; sample: Luke 3, John 18, Acts 4)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "John 18 summary: \"Jesus is arrested, questioned before Annas and Caiaphas, denied by Peter, and examined by Pilate. In the garden Peter cuts off the ear of the high priest's servant. Jesus tells Pilate his kingdom is n\"",
+   "card of Caiaphas: \"He was high priest, alongside Annas, when John the Baptist began preaching (Luke 3).\"",
+   "card of Caiaphas: \"With Annas and others, he questioned Peter and John after a lame man was healed (Acts 4).\""
+  ]
+ },
+ {
+  "slug": "arad_281",
+  "source_name": "Arad",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Numbers 21 → 1 Chronicles 8 (3 chapters; sample: Numbers 21, Numbers 33, 1 Chronicles 8)",
+  "family_in_source": {
+   "f": [
+    "Beriah [beriah_480]"
+   ],
+   "s": [
+    "Ader [ader_82]",
+    "Ahio [ahio_155]",
+    "Ispah [ispah_644]",
+    "Jeremoth [jeremoth_856]",
+    "Joha [joha_1664]",
+    "Michael [michael_2063]",
+    "Shashak [shashak_2561]",
+    "Zebadiah [zebadiah_2988]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Numbers 21 summary: \"Israel defeats Arad, suffers a plague of serpents, and conquers the Amorite kings Sihon and Og. When the people complain, God sends venomous snakes, and those who look at Moses' bronze serpent live. I\"",
+   "card of Arad: \"The king of Arad attacks Israel, and Israel devotes his cities to destruction (Numbers 21).\"",
+   "card of Arad: \"The Canaanite king of Arad hears that Israel is coming (Numbers 33).\""
+  ]
+ },
+ {
+  "slug": "aran_288",
+  "source_name": "Aran",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Dishan [dishan_1015]"
+   ],
+   "s": [
+    "Uz [uz_2909]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Dishan: \"His sons Uz and Aran are named, and he was a Horite chief (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "arba_290",
+  "source_name": "Arba",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Joshua 14 → Joshua 21 (3 chapters; sample: Joshua 14, Joshua 15, Joshua 21)",
+  "family_in_source": {
+   "c": [
+    "Anak [anak_252]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Kiriath-arba: \"The older name of Hebron, a city in the hill country of Judah named after Arba of the Anakim.\"",
+   "card of Anak: \"Son of Arba and ancestor of the Anakim, the tall people of Hebron who frightened Israel's spies.\""
+  ]
+ },
+ {
+  "slug": "archelaus_291",
+  "source_name": "Archelaus",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Matthew 2 → Matthew 2 (1 chapters; sample: Matthew 2)",
+  "family_in_source": {
+   "f": [
+    "Herod [herod_1504]"
+   ],
+   "s": [
+    "Herod Antipas [herod_1505]",
+    "Philip [philip_2345]",
+    "Philip [philip_2346]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Herod: \"After Herod died, Joseph brought Jesus back from Egypt, avoiding Herod's son Archelaus (Matthew 2).\""
+  ]
+ },
+ {
+  "slug": "artaxerxes_313",
+  "source_name": "Artaxerxes",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Ezra 4 → Ezra 4 (1 chapters; sample: Ezra 4)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Ezra 4 summary: \"Local opponents offer to help, are refused, and then frustrate the rebuilding until the work stops. Adversaries discourage the builders and hire counselors against them through the reign of Cyrus. A l\"",
+   "card of Beyond the River: \"Officials of the province Beyond the River wrote to Artaxerxes against Jerusalem (Ezra 4).\""
+  ]
+ },
+ {
+  "slug": "artemas_315",
+  "source_name": "Artemas",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Titus 3 → Titus 3 (1 chapters; sample: Titus 3)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Tychicus: \"Paul planned to send Artemas or Tychicus to Titus in Crete (Titus 3).\""
+  ]
+ },
+ {
+  "slug": "asaph_329",
+  "source_name": "Asaph",
+  "gender": "M",
+  "verses": 3,
+  "appears": "2 Kings 18 → Isaiah 36 (2 chapters; sample: 2 Kings 18, Isaiah 36)",
+  "family_in_source": {
+   "c": [
+    "Joah [joah_1621]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Joah: \"A son of Asaph who served as recorder under King Hezekiah of Judah.\""
+  ]
+ },
+ {
+  "slug": "asenath_335",
+  "source_name": "Asenath",
+  "gender": "F",
+  "verses": 3,
+  "appears": "Genesis 41 → Genesis 46 (2 chapters; sample: Genesis 41, Genesis 46)",
+  "family_in_source": {
+   "f": [
+    "Poti-pherah [poti-pherah_2369]"
+   ],
+   "p": [
+    "Joseph [joseph_1710]"
+   ],
+   "c": [
+    "Ephraim [ephraim_1206]",
+    "Manasseh [manasseh_1928]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Genesis 41 summary: \"Joseph interprets Pharaoh's dreams of coming famine, and Pharaoh makes him ruler over Egypt to prepare for it. Two years later, the cupbearer remembers Joseph when Pharaoh's dreams trouble him. The dr\"",
+   "card of On: \"Pharaoh gives Joseph Asenath, daughter of Potiphera priest of On, as his wife (Genesis 41).\"",
+   "card of On: \"Asenath of On bears Joseph's sons Manasseh and Ephraim (Genesis 46).\""
+  ]
+ }
+]

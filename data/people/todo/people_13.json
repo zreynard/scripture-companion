@@ -1,0 +1,908 @@
+[
+ {
+  "slug": "john_1678",
+  "source_name": "John",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Acts 4 → Acts 4 (1 chapters; sample: Acts 4)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Acts 4 summary: \"Peter and John are arrested, boldly testify before the council, and are released with warnings. Peter declares there is salvation in no other name than Jesus. The believers pray for boldness, and the \"",
+   "card of Herod Antipas: \"The tetrarch of Galilee who executed John the Baptist and questioned Jesus before his crucifixion.\"",
+   "card of Caiaphas: \"With Annas and others, he questioned Peter and John after a lame man was healed (Acts 4).\""
+  ]
+ },
+ {
+  "slug": "jonathan_1691",
+  "source_name": "Jonathan",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Judges 18 → Judges 18 (1 chapters; sample: Judges 18)",
+  "family_in_source": {
+   "f": [
+    "Gershom [gershom_1303]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Judges 18 summary: \"The tribe of Dan seizes Micah's idol and priest, conquers Laish, and sets up idol worship there. Danite spies find Laish quiet and unprotected. Six hundred armed Danites take the idol, and the Levite \""
+  ]
+ },
+ {
+  "slug": "jonathan_1694",
+  "source_name": "Jonathan",
+  "gender": "M",
+  "verses": 2,
+  "appears": "2 Samuel 23 → 1 Chronicles 11 (2 chapters; sample: 2 Samuel 23, 1 Chronicles 11)",
+  "family_in_source": {
+   "f": [
+    "Shage [shage_2541]"
+   ]
+  },
+  "mentioned_in_app": [
+   "2 Samuel: \"David becomes king over Judah and then all Israel, receives God's covenant promise, but sins grievously and faces family turmoil. David mourns Saul and Jonathan and is anointed king of Judah at Hebron\""
+  ]
+ },
+ {
+  "slug": "jonathan_1702",
+  "source_name": "Jonathan",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Jeremiah 40 → Jeremiah 40 (1 chapters; sample: Jeremiah 40)",
+  "family_in_source": {
+   "f": [
+    "Kareah [kareah_919]"
+   ],
+   "s": [
+    "Johanan [johanan_1666]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Kareah: \"Johanan and Jonathan, his sons, joined Gedaliah with their men (Jeremiah 40).\"",
+   "card of Kareah: \"Father of Johanan and Jonathan, army captains in Judah after the fall of Jerusalem.\""
+  ]
+ },
+ {
+  "slug": "joseph_1711",
+  "source_name": "Joseph",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Numbers 13 → Numbers 13 (1 chapters; sample: Numbers 13)",
+  "family_in_source": {
+   "c": [
+    "Igal [igal_1598]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ephraim: \"Younger son of Joseph born in Egypt, ancestor of the tribe of Ephraim, a leading northern tribe.\"",
+   "card of Manasseh: \"Firstborn son of Joseph born in Egypt, ancestor of the tribe of Manasseh.\""
+  ]
+ },
+ {
+  "slug": "jotham_1734",
+  "source_name": "Jotham",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Judges 9 → Judges 9 (1 chapters; sample: Judges 9)",
+  "family_in_source": {
+   "f": [
+    "Gideon [gideon_1314]"
+   ],
+   "s": [
+    "Abimelech [abimelech_41]",
+    "Jether [jether_906]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Judges 9 summary: \"Gideon's son Abimelech murders his brothers, rules Shechem for three years, and dies violently. Abimelech kills seventy brothers, but Jotham escapes and tells a parable of the trees. Shechem later rev\"",
+   "card of Mount Gerizim: \"Jotham tells his fable of the trees from the top of Mount Gerizim (Judges 9).\"",
+   "card of Abimelech: \"His surviving brother Jotham warned Shechem with a fable about the trees (Judges 9).\""
+  ]
+ },
+ {
+  "slug": "jozabad_1737",
+  "source_name": "Jozabad",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 12 → 1 Chronicles 12 (1 chapters; sample: 1 Chronicles 12)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Gederah: \"Jozabad of Gederah joined David's mighty men at Ziklag (1 Chronicles 12).\""
+  ]
+ },
+ {
+  "slug": "jozabad_1738",
+  "source_name": "Jozabad",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 12 → 1 Chronicles 12 (1 chapters; sample: 1 Chronicles 12)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Gederah: \"Jozabad of Gederah joined David's mighty men at Ziklag (1 Chronicles 12).\""
+  ]
+ },
+ {
+  "slug": "judah_1752",
+  "source_name": "Judah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Ezra 10 → Ezra 10 (1 chapters; sample: Ezra 10)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Elam: \"The ancestor of a large family whose descendants returned to Judah after the exile.\"",
+   "card of Nebo: \"A town in Judah whose people returned from exile, distinct from Mount Nebo in Moab.\""
+  ]
+ },
+ {
+  "slug": "judah_1753",
+  "source_name": "Judah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Nehemiah 11 → Nehemiah 11 (1 chapters; sample: Nehemiah 11)",
+  "family_in_source": {
+   "f": [
+    "Senuah [senuah_2490]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Nehemiah 11 summary: \"One in ten is chosen by lot to live in Jerusalem, and those who settle there and in Judah are listed. The people bless those who willingly offer to live in Jerusalem. Leaders of Judah and Benjamin, pr\"",
+   "card of Zerah: \"A son of Judah and Tamar, twin brother of Perez, and ancestor of the Zerahite clan.\"",
+   "card of Kiriath-arba: \"Some people of Judah lived in Kiriath-arba after the exile (Nehemiah 11).\""
+  ]
+ },
+ {
+  "slug": "judah_1754",
+  "source_name": "Judah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Nehemiah 12 → Nehemiah 12 (1 chapters; sample: Nehemiah 12)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Shealtiel: \"A son of Jehoiachin, the captive king of Judah, and father of Zerubbabel, who led the return from exile.\"",
+   "card of Geba: \"A Levitical town in Benjamin north of Jerusalem, often marking the northern edge of Judah.\"",
+   "card of Zerubbabel: \"A descendant of David and governor of Judah who led exiles home and rebuilt the temple.\""
+  ]
+ },
+ {
+  "slug": "judah_1755",
+  "source_name": "Judah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Nehemiah 12 → Nehemiah 12 (1 chapters; sample: Nehemiah 12)",
+  "family_in_source": {
+   "f": [
+    "Jonathan [jonathan_1700]"
+   ],
+   "s": [
+    "Azarael [azarael_369]",
+    "Gilalai [gilalai_1316]",
+    "Hanani [hanani_1383]",
+    "Maai [maai_1848]",
+    "Milalai [milalai_2081]",
+    "Nethaneel [nethaneel_2197]",
+    "Shemaiah [shemaiah_2640]",
+    "Zechariah [zechariah_3026]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Shealtiel: \"A son of Jehoiachin, the captive king of Judah, and father of Zerubbabel, who led the return from exile.\"",
+   "card of Geba: \"A Levitical town in Benjamin north of Jerusalem, often marking the northern edge of Judah.\"",
+   "card of Zerubbabel: \"A descendant of David and governor of Judah who led exiles home and rebuilt the temple.\""
+  ]
+ },
+ {
+  "slug": "jude_1756",
+  "source_name": "Jude",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Matthew 13 → Jude 1 (3 chapters; sample: Matthew 13, Mark 6, Jude 1)",
+  "family_in_source": {
+   "f": [
+    "Joseph [joseph_1715]"
+   ],
+   "m": [
+    "Mary [mary_1938]"
+   ],
+   "s": [
+    "James [james_719]",
+    "Jesus [jesus_905]",
+    "Joses [joses_1721]",
+    "Simon [simon_2747]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Jude: \"Jude urges believers to contend for the faith against ungodly people who have crept into the church. He recalls past examples of God's judgment on unbelief and rebellion. He describes the false teache\"",
+   "Jude 1 summary: \"Jude warns against intruders who pervert God's grace into sensuality and calls believers to remain faithful. Israel in the wilderness, rebellious angels, and Sodom illustrate God's judgment. The intru\"",
+   "card of Enoch: \"Jude cites his prophecy of the Lord coming with his holy ones in judgment (Jude 1).\""
+  ]
+ },
+ {
+  "slug": "julius_1763",
+  "source_name": "Julius",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Acts 27 → Acts 27 (1 chapters; sample: Acts 27)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Italy: \"Paul sails for Italy as a prisoner under the centurion Julius (Acts 27).\""
+  ]
+ },
+ {
+  "slug": "kenaz_1776",
+  "source_name": "Kenaz",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Eliphaz [eliphaz_1144]"
+   ],
+   "s": [
+    "Amalek [amalek_197]",
+    "Gatam [gatam_1281]",
+    "Korah [korah_1794]",
+    "Omar [omar_2242]",
+    "Teman [teman_2838]",
+    "Zepho [zepho_3042]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Eliphaz: \"His sons were Teman, Omar, Zepho, Gatam, and Kenaz (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "kenaz_1777",
+  "source_name": "Kenaz",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Eliphaz: \"His sons were Teman, Omar, Zepho, Gatam, and Kenaz (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "kenaz_1779",
+  "source_name": "Kenaz",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 chapters; sample: 1 Chronicles 4)",
+  "family_in_source": {
+   "f": [
+    "Elah [elah_1047]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Othniel: \"The son of Kenaz from Judah who became Israel's first judge after Joshua.\"",
+   "card of Kenaz: \"Chronicles lists Othniel and Seraiah as the sons of Kenaz (1 Chronicles 4).\""
+  ]
+ },
+ {
+  "slug": "keturah_1782",
+  "source_name": "Keturah",
+  "gender": "F",
+  "verses": 4,
+  "appears": "Genesis 25 → 1 Chronicles 1 (2 chapters; sample: Genesis 25, 1 Chronicles 1)",
+  "family_in_source": {
+   "p": [
+    "Abraham [abraham_58]"
+   ],
+   "c": [
+    "Midian [midian_2075]",
+    "Ishbak [ishbak_620]",
+    "Jokshan [jokshan_1685]",
+    "Medan [medan_1978]",
+    "Zimran [zimran_3086]",
+    "Shuah [shuah_2727]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Genesis 25 summary: \"Abraham dies, Ishmael's descendants are listed, and Rebekah bears twins Esau and Jacob, who struggle from birth. Abraham's sons by Keturah are sent east, and Isaac and Ishmael bury Abraham. God tells \"",
+   "card of Midian: \"Keturah bore Midian and his brothers to Abraham (Genesis 25).\"",
+   "card of Midian: \"Abraham gave gifts to Keturah's sons and sent them east, away from Isaac (Genesis 25).\""
+  ]
+ },
+ {
+  "slug": "kish_1785",
+  "source_name": "Kish",
+  "gender": "M",
+  "verses": 3,
+  "appears": "1 Chronicles 23 → 1 Chronicles 24 (2 chapters; sample: 1 Chronicles 23, 1 Chronicles 24)",
+  "family_in_source": {
+   "f": [
+    "Mahli [mahli_1889]"
+   ],
+   "s": [
+    "Eleazar [eleazar_1065]",
+    "Libni [libni_1824]"
+   ],
+   "c": [
+    "Jerahmeel [jerahmeel_844]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Mahli: \"His sons were Eleazar and Kish; Eleazar's daughters married Kish's sons (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "kittim_1789",
+  "source_name": "Kittim",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 10 → 1 Chronicles 1 (2 chapters; sample: Genesis 10, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Javan [javan_744]"
+   ],
+   "s": [
+    "Dodanim [dodanim_1018]",
+    "Elishah [elishah_1154]",
+    "Tarshish [tarshish_2828]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Javan: \"He is listed among the sons of Japheth, with sons Elishah, Tarshish, Kittim, and Dodanim (Genesis 10).\""
+  ]
+ },
+ {
+  "slug": "korah_1793",
+  "source_name": "Korah",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Esau [esau_1216]"
+   ],
+   "m": [
+    "Aholibamah [aholibamah_1761]"
+   ],
+   "s": [
+    "Jaalam [jaalam_662]",
+    "Jeush [jeush_913]",
+    "Eliphaz [eliphaz_1144]",
+    "Reuel [reuel_2430]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Oholibamah: \"She bore Esau three sons, Jeush, Jalam, and Korah, in Canaan (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "korah_1794",
+  "source_name": "Korah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Genesis 36 → Genesis 36 (1 chapters; sample: Genesis 36)",
+  "family_in_source": {
+   "f": [
+    "Eliphaz [eliphaz_1144]"
+   ],
+   "s": [
+    "Amalek [amalek_197]",
+    "Gatam [gatam_1281]",
+    "Kenaz [kenaz_1776]",
+    "Omar [omar_2242]",
+    "Teman [teman_2838]",
+    "Zepho [zepho_3042]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Oholibamah: \"She bore Esau three sons, Jeush, Jalam, and Korah, in Canaan (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "kore_1797",
+  "source_name": "Kore",
+  "gender": "M",
+  "verses": 3,
+  "appears": "1 Chronicles 9 → 1 Chronicles 26 (2 chapters; sample: 1 Chronicles 9, 1 Chronicles 26)",
+  "family_in_source": {
+   "f": [
+    "Ebiasaph [ebiasaph_19]"
+   ],
+   "s": [
+    "Assir [assir_352]"
+   ],
+   "c": [
+    "Shallum [shallum_2520]",
+    "Meshelemiah [meshelemiah_2013]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Meshelemiah: \"Meshelemiah son of Kore was a Korahite gatekeeper with seven sons (1 Chronicles 26).\"",
+   "card of Meshelemiah: \"A Korahite Levite, son of Kore, who headed a family of gatekeepers in David's time.\"",
+   "card of Shallum: \"A Korahite Levite, son of Kore, who was chief of the gatekeepers at the house of the Lord.\""
+  ]
+ },
+ {
+  "slug": "lahmi_1806",
+  "source_name": "Lahmi",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 20 → 1 Chronicles 20 (1 chapters; sample: 1 Chronicles 20)",
+  "family_in_source": {
+   "f": [
+    "the giant in Gath [the_giant_in_gath_2848]"
+   ],
+   "s": [
+    "Ishbi-benob [ishbi-benob_621]",
+    "Goliath [goliath_1327]",
+    "man of great stature [man_of_great_stature_1924]",
+    "Sippai [sippai_2471]"
+   ]
+  },
+  "mentioned_in_app": [
+   "1 Chronicles 20 summary: \"Joab captures Rabbah, and David's men kill several Philistine giants from Gath. David takes the crown of the Ammonite king. Elhanan kills Lahmi, the brother of Goliath.\"",
+   "card of Goliath: \"Elhanan later struck down Lahmi, the brother of Goliath (1 Chronicles 20).\""
+  ]
+ },
+ {
+  "slug": "laish_1807",
+  "source_name": "Laish",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Samuel 25 → 2 Samuel 3 (2 chapters; sample: 1 Samuel 25, 2 Samuel 3)",
+  "family_in_source": {
+   "c": [
+    "Phaltiel [phaltiel_2326]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Dan: \"A city at Israel's northern edge, formerly Laish, captured and renamed by the tribe of Dan.\"",
+   "card of Michal: \"Saul gave her to Palti son of Laish while David was a fugitive (1 Samuel 25).\""
+  ]
+ },
+ {
+  "slug": "lamech_1808",
+  "source_name": "Lamech",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Genesis 4 → Genesis 4 (1 chapters; sample: Genesis 4)",
+  "family_in_source": {
+   "f": [
+    "Methusael [methusael_2041]"
+   ],
+   "p": [
+    "Adah [adah_69]",
+    "Zillah [zillah_3080]"
+   ],
+   "c": [
+    "Jabal [jabal_673]",
+    "Naamah [naamah_2118]",
+    "Tubal-cain [tubal-cain_2884]",
+    "Jubal [jubal_1748]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Genesis 4 summary: \"Cain murders his brother Abel and is sent away as a wanderer, and Adam and Eve receive another son, Seth. God accepts Abel's offering but not Cain's, and Cain grows angry. God puts a mark on Cain to p\""
+  ]
+ },
+ {
+  "slug": "lapidoth_1810",
+  "source_name": "Lapidoth",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Judges 4 → Judges 4 (1 chapters; sample: Judges 4)",
+  "family_in_source": {
+   "p": [
+    "Deborah [deborah_997]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Deborah: \"As a prophetess and wife of Lapidoth, she judged Israel under a palm tree (Judges 4).\""
+  ]
+ },
+ {
+  "slug": "lazarus_1811",
+  "source_name": "Lazarus",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Luke 16 → Luke 16 (1 chapters; sample: Luke 16)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Luke 16 summary: \"Jesus teaches about the faithful use of money and tells the story of the rich man and Lazarus. The parable of the dishonest manager leads to teaching that no one can serve God and money. Jesus rebukes\""
+  ]
+ },
+ {
+  "slug": "lemuel_1817",
+  "source_name": "Lemuel",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Proverbs 31 → Proverbs 31 (1 chapters; sample: Proverbs 31)",
+  "family_in_source": {
+   "m": [
+    "Mother of Lemuel [mother_of_lemuel_2110]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Proverbs: \"Proverbs gathers wise sayings, mostly from Solomon, teaching that the fear of the LORD is the beginning of wisdom. Chapters 1–9 are a father's appeals to his son to embrace wisdom and avoid folly and \"",
+   "Proverbs 31 summary: \"King Lemuel records his mother's counsel on just rule, and the book closes with a poem praising the excellent wife. Lemuel's mother warns against women and wine and urges defending the poor and needy.\""
+  ]
+ },
+ {
+  "slug": "lo-ammi_1827",
+  "source_name": "Lo-ammi",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Hosea 1 → Hosea 1 (1 chapters; sample: Hosea 1)",
+  "family_in_source": {
+   "f": [
+    "Hosea [hosea_1555]"
+   ],
+   "m": [
+    "Gomer [gomer_1329]"
+   ],
+   "s": [
+    "Jezreel [jezreel_1613]",
+    "Lo-ruhamah [lo-ruhamah_1829]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Hosea 1 summary: \"God commands Hosea to marry Gomer, and their three children receive names announcing judgment on Israel. The marriage pictures Israel committing great whoredom by forsaking the LORD. Jezreel signals p\""
+  ]
+ },
+ {
+  "slug": "lo-ruhamah_1829",
+  "source_name": "Lo-ruhamah",
+  "gender": "F",
+  "verses": 2,
+  "appears": "Hosea 1 → Hosea 1 (1 chapters; sample: Hosea 1)",
+  "family_in_source": {
+   "f": [
+    "Hosea [hosea_1555]"
+   ],
+   "m": [
+    "Gomer [gomer_1329]"
+   ],
+   "s": [
+    "Jezreel [jezreel_1613]",
+    "Lo-ammi [lo-ammi_1827]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Hosea 1 summary: \"God commands Hosea to marry Gomer, and their three children receive names announcing judgment on Israel. The marriage pictures Israel committing great whoredom by forsaking the LORD. Jezreel signals p\""
+  ]
+ },
+ {
+  "slug": "lois_1828",
+  "source_name": "Lois",
+  "gender": "F",
+  "verses": 1,
+  "appears": "2 Timothy 1 → 2 Timothy 1 (1 chapters; sample: 2 Timothy 1)",
+  "family_in_source": {
+   "c": [
+    "Eunice [eunice_1228]"
+   ]
+  },
+  "mentioned_in_app": [
+   "2 Timothy 1 summary: \"Paul encourages Timothy to fan into flame God's gift and not be ashamed of the gospel or of Paul's chains. He recalls Timothy's sincere faith, shared by his grandmother Lois and mother Eunice. God gav\""
+  ]
+ },
+ {
+  "slug": "lucius_1833",
+  "source_name": "Lucius",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Acts 13 → Romans 16 (2 chapters; sample: Acts 13, Romans 16)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Cyrene: \"Lucius of Cyrene was a prophet and teacher in the church at Antioch (Acts 13).\""
+  ]
+ },
+ {
+  "slug": "lydia_1837",
+  "source_name": "Lydia",
+  "gender": "F",
+  "verses": 4,
+  "appears": "Genesis 36 → Acts 16 (3 chapters; sample: Genesis 36, 1 Chronicles 1, Acts 16)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Acts 16 summary: \"Paul is called to Macedonia, where Lydia believes and a Philippian jailer is saved after an earthquake. Timothy joins Paul, and a vision of a Macedonian man directs their route. Paul casts a spirit ou\"",
+   "card of Philippi: \"Lydia believes, a slave girl is freed, and a jailer is converted (Acts 16).\"",
+   "card of Thyatira: \"Lydia, a seller of purple goods from Thyatira, believes Paul's message in Philippi (Acts 16).\""
+  ]
+ },
+ {
+  "slug": "maacah_1839",
+  "source_name": "Maacah",
+  "gender": "F",
+  "verses": 2,
+  "appears": "2 Samuel 3 → 1 Chronicles 3 (2 chapters; sample: 2 Samuel 3, 1 Chronicles 3)",
+  "family_in_source": {
+   "f": [
+    "Talmai [talmai_2819]"
+   ],
+   "p": [
+    "David [david_994]"
+   ],
+   "c": [
+    "Absalom [absalom_59]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Geshur: \"David married Maacah, daughter of Talmai king of Geshur, the mother of Absalom (2 Samuel 3).\"",
+   "card of Absalom: \"Son of David by Maacah who rebelled against his father and tried to seize the throne.\""
+  ]
+ },
+ {
+  "slug": "maaseiah_1866",
+  "source_name": "Maaseiah",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Jeremiah 21 → Jeremiah 37 (3 chapters; sample: Jeremiah 21, Jeremiah 29, Jeremiah 37)",
+  "family_in_source": {
+   "c": [
+    "Zephaniah [zephaniah_3039]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Zephaniah: \"A priest, son of Maaseiah, in Jerusalem during King Zedekiah's reign.\""
+  ]
+ },
+ {
+  "slug": "maaseiah_1867",
+  "source_name": "Maaseiah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Jeremiah 29 → Jeremiah 29 (1 chapters; sample: Jeremiah 29)",
+  "family_in_source": {
+   "c": [
+    "Zedekiah [zedekiah_3031]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Zephaniah: \"A priest, son of Maaseiah, in Jerusalem during King Zedekiah's reign.\""
+  ]
+ },
+ {
+  "slug": "machir_1878",
+  "source_name": "Machir",
+  "gender": "M",
+  "verses": 3,
+  "appears": "2 Samuel 9 → 2 Samuel 17 (2 chapters; sample: 2 Samuel 9, 2 Samuel 17)",
+  "family_in_source": {
+   "f": [
+    "Ammiel [ammiel_221]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Lo-debar: \"David found Mephibosheth living in Machir's house at Lo-debar and showed him kindness (2 Samuel 9).\"",
+   "card of Lo-debar: \"Machir of Lo-debar brought food and supplies to David during Absalom's revolt (2 Samuel 17).\"",
+   "card of Lo-debar: \"A town in Gilead east of the Jordan, home of Machir son of Ammiel.\""
+  ]
+ },
+ {
+  "slug": "maharai_1890",
+  "source_name": "Maharai",
+  "gender": "M",
+  "verses": 3,
+  "appears": "2 Samuel 23 → 1 Chronicles 27 (3 chapters; sample: 2 Samuel 23, 1 Chronicles 11, 1 Chronicles 27)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Netophah: \"Maharai and Heleb of Netophah were among David's mighty men (2 Samuel 23).\"",
+   "card of Netophah: \"Maharai and Heldai of Netophah led monthly divisions of David's army (1 Chronicles 27).\""
+  ]
+ },
+ {
+  "slug": "maher-shalal-hash-baz_1894",
+  "source_name": "Maher-shalal-hash-baz",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Isaiah 8 → Isaiah 8 (1 chapters; sample: Isaiah 8)",
+  "family_in_source": {
+   "f": [
+    "Isaiah [isaiah_617]"
+   ],
+   "s": [
+    "Shear-jashub [shear-jashub_2566]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Isaiah 8 summary: \"Isaiah's son's name signals Assyria's coming invasion, and the prophet is told to fear the LORD rather than conspiracies. Maher-shalal-hash-baz is born as a sign that Damascus and Samaria will be plun\""
+  ]
+ },
+ {
+  "slug": "mahli_1896",
+  "source_name": "Mahli",
+  "gender": "M",
+  "verses": 3,
+  "appears": "1 Chronicles 6 → 1 Chronicles 24 (3 chapters; sample: 1 Chronicles 6, 1 Chronicles 23, 1 Chronicles 24)",
+  "family_in_source": {
+   "f": [
+    "Mushi [mushi_2116]"
+   ],
+   "s": [
+    "Jeremoth [jeremoth_857]",
+    "Eder [eder_1035]"
+   ],
+   "c": [
+    "Shamer [shamer_2533]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Mushi: \"His sons Mahli, Eder, and Jeremoth are listed in David's Levite divisions (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "malachi_1899",
+  "source_name": "Malachi",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Malachi 1 → Malachi 1 (1 chapters; sample: Malachi 1)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Malachi: \"Malachi confronts the returned community for dishonoring God and announces a coming day of judgment and healing. The book follows a pattern of God's statement, the people's objection, and God's answer\""
+  ]
+ },
+ {
+  "slug": "malchi-shua_1990",
+  "source_name": "Malchi-shua",
+  "gender": "M",
+  "verses": 4,
+  "appears": "1 Samuel 31 → 1 Chronicles 10 (4 chapters; sample: 1 Samuel 31, 1 Chronicles 8, 1 Chronicles 9, 1 Chronicles 10)",
+  "family_in_source": {
+   "f": [
+    "Saul [saul_2478]"
+   ],
+   "m": [
+    "Ahinoam [ahinoam_152]"
+   ],
+   "s": [
+    "Ish-bosheth [ish-bosheth_622]",
+    "Abinadab [abinadab_641]",
+    "Jonathan [jonathan_1692]",
+    "Merab [merab_2001]",
+    "Michal [michal_2073]",
+    "Armoni [armoni_309]",
+    "Mephibosheth [mephibosheth_2000]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Abinadab: \"The Philistines killed him with Jonathan and Malchi-shua on Mount Gilboa (1 Samuel 31).\""
+  ]
+ },
+ {
+  "slug": "malchiel_1908",
+  "source_name": "Malchiel",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Genesis 46 → 1 Chronicles 7 (3 chapters; sample: Genesis 46, Numbers 26, 1 Chronicles 7)",
+  "family_in_source": {
+   "f": [
+    "Beriah [beriah_478]"
+   ],
+   "s": [
+    "Heber [heber_1469]"
+   ],
+   "c": [
+    "Birzavith [birzavith_514]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Beriah: \"His sons Heber and Malchiel are listed in Asher's genealogy (1 Chronicles 7).\""
+  ]
+ },
+ {
+  "slug": "malchijah_1909",
+  "source_name": "Malchijah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 9 → Nehemiah 11 (2 chapters; sample: 1 Chronicles 9, Nehemiah 11)",
+  "family_in_source": {
+   "c": [
+    "Pashur [pashur_2283]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Pashhur: \"A priest, son of Malchijah, whose large family of descendants returned from exile and served in Jerusalem.\""
+  ]
+ },
+ {
+  "slug": "malchijah_1911",
+  "source_name": "Malchijah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Ezra 10 → Ezra 10 (1 chapters; sample: Ezra 10)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Pashhur: \"A priest, son of Malchijah, whose large family of descendants returned from exile and served in Jerusalem.\""
+  ]
+ },
+ {
+  "slug": "malchijah_1912",
+  "source_name": "Malchijah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Nehemiah 3 → Nehemiah 3 (1 chapters; sample: Nehemiah 3)",
+  "family_in_source": {
+   "f": [
+    "Harim [harim_1417]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Dung Gate: \"Malchijah son of Rechab repairs the Dung Gate (Nehemiah 3).\""
+  ]
+ },
+ {
+  "slug": "mamre_1923",
+  "source_name": "Mamre",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Genesis 14 → Genesis 18 (2 chapters; sample: Genesis 14, Genesis 18)",
+  "family_in_source": {
+   "s": [
+    "Aner [aner_266]",
+    "Eshcol [eshcol_1218]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Genesis 18 summary: \"Three visitors promise Abraham a son within a year, and Abraham pleads with the Lord to spare Sodom. Abraham welcomes the visitors with a generous meal at Mamre. Sarah laughs in disbelief, and the Lor\""
+  ]
+ },
+ {
+  "slug": "manahath_1927",
+  "source_name": "Manahath",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Shobal [shobal_2719]"
+   ],
+   "s": [
+    "Alvan [alvan_195]",
+    "Ebal [ebal_1026]",
+    "Onam [onam_2248]",
+    "Shepho [shepho_2665]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Shobal: \"His sons were Alvan, Manahath, Ebal, Shepho, and Onam (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "mary_1941",
+  "source_name": "Mary",
+  "gender": "F",
+  "verses": 1,
+  "appears": "Acts 12 → Acts 12 (1 chapters; sample: Acts 12)",
+  "family_in_source": {
+   "s": [
+    "Barnabas [barnabas_1722]"
+   ],
+   "c": [
+    "John [mark_1679]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Acts 12 summary: \"Herod kills James and imprisons Peter, but an angel frees Peter, and Herod later dies. The church prays earnestly while Peter is in prison. Peter arrives at Mary's house, and Rhoda is too excited to o\"",
+   "card of Mark: \"After his release from prison, Peter went to the house of Mary, mother of John Mark (Acts 12).\""
+  ]
+ },
+ {
+  "slug": "matthias_1972",
+  "source_name": "Matthias",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Acts 1 → Acts 1 (1 chapters; sample: Acts 1)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Acts 1 summary: \"Jesus promises the Holy Spirit, ascends to heaven, and the apostles choose Matthias to replace Judas. Jesus appears to the apostles for forty days, speaking about God's kingdom. They will be his witne\""
+  ]
+ },
+ {
+  "slug": "mattithiah_1973",
+  "source_name": "Mattithiah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 9 → 1 Chronicles 9 (1 chapters; sample: 1 Chronicles 9)",
+  "family_in_source": {
+   "f": [
+    "Shallum [shallum_2520]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Shallum: \"His firstborn Mattithiah was in charge of making the flat cakes (1 Chronicles 9).\""
+  ]
+ }
+]

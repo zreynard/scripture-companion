@@ -1,0 +1,802 @@
+[
+ {
+  "slug": "simon_2752",
+  "source_name": "Simon",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Acts 8 → Acts 8 (1 chapters; sample: Acts 8)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Acts 8 summary: \"Persecution scatters the church, and Philip preaches in Samaria and to an Ethiopian official. Saul ravages the church, entering houses and dragging believers to prison. Samaritans believe, and Peter a\""
+  ]
+ },
+ {
+  "slug": "simon_2753",
+  "source_name": "Simon",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Acts 9 → Acts 10 (2 chapters; sample: Acts 9, Acts 10)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Cornelius: \"At the angel's word he sent men to Joppa to bring Simon Peter (Acts 10).\""
+  ]
+ },
+ {
+  "slug": "sippai_2471",
+  "source_name": "Sippai",
+  "gender": "M",
+  "verses": 2,
+  "appears": "2 Samuel 21 → 1 Chronicles 20 (2 chapters; sample: 2 Samuel 21, 1 Chronicles 20)",
+  "family_in_source": {
+   "f": [
+    "the giant in Gath [the_giant_in_gath_2848]"
+   ],
+   "s": [
+    "Ishbi-benob [ishbi-benob_621]",
+    "Goliath [goliath_1327]",
+    "Lahmi [lahmi_1806]",
+    "man of great stature [man_of_great_stature_1924]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Sibbecai: \"Chronicles records that he killed Sippai at Gezer, subduing the Philistines (1 Chronicles 20).\""
+  ]
+ },
+ {
+  "slug": "stephanas_2801",
+  "source_name": "Stephanas",
+  "gender": "M",
+  "verses": 3,
+  "appears": "1 Corinthians 1 → 1 Corinthians 16 (2 chapters; sample: 1 Corinthians 1, 1 Corinthians 16)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "1 Corinthians 16 summary: \"Paul gives instructions for the collection for Jerusalem, shares travel plans, and closes with greetings. Each should set money aside on the first day of every week. He plans to visit after staying in\"",
+   "card of Achaia: \"Stephanas' household were the first converts in Achaia (1 Corinthians 16).\""
+  ]
+ },
+ {
+  "slug": "syntyche_2806",
+  "source_name": "Syntyche",
+  "gender": "F",
+  "verses": 1,
+  "appears": "Philippians 4 → Philippians 4 (1 chapters; sample: Philippians 4)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Philippians 4 summary: \"Paul urges unity, joy, and peace, and thanks the Philippians for their generous gifts. He appeals to Euodia and Syntyche to agree in the Lord. Prayer with thanksgiving brings God's peace, which guards\""
+  ]
+ },
+ {
+  "slug": "tahpenes_2817",
+  "source_name": "Tahpenes",
+  "gender": "F",
+  "verses": 2,
+  "appears": "1 Kings 11 → 1 Kings 11 (1 chapters; sample: 1 Kings 11)",
+  "family_in_source": {
+   "s": [
+    "Sister of Tahpenes [sister_of_tahpenes_2759]"
+   ],
+   "p": [
+    "Pharaoh [pharaoh_2332]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Hadad: \"Pharaoh gave him the sister of Queen Tahpenes as his wife (1 Kings 11).\"",
+   "card of Pharaoh: \"He gave Hadad the Edomite the sister of his wife Tahpenes in marriage (1 Kings 11).\""
+  ]
+ },
+ {
+  "slug": "talmai_2818",
+  "source_name": "Talmai",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Numbers 13 → Judges 1 (3 chapters; sample: Numbers 13, Joshua 15, Judges 1)",
+  "family_in_source": {
+   "f": [
+    "Anak [anak_252]"
+   ],
+   "s": [
+    "Ahiman [ahiman_146]",
+    "Sheshai [sheshai_2671]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Kiriath-arba: \"Judah defeated Sheshai, Ahiman, and Talmai there (Judges 1).\"",
+   "card of Anak: \"Caleb drove out the three sons of Anak, Sheshai, Ahiman, and Talmai, from Hebron (Joshua 15).\""
+  ]
+ },
+ {
+  "slug": "talmai_2819",
+  "source_name": "Talmai",
+  "gender": "M",
+  "verses": 3,
+  "appears": "2 Samuel 3 → 1 Chronicles 3 (3 chapters; sample: 2 Samuel 3, 2 Samuel 13, 1 Chronicles 3)",
+  "family_in_source": {
+   "f": [
+    "Ammihud [ammihud_226]"
+   ],
+   "c": [
+    "Maacah [maacah_1839]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Geshur: \"David married Maacah, daughter of Talmai king of Geshur, the mother of Absalom (2 Samuel 3).\""
+  ]
+ },
+ {
+  "slug": "tarshish_2828",
+  "source_name": "Tarshish",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 10 → 1 Chronicles 1 (2 chapters; sample: Genesis 10, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Javan [javan_744]"
+   ],
+   "s": [
+    "Dodanim [dodanim_1018]",
+    "Elishah [elishah_1154]",
+    "Kittim [kittim_1789]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Javan: \"He is listed among the sons of Japheth, with sons Elishah, Tarshish, Kittim, and Dodanim (Genesis 10).\""
+  ]
+ },
+ {
+  "slug": "teman_2838",
+  "source_name": "Teman",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Eliphaz [eliphaz_1144]"
+   ],
+   "s": [
+    "Amalek [amalek_197]",
+    "Gatam [gatam_1281]",
+    "Kenaz [kenaz_1776]",
+    "Korah [korah_1794]",
+    "Omar [omar_2242]",
+    "Zepho [zepho_3042]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Eliphaz: \"His sons were Teman, Omar, Zepho, Gatam, and Kenaz (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "teman_2839",
+  "source_name": "Teman",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Eliphaz: \"His sons were Teman, Omar, Zepho, Gatam, and Kenaz (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "tertullus_2844",
+  "source_name": "Tertullus",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Acts 24 → Acts 24 (1 chapters; sample: Acts 24)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Acts 24 summary: \"Paul defends himself before Felix, who delays a decision and keeps him in custody for two years. The lawyer Tertullus accuses Paul of stirring riots and profaning the temple. Paul denies the charges a\"",
+   "card of Felix: \"He heard Tertullus accuse Paul and heard Paul's defense, then postponed a decision (Acts 24).\""
+  ]
+ },
+ {
+  "slug": "theophilus_2849",
+  "source_name": "Theophilus",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Luke 1 → Acts 1 (2 chapters; sample: Luke 1, Acts 1)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Luke: \"Luke gives an orderly account of Jesus' life, showing him as the Savior who seeks and saves the lost. Luke writes to Theophilus, beginning with the births of John the Baptist and Jesus. Jesus minister\"",
+   "Luke 1 summary: \"The angel Gabriel announces the births of John the Baptist and Jesus, and John is born. Luke explains he is writing an orderly account for Theophilus. Zechariah doubts Gabriel's message and is struck \""
+  ]
+ },
+ {
+  "slug": "timna_2860",
+  "source_name": "Timna",
+  "gender": "F",
+  "verses": 3,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Seir [seir_2485]"
+   ],
+   "s": [
+    "Anah [anah_248]",
+    "Dishan [dishan_1015]",
+    "Dishon [dishon_1016]",
+    "Ezer [ezer_1238]",
+    "Lotan [lotan_1831]",
+    "Shobal [shobal_2719]",
+    "Zibeon [zibeon_3062]"
+   ],
+   "p": [
+    "Eliphaz [eliphaz_1144]"
+   ],
+   "c": [
+    "Amalek [amalek_197]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Amalek: \"Timna bore Amalek to Eliphaz, Esau's son (Genesis 36).\"",
+   "card of Amalek: \"A grandson of Esau, son of Eliphaz by Timna, and ancestor of the Amalekites.\"",
+   "card of Eliphaz: \"His concubine Timna bore him Amalek (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "tirhakah_2865",
+  "source_name": "Tirhakah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "2 Kings 19 → Isaiah 37 (2 chapters; sample: 2 Kings 19, Isaiah 37)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Cush: \"Tirhakah king of Cush marched out against Sennacherib (2 Kings 19).\""
+  ]
+ },
+ {
+  "slug": "togarmah_2875",
+  "source_name": "Togarmah",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Genesis 10 → Ezekiel 38 (4 chapters; sample: Genesis 10, 1 Chronicles 1, Ezekiel 27, Ezekiel 38)",
+  "family_in_source": {
+   "f": [
+    "Gomer [gomer_1328]"
+   ],
+   "s": [
+    "Ashkenaz [ashkenaz_338]",
+    "Riphath [riphath_2443]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Gomer: \"His sons Ashkenaz, Riphath, and Togarmah are named (1 Chronicles 1).\""
+  ]
+ },
+ {
+  "slug": "toi_2877",
+  "source_name": "Toi",
+  "gender": "M",
+  "verses": 4,
+  "appears": "2 Samuel 8 → 1 Chronicles 18 (2 chapters; sample: 2 Samuel 8, 1 Chronicles 18)",
+  "family_in_source": {
+   "c": [
+    "Joram [joram_1705]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Hamath: \"Toi king of Hamath sent his son to congratulate David on his victory (2 Samuel 8).\""
+  ]
+ },
+ {
+  "slug": "tola_2879",
+  "source_name": "Tola",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Judges 10 → Judges 10 (1 chapters; sample: Judges 10)",
+  "family_in_source": {
+   "f": [
+    "Puah [puah_2373]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Judges 10 summary: \"After the judges Tola and Jair, Israel worships many gods and is oppressed by the Philistines and Ammonites. Israel suffers eighteen years and cries out to God. God at first refuses, but the people pu\""
+  ]
+ },
+ {
+  "slug": "trophimus_2880",
+  "source_name": "Trophimus",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Acts 20 → 2 Timothy 4 (3 chapters; sample: Acts 20, Acts 21, 2 Timothy 4)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Miletus: \"Paul tells Timothy he left Trophimus ill at Miletus (2 Timothy 4).\""
+  ]
+ },
+ {
+  "slug": "uzzi_2917",
+  "source_name": "Uzzi",
+  "gender": "M",
+  "verses": 4,
+  "appears": "1 Chronicles 6 → Ezra 7 (2 chapters; sample: 1 Chronicles 6, Ezra 7)",
+  "family_in_source": {
+   "f": [
+    "Bukki [bukki_523]"
+   ],
+   "c": [
+    "Zerahiah [zerahiah_3047]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Zerahiah: \"Chronicles lists Zerahiah son of Uzzi in the line from Aaron to the exile (1 Chronicles 6).\""
+  ]
+ },
+ {
+  "slug": "uzziel_2933",
+  "source_name": "Uzziel",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Chronicles 29 → 2 Chronicles 29 (1 chapters; sample: 2 Chronicles 29)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Elizaphan: \"A Levite, son of Uzziel, and chief of the Kohathite clans.\""
+  ]
+ },
+ {
+  "slug": "zacchaeus_2961",
+  "source_name": "Zacchaeus",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Luke 19 → Luke 19 (1 chapters; sample: Luke 19)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Luke 19 summary: \"Jesus saves Zacchaeus, tells the parable of the minas, enters Jerusalem, weeps over it, and cleanses the temple. The tax collector Zacchaeus repents, and Jesus says he came to seek and save the lost. \"",
+   "card of Jericho: \"Jesus called Zacchaeus down from a tree in Jericho (Luke 19).\""
+  ]
+ },
+ {
+  "slug": "zadok_2975",
+  "source_name": "Zadok",
+  "gender": "M",
+  "verses": 4,
+  "appears": "1 Chronicles 6 → Nehemiah 11 (4 chapters; sample: 1 Chronicles 6, 1 Chronicles 9, Ezra 7, Nehemiah 11)",
+  "family_in_source": {
+   "f": [
+    "Ahitub [ahitub_165]"
+   ],
+   "c": [
+    "Shallum [shallum_2519]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ahimaaz: \"A son of Zadok the priest who served as a swift messenger for David during Absalom's rebellion.\"",
+   "card of Ahitub: \"A priest descended from Aaron, the son of Amariah and father of Zadok.\"",
+   "card of Shallum: \"Chronicles places Shallum between Zadok and Hilkiah in the high-priestly line (1 Chronicles 6).\""
+  ]
+ },
+ {
+  "slug": "zebadiah_2992",
+  "source_name": "Zebadiah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 27 → 1 Chronicles 27 (1 chapters; sample: 1 Chronicles 27)",
+  "family_in_source": {
+   "f": [
+    "Asahel [asahel_320]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Asahel: \"He commanded the fourth month's division, followed by his son Zebadiah (1 Chronicles 27).\""
+  ]
+ },
+ {
+  "slug": "zebadiah_2994",
+  "source_name": "Zebadiah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Chronicles 19 → 2 Chronicles 19 (1 chapters; sample: 2 Chronicles 19)",
+  "family_in_source": {
+   "f": [
+    "Ishmael [ishmael_633]"
+   ]
+  },
+  "mentioned_in_app": [
+   "2 Chronicles 19 summary: \"Rebuked for helping Ahab, Jehoshaphat brings the people back to the LORD and appoints judges throughout Judah. Jehu the seer says wrath is on him, yet some good is found in him. Jehoshaphat charges ju\""
+  ]
+ },
+ {
+  "slug": "zebadiah_2996",
+  "source_name": "Zebadiah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Ezra 10 → Ezra 10 (1 chapters; sample: Ezra 10)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Immer: \"Two of his descendants, Hanani and Zebadiah, had married foreign wives (Ezra 10).\""
+  ]
+ },
+ {
+  "slug": "zechariah_3012",
+  "source_name": "Zechariah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Chronicles 26 → 2 Chronicles 26 (1 chapters; sample: 2 Chronicles 26)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "2 Chronicles 26 summary: \"Uzziah prospers greatly while seeking God, but in pride he burns incense in the temple and is struck with leprosy. He seeks God in the days of Zechariah, who instructs him in the fear of God. He defea\""
+  ]
+ },
+ {
+  "slug": "zechariah_3017",
+  "source_name": "Zechariah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Ezra 8 → Ezra 8 (1 chapters; sample: Ezra 8)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Ezra: \"Jews return from exile in Persia, rebuild the temple, and are reformed under Ezra's teaching of God's law. Cyrus decrees that the exiles may return, and a first group goes back to Jerusalem. They rebu\""
+  ]
+ },
+ {
+  "slug": "zechariah_3018",
+  "source_name": "Zechariah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Ezra 8 → Ezra 8 (1 chapters; sample: Ezra 8)",
+  "family_in_source": {
+   "f": [
+    "Bebai [bebai_421]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Ezra: \"Jews return from exile in Persia, rebuild the temple, and are reformed under Ezra's teaching of God's law. Cyrus decrees that the exiles may return, and a first group goes back to Jerusalem. They rebu\""
+  ]
+ },
+ {
+  "slug": "zechariah_3019",
+  "source_name": "Zechariah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Ezra 8 → Ezra 8 (1 chapters; sample: Ezra 8)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Ezra: \"Jews return from exile in Persia, rebuild the temple, and are reformed under Ezra's teaching of God's law. Cyrus decrees that the exiles may return, and a first group goes back to Jerusalem. They rebu\""
+  ]
+ },
+ {
+  "slug": "zechariah_3020",
+  "source_name": "Zechariah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Ezra 10 → Ezra 10 (1 chapters; sample: Ezra 10)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Ezra: \"Jews return from exile in Persia, rebuild the temple, and are reformed under Ezra's teaching of God's law. Cyrus decrees that the exiles may return, and a first group goes back to Jerusalem. They rebu\""
+  ]
+ },
+ {
+  "slug": "zedekiah_3031",
+  "source_name": "Zedekiah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Jeremiah 29 → Jeremiah 29 (1 chapters; sample: Jeremiah 29)",
+  "family_in_source": {
+   "f": [
+    "Maaseiah [maaseiah_1867]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Jeremiah 29 summary: \"Jeremiah writes to the exiles in Babylon to settle down, seek the city's welfare, and await restoration after seventy years. They are to build houses, marry, and pray for Babylon. God has plans for th\"",
+   "card of Zephaniah: \"A priest, son of Maaseiah, in Jerusalem during King Zedekiah's reign.\""
+  ]
+ },
+ {
+  "slug": "zeeb_3033",
+  "source_name": "Zeeb",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Judges 7 → Psalms 83 (3 chapters; sample: Judges 7, Judges 8, Psalms 83)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Judges 7 summary: \"God reduces Gideon's army to three hundred men, who rout the Midianites with trumpets, jars, and torches. The fearful leave, and the rest are tested by how they drink water. Gideon overhears a Midiani\""
+  ]
+ },
+ {
+  "slug": "zephaniah_3040",
+  "source_name": "Zephaniah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Zephaniah 1 → Zephaniah 1 (1 chapters; sample: Zephaniah 1)",
+  "family_in_source": {
+   "f": [
+    "Cushi [cushi_966]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Zephaniah: \"Zephaniah warns Judah and the nations of the coming day of the LORD and promises joy for a humble remnant. Zephaniah prophesies during the reign of Josiah king of Judah. He announces sweeping judgment\"",
+   "Zephaniah 1 summary: \"Zephaniah announces that the day of the LORD will sweep away Judah's idolaters and complacent people. God will consume everything from the face of the earth, people and animals alike. He will cut off \"",
+   "card of Fish Gate: \"Zephaniah warns that a cry will rise from the Fish Gate on the day of the LORD (Zephaniah 1).\""
+  ]
+ },
+ {
+  "slug": "zepho_3042",
+  "source_name": "Zepho",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Eliphaz [eliphaz_1144]"
+   ],
+   "s": [
+    "Amalek [amalek_197]",
+    "Gatam [gatam_1281]",
+    "Kenaz [kenaz_1776]",
+    "Korah [korah_1794]",
+    "Omar [omar_2242]",
+    "Teman [teman_2838]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Eliphaz: \"His sons were Teman, Omar, Zepho, Gatam, and Kenaz (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "zerah_3043",
+  "source_name": "Zerah",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Reuel [reuel_2430]"
+   ],
+   "s": [
+    "Mizzah [mizzah_2101]",
+    "Nahath [nahath_2146]",
+    "Shammah [shammah_2538]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Reuel: \"His sons Nahath, Zerah, Shammah, and Mizzah became chiefs in Edom (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "zerah_3044",
+  "source_name": "Zerah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "c": [
+    "Jobab [jobab_1641]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Reuel: \"His sons Nahath, Zerah, Shammah, and Mizzah became chiefs in Edom (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "zerah_3046",
+  "source_name": "Zerah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Chronicles 14 → 2 Chronicles 14 (1 chapters; sample: 2 Chronicles 14)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "2 Chronicles 14 summary: \"Asa does what is right, removes idols, and defeats a vast Ethiopian army under Zerah by relying on God. Asa commands Judah to seek the LORD and keep his law, and the land has rest. He fortifies cities\"",
+   "card of Mareshah: \"Asa defeated Zerah the Cushite's vast army near Mareshah (2 Chronicles 14).\"",
+   "card of Asa: \"He relied on the Lord and defeated Zerah the Ethiopian's huge army (2 Chronicles 14).\""
+  ]
+ },
+ {
+  "slug": "zerah_3102",
+  "source_name": "Zerah",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Genesis 46 → 1 Chronicles 4 (4 chapters; sample: Genesis 46, Exodus 6, Numbers 26, 1 Chronicles 4)",
+  "family_in_source": {
+   "f": [
+    "Simeon [simeon_2741]"
+   ],
+   "s": [
+    "Jachin [jachin_679]",
+    "Jamin [jamin_720]",
+    "Jemuel [jemuel_838]",
+    "Ohad [ohad_2239]",
+    "Shaul [shaul_2562]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Perez: \"Son of Judah and Tamar, twin of Zerah, and ancestor of King David and Jesus.\""
+  ]
+ },
+ {
+  "slug": "zeresh_3049",
+  "source_name": "Zeresh",
+  "gender": "F",
+  "verses": 3,
+  "appears": "Esther 5 → Esther 6 (2 chapters; sample: Esther 5, Esther 6)",
+  "family_in_source": {
+   "p": [
+    "Haman [haman_1360]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Esther 5 summary: \"The king receives Esther, who invites him and Haman to banquets, while Haman builds a gallows for Mordecai. At the first banquet Esther delays her request and invites them back the next day. Haman lea\""
+  ]
+ },
+ {
+  "slug": "zeror_3052",
+  "source_name": "Zeror",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Samuel 9 → 1 Samuel 9 (1 chapters; sample: 1 Samuel 9)",
+  "family_in_source": {
+   "f": [
+    "Bechorath [bechorath_425]"
+   ],
+   "c": [
+    "Abiel [abiel_23]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Abiel: \"A Benjaminite, the son of Zeror, and grandfather of King Saul through Kish.\""
+  ]
+ },
+ {
+  "slug": "zeruah_3053",
+  "source_name": "Zeruah",
+  "gender": "F",
+  "verses": 1,
+  "appears": "1 Kings 11 → 1 Kings 11 (1 chapters; sample: 1 Kings 11)",
+  "family_in_source": {
+   "p": [
+    "Nebat [nebat_2165]"
+   ],
+   "c": [
+    "Jeroboam [jeroboam_872]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Nebat: \"Nebat is named as the Ephraimite father of Jeroboam, whose mother was Zeruah (1 Kings 11).\""
+  ]
+ },
+ {
+  "slug": "zetham_3056",
+  "source_name": "Zetham",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 23 → 1 Chronicles 26 (2 chapters; sample: 1 Chronicles 23, 1 Chronicles 26)",
+  "family_in_source": {
+   "f": [
+    "Jehiel [jehiel_771]"
+   ],
+   "s": [
+    "Joel [joel_1655]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ladan: \"David organized his sons Jehiel, Zetham, and Joel among the Levites (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "zibeon_3061",
+  "source_name": "Zibeon",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 36 → Genesis 36 (1 chapters; sample: Genesis 36)",
+  "family_in_source": {
+   "c": [
+    "Anah [anah_247]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Oholibamah: \"One of Esau's wives, a Canaanite woman descended from Zibeon the Hivite.\"",
+   "card of Zibeon: \"Esau's wife Oholibamah was the daughter of Anah, the daughter of Zibeon (Genesis 36).\"",
+   "card of Zibeon: \"Zibeon is listed among the sons of Seir the Horite, the inhabitants of the land (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "zichri_3065",
+  "source_name": "Zichri",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Exodus 6 → Exodus 6 (1 chapters; sample: Exodus 6)",
+  "family_in_source": {
+   "f": [
+    "Izhar [izhar_658]"
+   ],
+   "s": [
+    "Korah [korah_1795]",
+    "Nepheg [nepheg_2178]",
+    "Shelomoth [shelomoth_2608]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Izhar: \"He is listed as a son of Kohath, with sons Korah, Nepheg, and Zichri (Exodus 6).\""
+  ]
+ },
+ {
+  "slug": "zimri_3087",
+  "source_name": "Zimri",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Numbers 25 → Numbers 25 (1 chapters; sample: Numbers 25)",
+  "family_in_source": {
+   "f": [
+    "Salu [salu_2465]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Phinehas: \"He killed Zimri and Cozbi, stopping the plague, and received a covenant of perpetual priesthood (Numbers 25).\""
+  ]
+ },
+ {
+  "slug": "ziph_3091",
+  "source_name": "Ziph",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Samuel 26 → 1 Chronicles 4 (2 chapters; sample: 1 Samuel 26, 1 Chronicles 4)",
+  "family_in_source": {
+   "f": [
+    "Jehaleleel [jehaleleel_764]"
+   ],
+   "s": [
+    "Asareel [asareel_333]",
+    "Tiria [tiria_2867]",
+    "Ziphah [ziphah_3092]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ziph: \"David took Saul's spear and water jar in the wilderness of Ziph (1 Samuel 26).\"",
+   "card of Hachilah: \"A hill in the wilderness near Ziph where David hid from Saul.\""
+  ]
+ },
+ {
+  "slug": "zipporah_3095",
+  "source_name": "Zipporah",
+  "gender": "F",
+  "verses": 3,
+  "appears": "Exodus 2 → Exodus 18 (3 chapters; sample: Exodus 2, Exodus 4, Exodus 18)",
+  "family_in_source": {
+   "f": [
+    "Jethro [jethro_2431]"
+   ],
+   "s": [
+    "Eliasaph [eliasaph_1091]",
+    "Hobab [hobab_1537]"
+   ],
+   "p": [
+    "Moses [moses_2108]"
+   ],
+   "c": [
+    "Gershom [gershom_1302]",
+    "Eliezer [eliezer_1114]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Exodus 2 summary: \"Moses is saved as a baby and raised by Pharaoh's daughter, then flees to Midian after killing an Egyptian. His mother hides him in a basket among the reeds of the Nile. Grown, Moses kills an Egyptian \"",
+   "Exodus 4 summary: \"God gives Moses signs and appoints Aaron as his spokesman, and the Israelites believe Moses' message. Moses' staff becomes a snake, and his hand becomes leprous and is restored. When Moses objects tha\"",
+   "Exodus 18 summary: \"Moses' father-in-law Jethro visits, praises God, and advises Moses to appoint judges to share his burden. Jethro brings Zipporah and Moses' two sons. He offers sacrifices after hearing what God has do\""
+  ]
+ },
+ {
+  "slug": "zohar_3101",
+  "source_name": "Zohar",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 23 → Genesis 25 (2 chapters; sample: Genesis 23, Genesis 25)",
+  "family_in_source": {
+   "c": [
+    "Ephron [ephron_1208]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ephron: \"A Hittite, son of Zohar, who sold Abraham the field and cave of Machpelah as a family tomb.\""
+  ]
+ },
+ {
+  "slug": "zophar_3105",
+  "source_name": "Zophar",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Job 2 → Job 42 (4 chapters; sample: Job 2, Job 11, Job 20, Job 42)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Job 2 summary: \"Satan afflicts Job with painful sores, yet Job still does not sin, and three friends come to comfort him. God permits Satan to strike Job's body but spare his life. Job's wife urges him to curse God a\"",
+   "Job 11 summary: \"Zophar rebukes Job's claims of innocence and says God exacts less than his guilt deserves. He says God's wisdom is deeper than Sheol and beyond searching out. He urges Job to put away iniquity and str\"",
+   "Job 20 summary: \"Zophar says the triumph of the wicked is brief and their gains are taken away by God's anger. He feels insulted by Job's rebuke and answers from his understanding. He says the wicked must give back th\""
+  ]
+ }
+]

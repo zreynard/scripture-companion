@@ -1,0 +1,692 @@
+[
+ {
+  "slug": "abel-beth-maacah_5",
+  "source_name": "Abel-beth-maacah",
+  "type": "City",
+  "lat": 33.2685,
+  "lon": 35.578,
+  "verses": 2,
+  "appears": "1 Kings 15 → 2 Kings 15 (2 chapters; sample: 1 Kings 15, 2 Kings 15)",
+  "mentioned_in_app": [
+   "card of Ben-hadad: \"He attacked Israelite cities including Ijon, Dan, and Abel-beth-maacah (1 Kings 15).\""
+  ]
+ },
+ {
+  "slug": "abel-shittim_10",
+  "source_name": "Abel-shittim",
+  "type": "",
+  "lat": 31.8583,
+  "lon": 35.6416,
+  "verses": 1,
+  "appears": "Numbers 33 → Numbers 33 (1 chapters; sample: Numbers 33)",
+  "mentioned_in_app": [
+   "card of Beth-jeshimoth: \"Israel camps along the Jordan from Beth-jeshimoth to Abel-shittim (Numbers 33).\""
+  ]
+ },
+ {
+  "slug": "abiezer_11",
+  "source_name": "Abiezer",
+  "type": "",
+  "lat": 32.6087,
+  "lon": 35.2883,
+  "verses": 1,
+  "appears": "Judges 8 → Judges 8 (1 chapters; sample: Judges 8)",
+  "mentioned_in_app": [
+   "card of Ophrah: \"Gideon's hometown, belonging to the clan of Abiezer in Manasseh.\""
+  ]
+ },
+ {
+  "slug": "acco_15",
+  "source_name": "Acco",
+  "type": "City",
+  "lat": 32.9276,
+  "lon": 35.0816,
+  "verses": 1,
+  "appears": "Judges 1 → Judges 1 (1 chapters; sample: Judges 1)",
+  "mentioned_in_app": [
+   "card of Asher: \"Asher failed to drive out the people of Acco and Sidon (Judges 1).\""
+  ]
+ },
+ {
+  "slug": "adam_21",
+  "source_name": "Adam",
+  "type": "City",
+  "lat": 32.0977,
+  "lon": 35.5647,
+  "verses": 1,
+  "appears": "Joshua 3 → Joshua 3 (1 chapters; sample: Joshua 3)",
+  "mentioned_in_app": [
+   "Joshua 3 summary: \"Israel crosses the Jordan on dry ground as the priests carrying the ark stand in the river. The river is at flood stage, but its waters stop and pile up far upstream at Adam. The priests remain in the\""
+  ]
+ },
+ {
+  "slug": "ararat_86",
+  "source_name": "Ararat",
+  "type": "Region",
+  "lat": 39.7029,
+  "lon": 44.2982,
+  "verses": 2,
+  "appears": "Genesis 8 → Jeremiah 51 (2 chapters; sample: Genesis 8, Jeremiah 51)",
+  "mentioned_in_app": [
+   "Genesis 8 summary: \"God remembers Noah, the waters recede, and Noah leaves the ark and offers sacrifices. The ark comes to rest on the mountains of Ararat. Noah sends out a raven and a dove until the dove does not return\""
+  ]
+ },
+ {
+  "slug": "armageddon_91",
+  "source_name": "Armageddon",
+  "type": "",
+  "lat": 32.5842,
+  "lon": 35.1823,
+  "verses": 1,
+  "appears": "Revelation 16 → Revelation 16 (1 chapters; sample: Revelation 16)",
+  "mentioned_in_app": [
+   "Revelation 16 summary: \"The seven bowls of God's wrath are poured out on the earth, culminating in judgment on Babylon. The bowls bring sores, blood, scorching heat, darkness, and a dried-up Euphrates. People curse God rathe\""
+  ]
+ },
+ {
+  "slug": "baalah_134",
+  "source_name": "Baalah",
+  "type": "City",
+  "lat": 31.245,
+  "lon": 34.8409,
+  "verses": 1,
+  "appears": "Joshua 15 → Joshua 15 (1 chapters; sample: Joshua 15)",
+  "mentioned_in_app": [
+   "card of Baalah: \"Baalah, identified as Kiriath-jearim, marks part of Judah's northern boundary (Joshua 15).\""
+  ]
+ },
+ {
+  "slug": "babel_150",
+  "source_name": "Babel",
+  "type": "City",
+  "lat": 32.5365,
+  "lon": 44.4209,
+  "verses": 2,
+  "appears": "Genesis 10 → Genesis 11 (2 chapters; sample: Genesis 10, Genesis 11)",
+  "mentioned_in_app": [
+   "Genesis: \"Genesis tells of creation, humanity's fall into sin, and God's covenant promises to Abraham and his family through Joseph's time in Egypt. God creates the world good, but Adam and Eve disobey and sin \"",
+   "Genesis 11 summary: \"People build the tower of Babel, God confuses their language and scatters them, and Shem's line leads to Abram. The builders seek to make a name for themselves and avoid being scattered. A genealogy t\"",
+   "card of Shinar: \"Nimrod's kingdom began with Babel and other cities in Shinar (Genesis 10).\""
+  ]
+ },
+ {
+  "slug": "beer_164",
+  "source_name": "Beer",
+  "type": "",
+  "lat": 30.9981,
+  "lon": 35.4985,
+  "verses": 1,
+  "appears": "Numbers 21 → Numbers 21 (1 chapters; sample: Numbers 21)",
+  "mentioned_in_app": [
+   "Numbers 21 summary: \"Israel defeats Arad, suffers a plague of serpents, and conquers the Amorite kings Sihon and Og. When the people complain, God sends venomous snakes, and those who look at Moses' bronze serpent live. I\""
+  ]
+ },
+ {
+  "slug": "bela_172",
+  "source_name": "Bela",
+  "type": "City",
+  "lat": 30.9265,
+  "lon": 35.4191,
+  "verses": 2,
+  "appears": "Genesis 14 → Genesis 14 (1 chapters; sample: Genesis 14)",
+  "mentioned_in_app": [
+   "card of Zoar: \"The king of Bela, that is, Zoar, fought against the four kings (Genesis 14).\""
+  ]
+ },
+ {
+  "slug": "berea_177",
+  "source_name": "Berea",
+  "type": "City",
+  "lat": 40.5167,
+  "lon": 22.2,
+  "verses": 2,
+  "appears": "Acts 17 → Acts 17 (1 chapters; sample: Acts 17)",
+  "mentioned_in_app": [
+   "Acts 17 summary: \"Paul preaches in Thessalonica, Berea, and Athens, where he addresses the Areopagus. In Thessalonica jealous Jews start a riot and drag Jason before the authorities. The Bereans examine the Scriptures \"",
+   "card of Silas: \"He preached with Paul in Thessalonica and Berea (Acts 17).\""
+  ]
+ },
+ {
+  "slug": "beth-maacah_221",
+  "source_name": "Beth-maacah",
+  "type": "City",
+  "lat": 33.2685,
+  "lon": 35.578,
+  "verses": 2,
+  "appears": "2 Samuel 20 → 2 Samuel 20 (1 chapters; sample: 2 Samuel 20)",
+  "mentioned_in_app": [
+   "card of Sheba: \"Joab pursued him and besieged him in the city of Abel of Beth-maacah (2 Samuel 20).\"",
+   "card of Sheba: \"Benjaminite son of Bichri who led a revolt against King David and was beheaded at Abel of Beth-maacah.\""
+  ]
+ },
+ {
+  "slug": "bethel_203",
+  "source_name": "Bethel",
+  "type": "City",
+  "lat": 32.05,
+  "lon": 35.7334,
+  "verses": 2,
+  "appears": "Joshua 12 → 1 Samuel 30 (2 chapters; sample: Joshua 12, 1 Samuel 30)",
+  "mentioned_in_app": [
+   "card of Ai: \"A Canaanite town near Bethel, where Israel was defeated before capturing it.\""
+  ]
+ },
+ {
+  "slug": "bethesda_205",
+  "source_name": "Bethesda",
+  "type": "Landmark",
+  "lat": 31.7774,
+  "lon": 35.2349,
+  "verses": 1,
+  "appears": "John 5 → John 5 (1 chapters; sample: John 5)",
+  "mentioned_in_app": [
+   "John 5 summary: \"Jesus heals a disabled man on the Sabbath and defends his authority as the Son equal with the Father. The man had been ill thirty-eight years and lay by the pool of Bethesda. Jewish leaders seek to ki\"",
+   "card of Sheep Gate: \"A gate in the northern wall of Jerusalem near the temple, beside the pool of Bethesda.\""
+  ]
+ },
+ {
+  "slug": "bochim_252",
+  "source_name": "Bochim",
+  "type": "",
+  "lat": 31.9305,
+  "lon": 35.221,
+  "verses": 2,
+  "appears": "Judges 2 → Judges 2 (1 chapters; sample: Judges 2)",
+  "mentioned_in_app": [
+   "Judges 2 summary: \"The angel of the LORD rebukes Israel, and a new generation forsakes God, beginning a repeated cycle. At Bochim, Israel weeps after hearing that the nations will remain as snares. After Joshua's genera\""
+  ]
+ },
+ {
+  "slug": "caesarea_philippi_267",
+  "source_name": "Caesarea Philippi",
+  "type": "City",
+  "lat": 33.2481,
+  "lon": 35.6946,
+  "verses": 2,
+  "appears": "Matthew 16 → Mark 8 (2 chapters; sample: Matthew 16, Mark 8)",
+  "mentioned_in_app": [
+   "Mark: \"Mark presents Jesus as the Son of God, whose powerful ministry leads to his death and resurrection. John the Baptist prepares the way, and Jesus begins preaching the kingdom of God in Galilee. Jesus h\""
+  ]
+ },
+ {
+  "slug": "calno_270",
+  "source_name": "Calno",
+  "type": "",
+  "lat": 32.1272,
+  "lon": 45.23,
+  "verses": 1,
+  "appears": "Isaiah 10 → Isaiah 10 (1 chapters; sample: Isaiah 10)",
+  "mentioned_in_app": [
+   "card of Arpad: \"God described Assyria boasting that Calno, Hamath, and Arpad had all fallen (Isaiah 10).\""
+  ]
+ },
+ {
+  "slug": "casiphia_279",
+  "source_name": "Casiphia",
+  "type": "",
+  "lat": 35.1362,
+  "lon": 36.7495,
+  "verses": 1,
+  "appears": "Ezra 8 → Ezra 8 (1 chapters; sample: Ezra 8)",
+  "mentioned_in_app": [
+   "Ezra 8 summary: \"Ezra gathers returnees and Levites, fasts for protection rather than requesting soldiers, and arrives safely with the treasures. The family heads who return with Ezra are listed. Finding no Levites, E\""
+  ]
+ },
+ {
+  "slug": "cherith_286",
+  "source_name": "Cherith",
+  "type": "Valley",
+  "lat": 32.3091,
+  "lon": 35.5599,
+  "verses": 2,
+  "appears": "1 Kings 17 → 1 Kings 17 (1 chapters; sample: 1 Kings 17)",
+  "mentioned_in_app": [
+   "1 Kings 17 summary: \"Elijah announces a drought to Ahab, and God provides for Elijah through ravens and a widow at Zarephath. Elijah drinks from the brook Cherith until it dries up. The widow's flour and oil do not run ou\""
+  ]
+ },
+ {
+  "slug": "chezib_291",
+  "source_name": "Chezib",
+  "type": "City",
+  "lat": 31.7,
+  "lon": 35.0,
+  "verses": 1,
+  "appears": "Genesis 38 → Genesis 38 (1 chapters; sample: Genesis 38)",
+  "mentioned_in_app": [
+   "card of Shelah: \"He was born to Judah and the daughter of Shua at Chezib (Genesis 38).\""
+  ]
+ },
+ {
+  "slug": "chorazin_299",
+  "source_name": "Chorazin",
+  "type": "City",
+  "lat": 32.9091,
+  "lon": 35.5529,
+  "verses": 2,
+  "appears": "Matthew 11 → Luke 10 (2 chapters; sample: Matthew 11, Luke 10)",
+  "mentioned_in_app": [
+   "Matthew 11 summary: \"Jesus answers John the Baptist's question, rebukes unrepentant towns, and invites the weary to come to him for rest. He points to his miracles and preaching as signs of who he is. He calls John more t\""
+  ]
+ },
+ {
+  "slug": "debir_326",
+  "source_name": "Debir",
+  "type": "",
+  "lat": 31.8167,
+  "lon": 35.35,
+  "verses": 1,
+  "appears": "Joshua 15 → Joshua 15 (1 chapters; sample: Joshua 15)",
+  "mentioned_in_app": [
+   "Joshua 15 summary: \"Judah's boundaries and towns are described, along with Caleb's conquest of Hebron and Debir. Caleb drives out the three sons of Anak from Hebron. Othniel captures Debir and marries Caleb's daughter Ac\"",
+   "card of Kiriath-sepher: \"The earlier name of Debir, a town in Judah captured by Othniel.\"",
+   "card of Debir: \"Othniel captured Debir and received Caleb's daughter Achsah as his wife (Joshua 15).\""
+  ]
+ },
+ {
+  "slug": "dothan_342",
+  "source_name": "Dothan",
+  "type": "",
+  "lat": 32.4206,
+  "lon": 35.1802,
+  "verses": 2,
+  "appears": "Genesis 37 → 2 Kings 6 (2 chapters; sample: Genesis 37, 2 Kings 6)",
+  "mentioned_in_app": [
+   "card of Elisha: \"At Dothan, God opened his servant's eyes to see an army of fiery chariots (2 Kings 6).\""
+  ]
+ },
+ {
+  "slug": "dumah_345",
+  "source_name": "Dumah",
+  "type": "",
+  "lat": 27.4,
+  "lon": 37.7,
+  "verses": 1,
+  "appears": "Isaiah 21 → Isaiah 21 (1 chapters; sample: Isaiah 21)",
+  "mentioned_in_app": [
+   "Isaiah 21 summary: \"Oracles announce Babylon's fall, distress for Dumah, and judgment on Arabia within a year. The prophet is distressed by the harsh vision. A watchman reports that Babylon has fallen and its idols are s\""
+  ]
+ },
+ {
+  "slug": "dura_347",
+  "source_name": "Dura",
+  "type": "",
+  "lat": 32.5365,
+  "lon": 44.4209,
+  "verses": 1,
+  "appears": "Daniel 3 → Daniel 3 (1 chapters; sample: Daniel 3)",
+  "mentioned_in_app": [
+   "Daniel 3 summary: \"Shadrach, Meshach, and Abednego refuse to worship Nebuchadnezzar's golden image and survive being thrown into a fiery furnace. Nebuchadnezzar orders all officials to bow to a huge golden image on the \""
+  ]
+ },
+ {
+  "slug": "ecbatana_353",
+  "source_name": "Ecbatana",
+  "type": "",
+  "lat": 34.7983,
+  "lon": 48.515,
+  "verses": 1,
+  "appears": "Ezra 6 → Ezra 6 (1 chapters; sample: Ezra 6)",
+  "mentioned_in_app": [
+   "card of Media: \"Cyrus' decree for rebuilding the temple was found at Ecbatana in Media (Ezra 6).\""
+  ]
+ },
+ {
+  "slug": "eden_354",
+  "source_name": "Eden",
+  "type": "Region",
+  "lat": null,
+  "lon": null,
+  "verses": 15,
+  "appears": "Genesis 2 → Joel 2 (10 chapters; sample: Genesis 2, Genesis 3, 2 Kings 19, Isaiah 37, Isaiah 51, Ezekiel 27, Ezekiel 28, Ezekiel 31)",
+  "mentioned_in_app": [
+   "Genesis 2 summary: \"God rests on the seventh day, then forms Adam, places him in Eden, and creates Eve as his partner. God forms the man from dust and breathes life into him. He forbids eating from the tree of the knowle\"",
+   "Genesis 3 summary: \"The serpent deceives Eve, she and Adam eat the forbidden fruit, and God judges them and sends them from Eden. Ashamed, they hide from God and blame others when questioned. God curses the serpent and p\"",
+   "Isaiah 51 summary: \"The LORD calls the faithful to look to Abraham, promises lasting salvation, and summons Jerusalem to awake from his wrath. God will comfort Zion and make her wilderness like Eden. His salvation will l\""
+  ]
+ },
+ {
+  "slug": "emmaus_382",
+  "source_name": "Emmaus",
+  "type": "City",
+  "lat": 31.8395,
+  "lon": 34.9895,
+  "verses": 1,
+  "appears": "Luke 24 → Luke 24 (1 chapters; sample: Luke 24)",
+  "mentioned_in_app": [
+   "Luke 24 summary: \"Jesus rises from the dead, appears to his disciples, explains the Scriptures, and ascends to heaven. Women find the tomb empty, and angels tell them Jesus has risen. On the road to Emmaus, Jesus expla\""
+  ]
+ },
+ {
+  "slug": "gath-rimmon_445",
+  "source_name": "Gath-rimmon",
+  "type": "City",
+  "lat": 32.45,
+  "lon": 35.2833,
+  "verses": 1,
+  "appears": "Joshua 21 → Joshua 21 (1 chapters; sample: Joshua 21)",
+  "mentioned_in_app": [
+   "card of Gath-rimmon: \"Gath-rimmon was given from Dan's land to the Kohathite Levites (Joshua 21).\""
+  ]
+ },
+ {
+  "slug": "geba_448",
+  "source_name": "Geba",
+  "type": "",
+  "lat": 31.8468,
+  "lon": 35.1849,
+  "verses": 1,
+  "appears": "2 Samuel 5 → 2 Samuel 5 (1 chapters; sample: 2 Samuel 5)",
+  "mentioned_in_app": [
+   "card of Gezer: \"David struck down the Philistines from Geba to Gezer (2 Samuel 5).\""
+  ]
+ },
+ {
+  "slug": "gethsemane_462",
+  "source_name": "Gethsemane",
+  "type": "Landmark",
+  "lat": 31.7774,
+  "lon": 35.2349,
+  "verses": 2,
+  "appears": "Matthew 26 → Mark 14 (2 chapters; sample: Matthew 26, Mark 14)",
+  "mentioned_in_app": [
+   "Matthew 26 summary: \"Jesus is anointed, shares the Last Supper, prays in Gethsemane, is arrested, tried by the council, and denied by Peter. The chief priests plot to kill Jesus, and Judas agrees to betray him for thirty \"",
+   "Mark 14 summary: \"Jesus is anointed, shares the Passover with his disciples, prays in Gethsemane, is arrested, and is tried. Judas agrees to betray Jesus, who institutes the Lord's Supper with bread and cup. In Gethsem\""
+  ]
+ },
+ {
+  "slug": "gihon_472",
+  "source_name": "Gihon",
+  "type": "Water",
+  "lat": null,
+  "lon": null,
+  "verses": 1,
+  "appears": "Genesis 2 → Genesis 2 (1 chapters; sample: Genesis 2)",
+  "mentioned_in_app": [
+   "card of Cush: \"The river Gihon flows around the whole land of Cush (Genesis 2).\""
+  ]
+ },
+ {
+  "slug": "giloh_479",
+  "source_name": "Giloh",
+  "type": "City",
+  "lat": 31.6167,
+  "lon": 35.0833,
+  "verses": 2,
+  "appears": "Joshua 15 → 2 Samuel 15 (2 chapters; sample: Joshua 15, 2 Samuel 15)",
+  "mentioned_in_app": [
+   "card of Ahithophel: \"David's trusted counselor from Giloh who joined Absalom's rebellion.\""
+  ]
+ },
+ {
+  "slug": "gog_484",
+  "source_name": "Gog",
+  "type": "Region",
+  "lat": 46.0,
+  "lon": 47.0,
+  "verses": 1,
+  "appears": "Revelation 20 → Revelation 20 (1 chapters; sample: Revelation 20)",
+  "mentioned_in_app": [
+   "card of Magog: \"After the thousand years, Satan gathers Gog and Magog for a final battle (Revelation 20).\"",
+   "card of Magog: \"A distant northern land, home of Gog, who leads the nations against God's people.\"",
+   "card of Gog: \"After the thousand years, Satan gathers Gog and Magog for battle, and fire consumes them (Revelation 20).\""
+  ]
+ },
+ {
+  "slug": "gomer_488",
+  "source_name": "Gomer",
+  "type": "",
+  "lat": null,
+  "lon": null,
+  "verses": 1,
+  "appears": "Ezekiel 38 → Ezekiel 38 (1 chapters; sample: Ezekiel 38)",
+  "mentioned_in_app": [
+   "card of Gomer: \"Gomer and its hordes are named among Gog's allies (Ezekiel 38).\""
+  ]
+ },
+ {
+  "slug": "gur_497",
+  "source_name": "Gur",
+  "type": "",
+  "lat": 32.45,
+  "lon": 35.2833,
+  "verses": 1,
+  "appears": "2 Kings 9 → 2 Kings 9 (1 chapters; sample: 2 Kings 9)",
+  "mentioned_in_app": [
+   "card of Ibleam: \"Jehu's men wounded King Ahaziah at the ascent of Gur, near Ibleam (2 Kings 9).\""
+  ]
+ },
+ {
+  "slug": "hadrach_504",
+  "source_name": "Hadrach",
+  "type": "Region",
+  "lat": 33.5193,
+  "lon": 36.3134,
+  "verses": 1,
+  "appears": "Zechariah 9 → Zechariah 9 (1 chapters; sample: Zechariah 9)",
+  "mentioned_in_app": [
+   "Zechariah 9 summary: \"God announces judgment on Israel's neighbors and the coming of Zion's king, humble and riding on a donkey. Hadrach, Damascus, Tyre, and Philistia will be judged, and a remnant of Philistia will join G\""
+  ]
+ },
+ {
+  "slug": "havilah_534",
+  "source_name": "Havilah",
+  "type": "Region",
+  "lat": 30.14,
+  "lon": 35.22,
+  "verses": 2,
+  "appears": "Genesis 25 → 1 Samuel 15 (2 chapters; sample: Genesis 25, 1 Samuel 15)",
+  "mentioned_in_app": [
+   "card of Shur: \"Saul defeated the Amalekites from Havilah as far as Shur (1 Samuel 15).\""
+  ]
+ },
+ {
+  "slug": "hazazon-tamar_542",
+  "source_name": "Hazazon-tamar",
+  "type": "",
+  "lat": 31.4615,
+  "lon": 35.3924,
+  "verses": 2,
+  "appears": "Genesis 14 → 2 Chronicles 20 (2 chapters; sample: Genesis 14, 2 Chronicles 20)",
+  "mentioned_in_app": [
+   "card of En-gedi: \"Moabite and Ammonite armies gathered at Hazazon-tamar, that is, En-gedi (2 Chronicles 20).\""
+  ]
+ },
+ {
+  "slug": "hazor_549",
+  "source_name": "Hazor",
+  "type": "",
+  "lat": null,
+  "lon": null,
+  "verses": 3,
+  "appears": "Jeremiah 49 → Jeremiah 49 (1 chapters; sample: Jeremiah 49)",
+  "mentioned_in_app": [
+   "Jeremiah 49 summary: \"Jeremiah pronounces judgment on Ammon, Edom, Damascus, Kedar and Hazor, and Elam. Ammon will be dispossessed but later restored. Edom will become a desolation like Sodom and Gomorrah. Damascus will pa\""
+  ]
+ },
+ {
+  "slug": "helam_552",
+  "source_name": "Helam",
+  "type": "",
+  "lat": 32.1844,
+  "lon": 35.7029,
+  "verses": 2,
+  "appears": "2 Samuel 10 → 2 Samuel 10 (1 chapters; sample: 2 Samuel 10)",
+  "mentioned_in_app": [
+   "2 Samuel 10 summary: \"The Ammonites humiliate David's envoys and hire Syrian troops, and Joab and David defeat both. King Hanun shaves half the envoys' beards and cuts their garments. Joab and Abishai split the army to fac\""
+  ]
+ },
+ {
+  "slug": "hierapolis_569",
+  "source_name": "Hierapolis",
+  "type": "City",
+  "lat": 37.9245,
+  "lon": 29.1245,
+  "verses": 1,
+  "appears": "Colossians 4 → Colossians 4 (1 chapters; sample: Colossians 4)",
+  "mentioned_in_app": [
+   "card of Laodicea: \"A prosperous city in the Lycus Valley of Asia Minor, near Colossae and Hierapolis.\""
+  ]
+ },
+ {
+  "slug": "holy_place_574",
+  "source_name": "Holy Place",
+  "type": "",
+  "lat": null,
+  "lon": null,
+  "verses": 19,
+  "appears": "Exodus 26 → Numbers 28 (9 chapters; sample: Exodus 26, Exodus 28, Exodus 29, Exodus 31, Exodus 35, Exodus 39, Leviticus 6, Leviticus 16)",
+  "mentioned_in_app": [
+   "Exodus 26 summary: \"God gives instructions for the tabernacle's curtains, coverings, frames, and the veil that separates the Most Holy Place. Ten linen curtains embroidered with cherubim form the inner covering. Goat hai\"",
+   "Leviticus 16 summary: \"God gives instructions for the annual Day of Atonement to cleanse the sanctuary and atone for the people's sins. Aaron enters the Most Holy Place only on this day, with blood and incense. One goat is \""
+  ]
+ },
+ {
+  "slug": "hor-haggidgad_579",
+  "source_name": "Hor-haggidgad",
+  "type": "",
+  "lat": 30.3583,
+  "lon": 35.1903,
+  "verses": 2,
+  "appears": "Numbers 33 → Numbers 33 (1 chapters; sample: Numbers 33)",
+  "mentioned_in_app": [
+   "card of Jotbathah: \"Israel set out from Hor-haggidgad and camped at Jotbathah (Numbers 33).\""
+  ]
+ },
+ {
+  "slug": "immer_596",
+  "source_name": "Immer",
+  "type": "",
+  "lat": 36.3594,
+  "lon": 43.1529,
+  "verses": 2,
+  "appears": "Ezra 2 → Nehemiah 7 (2 chapters; sample: Ezra 2, Nehemiah 7)",
+  "mentioned_in_app": [
+   "card of Immer: \"More than a thousand priests of Immer's line returned from Babylon with Zerubbabel (Ezra 2).\""
+  ]
+ },
+ {
+  "slug": "india_597",
+  "source_name": "India",
+  "type": "",
+  "lat": 22.0,
+  "lon": 77.0,
+  "verses": 2,
+  "appears": "Esther 1 → Esther 8 (2 chapters; sample: Esther 1, Esther 8)",
+  "mentioned_in_app": [
+   "card of Cush: \"King Ahasuerus rules 127 provinces from India to Cush (Esther 1).\"",
+   "card of Cush: \"Mordecai's decree goes to every province from India to Cush (Esther 8).\""
+  ]
+ },
+ {
+  "slug": "javan_627",
+  "source_name": "Javan",
+  "type": "",
+  "lat": 37.9533,
+  "lon": 27.3678,
+  "verses": 2,
+  "appears": "Isaiah 66 → Ezekiel 27 (2 chapters; sample: Isaiah 66, Ezekiel 27)",
+  "mentioned_in_app": [
+   "card of Javan: \"Javan is named among distant nations who will hear of the Lord's glory (Isaiah 66).\"",
+   "card of Javan: \"Javan traded slaves and bronze vessels with the city of Tyre (Ezekiel 27).\""
+  ]
+ },
+ {
+  "slug": "jebusite_630",
+  "source_name": "Jebusite",
+  "type": "",
+  "lat": 31.7774,
+  "lon": 35.2349,
+  "verses": 1,
+  "appears": "Joshua 15 → Joshua 15 (1 chapters; sample: Joshua 15)",
+  "mentioned_in_app": [
+   "card of Valley of Hinnom: \"Judah's northern boundary ran through the Valley of Hinnom, south of the Jebusite city (Joshua 15).\""
+  ]
+ },
+ {
+  "slug": "judah_1280",
+  "source_name": "Judah",
+  "type": "Region",
+  "lat": null,
+  "lon": null,
+  "verses": 27,
+  "appears": "Joshua 11 → Psalms 63 (13 chapters; sample: Joshua 11, Joshua 15, Joshua 20, Joshua 21, Judges 1, Judges 15, 1 Samuel 22, 1 Samuel 27)",
+  "mentioned_in_app": [
+   "Joshua 15 summary: \"Judah's boundaries and towns are described, along with Caleb's conquest of Hebron and Debir. Caleb drives out the three sons of Anak from Hebron. Othniel captures Debir and marries Caleb's daughter Ac\"",
+   "Judges 1 summary: \"After Joshua's death, the tribes fight the Canaanites but largely fail to drive them out. Judah and Simeon defeat Adoni-bezek and take several cities. Othniel captures Debir and marries Caleb's daught\"",
+   "Judges 15 summary: \"Samson takes revenge on the Philistines and kills a thousand men with a donkey's jawbone. He burns their grain fields using foxes, and they burn his wife and her father. Men of Judah bind him and hand\""
+  ]
+ },
+ {
+  "slug": "judgment_511",
+  "source_name": "Hall of Judgment",
+  "type": "",
+  "lat": 31.7774,
+  "lon": 35.2349,
+  "verses": 1,
+  "appears": "1 Kings 7 → 1 Kings 7 (1 chapters; sample: 1 Kings 7)",
+  "mentioned_in_app": [
+   "card of Daughter of Pharaoh: \"Solomon built her a house like his Hall of Judgment (1 Kings 7).\""
+  ]
+ },
+ {
+  "slug": "kanah_666",
+  "source_name": "Kanah",
+  "type": "Water",
+  "lat": 32.1382,
+  "lon": 35.039,
+  "verses": 2,
+  "appears": "Joshua 16 → Joshua 17 (2 chapters; sample: Joshua 16, Joshua 17)",
+  "mentioned_in_app": [
+   "card of Tappuah: \"Ephraim's border went west from Tappuah to the brook Kanah (Joshua 16).\""
+  ]
+ },
+ {
+  "slug": "karkor_669",
+  "source_name": "Karkor",
+  "type": "",
+  "lat": 32.1844,
+  "lon": 35.7029,
+  "verses": 1,
+  "appears": "Judges 8 → Judges 8 (1 chapters; sample: Judges 8)",
+  "mentioned_in_app": [
+   "card of Zalmunna: \"Gideon routed their army at Karkor and captured both kings (Judges 8).\"",
+   "card of Zebah: \"Gideon routed their army at Karkor and captured both kings (Judges 8).\""
+  ]
+ },
+ {
+  "slug": "leshem_727",
+  "source_name": "Leshem",
+  "type": "",
+  "lat": 33.2487,
+  "lon": 35.6525,
+  "verses": 1,
+  "appears": "Joshua 19 → Joshua 19 (1 chapters; sample: Joshua 19)",
+  "mentioned_in_app": [
+   "Joshua 19 summary: \"The last six tribes receive their land, and Joshua receives his own town. Simeon's inheritance lies within Judah because Judah's portion was too large. Zebulun, Issachar, Asher, Naphtali, and Dan rece\""
+  ]
+ },
+ {
+  "slug": "libya_730",
+  "source_name": "Libya",
+  "type": "Region",
+  "lat": 32.825,
+  "lon": 21.8583,
+  "verses": 2,
+  "appears": "Ezekiel 30 → Acts 2 (2 chapters; sample: Ezekiel 30, Acts 2)",
+  "mentioned_in_app": [
+   "card of Cyrene: \"Visitors from the parts of Libya near Cyrene heard the gospel at Pentecost (Acts 2).\""
+  ]
+ },
+ {
+  "slug": "luz_738",
+  "source_name": "Luz",
+  "type": "",
+  "lat": 37.0,
+  "lon": 36.57,
+  "verses": 1,
+  "appears": "Judges 1 → Judges 1 (1 chapters; sample: Judges 1)",
+  "mentioned_in_app": [
+   "card of Luz: \"The house of Joseph captured Luz, and a spared man built another Luz elsewhere (Judges 1).\""
+  ]
+ }
+]

@@ -1,0 +1,945 @@
+[
+ {
+  "slug": "havilah_1461",
+  "source_name": "Havilah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 10 → 1 Chronicles 1 (2 chapters; sample: Genesis 10, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Cush [cush_962]"
+   ],
+   "s": [
+    "Nimrod [nimrod_2206]",
+    "Raamah [raamah_2380]",
+    "Sabtah [sabtah_2451]",
+    "Sabtecha [sabtecha_2452]",
+    "Seba [seba_2481]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Cush: \"His sons were Seba, Havilah, Sabtah, Raamah, and Sabteca (Genesis 10).\"",
+   "card of Joktan: \"He fathered thirteen sons, including Sheba, Ophir, and Havilah (Genesis 10).\""
+  ]
+ },
+ {
+  "slug": "havilah_1462",
+  "source_name": "Havilah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Genesis 10 → 1 Chronicles 1 (2 chapters; sample: Genesis 10, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Joktan [joktan_1686]"
+   ],
+   "s": [
+    "Abimael [abimael_39]",
+    "Almodad [almodad_191]",
+    "Jerah [jerah_842]",
+    "Diklah [diklah_1011]",
+    "Hadoram [hadoram_1345]",
+    "Hazarmaveth [hazarmaveth_1465]",
+    "Jobab [jobab_1640]",
+    "Ebal [ebal_2227]",
+    "Ophir [ophir_2253]",
+    "Sheba [sheba_2568]",
+    "Sheleph [sheleph_2602]",
+    "Uzal [uzal_2911]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Cush: \"His sons were Seba, Havilah, Sabtah, Raamah, and Sabteca (Genesis 10).\"",
+   "card of Joktan: \"He fathered thirteen sons, including Sheba, Ophir, and Havilah (Genesis 10).\""
+  ]
+ },
+ {
+  "slug": "heber_1470",
+  "source_name": "Heber",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Judges 4 → Judges 5 (2 chapters; sample: Judges 4, Judges 5)",
+  "family_in_source": {
+   "p": [
+    "Jael [jael_689]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Jael: \"Sisera fled to her tent, since Jabin was at peace with Heber's house (Judges 4).\"",
+   "card of Jael: \"The wife of Heber the Kenite, who killed the Canaanite commander Sisera in her tent.\""
+  ]
+ },
+ {
+  "slug": "heleb_1480",
+  "source_name": "Heleb",
+  "gender": "M",
+  "verses": 3,
+  "appears": "2 Samuel 23 → 1 Chronicles 27 (3 chapters; sample: 2 Samuel 23, 1 Chronicles 11, 1 Chronicles 27)",
+  "family_in_source": {
+   "f": [
+    "Baanah [baanah_583]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Netophah: \"Maharai and Heleb of Netophah were among David's mighty men (2 Samuel 23).\""
+  ]
+ },
+ {
+  "slug": "herodias_1507",
+  "source_name": "Herodias",
+  "gender": "F",
+  "verses": 4,
+  "appears": "Matthew 14 → Luke 3 (3 chapters; sample: Matthew 14, Mark 6, Luke 3)",
+  "family_in_source": {
+   "p": [
+    "Herod Antipas [herod_1505]",
+    "Philip [philip_2345]"
+   ],
+   "c": [
+    "Daughter of Herodias [daughter_of_herodias_983]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Matthew 14 summary: \"After Herod beheads John the Baptist, Jesus feeds five thousand men and walks on the sea. Herod had imprisoned John for condemning his marriage to Herodias. Jesus multiplies five loaves and two fish, \"",
+   "Mark 6 summary: \"Rejected at Nazareth, Jesus sends out the twelve, feeds five thousand, and walks on the sea. Herod Antipas has John the Baptist beheaded at the request of Herodias' daughter. Jesus feeds a great crowd\"",
+   "card of John the Baptist: \"Herod had him beheaded at the request of Herodias's daughter (Mark 6).\""
+  ]
+ },
+ {
+  "slug": "hezekiah_1513",
+  "source_name": "Hezekiah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 3 → 1 Chronicles 3 (1 chapters; sample: 1 Chronicles 3)",
+  "family_in_source": {
+   "f": [
+    "Neariah [neariah_2161]"
+   ],
+   "s": [
+    "Azrikam [azrikam_563]",
+    "Elioenai [elioenai_1135]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Manasseh: \"A king of Judah, son of Hezekiah, whose long reign was marked by idolatry until he repented.\""
+  ]
+ },
+ {
+  "slug": "hiel_1522",
+  "source_name": "Hiel",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Kings 16 → 1 Kings 16 (1 chapters; sample: 1 Kings 16)",
+  "family_in_source": {
+   "c": [
+    "Abiram [abiram_48]",
+    "Segub [segub_2483]"
+   ]
+  },
+  "mentioned_in_app": [
+   "1 Kings 16 summary: \"Israel's kings Elah, Zimri, Omri, and Ahab do evil, with Ahab marrying Jezebel and promoting Baal worship. Zimri kills Elah but reigns only seven days. Omri buys the hill of Samaria and builds his cap\"",
+   "card of Jericho: \"Hiel rebuilt Jericho at the cost of his sons, as Joshua had warned (1 Kings 16).\""
+  ]
+ },
+ {
+  "slug": "hilkiah_1525",
+  "source_name": "Hilkiah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 6 → 1 Chronicles 6 (1 chapters; sample: 1 Chronicles 6)",
+  "family_in_source": {
+   "f": [
+    "Amzi [amzi_245]"
+   ],
+   "c": [
+    "Amaziah [amaziah_216]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Shallum: \"Chronicles places Shallum between Zadok and Hilkiah in the high-priestly line (1 Chronicles 6).\"",
+   "card of Shallum: \"A priest in Zadok's line and father of Hilkiah, the high priest in King Josiah's day.\""
+  ]
+ },
+ {
+  "slug": "hobab_1537",
+  "source_name": "Hobab",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Numbers 10 → Judges 4 (2 chapters; sample: Numbers 10, Judges 4)",
+  "family_in_source": {
+   "f": [
+    "Jethro [jethro_2431]"
+   ],
+   "s": [
+    "Eliasaph [eliasaph_1091]",
+    "Zipporah [zipporah_3095]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Numbers 10 summary: \"After silver trumpets are made for signaling, Israel leaves Sinai in tribal order following the ark. The trumpets call assemblies, sound the march, rally for war, and mark feasts. Moses urges his rela\""
+  ]
+ },
+ {
+  "slug": "horam_1551",
+  "source_name": "Horam",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Joshua 10 → Joshua 10 (1 chapters; sample: Joshua 10)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Gezer: \"Horam king of Gezer came to help Lachish, and Joshua struck him down (Joshua 10).\""
+  ]
+ },
+ {
+  "slug": "hori_1552",
+  "source_name": "Hori",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Lotan [lotan_1831]"
+   ],
+   "s": [
+    "Homam [homam_1487]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Lotan: \"His sons were Hori and Hemam, and his sister was Timna (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "hosea_1555",
+  "source_name": "Hosea",
+  "gender": "M",
+  "verses": 3,
+  "appears": "Hosea 1 → Romans 9 (2 chapters; sample: Hosea 1, Romans 9)",
+  "family_in_source": {
+   "f": [
+    "Beeri [beeri_433]"
+   ],
+   "p": [
+    "Gomer [gomer_1329]"
+   ],
+   "c": [
+    "Lo-ammi [lo-ammi_1827]",
+    "Jezreel [jezreel_1613]",
+    "Lo-ruhamah [lo-ruhamah_1829]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Hosea: \"Through Hosea's marriage to an unfaithful wife, God exposes Israel's spiritual adultery and promises a love that will restore them. Hosea prophesies to the northern kingdom of Israel in its final deca\"",
+   "Hosea 1 summary: \"God commands Hosea to marry Gomer, and their three children receive names announcing judgment on Israel. The marriage pictures Israel committing great whoredom by forsaking the LORD. Jezreel signals p\"",
+   "card of Jezreel: \"Hosea named his son Jezreel as a sign of judgment on Jehu's house (Hosea 1).\""
+  ]
+ },
+ {
+  "slug": "hotham_1562",
+  "source_name": "Hotham",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 7 → 1 Chronicles 7 (1 chapters; sample: 1 Chronicles 7)",
+  "family_in_source": {
+   "f": [
+    "Heber [heber_1469]"
+   ],
+   "s": [
+    "Japhlet [japhlet_729]",
+    "Shamer [shamer_2725]",
+    "Shua [shua_2726]"
+   ],
+   "c": [
+    "Shelesh [shelesh_2603]",
+    "Zophah [zophah_3104]",
+    "Amal [amal_196]",
+    "Imna [imna_601]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Heber: \"He fathered Japhlet, Shomer, Hotham, and their sister Shua (1 Chronicles 7).\""
+  ]
+ },
+ {
+  "slug": "huldah_1567",
+  "source_name": "Huldah",
+  "gender": "F",
+  "verses": 2,
+  "appears": "2 Kings 22 → 2 Chronicles 34 (2 chapters; sample: 2 Kings 22, 2 Chronicles 34)",
+  "family_in_source": {
+   "p": [
+    "Shallum [shallum_2515]"
+   ]
+  },
+  "mentioned_in_app": [
+   "2 Kings 22 summary: \"Josiah does right and repairs the temple, the Book of the Law is found, and Huldah the prophetess confirms coming judgment. Josiah tears his clothes on hearing the law read. Huldah says disaster will \"",
+   "2 Chronicles 34 summary: \"Josiah purges idolatry, repairs the temple, and after the Book of the Law is found, leads Judah in covenant renewal. He begins seeking God as a youth and destroys idols in Judah and the north. Hearing\"",
+   "card of Ahikam: \"Josiah sent him with others to inquire of the prophetess Huldah about the Book of the Law (2 Kings 22).\""
+  ]
+ },
+ {
+  "slug": "hurai_1521",
+  "source_name": "Hurai",
+  "gender": "M",
+  "verses": 2,
+  "appears": "2 Samuel 23 → 1 Chronicles 11 (2 chapters; sample: 2 Samuel 23, 1 Chronicles 11)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "card of Gaash: \"Hurai of the brooks of Gaash appears in the list of David's mighty men (1 Chronicles 11).\""
+  ]
+ },
+ {
+  "slug": "huram_1575",
+  "source_name": "Huram",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Chronicles 2 → 2 Chronicles 2 (1 chapters; sample: 2 Chronicles 2)",
+  "family_in_source": {
+   "c": [
+    "Hiram [hiram_1532]"
+   ]
+  },
+  "mentioned_in_app": [
+   "2 Chronicles 2 summary: \"Solomon prepares to build the temple and secures materials and a skilled craftsman from Hiram king of Tyre. Solomon explains that the temple is for incense and offerings to the great God. Hiram praise\""
+  ]
+ },
+ {
+  "slug": "hymenaeus_1583",
+  "source_name": "Hymenaeus",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Timothy 1 → 2 Timothy 2 (2 chapters; sample: 1 Timothy 1, 2 Timothy 2)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "1 Timothy 1 summary: \"Paul charges Timothy to confront false teachers and recalls how Christ showed him mercy as the foremost sinner. Some were devoted to myths and endless genealogies. The law is good when used lawfully a\""
+  ]
+ },
+ {
+  "slug": "ibzan_1588",
+  "source_name": "Ibzan",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Judges 12 → Judges 12 (1 chapters; sample: Judges 12)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Judges 12 summary: \"Jephthah defeats the tribe of Ephraim, and three more minor judges lead Israel. Gileadites identify fleeing Ephraimites by their pronunciation of Shibboleth, and 42,000 die. Jephthah judges six years \""
+  ]
+ },
+ {
+  "slug": "iddo_1595",
+  "source_name": "Iddo",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Ezra 5 → Zechariah 1 (3 chapters; sample: Ezra 5, Ezra 6, Zechariah 1)",
+  "family_in_source": {
+   "c": [
+    "Berechiah [berechiah_475]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Zechariah: \"A prophet after the exile, son of Berechiah and grandson of Iddo, who urged rebuilding the temple.\""
+  ]
+ },
+ {
+  "slug": "igal_1599",
+  "source_name": "Igal",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Samuel 23 → 2 Samuel 23 (1 chapters; sample: 2 Samuel 23)",
+  "family_in_source": {
+   "f": [
+    "Nathan [nathan_2154]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Zobah: \"Igal of Zobah was among David's mighty men (2 Samuel 23).\""
+  ]
+ },
+ {
+  "slug": "iscah_618",
+  "source_name": "Iscah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Genesis 11 → Genesis 11 (1 chapters; sample: Genesis 11)",
+  "family_in_source": {
+   "f": [
+    "Haran [haran_1407]"
+   ],
+   "s": [
+    "Lot [lot_1830]",
+    "Milcah [milcah_2082]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Haran: \"He fathered Lot, as well as daughters Milcah and Iscah (Genesis 11).\"",
+   "card of Haran: \"A son of Terah, brother of Abram and Nahor, and father of Lot, Milcah, and Iscah.\""
+  ]
+ },
+ {
+  "slug": "ishbi-benob_621",
+  "source_name": "Ishbi-benob",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Samuel 21 → 2 Samuel 21 (1 chapters; sample: 2 Samuel 21)",
+  "family_in_source": {
+   "f": [
+    "the giant in Gath [the_giant_in_gath_2848]"
+   ],
+   "s": [
+    "Goliath [goliath_1327]",
+    "Lahmi [lahmi_1806]",
+    "man of great stature [man_of_great_stature_1924]",
+    "Sippai [sippai_2471]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Abishai: \"He rescued David by killing the giant Ishbi-benob (2 Samuel 21).\""
+  ]
+ },
+ {
+  "slug": "jabez_675",
+  "source_name": "Jabez",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 4 → 1 Chronicles 4 (1 chapters; sample: 1 Chronicles 4)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "1 Chronicles 4 summary: \"Further descendants of Judah and the tribe of Simeon are listed, with brief notes on their towns and conquests. Jabez prays for blessing, and God grants his request. Simeonites take new pastureland an\""
+  ]
+ },
+ {
+  "slug": "jabin_676",
+  "source_name": "Jabin",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Joshua 11 → Joshua 11 (1 chapters; sample: Joshua 11)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Joshua 11 summary: \"Joshua defeats a northern coalition led by Jabin of Hazor and completes the main conquest of Canaan. At the waters of Merom, Israel routs them, hamstrings their horses, and burns their chariots. Hazor\"",
+   "card of Achshaph: \"Jabin king of Hazor summons the king of Achshaph to fight Israel (Joshua 11).\"",
+   "card of Hazor: \"Jabin king of Hazor led a northern coalition, and Joshua burned the city (Joshua 11).\""
+  ]
+ },
+ {
+  "slug": "jacob_683",
+  "source_name": "Jacob",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Matthew 1 → Matthew 1 (1 chapters; sample: Matthew 1)",
+  "family_in_source": {
+   "f": [
+    "Matthan [matthan_1968]"
+   ],
+   "c": [
+    "Joseph [joseph_1715]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Isaac: \"The promised son of Abraham and Sarah, father of Jacob and Esau, and heir of God's covenant.\""
+  ]
+ },
+ {
+  "slug": "jahaziel_698",
+  "source_name": "Jahaziel",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 23 → 1 Chronicles 24 (2 chapters; sample: 1 Chronicles 23, 1 Chronicles 24)",
+  "family_in_source": {
+   "f": [
+    "Hebron [hebron_1475]"
+   ],
+   "s": [
+    "Amariah [amariah_200]",
+    "Jekameam [jekameam_834]",
+    "Jeriah [jeriah_860]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Hebron: \"His sons Jeriah, Amariah, Jahaziel, and Jekameam are listed in David's Levite divisions (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "jahaziel_699",
+  "source_name": "Jahaziel",
+  "gender": "M",
+  "verses": 1,
+  "appears": "2 Chronicles 20 → 2 Chronicles 20 (1 chapters; sample: 2 Chronicles 20)",
+  "family_in_source": {
+   "f": [
+    "Zechariah [zechariah_3009]"
+   ]
+  },
+  "mentioned_in_app": [
+   "2 Chronicles 20 summary: \"Facing a vast invading army, Jehoshaphat leads Judah in prayer, and God makes the enemies destroy one another. Jehoshaphat proclaims a fast and prays, confessing they do not know what to do. Jahaziel \""
+  ]
+ },
+ {
+  "slug": "jair_708",
+  "source_name": "Jair",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Numbers 32 → 1 Chronicles 2 (4 chapters; sample: Numbers 32, Deuteronomy 3, 1 Kings 4, 1 Chronicles 2)",
+  "family_in_source": {
+   "f": [
+    "Segub [segub_2484]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Argob: \"Jair of Manasseh takes the region of Argob and names it after himself (Deuteronomy 3).\"",
+   "card of Havvoth-jair: \"Jair son of Manasseh captures villages and calls them Havvoth-jair (Numbers 32).\"",
+   "card of Havvoth-jair: \"Jair takes the region of Argob and names Bashan's villages Havvoth-jair (Deuteronomy 3).\""
+  ]
+ },
+ {
+  "slug": "jair_709",
+  "source_name": "Jair",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Judges 10 → Judges 10 (1 chapters; sample: Judges 10)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Judges 10 summary: \"After the judges Tola and Jair, Israel worships many gods and is oppressed by the Philistines and Ammonites. Israel suffers eighteen years and cries out to God. God at first refuses, but the people pu\"",
+   "card of Havvoth-jair: \"The judge Jair's thirty sons have thirty cities called Havvoth-jair in Gilead (Judges 10).\"",
+   "card of Havvoth-jair: \"A group of villages east of the Jordan, named after Jair of the tribe of Manasseh.\""
+  ]
+ },
+ {
+  "slug": "jairus_711",
+  "source_name": "Jairus",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Mark 5 → Luke 8 (2 chapters; sample: Mark 5, Luke 8)",
+  "family_in_source": {},
+  "mentioned_in_app": [
+   "Mark 5 summary: \"Jesus frees a man possessed by many demons, heals a bleeding woman, and raises Jairus' daughter from death. In the region of the Gerasenes, the demons called Legion enter a herd of pigs. The healed ma\"",
+   "Luke 8 summary: \"Jesus teaches in parables, calms a storm, frees a demon-possessed man, and heals a woman and Jairus' daughter. Several women, including Mary Magdalene, support his ministry. The parable of the sower e\""
+  ]
+ },
+ {
+  "slug": "japhlet_729",
+  "source_name": "Japhlet",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 7 → 1 Chronicles 7 (1 chapters; sample: 1 Chronicles 7)",
+  "family_in_source": {
+   "f": [
+    "Heber [heber_1469]"
+   ],
+   "s": [
+    "Hotham [hotham_1562]",
+    "Shamer [shamer_2725]",
+    "Shua [shua_2726]"
+   ],
+   "c": [
+    "Bimhal [bimhal_506]",
+    "Ashvath [ashvath_343]",
+    "Pasach [pasach_2279]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Heber: \"He fathered Japhlet, Shomer, Hotham, and their sister Shua (1 Chronicles 7).\""
+  ]
+ },
+ {
+  "slug": "jehiel_771",
+  "source_name": "Jehiel",
+  "gender": "M",
+  "verses": 4,
+  "appears": "1 Chronicles 23 → 1 Chronicles 29 (3 chapters; sample: 1 Chronicles 23, 1 Chronicles 26, 1 Chronicles 29)",
+  "family_in_source": {
+   "c": [
+    "Zetham [zetham_3056]",
+    "Joel [joel_1655]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ladan: \"David organized his sons Jehiel, Zetham, and Joel among the Levites (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "jehoiada_794",
+  "source_name": "Jehoiada",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Chronicles 27 → 1 Chronicles 27 (1 chapters; sample: 1 Chronicles 27)",
+  "family_in_source": {
+   "f": [
+    "Benaiah [benaiah_443]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Benaiah: \"Son of Jehoiada, a mighty warrior of David who became commander of Solomon's army.\""
+  ]
+ },
+ {
+  "slug": "jehoshabeath_811",
+  "source_name": "Jehoshabeath",
+  "gender": "F",
+  "verses": 2,
+  "appears": "2 Kings 11 → 2 Chronicles 22 (2 chapters; sample: 2 Kings 11, 2 Chronicles 22)",
+  "family_in_source": {
+   "f": [
+    "Jehoram [jehoram_803]"
+   ],
+   "m": [
+    "Athaliah [athaliah_359]"
+   ],
+   "s": [
+    "Ahaziah [ahaziah_121]"
+   ],
+   "p": [
+    "Jehoiada [jehoiada_793]"
+   ]
+  },
+  "mentioned_in_app": [
+   "2 Chronicles 22 summary: \"Ahaziah reigns briefly and is killed by Jehu, then Athaliah seizes power and murders the royal family except Joash. Ahaziah follows the counsel of his mother Athaliah and Ahab's house, doing evil. Vis\""
+  ]
+ },
+ {
+  "slug": "jehoshaphat_806",
+  "source_name": "Jehoshaphat",
+  "gender": "M",
+  "verses": 4,
+  "appears": "2 Samuel 8 → 1 Chronicles 18 (4 chapters; sample: 2 Samuel 8, 2 Samuel 20, 1 Kings 4, 1 Chronicles 18)",
+  "family_in_source": {
+   "f": [
+    "Ahilud [ahilud_142]"
+   ],
+   "s": [
+    "Baana [baana_580]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Issachar: \"Jehoshaphat son of Paruah served as Solomon's district officer in Issachar (1 Kings 4).\"",
+   "card of Ahilud: \"His son Jehoshaphat served as recorder in David's court (2 Samuel 8).\"",
+   "card of Ahilud: \"Jehoshaphat is again listed as recorder among David's officials (2 Samuel 20).\""
+  ]
+ },
+ {
+  "slug": "jehoshaphat_807",
+  "source_name": "Jehoshaphat",
+  "gender": "M",
+  "verses": 1,
+  "appears": "1 Kings 4 → 1 Kings 4 (1 chapters; sample: 1 Kings 4)",
+  "family_in_source": {
+   "f": [
+    "Paruah [paruah_2278]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Issachar: \"Jehoshaphat son of Paruah served as Solomon's district officer in Issachar (1 Kings 4).\"",
+   "card of Ahilud: \"His sons Jehoshaphat and Baana served among Solomon's officials (1 Kings 4).\"",
+   "card of Ahilud: \"The father of Jehoshaphat, David's recorder, and of Baana, one of Solomon's officers.\""
+  ]
+ },
+ {
+  "slug": "jehoshaphat_809",
+  "source_name": "Jehoshaphat",
+  "gender": "M",
+  "verses": 2,
+  "appears": "2 Kings 9 → 2 Kings 9 (1 chapters; sample: 2 Kings 9)",
+  "family_in_source": {
+   "f": [
+    "Nimshi [nimshi_2207]"
+   ],
+   "c": [
+    "Jehu [jehu_817]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Nimshi: \"Elisha sent a prophet to anoint Jehu, son of Jehoshaphat, son of Nimshi (2 Kings 9).\""
+  ]
+ },
+ {
+  "slug": "jekameam_834",
+  "source_name": "Jekameam",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 23 → 1 Chronicles 24 (2 chapters; sample: 1 Chronicles 23, 1 Chronicles 24)",
+  "family_in_source": {
+   "f": [
+    "Hebron [hebron_1475]"
+   ],
+   "s": [
+    "Amariah [amariah_200]",
+    "Jahaziel [jahaziel_698]",
+    "Jeriah [jeriah_860]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Hebron: \"His sons Jeriah, Amariah, Jahaziel, and Jekameam are listed in David's Levite divisions (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "jeremiah_848",
+  "source_name": "Jeremiah",
+  "gender": "M",
+  "verses": 3,
+  "appears": "2 Kings 23 → Jeremiah 52 (3 chapters; sample: 2 Kings 23, 2 Kings 24, Jeremiah 52)",
+  "family_in_source": {
+   "c": [
+    "Hamutal [hamutal_1368]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Jeremiah: \"Jeremiah warns Judah of coming judgment through Babylon, calls for repentance, suffers rejection, and promises a future new covenant. God calls Jeremiah as a young prophet to the nations during Judah'\"",
+   "card of Jehoiakim: \"A son of Josiah whom Pharaoh Neco made king of Judah, and who opposed Jeremiah.\"",
+   "card of Manasseh: \"His sins are named as a cause of Judah's later judgment (2 Kings 24; Jeremiah 15).\""
+  ]
+ },
+ {
+  "slug": "jeremiah_855",
+  "source_name": "Jeremiah",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Jeremiah 35 → Jeremiah 35 (1 chapters; sample: Jeremiah 35)",
+  "family_in_source": {
+   "f": [
+    "Habaziniah [habaziniah_1335]"
+   ],
+   "c": [
+    "Jaazaniah [jaazaniah_668]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Jeremiah: \"Jeremiah warns Judah of coming judgment through Babylon, calls for repentance, suffers rejection, and promises a future new covenant. God calls Jeremiah as a young prophet to the nations during Judah'\"",
+   "Jeremiah 35 summary: \"Jeremiah offers wine to the Rechabites, whose refusal displays a faithfulness that condemns Judah's disobedience. They keep their ancestor Jonadab's commands against wine and houses. Judah has ignored\"",
+   "card of Rechab: \"Jeremiah held up the obedient Rechabites as a rebuke to disobedient Judah (Jeremiah 35).\""
+  ]
+ },
+ {
+  "slug": "jeremoth_857",
+  "source_name": "Jeremoth",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 23 → 1 Chronicles 24 (2 chapters; sample: 1 Chronicles 23, 1 Chronicles 24)",
+  "family_in_source": {
+   "f": [
+    "Mushi [mushi_2116]"
+   ],
+   "s": [
+    "Eder [eder_1035]",
+    "Mahli [mahli_1896]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Mushi: \"His sons Mahli, Eder, and Jeremoth are listed in David's Levite divisions (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "jeriah_860",
+  "source_name": "Jeriah",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 23 → 1 Chronicles 24 (2 chapters; sample: 1 Chronicles 23, 1 Chronicles 24)",
+  "family_in_source": {
+   "f": [
+    "Hebron [hebron_1475]"
+   ],
+   "s": [
+    "Amariah [amariah_200]",
+    "Jahaziel [jahaziel_698]",
+    "Jekameam [jekameam_834]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Hebron: \"His sons Jeriah, Amariah, Jahaziel, and Jekameam are listed in David's Levite divisions (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "jeshua_894",
+  "source_name": "Jeshua",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Ezra 2 → Nehemiah 7 (2 chapters; sample: Ezra 2, Nehemiah 7)",
+  "family_in_source": {
+   "f": [
+    "Pahath-moab [pahath-moab_2265]"
+   ],
+   "s": [
+    "Joab [joab_1619]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Jeshua: \"Levites of the family of Jeshua and Kadmiel returned from exile with Zerubbabel (Ezra 2).\"",
+   "card of Kadmiel: \"Levites of the family of Jeshua and Kadmiel returned from exile with Zerubbabel (Ezra 2).\""
+  ]
+ },
+ {
+  "slug": "jeshua_898",
+  "source_name": "Jeshua",
+  "gender": "M",
+  "verses": 1,
+  "appears": "Nehemiah 12 → Nehemiah 12 (1 chapters; sample: Nehemiah 12)",
+  "family_in_source": {
+   "f": [
+    "Kadmiel [kadmiel_1767]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Rehum: \"A Rehum is also listed among those who came up with Zerubbabel and Jeshua (Nehemiah 12).\""
+  ]
+ },
+ {
+  "slug": "jeshua_899",
+  "source_name": "Jeshua",
+  "gender": "M",
+  "verses": 4,
+  "appears": "1 Chronicles 24 → Nehemiah 7 (4 chapters; sample: 1 Chronicles 24, Ezra 2, Ezra 10, Nehemiah 7)",
+  "family_in_source": {
+   "f": [
+    "Jozadak [jozadak_1747]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Jeshua: \"Levites of the family of Jeshua and Kadmiel returned from exile with Zerubbabel (Ezra 2).\"",
+   "card of Kadmiel: \"Levites of the family of Jeshua and Kadmiel returned from exile with Zerubbabel (Ezra 2).\""
+  ]
+ },
+ {
+  "slug": "jeush_913",
+  "source_name": "Jeush",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Esau [esau_1216]"
+   ],
+   "m": [
+    "Aholibamah [aholibamah_1761]"
+   ],
+   "s": [
+    "Jaalam [jaalam_662]",
+    "Korah [korah_1793]",
+    "Eliphaz [eliphaz_1144]",
+    "Reuel [reuel_2430]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Oholibamah: \"She bore Esau three sons, Jeush, Jalam, and Korah, in Canaan (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "jezreel_1613",
+  "source_name": "Jezreel",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Hosea 1 → Hosea 2 (2 chapters; sample: Hosea 1, Hosea 2)",
+  "family_in_source": {
+   "f": [
+    "Hosea [hosea_1555]"
+   ],
+   "m": [
+    "Gomer [gomer_1329]"
+   ],
+   "s": [
+    "Lo-ammi [lo-ammi_1827]",
+    "Lo-ruhamah [lo-ruhamah_1829]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Hosea 1 summary: \"God commands Hosea to marry Gomer, and their three children receive names announcing judgment on Israel. The marriage pictures Israel committing great whoredom by forsaking the LORD. Jezreel signals p\"",
+   "card of Jezreel: \"Hosea named his son Jezreel as a sign of judgment on Jehu's house (Hosea 1).\"",
+   "card of Jezreel: \"A town in Issachar overlooking the Jezreel Valley, a royal residence of King Ahab.\""
+  ]
+ },
+ {
+  "slug": "jobab_1641",
+  "source_name": "Jobab",
+  "gender": "M",
+  "verses": 4,
+  "appears": "Genesis 36 → 1 Chronicles 1 (2 chapters; sample: Genesis 36, 1 Chronicles 1)",
+  "family_in_source": {
+   "f": [
+    "Zerah [zerah_3044]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Bozrah: \"Jobab of Bozrah reigned as an early king of Edom (Genesis 36).\""
+  ]
+ },
+ {
+  "slug": "jochebed_1645",
+  "source_name": "Jochebed",
+  "gender": "F",
+  "verses": 2,
+  "appears": "Exodus 6 → Numbers 26 (2 chapters; sample: Exodus 6, Numbers 26)",
+  "family_in_source": {
+   "f": [
+    "Levi [levi_1820]"
+   ],
+   "s": [
+    "Gershon [gershon_1305]",
+    "Kohath [kohath_1790]",
+    "Merari [merari_2004]"
+   ],
+   "p": [
+    "Amram [amram_242]"
+   ],
+   "c": [
+    "Miriam [miriam_2087]",
+    "Moses [moses_2108]",
+    "Aaron [aaron_1]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Amram: \"He married his father's sister Jochebed, who bore him Aaron and Moses; he lived 137 years (Exodus 6).\"",
+   "card of Amram: \"Jochebed bore to Amram Aaron, Moses, and their sister Miriam (Numbers 26).\"",
+   "card of Amram: \"A Levite of the clan of Kohath, husband of Jochebed, and father of Aaron, Moses, and Miriam.\""
+  ]
+ },
+ {
+  "slug": "joel_1647",
+  "source_name": "Joel",
+  "gender": "M",
+  "verses": 4,
+  "appears": "1 Samuel 8 → 1 Chronicles 15 (3 chapters; sample: 1 Samuel 8, 1 Chronicles 6, 1 Chronicles 15)",
+  "family_in_source": {
+   "f": [
+    "Samuel [samuel_2469]"
+   ],
+   "s": [
+    "Abiah [abiah_15]"
+   ],
+   "c": [
+    "Heman [heman_1490]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Heman: \"He is listed as a singer descended from Kohath, son of Joel and grandson of Samuel (1 Chronicles 6).\""
+  ]
+ },
+ {
+  "slug": "joel_1655",
+  "source_name": "Joel",
+  "gender": "M",
+  "verses": 2,
+  "appears": "1 Chronicles 23 → 1 Chronicles 26 (2 chapters; sample: 1 Chronicles 23, 1 Chronicles 26)",
+  "family_in_source": {
+   "f": [
+    "Jehiel [jehiel_771]"
+   ],
+   "s": [
+    "Zetham [zetham_3056]"
+   ]
+  },
+  "mentioned_in_app": [
+   "card of Ladan: \"David organized his sons Jehiel, Zetham, and Joel among the Levites (1 Chronicles 23).\""
+  ]
+ },
+ {
+  "slug": "joel_1660",
+  "source_name": "Joel",
+  "gender": "M",
+  "verses": 2,
+  "appears": "Joel 1 → Acts 2 (2 chapters; sample: Joel 1, Acts 2)",
+  "family_in_source": {
+   "f": [
+    "Pethuel [pethuel_2323]"
+   ]
+  },
+  "mentioned_in_app": [
+   "Joel: \"Joel uses a devastating locust plague to call Judah to repentance and to announce the coming day of the LORD. A locust invasion has stripped the land, and Joel calls everyone to mourn and seek God. He\"",
+   "Joel 1 summary: \"Joel describes a locust plague that has devastated Judah and calls priests and people to fast and cry out to God. Successive swarms of locusts have eaten what the others left. Vines, fig trees, and fi\""
+  ]
+ }
+]
