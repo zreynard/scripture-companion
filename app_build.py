@@ -232,6 +232,15 @@ def write_site(html: str):
     os.makedirs(SITE, exist_ok=True)
     open(os.path.join(SITE, "index.html"), "w", encoding="utf-8").write(html)
     open(os.path.join(SITE, "version.txt"), "w").write(str(VERSION))
+    vdir = os.path.join(HERE, "data", "voice_samples")
+    if os.path.isdir(vdir):  # narrator samples page (voices.html)
+        os.makedirs(os.path.join(SITE, "voices"), exist_ok=True)
+        meta = json.load(open(os.path.join(vdir, "voices.json"))) if os.path.exists(os.path.join(vdir, "voices.json")) else []
+        for f in os.listdir(vdir):
+            shutil.copy(os.path.join(vdir, f), os.path.join(SITE, "voices", f))
+        rows = "".join(f'<div class="v"><div class="n">{m["name"]}<span>{"Man" if m["voice"] == "male" else "Woman"} · British</span></div>'
+                       f'<audio controls preload="none" src="voices/{m["file"]}"></audio></div>' for m in meta)
+        open(os.path.join(SITE, "voices.html"), "w", encoding="utf-8").write(VOICES_PAGE.replace("__ROWS__", rows))
     bdir = os.path.join(HERE, "data", "bible")
     if os.path.isdir(bdir):  # Berean Standard Bible, one file per book, loaded when a chapter is opened
         os.makedirs(os.path.join(SITE, "bible"), exist_ok=True)
@@ -603,6 +612,16 @@ if('serviceWorker' in navigator&&isSecureContext)navigator.serviceWorker.registe
 const APPV=__VERSION__;function checkV(){fetch('version.txt?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.text():'').then(t=>{if(+t>APPV)location.reload()}).catch(()=>{})}checkV();document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkV()});
 if(navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(()=>{});
 </script></body></html>"""
+
+VOICES_PAGE = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Narrator voices</title><style>
+:root{--bg:#f4efe3;--ink:#1b2440;--mute:#6b7390;--gold:#c9a24a;--gold2:#a8812a}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,system-ui,sans-serif;padding:calc(20px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 40px max(16px,env(safe-area-inset-left))}
+h1{font:400 30px "Iowan Old Style",Palatino,Georgia,serif;margin:0 0 4px}p{color:var(--mute);margin:0 0 18px;max-width:34em}
+.v{background:rgba(255,255,255,.8);border:1px solid rgba(27,36,64,.08);border-radius:16px;padding:12px 14px;margin:10px 0}
+.n{font:20px "Iowan Old Style",Palatino,Georgia,serif;margin-bottom:6px}.n span{font:12px -apple-system,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-left:10px}
+audio{width:100%}
+</style></head><body><h1>Choose the narrator</h1><p>Psalm 23 from the Berean Standard Bible, read by each British voice. Pick the one you want reading the whole Bible.</p>__ROWS__</body></html>"""
 
 if __name__ == "__main__":
     main()

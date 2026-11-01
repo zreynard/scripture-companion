@@ -1,0 +1,33 @@
+# Narrator samples: Psalm 23 read by each British voice of the open-source Kokoro model.
+name: Narrator samples
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: tts-samples
+jobs:
+  samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q espeak-ng ffmpeg >/dev/null
+      - run: pip install -q "kokoro>=0.9.4" soundfile numpy
+      - run: python tools/tts_samples.py 2>&1 | tee tts.log; exit ${PIPESTATUS[0]}
+      - if: always()
+        run: |
+          mkdir -p /tmp/d && cp tts.log /tmp/d/ && cd /tmp/d && git init -q -b diag-tts && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m log
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag-tts
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/voice_samples
+          git diff --cached --quiet || git commit -q -m "Narrator samples (Psalm 23, Kokoro British voices)"
+          git pull -q --rebase origin main && git push -q origin HEAD:main
