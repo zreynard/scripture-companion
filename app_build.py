@@ -402,6 +402,15 @@ body.mapopen #sheet{z-index:24}
 .pane.story .st-t{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin:2px 0 6px;font-weight:600}
 .pane.story ul{margin:0 0 12px;padding-left:18px}.pane.story li{font-size:15px;line-height:1.45;color:var(--ink);margin:4px 0}
 .pane .readx>summary{display:none}
+.maptab{font-size:15px;color:var(--mute)}
+.maptab .mini{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(27,36,64,.1);background:#d6e4e3;margin:0 0 12px}
+.maptab .mini .mm{display:block;width:100%;height:auto}
+.maptab .mini .inset{position:absolute;right:8px;bottom:8px;width:96px;height:58px;border-radius:8px;border:1px solid rgba(27,36,64,.18);box-shadow:0 2px 8px rgba(27,36,64,.15);background:#d6e4e3}
+.maptab .mt-k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);font-weight:600}
+.maptab .mt-s{margin:4px 0 6px;font-size:15px;line-height:1.45;color:var(--ink)}
+.maptab .mt-here{margin:0 0 8px;font-size:14px;line-height:1.4;color:#4b5266}
+.maptab .mt-note{margin:0 0 12px;font-size:14px;line-height:1.6;color:#4b5266}
+.maptab .mt-open{width:100%;min-height:46px;border:1px solid rgba(27,36,64,.15);border-radius:14px;background:#fff;font:inherit;font-size:15px;font-weight:600;color:var(--ink);text-align:left;padding:10px 14px;cursor:pointer}
 .sv-t{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:10px 0 4px}
 .enter{margin:6px 0 8px}.enter summary{list-style:none;cursor:pointer;font-size:13px;color:var(--mute)}.enter summary::-webkit-details-marker{display:none}
 .empty{font-size:14px;color:var(--mute);padding:8px 2px}
@@ -555,27 +564,33 @@ function refLinks(t){ /* "(Exodus 3)" -> a tap goes to that chapter; names becom
  return rich(t).replace(/\(([1-3]?\s?[A-Z][A-Za-z]+(?:\s(?:of\s)?[A-Z][a-z]+)?)\s(\d+)(?::[\d–\-, ]+)?\)/g,(m,bk,ch)=>{const nm=bk==='Psalm'?'Psalms':bk==='Song of Songs'?'Song of Solomon':bk;
   return bookNames().includes(nm)?`<span style="white-space:nowrap">(<button class="go" data-gob="${nm}" data-goc="${ch}">${bk} ${ch}</button>)</span>`:m})}
 function famRow(k,label,list){if(!list||!list.length)return'';return `<div class="k">${label}</div><div>${list.map(x=>x.s?`<button class="chip" data-nk="p" data-ns="${x.s}">${esc(x.n)}</button>`:`<span class="chip">${esc(x.n)}</span>`).join('')}</div>`}
-function miniMap(A,x,y,sl){const M=A.map,T=A.trip;if(!M)return'';
- /* a close view that shows the territory around the place, plus a tiny whole-world inset */
- const W=340,H=200,w=46,h=w*H/W,u=w/W,vx=x-w/2,vy=y-h/2,leg=T?standing(A).leg:0,lab=[],dots=[[x,y,7]];
+function miniMap(A,x,y,sl){const nm=sl&&A.l[sl]?A.l[sl].n:'';return mapSVG(A,x,y,46,[{x,y,n:nm,main:1}],{skip:sl})}
+/* a close map: territory names, waters, a nearby town or two, the marked places, and a tiny whole-world inset.
+   marks: [{x,y,n,sl?,main?}] — main = the gold "here" dot; others = ink dots (tappable when sl is set); trail = dotted road */
+function mapSVG(A,x,y,w,marks,opts={}){const M=A.map,T=A.trip;if(!M)return'';
+ const W=340,H=200,h=w*H/W,u=w/W,vx=x-w/2,vy=y-h/2,leg=T?standing(A).leg:0,lab=[],dots=[];
  const inV=(px,py)=>px>vx&&px<vx+w&&py>vy&&py<vy+h,rc='stroke-linecap="round" stroke-linejoin="round"';
  let o=`<rect x="${vx-60}" y="${vy-60}" width="${w+120}" height="${h+120}" fill="#d6e4e3"/><path d="${M.land}" fill="none" stroke="#e8f0ee" stroke-width="${7*u}" ${rc}/><path d="${M.land}" fill="#f4ecda" stroke="#c6b186" stroke-width="${.9*u}" ${rc}/>`+
   M.lakes.map(l=>`<path d="${l.d}" fill="#c8dad9"/>`).join('')+M.rivers.map(r=>`<path d="${r.d}" fill="none" stroke="#93b2b8" stroke-width="${1.3*u}" ${rc}/>`).join('');
- if(T){T.anchors.filter(([s,ax,ay])=>s!==sl&&inV(ax,ay)&&Math.hypot(ax-x,ay-y)>1.2).sort((a,b)=>Math.hypot(a[1]-x,a[2]-y)-Math.hypot(b[1]-x,b[2]-y)).slice(0,2)
-   .forEach(([s,ax,ay,n])=>{o+=`<circle cx="${ax}" cy="${ay}" r="${2.6*u}" fill="#1b2440" stroke="#fff" stroke-width="${u}"/>`;dots.push([ax,ay,4]);lab.push({x:ax,y:ay,t:n,fs:11,col:'#1b2440',pri:1,r:4})});
+ if(opts.trail&&opts.trail.length>1)o+=`<path d="${curve(opts.trail.map(p=>[p.x,p.y]))}" fill="none" stroke="rgba(176,138,52,.8)" stroke-width="${3*u}" stroke-dasharray="0 ${7*u}" ${rc}/>`;
+ marks.forEach(m=>dots.push([m.x,m.y,m.main?7:5]));
+ if(T){const skip=new Set([opts.skip,...marks.map(m=>m.sl)]);T.anchors.filter(([s,ax,ay])=>!skip.has(s)&&inV(ax,ay)&&marks.every(m=>Math.hypot(ax-m.x,ay-m.y)>1.2)).sort((a,b)=>Math.hypot(a[1]-x,a[2]-y)-Math.hypot(b[1]-x,b[2]-y)).slice(0,marks.length>2?1:2)
+   .forEach(([s,ax,ay,n])=>{o+=`<circle cx="${ax}" cy="${ay}" r="${2.4*u}" fill="#6b7186" stroke="#fff" stroke-width="${u}"/>`;dots.push([ax,ay,4]);lab.push({x:ax,y:ay,t:n,fs:10.5,col:'#5a6178',pri:2,r:4})});
   T.fine.forEach(([n,fx,fy,legs])=>{if(legs.includes(leg)&&inV(fx,fy))lab.push({x:fx,y:fy,t:n.toUpperCase(),fs:9.5,col:'rgba(122,98,50,.62)',pri:3,ctr:1,up:1})});
   T.reg.forEach(([n,rx,ry,legs])=>{if((!legs||legs.includes(leg))&&inV(rx,ry))lab.push({x:rx,y:ry,t:n.toUpperCase(),fs:10.5,col:'rgba(122,98,50,.5)',pri:4,ctr:1,up:1})});
   T.waters.forEach(([n,wx,wy])=>{if(inV(wx,wy))lab.push({x:wx,y:wy,t:n,fs:10,col:'rgba(64,98,108,.7)',it:1,pri:5,ctr:1})})}
- o+=`<circle cx="${x}" cy="${y}" r="${9*u}" fill="rgba(201,162,74,.28)"/><circle cx="${x}" cy="${y}" r="${3.8*u}" fill="#a8812a" stroke="#fff" stroke-width="${1.4*u}"/>`;
- const nm=sl&&A.l[sl]?A.l[sl].n:'';if(nm)lab.push({x,y,t:nm,fs:12.5,col:'#3b2f12',b:1,pri:0,r:7});
+ marks.forEach(m=>{const tap=m.sl?` data-nk="l" data-ns="${m.sl}" style="cursor:pointer"`:'';
+  o+=m.main?`<circle cx="${m.x}" cy="${m.y}" r="${9*u}" fill="rgba(201,162,74,.28)"/><circle cx="${m.x}" cy="${m.y}" r="${3.8*u}" fill="#a8812a" stroke="#fff" stroke-width="${1.4*u}"${tap}/>`
+   :`<circle cx="${m.x}" cy="${m.y}" r="${3.4*u}" fill="${m.hollow?'#fffaf0':'#1b2440'}" stroke="${m.hollow?'#c9a24a':'#fff'}" stroke-width="${1.3*u}"${tap}/>`;
+  if(m.n)lab.push({x:m.x,y:m.y,t:m.n,fs:m.main?12.5:12,col:m.main?'#3b2f12':'#1b2440',b:1,pri:m.main?0:1,r:m.main?7:5,sl:m.sl})});
  const boxes=dots.map(([dx,dy,r])=>[dx-r*u,dy-r*u,dx+r*u,dy+r*u]),hit=b=>boxes.some(q=>b[0]<q[2]&&q[0]<b[2]&&b[1]<q[3]&&q[1]<b[3]),fits=b=>b[0]>=vx&&b[2]<=vx+w&&b[1]>=vy&&b[3]<=vy+h;
  lab.sort((a,b)=>a.pri-b.pri).forEach(l=>{const fs=l.fs*u,tw=l.t.length*fs*(l.up?.86:.55),th=fs*1.2,g=(l.r||0)*u+3*u;
   const c=l.ctr?[[l.x-tw/2,l.y-th/2]]:[[l.x+g,l.y-th/2],[l.x-g-tw,l.y-th/2],[l.x-tw/2,l.y-g-th],[l.x-tw/2,l.y+g*.8]];let ok=null;
   for(const[cx,cy]of c){const b=[cx,cy,cx+tw,cy+th];if(fits(b)&&!hit(b)){ok=b;break}}if(!ok)return;boxes.push(ok);
-  o+=`<text x="${ok[0]}" y="${ok[1]+th*.8}" font-size="${fs}" font-family='${SERIF}' fill="${l.col}" ${l.b?'font-weight="700"':''} ${l.it?'font-style="italic"':''} ${l.up?`letter-spacing="${fs*.28}"`:''} ${l.ctr?'':`paint-order="stroke" stroke="#f7f0e1" stroke-width="${2.6*u}" stroke-linejoin="round"`}>${esc(l.t)}</text>`});
+  o+=`<text x="${ok[0]}" y="${ok[1]+th*.8}" font-size="${fs}" font-family='${SERIF}' fill="${l.col}" ${l.b?'font-weight="700"':''} ${l.it?'font-style="italic"':''} ${l.up?`letter-spacing="${fs*.28}"`:''} ${l.ctr?'':`paint-order="stroke" stroke="#f7f0e1" stroke-width="${2.6*u}" stroke-linejoin="round"`}${l.sl?` data-nk="l" data-ns="${l.sl}" style="cursor:pointer"`:''}>${esc(l.t)}</text>`});
  const V=M.view,iu=V[2]/96;
  const inset=`<svg class="inset" viewBox="${V.join(' ')}" aria-hidden="true"><rect x="0" y="0" width="${V[2]}" height="${V[3]}" fill="#d6e4e3"/><path d="${M.land}" fill="#f1e8d4"/><rect x="${vx}" y="${vy}" width="${w}" height="${h}" fill="rgba(201,162,74,.25)" stroke="#a8812a" stroke-width="${1.6*iu}"/><circle cx="${x}" cy="${y}" r="${2.2*iu}" fill="#a8812a"/></svg>`;
- return `<div class="mini" role="button" aria-label="Open the map"><svg class="mm" viewBox="${vx} ${vy} ${w} ${h}">${o}</svg>${inset}</div>`}
+ return `<div class="mini"${opts.notap?'':' role="button" aria-label="Open the map"'}><svg class="mm" viewBox="${vx} ${vy} ${w} ${h}">${o}</svg>${inset}</div>`}
 function storyList(items){ /* key moments as a timeline, with where the reader stands */
  const order=D.books.map(b=>b.name),pos=(b,c)=>order.indexOf(b)*1000+c,w=walk()[camp||0],me=pos(w.b.name,w.c.c);let placed=false,h='';
  for(const x of items){const m=x.match(/\(([1-3]?\s?[A-Z][A-Za-z]+(?:\s(?:of\s)?[A-Z][a-z]+)?)\s(\d+)/);const bk=m&&(m[1]==='Psalm'?'Psalms':m[1]==='Song of Songs'?'Song of Solomon':m[1]),p=m&&order.includes(bk)?pos(bk,+m[2]):null;
@@ -706,6 +721,20 @@ function chapterHTML(data,c,hl){const vs=data.chapters[c-1]||[];let h='',open=fa
 function wireReader(el){const d=el.closest('details');
  el.querySelectorAll('[data-endclose]').forEach(b=>b.onclick=()=>{TAB='listen';S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false;const cl=$('#clearing');if(cl)window.scrollTo({top:cl.getBoundingClientRect().top+scrollY-70,behavior:'smooth'})});
  el.querySelectorAll('[data-endwalk]').forEach(b=>b.onclick=()=>{const x=walk()[camp];read[x.b.abbr+x.c.c]=true;S.set('read',read);go(Math.min(walk().length-1,camp+1))})}
+function fillMapTab(){const el=document.querySelector('.maptab');if(!el||el.dataset.done)return;el.dataset.done='1';
+ atlas().then(A=>{if(!A.map||!A.trip){el.textContent='The map could not be opened.';return}const T=A.trip,st=standing(A),L=T.legs[st.leg],key=el.dataset.b+' '+el.dataset.c;
+  const places=(A.here[key]||[]).map(s=>[s,A.l[s]]).filter(x=>x[1]&&x[1].x!=null).slice(0,6);let marks,trail=null;
+  if(places.length)marks=places.map(([s,l],i)=>({x:l.x,y:l.y,n:l.n,sl:s,main:st.mark&&Math.hypot(st.mark.x-l.x,st.mark.y-l.y)<.01}));
+  else{const seen=new Set();marks=L.stops.filter(s=>{const k=s.x+','+s.y;if(seen.has(k))return false;seen.add(k);return true}).map(s=>({x:s.x,y:s.y,n:s.n,sl:s.sl,hollow:1}));trail=L.stops.filter(s=>s.t!=null)}
+  if(st.mark&&!marks.some(m=>m.main))marks.push({x:st.mark.x,y:st.mark.y,n:places.length?'':st.mark.n,main:1});
+  const xs=marks.map(m=>m.x),ys=marks.map(m=>m.y),bw=Math.max(...xs)-Math.min(...xs),bh=Math.max(...ys)-Math.min(...ys),w=Math.max(30,bw*1.5,bh*1.5*340/200);
+  const line=st.mark?st.line:(st.line||'');
+  el.innerHTML=mapSVG(A,(Math.max(...xs)+Math.min(...xs))/2,(Math.max(...ys)+Math.min(...ys))/2,w,marks,{trail,notap:1})+
+   `<div class="mt-k">Leg ${st.leg+1} of 14 · ${esc(L.t)}</div><p class="mt-s">${esc(L.s)}</p>`+(line?`<p class="mt-here">${esc(line)}</p>`:'')+
+   (places.length?`<p class="mt-note">Places in ${esc(key)}: ${places.map(([s,l])=>`<button class="nm l" data-nk="l" data-ns="${s}">${esc(l.n)}</button>`).join(', ')}</p>`:'')+
+   `<button class="mt-open" id="mtopen">Open the whole journey map ›</button>`;
+  el.querySelectorAll('[data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
+  const ob=el.querySelector('#mtopen');if(ob)ob.onclick=e=>{e.stopPropagation();openMap(null)}}).catch(()=>{el.textContent='The map could not be opened.'})}
 function fillReaders(){document.querySelectorAll('details.readx[open] .txt').forEach(el=>{const book=el.dataset.book,c=+el.dataset.ch;
  if(el.dataset.done==='1')return;el.dataset.done='1';el.textContent='Opening '+book+' '+c+'…';
  loadBook(book).then(d=>{const hl=HL&&HL.book===book&&HL.ch===c?HL:null;el.innerHTML=chapterHTML(d,c,hl);wireReader(el);
@@ -773,15 +802,16 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  {const cut=Math.min(Hs-20,m.y+44);svg.setAttribute('viewBox',`0 0 390 ${cut}`);$('#w2').setAttribute('viewBox',`0 ${cut} 390 ${Hs-cut}`)}
  const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';
  const rdc=w.filter(x=>read[x.b.abbr+x.c.c]).length,lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${camp!==first?`<button class="myplace" data-camp="${first}">My place</button> · `:''}${rdc} of 1,189</span></div><div class="hd"><div class="ch serif" id="chT">${b.name} ${c.c}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c.sl?`<div class="sline">${rich(c.sl)}</div>`:''}${fold?`<button class="unfold" id="unfold">${ids.length?'▸ Open · '+ids.length+' voice'+(ids.length>1?'s':''):'▸ Open this stop'}</button>`:''}<div class="body"${fold?' hidden':''}>
-  <div class="tabs" role="tablist">${[['listen','Listen',ids.length+ov.length],['read','Read',0],['story','Story',0]].map(([k,l,n])=>`<button class="tab${TAB===k?' on':''}" role="tab" aria-selected="${TAB===k}" data-tab="${k}">${l}${n?`<span>${n}</span>`:''}</button>`).join('')}</div>
+  <div class="tabs" role="tablist">${[['listen','Listen',ids.length+ov.length],['read','Read',0],['summary','Summary',0],['map','Map',0]].map(([k,l,n])=>`<button class="tab${TAB===k?' on':''}" role="tab" aria-selected="${TAB===k}" data-tab="${k}">${l}${n?`<span>${n}</span>`:''}</button>`).join('')}</div>
   ${TAB==='listen'?`<div class="pane">${(()=>{const all=[...ids.filter(i=>I[i].tr!=='devotional'),...ids.filter(i=>I[i].tr==='devotional')];const show=decorate.more?all:all.slice(0,3);return show.map(voiceHTML).join('')+(all.length>3&&!decorate.more?`<button class="more" id="more">${all.length-3} more voice${all.length-3>1?'s':''} on this stretch ›</button>`:'')})()}
   ${(()=>{const groups={};if(c===b.ch[0]){const ord=books().map(x=>x.name);(b.spans||[]).forEach(x=>{let lab=x.label;if(x.books&&!/Testament|Law|History|Wisdom|Prophets|Gospels|Church|Letters|Revelation/.test(lab)){const idxs=x.books.map(n=>ord.indexOf(n)).sort((p,q)=>p-q);const contig=idxs[idxs.length-1]-idxs[0]===idxs.length-1;lab=contig?`${ord[idxs[0]]}–${ord[idxs[idxs.length-1]]}`:x.books.join(', ')}(groups[lab]=groups[lab]||[]).push(x.id)});if(ov.length)groups[b.name+' overviews']=ov}
    const tot=Object.values(groups).reduce((a,g)=>a+g.length,0);if(!tot)return'';const k='sv:'+b.abbr;
    return `<details class="enter" data-k="${k}"${OPEN.has(k)?' open':''}><summary>Big-picture surveys for this part of the Bible · ${tot} ›</summary>${Object.entries(groups).map(([lab,g])=>`<div class="sv-t">${esc(lab)}</div>${g.map(voiceHTML).join('')}`).join('')}</details>`})()}
   ${ids.length?'':`<div class="empty">No voice on this stretch yet.${nextV?` Next voice: <b style="color:var(--gold2);cursor:pointer" data-camp="${nextV.i}" class="nv">${nextV.x.b.name} ${nextV.x.c.c}</b> · ${nextV.i-camp} stop${nextV.i-camp>1?'s':''} on.`:''}</div>`}</div>`:''}
   ${TAB==='read'?`<div class="pane"><details class="readx" open data-k="r:${b.abbr}${c.c}"><summary hidden></summary><div class="txt" data-book="${b.name}" data-ch="${c.c}"></div></details></div>`:''}
-  ${TAB==='story'?`<div class="pane story">${c.sm&&c.sm.length?`<div class="st-t">What happens in ${b.name} ${c.c}</div><ul>${c.sm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}
+  ${TAB==='summary'?`<div class="pane story">${c.sm&&c.sm.length?`<div class="st-t">What happens in ${b.name} ${c.c}</div><ul>${c.sm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}
    ${b.bl?(c===b.ch[0]?`<div class="about"><div class="ab-t">About ${b.name}</div><div class="sline">${rich(b.bl)}</div>${b.bm&&b.bm.length?`<ul>${b.bm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}</div>`:`<details class="sum2" data-k="b:${b.abbr}"${OPEN.has('b:'+b.abbr)?' open':''}><summary>About the book of ${b.name} ›</summary><div class="sline" style="margin-top:6px">${rich(b.bl)}</div>${b.bm&&b.bm.length?`<ul>${b.bm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}</details>`):''}</div>`:''}
+  ${TAB==='map'?`<div class="pane"><div class="maptab" data-b="${b.name}" data-c="${c.c}">Opening the map…</div></div>`:''}
   </div><div class="acts"><button class="bk" data-camp="${Math.max(0,camp-1)}" aria-label="Back a chapter"${camp===0?' disabled':''}>‹</button><button class="read ${r?'on':''}" data-read="${b.abbr+c.c}">${r?'Read ✓':'Mark read'}</button><button class="go" data-camp="${Math.min(w.length-1,camp+1)}">Walk on ›</button></div>`;
  /* the road below the stop: tap a book name or the road to go there */
  $('#w2').onclick=e=>{const w2=$('#w2'),pt=w2.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(w2.getScreenCTM().inverse());
@@ -792,7 +822,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  if(!decorate.moving&&(decorate.follow||decorate.first)){const y=m.y*sc+$('#world').offsetTop-window.innerHeight*0.30;window.scrollTo({top:Math.max(0,y),behavior:decorate.first?'auto':'smooth'})}decorate.first=false;decorate.follow=false
  $('#hit').onclick=e=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());let best=0,bd=1e12;for(let i=0;i<w.length;i++){const q=at(i),dd=(q.x-p.x)**2+(q.y-p.y)**2;if(dd<bd){bd=dd;best=i}}go(best)};
  document.querySelectorAll('.bl[data-camp], #labels g[data-camp]').forEach(t=>t.onclick=e=>{e.stopPropagation();go(+t.dataset.camp)})}
-let FOLD=false,TAB=['listen','read','story'].includes(S.get('tab','listen'))?S.get('tab','listen'):'listen';  /* folding is for this stop only; every stop (and every app open) starts with its voices showing */
+let FOLD=false,TAB=['listen','read','summary','map'].includes(S.get('tab','listen'))?S.get('tab','listen'):'listen';  /* folding is for this stop only; every stop (and every app open) starts with its voices showing */
 function go(i){camp=i;FOLD=false;decorate.more=false;decorate.follow=true;S.set('camp',camp);render()}
 function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(b=>b.ov.includes(i.id)||(b.spans||[]).some(x=>x.id===i.id)||b.ch.some(c=>c.ids.includes(i.id)))).length;const n=Object.keys(I).length,na=Object.values(I).filter(i=>i.audio).length;
  return `<div class="settings"><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
@@ -842,7 +872,7 @@ function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;r
 /* wiring */
 function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
  document.querySelectorAll('details[data-k]').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.k):OPEN.delete(d.dataset.k);if(d.classList.contains('readx'))fillReaders()});
- fillReaders();
+ fillReaders();fillMapTab();
  document.querySelectorAll('.pref').forEach(b=>b.onclick=e=>{e.stopPropagation();const x=walk()[camp];const r=versesFor(b.dataset.pass,x.b.name,x.c.c);
   HL=r?{book:x.b.name,ch:x.c.c,...r}:null;TAB='read';S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false;
   const d=document.querySelector('details.readx');if(d)setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'start'}),60)});
