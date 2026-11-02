@@ -1,0 +1,70 @@
+# The whole Bible read aloud by Alistair (tools/narrate.py). Chapters already made are skipped, so it can be re-run.
+name: Narrate the Bible
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Only these chapters, e.g. "Gen:1,Psa:23" (empty = everything not made yet)'
+        default: ""
+      shards:
+        description: "Machines to split the work over"
+        default: "60"
+      collect_only:
+        description: "Only gather the timings (1 = yes)"
+        default: "0"
+permissions:
+  contents: write
+concurrency:
+  group: narrate
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      shards: ${{ steps.p.outputs.shards }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for t in ot nt; do gh release view narration-$t -R ${{ github.repository }} >/dev/null 2>&1 || \
+            gh release create narration-$t -R ${{ github.repository }} --title "Narration ($t)" --notes "The Bible read aloud by Alistair: one mp3 and one timing file per chapter. Made by tools/narrate.py." ; done
+          if [ "${{ github.event.inputs.collect_only }}" = "1" ]; then echo 'shards=[]' >> $GITHUB_OUTPUT
+          elif [ -n "${{ github.event.inputs.only }}" ]; then echo 'shards=[0]' >> $GITHUB_OUTPUT
+          else echo "shards=$(python tools/narrate.py plan ${{ github.event.inputs.shards }})" >> $GITHUB_OUTPUT; fi
+  narrate:
+    needs: plan
+    if: needs.plan.outputs.shards != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix:
+        k: ${{ fromJson(needs.plan.outputs.shards) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q chatterbox-tts soundfile faster-whisper scipy
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/narrate.py run ${{ matrix.k }} ${{ github.event.inputs.shards }} "${{ github.event.inputs.only }}"
+  collect:
+    needs: [plan, narrate]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/narrate.py collect
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/narration
+          git diff --cached --quiet || git commit -q -m "Narration timings"
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
