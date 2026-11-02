@@ -15,5 +15,5 @@ jobs:
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
       - run: |
           pip install -q torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
-          pip install -q "speechbrain==1.0.3" numpy
+          pip install -q "speechbrain==1.0.3" numpy requests huggingface_hub
       - run: python tools/tts_score.py ${{ github.event.inputs.dir }}
