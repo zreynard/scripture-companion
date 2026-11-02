@@ -58,6 +58,10 @@ def iso_date(s) -> str:
         return ""
 
 def main():
+    # where each episode's intro ends, found by tools/intro_detect.py (data/intro_skip/<source>.json: {id: seconds})
+    INTROS = {}
+    for f in sorted(_glob.glob(os.path.join(HERE, "data", "intro_skip", "*.json"))):
+        INTROS.update(json.load(open(f, encoding="utf-8")))
     entries = [json.loads(l) for l in open(VERIFIED, encoding="utf-8")]
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
@@ -77,7 +81,7 @@ def main():
     for e in usable:
         it = {"id": e["id"], "t": e["title"], "who": "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Skip" if skip_guest(e) else e["speaker"] if e["speaker"] in ("Davey", "Skip") else "Platt"),
               "show": config.SHOWS.get(e["source"]),
-              **({"s": config.INTRO_SKIP[e["source"]]} if config.INTRO_SKIP.get(e["source"]) else {}),
+              **({"s": INTROS[e["id"]]} if INTROS.get(e["id"]) else {"s": config.INTRO_SKIP[e["source"]]} if config.INTRO_SKIP.get(e["source"]) else {}),
               "by": e["speaker"].split(":", 1)[1] if (e["speaker"] in team or skip_guest(e)) else None,
               "era": e["era"], "tr": e["track"], "src": e["source"], "url": e.get("primary_url") or e["url"],
               "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() else 0,
