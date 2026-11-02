@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 59  # bump on every shipped build; also busts the service-worker cache
+VERSION = 60  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -1014,7 +1014,6 @@ function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(
  return `<div class="settings"><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
  <p>
  <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who?NAMES[cfg.who]+' only':'everyone'} — switch</span></p>
- <p><span class="btn" id="lvl" style="display:inline-block;cursor:pointer">Even out volume: ${levelOn()?'on':'off'} — switch</span><br><span class="note">Brings every episode to the same loudness, so a loud one never follows a quiet one. Turn it off if audio ever stops when your screen locks.</span></p>
  <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).</p><p class="note">Progress is stored on this device.</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>
  <button class="btn" id="back">‹ Back to the road</button></div>`}
@@ -1028,7 +1027,7 @@ function onAudio(type,fn){AUDIO_EL.forEach(el=>el.addEventListener(type,e=>{if(e
 const LEVEL_SRC=new Set(['davey_wfth','davey_journey','davey_sermons','platt_messages','ptw','secret_church_podcast','mclean_podcast','mclean_oceans','brookhills']);
 let AC=null,LVG=null,LVA=null,lvl=null,lvlFast=0;
 function levelOn(){return S.get('level',true)!==false}
-function levelFor(i){return levelOn()&&LEVEL_SRC.has(i.src)&&!!(window.AudioContext||window.webkitAudioContext)}
+function levelFor(i){return false}  // leveler turned off: every episode plays straight through the plain audio element
 function leveler(){if(AC)return AC;try{AC=new (window.AudioContext||window.webkitAudioContext)();try{if(navigator.audioSession)navigator.audioSession.type='playback'}catch(e){}
   const src=AC.createMediaElementSource($('#audiofx')),g=AC.createGain(),an=AC.createAnalyser(),cp=AC.createDynamicsCompressor();
   an.fftSize=2048;cp.threshold.value=-12;cp.knee.value=8;cp.ratio.value=4;cp.attack.value=.005;cp.release.value=.2;
