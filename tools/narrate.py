@@ -9,6 +9,7 @@ verse numbers are never read, and section headings (not part of the text) are le
     python tools/narrate.py plan SHARDS             matrix for the workflow (chapters split evenly by length)
     python tools/narrate.py run SHARD SHARDS [ONLY] make and upload the shard's chapters that are not uploaded yet
     python tools/narrate.py collect                 gather every chapter's timings into data/narration/<abbr>.json
+    python tools/narrate.py publish                 copy new mp3s to the narration-audio branch, then collect those
 ONLY limits a run to some chapters, e.g. "Gen:1,Psa:23".
 """
 import difflib, glob, json, os, re, subprocess, sys, tempfile
@@ -99,15 +100,17 @@ def shard_of(chs, k, shards):
 def asset(x, ext): return f'{x["abbr"]}_{x["c"]:03d}.{ext}'
 
 
+def release_files(t):
+    """Every file in a testament's release (listed page by page: a release holds over a thousand)."""
+    rid = subprocess.run(["gh", "api", f"repos/{REPO}/releases/tags/{TAG(t)}", "-q", ".id"], capture_output=True, text=True).stdout.strip()
+    if not rid: return set()
+    r = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/releases/{rid}/assets?per_page=100", "-q", ".[].name"],
+                       capture_output=True, text=True, check=True)
+    return set(r.stdout.split())
+
+
 def uploaded():
-    have = set()
-    for t in ("OT", "NT"):
-        r = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/releases/tags/{TAG(t)}", "-q", ".assets[].name"],
-                           capture_output=True, text=True)
-        if r.returncode: r = subprocess.run(["gh", "release", "view", TAG(t), "-R", REPO, "--json", "assets", "-q", ".assets[].name"],
-                                            capture_output=True, text=True)
-        have |= set(r.stdout.split())
-    return have
+    return release_files("OT") | release_files("NT")
 
 
 # ---------- making the audio ----------
@@ -250,16 +253,61 @@ def run(k, shards, only=""):
         os.remove(mp3)
 
 
-def collect():
+AUDIO = "narration-audio"  # branch the app plays from (raw.githubusercontent.com lets the app fetch it; releases do not)
+
+
+def git(d, *a, **kw): return subprocess.run(["git", "-C", d, *a], check=True, capture_output=True, text=True, **kw).stdout
+
+
+def mirror():
+    """Copy every chapter mp3 that is not yet on the audio branch from the releases. Without downloading what is
+    already there: a clone with no file contents, then only the new files are added."""
+    url = f"https://x-access-token:{os.environ['GH_TOKEN']}@github.com/{REPO}.git"
+    d = tempfile.mkdtemp()
+    r = subprocess.run(["git", "clone", "-q", "--filter=blob:none", "--no-checkout", "--depth", "1", "-b", AUDIO, url, d],
+                       capture_output=True, text=True)
+    git_id = ["-c", "user.name=github-actions[bot]", "-c", "user.email=41898+github-actions[bot]@users.noreply.github.com"]
+    if r.returncode:  # first time: start the branch
+        git(d, "init", "-q", "-b", AUDIO)
+        git(d, "remote", "add", "origin", url)
+        open(os.path.join(d, "README.md"), "w").write("The Bible read aloud by Alistair, one mp3 per chapter. Made by tools/narrate.py on main.\n")
+        git(d, "add", "README.md"); git(d, *git_id, "commit", "-q", "-m", "Narration audio")
+        have = set()
+    else:
+        git(d, "read-tree", "HEAD")
+        have = set(git(d, "ls-tree", "--name-only", "HEAD").split())
+    todo = []
+    for t in ("OT", "NT"):
+        todo += [(t, n) for n in sorted(release_files(t)) if n.endswith(".mp3") and n not in have]
+    print(f"{len(have & {n for n in have if n.endswith('.mp3')})} chapters on the audio branch, {len(todo)} to add", flush=True)
+    for i in range(0, len(todo), 80):
+        batch = todo[i:i + 80]
+        for t, n in batch:
+            subprocess.run(["gh", "release", "download", TAG(t), "-R", REPO, "-p", n, "-D", d, "--clobber"], check=True)
+            git(d, "add", n); os.remove(os.path.join(d, n))
+        git(d, *git_id, "commit", "-q", "-m", f"Narration audio: {len(batch)} chapters")
+        for k in range(4):
+            if subprocess.run(["git", "-C", d, "push", "-q", "origin", f"HEAD:{AUDIO}"]).returncode == 0: break
+            import time; time.sleep(10 * (k + 1))
+        else: raise RuntimeError("push failed")
+        have |= {n for _, n in batch}
+        print(f"  added {len(batch)}", flush=True)
+    return have
+
+
+def collect(playable=None):
+    """Timings for every chapter; with playable, only the chapters whose audio the app can already fetch."""
     tmp = tempfile.mkdtemp()
     for t in ("OT", "NT"):
         subprocess.run(["gh", "release", "download", TAG(t), "-R", REPO, "-p", "*.json", "-D", tmp, "--clobber"], check=False)
     books = {}
     for f in sorted(glob.glob(os.path.join(tmp, "*.json"))):
         m = json.load(open(f))
+        if playable is not None and os.path.basename(f)[:-5] + ".mp3" not in playable: continue
         books.setdefault(m["a"], {"b": m["b"], "tag": TAG("OT" if any(b[1] == m["a"] and b[3] == "OT" for b in BOOKS) else "NT"), "c": {}})
         books[m["a"]]["c"][str(m["c"])] = {"d": m["d"], "v": m["v"]}
     os.makedirs(OUTDIR, exist_ok=True)
+    for f in glob.glob(os.path.join(OUTDIR, "*.json")): os.remove(f)
     for a, b in books.items():
         json.dump(b, open(os.path.join(OUTDIR, a + ".json"), "w"), separators=(",", ":"))
     n = sum(len(b["c"]) for b in books.values())
@@ -271,3 +319,4 @@ if __name__ == "__main__":
     if cmd == "plan": print(json.dumps(list(range(int(sys.argv[2])))))
     elif cmd == "run": run(*sys.argv[2:])
     elif cmd == "collect": collect()
+    elif cmd == "publish": collect(mirror())

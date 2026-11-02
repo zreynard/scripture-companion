@@ -24,7 +24,7 @@ jobs:
       - run: pip install -q -r requirements.txt
       - env:
           GH_TOKEN: ${{ github.token }}
-        run: python tools/narrate.py collect
+        run: python tools/narrate.py publish
       - name: Save the timings
         run: |
           git config user.name "github-actions[bot]"
