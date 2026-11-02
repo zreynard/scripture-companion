@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 73  # bump on every shipped build; also busts the service-worker cache
+VERSION = 74  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -426,6 +426,9 @@ span.nw{white-space:nowrap}
 .jg{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:8px}.jg.small{margin:10px 0 2px}
 .jc{min-height:48px;border-radius:12px;border:1px solid rgba(27,36,64,.12);background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer}
 @keyframes slideL{from{transform:translateX(44px);opacity:.35}to{transform:none;opacity:1}}@keyframes slideR{from{transform:translateX(-44px);opacity:.35}to{transform:none;opacity:1}}#clearing.in-l{animation:slideL .28s ease-out}#clearing.in-r{animation:slideR .28s ease-out}
+.sccard{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;margin:0 0 18px;padding:16px 18px;border:0;border-radius:18px;background:linear-gradient(140deg,#2a2f3f,#1b2440);color:#fff;text-align:left;cursor:pointer;box-shadow:0 8px 24px rgba(27,36,64,.18)}.sccard .serif{font-size:24px}.sccard small{font-size:13px;opacity:.8;font-weight:600}
+.sce{border:1px solid rgba(27,36,64,.1);border-radius:16px;background:#fff;margin:10px 0;overflow:hidden}.sce summary{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;list-style:none}.sce summary::-webkit-details-marker{display:none}
+.sce-n{flex:none;width:34px;height:34px;border-radius:17px;background:rgba(201,162,74,.18);color:#7a5c16;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}.sce-t{flex:1;font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:18px;color:var(--ink)}.sce-p{flex:none;font-size:13px;color:var(--mute);font-weight:600}.sce-b{padding:0 10px 10px}
 .jc-bk{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:10px;font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:19px;font-weight:400}.jc-bk small{font-family:-apple-system,system-ui,sans-serif;font-size:12px;font-weight:600;color:var(--mute);letter-spacing:.04em}
 .jc.done{background:#c9a24a;border-color:#c9a24a;color:#fff}.jc.here{box-shadow:0 0 0 2.5px #1b2440;}
 .jb{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:46px;border:0;border-bottom:1px solid rgba(27,36,64,.07);background:none;font:inherit;font-size:16px;color:var(--ink);padding:0 4px;cursor:pointer;text-align:left}
@@ -744,6 +747,7 @@ function closeJump(){$('#jump').hidden=true;document.body.classList.remove('jump
 function chDoneAt(x){return !!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone)}
 function jumpGo(i,o={}){closeJump();if(o.hl){HL=o.hl;TAB='read';S.set('tab',TAB)}if(o.listen){TAB='listen';S.set('tab',TAB);if(o.lk){LK=o.lk;S.set('lk2',LK)}}go(i)}
 function renderJump(){const body=$('#jbody'),q=$('#jq').value.trim(),w=walk(),cur=w[camp||0];let h='';
+ if(q&&/secret|platt.*church/i.test(q))h+=`<button class="jr" id="jsc"><span class="jr-ic">▶</span><span class="jr-t"><b>Secret Church</b><span>${scGroups().length} nights · every session in order</span></span></button>`;
  if(!q){if(JP.list){h+=`<div class="jp-h">All books</div>`;let land='';for(const b of D.books){const L=(LANDS.slice().reverse().find(l=>D.books.indexOf(b)>=D.books.findIndex(bb=>bb.name===l[0]))||[,''])[1];
     if(L!==land){h+=`<div class="jp-sec">${esc(L)}</div>`;land=L}const n=b.ch.filter(c=>chDoneAt({b,c})).length,done=n===b.ch.length;
     h+=`<button class="jb${b===cur.b?' cur':''}" data-jb="${esc(b.name)}"><span>${esc(b.name)}</span><span class="jb-r">${done?'<i class="ok">✓</i>':n?Math.round(100*n/b.ch.length)+'%':b.ch.length+' ch'}</span></button>`}}
@@ -770,6 +774,7 @@ function renderJump(){const body=$('#jbody'),q=$('#jq').value.trim(),w=walk(),cu
  body.innerHTML=h;
  body.querySelectorAll('[data-jb]').forEach(b=>b.onclick=()=>{JP.book=D.books.find(x=>x.name===b.dataset.jb);JP.list=false;renderJump();body.scrollTop=0});
  const al=$('#jall');if(al)al.onclick=()=>{JP.list=true;renderJump();const c=body.querySelector('.jb.cur');if(c)c.scrollIntoView({block:'center'})};
+ {const js=$('#jsc');if(js)js.onclick=()=>{closeJump();view='sc';S.set('view',view);render();window.scrollTo(0,0)}}
  body.querySelectorAll('[data-ji]').forEach(b=>b.onclick=()=>{const i=+b.dataset.ji,x=w[i];if(b.dataset.v1)return jumpGo(i,{hl:{book:x.b.name,ch:x.c.c,from:+b.dataset.v1,to:+b.dataset.v2}});
   if(b.dataset.sid){const g=listenGroups(x.b,x.c),lk=['overview','chapter','verses'].find(k=>g[k].some(y=>y.id===b.dataset.sid));return jumpGo(i,{listen:1,lk})}jumpGo(i)});
  body.querySelectorAll('[data-nk]').forEach(b=>b.onclick=()=>{closeJump();openSheet(b.dataset.nk,b.dataset.ns)})}
@@ -1038,7 +1043,7 @@ function stopRead(x){return x.c.intro?!!(read[x.b.abbr+'0']||x.b.ch.some(cc=>rea
 function migrateCamp(){if(S.get('camp2'))return;if(camp!=null){let cum=0,bi=0;for(const b of books()){if(camp<cum+b.n){camp=camp+bi+1;break}cum+=b.n;bi++}S.set('camp',camp)}S.set('camp2',1)}
 const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Davey',Skip:'Skip Heitzig'};
 function teacher(i){return i.by||NAMES[i.who]}
-function dispTitle(i){const t=i.t||'';const fl=t.match(/^Flight\s+([1-3]?[A-Z]{2,4}?)(\d{1,2})\b(?:\s*-\s*(Part\s+\w+))?/);if(fl){const ord=books().map(x=>x.name),bk=fl[1]==='INT'?['Between the Testaments']:(i.pass||'').split(';').map(x=>x.replace(/the book of/i,'').replace(/\s+\d+(?:\s*[-–]\s*\d+)?\s*$/,'').trim()).filter(Boolean).sort((p,q)=>ord.indexOf(p)-ord.indexOf(q));return ['Bible from 30,000 Feet',bk.join(', ')+(+fl[2]>1?' ('+(+fl[2])+')':''),fl[3]].filter(Boolean).join(' · ')}if(!t.includes('|'))return t;const parts=t.split('|').map(x=>x.trim()).filter(Boolean),who=(teacher(i)||'').toLowerCase();
+function dispTitle(i){const t=(i.sc?(i.t||'').replace(/^\s*\d+\.\d+\s*[–—-]\s*/,''):(i.t||''));const fl=t.match(/^Flight\s+([1-3]?[A-Z]{2,4}?)(\d{1,2})\b(?:\s*-\s*(Part\s+\w+))?/);if(fl){const ord=books().map(x=>x.name),bk=fl[1]==='INT'?['Between the Testaments']:(i.pass||'').split(';').map(x=>x.replace(/the book of/i,'').replace(/\s+\d+(?:\s*[-–]\s*\d+)?\s*$/,'').trim()).filter(Boolean).sort((p,q)=>ord.indexOf(p)-ord.indexOf(q));return ['Bible from 30,000 Feet',bk.join(', ')+(+fl[2]>1?' ('+(+fl[2])+')':''),fl[3]].filter(Boolean).join(' · ')}if(!t.includes('|'))return t;const parts=t.split('|').map(x=>x.trim()).filter(Boolean),who=(teacher(i)||'').toLowerCase();
  const keep=parts.filter(x=>!/^(?:[1-3]\s?)?[A-Za-z]+\.?\s*\d+(?::\d+)?(?:\s*[-–]\s*\d+(?::\d+)?)?$/.test(x)&&!(who&&x.toLowerCase().replace(/^(elder|pastor|minister)\s+/,'')===who.replace(/^(elder|pastor|minister)\s+/,''))&&!/^(philip anthony mitchell|pam)$/i.test(x));
  return keep.length?keep.join(' · '):t}
 function voiceHTML(id,bd){const i=I[id],p=prog[id]||{},hp=heardPct(id),deg=!isDone(id)?Math.round(3.6*hp):0,playing=cur===id&&!audio.paused;
@@ -1046,7 +1051,7 @@ function voiceHTML(id,bd){const i=I[id],p=prog[id]||{},hp=heardPct(id),deg=!isDo
  <div class="tx"><div class="who">${bd?`<button class="pref vb" data-pass="${esc(i.pass)}">${bd}</button>`:''}${teacher(i)}${i.show?' · '+i.show:i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(dispTitle(i))}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}${hp&&!isDone(id)?' · '+hp+'% heard':''}${!bd&&i.pass&&!/^All \d|survey/i.test(i.pass)?` · <button class="pref" data-pass="${esc(i.pass)}">${esc(shortPass(i.pass))}</button>`:''}</div></div>
  <span class="ck" role="img" aria-label="${isDone(id)?'Listened':'Not yet listened'}">✓</span></div>`}
 let W=null; // cached world geometry
-function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsView();wire();return}
+function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
  migrateCamp();const w=walk();let first=w.findIndex(x=>!stopRead(x));if(first<0)first=w.length-1;if(camp==null||camp>=w.length)camp=first;
  const rd=w.filter(x=>!x.c.intro&&read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
@@ -1130,12 +1135,23 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
 let LK=['overview','chapter','verses'].includes(S.get('lk2','overview'))?S.get('lk2','overview'):'overview',FOLD=false,TAB=['listen','read','summary','map'].includes(S.get('tab','summary'))?S.get('tab','summary'):'summary';  /* folding is for this stop only; every stop (and every app open) starts with its voices showing */
 function go(i){{const w=walk(),here=camp!=null&&w[camp];if(here&&here.c.intro&&i>camp&&!read[here.b.abbr+'0']){read[here.b.abbr+'0']=true;S.set('read',read)}}camp=i;FOLD=false;decorate.more=false;decorate.follow=true;S.set('camp',camp);render()}
 function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(b=>b.ov.includes(i.id)||(b.spans||[]).some(x=>x.id===i.id)||b.ch.some(c=>c.ids.includes(i.id)))).length;const n=Object.keys(I).length,na=Object.values(I).filter(i=>i.audio).length;
- return `<div class="settings"><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
+ return `<div class="settings"><button class="sccard" id="opensc"><span class="serif">Secret Church</span><small>${scGroups().length} nights · every session in order ›</small></button><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
  <p>
  <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who?NAMES[cfg.who]+' only':'everyone'} — switch</span></p>
  <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).</p><p class="note">Progress is stored on this device.</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>
  <button class="btn" id="back">‹ Back to the road</button></div>`}
+/* Secret Church library: every night, every session, in order (the podcast's sessions where it has them) */
+function scGroups(){const by={};D.sc.ids.forEach(id=>{const i=I[id];if(!i||!i.sc)return;(by[i.sc[0]]=by[i.sc[0]]||[]).push(id)});
+ return D.sc.events.map(ev=>{let ids=by[ev.n]||[];const pod=ids.filter(id=>I[id].src==='secret_church_podcast');if(pod.length)ids=pod;
+  return {ev,ids:ids.slice().sort((a,b)=>(I[a].sc[1]||0)-(I[b].sc[1]||0))}}).filter(g=>g.ids.length)}
+function scSeq(){return scGroups().flatMap(g=>g.ids).filter(id=>I[id].audio)}
+function scView(){const G=scGroups(),tot=G.reduce((a,g)=>a+g.ids.length,0);
+ let h=`<div class="settings scl"><button class="btn" id="scback">‹ Back to the road</button><h2 class="serif" style="margin:14px 0 4px">Secret Church</h2>
+ <p class="note">David Platt · ${G.length} nights of deep teaching, ${tot} sessions, in order. Sessions that teach a stretch of the Bible also sit on the road.</p>`;
+ G.forEach(({ev,ids})=>{const done=ids.filter(isDone).length,k='sc:'+ev.n;
+  h+=`<details class="sce" data-sck="${k}"${OPEN.has(k)?' open':''}><summary><span class="sce-n">${ev.n}</span><span class="sce-t">${esc(ev.title)}</span><span class="sce-p">${done===ids.length?'✓':done+' / '+ids.length}</span></summary><div class="sce-b">${ids.map(id=>voiceHTML(id,(I[id].sc||[])[0]+'.'+(I[id].sc||[])[1])).join('')}</div></details>`});
+ return h+'</div>'}
 /* player */
 let audio=$('#audio');const AUDIO_EL=[$('#audio'),$('#audiofx')];let cur=null,speed=S.get('speed',1);AUDIO_EL.forEach(a=>a.playbackRate=speed);
 /* events from whichever player is active (the other one is idle) */
@@ -1161,7 +1177,7 @@ function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;ready=fal
   $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=teacher(i)+' · '+where(id);npArt(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(false)}setPP();
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',()=>skipTrack(1),'previoustrack',()=>skipTrack(-1)].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  audio.paused?audio.play().catch(()=>{}):audio.pause()}
-function next(){const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;seq.push(...orderedIds(x.b,x.c))});/* continue from where the listener stands: a teaching that spans chapters appears in each of them */let k=seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]);if(k<0)k=seq.lastIndexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
+function next(){if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq();for(let j=q.indexOf(cur)+1;j<q.length;j++)if(!isDone(q[j])&&okWho(q[j])){play(q[j]);return}return}const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;seq.push(...orderedIds(x.b,x.c))});/* continue from where the listener stands: a teaching that spans chapters appears in each of them */let k=seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]);if(k<0)k=seq.lastIndexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
 let saveSec=-1;onAudio('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
  if(!ready)return;const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
  if(lastT!==null&&!audio.paused&&!audio.seeking){const dt=t-lastT;if(dt>0&&dt<4)p.heard=Math.min(d||Infinity,(p.heard||0)+dt)}lastT=t;
@@ -1192,6 +1208,7 @@ function npArt(id){const i=I[id],c=ART_C[i.who]||['#1b2440','#a8812a'],d=i.date?
  $('#np-d').textContent=[d&&!isNaN(d)?d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}):'',i.show||''].filter(Boolean).join(' · ')}
 /* previous / next teaching along the road (manual: every teaching in order; ⏮ restarts first if you are past 5 s) */
 function skipTrack(dir){if(dir<0&&audio.currentTime>5&&cur){audio.currentTime=(I[cur]&&I[cur].s)||0;return}
+ if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq(),j=q.indexOf(cur)+dir;if(j>=0&&j<q.length){const np=NP();np.classList.remove('sw-l','sw-r');void np.offsetWidth;np.classList.add(dir>0?'sw-l':'sw-r');play(q[j])}return}
  const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;seq.push(...orderedIds(x.b,x.c))});
  let k=cur?seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]):-1;if(k<0&&cur)k=seq.indexOf(cur);
  for(let j=k+dir;j>=0&&j<seq.length;j+=dir){const id=seq[j];if(id!==cur&&I[id].audio&&okWho(id)){const np=NP();np.classList.remove('sw-l','sw-r');void np.offsetWidth;np.classList.add(dir>0?'sw-l':'sw-r');setTimeout(()=>np.classList.remove('sw-l','sw-r'),320);play(id);return}}}
@@ -1222,7 +1239,10 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
    const cl=$('#clearing');if(cl){const t=cl.getBoundingClientRect().top;if(t<60||t>innerHeight-120)window.scrollTo({top:scrollY+t-70})}};const ct=$('#chT');if(ct){ct.onclick=e=>{e.stopPropagation();openJump('browse')};ct.setAttribute('role','button');ct.setAttribute('aria-label','Choose a chapter')}}
  const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
  const g=$('#gear');g.onclick=()=>{view=view==='settings'?'walk':'settings';S.set('view',view);decorate.first=true;render();window.scrollTo(0,0)};
- const back=$('#back');if(back)back.onclick=g.onclick;const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
+ const back=$('#back');if(back)back.onclick=g.onclick;
+ const osc=$('#opensc');if(osc)osc.onclick=()=>{view='sc';S.set('view',view);render();window.scrollTo(0,0)};
+ const scb=$('#scback');if(scb)scb.onclick=()=>{view='walk';S.set('view',view);decorate.first=true;render()};
+ document.querySelectorAll('details.sce').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.sck):OPEN.delete(d.dataset.sck)});const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
  const io=$('#io');if(io){$('#exp').onclick=()=>io.value=JSON.stringify({prog,read,cfg});$('#imp').onclick=()=>{try{const v=JSON.parse(io.value);prog=v.prog||prog;read=v.read||read;S.set('prog',prog);S.set('read',read);render()}catch(e){io.value='Could not read that JSON.'}};
   $('#reset').onclick=()=>{if(confirm('Erase all progress on this device?')){prog={};read={};camp=null;S.set('prog',prog);S.set('read',read);S.set('camp',null);render()}};
   $('#atest').onclick=()=>{const o=$('#atest-out');o.textContent=' testing…';const a=new Audio();a.src=Object.values(I).find(i=>i.audio).audio;a.addEventListener('loadedmetadata',()=>o.textContent=' ✓ streams ('+fmt(a.duration)+')');a.addEventListener('error',()=>o.textContent=' ✗ blocked here');a.load()}}}

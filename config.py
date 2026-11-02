@@ -123,6 +123,26 @@ DAVEY_FEEDS = {
     "davey_wfth": (2545810, "https://rss.buzzsprout.com/2545810.rss"),      # Wisdom for the Heart (sermons broadcast in parts)
     "davey_journey": (2545807, "https://rss.buzzsprout.com/2545807.rss"),   # The Wisdom Journey (daily walk through the Bible)
 }
+# Secret Church podcast sessions that teach a stretch of books or a passage, though their titles do not say so
+# (from each session's own description). (event, session) -> whole books, or a passage
+SC_BOOKS = {
+    (2, 4): ["1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians"],
+    (2, 5): ["1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter"],
+    (2, 6): ["2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"],
+    (2, 7): ["Matthew", "Mark", "Luke", "John"], (2, 8): ["Matthew", "Mark", "Luke", "John"], (2, 9): ["Matthew", "Mark", "Luke", "John"],
+    (2, 10): ["Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians",
+              "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John",
+              "3 John", "Jude", "Revelation"],
+}
+SC_BOOKS[(2, 11)] = SC_BOOKS[(2, 10)]
+SC_PASSAGES = {
+    (6, 5): "Matthew 26:17-30; Mark 14:12-26; Luke 22:7-23",     # The Last Supper
+    (6, 6): "Matthew 26:36-46; Mark 14:32-42; Luke 22:39-46",    # The Garden of Gethsemane
+    (6, 7): "Matthew 27:45-46; Mark 15:33-34; Psalm 22:1",       # The Cry of Dereliction
+    (6, 8): "John 19:28-30",                                     # The Declaration of Triumph
+}
+# sessions whose titles only look like they name books ("Counterfeit Gospels"): library only
+SC_NO_PLACE = {(18, 3)}
 # shows kept in the catalog but left off the road (Pray the Word: short prayers, not teaching)
 OFF_ROAD_SOURCES = {"ptw"}
 SHOWS = {"ptw": "Pray the Word", "davey_wfth": "Wisdom for the Heart", "davey_journey": "The Wisdom Journey"}

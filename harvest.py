@@ -191,6 +191,21 @@ def secret_church_fixup(e: dict) -> dict:
         return e
     e["sc_season"], e["sc_episode"], rest = int(m.group(1)), int(m.group(2)), m.group(3)
     e["track"] = "overview"; e["speaker"] = "Platt"; e["era"] = "platt"
+    k = (e["sc_season"], e["sc_episode"])
+    if k in config.SC_NO_PLACE:
+        e["refs"], e["refs_text"], e["ref_how"] = {}, "", "curated"
+        return e
+    if k in config.SC_BOOKS:      # sessions whose descriptions name the books they teach
+        bs = config.SC_BOOKS[k]
+        e["refs"] = {b: {"chapters": list(range(1, CHAPTERS[b] + 1)), "verse_level": False, "whole_book": True, "raw": [b]} for b in bs}
+        e["refs_text"] = f"{bs[0]}–{bs[-1]}"; e["ref_how"] = "curated"
+        return e
+    if k in config.SC_PASSAGES:   # sessions on one scene of the Gospels
+        from refs import parse_refs, merge_refs, refs_to_text
+        mr = merge_refs(parse_refs(config.SC_PASSAGES[k]))
+        e["refs"] = {b: {"chapters": sorted(d["chapters"]), "verse_level": d["verse_level"], "whole_book": False, "raw": d["raw"]} for b, d in mr.items()}
+        e["refs_text"] = refs_to_text(mr); e["ref_how"] = "curated"; e["track"] = "sermon"
+        return e
     if e.get("refs"):
         return e
     books = []
