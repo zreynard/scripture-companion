@@ -316,14 +316,26 @@ def write_site(html: str):
     open(os.path.join(SITE, "version.txt"), "w").write(str(VERSION))
     if ATLAS.ok:  # people, places and the map: loaded on the first tap of a name or the map button
         json.dump(ATLAS.data(), open(os.path.join(SITE, "atlas.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
-    vdir = os.path.join(HERE, "data", "voice_samples")
-    if os.path.isdir(vdir):  # narrator samples page (voices.html)
-        os.makedirs(os.path.join(SITE, "voices"), exist_ok=True)
+    # narrator samples page (voices.html): the newest round first, then earlier rounds; men only
+    rows, sections = "", [("voice_samples2", "Round 2 · the most natural open voices", "The prodigal son (Luke 15). Each voice was designed from a written description, then read by Chatterbox."),
+                          ("voice_samples", "Round 1 · Kokoro", "Psalm 23, the earlier voices, for comparison.")]
+    os.makedirs(os.path.join(SITE, "voices"), exist_ok=True)
+    for d, head, sub in sections:
+        vdir = os.path.join(HERE, "data", d)
+        if not os.path.isdir(vdir): continue
         meta = json.load(open(os.path.join(vdir, "voices.json"))) if os.path.exists(os.path.join(vdir, "voices.json")) else []
+        meta = [m for m in meta if m.get("voice") == "male"]
+        if not meta: continue
         for f in os.listdir(vdir):
-            shutil.copy(os.path.join(vdir, f), os.path.join(SITE, "voices", f))
-        rows = "".join(f'<div class="v"><div class="n">{m["name"]}<span>{"Man" if m["voice"] == "male" else "Woman"} · British</span></div>'
-                       f'<audio controls preload="none" src="voices/{m["file"]}"></audio></div>' for m in meta)
+            if f.endswith(".mp3"): shutil.copy(os.path.join(vdir, f), os.path.join(SITE, "voices", f))
+        rows += f'<h2>{head}</h2><p>{sub}</p>'
+        for m in meta:
+            short = m["id"].replace("cb_", "parler_")
+            extra = (f'<div class="sub">The designed voice on its own (a short line):</div><audio controls preload="none" src="voices/{short}.mp3"></audio>'
+                     if os.path.exists(os.path.join(vdir, short + ".mp3")) else "")
+            rows += (f'<div class="v"><div class="n">{m["name"]}<span>{m.get("about", "British")}</span></div>'
+                     f'<audio controls preload="none" src="voices/{m["file"]}"></audio>{extra}</div>')
+    if rows:
         open(os.path.join(SITE, "voices.html"), "w", encoding="utf-8").write(VOICES_PAGE.replace("__ROWS__", rows))
     bdir = os.path.join(HERE, "data", "bible")
     if os.path.isdir(bdir):  # Berean Standard Bible, one file per book, loaded when a chapter is opened
@@ -1269,7 +1281,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 h1{font:400 30px "Iowan Old Style",Palatino,Georgia,serif;margin:0 0 4px}p{color:var(--mute);margin:0 0 18px;max-width:34em}
 .v{background:rgba(255,255,255,.8);border:1px solid rgba(27,36,64,.08);border-radius:16px;padding:12px 14px;margin:10px 0}
 .n{font:20px "Iowan Old Style",Palatino,Georgia,serif;margin-bottom:6px}.n span{font:12px -apple-system,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-left:10px}
-audio{width:100%}
+audio{width:100%}\nh2{font:400 22px "Iowan Old Style",Palatino,Georgia,serif;margin:26px 0 2px}.sub{font-size:13px;color:var(--mute);margin:8px 0 4px}
 .speed{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(244,239,227,.94);backdrop-filter:blur(8px);padding:10px 0 12px;margin:0 0 6px;border-bottom:1px solid rgba(27,36,64,.1)}
 .speed .lab{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}
 .speed .ctl{display:flex;align-items:center;gap:10px}
@@ -1277,7 +1289,7 @@ audio{width:100%}
 .speed button:active{background:rgba(201,162,74,.25)}
 .speed .val{font:600 24px -apple-system,system-ui,sans-serif;min-width:3.6em;text-align:center;font-variant-numeric:tabular-nums}
 .speed .reset{width:auto;height:auto;border-radius:14px;padding:6px 12px;font-size:13px}
-</style></head><body><h1>Choose the narrator</h1><p>Psalm 23 from the Berean Standard Bible, read by each British voice. Pick the one you want reading the whole Bible. Change the speed to hear each voice faster or slower.</p>
+</style></head><body><h1>Choose the narrator</h1><p>Pick the voice you want reading the whole Bible to you. Change the speed to hear each one faster or slower.</p>
 <div class="speed"><span class="lab">Speed</span><div class="ctl"><button id="dn" aria-label="Slower">−</button><span class="val" id="sv">1.00×</span><button id="up" aria-label="Faster">+</button></div><button class="reset" id="rs">Reset</button></div>
 __ROWS__
 <script>
