@@ -1,0 +1,74 @@
+# Narrator samples, round 3: clean, donated voices of real British men, read by Chatterbox and Chatterbox Turbo.
+name: Narrator samples round 3
+on: workflow_dispatch
+permissions:
+  contents: write
+concurrency:
+  group: tts-round3
+jobs:
+  pick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: |
+          pip install -q torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "transformers==4.46.3" "speechbrain==1.0.3" huggingface_hub soundfile numpy
+      - run: python tools/tts_round3.py pick
+      - uses: actions/upload-artifact@v4
+        with:
+          name: refs
+          path: refs/
+  read:
+    needs: pick
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        n: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q chatterbox-tts soundfile
+      - uses: actions/download-artifact@v4
+        with:
+          name: refs
+          path: refs/
+      - run: python tools/tts_round3.py read ${{ matrix.n }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: part-${{ matrix.n }}
+          path: parts/
+          if-no-files-found: ignore
+  collect:
+    needs: read
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/download-artifact@v4
+        with:
+          name: refs
+          path: refs/
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: part-*
+          path: parts/
+          merge-multiple: true
+      - run: python tools/tts_round3.py collect
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/voice_samples3
+          git diff --cached --quiet || git commit -q -m "Narrator samples round 3 (donated British voices, Chatterbox)"
+          git pull -q --rebase origin main && git push -q origin HEAD:main
