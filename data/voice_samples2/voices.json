@@ -1,0 +1,30 @@
+[
+ {
+  "id": "cb_arthur",
+  "name": "Arthur",
+  "voice": "male",
+  "file": "cb_arthur.mp3",
+  "about": "Chatterbox, voice designed with Parler-TTS"
+ },
+ {
+  "id": "cb_edmund",
+  "name": "Edmund",
+  "voice": "male",
+  "file": "cb_edmund.mp3",
+  "about": "Chatterbox, voice designed with Parler-TTS"
+ },
+ {
+  "id": "cb_hugh",
+  "name": "Hugh",
+  "voice": "male",
+  "file": "cb_hugh.mp3",
+  "about": "Chatterbox, voice designed with Parler-TTS"
+ },
+ {
+  "id": "cb_default",
+  "name": "Chatterbox default",
+  "voice": "male",
+  "file": "cb_default.mp3",
+  "about": "Chatterbox, its built-in voice"
+ }
+]
