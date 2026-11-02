@@ -119,7 +119,7 @@ def stated_refs(source: str, title: str, description: str, extra_ref_text: str =
     t = merge_refs(parse_refs(title))
     if t:
         return t, "title"
-    fl = re.match(r"\s*Flight\s+([A-Z0-9]{3})\d{2}\b", title or "")
+    fl = re.match(r"\s*Flight\s+([1-3]?[A-Z]{2,4}?)\d{1,2}\b", title or "")
     if fl and source.startswith("skip_"):  # Bible from 30,000 Feet: the flight code names the book(s)
         books = flight_books(fl.group(1))
         if books:

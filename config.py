@@ -133,7 +133,15 @@ SKIP_FEEDS = {
 }
 # "Bible from 30,000 Feet" episodes are titled "Flight GEN01 - Part A": the code names the book(s) the overview covers
 SKIP_FLIGHT_BOOKS = {"JAO": ["Joel", "Amos", "Obadiah"], "MNH": ["Micah", "Nahum", "Habakkuk"],
-                     "ZHA": ["Zephaniah", "Haggai"], "ZMA": ["Zechariah", "Malachi"]}
+                     "ZHA": ["Zephaniah", "Haggai"], "ZMA": ["Zechariah", "Malachi"],
+                     "JUD": ["Judges"],  # in this series JUD sits between Joshua and Ruth; Jude flies with 2-3 John (JJU)
+                     "JJU": ["2 John", "3 John", "Jude"], "TPH": ["Titus", "Philemon"], "JLA": ["Jeremiah", "Lamentations"],
+                     "MML": ["Matthew", "Mark", "Luke"], "THE": ["1 Thessalonians", "2 Thessalonians"],
+                     "TIM": ["1 Timothy", "2 Timothy"], "PET": ["1 Peter", "2 Peter"], "SON": ["Song of Solomon"],
+                     "1SAM": ["1 Samuel"], "2SAM": ["2 Samuel"], "1KIN": ["1 Kings"], "2KIN": ["2 Kings"],
+                     "1CHR": ["1 Chronicles"], "2CHR": ["2 Chronicles"], "1COR": ["1 Corinthians"], "2COR": ["2 Corinthians"],
+                     "1JOH": ["1 John"], "PHI": ["Philippians"],
+                     "INT": ["Matthew"]}  # the 400 years between the Testaments: the bridge into Matthew
 
 # ---- skip the intro music: seconds to start at when an episode is played fresh (resume ignores this) ----
 INTRO_SKIP = {
