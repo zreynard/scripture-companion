@@ -1,0 +1,30 @@
+# Find where each episode's shared intro ends (audio fingerprints); results go to the "diag" branch.
+name: Intro finder
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Catalog source to scan"
+        default: "davey_journey"
+      n:
+        description: "Episodes to scan (0 = all)"
+        default: "0"
+permissions:
+  contents: write
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get install -y ffmpeg libchromaprint-tools >/dev/null
+      - run: pip install numpy
+      - run: SOURCE=${{ github.event.inputs.source }} N=${{ github.event.inputs.n }} python tools/intro_detect.py | tee intro.log
+      - run: |
+          mkdir /tmp/d && cp intro_*.json intro.log /tmp/d/ && cd /tmp/d
+          git init -q -b diag && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m intro
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag
