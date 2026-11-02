@@ -67,7 +67,7 @@ def read():
     os.makedirs(OUT, exist_ok=True)
     pieces = sentences(passage())
     meta = []
-    voices = [(vid, nm, os.path.join(REFS, f"{vid}.wav")) for vid, nm, _ in NARRATORS] + [("default", "Chatterbox default", None)]
+    voices = [(vid, nm, os.path.join(REFS, f"{vid}.wav")) for vid, nm, _ in NARRATORS]
     for vid, nm, ref in voices:
         if ref and not os.path.exists(ref):
             print("no reference for", vid, flush=True); continue
@@ -85,11 +85,6 @@ def read():
         meta.append({"id": f"cb_{vid}", "name": nm, "voice": "male", "file": f"cb_{vid}.mp3",
                      "about": "Chatterbox" + (", voice designed with Parler-TTS" if ref else ", its built-in voice")})
         print("read", vid, flush=True)
-    # also keep each designed voice's own short reading, so the voice itself can be judged
-    for vid, nm, _ in NARRATORS:
-        ref = os.path.join(REFS, f"{vid}.wav")
-        if os.path.exists(ref):
-            subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", ref, "-ac", "1", "-b:a", "96k", os.path.join(OUT, f"parler_{vid}.mp3")], check=True)
     json.dump(meta, open(os.path.join(OUT, "voices.json"), "w"), indent=1)
 
 
