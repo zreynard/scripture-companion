@@ -317,7 +317,8 @@ def write_site(html: str):
     if ATLAS.ok:  # people, places and the map: loaded on the first tap of a name or the map button
         json.dump(ATLAS.data(), open(os.path.join(SITE, "atlas.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     # narrator samples page (voices.html): the newest round first, then earlier rounds; men only
-    rows, sections = "", [("voice_samples2", "Round 2 · the most natural open voices", "The prodigal son (Luke 15). Each is a made-up British voice, designed from a written description and read by Chatterbox."),
+    rows, sections = "", [("voice_samples3", "Round 3 · real voices, clean recordings", "The prodigal son (Luke 15), read in the voices of real British men who donated recordings of their voices for this. Each comes in two readers; the short clip under it is the man himself."),
+                          ("voice_samples2", "Round 2 · the most natural open voices", "The prodigal son (Luke 15). Each is a made-up British voice, designed from a written description and read by Chatterbox."),
                           ("voice_samples", "Round 1 · Kokoro", "Psalm 23, the earlier voices, for comparison.")]
     os.makedirs(os.path.join(SITE, "voices"), exist_ok=True)
     for d, head, sub in sections:
@@ -327,11 +328,14 @@ def write_site(html: str):
         meta = [m for m in meta if m.get("voice") == "male"]
         if not meta: continue
         for f in os.listdir(vdir):
-            if f.endswith(".mp3") and any(m["file"] == f for m in meta): shutil.copy(os.path.join(vdir, f), os.path.join(SITE, "voices", f))
+            if f.endswith(".mp3") and any(f in (m["file"], m.get("ref")) for m in meta): shutil.copy(os.path.join(vdir, f), os.path.join(SITE, "voices", f))
         rows += f'<h2>{head}</h2><p>{sub}</p>'
         for m in meta:
             rows += (f'<div class="v"><div class="n">{m["name"]}<span>{m.get("about", "British")}</span></div>'
-                     f'<audio controls preload="none" src="voices/{m["file"]}"></audio></div>')
+                     f'<audio controls preload="none" src="voices/{m["file"]}"></audio>'
+                     + (f'<div class="sub">His own voice (the recording it learned from):</div><audio controls preload="none" src="voices/{m["ref"]}"></audio>'
+                        if m.get("ref") and (m["id"].startswith("turbo_") or not any(x["id"] == "turbo_" + m["id"].split("_")[-1] for x in meta)) else "")
+                     + '</div>')
     if rows:
         open(os.path.join(SITE, "voices.html"), "w", encoding="utf-8").write(VOICES_PAGE.replace("__ROWS__", rows))
     bdir = os.path.join(HERE, "data", "bible")
