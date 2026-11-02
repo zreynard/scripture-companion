@@ -1062,5 +1062,47 @@
 "referer": "https://radical.net/message/10-exhortations-for-the-church/",
 "error": "ERROR: [vimeo] 50368234: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)",
 "tried": "2026-11-02"
+},
+"rmsg-84312": {
+"id": "rmsg-84312",
+"title": "Take Heed, Lest You Fall",
+"channel": "radical_msg",
+"source": "radical_message",
+"duration": 0,
+"upload_date": "20110907",
+"media": "https://player.vimeo.com/video/28714333",
+"page": "https://radical.net/message/take-heed-lest-you-fall/",
+"refs": "",
+"referer": "https://radical.net/message/take-heed-lest-you-fall/",
+"error": "ERROR: [vimeo] 28714333: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)",
+"tried": "2026-11-02"
+},
+"rmsg-84315": {
+"id": "rmsg-84315",
+"title": "What The Gospel Does To Our Hearts",
+"channel": "radical_msg",
+"source": "radical_message",
+"duration": 0,
+"upload_date": "20100210",
+"media": "https://player.vimeo.com/video/9259509",
+"page": "https://radical.net/message/what-the-gospel-does-to-our-hearts/",
+"refs": "",
+"referer": "https://radical.net/message/what-the-gospel-does-to-our-hearts/",
+"error": "ERROR: [vimeo] 9259509: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)",
+"tried": "2026-11-02"
+},
+"rmsg-7100": {
+"id": "rmsg-7100",
+"title": "Proto-Euangelion: The First Gospel",
+"channel": "radical_msg",
+"source": "radical_message",
+"duration": 0,
+"upload_date": "20061112",
+"media": "https://player.vimeo.com/video/285810377",
+"page": "https://radical.net/message/proto-euangelion-the-first-gospel/",
+"refs": "3 1-24",
+"referer": "https://radical.net/message/proto-euangelion-the-first-gospel/",
+"error": "ERROR: [vimeo] 285810377: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)",
+"tried": "2026-11-02"
 }
 }
