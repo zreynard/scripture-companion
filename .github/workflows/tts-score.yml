@@ -1,0 +1,19 @@
+name: Narrator sample scores
+on:
+  workflow_dispatch:
+    inputs:
+      dir:
+        default: "data/voice_samples3"
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: |
+          pip install -q torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "speechbrain==1.0.3" numpy
+      - run: python tools/tts_score.py ${{ github.event.inputs.dir }}
