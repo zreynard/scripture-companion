@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 76  # bump on every shipped build; also busts the service-worker cache
+VERSION = 77  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -574,6 +574,7 @@ body.mapopen #sheet{z-index:24}
 #np:not(.mini) .ctl .big{width:76px;height:76px}
 #np .ctl .sk{display:flex;align-items:center;justify-content:center}
 #np .ctl2{display:flex;justify-content:space-between;margin-top:10px}
+.spd{display:flex;align-items:center;gap:2px;border:1px solid rgba(27,36,64,.14);border-radius:22px;background:#fff}.spd button{min-width:40px;font-weight:600}#np .ctl2 .spd button{padding:8px 10px}#spd{min-width:58px!important}
 #np .ctl2 button{background:none;border:0;color:var(--ink);font:inherit;font-size:15px;padding:10px 4px}
 @keyframes npL{from{transform:translateX(50px);opacity:.2}to{transform:none;opacity:1}}@keyframes npR{from{transform:translateX(-50px);opacity:.2}to{transform:none;opacity:1}}
 #np.sw-l .art,#np.sw-l .t,#np.sw-l .s{animation:npL .28s ease-out}#np.sw-r .art,#np.sw-r .t,#np.sw-r .s{animation:npR .28s ease-out}
@@ -600,7 +601,7 @@ body.mapopen #sheet{z-index:24}
 <div class="t serif" id="np-t"></div><div class="s" id="np-s"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
 <div class="ctl"><button class="side sk" id="prv" aria-label="Previous"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5l-10 7 10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button><button class="side" id="bk">↺ 10</button><button class="big" id="pp" style="display:flex;align-items:center;justify-content:center"></button><button class="side" id="fw">10 ↻</button><button class="side sk" id="nxt" aria-label="Next"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button></div>
-<div class="ctl2"><button id="spd">1×</button><button id="zz">Sleep off</button></div></div>
+<div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="zz">Sleep off</button></div></div>
 <audio id="audio" preload="metadata"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
 <script>
 const D=__DATA__,I=D.items;
@@ -1159,6 +1160,7 @@ function scView(){const G=scGroups(),tot=G.reduce((a,g)=>a+g.ids.length,0);
   h+=`<details class="sce" data-sck="${k}"${OPEN.has(k)?' open':''}><summary><span class="sce-n">${ev.n}</span><span class="sce-t">${esc(ev.title)}</span><span class="sce-p">${done===ids.length?'✓':done+' / '+ids.length}</span></summary><div class="sce-b">${ids.map(id=>voiceHTML(id,(I[id].sc||[])[0]+'.'+(I[id].sc||[])[1])).join('')}</div></details>`});
  return h+'</div>'}
 /* player */
+function spdLabel(){return (speed%1?speed.toFixed(2).replace(/0$/,''):speed)+'×'}
 let audio=$('#audio');const AUDIO_EL=[$('#audio'),$('#audiofx')];let cur=null,speed=S.get('speed',1);AUDIO_EL.forEach(a=>a.playbackRate=speed);
 /* events from whichever player is active (the other one is idle) */
 function onAudio(type,fn){AUDIO_EL.forEach(el=>el.addEventListener(type,e=>{if(el===audio)fn(e)}))}
@@ -1177,7 +1179,7 @@ function leveler(){if(AC)return AC;try{AC=new (window.AudioContext||window.webki
    const db=10*Math.log10(q/buf.length+1e-12);if(db<-48)return;const a=lvlFast>0?.25:.03;lvlFast=Math.max(0,lvlFast-1);lvl=lvl==null?db:lvl+(db-lvl)*a;
    const want=Math.max(-10,Math.min(10,TARGET-lvl));g.gain.setTargetAtTime(Math.pow(10,want/20),AC.currentTime,lvlFast>0?.3:2)},100)}catch(e){AC=null}return AC}
 function useAudioFor(i){const fx=levelFor(i)&&leveler(),want=fx?$('#audiofx'):$('#audio');if(fx&&AC.state!=='running')AC.resume().catch(()=>{});
- if(want!==audio){try{audio.pause()}catch(e){}audio=want;audio.playbackRate=speed}if(fx){lvl=null;lvlFast=40}}$('#spd').textContent=speed+'×';
+ if(want!==audio){try{audio.pause()}catch(e){}audio=want;audio.playbackRate=speed}if(fx){lvl=null;lvlFast=40}}$('#spd').textContent=spdLabel();
 function where(id){for(const b of D.books){if(b.ov.includes(id)||(b.spans||[]).some(x=>x.id===id))return b.name;for(const c of b.ch)if(c.ids.includes(id))return b.name+' '+c.c}return ''}
 function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;ready=false;const p=prog[id]||{},saved=p.pos||0;useAudioFor(i);audio.src=i.audio;audio.addEventListener('loadedmetadata',()=>{const st=i.s||0;if(saved&&saved>st&&saved<audio.duration-5)audio.currentTime=saved;else if(st&&st<audio.duration-30)audio.currentTime=st;ready=true},{once:true});  /* fresh plays start after the intro */
   $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=teacher(i)+' · '+where(id);npArt(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(false)}setPP();
@@ -1199,7 +1201,7 @@ $('#audiofx').addEventListener('error',()=>{if(audio!==$('#audiofx')||!cur)retur
 onAudio('error',()=>{$('#np-s').textContent=(location.protocol==='file:'||window!==window.top)?'Audio is blocked in this viewer — open in Safari from a web address.':'This file did not load.'});
 $('#pp').onclick=()=>cur&&(audio.paused?audio.play().catch(()=>{}):audio.pause());$('#bk').onclick=()=>audio.currentTime-=10;$('#fw').onclick=()=>audio.currentTime+=10;
 $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.target.value/1000};
-$('#spd').onclick=()=>{const sp=[1,1.25,1.5,1.75,2];speed=sp[(sp.indexOf(speed)+1)%sp.length];audio.playbackRate=speed;$('#spd').textContent=speed+'×';S.set('speed',speed)};
+const setSpeed=v=>{speed=Math.round(Math.min(3,Math.max(0.5,v))*100)/100;AUDIO_EL.forEach(a=>a.playbackRate=speed);$('#spd').textContent=spdLabel();S.set('speed',speed)};$('#spd').onclick=e=>{e.stopPropagation();setSpeed(1)};$('#spd-dn').onclick=e=>{e.stopPropagation();setSpeed(speed-0.05)};$('#spd-up').onclick=e=>{e.stopPropagation();setSpeed(speed+0.05)};
 let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};
 $('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NP().classList.remove('on');roomForPlayer();render()};
