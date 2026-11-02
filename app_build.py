@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 75  # bump on every shipped build; also busts the service-worker cache
+VERSION = 76  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -57,6 +57,12 @@ def iso_date(s) -> str:
     except Exception:
         return ""
 
+def is_walk(title):
+    """A walk-through message: titled only by its passage ("Genesis 1", "Expound: Romans 9-10:4 - Part A")."""
+    rest = title or ""
+    for r in parse_refs(rest): rest = rest.replace(r.raw, " ")
+    return bool(parse_refs(title or "")) and not re.search(r"[A-Za-z]{2,}", re.sub(r"\b(?:and|part|review|expound)\b", " ", rest, flags=re.I))
+
 def main():
     # where each episode's intro ends, found by tools/intro_detect.py (data/intro_skip/<source>.json: {id: seconds})
     INTROS = {}
@@ -66,7 +72,9 @@ def main():
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
     skip_guest = lambda e: e["source"].startswith("skip_") and e["speaker"].startswith("guest:")  # Calvary Church guests keep Skip's series unbroken
-    usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["source"] not in config.OFF_ROAD_SOURCES and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e))]
+    # Skip Heitzig: his verse-by-verse walk-throughs and Bible from 30,000 Feet, not his topical Sunday sermons
+    skip_kept = lambda e: not e["source"].startswith("skip_") or is_walk(e["title"]) or re.match(r"\s*Flight\b", e["title"])
+    usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["source"] not in config.OFF_ROAD_SOURCES and skip_kept(e) and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e))]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
     CH, WALK, VS = {}, {}, {}  # chapters per book for each item; WALK = titled only by its passage (a walk-through message); VS = verses
     VC = {}
@@ -128,9 +136,7 @@ def main():
         item_books[it["id"]] = set(e["refs"])
         CH[it["id"]] = {b: set(d["chapters"]) for b, d in e["refs"].items()}
         VS[it["id"]] = {b: verses_of(b, d) for b, d in e["refs"].items()}
-        rest = e["title"]
-        for r in parse_refs(e["title"]): rest = rest.replace(r.raw, " ")
-        WALK[it["id"]] = bool(parse_refs(e["title"])) and not re.search(r"[A-Za-z]{2,}", re.sub(r"\b(?:and|part|review|expound)\b", " ", rest, flags=re.I))
+        WALK[it["id"]] = is_walk(e["title"])
         first_verse[it["id"]] = {b: _first_verse(d) for b, d in e["refs"].items()}
         ref_how[it["id"]] = e.get("ref_how", "curated")
         cited[it["id"]] = len({(r.book, tuple(sorted(r.chapters))) for r in parse_refs(e.get("description", "")) if not r.whole_book})
@@ -202,7 +208,7 @@ def main():
             a = VS[i].get(book) or set()
             # redundant: a newer kept walk-through covers most of this one's verses and is not much wider
             if a and any(len(a & VS[j][book]) >= 0.6 * len(a) and len(VS[j][book]) <= 4 * len(a) for j in kept): drop.add(i)
-            else: kept.append(i)
+            elif not re.search(r"\breview\b", items[i]["t"], re.I): kept.append(i)   # a recap stays but never replaces the study itself
     for lst in by_chapter.values():
         lst[:] = [i for i in lst if i not in drop]
     for lst in by_book_ov.values(): one_each(lst)
