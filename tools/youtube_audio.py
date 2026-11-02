@@ -94,6 +94,46 @@ def choose(vids: list[dict]) -> list[dict]:
         out.append(v)
     return out
 
+def radical_messages(have_titles: set) -> list[dict]:
+    """David Platt's messages on radical.net (public WordPress data): each new one with its Scripture tags and
+    the Vimeo video the page embeds. YouTube-embedded ones are skipped (YouTube refuses GitHub's servers)."""
+    import requests
+    H = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"}
+    terms, page = {}, 1
+    while page < 30:
+        r = requests.get(f"https://radical.net/wp-json/wp/v2/scripture?per_page=100&page={page}&_fields=id,name,parent", headers=H, timeout=60)
+        if r.status_code != 200 or not r.json(): break
+        terms.update({t["id"]: t for t in r.json()}); page += 1
+    msgs, page = [], 1
+    while page < 30:
+        r = requests.get(f"https://radical.net/wp-json/wp/v2/message?per_page=100&page={page}&_fields=id,date,link,title,scripture", headers=H, timeout=60)
+        if r.status_code != 200 or not r.json(): break
+        msgs += r.json(); page += 1
+    norm = lambda t: re.sub(r"[^a-z0-9]", "", re.sub(r"&#\d+;|&[a-z]+;", "", (t or "").lower()))
+    out = []
+    for m in msgs:
+        import html as _h
+        title = _h.unescape(m["title"]["rendered"]).strip()
+        if norm(title) in have_titles: continue
+        refs = []
+        for tid in m.get("scripture") or []:
+            t = terms.get(tid)
+            if not t: continue
+            if t.get("parent") in terms: refs.append(f"{terms[t['parent']]['name']} {t['name']}")
+            elif t.get("parent") == 0 and not any(terms.get(x, {}).get("parent") == tid for x in m["scripture"]): refs.append(t["name"])
+        pg = requests.get(m["link"], headers=H, timeout=60)
+        desc = " ".join(re.findall(r'<meta (?:name="description"|property="og:description") content="([^"]*)"', pg.text))
+        if "Platt" not in desc: log(f"skip (not named as Platt): {title[:60]}"); continue
+        vm = re.search(r"player\.vimeo\.com/video/(\d+)(?:\?h=([0-9a-f]+))?", pg.text) or re.search(r"vimeo\.com/video/(\d+)", pg.text)
+        if not vm: continue
+        media = f"https://player.vimeo.com/video/{vm.group(1)}" + (f"?h={vm.group(2)}" if vm.lastindex and vm.lastindex >= 2 and vm.group(2) else "")
+        out.append({"id": f"rmsg-{m['id']}", "title": title, "channel": "radical_msg", "source": "radical_message", "duration": 0,
+                    "upload_date": m["date"][:10].replace("-", ""), "media": media, "page": m["link"], "refs": "; ".join(dict.fromkeys(refs)),
+                    "referer": m["link"]})
+        time.sleep(0.5)
+    log(f"radical messages: {len(msgs)} listed, {len(out)} new with a Vimeo video")
+    return out
+
 def release_tag(done: dict) -> str:
     n = sum(1 for d in done.values() if d.get("asset"))
     tag = f"audio-{n // 900 + 1}"
@@ -107,6 +147,7 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--limit", type=int, default=120)
     ap.add_argument("--minutes", type=int, default=300, help="stop starting new downloads after this long")
     ap.add_argument("--youtube", action="store_true", help="also try YouTube-only videos")
+    ap.add_argument("--radical-messages", action="store_true", help="David Platt's radical.net messages (Vimeo)")
     a = ap.parse_args()
     t0 = time.time()
     done = json.load(open(MAP)) if os.path.exists(MAP) else {}
@@ -117,6 +158,11 @@ def main():
     if a.youtube:  # YouTube refuses downloads from GitHub's servers; off unless asked
         vids = list_channels()
         targets += choose(vids)
+    if a.radical_messages:
+        have = set()
+        for line in open(CATALOG, encoding="utf-8"):
+            have.add(re.sub(r"[^a-z0-9]", "", json.loads(line).get("title", "").lower()))
+        targets += radical_messages(have)
     targets = [v for v in targets if not done.get(v["id"], {}).get("asset")]
     log(f"{len(vids)} videos listed; {len(targets)} need audio")
     repo = os.environ.get("GITHUB_REPOSITORY", "")
@@ -126,7 +172,7 @@ def main():
         if time.time() - t0 > a.minutes * 60:
             break
         out = f"/tmp/yta/{v['id']}.mp3"
-        p = ytdlp("-f", "bestaudio", "-x", "--audio-format", "mp3",
+        p = ytdlp(*(["--referer", v["referer"]] if v.get("referer") else []), "-f", "bestaudio/best", "-x", "--audio-format", "mp3",
                   "--postprocessor-args", "ffmpeg:-ac 1 -b:a 40k -ar 22050",
                   "-o", f"/tmp/yta/{v['id']}.%(ext)s", v.get("media") or f"https://www.youtube.com/watch?v={v['id']}", timeout=5400)
         if p.returncode != 0 or not os.path.exists(out):

@@ -395,7 +395,11 @@ def harvest_youtube_audio() -> list[dict]:
         d = v.get("upload_date") or ""
         pub = f"{d[:4]}-{d[4:6]}-{d[6:8]}" if re.fullmatch(r"\d{8}", d) else ""
         url = v.get("page") or f"https://www.youtube.com/watch?v={v['id']}"
-        if v["channel"] == "radical":
+        if v["channel"] == "radical_msg":  # David Platt's radical.net messages: passage from Radical's own Scripture tags
+            e = make_entry(source="radical_message", source_url="https://radical.net/wp-json/wp/v2/message", url=url, title=v["title"],
+                           published=pub, author="David Platt", era="platt", extra_ref_text=v.get("refs", ""))
+            e.update({"speaker": "Platt", "speaker_evidence": "radical-message"})
+        elif v["channel"] == "radical":
             e = make_entry(source="youtube_radical", source_url=config.YOUTUBE_CHANNELS["radical"][0], url=url,
                            title=v["title"], published=pub, duration=str(v.get("duration") or ""), era="platt",
                            channel_default="Platt")

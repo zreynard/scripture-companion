@@ -35,7 +35,7 @@ jobs:
       - run: pip install -r requirements.txt feedparser && pip install -U yt-dlp
       - run: sudo apt-get install -y ffmpeg >/dev/null || true
       - name: Download and host audio
-        run: python tools/youtube_audio.py --limit "${{ github.event.inputs.limit || '150' }}" --minutes 280 2>&1 | tee yt.log; exit ${PIPESTATUS[0]}
+        run: python tools/youtube_audio.py --limit "${{ github.event.inputs.limit || '150' }}" --minutes 280 --radical-messages 2>&1 | tee yt.log; exit ${PIPESTATUS[0]}
       - name: Save the log for diagnosis
         if: always()
         run: |
