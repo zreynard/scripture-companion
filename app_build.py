@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 62  # bump on every shipped build; also busts the service-worker cache
+VERSION = 63  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -664,8 +664,8 @@ function renderJump(){const body=$('#jbody'),q=$('#jq').value.trim(),w=walk(),cu
      ppl.forEach(([s,p])=>h+=`<button class="jr" data-nk="p" data-ns="${s}">${medal(p,34)}<span class="jr-t"><b>${esc(p.n)}</b><small>${esc(plainT(p.who))}</small></span></button>`);
      pls.forEach(([s,l])=>h+=`<button class="jr" data-nk="l" data-ns="${s}"><span class="jr-ic pin">◉</span><span class="jr-t"><b>${esc(l.n)}</b><small>${esc(plainT(l.what))}</small></span></button>`)}}
    if(ql.length>=3&&words.length){const ch=searchIndex().filter(r=>words.every(x=>r.t.includes(x))).slice(0,6);
-    if(ch.length){h+=`<div class="jp-h">In the story</div>`;ch.forEach(r=>h+=`<button class="jr" data-ji="${r.i}"><span class="jr-ic">${r.x.c.c}</span><span class="jr-t"><b>${esc(r.x.b.name)} ${r.x.c.c}</b><small>${esc(plainT(r.x.c.sl||''))}</small></span></button>`)}
-    const seen=new Set(),ser=[];for(const r of searchIndex()){for(const id of r.x.c.ids){if(seen.has(id))continue;seen.add(id);const t=(I[id].t||'').toLowerCase();if(okWho(id)&&words.every(x=>t.includes(x)))ser.push([id,r.i])}if(ser.length>=8)break}
+    if(ch.length){h+=`<div class="jp-h">In the story</div>`;ch.forEach(r=>h+=`<button class="jr" data-ji="${r.i}"><span class="jr-ic">${r.x.c.intro?'•':r.x.c.c}</span><span class="jr-t"><b>${esc(r.x.b.name)} ${r.x.c.c}</b><small>${esc(plainT(r.x.c.sl||''))}</small></span></button>`)}
+    const seen=new Set(),ser=[];for(const r of searchIndex()){for(const id of stopIds(r.x)){if(seen.has(id))continue;seen.add(id);const t=(I[id].t||'').toLowerCase();if(okWho(id)&&words.every(x=>t.includes(x)))ser.push([id,r.i])}if(ser.length>=8)break}
     if(ser.length){h+=`<div class="jp-h">Sermons</div>`;ser.forEach(([id,i])=>{const it=I[id];h+=`<button class="jr" data-ji="${i}" data-sid="${id}"><span class="jr-ic play">▶</span><span class="jr-t"><b>${esc(it.t)}</b><small>${esc(teacher(it))}${it.pass?' · '+esc(shortPass(it.pass)):''}</small></span></button>`})}}}
   if(!h)h=`<div class="jp-empty">No match for “${esc(q)}”. Try a book (“Nehemiah”), a passage (“John 3:16”), a name, or a phrase from the story.</div>`}
  body.innerHTML=h;
@@ -769,7 +769,7 @@ let MV=null;
 const SERIF='"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif';
 function legOf(T,b,c){let L=0;for(const[s,i]of(T.bl[b]||[[1,0]]))if(c>=s)L=i;return L}
 function bkey(b,c){return D.books.findIndex(x=>x.name===b)*1000+c}
-function standing(A){const T=A.trip,W=walk(),w=W[Math.max(0,Math.min(W.length-1,camp||0))],b=w.b.name,c=w.c.c,leg=legOf(T,b,c),L=T.legs[leg];
+function standing(A){const T=A.trip,W=walk(),w=W[Math.max(0,Math.min(W.length-1,camp||0))],b=w.b.name,c=w.c.c||1,leg=legOf(T,b,c),L=T.legs[leg];
  const places=(A.here[b+' '+c]||[]).map(s=>[s,A.l[s]]).filter(x=>x[1]&&x[1].x!=null);
  const r={leg,b,c,idx:-1,mark:null,line:'',places},note=T.notes[b],me=bkey(b,c);L.stops.forEach((s,i)=>{if(!s.np&&bkey(s.b,s.c)<=me)r.idx=i});
  if(note){if(note[0])r.mark={x:note[0][0],y:note[0][1],n:note[0][2]};r.line=note[1];return r}
@@ -862,6 +862,8 @@ function prange(pass,book){if(!pass)return null;const bk=new RegExp('^'+book.rep
  /* a harmony passage names several books ("Luke 8:22-25; Mark 4:35-41; Matthew 8:18, 23-27"): take this book's part */
  for(let part of pass.replace(/[–—]/g,'-').split(';')){part=part.trim();const m=part.match(/^((?:[1-3]\s+)?[A-Za-z]+(?:\s+of\s+[A-Za-z]+)?)\s+(\d.*)$/);
   if(m){cur=m[1];if(bk.test(part)){seg=m[2];break}}else if(cur&&/^\d/.test(part)&&bk.test(cur+' '+part)){seg=part;break}}
+ /* one passage with a spelling the book test misses ("I Samuel 16:1-13", "Matt. 11:11", "MT 17:22", "1Kings 18"): it is this book's, since it was placed here */
+ if(seg==null&&!pass.includes(';')){const m=pass.replace(/[–—]/g,'-').match(/^\s*(?:[1-3]|I{1,3}|First|Second|Third)?\s*[A-Za-z][A-Za-z.]*(?:\s+of\s+[A-Za-z]+)?\.?\s*(\d.*)$/);if(m)seg=m[1]}
  if(seg==null)return null;const p=seg.split(',')[0].replace(/\s+and\s+/gi,'-').replace(/\s/g,'');let m;
  if(m=p.match(/^(\d+):(\d+)-(\d+):(\d+)/))return{sc:+m[1],sv:+m[2],ec:+m[3],ev:+m[4]};
  if(m=p.match(/^(\d+):(\d+)-(\d+)/))return{sc:+m[1],sv:+m[2],ec:+m[1],ev:+m[3]};
@@ -875,24 +877,25 @@ function vbadge(r){if(!r)return'';if(r.sc===r.ec)return r.sv===1&&r.ev===999?`${
    overview = whole Bible / section surveys (at a book's first chapter), the whole book, then stretches of 3+ chapters, widest first;
    chapter  = full sermons on this chapter (one or two chapters), by where they start;
    verses   = short devotionals on a verse or two, by verse */
-function listenGroups(b,c){const g={overview:[],chapter:[],verses:[]},R=x=>x.r||{sc:999,sv:999,ec:999,ev:999},first=c===b.ch[0];
+function listenGroups(b,c){const g={overview:[],chapter:[],verses:[]},R=x=>x.r||{sc:999,sv:999,ec:999,ev:999},first=!!c.intro;
  const span=x=>x.r?(x.r.ec-x.r.sc)*1000+(x.r.ev-x.r.sv):1e9;
  if(first){const ord=books().map(x=>x.name),groups={};(b.spans||[]).forEach(x=>{if(!okWho(x.id))return;let lab=x.label;
    if(x.books&&!/Testament|Law|History|Wisdom|Prophets|Gospels|Church|Letters|Revelation/.test(lab)){const idxs=x.books.map(n=>ord.indexOf(n)).sort((p,q)=>p-q);const contig=idxs[idxs.length-1]-idxs[0]===idxs.length-1;lab=contig?`${ord[idxs[0]]}–${ord[idxs[idxs.length-1]]}`:x.books.join(', ')}
    const w=/Bible/i.test(lab)?1000:/Testament/i.test(lab)?500:x.books?x.books.length:50;(groups[lab]=groups[lab]||{w:0,ids:[]}).ids.push(x.id);groups[lab].w=Math.max(groups[lab].w,w)});
   Object.entries(groups).sort((a,z)=>z[1].w-a[1].w).forEach(([lab,o])=>o.ids.forEach(id=>g.overview.push({id,r:null,h:lab.charAt(0).toUpperCase()+lab.slice(1)})));
   b.ov.filter(okWho).forEach(id=>g.overview.push({id,r:prange(I[id].pass,b.name),h:'The book of '+b.name}))}
- const st=[];c.ids.filter(okWho).forEach((id,k)=>{const it=I[id],r=prange(it.pass,b.name),wide=!r||r.ec-r.sc>=2||/^All |survey/i.test(it.pass||'');
-  (it.tr==='devotional'?g.verses:wide?st:g.chapter).push({id,r,k})});
+ const st=[];c.ids.filter(okWho).forEach((id,k)=>{const it=I[id],r=prange(it.pass,b.name),verse=!!r&&(r.sv>1||r.ev<999),wide=!verse&&(!r||r.ec-r.sc>=2||/^All |survey/i.test(it.pass||''));
+  /* zoom by how exact the passage is: whole books and long stretches → overview, whole chapters → chapter, named verses → verses */
+  (it.tr==='devotional'||verse?g.verses:wide?st:g.chapter).push({id,r,k})});
  st.sort((a,z)=>(span(z)-span(a))||(R(a).sc-R(z).sc)||(a.k-z.k));
  st.forEach(x=>g.overview.push({...x,h:x.r?`${b.name} ${vbadge(x.r)}`:(shortPass(I[x.id].pass||'')||'Across several books')}));
  const byVerse=(a,z)=>(R(a).sc-R(z).sc)||(R(a).sv-R(z).sv)||(R(a).ec-R(z).ec)||(R(a).ev-R(z).ev)||(a.k-z.k);
  g.chapter.sort(byVerse);g.verses.sort(byVerse);for(const k in g)g[k]=partsInOrder(g[k]);return g}
 /* radio messages come in parts ("… - Part A", "Part 2"): keep each message's parts together and in order A, B, C */
 function partOf(t){const m=(t||'').match(/^(.*?)[\s\-–—:,(]*\bPart\s+([A-Z]|\d+)\b\)?\s*$/i);return m?{base:m[1].trim().toLowerCase(),n:isNaN(+m[2])?m[2].toUpperCase().charCodeAt(0)-64:+m[2]}:null}
-function partsInOrder(a){const by={};a.forEach((x,k)=>{const p=partOf(I[x.id]&&I[x.id].t);if(p)(by[p.base]=by[p.base]||[]).push({k,n:p.n})});
- const out=a.slice();Object.values(by).forEach(l=>{if(l.length<2)return;const first=Math.min(...l.map(y=>y.k)),items=l.slice().sort((p,q)=>p.n-q.n).map(y=>a[y.k]);
-  l.forEach(y=>out[y.k]=null);items.forEach((x,j)=>out.splice(first+j,0,x))});return out.filter(Boolean)}
+function partsInOrder(a){const by={},P=a.map(x=>partOf(I[x.id]&&I[x.id].t));P.forEach((p,k)=>{if(p)(by[p.base]=by[p.base]||[]).push(k)});
+ const out=[],done=new Set();a.forEach((x,k)=>{const p=P[k],grp=p&&by[p.base];if(!grp||grp.length<2){out.push(x);return}if(done.has(p.base))return;done.add(p.base);
+  grp.slice().sort((u,v)=>P[u].n-P[v].n).forEach(u=>out.push(a[u]))});return out}
 function orderedIds(b,c){const g=listenGroups(b,c);return [...g.overview,...g.chapter,...g.verses].map(x=>x.id)}
 function versesFor(pass,book,ch){ /* the verse range a passage names inside this chapter, or null for the whole chapter */
  const esc2=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');const re=new RegExp(esc2(book).replace(/^Psalms$/,'Psalms?')+'\\s+(\\d+)(?::(\\d+)(?:\\s*[–-]\\s*(?:(\\d+):)?(\\d+))?)?','i');
@@ -902,7 +905,7 @@ function chapterHTML(data,c,hl){const vs=data.chapters[c-1]||[];let h='',open=fa
   if(v.p||!open){if(open)h+='</p>';h+=`<p class="${v.q?'poem q'+v.q:''}">`;open=true}
   const on=hl&&v.v>=hl.from&&v.v<=hl.to;h+=`<span class="vs${on?' hl':''}" data-v="${v.v}"><sup>${v.v}</sup>${esc(v.t).replace(/\n/g,'<br>')}</span> `}
  if(open)h+='</p>';const w=walk(),nx=w[camp+1];
- return h+`<div class="endacts">${nx?`<button class="walk" data-endwalk="1">Mark read & walk on to ${esc(nx.b.name)} ${nx.c.c} ›</button>`:''}<button data-endclose="1">Back to listening</button></div><div class="src">Berean Standard Bible · public domain</div>`}
+ return h+`<div class="endacts">${nx?`<button class="walk" data-endwalk="1">Mark read & walk on to ${esc(stopName(nx))} ›</button>`:''}<button data-endclose="1">Back to listening</button></div><div class="src">Berean Standard Bible · public domain</div>`}
 function wireReader(el){const d=el.closest('details');
  el.querySelectorAll('[data-endclose]').forEach(b=>b.onclick=()=>{TAB='listen';S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false;const cl=$('#clearing');if(cl)window.scrollTo({top:cl.getBoundingClientRect().top+scrollY-70,behavior:'smooth'})});
  el.querySelectorAll('[data-endwalk]').forEach(b=>b.onclick=()=>{const x=walk()[camp];read[x.b.abbr+x.c.c]=true;S.set('read',read);go(Math.min(walk().length-1,camp+1))})}
@@ -926,7 +929,14 @@ function fillReaders(){document.querySelectorAll('details.readx[open] .txt').for
   if(hl){const t=el.querySelector('.hl');if(t)setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'center'}),80)}}).catch(()=>{el.dataset.done='';el.textContent='This book could not be opened. Check the connection and try again.'})})}  /* summaries the listener opened stay open across redraws */  /* ready: the episode has loaded and jumped to its place, so positions can be saved */
 const LANDS=[['Genesis','The Law'],['Joshua','History'],['Job','Wisdom & Song'],['Isaiah','Major Prophets'],['Hosea','Minor Prophets'],['Matthew','The Gospels'],['Acts','The Church Begins'],['Romans','Letters of Paul'],['Hebrews','General Letters'],['Revelation','The End & the New Beginning']];
 function books(){const b=[...D.books];if(cfg.order==='narr')b.sort((x,y)=>Math.min(...x.ch.map(c=>c.seq))-Math.min(...y.ch.map(c=>c.seq)));return b}
-function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;for(const c of chs)w.push({b,c})}return w}
+function introOf(b){return b._in||(b._in={c:0,intro:true,ids:[],sl:b.bl||'',y:b.yr||'',sm:null,seq:-1})}
+/* each book opens with its own stop (title, what the book is about, its overviews); its chapters follow */
+function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;w.push({b,c:introOf(b)});for(const c of chs)w.push({b,c})}return w}
+function stopName(x){return x.c.intro?x.b.name:x.b.name+' '+x.c.c}
+function stopIds(x){return x.c.intro?[...(x.b.spans||[]).map(s=>s.id),...x.b.ov]:x.c.ids}
+function stopRead(x){return x.c.intro?!!(read[x.b.abbr+'0']||x.b.ch.some(cc=>read[x.b.abbr+cc.c]||cc.ids.some(id=>((prog[id]||{}).heard||0)>0))):!!read[x.b.abbr+x.c.c]}
+/* saved places from before book stops existed: move them once onto the same chapter */
+function migrateCamp(){if(S.get('camp2'))return;if(camp!=null){let cum=0,bi=0;for(const b of books()){if(camp<cum+b.n){camp=camp+bi+1;break}cum+=b.n;bi++}S.set('camp',camp)}S.set('camp2',1)}
 const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Davey',Skip:'Skip Heitzig'};
 function teacher(i){return i.by||NAMES[i.who]}
 function dispTitle(i){const t=i.t||'';const fl=t.match(/^Flight\s+[A-Z0-9]{3}(\d\d)\b(?:\s*-\s*(Part\s+\w+))?/);if(fl){const ord=books().map(x=>x.name),bk=(i.pass||'').split(';').map(x=>x.replace(/the book of/i,'').trim()).filter(Boolean).sort((p,q)=>ord.indexOf(p)-ord.indexOf(q));return ['Bible from 30,000 Feet',bk.join(', ')+(+fl[1]>1?' ('+(+fl[1])+')':''),fl[2]].filter(Boolean).join(' · ')}if(!t.includes('|'))return t;const parts=t.split('|').map(x=>x.trim()).filter(Boolean),who=(teacher(i)||'').toLowerCase();
@@ -938,10 +948,10 @@ function voiceHTML(id,bd){const i=I[id],p=prog[id]||{},hp=heardPct(id),deg=!isDo
  <span class="ck" role="img" aria-label="${isDone(id)?'Listened':'Not yet listened'}">✓</span></div>`}
 let W=null; // cached world geometry
 function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsView();wire();return}
- const w=walk();let first=w.findIndex(x=>!read[x.b.abbr+x.c.c]);if(first<0)first=w.length-1;if(camp==null||camp>=w.length)camp=first;
- const rd=w.filter(x=>read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
+ migrateCamp();const w=walk();let first=w.findIndex(x=>!stopRead(x));if(first<0)first=w.length-1;if(camp==null||camp>=w.length)camp=first;
+ const rd=w.filter(x=>!x.c.intro&&read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
- const POS=[];let acc=0;for(const b of books()){const wgt=(D.books[0].yr?11:6)+2.2*Math.sqrt(b.n);const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;chs.forEach((c,k)=>POS.push(acc+wgt*(k+0.5)/b.n));acc+=wgt}
+ const POS=[];let acc=0;for(const b of books()){const wgt=(D.books[0].yr?11:6)+2.2*Math.sqrt(b.n);const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;[0,...chs].forEach((c,k)=>POS.push(acc+wgt*(k+0.5)/(b.n+1)));acc+=wgt}
  render.POS=POS;render.TOT=acc;const fill=first>0?(POS[first-1]+POS[first])/2/acc:0;
  m.innerHTML=`<div class="world" id="world"><svg id="w1" viewBox="0 0 390 ${H}" preserveAspectRatio="xMidYMin meet">
   <defs><radialGradient id="g"><stop offset="0" stop-color="#d9b15a" stop-opacity=".55"/><stop offset="1" stop-color="#d9b15a" stop-opacity="0"/></radialGradient>
@@ -959,11 +969,11 @@ function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsV
 function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road.getTotalLength(),POS=render.POS,TOT=render.TOT,at=i=>road.getPointAtLength(L*POS[Math.max(0,Math.min(w.length-1,Math.round(i)))]/TOT);
  // labels with collision avoidance: short books alternate sides and get pushed apart, with leader lines back to the road
  const labs=[];let lands='',idx=0,prevSide=null,prevShort=false;
- for(const b of books()){const mid=at(idx+b.n/2),st=at(idx);let side=mid.x<195?'L':'R';if(b.n<10&&prevShort&&side===prevSide)side=side==='L'?'R':'L';
+ for(const b of books()){const mid=at(idx+(b.n+1)/2),st=at(idx);let side=mid.x<195?'L':'R';if(b.n<10&&prevShort&&side===prevSide)side=side==='L'?'R':'L';
   const land=cfg.order==='canon'?LANDS.find(l=>l[0]===b.name):null;
   if(land){lands+=`<circle cx="${st.x}" cy="${st.y}" r="90" fill="url(#g)" class="glow"/>`;const txt=land[1].replace('The End & the New Beginning','The New Beginning');labs.push({kind:'land',side:st.x<195?'L':'R',x:st.x<195?st.x+40:st.x-40,y:mid.y+5-0.5,txt})  /* heading sits right above its first book */}
   labs.push({kind:'book',side,x:side==='L'?Math.min(mid.x+30,250):Math.max(mid.x-30,140),y:mid.y+5,px:mid.x,py:mid.y,txt:b.name,yr:b.yr||'',big:b.n>=20,here:w[camp].b===b,idx});
-  prevSide=side;prevShort=b.n<10;idx+=b.n}
+  prevSide=side;prevShort=b.n<10;idx+=b.n+1}
  labs.sort((a,b)=>a.y-b.y);const last={L:-1e9,R:-1e9};let lbl='';decorate.drift=labs;
  for(const l of labs){const gap=l.kind==='land'?30:(D.books[0].yr?38:24);const ref=Math.max(last.L,last.R);  /* one column: labels on either side can reach the middle */if(l.y-ref<gap)l.y=ref+gap;if(l.kind==='land'){last.L=last.R=l.y}else last[l.side]=l.y;
   if(l.kind==='land'){lbl+=`<text x="${l.x}" y="${l.y}" text-anchor="${l.side==='L'?'start':'end'}" class="land">${l.txt}</text>`}
@@ -972,39 +982,38 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  // scenery: stars thin out toward the New Testament dawn; each land gets its horizon
  let sky='';const Hs=+svg.getAttribute('viewBox').split(' ')[3];HH=Hs;let seed=7;const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
  for(let i=0;i<140;i++){const yy=rnd()*Hs;if(rnd()<1-yy/Hs)sky+=`<circle cx="${(rnd()*390).toFixed(0)}" cy="${yy.toFixed(0)}" r="${(0.6+rnd()*1.2).toFixed(1)}" fill="rgba(168,129,42,${(0.12+rnd()*0.25).toFixed(2)})"/>`}
- let scenes='';idx=0;for(const b of books()){const land=cfg.order==='canon'?LANDS.find(l=>l[0]===b.name):null;if(land){const st=at(idx);scenes+=`<g opacity=".7">${sceneSVG(SCENES[land[1]],st.x,st.y-40)}</g>`}idx+=b.n}
+ let scenes='';idx=0;for(const b of books()){const land=cfg.order==='canon'?LANDS.find(l=>l[0]===b.name):null;if(land){const st=at(idx);scenes+=`<g opacity=".7">${sceneSVG(SCENES[land[1]],st.x,st.y-40)}</g>`}idx+=b.n+1}
  // landmarks: where the great scenes stand
  let marks='',lastVy=-1e9;
  w.forEach((x,i)=>{const lm=LANDMARKS[x.b.abbr+x.c.c];if(!lm)return;const pt=at(i);if(pt.y-lastVy<110)return;lastVy=pt.y;marks+=`<g transform="translate(${pt.x} ${pt.y}) scale(.6) translate(${-pt.x} ${-pt.y})" opacity=".75">${vignette2(lm[0],pt.x,pt.y)}</g>`});
  // per-book motifs beside the road, alternating sides; rivers at the Jordan and the river of life
- let mot='';idx=0;for(const b of books()){const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';const mid=at(idx+b.n/2);const side=mid.x<195?1:-1;const kinds={'The Law':['palm','tent','palm'],'History':['town','town','palm'],'Wisdom & Song':['olive','olive','palm'],'Major Prophets':['cedar','town','cedar'],'Minor Prophets':['olive','town','olive'],'The Gospels':['olive','town','olive'],'The Church Begins':['sail','sail','town'],'Letters of Paul':['column','sail','column'],'General Letters':['fire','fire','town'],'The New Beginning':['tree','tree','tree']}[land];
+ let mot='';idx=0;for(const b of books()){const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';const mid=at(idx+(b.n+1)/2);const side=mid.x<195?1:-1;const kinds={'The Law':['palm','tent','palm'],'History':['town','town','palm'],'Wisdom & Song':['olive','olive','palm'],'Major Prophets':['cedar','town','cedar'],'Minor Prophets':['olive','town','olive'],'The Gospels':['olive','town','olive'],'The Church Begins':['sail','sail','town'],'Letters of Paul':['column','sail','column'],'General Letters':['fire','fire','town'],'The New Beginning':['tree','tree','tree']}[land];
   if(kinds){const ox=mid.x+side*(118+(b.n%3)*12);if(ox>30&&ox<360)mot+=motif('',ox,mid.y+12,b.n>=20?.9:.7)}
-  if(b.name==='Joshua'){const st=at(idx);mot+=river(st.x,st.y+6)}if(b.name==='Revelation'){const st=at(idx+b.n-2);mot+=river(st.x,st.y+40,.18)}idx+=b.n}
+  if(b.name==='Joshua'){const st=at(idx);mot+=river(st.x,st.y+6)}if(b.name==='Revelation'){const st=at(idx+b.n-2);mot+=river(st.x,st.y+40,.18)}idx+=b.n+1}
  $('#sky').innerHTML=terrain(Hs)+celestial(Hs)+sky+scenes+mot;
  $('#lands').innerHTML=lands;$('#labels').innerHTML=lbl+marks;
  const m=at(camp),f=at(first);
  $('#marker').innerHTML=`${camp!==first?`<circle cx="${f.x}" cy="${f.y}" r="8" fill="var(--gold)" opacity=".7"/>`:''}<circle cx="${m.x}" cy="${m.y}" r="26" fill="rgba(240,215,154,.18)"/><circle cx="${m.x}" cy="${m.y}" r="13" fill="var(--gold)" class="you"/><circle cx="${m.x}" cy="${m.y}" r="5" fill="#fff"/>`;
  // clearing placed in the world beside the marker
- const sc=svg.getBoundingClientRect().width/390,cl=$('#clearing');const x=w[camp],b=x.b,c=x.c,ids=c.ids.filter(okWho),r=!!read[b.abbr+c.c],ov=(c===b.ch[0]?b.ov:[]).filter(okWho);const fold=FOLD;cl.classList.toggle('folded',fold);
- let nextV=null;for(let i=camp+1;i<w.length;i++){if(w[i].c.ids.some(okWho)){nextV={i,x:w[i]};break}}
+ const sc=svg.getBoundingClientRect().width/390,cl=$('#clearing');const x=w[camp],b=x.b,c=x.c,ids=c.ids.filter(okWho),r=!!read[b.abbr+c.c],ov=(c.intro?b.ov:[]).filter(okWho);const fold=FOLD;cl.classList.toggle('folded',fold);
+ let nextV=null;for(let i=camp+1;i<w.length;i++){if(stopIds(w[i]).some(okWho)){nextV={i,x:w[i]};break}}
  {const cut=Math.min(Hs-20,m.y+44);svg.setAttribute('viewBox',`0 0 390 ${cut}`);$('#w2').setAttribute('viewBox',`0 ${cut} 390 ${Hs-cut}`)}
  const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';
- const chDone=x=>!!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone),bibleN=w.filter(chDone).length,bookN=b.ch.filter(cc=>chDone({b,c:cc})).length,hereDone=chDone(x),heardIn=ids2=>[...new Set(ids2)].reduce((a,id)=>a+((prog[id]||{}).heard||0),0),bookHeard=heardIn([...b.ch.flatMap(cc=>cc.ids),...b.ov,...(b.spans||[]).map(sp=>sp.id)]),bibleHeard=Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0),AV=avail(),pct=(n,d)=>{const v=100*n/d;return v>0&&v<10?v.toFixed(1):String(Math.round(v))},lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${camp!==first?`<button class="myplace" data-camp="${first}">My place</button>`:''}</span></div><div class="hd"><div class="ch serif"><span id="chT">${b.name} ${c.c}<svg class="chv" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>${hereDone?'<span class="ck-c" role="img" aria-label="Completed">✓</span>':''}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="pg">${[[b.name,bookN,b.ch.length,bookHeard,AV.book[b.name]||0],['Bible',bibleN,1189,bibleHeard,AV.bible]].map(([l,n,d,hs,av])=>`<div class="pg-r"><span class="pg-l">${l}</span><span class="pg-b" role="progressbar" aria-label="${l}" aria-valuenow="${Math.round(100*n/d)}" aria-valuemin="0" aria-valuemax="100"><i style="width:${100*n/d}%"></i></span><span class="pg-p">${n===d?'✓':pct(n,d)+'%'}${av?`<span class="pg-h"> · ${hrsOf(hs,av)}</span>`:''}</span></div>`).join('')}</div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c.sl?`<div class="sline">${rich(c.sl)}</div>`:''}${fold?`<button class="unfold" id="unfold">${ids.length?'▸ Open · '+ids.length+' voice'+(ids.length>1?'s':''):'▸ Open this stop'}</button>`:''}<div class="body"${fold?' hidden':''}>
-  <div class="tabs" role="tablist">${[['listen','Listen',ids.length+ov.length+(c===b.ch[0]?(b.spans||[]).filter(x=>okWho(x.id)).length:0)],['read','Read',0],['summary','Summary',0],['map','Map',0]].map(([k,l,n])=>`<button class="tab${TAB===k?' on':''}" role="tab" aria-selected="${TAB===k}" data-tab="${k}">${l}${n?`<span>${n}</span>`:''}</button>`).join('')}</div>
-  ${TAB==='listen'?`<div class="pane">${(()=>{const G=listenGroups(b,c),N={overview:G.overview.length,chapter:G.chapter.length,verses:G.verses.length};
-   if(!N.overview&&!N.chapter&&!N.verses)return `<div class="empty">No voice on this stretch yet.${nextV?` Next voice: <b style="color:var(--gold2);cursor:pointer" data-camp="${nextV.i}" class="nv">${nextV.x.b.name} ${nextV.x.c.c}</b> · ${nextV.i-camp} stop${nextV.i-camp>1?'s':''} on.`:''}</div>`;
+ const chDone=x=>!!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone),bibleN=w.filter(x=>!x.c.intro&&chDone(x)).length,bookN=b.ch.filter(cc=>chDone({b,c:cc})).length,hereDone=x.c.intro?stopRead(x):chDone(x),heardIn=ids2=>[...new Set(ids2)].reduce((a,id)=>a+((prog[id]||{}).heard||0),0),bookHeard=heardIn([...b.ch.flatMap(cc=>cc.ids),...b.ov,...(b.spans||[]).map(sp=>sp.id)]),bibleHeard=Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0),AV=avail(),pct=(n,d)=>{const v=100*n/d;return v>0&&v<10?v.toFixed(1):String(Math.round(v))},lm=LANDMARKS[b.abbr+c.c],T_=c.intro&&TAB==='read'?'summary':TAB;cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${camp!==first?`<button class="myplace" data-camp="${first}">My place</button>`:''}</span></div><div class="hd"><div class="ch serif"><span id="chT">${stopName(x)}<svg class="chv" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>${hereDone?'<span class="ck-c" role="img" aria-label="Completed">✓</span>':''}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="pg">${[[b.name,bookN,b.ch.length,bookHeard,AV.book[b.name]||0],['Bible',bibleN,1189,bibleHeard,AV.bible]].map(([l,n,d,hs,av])=>`<div class="pg-r"><span class="pg-l">${l}</span><span class="pg-b" role="progressbar" aria-label="${l}" aria-valuenow="${Math.round(100*n/d)}" aria-valuemin="0" aria-valuemax="100"><i style="width:${100*n/d}%"></i></span><span class="pg-p">${n===d?'✓':pct(n,d)+'%'}${av?`<span class="pg-h"> · ${hrsOf(hs,av)}</span>`:''}</span></div>`).join('')}</div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c.sl?`<div class="sline">${rich(c.sl)}</div>`:''}${fold?`<button class="unfold" id="unfold">${ids.length?'▸ Open · '+ids.length+' voice'+(ids.length>1?'s':''):'▸ Open this stop'}</button>`:''}<div class="body"${fold?' hidden':''}>
+  <div class="tabs" role="tablist">${[['summary','Summary',0],['read','Read',0],['listen','Listen',(G0=>G0.overview.length+G0.chapter.length+G0.verses.length)(listenGroups(b,c))],['map','Map',0]].filter(t=>!(c.intro&&t[0]==='read')).map(([k,l,n])=>`<button class="tab${T_===k?' on':''}" role="tab" aria-selected="${T_===k}" data-tab="${k}">${l}${n?`<span>${n}</span>`:''}</button>`).join('')}</div>
+  ${T_==='listen'?`<div class="pane">${(()=>{const G=listenGroups(b,c),N={overview:G.overview.length,chapter:G.chapter.length,verses:G.verses.length};
+   if(!N.overview&&!N.chapter&&!N.verses)return `<div class="empty">No voice on this stretch yet.${nextV?` Next voice: <b style="color:var(--gold2);cursor:pointer" data-camp="${nextV.i}" class="nv">${stopName(nextV.x)}</b> · ${nextV.i-camp} stop${nextV.i-camp>1?'s':''} on.`:''}</div>`;
    const lk=N[LK]?LK:['overview','chapter','verses'].find(k=>N[k]);
    const chips=`<div class="lks" role="group" aria-label="Zoom level">${[['overview','Overview'],['chapter','Chapter'],['verses','Verses']].filter(([k])=>N[k]).map(([k,l],n,arr)=>`<button class="lk${k===lk?' on':''}" data-lk="${k}" aria-pressed="${k===lk}">${l}<span>${N[k]}</span></button>${n<arr.length-1?'<i class="lk-sep" aria-hidden="true">›</i>':''}`).join('')}</div>`;
-   const hint={overview:'From the widest view down to this stretch of the book.',chapter:'Full sermons on this chapter, in verse order.',verses:'Short readings on a verse or two, in verse order.'}[lk];
+   const hint={overview:c.intro?'The whole book, and the wider stretches it belongs to.':'Teaching on a long stretch of the book.',chapter:'Teaching on this whole chapter.',verses:'Teaching on specific verses, in verse order.'}[lk];
    const list=G[lk];let h=chips+`<p class="lk-hint">${hint}</p>`;
    if(lk==='overview'){let last=null;list.forEach(x=>{if(x.h!==last){h+=`<div class="sv-t">${esc(x.h)}</div>`;last=x.h}h+=voiceHTML(x.id)})}
    else{const show=decorate.more?list:list.slice(0,6);h+=show.map(x=>voiceHTML(x.id,vbadge(x.r))).join('')+(list.length>6&&!decorate.more?`<button class="more" id="more">${list.length-6} more ›</button>`:'')}
    return h})()}</div>`:''}
-  ${TAB==='read'?`<div class="pane"><details class="readx" open data-k="r:${b.abbr}${c.c}"><summary hidden></summary><div class="txt" data-book="${b.name}" data-ch="${c.c}"></div></details></div>`:''}
-  ${TAB==='summary'?`<div class="pane story">${c.sm&&c.sm.length?`<div class="st-t">What happens in ${b.name} ${c.c}</div><ul>${c.sm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}
-   ${b.bl?(c===b.ch[0]?`<div class="about"><div class="ab-t">About ${b.name}</div><div class="sline">${rich(b.bl)}</div>${b.bm&&b.bm.length?`<ul>${b.bm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}</div>`:`<details class="sum2" data-k="b:${b.abbr}"${OPEN.has('b:'+b.abbr)?' open':''}><summary>About the book of ${b.name} ›</summary><div class="sline" style="margin-top:6px">${rich(b.bl)}</div>${b.bm&&b.bm.length?`<ul>${b.bm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}</details>`):''}</div>`:''}
-  ${TAB==='map'?`<div class="pane"><div class="maptab" data-b="${b.name}" data-c="${c.c}">Opening the map…</div></div>`:''}
-  </div><div class="acts"><button class="bk" data-camp="${Math.max(0,camp-1)}" aria-label="Back a chapter"${camp===0?' disabled':''}>‹</button><button class="read ${r?'on':''}" data-read="${b.abbr+c.c}">${r?'Read ✓':'Mark read'}</button><button class="go" data-camp="${Math.min(w.length-1,camp+1)}">Walk on ›</button></div>`;
+  ${T_==='read'?`<div class="pane"><details class="readx" open data-k="r:${b.abbr}${c.c}"><summary hidden></summary><div class="txt" data-book="${b.name}" data-ch="${c.c}"></div></details></div>`:''}
+  ${T_==='summary'?`<div class="pane story">${c.intro?(b.bm&&b.bm.length?`<div class="st-t">Inside ${b.name}</div><ul>${b.bm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''):`${c.sm&&c.sm.length?`<div class="st-t">What happens in ${b.name} ${c.c}</div><ul>${c.sm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}${b.bl?`<details class="sum2" data-k="b:${b.abbr}"${OPEN.has('b:'+b.abbr)?' open':''}><summary>About the book of ${b.name} ›</summary><div class="sline" style="margin-top:6px">${rich(b.bl)}</div>${b.bm&&b.bm.length?`<ul>${b.bm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}</details>`:''}`}</div>`:''}
+  ${T_==='map'?`<div class="pane"><div class="maptab" data-b="${b.name}" data-c="${c.c||1}">Opening the map…</div></div>`:''}
+  </div><div class="acts"><button class="bk" data-camp="${Math.max(0,camp-1)}" aria-label="Back a chapter"${camp===0?' disabled':''}>‹</button>${c.intro?'':`<button class="read ${r?'on':''}" data-read="${b.abbr+c.c}">${r?'Read ✓':'Mark read'}</button>`}<button class="go" data-camp="${Math.min(w.length-1,camp+1)}">Walk on ›</button></div>`;
  /* the road below the stop: tap a book name or the road to go there */
  $('#w2').onclick=e=>{const w2=$('#w2'),pt=w2.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(w2.getScreenCTM().inverse());
   const lb=(decorate.drift||[]).find(l=>l.kind==='book'&&p.y>l.y-18&&p.y<l.y+(l.yr?20:8)&&(l.side==='L'?p.x>l.x-6&&p.x<l.x+150:p.x<l.x+6&&p.x>l.x-150));
@@ -1014,8 +1023,8 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  if(!decorate.moving&&(decorate.follow||decorate.first)){const y=m.y*sc+$('#world').offsetTop-window.innerHeight*0.30;window.scrollTo({top:Math.max(0,y),behavior:decorate.first?'auto':'smooth'})}decorate.first=false;decorate.follow=false
  $('#hit').onclick=e=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());let best=0,bd=1e12;for(let i=0;i<w.length;i++){const q=at(i),dd=(q.x-p.x)**2+(q.y-p.y)**2;if(dd<bd){bd=dd;best=i}}go(best)};
  document.querySelectorAll('.bl[data-camp], #labels g[data-camp]').forEach(t=>t.onclick=e=>{e.stopPropagation();go(+t.dataset.camp)})}
-let LK=['overview','chapter','verses'].includes(S.get('lk2','overview'))?S.get('lk2','overview'):'overview',FOLD=false,TAB=['listen','read','summary','map'].includes(S.get('tab','listen'))?S.get('tab','listen'):'listen';  /* folding is for this stop only; every stop (and every app open) starts with its voices showing */
-function go(i){camp=i;FOLD=false;decorate.more=false;decorate.follow=true;S.set('camp',camp);render()}
+let LK=['overview','chapter','verses'].includes(S.get('lk2','overview'))?S.get('lk2','overview'):'overview',FOLD=false,TAB=['listen','read','summary','map'].includes(S.get('tab','summary'))?S.get('tab','summary'):'summary';  /* folding is for this stop only; every stop (and every app open) starts with its voices showing */
+function go(i){{const w=walk(),here=camp!=null&&w[camp];if(here&&here.c.intro&&i>camp&&!read[here.b.abbr+'0']){read[here.b.abbr+'0']=true;S.set('read',read)}}camp=i;FOLD=false;decorate.more=false;decorate.follow=true;S.set('camp',camp);render()}
 function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(b=>b.ov.includes(i.id)||(b.spans||[]).some(x=>x.id===i.id)||b.ch.some(c=>c.ids.includes(i.id)))).length;const n=Object.keys(I).length,na=Object.values(I).filter(i=>i.audio).length;
  return `<div class="settings"><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
  <p>
