@@ -9,6 +9,12 @@ on:
       n:
         description: "Episodes to scan (0 = all)"
         default: "0"
+      focus:
+        description: "Only the episodes around this title (for checking)"
+        default: ""
+      head:
+        description: "Seconds of each episode to look at"
+        default: "180"
 permissions:
   contents: write
 jobs:
@@ -22,7 +28,7 @@ jobs:
           python-version: "3.12"
       - run: sudo apt-get install -y ffmpeg libchromaprint-tools >/dev/null
       - run: pip install numpy
-      - run: SOURCE=${{ github.event.inputs.source }} N=${{ github.event.inputs.n }} python tools/intro_detect.py | tee intro.log
+      - run: SOURCE=${{ github.event.inputs.source }} N=${{ github.event.inputs.n }} FOCUS="${{ github.event.inputs.focus }}" HEAD=${{ github.event.inputs.head }} python tools/intro_detect.py | tee intro.log
       - run: |
           mkdir /tmp/d && cp intro_*.json intro.log /tmp/d/ && cd /tmp/d
           git init -q -b diag && git add -A
