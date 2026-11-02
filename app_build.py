@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 55  # bump on every shipped build; also busts the service-worker cache
+VERSION = 56  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -492,7 +492,7 @@ body.mapopen #sheet{z-index:24}
 <div id="np"><div class="grab"></div><div class="t serif" id="np-t"></div><div class="s" id="np-s"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
 <div class="ctl"><button class="side" id="spd">1×</button><button class="side" id="bk">↺ 10</button><button class="big" id="pp" style="display:flex;align-items:center;justify-content:center"></button><button class="side" id="fw">10 ↻</button><button class="side" id="zz">Sleep off</button><button id="cls">✕</button></div></div>
-<audio id="audio" preload="metadata"></audio>
+<audio id="audio" preload="metadata"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
 <script>
 const D=__DATA__,I=D.items;
 const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('sc:'+k,JSON.stringify(v))}catch(e){}}};
@@ -1010,29 +1010,49 @@ function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(
  return `<div class="settings"><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
  <p>
  <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who?NAMES[cfg.who]+' only':'everyone'} — switch</span></p>
+ <p><span class="btn" id="lvl" style="display:inline-block;cursor:pointer">Even out volume: ${levelOn()?'on':'off'} — switch</span><br><span class="note">Brings every episode to the same loudness, so a loud one never follows a quiet one. Turn it off if audio ever stops when your screen locks.</span></p>
  <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).</p><p class="note">Progress is stored on this device.</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>
  <button class="btn" id="back">‹ Back to the road</button></div>`}
 /* player */
-const audio=$('#audio');let cur=null,speed=S.get('speed',1);audio.playbackRate=speed;$('#spd').textContent=speed+'×';
+let audio=$('#audio');const AUDIO_EL=[$('#audio'),$('#audiofx')];let cur=null,speed=S.get('speed',1);AUDIO_EL.forEach(a=>a.playbackRate=speed);
+/* events from whichever player is active (the other one is idle) */
+function onAudio(type,fn){AUDIO_EL.forEach(el=>el.addEventListener(type,e=>{if(el===audio)fn(e)}))}
+/* ---- Even out volume: the leveler listens as audio plays and steers every episode to one level (loud ones down,
+   quiet ones up, within ±10 dB, slowly so speech never pumps; pauses between words are ignored), then a gentle
+   limiter catches peaks. Only for hosts that allow the browser to process their audio (CORS). ---- */
+const LEVEL_SRC=new Set(['davey_wfth','davey_journey','davey_sermons','platt_messages','ptw','secret_church_podcast','mclean_podcast','mclean_oceans','brookhills']);
+let AC=null,LVG=null,LVA=null,lvl=null,lvlFast=0;
+function levelOn(){return S.get('level',true)!==false}
+function levelFor(i){return levelOn()&&LEVEL_SRC.has(i.src)&&!!(window.AudioContext||window.webkitAudioContext)}
+function leveler(){if(AC)return AC;try{AC=new (window.AudioContext||window.webkitAudioContext)();try{if(navigator.audioSession)navigator.audioSession.type='playback'}catch(e){}
+  const src=AC.createMediaElementSource($('#audiofx')),g=AC.createGain(),an=AC.createAnalyser(),cp=AC.createDynamicsCompressor();
+  an.fftSize=2048;cp.threshold.value=-12;cp.knee.value=8;cp.ratio.value=4;cp.attack.value=.005;cp.release.value=.2;
+  src.connect(an);src.connect(g);g.connect(cp);cp.connect(AC.destination);LVG=g;LVA=an;const buf=new Float32Array(an.fftSize),TARGET=-21;
+  setInterval(()=>{if(audio!==$('#audiofx')||audio.paused)return;an.getFloatTimeDomainData(buf);let q=0;for(let k=0;k<buf.length;k++)q+=buf[k]*buf[k];
+   const db=10*Math.log10(q/buf.length+1e-12);if(db<-48)return;const a=lvlFast>0?.25:.03;lvlFast=Math.max(0,lvlFast-1);lvl=lvl==null?db:lvl+(db-lvl)*a;
+   const want=Math.max(-10,Math.min(10,TARGET-lvl));g.gain.setTargetAtTime(Math.pow(10,want/20),AC.currentTime,lvlFast>0?.3:2)},100)}catch(e){AC=null}return AC}
+function useAudioFor(i){const fx=levelFor(i)&&leveler(),want=fx?$('#audiofx'):$('#audio');if(fx&&AC.state!=='running')AC.resume().catch(()=>{});
+ if(want!==audio){try{audio.pause()}catch(e){}audio=want;audio.playbackRate=speed}if(fx){lvl=null;lvlFast=40}}$('#spd').textContent=speed+'×';
 function where(id){for(const b of D.books){if(b.ov.includes(id)||(b.spans||[]).some(x=>x.id===id))return b.name;for(const c of b.ch)if(c.ids.includes(id))return b.name+' '+c.c}return ''}
-function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;ready=false;const p=prog[id]||{},saved=p.pos||0;audio.src=i.audio;audio.addEventListener('loadedmetadata',()=>{const st=i.s||0;if(saved&&saved>st&&saved<audio.duration-5)audio.currentTime=saved;else if(st&&st<audio.duration-30)audio.currentTime=st;ready=true},{once:true});  /* fresh plays start after the intro */
+function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;ready=false;const p=prog[id]||{},saved=p.pos||0;useAudioFor(i);audio.src=i.audio;audio.addEventListener('loadedmetadata',()=>{const st=i.s||0;if(saved&&saved>st&&saved<audio.duration-5)audio.currentTime=saved;else if(st&&st<audio.duration-30)audio.currentTime=st;ready=true},{once:true});  /* fresh plays start after the intro */
   $('#np-t').textContent=i.t;$('#np-s').textContent=teacher(i)+' · '+where(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(false)}setPP();
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',next].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  audio.paused?audio.play().catch(()=>{}):audio.pause()}
 function next(){const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;seq.push(...orderedIds(x.b,x.c))});/* continue from where the listener stands: a teaching that spans chapters appears in each of them */let k=seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]);if(k<0)k=seq.lastIndexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
-let saveSec=-1;audio.addEventListener('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
+let saveSec=-1;onAudio('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
  if(!ready)return;const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
  if(lastT!==null&&!audio.paused&&!audio.seeking){const dt=t-lastT;if(dt>0&&dt<4)p.heard=Math.min(d||Infinity,(p.heard||0)+dt)}lastT=t;
  const wasDone=!!p.done;if(d&&p.heard>=DONE_AT*body(cur))p.done=true;const nowDone=!!p.done,sec=Math.floor(t);
  if((sec%5===0&&sec!==saveSec)||nowDone!==wasDone){saveSec=sec;p.pos=t;p.at=Date.now();S.set('prog',prog);if(nowDone!==wasDone)render()}});
-audio.addEventListener('seeking',()=>{lastT=null});audio.addEventListener('play',()=>{lastT=null});
-audio.addEventListener('ended',()=>{const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*body(cur))p.done=true;S.set('prog',prog);render();next()});
+onAudio('seeking',()=>{lastT=null});onAudio('play',()=>{lastT=null});
+onAudio('ended',()=>{const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*body(cur))p.done=true;S.set('prog',prog);render();next()});
 const setPP=()=>{$('#pp').innerHTML=icon(audio.paused?'play':'pause',28,0,'#1b2440')};setPP();/* play/pause only changes the play buttons: update them in place so the page (and an open reading) never re-lays out */
 function refreshVoices(){document.querySelectorAll('.pb[data-play]').forEach(b=>{const id=b.dataset.play,i=I[id],playing=String(cur)===id&&!audio.paused,deg=!isDone(id)?Math.round(3.6*heardPct(id)):0;
  b.classList.toggle('playing',playing);b.style.setProperty('--p',deg+'deg');b.innerHTML=`<span style="color:${playing?'var(--gold2)':'var(--ink)'}">${icon(playing?'pause':'play',18,0,'currentColor')}</span>`})}
-audio.addEventListener('play',()=>{setPP();refreshVoices()});audio.addEventListener('pause',()=>{setPP();refreshVoices()});
-audio.addEventListener('error',()=>{$('#np-s').textContent=(location.protocol==='file:'||window!==window.top)?'Audio is blocked in this viewer — open in Safari from a web address.':'This file did not load.'});
+onAudio('play',()=>{setPP();refreshVoices()});onAudio('pause',()=>{setPP();refreshVoices()});
+$('#audiofx').addEventListener('error',()=>{if(audio!==$('#audiofx')||!cur)return;const t=audio.currentTime||0,src=audio.src;audio=$('#audio');audio.playbackRate=speed;audio.src=src;audio.addEventListener('loadedmetadata',()=>{try{audio.currentTime=t}catch(e){}},{once:true});audio.play().catch(()=>{})});
+onAudio('error',()=>{$('#np-s').textContent=(location.protocol==='file:'||window!==window.top)?'Audio is blocked in this viewer — open in Safari from a web address.':'This file did not load.'});
 $('#pp').onclick=()=>cur&&(audio.paused?audio.play().catch(()=>{}):audio.pause());$('#bk').onclick=()=>audio.currentTime-=10;$('#fw').onclick=()=>audio.currentTime+=10;
 $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.target.value/1000};
 $('#spd').onclick=()=>{const sp=[1,1.25,1.5,1.75,2];speed=sp[(sp.indexOf(speed)+1)%sp.length];audio.playbackRate=speed;$('#spd').textContent=speed+'×';S.set('speed',speed)};
@@ -1066,7 +1086,7 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
    const cl=$('#clearing');if(cl){const t=cl.getBoundingClientRect().top;if(t<60||t>innerHeight-120)window.scrollTo({top:scrollY+t-70})}};const ct=$('#chT');if(ct){ct.onclick=e=>{e.stopPropagation();openJump('browse')};ct.setAttribute('role','button');ct.setAttribute('aria-label','Choose a chapter')}}
  const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
  const g=$('#gear');g.onclick=()=>{view=view==='settings'?'walk':'settings';S.set('view',view);decorate.first=true;render();window.scrollTo(0,0)};
- const back=$('#back');if(back)back.onclick=g.onclick;const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
+ const back=$('#back');if(back)back.onclick=g.onclick;const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
  const io=$('#io');if(io){$('#exp').onclick=()=>io.value=JSON.stringify({prog,read,cfg});$('#imp').onclick=()=>{try{const v=JSON.parse(io.value);prog=v.prog||prog;read=v.read||read;S.set('prog',prog);S.set('read',read);render()}catch(e){io.value='Could not read that JSON.'}};
   $('#reset').onclick=()=>{if(confirm('Erase all progress on this device?')){prog={};read={};camp=null;S.set('prog',prog);S.set('read',read);S.set('camp',null);render()}};
   $('#atest').onclick=()=>{const o=$('#atest-out');o.textContent=' testing…';const a=new Audio();a.src=Object.values(I).find(i=>i.audio).audio;a.addEventListener('loadedmetadata',()=>o.textContent=' ✓ streams ('+fmt(a.duration)+')');a.addEventListener('error',()=>o.textContent=' ✗ blocked here');a.load()}}}
