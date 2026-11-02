@@ -1,1 +1,218 @@
-[]
+[
+ {
+  "id": "turbo_0",
+  "name": "Alistair",
+  "voice": "male",
+  "file": "turbo_0.mp3",
+  "about": "Chatterbox Turbo \u00b7 a real man's voice, sounds about 58, England accent",
+  "ref": "ref_0.mp3",
+  "scores": {
+   "file": "voice-donations/gmaskell92_enhanced.wav",
+   "set": "voice-donations",
+   "age": 58,
+   "male": 1.0,
+   "brit": 0.3,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.075
+  }
+ },
+ {
+  "id": "cb_0",
+  "name": "Alistair",
+  "voice": "male",
+  "file": "cb_0.mp3",
+  "about": "Chatterbox \u00b7 a real man's voice, sounds about 58, England accent",
+  "ref": "ref_0.mp3",
+  "scores": {
+   "file": "voice-donations/gmaskell92_enhanced.wav",
+   "set": "voice-donations",
+   "age": 58,
+   "male": 1.0,
+   "brit": 0.3,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.075
+  }
+ },
+ {
+  "id": "turbo_1",
+  "name": "Barnaby",
+  "voice": "male",
+  "file": "turbo_1.mp3",
+  "about": "Chatterbox Turbo \u00b7 a real man's voice, sounds about 42, England accent",
+  "ref": "ref_1.mp3",
+  "scores": {
+   "file": "voice-donations/Sp46_enhanced.wav",
+   "set": "voice-donations",
+   "age": 42,
+   "male": 1.0,
+   "brit": 0.31,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.101
+  }
+ },
+ {
+  "id": "cb_1",
+  "name": "Barnaby",
+  "voice": "male",
+  "file": "cb_1.mp3",
+  "about": "Chatterbox \u00b7 a real man's voice, sounds about 42, England accent",
+  "ref": "ref_1.mp3",
+  "scores": {
+   "file": "voice-donations/Sp46_enhanced.wav",
+   "set": "voice-donations",
+   "age": 42,
+   "male": 1.0,
+   "brit": 0.31,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.101
+  }
+ },
+ {
+  "id": "turbo_2",
+  "name": "Callum",
+  "voice": "male",
+  "file": "turbo_2.mp3",
+  "about": "Chatterbox Turbo \u00b7 a real man's voice, sounds about 37, England accent",
+  "ref": "ref_2.mp3",
+  "scores": {
+   "file": "voice-donations/Midlands_Bedfordshire_Dialect_enhanced.wav",
+   "set": "voice-donations",
+   "age": 37,
+   "male": 1.0,
+   "brit": 0.3,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.107
+  }
+ },
+ {
+  "id": "cb_2",
+  "name": "Callum",
+  "voice": "male",
+  "file": "cb_2.mp3",
+  "about": "Chatterbox \u00b7 a real man's voice, sounds about 37, England accent",
+  "ref": "ref_2.mp3",
+  "scores": {
+   "file": "voice-donations/Midlands_Bedfordshire_Dialect_enhanced.wav",
+   "set": "voice-donations",
+   "age": 37,
+   "male": 1.0,
+   "brit": 0.3,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.107
+  }
+ },
+ {
+  "id": "turbo_3",
+  "name": "Desmond",
+  "voice": "male",
+  "file": "turbo_3.mp3",
+  "about": "Chatterbox Turbo \u00b7 a real man's voice, sounds about 68, England accent",
+  "ref": "ref_3.mp3",
+  "scores": {
+   "file": "voice-donations/Deepak_enhanced.wav",
+   "set": "voice-donations",
+   "age": 68,
+   "male": 0.97,
+   "brit": 0.28,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.059
+  }
+ },
+ {
+  "id": "cb_3",
+  "name": "Desmond",
+  "voice": "male",
+  "file": "cb_3.mp3",
+  "about": "Chatterbox \u00b7 a real man's voice, sounds about 68, England accent",
+  "ref": "ref_3.mp3",
+  "scores": {
+   "file": "voice-donations/Deepak_enhanced.wav",
+   "set": "voice-donations",
+   "age": 68,
+   "male": 0.97,
+   "brit": 0.28,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.059
+  }
+ },
+ {
+  "id": "turbo_4",
+  "name": "Everett",
+  "voice": "male",
+  "file": "turbo_4.mp3",
+  "about": "Chatterbox Turbo \u00b7 a real man's voice, sounds about 50, England accent",
+  "ref": "ref_4.mp3",
+  "scores": {
+   "file": "voice-donations/aepeak_enhanced.wav",
+   "set": "voice-donations",
+   "age": 50,
+   "male": 1.0,
+   "brit": 0.28,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.105
+  }
+ },
+ {
+  "id": "cb_4",
+  "name": "Everett",
+  "voice": "male",
+  "file": "cb_4.mp3",
+  "about": "Chatterbox \u00b7 a real man's voice, sounds about 50, England accent",
+  "ref": "ref_4.mp3",
+  "scores": {
+   "file": "voice-donations/aepeak_enhanced.wav",
+   "set": "voice-donations",
+   "age": 50,
+   "male": 1.0,
+   "brit": 0.28,
+   "accent": "england",
+   "secs": 10.0,
+   "level": 0.105
+  }
+ },
+ {
+  "id": "turbo_5",
+  "name": "Fergus",
+  "voice": "male",
+  "file": "turbo_5.mp3",
+  "about": "Chatterbox Turbo \u00b7 a real man's voice, sounds about 40, England accent",
+  "ref": "ref_5.mp3",
+  "scores": {
+   "file": "vctk/p227_023_enhanced.wav",
+   "set": "vctk",
+   "age": 40,
+   "male": 1.0,
+   "brit": 0.31,
+   "accent": "england",
+   "secs": 12.7,
+   "level": 0.093
+  }
+ },
+ {
+  "id": "cb_5",
+  "name": "Fergus",
+  "voice": "male",
+  "file": "cb_5.mp3",
+  "about": "Chatterbox \u00b7 a real man's voice, sounds about 40, England accent",
+  "ref": "ref_5.mp3",
+  "scores": {
+   "file": "vctk/p227_023_enhanced.wav",
+   "set": "vctk",
+   "age": 40,
+   "male": 1.0,
+   "brit": 0.31,
+   "accent": "england",
+   "secs": 12.7,
+   "level": 0.093
+  }
+ }
+]
