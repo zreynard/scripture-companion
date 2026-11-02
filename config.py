@@ -113,7 +113,8 @@ NEVER_ON_ROAD_RE = (r"womanhood|\bmoms?\b|mother'?s day|\bladies\b|godly wom[ae]
                     r"\bfor women\b|\bwomen'?s\b")
 
 # 2819 Church preachers who teach inside PAM's series; they ride the road with PAM's voices, under their own name.
-PAM_CHURCH_PREACHERS = ["Arik Hayes", "Milton James"]
+PAM_CHURCH_PREACHERS = ["Arik Hayes", "Milton James", "Lonnell Williams", "Kenneth McFarland", "Brandon Freeman", "Marquavious Walker",
+                        "Courtney McClendon", "Tyonna Lewis"]
 
 # ---- Stephen Davey (Wisdom for the Heart / The Shepherd's Church) ----
 # Every feed he publishes on Buzzsprout (wisdomonline.org itself sits behind a bot check and is not crawled).
