@@ -41,8 +41,10 @@ _BOOK_ALT = "|".join(_alias_pattern(a) for a, _ in _ALIASES)
 _NUM = r"\d{1,3}"
 _CV = rf"{_NUM}(?::{_NUM}(?:[a-c])?)?"
 _SEG = rf"{_CV}(?:\s*{DASH}\s*{_CV})?"
+# a trailing "1"/"2"/"3" that starts the next numbered book ("... and 1 Corinthians 5") is not a chapter
+_NOT_NUMBOOK = r"(?!\s*(?:Samuel|Sam|Kings|Kgs|Chronicles|Chron|Chr|Corinthians|Cor|Thessalonians|Thess|Timothy|Tim|Peter|Pet|John|Jn)\b)"
 REF_RE = re.compile(
-    rf"(?<![A-Za-z])(?P<book>{_BOOK_ALT})\s+(?P<segs>{_SEG}(?:\s*(?:,\s*and|,|;|&|and)\s*(?:ff\.?\s*)?{_SEG})*)(?!\d)(?:\s*ff\.?)?",
+    rf"(?<![A-Za-z])(?P<book>{_BOOK_ALT})\s+(?P<segs>{_SEG}(?:\s*(?:,\s*and|,|;|&|and)\s*(?:ff\.?\s*)?{_SEG}{_NOT_NUMBOOK})*)(?!\d)(?:\s*ff\.?)?",
     re.IGNORECASE,
 )
 # cross-book range: "1 Kings 17-2 Kings 2"

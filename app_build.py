@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 57  # bump on every shipped build; also busts the service-worker cache
+VERSION = 58  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -296,7 +296,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .voice .vb{display:inline-block;margin:0 8px 0 0;padding:1px 7px;border-radius:8px;background:rgba(201,162,74,.16);color:#7a5c16;font-size:11.5px;font-weight:700;letter-spacing:0;text-transform:none;text-decoration:none}
 .lks{display:flex;gap:6px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}.lks::-webkit-scrollbar{display:none}
 .lk{flex:none;min-height:38px;border-radius:19px;padding:7px 11px;border:1px solid rgba(27,36,64,.16);background:#fff;font:inherit;font-size:13.5px;font-weight:600;color:var(--ink);cursor:pointer;white-space:nowrap}
-.lk span{font-weight:700;opacity:.7;margin-left:4px}.lk.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.lk span{display:inline-block;min-width:20px;margin-left:7px;padding:1px 7px;border-radius:10px;background:rgba(201,162,74,.18);color:#7a5c16;font-size:12px;font-weight:700;line-height:18px;text-align:center}.lk.on span{background:rgba(255,255,255,.2);color:#fff}.lk.on{background:var(--ink);border-color:var(--ink);color:#fff}
 .lk-sep{flex:none;align-self:center;font-style:normal;color:#b59a5a;font-size:15px;margin:0 -3px}
 .lk-hint{margin:0 0 10px 2px;font-size:13px;line-height:1.4;color:var(--mute)}.voice .ln{font-size:12px;color:var(--mute)}
 .voice.done .ti{color:var(--mute)}.voice .ck{flex:none;background:none;border:1px solid rgba(27,36,64,.15);color:var(--mute);width:30px;height:30px;border-radius:50%;font-size:14px}
@@ -922,9 +922,12 @@ function books(){const b=[...D.books];if(cfg.order==='narr')b.sort((x,y)=>Math.m
 function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;for(const c of chs)w.push({b,c})}return w}
 const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Davey'};
 function teacher(i){return i.by||NAMES[i.who]}
+function dispTitle(i){const t=i.t||'';if(!t.includes('|'))return t;const parts=t.split('|').map(x=>x.trim()).filter(Boolean),who=(teacher(i)||'').toLowerCase();
+ const keep=parts.filter(x=>!/^(?:[1-3]\s?)?[A-Za-z]+\.?\s*\d+(?::\d+)?(?:\s*[-–]\s*\d+(?::\d+)?)?$/.test(x)&&!(who&&x.toLowerCase().replace(/^(elder|pastor|minister)\s+/,'')===who.replace(/^(elder|pastor|minister)\s+/,''))&&!/^(philip anthony mitchell|pam)$/i.test(x));
+ return keep.length?keep.join(' · '):t}
 function voiceHTML(id,bd){const i=I[id],p=prog[id]||{},hp=heardPct(id),deg=!isDone(id)?Math.round(3.6*hp):0,playing=cur===id&&!audio.paused;
  return `<div class="voice ${isDone(id)?'done':''}"><button class="pb ${i.audio?'':'off'} ${playing?'playing':''}" style="--p:${deg}deg;position:relative" data-play="${id}"><span style="color:${playing?'var(--gold2)':'var(--ink)'}">${icon(playing?'pause':'play',18,0,'currentColor')}</span></button>
- <div class="tx"><div class="who">${bd?`<button class="pref vb" data-pass="${esc(i.pass)}">${bd}</button>`:''}${teacher(i)}${i.show?' · '+i.show:i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(i.t)}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}${hp&&!isDone(id)?' · '+hp+'% heard':''}${!bd&&i.pass&&!/^All \d|survey/i.test(i.pass)?` · <button class="pref" data-pass="${esc(i.pass)}">${esc(shortPass(i.pass))}</button>`:''}</div></div>
+ <div class="tx"><div class="who">${bd?`<button class="pref vb" data-pass="${esc(i.pass)}">${bd}</button>`:''}${teacher(i)}${i.show?' · '+i.show:i.tr==='overview'?' · Overview':''}</div><div class="ti">${esc(dispTitle(i))}</div><div class="ln">${mins(i.dur)||(i.audio?'':'audio soon')}${hp&&!isDone(id)?' · '+hp+'% heard':''}${!bd&&i.pass&&!/^All \d|survey/i.test(i.pass)?` · <button class="pref" data-pass="${esc(i.pass)}">${esc(shortPass(i.pass))}</button>`:''}</div></div>
  <span class="ck" role="img" aria-label="${isDone(id)?'Listened':'Not yet listened'}">✓</span></div>`}
 let W=null; // cached world geometry
 function render(){const m=$('#main');if(view==='settings'){m.innerHTML=settingsView();wire();return}
