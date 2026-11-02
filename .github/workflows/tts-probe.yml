@@ -1,0 +1,8 @@
+name: Voice model probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q huggingface_hub && python tools/tts_probe.py
