@@ -316,10 +316,8 @@ def write_site(html: str):
     open(os.path.join(SITE, "version.txt"), "w").write(str(VERSION))
     if ATLAS.ok:  # people, places and the map: loaded on the first tap of a name or the map button
         json.dump(ATLAS.data(), open(os.path.join(SITE, "atlas.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
-    # narrator samples page (voices.html): the newest round first, then earlier rounds; men only
-    rows, sections = "", [("voice_samples3", "Round 3 · real voices, clean recordings", "The prodigal son (Luke 15), read in the voices of real British men who donated recordings of their voices for this. Each comes in two readers; the short clip under it is the man himself."),
-                          ("voice_samples2", "Round 2 · the most natural open voices", "The prodigal son (Luke 15). Each is a made-up British voice, designed from a written description and read by Chatterbox."),
-                          ("voice_samples", "Round 1 · Kokoro", "Psalm 23, the earlier voices, for comparison.")]
+    # narrator samples page (voices.html): the current round only; men only
+    rows, sections = "", [("voice_samples3", "Real voices, clean recordings", "The prodigal son (Luke 15), read in the voices of real British men who shared recordings of their voices for voice research and cloning. Each comes in two readers; the short clip under it is the man himself.")]
     os.makedirs(os.path.join(SITE, "voices"), exist_ok=True)
     for d, head, sub in sections:
         vdir = os.path.join(HERE, "data", d)

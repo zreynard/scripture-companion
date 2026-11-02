@@ -1,0 +1,15 @@
+name: Narrator sample check
+on:
+  workflow_dispatch:
+    inputs:
+      dir:
+        default: "data/voice_samples3"
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q faster-whisper && python tools/tts_check.py ${{ github.event.inputs.dir }}
