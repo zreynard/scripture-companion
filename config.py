@@ -123,6 +123,8 @@ DAVEY_FEEDS = {
     "davey_wfth": (2545810, "https://rss.buzzsprout.com/2545810.rss"),      # Wisdom for the Heart (sermons broadcast in parts)
     "davey_journey": (2545807, "https://rss.buzzsprout.com/2545807.rss"),   # The Wisdom Journey (daily walk through the Bible)
 }
+# shows kept in the catalog but left off the road (Pray the Word: short prayers, not teaching)
+OFF_ROAD_SOURCES = {"ptw"}
 SHOWS = {"ptw": "Pray the Word", "davey_wfth": "Wisdom for the Heart", "davey_journey": "The Wisdom Journey"}
 # Skip Heitzig (Calvary Church, Albuquerque): public podcast feeds. Each episode's itunes:author names its speaker.
 SKIP_FEEDS = {

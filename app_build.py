@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 63  # bump on every shipped build; also busts the service-worker cache
+VERSION = 64  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -62,7 +62,7 @@ def main():
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
     skip_guest = lambda e: e["source"].startswith("skip_") and e["speaker"].startswith("guest:")  # Calvary Church guests keep Skip's series unbroken
-    usable = [e for e in entries if e["tier"] in ("V2", "V1") and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e))]
+    usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["source"] not in config.OFF_ROAD_SOURCES and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e))]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
     item_books, title_states, ref_how, cited, first_verse = {}, {}, {}, {}, {}
     order = [b[0] for b in BOOKS]; OT = order[:39]; NT = order[39:]
@@ -111,7 +111,7 @@ def main():
         return re.sub(r"\bpart (\w+)\b", r"part \1", t)
     SRC_PREF = {"platt_messages": 0, "ptw": 0, "2819_podcast": 0, "secret_church_podcast": 0, "twr360_secret_church": 1,
                 "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3, "radical_vimeo": 1, "street_preachers": 2,
-                "davey_sermons": 0, "davey_wfth": 1, "davey_journey": 0}
+                "davey_sermons": 0, "davey_wfth": 1, "davey_journey": 0, "skip_archive": 0, "skip_church": 1, "skip_connect": 2}
     for k, lst in by_chapter.items():  # one teaching, one entry: keep the best form of same-titled items
         best = {}
         for i in lst:
@@ -120,9 +120,11 @@ def main():
             if key not in best or score < best[key][0]: best[key] = (score, i)
         keep = {v[1] for v in best.values()}
         lst[:] = [i for i in lst if i in keep]
-        whole = {(core(items[i]["t"]), items[i]["who"]) for i in lst if items[i]["audio"] and not re.search(r"\bpart \d+\b", core(items[i]["t"]))}
-        lst[:] = [i for i in lst if not (re.search(r"\bpart \d+\b", core(items[i]["t"])) and items[i]["src"] == "davey_wfth"
-                                         and (re.sub(r"\s*\bpart \d+\b", "", core(items[i]["t"])).strip(), items[i]["who"]) in whole)]
+        # radio broadcasts split a sermon into parts (Davey "Part 1", Skip "Part A"): drop the parts when the whole sermon is here
+        RADIO, PART = ("davey_wfth", "skip_connect"), r"\bpart (?:\d+|[a-c])$"
+        whole = {(core(items[i]["t"]), items[i]["who"]) for i in lst if items[i]["audio"] and items[i]["src"] not in RADIO}
+        lst[:] = [i for i in lst if not (items[i]["src"] in RADIO and re.search(PART, core(items[i]["t"]))
+                                         and (re.sub(r"\s*" + PART, "", core(items[i]["t"])).strip(), items[i]["who"]) in whole)]
         # the same sermon posted by two feeds under slightly different titles, days apart
         from difflib import SequenceMatcher
         drop = set()
