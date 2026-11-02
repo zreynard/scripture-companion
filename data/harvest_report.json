@@ -1,10 +1,18 @@
 {
-  "started": "2026-11-02T04:11:00.063528+00:00",
+  "started": "2026-11-02T04:21:08.660600+00:00",
   "sources": {
     "skip_archive": {
-      "count": 395,
-      "seconds": 0.2
+      "count": 4131,
+      "seconds": 160.2
+    },
+    "skip_church": {
+      "count": 98,
+      "seconds": 0.7
+    },
+    "skip_connect": {
+      "count": 1433,
+      "seconds": 1.6
     }
   },
-  "catalog_total": 7778
+  "catalog_total": 11441
 }
