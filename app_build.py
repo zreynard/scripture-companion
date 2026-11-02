@@ -232,12 +232,25 @@ def main():
 def blk(t, book):
     return ATLAS.link_book(t, book) if ATLAS.ok else t
 
+YT_TEST = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lock-screen test</title><style>body{margin:0;background:#f4efe3;font:16px/1.5 -apple-system,system-ui,sans-serif;color:#1b2440;padding:20px 16px 40px}
+h1{font:400 28px Georgia,serif;margin:0 0 6px}.v{position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;background:#000;margin:14px 0}
+.v iframe{position:absolute;inset:0;width:100%;height:100%;border:0}ol{padding-left:22px}li{margin:8px 0}.n{color:#5c6378;font-size:14px}</style></head><body>
+<h1>Lock-screen test</h1><p class="n">One 2819 sermon through YouTube's own player. Try this in Safari (not the home-screen icon) first.</p>
+<div class="v"><iframe src="https://www.youtube-nocookie.com/embed/QYhfTk05eU8?playsinline=1&rel=0" title="Sealed In Christ, Ephesians 1:11-14, Philip Anthony Mitchell"
+ allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+<ol><li>Tap play and let it run a few seconds.</li><li>Lock your phone. It will likely pause.</li>
+<li>On the lock screen, press <b>play</b> on the audio controls (or open Control Center and press play).</li>
+<li>Leave it locked for a minute. Does it keep playing?</li></ol>
+<p class="n">Then try the same from the home-screen icon version of the app if you use it that way.</p></body></html>"""
+
 def write_site(html: str):
     """out/site/: index.html + manifest + icons + service worker — the installable home-screen app."""
     import shutil
     os.makedirs(SITE, exist_ok=True)
     open(os.path.join(SITE, "index.html"), "w", encoding="utf-8").write(html)
     open(os.path.join(SITE, "version.txt"), "w").write(str(VERSION))
+    open(os.path.join(SITE, "yt-test.html"), "w", encoding="utf-8").write(YT_TEST)
     if ATLAS.ok:  # people, places and the map: loaded on the first tap of a name or the map button
         json.dump(ATLAS.data(), open(os.path.join(SITE, "atlas.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     vdir = os.path.join(HERE, "data", "voice_samples")
