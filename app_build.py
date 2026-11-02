@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 69  # bump on every shipped build; also busts the service-worker cache
+VERSION = 70  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -68,6 +68,43 @@ def main():
     skip_guest = lambda e: e["source"].startswith("skip_") and e["speaker"].startswith("guest:")  # Calvary Church guests keep Skip's series unbroken
     usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["source"] not in config.OFF_ROAD_SOURCES and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e))]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
+    CH, WALK, VS = {}, {}, {}  # chapters per book for each item; WALK = titled only by its passage (a walk-through message); VS = verses
+    VC = {}
+    def vcount(book, c):
+        if book not in VC:
+            try: VC[book] = [len(x) for x in json.load(open(os.path.join(HERE, "data", "bible", book + ".json"), encoding="utf-8"))["chapters"]]
+            except (OSError, ValueError, KeyError): VC[book] = []
+        return VC[book][c - 1] if 0 < c <= len(VC[book]) else 30
+    def verses_of(book, d):
+        """The verses a reference covers in this book, as (chapter, verse) pairs (whole chapters when no verses are named)."""
+        out = set()
+        for raw in d.get("raw") or []:
+            m = re.match(r"^\s*(?:[1-3]|I{1,3}|First|Second|Third)?\s*[A-Za-z][A-Za-z. ]*?\s*(\d.*)$", raw)
+            tail = (m.group(1) if m else "").replace("\u2013", "-").replace("\u2014", "-")
+            cur = None
+            for seg in re.split(r"\s*(?:,|;|&|\band\b)\s*", tail):
+                seg = seg.strip().rstrip("abc")
+                if not seg: continue
+                x = re.match(r"^(\d+)(?::(\d+))?(?:\s*-\s*(\d+)(?::(\d+))?)?", seg)
+                if not x: continue
+                a, av, b, bv = [int(g) if g else None for g in x.groups()]
+                if av is None and b is not None and bv is None and cur is not None and ":" not in seg:
+                    pass
+                if av is not None and b is not None and bv is None:      # 3:16-21 → verses in one chapter
+                    sc, sv, ec, ev = a, av, a, b
+                elif av is None and b is None and cur is not None and ":" not in seg and a <= vcount(book, cur) and re.search(r":", tail) and False:
+                    sc = sv = ec = ev = None
+                else:
+                    sc, sv = a, (av or 1)
+                    ec = b if b is not None else a
+                    ev = bv if bv is not None else (av if (b is None and av is not None) else vcount(book, ec))
+                cur = ec
+                for c in range(sc, ec + 1):
+                    lo = sv if c == sc else 1; hi = ev if c == ec else vcount(book, c)
+                    out.update((c, v) for v in range(lo, hi + 1))
+        if not out:
+            for c in d.get("chapters") or []: out.update((c, v) for v in range(1, vcount(book, c) + 1))
+        return out
     item_books, title_states, ref_how, cited, first_verse = {}, {}, {}, {}, {}
     order = [b[0] for b in BOOKS]; OT = order[:39]; NT = order[39:]
     def span_label(bks):
@@ -89,6 +126,11 @@ def main():
               "sc": [e.get("sc_season"), e.get("sc_episode")] if e.get("sc_season") else None}
         items[it["id"]] = it
         item_books[it["id"]] = set(e["refs"])
+        CH[it["id"]] = {b: set(d["chapters"]) for b, d in e["refs"].items()}
+        VS[it["id"]] = {b: verses_of(b, d) for b, d in e["refs"].items()}
+        rest = e["title"]
+        for r in parse_refs(e["title"]): rest = rest.replace(r.raw, " ")
+        WALK[it["id"]] = bool(parse_refs(e["title"])) and not re.search(r"[A-Za-z]{2,}", re.sub(r"\b(?:and|part|review|expound)\b", " ", rest, flags=re.I))
         first_verse[it["id"]] = {b: _first_verse(d) for b, d in e["refs"].items()}
         ref_how[it["id"]] = e.get("ref_how", "curated")
         cited[it["id"]] = len({(r.book, tuple(sorted(r.chapters))) for r in parse_refs(e.get("description", "")) if not r.whole_book})
@@ -106,6 +148,7 @@ def main():
                     by_chapter[(book, c)].append(it["id"])
     def core(t):  # title without episode numbers, "| Speaker" tails, or (Bible reference) brackets
         t = re.sub(r"^\s*#?[\d,]+\s*[\u2013\u2014-]\s*", "", t or "")
+        t = re.sub(r"^\s*Expound:\s*", "", t, flags=re.I)  # Skip's radio labels his Expound series
         segs = [x.strip() for x in t.split("|")]
         if len(segs) > 1:  # "SERIES | Name | Passage | Speaker": keep series + name, drop passage and speaker
             segs = [x for x in segs[:-1] if x and not parse_refs(x)] or segs[:1]
@@ -147,6 +190,21 @@ def main():
                     drop.add(b if sa <= sb else a)
         lst[:] = [i for i in lst if i not in drop]
     for lst in by_chapter.values(): one_each(lst)
+    # Skip taught through the Bible several times (1980s, 90s, 2000s, today): where an older walk-through message of his
+    # covers much the same chapters as a newer one, keep only the newer (decided once per message, for the whole book)
+    on_road = {i for lst in by_chapter.values() for i in lst}
+    drop = set()
+    for book in {b for i in on_road for b in CH.get(i, {})}:
+        walks = sorted([i for i in on_road if items[i]["who"] == "Skip" and not items[i].get("by") and WALK.get(i) and CH[i].get(book)],
+                       key=lambda i: items[i]["date"] or "", reverse=True)
+        kept = []
+        for i in walks:
+            a = VS[i].get(book) or set()
+            # redundant: a newer kept walk-through covers most of this one's verses and is not much wider
+            if a and any(len(a & VS[j][book]) >= 0.6 * len(a) and len(VS[j][book]) <= 4 * len(a) for j in kept): drop.add(i)
+            else: kept.append(i)
+    for lst in by_chapter.values():
+        lst[:] = [i for i in lst if i not in drop]
     for lst in by_book_ov.values(): one_each(lst)
     for book, sp in spans.items():  # multi-book overviews
         ids = [x["id"] for x in sp]; one_each(ids); sp[:] = [x for x in sp if x["id"] in set(ids)]
