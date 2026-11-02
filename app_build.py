@@ -4,7 +4,7 @@ books → chapters → episodes with progress bars, Secret Church in order, Pray
 Progress lives in localStorage; export/import as JSON. Run: python app_build.py
 """
 from __future__ import annotations
-import json, os, re
+import json, os, re, shutil
 from collections import defaultdict
 from canon import BOOKS, CHAPTERS, TESTAMENT
 from refs import parse_refs
@@ -597,6 +597,11 @@ body.mapopen #sheet{z-index:24}
 #np:not(.mini) .ctl{margin-top:10px}
 #np:not(.mini) .ctl .big{width:76px;height:76px}
 #np .ctl .sk{display:flex;align-items:center;justify-content:center}
+#np-read{display:none}#np.reading:not(.mini) #np-read{display:block;flex:1;min-height:0;overflow-y:auto;touch-action:pan-y;-webkit-overflow-scrolling:touch;margin:6px -26px 0;padding:4px 26px 40px;border-bottom:1px solid var(--line)}
+#np.reading:not(.mini) .art,#np.reading:not(.mini) .np-d{display:none}#np.reading:not(.mini) .t{font-size:20px;margin-top:0}#np.reading:not(.mini) .s{font-size:13px}
+#np-read .rc{font:600 12px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin:22px 0 2px}#np-read .rc:first-child{margin-top:6px}
+#np-read .txt{font-size:19px;line-height:1.7}#np-read .rmore{display:block;margin:18px auto;border:1px solid var(--line);background:#fff;border-radius:20px;padding:9px 16px;font:14px -apple-system,system-ui,sans-serif;color:var(--ink)}
+.narbar .nx{background:#fff;color:var(--ink);border:1px solid var(--line);padding:9px 12px}
 #np .ctl2{display:flex;justify-content:space-between;margin-top:10px}
 .spd{display:flex;align-items:center;gap:2px;border:1px solid rgba(27,36,64,.14);border-radius:22px;background:#fff}.spd button{min-width:40px;font-weight:600}#np .ctl2 .spd button{padding:8px 10px}#spd{min-width:58px!important}
 #np .ctl2 button{background:none;border:0;color:var(--ink);font:inherit;font-size:15px;padding:10px 4px}
@@ -622,7 +627,7 @@ body.mapopen #sheet{z-index:24}
 <div id="np"><div class="grab"></div>
 <div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="cls" aria-label="Stop and close">✕</button></div>
 <div class="art" id="np-art"></div><div class="np-d" id="np-d"></div>
-<div class="t serif" id="np-t"></div><div class="s" id="np-s"></div>
+<div class="t serif" id="np-t"></div><div class="s" id="np-s"></div><div id="np-read" aria-label="Reader"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
 <div class="ctl"><button class="side sk" id="prv" aria-label="Previous"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5l-10 7 10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button><button class="side" id="bk">↺ 10</button><button class="big" id="pp" style="display:flex;align-items:center;justify-content:center"></button><button class="side" id="fw">10 ↻</button><button class="side sk" id="nxt" aria-label="Next"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button></div>
 <div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="zz">Sleep off</button></div></div>
@@ -1035,16 +1040,19 @@ function orderedIds(b,c){const g=listenGroups(b,c);return [...g.overview,...g.ch
 function versesFor(pass,book,ch){ /* the verse range a passage names inside this chapter, or null for the whole chapter */
  const esc2=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');const re=new RegExp(esc2(book).replace(/^Psalms$/,'Psalms?')+'\\s+(\\d+)(?::(\\d+)(?:\\s*[–-]\\s*(?:(\\d+):)?(\\d+))?)?','i');
  for(const part of pass.split(/;/)){const m=part.match(re);if(!m||+m[1]!==ch)continue;if(!m[2])return null;const a=+m[2];const b=m[3]&&+m[3]!==ch?999:(m[4]?+m[4]:a);return{from:a,to:b}}return null}
-function chapterHTML(data,c,hl){const vs=data.chapters[c-1]||[],nb=D.books.find(x=>x.name===data.book);let h=nb&&hasNar(nb.abbr,c)?`<div class="narbar"><button data-narplay="1">${icon('play',16,0,'#fff')}<b>Listen</b></button><span>Read by Alistair. Tap any verse to start there.</span></div>`:'',open=false;
+function chapterHTML(data,c,hl){const nb=D.books.find(x=>x.name===data.book);const top=nb&&hasNar(nb.abbr,c)?`<div class="narbar"><button data-narplay="1">${icon('play',16,0,'#fff')}<b>Listen</b></button><button class="nx" data-narfull="1" aria-label="Open the full reader"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span>Read by Alistair. Tap a verse to start there.</span></div>`:'';const w=walk(),nx=w[camp+1];
+ return top+chapterBody(data,c,hl)+`<div class="endacts">${nx?`<button class="walk" data-endwalk="1">Mark read & walk on to ${esc(stopName(nx))} ›</button>`:''}<button data-endclose="1">Back to listening</button></div><div class="src">Berean Standard Bible · public domain</div>`}
+function chapterBody(data,c,hl){const vs=data.chapters[c-1]||[];let h='',open=false;
  for(const v of vs){if(v.h){if(open){h+='</p>';open=false}h+=`<h4>${esc(v.h)}</h4>`}if(v.d)h+=`<div class="ptitle">${esc(v.d)}</div>`;
   if(v.p||!open){if(open)h+='</p>';h+=`<p class="${v.q?'poem q'+v.q:''}">`;open=true}
   const on=hl&&v.v>=hl.from&&v.v<=hl.to;h+=`<span class="vs${on?' hl':''}" data-v="${v.v}"><sup>${v.v}</sup>${esc(v.t).replace(/\n/g,'<br>')}</span> `}
- if(open)h+='</p>';const w=walk(),nx=w[camp+1];
- return h+`<div class="endacts">${nx?`<button class="walk" data-endwalk="1">Mark read & walk on to ${esc(stopName(nx))} ›</button>`:''}<button data-endclose="1">Back to listening</button></div><div class="src">Berean Standard Bible · public domain</div>`}
+ if(open)h+='</p>';return h}
 function wireReader(el){const d=el.closest('details'),nb=D.books.find(x=>x.name===el.dataset.book),nc=+el.dataset.ch;
  if(nb&&hasNar(nb.abbr,nc)){el.classList.add('narr');
   el.querySelectorAll('[data-narplay]').forEach(b=>b.onclick=e=>{e.stopPropagation();const id=narId(nb.abbr,nc);if(cur===id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}narPlay(nb,nc,null)});
-  el.querySelectorAll('.vs').forEach(v=>v.onclick=e=>{if(e.target.closest('button,a,[data-nk]'))return;const sel=getSelection&&getSelection();if(sel&&String(sel).length)return;narPlay(nb,nc,+v.dataset.v)});narMark(true);narBar()}
+  el.querySelectorAll('[data-narfull]').forEach(b=>b.onclick=e=>{e.stopPropagation();const id=narId(nb.abbr,nc);if(cur===id){setMini(false);return}
+   const top=[...el.querySelectorAll('.vs')].find(v=>v.getBoundingClientRect().bottom>80);narPlay(nb,nc,top&&+top.dataset.v>1?+top.dataset.v:null,{load:true,full:true})});
+  wireVerses(el,nb,nc);narMark(true);narBar()}
  el.querySelectorAll('[data-endclose]').forEach(b=>b.onclick=()=>{TAB='listen';S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false;const cl=$('#clearing');if(cl)window.scrollTo({top:cl.getBoundingClientRect().top+scrollY-70,behavior:'smooth'})});
  el.querySelectorAll('[data-endwalk]').forEach(b=>b.onclick=()=>{const x=walk()[camp];read[x.b.abbr+x.c.c]=true;S.set('read',read);go(Math.min(walk().length-1,camp+1))})}
 function fillMapTab(){const el=document.querySelector('.maptab');if(!el||el.dataset.done)return;el.dataset.done='1';
@@ -1208,10 +1216,10 @@ function leveler(){if(AC)return AC;try{AC=new (window.AudioContext||window.webki
 function useAudioFor(i){const fx=levelFor(i)&&leveler(),want=fx?$('#audiofx'):$('#audio');if(fx&&AC.state!=='running')AC.resume().catch(()=>{});
  if(want!==audio){try{audio.pause()}catch(e){}audio=want;audio.playbackRate=speed}if(fx){lvl=null;lvlFast=40}}$('#spd').textContent=spdLabel();
 function where(id){if(I[id]&&I[id].nar)return I[id].nar.book+' '+I[id].nar.c;for(const b of D.books){if(b.ov.includes(id)||(b.spans||[]).some(x=>x.id===id))return b.name;for(const c of b.ch)if(c.ids.includes(id))return b.name+' '+c.c}return ''}
-function play(id){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;ready=false;const p=i.nar?{}:prog[id]||{},saved=p.pos||0;useAudioFor(i);audio.src=i.audio;audio.addEventListener('loadedmetadata',()=>{const st=i.s||0;if(i.nar){if(narAt)audio.currentTime=narAt;narAt=null;narRetry=0;ready=true;narMark(true);return}if(saved&&saved>st&&saved<audio.duration-5)audio.currentTime=saved;else if(st&&st<audio.duration-30)audio.currentTime=st;ready=true},{once:true});  /* fresh plays start after the intro */
-  $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=teacher(i)+' · '+where(id);npArt(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!!i.nar)}setPP();
+function play(id,o={}){const i=I[id];if(!i.audio)return;if(cur!==id){cur=id;NP().classList.toggle('reading',!!i.nar);if(!i.nar)NAR=null;ready=false;const p=i.nar?{}:prog[id]||{},saved=p.pos||0;useAudioFor(i);audio.src=i.audio;audio.addEventListener('loadedmetadata',()=>{const st=i.s||0;if(i.nar){if(narAt)audio.currentTime=narAt;narAt=null;narRetry=0;ready=true;narMark(true);return}if(saved&&saved>st&&saved<audio.duration-5)audio.currentTime=saved;else if(st&&st<audio.duration-30)audio.currentTime=st;ready=true},{once:true});  /* fresh plays start after the intro */
+  $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=teacher(i)+' · '+where(id);npArt(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!!i.nar&&!o.full)}else if(o.full)setMini(false);if(i.nar)readerFill(true);setPP();
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',()=>skipTrack(1),'previoustrack',()=>skipTrack(-1)].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
- audio.paused?audio.play().catch(()=>{}):audio.pause()}
+ if(o.load)return;audio.paused?audio.play().catch(()=>{}):audio.pause()}
 function next(){if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq();for(let j=q.indexOf(cur)+1;j<q.length;j++)if(!isDone(q[j])&&okWho(q[j])){play(q[j]);return}return}const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;seq.push(...orderedIds(x.b,x.c))});/* continue from where the listener stands: a teaching that spans chapters appears in each of them */let k=seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]);if(k<0)k=seq.lastIndexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
 let saveSec=-1;onAudio('timeupdate',()=>{if(!cur)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(d-t);
  if(I[cur].nar){if(!ready)return;narMark();const sec=Math.floor(t);if(sec%5===0&&sec!==saveSec){saveSec=sec;const pos=S.get('narpos',{});pos[cur]=t;S.set('narpos',pos)}return}
@@ -1255,15 +1263,36 @@ function narId(abbr,c){return 'nar:'+abbr+':'+c}
 function narTimes(abbr){return NT[abbr]||(NT[abbr]=fetch('narration/'+abbr+'.json').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(e=>{delete NT[abbr];throw e}))}
 function narItem(b,c){const id=narId(b.abbr,c);if(!I[id])I[id]={id,t:b.name+' '+c,audio:NREL+NARR[b.abbr].t+'/'+b.abbr+'_'+String(c).padStart(3,'0')+'.mp3',who:'Alistair',by:'Read by Alistair',nar:{abbr:b.abbr,c,book:b.name}};return id}
 /* start chapter c of book b: at verse v, from the top (v=0), or where it was left (v=null) */
-function narPlay(b,c,v){narTimes(b.abbr).then(T=>{const ch=T.c[String(c)];if(!ch)return;const id=narItem(b,c),pos=S.get('narpos',{});
+function narPlay(b,c,v,o={}){narTimes(b.abbr).then(T=>{const ch=T.c[String(c)];if(!ch)return;const id=narItem(b,c),pos=S.get('narpos',{});
   NAR={b,c,id,m:ch.v};const at=v===0?0:v?((ch.v.find(m=>m[0]===v)||ch.v[0])[1]):(pos[id]&&pos[id]<ch.d-3?pos[id]:0);narV=null;
-  if(cur===id){audio.currentTime=at;if(audio.paused)audio.play().catch(()=>{});return}narAt=at;play(id)}).catch(()=>{})}
+  if(cur===id){audio.currentTime=at;if(!o.load&&audio.paused)audio.play().catch(()=>{});if(o.full)setMini(false);readerFill(true);return}narAt=at;play(id,o)}).catch(()=>{})}
+/* verses are taps: start reading there */
+function wireVerses(el,b,c){el.querySelectorAll('.vs').forEach(v=>v.onclick=e=>{if(e.target.closest('button,a,[data-nk]'))return;const sel=getSelection&&getSelection();if(sel&&String(sel).length)return;e.stopPropagation();narPlay(b,c,+v.dataset.v)})}
+/* the full reader: the chapter being read, then the next ones as you scroll (read straight on, as long as you like) */
+function chAfter(b,c){if(c<b.ch.length)return [b,c+1];const i=D.books.indexOf(b);return i>=0&&i+1<D.books.length?[D.books[i+1],1]:null}
+function chBefore(b,c){if(c>1)return [b,c-1];const i=D.books.indexOf(b);return i>0?[D.books[i-1],D.books[i-1].ch.length]:null}
+function readerSec(b,c){return loadBook(b.name).then(d=>{const sec=document.createElement('section');sec.dataset.k=b.abbr+c;
+  sec.innerHTML=`<h3 class="rc">${esc(b.name)} ${c}</h3><div class="txt${hasNar(b.abbr,c)?' narr':''}" data-book="${esc(b.name)}" data-ch="${c}">${chapterBody(d,c,null)}</div>`;
+  if(hasNar(b.abbr,c))wireVerses(sec.querySelector('.txt'),b,c);return sec})}
+let RD={busy:false,first:null,last:null};
+function readerFill(reset){const box=$('#np-read');if(!NAR||!box)return;
+ if(reset&&!box.querySelector(`section[data-k="${NAR.b.abbr+NAR.c}"]`)){box.innerHTML='';RD={busy:true,first:[NAR.b,NAR.c],last:[NAR.b,NAR.c]};
+  readerSec(NAR.b,NAR.c).then(sec=>{box.appendChild(sec);const pv=chBefore(NAR.b,NAR.c);if(pv){const bt=document.createElement('button');bt.className='rmore';bt.textContent='‹ '+pv[0].name+' '+pv[1];bt.onclick=e=>{e.stopPropagation();readerPrev(bt)};box.prepend(bt)}
+   RD.busy=false;narMark(true);readerMore()}).catch(()=>{RD.busy=false});return}
+ readerMore()}
+function readerMore(){const box=$('#np-read');if(RD.busy||!RD.last||!box.clientHeight||box.scrollHeight-box.scrollTop-box.clientHeight>900)return;const nx=chAfter(...RD.last);if(!nx)return;RD.busy=true;
+ readerSec(...nx).then(sec=>{box.appendChild(sec);RD.last=nx;RD.busy=false;readerMore()}).catch(()=>{RD.busy=false})}
+function readerPrev(bt){const pv=chBefore(...RD.first);if(!pv)return;const box=$('#np-read');readerSec(...pv).then(sec=>{const h0=box.scrollHeight;bt.after(sec);RD.first=pv;box.scrollTop+=box.scrollHeight-h0;
+ const p2=chBefore(...pv);if(p2)bt.textContent='‹ '+p2[0].name+' '+p2[1];else bt.remove()})}
+$('#np-read').addEventListener('scroll',()=>{narUser=Date.now();readerMore()},{passive:true});
 function narNow(){if(!NAR)return null;const t=audio.currentTime+.05;let k=-1;for(let j=0;j<NAR.m.length;j++){if(NAR.m[j][1]<=t)k=j;else break}return k}
-function narEl(v){return document.querySelector(`.txt[data-book="${CSS.escape(NAR.b.name)}"][data-ch="${NAR.c}"] .vs[data-v="${v}"]`)}
+function narEls(v){return [...document.querySelectorAll(`.txt[data-book="${CSS.escape(NAR.b.name)}"][data-ch="${NAR.c}"] .vs[data-v="${v}"]`)]}
 function narMark(force){if(!NAR||!cur||cur!==NAR.id)return;const k=narNow(),v=k>=0?NAR.m[k][0]:null;if(v===narV&&!force)return;narV=v;
- document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));if(v==null)return;const el=narEl(v);if(!el)return;el.classList.add('now');
- $('#np-s').textContent='Read by Alistair · '+NAR.b.name+' '+NAR.c+':'+v;
- if(Date.now()-narUser>5000&&!audio.paused){const r=el.getBoundingClientRect(),bottom=innerHeight-(NP().classList.contains('on')?NP().offsetHeight:0);if(r.top<70||r.bottom>bottom-20)window.scrollTo({top:scrollY+r.top-Math.max(90,(bottom-r.height)/3),behavior:'smooth'})}}
+ document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));$('#np-t').textContent=NAR.b.name+' '+NAR.c;if(v==null)return;const els=narEls(v);els.forEach(e=>e.classList.add('now'));
+ $('#np-s').textContent='Read by Alistair · '+NAR.b.name+' '+NAR.c+':'+v;if(Date.now()-narUser<5000||(audio.paused&&!force))return;
+ const full=NP().classList.contains('on')&&!NP().classList.contains('mini'),box=$('#np-read');
+ if(full){const el=els.find(e=>box.contains(e));if(!el){readerFill(true);return}const r=el.getBoundingClientRect(),b=box.getBoundingClientRect();if(force||r.top<b.top+10||r.bottom>b.bottom-30)box.scrollTo({top:box.scrollTop+r.top-b.top-b.height/4,behavior:force?'auto':'smooth'});return}
+ const el=els.find(e=>!box.contains(e));if(!el)return;const r=el.getBoundingClientRect(),bottom=innerHeight-(NP().classList.contains('on')?NP().offsetHeight:0);if(r.top<70||r.bottom>bottom-20)window.scrollTo({top:scrollY+r.top-Math.max(90,(bottom-r.height)/3),behavior:'smooth'})}
 function narBar(){document.querySelectorAll('[data-narplay]').forEach(b=>{const el=b.closest('.txt'),on=NAR&&cur===NAR.id&&el&&el.dataset.book===NAR.b.name&&+el.dataset.ch===NAR.c&&!audio.paused;b.innerHTML=icon(on?'pause':'play',16,0,'#fff')+`<b>${on?'Pause':'Listen'}</b>`})}
 ['touchmove','wheel'].forEach(t=>addEventListener(t,()=>{narUser=Date.now()},{passive:true}));
 /* the arrows step a verse at a time; back first returns to the start of the verse being read */
@@ -1276,9 +1305,9 @@ function narNext(){const was=NAR;if(!was)return;read[was.b.abbr+was.c]=true;S.se
  if(here&&!here.c.intro&&here.b.name===was.b.name&&here.c.c===was.c){const k=w.findIndex(x=>!x.c.intro&&x.b.name===nx[0].name&&x.c.c===nx[1]);if(k>=0){TAB='read';S.set('tab',TAB);go(k)}}else render();
  narPlay(nx[0],nx[1],0)}
 let fullAtScroll=0;
-function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;roomForPlayer()}
+function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;roomForPlayer();if(!m&&NAR&&cur===NAR.id){narUser=0;readerFill(true);setTimeout(()=>narMark(true),60)}}
 (()=>{const np=NP();let y0=null,x0=0,dy=0,dx=0;
- np.addEventListener('touchstart',e=>{if(e.target.closest('input'))return;y0=e.touches[0].clientY;x0=e.touches[0].clientX;dy=0;dx=0;np.style.transition='none'},{passive:true});
+ np.addEventListener('touchstart',e=>{if(e.target.closest('input')||(e.target.closest('#np-read')&&!np.classList.contains('mini')))return;y0=e.touches[0].clientY;x0=e.touches[0].clientX;dy=0;dx=0;np.style.transition='none'},{passive:true});
  np.addEventListener('touchmove',e=>{if(y0===null)return;dy=e.touches[0].clientY-y0;dx=e.touches[0].clientX-x0;if(!np.classList.contains('mini')&&dy>0&&Math.abs(dy)>Math.abs(dx))np.style.transform=`translateY(${dy}px)`},{passive:true});
  np.addEventListener('touchend',()=>{if(y0===null)return;np.style.transition='';np.style.transform='';y0=null;
   if(Math.abs(dx)>60&&Math.abs(dx)>2*Math.abs(dy)){np.dataset.swiped=Date.now();skipTrack(dx<0?1:-1);return}

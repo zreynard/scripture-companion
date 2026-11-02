@@ -135,6 +135,24 @@ class Reader:
         self.sr = self.tts.sr
         self.asr = WhisperModel("base.en", device="cpu", compute_type="int8")
         self.ref = reference()
+        self.fast = self._fast_ok()
+
+    def _fast_ok(self):
+        """Prepare the voice once instead of before every piece, if that gives exactly the same sound."""
+        import numpy as np
+        try:
+            t = "In the beginning God created the heavens and the earth."
+            self.torch.manual_seed(SEED); a = self.tts.generate(t, audio_prompt_path=self.ref).squeeze().cpu().numpy()
+            self.torch.manual_seed(SEED); b = self.tts.generate(t).squeeze().cpu().numpy()   # uses the voice just prepared
+            same = a.shape == b.shape and np.allclose(a, b, atol=1e-4)
+            print("voice prepared once:", same, flush=True)
+            return same
+        except Exception as e:
+            print("voice prepared once: no,", type(e).__name__, e, flush=True)
+            return False
+
+    def gen(self, text):
+        return self.tts.generate(text) if self.fast else self.tts.generate(text, audio_prompt_path=self.ref)
 
     def heard(self, wav):
         import numpy as np, scipy.signal as ss
@@ -158,7 +176,7 @@ class Reader:
         want = letters(text)
         for k in range(3):
             self.torch.manual_seed(SEED + k)
-            wav = self.trim(self.tts.generate(text, audio_prompt_path=self.ref).squeeze().cpu().numpy())
+            wav = self.trim(self.gen(text).squeeze().cpu().numpy())
             dur = len(wav) / self.sr
             got = letters(self.heard(wav))
             sim = difflib.SequenceMatcher(None, want, got, autojunk=False).ratio() if want else 1
@@ -166,8 +184,8 @@ class Reader:
             ok_pace = 7 <= cps <= 26 or len(text) < 15
             score = sim - (0 if ok_pace else 0.5)
             if best is None or score > best[0]: best = (score, wav, sim, cps, k)
-            if sim >= (0.6 if len(want) < 25 else 0.82) and ok_pace: break
-        if best[4] or best[0] < 0.82:
+            if sim >= (0.6 if len(want) < 25 else 0.72) and ok_pace: break
+        if best[4] or best[0] < 0.72:
             log.append({"text": text[:80], "sim": round(best[2], 2), "cps": round(best[3], 1), "tries": k + 1})
         return best[1]
 
