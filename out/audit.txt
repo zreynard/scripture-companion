@@ -17,13 +17,7 @@ PASS  a book overview is not repeated inside that book's chapters
 PASS  only David Platt, PAM (with Arik Hayes, Milton James) and Stephen Davey on the road
 PASS  Stephen Davey teaching comes only from his own feeds, and his feeds only from him
 PASS  2819 teaching shows the preacher named in its title
-FAIL  David Platt teaching comes only from Platt / Radical / McLean sources  (35)
-        - Pray from brookhills
-        - The Cross and the Christian's Work from brookhills
-        - The Sufficiency of Christ from brookhills
-        - The Confession of Man and the Compassion of God from brookhills
-        - The Cross and Christian Resurrection from brookhills
-        - The Cosmic Cause of Christ from brookhills
+PASS  David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources
 PASS  McLean episodes on the road name David Platt
 
 == Order inside each chapter
@@ -60,4 +54,4 @@ PASS  overviews and points stay short (22 words or fewer)
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-36 of 37 checks pass
+37 of 37 checks pass
