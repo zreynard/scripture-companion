@@ -37,16 +37,20 @@ def bits(a):
     return np.unpackbits(a.view(np.uint8)).reshape(-1, 32).sum(1)
 
 
-def runs(a, b, max_shift=960, min_pts=24):
+BITS = int(os.environ.get("BITS", "10"))      # fingerprint points match when at most this many of 32 bits differ
+MINRUN = float(os.environ.get("MINRUN", "3"))  # seconds
+
+def runs(a, b, max_shift=960, min_pts=None):
     """Every stretch of matching fingerprint points between a and b, over shifts up to about 2 minutes.
     Returns [(start_a, end_a, start_b, end_b)] in points, longest first, without overlaps in a."""
     found = []
     k5 = np.ones(5)
+    min_pts = min_pts or int(MINRUN / 0.1238)
     for s in range(-min(max_shift, len(b) - 1), min(max_shift, len(a) - 1) + 1):
         ia, ib = (s, 0) if s >= 0 else (0, -s)
         n = min(len(a) - ia, len(b) - ib)
         if n < min_pts: continue
-        ok = (bits(a[ia:ia + n] ^ b[ib:ib + n]) <= 10).astype(float)
+        ok = (bits(a[ia:ia + n] ^ b[ib:ib + n]) <= BITS).astype(float)
         okb = np.convolve(ok, k5, "same") >= 1          # bridge gaps of up to 4 points
         d = np.diff(np.concatenate(([0], okb.astype(int), [0])))
         for st, sp in zip(np.flatnonzero(d == 1), np.flatnonzero(d == -1)):
@@ -86,29 +90,37 @@ def main():
     ids = [e["id"] for e in eps if F.get(e["id"])]
     title = {e["id"]: e["title"] for e in eps}
     OPEN = float(os.environ.get("OPEN", "150"))       # the intro's last shared stretch must start within this many seconds
-    # every shared stretch each episode has with each of its neighbours (three before, three after), in its own timeline
-    seen = {i: [] for i in ids}
-    for k, i in enumerate(ids):
-        for j in ids[k + 1:k + 4]:
-            (a, sa), (b, sb) = F[i], F[j]
-            for r in runs(a, b):
-                if (r[1] - r[0]) * sa > MAX_SKIP: continue                 # the same episode twice
-                seen[i].append((r[0] * sa, r[1] * sa, j)); seen[j].append((r[2] * sb, r[3] * sb, i))
-    ends = {}
-    for i in ids:
-        nbrs = {x[2] for x in seen[i]}
-        need = max(2, (len(nbrs) + 1) // 2)                               # found with at least half of the neighbours
-        segs = sorted(seen[i])
-        steady = []
-        for st, en, j in segs:
-            if st > OPEN: continue
-            same = {x[2] for x in segs if abs(x[0] - st) <= 2.5 and abs(x[1] - en) <= 3}
-            if len(same) >= need: steady.append((st, en))
-        if steady:
-            ends[i] = [max(en for st, en in steady)]
-        if FOCUS and FOCUS.lower() in title[i].lower():
-            print(f"  {title[i][:40]}: steady {sorted(set((round(a), round(b)) for a, b in steady))}  of {len(nbrs)} neighbours", flush=True)
+    def analyse():
+        # every shared stretch each episode has with each of its neighbours (three before, three after), in its own timeline
+        seen = {i: [] for i in ids}
+        for k, i in enumerate(ids):
+            for j in ids[k + 1:k + 4]:
+                (a, sa), (b, sb) = F[i], F[j]
+                for r in runs(a, b):
+                    if (r[1] - r[0]) * sa > MAX_SKIP: continue                 # the same episode twice
+                    seen[i].append((r[0] * sa, r[1] * sa, j)); seen[j].append((r[2] * sb, r[3] * sb, i))
+        ends = {}
+        for i in ids:
+            nbrs = {x[2] for x in seen[i]}
+            need = max(2, (len(nbrs) + 1) // 2)                               # found with at least half of the neighbours
+            segs = sorted(seen[i])
+            steady = []
+            for st, en, j in segs:
+                if st > OPEN: continue
+                same = {x[2] for x in segs if abs(x[0] - st) <= 2.5 and abs(x[1] - en) <= 3}
+                if len(same) >= need: steady.append((st, en))
+            if steady:
+                ends[i] = [max(en for st, en in steady)]
+            if FOCUS and FOCUS.lower() in title[i].lower():
+                print(f"  {title[i][:40]}: steady {sorted(set((round(a), round(b)) for a, b in steady))}  of {len(nbrs)} neighbours", flush=True)
 
+        return ends
+    global BITS, MINRUN
+    sweep = [(int(x.split("/")[0]), float(x.split("/")[1])) for x in os.environ.get("SWEEP", "").split(",") if "/" in x]
+    for BITS, MINRUN in sweep:
+        print(f"-- BITS {BITS}, MINRUN {MINRUN}s", flush=True); analyse()
+    BITS, MINRUN = int(os.environ.get("BITS", "10")), float(os.environ.get("MINRUN", "3"))
+    ends = analyse()
     out = {}
     for e in eps:
         v = ends.get(e["id"]) or []
