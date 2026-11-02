@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 60  # bump on every shipped build; also busts the service-worker cache
+VERSION = 61  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -61,7 +61,7 @@ def main():
     entries = [json.loads(l) for l in open(VERIFIED, encoding="utf-8")]
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
-    usable = [e for e in entries if e["tier"] in ("V2", "V1") and (e["speaker"] in ("Platt", "PAM", "Davey") or e["speaker"] in team)]
+    usable = [e for e in entries if e["tier"] in ("V2", "V1") and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team)]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
     item_books, title_states, ref_how, cited, first_verse = {}, {}, {}, {}, {}
     order = [b[0] for b in BOOKS]; OT = order[:39]; NT = order[39:]
@@ -74,7 +74,7 @@ def main():
         idx = sorted(order.index(b) for b in bks)
         return f"{order[idx[0]]}–{order[idx[-1]]}" if idx[-1]-idx[0] == len(idx)-1 else ", ".join(bks)
     for e in usable:
-        it = {"id": e["id"], "t": e["title"], "who": "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Davey" if e["speaker"] == "Davey" else "Platt"),
+        it = {"id": e["id"], "t": e["title"], "who": "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else (e["speaker"] if e["speaker"] in ("Davey", "Skip") else "Platt"),
               "show": config.SHOWS.get(e["source"]),
               **({"s": config.INTRO_SKIP[e["source"]]} if config.INTRO_SKIP.get(e["source"]) else {}),
               "by": e["speaker"].split(":", 1)[1] if e["speaker"] in team else None,
@@ -886,7 +886,12 @@ function listenGroups(b,c){const g={overview:[],chapter:[],verses:[]},R=x=>x.r||
  st.sort((a,z)=>(span(z)-span(a))||(R(a).sc-R(z).sc)||(a.k-z.k));
  st.forEach(x=>g.overview.push({...x,h:x.r?`${b.name} ${vbadge(x.r)}`:(shortPass(I[x.id].pass||'')||'Across several books')}));
  const byVerse=(a,z)=>(R(a).sc-R(z).sc)||(R(a).sv-R(z).sv)||(R(a).ec-R(z).ec)||(R(a).ev-R(z).ev)||(a.k-z.k);
- g.chapter.sort(byVerse);g.verses.sort(byVerse);return g}
+ g.chapter.sort(byVerse);g.verses.sort(byVerse);for(const k in g)g[k]=partsInOrder(g[k]);return g}
+/* radio messages come in parts ("… - Part A", "Part 2"): keep each message's parts together and in order A, B, C */
+function partOf(t){const m=(t||'').match(/^(.*?)[\s\-–—:,(]*\bPart\s+([A-Z]|\d+)\b\)?\s*$/i);return m?{base:m[1].trim().toLowerCase(),n:isNaN(+m[2])?m[2].toUpperCase().charCodeAt(0)-64:+m[2]}:null}
+function partsInOrder(a){const by={};a.forEach((x,k)=>{const p=partOf(I[x.id]&&I[x.id].t);if(p)(by[p.base]=by[p.base]||[]).push({k,n:p.n})});
+ const out=a.slice();Object.values(by).forEach(l=>{if(l.length<2)return;const first=Math.min(...l.map(y=>y.k)),items=l.slice().sort((p,q)=>p.n-q.n).map(y=>a[y.k]);
+  l.forEach(y=>out[y.k]=null);items.forEach((x,j)=>out.splice(first+j,0,x))});return out.filter(Boolean)}
 function orderedIds(b,c){const g=listenGroups(b,c);return [...g.overview,...g.chapter,...g.verses].map(x=>x.id)}
 function versesFor(pass,book,ch){ /* the verse range a passage names inside this chapter, or null for the whole chapter */
  const esc2=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');const re=new RegExp(esc2(book).replace(/^Psalms$/,'Psalms?')+'\\s+(\\d+)(?::(\\d+)(?:\\s*[–-]\\s*(?:(\\d+):)?(\\d+))?)?','i');
@@ -921,9 +926,9 @@ function fillReaders(){document.querySelectorAll('details.readx[open] .txt').for
 const LANDS=[['Genesis','The Law'],['Joshua','History'],['Job','Wisdom & Song'],['Isaiah','Major Prophets'],['Hosea','Minor Prophets'],['Matthew','The Gospels'],['Acts','The Church Begins'],['Romans','Letters of Paul'],['Hebrews','General Letters'],['Revelation','The End & the New Beginning']];
 function books(){const b=[...D.books];if(cfg.order==='narr')b.sort((x,y)=>Math.min(...x.ch.map(c=>c.seq))-Math.min(...y.ch.map(c=>c.seq)));return b}
 function walk(){const w=[];for(const b of books()){const chs=cfg.order==='narr'?[...b.ch].sort((x,y)=>x.seq-y.seq):b.ch;for(const c of chs)w.push({b,c})}return w}
-const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Davey'};
+const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Davey',Skip:'Skip Heitzig'};
 function teacher(i){return i.by||NAMES[i.who]}
-function dispTitle(i){const t=i.t||'';if(!t.includes('|'))return t;const parts=t.split('|').map(x=>x.trim()).filter(Boolean),who=(teacher(i)||'').toLowerCase();
+function dispTitle(i){const t=i.t||'';const fl=t.match(/^Flight\s+[A-Z0-9]{3}(\d\d)\b(?:\s*-\s*(Part\s+\w+))?/);if(fl){const ord=books().map(x=>x.name),bk=(i.pass||'').split(';').map(x=>x.replace(/the book of/i,'').trim()).filter(Boolean).sort((p,q)=>ord.indexOf(p)-ord.indexOf(q));return ['Bible from 30,000 Feet',bk.join(', ')+(+fl[1]>1?' ('+(+fl[1])+')':''),fl[2]].filter(Boolean).join(' · ')}if(!t.includes('|'))return t;const parts=t.split('|').map(x=>x.trim()).filter(Boolean),who=(teacher(i)||'').toLowerCase();
  const keep=parts.filter(x=>!/^(?:[1-3]\s?)?[A-Za-z]+\.?\s*\d+(?::\d+)?(?:\s*[-–]\s*\d+(?::\d+)?)?$/.test(x)&&!(who&&x.toLowerCase().replace(/^(elder|pastor|minister)\s+/,'')===who.replace(/^(elder|pastor|minister)\s+/,''))&&!/^(philip anthony mitchell|pam)$/i.test(x));
  return keep.length?keep.join(' · '):t}
 function voiceHTML(id,bd){const i=I[id],p=prog[id]||{},hp=heardPct(id),deg=!isDone(id)?Math.round(3.6*hp):0,playing=cur===id&&!audio.paused;
@@ -1089,7 +1094,7 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
    const cl=$('#clearing');if(cl){const t=cl.getBoundingClientRect().top;if(t<60||t>innerHeight-120)window.scrollTo({top:scrollY+t-70})}};const ct=$('#chT');if(ct){ct.onclick=e=>{e.stopPropagation();openJump('browse')};ct.setAttribute('role','button');ct.setAttribute('aria-label','Choose a chapter')}}
  const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
  const g=$('#gear');g.onclick=()=>{view=view==='settings'?'walk':'settings';S.set('view',view);decorate.first=true;render();window.scrollTo(0,0)};
- const back=$('#back');if(back)back.onclick=g.onclick;const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
+ const back=$('#back');if(back)back.onclick=g.onclick;const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
  const io=$('#io');if(io){$('#exp').onclick=()=>io.value=JSON.stringify({prog,read,cfg});$('#imp').onclick=()=>{try{const v=JSON.parse(io.value);prog=v.prog||prog;read=v.read||read;S.set('prog',prog);S.set('read',read);render()}catch(e){io.value='Could not read that JSON.'}};
   $('#reset').onclick=()=>{if(confirm('Erase all progress on this device?')){prog={};read={};camp=null;S.set('prog',prog);S.set('read',read);S.set('camp',null);render()}};
   $('#atest').onclick=()=>{const o=$('#atest-out');o.textContent=' testing…';const a=new Audio();a.src=Object.values(I).find(i=>i.audio).audio;a.addEventListener('loadedmetadata',()=>o.textContent=' ✓ streams ('+fmt(a.duration)+')');a.addEventListener('error',()=>o.textContent=' ✗ blocked here');a.load()}}}

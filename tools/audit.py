@@ -96,10 +96,12 @@ def main():
 
     print("\n== Speakers")
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
-    bad = [f"{I[i]['t'][:60]} speaker={E[i]['speaker']}" for i in road if E[i]["speaker"] not in ("Platt", "PAM", "Davey") and E[i]["speaker"] not in team]
-    check("only David Platt, PAM (with Arik Hayes, Milton James) and Stephen Davey on the road", bad, len(road))
+    bad = [f"{I[i]['t'][:60]} speaker={E[i]['speaker']}" for i in road if E[i]["speaker"] not in ("Platt", "PAM", "Davey", "Skip") and E[i]["speaker"] not in team]
+    check("only David Platt, PAM (with his church preachers), Stephen Davey and Skip Heitzig on the road", bad, len(road))
     bad = [f"{I[i]['t'][:60]} from {E[i]['source']}" for i in road if (I[i]["who"] == "Davey") != E[i]["source"].startswith("davey_")]
     check("Stephen Davey teaching comes only from his own feeds, and his feeds only from him", bad)
+    bad = [f"{I[i]['t'][:60]} from {E[i]['source']}" for i in road if (I[i]["who"] == "Skip") != E[i]["source"].startswith("skip_")]
+    check("Skip Heitzig teaching comes only from his own feeds, and his feeds only from him", bad)
     bad = []
     for i in road:
         segs = [x.strip() for x in I[i]["t"].split("|")]

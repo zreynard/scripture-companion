@@ -58,6 +58,24 @@ def harvest_feed(key: str, feed_url: str, era: str = "platt") -> list[dict]:
     _log(f"{key}: {len(out)} items")
     return out
 
+# ---------- Skip Heitzig feeds (Subsplash audio; the episode's mp3 address is its link) ----------
+def harvest_skip(key: str, feed_url: str) -> list[dict]:
+    r = get(feed_url, timeout=60)
+    if not r.ok:
+        _log(f"{key}: feed fetch failed {r.status} {r.note}")
+        return []
+    out = []
+    for it in parse_rss(r.text):
+        url = it.get("enclosure") or it.get("link")
+        if not url:
+            continue
+        e = make_entry(source=key, source_url=feed_url, url=url, title=it["title"], description=it["description"],
+                       published=it["pubdate"], duration=it["duration"], author=it["author"], era="skip")
+        e["audio_override"] = it.get("enclosure") or None
+        out.append(e)
+    _log(f"{key}: {len(out)} items")
+    return out
+
 # ---------- iTunes-resolved podcasts ----------
 def itunes_feed_url(term: str, must_match: str) -> tuple[str, str] | None:
     data, r = get_json(config.ITUNES_SEARCH + urllib.parse.quote(term))
@@ -425,7 +443,7 @@ def harvest_youtube_audio() -> list[dict]:
     return out
 
 # ---------- orchestration ----------
-ALL_SOURCES = ["brookhills", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
+ALL_SOURCES = ["brookhills", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
                "youtube_2819", "youtube_pam", "youtube_victory", "victory_podcast"]
 
 def run(sources: list[str], radical_limit: int | None = None):
@@ -456,6 +474,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s in config.DAVEY_FEEDS:
                 sid, feed = config.DAVEY_FEEDS[s]
                 entries = harvest_feed(s, feed, era="davey") + harvest_buzzsprout_archive(s, sid, feed, era="davey")
+            elif s in config.SKIP_FEEDS: entries = harvest_skip(s, config.SKIP_FEEDS[s])
             elif s == "street_preachers": entries = [e for e in harvest_feed("street_preachers", "https://rss.buzzsprout.com/2524921.rss", era="pam-podcast")]
             elif s == "2819_podcast": entries = harvest_itunes_podcast("2819_podcast", config.PODCAST_SEARCH_TERMS["2819"], r"2819", "2819")
             elif s == "victory_podcast": entries = harvest_itunes_podcast("victory_podcast", config.PODCAST_SEARCH_TERMS["victory"], r"victory", "victory")

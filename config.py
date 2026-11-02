@@ -124,6 +124,14 @@ DAVEY_FEEDS = {
     "davey_journey": (2545807, "https://rss.buzzsprout.com/2545807.rss"),   # The Wisdom Journey (daily walk through the Bible)
 }
 SHOWS = {"ptw": "Pray the Word", "davey_wfth": "Wisdom for the Heart", "davey_journey": "The Wisdom Journey"}
+# Skip Heitzig (Calvary Church, Albuquerque): public podcast feeds. Each episode's itunes:author names its speaker.
+SKIP_FEEDS = {
+    "skip_church": "http://feeds.calvaryabq.org/calvaryabqaudio",     # Sunday + Wednesday (Expound) messages, full length
+    "skip_connect": "http://feeds.feedburner.com/ConnectionRadio",    # Connect with Skip Heitzig radio (messages in parts; Bible from 30,000 Feet)
+}
+# "Bible from 30,000 Feet" episodes are titled "Flight GEN01 - Part A": the code names the book(s) the overview covers
+SKIP_FLIGHT_BOOKS = {"JAO": ["Joel", "Amos", "Obadiah"], "MNH": ["Micah", "Nahum", "Habakkuk"],
+                     "ZHA": ["Zephaniah", "Haggai"], "ZMA": ["Zechariah", "Malachi"]}
 
 # ---- skip the intro music: seconds to start at when an episode is played fresh (resume ignores this) ----
 INTRO_SKIP = {
