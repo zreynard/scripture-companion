@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 84  # bump on every shipped build; also busts the service-worker cache
+VERSION = 85  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -628,6 +628,10 @@ body.mapopen #sheet{z-index:24}
 .settings{padding:calc(70px + env(safe-area-inset-top)) 20px 60px;max-width:560px}
 .settings .note{color:var(--mute);font-size:14px;line-height:1.5}textarea{width:100%;height:110px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;font:12px/1.4 ui-monospace,monospace}
 .btn{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 14px;font:inherit;margin:4px 6px 4px 0}
+.bk-steps{padding-left:20px}.bk-steps li{margin:6px 0}.bk-steps a{color:var(--gold2);font-weight:600}
+.bkf{display:flex;flex-direction:column;gap:8px;max-width:420px}.bkf input{font:16px -apple-system,system-ui,sans-serif;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}.bkf .btn{align-self:flex-start}
+.bk-u{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+#gear{position:relative}#gear.alert::after{content:'';position:absolute;top:6px;right:6px;width:9px;height:9px;border-radius:50%;background:#d93025;border:2px solid #fff}
 </style></head><body>
 <div id="topbar" aria-hidden="true"></div><button id="bookhd" aria-label="Go to this book's opening stop"></button><div class="top"><span id="pct" style="display:none"></span><button id="srch" aria-label="Search or go to a chapter"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Search</span></button><button id="mapbtn" aria-label="Map of the journey"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Zm0 0v13m6-10.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button><button id="gear">⋯</button></div>
 <div id="sheetbg" hidden></div><div id="sheet" role="dialog" aria-modal="true" hidden><div class="sh-grab"></div><div class="sh-top"><button id="shback" aria-label="Back" hidden>‹</button><span class="sh-kind" id="shkind"></span><button id="shx" aria-label="Close">✕</button></div><div id="shbody"></div></div>
@@ -643,7 +647,34 @@ body.mapopen #sheet{z-index:24}
 <audio id="audio" preload="metadata"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
 <script>
 const D=__DATA__,I=D.items;
-const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('sc:'+k,JSON.stringify(v))}catch(e){}}};
+const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('sc:'+k,JSON.stringify(v));if(BK_KEYS.includes(k))localStorage.setItem('sc:bkdirty','1')}catch(e){}}};
+/* Automatic backup to the listener's own private GitHub repo. The key never leaves this phone except to GitHub.
+   Saved about every 10 minutes while something changed, and whenever the app goes to the background; every backup is
+   a commit, so older versions stay in the repo's history. A new phone: paste the key once and everything comes back. */
+const BK_KEYS=['camp','camp2','cfg','level','lk2','narpos','prog','read','speed','tab'],BK={sha:null,busy:false,tried:0,err:S.get('bkerr','')};
+const bkRepo=()=>S.get('bkrepo','zreynard/scripture-companion-backup'),bkKey=()=>S.get('bkkey',''),bkOn=()=>!!bkKey();
+function bkSnap(){const o={};BK_KEYS.forEach(k=>{try{const v=localStorage.getItem('sc:'+k);if(v!=null)o[k]=JSON.parse(v)}catch(e){}});return o}
+function bkB64(str){const b=new TextEncoder().encode(str);let s='';for(let i=0;i<b.length;i+=0x8000)s+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(s)}
+function bkUn64(b64){return new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g,'')),c=>c.charCodeAt(0)))}
+function bkGH(path,opt={},key=bkKey(),repo=bkRepo()){return fetch('https://api.github.com/repos/'+repo+path,{method:opt.method||'GET',body:opt.body,cache:'no-store',headers:Object.assign({Authorization:'Bearer '+key,Accept:'application/vnd.github+json'},opt.body?{'Content-Type':'application/json'}:{})})}
+async function bkFetch(){const r=await bkGH('/contents/progress.json');if(r.status===404){BK.sha=null;return null}if(!r.ok)throw r.status;const j=await r.json();BK.sha=j.sha;let c=j.content;
+ if(!c||j.encoding!=='base64'){const r2=await bkGH('/git/blobs/'+j.sha);if(!r2.ok)throw r2.status;c=(await r2.json()).content}return JSON.parse(bkUn64(c))}
+function bkFail(e){BK.err=e===401||e===403?'GitHub no longer accepts the backup key: paste a new one in ⋯':e===404?'The backup repo was not found':'';S.set('bkerr',BK.err);bkDot()}
+async function bkSave(){if(!bkOn()||BK.busy)return;BK.busy=true;BK.tried=Date.now();try{
+  const body={message:'Backup '+new Date().toISOString().slice(0,16).replace('T',' '),content:bkB64(JSON.stringify({v:1,at:Date.now(),data:bkSnap()}))};
+  if(BK.sha===null)await bkFetch().catch(()=>{});if(BK.sha)body.sha=BK.sha;
+  let r=await bkGH('/contents/progress.json',{method:'PUT',body:JSON.stringify(body)});
+  if(r.status===409||r.status===422){await bkFetch();if(BK.sha)body.sha=BK.sha;r=await bkGH('/contents/progress.json',{method:'PUT',body:JSON.stringify(body)})}
+  if(!r.ok)throw r.status;BK.sha=(await r.json()).content.sha;localStorage.removeItem('sc:bkdirty');S.set('bklast',Date.now());bkFail(0)}
+ catch(e){if(typeof e==='number')bkFail(e)}finally{BK.busy=false;const st=document.getElementById('bkst');if(st)st.innerHTML=bkStatus()}}
+function bkDue(){return bkOn()&&localStorage.getItem('sc:bkdirty')==='1'}
+function bkApply(d){BK_KEYS.forEach(k=>{if(k in d)localStorage.setItem('sc:'+k,JSON.stringify(d[k]))});localStorage.setItem('sc:view',JSON.stringify('walk'));localStorage.removeItem('sc:bkdirty')}
+function bkAgo(t){if(!t)return 'not yet';const m=Math.round((Date.now()-t)/60000);return m<1?'just now':m<60?m+' min ago':m<1440?Math.round(m/60)+' h ago':Math.round(m/1440)+' days ago'}
+function bkStatus(){return BK.err?`<b style="color:#b3261e">Backup stopped.</b> ${BK.err}.`:`Backed up ${bkAgo(S.get('bklast',0))} to your private repo <b>${bkRepo()}</b>. It saves on its own; nothing to do.`}
+function bkDot(){const g=document.getElementById('gear');if(g)g.classList.toggle('alert',!!(bkOn()&&BK.err))}
+/* how much progress a snapshot holds, to tell an empty new phone from a used one */
+function bkWeight(d){return Object.keys((d&&d.prog)||{}).length+Object.keys((d&&d.read)||{}).length}
+
 let prog=S.get('prog',{}),read=S.get('read',{}),cfg=Object.assign(S.get('cfg',{who:''}),{order:'canon'}),view=S.get('view','walk'),camp=S.get('camp',null);
 const okWho=id=>!cfg.who||I[id].who===cfg.who;
 // --- denser scenery: terrain everywhere, per-book motifs, more vignettes, celestial bodies, rivers ---
@@ -1190,11 +1221,14 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  document.querySelectorAll('.bl[data-camp], #labels g[data-camp]').forEach(t=>t.onclick=e=>{e.stopPropagation();go(+t.dataset.camp)})}
 let LK=['overview','chapter','verses'].includes(S.get('lk2','overview'))?S.get('lk2','overview'):'overview',FOLD=false,TAB=['listen','read','summary','map'].includes(S.get('tab','summary'))?S.get('tab','summary'):'summary';  /* folding is for this stop only; every stop (and every app open) starts with its voices showing */
 function go(i){{const w=walk(),here=camp!=null&&w[camp];if(here&&here.c.intro&&i>camp&&!read[here.b.abbr+'0']){read[here.b.abbr+'0']=true;S.set('read',read)}}camp=i;FOLD=false;decorate.more=false;decorate.follow=true;S.set('camp',camp);render()}
+function bkForm(again){return `<form id="bkf" class="bkf" autocomplete="on"><input type="text" name="username" autocomplete="username" value="Scripture Companion backup" readonly class="bk-u" tabindex="-1" aria-hidden="true"><input type="password" name="password" id="bkkey" autocomplete="current-password" placeholder="${again?'Paste a new GitHub key':'Paste your GitHub key'}" required><input type="text" id="bkrepo" value="${esc(bkRepo())}" aria-label="Backup repo (owner/name)" autocapitalize="off" spellcheck="false"><button class="btn" type="submit">${again?'Use this key':'Turn on backup'}</button><p class="note" id="bkmsg"></p></form>`}
 function settingsView(){const unmapped=Object.values(I).filter(i=>!D.books.some(b=>b.ov.includes(i.id)||(b.spans||[]).some(x=>x.id===i.id)||b.ch.some(c=>c.ids.includes(i.id)))).length;const n=Object.keys(I).length,na=Object.values(I).filter(i=>i.audio).length;
  return `<div class="settings"><button class="sccard" id="opensc"><span class="serif">Secret Church</span><small>${scGroups().length} nights · every session in order ›</small></button><h2 class="serif" style="margin:0 0 8px">The road</h2><p class="note">${n} episodes, ${na} with audio in the app. Everything on the road sits at the chapter or book it teaches: sermons and Pray the Word at their chapters, Secret Church and other surveys at the books they cover. ${unmapped} episodes don't name a passage and wait off-road until the full import adds their Scripture. A new teacher is a new feed; their episodes land the same way.</p>
  <p>
  <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who?NAMES[cfg.who]+' only':'everyone'} — switch</span></p>
- <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).</p><p class="note">Progress is stored on this device.</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
+ <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).</p><h2 class="serif" style="margin:22px 0 8px">Backup</h2>${bkOn()?`<p class="note" id="bkst">${bkStatus()}</p><button class="btn" id="bknow">Back up now</button><button class="btn" id="bkrest">Restore from backup</button><button class="btn" id="bkoff">Turn off</button>${BK.err?bkForm(true):''}`:`<p class="note">Your progress lives only on this phone. Turn on backup and it saves itself to a private GitHub repo you own; on a new phone, paste the same key and everything comes back.</p>
+ <ol class="note bk-steps"><li><a href="https://github.com/new?name=scripture-companion-backup&visibility=private" target="_blank" rel="noopener">Create the private repo</a> (name and Private are filled in: tap <b>Create repository</b>).</li><li><a href="https://github.com/settings/personal-access-tokens/new?name=Scripture%20Companion%20backup&description=Lets%20the%20app%20save%20listening%20progress&expires_in=none&contents=write" target="_blank" rel="noopener">Make a key</a>: under <b>Repository access</b> pick <b>Only select repositories</b> → scripture-companion-backup; check <b>Contents: Read and write</b>; tap <b>Generate</b> and copy it.</li><li>Paste it here. Your iPhone offers to save it in Passwords, so a new phone fills it in.</li></ol>${bkForm(false)}`}
+ <p class="note" style="margin-top:18px">By hand:</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>
  <button class="btn" id="back">‹ Back to the road</button></div>`}
 /* Secret Church library: every night, every session, in order (the podcast's sessions where it has them) */
@@ -1367,9 +1401,22 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
  const scb=$('#scback');if(scb)scb.onclick=()=>{view='walk';S.set('view',view);decorate.first=true;render()};
  document.querySelectorAll('details.sce').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.sck):OPEN.delete(d.dataset.sck)});const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
  const io=$('#io');if(io){$('#exp').onclick=()=>io.value=JSON.stringify({prog,read,cfg});$('#imp').onclick=()=>{try{const v=JSON.parse(io.value);prog=v.prog||prog;read=v.read||read;S.set('prog',prog);S.set('read',read);render()}catch(e){io.value='Could not read that JSON.'}};
+  const bkf=$('#bkf');if(bkf)bkf.onsubmit=async e=>{e.preventDefault();const key=$('#bkkey').value.trim(),repo=$('#bkrepo').value.trim().replace(/^https?:\/\/github\.com\//,'').replace(/\.git$|\/$/g,''),msg=$('#bkmsg');msg.textContent='Checking…';
+   try{const r=await bkGH('',{},key,repo);if(r.status===401)throw 'GitHub did not accept that key.';if(r.status===404)throw 'Could not open '+repo+' with that key: check the repo exists and the key was given access to it.';if(!r.ok)throw 'GitHub said '+r.status+'.';
+    const j=await r.json();if(!j.private&&!confirm(repo+' is public: anyone could see your listening history. Use it anyway?'))throw 'Make the repo private, then try again.';
+    if(j.permissions&&!j.permissions.push)throw 'That key can read the repo but not save to it: give it Contents: Read and write.';
+    S.set('bkkey',key);S.set('bkrepo',repo);BK.sha=null;BK.err='';S.set('bkerr','');bkDot();
+    const remote=await bkFetch().catch(()=>null),here=bkSnap();
+    if(remote&&remote.data&&bkWeight(remote.data)>0){const when=new Date(remote.at).toLocaleString();
+     if(bkWeight(here)===0||confirm('Found a backup from '+when+'. Restore it on this phone? (Cancel keeps this phone\'s progress and backs it up instead.)')){bkApply(remote.data);location.reload();return}}
+    await bkSave();render()}catch(err){msg.textContent=typeof err==='string'?err:'Could not reach GitHub. Check your connection.'}};
+  const bkn=$('#bknow');if(bkn)bkn.onclick=async()=>{localStorage.setItem('sc:bkdirty','1');$('#bkst').textContent='Backing up…';await bkSave()};
+  const bkr=$('#bkrest');if(bkr)bkr.onclick=async()=>{try{const d=await bkFetch();if(!d||!d.data){alert('No backup yet.');return}if(confirm('Replace this phone\'s progress with the backup from '+new Date(d.at).toLocaleString()+'?')){bkApply(d.data);location.reload()}}catch(e){alert('Could not reach the backup.')}};
+  const bko=$('#bkoff');if(bko)bko.onclick=()=>{if(confirm('Stop backing up? The backups already saved stay in your repo.')){localStorage.removeItem('sc:bkkey');localStorage.removeItem('sc:bkerr');BK.err='';bkDot();render()}};
   $('#reset').onclick=()=>{if(confirm('Erase all progress on this device?')){prog={};read={};camp=null;S.set('prog',prog);S.set('read',read);S.set('camp',null);render()}};
   $('#atest').onclick=()=>{const o=$('#atest-out');o.textContent=' testing…';const a=new Audio();a.src=Object.values(I).find(i=>i.audio).audio;a.addEventListener('loadedmetadata',()=>o.textContent=' ✓ streams ('+fmt(a.duration)+')');a.addEventListener('error',()=>o.textContent=' ✗ blocked here');a.load()}}}
 decorate.first=true;render();let lastW=innerWidth;window.addEventListener('resize',()=>{if(innerWidth===lastW)return;lastW=innerWidth;decorate.first=true;render()});
+setInterval(()=>{if(bkDue()&&Date.now()-BK.tried>10*60e3)bkSave()},60e3);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&bkDue())bkSave()});setTimeout(()=>{bkDot();if(bkDue())bkSave()},5000);
 /* home-screen app: offline shell + keep progress from being evicted */
 if('serviceWorker' in navigator&&isSecureContext)navigator.serviceWorker.register('sw.js').catch(()=>{});
 /* pick up new versions: check on open and whenever the app comes back to the front */
