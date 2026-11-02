@@ -1,0 +1,47 @@
+# Narrator samples, round 2: voices designed with Parler-TTS, read by Chatterbox (both open-source, no keys).
+name: Narrator samples round 2
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: tts-round2
+jobs:
+  design:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q "git+https://github.com/huggingface/parler-tts.git" soundfile
+      - run: python tools/tts_round2.py design 2>&1 | tee design.log; exit ${PIPESTATUS[0]}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: refs
+          path: refs/
+  read:
+    needs: design
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q chatterbox-tts soundfile
+      - uses: actions/download-artifact@v4
+        with:
+          name: refs
+          path: refs/
+      - run: python tools/tts_round2.py read 2>&1 | tee read.log; exit ${PIPESTATUS[0]}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/voice_samples2
+          git diff --cached --quiet || git commit -q -m "Narrator samples round 2 (Chatterbox, Parler-designed British voices)"
+          git pull -q --rebase origin main && git push -q origin HEAD:main
