@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 83  # bump on every shipped build; also busts the service-worker cache
+VERSION = 84  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -611,13 +611,15 @@ body.mapopen #sheet{z-index:24}
 #np .ctl2 button{background:none;border:0;color:var(--ink);font:inherit;font-size:15px;padding:10px 4px}
 @keyframes npL{from{transform:translateX(50px);opacity:.2}to{transform:none;opacity:1}}@keyframes npR{from{transform:translateX(-50px);opacity:.2}to{transform:none;opacity:1}}
 #np.sw-l .art,#np.sw-l .t,#np.sw-l .s{animation:npL .28s ease-out}#np.sw-r .art,#np.sw-r .t,#np.sw-r .s{animation:npR .28s ease-out}
-#np.mini .np-top,#np.mini .art,#np.mini .np-d,#np.mini .ctl2{display:none}
+#np.mini .np-top,#np.mini .art,#np.mini .np-d,#np.mini #zz{display:none}
 #np.mini .ctl #nxt{display:flex;padding:6px}
 #np.mini{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto auto auto;column-gap:12px;align-items:center;padding:8px 16px calc(6px + env(safe-area-inset-bottom));cursor:pointer}
 #np.mini .grab{grid-column:1/-1;grid-row:1;margin:0 auto 8px}
-#np.mini .t{grid-column:1/-1;grid-row:2;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#np.mini .t{grid-column:1;grid-row:2;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #np.mini .s{grid-column:1;grid-row:3;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #np.mini #cls{display:none}
+#np.mini .ctl2{grid-column:2;grid-row:2;margin:0;justify-self:end}#np.mini .ctl2 .spd button{padding:4px 9px;min-width:32px;font-size:14px}#np.mini #spd{min-width:46px!important}
+#np.mini .times{justify-self:end}
 #np.mini .times{grid-column:2;grid-row:3;gap:8px;font-size:12px;font-variant-numeric:tabular-nums}
 #np.mini input[type=range]{grid-column:1/-1;grid-row:4;margin:6px 0 0;height:18px}
 #np.mini .ctl .side{font-size:15px;padding:6px 10px}
