@@ -137,6 +137,7 @@ SKIP_FLIGHT_BOOKS = {"JAO": ["Joel", "Amos", "Obadiah"], "MNH": ["Micah", "Nahum
 
 # ---- skip the intro music: seconds to start at when an episode is played fresh (resume ignores this) ----
 INTRO_SKIP = {
+    "skip_connect": 47,           # Connect with Skip Heitzig radio: 47 s intro
     "ptw": 0,                     # Pray the Word
     "platt_messages": 0,          # David Platt Messages
     "secret_church_podcast": 0,   # Secret Church podcast
