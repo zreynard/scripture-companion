@@ -7,13 +7,14 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: narration-publish
   cancel-in-progress: false
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,3 +40,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: ./publish.sh "Publish app"
+      - name: Again in an hour while the narration is still running (GitHub's hourly schedule can lag by hours)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          busy() { gh api "repos/${{ github.repository }}/actions/workflows/narrate.yml/runs?per_page=1" -q '.workflow_runs[0].status' | grep -qv completed; }
+          busy || exit 0
+          sleep 3300
+          busy && gh workflow run narration-publish.yml -R ${{ github.repository }} --ref main || true
