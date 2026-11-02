@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 80  # bump on every shipped build; also busts the service-worker cache
+VERSION = 81  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -1319,8 +1319,13 @@ function narNext(){const was=NAR;if(!was)return;read[was.b.abbr+was.c]=true;S.se
  narPlay(nx[0],nx[1],0)}
 let fullAtScroll=0;
 function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;roomForPlayer();if(!m&&NAR&&cur===NAR.id){narUser=0;readerFill(true);setTimeout(()=>narMark(true),60)}}
-(()=>{const np=NP();let y0=null,x0=0,dy=0,dx=0;
- np.addEventListener('touchstart',e=>{if(e.target.closest('input')||(e.target.closest('#np-read')&&!np.classList.contains('mini')))return;y0=e.touches[0].clientY;x0=e.touches[0].clientX;dy=0;dx=0;np.style.transition='none'},{passive:true});
+(()=>{const np=NP();let y0=null,x0=0,dy=0,dx=0,tb=null,bx=0,by=0;
+ /* buttons act the moment the finger lifts: an iPhone can drop the click while the reader moves, and a button press never drags the player */
+ np.addEventListener('touchstart',e=>{tb=e.target.closest('button');if(tb){bx=e.touches[0].clientX;by=e.touches[0].clientY}},{passive:true});
+ np.addEventListener('touchmove',e=>{if(tb&&Math.hypot(e.touches[0].clientX-bx,e.touches[0].clientY-by)>12)tb=null},{passive:true});
+ np.addEventListener('touchend',e=>{const b=tb;tb=null;if(!b||b.disabled)return;if(e.cancelable)e.preventDefault();b.click()});
+ np.addEventListener('touchcancel',()=>{tb=null});
+ np.addEventListener('touchstart',e=>{if(e.target.closest('input,button')||(e.target.closest('#np-read')&&!np.classList.contains('mini')))return;y0=e.touches[0].clientY;x0=e.touches[0].clientX;dy=0;dx=0;np.style.transition='none'},{passive:true});
  np.addEventListener('touchmove',e=>{if(y0===null)return;dy=e.touches[0].clientY-y0;dx=e.touches[0].clientX-x0;if(!np.classList.contains('mini')&&dy>0&&Math.abs(dy)>Math.abs(dx))np.style.transform=`translateY(${dy}px)`},{passive:true});
  np.addEventListener('touchend',()=>{if(y0===null)return;np.style.transition='';np.style.transform='';y0=null;
   if(Math.abs(dx)>60&&Math.abs(dx)>2*Math.abs(dy)){np.dataset.swiped=Date.now();skipTrack(dx<0?1:-1);return}
