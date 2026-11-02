@@ -25,12 +25,52 @@ def fingerprint(url):
         subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-user_agent", "Mozilla/5.0", "-t", str(HEAD),
                         "-i", url, "-ac", "1", "-ar", "11025", wav], check=True, timeout=300)
         out = subprocess.run(["fpcalc", "-raw", "-length", str(HEAD), wav], capture_output=True, text=True, timeout=120).stdout
+        feats = voice_feats(wav)
     dur = fp = None
     for line in out.splitlines():
         if line.startswith("DURATION="): dur = float(line.split("=")[1])
         if line.startswith("FINGERPRINT="): fp = np.array([int(x) for x in line.split("=")[1].split(",") if x], dtype=np.uint32)
     if fp is None or not len(fp) or not dur: return None
-    return fp, min(dur, HEAD) / len(fp)
+    return fp, min(dur, HEAD) / len(fp), feats
+
+
+VSTEP = 0.5  # seconds between voice-feature windows
+
+def voice_feats(wav):
+    """Tone colour of the sound, every half second: log energy in 24 bands (100-4500 Hz) over a 1 s window, with
+    overall loudness removed, so two speakers can be told apart however loud they are."""
+    import wave
+    with wave.open(wav) as w:
+        sr = w.getframerate(); x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32)
+    n, hop = 1024, 512
+    if len(x) < n * 4: return np.zeros((0, 24))
+    frames = np.lib.stride_tricks.sliding_window_view(x, n)[::hop] * np.hanning(n)
+    spec = np.abs(np.fft.rfft(frames, axis=1)) ** 2
+    edges = np.geomspace(100, 4500, 25) * n / sr
+    bands = np.stack([spec[:, int(edges[k]):max(int(edges[k]) + 1, int(edges[k + 1]))].sum(1) for k in range(24)], 1)
+    logb = np.log(bands + 1e-6)
+    per = sr / hop                          # frames per second
+    out = []
+    t = 0.0
+    while (t + 1.0) * per <= len(logb):
+        seg = logb[int(t * per):int((t + 1.0) * per)]
+        v = seg.mean(0); out.append(v - v.mean())
+        t += VSTEP
+    return np.array(out)
+
+
+def davey_starts(feats, after, ann=(41, 52), ref=(175, 235), hold=12.0, share=0.8):
+    """First moment after `after` seconds where the main speaker (as heard deep in the episode, ref) takes over from
+    the announcer (as heard in the fixed intro, ann) and keeps going for `hold` seconds."""
+    if feats is None or len(feats) < ref[1] / VSTEP: return None
+    w = lambda a, b: feats[int(a / VSTEP):int(b / VSTEP)]
+    A, Dv = w(*ann).mean(0), w(*ref).mean(0)
+    lab = np.linalg.norm(feats - Dv, axis=1) < np.linalg.norm(feats - A, axis=1)
+    k0, need = int(after / VSTEP), int(hold / VSTEP)
+    for k in range(k0, min(len(lab) - need, int(MAX_SKIP / VSTEP))):
+        if lab[k] and lab[k:k + need].mean() >= share:
+            return round(k * VSTEP, 1)
+    return None
 
 
 def bits(a):
@@ -95,7 +135,7 @@ def main():
         seen = {i: [] for i in ids}
         for k, i in enumerate(ids):
             for j in ids[k + 1:k + 4]:
-                (a, sa), (b, sb) = F[i], F[j]
+                (a, sa, _), (b, sb, _) = F[i], F[j]
                 for r in runs(a, b):
                     if (r[1] - r[0]) * sa > MAX_SKIP: continue                 # the same episode twice
                     seen[i].append((r[0] * sa, r[1] * sa, j)); seen[j].append((r[2] * sb, r[3] * sb, i))
@@ -121,11 +161,28 @@ def main():
         print(f"-- BITS {BITS}, MINRUN {MINRUN}s", flush=True); analyse()
     BITS, MINRUN = int(os.environ.get("BITS", "10")), float(os.environ.get("MINRUN", "3"))
     ends = analyse()
-    out = {}
+    # the shared pieces end the intro when the last one comes late (a sting right before the sermon); when the last
+    # shared piece is early (the fixed announcer bit), the announcer goes on speaking: find where the main voice takes over
+    VOICE = os.environ.get("VOICE", "0") == "1"
+    out, check = {}, []
     for e in eps:
-        v = ends.get(e["id"]) or []
-        if v:
-            out[e["id"]] = round(min(MAX_SKIP, max(v)), 1)
+        i = e["id"]; v = ends.get(i) or []
+        shared_end = max(v) if v else None
+        feats = F[i][2] if F.get(i) else None
+        if VOICE and shared_end is not None and shared_end > 70:
+            vs = davey_starts(feats, after=55)
+            if vs is not None: check.append((shared_end, vs))
+        if shared_end is None: continue
+        if VOICE and shared_end <= 70:
+            vs = davey_starts(feats, after=shared_end)
+            out[i] = round(min(MAX_SKIP, vs if vs is not None else shared_end), 1)
+        else:
+            out[i] = round(min(MAX_SKIP, shared_end), 1)
+    if check:
+        diffs = [abs(a - b) for a, b in check]
+        print(f"\nvoice check against the sting, {len(check)} episodes: median off by {statistics.median(diffs):.1f}s; "
+              f"within 5 s {sum(d <= 5 for d in diffs)}, within 10 s {sum(d <= 10 for d in diffs)}")
+        for a, b in check[:12]: print(f"    sting {a:6.1f}   voice {b:6.1f}")
     found = list(out.values())
     print(f"\nintro found in {len(out)} of {len(eps)} episodes"
           + (f"; skip median {statistics.median(found):.1f}s, range {min(found):.1f}-{max(found):.1f}s" if found else ""))

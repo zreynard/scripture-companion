@@ -24,6 +24,9 @@ on:
       sweep:
         description: "Try several BITS/MINRUN pairs, e.g. 8/3,6/3,4/4"
         default: ""
+      voice:
+        description: "Also find where the main speaker takes over (1 = yes)"
+        default: "0"
 permissions:
   contents: write
 jobs:
@@ -37,7 +40,7 @@ jobs:
           python-version: "3.12"
       - run: sudo apt-get install -y ffmpeg libchromaprint-tools >/dev/null
       - run: pip install numpy
-      - run: SOURCE=${{ github.event.inputs.source }} N=${{ github.event.inputs.n }} FOCUS="${{ github.event.inputs.focus }}" HEAD=${{ github.event.inputs.head }} SWEEP="${{ github.event.inputs.sweep }}" BITS=${{ github.event.inputs.bits }} MINRUN=${{ github.event.inputs.minrun }} python tools/intro_detect.py | tee intro.log
+      - run: SOURCE=${{ github.event.inputs.source }} N=${{ github.event.inputs.n }} FOCUS="${{ github.event.inputs.focus }}" HEAD=${{ github.event.inputs.head }} SWEEP="${{ github.event.inputs.sweep }}" BITS=${{ github.event.inputs.bits }} MINRUN=${{ github.event.inputs.minrun }} VOICE=${{ github.event.inputs.voice }} python tools/intro_detect.py | tee intro.log
       - run: |
           mkdir /tmp/d && cp intro_*.json intro.log /tmp/d/ && cd /tmp/d
           git init -q -b diag && git add -A
