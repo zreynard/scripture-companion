@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 51  # bump on every shipped build; also busts the service-worker cache
+VERSION = 52  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -305,7 +305,13 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .acts button{font:inherit;font-size:14px;white-space:nowrap;border-radius:22px;padding:10px 8px;flex:1 1 auto;min-width:0;border:1px solid rgba(27,36,64,.15);background:rgba(255,255,255,.6);color:var(--ink)}
 .acts .bk{flex:0 0 44px;padding:10px 0;font-size:18px;line-height:1}
 .myplace{display:inline-flex;align-items:center;min-height:36px;vertical-align:middle;background:none;border:0;padding:0 2px;font:inherit;font-size:12px;color:var(--gold2);text-decoration:underline;text-underline-offset:2px;cursor:pointer}.acts .bk:disabled{opacity:.3}
-.clearing .hd{display:flex;align-items:center;justify-content:space-between;gap:10px}.clearing .hd .ch{cursor:pointer}
+.clearing .hd{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ck-c{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#c9a24a;color:#fff;font:700 14px/1 -apple-system,system-ui,sans-serif;margin-left:9px;vertical-align:4px}
+.pg{display:grid;gap:5px;margin:8px 0 6px}
+.pg-r{display:grid;grid-template-columns:minmax(52px,auto) minmax(0,1fr) 44px;align-items:center;gap:10px;font-size:12.5px;color:var(--mute)}
+.pg-l{white-space:nowrap}.pg-b{height:6px;border-radius:3px;background:rgba(27,36,64,.08);overflow:hidden}
+.pg-b i{display:block;height:100%;min-width:0;border-radius:3px;background:linear-gradient(90deg,#d9b45a,#c9a24a);transition:width .5s ease}
+.pg-p{text-align:right;font-weight:650;color:var(--ink);font-variant-numeric:tabular-nums}.clearing .hd .ch{cursor:pointer}
 .clearing .fold{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid rgba(27,36,64,.15);background:rgba(255,255,255,.6);color:var(--ink);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
 .clearing .yr{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);margin:-2px 0 8px}.clearing.folded .yr{margin:-2px 0 4px}
 .byr{font:600 9px -apple-system,system-ui,sans-serif;letter-spacing:.14em;fill:rgba(168,129,42,.85);text-transform:uppercase}
@@ -878,7 +884,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  let nextV=null;for(let i=camp+1;i<w.length;i++){if(w[i].c.ids.some(okWho)){nextV={i,x:w[i]};break}}
  {const cut=Math.min(Hs-20,m.y+44);svg.setAttribute('viewBox',`0 0 390 ${cut}`);$('#w2').setAttribute('viewBox',`0 ${cut} 390 ${Hs-cut}`)}
  const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';
- const rdc=w.filter(x=>read[x.b.abbr+x.c.c]).length,lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${camp!==first?`<button class="myplace" data-camp="${first}">My place</button> · `:''}${rdc} of 1,189</span></div><div class="hd"><div class="ch serif" id="chT">${b.name} ${c.c}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c.sl?`<div class="sline">${rich(c.sl)}</div>`:''}${fold?`<button class="unfold" id="unfold">${ids.length?'▸ Open · '+ids.length+' voice'+(ids.length>1?'s':''):'▸ Open this stop'}</button>`:''}<div class="body"${fold?' hidden':''}>
+ const chDone=x=>!!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone),bibleN=w.filter(chDone).length,bookN=b.ch.filter(cc=>chDone({b,c:cc})).length,hereDone=chDone(x),pct=(n,d)=>{const v=100*n/d;return v>0&&v<10?v.toFixed(1):String(Math.round(v))},lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${camp!==first?`<button class="myplace" data-camp="${first}">My place</button>`:''}</span></div><div class="hd"><div class="ch serif"><span id="chT">${b.name} ${c.c}</span>${hereDone?'<span class="ck-c" role="img" aria-label="Completed">✓</span>':''}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="pg">${[[b.name,bookN,b.ch.length],['Bible',bibleN,1189]].map(([l,n,d])=>`<div class="pg-r"><span class="pg-l">${l}</span><span class="pg-b" role="progressbar" aria-label="${l}" aria-valuenow="${Math.round(100*n/d)}" aria-valuemin="0" aria-valuemax="100"><i style="width:${100*n/d}%"></i></span><span class="pg-p">${n===d?'✓':pct(n,d)+'%'}</span></div>`).join('')}</div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c.sl?`<div class="sline">${rich(c.sl)}</div>`:''}${fold?`<button class="unfold" id="unfold">${ids.length?'▸ Open · '+ids.length+' voice'+(ids.length>1?'s':''):'▸ Open this stop'}</button>`:''}<div class="body"${fold?' hidden':''}>
   <div class="tabs" role="tablist">${[['listen','Listen',ids.length+ov.length+(c===b.ch[0]?(b.spans||[]).filter(x=>okWho(x.id)).length:0)],['read','Read',0],['summary','Summary',0],['map','Map',0]].map(([k,l,n])=>`<button class="tab${TAB===k?' on':''}" role="tab" aria-selected="${TAB===k}" data-tab="${k}">${l}${n?`<span>${n}</span>`:''}</button>`).join('')}</div>
   ${TAB==='listen'?`<div class="pane">${(()=>{const G=listenGroups(b,c),N={overview:G.overview.length,chapter:G.chapter.length,verses:G.verses.length};
    if(!N.overview&&!N.chapter&&!N.verses)return `<div class="empty">No voice on this stretch yet.${nextV?` Next voice: <b style="color:var(--gold2);cursor:pointer" data-camp="${nextV.i}" class="nv">${nextV.x.b.name} ${nextV.x.c.c}</b> · ${nextV.i-camp} stop${nextV.i-camp>1?'s':''} on.`:''}</div>`;
@@ -898,7 +904,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  $('#w2').onclick=e=>{const w2=$('#w2'),pt=w2.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(w2.getScreenCTM().inverse());
   const lb=(decorate.drift||[]).find(l=>l.kind==='book'&&p.y>l.y-18&&p.y<l.y+(l.yr?20:8)&&(l.side==='L'?p.x>l.x-6&&p.x<l.x+150:p.x<l.x+6&&p.x>l.x-150));
   if(lb){go(lb.idx);return}let best=0,bd=1e12;for(let i=0;i<w.length;i++){const q=at(i),dd=(q.x-p.x)**2+(q.y-p.y)**2;if(dd<bd){bd=dd;best=i}}if(bd<60*60)go(best)};
- $('#bookhd').textContent=b.name;$('#bookhd').dataset.camp=w.findIndex(x=>x.b===b);
+ $('#bookhd').textContent=b.name+(bookN===b.ch.length?' ✓':'');$('#bookhd').dataset.camp=w.findIndex(x=>x.b===b);
  // camera: keep you ~30% from top
  if(!decorate.moving&&(decorate.follow||decorate.first)){const y=m.y*sc+$('#world').offsetTop-window.innerHeight*0.30;window.scrollTo({top:Math.max(0,y),behavior:decorate.first?'auto':'smooth'})}decorate.first=false;decorate.follow=false
  $('#hit').onclick=e=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());let best=0,bd=1e12;for(let i=0;i<w.length;i++){const q=at(i),dd=(q.x-p.x)**2+(q.y-p.y)**2;if(dd<bd){bd=dd;best=i}}go(best)};
