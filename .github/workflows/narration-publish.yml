@@ -1,0 +1,41 @@
+# Put finished narration chapters in the app while the long narration run is still going (hourly),
+# and once more when it ends (narrate.yml starts this). Gathers the timing files and republishes the app.
+name: Publish narration so far
+on:
+  schedule:
+    - cron: "41 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: narration-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/narrate.py collect
+      - name: Save the timings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/narration
+          if git diff --cached --quiet; then echo "nothing new"; echo "NEW=0" >> $GITHUB_ENV; exit 0; fi
+          git commit -q -m "Narration timings"
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          echo "NEW=1" >> $GITHUB_ENV
+      - name: Build and publish
+        if: env.NEW == '1'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: ./publish.sh "Publish app"

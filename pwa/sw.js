@@ -20,6 +20,12 @@ self.addEventListener('fetch', e => {
     }).catch(() => caches.match('index.html')));
     return;
   }
+  if (u.pathname.includes('/narration/')) {  // chapter timings grow as narration is published: newest when online
+    e.respondWith(fetch(e.request, { cache: 'no-cache' }).then(r => {
+      if (r.ok) { const copy = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); } return r;
+    }).catch(() => caches.match(e.request)));
+    return;
+  }
   if (u.pathname.includes('/bible/')) {  // Bible books: kept once downloaded, across app versions
     e.respondWith(caches.open('sc-bible-1').then(c => c.match(e.request).then(r => r || fetch(e.request).then(res => { if (res.ok) c.put(e.request, res.clone()); return res; }))));
     return;
