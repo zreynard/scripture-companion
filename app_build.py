@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 66  # bump on every shipped build; also busts the service-worker cache
+VERSION = 67  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -116,7 +116,7 @@ def main():
     SRC_PREF = {"platt_messages": 0, "ptw": 0, "2819_podcast": 0, "secret_church_podcast": 0, "twr360_secret_church": 1,
                 "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3, "radical_vimeo": 1, "street_preachers": 2,
                 "davey_sermons": 0, "davey_wfth": 1, "davey_journey": 0, "skip_archive": 0, "skip_church": 1, "skip_connect": 2}
-    for k, lst in by_chapter.items():  # one teaching, one entry: keep the best form of same-titled items
+    def one_each(lst):  # one teaching, one entry: keep the best form of same-titled items
         best = {}
         for i in lst:
             key = (core(items[i]["t"]), items[i]["who"])
@@ -146,6 +146,10 @@ def main():
                     sa = (not A["audio"], SRC_PREF.get(A["src"], 5)); sb = (not B["audio"], SRC_PREF.get(B["src"], 5))
                     drop.add(b if sa <= sb else a)
         lst[:] = [i for i in lst if i not in drop]
+    for lst in by_chapter.values(): one_each(lst)
+    for lst in by_book_ov.values(): one_each(lst)
+    for book, sp in spans.items():  # multi-book overviews
+        ids = [x["id"] for x in sp]; one_each(ids); sp[:] = [x for x in sp if x["id"] in set(ids)]
     for k, lst in by_chapter.items():  # 2819 first; Victory-era only where 2819 has nothing
         if any(items[i]["who"] == "PAM" and items[i]["era"] == "2819" and items[i]["tr"] == "sermon" for i in lst):
             lst[:] = [i for i in lst if not (items[i]["who"] == "PAM" and items[i]["era"] != "2819")]
