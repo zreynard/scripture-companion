@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 53  # bump on every shipped build; also busts the service-worker cache
+VERSION = 55  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -338,6 +338,33 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system
 .nm.l{text-decoration-style:dotted}
 .top{display:flex;gap:8px;align-items:center}.top #mapbtn{display:flex;align-items:center;justify-content:center;padding:6px 10px}
 span.nw{white-space:nowrap}
+.chv{margin-left:6px;vertical-align:5px;opacity:.55}
+#srch{display:flex;align-items:center;gap:6px;padding:7px 12px 7px 10px;min-height:36px}#srch span{font-size:13.5px;color:var(--mute)}
+@media (max-width:389px){#srch span{display:none}#srch{padding:7px 10px}}
+#bookhd{max-width:calc(100vw - 215px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#jump{position:fixed;inset:0;z-index:25;background:#f7f2e7;display:flex;flex-direction:column}
+#jump[hidden]{display:none}
+#jump .jp-top{display:flex;gap:10px;align-items:center;padding:calc(10px + env(safe-area-inset-top)) 14px 10px;background:#f7f2e7;border-bottom:1px solid rgba(27,36,64,.08)}
+#jump .jp-field{flex:1;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(27,36,64,.14);border-radius:14px;padding:0 12px;min-height:44px;color:var(--mute)}
+#jump input{flex:1;border:0;outline:0;background:transparent;font:inherit;font-size:17px;color:var(--ink);min-width:0;-webkit-appearance:none}
+#jump #jx{border:0;background:none;font:inherit;font-size:15px;color:var(--gold2);font-weight:600;padding:8px 2px;min-height:44px}
+#jbody{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:6px 14px calc(30px + env(safe-area-inset-bottom))}
+.jp-h{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);font-weight:650;margin:16px 2px 8px}
+.jp-sec{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:14px 2px 6px}
+.jp-bk{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:14px 2px 12px}.jp-bn{font-size:28px;color:var(--ink)}.jp-bs{font-size:13px;color:var(--mute)}
+.jp-all{flex:none;border:1px solid rgba(168,129,42,.4);border-radius:18px;background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--gold2);padding:8px 14px;min-height:40px;cursor:pointer}
+.jg{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:8px}.jg.small{margin:10px 0 2px}
+.jc{min-height:48px;border-radius:12px;border:1px solid rgba(27,36,64,.12);background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer}
+.jc.done{background:#c9a24a;border-color:#c9a24a;color:#fff}.jc.here{box-shadow:0 0 0 2.5px #1b2440;}
+.jb{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:46px;border:0;border-bottom:1px solid rgba(27,36,64,.07);background:none;font:inherit;font-size:16px;color:var(--ink);padding:0 4px;cursor:pointer;text-align:left}
+.jb.cur{font-weight:700}.jb-r{font-size:13px;color:var(--mute)}.jb-r .ok{font-style:normal;color:#fff;background:#c9a24a;border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+.jr{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;padding:9px 10px;margin:0 0 6px;border:1px solid rgba(27,36,64,.09);border-radius:14px;background:#fff;font:inherit;color:var(--ink);text-align:left;cursor:pointer}
+.jr.top{border-color:rgba(201,162,74,.6);background:#fbf3df}
+.jr-ic{flex:none;width:34px;height:34px;border-radius:50%;background:#f3ead3;color:#8a6a1e;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}.jr-ic.pin{color:#a8812a;font-size:15px}.jr-ic.play{font-size:11px}
+.jr-t{min-width:0;display:flex;flex-direction:column;gap:2px}.jr-t b{font-size:15.5px;font-weight:650}.jr-t small{font-size:13px;color:var(--mute);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.jp-empty{margin:24px 6px;font-size:15px;line-height:1.5;color:var(--mute)}
+body.jumpopen{overflow:hidden}
+
 .medal{flex:none;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#fbf5e6;border:2px solid var(--ring);box-shadow:inset 0 0 0 3px #fbf5e6,inset 0 0 0 4px rgba(201,162,74,.5);box-sizing:border-box;vertical-align:middle}
 #sheet .ph{display:flex;align-items:center;gap:14px;margin:2px 0 6px}#sheet .ph-t{min-width:0}#sheet .ph h3{margin:0}
 #sheet .ph-r{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:#6b7186;font-weight:600;margin-top:5px}
@@ -458,9 +485,9 @@ body.mapopen #sheet{z-index:24}
 .settings .note{color:var(--mute);font-size:14px;line-height:1.5}textarea{width:100%;height:110px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;font:12px/1.4 ui-monospace,monospace}
 .btn{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 14px;font:inherit;margin:4px 6px 4px 0}
 </style></head><body>
-<button id="bookhd" aria-label="Go to chapter 1 of this book"></button><div class="top"><span id="pct" style="display:none"></span><button id="mapbtn" aria-label="Map of the journey"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Zm0 0v13m6-10.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button><button id="gear">⋯</button></div>
+<button id="bookhd" aria-label="Go to chapter 1 of this book"></button><div class="top"><span id="pct" style="display:none"></span><button id="srch" aria-label="Search or go to a chapter"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Search</span></button><button id="mapbtn" aria-label="Map of the journey"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Zm0 0v13m6-10.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button><button id="gear">⋯</button></div>
 <div id="sheetbg" hidden></div><div id="sheet" role="dialog" aria-modal="true" hidden><div class="sh-grab"></div><div class="sh-top"><button id="shback" aria-label="Back" hidden>‹</button><span class="sh-kind" id="shkind"></span><button id="shx" aria-label="Close">✕</button></div><div id="shbody"></div></div>
-<div id="mapv" role="dialog" aria-modal="true" aria-label="Map of the journey" hidden><svg id="mapsvg" preserveAspectRatio="xMidYMid meet"></svg><div class="mv-top"><button id="mvx" aria-label="Close map">✕</button><div class="mv-title" id="mvtitle">Your journey</div></div><div class="mv-panel" id="mvpanel"><div class="mv-card" id="mvcard"></div><div class="mv-legs" id="mvlegs" aria-label="Legs of the journey"></div></div></div>
+<div id="jump" role="dialog" aria-modal="true" aria-label="Go to" hidden><div class="jp-top"><label class="jp-field"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="jq" type="search" placeholder="Nehemiah, John 3:16, Goliath" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="Search"></label><button id="jx">Close</button></div><div id="jbody"></div></div><div id="mapv" role="dialog" aria-modal="true" aria-label="Map of the journey" hidden><svg id="mapsvg" preserveAspectRatio="xMidYMid meet"></svg><div class="mv-top"><button id="mvx" aria-label="Close map">✕</button><div class="mv-title" id="mvtitle">Your journey</div></div><div class="mv-panel" id="mvpanel"><div class="mv-card" id="mvcard"></div><div class="mv-legs" id="mvlegs" aria-label="Legs of the journey"></div></div></div>
 <div id="main"></div>
 <div id="np"><div class="grab"></div><div class="t serif" id="np-t"></div><div class="s" id="np-s"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
@@ -580,6 +607,71 @@ function bookNames(){return D.books.map(b=>b.name)}
 function refLinks(t){ /* "(Exodus 3)" -> a tap goes to that chapter; names become name buttons */
  return rich(t).replace(/\(([1-3]?\s?[A-Z][A-Za-z]+(?:\s(?:of\s)?[A-Z][a-z]+)?)\s(\d+)(?::[\d–\-, ]+)?\)/g,(m,bk,ch)=>{const nm=bk==='Psalm'?'Psalms':bk==='Song of Songs'?'Song of Solomon':bk;
   return bookNames().includes(nm)?`<span style="white-space:nowrap">(<button class="go" data-gob="${nm}" data-goc="${ch}">${bk} ${ch}</button>)</span>`:m})}
+/* ---- hours: listened of available (rounded); a feed without a length counts 40 min (10 for a devotional) ---- */
+let AVAIL=null;function avail(){if(AVAIL)return AVAIL;const est=it=>+it.dur||(it.tr==='devotional'?600:2400),book={},all=new Set();
+ for(const b of D.books){const set=new Set([...b.ch.flatMap(c=>c.ids),...b.ov,...(b.spans||[]).map(x=>x.id)].filter(id=>I[id]&&I[id].audio));book[b.name]=[...set].reduce((a,id)=>a+est(I[id]),0);set.forEach(id=>all.add(id))}
+ return AVAIL={book,bible:[...all].reduce((a,id)=>a+est(I[id]),0)}}
+function hrsOf(heard,av){const H=Math.max(1,Math.round(av/3600)).toLocaleString();return heard<30?`0 of ${H} h`:heard<3600?`${Math.round(heard/60)} min of ${H} h`:`${Math.round(heard/3600).toLocaleString()} of ${H} h`}
+
+/* ---- Go to: one panel for jumping anywhere. Tap the chapter title to browse chapters and books; the search at
+   the top understands books and abbreviations ("neh 4", "1 cor 13", "jn 3:16"), names (Goliath), what happens
+   in a chapter ("burning bush") and sermon titles. Enter takes the first result. ---- */
+const nrm=t=>(t||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+const plainT=t=>(t||'').replace(/⟦[pl]:[^|⟧]+\|([^⟧]+)⟧/g,'$1');
+let BKA=null;function bookAliases(){if(BKA)return BKA;const m={},add=(k,b)=>{k=nrm(k);if(k&&!(k in m))m[k]=b};
+ const X={Genesis:['gn','gen'],Exodus:['ex','exo','exod'],Leviticus:['lv','lev'],Numbers:['nm','num'],Deuteronomy:['dt','deut'],Joshua:['josh','jos'],Judges:['jdg','judg'],
+  Nehemiah:['neh'],Esther:['est','esth'],Psalms:['psalm','ps','psa','pss'],Proverbs:['prov','prv','pr'],Ecclesiastes:['eccl','ecc','qoh'],'Song of Solomon':['songofsongs','song','sos','canticles'],
+  Isaiah:['isa'],Jeremiah:['jer'],Lamentations:['lam'],Ezekiel:['ezk','ezek'],Daniel:['dan','dn'],Hosea:['hos'],Obadiah:['obad','ob'],Jonah:['jnh'],Micah:['mic'],Nahum:['nah'],
+  Habakkuk:['hab'],Zephaniah:['zeph','zep'],Haggai:['hag'],Zechariah:['zech','zec'],Malachi:['mal'],Matthew:['mt','matt'],Mark:['mk','mrk'],Luke:['lk','luk'],John:['jn','jhn'],
+  Acts:['ac'],Romans:['rom','ro'],Galatians:['gal'],Ephesians:['eph'],Philippians:['phil','php'],Colossians:['col'],Titus:['tit'],Philemon:['phm','philem'],Hebrews:['heb'],
+  James:['jas'],Jude:['jud'],Revelation:['rev','revelations','apocalypse']};
+ const NUM={Samuel:['sam','sa','sm'],Kings:['kgs','ki','kin'],Chronicles:['chr','ch','chron'],Corinthians:['cor','co'],Thessalonians:['thess','thes','th'],Timothy:['tim','ti','tm'],Peter:['pet','pe','pt'],John:['jn','jo','joh','jhn']};
+ for(const b of D.books){add(b.name,b);add(b.abbr,b);(X[b.name]||[]).forEach(a=>add(a,b));const mm=b.name.match(/^([1-3]) (.+)$/);
+  if(mm){for(const a of [mm[2],...(NUM[mm[2]]||[])])for(const pre of [mm[1],['','i','ii','iii'][mm[1]],['','first','second','third'][mm[1]]])add(pre+a,b)}}
+ return BKA=m}
+function lev(a,b){const d=Array.from({length:a.length+1},(_,i)=>[i]);for(let j=1;j<=b.length;j++)d[0][j]=j;for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[a.length][b.length]}
+function findBook(q){const k=nrm(q.replace(/^(first|1st)\s+/i,'1').replace(/^(second|2nd)\s+/i,'2').replace(/^(third|3rd)\s+/i,'3'));if(!k)return null;const A=bookAliases();if(A[k])return A[k];
+ const pre=D.books.filter(b=>nrm(b.name).startsWith(k));if(pre.length===1||(pre.length&&k.length>=3))return pre[0];
+ if(/^[a-z]/.test(k)&&A['1'+k])return A['1'+k];
+ if(k.length>=4){let best=null,bd=9;for(const b of D.books){const n=nrm(b.name),d=lev(k,n.slice(0,Math.max(k.length,4)));if(d<bd){bd=d;best=b}}if(bd<=(k.length>=6?2:1))return best}return null}
+function parsePassage(q){const m=q.trim().match(/^((?:[1-3]|i{1,3}|first|second|third|1st|2nd|3rd)?\s*[a-z][a-z\s.]*?)\.?\s*(\d+)?(?:\s*[:.]\s*(\d+)(?:\s*[-–]\s*(\d+))?)?\s*$/i);if(!m)return null;
+ const b=findBook(m[1]);if(!b)return null;const max=b.ch[b.ch.length-1].c,ch=Math.min(Math.max(1,+(m[2]||1)),max);return{b,ch,v1:m[3]?+m[3]:null,v2:m[4]?+m[4]:(m[3]?+m[3]:null),whole:!m[2]}}
+let SIDX=null;function searchIndex(){if(SIDX)return SIDX;const w=walk();SIDX=w.map((x,i)=>({i,x,t:(plainT(x.c.sl||'')+' '+(x.c.sm||[]).map(plainT).join(' ')).toLowerCase()}));return SIDX}
+const JP={open:false,book:null,list:false};
+function openJump(mode){const el=$('#jump');el.hidden=false;document.body.classList.add('jumpopen');JP.open=true;const w=walk(),x=w[camp||0];JP.book=x.b;JP.list=false;
+ const q=$('#jq');q.value='';if(mode==='search')q.focus();atlas().then(()=>{if(JP.open)renderJump()}).catch(()=>{});renderJump()}
+function closeJump(){$('#jump').hidden=true;document.body.classList.remove('jumpopen');JP.open=false;$('#jq').blur()}
+function chDoneAt(x){return !!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone)}
+function jumpGo(i,o={}){closeJump();if(o.hl){HL=o.hl;TAB='read';S.set('tab',TAB)}if(o.listen){TAB='listen';S.set('tab',TAB);if(o.lk){LK=o.lk;S.set('lk2',LK)}}go(i)}
+function renderJump(){const body=$('#jbody'),q=$('#jq').value.trim(),w=walk(),cur=w[camp||0];let h='';
+ if(!q){if(JP.list){h+=`<div class="jp-h">All books</div>`;let land='';for(const b of D.books){const L=(LANDS.slice().reverse().find(l=>D.books.indexOf(b)>=D.books.findIndex(bb=>bb.name===l[0]))||[,''])[1];
+    if(L!==land){h+=`<div class="jp-sec">${esc(L)}</div>`;land=L}const n=b.ch.filter(c=>chDoneAt({b,c})).length,done=n===b.ch.length;
+    h+=`<button class="jb${b===cur.b?' cur':''}" data-jb="${esc(b.name)}"><span>${esc(b.name)}</span><span class="jb-r">${done?'<i class="ok">✓</i>':n?Math.round(100*n/b.ch.length)+'%':b.ch.length+' ch'}</span></button>`}}
+  else{const b=JP.book,n=b.ch.filter(c=>chDoneAt({b,c})).length;
+   h+=`<div class="jp-bk"><div><div class="jp-bn serif">${esc(b.name)}</div><div class="jp-bs">${n} of ${b.ch.length} chapters done</div></div><button class="jp-all" id="jall">All books ›</button></div><div class="jg">`;
+   for(const c of b.ch){const i=w.findIndex(x=>x.b===b&&x.c===c),done=chDoneAt({b,c}),here=i===camp;h+=`<button class="jc${done?' done':''}${here?' here':''}" data-ji="${i}" aria-label="${esc(b.name)} ${c.c}${done?', done':''}">${c.c}</button>`}h+='</div>'}}
+ else{const P=parsePassage(q),ql=q.toLowerCase(),words=ql.split(/\s+/).filter(x=>x.length>1);
+  if(P){const i=w.findIndex(x=>x.b===P.b&&x.c.c===P.ch),x=w[i];const ref=`${P.b.name} ${P.ch}${P.v1?':'+P.v1+(P.v2&&P.v2!==P.v1?'–'+P.v2:''):''}`;
+   h+=`<div class="jp-h">Go to</div><button class="jr top" data-ji="${i}"${P.v1?` data-v1="${P.v1}" data-v2="${P.v2}"`:''}><span class="jr-ic">›</span><span class="jr-t"><b>${esc(ref)}</b><small>${esc(plainT(x.c.sl||''))}</small></span></button>`;
+   if(P.whole){h+=`<div class="jg small">`;for(const c of P.b.ch){const k=w.findIndex(y=>y.b===P.b&&y.c===c);h+=`<button class="jc${chDoneAt({b:P.b,c})?' done':''}${k===camp?' here':''}" data-ji="${k}">${c.c}</button>`}h+='</div>'}}
+  if(!P||P.whole){
+   if(ATL_D&&ql.length>=2){const hit=(n)=>{const l=n.toLowerCase();return l===ql?3:l.startsWith(ql)?2:l.split(/[\s-]/).some(p=>p.startsWith(ql))&&ql.length>=3?1:0};
+    const ppl=Object.entries(ATL_D.p).map(([s,p])=>[s,p,hit(p.n)]).filter(r=>r[2]).sort((a,z)=>z[2]-a[2]||(z[1].nc||0)-(a[1].nc||0)).slice(0,4);
+    const pls=Object.entries(ATL_D.l).map(([s,l])=>[s,l,hit(l.n)]).filter(r=>r[2]).sort((a,z)=>z[2]-a[2]||(z[1].nc||0)-(a[1].nc||0)).slice(0,3);
+    if(ppl.length||pls.length){h+=`<div class="jp-h">People &amp; places</div>`;
+     ppl.forEach(([s,p])=>h+=`<button class="jr" data-nk="p" data-ns="${s}">${medal(p,34)}<span class="jr-t"><b>${esc(p.n)}</b><small>${esc(plainT(p.who))}</small></span></button>`);
+     pls.forEach(([s,l])=>h+=`<button class="jr" data-nk="l" data-ns="${s}"><span class="jr-ic pin">◉</span><span class="jr-t"><b>${esc(l.n)}</b><small>${esc(plainT(l.what))}</small></span></button>`)}}
+   if(ql.length>=3&&words.length){const ch=searchIndex().filter(r=>words.every(x=>r.t.includes(x))).slice(0,6);
+    if(ch.length){h+=`<div class="jp-h">In the story</div>`;ch.forEach(r=>h+=`<button class="jr" data-ji="${r.i}"><span class="jr-ic">${r.x.c.c}</span><span class="jr-t"><b>${esc(r.x.b.name)} ${r.x.c.c}</b><small>${esc(plainT(r.x.c.sl||''))}</small></span></button>`)}
+    const seen=new Set(),ser=[];for(const r of searchIndex()){for(const id of r.x.c.ids){if(seen.has(id))continue;seen.add(id);const t=(I[id].t||'').toLowerCase();if(okWho(id)&&words.every(x=>t.includes(x)))ser.push([id,r.i])}if(ser.length>=8)break}
+    if(ser.length){h+=`<div class="jp-h">Sermons</div>`;ser.forEach(([id,i])=>{const it=I[id];h+=`<button class="jr" data-ji="${i}" data-sid="${id}"><span class="jr-ic play">▶</span><span class="jr-t"><b>${esc(it.t)}</b><small>${esc(teacher(it))}${it.pass?' · '+esc(shortPass(it.pass)):''}</small></span></button>`})}}}
+  if(!h)h=`<div class="jp-empty">No match for “${esc(q)}”. Try a book (“Nehemiah”), a passage (“John 3:16”), a name, or a phrase from the story.</div>`}
+ body.innerHTML=h;
+ body.querySelectorAll('[data-jb]').forEach(b=>b.onclick=()=>{JP.book=D.books.find(x=>x.name===b.dataset.jb);JP.list=false;renderJump();body.scrollTop=0});
+ const al=$('#jall');if(al)al.onclick=()=>{JP.list=true;renderJump();const c=body.querySelector('.jb.cur');if(c)c.scrollIntoView({block:'center'})};
+ body.querySelectorAll('[data-ji]').forEach(b=>b.onclick=()=>{const i=+b.dataset.ji,x=w[i];if(b.dataset.v1)return jumpGo(i,{hl:{book:x.b.name,ch:x.c.c,from:+b.dataset.v1,to:+b.dataset.v2}});
+  if(b.dataset.sid){const g=listenGroups(x.b,x.c),lk=['overview','chapter','verses'].find(k=>g[k].some(y=>y.id===b.dataset.sid));return jumpGo(i,{listen:1,lk})}jumpGo(i)});
+ body.querySelectorAll('[data-nk]').forEach(b=>b.onclick=()=>{closeJump();openSheet(b.dataset.nk,b.dataset.ns)})}
 /* ---- medallions: one engraved emblem per role (a few people have their own); the ring's tint is the era ---- */
 const MEDAL_ICON={patriarch:'M8 38 L24 14 L40 38 Z M24 14 V38 M18 38 L24 29 L30 38 M10 10 l1.5 3 M15 6 l.8 2.4 M37 7 l-1 3 M41 12 l-2 2',
  matriarch:'M12 22 H36 M14 22 V40 H34 V22 M18 22 V14 H30 V22 M24 14 V8 M20 8 H28 M14 31 H34',
@@ -758,6 +850,8 @@ function closeMap(){$('#mapv').hidden=true;document.body.classList.remove('mapop
  el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
  el.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY>0?1.15:1/1.15,e.clientX,e.clientY)},{passive:false});
  $('#mvx').onclick=closeMap;$('#mapbtn').onclick=()=>openMap(null)})();
+(()=>{$('#srch').onclick=()=>openJump('search');$('#jx').onclick=closeJump;const q=$('#jq');q.oninput=()=>renderJump();
+ q.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();const f=$('#jbody').querySelector('.jr,[data-ji]');if(f)f.click()}else if(e.key==='Escape')closeJump()}})();
 const BIBLE={};let HL=null;  /* HL = {book, ch, from, to}: verses to highlight */
 function loadBook(book){return BIBLE[book]||(BIBLE[book]=fetch('bible/'+encodeURIComponent(book)+'.json').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(e=>{delete BIBLE[book];throw e}))}
 function shortPass(p){return p.split(';')[0].trim()}
@@ -885,7 +979,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  let nextV=null;for(let i=camp+1;i<w.length;i++){if(w[i].c.ids.some(okWho)){nextV={i,x:w[i]};break}}
  {const cut=Math.min(Hs-20,m.y+44);svg.setAttribute('viewBox',`0 0 390 ${cut}`);$('#w2').setAttribute('viewBox',`0 ${cut} 390 ${Hs-cut}`)}
  const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';
- const chDone=x=>!!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone),bibleN=w.filter(chDone).length,bookN=b.ch.filter(cc=>chDone({b,c:cc})).length,hereDone=chDone(x),heardIn=ids2=>[...new Set(ids2)].reduce((a,id)=>a+((prog[id]||{}).heard||0),0),bookHeard=heardIn([...b.ch.flatMap(cc=>cc.ids),...b.ov,...(b.spans||[]).map(sp=>sp.id)]),bibleHeard=Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0),hrs=sec=>sec<3600?Math.round(sec/60)+' min':Math.round(sec/3600).toLocaleString()+' h',pct=(n,d)=>{const v=100*n/d;return v>0&&v<10?v.toFixed(1):String(Math.round(v))},lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${camp!==first?`<button class="myplace" data-camp="${first}">My place</button>`:''}</span></div><div class="hd"><div class="ch serif"><span id="chT">${b.name} ${c.c}</span>${hereDone?'<span class="ck-c" role="img" aria-label="Completed">✓</span>':''}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="pg">${[[b.name,bookN,b.ch.length,bookHeard],['Bible',bibleN,1189,bibleHeard]].map(([l,n,d,hs])=>`<div class="pg-r"><span class="pg-l">${l}</span><span class="pg-b" role="progressbar" aria-label="${l}" aria-valuenow="${Math.round(100*n/d)}" aria-valuemin="0" aria-valuemax="100"><i style="width:${100*n/d}%"></i></span><span class="pg-p">${n===d?'✓':pct(n,d)+'%'}${hs>=30?`<span class="pg-h"> · ${hrs(hs)}</span>`:''}</span></div>`).join('')}</div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c.sl?`<div class="sline">${rich(c.sl)}</div>`:''}${fold?`<button class="unfold" id="unfold">${ids.length?'▸ Open · '+ids.length+' voice'+(ids.length>1?'s':''):'▸ Open this stop'}</button>`:''}<div class="body"${fold?' hidden':''}>
+ const chDone=x=>!!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone),bibleN=w.filter(chDone).length,bookN=b.ch.filter(cc=>chDone({b,c:cc})).length,hereDone=chDone(x),heardIn=ids2=>[...new Set(ids2)].reduce((a,id)=>a+((prog[id]||{}).heard||0),0),bookHeard=heardIn([...b.ch.flatMap(cc=>cc.ids),...b.ov,...(b.spans||[]).map(sp=>sp.id)]),bibleHeard=Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0),AV=avail(),pct=(n,d)=>{const v=100*n/d;return v>0&&v<10?v.toFixed(1):String(Math.round(v))},lm=LANDMARKS[b.abbr+c.c];cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)">${camp!==first?`<button class="myplace" data-camp="${first}">My place</button>`:''}</span></div><div class="hd"><div class="ch serif"><span id="chT">${b.name} ${c.c}<svg class="chv" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>${hereDone?'<span class="ck-c" role="img" aria-label="Completed">✓</span>':''}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="pg">${[[b.name,bookN,b.ch.length,bookHeard,AV.book[b.name]||0],['Bible',bibleN,1189,bibleHeard,AV.bible]].map(([l,n,d,hs,av])=>`<div class="pg-r"><span class="pg-l">${l}</span><span class="pg-b" role="progressbar" aria-label="${l}" aria-valuenow="${Math.round(100*n/d)}" aria-valuemin="0" aria-valuemax="100"><i style="width:${100*n/d}%"></i></span><span class="pg-p">${n===d?'✓':pct(n,d)+'%'}${av?`<span class="pg-h"> · ${hrsOf(hs,av)}</span>`:''}</span></div>`).join('')}</div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c.sl?`<div class="sline">${rich(c.sl)}</div>`:''}${fold?`<button class="unfold" id="unfold">${ids.length?'▸ Open · '+ids.length+' voice'+(ids.length>1?'s':''):'▸ Open this stop'}</button>`:''}<div class="body"${fold?' hidden':''}>
   <div class="tabs" role="tablist">${[['listen','Listen',ids.length+ov.length+(c===b.ch[0]?(b.spans||[]).filter(x=>okWho(x.id)).length:0)],['read','Read',0],['summary','Summary',0],['map','Map',0]].map(([k,l,n])=>`<button class="tab${TAB===k?' on':''}" role="tab" aria-selected="${TAB===k}" data-tab="${k}">${l}${n?`<span>${n}</span>`:''}</button>`).join('')}</div>
   ${TAB==='listen'?`<div class="pane">${(()=>{const G=listenGroups(b,c),N={overview:G.overview.length,chapter:G.chapter.length,verses:G.verses.length};
    if(!N.overview&&!N.chapter&&!N.verses)return `<div class="empty">No voice on this stretch yet.${nextV?` Next voice: <b style="color:var(--gold2);cursor:pointer" data-camp="${nextV.i}" class="nv">${nextV.x.b.name} ${nextV.x.c.c}</b> · ${nextV.i-camp} stop${nextV.i-camp>1?'s':''} on.`:''}</div>`;
@@ -969,7 +1063,7 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
  document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{const was=!!read[b.dataset.read];read[b.dataset.read]=!was;S.set('read',read);if(!was){camp=Math.min(walk().length-1,camp+1);decorate.follow=true}S.set('camp',camp);render()});
  document.querySelectorAll('.acts [data-camp], .nv[data-camp], .myplace[data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;go(+b.dataset.camp)});document.querySelectorAll('.lk[data-lk]').forEach(t=>t.onclick=e=>{e.stopPropagation();if(LK===t.dataset.lk)return;LK=t.dataset.lk;S.set('lk2',LK);decorate.more=false;decorate.moving=true;render();decorate.moving=false});document.querySelectorAll('.tab[data-tab]').forEach(t=>t.onclick=e=>{e.stopPropagation();if(TAB===t.dataset.tab)return;TAB=t.dataset.tab;S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false});const uf=$('#unfold');if(uf)uf.onclick=e=>{e.stopPropagation();const f=$('#fold');if(f)f.onclick()};const fd=$('#fold');if(fd){fd.onclick=e=>{e&&e.stopPropagation();const f=!FOLD;FOLD=f;if(f&&NP().classList.contains('on'))setMini(true);decorate.moving=true;render();decorate.moving=false;
    /* folding while scrolled down inside a long stop: keep the stop's top in view instead of the page jumping */
-   const cl=$('#clearing');if(cl){const t=cl.getBoundingClientRect().top;if(t<60||t>innerHeight-120)window.scrollTo({top:scrollY+t-70})}};const ct=$('#chT');if(ct)ct.onclick=fd.onclick}
+   const cl=$('#clearing');if(cl){const t=cl.getBoundingClientRect().top;if(t<60||t>innerHeight-120)window.scrollTo({top:scrollY+t-70})}};const ct=$('#chT');if(ct){ct.onclick=e=>{e.stopPropagation();openJump('browse')};ct.setAttribute('role','button');ct.setAttribute('aria-label','Choose a chapter')}}
  const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
  const g=$('#gear');g.onclick=()=>{view=view==='settings'?'walk':'settings';S.set('view',view);decorate.first=true;render();window.scrollTo(0,0)};
  const back=$('#back');if(back)back.onclick=g.onclick;const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
