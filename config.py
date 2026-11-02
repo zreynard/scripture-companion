@@ -148,6 +148,6 @@ INTRO_SKIP = {
     "2819_podcast": 0,            # 2819 Church (PAM)
     "street_preachers": 0,        # Street Preachers (PAM)
     "davey_sermons": 6,           # Stephen Davey Sermons
-    "davey_wfth": 6,              # Wisdom for the Heart
+    "davey_wfth": 53,             # Wisdom for the Heart: fallback (end of the fixed announcer intro); each episode's own is in data/intro_skip/
     "davey_journey": 6,           # The Wisdom Journey
 }
