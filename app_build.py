@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 68  # bump on every shipped build; also busts the service-worker cache
+VERSION = 69  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -367,6 +367,7 @@ span.nw{white-space:nowrap}
 .jp-all{flex:none;border:1px solid rgba(168,129,42,.4);border-radius:18px;background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--gold2);padding:8px 14px;min-height:40px;cursor:pointer}
 .jg{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:8px}.jg.small{margin:10px 0 2px}
 .jc{min-height:48px;border-radius:12px;border:1px solid rgba(27,36,64,.12);background:#fff;font:inherit;font-size:16px;font-weight:600;color:var(--ink);cursor:pointer}
+@keyframes slideL{from{transform:translateX(44px);opacity:.35}to{transform:none;opacity:1}}@keyframes slideR{from{transform:translateX(-44px);opacity:.35}to{transform:none;opacity:1}}#clearing.in-l{animation:slideL .28s ease-out}#clearing.in-r{animation:slideR .28s ease-out}
 .jc-bk{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:10px;font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:19px;font-weight:400}.jc-bk small{font-family:-apple-system,system-ui,sans-serif;font-size:12px;font-weight:600;color:var(--mute);letter-spacing:.04em}
 .jc.done{background:#c9a24a;border-color:#c9a24a;color:#fff}.jc.here{box-shadow:0 0 0 2.5px #1b2440;}
 .jb{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:46px;border:0;border-bottom:1px solid rgba(27,36,64,.07);background:none;font:inherit;font-size:16px;color:var(--ink);padding:0 4px;cursor:pointer;text-align:left}
@@ -1026,6 +1027,11 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
   ${T_==='summary'?`<div class="pane story">${c.intro?(b.bm&&b.bm.length?`<div class="st-t">Inside ${b.name}</div><ul>${b.bm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''):`${c.sm&&c.sm.length?`<div class="st-t">What happens in ${b.name} ${c.c}</div><ul>${c.sm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}${b.bl?`<details class="sum2" data-k="b:${b.abbr}"${OPEN.has('b:'+b.abbr)?' open':''}><summary>About the book of ${b.name} ›</summary><div class="sline" style="margin-top:6px">${rich(b.bl)}</div>${b.bm&&b.bm.length?`<ul>${b.bm.map(x=>`<li>${rich(x)}</li>`).join('')}</ul>`:''}</details>`:''}`}</div>`:''}
   ${T_==='map'?`<div class="pane"><div class="maptab" data-b="${b.name}" data-c="${c.c||1}">Opening the map…</div></div>`:''}
   </div><div class="acts"><button class="bk" data-camp="${Math.max(0,camp-1)}" aria-label="Back a chapter"${camp===0?' disabled':''}>‹</button>${c.intro?'':`<button class="read ${r?'on':''}" data-read="${b.abbr+c.c}">${r?'Read ✓':'Mark read'}</button>`}<button class="go" data-camp="${Math.min(w.length-1,camp+1)}">Walk on ›</button></div>`;
+ /* swipe the stop card: left walks on, right goes back (not when the swipe starts on a scrolling row or the map) */
+ {let sw=null;cl.ontouchstart=e=>{sw=null;if(e.touches.length!==1||e.target.closest('.lks,.maptab,input,textarea,select,#np'))return;const t=e.touches[0];sw={x:t.clientX,y:t.clientY,t:Date.now()}};
+  cl.ontouchend=e=>{if(!sw)return;const t=e.changedTouches[0],dx=t.clientX-sw.x,dy=t.clientY-sw.y,fast=Date.now()-sw.t<800;sw=null;
+   if(fast&&Math.abs(dx)>60&&Math.abs(dx)>2*Math.abs(dy)){const to=camp+(dx<0?1:-1);if(to>=0&&to<w.length){decorate.slide=dx<0?'l':'r';go(to)}}}}
+ if(decorate.slide){const k='in-'+decorate.slide;decorate.slide=null;cl.classList.remove('in-l','in-r');void cl.offsetWidth;cl.classList.add(k);setTimeout(()=>cl.classList.remove(k),320)}
  /* the road below the stop: tap a book name or the road to go there */
  $('#w2').onclick=e=>{const w2=$('#w2'),pt=w2.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(w2.getScreenCTM().inverse());
   const lb=(decorate.drift||[]).find(l=>l.kind==='book'&&p.y>l.y-18&&p.y<l.y+(l.yr?20:8)&&(l.side==='L'?p.x>l.x-6&&p.x<l.x+150:p.x<l.x+6&&p.x>l.x-150));
