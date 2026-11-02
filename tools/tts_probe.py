@@ -7,7 +7,7 @@ for r in REPOS:
     print("=" * 20, r, flush=True)
     try:
         fs = list_repo_files(r)
-        print(len(fs), "files"); print("\n".join(f for f in fs if not f.startswith(".")][:400]))
+        print(len(fs), "files"); print("\n".join([f for f in fs if not f.startswith(".")][:400]))
         try:
             print(open(hf_hub_download(r, "README.md")).read()[:5000])
         except Exception as e: print("no readme", e)
