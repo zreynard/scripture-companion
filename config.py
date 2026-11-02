@@ -141,8 +141,79 @@ SC_PASSAGES = {
     (6, 7): "Matthew 27:45-46; Mark 15:33-34; Psalm 22:1",       # The Cry of Dereliction
     (6, 8): "John 19:28-30",                                     # The Declaration of Triumph
 }
-# sessions whose titles only look like they name books ("Counterfeit Gospels"): library only
-SC_NO_PLACE = {(18, 3)}
+
+# Every other Secret Church session sits at the passage it is most anchored in (read from each session's title and
+# description): the text the teaching turns on, or the classic passage for its topic.
+SC_PASSAGES.update({
+    # 3 How to Study the Bible
+    (3, 1): "2 Timothy 3:14-17", (3, 2): "2 Timothy 2:15", (3, 3): "Nehemiah 8:1-8", (3, 4): "Psalm 119:17-24",
+    (3, 5): "Acts 8:26-35", (3, 6): "Luke 24:25-27", (3, 7): "James 1:22-25", (3, 8): "Matthew 13:1-23",
+    (3, 9): "Romans 15:4-6", (3, 10): "Psalm 1:1-6",
+    # 4 Who Is God?
+    (4, 1): "Jeremiah 9:23-24", (4, 2): "1 John 2:3-6", (4, 3): "Exodus 3:13-15", (4, 4): "Genesis 17:1-2",
+    (4, 5): "Isaiah 40:12-31", (4, 6): "Psalm 90:1-2", (4, 7): "Psalm 139:1-12", (4, 8): "Exodus 34:6-7",
+    (4, 9): "Matthew 3:16-17", (4, 10): "Isaiah 46:8-11", (4, 11): "Genesis 50:15-21",
+    # 5 Exploring the Holy Spirit
+    (5, 1): "John 14:15-26", (5, 2): "John 3:5-8", (5, 3): "John 16:7-15", (5, 5): "Acts 2:1-21",
+    (5, 6): "1 Corinthians 12:4-13", (5, 7): "Romans 8:12-17", (5, 8): "Matthew 12:22-32", (5, 9): "Ephesians 5:18-21",
+    (5, 10): "Acts 1:8",
+    # 6 The Cross of Christ
+    (6, 1): "1 Corinthians 1:18-25", (6, 2): "Isaiah 52:13-53:12", (6, 3): "Romans 3:21-26", (6, 4): "2 Corinthians 5:21",
+    (6, 9): "John 10:11-18", (6, 10): "Galatians 6:14",
+    # 7 Angels, Demons, and Spiritual Warfare
+    (7, 1): "Ephesians 6:10-12", (7, 2): "Hebrews 1:4-14", (7, 3): "Revelation 12:7-12", (7, 5): "Colossians 2:13-15",
+    (7, 6): "Matthew 16:13-20", (7, 7): "Ephesians 6:13-17", (7, 8): "James 4:7-10", (7, 9): "Mark 5:1-20",
+    (7, 10): "Romans 16:20",
+    # 8 The Gospel, Possessions, and Prosperity
+    (8, 1): "Luke 16:10-15", (8, 2): "2 Corinthians 8:9", (8, 3): "Deuteronomy 8:11-18", (8, 4): "Proverbs 30:7-9",
+    (8, 5): "Matthew 6:19-24", (8, 6): "Mark 10:17-31", (8, 7): "Acts 4:32-37", (8, 8): "1 Timothy 6:17-19",
+    (8, 9): "Matthew 13:44-46", (8, 10): "James 5:1-6",
+    # 9 The Body of Christ
+    (9, 1): "Ephesians 5:25-27", (9, 2): "1 Peter 2:4-10", (9, 3): "Ephesians 2:19-22", (9, 4): "Matthew 28:18-20",
+    (9, 5): "2 Timothy 2:1-2", (9, 6): "Hebrews 10:23-25", (9, 7): "Colossians 3:16-17", (9, 8): "Acts 2:42-47",
+    (9, 9): "1 Peter 5:1-4",
+    # 10 Crucifixion, Salvation, and the Glory of God
+    (10, 1): "Titus 3:3-7", (10, 2): "Mark 15:21-39", (10, 3): "Ephesians 2:1-10", (10, 4): "Mark 1:14-15",
+    (10, 5): "Romans 4:1-8", (10, 6): "Galatians 4:4-7", (10, 7): "Romans 6:1-14", (10, 8): "Romans 8:28-39",
+    (10, 9): "Ephesians 1:3-14", (10, 10): "Revelation 7:9-12",
+    # 11 Family, Marriage, Sex, and the Gospel
+    (11, 1): "Genesis 1:26-28", (11, 2): "Romans 5:6-11", (11, 3): "Genesis 2:18-25", (11, 4): "Deuteronomy 6:4-9",
+    (11, 5): "1 Corinthians 7:25-35", (11, 6): "Matthew 19:3-9", (11, 7): "Romans 1:18-32", (11, 8): "Psalm 139:13-16",
+    (11, 9): "Matthew 5:27-30", (11, 10): "Proverbs 5:15-19",
+    # 12 The Cross and Suffering
+    (12, 1): "Romans 8:18-25", (12, 8): "2 Corinthians 4:16-18",
+    # 13 Heaven, Hell, and the End of the World
+    (13, 1): "Colossians 3:1-4", (13, 2): "James 4:13-17", (13, 3): "2 Corinthians 5:1-8", (13, 4): "1 Thessalonians 4:13-5:11",
+    (13, 5): "1 Corinthians 15:35-58", (13, 6): "Revelation 20:11-15", (13, 7): "Luke 16:19-31", (13, 8): "Revelation 21:1-8",
+    # 14 The Cross and Everyday Life (built on the two great commandments)
+    (14, 1): "Matthew 22:34-40", (14, 2): "Galatians 2:20", (14, 3): "Mark 12:28-34", (14, 4): "1 Timothy 4:7-8",
+    (14, 5): "Ephesians 5:22-6:4", (14, 6): "Luke 10:25-37", (14, 7): "Colossians 3:22-24", (14, 8): "1 Corinthians 10:31",
+    (14, 9): "Philippians 4:8", (14, 10): "Hebrews 4:1-11",
+    # 15 Christ, Culture, and a Call to Action
+    (15, 1): "Romans 12:1-2", (15, 2): "1 Corinthians 15:1-8", (15, 3): "Proverbs 24:11-12", (15, 4): "James 1:27",
+    (15, 5): "Isaiah 58:6-12", (15, 6): "Philemon 1:8-21", (15, 7): "1 Corinthians 6:9-20", (15, 8): "Leviticus 19:33-34",
+    (15, 9): "1 Peter 4:12-19", (15, 10): "Matthew 24:14",
+    # 16 A Global Gospel in a World of Religions
+    (16, 1): "Acts 17:22-31", (16, 2): "John 14:1-7", (16, 3): "Acts 16:25-34", (16, 4): "Acts 14:8-18",
+    (16, 5): "Isaiah 44:6-20", (16, 6): "Matthew 11:25-30", (16, 7): "1 John 2:18-25", (16, 8): "Psalm 14:1-3",
+    (16, 9): "Revelation 5:9-10",
+    # 17 Scripture and Authority in an Age of Skepticism
+    (17, 1): "Amos 8:11-12", (17, 2): "2 Peter 1:16-21", (17, 3): "Matthew 5:17-18", (17, 4): "John 17:13-19",
+    (17, 5): "Psalm 119:105-112", (17, 6): "Psalm 19:7-11", (17, 7): "Psalm 119:65-72", (17, 8): "Isaiah 40:6-8",
+    # 18 Cults and Counterfeit Gospels
+    (18, 1): "Matthew 7:15-23", (18, 2): "Galatians 1:6-9", (18, 3): "2 Peter 2:1-3", (18, 4): "Isaiah 43:10-11",
+    (18, 5): "John 1:1-18", (18, 6): "Hebrews 10:10-18", (18, 7): "1 Timothy 6:3-10", (18, 8): "2 Timothy 4:1-5",
+    (18, 9): "Jude 1:3-4",
+    # 19 Prayer, Fasting, and the Pursuit of God (its other sessions walk the Bible book by book)
+    (19, 1): "Matthew 6:5-18",
+    # 20 God, Government, and the Gospel
+    (20, 1): "Romans 13:1-7", (20, 2): "Colossians 1:13-20", (20, 5): "Mark 12:13-17", (20, 6): "1 Timothy 2:1-4",
+    # 21 The Great Imbalance
+    (21, 1): "Genesis 12:1-3", (21, 2): "Psalm 67:1-7", (21, 3): "Romans 15:18-24", (21, 4): "Matthew 9:35-38",
+    (21, 5): "Acts 20:22-24", (21, 6): "Philippians 3:7-14", (21, 7): "Luke 24:45-49", (21, 8): "Romans 10:13-17",
+    (21, 9): "Habakkuk 2:14",
+})
+SC_NO_PLACE = set()
 # shows kept in the catalog but left off the road (Pray the Word: short prayers, not teaching)
 OFF_ROAD_SOURCES = {"ptw"}
 SHOWS = {"ptw": "Pray the Word", "davey_wfth": "Wisdom for the Heart", "davey_journey": "The Wisdom Journey"}

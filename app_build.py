@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 74  # bump on every shipped build; also busts the service-worker cache
+VERSION = 75  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -233,7 +233,7 @@ def main():
         if it["tr"] != "sermon": return True
         parallel = set(item_books[i]) <= {"1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles"} or set(item_books[i]) <= {"Matthew", "Mark", "Luke", "John"}
         if ref_how[i] == "description-first" and cited[i] > 1 and focus(i, book) < 2 and not parallel: return False  # several passages, none named the text, not in a series
-        if TOPICAL.search(it["t"]) and focus(i, book) < 2: return False  # one-off topical message
+        if TOPICAL.search(it["t"]) and focus(i, book) < 2 and it["src"] != "secret_church_podcast": return False  # one-off topical message (Secret Church sessions are placed on purpose)
         return True
     off_road = set()
     for (book, c), lst in by_chapter.items():
@@ -1043,7 +1043,7 @@ function stopRead(x){return x.c.intro?!!(read[x.b.abbr+'0']||x.b.ch.some(cc=>rea
 function migrateCamp(){if(S.get('camp2'))return;if(camp!=null){let cum=0,bi=0;for(const b of books()){if(camp<cum+b.n){camp=camp+bi+1;break}cum+=b.n;bi++}S.set('camp',camp)}S.set('camp2',1)}
 const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Davey',Skip:'Skip Heitzig'};
 function teacher(i){return i.by||NAMES[i.who]}
-function dispTitle(i){const t=(i.sc?(i.t||'').replace(/^\s*\d+\.\d+\s*[–—-]\s*/,''):(i.t||''));const fl=t.match(/^Flight\s+([1-3]?[A-Z]{2,4}?)(\d{1,2})\b(?:\s*-\s*(Part\s+\w+))?/);if(fl){const ord=books().map(x=>x.name),bk=fl[1]==='INT'?['Between the Testaments']:(i.pass||'').split(';').map(x=>x.replace(/the book of/i,'').replace(/\s+\d+(?:\s*[-–]\s*\d+)?\s*$/,'').trim()).filter(Boolean).sort((p,q)=>ord.indexOf(p)-ord.indexOf(q));return ['Bible from 30,000 Feet',bk.join(', ')+(+fl[2]>1?' ('+(+fl[2])+')':''),fl[3]].filter(Boolean).join(' · ')}if(!t.includes('|'))return t;const parts=t.split('|').map(x=>x.trim()).filter(Boolean),who=(teacher(i)||'').toLowerCase();
+function dispTitle(i){let t=(i.sc?(i.t||'').replace(/^\s*\d+\.\d+\s*[–—-]\s*/,''):(i.t||''));if(i.sc&&/^(introduction|conclusions?|critical conclusions|gospel foundations|gospel conclusions|practical takeaways|applications|the gospel|concluding challenges)\b/i.test(t)){const ev=(D.sc.events||[]).find(e=>e.n===i.sc[0]);if(ev)t=ev.title+': '+t}const fl=t.match(/^Flight\s+([1-3]?[A-Z]{2,4}?)(\d{1,2})\b(?:\s*-\s*(Part\s+\w+))?/);if(fl){const ord=books().map(x=>x.name),bk=fl[1]==='INT'?['Between the Testaments']:(i.pass||'').split(';').map(x=>x.replace(/the book of/i,'').replace(/\s+\d+(?:\s*[-–]\s*\d+)?\s*$/,'').trim()).filter(Boolean).sort((p,q)=>ord.indexOf(p)-ord.indexOf(q));return ['Bible from 30,000 Feet',bk.join(', ')+(+fl[2]>1?' ('+(+fl[2])+')':''),fl[3]].filter(Boolean).join(' · ')}if(!t.includes('|'))return t;const parts=t.split('|').map(x=>x.trim()).filter(Boolean),who=(teacher(i)||'').toLowerCase();
  const keep=parts.filter(x=>!/^(?:[1-3]\s?)?[A-Za-z]+\.?\s*\d+(?::\d+)?(?:\s*[-–]\s*\d+(?::\d+)?)?$/.test(x)&&!(who&&x.toLowerCase().replace(/^(elder|pastor|minister)\s+/,'')===who.replace(/^(elder|pastor|minister)\s+/,''))&&!/^(philip anthony mitchell|pam)$/i.test(x));
  return keep.length?keep.join(' · '):t}
 function voiceHTML(id,bd){const i=I[id],p=prog[id]||{},hp=heardPct(id),deg=!isDone(id)?Math.round(3.6*hp):0,playing=cur===id&&!audio.paused;
