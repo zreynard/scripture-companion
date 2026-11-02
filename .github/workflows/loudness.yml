@@ -5,7 +5,7 @@ on:
     inputs:
       n:
         description: "Episodes to sample per source"
-        default: "8"
+        default: "0"
 permissions:
   contents: write
 jobs:
@@ -19,9 +19,10 @@ jobs:
           python-version: "3.12"
       - run: sudo apt-get install -y ffmpeg >/dev/null
       - run: pip install -r requirements.txt && python app_build.py
+      - run: python tools/cors_check.py | tee cors.log
       - run: N=${{ github.event.inputs.n }} python tools/loudness.py | tee loudness.log
       - run: |
-          mkdir /tmp/d && cp loudness.json loudness.log /tmp/d/ && cd /tmp/d
+          mkdir /tmp/d && cp loudness.json loudness.log cors.json cors.log /tmp/d/ && cd /tmp/d
           git init -q -b diag && git add -A
           git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m loudness
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag
