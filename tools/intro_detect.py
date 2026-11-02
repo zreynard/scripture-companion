@@ -83,27 +83,37 @@ def main():
     with ThreadPoolExecutor(8) as ex:
         F = dict(ex.map(fp_of, eps))
 
-    ends = {e["id"]: [] for e in eps}
     ids = [e["id"] for e in eps if F.get(e["id"])]
     title = {e["id"]: e["title"] for e in eps}
     OPEN = float(os.environ.get("OPEN", "150"))       # the intro's last shared stretch must start within this many seconds
+    # every shared stretch each episode has with each of its neighbours (three before, three after), in its own timeline
+    seen = {i: [] for i in ids}
     for k, i in enumerate(ids):
-        for j in ids[k + 1:k + 4]:  # compare with the next three episodes
+        for j in ids[k + 1:k + 4]:
             (a, sa), (b, sb) = F[i], F[j]
-            R = runs(a, b)
-            if FOCUS and (FOCUS.lower() in title[i].lower() or FOCUS.lower() in title[j].lower()):
-                print(f"  {title[i][:30]} ~ {title[j][:30]}: " + ", ".join(f"[{r[0]*sa:.0f}-{r[1]*sa:.0f}s | {r[2]*sb:.0f}-{r[3]*sb:.0f}s]" for r in sorted(R)), flush=True)
-            R = [r for r in R if r[0] * sa <= OPEN and r[2] * sb <= OPEN and (r[1] - r[0]) * sa >= 3]
-            if not R: continue
-            if max((r[1] - r[0]) * sa for r in R) < MIN_SHARED: continue   # nothing intro-like in common
-            if sum((r[1] - r[0]) * sa for r in R) > MAX_SKIP: continue      # the same episode twice
-            ends[i].append(max(r[1] for r in R) * sa); ends[j].append(max(r[3] for r in R) * sb)
+            for r in runs(a, b):
+                if (r[1] - r[0]) * sa > MAX_SKIP: continue                 # the same episode twice
+                seen[i].append((r[0] * sa, r[1] * sa, j)); seen[j].append((r[2] * sb, r[3] * sb, i))
+    ends = {}
+    for i in ids:
+        nbrs = {x[2] for x in seen[i]}
+        need = max(2, (len(nbrs) + 1) // 2)                               # found with at least half of the neighbours
+        segs = sorted(seen[i])
+        steady = []
+        for st, en, j in segs:
+            if st > OPEN: continue
+            same = {x[2] for x in segs if abs(x[0] - st) <= 2.5 and abs(x[1] - en) <= 3}
+            if len(same) >= need: steady.append((st, en))
+        if steady:
+            ends[i] = [max(en for st, en in steady)]
+        if FOCUS and FOCUS.lower() in title[i].lower():
+            print(f"  {title[i][:40]}: steady {sorted(set((round(a), round(b)) for a, b in steady))}  of {len(nbrs)} neighbours", flush=True)
 
     out = {}
     for e in eps:
         v = ends.get(e["id"]) or []
         if v:
-            out[e["id"]] = round(min(MAX_SKIP, statistics.median(v)), 1)
+            out[e["id"]] = round(min(MAX_SKIP, max(v)), 1)
     found = list(out.values())
     print(f"\nintro found in {len(out)} of {len(eps)} episodes"
           + (f"; skip median {statistics.median(found):.1f}s, range {min(found):.1f}-{max(found):.1f}s" if found else ""))
