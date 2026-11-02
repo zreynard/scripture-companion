@@ -1,10 +1,10 @@
 {
-  "started": "2026-11-01T23:45:58.589077+00:00",
+  "started": "2026-11-02T00:10:38.896024+00:00",
   "sources": {
-    "brookhills": {
-      "count": 59,
-      "seconds": 39.4
+    "youtube_audio": {
+      "count": 1,
+      "seconds": 0.0
     }
   },
-  "catalog_total": 5935
+  "catalog_total": 5936
 }

@@ -969,7 +969,7 @@
 "media": "https://vimeo.com/830346750/b5f0c1c9f1",
 "page": "https://radical.net/secret_church/jonah/",
 "error": "ERROR: [vimeo] 830346750: The web client only works when logged-in. Use --cookies, --cookies-from-browser, --username and --password, --netrc-cmd, or --netrc (vimeo) to provide account credentials. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pa",
-"tried": "2026-10-30"
+"tried": "2026-11-02"
 },
 "vimeo-935931865": {
 "id": "vimeo-935931865",
@@ -981,7 +981,7 @@
 "media": "https://vimeo.com/935931865/16148f16c1",
 "page": "https://radical.net/secret_church/ruth/",
 "error": "ERROR: [vimeo] 935931865: The web client only works when logged-in. Use --cookies, --cookies-from-browser, --username and --password, --netrc-cmd, or --netrc (vimeo) to provide account credentials. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pa",
-"tried": "2026-10-30"
+"tried": "2026-11-02"
 },
 "vimeo-1086173271": {
 "id": "vimeo-1086173271",
@@ -993,7 +993,7 @@
 "media": "https://vimeo.com/1086173271/51d8e239bd",
 "page": "https://radical.net/secret_church/matthew/",
 "error": "ERROR: [vimeo] 1086173271: The web client only works when logged-in. Use --cookies, --cookies-from-browser, --username and --password, --netrc-cmd, or --netrc (vimeo) to provide account credentials. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually p",
-"tried": "2026-10-30"
+"tried": "2026-11-02"
 },
 "vimeo-1192641519": {
 "id": "vimeo-1192641519",
@@ -1005,6 +1005,62 @@
 "media": "https://vimeo.com/1192641519/b7054d872d",
 "page": "https://radical.net/secret_church/elijah/",
 "error": "ERROR: [vimeo] 1192641519: The web client only works when logged-in. Use --cookies, --cookies-from-browser, --username and --password, --netrc-cmd, or --netrc (vimeo) to provide account credentials. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually p",
-"tried": "2026-10-30"
+"tried": "2026-11-02"
+},
+"rmsg-7483": {
+"id": "rmsg-7483",
+"title": "Tremble at His Word Pt. 2",
+"channel": "radical_msg",
+"source": "radical_message",
+"duration": 0,
+"upload_date": "20170305",
+"media": "https://player.vimeo.com/video/227791213",
+"page": "https://radical.net/message/tremble-at-his-word-pt-2/",
+"refs": "",
+"referer": "https://radical.net/message/tremble-at-his-word-pt-2/",
+"error": "ERROR: [vimeo] 227791213: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)",
+"tried": "2026-11-02"
+},
+"rmsg-84318": {
+"id": "rmsg-84318",
+"title": "Four Reasons to Say Yes to God",
+"channel": "radical_msg",
+"source": "radical_message",
+"duration": 0,
+"upload_date": "20160131",
+"media": "https://player.vimeo.com/video/153788908",
+"page": "https://radical.net/message/four-reasons-to-say-yes-to-god/",
+"refs": "",
+"referer": "https://radical.net/message/four-reasons-to-say-yes-to-god/",
+"asset": "https://github.com/zreynard/scripture-companion/releases/download/audio-1/rmsg-84318.mp3",
+"bytes": 14922926
+},
+"rmsg-84306": {
+"id": "rmsg-84306",
+"title": "How God Leads Our Lives",
+"channel": "radical_msg",
+"source": "radical_message",
+"duration": 0,
+"upload_date": "20150317",
+"media": "https://player.vimeo.com/video/122460048",
+"page": "https://radical.net/message/how-god-leads-our-lives/",
+"refs": "",
+"referer": "https://radical.net/message/how-god-leads-our-lives/",
+"error": "ERROR: [vimeo] 122460048: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)",
+"tried": "2026-11-02"
+},
+"rmsg-84309": {
+"id": "rmsg-84309",
+"title": "10 Exhortations for the Church",
+"channel": "radical_msg",
+"source": "radical_message",
+"duration": 0,
+"upload_date": "20120928",
+"media": "https://player.vimeo.com/video/50368234",
+"page": "https://radical.net/message/10-exhortations-for-the-church/",
+"refs": "",
+"referer": "https://radical.net/message/10-exhortations-for-the-church/",
+"error": "ERROR: [vimeo] 50368234: Unable to download webpage: HTTP Error 401: Unauthorized (caused by <HTTPError 401: Unauthorized>)",
+"tried": "2026-11-02"
 }
 }
