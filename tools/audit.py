@@ -96,8 +96,8 @@ def main():
 
     print("\n== Speakers")
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
-    bad = [f"{I[i]['t'][:60]} speaker={E[i]['speaker']}" for i in road if E[i]["speaker"] not in ("Platt", "PAM", "Davey", "Skip") and E[i]["speaker"] not in team]
-    check("only David Platt, PAM (with his church preachers), Stephen Davey and Skip Heitzig on the road", bad, len(road))
+    bad = [f"{I[i]['t'][:60]} speaker={E[i]['speaker']}" for i in road if E[i]["speaker"] not in ("Platt", "PAM", "Davey", "Skip") and E[i]["speaker"] not in team and not (E[i]["source"].startswith("skip_") and E[i]["speaker"].startswith("guest:"))]
+    check("only David Platt, PAM, Stephen Davey and Skip Heitzig (each with their church preachers) on the road", bad, len(road))
     bad = [f"{I[i]['t'][:60]} from {E[i]['source']}" for i in road if (I[i]["who"] == "Davey") != E[i]["source"].startswith("davey_")]
     check("Stephen Davey teaching comes only from his own feeds, and his feeds only from him", bad)
     bad = [f"{I[i]['t'][:60]} from {E[i]['source']}" for i in road if (I[i]["who"] == "Skip") != E[i]["source"].startswith("skip_")]
