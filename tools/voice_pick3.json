@@ -1,0 +1,62 @@
+[
+ {
+  "file": "voice-donations/gmaskell92_enhanced.wav",
+  "set": "voice-donations",
+  "age": 58,
+  "male": 1.0,
+  "brit": 0.3,
+  "accent": "england",
+  "secs": 10.0,
+  "level": 0.075
+ },
+ {
+  "file": "voice-donations/Sp46_enhanced.wav",
+  "set": "voice-donations",
+  "age": 42,
+  "male": 1.0,
+  "brit": 0.31,
+  "accent": "england",
+  "secs": 10.0,
+  "level": 0.101
+ },
+ {
+  "file": "voice-donations/Midlands_Bedfordshire_Dialect_enhanced.wav",
+  "set": "voice-donations",
+  "age": 37,
+  "male": 1.0,
+  "brit": 0.3,
+  "accent": "england",
+  "secs": 10.0,
+  "level": 0.107
+ },
+ {
+  "file": "voice-donations/Deepak_enhanced.wav",
+  "set": "voice-donations",
+  "age": 68,
+  "male": 0.97,
+  "brit": 0.28,
+  "accent": "england",
+  "secs": 10.0,
+  "level": 0.059
+ },
+ {
+  "file": "voice-donations/aepeak_enhanced.wav",
+  "set": "voice-donations",
+  "age": 50,
+  "male": 1.0,
+  "brit": 0.28,
+  "accent": "england",
+  "secs": 10.0,
+  "level": 0.105
+ },
+ {
+  "file": "vctk/p227_023_enhanced.wav",
+  "set": "vctk",
+  "age": 40,
+  "male": 1.0,
+  "brit": 0.31,
+  "accent": "england",
+  "secs": 12.7,
+  "level": 0.093
+ }
+]

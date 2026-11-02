@@ -46,8 +46,12 @@ def load16k(path):
 
 
 def pick():
+    from huggingface_hub import hf_hub_download
+    chosen = os.path.join(HERE, "tools", "voice_pick3.json")
+    if os.path.exists(chosen):  # chosen from an earlier scoring run (its log), so skip the slow scoring
+        return save_refs(json.load(open(chosen)))
     import numpy as np, torch, torch.nn as nn
-    from huggingface_hub import list_repo_files, hf_hub_download
+    from huggingface_hub import list_repo_files
     from transformers import Wav2Vec2Processor
     from transformers.models.wav2vec2.modeling_wav2vec2 import Wav2Vec2Model, Wav2Vec2PreTrainedModel
     from speechbrain.inference.classifiers import EncoderClassifier
@@ -121,10 +125,14 @@ def pick():
     men = sorted([r for r in rows if r["male"] >= 0.8 and r["brit"] >= 0.4], key=score, reverse=True)
     print("\nbest British men:")
     for r in men[:25]: print(f"  {score(r):.2f}  {r}")
+    save_refs(men[:KEEP])
+
+
+def save_refs(keep):
+    from huggingface_hub import hf_hub_download
     os.makedirs(REFS, exist_ok=True)
-    keep = men[:KEEP]
     for n, r in enumerate(keep):
-        # trim to the 12 loudest-steady seconds and level it, so every reference is clean and comparable
+        # up to 14 seconds, levelled, so every reference is comparable
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", hf_hub_download(REPO, r["file"]), "-t", "14",
                         "-ac", "1", "-ar", "24000", "-af", "loudnorm=I=-18:TP=-2", os.path.join(REFS, f"{n}.wav")], check=True)
     json.dump(keep, open(os.path.join(REFS, "pick.json"), "w"), indent=1)
@@ -181,7 +189,7 @@ def collect():
             name = f"{tag}_{n}.mp3"
             os.replace(src, os.path.join(OUT, name))
             meta.append({"id": f"{tag}_{n}", "name": NAMES[n], "voice": "male", "file": name,
-                         "about": f"{model} · a volunteer's donated voice, sounds about {r['age']}, {r['accent'].title()} accent",
+                         "about": f"{model} · a real man's voice, sounds about {r['age']}, {r['accent'].title()} accent",
                          "ref": f"ref_{n}.mp3", "scores": r})
         if os.path.exists(os.path.join(PARTS, f"ref_{n}.mp3")):
             os.replace(os.path.join(PARTS, f"ref_{n}.mp3"), os.path.join(OUT, f"ref_{n}.mp3"))
