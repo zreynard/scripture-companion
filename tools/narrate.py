@@ -108,8 +108,9 @@ def release_files(t):
     """Every file in a testament's releases, as {name: release tag} (listed page by page)."""
     out = {}
     for tag in TAGS(t):
-        rid = subprocess.run(["gh", "api", f"repos/{REPO}/releases/tags/{tag}", "-q", ".id"], capture_output=True, text=True).stdout.strip()
-        if not rid: continue
+        q = subprocess.run(["gh", "api", f"repos/{REPO}/releases/tags/{tag}", "-q", ".id"], capture_output=True, text=True)
+        rid = q.stdout.strip()
+        if q.returncode or not rid.isdigit(): continue  # this release does not exist (yet)
         r = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/releases/{rid}/assets?per_page=100", "-q", ".[].name"],
                            capture_output=True, text=True, check=True)
         for n in r.stdout.split(): out.setdefault(n, tag)
