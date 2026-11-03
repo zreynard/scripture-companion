@@ -18,7 +18,7 @@ def text_of(pdf):
             continue
         keep.append(s)
     t = re.sub(r"\s+", " ", " ".join(keep))
-    return re.sub(r"(?<=\d{4}) [A-Za-z:] (?=Scripture Reference)|(?<=\S) [:a-z] (?=[A-Z(])", " ", t)   # a stray letter from the page edge
+    return re.sub(r"(?<=\d{4}) [A-Za-z:] (?=Scripture Reference)|(?<=\S) [:gs] (?=[A-Z(])", " ", t)   # a stray letter from the page edge
 
 
 def parse(pdf):
