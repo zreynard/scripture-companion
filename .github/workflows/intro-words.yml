@@ -1,0 +1,25 @@
+# Diagnostics: what is said in each episode's first minutes, with times (tools/intro_words.py). Read it in the log.
+name: Intro words
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        default: "davey_journey"
+      ids:
+        default: ""
+      n:
+        default: "16"
+permissions:
+  contents: write
+jobs:
+  listen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q requests faster-whisper
+      - run: SOURCE=${{ github.event.inputs.source }} N=${{ github.event.inputs.n }} python tools/intro_words.py ${{ github.event.inputs.ids }}
