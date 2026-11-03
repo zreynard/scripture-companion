@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 89  # bump on every shipped build; also busts the service-worker cache
+VERSION = 90  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -702,9 +702,13 @@ body.mapopen #sheet{z-index:24}
 #tabs button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0 0;border:0;background:none;color:#5a6280;font:500 11px -apple-system,system-ui,sans-serif;cursor:pointer;min-height:52px}
 #tabs button.on{color:var(--gold2);font-weight:650}
 #tabs button.on svg{stroke-width:2.1}
-body:not([data-v="walk"]) #topbar,body:not([data-v="walk"]) #bookhd,body:not([data-v="walk"]) .top{display:none!important}
+body:not([data-v="walk"]) > #bookhd,body:not([data-v="walk"]) > div.top{display:none!important}
 body.bpsopen{overflow:hidden}
-#np.mini{left:10px;right:10px;bottom:calc(var(--tabh) + 8px);border-radius:20px;background:#1b2440;color:#fff;border:0;box-shadow:0 12px 28px rgba(27,36,64,.32);padding-bottom:8px}
+#np.mini{left:10px;right:10px;bottom:calc(var(--tabh) + 8px);border-radius:20px;background:#1b2440;color:#fff;border:0;box-shadow:0 12px 28px rgba(27,36,64,.32);padding:10px 14px 6px;row-gap:0}
+#np.mini .grab{display:none}
+#np.mini .t{grid-row:1;color:#fff;font-size:15.5px}#np.mini .s{grid-row:2}#np.mini .ctl2{grid-row:1}#np.mini .times{grid-row:2}
+#np.mini input[type=range]{grid-row:3;margin:4px 0 0}
+#np.mini .ctl{grid-row:4;margin-top:0}#np.mini .ctl .big{width:44px!important;height:44px!important}#np.mini .ctl .side{font-size:14px;padding:4px 8px}#np.mini .ctl svg{width:22px;height:22px}
 #np.mini .s,#np.mini .times{color:rgba(255,255,255,.72)}
 #np.mini .ctl button,#np.mini .ctl2 > button{color:#fff}
 #np.mini .grab{background:rgba(255,255,255,.3)}
@@ -714,13 +718,17 @@ body.bpsopen{overflow:hidden}
 .jv{max-width:430px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 18px) 20px 34px;position:relative;font-family:-apple-system,system-ui,sans-serif;color:var(--ink)}
 .vmore{position:absolute;top:calc(env(safe-area-inset-top) + 16px);right:16px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(27,36,64,.06);color:#4a5272;display:flex;align-items:center;justify-content:center;cursor:pointer}
 .jv-eb{font-size:11px;font-weight:650;letter-spacing:.2em;text-transform:uppercase;color:#7a5c16;margin-right:48px}
-.jv-t{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:40px;font-weight:500;letter-spacing:-.01em;margin:2px 48px 14px 0;line-height:1.08}
+.jv-t{margin:2px 48px 14px 0}
+.jv-t button,.jv-t{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:40px;font-weight:500;letter-spacing:-.01em;line-height:1.08;color:var(--ink)}
+.jv-t button{border:0;background:none;padding:0;display:inline-flex;align-items:center;gap:6px;cursor:pointer;text-align:left}.jv-t button svg{color:#7a5c16;flex:none;margin-top:6px}
+.jv-nav{display:flex;justify-content:space-between;gap:10px;margin:10px 2px 0}
+.jv-nav button{border:0;background:none;padding:8px 0;font:inherit;font-size:13.5px;color:#4a5272;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:48%}
 .jv-art{display:block;position:relative;border-radius:24px;overflow:hidden;box-shadow:0 12px 30px rgba(27,36,64,.12);background:#efe3c5}
 .jv-art svg{display:block;width:100%;height:230px}
 .jv-art.sm svg{height:150px}
 .jv-cap{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(180deg,rgba(246,238,218,0),rgba(246,238,218,.78) 38%,rgba(246,238,218,.92));color:var(--ink)}
 .jv-cap i{display:block;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:21px}
-.jv-cap span{display:block;font-size:13.5px;line-height:1.38;color:#2c3554}
+.jv-cap .cs{font-size:13.5px;line-height:1.4;color:#2c3554}
 .jv-cap button{font-size:inherit}
 .jv-seg{display:flex;gap:8px;margin:16px 0 18px}
 .jv-seg div{flex:1;font-size:11.5px;color:#5a6280;display:flex;flex-direction:column;gap:6px}
@@ -1001,7 +1009,7 @@ function openJump(mode){const el=$('#jump');el.hidden=false;document.body.classL
  const q=$('#jq');q.value='';if(mode==='search')q.focus();atlas().then(()=>{if(JP.open)renderJump()}).catch(()=>{});renderJump()}
 function closeJump(){$('#jump').hidden=true;document.body.classList.remove('jumpopen');JP.open=false;$('#jq').blur()}
 function chDoneAt(x){return !!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone)}
-function jumpGo(i,o={}){closeJump();if(o.hl){HL=o.hl;TAB='scripture';S.set('tab',TAB)}if(o.listen){TAB='teaching';S.set('tab',TAB);if(o.lk){LK=o.lk;S.set('lk2',LK)}}go(i)}
+function jumpGo(i,o={}){closeJump();if(view==='journey'){jMove(i);if(o.sid){JM=false;BPM=null;PLAYSTOP=i;play(o.sid)}else if(o.hl){const x=walk()[i];if(x&&!x.c.intro&&hasNar(x.b.abbr,x.c.c))narPlay(x.b,x.c.c,o.hl.from,{load:true,full:true})}return}if(o.hl){HL=o.hl;TAB='scripture';S.set('tab',TAB)}if(o.listen){TAB='teaching';S.set('tab',TAB);if(o.lk){LK=o.lk;S.set('lk2',LK)}}go(i)}
 function renderJump(){const body=$('#jbody'),q=$('#jq').value.trim(),w=walk(),cur=w[camp||0];let h='';
  if(q&&/secret|platt.*church/i.test(q))h+=`<button class="jr" id="jsc"><span class="jr-ic">▶</span><span class="jr-t"><b>Secret Church</b><span>${scGroups().length} nights · every session in order</span></span></button>`;
  if(!q){if(JP.list){h+=`<div class="jp-h">All books</div>`;let land='';for(const b of D.books){const L=(LANDS.slice().reverse().find(l=>D.books.indexOf(b)>=D.books.findIndex(bb=>bb.name===l[0]))||[,''])[1];
@@ -1032,7 +1040,7 @@ function renderJump(){const body=$('#jbody'),q=$('#jq').value.trim(),w=walk(),cu
  const al=$('#jall');if(al)al.onclick=()=>{JP.list=true;renderJump();const c=body.querySelector('.jb.cur');if(c)c.scrollIntoView({block:'center'})};
  {const js=$('#jsc');if(js)js.onclick=()=>{closeJump();view='sc';S.set('view',view);render();window.scrollTo(0,0)}}
  body.querySelectorAll('[data-ji]').forEach(b=>b.onclick=()=>{const i=+b.dataset.ji,x=w[i];if(b.dataset.v1)return jumpGo(i,{hl:{book:x.b.name,ch:x.c.c,from:+b.dataset.v1,to:+b.dataset.v2}});
-  if(b.dataset.sid){const g=listenGroups(x.b,x.c),lk=['overview','chapter','verses'].find(k=>g[k].some(y=>y.id===b.dataset.sid));return jumpGo(i,{listen:1,lk})}jumpGo(i)});
+  if(b.dataset.sid){const g=listenGroups(x.b,x.c),lk=['overview','chapter','verses'].find(k=>g[k].some(y=>y.id===b.dataset.sid));return jumpGo(i,{listen:1,lk,sid:b.dataset.sid})}jumpGo(i)});
  body.querySelectorAll('[data-nk]').forEach(b=>b.onclick=()=>{closeJump();openSheet(b.dataset.nk,b.dataset.ns)})}
 /* ---- medallions: one engraved emblem per role (a few people have their own); the ring's tint is the era ---- */
 const MEDAL_ICON={patriarch:'M8 38 L24 14 L40 38 Z M24 14 V38 M18 38 L24 29 L30 38 M10 10 l1.5 3 M15 6 l.8 2.4 M37 7 l-1 3 M41 12 l-2 2',
@@ -1320,7 +1328,7 @@ let W=null; // cached world geometry
    chapter, then verse by verse). A teaching that covers several chapters waits at the first of them; once heard or
    skipped it is not asked for again (it stays in the lists). Nothing walks on by itself: the next chapter waits for you. */
 Object.assign(ICON,{book:'<path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20"/>',arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',map:'<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>'});
-let SKIP=S.get('skip',{}),JM=false,FIRSTAT=null;
+let SKIP=S.get('skip',{}),JM=false,FIRSTAT=null,PLAYSTOP=null;
 const stopKey=x=>x.b.abbr+':'+(x.c.intro?0:x.c.c),scrKey=x=>x.b.abbr+x.c.c;
 function firstAt(){if(FIRSTAT)return FIRSTAT;const m={};walk().forEach((x,i)=>stopIds(x).forEach(id=>{if(!(id in m))m[id]=i}));return FIRSTAT=m}
 function jpIdx(){const w=walk(),k=S.get('jp',null);let i=k?w.findIndex(x=>stopKey(x)===k):-1;
@@ -1346,6 +1354,9 @@ function contHTML(i){const w=walk(),x=w[i],a=nextAction(i);if(!a)return'';
  if(a.kind==='walk'){const nx=w[a.to];return btn(icon('arrow',22,2,'#1b2440'),'When you’re ready','Walk on to '+esc(stopName(nx)),nx.c.intro?'A new book begins':'','walk')}
  return `<div class="cont-end">You have walked the whole of Scripture.</div>`}
 function awayHTML(j){const w=walk();return `<div class="away"><button class="cont ghost" id="cont"><span class="cont-ic">${icon('arrow',20,2,'var(--ink)')}</span><span class="cont-t"><small>Your place</small><b>Return to ${esc(stopName(w[j]))}</b></span></button><div class="cont-alt"><button id="sethere">Make ${esc(stopName(w[camp]))} my place</button></div></div>`}
+/* in Explore the card points to Journey, where your place is kept */
+function exploreNext(j){const w=walk();if(camp===j)return `<button class="cont ghost" id="tojourney"><span class="cont-ic">${icon('book',20,1.8,'var(--ink)')}</span><span class="cont-t"><small>Your place</small><b>Continue in Journey</b></span></button>`;
+ return `<button class="cont ghost" id="tojourney"><span class="cont-ic">${icon('arrow',20,2,'var(--ink)')}</span><span class="cont-t"><small>Your place · ${esc(stopName(w[j]))}</small><b>Continue in Journey</b></span></button><div class="cont-alt"><button id="sethere">Make ${esc(stopName(w[camp]))} my place</button></div>`}
 function showStep(step,scroll){if(step)TAB=step;S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false;
  if(scroll){const el=document.querySelector(scroll==='text'?'details.readx':'.tabs');if(el)setTimeout(()=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-70,behavior:'smooth'}),60)}}
 function walkOn(to){const w=walk(),fr=w[jpIdx()],nx=w[to];setJP(to);if(fr&&nx&&nx.b!==fr.b&&!fr.c.intro)note('You have walked through '+fr.b.name+'.');go(to)}
@@ -1365,7 +1376,7 @@ function tabOf(v){return v==='sc'?'library':v}
 function tabsPaint(){const t=$('#tabs');if(!t)return;if(!t.dataset.on){t.dataset.on=1;t.innerHTML=TABS.map(([k,l])=>`<button data-tab2="${k}"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TAB_IC[k]}</svg><span>${l}</span></button>`).join('');
   t.querySelectorAll('[data-tab2]').forEach(b=>b.onclick=()=>{const v=b.dataset.tab2;if(v===view){window.scrollTo({top:0,behavior:'smooth'});return}setView(v)})}
  t.querySelectorAll('[data-tab2]').forEach(b=>{const on=b.dataset.tab2===tabOf(view);b.classList.toggle('on',on);b.setAttribute('aria-current',on?'page':'false')});document.body.dataset.v=view}
-function setView(v){if(view!=='settings')PREV=view;view=v;S.set('view',v);if(v==='walk'){decorate.first=true;camp=jpIdx()}render();if(v!=='walk')window.scrollTo(0,0)}
+function setView(v){if(view!=='settings')PREV=view;view=v;S.set('view',v);if(v==='walk'){decorate.first=true;const jp=S.get('jp','');if(jp!==setView.jp||camp==null)camp=jpIdx();setView.jp=jp}render();if(v!=='walk')window.scrollTo(0,0)}
 const moreBtn=()=>`<button class="vmore" data-settings aria-label="Settings">${'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></svg>'}</button>`;
 
 /* ---- the illustration at the top of a stop: a dawn over the land, tinted by its part of the Bible ---- */
@@ -1387,8 +1398,10 @@ function stepFrac(i,list){const q=list.filter(id=>firstAt()[id]===i&&I[id]&&I[id
 function jRow(id,badge,up){const it=I[id];if(!it)return'';const done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id);
  return `<div class="jw${done?' heard':''}${up===id?' up':''}"><button class="jpb${it.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(it))}"${it.audio?'':' disabled'}>${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(it))}</b><span>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}${it.audio?'':' · audio soon'}</span></div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':badge?`<span class="vb">${badge}</span>`:''}</div>`}
 function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(i),s=stepsOf(i),G=listenGroups(b,c),lm=LANDMARKS[b.abbr+c.c],up=a&&a.kind==='play'?a.id:null;
- let h=`<div class="jv">${moreBtn()}<div class="jv-eb">${esc(landOf(b))}${(c.y||b.yr)?' · '+esc(c.y||b.yr):''}</div><h1 class="jv-t">${esc(stopName(x))}</h1>`;
- h+=`<div class="jv-art">${heroArt(x,350,230,'ja')}<div class="jv-cap">${c.intro?'<i>Book overview</i>':lm?`<i>${esc(lm[1])}</i>`:''}<span>${rich(c.intro?(b.bl||''):(c.sl||''))}</span></div></div>`;
+ const pv=w[i-1],nx2=w[i+1];
+ let h=`<div class="jv">${moreBtn()}<div class="jv-eb">${esc(landOf(b))}${(c.y||b.yr)?' · '+esc(c.y||b.yr):''}</div><h1 class="jv-t"><button id="jpick" aria-label="Choose a book or chapter">${esc(stopName(x))}<svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></h1>`;
+ h+=`<div class="jv-art" id="jart">${heroArt(x,350,230,'ja')}<div class="jv-cap">${!c.intro&&lm?`<i>${esc(lm[1])}</i>`:''}<div class="cs">${rich(c.intro?(b.bl||''):(c.sl||''))}</div></div></div>`;
+ h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
  const segs=c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['overview','Overview',stepFrac(i,s.ov)],['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',stepFrac(i,s.teach)]];
  h+=`<div class="jv-seg">${segs.map(([k,l,f])=>`<div class="${a&&a.step===k?'now':''}"><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</div>`).join('')}</div>`;
  if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
@@ -1411,7 +1424,12 @@ function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;
  if(a.kind==='play'){if(cur===a.id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;play(a.id)}
  else if(a.kind==='scripture'){const id=narId(x.b.abbr,x.c.c);if(cur===id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;narPlay(x.b,x.c.c,null,{jm:true,full:true})}
  else if(a.kind==='walk'){const fr=x,nx=w[a.to];setJP(a.to);camp=a.to;S.set('camp',camp);if(nx.b!==fr.b&&!fr.c.intro)note('You have walked through '+fr.b.name+'.');JV.more=false;render();window.scrollTo({top:0,behavior:'smooth'})}}
-function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
+function jMove(i){const w=walk();if(!w[i])return;setJP(i);camp=i;S.set('camp',camp);JV.more=false;render();window.scrollTo({top:0})}
+function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
+ document.querySelectorAll('[data-jgo]').forEach(b=>b.onclick=()=>jMove(+b.dataset.jgo));
+ const pk=$('#jpick');if(pk)pk.onclick=()=>{camp=jpIdx();openJump('browse')};
+ document.querySelectorAll('.jv [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
+ const art=$('#jart');if(art){let t0=null;art.ontouchstart=e=>{t0=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY,t:Date.now()}:null};art.ontouchend=e=>{if(!t0)return;const t=e.changedTouches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y,ok=Date.now()-t0.t<700;t0=null;if(ok&&Math.abs(dx)>60&&Math.abs(dx)>2*Math.abs(dy))jMove(jpIdx()+(dx<0?1:-1))}}const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
  document.querySelectorAll('[data-jread]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()];read[scrKey(x)]=true;S.set('read',read);render()});
  document.querySelectorAll('[data-jscr]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()],id=narId(x.b.abbr,x.c.c);BPM=null;if(cur===id){setMini(false);return}const a=nextAction(jpIdx());JM=!!(a&&a.kind==='scripture');narPlay(x.b,x.c.c,null,{jm:JM,full:true})})}
 
@@ -1520,7 +1538,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  let nextV=null;for(let i=camp+1;i<w.length;i++){if(stopIds(w[i]).some(okWho)){nextV={i,x:w[i]};break}}
  {const cut=Math.min(Hs-20,m.y+44);svg.setAttribute('viewBox',`0 0 390 ${cut}`);$('#w2').setAttribute('viewBox',`0 ${cut} 390 ${Hs-cut}`)}
  const land=cfg.order==='canon'?(LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]:'';
- const chDone=x=>!!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone),bibleN=w.filter(x=>!x.c.intro&&chDone(x)).length,bookN=b.ch.filter(cc=>chDone({b,c:cc})).length,hereDone=x.c.intro?stopRead(x):chDone(x),heardIn=ids2=>[...new Set(ids2)].reduce((a,id)=>a+((prog[id]||{}).heard||0),0),bookHeard=heardIn([...b.ch.flatMap(cc=>cc.ids),...b.ov,...(b.spans||[]).map(sp=>sp.id)]),bibleHeard=Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0),AV=avail(),pct=(n,d)=>{const v=100*n/d;return v>0&&v<10?v.toFixed(1):String(Math.round(v))},lm=LANDMARKS[b.abbr+c.c],T_=(t=>c.intro&&(t==='scripture'||t==='teaching')?'overview':t)(({summary:'overview',read:'scripture',listen:'teaching'})[TAB]||TAB),jpI=jpIdx(),NA=camp===jpI?nextAction(camp):null,SS=stepState(camp);cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)"></span></div><div class="hd"><div class="ch serif"><span id="chT">${stopName(x)}<svg class="chv" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>${hereDone?'<span class="ck-c" role="img" aria-label="Completed">✓</span>':''}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c.sl?`<div class="sline">${rich(c.sl)}</div>`:''}<div class="next">${camp===jpI?contHTML(camp):awayHTML(jpI)}</div>${fold?`<button class="unfold" id="unfold">${ids.length?'▸ Open · '+ids.length+' voice'+(ids.length>1?'s':''):'▸ Open this stop'}</button>`:''}<div class="body"${fold?' hidden':''}>
+ const chDone=x=>!!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone),bibleN=w.filter(x=>!x.c.intro&&chDone(x)).length,bookN=b.ch.filter(cc=>chDone({b,c:cc})).length,hereDone=x.c.intro?stopRead(x):chDone(x),heardIn=ids2=>[...new Set(ids2)].reduce((a,id)=>a+((prog[id]||{}).heard||0),0),bookHeard=heardIn([...b.ch.flatMap(cc=>cc.ids),...b.ov,...(b.spans||[]).map(sp=>sp.id)]),bibleHeard=Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0),AV=avail(),pct=(n,d)=>{const v=100*n/d;return v>0&&v<10?v.toFixed(1):String(Math.round(v))},lm=LANDMARKS[b.abbr+c.c],T_=(t=>c.intro&&(t==='scripture'||t==='teaching')?'overview':t)(({summary:'overview',read:'scripture',listen:'teaching'})[TAB]||TAB),jpI=jpIdx(),NA=camp===jpI?nextAction(camp):null,SS=stepState(camp);cl.innerHTML=`<div class="where">${land}<span style="float:right;letter-spacing:0;text-transform:none;color:var(--mute)"></span></div><div class="hd"><div class="ch serif"><span id="chT">${stopName(x)}<svg class="chv" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>${hereDone?'<span class="ck-c" role="img" aria-label="Completed">✓</span>':''}</div><button class="fold" id="fold" aria-label="${fold?'Open this stop':'Fold this stop'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${fold?'M3 6l5 5 5-5':'M3 10l5-5 5 5'}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>${c.y?`<div class="yr">${c.y}</div>`:''}${lm?`<div class="scene">${lm[1]}</div>`:''}${c.sl?`<div class="sline">${rich(c.sl)}</div>`:''}<div class="next">${exploreNext(jpI)}</div>${fold?`<button class="unfold" id="unfold">${ids.length?'▸ Open · '+ids.length+' voice'+(ids.length>1?'s':''):'▸ Open this stop'}</button>`:''}<div class="body"${fold?' hidden':''}>
   <div class="tabs" role="tablist">${(c.intro?[['overview','Overview']]:[['overview','Overview'],['scripture','Scripture'],['teaching','Teaching']]).map(([k,l])=>{const st=SS[k],nx=NA&&NA.step===k,ok=camp===jpI&&st.done&&(st.n||k==='scripture')&&!c.intro;
    return `<button class="tab step${T_===k?' on':''}${nx?' nextstep':''}" role="tab" aria-selected="${T_===k}" data-tab="${k}">${l}${ok?'<i class="ok" aria-label="nothing waiting">✓</i>':k!=='scripture'&&st.n?`<span>${st.n}</span>`:''}</button>`}).join('')}<button class="tab tmap${T_==='map'?' on':''}" role="tab" aria-selected="${T_==='map'}" aria-label="Map" data-tab="map">${icon('map',18,1.7,T_==='map'?'var(--ink)':'var(--mute)')}</button></div>
   ${T_==='overview'?`<div class="pane story">${(()=>{const G=listenGroups(b,c),up=NA&&NA.kind==='play'?NA.id:null;let h='';
@@ -1554,7 +1572,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
 let LK=['overview','chapter','verses'].includes(S.get('lk2','overview'))?S.get('lk2','overview'):'overview',FOLD=false,TAB=(t=>({summary:'overview',read:'scripture',listen:'teaching'})[t]||(['overview','scripture','teaching','map'].includes(t)?t:'overview'))(S.get('tab','overview'));  /* folding is for this stop only; every stop (and every app open) starts with its voices showing */
 function go(i){{const w=walk(),here=camp!=null&&w[camp];if(here&&here.c.intro&&i>camp&&!read[here.b.abbr+'0']){read[here.b.abbr+'0']=true;S.set('read',read)}}camp=i;FOLD=false;decorate.more=false;decorate.follow=true;S.set('camp',camp);if(i===jpIdx()){const a=nextAction(i);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}render()}
 /* one step along the road: from your place that is walking on; anywhere else it is just looking */
-function stepTo(to){if(camp===jpIdx()&&to===camp+1)walkOn(to);else go(to)}
+function stepTo(to){go(to)}
 function bkForm(again){return `<form id="bkf" class="bkf" autocomplete="on"><input type="text" name="username" autocomplete="username" value="Scripture Companion backup" readonly class="bk-u" tabindex="-1" aria-hidden="true"><input type="password" name="password" id="bkkey" autocomplete="current-password" placeholder="${again?'Paste a new GitHub key':'Paste your GitHub key'}" required><input type="text" id="bkrepo" value="${esc(bkRepo())}" aria-label="Backup repo (owner/name)" autocapitalize="off" spellcheck="false"><button class="btn" type="submit">${again?'Use this key':'Turn on backup'}</button><p class="note" id="bkmsg"></p></form>`}
 function settingsView(){
  return `<div class="settings"><button class="sccard" id="opensc"><span class="serif">Secret Church</span><small>${scGroups().length} nights · every session in order ›</small></button><h2 class="serif" style="margin:0 0 8px">Your journey</h2><p class="note">${(()=>{const w=walk(),j=jpIdx(),rd=w.filter(x=>!x.c.intro&&read[scrKey(x)]).length,hh=Math.round(Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0)/3600),sk=Object.keys(SKIP).length;
@@ -1572,7 +1590,7 @@ function scGroups(){const by={};D.sc.ids.forEach(id=>{const i=I[id];if(!i||!i.sc
   return {ev,ids:ids.slice().sort((a,b)=>(I[a].sc[1]||0)-(I[b].sc[1]||0))}}).filter(g=>g.ids.length)}
 function scSeq(){return scGroups().flatMap(g=>g.ids).filter(id=>I[id].audio)}
 function scView(){const G=scGroups(),tot=G.reduce((a,g)=>a+g.ids.length,0);
- let h=`<div class="settings scl"><button class="btn" id="scback">‹ Back to the road</button><h2 class="serif" style="margin:14px 0 4px">Secret Church</h2>
+ let h=`<div class="settings scl"><button class="btn" id="scback">‹ Library</button><h2 class="serif" style="margin:14px 0 4px">Secret Church</h2>
  <p class="note">David Platt · ${G.length} nights of deep teaching, ${tot} sessions, in order. Sessions that teach a stretch of the Bible also sit on the road.</p>`;
  G.forEach(({ev,ids})=>{const done=ids.filter(isDone).length,k='sc:'+ev.n;
   h+=`<details class="sce" data-sck="${k}"${OPEN.has(k)?' open':''}><summary><span class="sce-n">${ev.n}</span><span class="sce-t">${esc(ev.title)}</span><span class="sce-p">${done===ids.length?'✓':done+' / '+ids.length}</span></summary><div class="sce-b">${ids.map(id=>voiceHTML(id,(I[id].sc||[])[0]+'.'+(I[id].sc||[])[1])).join('')}</div></details>`});
@@ -1609,7 +1627,7 @@ function next(){if(BPM&&cur){const s=bpGet(BPM),ids=s?bpIds(s):[],k=ids.indexOf(
   if(a.kind==='play'){if(here){TAB=a.step;S.set('tab',TAB)}play(a.id);if(here){decorate.moving=true;render();decorate.moving=false}return}
   if(a.kind==='scripture'){const x=walk()[i];if(hasNar(x.b.abbr,x.c.c)){if(here){TAB='scripture';S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false}narPlay(x.b,x.c.c,0,{jm:true});return}}
   JM=false;decorate.moving=true;render();decorate.moving=false;if(a.kind==='walk')note('That is everything waiting in '+stopName(walk()[i])+'. Walk on when you’re ready.');return}
- const w=walk(),x=w[camp];if(!x)return;const ids=orderedIds(x.b,x.c),k=ids.indexOf(cur);if(k<0)return;
+ const w=walk(),x=w[PLAYSTOP!=null?PLAYSTOP:camp];if(!x)return;const ids=orderedIds(x.b,x.c),k=ids.indexOf(cur);if(k<0)return;
  for(let j=k+1;j<ids.length;j++)if(I[ids[j]].audio&&!isDone(ids[j])&&okWho(ids[j])&&!SKIP[ids[j]]){play(ids[j]);return}}
 let saveSec=-1;onAudio('timeupdate',()=>{if(!cur||narWait)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(Math.max(0,d-t-tail())/speed);
  if(tail()&&d&&d-t<=tail()&&!audio.paused&&!audio.seeking&&ready){audio.pause();finished();return}/* the outro after the last word: done */
@@ -1733,11 +1751,11 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
  document.querySelectorAll('.pref').forEach(b=>b.onclick=e=>{e.stopPropagation();const x=walk()[camp];const r=versesFor(b.dataset.pass,x.b.name,x.c.c);
   HL=r?{book:x.b.name,ch:x.c.c,...r}:null;TAB='scripture';S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false;
   const d=document.querySelector('details.readx');if(d)setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'start'}),60)});
- const bh=$('#bookhd');if(bh)bh.onclick=()=>{if(view!=='walk'){view='walk';S.set('view',view)}go(+bh.dataset.camp)};document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;if(SKIP[b.dataset.play]){delete SKIP[b.dataset.play];S.set('skip',SKIP)}play(b.dataset.play)});
+ const bh=$('#bookhd');if(bh)bh.onclick=()=>{if(view!=='walk'){view='walk';S.set('view',view)}go(+bh.dataset.camp)};document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=view==='journey'?jpIdx():camp;if(SKIP[b.dataset.play]){delete SKIP[b.dataset.play];S.set('skip',SKIP)}play(b.dataset.play)});
  
  document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{const was=!!read[b.dataset.read];read[b.dataset.read]=!was;S.set('read',read);decorate.moving=true;render();decorate.moving=false});
  document.querySelectorAll('.acts [data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;stepTo(+b.dataset.camp)});document.querySelectorAll('.nv[data-camp], .myplace[data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;go(+b.dataset.camp)});
- const ct2=$('#cont');if(ct2)ct2.onclick=e=>{e.stopPropagation();doCont()};const sh=$('#sethere');if(sh)sh.onclick=e=>{e.stopPropagation();setJP(camp);const a=nextAction(camp);if(a&&a.step)TAB=a.step;note(stopName(walk()[camp])+' is your place now.');decorate.moving=true;render();decorate.moving=false};
+ const ct2=$('#cont');if(ct2)ct2.onclick=e=>{e.stopPropagation();doCont()};const sh=$('#sethere');if(sh)sh.onclick=e=>{e.stopPropagation();setJP(camp);note(stopName(walk()[camp])+' is your place now.');setView('journey')};const tj=$('#tojourney');if(tj)tj.onclick=e=>{e.stopPropagation();setView('journey')};
  document.querySelectorAll('[data-skipnext]').forEach(b=>b.onclick=e=>{e.stopPropagation();SKIP[b.dataset.skipnext]=true;S.set('skip',SKIP);const a=nextAction(camp);if(a&&a.step)TAB=a.step;decorate.moving=true;render();decorate.moving=false});document.querySelectorAll('.lk[data-lk]').forEach(t=>t.onclick=e=>{e.stopPropagation();if(LK===t.dataset.lk)return;LK=t.dataset.lk;S.set('lk2',LK);decorate.more=false;decorate.moving=true;render();decorate.moving=false});document.querySelectorAll('.tab[data-tab]').forEach(t=>t.onclick=e=>{e.stopPropagation();if(TAB===t.dataset.tab)return;TAB=t.dataset.tab;S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false});const uf=$('#unfold');if(uf)uf.onclick=e=>{e.stopPropagation();const f=$('#fold');if(f)f.onclick()};const fd=$('#fold');if(fd){fd.onclick=e=>{e&&e.stopPropagation();const f=!FOLD;FOLD=f;if(f&&NP().classList.contains('on'))setMini(true);decorate.moving=true;render();decorate.moving=false;
    /* folding while scrolled down inside a long stop: keep the stop's top in view instead of the page jumping */
    const cl=$('#clearing');if(cl){const t=cl.getBoundingClientRect().top;if(t<60||t>innerHeight-120)window.scrollTo({top:scrollY+t-70})}};const ct=$('#chT');if(ct){ct.onclick=e=>{e.stopPropagation();openJump('browse')};ct.setAttribute('role','button');ct.setAttribute('aria-label','Choose a chapter')}}
