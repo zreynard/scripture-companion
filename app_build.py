@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 96  # bump on every shipped build; also busts the service-worker cache
+VERSION = 97  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -1519,7 +1519,7 @@ function bpView(){const L=bpList(),ls=bpGet(S.get('bplast',''));let h=`<div clas
   h+=`<button class="bp-cont" data-bpcont="${ls.id}">${bpCover(ls.art,64)}<span class="bp-ct"><small>Continue · ${esc(ls.title)}</small><b>${esc(bpName(ls,id))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':` · ${ls.unit||'episode'} ${k+1} of ${ids.length}`}</em></span><span class="bp-pp">${icon(pl?'pause':'play',16,0,'#1b2440')}</span></button>`}
  h+=`<div class="jv-sec">${L.length===2?'Two':L.length===3?'Three':L.length} series</div>`;
  L.forEach(s=>{const ids=bpIds(s),st=!!BP[s.id],k=bpAt(s),f=ids.filter(isDone).length/ids.length;
-  h+=`<button class="bp-row" data-bps="${s.id}">${bpCover(s.art,104)}<span class="bp-rt"><b>${esc(s.title)}</b><span class="by">${esc(s.by)}</span><span class="ds">${esc(s.desc.split('. ')[0].replace(/\.$/,''))}.</span><span class="pr">${st?`<i><b style="width:${Math.max(3,Math.round(100*f))}%"></b></i>${s.unit==='flight'?'Flight':'Session'} ${k+1} of ${ids.length}`:bpLen(s)}</span></span></button>`});
+  h+=`<button class="bp-row" data-bps="${s.id}">${bpCover(s.art,104)}<span class="bp-rt"><b>${esc(s.title)}</b><span class="by">${esc(s.by)}</span><span class="ds">${esc(s.desc.split('. ')[0].replace(/\.$/,''))}.</span><span class="pr"><i><b style="width:${f>0?Math.max(3,Math.round(100*f)):0}%"></b></i>${st||f>0?`${s.unit==='flight'?'Flight':'Session'} ${k+1} of ${ids.length}`:`${ids.length} ${s.unit||'episode'}s · not started`}</span></span></button>`});
  return h+'</div>'}
 function openSeries(sid){const s=bpGet(sid);if(!s)return;const ids=bpIds(s),k=bpAt(s),el=$('#bps'),st=!!BP[s.id];
  let list='';s.parts.forEach(([t,p])=>{if(t)list+=`<div class="jv-sub">${esc(t)}</div>`;p.filter(id=>I[id]).forEach(id=>{const j=ids.indexOf(id),done=isDone(id),left=leftOf(id),now=j===k&&st;
