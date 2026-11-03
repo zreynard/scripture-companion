@@ -1,0 +1,42 @@
+# Wisdom Journey: start each episode where the teaching starts (tools/intro_speech.py).
+# Daily: if the ministry's opening message has changed, re-measure every episode; otherwise measure new episodes.
+# Then save data/intro_skip/ and republish the app.
+name: Intro start points
+on:
+  schedule:
+    - cron: "41 10 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "all = re-measure every episode; daily = only if the opening changed, plus new episodes"
+        default: "daily"
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: intro-speech
+  cancel-in-progress: false
+jobs:
+  listen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q requests faster-whisper
+      - run: SOURCE=davey_journey python tools/intro_speech.py ${{ github.event.inputs.mode || 'daily' }}
+      - name: Save and republish
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/intro_skip/
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Wisdom Journey start points"
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          gh workflow run refresh.yml -f sources=davey_journey -f check_links=false
