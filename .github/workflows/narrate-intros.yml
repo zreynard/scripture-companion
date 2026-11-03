@@ -1,0 +1,66 @@
+# The Bible Narrative read aloud by Alistair (tools/narrate_intros.py): book and chapter introductions.
+# Only introductions that are missing, or whose text changed, are recorded, so it can be re-run any time.
+name: Narrate the introductions
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Only these, e.g. "Gen:0,Gen:1" (0 = book introduction; empty = everything missing or changed)'
+        default: ""
+      shards:
+        description: "Machines to split the work over"
+        default: "16"
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: narrate-intros
+jobs:
+  narrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        k: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q chatterbox-tts soundfile faster-whisper scipy
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ ${{ matrix.k }} -lt ${{ github.event.inputs.shards }} ] || exit 0
+          python tools/narrate_intros.py run ${{ matrix.k }} ${{ github.event.inputs.shards }} "${{ github.event.inputs.only }}"
+  publish:
+    needs: narrate
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/narrate_intros.py publish
+      - name: Save and republish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/narrative_audio.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "The Bible Narrative: recorded introductions"
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          gh workflow run refresh.yml -f sources=fearless -f check_links=false
