@@ -14,7 +14,7 @@ PASS  surveys are not repeated inside chapters
 PASS  a book overview is not repeated inside that book's chapters
 
 == Speakers
-PASS  only David Platt, PAM, Stephen Davey and Skip Heitzig (each with their church preachers) on the road
+PASS  only David Platt, PAM, Stephen Davey, Skip Heitzig (each with their church preachers) and Fearless Church on the road
 PASS  Stephen Davey teaching comes only from his own feeds, and his feeds only from him
 PASS  Skip Heitzig teaching comes only from his own feeds, and his feeds only from him
 PASS  2819 teaching shows the preacher named in its title
