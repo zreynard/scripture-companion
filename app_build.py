@@ -23,7 +23,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 103  # bump on every shipped build; also busts the service-worker cache
+VERSION = 104  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -874,7 +874,7 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 .lib-lead{font-size:13.5px;color:#5a6280;margin:14px 2px 6px}
 .lib-tp{display:flex;align-items:center;gap:12px;width:100%;padding:13px 4px;border:0;border-bottom:1px solid rgba(27,36,64,.08);background:none;text-align:left;color:var(--ink);cursor:pointer;font:inherit}
 .lib-tp>span:not(.tp-ic){flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.lib-tp b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;font-weight:500}.lib-tp em{font-style:normal;font-size:12.5px;color:#5a6280;line-height:1.35;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.lib-tp i{font-style:normal;font-size:12.5px;font-weight:600;color:#7a5c16}
-.tp-ic{flex:none;display:flex;align-items:center;justify-content:center;border-radius:11px}
+.tp-ic{flex:none;display:flex;align-items:center;justify-content:center;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
 .tp-hd{display:flex;align-items:center;gap:14px;margin:6px 4px 0}
 .lib-bk{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .lib-bk button{display:flex;justify-content:space-between;align-items:baseline;gap:6px;padding:11px 12px;border:0;border-radius:14px;background:#fffdf8;color:var(--ink);text-align:left;cursor:pointer;font:inherit;min-width:0}
@@ -1591,11 +1591,11 @@ const TOPIC_IC={kingdom:['#6b5320','<path d="M4 17 3 7l5 4 4-6 4 6 5-4-1 10z"/><
  suffering:['#4a5272','<path d="M12 3.5s6 6.4 6 10.5a6 6 0 0 1-12 0c0-4.1 6-10.5 6-10.5z"/><path d="M9.2 14.5a2.9 2.9 0 0 0 2.8 2.6"/>'],
  church:['#7a4b2a','<path d="M12 2v4M10 4h4"/><path d="M5 21V11l7-5 7 5v10z"/><path d="M10 21v-4.5a2 2 0 0 1 4 0V21"/>'],
  missions:['#2e4639','<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.5 5.7 3.5 9s-1 6.3-3.5 9c-2.5-2.7-3.5-5.7-3.5-9s1-6.3 3.5-9z"/>']};
-const topicIc=(id,sz)=>{const t=TOPIC_IC[id]||['#4a5272',''];return `<span class="tp-ic" style="background:${t[0]}1a;width:${sz}px;height:${sz}px" aria-hidden="true"><svg viewBox="0 0 24 24" width="${Math.round(sz*.56)}" height="${Math.round(sz*.56)}" fill="none" stroke="${t[0]}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".85">${t[1]}</svg></span>`};
+const topicIc=(id,sz)=>{const t=TOPIC_IC[id]||['#4a5272',''];return `<span class="tp-ic" style="background:${t[0]};width:${sz}px;height:${sz}px" aria-hidden="true"><svg viewBox="0 0 24 24" width="${Math.round(sz*.55)}" height="${Math.round(sz*.55)}" fill="none" stroke="#f0d79a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${t[1]}</svg></span>`};
 function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotional'&&i.audio&&!i.nar)cnt[i.who]=(cnt[i.who]||0)+1});
  const bpOf=id=>bpList().find(s=>bpIds(s).includes(id));
  let h=`<div class="jv lib">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Library</h1><div class="t-sort lib-seg" role="tablist" aria-label="Browse by">${[['teachers','Teachers'],['topics','Topics'],['books','Books']].map(([v,l])=>`<button role="tab" data-lt="${v}" class="${LT===v?'on':''}" aria-selected="${LT===v}">${l}</button>`).join('')}</div>`;
- if(LT==='topics'){h+=`<p class="lib-lead">What Scripture teaches about a subject, across every book and teacher.</p>`+(D.topics||[]).map(t=>{const n=t.ess.length+t.more.length;return `<button class="lib-tp" data-topic="${t.id}">${topicIc(t.id,36)}<span><b>${esc(t.name)}</b><em>${esc(t.blurb.split(/(?<=[.:])\s/)[0].replace(/[.:]$/,''))}</em></span><i>${n}</i></button>`}).join('');return h+'</div>'}
+ if(LT==='topics'){h+=`<p class="lib-lead">What Scripture teaches about a subject, across every book and teacher.</p>`+(D.topics||[]).map(t=>{const n=t.ess.length+t.more.length;return `<button class="lib-tp" data-topic="${t.id}">${topicIc(t.id,46)}<span><b>${esc(t.name)}</b><em>${esc(t.blurb.split(/(?<=[.:])\s/)[0].replace(/[.:]$/,''))}</em></span><i>${n}</i></button>`}).join('');return h+'</div>'}
  if(LT==='books'){const n={};const w=walk(),fa=firstAt();Object.values(I).forEach(i=>{if(i.tr==='devotional'||i.nar||!i.audio)return;const st=w[fa[i.id]];if(st)n[st.b.name]=(n[st.b.name]||0)+1});
   const grid=bs=>`<div class="lib-bk">${bs.map(b=>`<button data-lbook="${esc(b.name)}"><b>${esc(b.name)}</b><em>${n[b.name]||0}</em></button>`).join('')}</div>`;const mi=D.books.findIndex(b=>b.name==='Matthew'),ot=D.books.slice(0,mi),nt=D.books.slice(mi);
   return h+`<div class="jv-sec">Old Testament</div>${grid(ot)}<div class="jv-sec">New Testament</div>${grid(nt)}</div>`}
@@ -1617,7 +1617,7 @@ function openTopic(id){const t=(D.topics||[]).find(x=>x.id===id);if(!t)return;co
  const nights=t.sc.map(n=>G.find(g=>g.ev.n===n)).filter(Boolean).map(g=>`<button class="tp-sc" data-scn="${g.ev.n}"><small>Secret Church ${g.ev.n}</small><b>${esc(g.ev.title)}</b><span>David Platt · ${g.ids.length} sessions ›</span></button>`).join('');
  const list=()=>{const row=id=>tRow({i:I[id]},null);let h=`<div class="jv-sec">Essential teaching</div>${t.ess.map(row).join('')}`;
   if(t.more.length){const by={};t.more.forEach(id=>(by[I[id].who]=by[I[id].who]||[]).push(id));h+=`<div class="jv-sec">More teaching</div>`+Object.entries(by).map(([k,l])=>`<details class="tch-b"><summary>${esc(NAMES[k]||k)}<span>${l.length}</span></summary>${l.map(row).join('')}</details>`).join('')}return h};
- openSheet(t.name,`<div class="tp-hd">${topicIc(t.id,44)}<div class="bps-t">${esc(t.name)}</div></div><p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,el=>{
+ openSheet(t.name,`<div class="tp-hd">${topicIc(t.id,56)}<div class="bps-t">${esc(t.name)}</div></div><p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,el=>{
   el.querySelectorAll('[data-kgo]').forEach(b=>b.onclick=()=>{const [bk,c]=b.dataset.kgo.split('|');goStop(bk,+c)});el.querySelectorAll('[data-scn]').forEach(b=>b.onclick=()=>openSCNight(+b.dataset.scn))})}
 /* a book: every teaching on it from every teacher, in passage order, by chapter */
 let LB={t:'all'};
