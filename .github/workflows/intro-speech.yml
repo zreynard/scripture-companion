@@ -10,6 +10,9 @@ on:
       mode:
         description: "all = re-measure every episode; daily = only if the opening changed, plus new episodes"
         default: "daily"
+      n:
+        description: "trial: only this many episodes, nothing saved"
+        default: ""
 permissions:
   contents: write
   actions: write
@@ -27,9 +30,9 @@ jobs:
           python-version: "3.12"
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
       - run: pip install -q requests faster-whisper
-      - run: SOURCE=davey_journey python tools/intro_speech.py ${{ github.event.inputs.mode || 'daily' }}
+      - run: SOURCE=davey_journey N=${{ github.event.inputs.n }} python tools/intro_speech.py ${{ github.event.inputs.mode || 'daily' }}
       - name: Save and republish
-        if: always()
+        if: always() && github.event.inputs.n == ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

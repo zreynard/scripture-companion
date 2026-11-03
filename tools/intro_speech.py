@@ -108,7 +108,8 @@ def check():
 def run_all(only_new=False):
     skips = json.load(open(OUT)) if os.path.exists(OUT) else {}
     msgs = {}  # message wording -> how many episodes carry it
-    eps = [e for e in episodes() if not (only_new and e["id"] in skips)]
+    eps = [e for e in episodes() if not (only_new and e["id"] in skips)][:int(os.environ.get("N") or 10**6)]
+    if os.environ.get("N"): skips = {}  # a trial: write only what it measured
     for n, e in enumerate(eps, 1):
         w = opening(e["audio_override"])
         if w is None: continue
