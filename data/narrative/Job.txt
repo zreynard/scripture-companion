@@ -13,7 +13,7 @@ The friends' argument rests on a conviction found throughout the ancient world, 
 
 The poetry of Job is some of the finest, and most difficult, in the Old Testament. Its Hebrew contains many rare words, and translators are uncertain about some lines. Its imagery is drawn from the whole of creation: stars and storms, rivers and deserts, lions, ostriches and wild donkeys, mining and weaving. One small detail is worth listening for. In the prose frame and in the Lord's speeches the narrator uses God's covenant name, the Lord. In the debate the speakers mostly say God or the Almighty.
 
-In English Bibles, Job stands at the head of the poetic books, followed by Psalms, Proverbs, Ecclesiastes and the Song of Songs. Its position after Esther is not chronological; it simply begins a new section of the Bible. Much later, the letter of James will point to Job as an example of endurance, and of the Lord's compassion and mercy toward him.
+In English Bibles, Job is followed by the other poetic books: Psalms, Proverbs, Ecclesiastes and the Song of Songs. Its position after Esther is not chronological; it simply begins a new section of the Bible. Much later, the letter of James will point to Job as an example of endurance, and of the Lord's compassion and mercy toward him.
 
 === 1
 The book opens on earth, with a portrait of one man. Job lives in the land of Uz. He is blameless and upright, he fears God and turns away from evil, and he is the greatest man among all the people of the East. His wealth is counted the way wealth was counted in that world, in sheep, camels, oxen, donkeys and servants. He has seven sons and three daughters, and so careful is his devotion that after each round of his children's feasts he offers sacrifices for them, in case they have cursed God in their hearts.
@@ -60,7 +60,7 @@ Job is still answering Eliphaz, but partway through this chapter he stops addres
 
 He describes his life as hard labour, like a hired worker longing for evening. His nights are long and sleepless, his skin is cracked and festering, and his days pass swifter than a weaver's shuttle, coming to an end without hope. Because he has so little time left, he will not hold his tongue.
 
-The most striking moment comes when Job asks: what is man, that you make so much of him, that you examine him every morning? The words echo a psalm that marvels at God's care for humanity, but here they are turned on their head. Job feels watched, not cherished, and he begs God to look away and leave him alone, if only long enough to swallow.
+The most striking moment comes when Job asks: what is man, that you make so much of him, that you examine him every morning? The words echo the eighth psalm, which marvels at God's care for humanity, but here they are turned on their head. Job feels watched, not cherished, and he begs God to look away and leave him alone, if only long enough to swallow.
 
 === 8
 Bildad the Shuhite now speaks for the first time. He is blunter than Eliphaz, and he has been stung by Job's words, which he calls a blustering wind.
@@ -79,7 +79,7 @@ Near the end comes a longing that will return in new forms in later chapters. If
 === 10
 Job is still speaking, and he now addresses God again, voicing the complaint he said he could not hold back. Do not condemn me, he asks; tell me what charges you have against me.
 
-Most of the chapter is an appeal to God as Job's maker. Job recalls how God formed him in the womb, as a potter shapes clay, clothing him with skin and flesh and knitting him together with bones and sinews, and granting him life and steadfast love. Why then would God destroy the work of his own hands? Job begins to suspect that all along God was watching for a reason to condemn him.
+Most of the chapter is an appeal to God as Job's maker. Job recalls how God formed him in the womb, as a potter shapes clay, clothing him with skin and flesh and knitting him together with bones and sinews, and granting him life and loving devotion. Why then would God destroy the work of his own hands? Job begins to suspect that all along God was watching for a reason to condemn him.
 
 The chapter ends where Job's first lament ended, with the wish that he had never been born, and a plea for a little comfort before he goes to the land of darkness from which there is no return.
 
@@ -210,7 +210,7 @@ It begins underground, with miners. People cut shafts far from where anyone live
 But where can wisdom be found? It is not in the land of the living or in the depths of the sea, and it cannot be bought with the gold of Ophir or the topaz of Cush. Only God knows the way to it. The poem ends with a single sentence that recalls the first description of Job in chapter one: the fear of the Lord, that is wisdom, and to turn from evil is understanding.
 
 === 29
-And Job continued his discourse. With these words begins his final defence, which fills three chapters. He has finished with his friends; from now on he speaks about his own life, and at times directly to God.
+The heading from chapter twenty-seven appears again, Job continued his discourse, and this time it opens his final defence, which fills three chapters. He has finished with his friends; from now on he speaks about his own life, and at times directly to God.
 
 This chapter looks back. Job longs for the months gone by, when God watched over him, when the friendship of God was on his tent and his children were all around him. He remembers going out to the city gate, where the elders of a town sat to settle its affairs. The young men stepped aside, the old men rose to their feet, and princes fell silent when he spoke.
 
@@ -273,7 +273,7 @@ Then Elihu speaks to Job one last time. Stand still, he says, and consider the w
 His final words speak of golden splendour coming out of the north, and of the Almighty, exalted in power and beyond our reach. Then Elihu falls silent. Job does not answer him, and he is not mentioned again. Another voice is about to speak.
 
 === 38
-At last the Lord answers Job. Throughout the debate Job has demanded a hearing, and now God speaks to him directly, out of the whirlwind. The narrator uses the Lord's covenant name again for the first time since the prologue.
+At last the Lord answers Job. Throughout the debate Job has demanded a hearing, and now God speaks to him directly, out of the whirlwind. For the first time since the prologue, the narrator uses the Lord's covenant name.
 
 But the Lord does not come to answer Job's questions. He comes to ask questions of his own. Who is this who darkens my counsel with words without knowledge? Brace yourself like a man, the Lord says; I will question you, and you will answer me.
 
