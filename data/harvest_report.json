@@ -1,10 +1,10 @@
 {
-  "started": "2026-11-03T10:59:43.703885+00:00",
+  "started": "2026-11-03T13:32:02.654802+00:00",
   "sources": {
-    "brookhills": {
-      "count": 59,
-      "seconds": 36.5
+    "davey_journey": {
+      "count": 1153,
+      "seconds": 14.1
     }
   },
-  "catalog_total": 11454
+  "catalog_total": 11455
 }
