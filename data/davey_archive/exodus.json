@@ -21,7 +21,8 @@
    "ref": "Ex 2:1–10",
    "date": "July 30, 1989",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Exodus"
+   "series": "Sermons in Exodus",
+   "tried": 1
   },
   {
    "n": 3,
@@ -53,7 +54,8 @@
    "ref": "Ex 3; 4:1–17",
    "date": "August 20, 1989",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Exodus"
+   "series": "Sermons in Exodus",
+   "tried": 1
   },
   {
    "n": 6,
@@ -261,7 +263,8 @@
    "ref": "Ex 21–32",
    "date": "April 22, 1990",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Exodus"
+   "series": "Sermons in Exodus",
+   "mp3": "https://wisdomonline-a.atl1.cdn.digitaloceanspaces.com/Exodus24-Exodus21-32.mp3"
   },
   {
    "n": 25,

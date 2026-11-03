@@ -131,7 +131,8 @@
    "ref": "Gen 13–19",
    "date": "December 4, 1988",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Genesis"
+   "series": "Sermons in Genesis",
+   "tried": 1
   },
   {
    "n": 13,
@@ -163,7 +164,8 @@
    "ref": "Gen 22",
    "date": "January 8, 1989",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Genesis"
+   "series": "Sermons in Genesis",
+   "mp3": "https://wisdomonline-a.atl1.cdn.digitaloceanspaces.com/Genesis15-Genesis22.mp3"
   },
   {
    "n": 16,
