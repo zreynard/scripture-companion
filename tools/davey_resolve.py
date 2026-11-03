@@ -16,6 +16,11 @@ ABBR = {"Gen": "Genesis", "Ex": "Exodus", "Lev": "Leviticus", "Num": "Numbers", 
 
 
 def passages(x):
+    """See below; Psalms files may say Psalm or Psalms."""
+    return _passages(x) + [(b.replace("Psalms", "Psalm"), p) for b, p in _passages(x) if b == "Psalms"]
+
+
+def _passages(x):
     """Passage strings as the file names write them: 'Genesis 6:1-9:17' -> ('Genesis', '6_1-9_17'), plus looser forms."""
     out = []
     for raw in (x.get("title_passage", ""), x.get("ref", "")):
@@ -31,7 +36,7 @@ def passages(x):
 
 
 def candidates(prefix, n, x):
-    nn = f"{n:02d}"
+    nn = f"{n:02d}" if n < 100 else str(n)
     c = [f"{prefix}{nn}-{b}{p}" for b, p in passages(x)]
     if x.get("ref") == "" or "Introduction" in x.get("title_passage", ""):
         c += [f"{prefix}{nn}-{prefix}1_1", f"{prefix}{nn}-{prefix}1"]
@@ -46,15 +51,25 @@ def prefix_of(series):
 def main():
     for f in sorted(glob.glob(os.path.join(HERE, "data", "davey_archive", "*.json"))):
         d = json.load(open(f)); changed = 0
+        used = {x["mp3"] for x in d["sermons"] if x.get("mp3")}
         for x in d["sermons"]:
-            if x.get("mp3") or x.get("tried", 0) >= 2: continue
+            if x.get("mp3") or x.get("tried", 0) >= 3: continue
             hit = None
-            for pre in list(dict.fromkeys(prefix_of(d["series"]) + [b for b, _ in passages(x)])):
-                for c in candidates(pre, x["n"], x):
-                    r = requests.get(B + c + ".mp3", headers=H, timeout=30)
-                    if r.status_code in (200, 206): hit = B + c + ".mp3"; break
-                    time.sleep(0.05)
+            # a list made from another source can number the lessons a few places off: the series' own number first, then nearby
+            offs = [0] if x.get("tried", 0) == 0 and d.get("from") != "spreadsheet" else [0, 1, -1, 2, -2, 3, -3, 4, 5, 6]
+            pres = list(dict.fromkeys(prefix_of(d["series"]) + [b for b, _ in passages(x)] + [b.replace("Psalms", "Psalm") for b, _ in passages(x)]))
+            for off in offs:
+                if x["n"] + off < 1: continue
+                for pre in pres:
+                    for c in candidates(pre, x["n"] + off, x):
+                        u = B + c + ".mp3"
+                        if u in used: continue
+                        r = requests.get(u, headers=H, timeout=30)
+                        if r.status_code in (200, 206): hit = u; break
+                        time.sleep(0.03)
+                    if hit: break
                 if hit: break
+            if hit: used.add(hit)
             if hit: x["mp3"] = hit
             else: x["tried"] = x.get("tried", 0) + 1
             changed += 1
