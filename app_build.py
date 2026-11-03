@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 93  # bump on every shipped build; also busts the service-worker cache
+VERSION = 94  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -712,7 +712,7 @@ body[data-z="road"].hidehd > div.top{transform:none}
 .zt-seg button span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .zt-seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(27,36,64,.14)}
 .zt-more{flex:none;width:36px;height:36px;border-radius:50%;border:0;background:rgba(27,36,64,.06);color:#4a5272;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.jvz{padding-top:calc(env(safe-area-inset-top) + 70px)!important;transition:transform .2s}
+.jvz{padding-top:calc(env(safe-area-inset-top) + 70px)!important;touch-action:pan-y}
 .jvz .jv-eb{margin-right:0}.jvz .jv-t{margin-right:0}
 @keyframes jvl{from{transform:translateX(36px);opacity:.3}to{transform:none;opacity:1}}@keyframes jvr{from{transform:translateX(-36px);opacity:.3}to{transform:none;opacity:1}}
 .jv.in-l{animation:jvl .26s ease-out}.jv.in-r{animation:jvr .26s ease-out}
@@ -1481,8 +1481,12 @@ function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
  const pk=$('#jpick');if(pk)pk.onclick=()=>{camp=jpIdx();openJump('browse')};
  document.querySelectorAll('.jv [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
  /* swipe anywhere on the player: left = on to the next stop, right = back one */
- const jv=$('#jv');if(jv){let t0=null;jv.ontouchstart=e=>{t0=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY,t:Date.now()}:null};jv.ontouchmove=e=>{if(!t0)return;const dx=e.touches[0].clientX-t0.x,dy=e.touches[0].clientY-t0.y;if(Math.abs(dx)>14&&Math.abs(dx)>1.5*Math.abs(dy))jv.style.transform=`translateX(${dx*.35}px)`};
-  jv.ontouchend=e=>{if(!t0)return;const t=e.changedTouches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y,ok=Date.now()-t0.t<900;t0=null;jv.style.transform='';if(ok&&Math.abs(dx)>55&&Math.abs(dx)>1.6*Math.abs(dy)){const to=jpIdx()+(dx<0?1:-1);if(walk()[to])jMove(to)}};jv.ontouchcancel=()=>{t0=null;jv.style.transform=''}}const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
+ /* listened to passively, so scrolling stays the phone's own; a clearly sideways flick steps once the finger lifts */
+ const jv=$('#jv');if(jv){let t0=null;const o={passive:true};
+  jv.addEventListener('touchstart',e=>{t0=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY,t:Date.now(),y0:scrollY}:null},o);
+  jv.addEventListener('touchend',e=>{if(!t0)return;const t=e.changedTouches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y,ok=Date.now()-t0.t<700&&Math.abs(scrollY-t0.y0)<12;t0=null;
+   if(ok&&Math.abs(dx)>60&&Math.abs(dx)>2.2*Math.abs(dy)&&!(e.target.closest&&e.target.closest('input,textarea'))){const to=jpIdx()+(dx<0?1:-1);if(walk()[to])jMove(to)}},o);
+  jv.addEventListener('touchcancel',()=>{t0=null},o)}const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
  document.querySelectorAll('[data-jread]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()];read[scrKey(x)]=true;S.set('read',read);render()});
  document.querySelectorAll('[data-jscr]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()],id=narId(x.b.abbr,x.c.c);BPM=null;if(cur===id){setMini(false);return}const a=nextAction(jpIdx());JM=!!(a&&a.kind==='scripture');narPlay(x.b,x.c.c,null,{jm:JM,full:true})})}
 
