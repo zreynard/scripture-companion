@@ -158,6 +158,7 @@ def main():
     def core(t):  # title without episode numbers, "| Speaker" tails, or (Bible reference) brackets
         t = re.sub(r"^\s*#?[\d,]+\s*[\u2013\u2014-]\s*", "", t or "")
         t = re.sub(r"^\s*Expound:\s*", "", t, flags=re.I)  # Skip's radio labels his Expound series
+        t = re.sub(r"^\s*MBC [A-Z][A-Za-z ]+\|\|\s*", "", t)  # McLean campus postings ("MBC Loudoun || ...") of the main sermon
         segs = [x.strip() for x in t.split("|")]
         if len(segs) > 1:  # "SERIES | Name | Passage | Speaker": keep series + name, drop passage and speaker
             segs = [x for x in segs[:-1] if x and not parse_refs(x)] or segs[:1]
