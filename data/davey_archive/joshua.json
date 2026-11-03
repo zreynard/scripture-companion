@@ -70,14 +70,23 @@
   },
   {
    "n": 7,
+   "title": "(Joshua 20, 21) A Tale of Two Cities",
+   "name": "A Tale of Two Cities",
+   "title_passage": "Joshua 20, 21",
+   "ref": "Josh 20–21",
+   "date": "January 12, 1992",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Joshua"
+  },
+  {
+   "n": 8,
    "title": "( Joshua 23, 24) An Old Soldier's Farewell ",
    "name": "An Old Soldier's Farewell ",
    "title_passage": "Joshua 23, 24",
    "ref": "Josh 23–24",
    "date": "January 26, 1992",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Joshua",
-   "tried": 1
+   "series": "Sermons in Joshua"
   }
  ]
 }
