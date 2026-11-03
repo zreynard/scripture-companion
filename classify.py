@@ -185,7 +185,7 @@ def spoken_refs(entry_id: str) -> tuple[dict, str]:
         p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "spoken_refs.json")
         _SPOKEN = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
     x = _SPOKEN.get(entry_id)
-    if not x or not x.get("ref"): return {}, "none"
+    if not x or not x.get("ref") or x.get("score", 0) < 0.45: return {}, "none"   # announced and then read aloud, or not placed
     m = merge_refs(parse_refs(x["ref"]))
     return (m, "spoken") if m else ({}, "none")
 
