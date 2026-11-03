@@ -23,19 +23,22 @@ I = re.I
 SKIPN = r"sk\w*p\s+h\w+"            # Skip Heitzig, as speech recognition spells it
 PLATT = r"(?:david|dave)\s+pl\w+"
 COMMON_OUT = [r"thank(s| you)( so much)? for (listening|joining us|tuning in|watching)", r"we hope you('ve| have) enjoyed this",
-              r"(see you|join us|tune in|come back) (next time|next week|tomorrow)", r"until next time", r"i'?m your host",
+              r"(see you|join us|tune in|come back)( again)? (next time|next week)\b(?! night)", r"until next time", r"i'?m your host",
               r"for more resources from", r"visit (us )?(online )?at \w", r"\b(www\.|\.org\b|\.com\b|dot org|dot com)"]
 RULES = {
     "platt_messages": {
         "start": [r"here(?:'?s| is) " + PLATT + r" with (a|the) (sermon|message)", r"here(?:'?s| is) (david|dave) with (a|the) (sermon|message)",
-                  r"you are listening to .{0,60}(podcast|messages)", r"teacher,? " + PLATT, r"listen in as .{0,120}(episode|conversation)"],
+                  r"you are listening to .{0,60}(podcast|messages)", r"teacher,? " + PLATT, r"listen in as .{0,120}(episode|conversation)",
+                  r"let'?s turn to (pastor )?david( now)?,?[^.?!]*[.?!]", r"here(?:'?s| is) (pastor )?(david|dave)[^.?!]{0,30} with (a|the) (sermon|message)( titled)?[^.?!]*[.?!]"],
+        "promo": [r"^(well,? )?that'?s it for today'?s episode", r"^i'?m your host", r"^for additional articles", r"follow us on (facebook|instagram)"],
         "end": COMMON_OUT + [r"if you('ve| have) enjoyed this (sermon|message|episode)", r"that'?s it for today'?s episode",
                              r"you can find more episodes", r"for additional articles", r"join us for secret church",
                              r"secret ?church.{0,40}(registration|register)", r"secretchurch", r"urgent ?needs", r"(subscribed|rated|reviewed).{0,40}podcast",
-                             r"download the free discussion", r"gender, sexuality, artificial intelligence", r"what does the bible say about all of these"]},
+                             r"download the free discussion", r"gender, sexuality, artificial intelligence", r"what does the bible say about all of these",
+                             r"your inbox is filled", r"good news is on the way", r"that'?s all for today'?s episode", r"we hope you'?ve enjoyed this week'?s episode"]},
     "radical_message": {"start": [r"here(?:'?s| is) " + PLATT + r" with (a|the) (sermon|message)", r"join me in welcoming (dr\.? )?" + PLATT],
                         "end": COMMON_OUT + [r"secretchurch", r"join us for secret church"]},
-    "secret_church_podcast": {"start": [r"this is secret church \w+,? episode \w+"],
+    "secret_church_podcast": {"start": [r"this is (the )?secret church \w+,? episode \w+\.?", r"is a resource from radical ?\.? ?net\.?", r"radical ?\.? ?net (forward )?slash \w+\."],
                               "end": [r"thank you for listening", r"you can find more episodes", r"free resources.{0,40}radical"]},
     "mclean_podcast": {"start": [], "end": []},
     "brookhills": {"start": [], "end": []},
@@ -52,7 +55,9 @@ RULES = {
     "skip_archive": {"start": [r"this is expound\.?", r"interactive, enjoyable,? and congregational", r"grow (in|and) grace and (in )?the knowledge of our lord",
                                r"thank you for listening to this (service|message) from calvary"],
                      "end": [r"thank(s| you)( so much)? for listening to this (service|message|teaching)", r"for more resources from calvary",
-                             r"visit (our website at )?(www\.)?calvary", r"prayer ?watch line", r"thank you and god bless"]},
+                             r"visit (our website at )?(www\.)?calvary", r"prayer ?watch line", r"thank you and god bless",
+                             r"this is the end of this message", r"further information on any of our products", r"free catalog", r"toll.?free", r"800 ?-? ?272",
+                             r"let'?s stand\b", r"pastors are (down )?(here )?at the front"]},
     "skip_church": {"start": [r"in this message from pastor skip[^.?!]*[.?!]", r"this is expound\.?", r"welcome to calvary church with skip[^.?!]*[.?!]"],
                     "promo": [r"^(we'?ll|we will|we won'?t|you'?ll|you will|and (we'?ll|you'?ll|remember))\b(?!.*\b(turn|bibles?|open)\b)"],
                     "end": [r"thank(s| you)( so much)? for joining us (for|in) (this|today'?s) (message|teaching)", r"for more resources from calvary",
@@ -64,6 +69,8 @@ RULES = {
     # Stephen Davey. Both daily shows open with a ministry message ending "Now here's Stephen."
     "davey_journey": {"pre": [r"now,? here'?s stephen\.?"], "gap": (8, 40, 100), "floor": 80,
                       "start": [r"here'?s stephen with today'?s lesson", r"lesson (for you )?called [^.?!]*[.?!]", r"as we open god'?s word( now)?",
+                                r"(?<!now )(?<!now, )here'?s stephen\.", r"keep listening to (learn|discover|find out|hear|see)[^.?!]*[.?!]",
+                                r"let'?s get started with (your|today'?s) lesson[^.?!]*[.?!]", r"(lesson|message)[^.?!]{0,40} called [^.?!]*[.?!]",
                                 r"(thanks|thank you) for joining us (today )?on (this|the) wisdom journey[^.?!]*[.?!]", r"^hello,? and thank you[^.?!]*[.?!]"],
                       "promo": [r"today on the wisdom journey", r"stephen dav\w*,? (president|walks|explores|opens|is)", r"stephen walks us", r"stay tuned", r"^discover", r"^learn why"],
                       "tail": 380, "amen_after": r"be with you all",
@@ -73,11 +80,14 @@ RULES = {
     "davey_wfth": {"pre": [r"now,? here'?s stephen\.?"], "gap": (8, 55, 105),
                    "start": [r"here'?s stephen\.", r"(here'?s|you'?re) stephen with today'?s message", r"(this|the) message (is )?called [^.?!]*[.?!]", r"stephen called this message[^.?!]*[.?!]",
                              r"stephen'?s teaching from[^.?!]*[.?!]"],
-                   "promo": [r"welcome to (this broadcast of )?wisdom for the heart", r"in today'?s message", r"^today,? stephen", r"we'?re currently in a series"],
+                   "promo": [r"welcome to (this broadcast of )?wisdom for the heart", r"in today'?s message", r"^today,? stephen", r"we'?re currently in a series",
+                             r"today on wisdom for the heart", r"thanks for joining us today here on wisdom for the heart", r"^putting jesus"],
                    "start_by": 170, "tail": 320,
                    "end": [r"(here )?on wisdom for the heart", r"you'?re listening to wisdom for the heart", r"thanks for joining us today", r"bible teaching ministry of stephen", r"stephen is the pastor of",
                            r"as we (wrap up|close) today'?s", r"glad you were able to join", r"wisdom ?online", r"\b866\b", r"p\.?o\.? box", r"companion study guide",
-                           r"join us (back here )?next time", r"be with us next time", r"office staff"],
+                           r"join us (back here )?next time", r"be with us next time", r"office staff",
+                           r"shepherd'?s (theological )?seminary", r"\bsts\b", r"before we (end|leave you|close)", r"resources? we have for you", r"a book (that'?s )?based on this series",
+                           r"hardback", r"order (yours|that set|the set)", r"that was stephen dav", r"stephen (davey )?is (examining|exploring|taking us|walking us)", r"discount", r"online store", r"free resources tab", r"free of charge", r"smartphone app", r"right back here next time"],
                    "back_gap": (8, 30)},
     "davey_sermons": {"pre": [r"now,? here'?s stephen\.?"], "start": [], "end": []},
 }
@@ -183,13 +193,14 @@ def find_end(ws, rule, L):
     if rule.get("amen_after"):                                  # "...be with you all. Amen." closes the lesson
         ms = list(re.finditer(rule["amen_after"] + r"[.,]?\s+amen", text, I))
         if ms:
-            k = word_at(spans, ms[-1].end() - 1)
+            k = word_at(spans, ms[-1].end() - 1); find_end.why = "closing blessing"
             return max(0.0, round(L - (ws[k][1] + 0.7), 1))
     first = None
-    for pat in rule.get("end", []):
+    find_end.why = "anchor" if cut is not None else ""
+    for pat in ([] if cut is not None else rule.get("end", [])):
         for m in re.finditer(pat, text, I):
             k = word_at(spans, m.start())
-            if ws[k][0] >= L - rule.get("tail", WIN) and (first is None or k < first): first = k; break
+            if ws[k][0] >= L - rule.get("tail", WIN) and (first is None or k < first): first = k; find_end.why = m.group(0)[:40]; break
     if first is not None and (cut is None or ws[first][0] < cut):
         j = sentence_start(ws, first)
         c = ws[j][0] - 0.2
@@ -256,7 +267,7 @@ def measure(k, n):
             out[it["id"]] = [s, e]
             nxt = " ".join(w[2] for w in hw if w[0] >= s)[:70]
             prv = " ".join(w[2] for w in tw if w[1] <= TL - e)[-70:]
-            print(f"[{x}/{len(todo)}] {it['src']:20} +{s:5.1f}s -{e:5.1f}s  {it['t'][:40]!r}  starts: {nxt!r}  ends: {prv!r}", flush=True)
+            print(f"[{x}/{len(todo)}] {it['src']:20} +{s:5.1f}s -{e:5.1f}s  {it['t'][:40]!r}  starts: {nxt!r}  ends: {prv!r}  why: {getattr(find_end, 'why', '')!r}", flush=True)
         except Exception as ex:
             print(f"[{x}/{len(todo)}] {it['src']} {it['t'][:40]!r}: {type(ex).__name__} {str(ex)[:80]}", flush=True)
         if x % 20 == 0: json.dump(out, open(path, "w"))
