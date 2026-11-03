@@ -11,6 +11,7 @@ from refs import parse_refs
 from datetime import date as _dd
 import config
 import years
+import topics
 from atlas import Atlas
 ATLAS = Atlas()
 import glob as _glob
@@ -22,7 +23,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 99  # bump on every shipped build; also busts the service-worker cache
+VERSION = 100  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -87,6 +88,13 @@ def big_picture(items):
         names[i["id"]] = nm + (f" · Part {n}" if count[stem(i)] > 1 else "")
     out[1]["names"] = names
     out[0]["unit"], out[1]["unit"] = "session", "flight"
+    out[0]["group"] = out[1]["group"] = "bp"
+    # Spiritual Growth: Stephen Davey's Legacies of Light, lives of Christians who went before (Wisdom for the Heart, 2026)
+    lol = sorted([i for i in items.values() if i["src"] == "davey_wfth" and re.match(r"\s*Legacies of Light:", i["t"])], key=lambda i: (i["date"], i["t"]))
+    out.append({"id": "legacies", "title": "Legacies of Light", "by": "Stephen Davey", "art": "legacies", "group": "growth", "unit": "life",
+                "desc": "Lives of Christians who went before us: Spurgeon, Hudson Taylor, Amy Carmichael, Corrie ten Boom, William Carey and more. Faith, perseverance and sacrifice, told one life at a time.",
+                "parts": [["", [i["id"] for i in lol]]],
+                "names": {i["id"]: re.sub(r"\)$", "", re.sub(r"^\s*Legacies of Light:\s*", "", i["t"])).replace("Part 2)", "Part 2").strip() for i in lol}})
     return [x for x in out if any(ids for _, ids in x["parts"])]
 
 def main():
@@ -340,7 +348,8 @@ def main():
             narr[f[:-5]] = {"t": nb["tag"], "c": cs, "d": [round(nb["c"][str(c)]["d"]) for c in cs]}
             shutil.copy(os.path.join(ndir, f), os.path.join(SITE, "narration", f))
     data = {"built": __import__("datetime").date.today().isoformat(), "items": items, "books": books, "narr": narr,
-            "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items)}
+            "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items),
+            "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst})}
     html = TEMPLATE.replace("__VERSION__", str(VERSION)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
@@ -867,6 +876,20 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 .jv-back svg{flex:none}.jv-back{display:inline-flex;align-items:center;gap:5px}
 .t-ctl{display:flex;flex-direction:column;gap:10px;margin:0 0 6px}
 .t-sort{display:flex;padding:3px;border-radius:18px;background:rgba(27,36,64,.07)}
+.lib-seg{margin:10px 0 4px}.t-who{margin:0 0 6px;overflow-x:auto}.t-who button{flex:1 0 auto;padding:0 10px}
+.lib-lead{font-size:13.5px;color:#5a6280;margin:14px 2px 6px}
+.lib-tp{display:flex;align-items:center;gap:12px;width:100%;padding:13px 4px;border:0;border-bottom:1px solid rgba(27,36,64,.08);background:none;text-align:left;color:var(--ink);cursor:pointer;font:inherit}
+.lib-tp>span{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.lib-tp b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;font-weight:500}.lib-tp em{font-style:normal;font-size:12.5px;color:#5a6280;line-height:1.35;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.lib-tp i{font-style:normal;font-size:12.5px;font-weight:600;color:#7a5c16}
+.lib-bk{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.lib-bk button{display:flex;justify-content:space-between;align-items:baseline;gap:6px;padding:11px 12px;border:0;border-radius:14px;background:#fffdf8;color:var(--ink);text-align:left;cursor:pointer;font:inherit;min-width:0}
+.lib-bk b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:16px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lib-bk em{font-style:normal;font-size:12px;color:#7a5c16;font-weight:600}
+.tp-k{display:flex;align-items:center;gap:10px;width:100%;padding:10px 4px;border:0;border-bottom:1px solid rgba(27,36,64,.08);background:none;text-align:left;color:var(--ink);cursor:pointer;font:inherit;flex-wrap:wrap}
+.tp-k b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:16.5px;font-weight:500;flex:none}.tp-k span{flex:1;min-width:140px;font-size:13px;color:#5a6280}.tp-k i{font-style:normal;color:#5a6280}
+.tp-sc{display:flex;flex-direction:column;gap:2px;width:100%;margin:4px 0;padding:12px 16px;border:0;border-radius:18px;background:radial-gradient(circle at 86% 20%,rgba(201,162,74,.22),rgba(201,162,74,0) 45%),#1b2440;color:#fff;text-align:left;cursor:pointer;font:inherit}
+.tp-sc small{font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase;color:#e9cf8c}.tp-sc b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;font-weight:500}.tp-sc span{font-size:12.5px;color:rgba(255,255,255,.75)}
+.jv-tp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:22px 2px 4px}.jv-tp span{width:100%;font-size:10.5px;font-weight:650;letter-spacing:.2em;text-transform:uppercase;color:#7a5c16}
+.jv-tp button{height:34px;padding:0 14px;border:1px solid rgba(154,117,36,.35);border-radius:17px;background:#fffdf8;color:#1b2440;font:600 13.5px -apple-system,system-ui,sans-serif;cursor:pointer}
+.bp-gs{font-size:13px;color:#5a6280;margin:0 2px 2px}
 .t-sort button{flex:1;height:34px;border:0;border-radius:15px;background:none;font:600 13.5px -apple-system,system-ui,sans-serif;color:#4a5272;cursor:pointer}
 .t-sort button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(27,36,64,.14)}
 .t-q{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:20px;background:#fff;border:1px solid rgba(27,36,64,.1);color:#5a6280}
@@ -1425,7 +1448,7 @@ function doCont(){const i=jpIdx();if(camp!==i){go(i);return}const a=nextAction(i
 function contRefresh(){const b=$('#cont');if(!b||camp!==jpIdx())return;const a=nextAction(camp);if(a&&a.kind==='play'&&a.id===cur){const ic=b.querySelector('.cont-ic'),sm=b.querySelector('small');if(ic)ic.innerHTML=icon(audio.paused?'play':'pause',22,0,'#1b2440');if(sm)sm.textContent=(audio.paused?'Resume · ':'Playing · ')+sm.textContent.replace(/^(Playing|Resume) · /,'')}}
 function note(t){let n=$('#note');if(!n){n=document.createElement('div');n.id='note';n.setAttribute('role','status');document.body.appendChild(n)}n.textContent=t;n.classList.add('on');clearTimeout(note.t);note.t=setTimeout(()=>n.classList.remove('on'),3800)}
 /* ======== Four places along the bottom: Journey · Big Picture · Explore (the road) · Library. Settings sit behind ⋯ ======== */
-const TABS=[['journey','Journey'],['bigpicture','Big Picture'],['library','Library']];
+const TABS=[['journey','Journey'],['bigpicture','Series'],['library','Library']];
 let JZ=S.get('jz','stop')==='road'?'road':'stop',BACK=null;
 const TAB_IC={journey:'<path d="M12 6.5C9.8 5 7 4.6 3.5 5v13c3.5-.4 6.3 0 8.5 1.5 2.2-1.5 5-1.9 8.5-1.5V5c-3.5-.4-6.3 0-8.5 1.5z"/><path d="M12 6.5v13"/>',
  bigpicture:'<path d="M3 17h18"/><path d="M7 17a5 5 0 0 1 10 0"/><path d="M12 6v2M5.6 9.6l1.4 1.4M18.4 9.6 17 11M3 13.5h1.5M19.5 13.5H21"/>',
@@ -1496,6 +1519,8 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  if(!c.intro){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec" id="js-scripture">Scripture</div><div class="jw${rd?' heard':''}"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
  rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;if(!G.overview.length&&!c.intro)rows=`<div id="js-overview"></div>`+rows;
  if(shown<total)rows+=`<button class="jv-more" id="jmore">${total-shown} more</button>`;
+ const tp=c.intro?[]:(D.topics||[]).filter(t=>t.keys.some(k=>k.b===b.name&&c.c>=k.c&&c.c<=k.to));
+ if(tp.length)rows+=`<div class="jv-tp"><span>Explore this topic</span>${tp.map(t=>`<button data-topic="${t.id}">${esc(t.name)} ›</button>`).join('')}</div>`;
  return h+`<div class="jv-list">${rows}</div></div>`}
 function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;
  if(a.kind==='play'){if(cur===a.id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;play(a.id)}
@@ -1503,7 +1528,7 @@ function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;
  else if(a.kind==='walk'){const fr=x,nx=w[a.to];setJP(a.to);camp=a.to;S.set('camp',camp);if(nx.b!==fr.b&&!fr.c.intro)note('You have walked through '+fr.b.name+'.');JV.more=false;render();window.scrollTo({top:0,behavior:'smooth'})}}
 function jMove(i,back){const w=walk(),f=jpIdx();if(!w[i])return;if(back)BACK=null;else if(Math.abs(i-f)>1)BACK={from:f};else if(BACK&&i===BACK.from)BACK=null;
  jMove.dir=i>f?'l':i<f?'r':'';setJP(i);camp=i;S.set('camp',camp);JV.more=false;render();jMove.dir='';window.scrollTo({top:0})}
-function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
+function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;document.querySelectorAll('#jv [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));
  document.querySelectorAll('[data-jgo]').forEach(b=>b.onclick=()=>jMove(+b.dataset.jgo,!!b.dataset.back));
  document.querySelectorAll('[data-jseg]').forEach(b=>b.onclick=()=>{const k=b.dataset.jseg,t=$('#js-'+k)||$('.jv-list');if(!t)return;if(k!=='overview'||$('#js-overview')){const y=t.getBoundingClientRect().top+scrollY-(($('#zt')||{}).offsetHeight||0)-12;window.scrollTo({top:Math.max(0,y),behavior:'smooth'});const row=t.nextElementSibling&&t.nextElementSibling.classList.contains('jw')?t.nextElementSibling:t;row.classList.remove('flash');void row.offsetWidth;row.classList.add('flash')}});
  const pk=$('#jpick');if(pk)pk.onclick=()=>{camp=jpIdx();openJump('browse')};
@@ -1522,23 +1547,25 @@ function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
 let BP=S.get('bp',{}),BPM=null;
 const bpList=()=>D.bp||[],bpGet=id=>bpList().find(s=>s.id===id),bpIds=s=>s.parts.flatMap(p=>p[1]).filter(id=>I[id]),bpName=(s,id)=>(s.names&&s.names[id])||dispTitle(I[id]);
 function bpAt(s){const ids=bpIds(s),k=BP[s.id]?ids.indexOf(BP[s.id].cur):-1;if(k>=0){if(!isDone(ids[k]))return k;const n=ids.findIndex((id,j)=>j>k&&!isDone(id));return n>=0?n:k}const f=ids.findIndex(id=>!isDone(id));return f<0?0:f}
+const unitN=(s,n)=>n+' '+(s.unit==='life'?(n>1?'lives':'life'):(s.unit||'episode')+(n>1?'s':''));
 function bpNum(s,id){const it=I[id];return it.sc?it.sc[0]+'.'+it.sc[1]:String(bpIds(s).indexOf(id)+1)}
 function bpCover(art,sz){const v={survey:`<rect width="104" height="104" fill="#1b2440"/><g fill="#f0d79a"><circle cx="18" cy="20" r="1.2"/><circle cx="40" cy="12" r="1"/><circle cx="78" cy="18" r="1.4"/><circle cx="90" cy="40" r="1"/><circle cx="14" cy="50" r="1"/><circle cx="64" cy="30" r="1"/></g><circle cx="52" cy="64" r="30" fill="#c9a24a" opacity=".14"/><path d="M52 46 C 46 54 46 60 52 64 C 58 60 58 54 52 46Z" fill="#e9cf8c"/><path d="M44 66h16v18H44z" fill="none" stroke="#e9cf8c" stroke-width="2"/><text x="52" y="96" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="7" letter-spacing="1.6" fill="#e9cf8c">OT · NT</text>`,
   chronicle:`<rect width="104" height="104" fill="#e7dbbd"/><path d="M16 86 C 36 66 28 50 50 46 C 72 42 66 22 88 16" fill="none" stroke="#9a7524" stroke-width="3" stroke-linecap="round"/><g transform="translate(16 86)" fill="none" stroke="#4f5f3f" stroke-width="1.8" stroke-linecap="round"><path d="M0 0 V-16"/><path d="M0 -12 C -9 -18 -12 -26 -5 -30 C 0 -33 6 -31 7 -26 C 15 -28 16 -18 10 -14 C 6 -12 3 -12 0 -13"/></g><path d="M78 22h20v-12h-4v-5h-4v5h-4v-8h-4v8h-4z" fill="#1b2440"/>`,
+  legacies:`<rect width="104" height="104" fill="#2e4639"/><circle cx="52" cy="40" r="30" fill="#f0d79a" opacity=".12"/><circle cx="52" cy="40" r="17" fill="#f0d79a" opacity=".16"/><path d="M52 24 C 46 32 46 38 52 42 C 58 38 58 32 52 24Z" fill="#f0d79a"/><rect x="47" y="44" width="10" height="34" rx="2" fill="#e9dfc6"/><path d="M36 80h32" stroke="#c9a24a" stroke-width="3" stroke-linecap="round"/><text x="52" y="96" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="7" letter-spacing="1.6" fill="#e9cf8c">LIVES OF FAITH</text>`,
   '30k':`<rect width="104" height="104" fill="#dfe6df"/><g fill="none" stroke="#8fa08a" stroke-width="1.2"><path d="M-4 30 C 20 20 40 36 60 26 S 96 22 110 30"/><path d="M-4 46 C 22 36 42 54 64 42 S 98 38 110 46"/><path d="M-4 62 C 24 52 44 70 66 58 S 98 56 110 62"/><path d="M-4 78 C 26 68 46 86 68 74 S 98 72 110 78"/><path d="M-4 94 C 28 84 48 100 70 90 S 98 88 110 94"/></g><path d="M14 90 C 34 70 50 64 60 52 S 84 26 92 14" fill="none" stroke="#9a7524" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/><path d="M88 10 l8 2 -6 6z" fill="#1b2440"/><text x="12" y="20" font-family="-apple-system,system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1" fill="#1b2440">30,000 FT</text>`}[art]||'';
  return `<svg viewBox="0 0 104 104" width="${sz}" height="${sz}" class="bpc" aria-hidden="true">${v}</svg>`}
 function bpLen(s){const ids=bpIds(s),known=ids.filter(id=>+I[id].dur>0),sec=known.reduce((t,id)=>t+ +I[id].dur,0);
- return `${ids.length} ${s.unit||'episode'}${ids.length>1?'s':''}`+(known.length>=ids.length*.8&&sec?` · about ${Math.round(sec/3600)} hours`:s.id==='30k'?' · Genesis to Revelation':'')}
+ return unitN(s,ids.length)+(known.length>=ids.length*.8&&sec?` · about ${Math.round(sec/3600)} hours`:s.id==='30k'?' · Genesis to Revelation':'')}
 function bpPlay(sid,id){const s=bpGet(sid);if(!s||!I[id])return;const ids=bpIds(s),k=ids.indexOf(id);JM=false;
  if(cur===id&&BPM===sid){audio.paused?audio.play().catch(()=>{}):audio.pause();return}
  BPM=sid;const ck=BP[sid]?ids.indexOf(BP[sid].cur):-1;if(k>ck)BP[sid]={cur:id};S.set('bp',BP);S.set('bplast',sid);play(id);bpLabel()}
 function bpLabel(){if(!BPM||!cur)return;const s=bpGet(BPM);if(!s)return;const ids=bpIds(s),k=ids.indexOf(cur);if(k<0)return;$('#np-t').textContent=bpName(s,cur);$('#np-s').textContent=teacher(I[cur])+' · '+s.title+' · '+(k+1)+' of '+ids.length}
-function bpView(){const L=bpList(),ls=bpGet(S.get('bplast',''));let h=`<div class="jv bpv">${moreBtn()}<div class="jv-eb">The whole story</div><h1 class="jv-t">Big Picture</h1>`;
+function bpView(){const L=bpList(),ls=bpGet(S.get('bplast',''));let h=`<div class="jv bpv">${moreBtn()}<div class="jv-eb">Guided listening</div><h1 class="jv-t">Series</h1>`;
  if(ls&&BP[ls.id]){const ids=bpIds(ls),k=bpAt(ls),id=ids[k],it=I[id],pl=cur===id&&!audio.paused,left=leftOf(id);
-  h+=`<button class="bp-cont" data-bpcont="${ls.id}">${bpCover(ls.art,64)}<span class="bp-ct"><small>Continue · ${esc(ls.title)}</small><b>${esc(bpName(ls,id))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':` · ${ls.unit||'episode'} ${k+1} of ${ids.length}`}</em></span><span class="bp-pp">${icon(pl?'pause':'play',16,0,'#1b2440')}</span></button>`}
- h+=`<div class="jv-sec">${L.length===2?'Two':L.length===3?'Three':L.length} series</div>`;
- L.forEach(s=>{const ids=bpIds(s),st=!!BP[s.id],k=bpAt(s),f=ids.filter(isDone).length/ids.length;
-  h+=`<button class="bp-row" data-bps="${s.id}">${bpCover(s.art,104)}<span class="bp-rt"><b>${esc(s.title)}</b><span class="by">${esc(s.by)}</span><span class="ds">${esc(s.desc.split('. ')[0].replace(/\.$/,''))}.</span><span class="pr"><i><b style="width:${f>0?Math.max(3,Math.round(100*f)):0}%"></b></i>${st||f>0?`${s.unit==='flight'?'Flight':'Session'} ${k+1} of ${ids.length}`:`${ids.length} ${s.unit||'episode'}s · not started`}</span></span></button>`});
+  h+=`<button class="bp-cont" data-bpcont="${ls.id}">${bpCover(ls.art,64)}<span class="bp-ct"><small>Continue · ${esc(ls.title)}</small><b>${esc(bpName(ls,id))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':` · ${k+1} of ${unitN(ls,ids.length)}`}</em></span><span class="bp-pp">${icon(pl?'pause':'play',16,0,'#1b2440')}</span></button>`}
+ const row=s=>{const ids=bpIds(s),st=!!BP[s.id],k=bpAt(s),f=ids.filter(isDone).length/ids.length,U={session:'Session',flight:'Flight'}[s.unit];
+  return `<button class="bp-row" data-bps="${s.id}">${bpCover(s.art,104)}<span class="bp-rt"><b>${esc(s.title)}</b><span class="by">${esc(s.by)}</span><span class="ds">${esc(s.desc.split('. ')[0].replace(/\.$/,''))}.</span><span class="pr"><i><b style="width:${f>0?Math.max(3,Math.round(100*f)):0}%"></b></i>${st||f>0?(U?`${U} ${k+1} of ${ids.length}`:`${k+1} of ${unitN(s,ids.length)}`):`${unitN(s,ids.length)} · not started`}</span></span></button>`};
+ [['bp','Big Picture','The whole story of Scripture, start to finish'],['growth','Spiritual Growth','Teaching to grow by, one series at a time']].forEach(([g,t,sub])=>{const G=L.filter(s=>(s.group||'bp')===g);if(G.length)h+=`<div class="jv-sec">${t}</div><p class="bp-gs">${sub}</p>`+G.map(row).join('')});
  return h+'</div>'}
 function openSeries(sid){const s=bpGet(sid);if(!s)return;const ids=bpIds(s),k=bpAt(s),el=$('#bps'),st=!!BP[s.id];
  let list='';s.parts.forEach(([t,p])=>{if(t)list+=`<div class="jv-sub">${esc(t)}</div>`;p.filter(id=>I[id]).forEach(id=>{const j=ids.indexOf(id),done=isDone(id),left=leftOf(id),now=j===k&&st;
@@ -1555,19 +1582,50 @@ function wireBP(){document.querySelectorAll('#main [data-bps]').forEach(b=>b.onc
 
 /* ---- Library: Secret Church, the four teachers, what you played lately ---- */
 const TCH_C={Platt:'#2f4a6b',PAM:'#7a4b2a',Skip:'#5b4a7a',Davey:'#3c5a4c',Fearless:'#6b5320'};
+let LT=S.get('libtab','teachers');
 function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotional'&&i.audio&&!i.nar)cnt[i.who]=(cnt[i.who]||0)+1});
  const bpOf=id=>bpList().find(s=>bpIds(s).includes(id));
+ let h=`<div class="jv lib">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Library</h1><div class="t-sort lib-seg" role="tablist" aria-label="Browse by">${[['teachers','Teachers'],['topics','Topics'],['books','Books']].map(([v,l])=>`<button role="tab" data-lt="${v}" class="${LT===v?'on':''}" aria-selected="${LT===v}">${l}</button>`).join('')}</div>`;
+ if(LT==='topics'){h+=`<p class="lib-lead">What Scripture teaches about a subject, across every book and teacher.</p>`+(D.topics||[]).map(t=>{const n=t.ess.length+t.more.length;return `<button class="lib-tp" data-topic="${t.id}"><span><b>${esc(t.name)}</b><em>${esc(t.blurb.split(/(?<=[.:])\s/)[0].replace(/[.:]$/,''))}</em></span><i>${n}</i></button>`}).join('');return h+'</div>'}
+ if(LT==='books'){const n={};const w=walk(),fa=firstAt();Object.values(I).forEach(i=>{if(i.tr==='devotional'||i.nar||!i.audio)return;const st=w[fa[i.id]];if(st)n[st.b.name]=(n[st.b.name]||0)+1});
+  const grid=bs=>`<div class="lib-bk">${bs.map(b=>`<button data-lbook="${esc(b.name)}"><b>${esc(b.name)}</b><em>${n[b.name]||0}</em></button>`).join('')}</div>`;const mi=D.books.findIndex(b=>b.name==='Matthew'),ot=D.books.slice(0,mi),nt=D.books.slice(mi);
+  return h+`<div class="jv-sec">Old Testament</div>${grid(ot)}<div class="jv-sec">New Testament</div>${grid(nt)}</div>`}
  const rec=Object.entries(prog).filter(([id,p])=>I[id]&&!I[id].nar&&p&&p.at).sort((a,z)=>z[1].at-a[1].at).slice(0,6);
- let h=`<div class="jv lib">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Library</h1><button class="lib-sc" id="opensc"><b>Secret Church</b><span>David Platt · all ${scGroups().length} nights · ${D.sc.ids.length} sessions ›</span></button>`;
+ h+=`<button class="lib-sc" id="opensc"><b>Secret Church</b><span>David Platt · all ${scGroups().length} nights · ${D.sc.ids.length} sessions ›</span></button>`;
  h+=`<div class="jv-sec">Teachers</div>`+['Platt','PAM','Skip','Davey','Fearless'].filter(k=>cnt[k]).map(k=>`<button class="lib-t" data-tch="${k}"><span class="av" style="background:${TCH_C[k]}">${(n=>n[0][0]+n[n.length-1][0])(NAMES[k].split(' '))}</span><span><b>${NAMES[k]}</b><em>${(cnt[k]||0).toLocaleString()} teachings</em></span><i>›</i></button>`).join('');
- if(rec.length)h+=`<div class="jv-sec">Recently played</div><div class="lib-rec">${rec.map(([id,p])=>{const s=bpOf(id),left=leftOf(id);return `<button data-${s?'bpplay2':'play'}="${id}"${s?` data-sid="${s.id}"`:''}><small>${s?'Big Picture':'Journey'}</small><b>${esc(s?bpName(s,id):dispTitle(I[id]))}</b><em>${esc(teacher(I[id]).split(' ').slice(-1)[0])} · ${p.done?'heard':left?atSpd(left)+' left':'started'}</em></button>`}).join('')}</div>`;
+ if(rec.length)h+=`<div class="jv-sec">Recently played</div><div class="lib-rec">${rec.map(([id,p])=>{const s=bpOf(id),left=leftOf(id);return `<button data-${s?'bpplay2':'play'}="${id}"${s?` data-sid="${s.id}"`:''}><small>${s?'Series':'Journey'}</small><b>${esc(s?bpName(s,id):dispTitle(I[id]))}</b><em>${esc(teacher(I[id]).split(' ').slice(-1)[0])} · ${p.done?'heard':left?atSpd(left)+' left':'started'}</em></button>`}).join('')}</div>`;
  const sk=Object.keys(SKIP).length;if(sk)h+=`<button class="lnk lib-sk" id="unskip">${sk} skipped for now — bring them back</button>`;
  return h+'</div>'}
+/* a sheet over the page (#bps) holding a list of teachings; rows play in place */
+function openSheet(label,inner,list,after){const el=$('#bps');el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh" role="dialog" aria-modal="true" aria-label="${esc(label)}"><button class="grab2" data-bpsx aria-label="Close"></button>${inner}<div id="tlist">${list()}</div></div>`;
+ el.hidden=false;document.body.classList.add('bpsopen');requestAnimationFrame(()=>el.classList.add('on'));el.querySelectorAll('[data-bpsx]').forEach(b=>b.onclick=closeSeries);
+ const wireL=()=>{el.querySelectorAll('#tlist [data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=null;play(b.dataset.play);setTimeout(()=>{$('#tlist').innerHTML=list();wireL()},60)});if(after)after(el,()=>{$('#tlist').innerHTML=list();wireL()})};wireL();return el}
+/* a topic: what it is, the key passages (each opens that stop on the Journey), the Secret Church night on it, essential teaching, then the rest by teacher */
+function goStop(bk,c){const w=walk(),i=w.findIndex(x=>x.b.name===bk&&!x.c.intro&&x.c.c===c);if(i<0)return;closeSeries();JZ='stop';S.set('jz',JZ);if(view!=='journey'){if(view!=='settings')PREV=view;view='journey';S.set('view',view)}jMove(i)}
+function openSCNight(n){closeSeries();OPEN.add('sc:'+n);view='sc';S.set('view',view);render();setTimeout(()=>{const d=document.querySelector(`[data-sck="sc:${n}"]`);if(d){d.open=true;d.scrollIntoView({block:'start'})}},40)}
+function openTopic(id){const t=(D.topics||[]).find(x=>x.id===id);if(!t)return;const G=scGroups();
+ const keys=t.keys.map(k=>`<button class="tp-k" data-kgo="${esc(k.b)}|${k.c}"><b>${esc(k.ref)}</b><span>${esc(k.note)}</span><i>›</i></button>`).join('');
+ const nights=t.sc.map(n=>G.find(g=>g.ev.n===n)).filter(Boolean).map(g=>`<button class="tp-sc" data-scn="${g.ev.n}"><small>Secret Church ${g.ev.n}</small><b>${esc(g.ev.title)}</b><span>David Platt · ${g.ids.length} sessions ›</span></button>`).join('');
+ const list=()=>{const row=id=>tRow({i:I[id]},null);let h=`<div class="jv-sec">Essential teaching</div>${t.ess.map(row).join('')}`;
+  if(t.more.length){const by={};t.more.forEach(id=>(by[I[id].who]=by[I[id].who]||[]).push(id));h+=`<div class="jv-sec">More teaching</div>`+Object.entries(by).map(([k,l])=>`<details class="tch-b"><summary>${esc(NAMES[k]||k)}<span>${l.length}</span></summary>${l.map(row).join('')}</details>`).join('')}return h};
+ openSheet(t.name,`<div class="bps-t" style="margin:6px 4px 0">${esc(t.name)}</div><p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,el=>{
+  el.querySelectorAll('[data-kgo]').forEach(b=>b.onclick=()=>{const [bk,c]=b.dataset.kgo.split('|');goStop(bk,+c)});el.querySelectorAll('[data-scn]').forEach(b=>b.onclick=()=>openSCNight(+b.dataset.scn))})}
+/* a book: every teaching on it from every teacher, in passage order, by chapter */
+let LB={t:'all'};
+function openLibBook(name){const b=D.books.find(x=>x.name===name);if(!b)return;const w=walk(),fa=firstAt();if(LB.b!==name){LB={b:name,t:'all'}}
+ const all=Object.values(I).filter(i=>i.tr!=='devotional'&&!i.nar&&i.audio&&w[fa[i.id]]&&w[fa[i.id]].b===b).map(i=>({i,r:prange(i.pass,name),ov:w[fa[i.id]].c.intro}));
+ const who=['Platt','PAM','Skip','Davey','Fearless'].filter(k=>all.some(x=>x.i.who===k));
+ const list=()=>{const L=all.filter(x=>LB.t==='all'||x.i.who===LB.t),R=x=>x.r||{sc:0,sv:0,ec:999,ev:999};if(!L.length)return `<p class="bps-n" style="margin:16px 4px">Nothing here yet.</p>`;
+  L.sort((a,z)=>(z.ov-a.ov)||(R(a).sc-R(z).sc)||(R(a).sv-R(z).sv)||(R(a).ec-R(z).ec)||((a.i.date||'')<(z.i.date||'')?-1:1));
+  const g=[];L.forEach(x=>{const k=x.ov||!x.r?'The whole book':'Chapter '+x.r.sc;const l=g[g.length-1];if(l&&l.k===k)l.l.push(x);else g.push({k,l:[x]})});
+  return g.map(x=>`<details class="tch-b"${g.length<=2||L.length<=12?' open':''}><summary>${esc(x.k)}<span>${x.l.length}</span></summary>${x.l.map(y=>tRow(y,null)).join('')}</details>`).join('')};
+ openSheet(name,`<div class="bps-t" style="margin:6px 4px 0">${esc(name)}</div><div class="bps-n" style="margin:2px 4px 12px">${all.length} teaching${all.length===1?'':'s'}${b.bl?' · '+esc(plainT(b.bl)).split('. ')[0]:''}</div>${who.length>1?`<div class="t-sort t-who" role="group" aria-label="Teacher">${[['all','All'],...who.map(k=>[k,k])].map(([v,l])=>`<button data-lbt="${v}" class="${LB.t===v?'on':''}" aria-pressed="${LB.t===v}">${esc(l)}</button>`).join('')}</div>`:''}`,list,(el,re)=>{
+  el.querySelectorAll('[data-lbt]').forEach(x=>x.onclick=()=>{LB.t=x.dataset.lbt;el.querySelectorAll('[data-lbt]').forEach(y=>{y.classList.toggle('on',y===x);y.setAttribute('aria-pressed',y===x)});re()})})}
 /* a teacher's whole collection: sort by Bible order (passage order inside each book), newest or oldest; search; full details */
 let TS={k:null,sort:S.get('tsort','bible'),q:'',more:0};
 const fmtDate=d=>{try{return d?new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):''}catch(e){return d}};
 function tItems(k){const w=walk(),fa=firstAt();return Object.values(I).filter(i=>i.who===k&&i.tr!=='devotional'&&!i.nar&&i.audio).map(i=>{const st=w[fa[i.id]],bk=st?st.b.name:'Other teaching';return {i,bk,bi:st?D.books.indexOf(st.b):999,r:st?prange(i.pass,bk):null}})}
-function tRow(x,k){const i=x.i,id=i.id,done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id),ps=i.pass&&!/^the book of/i.test(i.pass)?shortPass(i.pass):(i.pass||'').replace(/^the book of /i,''),who=i.by&&i.by!==NAMES[k]?i.by:'';
+function tRow(x,k){const i=x.i,id=i.id,done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id),ps=i.pass&&!/^the book of/i.test(i.pass)?shortPass(i.pass):(i.pass||'').replace(/^the book of /i,''),who=k?(i.by&&i.by!==NAMES[k]?i.by:''):teacher(i);
  return `<div class="tr2${done?' heard':''}"><button class="jpb${i.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(i))}">${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(i))}</b><span>${[ps,fmtDate(i.date),left?atSpd(left)+' left':i.dur?durTxt(+i.dur):''].filter(Boolean).map(esc).join(' · ')}</span>${(sh=>who||sh?`<span class="t3">${esc([who,sh].filter(Boolean).join(' · '))}</span>`:'')(i.show&&i.show!==NAMES[k]?i.show:'')}</div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':''}</div>`}
 function tList(){const k=TS.k,q=TS.q.trim().toLowerCase();let L=tItems(k);
  if(q){const ws=q.split(/\s+/).map(w=>/^\d+$/.test(w)?new RegExp('(^|[^0-9])'+w+'([^0-9]|$)'):w);L=L.filter(x=>{const t=(x.i.t+' '+(x.i.pass||'')+' '+(x.i.by||'')+' '+(x.i.show||'')+' '+x.bk).toLowerCase();return ws.every(w=>typeof w==='string'?t.includes(w):w.test(t))})}
@@ -1589,7 +1647,7 @@ function openTeacher(k){const el=$('#bps');if(TS.k!==k){TS.k=k;TS.q='';TS.more=0
  const wireL=()=>{el.querySelectorAll('#tlist [data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=null;play(b.dataset.play);setTimeout(()=>{$('#tlist').innerHTML=tList();wireL()},60)});const m=$('#tmore');if(m)m.onclick=()=>{TS.more++;$('#tlist').innerHTML=tList();wireL()}};wireL();
  el.querySelectorAll('[data-tsort]').forEach(b=>b.onclick=()=>{TS.sort=b.dataset.tsort;S.set('tsort',TS.sort);TS.more=0;el.querySelectorAll('[data-tsort]').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});$('#tlist').innerHTML=tList();wireL()});
  const q=$('#tq');let tt=null;q.oninput=()=>{clearTimeout(tt);tt=setTimeout(()=>{TS.q=q.value;TS.more=0;$('#tlist').innerHTML=tList();wireL()},150)}}
-function wireLib(){document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2))}
+function wireLib(){document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('[data-lt]').forEach(b=>b.onclick=()=>{LT=b.dataset.lt;S.set('libtab',LT);render()});document.querySelectorAll('#main [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));document.querySelectorAll('[data-lbook]').forEach(b=>b.onclick=()=>openLibBook(b.dataset.lbook));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2))}
 
 function render(){const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
  migrateCamp();const w=walk();let first=jpIdx();if(camp==null||camp>=w.length)camp=first;  /* the road is walked up to your place */
