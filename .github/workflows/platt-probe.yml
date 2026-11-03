@@ -1,0 +1,10 @@
+# Diagnostics: where David Platt's preaching lives online (tools/platt_probe.py). Read the result in the log.
+name: Platt probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q requests
+      - run: python tools/platt_probe.py
