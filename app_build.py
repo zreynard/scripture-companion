@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 88  # bump on every shipped build; also busts the service-worker cache
+VERSION = 89  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -62,6 +62,32 @@ def is_walk(title):
     rest = title or ""
     for r in parse_refs(rest): rest = rest.replace(r.raw, " ")
     return bool(parse_refs(title or "")) and not re.search(r"[A-Za-z]{2,}", re.sub(r"\b(?:and|part|review|expound)\b", " ", rest, flags=re.I))
+
+def big_picture(items):
+    """Big Picture: whole-Bible series heard in order, each with its own place. Episodes are items already in the app."""
+    sc = sorted([i for i in items.values() if i["src"] == "secret_church_podcast" and i["sc"] and i["sc"][0] in (1, 2)], key=lambda i: tuple(i["sc"]))
+    flights = sorted([i for i in items.values() if i["src"] == "skip_archive" and re.match(r"\s*Flight\b", i["t"])], key=lambda i: (i["date"], i["t"]))
+    out = [{"id": "survey", "title": "Secret Church — Bible Survey", "by": "David Platt", "art": "survey",
+            "desc": "The whole Bible in two nights. Secret Church 1 surveys the Old Testament; Secret Church 2 the New. The shortest way to see the entire story at once.",
+            "parts": [["The Old Testament · Secret Church 1", [i["id"] for i in sc if i["sc"][0] == 1]], ["The New Testament · Secret Church 2", [i["id"] for i in sc if i["sc"][0] == 2]]]},
+           {"id": "30k", "title": "The Bible from 30,000 Feet", "by": "Skip Heitzig", "art": "30k",
+            "desc": "A flight over all 66 books, from Genesis to Revelation: the setting, the shape and the themes of each. Calvary Albuquerque, 2018–2020.",
+            "parts": [["", [i["id"] for i in flights]]]}]
+    # Skip's flights by the books they cover ("Flight GEN02" -> "Genesis · Part 2")
+    code = lambda i: re.sub(r"^\s*Flight\s*", "", i["t"])
+    stem = lambda i: re.sub(r"\d+$", "", code(i)) if not re.match(r"^\d", code(i)) else re.sub(r"\d$", "", code(i))
+    count = defaultdict(int)
+    for i in flights: count[stem(i)] += 1
+    names = {}
+    for i in flights:
+        bks = re.findall(r"the book of ([^;]+)", i["pass"] or "")
+        bks.sort(key=lambda n: [b[0] for b in BOOKS].index(n) if n in [b[0] for b in BOOKS] else 99)
+        nm = "Between the Testaments" if stem(i) == "INT" else (", ".join(bks[:-1]) + " and " + bks[-1] if len(bks) > 1 else (bks[0] if bks else code(i)))
+        n = int(re.search(r"(\d)$", code(i)).group(1)) if re.search(r"\d$", code(i)) else 1
+        names[i["id"]] = nm + (f" · Part {n}" if count[stem(i)] > 1 else "")
+    out[1]["names"] = names
+    out[0]["unit"], out[1]["unit"] = "session", "flight"
+    return [x for x in out if any(ids for _, ids in x["parts"])]
 
 def main():
     # where each episode's intro ends, found by tools/intro_detect.py (data/intro_skip/<source>.json: {id: seconds})
@@ -314,7 +340,7 @@ def main():
             narr[f[:-5]] = {"t": nb["tag"], "c": cs, "d": [round(nb["c"][str(c)]["d"]) for c in cs]}
             shutil.copy(os.path.join(ndir, f), os.path.join(SITE, "narration", f))
     data = {"built": __import__("datetime").date.today().isoformat(), "items": items, "books": books, "narr": narr,
-            "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw]}
+            "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items)}
     html = TEMPLATE.replace("__VERSION__", str(VERSION)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
@@ -669,11 +695,123 @@ body.mapopen #sheet{z-index:24}
 .bkf{display:flex;flex-direction:column;gap:8px;max-width:420px}.bkf input{font:16px -apple-system,system-ui,sans-serif;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}.bkf .btn{align-self:flex-start}
 .bk-u{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
 #gear{position:relative}#gear.alert::after{content:'';position:absolute;top:6px;right:6px;width:9px;height:9px;border-radius:50%;background:#d93025;border:2px solid #fff}
+
+/* ---- the four places ---- */
+:root{--tabh:calc(58px + env(safe-area-inset-bottom))}
+#tabs{position:fixed;left:0;right:0;bottom:0;z-index:8;height:var(--tabh);display:flex;justify-content:space-around;align-items:flex-start;background:rgba(250,246,236,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid rgba(27,36,64,.08)}
+#tabs button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0 0;border:0;background:none;color:#5a6280;font:500 11px -apple-system,system-ui,sans-serif;cursor:pointer;min-height:52px}
+#tabs button.on{color:var(--gold2);font-weight:650}
+#tabs button.on svg{stroke-width:2.1}
+body:not([data-v="walk"]) #topbar,body:not([data-v="walk"]) #bookhd,body:not([data-v="walk"]) .top{display:none!important}
+body.bpsopen{overflow:hidden}
+#np.mini{left:10px;right:10px;bottom:calc(var(--tabh) + 8px);border-radius:20px;background:#1b2440;color:#fff;border:0;box-shadow:0 12px 28px rgba(27,36,64,.32);padding-bottom:8px}
+#np.mini .s,#np.mini .times{color:rgba(255,255,255,.72)}
+#np.mini .ctl button,#np.mini .ctl2 > button{color:#fff}
+#np.mini .grab{background:rgba(255,255,255,.3)}
+#np.mini .spd{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}#np.mini .spd button{color:#fff}
+#np.mini input[type=range]{accent-color:var(--gold)}
+/* ---- Journey, Big Picture, Library: one calm column ---- */
+.jv{max-width:430px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 18px) 20px 34px;position:relative;font-family:-apple-system,system-ui,sans-serif;color:var(--ink)}
+.vmore{position:absolute;top:calc(env(safe-area-inset-top) + 16px);right:16px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(27,36,64,.06);color:#4a5272;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.jv-eb{font-size:11px;font-weight:650;letter-spacing:.2em;text-transform:uppercase;color:#7a5c16;margin-right:48px}
+.jv-t{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:40px;font-weight:500;letter-spacing:-.01em;margin:2px 48px 14px 0;line-height:1.08}
+.jv-art{display:block;position:relative;border-radius:24px;overflow:hidden;box-shadow:0 12px 30px rgba(27,36,64,.12);background:#efe3c5}
+.jv-art svg{display:block;width:100%;height:230px}
+.jv-art.sm svg{height:150px}
+.jv-cap{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(180deg,rgba(246,238,218,0),rgba(246,238,218,.78) 38%,rgba(246,238,218,.92));color:var(--ink)}
+.jv-cap i{display:block;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:21px}
+.jv-cap span{display:block;font-size:13.5px;line-height:1.38;color:#2c3554}
+.jv-cap button{font-size:inherit}
+.jv-seg{display:flex;gap:8px;margin:16px 0 18px}
+.jv-seg div{flex:1;font-size:11.5px;color:#5a6280;display:flex;flex-direction:column;gap:6px}
+.jv-seg div.now{color:var(--ink);font-weight:650}
+.jv-seg i{display:block;height:3px;border-radius:2px;background:rgba(27,36,64,.12);overflow:hidden}
+.jv-seg b{display:block;height:100%;background:#9a7524;border-radius:2px;transition:width .4s}
+.jv-next{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px;border:0;border-radius:22px;background:#fffdf8;color:var(--ink);box-shadow:0 6px 20px rgba(27,36,64,.08);cursor:pointer;font:inherit}
+.jv-next:active{transform:scale(.99)}
+.jv-pp{flex:none;width:56px;height:56px;border-radius:50%;background:#9a7524;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(154,117,36,.35)}
+.jv-nt{flex:1;min-width:0;display:flex;flex-direction:column}
+.jv-nt small{font-size:10.5px;font-weight:650;letter-spacing:.18em;text-transform:uppercase;color:#7a5c16}
+.jv-nt b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:21px;font-weight:500;line-height:1.2;margin-top:1px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.jv-nt em{font-style:normal;font-size:13px;color:#5a6280;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.jv-alt{display:flex;justify-content:flex-end;gap:16px;margin:6px 4px 0}
+.jv-alt button{border:0;background:none;font:inherit;font-size:13px;color:#5a6280;padding:6px 0;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(90,98,128,.35);text-underline-offset:3px}
+.jv-done{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:19px;line-height:1.45;color:#2c3554;margin:0 0 14px}
+.jv-nextstop{display:block;width:100%;padding:0;border:0;border-radius:26px;overflow:hidden;background:#fffdf8;text-align:left;color:var(--ink);box-shadow:0 14px 34px rgba(27,36,64,.12);cursor:pointer;font:inherit}
+.jv-nextstop .jv-art{border-radius:0;box-shadow:none}
+.jv-ns{display:flex;flex-direction:column;padding:16px 18px 18px}
+.jv-ns small{font-size:10.5px;font-weight:650;letter-spacing:.2em;text-transform:uppercase;color:#7a5c16}
+.jv-ns b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:28px;font-weight:500;margin-top:2px}
+.jv-ns em{font-style:normal;font-size:14px;color:#4a5272;line-height:1.4;margin-top:4px}
+.jv-go{display:flex;align-items:center;justify-content:center;gap:10px;height:52px;border-radius:26px;background:#9a7524;color:#fff;font-size:17px;font-weight:600;margin-top:16px}
+.jv-sec{font-size:10.5px;font-weight:650;letter-spacing:.2em;text-transform:uppercase;color:#7a5c16;margin:24px 2px 4px}
+.jv-sub{font-size:12px;font-weight:600;color:#4a5272;margin:12px 2px 2px}
+.jv-sec:empty{display:none}
+.jw{display:flex;align-items:center;gap:12px;padding:10px 2px}
+.jr+.jw{border-top:1px solid rgba(27,36,64,.07)}
+.jw.up .jw-t b{color:#7a5c16}
+.jpb{flex:none;width:36px;height:36px;border-radius:50%;border:0;background:rgba(27,36,64,.06);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.jpb.off{opacity:.35}
+.jw-t{flex:1;min-width:0;display:flex;flex-direction:column}
+.jw-t b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:16.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.jw-t span{font-size:12.5px;color:#5a6280;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.jw.heard .jw-t b{color:#5a6280}
+.jw-ok{flex:none;font-style:normal;color:#9a7524;font-weight:700}
+.jw .vb{flex:none;font-size:11.5px;font-weight:650;color:#7a5c16;font-variant-numeric:tabular-nums}
+.jv-more{display:block;margin:10px auto 0;border:1px solid rgba(27,36,64,.14);background:#fff;border-radius:18px;padding:8px 16px;font:inherit;font-size:13.5px;color:var(--ink);cursor:pointer}
+/* ---- Big Picture ---- */
+.bpc{flex:none;border-radius:18px;box-shadow:0 8px 18px rgba(27,36,64,.18)}
+.bp-cont{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px;border:0;border-radius:22px;background:#1b2440;color:#fff;box-shadow:0 14px 30px rgba(27,36,64,.22);cursor:pointer;font:inherit;margin-bottom:6px}
+.bp-cont .bpc{border-radius:14px;box-shadow:none}
+.bp-ct{flex:1;min-width:0;display:flex;flex-direction:column}
+.bp-ct small{font-size:10.5px;font-weight:650;letter-spacing:.16em;text-transform:uppercase;color:#e9cf8c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bp-ct b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:19px;font-weight:500;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bp-ct em{font-style:normal;font-size:12.5px;color:rgba(255,255,255,.72)}
+.bp-pp{flex:none;width:46px;height:46px;border-radius:50%;background:#c9a24a;display:flex;align-items:center;justify-content:center}
+.bp-row{display:flex;gap:14px;align-items:center;width:100%;text-align:left;padding:12px 0;border:0;background:none;color:var(--ink);cursor:pointer;font:inherit}
+.bp-row+.bp-row{border-top:1px solid rgba(27,36,64,.08)}
+.bp-rt{flex:1;min-width:0;display:flex;flex-direction:column}
+.bp-rt b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:19px;font-weight:500;line-height:1.2}
+.bp-rt .by{font-size:12.5px;color:#7a5c16;font-weight:650;margin-top:2px}
+.bp-rt .ds{font-size:13px;color:#4a5272;line-height:1.35;margin-top:4px}
+.bp-rt .pr{display:flex;align-items:center;gap:8px;font-size:12px;color:#5a6280;margin-top:6px}
+.bp-rt .pr i{flex:1;height:3px;border-radius:2px;background:rgba(27,36,64,.1);overflow:hidden}.bp-rt .pr i b{display:block;height:3px;background:#9a7524}
+#bps{position:fixed;inset:0;z-index:12}
+#bps .bps-bg{position:absolute;inset:0;background:rgba(27,36,64,.32);opacity:0;transition:opacity .25s}
+#bps .bps-sh{position:absolute;left:0;right:0;bottom:0;top:calc(env(safe-area-inset-top) + 40px);max-width:560px;margin:0 auto;background:#f7f2e7;border-radius:30px 30px 0 0;padding:6px 22px calc(28px + env(safe-area-inset-bottom));overflow-y:auto;-webkit-overflow-scrolling:touch;transform:translateY(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);font-family:-apple-system,system-ui,sans-serif;color:var(--ink)}
+#bps.on .bps-bg{opacity:1}#bps.on .bps-sh{transform:none}
+.grab2{display:block;width:60px;height:24px;margin:0 auto;border:0;background:none;position:relative;cursor:pointer}.grab2::after{content:'';position:absolute;left:12px;right:12px;top:9px;height:5px;border-radius:3px;background:rgba(27,36,64,.22)}
+.bps-hd{display:flex;gap:16px;align-items:flex-end;margin-top:10px}
+.bps-hd .bpc{border-radius:22px;box-shadow:0 14px 28px rgba(27,36,64,.25)}
+.bps-t{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:25px;line-height:1.15}
+.bps-by{font-size:13.5px;font-weight:650;color:#7a5c16;margin-top:4px}
+.bps-n{font-size:12.5px;color:#5a6280;margin-top:2px}
+.bps-d{font-size:14px;line-height:1.45;color:#2c3554;margin:14px 0 0}
+.bps-go{display:flex;align-items:center;gap:12px;width:100%;margin:16px 0 4px;height:60px;padding:0 18px 0 8px;border:0;border-radius:30px;background:#9a7524;color:#fff;text-align:left;cursor:pointer;font:inherit;box-shadow:0 8px 18px rgba(154,117,36,.32)}
+.bps-go>span:first-child{flex:none;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center}
+.bps-go>span:last-child{flex:1;min-width:0;display:flex;flex-direction:column}.bps-go b{font-size:16.5px}.bps-go em{font-style:normal;font-size:12.5px;opacity:.88;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bp-ep{display:flex;align-items:center;gap:12px;width:100%;padding:11px 2px;border:0;border-top:1px solid rgba(27,36,64,.07);background:none;text-align:left;color:var(--ink);font:inherit;cursor:pointer}
+.bp-ep .n{flex:none;width:28px;font-size:12.5px;font-weight:650;color:#7a5c16;font-variant-numeric:tabular-nums}
+.bp-ep b{flex:1;min-width:0;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:16.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bp-ep .d{flex:none;font-size:12.5px;color:#5a6280;font-variant-numeric:tabular-nums}
+.bp-ep.heard b{color:#5a6280}.bp-ep.heard .d{color:#9a7524;font-weight:700}
+.bp-ep.now{background:rgba(201,162,74,.13);border-radius:12px;border-top-color:transparent;padding:11px 10px;margin:0 -8px;width:calc(100% + 16px)}.bp-ep.now .d{color:#7a5c16;font-weight:650}
+/* ---- Library ---- */
+.lib-sc{display:flex;flex-direction:column;justify-content:flex-end;width:100%;height:96px;padding:14px 18px;border:0;border-radius:22px;background:radial-gradient(circle at 86% 20%,rgba(201,162,74,.22),rgba(201,162,74,0) 45%),#1b2440;color:#fff;text-align:left;cursor:pointer;font:inherit}
+.lib-sc b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:22px;font-weight:500}.lib-sc span{font-size:13px;color:rgba(255,255,255,.75)}
+.lib-t{display:flex;align-items:center;gap:12px;width:100%;padding:10px 4px;border:0;border-bottom:1px solid rgba(27,36,64,.08);background:none;text-align:left;color:var(--ink);cursor:pointer;font:inherit}
+.lib-t .av{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:15px;color:#fff}
+.lib-t>span:nth-child(2){flex:1;display:flex;flex-direction:column}.lib-t b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:17px;font-weight:500}.lib-t em{font-style:normal;font-size:12.5px;color:#5a6280}.lib-t i{font-style:normal;color:#5a6280;font-size:20px}
+.lib-rec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.lib-rec button{display:flex;flex-direction:column;gap:3px;padding:12px;border:0;border-radius:16px;background:#fffdf8;text-align:left;color:var(--ink);cursor:pointer;font:inherit}
+.lib-rec small{font-size:10px;font-weight:650;letter-spacing:.14em;text-transform:uppercase;color:#7a5c16}.lib-rec b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:15px;font-weight:500;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.lib-rec em{font-style:normal;font-size:12px;color:#5a6280}
+.lib-sk{display:block;margin:16px 4px 0;font-size:13px}
+.tch-b{border-top:1px solid rgba(27,36,64,.08)}.tch-b summary{display:flex;justify-content:space-between;padding:12px 2px;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;cursor:pointer;list-style:none}.tch-b summary span{font:600 12.5px -apple-system,system-ui,sans-serif;color:#7a5c16}
 </style></head><body>
 <div id="topbar" aria-hidden="true"></div><button id="bookhd" aria-label="Go to this book's opening stop"></button><div class="top"><span id="pct" style="display:none"></span><button id="srch" aria-label="Search or go to a chapter"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Search</span></button><button id="mapbtn" aria-label="Map of the journey"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Zm0 0v13m6-10.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button><button id="gear">⋯</button></div>
 <div id="sheetbg" hidden></div><div id="sheet" role="dialog" aria-modal="true" hidden><div class="sh-grab"></div><div class="sh-top"><button id="shback" aria-label="Back" hidden>‹</button><span class="sh-kind" id="shkind"></span><button id="shx" aria-label="Close">✕</button></div><div id="shbody"></div></div>
 <div id="jump" role="dialog" aria-modal="true" aria-label="Go to" hidden><div class="jp-top"><label class="jp-field"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="jq" type="search" placeholder="Nehemiah, John 3:16, Goliath" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="Search"></label><button id="jx">Close</button></div><div id="jbody"></div></div><div id="mapv" role="dialog" aria-modal="true" aria-label="Map of the journey" hidden><svg id="mapsvg" preserveAspectRatio="xMidYMid meet"></svg><div class="mv-top"><button id="mvx" aria-label="Close map">✕</button><div class="mv-title" id="mvtitle">Your journey</div></div><div class="mv-panel" id="mvpanel"><div class="mv-card" id="mvcard"></div><div class="mv-legs" id="mvlegs" aria-label="Legs of the journey"></div></div></div>
-<div id="main"></div>
+<div id="main"></div><nav id="tabs" aria-label="Main"></nav><div id="bps" hidden></div>
 <div id="np"><div class="grab"></div>
 <div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="cls" aria-label="Stop and close">✕</button></div>
 <div class="art" id="np-art"></div><div class="np-d" id="np-d"></div>
@@ -1217,7 +1355,120 @@ function doCont(){const i=jpIdx();if(camp!==i){go(i);return}const a=nextAction(i
  else if(a.kind==='walk')walkOn(a.to)}
 function contRefresh(){const b=$('#cont');if(!b||camp!==jpIdx())return;const a=nextAction(camp);if(a&&a.kind==='play'&&a.id===cur){const ic=b.querySelector('.cont-ic'),sm=b.querySelector('small');if(ic)ic.innerHTML=icon(audio.paused?'play':'pause',22,0,'#1b2440');if(sm)sm.textContent=(audio.paused?'Resume · ':'Playing · ')+sm.textContent.replace(/^(Playing|Resume) · /,'')}}
 function note(t){let n=$('#note');if(!n){n=document.createElement('div');n.id='note';n.setAttribute('role','status');document.body.appendChild(n)}n.textContent=t;n.classList.add('on');clearTimeout(note.t);note.t=setTimeout(()=>n.classList.remove('on'),3800)}
-function render(){const m=$('#main');if(!render.boot){render.boot=true;if(view!=='walk'){view='walk';S.set('view',view)}migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
+/* ======== Four places along the bottom: Journey · Big Picture · Explore (the road) · Library. Settings sit behind ⋯ ======== */
+const TABS=[['journey','Journey'],['bigpicture','Big Picture'],['walk','Explore'],['library','Library']];
+const TAB_IC={journey:'<path d="M12 6.5C9.8 5 7 4.6 3.5 5v13c3.5-.4 6.3 0 8.5 1.5 2.2-1.5 5-1.9 8.5-1.5V5c-3.5-.4-6.3 0-8.5 1.5z"/><path d="M12 6.5v13"/>',
+ bigpicture:'<path d="M3 17h18"/><path d="M7 17a5 5 0 0 1 10 0"/><path d="M12 6v2M5.6 9.6l1.4 1.4M18.4 9.6 17 11M3 13.5h1.5M19.5 13.5H21"/>',
+ walk:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',library:'<path d="M4 5h4v15H4zM10 5h4v15h-4zM16.5 5.5l3.6-.9 3 14.5-3.6.9z"/>'};
+let PREV='journey';
+function tabOf(v){return v==='sc'?'library':v}
+function tabsPaint(){const t=$('#tabs');if(!t)return;if(!t.dataset.on){t.dataset.on=1;t.innerHTML=TABS.map(([k,l])=>`<button data-tab2="${k}"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TAB_IC[k]}</svg><span>${l}</span></button>`).join('');
+  t.querySelectorAll('[data-tab2]').forEach(b=>b.onclick=()=>{const v=b.dataset.tab2;if(v===view){window.scrollTo({top:0,behavior:'smooth'});return}setView(v)})}
+ t.querySelectorAll('[data-tab2]').forEach(b=>{const on=b.dataset.tab2===tabOf(view);b.classList.toggle('on',on);b.setAttribute('aria-current',on?'page':'false')});document.body.dataset.v=view}
+function setView(v){if(view!=='settings')PREV=view;view=v;S.set('view',v);if(v==='walk'){decorate.first=true;camp=jpIdx()}render();if(v!=='walk')window.scrollTo(0,0)}
+const moreBtn=()=>`<button class="vmore" data-settings aria-label="Settings">${'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></svg>'}</button>`;
+
+/* ---- the illustration at the top of a stop: a dawn over the land, tinted by its part of the Bible ---- */
+const LAND_HUE={'The Law':['#c8b183','#f2e2ba','#a8946c','#8a7756'],'History':['#b9ae8c','#efe6c6','#9c8f6a','#7d7254'],'Wisdom & Song':['#c3b59a','#f3e9cf','#a59575','#86775b'],
+ 'Major Prophets':['#b4a088','#eee0c4','#94806a','#776350'],'Minor Prophets':['#bcab8c','#f0e4c6','#9e8a6b','#816d51'],'The Gospels':['#cdb98c','#f6ead0','#ab9568','#8b7650'],
+ 'The Church Begins':['#b5bfb2','#eef0e2','#909f8c','#73836d'],'Letters of Paul':['#c4b89c','#f3ead4','#a39678','#857a5d'],'General Letters':['#c0ae8e','#f1e6c8','#a08f6e','#827153'],'The New Beginning':['#d6c08a','#fbf0cf','#b69d64','#94804f']};
+function landOf(b){return (LANDS.slice().reverse().find(l=>books().indexOf(b)>=books().findIndex(bb=>bb.name===l[0]))||[,''])[1]}
+function heroArt(x,w,h,id){const c=LAND_HUE[landOf(x.b)]||LAND_HUE['The Law'],sd=((D.books.indexOf(x.b)*37+(x.c.c||0)*13)%97)/97,sx=Math.round(w*(.3+.4*sd)),sy=Math.round(h*.42),
+  hl=(y,a,ph)=>{let d=`M0 ${y}`;for(let k=0;k<=8;k++){const px=w*k/8;d+=` L${px.toFixed(0)} ${(y+a*Math.sin(k*1.1+ph)).toFixed(1)}`}return d+` V${h} H0 Z`},lm=LANDMARKS[x.b.abbr+x.c.c];
+ return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c[0]}"/><stop offset=".62" stop-color="${c[1]}"/><stop offset="1" stop-color="${c[1]}"/></linearGradient><radialGradient id="${id}g" cx="${(sx/w).toFixed(2)}" cy=".42" r=".55"><stop offset="0" stop-color="#fffbef"/><stop offset=".38" stop-color="#fff0c4" stop-opacity=".85"/><stop offset="1" stop-color="#fff0c4" stop-opacity="0"/></radialGradient></defs>
+  <rect width="${w}" height="${h}" fill="url(#${id}s)"/><g stroke="#fff8e0" stroke-opacity=".55" stroke-width="6" stroke-linecap="round">${[-2,-1,0,1,2].map(k=>`<path d="M${sx} ${sy} L${(sx+k*w*.22).toFixed(0)} ${h}"/>`).join('')}</g><rect width="${w}" height="${h}" fill="url(#${id}g)"/>
+  <g fill="#fffaf0" opacity=".8"><ellipse cx="${(w*.2).toFixed(0)}" cy="${(h*.3).toFixed(0)}" rx="${(w*.17).toFixed(0)}" ry="13"/><ellipse cx="${(w*.8).toFixed(0)}" cy="${(h*.36).toFixed(0)}" rx="${(w*.19).toFixed(0)}" ry="13"/></g>
+  <path d="${hl(h*.5,8,sd*6)}" fill="${c[2]}" opacity=".5"/><path d="${hl(h*.6,6,sd*9+2)}" fill="${c[3]}" opacity=".45"/>
+  ${lm?`<g opacity=".5" transform="translate(${(w*.82).toFixed(0)} ${(h*.6).toFixed(0)}) scale(.55) translate(${-w*.82} ${-h*.6})">${vignette2(lm[0],w*.82,h*.6)}</g>`:''}</svg>`}
+
+/* ---- Journey: your place, the next step, and the whole stop beneath it, on one screen ---- */
+let JV={more:false};
+function stepFrac(i,list){const q=list.filter(id=>firstAt()[id]===i&&I[id]&&I[id].audio);if(!q.length)return 1;return q.filter(id=>isDone(id)||SKIP[id]).length/q.length}
+function jRow(id,badge,up){const it=I[id];if(!it)return'';const done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id);
+ return `<div class="jw${done?' heard':''}${up===id?' up':''}"><button class="jpb${it.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(it))}"${it.audio?'':' disabled'}>${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(it))}</b><span>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}${it.audio?'':' · audio soon'}</span></div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':badge?`<span class="vb">${badge}</span>`:''}</div>`}
+function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(i),s=stepsOf(i),G=listenGroups(b,c),lm=LANDMARKS[b.abbr+c.c],up=a&&a.kind==='play'?a.id:null;
+ let h=`<div class="jv">${moreBtn()}<div class="jv-eb">${esc(landOf(b))}${(c.y||b.yr)?' · '+esc(c.y||b.yr):''}</div><h1 class="jv-t">${esc(stopName(x))}</h1>`;
+ h+=`<div class="jv-art">${heroArt(x,350,230,'ja')}<div class="jv-cap">${c.intro?'<i>Book overview</i>':lm?`<i>${esc(lm[1])}</i>`:''}<span>${rich(c.intro?(b.bl||''):(c.sl||''))}</span></div></div>`;
+ const segs=c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['overview','Overview',stepFrac(i,s.ov)],['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',stepFrac(i,s.teach)]];
+ h+=`<div class="jv-seg">${segs.map(([k,l,f])=>`<div class="${a&&a.step===k?'now':''}"><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</div>`).join('')}</div>`;
+ if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
+  h+=`<button class="jv-next" id="jnext"><span class="jv-pp">${icon(pl?'pause':'play',20,0,'#fff')}</span><span class="jv-nt"><small>${pl?'Playing':left?'Resume':'Up next'}${a.step==='overview'&&!c.intro?' · Overview':''}</small><b>${esc(dispTitle(it))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}</em></span></button><div class="jv-alt"><button data-skipnext="${a.id}">Skip for now</button></div>`}
+ else if(a.kind==='scripture'){const n=narDur(b.abbr,c.c),pl=cur===narId(b.abbr,c.c)&&!audio.paused;
+  h+=`<button class="jv-next" id="jnext"><span class="jv-pp">${icon(pl?'pause':'play',20,0,'#fff')}</span><span class="jv-nt"><small>${pl?'Reading':'Up next'}</small><b>Read ${esc(stopName(x))}</b><em>Listen along${n?' · '+durTxt(n):''}</em></span></button><div class="jv-alt"><button data-jread="1">I’ve read it</button><button data-skipnext="S:${scrKey(x)}">Skip for now</button></div>`}
+ else if(a.kind==='walk'){const nx=w[a.to],nlm=LANDMARKS[nx.b.abbr+nx.c.c];
+  h+=`<p class="jv-done">${c.intro?`That’s the overview of ${esc(b.name)}.`:`You’ve walked through ${esc(stopName(x))}.`} ${esc(stopName(nx))} is ready whenever you are.</p>
+  <button class="jv-nextstop" id="jnext"><span class="jv-art sm">${heroArt(nx,350,150,'jn')}</span><span class="jv-ns"><small>${nx.c.intro?'A new book':'Next stop'}${nlm?' · '+esc(nlm[1]):''}</small><b>${esc(stopName(nx))}</b><em>${esc(plainT(nx.c.intro?(nx.b.bl||''):(nx.c.sl||'')))}</em><span class="jv-go">Begin ${esc(stopName(nx))} ${icon('arrow',18,2.2,'#fff')}</span></span></button>`}
+ else h+=`<p class="jv-done">You have walked the whole of Scripture.</p>`;
+ /* the stop's whole list: overview, scripture, teaching, in order; heard ones stay, quietly ticked */
+ const cap=n=>JV.more?n:Math.min(n,8);let rows='',shown=0,total=0;
+ const sec=(t,list)=>{if(!list.length)return'';let o=`<div class="jv-sec">${t}</div>`,last=null;list.forEach(g=>{total++;if(shown>=cap(1e9))return;if(g.h&&g.h!==last&&c.intro){o+=`<div class="jv-sub">${esc(g.h)}</div>`;last=g.h}o+=jRow(g.id,g.r?vbadge(g.r):'',up);shown++});return o};
+ rows+=sec(c.intro?'Teaching on the book':'Overview',G.overview);
+ if(!c.intro){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec">Scripture</div><div class="jw${rd?' heard':''}"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
+ rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses]);
+ if(shown<total)rows+=`<button class="jv-more" id="jmore">${total-shown} more</button>`;
+ return h+`<div class="jv-list">${rows}</div></div>`}
+function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;
+ if(a.kind==='play'){if(cur===a.id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;play(a.id)}
+ else if(a.kind==='scripture'){const id=narId(x.b.abbr,x.c.c);if(cur===id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;narPlay(x.b,x.c.c,null,{jm:true,full:true})}
+ else if(a.kind==='walk'){const fr=x,nx=w[a.to];setJP(a.to);camp=a.to;S.set('camp',camp);if(nx.b!==fr.b&&!fr.c.intro)note('You have walked through '+fr.b.name+'.');JV.more=false;render();window.scrollTo({top:0,behavior:'smooth'})}}
+function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
+ document.querySelectorAll('[data-jread]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()];read[scrKey(x)]=true;S.set('read',read);render()});
+ document.querySelectorAll('[data-jscr]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()],id=narId(x.b.abbr,x.c.c);BPM=null;if(cur===id){setMini(false);return}const a=nextAction(jpIdx());JM=!!(a&&a.kind==='scripture');narPlay(x.b,x.c.c,null,{jm:JM,full:true})})}
+
+/* ---- Big Picture: whole-Bible series, each heard in order, each keeping its own place ---- */
+let BP=S.get('bp',{}),BPM=null;
+const bpList=()=>D.bp||[],bpGet=id=>bpList().find(s=>s.id===id),bpIds=s=>s.parts.flatMap(p=>p[1]).filter(id=>I[id]),bpName=(s,id)=>(s.names&&s.names[id])||dispTitle(I[id]);
+function bpAt(s){const ids=bpIds(s),k=BP[s.id]?ids.indexOf(BP[s.id].cur):-1;if(k>=0){if(!isDone(ids[k]))return k;const n=ids.findIndex((id,j)=>j>k&&!isDone(id));return n>=0?n:k}const f=ids.findIndex(id=>!isDone(id));return f<0?0:f}
+function bpNum(s,id){const it=I[id];return it.sc?it.sc[0]+'.'+it.sc[1]:String(bpIds(s).indexOf(id)+1)}
+function bpCover(art,sz){const v={survey:`<rect width="104" height="104" fill="#1b2440"/><g fill="#f0d79a"><circle cx="18" cy="20" r="1.2"/><circle cx="40" cy="12" r="1"/><circle cx="78" cy="18" r="1.4"/><circle cx="90" cy="40" r="1"/><circle cx="14" cy="50" r="1"/><circle cx="64" cy="30" r="1"/></g><circle cx="52" cy="64" r="30" fill="#c9a24a" opacity=".14"/><path d="M52 46 C 46 54 46 60 52 64 C 58 60 58 54 52 46Z" fill="#e9cf8c"/><path d="M44 66h16v18H44z" fill="none" stroke="#e9cf8c" stroke-width="2"/><text x="52" y="96" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="7" letter-spacing="1.6" fill="#e9cf8c">OT · NT</text>`,
+  chronicle:`<rect width="104" height="104" fill="#e7dbbd"/><path d="M16 86 C 36 66 28 50 50 46 C 72 42 66 22 88 16" fill="none" stroke="#9a7524" stroke-width="3" stroke-linecap="round"/><g transform="translate(16 86)" fill="none" stroke="#4f5f3f" stroke-width="1.8" stroke-linecap="round"><path d="M0 0 V-16"/><path d="M0 -12 C -9 -18 -12 -26 -5 -30 C 0 -33 6 -31 7 -26 C 15 -28 16 -18 10 -14 C 6 -12 3 -12 0 -13"/></g><path d="M78 22h20v-12h-4v-5h-4v5h-4v-8h-4v8h-4z" fill="#1b2440"/>`,
+  '30k':`<rect width="104" height="104" fill="#dfe6df"/><g fill="none" stroke="#8fa08a" stroke-width="1.2"><path d="M-4 30 C 20 20 40 36 60 26 S 96 22 110 30"/><path d="M-4 46 C 22 36 42 54 64 42 S 98 38 110 46"/><path d="M-4 62 C 24 52 44 70 66 58 S 98 56 110 62"/><path d="M-4 78 C 26 68 46 86 68 74 S 98 72 110 78"/><path d="M-4 94 C 28 84 48 100 70 90 S 98 88 110 94"/></g><path d="M14 90 C 34 70 50 64 60 52 S 84 26 92 14" fill="none" stroke="#9a7524" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/><path d="M88 10 l8 2 -6 6z" fill="#1b2440"/><text x="12" y="20" font-family="-apple-system,system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1" fill="#1b2440">30,000 FT</text>`}[art]||'';
+ return `<svg viewBox="0 0 104 104" width="${sz}" height="${sz}" class="bpc" aria-hidden="true">${v}</svg>`}
+function bpLen(s){const ids=bpIds(s),known=ids.filter(id=>+I[id].dur>0),sec=known.reduce((t,id)=>t+ +I[id].dur,0);
+ return `${ids.length} ${s.unit||'episode'}${ids.length>1?'s':''}`+(known.length>=ids.length*.8&&sec?` · about ${Math.round(sec/3600)} hours`:s.id==='30k'?' · Genesis to Revelation':'')}
+function bpPlay(sid,id){const s=bpGet(sid);if(!s||!I[id])return;const ids=bpIds(s),k=ids.indexOf(id);JM=false;
+ if(cur===id&&BPM===sid){audio.paused?audio.play().catch(()=>{}):audio.pause();return}
+ BPM=sid;const ck=BP[sid]?ids.indexOf(BP[sid].cur):-1;if(k>ck)BP[sid]={cur:id};S.set('bp',BP);S.set('bplast',sid);play(id);bpLabel()}
+function bpLabel(){if(!BPM||!cur)return;const s=bpGet(BPM);if(!s)return;const ids=bpIds(s),k=ids.indexOf(cur);if(k<0)return;$('#np-t').textContent=bpName(s,cur);$('#np-s').textContent=teacher(I[cur])+' · '+s.title+' · '+(k+1)+' of '+ids.length}
+function bpView(){const L=bpList(),ls=bpGet(S.get('bplast',''));let h=`<div class="jv bpv">${moreBtn()}<div class="jv-eb">The whole story</div><h1 class="jv-t">Big Picture</h1>`;
+ if(ls&&BP[ls.id]){const ids=bpIds(ls),k=bpAt(ls),id=ids[k],it=I[id],pl=cur===id&&!audio.paused,left=leftOf(id);
+  h+=`<button class="bp-cont" data-bpcont="${ls.id}">${bpCover(ls.art,64)}<span class="bp-ct"><small>Continue · ${esc(ls.title)}</small><b>${esc(bpName(ls,id))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':` · ${ls.unit||'episode'} ${k+1} of ${ids.length}`}</em></span><span class="bp-pp">${icon(pl?'pause':'play',16,0,'#1b2440')}</span></button>`}
+ h+=`<div class="jv-sec">${L.length===2?'Two':L.length===3?'Three':L.length} series</div>`;
+ L.forEach(s=>{const ids=bpIds(s),st=!!BP[s.id],k=bpAt(s),f=ids.filter(isDone).length/ids.length;
+  h+=`<button class="bp-row" data-bps="${s.id}">${bpCover(s.art,104)}<span class="bp-rt"><b>${esc(s.title)}</b><span class="by">${esc(s.by)}</span><span class="ds">${esc(s.desc.split('. ')[0].replace(/\.$/,''))}.</span><span class="pr">${st?`<i><b style="width:${Math.max(3,Math.round(100*f))}%"></b></i>${s.unit==='flight'?'Flight':'Session'} ${k+1} of ${ids.length}`:bpLen(s)}</span></span></button>`});
+ return h+'</div>'}
+function openSeries(sid){const s=bpGet(sid);if(!s)return;const ids=bpIds(s),k=bpAt(s),el=$('#bps'),st=!!BP[s.id];
+ let list='';s.parts.forEach(([t,p])=>{if(t)list+=`<div class="jv-sub">${esc(t)}</div>`;p.filter(id=>I[id]).forEach(id=>{const j=ids.indexOf(id),done=isDone(id),left=leftOf(id),now=j===k&&st;
+  list+=`<button class="bp-ep${done?' heard':''}${now?' now':''}" data-bpplay="${id}"><span class="n">${bpNum(s,id)}</span><b>${esc(bpName(s,id))}</b><span class="d">${done?'✓':left?atSpd(left)+' left':I[id].dur?Math.round(I[id].dur/60)+' min':''}</span></button>`})});
+ el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh" role="dialog" aria-modal="true" aria-label="${esc(s.title)}"><button class="grab2" data-bpsx aria-label="Close"></button>
+  <div class="bps-hd">${bpCover(s.art,128)}<div><div class="bps-t">${esc(s.title)}</div><div class="bps-by">${esc(s.by)}</div><div class="bps-n">${bpLen(s)}</div></div></div><p class="bps-d">${esc(s.desc)}</p>
+  <button class="bps-go" data-bpcont="${s.id}"><span>${icon('play',16,0,'#fff')}</span><span><b>${st?'Continue Listening':'Begin'}</b><em>${esc(bpNum(s,ids[k])+' · '+bpName(s,ids[k]))}</em></span></button><div class="bps-list">${list}</div></div>`;
+ el.hidden=false;document.body.classList.add('bpsopen');requestAnimationFrame(()=>el.classList.add('on'));
+ el.querySelectorAll('[data-bpsx]').forEach(b=>b.onclick=closeSeries);el.querySelectorAll('[data-bpcont]').forEach(b=>b.onclick=()=>{const t=bpGet(b.dataset.bpcont);bpPlay(t.id,bpIds(t)[bpAt(t)]);closeSeries()});
+ el.querySelectorAll('[data-bpplay]').forEach(b=>b.onclick=()=>{bpPlay(s.id,b.dataset.bpplay);closeSeries()});
+ const sh=el.querySelector('.bps-sh');let y0=null;sh.ontouchstart=e=>{y0=sh.scrollTop<=0?e.touches[0].clientY:null};sh.ontouchmove=e=>{if(y0==null)return;const dy=e.touches[0].clientY-y0;if(dy>0){sh.style.transform=`translateY(${dy}px)`}};sh.ontouchend=e=>{if(y0==null)return;const dy=e.changedTouches[0].clientY-y0;y0=null;sh.style.transform='';if(dy>90)closeSeries()}}
+function closeSeries(){const el=$('#bps');el.classList.remove('on');document.body.classList.remove('bpsopen');setTimeout(()=>{if(!el.classList.contains('on')){el.hidden=true;el.innerHTML='';if(view==='bigpicture')render()}},260)}
+function wireBP(){document.querySelectorAll('#main [data-bps]').forEach(b=>b.onclick=()=>openSeries(b.dataset.bps));document.querySelectorAll('#main [data-bpcont]').forEach(b=>b.onclick=()=>{const t=bpGet(b.dataset.bpcont);bpPlay(t.id,bpIds(t)[bpAt(t)])})}
+
+/* ---- Library: Secret Church, the four teachers, what you played lately ---- */
+const TCH_C={Platt:'#2f4a6b',PAM:'#7a4b2a',Skip:'#5b4a7a',Davey:'#3c5a4c'};
+function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotional'&&i.audio&&!i.nar)cnt[i.who]=(cnt[i.who]||0)+1});
+ const bpOf=id=>bpList().find(s=>bpIds(s).includes(id));
+ const rec=Object.entries(prog).filter(([id,p])=>I[id]&&!I[id].nar&&p&&p.at).sort((a,z)=>z[1].at-a[1].at).slice(0,6);
+ let h=`<div class="jv lib">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Library</h1><button class="lib-sc" id="opensc"><b>Secret Church</b><span>David Platt · all ${scGroups().length} nights · ${D.sc.ids.length} sessions ›</span></button>`;
+ h+=`<div class="jv-sec">Teachers</div>`+['Platt','PAM','Skip','Davey'].map(k=>`<button class="lib-t" data-tch="${k}"><span class="av" style="background:${TCH_C[k]}">${(n=>n[0][0]+n[n.length-1][0])(NAMES[k].split(' '))}</span><span><b>${NAMES[k]}</b><em>${(cnt[k]||0).toLocaleString()} teachings</em></span><i>›</i></button>`).join('');
+ if(rec.length)h+=`<div class="jv-sec">Recently played</div><div class="lib-rec">${rec.map(([id,p])=>{const s=bpOf(id),left=leftOf(id);return `<button data-${s?'bpplay2':'play'}="${id}"${s?` data-sid="${s.id}"`:''}><small>${s?'Big Picture':'Journey'}</small><b>${esc(s?bpName(s,id):dispTitle(I[id]))}</b><em>${esc(teacher(I[id]).split(' ').slice(-1)[0])} · ${p.done?'heard':left?atSpd(left)+' left':'started'}</em></button>`}).join('')}</div>`;
+ const sk=Object.keys(SKIP).length;if(sk)h+=`<button class="lnk lib-sk" id="unskip">${sk} skipped for now — bring them back</button>`;
+ return h+'</div>'}
+function openTeacher(k){const el=$('#bps'),by={};Object.values(I).forEach(i=>{if(i.who!==k||i.tr==='devotional'||i.nar||!i.audio)return;const w=where(i.id)||'Other teaching';const b=(w.match(/^(.+?)(?: \d+)?$/)||[,w])[1];(by[b]=by[b]||[]).push(i.id)});
+ const order=[...D.books.map(b=>b.name).filter(n=>by[n]),...Object.keys(by).filter(n=>!D.books.some(b=>b.name===n))];
+ el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh" role="dialog" aria-modal="true" aria-label="${NAMES[k]}"><button class="grab2" data-bpsx aria-label="Close"></button><div class="bps-t" style="margin:6px 4px 2px">${NAMES[k]}</div><div class="bps-n" style="margin:0 4px 10px">By book, in Bible order</div>
+  ${order.map(n=>`<details class="tch-b"><summary>${esc(n)}<span>${by[n].length}</span></summary>${by[n].map(id=>jRow(id,'',null)).join('')}</details>`).join('')}</div>`;
+ el.hidden=false;document.body.classList.add('bpsopen');requestAnimationFrame(()=>el.classList.add('on'));el.querySelectorAll('[data-bpsx]').forEach(b=>b.onclick=closeSeries);
+ el.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;play(b.dataset.play)})}
+function wireLib(){document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2))}
+
+function render(){const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='journey'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
  migrateCamp();const w=walk();let first=jpIdx();if(camp==null||camp>=w.length)camp=first;  /* the road is walked up to your place */
  const rd=w.filter(x=>!x.c.intro&&read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
@@ -1352,7 +1603,8 @@ function play(id,o={}){const i=I[id];if(!i.audio)return;let wait=false;if(cur!==
   $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=i.nar?'\u00a0':teacher(i)+' · '+where(id);npArt(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!!i.nar&&!o.full)}else if(o.full)setMini(false);if(i.nar)readerFill(true);setPP();
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',()=>skipTrack(1),'previoustrack',()=>skipTrack(-1)].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  if(o.load||wait)return;audio.paused?audio.play().catch(()=>{}):audio.pause()}
-function next(){if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq();for(let j=q.indexOf(cur)+1;j<q.length;j++)if(!isDone(q[j])&&okWho(q[j])){play(q[j]);return}return}
+function next(){if(BPM&&cur){const s=bpGet(BPM),ids=s?bpIds(s):[],k=ids.indexOf(cur);if(k>=0){if(k+1<ids.length)bpPlay(s.id,ids[k+1]);else{BPM=null;note('That is the end of '+s.title+'.')}render();return}BPM=null}
+ if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq();for(let j=q.indexOf(cur)+1;j<q.length;j++)if(!isDone(q[j])&&okWho(q[j])){play(q[j]);return}return}
  if(JM){const i=jpIdx(),a=nextAction(i),here=camp===i;
   if(a.kind==='play'){if(here){TAB=a.step;S.set('tab',TAB)}play(a.id);if(here){decorate.moving=true;render();decorate.moving=false}return}
   if(a.kind==='scripture'){const x=walk()[i];if(hasNar(x.b.abbr,x.c.c)){if(here){TAB='scripture';S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false}narPlay(x.b,x.c.c,0,{jm:true});return}}
@@ -1370,7 +1622,7 @@ onAudio('seeking',()=>{lastT=null});onAudio('play',()=>{lastT=null});
 function finished(){if(narWait)return;if(cur&&I[cur].nar){narNext();return}const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*body(cur))p.done=true;S.set('prog',prog);render();next()}
 onAudio('ended',finished);
 const setPP=()=>{$('#pp').innerHTML=icon(audio.paused?'play':'pause',28,0,'#1b2440')};setPP();/* play/pause only changes the play buttons: update them in place so the page (and an open reading) never re-lays out */
-function refreshVoices(){contRefresh();document.querySelectorAll('.pb[data-play]').forEach(b=>{const id=b.dataset.play,i=I[id],playing=String(cur)===id&&!audio.paused,deg=!isDone(id)?Math.round(3.6*heardPct(id)):0;
+function refreshVoices(){contRefresh();if(view==='journey'||view==='bigpicture'){cancelAnimationFrame(refreshVoices.r);refreshVoices.r=requestAnimationFrame(()=>{const y=scrollY;render();window.scrollTo(0,y)})}document.querySelectorAll('.pb[data-play]').forEach(b=>{const id=b.dataset.play,i=I[id],playing=String(cur)===id&&!audio.paused,deg=!isDone(id)?Math.round(3.6*heardPct(id)):0;
  b.classList.toggle('playing',playing);b.style.setProperty('--p',deg+'deg');b.innerHTML=`<span style="color:${playing?'var(--gold2)':'var(--ink)'}">${icon(playing?'pause':'play',18,0,'currentColor')}</span>`})}
 onAudio('play',()=>{setPP();refreshVoices();narBar()});onAudio('pause',()=>{setPP();refreshVoices();narBar()});
 $('#audiofx').addEventListener('error',()=>{if(audio!==$('#audiofx')||!cur)return;const t=audio.currentTime||0,src=audio.src;audio=$('#audio');audio.playbackRate=speed;audio.src=src;audio.addEventListener('loadedmetadata',()=>{try{audio.currentTime=t}catch(e){}},{once:true});audio.play().catch(()=>{})});
@@ -1384,7 +1636,7 @@ $('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NAR=null;document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));narBar();NP().classList.remove('on');roomForPlayer();render()};
 /* player sheet: swipe down or tap the page to shrink it to a bar; tap or swipe up the bar to open it */
 function NP(){return $('#np')}
-function roomForPlayer(){requestAnimationFrame(()=>{const np=NP();if(!np.classList.contains('on')){document.body.style.paddingBottom='';return}if(!np.classList.contains('mini'))roomForPlayer.full=np.offsetHeight;document.body.style.paddingBottom=(roomForPlayer.full||np.offsetHeight)+'px'})}
+function roomForPlayer(){requestAnimationFrame(()=>{const np=NP(),tb=($('#tabs')||{}).offsetHeight||0;if(!np.classList.contains('on')){document.body.style.paddingBottom=tb+'px';return}document.body.style.paddingBottom=(tb+(np.classList.contains('mini')?np.offsetHeight+16:0))+'px'})}
 /* the full-screen player's cover: the passage on the teacher's colour, with their medallion mark */
 const ART_C={Platt:['#1b2440','#3b5578'],PAM:['#4a1f3a','#8a3b5c'],Davey:['#1f3b33','#3f6b5a'],Skip:['#5a3417','#a8662e']};
 function npArt(id){const i=I[id],c=ART_C[i.who]||['#1b2440','#a8812a'],d=i.date?new Date(i.date+'T12:00:00'):null;
@@ -1392,7 +1644,7 @@ function npArt(id){const i=I[id],c=ART_C[i.who]||['#1b2440','#a8812a'],d=i.date?
  $('#np-art').innerHTML=`<svg class="a-m" viewBox="0 0 48 48"><path d="${MEDAL_ICON[{Platt:'apostle',PAM:'prophet',Davey:'writer',Skip:'patriarch'}[i.who]]||''}" fill="none" stroke="#fff" stroke-width="2"/></svg><div class="a-w">${esc(teacher(i))}</div><div class="a-p">${esc(where(id))}</div>${i.show?`<div class="a-s">${esc(i.show)}</div>`:''}`;
  $('#np-d').textContent=[d&&!isNaN(d)?d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}):'',i.show||''].filter(Boolean).join(' · ')}
 /* previous / next teaching along the road (manual: every teaching in order; ⏮ restarts first if you are past 5 s) */
-function skipTrack(dir){if(cur&&I[cur].nar&&NAR&&NAR.id===cur){narStep(dir);return}if(dir<0&&audio.currentTime>5&&cur){audio.currentTime=(I[cur]&&I[cur].s)||0;return}
+function skipTrack(dir){if(BPM&&cur&&!(I[cur]&&I[cur].nar)){const s=bpGet(BPM),ids=s?bpIds(s):[],j=ids.indexOf(cur)+dir;if(dir<0&&audio.currentTime>5){audio.currentTime=(I[cur]&&I[cur].s)||0;return}if(ids.includes(cur)){if(j>=0&&j<ids.length)bpPlay(s.id,ids[j]);return}}if(cur&&I[cur].nar&&NAR&&NAR.id===cur){narStep(dir);return}if(dir<0&&audio.currentTime>5&&cur){audio.currentTime=(I[cur]&&I[cur].s)||0;return}
  if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq(),j=q.indexOf(cur)+dir;if(j>=0&&j<q.length){const np=NP();np.classList.remove('sw-l','sw-r');void np.offsetWidth;np.classList.add(dir>0?'sw-l':'sw-r');play(q[j])}return}
  const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;seq.push(...orderedIds(x.b,x.c))});
  let k=cur?seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]):-1;if(k<0&&cur)k=seq.indexOf(cur);
@@ -1481,7 +1733,7 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
  document.querySelectorAll('.pref').forEach(b=>b.onclick=e=>{e.stopPropagation();const x=walk()[camp];const r=versesFor(b.dataset.pass,x.b.name,x.c.c);
   HL=r?{book:x.b.name,ch:x.c.c,...r}:null;TAB='scripture';S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false;
   const d=document.querySelector('details.readx');if(d)setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'start'}),60)});
- const bh=$('#bookhd');if(bh)bh.onclick=()=>{if(view!=='walk'){view='walk';S.set('view',view)}go(+bh.dataset.camp)};document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;if(SKIP[b.dataset.play]){delete SKIP[b.dataset.play];S.set('skip',SKIP)}play(b.dataset.play)});
+ const bh=$('#bookhd');if(bh)bh.onclick=()=>{if(view!=='walk'){view='walk';S.set('view',view)}go(+bh.dataset.camp)};document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;if(SKIP[b.dataset.play]){delete SKIP[b.dataset.play];S.set('skip',SKIP)}play(b.dataset.play)});
  
  document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{const was=!!read[b.dataset.read];read[b.dataset.read]=!was;S.set('read',read);decorate.moving=true;render();decorate.moving=false});
  document.querySelectorAll('.acts [data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;stepTo(+b.dataset.camp)});document.querySelectorAll('.nv[data-camp], .myplace[data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;go(+b.dataset.camp)});
@@ -1490,10 +1742,10 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
    /* folding while scrolled down inside a long stop: keep the stop's top in view instead of the page jumping */
    const cl=$('#clearing');if(cl){const t=cl.getBoundingClientRect().top;if(t<60||t>innerHeight-120)window.scrollTo({top:scrollY+t-70})}};const ct=$('#chT');if(ct){ct.onclick=e=>{e.stopPropagation();openJump('browse')};ct.setAttribute('role','button');ct.setAttribute('aria-label','Choose a chapter')}}
  const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
- const g=$('#gear');g.onclick=()=>{view=view==='settings'?'walk':'settings';S.set('view',view);decorate.first=true;render();window.scrollTo(0,0)};
- const back=$('#back');if(back)back.onclick=g.onclick;const us=$('#unskip');if(us)us.onclick=()=>{SKIP={};S.set('skip',SKIP);note('Everything you skipped is waiting again where it belongs.');render()};
+ const g=$('#gear');g.onclick=()=>setView(view==='settings'?PREV:'settings');document.querySelectorAll('[data-settings]').forEach(b=>b.onclick=()=>setView('settings'));
+ const back=$('#back');if(back)back.onclick=()=>setView(PREV==='settings'?'journey':PREV);const us=$('#unskip');if(us)us.onclick=()=>{SKIP={};S.set('skip',SKIP);note('Everything you skipped is waiting again where it belongs.');render()};
  const osc=$('#opensc');if(osc)osc.onclick=()=>{view='sc';S.set('view',view);render();window.scrollTo(0,0)};
- const scb=$('#scback');if(scb)scb.onclick=()=>{view='walk';S.set('view',view);decorate.first=true;render()};
+ const scb=$('#scback');if(scb)scb.onclick=()=>setView('library');
  document.querySelectorAll('details.sce').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.sck):OPEN.delete(d.dataset.sck)});const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
  const io=$('#io');if(io){$('#exp').onclick=()=>io.value=JSON.stringify({prog,read,cfg});$('#imp').onclick=()=>{try{const v=JSON.parse(io.value);prog=v.prog||prog;read=v.read||read;S.set('prog',prog);S.set('read',read);render()}catch(e){io.value='Could not read that JSON.'}};
   const bkf=$('#bkf');if(bkf)bkf.onsubmit=async e=>{e.preventDefault();const key=$('#bkkey').value.trim(),repo=$('#bkrepo').value.trim().replace(/^https?:\/\/github\.com\//,'').replace(/\.git$|\/$/g,''),msg=$('#bkmsg');msg.textContent='Checking…';
