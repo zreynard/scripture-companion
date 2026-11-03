@@ -37,7 +37,8 @@ def _passages(x):
 
 def candidates(prefix, n, x):
     nn = f"{n:02d}" if n < 100 else str(n)
-    c = [f"{prefix}{nn}-{b}{p}" for b, p in passages(x)]
+    c = [f"{n:05d}{prefix}.mp3"]   # newer series name files 00001Philippians.mp3.mp3
+    c += [f"{prefix}{nn}-{b}{p}" for b, p in passages(x)]
     if x.get("ref") == "" or "Introduction" in x.get("title_passage", ""):
         c += [f"{prefix}{nn}-{prefix}1_1", f"{prefix}{nn}-{prefix}1"]
     return list(dict.fromkeys(c))
@@ -45,7 +46,9 @@ def candidates(prefix, n, x):
 
 def prefix_of(series):
     s = re.sub(r"^(Sermons in|Series:|Topic:)\s*", "", series).strip()
-    return list(dict.fromkeys([s.replace(" ", ""), s.split()[0], s.replace(" ", "-"), s.replace(" & ", "and").replace(" ", ""), s.replace(" & ", "And").replace(" ", "")]))
+    words = {"1": "First", "2": "Second", "3": "Third"}
+    ordinal = re.sub(r"^([123]) ", lambda m: words[m.group(1)], s)
+    return list(dict.fromkeys([s.replace(" ", ""), s.split()[0], s.replace(" ", "-"), ordinal.replace(" ", ""), s.replace(" & ", "and").replace(" ", ""), s.replace(" & ", "And").replace(" ", "")]))
 
 
 def main():
@@ -64,7 +67,7 @@ def main():
             learned = [o for o, _ in sorted(seen.items(), key=lambda kv: -kv[1])]
             offs = list(dict.fromkeys([0] + learned + ([1, -1, 2, -2, 3, -3] if x.get("tried", 0) >= 1 or d.get("from") == "spreadsheet" else [])))[:7]
             budget = [40]
-            pres = list(dict.fromkeys(prefix_of(d["series"])[:2] + [b for b, _ in passages(x)][:2]))
+            pres = list(dict.fromkeys(prefix_of(d["series"])[:4] + [b for b, _ in passages(x)][:2]))
             for off in offs:
                 if x["n"] + off < 1: continue
                 for pre in pres:
