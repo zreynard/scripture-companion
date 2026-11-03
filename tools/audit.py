@@ -68,9 +68,12 @@ def main():
                 bad.append(f"{I[i]['t'][:60]} at {bk} {c}; its passage is {E[i]['refs_text'][:40]}")
     check("every placement matches the teaching's passage", bad, len(placed))
     bad = []
+    _core = lambda t: re.sub(r"[^a-z0-9]+", " ", re.sub(r"\([^)]*\)", " ", (t or "").lower())).strip()
+    placed_core = {(_core(I[j]["t"]), I[j]["who"]) for j in placed if placed[j]}
     for i in road:
         t = {r.book: r.chapters for r in parse_refs(I[i]["t"]) if not r.whole_book}
         if not t or E[i]["track"] == "overview": continue
+        if not placed[i] and (_core(I[i]["t"]), I[i]["who"]) in placed_core: continue  # a better form of the same sermon stands there
         got = defaultdict(set)
         for bk, c in placed[i]:
             if isinstance(c, int): got[bk].add(c)
