@@ -44,7 +44,7 @@ RULES = {
     "brookhills": {"start": [], "end": []},
     "2819_podcast": {"start": [], "anchor": r"(mighty|majestic|matchless).{0,30}name of (our )?soon[- ]?coming king",
                      "end": [r"give (him|god) (a )?(radical )?praise", r"take the roof off", r"put your hands together", r"on your feet",
-                             r"overflow", r"lobby", r"gift for you", r"next steps", r"we don'?t do membership", r"baptism sunday",
+                             r"overflow (room|seating)", r"lobby", r"gift for you", r"next steps", r"we don'?t do membership", r"baptism sunday",
                              r"see you next week", r"pray over (all )?the givers", r"every giver"]},
     "street_preachers": {"start": [r"you'?re (listening to|watching) (this episode of )?the street preach\w*", r"we pray you'?re blessed by the content you'?re about to receive",
                                    r"stay locked", r"behind the scenes series", r"pause the podcast", r"pre-?order"],
