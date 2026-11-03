@@ -78,13 +78,15 @@ def main(k=0, n=1):
         if os.path.exists(wav): os.remove(wav)
         try:
             r = subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-user_agent", UA, "-t", str(MINUTES * 60), "-i", audio_of(e),
-                                "-ac", "1", "-ar", "16000", wav], capture_output=True, text=True, timeout=600)
+                                "-ac", "1", "-ar", "16000", "-c:a", "pcm_s16le", wav], capture_output=True, text=True, timeout=600)
         except subprocess.TimeoutExpired:
             print(f"  {e['title'][:60]}: audio timed out", flush=True); continue
         if r.returncode or not os.path.exists(wav) or os.path.getsize(wav) < 100000:
             print(f"  {e['title'][:60]}: audio did not load ({r.stderr[:100]})", flush=True); continue
         try:
-            segs, _ = model.transcribe(wav, beam_size=1, language="en", vad_filter=True, condition_on_previous_text=False)
+            import wave, numpy as np   # read the samples here: faster-whisper's own file reader breaks on newer PyAV releases
+            with wave.open(wav) as w: pcm = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768.0
+            segs, _ = model.transcribe(pcm, beam_size=1, language="en", vad_filter=True, condition_on_previous_text=False)
             text, at = "", {}
             for s in segs:
                 at[len(text)] = s.start; text += s.text + " "
