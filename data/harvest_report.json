@@ -1,10 +1,10 @@
 {
-  "started": "2026-11-03T05:33:01.449307+00:00",
+  "started": "2026-11-03T10:55:32.158561+00:00",
   "sources": {
-    "mclean": {
-      "count": 395,
-      "seconds": 4.6
+    "brookhills": {
+      "count": 116,
+      "seconds": 36.4
     }
   },
-  "catalog_total": 11454
+  "catalog_total": 11492
 }
