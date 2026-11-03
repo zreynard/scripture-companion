@@ -1,10 +1,10 @@
 {
-  "started": "2026-11-03T19:01:53.817733+00:00",
+  "started": "2026-11-03T21:23:07.902270+00:00",
   "sources": {
-    "fearless": {
-      "count": 9,
-      "seconds": 2.8
+    "davey_archive": {
+      "count": 44,
+      "seconds": 0.0
     }
   },
-  "catalog_total": 11464
+  "catalog_total": 11495
 }
