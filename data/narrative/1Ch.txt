@@ -1,7 +1,7 @@
 === intro
 The listener who has come through Samuel and Kings has already walked with David and Solomon, watched the kingdom divide, and seen Jerusalem burn. Chronicles goes back over that same ground. It is not a sequel but a second telling, written for a different generation and from a different vantage point, and the difference in vantage point is the key to the whole work.
 
-Kings was shaped for people living in the shadow of the catastrophe, explaining how a nation that had God's promises could end in ruin. Chronicles comes from the far side of the exile. Babylon has fallen to the Persians, and the Persian king Cyrus has allowed the deported people of Judah to go home. Some have returned. They have rebuilt the temple in Jerusalem, a modest building compared with Solomon's, and they live in a small province of a vast empire, with a governor appointed by a foreign king and no son of David on any throne. They have their lives back, but they have many questions. Are we still the people of God? Do his promises to David still stand? Does the temple matter, and who should serve in it? Where do we belong?
+Kings was shaped for people living in the shadow of the catastrophe, explaining how a nation that had God's promises could end in ruin. Chronicles comes from the far side of the exile. Babylon has fallen to the Persians, and the Persian king Cyrus has allowed the deported people of Judah to go home. Some have returned. They have rebuilt the temple in Jerusalem, a modest building compared with Solomon's, and they live in a small province of a vast empire, with a governor appointed by a foreign king and no son of David on any throne. They have their lives back, but they live with questions: whether they are still the people of God, whether his promises to David still stand, why the temple matters and who should serve in it, and where they belong.
 
 Chronicles was originally a single book in Hebrew, divided into two only later, and its Hebrew title means something like the events of the days. The author does not give his name. Jewish tradition gives the work to Ezra the scribe, and the last lines of Second Chronicles are repeated almost word for word at the start of the book of Ezra. He writes in the Persian period, with a deep love for the temple and its Levites. He draws openly on older writings, naming royal annals and the records of prophets, and he clearly knew much of the material we have in Samuel and Kings.
 
@@ -13,7 +13,7 @@ So the chapters that follow linger where Samuel moved quickly. David captures Je
 
 Running through the book is the conviction that Israel is one people. The writer loves the phrase all Israel, and he wants every tribe included, north as well as south. He also writes as someone who knows that the throne is empty, yet he keeps the promise to David at the very centre of his story. For a people with a temple but no king, that promise was both a memory and a hope.
 
-The pace is unhurried, and the lists return in the later chapters, but every list is doing work. By the end of First Chronicles David has died full of days, and Solomon sits on the throne of the Lord. Second Chronicles will carry the story from the building of the temple to its destruction, and on to the decree of Cyrus that brought the exiles home.
+The pace is unhurried, and the lists return in the later chapters, but every list is doing work. By the end of First Chronicles David has died full of years, and Solomon sits on the throne of the Lord. Second Chronicles will carry the story from the building of the temple to its destruction, and on to the decree of Cyrus that brought the exiles home.
 
 === 1
 The book opens with a name and no introduction at all: Adam. In a few lines the generations run from Adam to Noah and his three sons, Shem, Ham and Japheth, drawn from the family trees of Genesis.
@@ -25,9 +25,9 @@ Abraham's other sons come first, Ishmael and the sons of Keturah, before the lin
 === 2
 With the wider world accounted for, the writer names the twelve sons of Israel and turns at once to Judah. Judah was not the eldest, but he comes first, because the royal line of David descends from him.
 
-The record does not hide the family's troubles. It mentions Judah's Canaanite wife, his firstborn Er, whom the Lord put to death, and Tamar, who bore him Perez and Zerah. It names Achar, the man the book of Joshua calls Achan, who brought disaster on Israel at Jericho. Then the line runs through Boaz to Jesse, and Jesse's seventh son is David. His sisters' sons are there too: Joab, Abishai, Asahel and Amasa, who will command his armies.
+The record does not hide the family's troubles. It mentions Judah's Canaanite wife, his firstborn Er, whom the Lord put to death, and Tamar, who bore him Perez and Zerah. It names Achar, the man the book of Joshua calls Achan, who brought trouble on Israel by taking what had been devoted to the Lord. Then the line runs through Boaz to Jesse, and Jesse's seventh son is David. His sisters' sons are there too: Abishai, Joab and Asahel, the sons of Zeruiah, and Amasa, the son of Abigail, names that will run all through the story of his reign.
 
-The rest of the chapter maps the great clans of Judah. Many of the names are also towns, Bethlehem, Kiriath-jearim, Ziph and Hebron, so the list is a map of the hill country as well as a family tree. For returned exiles settling those same hills, these names were home.
+The rest of the chapter maps the great clans of Judah, and small stories surface among the names: Bezalel, the craftsman of the tabernacle, and Sheshan, who had no sons and gave his daughter in marriage to his Egyptian servant Jarha. Many of the names are also towns, Bethlehem, Kiriath-jearim, Ziph and Hebron, so the list is a map of the hill country as well as a family tree. For returned exiles settling those same hills, these names were home.
 
 === 3
 The genealogy of Judah now pauses on its most important family, the house of David. First come the six sons born to him in Hebron, then the sons born in Jerusalem, four of them by Bathsheba, Solomon among them.
@@ -58,11 +58,11 @@ It begins with the high priestly line, from Aaron through Eleazar and Phinehas, 
 Then come the three Levite clans, descended from Gershom, Kohath and Merari, and among them the singers David appointed once the ark had come to rest: Heman, Asaph and Ethan. Heman is a grandson of the prophet Samuel, and Asaph's name stands over a number of the psalms. Last come the towns given to the priests and Levites throughout the tribes, so that those who served the sanctuary lived among all Israel.
 
 === 7
-This chapter moves quickly through the northern tribes: Issachar, Benjamin, Naphtali, the western half of Manasseh, Ephraim and Asher. Many entries read like military rolls, counting the fighting men of each clan, and some are dated to the days of David.
+This chapter moves quickly through the northern tribes: Issachar, Benjamin, Naphtali, Manasseh, Ephraim and Asher. Many entries read like military rolls, counting the fighting men of each clan, and some are dated to the days of David.
 
 By the time Chronicles was written, the northern tribes had long been scattered by Assyria, and the returned community came largely from Judah, Benjamin and Levi. Yet the writer insists on including the north. For him Israel is all twelve tribes. Only Zebulun and Dan receive no lists of their own.
 
-A few human details break through. Zelophehad has only daughters, the women whose right to inherit Moses upheld. Ephraim mourns two sons killed in a cattle raid near Gath. And Ephraim's line leads at last to Nun and his son Joshua, who brought Israel into the land.
+A few human details break through. Zelophehad has only daughters, the women whose right to inherit Moses upheld. Ephraim mourns for many days over two sons killed by the men of Gath when they went down to take their livestock, and he names the son born afterwards Beriah, because tragedy had come upon his house. His daughter Sheerah builds the towns of Lower and Upper Beth-horon. And Ephraim's line leads at last to Nun and his son Joshua, who brought Israel into the land.
 
 === 8
 Benjamin has already appeared briefly, but now it receives a chapter of its own. This small tribe lay just north of Judah, around Jerusalem, and stayed bound to Judah after the kingdom divided. Benjamites returned from exile alongside the people of Judah, so their record mattered.
@@ -74,7 +74,7 @@ Jonathan's descendants are traced for many generations. The house of Saul lost t
 === 9
 The genealogies reach their goal. The chapter opens with a summary: all Israel was recorded, but Judah was carried into exile in Babylon because of their unfaithfulness. In one sentence the writer passes over the catastrophe, and turns at once to those who came back.
 
-What follows is a list of the first people to resettle their towns and to live in Jerusalem after the exile: families from Judah, Benjamin, Ephraim and Manasseh, then priests and Levites. A similar list appears in the book of Nehemiah. The writer gives special care to the gatekeepers who guarded the house of God day and night, and to the Levites who kept its treasuries, baked its bread, mixed its spices and led its music, tracing their duties back to David and Samuel.
+What follows is a list of the first people to resettle their towns and to live in Jerusalem after the exile: families from Judah, Benjamin, Ephraim and Manasseh, then priests and Levites. A similar list appears in the book of Nehemiah. The writer gives special care to the gatekeepers who guarded the house of God day and night, and to the Levites who kept its treasuries, counted its vessels, baked its bread and led its music, while sons of the priests mixed its spices. Their duties go back to David and Samuel the seer.
 
 The worship of the returned community stands in an unbroken line with the past. Finally, the family of Saul is listed again, almost exactly as before. It is a bridge, because the story itself is about to begin with Saul's death.
 
@@ -90,14 +90,14 @@ Saul is dead, and the story moves straight to David being made king over all Isr
 
 David's first act as king of the whole nation is to march on Jerusalem, still a Jebusite stronghold called Jebus, standing on its ridge between the territories of Judah and Benjamin. The fortress of Zion falls, and it becomes the City of David. Chronicles adds a detail that Samuel does not give: Joab wins his place as chief commander by being the first to strike.
 
-Most of the chapter is given to David's mighty men, the warriors whose loyalty made his kingdom possible. Some of their exploits are told: the three who broke through Philistine lines to bring David water from the well at Bethlehem, and Benaiah, who killed a lion in a pit on a snowy day. The roll that follows includes a name the listener will remember with a pang, Uriah the Hittite.
+Most of the chapter is given to David's mighty men, the warriors whose loyalty made his kingdom possible. Some of their exploits are told: the three who broke through Philistine lines to bring David water from the well at Bethlehem, water he would not drink but poured out to the Lord, and Benaiah, who killed a lion in a pit on a snowy day. The roll that follows includes a name the listener will remember with a pang, Uriah the Hittite.
 
 === 12
 The previous chapter listed David's mighty men. This one steps back in time to show how support gathered around him even while Saul was still alive. It opens at Ziklag, the Philistine town where David lived as an outlaw in the last years of Saul's reign.
 
 Men came to him from every direction. There were Benjamites, Saul's own kinsmen, skilled with bow and sling in either hand. There were Gadites from across the Jordan, swift and fierce, who crossed the river in flood to join him. Men of Judah and Benjamin came to his stronghold, and when David asked whether they came in peace, the Spirit came upon one of their leaders, Amasai, who answered with a short poem of loyalty. Men from Manasseh came over to him when the Philistines sent him away from their last battle against Saul.
 
-The chapter then returns to Hebron, and to a great roll of the tribes who came armed to make David king, every tribe named, including some barely mentioned in the genealogies. Issachar is remembered for men who understood the times. It all ends in three days of feasting, with food carried in from as far as Galilee, and joy in Israel.
+The chapter then returns to Hebron, and to a great roll of the tribes who came armed to make David king, every tribe named, including some barely mentioned in the genealogies. Issachar is remembered for men who understood the times. It all ends in three days of feasting, with food carried in on donkeys, camels, mules and oxen from as far away as Issachar, Zebulun and Naphtali, and joy in Israel.
 
 === 13
 David is king and Jerusalem is his. Now his first concern is the ark of the covenant. Samuel told of David's battles with the Philistines before the ark was moved; Chronicles brings the ark forward, as if to say that this was the first thing on the new king's heart. In the days of Saul, David says, we did not inquire of him.
@@ -107,7 +107,7 @@ The ark has spent long years at Kiriath-jearim, in the house of Abinadab, ever s
 The procession sets out with music and great celebration, the ark riding on a new cart guided by Uzzah and Ahio. But at a threshing floor along the way the oxen stumble, and what happens next turns the celebration to fear. David is left angry and afraid, unsure how the ark can ever come to him, and it is left instead in the house of Obed-edom the Gittite. For three months the ark stays there, and the Lord blesses his household.
 
 === 14
-The ark is resting in the house of Obed-edom, and Chronicles uses the three months of waiting to show how God was establishing David's kingdom. Hiram, king of the Phoenician city of Tyre on the coast to the north, sends cedar, masons and carpenters to build David a palace. It is the first sign of international recognition, and David understands that the Lord has exalted his kingdom for the sake of his people.
+The ark is resting in the house of Obed-edom, and the story turns to show how God was establishing David's kingdom. Hiram, king of the Phoenician city of Tyre on the coast to the north, sends cedar, masons and carpenters to build David a palace. It is the first sign of international recognition, and David understands that the Lord has exalted his kingdom for the sake of his people.
 
 His family grows in Jerusalem, and the sons born there are named, Solomon among them. Then come the Philistines. Having heard that David has been anointed king over all Israel, they come looking for him, raiding the Valley of Rephaim just south-west of the city.
 
@@ -118,7 +118,7 @@ Three months have passed since the death of Uzzah, and David has learned from it
 
 So David gathers the priests Zadok and Abiathar and the heads of the Levite clans, and the listener hears again the names of Heman, Asaph and Ethan, appointed as singers with cymbals, harps and lyres. Chronicles cares about this kind of detail because the worship of its own day traced its roots to this moment.
 
-Then the procession sets out once more from the house of Obed-edom, with shouting and rams' horns, David in a linen robe. And at the window of the palace, watching the king dance, stands Saul's daughter Michal, David's wife.
+Then the procession sets out once more from the house of Obed-edom, with shouting and rams' horns, David in a linen robe. And at a window, looking down on the king as he dances, stands Saul's daughter Michal, David's wife.
 
 === 16
 The ark has arrived in Jerusalem. It is set inside the tent David has pitched for it, offerings are made, and the king blesses the people and gives every man and woman bread and cakes of dates and raisins to take home.
@@ -153,7 +153,7 @@ The war with Ammon is not over. In the spring, the season when kings go out to w
 
 The listener who remembers Second Samuel knows what happened during that siege. It was then that David saw Bathsheba from the roof of his palace, and Uriah the Hittite was sent to his death at the walls of Rabbah. Chronicles moves straight from the siege to the city's fall, with David taking the Ammonite king's heavy crown, and says nothing of what took place in between. The writer's readers knew the story well; his subject is different.
 
-Then come three brief episodes from the Philistine wars, in which David's men kill giant warriors descended from Rapha, among them a brother of Goliath, and a man with six fingers on each hand and six toes on each foot. They are drawn from the appendix at the end of Second Samuel, and in Chronicles they close the account of David's wars.
+Then come three brief episodes from the Philistine wars, in which David's men kill giant warriors descended from Rapha, among them a brother of Goliath, and a man with six fingers on each hand and six toes on each foot. Second Samuel tells them near its end; in Chronicles they close the account of David's wars.
 
 === 21
 The wars are over, and the kingdom is secure. Now comes the one sin of David that Chronicles tells in full, because of where it leads. Satan rises against Israel and incites David to count the people. Second Samuel tells the same story but says that the anger of the Lord incited David; Chronicles names Satan as the adversary who stood against Israel. Even Joab, no stranger to hard decisions, protests that the census will bring guilt on Israel.
@@ -163,11 +163,11 @@ The census is taken, and God is displeased. The prophet Gad brings David a choic
 The angel is halted at a threshing floor belonging to Ornan the Jebusite, the man Samuel calls Araunah. Ornan is threshing wheat with his sons when David comes to buy the site. The chapter ends with an altar on that threshing floor, and with an explanation of why David could not go to the tabernacle at Gibeon. The place where the plague stopped is about to become the most important ground in Israel.
 
 === 22
-God answered David with fire on the altar at Ornan's threshing floor, and David now declares that this is the place. Here will be the house of the Lord God, and the altar of burnt offering for Israel. Second Chronicles will later name the site as Mount Moriah, linking it with the mountain where Abraham was sent to offer Isaac.
+God answered David with fire on the altar at Ornan's threshing floor, and David now declares that this is the place. Here will be the house of the Lord God, and the altar of burnt offering for Israel. Second Chronicles will later name the site Mount Moriah, the name of the land where Abraham was once sent to offer Isaac.
 
-From here to the end of the book, Chronicles tells a story that Samuel and Kings hardly mention: David's preparations for a temple he will not build. He assembles stonecutters, iron for nails, bronze beyond weighing and cedar from the Phoenician cities of Tyre and Sidon. Solomon, he says, is young and inexperienced, and the house must be magnificent, famous throughout all lands.
+From here to the end of the book, Chronicles tells a story that Samuel and Kings hardly mention: David's preparations for a temple he will not build. He sets foreigners in the land to work as stonecutters, and gathers iron for nails, bronze beyond weighing and cedar from the Phoenician cities of Tyre and Sidon. Solomon, he says, is young and inexperienced, and the house must be magnificent, famous throughout all lands.
 
-Then David calls Solomon and charges him privately. He explains why he himself may not build: he has shed much blood in war. Solomon will be a man of rest, and his name, which sounds like the Hebrew word for peace, fits the reign God has promised. David hands over what he has gathered and tells his son to be strong and courageous, words the Lord once spoke to Joshua. Then he commands the leaders of Israel to help him.
+Then David calls Solomon and gives him his charge. He explains why he himself may not build: he has shed much blood in war. Solomon will be a man of rest, and his name, which sounds like the Hebrew word for peace, fits the reign God has promised. David hands over what he has gathered and tells his son to be strong and courageous, words the Lord once spoke to Joshua. Then he commands the leaders of Israel to help him.
 
 === 23
 David is now old and full of years, and the book tells, in a single sentence, that he made Solomon king over Israel. The fuller story of the handover is told later, in chapter twenty-nine. First Chronicles pauses for five chapters to describe how David organised the people who would serve in the temple and the kingdom.
@@ -188,10 +188,10 @@ The priests have their divisions. Now come the musicians, and this chapter shows
 
 Heman is called the king's seer, and he is said to have had fourteen sons and three daughters, a sign of God's favour. Asaph, Jeduthun and Heman serve under the direction of the king himself.
 
-Like the priests, the musicians are divided into twenty-four groups of twelve, and they too cast lots for their order of service, young and old, teacher and pupil alike. The long list of lots may seem dry when read aloud, but each name marks a family whose descendants would still be singing in the temple generations later. The list of singers who returned from Babylon, in the books of Ezra and Nehemiah, includes the sons of Asaph.
+Like the priests, the musicians are divided into twenty-four groups of twelve, two hundred and eighty-eight trained singers in all, and they too cast lots for their order of service, young and old, teacher and pupil alike. Every name drawn stands for a family of singers. Centuries later, when the exiles came home from Babylon, the sons of Asaph were among them, still singing.
 
 === 26
-After the musicians come the gatekeepers. These were Levites who guarded the entrances of the temple, opened its doors in the morning, and kept watch over its storehouses. Among them is Obed-edom, apparently the man in whose house the ark rested for three months. The text notes that God blessed him, and his family has grown into one of the largest groups of gatekeepers. Lots are cast for the gates on each side, east, north, south and west.
+After the musicians come the gatekeepers. These were Levites who guarded the entrances of the temple, opened its doors in the morning, and kept watch over its storehouses. Among them is Obed-edom, whose family has grown to sixty-two strong and capable men, the largest of the gatekeeping families, for God had blessed him. Lots are cast for the gates on each side, east, north, south and west.
 
 Other Levites are given charge of the treasuries. These held the gifts dedicated to the house of God, including plunder from David's wars, and also offerings dedicated long before by Samuel the seer, Saul, Abner and Joab. It is a striking list of names. Men who were rivals and enemies in the story of Samuel all appear together here, as having given something toward the house of the Lord.
 
@@ -209,13 +209,13 @@ Last come David's counsellors. Two of them, Ahithophel and Hushai, played decisi
 === 28
 The lists are finished, and the story resumes with a great assembly in Jerusalem. David has summoned all the leaders of Israel: the heads of the tribes, the army commanders, the stewards of the royal estates, the officials and the mighty men. The aged king rises to his feet and speaks.
 
-He tells them what he told Solomon privately in chapter twenty-two, but now in public, before all Israel. It was in his heart to build a house for the ark, but God forbade it because he was a man of war. God chose Judah, then the house of Jesse, then David, and from David's many sons he has chosen Solomon to sit on the throne of the kingdom of the Lord. The promise is repeated, with an added condition: God will establish Solomon's kingdom for ever, if he holds firmly to God's commandments.
+He tells them what he told Solomon in chapter twenty-two, but now in public, before all Israel. It was in his heart to build a house for the ark, but God forbade it because he was a man of war. God chose Judah, then the house of Jesse, then David, and from David's many sons he has chosen Solomon to sit on the throne of the kingdom of the Lord. The promise is repeated, with an added condition: God will establish Solomon's kingdom for ever, if he holds firmly to God's commandments.
 
 David then turns to his son, charging him to know and serve God with a whole heart and a willing mind. Finally, he gives Solomon the plans for the temple, its courts and rooms and furnishings, down to the weight of gold for each lampstand, all of which, David says, the Lord made clear to him in writing.
 
 === 29
 The assembly is still gathered. David has handed over the plans, and now he speaks to the whole people once more. Solomon is young and the task is great, he says, because this palace is not for man but for the Lord God. David has given from the royal stores, and now he gives his own personal treasure, the gold of Ophir and refined silver. Then he asks who else is willing.
 
-The leaders respond generously, and the people rejoice at the willingness of the gifts. One of the gold units mentioned, the daric, was a Persian coin minted long after David's day, and the writer states the value in terms his own readers would understand.
+The leaders of the families and the tribes respond with gold, silver, bronze, iron and precious stones, and the people rejoice that their leaders have given so freely and wholeheartedly. King David rejoices with them.
 
-David then offers one of the great prayers of the Old Testament, before all the assembly. After sacrifices and a feast, Solomon is anointed king a second time, with Zadok as priest. First Kings told of a tense and hurried succession, with a rival claim from Solomon's brother Adonijah; Chronicles shows a calm and willing handover, with all David's sons pledging loyalty to Solomon. The book ends with David's death after forty years as king, full of days, riches and honour, and with the sources where his deeds were recorded, the writings of Samuel, Nathan and Gad.
+David then offers one of the great prayers of the Old Testament, before all the assembly. After sacrifices and a feast, Solomon is anointed king a second time, with Zadok as priest. First Kings told of a tense and hurried succession, with a rival claim from Solomon's brother Adonijah; Chronicles shows a calm and willing handover, with all David's sons pledging loyalty to Solomon. The book ends with David's death after forty years as king, full of years, riches and honour, and with the sources where his deeds were recorded, the writings of Samuel, Nathan and Gad.

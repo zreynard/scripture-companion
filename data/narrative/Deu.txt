@@ -9,7 +9,7 @@ Jewish and Christian tradition has long regarded Moses as the author of the book
 
 The book is built around Moses' speeches. In the first, he looks back over the forty years, from Mount Sinai, which Deuteronomy usually calls Horeb, to the plains of Moab. He reminds the people of the failure at Kadesh and the victories east of the Jordan, and calls them to faithfulness. The second and longest speech begins with the Ten Commandments and with the great call to love the Lord with all the heart, soul and strength. It goes on to set out the laws that will shape Israel's life in the land: its worship at the one place God will choose, its festivals, its courts, its kings and prophets, its care for the poor and the stranger, its life in family and field. Then come blessings and curses, life and death set before the people, and a ceremony of covenant renewal.
 
-The shape of the whole has often been compared with treaties made between kings and their subjects in the ancient Near East, which recalled the history between the parties, set out obligations, and closed with blessings and curses. Here the great king is the Lord himself, and the covenant is renewed with every generation that hears it.
+In its shape the book resembles the treaties that the great kings of the ancient Near East made with their subject peoples: a recollection of what the king had done for them, the obligations laid upon them, and blessings and curses to close. Here the great king is the Lord himself, and the covenant is renewed with every generation that hears it.
 
 The final chapters turn from speeches to farewell. Joshua is publicly charged to take Moses' place, the law is written down and entrusted to the priests, and Moses teaches the people a song and pronounces a blessing on each tribe. Then he climbs Mount Nebo, the Lord shows him the whole land, and he dies there in Moab.
 
@@ -20,14 +20,14 @@ The opening lines set the scene with care. These are the words Moses spoke to al
 
 Then Moses begins to speak, and he starts with history. He takes his listeners back to Horeb, when the Lord told them they had stayed at the mountain long enough and should go and take the land. He recalls how he appointed leaders and judges from every tribe, because the people had grown too many for him to carry alone, and charged them to judge fairly and fear no one.
 
-Most of the chapter retells the story of Kadesh-barnea from Numbers, but now as Moses tells it, to the children of those who were there. It is a story of fear, refusal and loss, told by the one man who remembers every part of it.
+Then he brings them to Kadesh-barnea. He reminds them of the spies coming back with fruit in their hands, of the grumbling in the tents that the Lord must hate them, and of the day the people marched into the hill country against his word and were chased down by the Amorites like a swarm of bees. Many of those listening were children then. Now they hear it from the one man who saw every part of it.
 
 === 2
 Moses' review of the past moves on from Kadesh, past the long years of wandering around the hill country of Seir, to the moment when the Lord told Israel to turn north. It covers ground already told in Numbers.
 
 As the people travel up the east side of the Dead Sea, they pass the lands of three related peoples: Edom, descended from Jacob's brother Esau, and Moab and Ammon, descended from Abraham's nephew Lot. Each time the Lord forbids Israel to provoke them, because he has given these peoples their lands, just as he is giving Israel its own. Brief notes, almost like an ancient historian's asides, recall the giant peoples who lived in these regions before them.
 
-At the Brook of Zered, the boundary of Moab, Moses marks a solemn milestone. Thirty-eight years have passed since Kadesh, and every man of fighting age from that generation has died. Only then does Israel's first battle on the road to the promised land begin. It is against Sihon, the Amorite king of Heshbon, who refuses them passage, and the victory is total.
+At the Brook of Zered, the boundary of Moab, Moses marks a solemn milestone. Thirty-eight years have passed since Kadesh, and every man of fighting age from that generation has died. Only then does the Lord give the order to cross the Arnon and begin to take possession. The first king to stand in their way is Sihon, the Amorite king of Heshbon, who refuses them passage, and the victory is total.
 
 === 3
 Moses continues the story of the victories east of the Jordan. After Sihon comes Og, king of Bashan, the fertile highland north of the Yarmuk valley, with its sixty fortified cities. Og is remembered as the last of the Rephaim, a people of great stature, and an aside mentions his enormous iron bed, still to be seen in the Ammonite city of Rabbah.
@@ -62,7 +62,7 @@ Moses also looks ahead to the danger of prosperity, when Israel lives in houses 
 === 7
 Moses has called Israel to love the Lord with all its heart. Now he turns to what that will mean when they cross the Jordan and meet the peoples already living there. He names seven nations of Canaan, among them the Hittites, Amorites, Canaanites and Jebusites, and describes them as larger and stronger than Israel.
 
-His instructions are uncompromising. Israel is to make no treaty with them, not to intermarry, and to tear down their altars, smash their sacred pillars and burn their idols. The command to devote these peoples to destruction is one of the hardest passages in the Old Testament for modern readers,. Moses' own concern, repeated through the chapter, is that their gods will draw Israel away from the Lord.
+His instructions are uncompromising. Israel is to devote these peoples to destruction, make no treaty with them, refuse to intermarry, tear down their altars, smash their sacred pillars and burn their idols. Moses' own concern, repeated through the chapter, is that their gods will draw Israel away from the Lord.
 
 At the centre of the chapter is a passage about why Israel was chosen at all. It was not because they were many, Moses says, for they were the fewest of peoples. It was because the Lord loved them and kept the oath he swore to their fathers. The chapter ends with encouragement for a people afraid of stronger enemies: remember what the Lord did to Pharaoh, and know that he will drive these nations out little by little.
 
@@ -97,7 +97,7 @@ The chapter ends with a choice set out in the plainest terms, a blessing and a c
 === 12
 The long introduction is over, and Moses now begins the detailed laws that form the core of the book. They run from here to chapter twenty-six. These are the statutes and ordinances, he says, that you must follow all the days you live in the land.
 
-The first subject is worship. The Canaanites worship their gods on hilltops and under green trees, at many local shrines, and Israel is to destroy them all. Instead, they are to bring their sacrifices, tithes and offerings to one place only, the place the Lord will choose from among their tribes to put his name. The chapter does not name the place. In time the tabernacle would stand at Shiloh, and centuries later the temple in Jerusalem would be understood as that chosen place.
+The first subject is worship. The Canaanites worship their gods on hilltops and under green trees, at many local shrines, and Israel is to destroy them all. Instead, they are to bring their sacrifices, tithes and offerings to one place only, the place the Lord will choose from among their tribes to put his name. The chapter does not name the place. In time the tabernacle would stand at Shiloh, and centuries later the Lord would choose Jerusalem, where Solomon would build the temple.
 
 Moses foresees practical questions. If the chosen place is far away, ordinary meat may be slaughtered and eaten at home, so long as the blood is poured out on the ground. But the holy offerings must be brought to the sanctuary, where families, servants and Levites will eat together and rejoice before the Lord. The chapter ends with a warning not to imitate the worship of the nations, which even includes the burning of children.
 
@@ -111,7 +111,7 @@ In each case the penalty is death, and the language is severe. The chapter treat
 === 14
 Having warned against anything that would draw Israel to other gods, Moses moves to the everyday practices that mark them out as a people belonging to the Lord. You are sons of the Lord your God, he begins, and you are a holy people.
 
-First he forbids the mourning customs of their neighbours, cutting the body or shaving the forehead for the dead. Then comes a list of foods. Much of it repeats the laws of clean and unclean animals in Leviticus: land animals that both chew the cud and have a split hoof may be eaten, sea creatures with fins and scales, and birds other than those named. The pig, the camel and many birds of prey are forbidden. A short command not to cook a young goat in its mother's milk, given twice already in Exodus, appears here a third time.
+He forbids the mourning customs of their neighbours, cutting the body or shaving the forehead for the dead. Then he turns to the table. Much of what he says repeats the laws of clean and unclean animals in Leviticus: land animals that both chew the cud and have a split hoof may be eaten, sea creatures with fins and scales, and birds other than those named. The pig, the camel and many birds of prey are forbidden. A short command not to cook a young goat in its mother's milk, given twice already in Exodus, appears here a third time.
 
 The chapter closes with the tithe, a tenth of each year's harvest. It is to be eaten as a joyful feast at the place the Lord will choose, and if the journey is too far, it may be turned into money and spent there. Every third year, the tithe stays in the towns, to feed the Levite, the foreigner, the fatherless and the widow.
 
@@ -171,21 +171,21 @@ The chapter ends with the body of an executed man hung on a tree, which must be 
 === 22
 The laws continue with a wide variety of everyday situations, and the opening examples show the spirit of many of them. If you see a neighbour's ox or sheep straying, or his donkey fallen on the road, you must not look away. Even a bird's nest by the road is covered: the young may be taken, but the mother bird is to go free.
 
-A run of short commands follows. A new house must have a railing round its flat roof, where people in that world often worked and gathered, so that no one falls. Men and women must not wear each other's clothing. Certain things must not be mixed: two kinds of seed in a vineyard, an ox and a donkey under one yoke, wool and linen in one garment. Tassels are to be worn on the corners of the cloak, as Numbers also commanded.
+Then comes a quick run of commands drawn from house, field and wardrobe. A new house must have a railing round its flat roof, where people in that world often worked and gathered, so that no one falls. Men and women must not wear each other's clothing. Certain things must not be mixed: two kinds of seed in a vineyard, an ox and a donkey under one yoke, wool and linen in one garment. Tassels are to be worn on the corners of the cloak, as Numbers also commanded.
 
 The rest of the chapter deals with marriage and sexual conduct, including a husband who falsely accuses his new wife, adultery, and the violation of a young woman. Some of these laws are severe, but they repeatedly protect a woman from a false charge or from blame where she could not resist.
 
 === 23
 The laws now turn to who may belong to the assembly of the Lord, the gathered people of Israel at worship. Certain people are excluded, and the reasons given for two of them reach back into Israel's recent history. Ammonites and Moabites may not enter, because they did not meet Israel with food and water on the journey, and because Moab hired Balaam to curse them. Yet Edomites are not to be despised, because they are Israel's brothers, descended from Esau, and Egyptians are not to be despised, because Israel once lived as foreigners in their land. The book of Ruth will later tell of a Moabite woman who joined herself to Israel's God and became an ancestor of King David.
 
-Varied laws follow. The army's camp must be kept clean, because the Lord walks through it. A slave who escapes from a foreign master and takes refuge in Israel must not be handed back. Israelites are not to charge one another interest. Vows to the Lord must be kept promptly.
+Then Moses moves swiftly through the life of the people, from the army camp to the vineyard. The camp must be kept clean, because the Lord walks through it. A slave who escapes from a foreign master and takes refuge in Israel must not be handed back. Israelites are not to charge one another interest. Vows to the Lord must be kept promptly.
 
 The chapter ends with a small law of neighbourliness. A traveller passing through a vineyard or grainfield may eat his fill, but not fill a basket or put a sickle to the grain.
 
 === 24
-The laws continue, many of them concerned with protecting people who could easily be harmed. The chapter begins with divorce. It regulates divorce, requiring a written certificate, and forbidding a man to remarry a woman he has divorced once she has married another. Jesus would be questioned about this passage, and his answer is recorded in the Gospels.
+The laws continue, and many of them stand guard over people who could easily be harmed. The chapter begins with divorce, requiring a written certificate and forbidding a man to take back a wife he has divorced once she has married another. Jesus would be questioned about this passage, and his answer is recorded in the Gospels.
 
-A newly married man is to be free from military service for a year. A millstone may not be taken as security for a loan, because a family needs it to make bread every day. Kidnapping an Israelite is a crime punishable by death. Moses reminds the people of what happened to Miriam when he speaks of skin disease.
+A newly married man is to be free from military service for a year, to stay at home and bring joy to his wife. A family's millstone may not be taken as security for a loan, because that would be taking its livelihood. Kidnapping an Israelite is punishable by death. And when Moses comes to skin disease, he tells the people to remember what the Lord did to Miriam on the way out of Egypt.
 
 Then come laws for the poor and the vulnerable. A lender must not walk into a borrower's house to take security, and a poor man's cloak must be returned by nightfall, so that he can sleep in it. Wages must be paid before sunset. Children are not to be put to death for their parents' sins. At harvest time, a forgotten sheaf is to be left in the field, and olive trees and vines are not to be stripped bare, so that the foreigner, the fatherless and the widow can glean.
 
@@ -213,16 +213,16 @@ It is to take place in the heart of Canaan, at the two mountains Moses mentioned
 Six tribes are to stand on Gerizim for the blessing, and six on Ebal for the curse. Then the Levites are to call out a series of twelve curses, each answered by the whole people with a single word: Amen. Many of them name sins committed in secret, an idol hidden away, a boundary stone moved, a blind man led astray, a neighbour struck down unseen, and the last sums up all the rest.
 
 === 28
-Moses resumes his speech, and sets out the consequences of the covenant in the starkest terms the Torah contains. Treaties in the ancient Near East commonly closed with blessings for loyalty and curses for betrayal, and this chapter has that shape.
+Moses resumes his speech, and now he lays before the people where each road will lead: the blessings of the covenant and its curses, set out in the starkest terms the Torah contains.
 
 It begins with blessing. If Israel obeys, they will be blessed in the city and in the country, in children, crops and flocks, in coming in and going out. The rain will fall in its season, enemies will flee, and Israel will lend to many nations and borrow from none.
 
 Then the tone darkens, and the curses run on far longer than the blessings: disease, drought, defeat and humiliation. As the chapter goes on, it describes a nation from far away, speaking an unknown language, besieging Israel's cities until the people suffer the worst horrors of famine, and finally Israel scattered among the nations, serving gods of wood and stone. The last line imagines them going back to Egypt in ships, offering themselves as slaves, with no one willing to buy.
 
-Later generations read these words with grief, because the histories and prophets record sieges and exile at the hands of Assyria and Babylon.
+The histories and prophets that follow will tell of sieges and exile like these, at the hands of Assyria and Babylon.
 
 === 29
-The blessings and curses have been set out. Now a new heading marks what many readers regard as Moses' third address: these are the words of the covenant made with Israel in the land of Moab, in addition to the covenant made at Horeb.
+The blessings and curses have been set out. Now a new heading marks a fresh stage in Moses' words: these are the words of the covenant made with Israel in the land of Moab, in addition to the covenant made at Horeb.
 
 Moses summons all Israel and begins, once more, with what they have seen: the signs in Egypt, the forty years in which their clothes and sandals did not wear out, the defeat of Sihon and Og. Yet, he says, to this day the Lord has not given them a mind to understand or eyes to see.
 

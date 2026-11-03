@@ -18,9 +18,9 @@ Nehemiah is the last of the Old Testament's historical narratives. After it, the
 === 1
 The book begins in Susa, the Persian royal city, in the month of Chislev, early in the winter. It is the twentieth year of King Artaxerxes, and the man speaking is Nehemiah son of Hacaliah.
 
-Hanani, one of Nehemiah's brothers, has arrived from Judah with a group of men. Nehemiah asks about the Jews who escaped the exile and about Jerusalem. Their answer is bleak. The people in the province are in great trouble and disgrace, the wall of Jerusalem is broken down, and its gates have been burned. Whether this is the old ruin left by Babylon or fresh damage after the halted rebuilding recorded in Ezra, the news strikes Nehemiah hard.
+Hanani, one of Nehemiah's brothers, has arrived from Judah with a group of men. Nehemiah asks about the Jews who escaped the exile and about Jerusalem. Their answer is bleak. The people in the province are in great trouble and disgrace, the wall of Jerusalem is broken down, and its gates have been burned. Nehemiah sits down and weeps.
 
-For days he mourns, fasts and prays. The prayer at the heart of the chapter draws on the words of Moses: God had warned that an unfaithful Israel would be scattered, and promised that a repentant Israel would be gathered again. Nehemiah confesses his people's sins as his own and asks for success before this man. Only in the last line do we learn who that man is, and what Nehemiah does: he is cupbearer to the king.
+For days afterwards he mourns, fasts and prays. The prayer at the heart of the chapter draws on the words of Moses: God had warned that an unfaithful Israel would be scattered, and promised that a repentant Israel would be gathered again. Nehemiah confesses his people's sins as his own and asks for success before this man. Only in the last line do we learn who that man is, and what Nehemiah does: he is cupbearer to the king.
 
 === 2
 Four months have passed since the news from Jerusalem. It is now the month of Nisan, in the spring, and Nehemiah is at his duties, serving wine to King Artaxerxes, with the queen seated beside him.
@@ -32,7 +32,7 @@ His arrival does not go unnoticed. Two men are named who will oppose him through
 === 3
 The people have agreed to rebuild, and this chapter shows how they did it. It is a record of who built which section of the wall, a little like a list of names carved on a memorial.
 
-The account traces the circuit of the walls, starting at the Sheep Gate, close to the temple at the north-eastern corner, then running west along the northern wall, down the western side and round the southern tip of the city, and back up the eastern side above the Kidron Valley. Gates and towers mark the way: the Fish Gate, the Valley Gate, the Dung Gate, the Fountain Gate, the Water Gate, the Horse Gate. Some of these cannot now be located with certainty.
+The account walks the listener round the whole circuit of the walls, gate by gate and tower by tower. It starts at the Sheep Gate near the temple, runs west along the northern wall past the Fish Gate, down the western side to the Valley Gate and the Dung Gate, round the southern tip of the city by the Fountain Gate and the stairs of the City of David, and back up the eastern side above the Kidron Valley, past the Water Gate and the Horse Gate, until it comes home to the Sheep Gate where it began.
 
 What stands out is who is doing the work. The high priest and his fellow priests start at the Sheep Gate. Goldsmiths and perfume makers work alongside district rulers and men from towns across Judah, and one man's daughters build beside him. Many repair the stretch beside their own homes. One group, the nobles of Tekoa, refuse to put their shoulders to the work, and the record notes it. Nehemiah the governor does not appear in the list at all; the Nehemiah named partway through is another man.
 
@@ -41,19 +41,19 @@ The work is going ahead along the whole circuit of the wall, and now the opposit
 
 As the gaps close, mockery turns to menace. Enemies on every side, from Samaria, Ammon, the Arabs and the coastal city of Ashdod, plot an attack. The builders are exhausted, the rubble seems endless, and Jews living near the enemy keep coming with warnings. Fear and fatigue are now as dangerous to the work as the enemy.
 
-Nehemiah's answer is part prayer and part military planning. The rest of the chapter shows a city working under arms, with builders carrying swords as they work, a trumpeter beside Nehemiah ready to sound the alarm, and no one taking off his clothes at night.
+Nehemiah's answer is part prayer and part military planning. The rest of the chapter shows a city working under arms, with builders carrying swords as they work, a trumpeter beside Nehemiah ready to sound the alarm, and Nehemiah and his men never changing out of their clothes, their weapons in hand even to fetch water.
 
 === 5
 The wall is rising and the enemies outside have been held at bay. Now Nehemiah faces a crisis from inside the community, and it is a bitter one.
 
 There has been a famine, and the poorer families are in desperate straits. Some have mortgaged their fields, vineyards and homes to buy grain. Others have borrowed money to pay the king's tax. Some have had to hand over their sons and daughters as slaves to fellow Jews, the nobles and officials who have lent to them at interest. The Law of Moses forbade Israelites to charge interest to their poor brothers, and Nehemiah is furious.
 
-He calls a public assembly and confronts the lenders before the whole people. Then the chapter steps forward in time. Writing at the end of his twelve years as governor, Nehemiah describes how he conducted himself. Unlike earlier governors, he never claimed the food allowance his office entitled him to, though he fed a hundred and fifty officials and many guests at his table every day. The chapter closes with the first of several short prayers that he adds to his account, asking God to remember him.
+He calls a public assembly and confronts the lenders before the whole people. Then the chapter steps forward in time. Writing at the end of his twelve years as governor, Nehemiah describes how he conducted himself. Unlike earlier governors, he never claimed the food allowance his office entitled him to, though a hundred and fifty Jews and officials, besides guests from the surrounding nations, ate at his table. The chapter closes with the first of several short prayers that he adds to his account, asking God to remember him.
 
 === 6
 The wall is finished, with not a gap left in it, though the doors have not yet been hung in the gates. Sanballat, Tobiah and Geshem change their tactics. Open threats have failed, so now they try cunning.
 
-First comes an invitation to a meeting in the plain of Ono, near Lod, on the edge of the coastal plain and well away from Jerusalem. Nehemiah suspects a trap. Then comes an open letter, the kind anyone could read along the way, accusing him of plotting rebellion and planning to make himself king. In the Persian Empire that was a dangerous charge, and the rumour alone could undo everything.
+First comes an invitation to a meeting in the plain of Ono, near Lod, on the edge of the coastal plain and well away from Jerusalem. Nehemiah knows they mean him harm, and four times he sends back the same answer: he is doing a great work and cannot come down. Then comes an open letter, the kind anyone could read along the way, accusing him of plotting rebellion and planning to make himself king. In the Persian Empire that was a dangerous charge, and the rumour alone could undo everything.
 
 The last scheme comes through a man in Jerusalem, Shemaiah, who urges Nehemiah to hide from assassins inside the temple building itself, where only priests were allowed to go. Nehemiah sees through each of these, and the wall is completed in fifty-two days, in the month of Elul, at the end of summer. Even so, the chapter ends with a reminder that the struggle is not over: Tobiah has family ties with leading households in Judah, and a stream of letters keeps passing between them.
 
@@ -69,7 +69,7 @@ The wall is finished. Now, on the first day of the seventh month, the opening of
 
 The man they ask is Ezra the scribe, who has not appeared in Nehemiah's story until now. It is about thirteen years since he came from Babylon to teach the Law, and here, for the first time, the two leaders stand together.
 
-Ezra stands on a wooden platform built for the occasion, with leading men on either side, and as he opens the scroll the whole crowd rises to its feet. He reads from daybreak until noon. Levites move among the people, explaining the reading so that everyone can understand. The people's first response is to weep, and they have to be told that this is a day for feasting. The next day, studying the Law further, the leaders discover something that will fill the rest of the month with celebration.
+Ezra stands on a wooden platform built for the occasion, with leading men on either side, and as he opens the scroll the whole crowd rises to its feet. He reads from daybreak until noon. As the people stand in their places, Levites explain the reading so that everyone can understand. The people's first response is to weep, and they have to be told that this is a day for feasting. The next day, studying the Law further, the leaders discover something that will soon have the whole city out gathering leafy branches.
 
 === 9
 The Feast of Tabernacles has been kept with great joy, and it ended only two days ago. Now, on the twenty-fourth day of the same month, the mood is very different. The people gather again, this time fasting, dressed in sackcloth, with dust on their heads.
@@ -88,19 +88,19 @@ Then come the terms, spoken by the whole people. They swear to keep the Law of M
 === 11
 The story now returns to the problem raised back in chapter seven, before the great assembly: Jerusalem has strong walls but too few people living inside them.
 
-The leaders already live in the city. For the rest, lots are cast, and one family in every ten is chosen to move into Jerusalem, while the others stay in their towns and villages. Some volunteer, and the people bless them for it. Living in the capital meant leaving fields and family land, and it may also have carried some danger.
+The leaders already live in the city. For the rest, lots are cast, and one family in every ten is chosen to move into Jerusalem, while the others stay in their towns and villages. Some volunteer, and the people bless them for it. Living in the capital meant leaving fields and family land behind.
 
 Most of the chapter is a record of who settled there: families from the tribes of Judah and Benjamin, priests, Levites, singers and gatekeepers, with the numbers of fighting men and temple workers. It ends with a list of the towns and villages where the rest of the people lived, from Beersheba in the far south to the Valley of Hinnom just outside Jerusalem, and through the towns of Benjamin to the north. It is a picture of the community as it now stood, a city at its heart and the old towns of Judah around it.
 
 === 12
-The chapter opens with more lists, this time of the priests and Levites. They reach back to the first return under Zerubbabel and Jeshua the high priest, and they trace the line of high priests from Jeshua through several generations, some of them beyond Nehemiah's own lifetime. For a community rebuilt around its temple, an unbroken priestly succession mattered a great deal.
+The chapter opens with more lists, this time of the priests and Levites. They reach back to the first return under Zerubbabel and Jeshua the high priest, and they trace the line of high priests from Jeshua, father to son, through six generations to Jaddua. For a community rebuilt around its temple, an unbroken priestly succession mattered a great deal.
 
 Then Nehemiah's own voice returns, and the scene changes to the event the whole book has been moving toward: the dedication of the wall of Jerusalem. The Levites and singers are gathered from the villages, and the priests purify themselves, the people, the gates and the wall.
 
 Nehemiah stages the celebration on the wall itself. Two great choirs climb up and process along its top in opposite directions, one led by Ezra, the other followed by Nehemiah, until they meet at the house of God. Nearly a century earlier, when the temple's foundation was laid, the sound of joy had been mingled with weeping. This time the joy of Jerusalem is heard far away.
 
 === 13
-The book's final chapter begins with one more public reading of the Law, and then it jumps forward. Nehemiah explains that after his twelve years as governor he went back to King Artaxerxes, in the king's thirty-second year. Some time later, how long is not said, he obtained leave to return to Jerusalem.
+The book's final chapter begins with one more public reading of the Law, and then it jumps forward. Nehemiah explains that after his twelve years as governor he went back to King Artaxerxes, in the king's thirty-second year. Some time later he obtained leave to return to Jerusalem.
 
 What he finds there is dispiriting. The first discovery is that Eliashib, the priest in charge of the temple storerooms, has given a room in the temple courts to Tobiah, the Ammonite who fought the rebuilding. It is not the last. One by one, the promises the people sealed in their covenant, about the support of the Levites, the Sabbath and marriage, turn out to have been quietly set aside, and the trouble reaches even into the high priest's own family.
 
