@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 98  # bump on every shipped build; also busts the service-worker cache
+VERSION = 99  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -157,7 +157,7 @@ def main():
     for e in usable:
         it = {"id": e["id"], "t": e["title"], "who": "Fearless" if e["speaker"].startswith("fearless:") else "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Skip" if skip_guest(e) else e["speaker"] if e["speaker"] in ("Davey", "Skip") else "Platt"),
               "show": config.SHOWS.get(e["source"]),
-              **({"s": INTROS[e["id"]]} if INTROS.get(e["id"]) else {"s": 13} if e["source"] == "skip_archive" and re.match(r"\s*Flight\b", e["title"]) else {"s": config.INTRO_SKIP[e["source"]]} if config.INTRO_SKIP.get(e["source"]) else {}),
+              **(({"s": INTROS[e["id"]]} if INTROS[e["id"]] else {}) if e["id"] in INTROS else {"s": 13} if e["source"] == "skip_archive" and re.match(r"\s*Flight\b", e["title"]) else {"s": config.INTRO_SKIP[e["source"]]} if config.INTRO_SKIP.get(e["source"]) else {}),
               "by": ("Pastor " + e["speaker"].split(":", 1)[1] if e["speaker"] != "fearless:Fearless Church" else None) if e["speaker"].startswith("fearless:") else e["speaker"].split(":", 1)[1] if (e["speaker"] in team or skip_guest(e)) else None,
               "era": e["era"], "tr": e["track"], "src": e["source"], "url": e.get("primary_url") or e["url"],
               "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() else 0,

@@ -1,0 +1,71 @@
+# Start and end points for every recording on the road (tools/trim.py): past intros, music, announcers and
+# sponsor messages; before outros. Daily: recordings not measured yet. Sundays (or by hand, all=1): every one again.
+name: Trim intros and outros
+on:
+  schedule:
+    - cron: "23 9 * * *"
+  workflow_dispatch:
+    inputs:
+      all:
+        description: "1 = measure every recording again"
+        default: "0"
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: trim
+  cancel-in-progress: false
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper
+      - run: python app_build.py >/dev/null
+      - run: |
+          ALL=${{ github.event.inputs.all || '0' }}
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" = "7" ]; then ALL=1; fi
+          ALL=$ALL python tools/trim.py measure ${{ matrix.shard }} 16
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: trim-${{ matrix.shard }}
+          path: trim/
+          if-no-files-found: ignore
+  merge:
+    needs: measure
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - run: python app_build.py >/dev/null
+      - uses: actions/download-artifact@v4
+        with:
+          path: trim-parts
+      - run: mkdir -p trim && find trim-parts -name '*.json' -exec sh -c 'cp "$1" "trim/$(basename $(dirname $1))-$(basename $1)"' _ {} \; ; ls trim | wc -l
+      - run: python tools/trim.py merge
+      - name: Save and republish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/intro_skip/
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Intro and outro trim points"
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          gh workflow run refresh.yml -f sources=fearless -f check_links=false

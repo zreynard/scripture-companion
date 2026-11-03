@@ -3,8 +3,6 @@
 # Then save data/intro_skip/ and republish the app.
 name: Intro start points
 on:
-  schedule:
-    - cron: "41 10 * * *"
   workflow_dispatch:
     inputs:
       mode:
