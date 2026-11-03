@@ -21,7 +21,9 @@ OPEN = os.path.join(HERE, "data", "intro_skip", f"{SOURCE}_opening.json")
 SECS = 90
 HANDOFF = re.compile(r"here'?s\s*$", re.I)          # "... Now here's" + "Stephen"
 GREET = re.compile(r"thank(s| you) for joining|welcome (back )?to (the )?wisdom journey|wisdom journey with stephen|"
-                   r"lesson (is )?(called|titled|entitled)|today'?s lesson is|stephen (returns|continues|takes us|is back)", re.I)
+                   r"lesson (is )?(called|titled|entitled)|today'?s lesson is|stephen (returns|continues|takes (us|you)|is back|brings|walks|leads)|"
+                   r"stephen dav[a-z]* is (taking|teaching|walking)|66 books|over three years|this is the wisdom journey|"
+                   r"on (today'?s|this) (episode|wisdom journey)", re.I)
 _model = None
 
 
