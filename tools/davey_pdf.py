@@ -24,6 +24,7 @@ def text_of(pdf):
 def parse(pdf):
     """Each sermon on the page ends with "Series: <name>": split there, then read title, speaker, date and reference."""
     t = text_of(pdf).replace("Back to Teaching Series", " ").strip()
+    t = re.sub(r"^Back\s+(?=Sermons in|Series:)", "", t)   # the page's "Back" link, run into the heading
     m = re.search(r"Series: (.+?)(?=\s+\S)", t)
     names = re.findall(r"Series: ((?:Sermons in |Topic: )?[A-Z0-9][A-Za-z0-9&',.:-]*(?: [A-Z0-9&][A-Za-z0-9&',.:-]*)*)", t)
     series = max(set(names), key=names.count) if names else os.path.basename(pdf)
