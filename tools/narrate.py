@@ -100,17 +100,24 @@ def shard_of(chs, k, shards):
 def asset(x, ext): return f'{x["abbr"]}_{x["c"]:03d}.{ext}'
 
 
+# GitHub allows 1000 files per release, so a testament spills over into narration-ot-2, -3, ...
+TAGS = lambda t: [TAG(t)] + [f"{TAG(t)}-{i}" for i in range(2, 6)]
+
+
 def release_files(t):
-    """Every file in a testament's release (listed page by page: a release holds over a thousand)."""
-    rid = subprocess.run(["gh", "api", f"repos/{REPO}/releases/tags/{TAG(t)}", "-q", ".id"], capture_output=True, text=True).stdout.strip()
-    if not rid: return set()
-    r = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/releases/{rid}/assets?per_page=100", "-q", ".[].name"],
-                       capture_output=True, text=True, check=True)
-    return set(r.stdout.split())
+    """Every file in a testament's releases, as {name: release tag} (listed page by page)."""
+    out = {}
+    for tag in TAGS(t):
+        rid = subprocess.run(["gh", "api", f"repos/{REPO}/releases/tags/{tag}", "-q", ".id"], capture_output=True, text=True).stdout.strip()
+        if not rid: continue
+        r = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/releases/{rid}/assets?per_page=100", "-q", ".[].name"],
+                           capture_output=True, text=True, check=True)
+        for n in r.stdout.split(): out.setdefault(n, tag)
+    return out
 
 
 def uploaded():
-    return release_files("OT") | release_files("NT")
+    return set(release_files("OT")) | set(release_files("NT"))
 
 
 # ---------- making the audio ----------
@@ -221,12 +228,22 @@ def make(reader, x, outdir):
 
 
 def upload(files, testament):
-    for k in range(5):
-        r = subprocess.run(["gh", "release", "upload", TAG(testament), *files, "--clobber", "-R", REPO], capture_output=True, text=True)
-        if not r.returncode: return
-        print("  upload retry", r.stderr[:200], flush=True)
-        import time; time.sleep(5 * (k + 1))
-    raise RuntimeError("upload failed")
+    import time
+    for tag in TAGS(testament):
+        for k in range(5):
+            r = subprocess.run(["gh", "release", "upload", tag, *files, "--clobber", "-R", REPO], capture_output=True, text=True)
+            if not r.returncode: return
+            err = r.stderr
+            if "file_count limited" in err: break  # this release is full: the next one
+            if "release not found" in err.lower():  # first chapter to spill over: start the next release
+                subprocess.run(["gh", "release", "create", tag, "-R", REPO, "--title", f"Narration ({tag[10:]})",
+                                "--notes", "More chapters read aloud by Alistair (a release holds at most 1000 files)."], capture_output=True)
+                continue
+            print("  upload retry", err[:200], flush=True)
+            time.sleep(5 * (k + 1))
+        else:
+            raise RuntimeError("upload failed")
+    raise RuntimeError("every release is full")
 
 
 def run(k, shards, only=""):
@@ -278,12 +295,12 @@ def mirror():
         have = set(git(d, "ls-tree", "--name-only", "HEAD").split())
     todo = []
     for t in ("OT", "NT"):
-        todo += [(t, n) for n in sorted(release_files(t)) if n.endswith(".mp3") and n not in have]
+        todo += [(tag, n) for n, tag in sorted(release_files(t).items()) if n.endswith(".mp3") and n not in have]
     print(f"{len(have & {n for n in have if n.endswith('.mp3')})} chapters on the audio branch, {len(todo)} to add", flush=True)
     for i in range(0, len(todo), 80):
         batch = todo[i:i + 80]
         for t, n in batch:
-            subprocess.run(["gh", "release", "download", TAG(t), "-R", REPO, "-p", n, "-D", d, "--clobber"], check=True)
+            subprocess.run(["gh", "release", "download", t, "-R", REPO, "-p", n, "-D", d, "--clobber"], check=True)
             git(d, "add", n); os.remove(os.path.join(d, n))
         git(d, *git_id, "commit", "-q", "-m", f"Narration audio: {len(batch)} chapters")
         for k in range(4):
@@ -299,7 +316,8 @@ def collect(playable=None):
     """Timings for every chapter; with playable, only the chapters whose audio the app can already fetch."""
     tmp = tempfile.mkdtemp()
     for t in ("OT", "NT"):
-        subprocess.run(["gh", "release", "download", TAG(t), "-R", REPO, "-p", "*.json", "-D", tmp, "--clobber"], check=False)
+        for tag in TAGS(t):
+            subprocess.run(["gh", "release", "download", tag, "-R", REPO, "-p", "*.json", "-D", tmp, "--clobber"], check=False)
     books = {}
     for f in sorted(glob.glob(os.path.join(tmp, "*.json"))):
         m = json.load(open(f))
