@@ -16,6 +16,7 @@ from refs import parse_refs, merge_refs, refs_to_text  # noqa: E402
 
 OUT = os.path.join(HERE, "data", "spoken_refs.json")
 MINUTES = 9
+UA = "scripture-companion (personal Bible app; github.com/zreynard/scripture-companion)"
 CUE = re.compile(r"\b(?:turn(?:ing)?|open(?:ing)?|look(?:ing)?|find|go|join me|read(?:ing)?|we(?:'re| are) in|our (?:text|passage)|the (?:text|passage)|"
                  r"in your bibles?|in our (?:study|journey) (?:of|through)|today in|this morning in|tonight in)\b", re.I)
 ORD = {"first": "1", "second": "2", "third": "3", "1st": "1", "2nd": "2", "3rd": "3"}
@@ -74,19 +75,25 @@ def main(k=0, n=1):
     found = 0
     for i, e in enumerate(todo, 1):
         wav = os.path.join(tmp, "a.wav")
-        r = subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-t", str(MINUTES * 60), "-i", audio_of(e), "-ac", "1", "-ar", "16000", wav],
-                           capture_output=True, text=True, timeout=600)
-        if r.returncode or not os.path.exists(wav):
+        if os.path.exists(wav): os.remove(wav)
+        try:
+            r = subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-user_agent", UA, "-t", str(MINUTES * 60), "-i", audio_of(e),
+                                "-ac", "1", "-ar", "16000", wav], capture_output=True, text=True, timeout=600)
+        except subprocess.TimeoutExpired:
+            print(f"  {e['title'][:60]}: audio timed out", flush=True); continue
+        if r.returncode or not os.path.exists(wav) or os.path.getsize(wav) < 100000:
             print(f"  {e['title'][:60]}: audio did not load ({r.stderr[:100]})", flush=True); continue
-        segs, _ = model.transcribe(wav, beam_size=1, language="en", vad_filter=True, condition_on_previous_text=False)
-        text, at = "", {}
-        for s in segs:
-            at[len(text)] = s.start; text += s.text + " "
+        try:
+            segs, _ = model.transcribe(wav, beam_size=1, language="en", vad_filter=True, condition_on_previous_text=False)
+            text, at = "", {}
+            for s in segs:
+                at[len(text)] = s.start; text += s.text + " "
+        except Exception as x:
+            print(f"  {e['title'][:60]}: could not transcribe ({str(x)[:80]})", flush=True); continue
         ref, quote = announced(text)
         done[e["id"]] = {"ref": ref, "quote": quote, "title": e["title"]}
         if ref: found += 1
         print(f"  [{i}/{len(todo)}] {e['title'][:55]!r}: {ref or '-'}" + (f"   <- \"{quote[:120]}\"" if quote else ""), flush=True)
-        os.remove(wav)
         if i % 10 == 0: json.dump(done, open(out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     json.dump(done, open(out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"announced passage heard in {found} of {len(todo)}", flush=True)
