@@ -1250,7 +1250,7 @@ function onAudio(type,fn){AUDIO_EL.forEach(el=>el.addEventListener(type,e=>{if(e
 /* ---- Even out volume: the leveler listens as audio plays and steers every episode to one level (loud ones down,
    quiet ones up, within ±10 dB, slowly so speech never pumps; pauses between words are ignored), then a gentle
    limiter catches peaks. Only for hosts that allow the browser to process their audio (CORS). ---- */
-const LEVEL_SRC=new Set(['davey_wfth','davey_journey','davey_sermons','platt_messages','ptw','secret_church_podcast','mclean_podcast','mclean_oceans','brookhills']);
+const LEVEL_SRC=new Set(['davey_wfth','davey_journey','davey_sermons','platt_messages','ptw','secret_church_podcast','mclean_podcast','mclean_oceans','brookhills','brookhills_archive','mclean_api']);
 let AC=null,LVG=null,LVA=null,lvl=null,lvlFast=0;
 function levelOn(){return S.get('level',true)!==false}
 function levelFor(i){return false}  // leveler turned off: every episode plays straight through the plain audio element
