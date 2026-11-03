@@ -218,7 +218,7 @@ SC_NO_PLACE = set()
 OFF_ROAD_SOURCES = {"ptw"}
 # Fearless Church (Spring Hill, TN): Sunday sermons, published on praise.global (the archive fearlesstn.org embeds).
 FEARLESS_FEED = "https://praise.global/feed/fearlesstn"
-SHOWS = {"fearless": "Fearless Church", "ptw": "Pray the Word", "davey_wfth": "Wisdom for the Heart", "davey_journey": "The Wisdom Journey"}
+SHOWS = {"fearless": "Fearless Church", "davey_archive": "Sermon archive", "ptw": "Pray the Word", "davey_wfth": "Wisdom for the Heart", "davey_journey": "The Wisdom Journey"}
 # Skip Heitzig (Calvary Church, Albuquerque): public podcast feeds. Each episode's itunes:author names its speaker.
 SKIP_FEEDS = {
     "skip_church": "http://feeds.calvaryabq.org/calvaryabqaudio",     # Sunday + Wednesday (Expound) messages, full length

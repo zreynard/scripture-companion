@@ -11,7 +11,7 @@ Sources (publisher-issued only):
 Run:  python run.py harvest [--sources ptw,platt_messages,...]
 """
 from __future__ import annotations
-import json, os, re, subprocess, sys, time, urllib.parse
+import glob, json, os, re, subprocess, sys, time, urllib.parse
 from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
 
@@ -81,6 +81,28 @@ def harvest_fearless() -> list[dict]:
         e["audio_override"] = it["enclosure"]
         out.append(e)
     _log(f"fearless: {len(out)} sermons")
+    return out
+
+# ---------- Stephen Davey's full sermons (Wisdom International's archive; lists in data/davey_archive/, audio found by
+# tools/davey_resolve.py on Wisdom's media server) ----------
+def harvest_davey_archive() -> list[dict]:
+    from datetime import datetime
+    out = []
+    for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "davey_archive", "*.json"))):
+        d = json.load(open(f, encoding="utf-8"))
+        for x in d["sermons"]:
+            if not x.get("mp3"): continue
+            try: pub = datetime.strptime(x["date"], "%B %d, %Y").strftime("%a, %d %b %Y 12:00:00 +0000")
+            except ValueError: pub = ""
+            tp = x.get("title_passage", "")
+            nm = re.sub(r"\s+", " ", x["name"] or x["title"]).strip()
+            title = f"{nm} ({tp})" if tp and re.search(r"\d", tp) else nm
+            e = make_entry(source="davey_archive", source_url="https://www.wisdomonline.org/teaching-series", url=x["mp3"], title=title,
+                           description=f'{d["series"]}. Scripture: {x.get("ref", "")}', published=pub, duration="", author="Stephen Davey", era="davey",
+                           series=d["series"], extra_ref_text=(tp if re.search(r"\d", tp) else "") or x.get("ref", ""))
+            e["audio_override"] = x["mp3"]
+            out.append(e)
+    _log(f"davey_archive: {len(out)} sermons with audio")
     return out
 
 # ---------- Skip Heitzig feeds (Subsplash audio; the episode's mp3 address is its link) ----------
@@ -578,7 +600,7 @@ def harvest_youtube_audio() -> list[dict]:
     return out
 
 # ---------- orchestration ----------
-ALL_SOURCES = ["fearless", "brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
+ALL_SOURCES = ["fearless", "davey_archive", "brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
                "youtube_2819", "youtube_pam", "youtube_victory", "victory_podcast"]
 
 def run(sources: list[str], radical_limit: int | None = None):
@@ -606,6 +628,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "radical": entries = harvest_radical(radical_limit)
             elif s == "secret_church_podcast": entries = harvest_itunes_podcast("secret_church_podcast", config.PODCAST_SEARCH_TERMS["secret_church"], r"secret church", "platt", channel_default="Platt")
             elif s == "fearless": entries = harvest_fearless()
+            elif s == "davey_archive": entries = harvest_davey_archive()
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt") + harvest_mclean_api()
             elif s in config.DAVEY_FEEDS:
                 sid, feed = config.DAVEY_FEEDS[s]

@@ -75,7 +75,7 @@ def detect_track(source: str, title: str, description: str, merged_refs: dict) -
 
 # Sources whose passages come from the parser (never hand-curated) — re-mapped whenever the rules change.
 REPARSE_SOURCES = {"ptw", "platt_messages", "2819_podcast", "street_preachers", "mclean_oceans",
-                   "davey_sermons", "davey_wfth", "davey_journey", "victory_podcast", "mclean_podcast", "radical_message",
+                   "davey_sermons", "davey_wfth", "davey_journey", "davey_archive", "victory_podcast", "mclean_podcast", "radical_message",
                    "youtube_2819", "youtube_pam", "youtube_victory", "skip_church", "skip_connect"}
 MAIN_TEXT_RE = re.compile(r"\b(?:message|sermon|episode|teaching|talk|study)\b[^.]{0,60}?"
                           r"\b(?:from|on|through|in|of|unpacks|walks through|looks at|explores|expounds)\s+", re.I)

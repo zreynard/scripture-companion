@@ -1,0 +1,36 @@
+# Stephen Davey's full sermons (tools/davey_resolve.py): find each listed sermon's audio, save, republish.
+name: Davey sermon archive
+on:
+  workflow_dispatch:
+  push:
+    paths: ["data/davey_archive/**"]
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: davey-archive
+  cancel-in-progress: false
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - run: python tools/davey_resolve.py
+      - name: Save and republish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/davey_archive
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Davey sermon archive: audio found"
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          gh workflow run refresh.yml -f sources=davey_archive -f check_links=false
