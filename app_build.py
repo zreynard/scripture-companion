@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 86  # bump on every shipped build; also busts the service-worker cache
+VERSION = 87  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -66,8 +66,10 @@ def is_walk(title):
 def main():
     # where each episode's intro ends, found by tools/intro_detect.py (data/intro_skip/<source>.json: {id: seconds})
     INTROS = {}
+    OUTROS = {}  # seconds before the end where the teaching's last word ends (data/intro_skip/<source>_end.json)
     for f in sorted(_glob.glob(os.path.join(HERE, "data", "intro_skip", "*.json"))):
-        INTROS.update(json.load(open(f, encoding="utf-8")))
+        if f.endswith("_opening.json"): continue
+        (OUTROS if f.endswith("_end.json") else INTROS).update(json.load(open(f, encoding="utf-8")))
     entries = [json.loads(l) for l in open(VERIFIED, encoding="utf-8")]
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
@@ -134,7 +136,8 @@ def main():
               "era": e["era"], "tr": e["track"], "src": e["source"], "url": e.get("primary_url") or e["url"],
               "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() else 0,
               "date": iso_date(e.get("published")), "pass": e.get("refs_text", ""), "tier": e["tier"],
-              "sc": [e.get("sc_season"), e.get("sc_episode")] if e.get("sc_season") else None}
+              "sc": [e.get("sc_season"), e.get("sc_episode")] if e.get("sc_season") else None,
+              **({"e": OUTROS[e["id"]]} if OUTROS.get(e["id"]) else {})}
         items[it["id"]] = it
         item_books[it["id"]] = set(e["refs"])
         CH[it["id"]] = {b: set(d["chapters"]) for b, d in e["refs"].items()}
@@ -780,7 +783,7 @@ const fmt=s=>{s=Math.max(0,Math.round(s||0));const h=Math.floor(s/3600),m=Math.f
 const mins=s=>s?Math.round(s/60)+' min':'';
 const isDone=id=>!!(prog[id]&&prog[id].done);
 // Listened = at least 70% of the teaching actually played (seconds heard, not where the slider sits)
-const DONE_AT=0.7,body=id=>{const p=prog[id]||{};return Math.max(1,(p.dur||0)-(I[id].s||0))},heardPct=id=>{const p=prog[id]||{};return p.dur&&p.heard?Math.min(100,Math.round(100*p.heard/body(id))):0};
+const DONE_AT=0.7,body=id=>{const p=prog[id]||{};return Math.max(1,(p.dur||0)-(I[id].s||0)-(I[id].e||0))},tail=()=>cur&&I[cur]&&I[cur].e||0,heardPct=id=>{const p=prog[id]||{};return p.dur&&p.heard?Math.min(100,Math.round(100*p.heard/body(id))):0};
 let lastT=null,ready=true;const OPEN=new Set();
 /* ---- the Bible text (Berean Standard Bible, public domain): one file per book, fetched once, then offline ---- */
 /* ---- people, places and the map (atlas.json, loaded on first use) ---- */
@@ -1274,14 +1277,16 @@ function play(id,o={}){const i=I[id];if(!i.audio)return;let wait=false;if(cur!==
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',()=>skipTrack(1),'previoustrack',()=>skipTrack(-1)].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  if(o.load||wait)return;audio.paused?audio.play().catch(()=>{}):audio.pause()}
 function next(){if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq();for(let j=q.indexOf(cur)+1;j<q.length;j++)if(!isDone(q[j])&&okWho(q[j])){play(q[j]);return}return}const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;seq.push(...orderedIds(x.b,x.c))});/* continue from where the listener stands: a teaching that spans chapters appears in each of them */let k=seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]);if(k<0)k=seq.lastIndexOf(cur);for(let j=k+1;j<seq.length;j++)if(I[seq[j]].audio&&!isDone(seq[j])&&okWho(seq[j])){play(seq[j]);return}}
-let saveSec=-1;onAudio('timeupdate',()=>{if(!cur||narWait)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt((d-t)/speed);
+let saveSec=-1;onAudio('timeupdate',()=>{if(!cur||narWait)return;const d=audio.duration||0,t=audio.currentTime;$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(Math.max(0,d-t-tail())/speed);
+ if(tail()&&d&&d-t<=tail()&&!audio.paused&&!audio.seeking&&ready){audio.pause();finished();return}/* the outro after the last word: done */
  if(I[cur].nar){if(!ready)return;narMark();if(d&&d-t<45)narPrefetch();const sec=Math.floor(t);if(sec%5===0&&sec!==saveSec){saveSec=sec;const pos=S.get('narpos',{});pos[cur]=t;S.set('narpos',pos)}return}
  if(!ready)return;const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
  if(lastT!==null&&!audio.paused&&!audio.seeking){const dt=t-lastT;if(dt>0&&dt<4)p.heard=Math.min(d||Infinity,(p.heard||0)+dt)}lastT=t;
  const wasDone=!!p.done;if(d&&p.heard>=DONE_AT*body(cur))p.done=true;const nowDone=!!p.done,sec=Math.floor(t);
  if((sec%5===0&&sec!==saveSec)||nowDone!==wasDone){saveSec=sec;p.pos=t;p.at=Date.now();S.set('prog',prog);if(nowDone!==wasDone)render()}});
 onAudio('seeking',()=>{lastT=null});onAudio('play',()=>{lastT=null});
-onAudio('ended',()=>{if(narWait)return;if(cur&&I[cur].nar){narNext();return}const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*body(cur))p.done=true;S.set('prog',prog);render();next()});
+function finished(){if(narWait)return;if(cur&&I[cur].nar){narNext();return}const p=prog[cur]=Object.assign(prog[cur]||{},{pos:0});if(p.dur&&p.heard>=DONE_AT*body(cur))p.done=true;S.set('prog',prog);render();next()}
+onAudio('ended',finished);
 const setPP=()=>{$('#pp').innerHTML=icon(audio.paused?'play':'pause',28,0,'#1b2440')};setPP();/* play/pause only changes the play buttons: update them in place so the page (and an open reading) never re-lays out */
 function refreshVoices(){document.querySelectorAll('.pb[data-play]').forEach(b=>{const id=b.dataset.play,i=I[id],playing=String(cur)===id&&!audio.paused,deg=!isDone(id)?Math.round(3.6*heardPct(id)):0;
  b.classList.toggle('playing',playing);b.style.setProperty('--p',deg+'deg');b.innerHTML=`<span style="color:${playing?'var(--gold2)':'var(--ink)'}">${icon(playing?'pause':'play',18,0,'currentColor')}</span>`})}
@@ -1291,7 +1296,7 @@ onAudio('error',()=>{if(narWait)return;if(cur&&I[cur].nar&&narRetry<3){narRetry+
 $('#pp').onclick=()=>cur&&(audio.paused?audio.play().catch(()=>{}):audio.pause());$('#bk').onclick=()=>audio.currentTime-=10;$('#fw').onclick=()=>audio.currentTime+=10;
 $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.target.value/1000};
 const setSpeed=v=>{speed=Math.round(Math.min(3,Math.max(0.5,v))*100)/100;AUDIO_EL.forEach(a=>a.playbackRate=speed);$('#spd').textContent=spdLabel();S.set('speed',speed);retime()};
-function retime(){document.querySelectorAll('[data-dur]').forEach(e=>e.textContent=durTxt(+e.dataset.dur));document.querySelectorAll('[data-hrs]').forEach(e=>{const [h,a]=e.dataset.hrs.split(',').map(Number);e.textContent=hrsTxt(h,a)});if(cur&&audio.duration)$('#rem').textContent='-'+fmt((audio.duration-audio.currentTime)/speed)}$('#spd').onclick=e=>{e.stopPropagation();setSpeed(1)};$('#spd-dn').onclick=e=>{e.stopPropagation();setSpeed(speed-0.05)};$('#spd-up').onclick=e=>{e.stopPropagation();setSpeed(speed+0.05)};
+function retime(){document.querySelectorAll('[data-dur]').forEach(e=>e.textContent=durTxt(+e.dataset.dur));document.querySelectorAll('[data-hrs]').forEach(e=>{const [h,a]=e.dataset.hrs.split(',').map(Number);e.textContent=hrsTxt(h,a)});if(cur&&audio.duration)$('#rem').textContent='-'+fmt(Math.max(0,audio.duration-audio.currentTime-tail())/speed)}$('#spd').onclick=e=>{e.stopPropagation();setSpeed(1)};$('#spd-dn').onclick=e=>{e.stopPropagation();setSpeed(speed-0.05)};$('#spd-up').onclick=e=>{e.stopPropagation();setSpeed(speed+0.05)};
 let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};
 $('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NAR=null;document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));narBar();NP().classList.remove('on');roomForPlayer();render()};
