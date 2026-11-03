@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 94  # bump on every shipped build; also busts the service-worker cache
+VERSION = 95  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -666,6 +666,7 @@ body.mapopen #sheet{z-index:24}
 #np .ctl .sk{display:flex;align-items:center;justify-content:center}
 #np-read{display:none}#np.reading:not(.mini) #np-read{display:block;flex:1;min-height:0;overflow-y:auto;touch-action:pan-y;-webkit-overflow-scrolling:touch;margin:6px -26px 0;padding:4px 26px 40px;border-bottom:1px solid var(--line)}
 #np.reading:not(.mini) .art,#np.reading:not(.mini) .np-d{display:none}#np.reading:not(.mini) .t{font-size:20px;margin-top:0}#np.reading:not(.mini) .s{font-size:13px}
+#np-read .rc.first{display:none}#np-read .rprev{display:block;margin:2px auto 10px;border:0;background:none;padding:8px 12px;font:600 13px -apple-system,system-ui,sans-serif;letter-spacing:.03em;color:var(--gold2);cursor:pointer}
 #np-read .rc{font:600 12px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin:22px 0 2px}#np-read .rc:first-child{margin-top:6px}
 #np-read .txt{font-size:19px;line-height:1.7}#np-read .rmore{display:block;margin:18px auto;border:1px solid var(--line);background:#fff;border-radius:20px;padding:9px 16px;font:14px -apple-system,system-ui,sans-serif;color:var(--ink)}
 .narbar .nx{background:#fff;color:var(--ink);border:1px solid var(--line);padding:9px 12px}
@@ -1746,19 +1747,19 @@ function wireVerses(el,b,c){el.querySelectorAll('.vs').forEach(v=>v.onclick=e=>{
 /* the full reader: the chapter being read, then the next ones as you scroll (read straight on, as long as you like) */
 function chAfter(b,c){if(c<b.ch.length)return [b,c+1];const i=D.books.indexOf(b);return i>=0&&i+1<D.books.length?[D.books[i+1],1]:null}
 function chBefore(b,c){if(c>1)return [b,c-1];const i=D.books.indexOf(b);return i>0?[D.books[i-1],D.books[i-1].ch.length]:null}
-function readerSec(b,c){return loadBook(b.name).then(d=>{const sec=document.createElement('section');sec.dataset.k=b.abbr+c;
-  sec.innerHTML=`<h3 class="rc">${esc(b.name)} ${c}</h3><div class="txt${hasNar(b.abbr,c)?' narr':''}" data-book="${esc(b.name)}" data-ch="${c}">${chapterBody(d,c,null)}</div>`;
+function readerSec(b,c,first){return loadBook(b.name).then(d=>{const sec=document.createElement('section');sec.dataset.k=b.abbr+c;
+  sec.innerHTML=`<h3 class="rc${first?' first':''}">${esc(b.name)} ${c}</h3><div class="txt${hasNar(b.abbr,c)?' narr':''}" data-book="${esc(b.name)}" data-ch="${c}">${chapterBody(d,c,null)}</div>`;
   if(hasNar(b.abbr,c))wireVerses(sec.querySelector('.txt'),b,c);return sec})}
 let RD={busy:false,first:null,last:null};
-function readerFill(reset){const box=$('#np-read');if(!NAR||!box)return;
- if(reset&&!box.querySelector(`section[data-k="${NAR.b.abbr+NAR.c}"]`)){box.innerHTML='';RD={busy:true,first:[NAR.b,NAR.c],last:[NAR.b,NAR.c]};
-  readerSec(NAR.b,NAR.c).then(sec=>{box.appendChild(sec);const pv=chBefore(NAR.b,NAR.c);if(pv){const bt=document.createElement('button');bt.className='rmore';bt.textContent='‹ '+pv[0].name+' '+pv[1];bt.onclick=e=>{e.stopPropagation();readerPrev(bt)};box.prepend(bt)}
+function readerFill(reset){const box=$('#np-read');if(!NAR||!box)return;const key=NAR.b.abbr+NAR.c;
+ if(reset&&!box.querySelector(`section[data-k="${key}"]`)){if(RD.loading===key)return;box.innerHTML='';RD={busy:true,loading:key,first:[NAR.b,NAR.c],last:[NAR.b,NAR.c]};
+  readerSec(NAR.b,NAR.c,true).then(sec=>{if(RD.loading!==key)return;RD.loading=null;box.innerHTML='';box.appendChild(sec);const pv=chBefore(NAR.b,NAR.c);if(pv){const bt=document.createElement('button');bt.className='rprev';bt.textContent='↑ '+pv[0].name+' '+pv[1];bt.onclick=e=>{e.stopPropagation();readerPrev(bt)};box.prepend(bt)}
    RD.busy=false;narMark(true);readerMore()}).catch(()=>{RD.busy=false});return}
  readerMore()}
 function readerMore(){const box=$('#np-read');if(RD.busy||!RD.last||!box.clientHeight||box.scrollHeight-box.scrollTop-box.clientHeight>900)return;const nx=chAfter(...RD.last);if(!nx)return;RD.busy=true;
  readerSec(...nx).then(sec=>{box.appendChild(sec);RD.last=nx;RD.busy=false;readerMore()}).catch(()=>{RD.busy=false})}
-function readerPrev(bt){const pv=chBefore(...RD.first);if(!pv)return;const box=$('#np-read');readerSec(...pv).then(sec=>{const h0=box.scrollHeight;bt.after(sec);RD.first=pv;box.scrollTop+=box.scrollHeight-h0;
- const p2=chBefore(...pv);if(p2)bt.textContent='‹ '+p2[0].name+' '+p2[1];else bt.remove()})}
+function readerPrev(bt){const pv=chBefore(...RD.first);if(!pv)return;const box=$('#np-read');readerSec(...pv).then(sec=>{const h0=box.scrollHeight;box.querySelectorAll('.rc.first').forEach(h=>h.classList.remove('first'));bt.after(sec);RD.first=pv;box.scrollTop+=box.scrollHeight-h0;
+ const p2=chBefore(...pv);if(p2)bt.textContent='↑ '+p2[0].name+' '+p2[1];else bt.remove()})}
 $('#np-read').addEventListener('scroll',()=>{narUser=Date.now();readerMore()},{passive:true});
 function narNow(){if(!NAR)return null;const t=audio.currentTime+.05;let k=-1;for(let j=0;j<NAR.m.length;j++){if(NAR.m[j][1]<=t)k=j;else break}return k}
 function narEls(v){return [...document.querySelectorAll(`.txt[data-book="${CSS.escape(NAR.b.name)}"][data-ch="${NAR.c}"] .vs[data-v="${v}"]`)]}
