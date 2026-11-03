@@ -422,14 +422,22 @@ def harvest_brookhills() -> list[dict]:
     _log(f"brookhills: {len(out)} Platt sermons, {sum(1 for e in out if e['refs'])} with a passage")
     return out
 
-def harvest_brookhills_archive() -> list[dict]:
+def harvest_brookhills_archive(skip=None) -> list[dict]:
     """Platt's Brook Hills sermons the church's site no longer lists, from data/brookhills_archive.json
     (tools/brookhills_archive.py: archived feeds and pages; audio checked on the church's current storage)."""
     path = os.path.join(DATA, "brookhills_archive.json")
     if not os.path.exists(path): return []
+    # the church's current site already lists many of these: keep only sermons the app has from nowhere else
+    norm = lambda t: re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
+    have = set(norm(e["title"]) for e in (skip or []))
+    cat = os.path.join(DATA, "catalog.jsonl")
+    if os.path.exists(cat):
+        for l in open(cat, encoding="utf-8"):
+            x = json.loads(l)
+            if x.get("speaker") == "Platt" and x.get("source") != "brookhills_archive": have.add(norm(x.get("title")))
     out = []
     for s in json.load(open(path, encoding="utf-8")):
-        if not s.get("audio") or not s.get("title"): continue
+        if not s.get("audio") or not s.get("title") or norm(s["title"]) in have: continue
         e = make_entry(source="brookhills_archive", source_url=s.get("via") or "https://www.brookhills.org/media/sermons/",
                        url=s.get("page") or s.get("via") or s["audio"], title=s["title"], description=s.get("desc", ""),
                        published=s.get("date", ""), author=s.get("who", ""), era="platt", series=s.get("series", ""),
@@ -569,7 +577,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "platt_messages": entries = harvest_feed("platt_messages", config.PLATT_MESSAGES_FEED)
             elif s == "secret_church": entries = harvest_secret_church()
             elif s == "twr360": entries = harvest_twr360()
-            elif s == "brookhills": entries = harvest_brookhills() + harvest_brookhills_archive()
+            elif s == "brookhills": entries = harvest_brookhills(); entries += harvest_brookhills_archive(entries)
             elif s == "radical": entries = harvest_radical(radical_limit)
             elif s == "secret_church_podcast": entries = harvest_itunes_podcast("secret_church_podcast", config.PODCAST_SEARCH_TERMS["secret_church"], r"secret church", "platt", channel_default="Platt")
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt") + harvest_mclean_api()
