@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 95  # bump on every shipped build; also busts the service-worker cache
+VERSION = 96  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -846,6 +846,14 @@ body.bpsopen{overflow:hidden}
 .lib-rec small{font-size:10px;font-weight:650;letter-spacing:.14em;text-transform:uppercase;color:#7a5c16}.lib-rec b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:15px;font-weight:500;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.lib-rec em{font-style:normal;font-size:12px;color:#5a6280}
 .lib-sk{display:block;margin:16px 4px 0;font-size:13px}
 .tch-b{border-top:1px solid rgba(27,36,64,.08)}.tch-b summary{display:flex;justify-content:space-between;padding:12px 2px;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;cursor:pointer;list-style:none}.tch-b summary span{font:600 12.5px -apple-system,system-ui,sans-serif;color:#7a5c16}
+.t-ctl{display:flex;flex-direction:column;gap:10px;margin:0 0 6px}
+.t-sort{display:flex;padding:3px;border-radius:18px;background:rgba(27,36,64,.07)}
+.t-sort button{flex:1;height:34px;border:0;border-radius:15px;background:none;font:600 13.5px -apple-system,system-ui,sans-serif;color:#4a5272;cursor:pointer}
+.t-sort button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(27,36,64,.14)}
+.t-q{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:20px;background:#fff;border:1px solid rgba(27,36,64,.1);color:#5a6280}
+.t-q input{flex:1;min-width:0;border:0;background:none;font:15px -apple-system,system-ui,sans-serif;color:var(--ink);outline:none}
+.tr2{display:flex;align-items:center;gap:12px;padding:10px 2px}.tr2+.tr2{border-top:1px solid rgba(27,36,64,.07)}
+.tr2 .jw-t .t3{font-size:12px;color:#7a5c16}.tr2.heard .jw-t b{color:#5a6280}
 </style></head><body>
 <div id="topbar" aria-hidden="true"></div><button id="bookhd" aria-label="Go to this book's opening stop"></button><div class="top"><span id="pct" style="display:none"></span><button id="srch" aria-label="Search or go to a chapter"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Search</span></button><button id="mapbtn" aria-label="Map of the journey"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Zm0 0v13m6-10.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button><button id="gear">⋯</button></div>
 <div id="sheetbg" hidden></div><div id="sheet" role="dialog" aria-modal="true" hidden><div class="sh-grab"></div><div class="sh-top"><button id="shback" aria-label="Back" hidden>‹</button><span class="sh-kind" id="shkind"></span><button id="shx" aria-label="Close">✕</button></div><div id="shbody"></div></div>
@@ -1536,12 +1544,32 @@ function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotion
  if(rec.length)h+=`<div class="jv-sec">Recently played</div><div class="lib-rec">${rec.map(([id,p])=>{const s=bpOf(id),left=leftOf(id);return `<button data-${s?'bpplay2':'play'}="${id}"${s?` data-sid="${s.id}"`:''}><small>${s?'Big Picture':'Journey'}</small><b>${esc(s?bpName(s,id):dispTitle(I[id]))}</b><em>${esc(teacher(I[id]).split(' ').slice(-1)[0])} · ${p.done?'heard':left?atSpd(left)+' left':'started'}</em></button>`}).join('')}</div>`;
  const sk=Object.keys(SKIP).length;if(sk)h+=`<button class="lnk lib-sk" id="unskip">${sk} skipped for now — bring them back</button>`;
  return h+'</div>'}
-function openTeacher(k){const el=$('#bps'),by={};Object.values(I).forEach(i=>{if(i.who!==k||i.tr==='devotional'||i.nar||!i.audio)return;const w=where(i.id)||'Other teaching';const b=(w.match(/^(.+?)(?: \d+)?$/)||[,w])[1];(by[b]=by[b]||[]).push(i.id)});
- const order=[...D.books.map(b=>b.name).filter(n=>by[n]),...Object.keys(by).filter(n=>!D.books.some(b=>b.name===n))];
- el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh" role="dialog" aria-modal="true" aria-label="${NAMES[k]}"><button class="grab2" data-bpsx aria-label="Close"></button><div class="bps-t" style="margin:6px 4px 2px">${NAMES[k]}</div><div class="bps-n" style="margin:0 4px 10px">By book, in Bible order</div>
-  ${order.map(n=>`<details class="tch-b"><summary>${esc(n)}<span>${by[n].length}</span></summary>${by[n].map(id=>jRow(id,'',null)).join('')}</details>`).join('')}</div>`;
+/* a teacher's whole collection: sort by Bible order (passage order inside each book), newest or oldest; search; full details */
+let TS={k:null,sort:S.get('tsort','bible'),q:'',more:0};
+const fmtDate=d=>{try{return d?new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):''}catch(e){return d}};
+function tItems(k){const w=walk(),fa=firstAt();return Object.values(I).filter(i=>i.who===k&&i.tr!=='devotional'&&!i.nar&&i.audio).map(i=>{const st=w[fa[i.id]],bk=st?st.b.name:'Other teaching';return {i,bk,bi:st?D.books.indexOf(st.b):999,r:st?prange(i.pass,bk):null}})}
+function tRow(x,k){const i=x.i,id=i.id,done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id),ps=i.pass&&!/^the book of/i.test(i.pass)?shortPass(i.pass):(i.pass||'').replace(/^the book of /i,''),who=i.by&&i.by!==NAMES[k]?i.by:'';
+ return `<div class="tr2${done?' heard':''}"><button class="jpb${i.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(i))}">${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(i))}</b><span>${[ps,fmtDate(i.date),left?atSpd(left)+' left':i.dur?durTxt(+i.dur):''].filter(Boolean).map(esc).join(' · ')}</span>${(sh=>who||sh?`<span class="t3">${esc([who,sh].filter(Boolean).join(' · '))}</span>`:'')(i.show&&i.show!==NAMES[k]?i.show:'')}</div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':''}</div>`}
+function tList(){const k=TS.k,q=TS.q.trim().toLowerCase();let L=tItems(k);
+ if(q){const ws=q.split(/\s+/).map(w=>/^\d+$/.test(w)?new RegExp('(^|[^0-9])'+w+'([^0-9]|$)'):w);L=L.filter(x=>{const t=(x.i.t+' '+(x.i.pass||'')+' '+(x.i.by||'')+' '+(x.i.show||'')+' '+x.bk).toLowerCase();return ws.every(w=>typeof w==='string'?t.includes(w):w.test(t))})}
+ if(!L.length)return `<p class="bps-n" style="margin:16px 4px">Nothing matches “${esc(TS.q)}”.</p>`;
+ const R=x=>x.r||{sc:999,sv:999,ec:999,ev:999};
+ if(TS.sort==='bible'){L.sort((a,z)=>(a.bi-z.bi)||(R(a).sc-R(z).sc)||(R(a).sv-R(z).sv)||(R(a).ec-R(z).ec)||((a.i.date||'')<(z.i.date||'')?-1:1));
+  const by=[];L.forEach(x=>{const g=by[by.length-1];if(g&&g.bk===x.bk)g.l.push(x);else by.push({bk:x.bk,l:[x]})});const open=q||by.length<=2;
+  return by.map(g=>`<details class="tch-b"${open?' open':''}><summary>${esc(g.bk)}<span>${g.l.length}</span></summary>${g.l.map(x=>tRow(x,k)).join('')}</details>`).join('')}
+ L.sort((a,z)=>((a.i.date||'')<(z.i.date||'')?-1:(a.i.date||'')>(z.i.date||'')?1:0)*(TS.sort==='newest'?-1:1));
+ const cap=150*(TS.more+1),show=L.slice(0,cap);let h='',last='';show.forEach(x=>{const m=x.i.date?new Date(x.i.date+'T12:00:00').toLocaleDateString('en-US',{month:'long',year:'numeric'}):'Undated';if(m!==last){h+=`<div class="jv-sub">${esc(m)}</div>`;last=m}h+=tRow(x,k)});
+ return h+(L.length>cap?`<button class="jv-more" id="tmore">${L.length-cap} more</button>`:'')}
+function openTeacher(k){const el=$('#bps');if(TS.k!==k){TS.k=k;TS.q='';TS.more=0}const n=tItems(k).length;
+ el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh" role="dialog" aria-modal="true" aria-label="${NAMES[k]}"><button class="grab2" data-bpsx aria-label="Close"></button>
+  <div class="bps-t" style="margin:6px 4px 0">${NAMES[k]}</div><div class="bps-n" style="margin:2px 4px 12px">${n.toLocaleString()} teaching${n>1?'s':''}</div>
+  <div class="t-ctl"><div class="t-sort" role="group" aria-label="Sort">${[['bible','Bible order'],['newest','Newest'],['oldest','Oldest']].map(([v,l])=>`<button data-tsort="${v}" class="${TS.sort===v?'on':''}" aria-pressed="${TS.sort===v}">${l}</button>`).join('')}</div>
+  <label class="t-q"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="tq" type="search" placeholder="Search these sermons" value="${esc(TS.q)}" autocomplete="off" aria-label="Search this teacher"></label></div>
+  <div id="tlist">${tList()}</div></div>`;
  el.hidden=false;document.body.classList.add('bpsopen');requestAnimationFrame(()=>el.classList.add('on'));el.querySelectorAll('[data-bpsx]').forEach(b=>b.onclick=closeSeries);
- el.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;play(b.dataset.play)})}
+ const wireL=()=>{el.querySelectorAll('#tlist [data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=null;play(b.dataset.play);setTimeout(()=>{$('#tlist').innerHTML=tList();wireL()},60)});const m=$('#tmore');if(m)m.onclick=()=>{TS.more++;$('#tlist').innerHTML=tList();wireL()}};wireL();
+ el.querySelectorAll('[data-tsort]').forEach(b=>b.onclick=()=>{TS.sort=b.dataset.tsort;S.set('tsort',TS.sort);TS.more=0;el.querySelectorAll('[data-tsort]').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});$('#tlist').innerHTML=tList();wireL()});
+ const q=$('#tq');let tt=null;q.oninput=()=>{clearTimeout(tt);tt=setTimeout(()=>{TS.q=q.value;TS.more=0;$('#tlist').innerHTML=tList();wireL()},150)}}
 function wireLib(){document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2))}
 
 function render(){const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
