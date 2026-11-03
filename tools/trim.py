@@ -13,7 +13,6 @@ Rules per source come from a survey of each feed (tools/intro_survey.py):
     python tools/trim.py merge                  -> data/intro_skip/trim_<source>.json and trim_<source>_end.json
 Runs on GitHub's servers (ffmpeg + faster-whisper)."""
 import glob, json, os, re, subprocess, sys, tempfile, wave
-import numpy as np
 import requests
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -109,6 +108,7 @@ def decode(data):
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", a, "-ac", "1", "-ar", "16000", w], check=False)
         if not os.path.exists(w): raise IOError("no decode")
         with wave.open(w) as f:
+            import numpy as np  # only the measuring machines need it
             return np.frombuffer(f.readframes(f.getnframes()), dtype=np.int16).astype(np.float32) / 32768
 
 def joined(ws):

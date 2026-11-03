@@ -9,6 +9,9 @@ on:
       all:
         description: "1 = measure every recording again"
         default: "0"
+      from_run:
+        description: "merge the measurements a finished run saved (its run id), without measuring again"
+        default: ""
 permissions:
   contents: write
   actions: write
@@ -17,6 +20,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   measure:
+    if: ${{ !inputs.from_run }}
     runs-on: ubuntu-latest
     timeout-minutes: 300
     strategy:
@@ -56,6 +60,8 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: trim-parts
+          run-id: ${{ inputs.from_run || github.run_id }}
+          github-token: ${{ github.token }}
       - run: mkdir -p trim && find trim-parts -name '*.json' -exec sh -c 'cp "$1" "trim/$(basename $(dirname $1))-$(basename $1)"' _ {} \; ; ls trim | wc -l
       - run: python tools/trim.py merge
       - name: Save and republish
