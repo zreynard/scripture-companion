@@ -1,14 +1,15 @@
 # Runs on GitHub's servers (which can reach the podcast feeds).
 # - Every push: rebuild the app and publish it.
-# - Weekly, or by hand from the Actions tab: pull new episodes and publish them right away,
-#   then check every link and publish again with the results. The catalog is saved back to the repo.
+# - Daily, or by hand from the Actions tab: pull new episodes and publish them right away. Weekly (Mondays) it then also
+#   checks every link and publishes again with the results. The catalog is saved back to the repo.
 name: Refresh and publish
 
 on:
   push:
     branches: [main]
   schedule:
-    - cron: "17 9 * * 1"   # Mondays 09:17 UTC
+    - cron: "17 9 * * 1"   # Mondays 09:17 UTC: new episodes, then every link checked
+    - cron: "47 13 * * *"  # every day 13:47 UTC (8:47 a.m. Eastern): new episodes only
   workflow_dispatch:
     inputs:
       sources:
@@ -30,7 +31,7 @@ concurrency:
 env:
   SOURCES: ${{ github.event.inputs.sources || 'ptw,platt_messages,secret_church_podcast,twr360,2819_podcast,mclean,street_preachers,davey_sermons,davey_wfth,davey_journey,davey_archive,brookhills,skip_archive,skip_church,skip_connect,fearless' }}
   REFRESH: ${{ github.event_name != 'push' }}
-  CHECK: ${{ github.event_name == 'schedule' || github.event.inputs.check_links == 'true' }}
+  CHECK: ${{ (github.event_name == 'schedule' && github.event.schedule == '17 9 * * 1') || github.event.inputs.check_links == 'true' }}
 
 jobs:
   build:
