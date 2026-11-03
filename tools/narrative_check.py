@@ -61,7 +61,28 @@ def check(abbr):
     return not probs
 
 
+DEBATE = re.compile(r"debat|\b(many|some|most|modern|other|few) scholars\b|\bscholars\b(?! translated)|\bscholarly|"
+                    r"interpreters|commentators|\bsome (readers|think|believe|suggest|have (suggested|seen|wondered|thought|argued)|take|see|hold|prefer|identify|link|connect)\b|"
+                    r"\bothers (think|read|take|see|suggest|hold|prefer|believe)\b|\buncertain|\bnot certain|\bunclear\b|\bdisputed|\bno one (knows|can say)|"
+                    r"\b(views?|opinions?|readings?) (differ|vary)|\bin different ways\b|\blong (been )?(debated|weighed|wondered|discussed|puzzled)|"
+                    r"\bwe (cannot|can't|do not|don't) (be sure|know|tell)|\bcannot be (sure|certain|identified|located|settled)|\bthe question of\b|"
+                    r"\bhard to (say|know|date|fit)\b|\bremains? a puzzle|\bpossibly\b|\bperhaps\b|\bprobably\b|\bmost likely\b|\bit seems\b|\bseems to\b|\bmay have been\b|\btraditionally\b|\bhypothes", re.I)
+
+
+def debate(abbr):
+    """Every sentence that reports a debate, an uncertainty or a hedge (some are fine in context: Jesus' 'no one knows the day')."""
+    s, _, files = sections(abbr)
+    n = 0
+    for k, v in s.items():
+        for sent in re.split(r"(?<=[.!?])\s+", v):
+            if DEBATE.search(sent):
+                n += 1; print(f"{abbr} {k}: {sent}")
+    return n
+
+
 if __name__ == "__main__":
+    if sys.argv[1:2] == ["--debate"]:
+        tot = sum(debate(a) for a in (sys.argv[2:] or [b[1] for b in BOOKS])); print(f"\n{tot} sentences to look at"); sys.exit()
     want = sys.argv[1:] or [b[1] for b in BOOKS]
     res = [check(a) for a in want]
     done = [r for r in res if r is not None]

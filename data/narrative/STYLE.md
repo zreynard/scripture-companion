@@ -27,9 +27,11 @@ narrator: informed, clear, warm, reverent, never preachy.
 - Application, exhortation, devotional asides ("we too must..."), mini sermons.
 - Forced links to Jesus in every chapter. Make a connection only where the Bible itself plainly makes it,
   or where the storyline genuinely runs on into the New Testament, and sparingly.
-- Speculation presented as fact. If something is uncertain (authorship, a date, where Paul was imprisoned),
-  say so in a short phrase, or leave it out.
-- Long treatment of controversies.
+- Debates, uncertainty and alternative views. The narrator never says what scholars think, what is debated or
+  uncertain, what "some readers" or "interpreters" hold, or that "others" see it differently. State the plain
+  traditional account where it orients the listener (Moses and the Torah, Luke the physician, Paul writing from
+  prison in Rome), or leave the point out. No hedging words piled on ("perhaps", "probably", "likely"): if a
+  detail is too doubtful to say plainly, it is not needed. Never present something false as fact.
 - Rhetorical questions (one, very rarely, at most).
 - Drama and hype: "shocking", "incredible", "little did they know", "buckle up".
 - Formulaic AI phrasing: "In this chapter we", "Let's dive in", "a testament to", "tapestry", "journey"
@@ -44,7 +46,7 @@ narrator: informed, clear, warm, reverent, never preachy.
 
 Answer, in flowing prose and in whatever order serves the book:
 - Where are we? Period, setting, circumstances.
-- Who are these people? Author where known (with honest uncertainty), audience, central figures.
+- Who are these people? Author (the traditional attribution, stated plainly), audience, central figures.
 - What has happened to bring us here? Preceding events, from earlier books or from history.
 - Why this book? Epistles: the writer's circumstances and relationship with the readers. Histories: the
   events and people at the centre. Prophets: what was happening in Israel, Judah and the nations.
@@ -85,6 +87,8 @@ Chapter 1 follows the book introduction directly: do not repeat it; take the lis
   before writing its introduction.
 - Background from reliable, mainstream reference knowledge (geography, empires, customs, chronology). All
   writing original: never copy or closely paraphrase a commentary or article.
+- Where the facts are unknown (an author, a date, a place), say nothing rather than discuss it. Saying plainly
+  what the book itself says ("the book does not name its author") is fine; reporting the debate is not.
 - Check names, relationships, places, who is speaking, and what precedes and follows each chapter.
 - Stay close to what the passage says when interpretation is needed for basic context.
 
