@@ -14,7 +14,7 @@ on:
     inputs:
       sources:
         description: "Feeds to pull (comma list)"
-        default: "ptw,platt_messages,secret_church_podcast,twr360,2819_podcast,mclean,street_preachers,davey_sermons,davey_wfth,davey_journey,davey_archive,brookhills,fearless"
+        default: "ptw,platt_messages,secret_church_podcast,twr360,2819_podcast,mclean,street_preachers,davey_sermons,davey_wfth,davey_journey,davey_archive,brookhills,brookhills_ia,fearless"
       check_links:
         description: "Also open every link (slow)"
         type: boolean
@@ -29,7 +29,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  SOURCES: ${{ github.event.inputs.sources || 'ptw,platt_messages,secret_church_podcast,twr360,2819_podcast,mclean,street_preachers,davey_sermons,davey_wfth,davey_journey,davey_archive,brookhills,skip_archive,skip_church,skip_connect,fearless' }}
+  SOURCES: ${{ github.event.inputs.sources || 'ptw,platt_messages,secret_church_podcast,twr360,2819_podcast,mclean,street_preachers,davey_sermons,davey_wfth,davey_journey,davey_archive,brookhills,brookhills_ia,skip_archive,skip_church,skip_connect,fearless' }}
   REFRESH: ${{ github.event_name != 'push' }}
   CHECK: ${{ (github.event_name == 'schedule' && github.event.schedule == '17 9 * * 1') || github.event.inputs.check_links == 'true' }}
 

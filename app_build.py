@@ -199,7 +199,7 @@ def main():
         return re.sub(r"\bpart (\w+)\b", r"part \1", t)
     SRC_PREF = {"platt_messages": 0, "ptw": 0, "2819_podcast": 0, "secret_church_podcast": 0, "twr360_secret_church": 1,
                 "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3, "radical_vimeo": 1, "street_preachers": 2,
-                "davey_archive": 0, "davey_sermons": 0, "davey_wfth": 1, "davey_journey": 0, "skip_archive": 0, "skip_church": 1, "skip_connect": 2}
+                "davey_archive": 0, "davey_sermons": 0, "davey_wfth": 1, "brookhills_ia": 1, "davey_journey": 0, "skip_archive": 0, "skip_church": 1, "skip_connect": 2}
     def one_each(lst):  # one teaching, one entry: keep the best form of same-titled items
         best = {}
         for i in lst:

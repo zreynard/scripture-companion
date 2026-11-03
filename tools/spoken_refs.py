@@ -5,6 +5,8 @@ first minutes with speech recognition and keep a passage only when he announces 
 our text is ..." phrase followed by a book and chapter. Nothing is guessed from the topic.
 
     python tools/spoken_refs.py            -> data/spoken_refs.json  {entry id: {ref, quote, at}}
+    python tools/spoken_refs.py K N        -> share K of N only, into data/spoken_refs.K.json
+    python tools/spoken_refs.py merge      -> fold the shares into data/spoken_refs.json
 Runs on GitHub's servers (needs ffmpeg and faster-whisper)."""
 import json, os, re, subprocess, sys, tempfile
 
@@ -48,12 +50,24 @@ def announced(text):
     return None, None
 
 
-def main():
+def merge():
+    done = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
+    import glob
+    for p in sorted(glob.glob(os.path.join(HERE, "data", "spoken_refs.*.json"))):
+        done.update(json.load(open(p, encoding="utf-8"))); os.remove(p)
+    json.dump(done, open(OUT, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    print(f"{len(done)} sermons listened to, {sum(1 for v in done.values() if v.get('ref'))} with an announced passage")
+
+
+def main(k=0, n=1):
     from faster_whisper import WhisperModel
     rows = [json.loads(l) for l in open(os.path.join(HERE, "data", "catalog_verified.jsonl"), encoding="utf-8")]
     done = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
     todo = [e for e in rows if e.get("speaker") == "Platt" and e.get("track") == "sermon" and not e.get("refs")
             and e["id"] not in done and audio_of(e)]
+    todo = todo[k::n]
+    out = OUT if n == 1 else os.path.join(HERE, "data", f"spoken_refs.{k}.json")
+    if n > 1: done = {}
     print(f"{len(todo)} Platt sermons with no stated passage to listen to", flush=True)
     model = WhisperModel("base.en", device="cpu", compute_type="int8")
     tmp = tempfile.mkdtemp()
@@ -73,10 +87,13 @@ def main():
         if ref: found += 1
         print(f"  [{i}/{len(todo)}] {e['title'][:55]!r}: {ref or '-'}" + (f"   <- \"{quote[:120]}\"" if quote else ""), flush=True)
         os.remove(wav)
-        if i % 10 == 0: json.dump(done, open(OUT, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
-    json.dump(done, open(OUT, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+        if i % 10 == 0: json.dump(done, open(out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    json.dump(done, open(out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"announced passage heard in {found} of {len(todo)}", flush=True)
 
 
 if __name__ == "__main__":
-    main()
+    a = sys.argv[1:]
+    if a[:1] == ["merge"]: merge()
+    elif len(a) == 2: main(int(a[0]), int(a[1]))
+    else: main()

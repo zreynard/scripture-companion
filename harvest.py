@@ -105,6 +105,41 @@ def harvest_davey_archive() -> list[dict]:
     _log(f"davey_archive: {len(out)} sermons with audio")
     return out
 
+# ---------- David Platt at the Church at Brook Hills, 2006-2016: a public archive.org collection of the church's sermon
+# audio (one file a Sunday, named date-title-preacher). Passages come from the Brook Hills pages the Internet Archive kept
+# (data/brookhills_archive.json, matched by date) or, for the rest, from what he announces (tools/spoken_refs.py) ----------
+BH_IA = "the-church-at-brook-hills-birmingham-194426"
+
+def harvest_brookhills_ia() -> list[dict]:
+    from datetime import datetime
+    r = get(f"https://archive.org/metadata/{BH_IA}", timeout=120)
+    if not r.ok:
+        _log(f"brookhills_ia: metadata fetch failed {r.status} {r.note}"); return []
+    meta = {}
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "brookhills_archive.json")
+    for s in (json.load(open(p)) if os.path.exists(p) else []):
+        m = re.match(r"(\d{2})(\d{2})(\d{2})", s.get("file", ""))   # 161204_11AM.mp3 = 4 December 2016
+        if m and s.get("verses"): meta.setdefault(f"20{m.group(1)}-{m.group(2)}-{m.group(3)}", s)
+    out = []
+    for f in json.loads(r.text).get("files", []):
+        m = re.match(r"^(\d{4}-\d{2}-\d{2})-(.+?)-David-Platt-\d+\.mp3$", f.get("name", ""))
+        if not m: continue
+        day, words = m.group(1), m.group(2).replace("-", " ")
+        title = re.sub(r"\bPt\.? ?(\d)", r"Part \1", words).strip()
+        try: pub = datetime.strptime(day, "%Y-%m-%d").strftime("%a, %d %b %Y 11:00:00 -0600")
+        except ValueError: pub = ""
+        url = f"https://archive.org/download/{BH_IA}/{urllib.parse.quote(f['name'])}"
+        known = meta.get(day)
+        refs = "; ".join(v.strip().rstrip(":") for v in (known or {}).get("verses", []) if v.strip())
+        e = make_entry(source="brookhills_ia", source_url=f"https://archive.org/details/{BH_IA}", url=url, title=title,
+                       description=f"The Church at Brook Hills, Birmingham. David Platt, {day}." + (f" {known.get('series')}." if known and known.get("series") else ""),
+                       published=pub, duration=str(int(float(f.get("length") or 0))) if f.get("length") else "", author="David Platt",
+                       era="platt", channel_default="Platt", series=(known or {}).get("series", ""), extra_ref_text=refs)
+        e["audio_override"] = url
+        out.append(e)
+    _log(f"brookhills_ia: {len(out)} David Platt sermons")
+    return out
+
 # ---------- Skip Heitzig feeds (Subsplash audio; the episode's mp3 address is its link) ----------
 def harvest_skip(key: str, feed_url: str) -> list[dict]:
     r = get(feed_url, timeout=60)
@@ -600,7 +635,7 @@ def harvest_youtube_audio() -> list[dict]:
     return out
 
 # ---------- orchestration ----------
-ALL_SOURCES = ["fearless", "davey_archive", "brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
+ALL_SOURCES = ["fearless", "davey_archive", "brookhills_ia", "brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
                "youtube_2819", "youtube_pam", "youtube_victory", "victory_podcast"]
 
 def run(sources: list[str], radical_limit: int | None = None):
@@ -629,6 +664,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "secret_church_podcast": entries = harvest_itunes_podcast("secret_church_podcast", config.PODCAST_SEARCH_TERMS["secret_church"], r"secret church", "platt", channel_default="Platt")
             elif s == "fearless": entries = harvest_fearless()
             elif s == "davey_archive": entries = harvest_davey_archive()
+            elif s == "brookhills_ia": entries = harvest_brookhills_ia()
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt") + harvest_mclean_api()
             elif s in config.DAVEY_FEEDS:
                 sid, feed = config.DAVEY_FEEDS[s]
