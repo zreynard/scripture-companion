@@ -1,0 +1,67 @@
+{
+ "series": "Sermons in Daniel",
+ "slug": "daniel",
+ "from": "spreadsheet",
+ "sermons": [
+  {
+   "n": 1,
+   "title": "Resolved (Daniel 1:1–21)",
+   "name": "Resolved",
+   "title_passage": "Daniel 1:1–21",
+   "ref": "Daniel 1:1–21",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Daniel"
+  },
+  {
+   "n": 2,
+   "title": "But, If Not . . . (Daniel 3)",
+   "name": "But, If Not . . .",
+   "title_passage": "Daniel 3",
+   "ref": "Daniel 3",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Daniel"
+  },
+  {
+   "n": 3,
+   "title": "Heaven Rules (Daniel 4:1–37)",
+   "name": "Heaven Rules",
+   "title_passage": "Daniel 4:1–37",
+   "ref": "Daniel 4:1–37",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Daniel"
+  },
+  {
+   "n": 4,
+   "title": "The End of the World (Daniel 2 & 7)",
+   "name": "The End of the World",
+   "title_passage": "Daniel 2 & 7",
+   "ref": "Daniel 2 & 7",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Daniel"
+  },
+  {
+   "n": 5,
+   "title": "Babylon’s Last Meal (Daniel 5)",
+   "name": "Babylon’s Last Meal",
+   "title_passage": "Daniel 5",
+   "ref": "Daniel 5",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Daniel"
+  },
+  {
+   "n": 6,
+   "title": "From Babylon to Bethlehem (Daniel 6)",
+   "name": "From Babylon to Bethlehem",
+   "title_passage": "Daniel 6",
+   "ref": "Daniel 6",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Daniel"
+  }
+ ]
+}

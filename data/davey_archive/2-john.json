@@ -1,0 +1,87 @@
+{
+ "series": "Sermons in 2 John",
+ "slug": "2-john",
+ "from": "spreadsheet",
+ "sermons": [
+  {
+   "n": 1,
+   "title": "A Letter to a Lady (2 John 1)",
+   "name": "A Letter to a Lady",
+   "title_passage": "2 John 1",
+   "ref": "2 John 1",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in 2 John"
+  },
+  {
+   "n": 2,
+   "title": "When Nothing Seems to Last (2 John 2–3)",
+   "name": "When Nothing Seems to Last",
+   "title_passage": "2 John 2–3",
+   "ref": "2 John 2–3",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in 2 John"
+  },
+  {
+   "n": 3,
+   "title": "Wearing the Dust of the Savior (2 John 4)",
+   "name": "Wearing the Dust of the Savior",
+   "title_passage": "2 John 4",
+   "ref": "2 John 4",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in 2 John"
+  },
+  {
+   "n": 4,
+   "title": "How to Keep from Growing Cold (2 John 5–6)",
+   "name": "How to Keep from Growing Cold",
+   "title_passage": "2 John 5–6",
+   "ref": "2 John 5–6",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in 2 John"
+  },
+  {
+   "n": 5,
+   "title": "The Devil’s Great Commission (2 John 7, 9)",
+   "name": "The Devil’s Great Commission",
+   "title_passage": "2 John 7, 9",
+   "ref": "2 John 7, 9",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in 2 John"
+  },
+  {
+   "n": 6,
+   "title": "This Is No Picnic (2 John 8)",
+   "name": "This Is No Picnic",
+   "title_passage": "2 John 8",
+   "ref": "2 John 8",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in 2 John"
+  },
+  {
+   "n": 7,
+   "title": "How to Handle a Heretic (2 John 8, 10–11)",
+   "name": "How to Handle a Heretic",
+   "title_passage": "2 John 8, 10–11",
+   "ref": "2 John 8, 10–11",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in 2 John"
+  },
+  {
+   "n": 8,
+   "title": "Heart to Heart (2 John 12–13)",
+   "name": "Heart to Heart",
+   "title_passage": "2 John 12–13",
+   "ref": "2 John 12–13",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in 2 John"
+  }
+ ]
+}

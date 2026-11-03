@@ -9,22 +9,35 @@ import openpyxl
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def main(path):
-    rows = list(openpyxl.load_workbook(path, read_only=True)["Sermon Records"].iter_rows(values_only=True))
+    wb = openpyxl.load_workbook(path, read_only=True)
+    rows = None
+    for ws in wb.worksheets:   # the sheet that lists the sermons: it has an order and a title column
+        R = list(ws.iter_rows(values_only=True))
+        h = [str(x or "").strip().lower() for x in (R[0] if R else [])]
+        if any("order" in x for x in h) and any("title" in x for x in h) and len(R) > 5: rows = R; break
     head = [str(h or "").strip().lower() for h in rows[0]]
-    col = lambda name: next(i for i, h in enumerate(head) if h.startswith(name))
+    ALIAS = {"series": ("series",), "order": ("series order", "order"), "sermon title": ("sermon title", "title"), "scripture": ("scripture",),
+             "date": ("preached date", "date"), "speaker": ("preacher", "speaker")}
+    col = lambda name: next(i for a in ALIAS.get(name, (name,)) for i, h in enumerate(head) if h.startswith(a))
     by = {}
     for r in rows[1:]:
         if not r[col("series")]: continue
         by.setdefault(r[col("series")], []).append(r)
     for series, L in by.items():
+        series = series if series.lower().startswith("sermons in") else "Sermons in " + series
         slug = re.sub(r"[^a-z0-9]+", "-", re.sub(r"^sermons in\s*", "", series.lower()).replace("&", "and")).strip("-")
+        slug = {"1-kings-1-2-chronicles": "kings-and-chronicles"}.get(slug, slug)
         p = os.path.join(HERE, "data", "davey_archive", slug + ".json")
         if os.path.exists(p) and json.load(open(p)).get("from") != "spreadsheet":
             print(f"{slug}: already from its series page, left alone"); continue
+        if os.path.exists(p) and len(json.load(open(p))["sermons"]) >= len(L):
+            print(f"{slug}: already listed ({len(L)} here), left alone"); continue
         old = {x["n"]: x for x in (json.load(open(p))["sermons"] if os.path.exists(p) else [])}
         out = []
-        for r in sorted(L, key=lambda r: int(r[col("order")] or 0)):
-            n = int(r[col("order")]); d = r[col("date")]
+        for r in sorted(L, key=lambda r: int(r[col("order")]) if str(r[col("order")] or "").isdigit() else 0):
+            try: n = int(r[col("order")])
+            except (TypeError, ValueError): continue
+            d = r[col("date")]
             try: ds = date.fromisoformat(str(d)[:10]).strftime("%B %-d, %Y") if d else ""
             except ValueError: ds = ""
             passage = (r[col("scripture")] or "").strip()

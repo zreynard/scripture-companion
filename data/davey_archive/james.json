@@ -1,0 +1,317 @@
+{
+ "series": "Sermons in James",
+ "slug": "james",
+ "from": "spreadsheet",
+ "sermons": [
+  {
+   "n": 1,
+   "title": "Whose Slave Are You? (James 1:1)",
+   "name": "Whose Slave Are You?",
+   "title_passage": "James 1:1",
+   "ref": "James 1:1",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 2,
+   "title": "The Truth about Trouble (James 1:2–12)",
+   "name": "The Truth about Trouble",
+   "title_passage": "James 1:2–12",
+   "ref": "James 1:2–12",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 3,
+   "title": "Humpty Dumpty Wasn’t Pushed (James 1:13–18)",
+   "name": "Humpty Dumpty Wasn’t Pushed",
+   "title_passage": "James 1:13–18",
+   "ref": "James 1:13–18",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 4,
+   "title": "Tutored by Truth (James 1:19–21)",
+   "name": "Tutored by Truth",
+   "title_passage": "James 1:19–21",
+   "ref": "James 1:19–21",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 5,
+   "title": "Just Do It! (James 1:22–25)",
+   "name": "Just Do It!",
+   "title_passage": "James 1:22–25",
+   "ref": "James 1:22–25",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 6,
+   "title": "Both Sound and Sight (James 1:26–27a)",
+   "name": "Both Sound and Sight",
+   "title_passage": "James 1:26–27a",
+   "ref": "James 1:26–27a",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 7,
+   "title": "Don’t Be a Snob! (James 2:1–7)",
+   "name": "Don’t Be a Snob!",
+   "title_passage": "James 2:1–7",
+   "ref": "James 2:1–7",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 8,
+   "title": "The King’s Commandment (James 2:8–13)",
+   "name": "The King’s Commandment",
+   "title_passage": "James 2:8–13",
+   "ref": "James 2:8–13",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 9,
+   "title": "Show and Tell (James 2:14–18)",
+   "name": "Show and Tell",
+   "title_passage": "James 2:14–18",
+   "ref": "James 2:14–18",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 10,
+   "title": "More than a Motto (James 2:19–20)",
+   "name": "More than a Motto",
+   "title_passage": "James 2:19–20",
+   "ref": "James 2:19–20",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 11,
+   "title": "In the Court of Public Opinion (James 2:21–24)",
+   "name": "In the Court of Public Opinion",
+   "title_passage": "James 2:21–24",
+   "ref": "James 2:21–24",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 12,
+   "title": "Surprising Saints (James 2:25–26)",
+   "name": "Surprising Saints",
+   "title_passage": "James 2:25–26",
+   "ref": "James 2:25–26",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 13,
+   "title": "Runaway Tongue (James 3:1–5a)",
+   "name": "Runaway Tongue",
+   "title_passage": "James 3:1–5a",
+   "ref": "James 3:1–5a",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 14,
+   "title": "It Only Takes a Spark (James 3:5b–8)",
+   "name": "It Only Takes a Spark",
+   "title_passage": "James 3:5b–8",
+   "ref": "James 3:5b–8",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 15,
+   "title": "Dr. Jekyll & Mr. Hyde (James 3:9–12)",
+   "name": "Dr. Jekyll & Mr. Hyde",
+   "title_passage": "James 3:9–12",
+   "ref": "James 3:9–12",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 16,
+   "title": "A Learner’s Permit for Life (James 3:13–16)",
+   "name": "A Learner’s Permit for Life",
+   "title_passage": "James 3:13–16",
+   "ref": "James 3:13–16",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 17,
+   "title": "Sandcastles Before Tide (James 3:14–16)",
+   "name": "Sandcastles Before Tide",
+   "title_passage": "James 3:14–16",
+   "ref": "James 3:14–16",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 18,
+   "title": "The Ways of Wisdom (James 3:17–18)",
+   "name": "The Ways of Wisdom",
+   "title_passage": "James 3:17–18",
+   "ref": "James 3:17–18",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 19,
+   "title": "Carrot on a Stick (James 4:1–3)",
+   "name": "Carrot on a Stick",
+   "title_passage": "James 4:1–3",
+   "ref": "James 4:1–3",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 20,
+   "title": "Choosing Enemies . . . Making Friends (James 4:4–6)",
+   "name": "Choosing Enemies . . . Making Friends",
+   "title_passage": "James 4:4–6",
+   "ref": "James 4:4–6",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 21,
+   "title": "Reviving the Saints (James 4:7–10)",
+   "name": "Reviving the Saints",
+   "title_passage": "James 4:7–10",
+   "ref": "James 4:7–10",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 22,
+   "title": "The Danger of Playing God (James 4:11–12)",
+   "name": "The Danger of Playing God",
+   "title_passage": "James 4:11–12",
+   "ref": "James 4:11–12",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 23,
+   "title": "The Vanishing Life (James 4:13–17)",
+   "name": "The Vanishing Life",
+   "title_passage": "James 4:13–17",
+   "ref": "James 4:13–17",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 24,
+   "title": "When Money Talks (James 5:1–6)",
+   "name": "When Money Talks",
+   "title_passage": "James 5:1–6",
+   "ref": "James 5:1–6",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 25,
+   "title": "Observations from a Farm (James 5:7–9)",
+   "name": "Observations from a Farm",
+   "title_passage": "James 5:7–9",
+   "ref": "James 5:7–9",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 26,
+   "title": "Following the Footprints (James 5:10–11)",
+   "name": "Following the Footprints",
+   "title_passage": "James 5:10–11",
+   "ref": "James 5:10–11",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 27,
+   "title": "Honest to God . . . and Everyone Else! (James 5:12)",
+   "name": "Honest to God . . . and Everyone Else!",
+   "title_passage": "James 5:12",
+   "ref": "James 5:12",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 28,
+   "title": "Does Prayer + Oil = Healing? (James 5:13–15)",
+   "name": "Does Prayer + Oil = Healing?",
+   "title_passage": "James 5:13–15",
+   "ref": "James 5:13–15",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 29,
+   "title": "Ordinary Prayers from Ordinary People (James 5:16–18)",
+   "name": "Ordinary Prayers from Ordinary People",
+   "title_passage": "James 5:16–18",
+   "ref": "James 5:16–18",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 30,
+   "title": "Drifting (James 5:19–20)",
+   "name": "Drifting",
+   "title_passage": "James 5:19–20",
+   "ref": "James 5:19–20",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  },
+  {
+   "n": 31,
+   "title": "Family Talk (James 1–5)",
+   "name": "Family Talk",
+   "title_passage": "James 1–5",
+   "ref": "James 1–5",
+   "date": "",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in James"
+  }
+ ]
+}

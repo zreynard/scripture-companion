@@ -56,14 +56,23 @@ def main():
             if x.get("mp3") or x.get("tried", 0) >= 3: continue
             hit = None
             # a list made from another source can number the lessons a few places off: the series' own number first, then nearby
-            offs = [0] if x.get("tried", 0) == 0 and d.get("from") != "spreadsheet" else [0, 1, -1, 2, -2, 3, -3, 4, 5, 6]
-            pres = list(dict.fromkeys(prefix_of(d["series"]) + [b for b, _ in passages(x)] + [b.replace("Psalms", "Psalm") for b, _ in passages(x)]))
+            # the offsets this series' found files already show (file number minus list number), most common first
+            seen = {}
+            for y in d["sermons"]:
+                m = re.search(r"/[A-Za-z0-9&-]*?(\d+)-", y.get("mp3") or "")
+                if m: seen[int(m.group(1)) - y["n"]] = seen.get(int(m.group(1)) - y["n"], 0) + 1
+            learned = [o for o, _ in sorted(seen.items(), key=lambda kv: -kv[1])]
+            offs = list(dict.fromkeys([0] + learned + ([1, -1, 2, -2, 3, -3] if x.get("tried", 0) >= 1 or d.get("from") == "spreadsheet" else [])))[:7]
+            budget = [40]
+            pres = list(dict.fromkeys(prefix_of(d["series"])[:2] + [b for b, _ in passages(x)][:2]))
             for off in offs:
                 if x["n"] + off < 1: continue
                 for pre in pres:
-                    for c in candidates(pre, x["n"] + off, x):
+                    for c in candidates(pre, x["n"] + off, x)[:4]:
                         u = B + c + ".mp3"
                         if u in used: continue
+                        if budget[0] <= 0: break
+                        budget[0] -= 1
                         r = requests.get(u, headers=H, timeout=30)
                         if r.status_code in (200, 206): hit = u; break
                         time.sleep(0.03)
