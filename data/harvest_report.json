@@ -1,10 +1,10 @@
 {
-  "started": "2026-11-03T23:00:03.949637+00:00",
+  "started": "2026-11-03T23:27:09.919388+00:00",
   "sources": {
     "davey_archive": {
-      "count": 286,
+      "count": 326,
       "seconds": 0.1
     }
   },
-  "catalog_total": 11750
+  "catalog_total": 11790
 }
