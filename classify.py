@@ -53,6 +53,8 @@ def detect_speaker(source: str, title: str, description: str, author: str, chann
     if source in ("mclean_podcast", "mclean_oceans"):
         if PLATT_RE.search(title):  # McLean posts every campus pastor; only a title naming him is Platt
             return "Platt", "named-in-title"
+        if PLATT_RE.search(author or ""):  # the church's own record names him as the preacher
+            return "Platt", "church-app-speaker"
         return (f"guest:{author}" if author else "unknown"), "feed-author"
     return "unknown", "none"
 
@@ -143,6 +145,7 @@ def make_entry(*, source: str, source_url: str, url: str, title: str, descriptio
                channel_default: str | None = None, series: str = "", alt_urls: list[str] | None = None,
                extra_ref_text: str = "") -> dict:
     merged, ref_how = stated_refs(source, title, description, extra_ref_text)
+    if not merged: merged, ref_how = spoken_refs(_id(url))
     speaker, how = detect_speaker(source, title, description, author, channel_default)
     track = detect_track(source, title, description, merged)
     if not era:
@@ -170,11 +173,27 @@ def make_entry(*, source: str, source_url: str, url: str, title: str, descriptio
     }
 
 
+_SPOKEN = None
+def spoken_refs(entry_id: str) -> tuple[dict, str]:
+    """The passage the preacher announces at the start of the sermon ("turn with me to Acts 1"), heard by speech
+    recognition (tools/spoken_refs.py -> data/spoken_refs.json). Used only when the publisher's listing names none."""
+    global _SPOKEN
+    if _SPOKEN is None:
+        import json, os
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "spoken_refs.json")
+        _SPOKEN = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+    x = _SPOKEN.get(entry_id)
+    if not x or not x.get("ref"): return {}, "none"
+    m = merge_refs(parse_refs(x["ref"]))
+    return (m, "spoken") if m else ({}, "none")
+
+
 def remap(e: dict) -> dict:
     """Re-apply the passage rules to a parser-mapped entry (keeps id/url/audio)."""
     if e.get("source") not in REPARSE_SOURCES or not e.get("url"):
         return e
     merged, how = stated_refs(e["source"], e["title"], e.get("description", ""))
+    if not merged: merged, how = spoken_refs(e.get("id", ""))
     e["refs"] = {b: {"chapters": sorted(d["chapters"]), "verse_level": d["verse_level"],
                      "whole_book": d["whole_book"], "raw": d["raw"]} for b, d in merged.items()}
     e["refs_text"] = refs_to_text(merged); e["ref_how"] = how
