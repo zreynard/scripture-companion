@@ -5,6 +5,8 @@ on:
     inputs:
       which:
         default: ""
+permissions:
+  contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
@@ -12,3 +14,10 @@ jobs:
       - uses: actions/checkout@v4
       - run: pip install -q requests
       - run: python tools/platt_probe.py ${{ github.event.inputs.which }}
+      - name: Save findings to the diag branch
+        if: always()
+        run: |
+          [ -d probe3 ] || exit 0
+          cd probe3 && git init -q -b diag && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m probe3
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag

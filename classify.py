@@ -18,8 +18,8 @@ def detect_speaker(source: str, title: str, description: str, author: str, chann
     blob = f"{title} || {description} || {author}"
     if source in ("ptw", "platt_messages"):
         # Platt's own feeds; flag a guest only when the item itself names another preacher
-        if re.search(r"\b(sermon|message)\s+(from|by)\s+(?!david platt)([A-Z][a-z]+\s+[A-Z][a-z]+)", description or ""):
-            m = re.search(r"\b(sermon|message)\s+(from|by)\s+([A-Z][a-z]+\s+[A-Z][a-z]+)", description)
+        m = re.search(r"\b(sermon|message)\s+(from|by)\s+([A-Z][a-z]+\s+[A-Z][a-z]+)", description or "")
+        if m and not PLATT_RE.search(m.group(3)):  # "a message from David Platt" is his own
             return f"guest:{m.group(3)}", "feed-description"
         return "Platt", "feed-owner"
     if source.startswith("radical") or source == "secret_church":

@@ -2,8 +2,8 @@
 Prints what each source holds: how many messages, whether each one carries playable audio, and whether it names
 its passage. Plain requests only: a site that refuses (bot check, sign-in) is reported and left alone."""
 import json, re, sys, time, requests
-if sys.argv[1:] == ["2"]:
-    import runpy; runpy.run_path(__file__.replace("platt_probe.py", "platt_probe2.py")); sys.exit()
+if sys.argv[1:] and sys.argv[1] in ("2", "3"):
+    import runpy; runpy.run_path(__file__.replace("platt_probe.py", f"platt_probe{sys.argv[1]}.py")); sys.exit()
 
 H = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"}
 
