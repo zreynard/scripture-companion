@@ -6,7 +6,9 @@ PASS  app always walks in canonical order (no order switch left)
 
 == Placement (each teaching sits only where its stated passage is)
 PASS  every placement matches the teaching's passage
-PASS  every passage named in a title is on the road where it says
+FAIL  every passage named in a title is on the road where it says  (2)
+        - Saying No When Others Say Yes  (Genesis 38 - 39) names Genesis [38, 39] but sits at [38]
+        - The Jacob Temperament  (Genesis 42:29-43:34) names Genesis [42, 43] but sits at [43]
 PASS  no chapter outside its book
 PASS  each multi-book survey stands exactly once
 PASS  each survey stands at the first of its books in canonical order
@@ -55,4 +57,4 @@ PASS  overviews and points stay short (22 words or fewer)
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-38 of 38 checks pass
+37 of 38 checks pass
