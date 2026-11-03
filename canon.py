@@ -46,7 +46,7 @@ BOOKS = [
  ("Mark","Mar",16,"NT",["Mark","Mrk","Mk"]),
  ("Luke","Luk",24,"NT",["Luke","Lk"]),
  ("John","Joh",21,"NT",["John","Jhn","Jn"]),
- ("Acts","Act",28,"NT",["Acts","Ac"]),
+ ("Acts","Act",28,"NT",["Acts","Act","Ac"]),
  ("Romans","Rom",16,"NT",["Romans","Rom","Rm"]),
  ("1 Corinthians","1Co",16,"NT",["1 Corinthians","1 Cor","1Cor","1Co","I Corinthians","First Corinthians"]),
  ("2 Corinthians","2Co",13,"NT",["2 Corinthians","2 Cor","2Cor","2Co","II Corinthians","Second Corinthians"]),
