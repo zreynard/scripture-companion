@@ -1,0 +1,28 @@
+# Diagnostics: the start and end of a few episodes of every source (tools/intro_survey.py). Read it in the logs.
+name: Intro survey
+on:
+  workflow_dispatch:
+    inputs:
+      sources:
+        default: '["platt_messages","secret_church_podcast","2819_podcast","street_preachers","davey_sermons","davey_wfth","davey_journey","skip_archive","skip_church","skip_connect","brookhills","mclean_podcast","radical_message","fearless"]'
+      k:
+        default: "6"
+permissions:
+  contents: read
+jobs:
+  survey:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 14
+      matrix:
+        source: ${{ fromJSON(github.event.inputs.sources) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper
+      - run: SOURCE=${{ matrix.source }} K=${{ github.event.inputs.k }} python tools/intro_survey.py
