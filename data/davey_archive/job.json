@@ -1,282 +1,256 @@
 {
  "series": "Sermons in Job",
  "slug": "job",
- "from": "spreadsheet",
  "sermons": [
   {
    "n": 1,
-   "title": "The Wise Man of Uz (Job 1:1–5)",
-   "name": "The Wise Man of Uz",
-   "title_passage": "Job 1:1–5",
+   "title": "Back Sermons in Job ( Job 1:1-5) The Wise Man of Uz",
+   "name": "Back Sermons in Job The Wise Man of Uz",
+   "title_passage": "Job 1:1-5",
    "ref": "Job 1:1–5",
-   "date": "",
+   "date": "January 7, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 2,
-   "title": "Exhibit A (Job 1:6–12)",
+   "title": "( Job 1:6-12) Exhibit A",
    "name": "Exhibit A",
-   "title_passage": "Job 1:6–12",
+   "title_passage": "Job 1:6-12",
    "ref": "Job 1:6–12",
-   "date": "",
+   "date": "January 14, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 3,
-   "title": "No Silver Lining in Sight (Job 1:13–22)",
+   "title": "( Job 1:13-22) No Silver Lining in Sight",
    "name": "No Silver Lining in Sight",
-   "title_passage": "Job 1:13–22",
+   "title_passage": "Job 1:13-22",
    "ref": "Job 1:13–22",
-   "date": "",
+   "date": "January 21, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 4,
-   "title": "Acts of God (Selected Scripture)",
+   "title": "(Selected Scripture) Acts of God",
    "name": "Acts of God",
    "title_passage": "Selected Scripture",
-   "ref": "Selected Scripture",
-   "date": "",
+   "ref": "",
+   "date": "January 28, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 5,
-   "title": "A Monument of Praise in the Valley of Despair (Job 2:1–10)",
+   "title": "( Job 2:1-10) A Monument of Praise in the Valley of Despair",
    "name": "A Monument of Praise in the Valley of Despair",
-   "title_passage": "Job 2:1–10",
+   "title_passage": "Job 2:1-10",
    "ref": "Job 2:1–10",
-   "date": "",
+   "date": "February 4, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 6,
-   "title": "Mrs. Job (Job 2:9–10)",
-   "name": "Mrs. Job",
-   "title_passage": "Job 2:9–10",
+   "title": "( Job 2:9-10) Mrs. Job, Lessons from Secondhand Su!ering",
+   "name": "Mrs. Job, Lessons from Secondhand Su!ering",
+   "title_passage": "Job 2:9-10",
    "ref": "Job 2:9–10",
-   "date": "",
+   "date": "February 18, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 7,
-   "title": "The Ministry of Presence (Job 2:11–13)",
+   "title": "( Job 2:11-13) The Ministry of Presence",
    "name": "The Ministry of Presence",
-   "title_passage": "Job 2:11–13",
+   "title_passage": "Job 2:11-13",
    "ref": "Job 2:11–13",
-   "date": "",
+   "date": "February 25, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 8,
-   "title": "Hitting Rock Bottom (Job 3)",
+   "title": "( Job 3) Hitting Rock Bottom",
    "name": "Hitting Rock Bottom",
    "title_passage": "Job 3",
    "ref": "Job 3",
-   "date": "",
+   "date": "March 4, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 9,
-   "title": "Avoiding the Error of Eliphaz (Job 4–5)",
+   "title": "( Job 4 & 5) Avoiding the Error of Eliphaz",
    "name": "Avoiding the Error of Eliphaz",
-   "title_passage": "Job 4–5",
+   "title_passage": "Job 4 & 5",
    "ref": "Job 4–5",
-   "date": "",
+   "date": "April 15, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 10,
-   "title": "Escaping the Dungeon of Giant Despair (Job 6–7)",
+   "title": "( Job 6 & 7) Escaping the Dungeon of Giant Despair",
    "name": "Escaping the Dungeon of Giant Despair",
-   "title_passage": "Job 6–7",
+   "title_passage": "Job 6 & 7",
    "ref": "Job 6–7",
-   "date": "",
+   "date": "April 22, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 11,
-   "title": "Calling the Kettle Black (Job 8)",
+   "title": "( Job 8) Calling the Kettle Black",
    "name": "Calling the Kettle Black",
    "title_passage": "Job 8",
    "ref": "Job 8",
-   "date": "",
+   "date": "April 29, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 12,
-   "title": "The Gospel According to Job (Job 9–10)",
+   "title": "( Job 9 & 10) The Gospel According to Job",
    "name": "The Gospel According to Job",
-   "title_passage": "Job 9–10",
+   "title_passage": "Job 9 & 10",
    "ref": "Job 9–10",
-   "date": "",
+   "date": "May 20, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 13,
-   "title": "The Day After You Die (Job 11–14)",
+   "title": "( Job 11-14) The Day After You Die",
    "name": "The Day After You Die",
-   "title_passage": "Job 11–14",
+   "title_passage": "Job 11-14",
    "ref": "Job 11–14",
-   "date": "",
+   "date": "June 3, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 14,
-   "title": "When Fairytales Have the Wrong Ending (Job 15–17)",
+   "title": "( Job 15-17) When Fairytales Have the Wrong Ending",
    "name": "When Fairytales Have the Wrong Ending",
-   "title_passage": "Job 15–17",
+   "title_passage": "Job 15-17",
    "ref": "Job 15–17",
-   "date": "",
+   "date": "June 10, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 15,
-   "title": "The Magnum Opus of Faith (Job 18–19)",
+   "title": "( Job 18, 19) The Magnum Opus of Faith",
    "name": "The Magnum Opus of Faith",
-   "title_passage": "Job 18–19",
+   "title_passage": "Job 18, 19",
    "ref": "Job 18–19",
-   "date": "",
+   "date": "June 17, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 16,
-   "title": "What Christians Want to Know but Are Too Afraid to Ask (Job 20–21)",
-   "name": "What Christians Want to Know but Are Too Afraid to Ask",
+   "title": "( Job 20–21) What Christians Want to Know but Are Afraid to Ask",
+   "name": "What Christians Want to Know but Are Afraid to Ask",
    "title_passage": "Job 20–21",
    "ref": "Job 20–21",
-   "date": "",
+   "date": "June 24, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 17,
-   "title": "Saints in the Hands of Angry Counselors (Job 22–24)",
-   "name": "Saints in the Hands of Angry Counselors",
+   "title": "( Job 22–24) Saints in the Hands of an Angry Counselor",
+   "name": "Saints in the Hands of an Angry Counselor",
    "title_passage": "Job 22–24",
    "ref": "Job 22–24",
-   "date": "",
+   "date": "September 16, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 18,
-   "title": "The Last Stand of a Desperate Man (Job 25–31)",
-   "name": "The Last Stand of a Desperate Man",
-   "title_passage": "Job 25–31",
+   "title": "( Job 25-31) The Last Stand of A Desperate Man",
+   "name": "The Last Stand of A Desperate Man",
+   "title_passage": "Job 25-31",
    "ref": "Job 25–31",
-   "date": "",
+   "date": "September 23, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 19,
-   "title": "The Learning Curve of Life (Job 32–37)",
-   "name": "The Learning Curve of Life",
-   "title_passage": "Job 32–37",
+   "title": "( Job 32-37) The Learning Curve",
+   "name": "The Learning Curve",
+   "title_passage": "Job 32-37",
    "ref": "Job 32–37",
-   "date": "",
+   "date": "September 30, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 20,
-   "title": "Finally . . . A Word from God (Job 38:1–4)",
-   "name": "Finally . . . A Word from God",
-   "title_passage": "Job 38:1–4",
+   "title": "( Job 38:1-4) Finally . . . A Word From God",
+   "name": "Finally . . . A Word From God",
+   "title_passage": "Job 38:1-4",
    "ref": "Job 38:1–4",
-   "date": "",
+   "date": "October 21, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 21,
-   "title": "Earth, Sky & Water (Job 38:1–18)",
-   "name": "Earth, Sky & Water",
-   "title_passage": "Job 38:1–18",
+   "title": "( Job 38:1-18) Water, Earth & Sky",
+   "name": "Water, Earth & Sky",
+   "title_passage": "Job 38:1-18",
    "ref": "Job 38:1–18",
-   "date": "",
+   "date": "October 28, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 22,
-   "title": "Lord of All the Weather (Job 38:19–38)",
+   "title": "( Job 38:19-38) Lord of All the Weather",
    "name": "Lord of All the Weather",
-   "title_passage": "Job 38:19–38",
+   "title_passage": "Job 38:19-38",
    "ref": "Job 38:19–38",
-   "date": "",
+   "date": "November 4, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 23,
-   "title": "To the Zoo and Back (Job 39:1–40:5)",
+   "title": "( Job 38:39–41) To the Zoo and Back",
    "name": "To the Zoo and Back",
-   "title_passage": "Job 39:1–40:5",
-   "ref": "Job 39:1–40:5",
-   "date": "",
+   "title_passage": "Job 38:39–41",
+   "ref": "Job 38:39–41; 39; 40:1–5",
+   "date": "November 18, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 24,
-   "title": "Dragons & Dinosaurs (Job 40:15–42:6)",
-   "name": "Dragons & Dinosaurs",
-   "title_passage": "Job 40:15–42:6",
-   "ref": "Job 40:15–42:6",
-   "date": "",
+   "title": "( Job 40:15-42:6) Dragon & Dinosaurs",
+   "name": "Dragon & Dinosaurs",
+   "title_passage": "Job 40:15-42:6",
+   "ref": "Job 40:15–24; 41; 42:1–6",
+   "date": "December 2, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   },
   {
    "n": 25,
-   "title": "Almost Happily Ever After (Job 42:7–16)",
+   "title": "( Job 42:7-16) Almost Happily Ever After",
    "name": "Almost Happily Ever After",
-   "title_passage": "Job 42:7–16",
-   "ref": "Job 42:7–16",
-   "date": "",
+   "title_passage": "Job 42:7-16",
+   "ref": "Job 42:7–17",
+   "date": "December 9, 2007",
    "speaker": "Stephen Davey",
-   "series": "Sermons in Job",
-   "tried": 1
+   "series": "Sermons in Job"
   }
  ]
 }
