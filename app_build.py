@@ -23,7 +23,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 100  # bump on every shipped build; also busts the service-worker cache
+VERSION = 101  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -89,12 +89,6 @@ def big_picture(items):
     out[1]["names"] = names
     out[0]["unit"], out[1]["unit"] = "session", "flight"
     out[0]["group"] = out[1]["group"] = "bp"
-    # Spiritual Growth: Stephen Davey's Legacies of Light, lives of Christians who went before (Wisdom for the Heart, 2026)
-    lol = sorted([i for i in items.values() if i["src"] == "davey_wfth" and re.match(r"\s*Legacies of Light:", i["t"])], key=lambda i: (i["date"], i["t"]))
-    out.append({"id": "legacies", "title": "Legacies of Light", "by": "Stephen Davey", "art": "legacies", "group": "growth", "unit": "life",
-                "desc": "Lives of Christians who went before us: Spurgeon, Hudson Taylor, Amy Carmichael, Corrie ten Boom, William Carey and more. Faith, perseverance and sacrifice, told one life at a time.",
-                "parts": [["", [i["id"] for i in lol]]],
-                "names": {i["id"]: re.sub(r"\)$", "", re.sub(r"^\s*Legacies of Light:\s*", "", i["t"])).replace("Part 2)", "Part 2").strip() for i in lol}})
     return [x for x in out if any(ids for _, ids in x["parts"])]
 
 def main():
