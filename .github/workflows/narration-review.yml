@@ -1,0 +1,16 @@
+# Which narrated chapters have a verse that may sound wrong (tools/narrate.py review). The list is in the log and in
+# redo.txt (an artifact), ready for a re-record pass: Narrate the Bible with only=<list>, redo=1.
+name: Review narration
+on: workflow_dispatch
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/narrate.py review
+      - uses: actions/upload-artifact@v4
+        with:
+          name: redo
+          path: redo.txt

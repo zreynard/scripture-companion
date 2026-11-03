@@ -10,6 +10,7 @@ verse numbers are never read, and section headings (not part of the text) are le
     python tools/narrate.py run SHARD SHARDS [ONLY] make and upload the shard's chapters that are not uploaded yet
     python tools/narrate.py collect                 gather every chapter's timings into data/narration/<abbr>.json
     python tools/narrate.py publish                 copy new mp3s to the narration-audio branch, then collect those
+    python tools/narrate.py review                  list chapters with pieces that may sound wrong (for a re-record)
 ONLY limits a run to some chapters, e.g. "Gen:1,Psa:23".
 """
 import difflib, glob, json, os, re, subprocess, sys, tempfile
@@ -105,15 +106,17 @@ TAGS = lambda t: [TAG(t)] + [f"{TAG(t)}-{i}" for i in range(2, 6)]
 
 
 def release_files(t):
-    """Every file in a testament's releases, as {name: release tag} (listed page by page)."""
+    """Every file in a testament's releases, as {name: (release tag, asset id)} (listed page by page)."""
     out = {}
     for tag in TAGS(t):
         q = subprocess.run(["gh", "api", f"repos/{REPO}/releases/tags/{tag}", "-q", ".id"], capture_output=True, text=True)
         rid = q.stdout.strip()
         if q.returncode or not rid.isdigit(): continue  # this release does not exist (yet)
-        r = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/releases/{rid}/assets?per_page=100", "-q", ".[].name"],
+        r = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/releases/{rid}/assets?per_page=100", "-q", '.[]|"\\(.name) \\(.id)"'],
                            capture_output=True, text=True, check=True)
-        for n in r.stdout.split(): out.setdefault(n, tag)
+        for line in r.stdout.splitlines():
+            n, i = line.split()
+            out.setdefault(n, (tag, int(i)))
     return out
 
 
@@ -185,7 +188,7 @@ class Reader:
         """Read one piece; check it by ear (speech recognition) and pace; try again up to twice; keep the best."""
         best = None
         want = letters(text)
-        for k in range(3):
+        for k in range(int(os.environ.get("TRIES", "3"))):
             self.torch.manual_seed(SEED + k)
             wav = self.trim(self.gen(text).squeeze().cpu().numpy())
             dur = len(wav) / self.sr
@@ -250,13 +253,16 @@ def upload(files, testament):
 def run(k, shards, only=""):
     import time
     chs = chapters()
+    redo = os.environ.get("REDO") == "1"
     if only:
-        want = {tuple(s.split(":")) for s in only.split(",")}
+        want = {tuple(s.split(":")) for s in only.split(",") if s}
         todo = [x for x in chs if (x["abbr"], str(x["c"])) in want]
+        if redo: todo = todo[int(k)::int(shards)]  # the list shared out over the machines
     else:
         todo = shard_of(chs, int(k), int(shards))
-    have = uploaded()
-    todo = [x for x in todo if asset(x, "mp3") not in have or asset(x, "json") not in have]
+    if not redo:
+        have = uploaded()
+        todo = [x for x in todo if asset(x, "mp3") not in have or asset(x, "json") not in have]
     print(f"shard {k}/{shards}: {len(todo)} chapters to make", flush=True)
     if not todo: return
     reader = Reader()
@@ -294,15 +300,23 @@ def mirror():
     else:
         git(d, "read-tree", "HEAD")
         have = set(git(d, "ls-tree", "--name-only", "HEAD").split())
-    todo = []
-    for t in ("OT", "NT"):
-        todo += [(tag, n) for n, tag in sorted(release_files(t).items()) if n.endswith(".mp3") and n not in have]
+    rel = {**release_files("OT"), **release_files("NT")}
+    if "manifest.json" in have: man = json.loads(git(d, "show", "HEAD:manifest.json"))
+    else: man = {n: rel[n][1] for n in have if n in rel}  # first time: what is there is current
+    todo = [(tag, n) for n, (tag, i) in sorted(rel.items()) if n.endswith(".mp3") and (n not in have or man.get(n) != i)]
     print(f"{len(have & {n for n in have if n.endswith('.mp3')})} chapters on the audio branch, {len(todo)} to add", flush=True)
+    if "manifest.json" not in have and not todo:  # record the ids even when nothing needs copying
+        json.dump(man, open(os.path.join(d, "manifest.json"), "w"), separators=(",", ":"), sort_keys=True)
+        git(d, "add", "manifest.json"); git(d, *git_id, "commit", "-q", "-m", "Narration audio: manifest")
+        subprocess.run(["git", "-C", d, "push", "-q", "origin", f"HEAD:{AUDIO}"], check=True)
     for i in range(0, len(todo), 80):
         batch = todo[i:i + 80]
         for t, n in batch:
             subprocess.run(["gh", "release", "download", t, "-R", REPO, "-p", n, "-D", d, "--clobber"], check=True)
             git(d, "add", n); os.remove(os.path.join(d, n))
+        for _, n in batch: man[n] = rel[n][1]
+        json.dump(man, open(os.path.join(d, "manifest.json"), "w"), separators=(",", ":"), sort_keys=True)
+        git(d, "add", "manifest.json")
         git(d, *git_id, "commit", "-q", "-m", f"Narration audio: {len(batch)} chapters")
         for k in range(4):
             if subprocess.run(["git", "-C", d, "push", "-q", "origin", f"HEAD:{AUDIO}"]).returncode == 0: break
@@ -333,9 +347,31 @@ def collect(playable=None):
     print(f"{n} chapters in {len(books)} books; {sum(c['d'] for b in books.values() for c in b['c'].values()) / 3600:.1f} hours")
 
 
+def review():
+    """Chapters with a piece the speech check still doubted after every take (or that ran far too fast or slow).
+    Prints the list for a re-record pass (narrate.yml with only=<list> and redo=1)."""
+    tmp = tempfile.mkdtemp()
+    for t in ("OT", "NT"):
+        for tag in TAGS(t):
+            subprocess.run(["gh", "release", "download", tag, "-R", REPO, "-p", "*.json", "-D", tmp, "--clobber"], check=False)
+    bad, n, pieces_bad = [], 0, 0
+    for f in sorted(glob.glob(os.path.join(tmp, "*.json"))):
+        m = json.load(open(f)); n += 1
+        w = [x for x in m.get("weak", []) if x["sim"] < 0.6 or (not 7 <= x["cps"] <= 26 and len(x["text"]) >= 15)]
+        if w:
+            bad.append((m["a"], m["c"], w)); pieces_bad += len(w)
+    print(f"{n} chapters checked; {len(bad)} have {pieces_bad} pieces that may sound wrong")
+    for a, c, w in bad[:40]:
+        print(f"  {a} {c}: " + " | ".join(f'{x["sim"]} {x["cps"]}cps "{x["text"][:50]}"' for x in w[:3]))
+    lst = ",".join(f"{a}:{c}" for a, c, _ in bad)
+    open(os.path.join(HERE, "redo.txt"), "w").write(lst)
+    print("REDO_LIST=" + lst)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "plan": print(json.dumps(list(range(int(sys.argv[2])))))
     elif cmd == "run": run(*sys.argv[2:])
     elif cmd == "collect": collect()
     elif cmd == "publish": collect(mirror())
+    elif cmd == "review": review()

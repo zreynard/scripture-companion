@@ -9,6 +9,9 @@ on:
       shards:
         description: "Machines to split the work over"
         default: "60"
+      redo:
+        description: "Re-record the chapters in only, even though they exist, with more takes per verse (1 = yes)"
+        default: "0"
       collect_only:
         description: "Only gather the timings (1 = yes)"
         default: "0"
@@ -30,7 +33,7 @@ jobs:
           for t in ot nt; do gh release view narration-$t -R ${{ github.repository }} >/dev/null 2>&1 || \
             gh release create narration-$t -R ${{ github.repository }} --title "Narration ($t)" --notes "The Bible read aloud by Alistair: one mp3 and one timing file per chapter. Made by tools/narrate.py." ; done
           if [ "${{ github.event.inputs.collect_only }}" = "1" ]; then echo 'shards=[]' >> $GITHUB_OUTPUT
-          elif [ -n "${{ github.event.inputs.only }}" ]; then echo 'shards=[0]' >> $GITHUB_OUTPUT
+          elif [ -n "${{ github.event.inputs.only }}" ] && [ "${{ github.event.inputs.redo }}" != "1" ]; then echo 'shards=[0]' >> $GITHUB_OUTPUT
           else echo "shards=$(python tools/narrate.py plan ${{ github.event.inputs.shards }})" >> $GITHUB_OUTPUT; fi
   narrate:
     needs: plan
@@ -51,6 +54,8 @@ jobs:
       - run: pip install -q chatterbox-tts soundfile faster-whisper scipy
       - env:
           GH_TOKEN: ${{ github.token }}
+          REDO: ${{ github.event.inputs.redo }}
+          TRIES: ${{ github.event.inputs.redo == '1' && '6' || '3' }}
         run: python tools/narrate.py run ${{ matrix.k }} ${{ github.event.inputs.shards }} "${{ github.event.inputs.only }}"
   collect:
     needs: [plan, narrate]
