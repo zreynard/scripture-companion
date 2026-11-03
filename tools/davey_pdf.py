@@ -10,6 +10,7 @@ MONTHS = "January|February|March|April|May|June|July|August|September|October|No
 
 def text_of(pdf):
     t = subprocess.run(["pdftotext", "-layout", pdf, "-"], capture_output=True, text=True).stdout
+    t = re.sub(r"[\ue000-\uf8ff]", " ", t)
     keep = []
     for line in t.splitlines():
         s = line.strip()

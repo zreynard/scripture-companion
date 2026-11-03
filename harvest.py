@@ -95,7 +95,7 @@ def harvest_davey_archive() -> list[dict]:
             try: pub = datetime.strptime(x["date"], "%B %d, %Y").strftime("%a, %d %b %Y 12:00:00 +0000")
             except ValueError: pub = ""
             tp = x.get("title_passage", "")
-            nm = re.sub(r"\s+", " ", x["name"] or x["title"]).strip()
+            nm = re.sub(r"\s+", " ", re.sub(r"[\ue000-\uf8ff]", " ", x["name"] or x["title"])).strip()
             title = f"{nm} ({tp})" if tp and re.search(r"\d", tp) else nm
             e = make_entry(source="davey_archive", source_url="https://www.wisdomonline.org/teaching-series", url=x["mp3"], title=title,
                            description=f'{d["series"]}. Scripture: {x.get("ref", "")}', published=pub, duration="", author="Stephen Davey", era="davey",
@@ -655,7 +655,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             old_e = existing.get(e["url"])
             if old_e is None:
                 twin = by_title.get(_n(e["title"]))
-                if twin and urlparse(twin["url"]).netloc != urlparse(e["url"]).netloc:
+                if twin and urlparse(twin["url"]).netloc != urlparse(e["url"]).netloc and e["source"] != "davey_archive" and twin.get("source") != "davey_archive":
                     old_e = twin  # same episode published on another host: keep the shipped id/url
                     if e["url"] not in twin.setdefault("alt_urls", []):
                         twin["alt_urls"].append(e["url"])
