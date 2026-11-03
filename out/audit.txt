@@ -35,13 +35,13 @@ PASS  Secret Church podcast sessions numbered without gaps
 PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
 PASS  no dates in the future
-FAIL  feed episodes on the road all carry a date  (92)
-        - Saints Alive (Romans 1:6–7) (davey_archive)
-        - Recovering the Gospel (Romans 1:17) (davey_archive)
-        - Learning to Say the Right Words (Titus 2:11–14) (davey_archive)
+FAIL  feed episodes on the road all carry a date  (130)
+        - Wax Free . . . Sun Tested (Titus 3:12–15) (davey_archive)
         - Chocolate Soldiers (Titus 1:8–9) (davey_archive)
-        - Ransomed! (1 Peter 1:18–21) (davey_archive)
-        - Somebody’s Servant (Romans 1:1) (davey_archive)
+        - Politically Incorrect (Titus 1:5) (davey_archive)
+        - The Other Side of God (Romans 1:18a) (davey_archive)
+        - A Learner’s Permit for Life (James 3:13–16) (davey_archive)
+        - Jesus Is God (Philippians 2:9–11) (davey_archive)
 PASS  every id is the hash of its link (progress keys stable)
 PASS  every shipped entry from the original catalog still exists (same id)
 PASS  nothing unverified (PENDING / FAIL) on the road
