@@ -1,537 +1,273 @@
 === intro
-Until now the Bible has mostly told a story. The book of Psalms does something different. It gathers up the voices of the people inside that story, and lets us hear them speaking to God. Here are a hundred and fifty poems, the songs and prayers of ancient Israel, written over many centuries and collected into a single book. Its Hebrew title means praises. Our word psalm comes through Greek, from a word for a song sung to the plucking of strings.
+Until now the Bible has mostly told a story. The book of Psalms does something different. It gathers up the voices of the people inside that story and lets us hear them speaking to God. Here are a hundred and fifty poems, the songs and prayers of ancient Israel, written over many centuries and collected into a single book. Its Hebrew title means praises. Our word psalm comes through Greek, from a word for a song sung to the plucking of strings.
 
-These poems span a remarkable stretch of history. One is credited to Moses, which would take us back to the wilderness. Many belong to the age of David and the kingdom he founded, about a thousand years before Christ. Others lament the destruction of Jerusalem by the Babylonians, and at least one is sung by exiles sitting beside the rivers of Babylon. So the collection grew slowly, through the years of the kings, the exile and the return, and it seems to have reached its final shape in the centuries after the temple was rebuilt. It became the songbook of the second temple, and later of the synagogue and the church.
+The poems span a remarkable stretch of history. One is credited to Moses, which takes us back to the wilderness. Many belong to the age of David and the kingdom he founded, about a thousand years before Christ. Others mourn the destruction of Jerusalem by the Babylonians, and at least one remembers the exiles weeping beside the rivers of Babylon. So the collection grew slowly, through the years of the kings, the exile and the return, and it seems to have reached its final shape after the temple was rebuilt. It became the songbook of the second temple, and later of the synagogue and the church.
 
-Most psalms open with a short heading, which the Bible we are reading counts as part of the first verse. These superscriptions are very old, and they are worth listening to. Some name a writer. Some give musical directions: for the choirmaster, with stringed instruments, to a tune with a name such as The Doe of the Dawn. Some use technical words whose meaning was lost long ago, such as Maskil, Miktam and Shiggaion. The word Selah appears often within the poems themselves, probably marking a pause or a musical interlude, though no one now knows exactly how it was used. And a handful of headings, all of them about David, link a psalm to a particular moment in his life: running from Saul, hiding in a cave, confronted by the prophet Nathan, fleeing his own son Absalom. Most psalms carry no such note, and we should not invent one where Scripture is silent.
+Most psalms open with a short heading, which the Bible we are reading counts as part of the first verse. These superscriptions are very old. Some name a writer. Some give musical directions: for the choirmaster, with stringed instruments, to a tune with a name such as The Doe of the Dawn. Some use technical words whose meaning was lost long ago, such as Maskil, Miktam and Shiggaion. The word Selah appears often within the poems, probably marking a pause or an interlude, though no one now knows exactly how it was used. And a handful of headings, all about David, link a psalm to a moment in his life: running from Saul, hiding in a cave, confronted by the prophet Nathan, fleeing his own son Absalom. Most psalms carry no such note, and where Scripture is silent about an occasion, it is wise not to invent one.
 
-David's name stands over more psalms than any other, about half of the whole collection. He was remembered as Israel's singer: the shepherd boy who played the lyre for King Saul, and the king who brought the ark to Jerusalem with music and dancing and organised the Levites as singers for the house of God. The Hebrew phrase of David can mean by David, but also for him or belonging to his collection, so readers have weighed it carefully. Other names appear as well. Asaph was one of the chief musicians David appointed, and a group of psalms bears his name, probably including the work of the singers who followed him. The sons of Korah were a family of Levites, descended from the Korah who rebelled against Moses in the wilderness, and later found serving as gatekeepers and singers at the temple. Two psalms are linked with Solomon, one with Moses, one with Heman and one with Ethan, both described as Ezrahites. Many psalms are anonymous.
+David's name stands over more psalms than any other, about half the collection. He was remembered as Israel's singer: the shepherd boy who played the lyre for King Saul, and the king who brought the ark to Jerusalem with music and dancing and appointed Levites to sing before God. The Hebrew phrase of David can mean by David, but also for him or belonging to his collection, so readers weigh it with care. Asaph was one of the chief musicians David appointed, and the psalms bearing his name probably include the work of singers who followed him. The sons of Korah were a family of Levites, descended from the Korah who rebelled against Moses, and later served as gatekeepers and singers at the temple. Two psalms are linked with Solomon, one with Moses, one with Heman and one with Ethan, both called Ezrahites. Many psalms are anonymous.
 
-The psalms come in recognisable kinds. The most common is the lament, a cry for help from someone who is sick, slandered, hunted or abandoned, or from the whole nation in defeat. Laments complain honestly, plead with God, and very often turn, sometimes abruptly, to trust and praise. There are hymns that praise God as creator and king, and songs of thanksgiving for a rescue already received. Royal psalms concern Israel's king, his coronation, his wedding, his battles, and God's promise to the house of David. Wisdom psalms reflect on the two ways of life and the puzzle of why the wicked prosper. Near the end of the book comes a little collection of fifteen short songs called the songs of ascents, probably sung by pilgrims going up to Jerusalem for the great festivals.
+The psalms come in recognisable kinds. The most common is the lament, a cry for help from someone sick, slandered, hunted or abandoned, or from the whole nation in defeat. Laments complain honestly, plead with God, and very often turn, sometimes abruptly, to trust and praise. There are hymns praising God as creator and king, and songs of thanksgiving for a rescue already received. Royal psalms concern Israel's king: his coronation, his wedding, his battles, and God's promise to the house of David. Wisdom psalms reflect on the two ways of life and the puzzle of why the wicked prosper. Near the end of the book come fifteen short songs of ascents, probably sung by pilgrims going up to Jerusalem for the great festivals.
 
-All of this is poetry, and Hebrew poetry has its own music. It does not rhyme. Instead it works by parallelism: one line makes a statement, and the next echoes it, deepens it, or sets it against its opposite. The Lord is my shepherd; I shall not want. Because the rhythm lies in the thought rather than the sound, it survives translation remarkably well. A few psalms go further and are built as acrostics, each line or stanza beginning with the next letter of the Hebrew alphabet. One small thing helps the listener too. Where English Bibles print the LORD, the Hebrew has God's personal name, the name he revealed to Moses at the burning bush.
+All of this is poetry, and Hebrew poetry has its own music. It does not rhyme. Instead it works by parallelism: one line makes a statement, and the next echoes it, deepens it, or sets it against its opposite. The Lord is my shepherd; I shall not want. Because the rhythm lies in the thought rather than the sound, it survives translation remarkably well. A few psalms are built as acrostics, each line or stanza beginning with the next letter of the Hebrew alphabet. One small thing helps the listener too. Where English Bibles print the LORD, the Hebrew has God's personal name, the name he revealed to Moses at the burning bush.
 
-The collection is arranged in five books, perhaps echoing the five books of Moses. Each of the first four closes with a short blessing of God, and the last psalm is itself one great closing burst of praise. Psalms one and two stand at the entrance as a gateway: one about the person who delights in God's law, the other about the king God has set on Zion. Book One is almost entirely David's, and full of laments. Book Two opens with the sons of Korah and returns to David. Book Three, darker in tone, is dominated by Asaph and ends with a grieving question about what has become of God's promise to David's line. Book Four answers with a prayer of Moses and a series of psalms declaring that the Lord reigns. Book Five gathers songs of pilgrimage and thanksgiving, and the whole book ends in a cascade of hallelujahs.
+The collection is arranged in five books, perhaps echoing the five books of Moses. Each of the first four closes with a short blessing of God, and the last psalm is one great closing burst of praise. Psalms one and two stand at the entrance as a gateway: one about the person who delights in God's law, the other about the king God has set on Zion. Book One is almost entirely David's, and full of laments. Book Two opens with the sons of Korah and returns to David. Book Three, darker in tone, belongs largely to Asaph and ends with a grieving question about what has become of God's promise to David's line. Book Four answers with a prayer of Moses and a series of psalms declaring that the Lord reigns. Book Five gathers songs of pilgrimage and thanksgiving, and the whole book ends in a cascade of hallelujahs.
 
-Israel sang these psalms in the temple courts, with lyres and harps, cymbals and trumpets, at the festivals and the daily sacrifices, and prayed them in homes and in exile far from Jerusalem. Jesus knew them by heart, quoted them often, and prayed one of them from the cross. They have been the prayer book of God's people ever since. As each one begins, the narrator will say what kind of psalm it is, what its heading tells us, and how it moves. Then the psalm will speak for itself.
+Israel sang these psalms in the temple courts, with lyres and harps, cymbals and trumpets, at the festivals and the daily sacrifices, and prayed them at home and in exile far from Jerusalem. Jesus knew them by heart, quoted them often, and prayed them from the cross. They have been the prayer book of God's people ever since, and each one is meant to be heard whole, in its own voice.
 
 === 1
-The Psalter opens not with a prayer but with a portrait. Psalm one has no heading and no named author. It is a wisdom psalm, and it describes two kinds of people and the two roads they travel.
+The Psalter opens not with a prayer but with a portrait. Psalm one has no heading and no named author. It is a wisdom psalm, describing two kinds of people and the two roads they travel.
 
-The first is the blessed man, a word that means something like truly happy, or well placed in life. He is defined first by what he refuses, and then by what he loves: the law of the Lord, which he turns over in his mind day and night. The word translated law is Torah, which means instruction, the whole teaching God has given, not merely a list of rules. Such a person is pictured as a tree beside streams of water, rooted, green and fruitful.
+The first is the blessed man, a word that means something like truly happy, or well placed in life. He is defined by what he refuses and by what he loves: the law of the Lord, which he turns over in his mind day and night. The word is Torah, meaning instruction, the whole of God's teaching, not merely a list of rules. Such a person is like a tree beside streams of water, rooted, green and fruitful.
 
-The second picture is of the wicked, and it is as light as the first is solid: chaff, the husks blown away when grain is tossed into the wind on the threshing floor. The psalm is short, and its last line names the two ways and where each one leads. Placed at the front of the book, it quietly invites every reader to come to the psalms that follow as this kind of person.
+The wicked, by contrast, are chaff, the husks blown away when grain is tossed into the wind on the threshing floor. Placed at the front of the book, this short psalm quietly invites every reader to come to the psalms that follow as the first kind of person.
 
 === 2
-The second psalm stands beside the first as the other half of the Psalter's gateway. Psalm one began with the word blessed; Psalm two ends with it. But where the first psalm looked at a single life, this one looks at the nations of the world.
+The second psalm stands beside the first as the other half of the Psalter's gateway. Psalm one began with the word blessed; Psalm two ends with it. But where the first looked at a single life, this one looks at the nations.
 
-It is a royal psalm, and its setting is a coronation in Jerusalem. In the ancient world, the accession of a new king was a dangerous moment, when subject peoples might try to throw off their obligations. Here the kings of the earth are plotting against the Lord and against his anointed one. The Hebrew word for anointed is messiah. The psalm has no heading, though in the book of Acts the early believers speak of it as David's.
+It is a royal psalm, set at a coronation in Jerusalem. In the ancient world a new king's accession was a dangerous moment, when subject peoples might try to break free. Here the kings of the earth plot against the Lord and his anointed one, in Hebrew his messiah. The psalm has no heading, though in the book of Acts the early believers speak of it as David's.
 
-Listen for the changing voices. First the rebellious rulers speak, then heaven laughs, then God declares that he has installed his king on Zion, his holy mountain. Then the king himself announces the decree God has spoken to him, you are my son, and finally the poet turns to warn the rulers to submit while they can. The New Testament returns to this psalm again and again when it speaks of Jesus as God's anointed Son.
+Listen for the changing voices: the rebellious rulers, heaven's laughter, God declaring that he has installed his king on Zion, the king announcing God's decree, you are my son, and finally a warning to the rulers to submit. The New Testament returns to this psalm again and again when it speaks of Jesus as God's Son.
 
 === 3
-Here, for the first time, a psalm carries a heading, and it takes us into one of the darkest chapters of David's life. A Psalm of David, when he fled from his son Absalom.
+Here, for the first time, a psalm carries a heading, and it takes us into one of the darkest chapters of David's life: when he fled from his son Absalom.
 
-The story is told in the second book of Samuel. David's son Absalom spent years winning the hearts of the people, then had himself proclaimed king at Hebron and marched on Jerusalem. David left the city with his household and loyal men, climbing the Mount of Olives barefoot and weeping, and crossed the Jordan into the wilderness. On the way a man from Saul's family pelted him with stones and cursed him, as though God had finally abandoned him.
+The second book of Samuel tells the story. Absalom spent years winning the hearts of the people, then had himself proclaimed king at Hebron and marched on Jerusalem. David left the city, climbing the Mount of Olives barefoot and weeping, and crossed the Jordan. On the way a man of Saul's family pelted him with stones and cursed him, as though God had finally abandoned him.
 
-That is the taunt this psalm repeats: God will not deliver him. Against it David sets a different picture of God, as a shield around him and the one who lifts his head. In the middle comes a remarkably simple line. He lies down, he sleeps, and he wakes again, alive. This is often called a morning psalm. Notice too the word Selah, appearing here three times, perhaps marking a pause in the singing.
+That is the taunt this psalm repeats: God will not deliver him. Against it David sets God as a shield around him, the one who lifts his head. Then comes a remarkably simple line. He lies down, sleeps, and wakes again, sustained by the Lord. Listen too for the word Selah, which appears here for the first time.
 
 === 4
-Psalm four is a prayer for the end of the day. It closes with David lying down to sleep in peace, and for that reason it has long been paired with the morning psalm before it. The heading adds the first of many musical directions: for the choirmaster, with stringed instruments.
+Psalm four is a prayer for the end of the day, closing with David lying down to sleep in peace, and it has long been paired with the morning psalm before it. Its heading brings the first of many musical directions: for the choirmaster, with stringed instruments.
 
-No occasion is named. The psalm opens with an urgent appeal to God, recalling that he has given relief in distress before. Then David turns, unusually, to speak to people around him, men who are dragging his honour through the mud and chasing after empty things. He tells them to be still, to search their hearts on their beds, and to trust the Lord.
+No occasion is named. David appeals to God, who has relieved his distress before, and then turns, unusually, to speak to the people around him, men who drag his honour through the mud and chase after lies. He tells them to search their hearts on their beds and be still.
 
-In the second half the scene widens. Many are asking who will show them any good. David's answer is a prayer, an echo of the old priestly blessing that asks God to make his face shine. He ends by saying the joy God has given him is greater than the joy of a bumper harvest, when the grain and the new wine overflow.
+The scene widens. Many are asking who will show them any good, and David answers with a prayer that echoes the old priestly blessing, asking God to let the light of his face shine. The joy God has given him, he says, is greater than the joy of a harvest when grain and new wine abound.
 
 === 5
-Psalm four ended at bedtime. Psalm five begins at daybreak, with David laying out his request before God like an offering and then watching to see what God will do. The heading asks for the accompaniment of flutes.
+Psalm four ended at bedtime; Psalm five begins at daybreak. David lays out his plea before God and waits to see what God will do. The heading asks for flutes.
 
-This is a lament, though a composed and steady one. Much of it contrasts two kinds of people standing before God. On one side are the boastful, the liars and the violent, whose throats are described as open graves. On the other is the psalmist, who knows he can enter God's house only because of God's own faithful love.
+This is a lament, though a composed one, setting two kinds of people side by side before God. On one side stand the boastful, the liars and the violent, whose throats are open graves. On the other stands the psalmist, who can enter God's house only because of God's own loving devotion.
 
-That phrase deserves a word of explanation, because it will be heard again and again in the psalms. The Hebrew word hesed is rich and hard to translate. The Berean Standard Bible renders it loving devotion; others say steadfast love or mercy. It means the loyal, committed love that God has bound himself to show his people. The psalm closes with a widening blessing over all who take refuge in him.
+That phrase will be heard again and again in the psalms, so it deserves a word. The Hebrew is hesed, the loyal, committed love God has bound himself to show his people. The Berean Standard Bible calls it loving devotion; others say steadfast love or mercy.
 
 === 6
-Psalm six is the prayer of a man at the end of his strength. Something has brought him very low, apparently a serious illness, and he fears that it may be God's discipline. His bones ache, his soul is shaken, and night after night he soaks his bed with tears. In church tradition it became the first of seven penitential psalms, prayers of sorrow and repentance.
+Psalm six is the prayer of a man at the end of his strength. He is gravely ill, it seems, and fears that his suffering is God's discipline. His bones ache, and night after night he floods his bed with tears. Church tradition counted it the first of seven penitential psalms.
 
-The heading includes the word Sheminith, which may mean the eighth, perhaps referring to an instrument or a musical setting; its meaning is uncertain. Listen for the cry, how long, O Lord, how long, which will return often in the psalms, and for the reason the psalmist gives God for saving him: in Sheol, the shadowy realm of the dead, no one remembers him or gives him praise.
+The heading's Sheminith may mean the eighth, perhaps an instrument or a musical setting; no one is sure. Listen for the cry how long, O Lord, how long, which will return often in the psalms, and for the reason the psalmist gives God for saving him: in Sheol, the shadowy realm of the dead, no one gives him praise.
 
-Then, with no warning, the mood changes. He turns on his enemies and tells them to go, because the Lord has heard. Three times in two lines he says it. The prayer that began in tears ends in confidence.
+Then, without warning, the mood changes. He orders his enemies away, because the Lord has heard his weeping. He says it three times in quick succession, and the prayer that began in tears ends in confidence.
 
 === 7
-The heading of Psalm seven is unusual. It calls the poem a Shiggaion, a word whose meaning has been lost, though some think it describes an intense or irregular song. And it names a cause: the words of Cush, a Benjamite. Who Cush was, Scripture never says. We know only that David had bitter enemies among Saul's tribe of Benjamin, and that someone of that name had evidently been spreading accusations against him.
+The heading of Psalm seven calls it a Shiggaion, a word whose meaning is lost, though some think it describes an impassioned, irregular song. It names a cause, the words of Cush, a Benjamite. Who Cush was, Scripture never says. We know only that David had bitter enemies in Saul's tribe of Benjamin, and that this man had evidently been accusing him.
 
-The psalm itself is a plea from someone falsely accused. David pictures himself hunted by a lion. Then he does something striking: he swears an oath of innocence, calling down disaster on himself if he has really done the wrong he is charged with.
+The psalm is the plea of someone falsely charged, hunted as if by a lion. David swears an oath of innocence, calling disaster down on himself if he has really done the wrong he is accused of.
 
-From there the scene moves to a courtroom. God is called to rise up and take his seat as judge over the assembled nations, the one who tests hearts and minds. The poem ends with the image of a man who digs a pit for others and falls into it himself, and with thanks to the Lord Most High.
+Then the scene becomes a courtroom. God is summoned to take his seat above the assembled nations, the righteous judge who searches hearts and minds. By the close, the wicked man has dug a pit and fallen into it himself, and David gives thanks to the Lord Most High.
 
 === 8
-After seven psalms of distress and struggle comes the first pure hymn of praise. Psalm eight is a song about God's glory in creation, and about the surprising place he has given to human beings within it. The heading mentions the Gittith, possibly an instrument or a tune linked with the Philistine city of Gath; no one knows for certain.
+After seven psalms of struggle comes the first pure hymn of praise. Psalm eight celebrates God's glory in creation, and the surprising place he has given human beings within it. The heading mentions the Gittith, perhaps an instrument or tune linked with the Philistine city of Gath.
 
-The psalm begins and ends with the same exclamation, how majestic is your name in all the earth, and everything in between is held inside it. The poet stands under the night sky, looking at the moon and the stars, which he calls the work of God's fingers, and the vastness of it all makes him ask what humanity can be, that God should care for it.
+The same exclamation opens and closes the psalm: how majestic is your name in all the earth. Between them the poet stands under the night sky. He looks at the moon and stars, the work of God's fingers, and the vastness of it makes him ask what man is, that God should care for him.
 
-The answer echoes the first chapter of Genesis. God has crowned human beings with glory and honour and set them to rule over his works, the flocks and herds, the wild animals, the birds and the fish. The letter to the Hebrews will later return to these lines and read them in the light of Jesus.
+The answer echoes the first chapter of Genesis. God has crowned human beings with glory and honour and set them over his works, the flocks and herds, the wild animals, the birds and the fish. The letter to the Hebrews later reads these lines in the light of Jesus.
 
 === 9
-Psalm nine is a song of thanks, and it belongs closely with the psalm that follows it. The two are bound together by a pattern hidden in the Hebrew: an acrostic, its stanzas beginning with successive letters of the alphabet, which starts here and runs on, somewhat broken, into Psalm ten. The ancient Greek translation treated them as a single poem.
+Psalm nine is a song of thanks, and it belongs closely with Psalm ten. Hidden in the Hebrew is an acrostic, its stanzas beginning with successive letters of the alphabet, which starts here and runs on, somewhat broken, into the next psalm. The ancient Greek translation treated the two as one.
 
-The heading names a tune, The Death of the Son, though what that title meant is unknown. The psalm praises God as a righteous judge on his throne, who has defeated hostile nations and remembers the cry of the afflicted. Zion, the hill of Jerusalem, appears as the place where the Lord dwells.
+The heading names a tune, The Death of the Son, its meaning now unknown. God is praised as a righteous judge on his throne, who has overthrown hostile nations and remembers the cry of the afflicted, and Zion appears as the place where he dwells.
 
-The mood is not simply triumphant. Midway through, the singer turns to ask for mercy, still pressed by enemies, and the psalm ends not with a victory celebration but with a prayer that the nations would be reminded they are only men. Near the end two musical terms appear together, Higgaion and Selah, perhaps calling for a pause for reflection.
+Yet the mood is not simply triumphant. Midway through, the singer asks for mercy, still pressed by enemies, and the psalm closes not with a victory song but with a prayer that the nations may learn they are only men. Near the end, Higgaion and Selah appear together, perhaps calling for a pause to reflect.
 
 === 10
-Psalm ten has no heading of its own, which is one reason many readers take it as the second half of Psalm nine. But its tone is very different. The confidence of the previous psalm gives way to a question that has been asked by sufferers in every age: why, O Lord, do you stand far off?
+Psalm ten has no heading of its own, one reason many readers take it as the second half of Psalm nine. But the confidence of that psalm gives way here to a question sufferers have asked in every age: why, O Lord, do you stand far off?
 
-Much of the psalm is a portrait of the wicked man. He is proud, greedy and secure. He mocks God and assumes that God never notices. Then the picture turns predatory: he lurks near the villages like a lion in a thicket, waiting to drag off the helpless in his net.
+Much of the psalm is a portrait of the wicked man. He is proud, greedy and secure, sure that God never notices. Then the picture turns predatory. He lurks near the villages like a lion in a thicket, waiting to drag off the helpless in his net.
 
-Against that portrait the psalmist calls on God to rise and act, and to remember the fatherless and the oppressed. By the end the question of the opening line has received its answer, not in an explanation but in a declaration. The Lord is King forever and ever, and he hears the desire of the humble.
+Against that portrait the psalmist calls on God to rise and remember the fatherless and the oppressed. By the end the opening question has its answer, not as an explanation but as a declaration: the Lord is King forever and ever, and he hears the desire of the humble.
 
 === 11
-Psalm eleven is a short song of trust, and it begins with a scene. Someone, perhaps well-meaning friends, is urging David to run: flee like a bird to the mountains. The wicked have their arrows on the string, they say, and if the very foundations are crumbling, what can a righteous person do?
+Psalm eleven is a short song of trust, and it begins with a scene. Someone is urging David to run: flee like a bird to your mountain. The wicked have their arrows on the string, they say, and if the foundations are crumbling, what can the righteous do?
 
-David does not argue with their description of the danger. Instead he lifts his eyes. The Lord is in his holy temple, the Lord is on his throne in heaven, and his eyes are examining everyone, the righteous and the wicked alike. The image of fire and sulphur raining down recalls the judgement on Sodom in Genesis.
+David does not dispute the danger. Instead he lifts his eyes. The Lord is in his holy temple, the Lord is on his heavenly throne, and his eyes are examining everyone, the righteous and the wicked alike. The fire and sulphur that will rain on the wicked recall the judgement on Sodom in Genesis.
 
-No occasion is given in the heading, and the psalm is brief, but it captures in a few lines the choice between panic and refuge. It ends with one of the most hopeful promises in the early psalms, that the upright will see God's face.
+In a few lines the psalm captures the choice between panic and refuge, and it closes with one of the most hopeful promises in these early psalms: the upright will see his face.
 
 === 12
-Psalm twelve is a lament over a whole society. The psalmist looks around and feels that the faithful have disappeared. What is left is a world of talk: flattering lips, double hearts, and people who boast that their tongues will carry them to victory, because no one can master them.
+Psalm twelve laments a whole society. The psalmist looks around and the faithful seem to have vanished. What is left is a world of talk: flattering lips, double hearts, and people who boast that their tongues will carry them, since no one can master them.
 
-Then, in the centre of the psalm, God himself speaks. Because the poor are being plundered and the needy groan, he says, he will now arise. Prophetic words like this, placed in the middle of a lament, appear several times in the psalms, and they may reflect a moment in worship when a word from God was declared.
+Then, at the centre, God himself speaks. Because the poor are plundered and the needy groan, he says, he will now arise. Words of God set within a lament appear several times in the psalms, and they may reflect a moment in worship when a divine answer was declared.
 
-After that, the psalmist answers. The words of the Lord, unlike the words of the liars, are flawless, like silver refined in a furnace seven times over. The poem does not end with everything resolved, though. Its last line returns to the world as it still is, where the wicked strut about and vileness is admired.
+The psalmist responds that the Lord's words, unlike the liars', are flawless, like silver refined seven times. Yet nothing is neatly resolved. The last line looks again at the world as it still is, where the wicked strut about and vileness is prized.
 
 === 13
-Psalm thirteen is one of the shortest laments in the book, and one of the clearest. In six verses it travels the whole path that so many psalms take, from complaint, to petition, to trust.
+Psalm thirteen is one of the shortest laments in the book, and one of the clearest. In six verses it travels the whole path so many psalms take, from complaint, to petition, to trust.
 
-It opens with four questions, each beginning how long. How long will God forget, how long will he hide his face, how long must the psalmist wrestle with sorrow, how long will his enemy have the upper hand. The heading names no occasion. David's life gave him reasons enough, but the psalm is left open, so that any troubled person can take up its words.
+It opens with four questions, each beginning how long: how long will God forget, how long will he hide his face, how long must the psalmist wrestle with sorrow, how long will his enemy prevail. No occasion is named, and the psalm is left open for any troubled person to take up.
 
-The second movement is a plea: look at me, answer me, give light to my eyes before I sleep in death. And then comes the turn, marked by a single word, but. Nothing outward has changed yet. What changes is where the psalmist rests his weight, on God's loving devotion. The psalm ends with a song.
+Then comes a plea: look on me, answer me, give light to my eyes before I sleep in death. And finally the turn, marked by a single word, but. Nothing outward has changed yet. What has changed is where the psalmist rests his weight, on God's loving devotion, and the last line is a song.
 
 === 14
-Psalm fourteen opens with a famous line: the fool says in his heart, there is no God. The Hebrew word for fool here does not mean someone lacking intelligence. It describes a person who is morally senseless, who lives as though God does not matter and will never call anyone to account.
+The fool says in his heart, there is no God. The Hebrew word for fool here does not mean someone lacking intelligence. It describes a person who is morally senseless, who lives as though God does not matter and will never call anyone to account.
 
-The psalm then pictures the Lord looking down from heaven, searching for anyone who understands and seeks him, and finding no one who does good. The apostle Paul would later quote these lines in his letter to the Romans. But the psalm also speaks of God's people being devoured like bread by evildoers, and of God standing with the righteous.
+The Lord looks down from heaven, searching for anyone who understands and seeks him, and finds no one who does good. The apostle Paul quotes these lines in his letter to the Romans. Yet the psalm also speaks of evildoers devouring God's people like bread, and of God standing with the righteous.
 
-This psalm appears a second time in the collection, almost word for word, as Psalm fifty-three, with one difference that will be noted there. It closes with a longing that salvation would come out of Zion, and that the Lord would restore the fortunes of his captive people, so that Jacob and Israel could rejoice.
+This poem appears again, almost word for word, as Psalm fifty-three. Here it closes with a longing that the salvation of Israel would come out of Zion, and that the Lord would restore his captive people, so that Jacob might rejoice and Israel be glad.
 
 === 15
-Psalm fifteen begins with a question asked at the threshold of God's house. Who may abide in your tent? Who may dwell on your holy mountain? The tent recalls the tabernacle of the wilderness years, and the tent David pitched in Jerusalem when he brought the ark of the covenant up to Zion.
+Who may abide in your tent? Who may dwell on your holy mountain? Psalm fifteen begins with a question asked at the threshold of God's house. The tent recalls the tabernacle of the wilderness years, and the tent David pitched on Zion for the ark of the covenant.
 
-This is often called an entrance psalm, and it may have been used as worshippers approached the sanctuary, with the question put by one voice and the answer given by another. The answer is surprising in its focus. It does not mention sacrifices or ritual purity. It describes a person's character: someone who walks with integrity, speaks the truth, does not slander a neighbour, keeps a promise even when it costs him, and refuses to profit from the poor or take a bribe.
+It is often called an entrance psalm, perhaps used as worshippers approached the sanctuary, with one voice asking and another answering. The answer says nothing about sacrifice or ritual. It describes character: someone who walks with integrity, speaks truth from the heart, does not slander his neighbour, keeps his word even when it costs him, lends without interest and refuses a bribe.
 
-The psalm ends with the assurance that such a person will never be shaken. Later in Book One, Psalm twenty-four will ask almost the same question in a grander setting.
+Such a person, the psalm says, will never be shaken. Psalm twenty-four will ask almost the same question in a grander setting.
 
 === 16
-Psalm sixteen is called a Miktam, a term that may mean a golden poem or an inscription, though no one is sure. It is a song of trust, and its central image is drawn from the land of Israel itself.
+Psalm sixteen is called a Miktam, a term that may mean a golden poem or an inscription; no one is sure. It is a song of trust, and its central image comes from the land of Israel itself.
 
-When the tribes entered Canaan under Joshua, the land was divided by lot, and each family received its portion, marked out with boundary lines. The tribe of Levi received no land; the Lord himself was their inheritance. David takes up that language. The Lord is his portion and his cup, his boundary lines have fallen in pleasant places, and his inheritance is delightful. Alongside that joy he refuses any part in the worship of other gods.
+When the tribes entered Canaan under Joshua, the land was divided by lot and marked out with boundary lines. The tribe of Levi received no land; the Lord himself was their inheritance. David takes up that language. The Lord is his portion and his cup, his boundary lines have fallen in pleasant places, and his inheritance is delightful. Alongside that joy he refuses any part in the worship of other gods.
 
-The last lines move beyond this life. God will not abandon him to Sheol, or let his holy one see decay, and will show him the path of life. On the day of Pentecost, the apostle Peter quoted these words in Jerusalem, and argued that they found their fullest meaning in the resurrection of Jesus.
+The last lines reach beyond this life. God will not abandon him to Sheol, or let his holy one see decay. On the day of Pentecost, the apostle Peter quoted these words in Jerusalem and applied them to the resurrection of Jesus.
 
 === 17
-Psalm seventeen is headed simply a prayer of David, and it is the plea of an innocent man under attack. He asks God to hear a just case, offered from lips without deceit. God has examined his heart, even in the night, and found nothing to condemn.
+Headed simply a prayer of David, Psalm seventeen is the plea of an innocent man under attack. He asks God to hear a just case, offered from lips without deceit. God has tested his heart, even at night, and found no evil.
 
-As with the earlier psalms of this kind, his claim is not to be sinless, but to be in the right in this particular conflict. His enemies have tracked him down and surrounded him, eyes fixed on bringing him to the ground, like a young lion crouching in ambush.
+His claim is not to be sinless, but to be in the right in this conflict. His enemies have tracked him down and surrounded him, eyes fixed on throwing him to the ground, like a young lion crouching in ambush.
 
-In the middle of the psalm come two of the tenderest images in the book. He asks God to keep him as the apple of his eye, the pupil that anyone instinctively protects, and to hide him in the shadow of his wings, like a bird sheltering its young. The psalm ends at dawn, with the singer waking to be satisfied with the presence of God.
+At the centre come two of the tenderest images in the book. He asks to be kept as the apple of God's eye, the pupil that anyone instinctively protects, and hidden in the shadow of his wings, like a bird sheltering its young. The prayer closes at waking, with the singer satisfied in the presence of God.
 
 === 18
-Psalm eighteen is one of the longest in Book One, and one of the few whose heading tells a story. It is a song David sang on the day the Lord delivered him from all his enemies and from the hand of Saul. The same poem appears, with small differences, near the end of the second book of Samuel, where it looks back across David's whole life: the years as a fugitive from Saul, the wars that followed, and his rise to the throne.
+Psalm eighteen is the longest psalm in Book One, and one of the few whose heading tells a story. David sang it on the day the Lord delivered him from all his enemies and from the hand of Saul. The same song appears, with small differences, near the end of the second book of Samuel, where it looks back across his whole life: the years as a fugitive, the wars that followed, his rise to the throne.
 
-It is a royal song of thanksgiving, and it falls into great movements. First comes the cry for help, from someone caught in the cords of death. Then God answers, and the description of his coming is overwhelming: earthquake, smoke and fire, thick darkness, thunder, hail and lightning, God riding on a cherub on the wings of the wind. It recalls the Lord's descent on Mount Sinai, and it is the language of a storm rather than of a battlefield report.
+It is a royal thanksgiving in great movements. First comes the cry for help from a man caught in the cords of death. Then God answers, and his coming is overwhelming: earthquake, smoke and fire, darkness, thunder, hail and lightning, God riding a cherub on the wings of the wind. It recalls the Lord's descent on Mount Sinai.
 
-After the rescue, David reflects on God's faithfulness to those who are faithful to him. Then the psalm becomes a warrior's song, as God trains his hands for battle, sets his feet on the heights, and makes him the head of nations. The final line names David and promises loving devotion to his descendants forever.
+After the rescue, David reflects on God's faithfulness to the faithful. Then the song becomes a warrior's hymn, as God trains his hands for battle, sets his feet on the heights and makes him head of nations. The last line names David and promises loving devotion to his descendants forever.
 
 === 19
-Psalm nineteen moves through two great subjects, and then turns inward. It is one of the best-loved hymns in the collection.
+Psalm nineteen moves through two great subjects and then turns inward. It begins with the sky. The heavens declare the glory of God, without words or voice, yet their message reaches the whole earth. The sun is a bridegroom leaving his chamber, a champion eager to run his course. In this first part the poet uses the general Hebrew word for God.
 
-It begins with the sky. The heavens declare the glory of God, without words or voice, and yet their message reaches the whole earth. The sun is pictured as a bridegroom leaving his chamber and a champion delighting to run his race, its heat reaching everything. In this first section the poet calls God by the general Hebrew word for God.
+Then he begins speaking of the law, and the name changes. Now it is the LORD, God's personal covenant name, repeated again and again. His law, testimony, precepts and commandments are praised in balanced lines, more precious than gold and sweeter than honey. The God who speaks silently through creation has spoken plainly to Israel.
 
-Then, abruptly, he begins speaking of the law, and the name changes. Now it is the LORD, God's personal covenant name, repeated again and again. The law of the Lord, his testimony, his precepts and his commandments are praised in six balanced lines as perfect, trustworthy, radiant and true, more precious than gold and sweeter than honey. The God who speaks silently through creation has spoken plainly to Israel.
-
-Finally the psalmist looks at himself, asking to be cleansed from hidden faults and kept from deliberate sin. His closing prayer, that the words of his mouth and the meditation of his heart may please God, has been prayed by countless readers since.
+Finally the psalmist looks at himself, asking to be cleansed from hidden faults and kept from wilful sin. His closing prayer, that the words of his mouth and the meditation of his heart may please God, has been prayed by countless readers since.
 
 === 20
-Psalms twenty and twenty-one belong together. Both are royal psalms, and they read like two moments in the same event: a prayer before a battle, and a song of thanks afterwards.
+Psalms twenty and twenty-one belong together. Both are royal psalms, and they read like two moments in one event: a prayer before battle, and thanks after it.
 
-Psalm twenty is the first of the pair. The king is about to go out to war, and the people pray for him. They ask that God would answer him in the day of trouble, send him help from the sanctuary in Zion, remember his offerings, and give him the desire of his heart. In ancient Israel a king would offer sacrifices before a campaign, and the psalm seems to have been sung in the temple courts as he did so.
+Here the king is about to march out to war, and the people pray for him. May the Lord answer him in the day of trouble, send help from the sanctuary in Zion, remember his offerings and grant the desire of his heart. Kings offered sacrifices before a campaign, and the psalm seems to have been sung in the temple courts as he did so.
 
-Halfway through, a single voice speaks, perhaps a priest or the king himself: now I know that the Lord saves his anointed. Then comes the famous contrast. Some trust in chariots and some in horses, the great weapons of the age, but Israel trusts in the name of the Lord. The psalm ends with the whole congregation praying, Lord, save the king.
+Halfway through, a single voice speaks, perhaps a priest or the king himself: now I know that the Lord saves his anointed. Then the famous contrast. Some trust in chariots and some in horses, the great weapons of the age, but Israel trusts in the name of the Lord. The last cry belongs to the whole congregation: O Lord, save the king.
 
 === 21
-Psalm twenty asked God to grant the king his heart's desire. Psalm twenty-one opens by announcing that he has done so. The prayer before the battle has become thanksgiving after it, and again we hear the voice of the gathered people, speaking first to God about their king.
+Psalm twenty asked God to grant the king his heart's desire. Psalm twenty-one announces that he has. The prayer before battle has become thanksgiving after it, and again it is the gathered people speaking to God about their king.
 
-They celebrate what God has given him: rich blessings, a crown of pure gold, long life, splendour and majesty, and joy in God's presence. At the centre of the psalm is the reason for it all. The king trusts in the Lord, and through the loving devotion of the Most High he will not be shaken.
+They celebrate what God has given him: rich blessings, a crown of pure gold, long life, splendour and joy in God's presence. At the centre stands the reason for it all. The king trusts in the Lord, and through the loving devotion of the Most High he will not be shaken.
 
-In the second half the address seems to turn to the king himself, or perhaps to God, and the tone becomes fierce, as his enemies are seized, consumed as if in a furnace and put to flight. The psalm closes with the congregation lifting their praise back to God, for his strength and power.
+Then the address turns, either to the king or to God himself, and the tone grows fierce, as enemies are seized, consumed as if in a furnace and put to flight. In the final line the congregation lifts its praise back to God, for his strength.
 
 === 22
-Psalm twenty-two begins with the most desolate words in the whole collection. My God, my God, why have you forsaken me? The heading names a tune, The Doe of the Dawn, and the psalm is attributed to David, though no occasion is given.
+My God, my God, why have you forsaken me? Psalm twenty-two opens with the most desolate words in the collection. The heading names a tune, The Doe of the Dawn, and attributes the psalm to David, but gives no occasion.
 
-It is a lament, and an extreme one. The psalmist feels utterly abandoned. He is mocked by onlookers who sneer that he trusted in the Lord, so let the Lord rescue him. He is surrounded by enemies pictured as the strong bulls of Bashan, the rich grazing country east of the Jordan, then as lions, and then as a pack of dogs. His body is wasting, his strength gone, his bones on display, and those around him are dividing his clothes and casting lots for them.
+It is a lament, and an extreme one. Onlookers mock the sufferer, sneering that he trusted in the Lord, so let the Lord rescue him. Enemies surround him like the strong bulls of Bashan, the rich cattle country east of the Jordan, then like roaring lions, then like a pack of dogs. His strength is poured out like water, his bones are on display, and those around him divide his garments and cast lots for his clothing.
 
-The Gospels record that Jesus cried out the opening words of this psalm from the cross, and the evangelists saw in it the soldiers gambling for his garments and the mockery of the crowd. The listener should know that the psalm does not end where it begins. Two-thirds of the way through it turns sharply. God has answered, and the cry becomes praise, spreading from the singer's brothers to all Israel, then to the ends of the earth, and finally to generations not yet born.
+The Gospels record that Jesus cried out the opening words of this psalm from the cross, and the evangelists saw in it the mockery of the crowd and the soldiers gambling for his clothes. But the psalm does not end where it begins. Two-thirds of the way through it turns sharply, with God's answer, and the cry becomes praise, spreading from the singer's brothers to all Israel, to the ends of the earth, and to a people yet unborn.
 
 === 23
-After the depths of Psalm twenty-two comes the most familiar psalm of all. Psalm twenty-three is a song of trust, and it is attributed to David, who had spent his youth as a shepherd in the hills around Bethlehem, guarding his father's flocks from lions and bears.
+After the depths of Psalm twenty-two comes the most familiar psalm of all. It is a song of trust attributed to David, who spent his youth as a shepherd in the hills around Bethlehem, guarding his father's flocks from lions and bears.
 
-In the ancient Near East, kings were often called the shepherds of their people. Here the king himself becomes the sheep. The Lord is his shepherd, leading him to grassy pastures and quiet waters, restoring him, and guiding him along right paths. Even the darkest valley holds no terror, because the shepherd is with him, with rod and staff, the club that fends off predators and the crook that guides.
+In the ancient Near East, kings were often called the shepherds of their people. Here the king himself becomes the sheep. The Lord leads him to green pastures and quiet waters, restores him, and guides him along right paths. Even the valley of the shadow of death holds no terror, because the shepherd is with him, with rod and staff, the club that drives off predators and the crook that guides.
 
-Midway through, the picture changes from the open country to a banquet. God becomes the host who prepares a table, anoints his guest's head with oil and fills his cup to overflowing, while his enemies can only look on. The psalm ends with the guest at home in the house of the Lord.
+Midway through, the picture changes from open country to a banquet. God becomes the host who prepares a table, anoints his guest's head with oil and fills his cup to overflowing, while enemies look on. At the last, the guest is at home in the house of the Lord.
 
 === 24
-Psalm twenty-four is a song for a procession. It opens with a sweeping declaration that the whole earth belongs to the Lord, because he founded it upon the seas. Then, like Psalm fifteen, it asks who may go up to the hill of the Lord and stand in his holy place, and the answer is the one with clean hands and a pure heart.
+Psalm twenty-four is a song for a procession. It opens by declaring that the whole earth belongs to the Lord, who founded it upon the seas. Then, like Psalm fifteen, it asks who may climb the hill of the Lord, and answers: the one with clean hands and a pure heart.
 
-In the final section the worshippers seem to have reached the gates of the city. A voice calls on the ancient doors to lift up their heads, so that the King of Glory may come in, and another voice asks, who is this King of Glory? The exchange is repeated, each time more grandly, until the answer rings out: the Lord of Hosts, the commander of the armies of heaven.
+In the final section the worshippers seem to stand at the city gates. One voice calls on the ancient doors to lift up their heads, so that the King of Glory may come in. Another asks, who is this King of Glory? The exchange is repeated, more grandly the second time, until the answer rings out: the Lord of Hosts, commander of the armies of heaven.
 
-The heading gives no occasion. Many readers have heard in it an echo of the day David brought the ark of the covenant up to Jerusalem, and the psalm may well have been sung at festivals as the ark or the worshippers entered the city. But that is an inference, not a statement of the text.
+No occasion is given. Many readers have heard an echo of the day David brought the ark up to Jerusalem, and the psalm may well have been sung at festival processions. But that is an inference, not something the text states.
 
 === 25
-Psalm twenty-five is a prayer for guidance and forgiveness, and it is built with care. It is an acrostic: in the Hebrew, each verse begins with the next letter of the alphabet, a pattern that gives the poem a sense of order and completeness, though it is lost in translation.
+Psalm twenty-five is a prayer for guidance and forgiveness, and it is carefully built. It is an acrostic, each verse in the Hebrew beginning with the next letter of the alphabet, a pattern of order and completeness that cannot survive translation.
 
-No occasion is named. The psalmist is under pressure from enemies, lonely and afflicted, but his deepest concern is with God's ways. Again and again he asks to be shown, taught and led along God's paths. He also asks God not to remember the sins of his youth, but to remember him according to his loving devotion, because God is good and upright, and therefore shows sinners the way.
+The psalmist is lonely and afflicted, pressed by enemies, but his deepest concern is God's ways. Again and again he asks to be shown, taught and led. He asks God not to remember the sins of his youth, but to remember him according to his loving devotion, for the Lord is good and upright, and therefore shows sinners the way.
 
-Prayer for guidance, confession of sin and pleas for rescue weave in and out of one another, the way they so often do in real life. At the very end, after the alphabet is complete, one more line is added, widening the prayer from one person to the whole nation: redeem Israel, O God, from all its distress.
+Guidance, confession and pleas for rescue weave in and out of one another, as they so often do in life. When the alphabet is complete, one more line is added, widening the prayer from one person to the nation: redeem Israel, O God, from all its distress.
 
 === 26
-Psalm twenty-six is the prayer of someone who asks God to examine him and clear his name. Vindicate me, O Lord, he begins, for I have walked with integrity. Like Psalms seven and seventeen, this is not a claim to be sinless. It is an appeal from someone wrongly lumped together with the wicked, asking God to see the difference.
+Vindicate me, O Lord, for I have walked with integrity. Like Psalms seven and seventeen, Psalm twenty-six is not a claim to sinlessness. It is the appeal of someone who fears being swept away with the wicked, and asks God to examine his heart and see the difference.
 
-He describes the company he refuses to keep, the deceitful, the hypocrites and the mob of evildoers, men with bribes in their right hands. And he describes the place he loves: the house where God dwells, the place where his glory resides.
+He names the company he refuses to keep: the deceitful, the hypocrites, the mob of evildoers, men whose right hands are full of bribes. And he names the place he loves, the house where God dwells, where his glory resides.
 
-At the heart of the psalm is a picture of worship. He washes his hands in innocence, a sign of being clean of guilt, and goes around God's altar, singing aloud of his wonderful works. The psalm ends on level ground, with the singer standing in the congregation and blessing the Lord.
+At the centre is a picture of worship. He washes his hands in innocence, a sign of being clean of guilt, and goes around God's altar, singing aloud of his wonderful works. By the last line he stands on level ground, blessing the Lord in the congregation.
 
 === 27
-Psalm twenty-seven begins with ringing confidence. The Lord is my light and my salvation, whom shall I fear? Even if an army camps around him and war breaks out, David says, his heart will not give way.
+The Lord is my light and my salvation, whom shall I fear? Psalm twenty-seven begins with ringing confidence. Even if an army camps around him and war breaks out, David says, his heart will not give way.
 
-At the centre of that confidence lies a single longing. One thing he asks above all else: to dwell in the house of the Lord, to gaze on his beauty and to seek him in his temple. There God will hide him in his shelter, under the cover of his tent, and set him high upon a rock.
+Beneath that confidence lies a single longing. One thing he asks above all: to dwell in the house of the Lord, to gaze on his beauty and seek him in his temple. There God will hide him in his shelter and set him high upon a rock.
 
-Then, halfway through, the tone changes so sharply that some readers have wondered whether two psalms were joined together. The singer is now pleading: hear me, do not hide your face, do not turn me away. False witnesses are rising against him, breathing violence. Yet the trust of the opening does not disappear. The psalm ends with him certain he will see the goodness of the Lord in the land of the living, and with a word of encouragement: wait for the Lord.
+Halfway through, the tone changes so sharply that some have wondered whether two psalms were joined. Now he is pleading: hear me, do not hide your face, do not turn me away. False witnesses are rising against him, breathing violence. Yet the trust of the opening holds. He is sure he will see the Lord's goodness in the land of the living, and he ends by urging himself, or his hearers, to wait for the Lord.
 
 === 28
-Psalm twenty-eight follows the classic path of the lament from distress to thanksgiving, and it does so in a small space. It opens with a fear of silence. If God does not answer, David says, he will be like those going down to the Pit, the grave.
+Psalm twenty-eight travels the lament's familiar road, from distress to thanksgiving, in a short space. It opens with a fear of silence. If God does not answer, David says, he will be like those going down to the Pit, the grave.
 
-He prays with his hands raised toward God's holy sanctuary, the innermost room where the ark of the covenant stood. His concern is not to be swept away along with the wicked, those who speak of peace to their neighbours while hiding malice in their hearts, and he asks God to give them what their deeds deserve.
+He prays with his hands raised toward God's holy sanctuary, the inner room where the ark of the covenant rested. His fear is of being dragged away with the wicked, who speak peace to their neighbours with malice in their hearts.
 
-Then, without any explanation, the prayer becomes praise. Blessed be the Lord, for he has heard. As often in these psalms of David, the last lines widen out from the king's own need to the people he leads. The Lord is the strength of his people and the stronghold of his anointed. The final request asks God to be Israel's shepherd and to carry them forever.
+Then, with no explanation, prayer becomes praise. Blessed be the Lord, for he has heard. As often in David's psalms, the final lines widen from the king's own need to the people he leads. The Lord is the strength of his people and a stronghold for his anointed, and David asks him to shepherd Israel and carry them forever.
 
 === 29
-Psalm twenty-nine is a hymn in the form of a thunderstorm. It opens in heaven, calling on the heavenly beings to give the Lord the glory due to his name, and then it brings the storm down to earth.
+Psalm twenty-nine is a hymn in the shape of a thunderstorm. It opens in heaven, calling the heavenly beings to give the Lord the glory due his name, and then brings the storm down to earth.
 
-Seven times we hear the phrase the voice of the Lord, like peals of thunder. The storm seems to come in off the Mediterranean, the many waters, and then to sweep across the land. It breaks the great cedars of Lebanon, makes the mountains leap like calves, among them Sirion, an old name for Mount Hermon, and shakes the wilderness of Kadesh far to the south. Lightning flashes, and oaks are twisted and stripped.
+Seven times we hear the voice of the Lord, like peals of thunder. The storm comes in over the many waters and sweeps across the land. It shatters the cedars of Lebanon, makes the mountains skip like calves, Sirion among them, an old name for Mount Hermon, and shakes the wilderness of Kadesh far to the south.
 
-Israel's Canaanite neighbours credited the storm to their god Baal, and some of the psalm's imagery may deliberately claim that ground for the Lord. Meanwhile, in his temple, all cry glory. The psalm ends in calm, with the Lord enthroned over the flood as king forever, and with a quiet blessing of strength and peace for his people.
+Israel's Canaanite neighbours credited the storm to their god Baal, and the psalm may deliberately claim that ground for the Lord. Meanwhile in his temple all cry, glory. The storm passes into calm, with the Lord enthroned over the flood as king forever, blessing his people with peace.
 
 === 30
-Psalm thirty is a song of thanksgiving from someone who has been brought back from the edge of death. Its heading is unusual: a song for the dedication of the temple, of David. Since the temple was built by Solomon after David's death, readers have suggested various explanations: that the Hebrew word for house refers to David's own palace, that David wrote it looking ahead to the temple he had prepared for, or that it was later sung at a dedication. The heading itself does not say.
+Psalm thirty is a song of thanksgiving from someone brought back from the edge of death. Its heading is puzzling: a song for the dedication of the temple, of David. The temple was built by Solomon after David died, so readers have suggested that the Hebrew word for house means David's palace, or that David wrote it looking ahead to the temple he prepared for, or that it was sung at a later dedication. The heading does not explain.
 
-The psalm is intensely personal. The singer had grown secure in prosperity and told himself he would never be shaken. Then God hid his face, and illness brought him close to the Pit. He remembers what he prayed: what profit is there in my death, can the dust praise you?
+The psalm itself is intensely personal. Grown secure in prosperity, the singer told himself he would never be shaken. Then God hid his face, and sickness brought him near the Pit. He remembers his prayer: can the dust praise you?
 
-God heard, and healed him. The psalm is full of reversals: weeping that lasts for a night and joy in the morning, mourning turned into dancing, sackcloth stripped away and replaced with gladness. The singer calls on the faithful to join him, and promises to give thanks forever.
+God heard and healed him, and the psalm is full of reversals: weeping that lasts for a night and joy in the morning, mourning turned into dancing, sackcloth stripped away and replaced with gladness.
 
 === 31
-Psalm thirty-one is a long prayer of trust, written by someone in grave danger who nonetheless keeps returning to God as his rock and refuge. Its most famous line comes early. Into your hands I commit my spirit. According to the Gospel of Luke, Jesus spoke these words as his last before he died.
+Psalm thirty-one is a long prayer from someone in grave danger who keeps returning to God as his rock and refuge. Its best-known line comes early: into your hands I commit my spirit. According to Luke's Gospel, Jesus spoke these words as he died.
 
-The psalm moves back and forth between distress and confidence, more than once. The singer describes himself as wasting away in grief, a disgrace to his neighbours, avoided in the street by friends, forgotten like a dead man and as useless as a broken pot. He hears whispering all around him, and a phrase the prophet Jeremiah would later use many times: terror on every side. Against all this he sets a simple affirmation. My times are in your hands.
+The psalm swings more than once between distress and confidence. The singer is wasting away with grief, a disgrace to his neighbours, avoided by friends in the street, forgotten like a dead man, a broken pot. He hears whispering all around, and a phrase the prophet Jeremiah would later use many times: terror on every side. Against all this he sets a simple affirmation. My times are in your hands.
 
-Near the end, he gives thanks for God's loving devotion shown to him in a city under siege, and admits that in his alarm he had thought himself cut off. The psalm ends by turning outward, urging all God's people to be strong and take heart.
+Near the end he gives thanks for God's loving devotion shown to him in a city under siege, then turns outward, urging all God's people to be strong and take heart.
 
 === 32
-Psalm thirty-two is called a Maskil, a word that may point to a skilful song or a song of instruction. Both fit. It is a psalm of thanksgiving for forgiveness, and in church tradition it became the second of the penitential psalms. The apostle Paul quotes its opening in his letter to the Romans as David's description of the blessing of being forgiven.
+Psalm thirty-two is called a Maskil, a word that may mean a skilful song or a song of instruction. Both fit. It celebrates the joy of being forgiven, and church tradition counted it the second of the penitential psalms. Paul quotes its opening in Romans as David's description of that blessing.
 
-It begins with two beatitudes for the one whose sins are covered. Then the psalmist tells his own story. While he kept silent about his sin, he wasted away under God's heavy hand, his strength drained as though in the summer heat. When at last he confessed, God forgave. No details of the sin are given, and the psalm makes no attempt to supply them.
+It begins with two beatitudes for the one whose sins are covered. Then the psalmist tells his story. While he kept silent about his sin, he wasted away under God's heavy hand, his strength dried up as in summer heat. When at last he confessed, God forgave. The sin is never named.
 
-In the second half a new voice seems to speak, probably God himself, promising to instruct and guide, and warning against being like a stubborn horse or mule that must be steered with bit and bridle. The psalm ends with a call to the righteous to rejoice.
+In the second half a new voice seems to speak, probably God himself, promising to instruct and guide, and warning against being like a stubborn horse or mule that must be steered with bit and bridle. Then comes a call to the righteous to rejoice.
 
 === 33
-Psalm thirty-two ended with a call to the righteous to rejoice and shout for joy. Psalm thirty-three, which has no heading, takes up the same call and turns it into a full hymn of praise.
+Psalm thirty-two closed with a call to the righteous to shout for joy. Psalm thirty-three, which has no heading, takes up that call and turns it into a full hymn of praise.
 
-It begins with music: the harp, the ten-stringed lyre, a new song played skilfully with shouts of joy. Then it gives the reasons for praise, and they are on the largest scale. The Lord made the heavens by his word, and the stars by the breath of his mouth. He gathers the sea as if into a jar and stores up the deep. He spoke, and it came to be.
+It begins with music: harp and ten-stringed lyre, a new song played skilfully with shouts of joy. The reasons for praise are on the largest scale. The Lord made the heavens by his word and the stars by the breath of his mouth. He gathers the waters of the sea and stores up the deep. He spoke, and it came to be.
 
-From creation the psalm moves to history. The plans of the nations come to nothing, but the Lord's purposes stand forever. He looks down on every human being. No king is saved by the size of his army, and a warhorse is a false hope. The psalm closes with the congregation waiting quietly for the Lord, their help and shield, and asking that his loving devotion rest upon them.
+From creation the psalm moves to history. The plans of the nations come to nothing, but the Lord's purposes stand forever. No king is saved by the size of his army, and a warhorse is a vain hope. The congregation waits quietly for the Lord, their help and shield, asking that his loving devotion rest on them.
 
 === 34
-The heading of Psalm thirty-four takes us back to the years when David was running from Saul. It recalls the day he pretended to be insane before the king, who drove him away. The first book of Samuel tells the story. Alone and in danger, David fled into Philistine territory, to the city of Gath, of all places, the home town of Goliath. There he was recognised, and in fear for his life he acted the madman, scrawling on the gate and letting saliva run down his beard, until the king dismissed him in disgust. In Samuel the king is named Achish. The heading calls him Abimelech, which seems to have been a royal title among the Philistines, much as Pharaoh was in Egypt.
+The heading of Psalm thirty-four takes us back to David's years on the run from Saul: when he pretended to be insane before Abimelech. The first book of Samuel tells the story. David fled into Philistine territory, to Gath, the home town of Goliath. There he was recognised, and in fear for his life he acted the madman, scrawling on the gate and letting saliva run down his beard, until the king sent him away. In Samuel the king is called Achish. Abimelech seems to have been a royal title among the Philistines, much as Pharaoh was in Egypt.
 
-The psalm itself is a thanksgiving, and like Psalm twenty-five it is an acrostic. It begins with David inviting others to praise God with him, because this poor man called out, and the Lord heard. Then it becomes a lesson, as David calls his hearers children and offers to teach them the fear of the Lord. Listen for its well-known invitation, taste and see that the Lord is good, and for its promise that the Lord is near to the brokenhearted.
+The psalm is a thanksgiving, and like Psalm twenty-five an acrostic. David invites others to magnify the Lord with him, because this poor man called and the Lord heard. Then he becomes a teacher, calling his hearers children. Listen for the invitation taste and see that the Lord is good, and the promise that the Lord is near to the brokenhearted.
 
 === 35
-Psalm thirty-five is the prayer of a man under attack from people he once treated as friends. He asks the Lord to come to his aid as a warrior, taking up shield, spear and javelin. Then the imagery shifts to the law court, where hostile witnesses accuse him of things he knows nothing about.
+Psalm thirty-five is the prayer of a man attacked by people he once treated as friends. He asks the Lord to fight for him like a warrior, with shield, spear and javelin. Then the scene becomes a law court, where hostile witnesses accuse him of things he knows nothing about.
 
-What wounds him most is their ingratitude. When they were sick, he wore sackcloth and fasted for them, grieving as he would for a brother or his own mother. Now that he has stumbled, they gather in glee, mocking him like jesters at a feast and crying, aha, aha.
+What wounds him most is their ingratitude. When they were sick, he wore sackcloth and fasted for them, grieving as if for a brother or his own mother. Now that he has stumbled, they gather in glee, mocking him like jesters at a feast and crying, aha, aha.
 
-The psalm moves through three cycles of complaint and prayer, each ending with a promise of praise. Its requests that God would shame and scatter his enemies are hard to hear, but they come from someone who has handed the matter to God rather than taking revenge himself. The psalm has no stated occasion, though it fits the years when David was hunted and slandered. Its last lines look forward to his friends shouting for joy at his vindication.
+The psalm moves through three rounds of complaint and prayer, each ending with a promise of praise. Its pleas for his enemies' shame are hard to hear, but they come from someone who has handed the matter to God rather than taking revenge himself.
 
 === 36
-Psalm thirty-six sets two portraits side by side. The heading calls David the servant of the Lord, a title also given to him in Psalm eighteen, and the opening line speaks of an oracle in his heart, a message about the wicked.
+Psalm thirty-six sets two portraits side by side. Its heading calls David the servant of the Lord, as Psalm eighteen did, and it opens with an oracle in his heart about the wicked.
 
-The first portrait is of the wicked man. He has no fear of God before his eyes. He is so pleased with himself that he cannot see his own sin. He lies on his bed and plans evil, and he has stopped trying to do good.
+The wicked man has no fear of God before his eyes. He is too pleased with himself to see his own sin, and he lies on his bed plotting evil.
 
-Then, without transition, the psalmist lifts his eyes to God, and the language soars. God's loving devotion reaches to the heavens, his faithfulness to the clouds, his righteousness is like the highest mountains and his judgements like the deepest sea. People take refuge in the shadow of his wings, feast in his house and drink from his river of delights. For with you is the fountain of life, the psalmist says, and in your light we see light. The psalm ends with a brief prayer for protection and a glimpse of the evildoers fallen.
+Then, without transition, the psalmist lifts his eyes, and the language soars. God's loving devotion reaches to the heavens and his faithfulness to the clouds, his righteousness is like the highest mountains and his judgements like the great deep. People shelter in the shadow of his wings, feast in his house and drink from his river of delights. With you is the fountain of life, he says, and in your light we see light. A short prayer for protection follows, and a glimpse of evildoers fallen, unable to rise.
 
 === 37
-Psalm thirty-seven is a wisdom psalm, and the longest of David's acrostics, with each pair of verses beginning with the next letter of the Hebrew alphabet. It is less a prayer than a body of counsel, spoken by someone who says he was once young and is now old.
+Psalm thirty-seven is a wisdom psalm, and the longest of David's acrostics. It is less a prayer than a body of counsel, from someone who says he was once young and now is old.
 
-Its subject is a question that troubled Israel's wise men: what should the faithful do when the wicked prosper? The psalm's answer begins with its opening words. Do not fret. Again and again it says that the success of the wicked is short-lived. They wither like grass and vanish like smoke, while those who trust in the Lord will inherit the land. That phrase, inheriting the land, recurs throughout the psalm, recalling God's promise to Israel's ancestors. Jesus echoes it in the Sermon on the Mount: the meek will inherit the earth.
+Its subject troubled Israel's wise men: what should the faithful do when the wicked prosper? The answer begins with its opening words, do not fret. The success of the wicked is brief. They wither like grass and vanish like smoke, while those who wait for the Lord will inherit the land. That phrase recurs throughout, recalling God's promise to Israel's ancestors, and Jesus echoes it in the Sermon on the Mount: the meek will inherit the earth.
 
-Because the psalm is built on the alphabet, it moves less by argument than by return, circling its theme from many angles. Listen for its gentle, repeated commands: trust in the Lord, delight in him, commit your way to him, be still, and wait.
-
-=== 38
-Psalm thirty-eight is the third of the church's seven penitential psalms. Its opening line is almost identical to the opening of Psalm six, and its heading adds that it is for remembrance, perhaps meaning a psalm to bring the sufferer's case to God's attention, or one used with a particular offering; the term is uncertain.
-
-The psalmist is ill, and he connects his suffering directly to his own sin. His wounds fester, his back burns, his heart pounds and the light in his eyes has gone out. Worse, his friends and family keep their distance from him, while his enemies are plotting against him.
-
-What he does in response is striking. He becomes like a deaf man who cannot hear and a mute who cannot answer, refusing to argue with his accusers, and waits instead for the Lord. He confesses his iniquity openly. The psalm has no turn to praise at the end; it closes with a plea that God would not forsake him and would come quickly, the Lord his Saviour.
-
-=== 39
-The heading of Psalm thirty-nine names Jeduthun, one of the three leaders of music David appointed in the worship of Israel, alongside Asaph and Heman. The psalm itself is one of the most personal and sombre in the book.
-
-It begins with silence. The psalmist resolved to keep quiet in front of the wicked, to guard his tongue as if with a muzzle. But the silence only made his distress burn hotter, until at last he spoke. What he says is not addressed to his enemies but to God: show me my end, let me know how fleeting my life is.
-
-What follows is a meditation on the brevity of human life. A lifetime is a few handbreadths. Each person is a mere breath, a passing shadow who heaps up wealth without knowing who will gather it. The psalmist calls himself a foreigner and a sojourner with God, as his fathers were. Unusually, the psalm ends without resolution, with a request that God would look away from him for a while, so that he might find some cheer before he is gone.
-
-=== 40
-Psalm forty begins where many laments end, with the answer already received. I waited patiently for the Lord, David says, and he heard my cry. God lifted him out of a pit, out of the miry clay, set his feet upon a rock and put a new song in his mouth.
-
-The song becomes a testimony before the great assembly. In the middle of it comes a passage about sacrifice. God did not want sacrifices and offerings, David says, but opened his ears, and he answered, here I am, I delight to do your will. The letter to the Hebrews quotes these lines and places them on the lips of Christ.
-
-Then, unexpectedly, the mood darkens. Troubles beyond counting surround him again, his sins have caught up with him, and his heart fails. The psalm, which began with thanksgiving, ends with an urgent plea: O my God, do not delay. This final section, from the request to hurry to help him onward, appears again almost word for word as Psalm seventy.
-
-=== 41
-Psalm forty-one brings Book One of the Psalter to its close. It begins as Psalm one did, with the word blessed, but here the blessing falls on the one who cares for the poor and weak, whom the Lord will sustain on his sickbed.
-
-Then the psalmist speaks of his own illness. He confesses that he has sinned, and asks God to heal him. Meanwhile his enemies wait for him to die, and visitors who come to his bedside pretend sympathy, then go out and spread rumours that he will never rise again. Most painful of all, his close friend, one who shared his bread, has turned against him. In John's Gospel, Jesus quotes this line at the Last Supper, speaking of the disciple who would betray him.
-
-The psalm ends with the singer's confidence that God upholds him. Its final line is not part of the psalm itself, but the formal ending of the first book: blessed be the Lord, the God of Israel, from everlasting to everlasting. Amen and Amen.
-
-=== 42
-With Psalm forty-two, Book Two of the Psalter begins. Its first psalms belong to the sons of Korah, the family of Levite singers. From here until well into Book Three, the poems prefer to call God simply God, rather than using his personal name, the LORD, though no one knows quite why the collection took that shape.
-
-Psalms forty-two and forty-three are almost certainly one poem. They share a refrain, sung three times: why are you downcast, O my soul? Put your hope in God. The singer is far from Jerusalem, in the land of the Jordan and the peaks of Hermon in the far north, where the headwaters of the river crash down from the mountain. He remembers leading crowds in festive procession to the house of God, and now he thirsts for God as a deer pants for streams of water.
-
-Around him people taunt him: where is your God? The roaring waterfalls become an image of grief overwhelming him, breaker after breaker. Why he is so far away, the psalm does not tell us. But each time the refrain returns, he talks back to his own despair.
-
-=== 43
-Psalm forty-three has no heading, and it continues the poem begun in Psalm forty-two. The same exile is speaking, still far from the house of God, and still asking why he must go about mourning because of the enemy.
-
-Now, though, the lament turns more directly into a request. He asks God to plead his case against an ungodly nation and deceitful men. Then comes the heart of this final stanza: a prayer that God would send out his light and his truth, like guides, to lead him back to the holy mountain, the place where God dwells.
-
-He pictures the return. He will go to the altar of God, to God his greatest joy, and praise him with the lyre. The despair of the first two stanzas has not yet lifted. But the refrain is heard for a third and final time, and this time it ends looking forward to the altar in Jerusalem.
-
-=== 44
-Psalm forty-four is a lament for the whole nation, and one of the most searching in the book. It is another Maskil of the sons of Korah.
-
-It begins by remembering. The fathers have told the story of how God drove out the nations and planted Israel in the land, not by their own swords, but by his right hand. The people still trust him: they say they do not rely on bow or sword, and they boast in God all day long.
-
-Then comes the shock. God has rejected them. The army has been defeated, the people scattered among the nations, sold off as cheaply as sheep, and made a laughingstock. The psalm does not tell us which defeat this was, and many have been suggested. What makes it so striking is its protest. The nation has not forgotten God or turned to foreign gods, and yet this has happened. For your sake, they say, we face death all day long. Paul quotes that line in Romans. The psalm ends with a bold cry for God to wake up, and an appeal to his loving devotion.
-
-=== 45
-Psalm forty-five is unlike any other in the collection. Its heading calls it a love song, to the tune of The Lilies, and it was written for a royal wedding. Which king is being married, the psalm does not say.
-
-The poet begins by telling us his heart is stirred and his tongue is like the pen of a skilled writer. Then he turns to the king himself, and praises his beauty, his gracious speech, and his majesty as a warrior riding out for truth and justice. In one remarkable line the king's throne is addressed as the throne of God, enduring forever. The letter to the Hebrews quotes these verses about the Son of God.
-
-The scene then moves to the bride. She is a princess from another land, urged to forget her own people and her father's house, and to honour the king. Gifts arrive from Tyre, the wealthy Phoenician city on the coast. She is led into the palace in gold-embroidered robes, with her companions behind her. The psalm ends with a promise to the king of sons who will become princes, and a name remembered through all generations.
-
-=== 46
-Psalm forty-six is a song of confidence in God when the whole world seems to be collapsing. The heading adds the term Alamoth, which may mean young women and perhaps refers to high voices; its exact meaning is not known. Centuries later, this psalm inspired Martin Luther's hymn A Mighty Fortress Is Our God.
-
-It moves in three stanzas, and the second and third end with a refrain: the Lord of Hosts is with us, the God of Jacob is our fortress. In the first stanza, nature itself is in upheaval, as the mountains topple into the sea and the waters roar. In the second, the scene shifts to the city of God, Jerusalem, which in reality had no great river, but here is pictured as gladdened by streams and protected by God's presence, while nations rage and kingdoms totter.
-
-In the third stanza the listener is invited to come and see the Lord bringing wars to an end, breaking bows and burning shields. Then God himself speaks: be still, and know that I am God.
-
-=== 47
-Psalm forty-seven is a hymn celebrating God as king of all the earth, and it is full of noise. Clap your hands, all you peoples, it begins, shout to God with cries of joy.
-
-At its centre is a dramatic picture. God has gone up amid shouts of joy, the Lord with the sound of the horn, the ram's horn trumpet that sounded at great occasions in Israel's worship and at the crowning of kings. It may echo a procession in which the ark of the covenant, the symbol of God's throne, was carried up to Zion. Then the call to sing praises rings out again and again.
-
-The psalm is aimed at the nations as much as at Israel. God has chosen Jacob's inheritance, but he reigns over all peoples. In its closing scene the leaders of the nations gather as the people of the God of Abraham, recalling the old promise that through Abraham all the families of the earth would be blessed.
-
-=== 48
-Psalm forty-eight is a song of Zion, celebrating Jerusalem as the city of the great King. Together with the two psalms before it, it forms a trio about God's reign and his presence among his people.
-
-The psalm praises the beauty and height of Mount Zion, comparing it to Zaphon, the mountain in the far north where Israel's neighbours imagined their gods assembling. For Israel the true holy mountain is Zion, and its true defence is God in her citadels.
-
-Then comes a story, told in quick strokes. Kings joined forces and advanced on the city. They saw it, were astonished, and fled in terror, gripped by pains like a woman in labour, and their great ocean-going ships, the ships of Tarshish, were wrecked by an east wind. No particular siege is named. In the final lines the worshippers are invited to walk around Zion, count her towers and study her ramparts, so that they can tell the next generation that this God is their God forever.
-
-=== 49
-Psalm forty-nine is a wisdom psalm, and it begins by summoning everyone, high and low, rich and poor. The singer of this psalm of the sons of Korah says he will solve a riddle to the music of the lyre.
-
-The riddle is the problem of wealth. Why should the faithful be afraid when rich and ruthless people surround them? The answer is that money cannot buy what matters most. No one can pay God a ransom to escape death. Wise and foolish alike die and leave their riches to others. They may name their estates after themselves, but the grave becomes their permanent home. Twice the refrain returns: a man in his splendour, without understanding, is like the beasts that perish.
-
-Death is pictured as a shepherd herding the proud into Sheol. But in the middle of the psalm comes one of the clearest flashes of hope beyond death in the Old Testament: God will redeem my life from Sheol, for he will surely take me to himself. The psalm ends with its warning not to be overawed when another man grows rich.
-
-=== 50
-Psalm fifty brings in a new name. It is the first psalm of Asaph, one of the chief musicians David appointed, and the only one of his psalms found outside Book Three.
-
-The scene is a courtroom on the grandest scale. God shines out from Zion, with fire before him and a storm around him, and summons heaven and earth as witnesses while he judges his own people. Then he speaks, at length.
-
-His first charge is not that Israel has neglected its sacrifices, but that it has misunderstood them. Every animal in the forest is his already, the cattle on a thousand hills. He does not need to be fed. What he wants is thanksgiving, kept promises, and a people who call on him in trouble. His second charge is sharper, aimed at those who recite his covenant while befriending thieves and slandering their own brothers. The psalm ends with both a warning and an invitation.
-
-=== 51
-Few psalm headings carry as much weight as this one: a Psalm of David, when Nathan the prophet came to him after his adultery with Bathsheba. The story is told in the second book of Samuel. While his army was at war, David took Bathsheba, the wife of one of his soldiers, Uriah the Hittite. When she became pregnant, he arranged for Uriah to be killed in battle and married her. Months passed. Then the prophet Nathan came to the king with a story about a rich man who stole a poor man's only lamb, and when David burned with anger, Nathan said to him, you are the man.
-
-Psalm fifty-one is the prayer that the heading links with that moment, and it became the best known of the penitential psalms. David makes no excuses. He pleads for mercy on the basis of God's loving devotion alone, and asks to be washed and purified with hyssop, the plant used in Israel's rituals of cleansing. He asks for far more than pardon: a clean heart, a renewed spirit, and the joy of salvation restored. The final lines turn from the king to the city, with a prayer for the walls of Jerusalem.
-
-=== 52
-The heading of Psalm fifty-two recalls one of the ugliest episodes of David's years on the run. Fleeing from Saul, David came to the town of Nob, where the priest Ahimelech gave him bread and the sword of Goliath, not knowing that David was a fugitive. One of Saul's men was there that day, his chief herdsman, Doeg the Edomite. He reported what he had seen, and when Saul's own guards refused to raise their hands against the priests, Doeg killed them himself, eighty-five priests in all, and then the people of their town.
-
-The psalm is addressed to a mighty man who boasts in evil, whose tongue is like a sharpened razor. It foretells his uprooting. Then it sets beside him a very different picture, of the psalmist as an olive tree flourishing in the house of God, trusting in God's loving devotion forever.
-
-=== 53
-Psalm fifty-three will sound familiar. It is almost the same poem as Psalm fourteen, beginning again with the fool who says in his heart there is no God. The heading adds a musical term, Mahalath, whose meaning is uncertain.
-
-Two differences stand out. The first reflects the character of this part of the Psalter: where Psalm fourteen used the personal name of the Lord, this version consistently says God. The second comes near the end. Instead of speaking of God's shelter for the poor, this version describes enemies overwhelmed with dread and the bones of those who besieged God's people scattered, as though the old psalm had been adapted to celebrate a deliverance from attack.
-
-Why the psalm appears twice is not known. The simplest explanation is that it belonged to more than one of the earlier collections from which the book was gathered.
-
-=== 54
-Psalm fifty-four is short and urgent, and its heading again takes us back to the years when David was hunted by Saul. The Ziphites lived in the wilderness of Judah, the barren hills south-east of Hebron. The first book of Samuel tells how they went to Saul and reported that David was hiding in their territory, and offered to hand him over. Saul came close to catching him, closing in around a hill, until news of a Philistine raid called him away. The Ziphites would betray David a second time later.
-
-The psalm speaks of strangers rising up against him, ruthless men who have no regard for God. In seven verses David moves from a cry for rescue to confidence that God is his helper, and ends with a promise of a freewill offering and thanks for a deliverance he speaks of as already done.
-
-=== 55
-Psalm fifty-five is a lament with a wound at its centre: betrayal by a close friend. The heading names no occasion. The psalmist is shaking with fear, the terrors of death upon him, and his first impulse is escape. If only he had wings like a dove, he says, he would fly away and stay in the wilderness, far from the storm.
-
-The city around him is full of violence and strife, oppression and deceit in its streets. Then he reveals what hurts most. It is not an enemy who taunts him, but a companion, someone he walked with in the crowd going up to the house of God. That friend has broken his covenant, his words smoother than butter but with war in his heart.
-
-The psalm moves back and forth between anguish and trust, and among its harsh words lies a line that has steadied many since: cast your burden on the Lord, and he will sustain you.
-
-=== 56
-Psalm fifty-six belongs to the same dangerous episode as Psalm thirty-four. The heading says it was written when the Philistines seized David in Gath, the city where he had sought refuge from Saul and found himself recognised instead. Its tune has a haunting name: A Dove on Distant Oaks.
-
-David describes enemies who hound him all day long, twisting his words, lurking and watching his steps. Twice a refrain breaks through the fear: in God I trust, I will not be afraid, what can man do to me?
-
-In the middle comes one of the most tender images in the psalms. God has kept count of David's wanderings, and he asks God to store his tears in a bottle and record them in his book. Nothing he has suffered has gone unnoticed. The psalm ends with vows of thanksgiving, and the hope of walking before God in the light of life.
-
-=== 57
-Psalm fifty-seven is set when David fled from Saul into the cave. Two caves feature in his story in the first book of Samuel. One is the cave of Adullam, where he first took refuge and gathered a band of outcasts. The other is a cave near En-gedi by the Dead Sea, where Saul himself walked in unaware, and David, hidden in the darkness, cut off a corner of his robe rather than kill him. The heading does not say which is meant.
-
-This is the first of several psalms set to the tune Do Not Destroy. David takes shelter in the shadow of God's wings, though he lies among lions, men whose teeth are spears. A refrain divides the psalm: be exalted, O God, above the heavens.
-
-In the second half the mood lifts. His heart is steadfast, and he will wake the harp and lyre and awaken the dawn with praise. These closing lines reappear later in Psalm one hundred and eight.
-
-=== 58
-Psalm fifty-eight is addressed to rulers who are supposed to dispense justice and do the opposite. The Hebrew of the opening is uncertain, but the charge is clear. In their hearts they devise injustice, and with their hands they deal out violence.
-
-David describes them with images of venom: liars from birth, like a cobra that stops its ears so that it cannot hear the snake charmer. Then come some of the fiercest prayers in the Psalter. He asks God to break their teeth, to make them vanish like water draining away, like a slug dissolving as it moves, like a stillborn child that never sees the sun.
-
-These are hard words, and they come from someone who has watched the powerful get away with cruelty. The psalm hands the matter to God, and it ends with what the singer most wants the world to see: that there is surely a God who judges the earth.
-
-=== 59
-The heading of Psalm fifty-nine takes us to the night David escaped from his own house. In the first book of Samuel, Saul's jealousy has turned murderous, and he sends men to watch David's house and kill him in the morning. David's wife Michal, Saul's daughter, lets him down through a window, and puts an idol in his bed, covered with a garment, to buy him time.
-
-The psalm pictures enemies who come back every evening, snarling like dogs and prowling around the city, convinced that no one hears them. Against them David sets God, who laughs at them, and calls him again and again his strength and his fortress.
-
-The poem is shaped by two refrains, one about the prowling dogs and one in praise of God's strength. It ends in the morning, as David sings of God's loving devotion.
-
-=== 60
-Psalm sixty is a lament for a nation that has suffered a defeat, and its heading sets it during David's wars. He was fighting the Aramean kingdoms to the north, Aram-naharaim in upper Mesopotamia and Aram-zobah north of Damascus, while in the south Joab struck down twelve thousand Edomites in the Valley of Salt, near the Dead Sea. The second book of Samuel records these campaigns as victories, but the psalm itself suggests that along the way there was a serious setback. It speaks of the land shaken and torn open, and of the people staggering as if drunk.
-
-At the centre God speaks from his sanctuary. He claims the whole land as his own, naming Shechem and the valley of Succoth, Gilead and Manasseh, Ephraim as his helmet and Judah as his sceptre. Neighbouring enemies are reduced to household objects: Moab is his washbasin, and on Edom he tosses his sandal. The psalm ends looking toward Edom's fortified city. Its second half reappears in Psalm one hundred and eight.
-
-=== 61
-Psalm sixty-one is a short prayer from someone who feels a long way off. From the ends of the earth I call to you, the psalmist says, whenever my heart grows faint. The heading names David but no occasion.
-
-His request is to be led to the rock that is higher than he is, and to dwell in God's tent forever, under the shelter of his wings. He remembers that God has heard his vows and given him the inheritance of those who fear his name.
-
-Then the psalm turns to pray for the king, his long life, and his reign before God for generations, guarded by God's loving devotion and faithfulness. If David wrote it, he is speaking of himself as king, or it may have been sung by the people on his behalf. The psalm ends with a promise to keep his vows day after day.
-
-=== 62
-Psalm sixty-two is a song of quiet trust, and its heading again names Jeduthun, one of the leaders of the temple music. One small word runs through it, translated alone or surely. In God alone my soul finds rest. He alone is my rock and my salvation.
-
-Around that stillness there is real danger. David's enemies are trying to topple him from his high position, as though pushing over a leaning wall or a tottering fence. They bless with their mouths and curse in their hearts.
-
-The psalmist speaks first to himself, telling his own soul to rest in God, and then to the people, urging them to pour out their hearts before him. Human beings, high or low, weigh less than a breath on the scales, and riches are not to be trusted. The psalm ends with a saying in the manner of the wise: God has spoken once, and twice I have heard it, that power belongs to God, and so does loving devotion.
-
-=== 63
-Psalm sixty-three is a Psalm of David, when he was in the Wilderness of Judah, the dry, broken country that falls away from the hills of Judah down to the Dead Sea. David spent much of his life there, both as a fugitive from Saul and later when he fled Jerusalem during Absalom's revolt. Because the psalm closes by speaking of the king rejoicing in God, many readers place it in the second of those times, though the heading does not say.
-
-The setting shapes the language. In a dry and weary land without water, David's soul thirsts for God. He remembers seeing God's power and glory in the sanctuary, and lies awake in the watches of the night thinking of him.
-
-It is one of the warmest psalms of longing in the book. God's loving devotion, he says, is better than life itself. The final lines turn briefly to his enemies, who will fall by the sword, before ending with the king's joy.
-
-=== 64
-Psalm sixty-four is a prayer for protection from conspirators. The enemies here are not soldiers but schemers, a mob of evildoers who sharpen their tongues like swords and aim bitter words like arrows, shooting at the innocent from hiding. They plot in secret and congratulate themselves on a perfect plan, confident no one will see.
-
-The psalm's turn comes with a striking reversal of that image. God will shoot his own arrows at them, suddenly, and their own tongues will bring them down. Those who see it will shake their heads, and all humanity will fear and ponder what God has done.
-
-The heading names David but no occasion. The psalm is brief and ends with the righteous rejoicing and taking refuge in the Lord.
-
-=== 65
-After a run of laments, Psalm sixty-five is pure thanksgiving. It begins in Zion, where praise waits for God and vows are being kept, and where sins are forgiven and people are brought near to dwell in his courts.
-
-Then the view widens. The God who answers prayer in his temple is also the hope of the farthest seas. He set the mountains in place and calmed the roaring waves and the tumult of the nations.
-
-The last part of the psalm is one of the loveliest pictures of the land of Israel in the Bible. God waters the earth, soaks its furrows and softens it with showers, and crowns the year with his goodness. The wilderness pastures overflow, the hills are wrapped in joy, the meadows are covered with flocks and the valleys with grain, until the whole landscape seems to shout and sing. It may well have been sung at a harvest festival, though the psalm does not say.
-
-=== 66
-Psalm sixty-six has no named author. It begins as a hymn for the whole earth, calling every nation to shout for joy to God and sing the glory of his name.
-
-The reason given is Israel's history. Come and see what God has done, the psalm says, and it recalls the day he turned the sea into dry land, and his people crossed the waters on foot. Then it speaks of a more recent ordeal, a time of testing when God refined his people like silver, laid burdens on their backs, let men ride over their heads, and led them through fire and water into a place of abundance.
-
-Halfway through, the voice changes from we to I. A single worshipper comes to the temple with burnt offerings to fulfil the vows he made when he was in trouble, and invites all who fear God to listen to what God has done for him.
-
-=== 67
-Psalm sixty-seven is short, and it opens with words every Israelite would have recognised. May God be gracious to us and bless us, and make his face shine upon us. They echo the blessing that the priests pronounced over Israel in the book of Numbers.
-
-But here the blessing has a purpose that reaches beyond Israel: that God's ways may be known on the earth and his salvation among all nations. A refrain rings out twice, let the peoples praise you, O God, let all the peoples praise you, and at the centre of the psalm the nations are pictured singing for joy under God's just rule.
-
-The last lines mention a harvest. The earth has yielded its crop. The psalm ends with God's blessing on Israel spreading out until all the ends of the earth fear him.
-
-=== 68
-Psalm sixty-eight is one of the longest and most difficult psalms in the book. Its Hebrew is often obscure, and its scenes change quickly, but its overall movement is clear. It is a great processional hymn, celebrating God's march from Sinai to Zion.
-
-It opens with words very close to the cry Moses raised whenever the ark of the covenant set out in the wilderness: God arises, his enemies are scattered. Then the psalm praises God as the father of the fatherless and defender of widows, and remembers how he went before Israel through the desert, when the earth shook at Sinai and rain fell on his weary people. It recalls kings fleeing before Israel and women dividing the spoils at home.
-
-Then the scene moves to the mountains. The many-peaked mountains of Bashan, east of the Jordan, are pictured looking on in envy, because God has chosen the little hill of Zion as his dwelling. He ascends on high, leading captives in his train. The apostle Paul quotes that line in Ephesians and applies it to the ascended Christ.
-
-Near the end we see the procession itself entering the sanctuary, singers first, then musicians, with girls playing tambourines, followed by the princes of the tribes, little Benjamin in the lead. The psalm closes with the kingdoms of the earth summoned to sing to God.
-
-=== 69
-Psalm sixty-nine is a long lament, and it begins with the image of drowning. The waters are up to the psalmist's neck, he is sinking in deep mud with no footing, and he is hoarse from crying out.
-
-His enemies hate him without cause, and he has become a stranger even to his own family. Much of his suffering comes because of his loyalty to God. Zeal for your house has consumed me, he says, and the insults aimed at God have fallen on him. When he fasted and wept, he became a joke to the people at the city gate and a song for drunkards. When he looked for comfort, they gave him poison for food and sour wine for his thirst.
-
-After Psalm twenty-two, this is one of the psalms the New Testament quotes most often. John's Gospel recalls the line about zeal for God's house when Jesus clears the temple, and the Gospels record that sour wine was offered to Jesus on the cross. The psalm also contains some of the Psalter's strongest prayers against enemies. It ends with praise and a promise that God will rebuild the cities of Judah.
-
-=== 70
-Psalm seventy is a short, urgent prayer, and it has been heard before. It repeats, with small changes, the closing section of Psalm forty, where a song of thanksgiving gave way to a fresh cry for help. Here the cry stands on its own. Like Psalm thirty-eight, its heading calls it a psalm to bring remembrance.
-
-It opens and closes with the same plea: hurry, O God, to help me, do not delay. Between those cries the psalmist prays that those who mock him with their aha, aha would be turned back in shame, and that all who seek God would rejoice. He describes himself simply as poor and needy.
-
-As in Psalm fifty-three, this version tends to say God where the earlier one used the Lord's personal name.
-
-=== 71
-Psalm seventy-one has no heading, and it reads like a continuation of the urgent prayer before it, from someone who is now old. Do not cast me off in my old age, the psalmist prays, do not forsake me when my strength is gone.
-
-Much of the language will sound familiar. Its opening lines echo the start of Psalm thirty-one, and its pleas for God to hurry recall Psalms forty and seventy. It is the prayer of someone who has learned the psalms and makes them his own.
-
-What gives it its particular warmth is its sense of a whole lifetime. God has been his hope since his youth, and he has leaned on him since birth. Enemies now say God has abandoned him, but he looks back on many troubles and believes God will revive him again. His great desire is to live long enough to tell the next generation of God's power. The psalm ends with harp and lyre and shouts of joy.
-
-=== 72
-Psalm seventy-two brings Book Two to a close. Its heading reads of Solomon, which may mean written by him or for him. Either way, it is a prayer for the king, the son of a king, and it describes the kind of reign Israel hoped for.
-
-Above all, the king is to be just. He is to defend the afflicted, save the children of the needy and crush the oppressor, because their lives are precious in his sight. His reign is pictured as rain on mown grass, bringing peace and plenty.
-
-The prayer also reaches far beyond Israel's borders. It asks that he rule from sea to sea and from the Euphrates to the ends of the earth, that the kings of distant Tarshish, Sheba and Seba bring him tribute, and that all nations be blessed through him, an echo of God's ancient promise to Abraham.
-
-Then comes the doxology that closes Book Two, followed by a short editorial note: the prayers of David son of Jesse are concluded. More psalms of David follow later in the book, so this seems to mark the end of an earlier collection.
-
-=== 73
-With Psalm seventy-three, Book Three of the Psalter begins. It opens a group of eleven psalms that bear the name of Asaph, and the tone of this whole book is darker and more searching than what has gone before.
-
-Psalm seventy-three is a wisdom psalm, and it tells a story of faith nearly lost. It begins with the conclusion: surely God is good to Israel. Then the singer confesses that his feet had almost slipped. He had looked at the arrogant and envied them. They seemed healthy, comfortable and untroubled, mocking God and growing rich, while he kept his heart pure and suffered every morning. It all seemed for nothing.
-
-The turning point comes when he enters God's sanctuary and sees where the path of the wicked ends. What follows is one of the most beautiful confessions in the book. Whom have I in heaven but you, he says, and on earth I desire nothing besides you.
-
-=== 74
-Psalm seventy-four is a community lament over an unthinkable disaster. The enemy has broken into God's sanctuary, smashing its carved panels with axes and hatchets, and burned it to the ground. Every meeting place of God in the land has been destroyed, there are no more signs, no prophet, and no one knows how long it will last.
-
-The psalm does not name the enemy, but its description fits the destruction of Jerusalem and Solomon's temple by the Babylonians, early in the sixth century before Christ. If so, the heading, a Maskil of Asaph, points to the guild of singers descended from him, still carrying his name centuries after David.
-
-In the middle of the devastation the singer remembers who God is: his King from ancient times, who divided the sea, crushed the heads of Leviathan, the monster of the deep, and set the boundaries of the earth. The psalm ends with an urgent plea for God to rise and defend his cause.
-
-=== 75
-Psalm seventy-four ended with a plea for God to rise up and judge. Psalm seventy-five, another psalm of Asaph set to the tune Do Not Destroy, opens with the congregation giving thanks, for God's name is near.
-
-Then God himself speaks. He will choose the appointed time and judge with fairness. When the earth and all its people totter, he is the one who holds its pillars steady. He warns the proud not to boast and the wicked not to lift their horns, the horn being an ancient image of strength, like the horns of a wild ox.
-
-The psalmist adds that promotion comes from neither east nor west nor the desert, but from God, who brings one down and lifts another up. In the Lord's hand is a cup of foaming wine, an image the prophets would use for his judgement, and the wicked of the earth must drink it to the dregs. The psalm ends with God's last word, that the horns of the wicked will be cut off and those of the righteous lifted high.
+Because the psalm follows the alphabet, it moves less by argument than by return, circling its theme from many angles. Listen for its gentle commands: trust in the Lord, delight in him, commit your way to him, be still, and wait.
