@@ -7,7 +7,7 @@ H = {"User-Agent": "scripture-companion (personal Bible app; github.com/zreynard
 B = "https://wisdomonline-a.atl1.cdn.digitaloceanspaces.com/"
 ABBR = {"Gen": "Genesis", "Ex": "Exodus", "Lev": "Leviticus", "Num": "Numbers", "Deut": "Deuteronomy", "Josh": "Joshua", "Judg": "Judges", "Ruth": "Ruth",
         "1 Sam": "1Samuel", "2 Sam": "2Samuel", "1 Kgs": "1Kings", "2 Kgs": "2Kings", "1 Chr": "1Chronicles", "2 Chr": "2Chronicles", "Ezra": "Ezra", "Neh": "Nehemiah",
-        "Esth": "Esther", "Job": "Job", "Ps": "Psalm", "Prov": "Proverbs", "Eccl": "Ecclesiastes", "Song": "Song", "Isa": "Isaiah", "Jer": "Jeremiah", "Lam": "Lamentations",
+        "Esth": "Esther", "Job": "Job", "Ps": "Psalm", "Psalms": "Psalms", "Prov": "Proverbs", "Eccl": "Ecclesiastes", "Song": "Song", "Isa": "Isaiah", "Jer": "Jeremiah", "Lam": "Lamentations",
         "Ezek": "Ezekiel", "Dan": "Daniel", "Hos": "Hosea", "Joel": "Joel", "Amos": "Amos", "Obad": "Obadiah", "Jonah": "Jonah", "Mic": "Micah", "Nah": "Nahum", "Hab": "Habakkuk",
         "Zeph": "Zephaniah", "Hag": "Haggai", "Zech": "Zechariah", "Mal": "Malachi", "Matt": "Matthew", "Mark": "Mark", "Luke": "Luke", "John": "John", "Acts": "Acts",
         "Rom": "Romans", "1 Cor": "1Corinthians", "2 Cor": "2Corinthians", "Gal": "Galatians", "Eph": "Ephesians", "Phil": "Philippians", "Col": "Colossians",
@@ -40,7 +40,7 @@ def candidates(prefix, n, x):
 
 def prefix_of(series):
     s = re.sub(r"^(Sermons in|Series:|Topic:)\s*", "", series).strip()
-    return [s.replace(" ", ""), s.split()[0], s.replace(" ", "-")]
+    return list(dict.fromkeys([s.replace(" ", ""), s.split()[0], s.replace(" ", "-"), s.replace(" & ", "and").replace(" ", ""), s.replace(" & ", "And").replace(" ", "")]))
 
 
 def main():
@@ -49,7 +49,7 @@ def main():
         for x in d["sermons"]:
             if x.get("mp3") or x.get("tried", 0) >= 2: continue
             hit = None
-            for pre in prefix_of(d["series"]):
+            for pre in list(dict.fromkeys(prefix_of(d["series"]) + [b for b, _ in passages(x)])):
                 for c in candidates(pre, x["n"], x):
                     r = requests.get(B + c + ".mp3", headers=H, timeout=30)
                     if r.status_code in (200, 206): hit = B + c + ".mp3"; break

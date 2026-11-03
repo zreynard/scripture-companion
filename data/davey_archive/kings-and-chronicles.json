@@ -1,0 +1,137 @@
+{
+ "series": "Sermons in Kings & Chronicles",
+ "slug": "kings-and-chronicles",
+ "from": "spreadsheet",
+ "sermons": [
+  {
+   "n": 1,
+   "title": "A Kingdom in Crisis (1 Kings 1)",
+   "name": "A Kingdom in Crisis",
+   "title_passage": "1 Kings 1",
+   "ref": "1 Kings 1",
+   "date": "May 21, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 2,
+   "title": "The Tyranny of Gravel (1 Kings 2:1–9)",
+   "name": "The Tyranny of Gravel",
+   "title_passage": "1 Kings 2:1–9",
+   "ref": "1 Kings 2:1–9",
+   "date": "May 28, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 3,
+   "title": "Make a Wish . . . Any Wish (1 Kings 3)",
+   "name": "Make a Wish . . . Any Wish",
+   "title_passage": "1 Kings 3",
+   "ref": "1 Kings 3",
+   "date": "June 4, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 4,
+   "title": "A Matter of Heart (1 Kings 3:16–28; 4)",
+   "name": "A Matter of Heart",
+   "title_passage": "1 Kings 3:16–28; 4",
+   "ref": "1 Kings 3:16–28; 4",
+   "date": "June 11, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 5,
+   "title": "Temples . . . Past and Present (1 Kings 5–6)",
+   "name": "Temples . . . Past and Present",
+   "title_passage": "1 Kings 5–6",
+   "ref": "1 Kings 5–6",
+   "date": "June 18, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 6,
+   "title": "If Only . . . (1 Kings 11)",
+   "name": "If Only . . .",
+   "title_passage": "1 Kings 11",
+   "ref": "1 Kings 11",
+   "date": "June 25, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 7,
+   "title": "Never Forgotten (1 Chronicles 1–9)",
+   "name": "Never Forgotten",
+   "title_passage": "1 Chronicles 1–9",
+   "ref": "1 Chronicles 1–9",
+   "date": "July 2, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 8,
+   "title": "Terminal (2 Kings 20)",
+   "name": "Terminal",
+   "title_passage": "2 Kings 20",
+   "ref": "2 Kings 20",
+   "date": "June 16, 1996",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 9,
+   "title": "Nothing Like His Father (2 Kings 21)",
+   "name": "Nothing Like His Father",
+   "title_passage": "2 Kings 21",
+   "ref": "2 Kings 21",
+   "date": "July 7, 1996",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 10,
+   "title": "The Boy Wonder (2 Kings 22:1–13)",
+   "name": "The Boy Wonder",
+   "title_passage": "2 Kings 22:1–13",
+   "ref": "2 Kings 22:1–13",
+   "date": "July 14, 1996",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 11,
+   "title": "The Lost Book (2 Kings 22)",
+   "name": "The Lost Book",
+   "title_passage": "2 Kings 22",
+   "ref": "2 Kings 22",
+   "date": "July 28, 1996",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 12,
+   "title": "Sundown at Noon (2 Kings 23:4)",
+   "name": "Sundown at Noon",
+   "title_passage": "2 Kings 23:4",
+   "ref": "2 Kings 23:4",
+   "date": "August 4, 1996",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  },
+  {
+   "n": 13,
+   "title": "All the King's Horses (2 Kings 23–25)",
+   "name": "All the King's Horses",
+   "title_passage": "2 Kings 23–25",
+   "ref": "2 Kings 23–25",
+   "date": "August 11, 1996",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Kings & Chronicles"
+  }
+ ]
+}

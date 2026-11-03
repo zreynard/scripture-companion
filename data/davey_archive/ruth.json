@@ -1,0 +1,107 @@
+{
+ "series": "Sermons in Ruth",
+ "slug": "ruth",
+ "from": "spreadsheet",
+ "sermons": [
+  {
+   "n": 1,
+   "title": "Once Upon a Time (Ruth 1:1)",
+   "name": "Once Upon a Time",
+   "title_passage": "Ruth 1:1",
+   "ref": "Ruth 1:1",
+   "date": "November 9, 2008",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  },
+  {
+   "n": 2,
+   "title": "Greener Grass (Ruth 1:1–5)",
+   "name": "Greener Grass",
+   "title_passage": "Ruth 1:1–5",
+   "ref": "Ruth 1:1–5",
+   "date": "November 16, 2008",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  },
+  {
+   "n": 3,
+   "title": "Three Widows . . . Three Ways (Ruth 1:6–22)",
+   "name": "Three Widows . . . Three Ways",
+   "title_passage": "Ruth 1:6–22",
+   "ref": "Ruth 1:6–22",
+   "date": "November 23, 2008",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  },
+  {
+   "n": 4,
+   "title": "No Such Thing as Chance (Ruth 2:1–13)",
+   "name": "No Such Thing as Chance",
+   "title_passage": "Ruth 2:1–13",
+   "ref": "Ruth 2:1–13",
+   "date": "December 7, 2008",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  },
+  {
+   "n": 5,
+   "title": "Gleaning in the Fields of Grace (Ruth 2:14–23)",
+   "name": "Gleaning in the Fields of Grace",
+   "title_passage": "Ruth 2:14–23",
+   "ref": "Ruth 2:14–23",
+   "date": "December 14, 2008",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  },
+  {
+   "n": 6,
+   "title": "A Midnight Proposal (Ruth 3:1–10)",
+   "name": "A Midnight Proposal",
+   "title_passage": "Ruth 3:1–10",
+   "ref": "Ruth 3:1–10",
+   "date": "March 15, 2009",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  },
+  {
+   "n": 7,
+   "title": "Seven Reasons to Say I Do (Ruth 3:11–17)",
+   "name": "Seven Reasons to Say I Do",
+   "title_passage": "Ruth 3:11–17",
+   "ref": "Ruth 3:11–17",
+   "date": "March 22, 2009",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  },
+  {
+   "n": 8,
+   "title": "The Longest Day (Ruth 3:18)",
+   "name": "The Longest Day",
+   "title_passage": "Ruth 3:18",
+   "ref": "Ruth 3:18",
+   "date": "March 29, 2009",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  },
+  {
+   "n": 9,
+   "title": "Sealed With a Sandal (Ruth 4:1–12)",
+   "name": "Sealed With a Sandal",
+   "title_passage": "Ruth 4:1–12",
+   "ref": "Ruth 4:1–12",
+   "date": "April 5, 2009",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  },
+  {
+   "n": 10,
+   "title": "And They Lived Happily Ever After (Ruth 4:13–22)",
+   "name": "And They Lived Happily Ever After",
+   "title_passage": "Ruth 4:13–22",
+   "ref": "Ruth 4:13–22",
+   "date": "April 19, 2009",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Ruth"
+  }
+ ]
+}

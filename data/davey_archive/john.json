@@ -1,0 +1,537 @@
+{
+ "series": "Sermons in John",
+ "slug": "john",
+ "from": "spreadsheet",
+ "sermons": [
+  {
+   "n": 1,
+   "title": "When Heaven Came Down (John 1:1–3)",
+   "name": "When Heaven Came Down",
+   "title_passage": "John 1:1–3",
+   "ref": "John 1:1–3",
+   "date": "September 26, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 2,
+   "title": "The Witness (John 1:6–29)",
+   "name": "The Witness",
+   "title_passage": "John 1:6–29",
+   "ref": "John 1:6–29",
+   "date": "October 3, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 3,
+   "title": "That Mysterious Holy Spirit (John 1:19–34)",
+   "name": "That Mysterious Holy Spirit",
+   "title_passage": "John 1:19–34",
+   "ref": "John 1:19–34",
+   "date": "October 3, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 4,
+   "title": "The Test (John 1:35–51)",
+   "name": "The Test",
+   "title_passage": "John 1:35–51",
+   "ref": "John 1:35–51",
+   "date": "October 10, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 5,
+   "title": "The Lion Roared (John 2:12–15)",
+   "name": "The Lion Roared",
+   "title_passage": "John 2:12–15",
+   "ref": "John 2:12–15",
+   "date": "November 7, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 6,
+   "title": "Reborn . . . the Declaration (John 3:1–15)",
+   "name": "Reborn . . . the Declaration",
+   "title_passage": "John 3:1–15",
+   "ref": "John 3:1–15",
+   "date": "November 21, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 7,
+   "title": "Reborn . . . the Decision (John 3:16–19)",
+   "name": "Reborn . . . the Decision",
+   "title_passage": "John 3:16–19",
+   "ref": "John 3:16–19",
+   "date": "November 28, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 8,
+   "title": "Reborn . . . the Demonstration (John 3:19–21)",
+   "name": "Reborn . . . the Demonstration",
+   "title_passage": "John 3:19–21",
+   "ref": "John 3:19–21",
+   "date": "December 5, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 9,
+   "title": "A Fading Star (John 3:22–36)",
+   "name": "A Fading Star",
+   "title_passage": "John 3:22–36",
+   "ref": "John 3:22–36",
+   "date": "December 12, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 10,
+   "title": "Thirsty Anyone? (John 4:1–42)",
+   "name": "Thirsty Anyone?",
+   "title_passage": "John 4:1–42",
+   "ref": "John 4:1–42",
+   "date": "December 19, 1993",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 11,
+   "title": "Discovering the Missing Jewel (John 4:1–42)",
+   "name": "Discovering the Missing Jewel",
+   "title_passage": "John 4:1–42",
+   "ref": "John 4:1–42",
+   "date": "January 2, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 12,
+   "title": "Crisis Faith . . . Confident Faith (John 4:43–54; 5:1–14)",
+   "name": "Crisis Faith . . . Confident Faith",
+   "title_passage": "John 4:43–54; 5:1–14",
+   "ref": "John 4:43–54; 5:1–14",
+   "date": "January 16, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 13,
+   "title": "Motives for Murder (John 5:19–47)",
+   "name": "Motives for Murder",
+   "title_passage": "John 5:19–47",
+   "ref": "John 5:19–47",
+   "date": "January 23, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 14,
+   "title": "I Flunked Faith 101 (John 6:1–21)",
+   "name": "I Flunked Faith 101",
+   "title_passage": "John 6:1–21",
+   "ref": "John 6:1–21",
+   "date": "January 30, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 15,
+   "title": "Anything Less Won't Last (John 6:22–71)",
+   "name": "Anything Less Won't Last",
+   "title_passage": "John 6:22–71",
+   "ref": "John 6:22–71",
+   "date": "February 13, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 16,
+   "title": "Water Unlimited (John 7)",
+   "name": "Water Unlimited",
+   "title_passage": "John 7",
+   "ref": "John 7",
+   "date": "February 28, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 17,
+   "title": "Judging the Judges (John 8:1–11)",
+   "name": "Judging the Judges",
+   "title_passage": "John 8:1–11",
+   "ref": "John 8:1–11",
+   "date": "March 6, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 18,
+   "title": "To See or Not to See (John 8:12–59; 9)",
+   "name": "To See or Not to See",
+   "title_passage": "John 8:12–59; 9",
+   "ref": "John 8:12–59; 9",
+   "date": "March 13, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 19,
+   "title": "The Absolute Truth (John 8:20–59)",
+   "name": "The Absolute Truth",
+   "title_passage": "John 8:20–59",
+   "ref": "John 8:20–59",
+   "date": "May 1, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 20,
+   "title": "Up Close and Personal (John 10:1–42)",
+   "name": "Up Close and Personal",
+   "title_passage": "John 10:1–42",
+   "ref": "John 10:1–42",
+   "date": "May 8, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 21,
+   "title": "Living Proof (John 11)",
+   "name": "Living Proof",
+   "title_passage": "John 11",
+   "ref": "John 11",
+   "date": "May 15, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 22,
+   "title": "Scent from a Broken Vase (John 12:1–11)",
+   "name": "Scent from a Broken Vase",
+   "title_passage": "John 12:1–11",
+   "ref": "John 12:1–11",
+   "date": "May 22, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 23,
+   "title": "Here Comes the King (John 12:12–21)",
+   "name": "Here Comes the King",
+   "title_passage": "John 12:12–21",
+   "ref": "John 12:12–21",
+   "date": "May 29, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 24,
+   "title": "Here Am I, Lord . . . Bury Me (John 12:22–33)",
+   "name": "Here Am I, Lord . . . Bury Me",
+   "title_passage": "John 12:22–33",
+   "ref": "John 12:22–33",
+   "date": "June 12, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 25,
+   "title": "Children of the Night (John 12:34–50)",
+   "name": "Children of the Night",
+   "title_passage": "John 12:34–50",
+   "ref": "John 12:34–50",
+   "date": "June 19, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 26,
+   "title": "Happiness and a Pair of Dirty Feet (John 13:1–20)",
+   "name": "Happiness and a Pair of Dirty Feet",
+   "title_passage": "John 13:1–20",
+   "ref": "John 13:1–20",
+   "date": "June 26, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 27,
+   "title": "Cloak and Dagger (John 13:21–30)",
+   "name": "Cloak and Dagger",
+   "title_passage": "John 13:21–30",
+   "ref": "John 13:21–30",
+   "date": "August 7, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 28,
+   "title": "Living on the Fourth Level (John 13:31–35)",
+   "name": "Living on the Fourth Level",
+   "title_passage": "John 13:31–35",
+   "ref": "John 13:31–35",
+   "date": "August 14, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 29,
+   "title": "Heaven Guaranteed (John 13:36–38; 14:1–4)",
+   "name": "Heaven Guaranteed",
+   "title_passage": "John 13:36–38; 14:1–4",
+   "ref": "John 13:36–38; 14:1–4",
+   "date": "August 21, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 30,
+   "title": "Is Christianity the Only Way to Heaven? (John 14:4–6)",
+   "name": "Is Christianity the Only Way to Heaven?",
+   "title_passage": "John 14:4–6",
+   "ref": "John 14:4–6",
+   "date": "August 28, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 31,
+   "title": "Troublesome Questions . . . Timeless Answers (John 14:3–15; 16:23–28)",
+   "name": "Troublesome Questions . . . Timeless Answers",
+   "title_passage": "John 14:3–15; 16:23–28",
+   "ref": "John 14:3–15; 16:23–28",
+   "date": "September 4, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 32,
+   "title": "Introducing the Holy Spirit (John 14:16–22)",
+   "name": "Introducing the Holy Spirit",
+   "title_passage": "John 14:16–22",
+   "ref": "John 14:16–22",
+   "date": "September 11, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 33,
+   "title": "Producing Spiritual Fruit is Impossible (John 15:1–11)",
+   "name": "Producing Spiritual Fruit is Impossible",
+   "title_passage": "John 15:1–11",
+   "ref": "John 15:1–11",
+   "date": "September 18, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 34,
+   "title": "Our Prize of Friendship (John 15:12–17)",
+   "name": "Our Prize of Friendship",
+   "title_passage": "John 15:12–17",
+   "ref": "John 15:12–17",
+   "date": "October 9, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 35,
+   "title": "The Promise of Suffering (John 15:18–27)",
+   "name": "The Promise of Suffering",
+   "title_passage": "John 15:18–27",
+   "ref": "John 15:18–27",
+   "date": "October 16, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 36,
+   "title": "In Case You Lose Heart (John 16)",
+   "name": "In Case You Lose Heart",
+   "title_passage": "John 16",
+   "ref": "John 16",
+   "date": "October 23, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 37,
+   "title": "The REAL Lord's Prayer (John 17)",
+   "name": "The REAL Lord's Prayer",
+   "title_passage": "John 17",
+   "ref": "John 17",
+   "date": "November 13, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 38,
+   "title": "A Tribute to the Lamb - Betrayed! (John 18:1–11)",
+   "name": "A Tribute to the Lamb - Betrayed!",
+   "title_passage": "John 18:1–11",
+   "ref": "John 18:1–11",
+   "date": "November 20, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 39,
+   "title": "A Tribute to the Lamb - Gethsemane! (Matt 26:36–46; John 18:1)",
+   "name": "A Tribute to the Lamb - Gethsemane!",
+   "title_passage": "Matt 26:36–46; John 18:1",
+   "ref": "Matt 26:36–46; John 18:1",
+   "date": "November 27, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 40,
+   "title": "A Tribute to the Lamb - Guilty! (John 18)",
+   "name": "A Tribute to the Lamb - Guilty!",
+   "title_passage": "John 18",
+   "ref": "John 18",
+   "date": "December 11, 1994",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 41,
+   "title": "And the Rooster Crowed . . . (John 18:15–27)",
+   "name": "And the Rooster Crowed . . .",
+   "title_passage": "John 18:15–27",
+   "ref": "John 18:15–27",
+   "date": "January 8, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 42,
+   "title": "The People's Choice (John 18:38–40)",
+   "name": "The People's Choice",
+   "title_passage": "John 18:38–40",
+   "ref": "John 18:38–40",
+   "date": "January 15, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 43,
+   "title": "The Verdict of Rome (John 18:29–40; 19:1–15)",
+   "name": "The Verdict of Rome",
+   "title_passage": "John 18:29–40; 19:1–15",
+   "ref": "John 18:29–40; 19:1–15",
+   "date": "January 22, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 44,
+   "title": "Death by Crucifixion (John 19:15–24)",
+   "name": "Death by Crucifixion",
+   "title_passage": "John 19:15–24",
+   "ref": "John 19:15–24",
+   "date": "February 5, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 45,
+   "title": "The Lamb's Last Words (John 19:25–30)",
+   "name": "The Lamb's Last Words",
+   "title_passage": "John 19:25–30",
+   "ref": "John 19:25–30",
+   "date": "February 12, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 46,
+   "title": "Saturday's Sorrow (John 19:38–42)",
+   "name": "Saturday's Sorrow",
+   "title_passage": "John 19:38–42",
+   "ref": "John 19:38–42",
+   "date": "March 5, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 47,
+   "title": "Surprise! (John 20:1–18)",
+   "name": "Surprise!",
+   "title_passage": "John 20:1–18",
+   "ref": "John 20:1–18",
+   "date": "March 12, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 48,
+   "title": "Behind Closed Doors (John 20:19–29)",
+   "name": "Behind Closed Doors",
+   "title_passage": "John 20:19–29",
+   "ref": "John 20:19–29",
+   "date": "March 19, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 49,
+   "title": "The Reason Why (John 20:30–31)",
+   "name": "The Reason Why",
+   "title_passage": "John 20:30–31",
+   "ref": "John 20:30–31",
+   "date": "April 9, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 50,
+   "title": "A Refresher Course . . . Fishing 101 (John 21:1–14)",
+   "name": "A Refresher Course . . . Fishing 101",
+   "title_passage": "John 21:1–14",
+   "ref": "John 21:1–14",
+   "date": "April 16, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 51,
+   "title": "Broken Things (John 21:15–17)",
+   "name": "Broken Things",
+   "title_passage": "John 21:15–17",
+   "ref": "John 21:15–17",
+   "date": "April 23, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 52,
+   "title": "Snooping, Comparing and Other Natural Diseases (John 21:18–23)",
+   "name": "Snooping, Comparing and Other Natural Diseases",
+   "title_passage": "John 21:18–23",
+   "ref": "John 21:18–23",
+   "date": "April 30, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  },
+  {
+   "n": 53,
+   "title": "John's Final Words (John 21:24–25)",
+   "name": "John's Final Words",
+   "title_passage": "John 21:24–25",
+   "ref": "John 21:24–25",
+   "date": "May 7, 1995",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in John"
+  }
+ ]
+}

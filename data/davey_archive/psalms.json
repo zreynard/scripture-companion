@@ -1,0 +1,87 @@
+{
+ "series": "Sermons in Psalms",
+ "slug": "psalms",
+ "from": "spreadsheet",
+ "sermons": [
+  {
+   "n": 1,
+   "title": "Drawing Circles for All the Right Reasons (Psalms 1:1–6)",
+   "name": "Drawing Circles for All the Right Reasons",
+   "title_passage": "Psalms 1:1–6",
+   "ref": "Psalms 1:1–6",
+   "date": "October 11, 2015",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Psalms"
+  },
+  {
+   "n": 2,
+   "title": "Evergreen (Psalms 1:2–6)",
+   "name": "Evergreen",
+   "title_passage": "Psalms 1:2–6",
+   "ref": "Psalms 1:2–6",
+   "date": "October 18, 2015",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Psalms"
+  },
+  {
+   "n": 3,
+   "title": "An Unbroken Chain (Psalms 78)",
+   "name": "An Unbroken Chain",
+   "title_passage": "Psalms 78",
+   "ref": "Psalms 78",
+   "date": "November 1, 2015",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Psalms"
+  },
+  {
+   "n": 4,
+   "title": "Between a Rock and a Hard Place (Psalms 46)",
+   "name": "Between a Rock and a Hard Place",
+   "title_passage": "Psalms 46",
+   "ref": "Psalms 46",
+   "date": "November 15, 2015",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Psalms"
+  },
+  {
+   "n": 5,
+   "title": "The First Thanksgiving Hymn (Psalms 100)",
+   "name": "The First Thanksgiving Hymn",
+   "title_passage": "Psalms 100",
+   "ref": "Psalms 100",
+   "date": "November 22, 2015",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Psalms"
+  },
+  {
+   "n": 6,
+   "title": "Singing About the Messiah (Psalms 69)",
+   "name": "Singing About the Messiah",
+   "title_passage": "Psalms 69",
+   "ref": "Psalms 69",
+   "date": "December 6, 2015",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Psalms"
+  },
+  {
+   "n": 7,
+   "title": "Abandoned at the Gate (Psalms 69)",
+   "name": "Abandoned at the Gate",
+   "title_passage": "Psalms 69",
+   "ref": "Psalms 69",
+   "date": "December 13, 2015",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Psalms"
+  },
+  {
+   "n": 8,
+   "title": "A Closer Look at Psalm 23 (Psalms 23)",
+   "name": "A Closer Look at Psalm 23",
+   "title_passage": "Psalms 23",
+   "ref": "Psalms 23",
+   "date": "June 14, 2026",
+   "speaker": "Stephen Davey",
+   "series": "Sermons in Psalms"
+  }
+ ]
+}
