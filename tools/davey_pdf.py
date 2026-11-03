@@ -14,10 +14,11 @@ def text_of(pdf):
     keep = []
     for line in t.splitlines():
         s = line.strip()
-        if re.match(r"^https?://\S+", s) or re.search(r"Page \d+ of \d+$", s) or re.fullmatch(r"[:s ]*", s) or s == "Back to Teaching Series":
+        if re.match(r"^https?://\S+", s) or re.search(r"Page \d+ of \d+$", s) or len(s) <= 2 or s == "Back to Teaching Series":
             continue
         keep.append(s)
-    return re.sub(r"\s+", " ", " ".join(keep))
+    t = re.sub(r"\s+", " ", " ".join(keep))
+    return re.sub(r"(?<=\d{4}) [A-Za-z:] (?=Scripture Reference)|(?<=\S) [:a-z] (?=[A-Z(])", " ", t)   # a stray letter from the page edge
 
 
 def parse(pdf):
@@ -50,9 +51,11 @@ if __name__ == "__main__":
         series, L = parse(pdf)
         slug = re.sub(r"[^a-z0-9]+", "-", re.sub(r"^(sermons in|series:|topic:)\s*", "", series.lower())).strip("-")
         p = os.path.join(HERE, "data", "davey_archive", slug + ".json")
-        old = {x["n"]: x for x in (json.load(open(p))["sermons"] if os.path.exists(p) else [])}
-        for x in L:
-            if x["n"] in old: x.update({k: v for k, v in old[x["n"]].items() if k in ("mp3", "tried")})
+        key = lambda x: (re.sub(r"[^a-z0-9]+", "", x["title"].lower()), x["date"])
+        old = {key(x): x for x in (json.load(open(p))["sermons"] if os.path.exists(p) else [])}
+        for x in L:   # audio already found stays with its sermon (matched by title and date), never by position
+            o = old.get(key(x))
+            if o and o["n"] == x["n"]: x.update({k: v for k, v in o.items() if k in ("mp3", "tried")})
         json.dump({"series": series, "slug": slug, "sermons": L}, open(p, "w"), indent=1, ensure_ascii=False)
         print(f"{slug}: {len(L)} sermons -> {os.path.relpath(p, HERE)}")
         for x in L[:3] + L[-2:]: print("   ", x["n"], "|", x["title"][:60], "|", x["ref"], "|", x["date"], "|", x["speaker"])
