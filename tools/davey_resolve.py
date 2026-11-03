@@ -38,6 +38,7 @@ def _passages(x):
 def candidates(prefix, n, x):
     nn = f"{n:02d}" if n < 100 else str(n)
     c = [f"{n:05d}{prefix}", f"{n:05d}{prefix}.mp3"]   # newer series: 00008Philippians.mp3 (the first few: 00001Philippians.mp3.mp3)
+    c += [f"{nn}{prefix.lower()}", f"{nn}{prefix}"]       # and some: 01job.mp3
     c += [f"{prefix}{nn}-{b}{p}" for b, p in passages(x)]
     if x.get("ref") == "" or "Introduction" in x.get("title_passage", ""):
         c += [f"{prefix}{nn}-{prefix}1_1", f"{prefix}{nn}-{prefix}1"]
