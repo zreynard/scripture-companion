@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 91  # bump on every shipped build; also busts the service-worker cache
+VERSION = 92  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -758,8 +758,11 @@ body.bpsopen{overflow:hidden}
 .jv-cap .cs{font-size:13.5px;line-height:1.4;color:#2c3554}
 .jv-cap button{font-size:inherit}
 .jv-seg{display:flex;gap:8px;margin:16px 0 18px}
-.jv-seg div{flex:1;font-size:11.5px;color:#5a6280;display:flex;flex-direction:column;gap:6px}
-.jv-seg div.now{color:var(--ink);font-weight:650}
+.jvz .jv-seg{position:sticky;top:calc(env(safe-area-inset-top) + 56px);z-index:3;background:rgba(244,239,227,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);margin:10px -20px 14px;padding:2px 20px 4px}
+.jv-seg button{flex:1;font:11.5px -apple-system,system-ui,sans-serif;color:#5a6280;display:flex;flex-direction:column;gap:6px;border:0;background:none;padding:6px 0 4px;text-align:left;cursor:pointer}
+.jv-seg button.now{color:var(--ink);font-weight:650}
+@keyframes flash{0%{background:rgba(201,162,74,.28)}100%{background:transparent}}.flash{animation:flash 1.2s ease-out;border-radius:12px}
+.jv-none{font-size:13.5px;color:#5a6280;margin:4px 2px}
 .jv-seg i{display:block;height:3px;border-radius:2px;background:rgba(27,36,64,.12);overflow:hidden}
 .jv-seg b{display:block;height:100%;background:#9a7524;border-radius:2px;transition:width .4s}
 .jv-next{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px;border:0;border-radius:22px;background:#fffdf8;color:var(--ink);box-shadow:0 6px 20px rgba(27,36,64,.08);cursor:pointer;font:inherit}
@@ -1449,7 +1452,7 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  const bk=BACK&&BACK.from!==i&&w[BACK.from]?BACK.from:null;
  h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1">↩ Back to ${esc(stopName(w[bk]))}</button>`:''}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
  const segs=c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['overview','Overview',stepFrac(i,s.ov)],['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',stepFrac(i,s.teach)]];
- h+=`<div class="jv-seg">${segs.map(([k,l,f])=>`<div class="${a&&a.step===k?'now':''}"><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</div>`).join('')}</div>`;
+ h+=`<div class="jv-seg">${segs.map(([k,l,f])=>`<button data-jseg="${k}" class="${a&&a.step===k?'now':''}" aria-label="Go to ${l}"><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</button>`).join('')}</div>`;
  if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
   h+=`<button class="jv-next" id="jnext"><span class="jv-pp">${icon(pl?'pause':'play',20,0,'#fff')}</span><span class="jv-nt"><small>${pl?'Playing':left?'Resume':'Up next'}${a.step==='overview'&&!c.intro?' · Overview':''}</small><b>${esc(dispTitle(it))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}</em></span></button><div class="jv-alt"><button data-skipnext="${a.id}">Skip for now</button></div>`}
  else if(a.kind==='scripture'){const n=narDur(b.abbr,c.c),pl=cur===narId(b.abbr,c.c)&&!audio.paused;
@@ -1460,10 +1463,10 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  else h+=`<p class="jv-done">You have walked the whole of Scripture.</p>`;
  /* the stop's whole list: overview, scripture, teaching, in order; heard ones stay, quietly ticked */
  const cap=n=>JV.more?n:Math.min(n,8);let rows='',shown=0,total=0;
- const sec=(t,list)=>{if(!list.length)return'';let o=`<div class="jv-sec">${t}</div>`,last=null;list.forEach(g=>{total++;if(shown>=cap(1e9))return;if(g.h&&g.h!==last&&c.intro){o+=`<div class="jv-sub">${esc(g.h)}</div>`;last=g.h}o+=jRow(g.id,g.r?vbadge(g.r):'',up);shown++});return o};
- rows+=sec(c.intro?'Teaching on the book':'Overview',G.overview);
- if(!c.intro){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec">Scripture</div><div class="jw${rd?' heard':''}"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
- rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses]);
+ const sec=(t,list,k)=>{if(!list.length)return'';let o=`<div class="jv-sec" id="js-${k}">${t}</div>`,last=null;list.forEach(g=>{total++;if(shown>=cap(1e9))return;if(g.h&&g.h!==last&&c.intro){o+=`<div class="jv-sub">${esc(g.h)}</div>`;last=g.h}o+=jRow(g.id,g.r?vbadge(g.r):'',up);shown++});return o};
+ rows+=sec(c.intro?'Teaching on the book':'Overview',G.overview,'overview');
+ if(!c.intro){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec" id="js-scripture">Scripture</div><div class="jw${rd?' heard':''}"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
+ rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;if(!G.overview.length&&!c.intro)rows=`<div id="js-overview"></div>`+rows;
  if(shown<total)rows+=`<button class="jv-more" id="jmore">${total-shown} more</button>`;
  return h+`<div class="jv-list">${rows}</div></div>`}
 function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;
@@ -1474,6 +1477,7 @@ function jMove(i,back){const w=walk(),f=jpIdx();if(!w[i])return;if(back)BACK=nul
  jMove.dir=i>f?'l':i<f?'r':'';setJP(i);camp=i;S.set('camp',camp);JV.more=false;render();jMove.dir='';window.scrollTo({top:0})}
 function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
  document.querySelectorAll('[data-jgo]').forEach(b=>b.onclick=()=>jMove(+b.dataset.jgo,!!b.dataset.back));
+ document.querySelectorAll('[data-jseg]').forEach(b=>b.onclick=()=>{const k=b.dataset.jseg,t=$('#js-'+k)||$('.jv-list');if(!t)return;if(k!=='overview'||$('#js-overview')){const y=t.getBoundingClientRect().top+scrollY-(($('#zt')||{}).offsetHeight||0)-12;window.scrollTo({top:Math.max(0,y),behavior:'smooth'});const row=t.nextElementSibling&&t.nextElementSibling.classList.contains('jw')?t.nextElementSibling:t;row.classList.remove('flash');void row.offsetWidth;row.classList.add('flash')}});
  const pk=$('#jpick');if(pk)pk.onclick=()=>{camp=jpIdx();openJump('browse')};
  document.querySelectorAll('.jv [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
  /* swipe anywhere on the player: left = on to the next stop, right = back one */
@@ -1834,7 +1838,7 @@ setInterval(()=>{if(bkDue()&&Date.now()-BK.tried>10*60e3)bkSave()},60e3);documen
 /* home-screen app: offline shell + keep progress from being evicted */
 if('serviceWorker' in navigator&&isSecureContext)navigator.serviceWorker.register('sw.js').catch(()=>{});
 /* pick up new versions: check on open and whenever the app comes back to the front */
-const APPV=__VERSION__;function checkV(){fetch('version.txt?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.text():'').then(t=>{if(+t>APPV)location.reload()}).catch(()=>{})}checkV();document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkV()});
+const APPV=__VERSION__;function checkV(){fetch('version.txt?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.text():'').then(t=>{if(+t>APPV){let k='';try{k=sessionStorage.getItem('sc:rl')}catch(e){}if(k===t)return;try{sessionStorage.setItem('sc:rl',t)}catch(e){}location.replace(location.pathname+'?v='+t)}}).catch(()=>{})}checkV();document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkV()});
 if(navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(()=>{});
 </script></body></html>"""
 
