@@ -157,7 +157,7 @@ def main():
     pod_nights = {e.get("sc_season") for e in usable if e["source"] == "secret_church_podcast" and e.get("sc_season")}
     usable = [e for e in usable if not (e["source"] == "twr360_secret_church" and e.get("sc_season") in pod_nights)]
     for e in usable:
-        it = {"id": e["id"], "t": e["title"], "who": "Fearless" if e["speaker"].startswith("fearless:") else "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Skip" if skip_guest(e) else e["speaker"] if e["speaker"] in ("Davey", "Skip") else "Platt"),
+        it = {"id": e["id"], "t": re.sub(r"\s{2,}", " ", re.sub(r"[\ue000-\uf8ff]", " ", e["title"])).strip(), "who": "Fearless" if e["speaker"].startswith("fearless:") else "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Skip" if skip_guest(e) else e["speaker"] if e["speaker"] in ("Davey", "Skip") else "Platt"),
               "show": config.SHOWS.get(e["source"]),
               **(({"s": INTROS[e["id"]]} if INTROS[e["id"]] else {}) if e["id"] in INTROS else {"s": 13} if e["source"] == "skip_archive" and re.match(r"\s*Flight\b", e["title"]) else {"s": config.INTRO_SKIP[e["source"]]} if config.INTRO_SKIP.get(e["source"]) else {}),
               "by": ("Pastor " + e["speaker"].split(":", 1)[1] if e["speaker"] != "fearless:Fearless Church" else None) if e["speaker"].startswith("fearless:") else e["speaker"].split(":", 1)[1] if (e["speaker"] in team or skip_guest(e)) else None,
