@@ -1,4 +1,4 @@
-"""HTTP helpers: polite, retrying, browser-like, with optional cloudscraper fallback."""
+"""HTTP helpers: polite and retrying. A site that refuses (bot check, sign-in) is reported, never worked around."""
 from __future__ import annotations
 import json, re, time, html as htmlmod
 from dataclasses import dataclass
@@ -13,11 +13,6 @@ HEADERS = {"User-Agent": UA, "Accept": "text/html,application/xhtml+xml,applicat
 
 _session = requests.Session()
 _session.headers.update(HEADERS)
-try:  # cloudscraper (optional) gets past basic bot walls such as radical.net's
-    import cloudscraper  # type: ignore
-    _scraper = cloudscraper.create_scraper()
-except Exception:  # pragma: no cover
-    _scraper = None
 
 @dataclass
 class Resp:
@@ -29,15 +24,11 @@ class Resp:
     note: str = ""
 
 def get(url: str, timeout: int = 25, retries: int = 2, sleep: float = 0.6) -> Resp:
-    """GET with retries; falls back to cloudscraper on 403/503/429."""
+    """GET with retries. 403/429/503 are retried after a pause, not worked around."""
     last = None
     for attempt in range(retries + 1):
         try:
             r = _session.get(url, timeout=timeout, allow_redirects=True)
-            if r.status_code in (403, 503, 429) and _scraper is not None:
-                r2 = _scraper.get(url, timeout=timeout, allow_redirects=True)
-                if r2.status_code < 400:
-                    r = r2
             last = Resp(url, r.url, r.status_code, r.text, r.status_code < 400)
             if r.status_code < 400 or r.status_code in (404, 410):
                 return last

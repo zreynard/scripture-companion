@@ -33,5 +33,5 @@ Data:    data/catalog.jsonl (harvest), data/verification_log.jsonl (every URL ev
 ## Things to confirm on first run
 * config.YOUTUBE_CHANNELS: the @PhilipAnthonyMitchell and @VictoryWorldChurch handles are best guesses;
   yt-dlp prints an error if a handle is wrong — fix the URL and re-run that source.
-* radical.net has bot protection. `cloudscraper` is used automatically on 403; if pages still come back
+* radical.net has bot protection. Refusals (403) are logged and left alone, never worked around; if pages come back
   403, those rows stay V1 (publisher-issued) rather than being invented or dropped.

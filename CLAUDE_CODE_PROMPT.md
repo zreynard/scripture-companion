@@ -1,6 +1,6 @@
 # MASTER PROMPT — Scripture Companion build-out (paste into Claude Code; run phase by phase)
 
-You are finishing a Bible-listening companion for one user. Read this whole file, then `HANDOFF.md`, then `README.md`, before touching code. Work inside `sermon_companion/`. Python 3.11+; `pip install -r requirements.txt cloudscraper yt-dlp feedparser`.
+You are finishing a Bible-listening companion for one user. Read this whole file, then `HANDOFF.md`, then `README.md`, before touching code. Work inside `sermon_companion/`. Python 3.11+; `pip install -r requirements.txt yt-dlp feedparser`.
 
 ## What exists (do not rebuild from scratch)
 - `data/catalog_verified.jsonl` — 1,021 entries. Tiers: V2 (fetched, title matches), V1 (publisher-issued, not opened), PENDING (cataloged, no link), FAIL (rejected). The app shows only V1/V2 by Platt or PAM.

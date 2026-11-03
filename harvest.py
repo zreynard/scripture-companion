@@ -422,6 +422,31 @@ def harvest_brookhills() -> list[dict]:
     _log(f"brookhills: {len(out)} Platt sermons, {sum(1 for e in out if e['refs'])} with a passage")
     return out
 
+def harvest_mclean_api() -> list[dict]:
+    """McLean Bible Church's own sermon data (what its app shows): every sermon names its preacher and carries the
+    church's mp3, so Platt's are known for certain, including ones older than the podcast feed's newest 200."""
+    base = "https://mclean.api.pocketplatform.io/v1/sermons?limit=100&page="
+    out, page, pages = [], 1, 1
+    while page <= pages and page < 50:
+        r, _ = get_json(base + str(page))
+        if not r: _log(f"mclean_api page {page}: no data"); break
+        pages = int(((r.get("meta") or {}).get("pagination") or {}).get("total_pages") or 1)
+        for x in r.get("data") or []:
+            who = ((x.get("Speaker") or {}).get("Display_Name") or "").strip()
+            audio = next((l["Link_URL"] for l in x.get("Links") or [] if l.get("Media_Type") == "audio" and l.get("Link_URL")), None)
+            title = (x.get("Description") or "").strip()
+            if not (audio and title): continue
+            e = make_entry(source="mclean_api", source_url="https://mcleanbible.org/sermons/", url=audio, title=title,
+                           published=(x.get("Sermon_Date") or "")[:10], author=who, era="platt",
+                           extra_ref_text="; ".join(l.get("Reference") or l.get("Title") or "" for l in x.get("Scripture_Links") or [] if isinstance(l, dict)))
+            e["speaker"] = "Platt" if re.search(r"\bplatt\b", who, re.I) else (f"guest:{who}" if who else "unknown")
+            e["speaker_evidence"] = "church-app-speaker"
+            e["audio_override"] = audio
+            out.append(e)
+        page += 1; time.sleep(config.REQUEST_SLEEP)
+    _log(f"mclean_api: {len(out)} sermons, {sum(1 for e in out if e['speaker'] == 'Platt')} by David Platt")
+    return out
+
 # ---------- Buzzsprout archive: episodes older than the feed's newest 1,000 ----------
 def harvest_buzzsprout_archive(key: str, show_id: int, feed_url: str, era: str = "platt") -> list[dict]:
     """The RSS feed stops at 1,000 items. The show's 'load more' pages (episodes.turbo_stream?page=N)
@@ -529,7 +554,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "brookhills": entries = harvest_brookhills()
             elif s == "radical": entries = harvest_radical(radical_limit)
             elif s == "secret_church_podcast": entries = harvest_itunes_podcast("secret_church_podcast", config.PODCAST_SEARCH_TERMS["secret_church"], r"secret church", "platt", channel_default="Platt")
-            elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt")
+            elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt") + harvest_mclean_api()
             elif s in config.DAVEY_FEEDS:
                 sid, feed = config.DAVEY_FEEDS[s]
                 entries = harvest_feed(s, feed, era="davey") + harvest_buzzsprout_archive(s, sid, feed, era="davey")
@@ -566,6 +591,8 @@ def run(sources: list[str], radical_limit: int | None = None):
                 for k, v in e.items():
                     if k in ("id", "url", "alt_urls"): continue
                     if v and not old_e.get(k): old_e[k] = v
+                if old_e.get("speaker") == "unknown" and e.get("speaker_evidence") == "church-app-speaker" and e.get("speaker") != "unknown":
+                    old_e["speaker"], old_e["speaker_evidence"] = e["speaker"], e["speaker_evidence"]
                 # a partial date ("2021") gives way to the feed's full date
                 if e.get("published") and not re.search(r"\d{4}-\d{2}-\d{2}|\d{1,2} [A-Z][a-z]{2} \d{4}", old_e.get("published") or ""):
                     old_e["published"] = e["published"]
