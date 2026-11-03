@@ -9,6 +9,15 @@ on:
       all:
         description: "1 = measure every recording again"
         default: "0"
+      sources:
+        description: "only these sources (comma list), e.g. davey_journey,skip_archive"
+        default: ""
+      ids:
+        description: "only these recordings (comma list of ids)"
+        default: ""
+      dump:
+        description: "1 = print each recording's words with their times (writing rules)"
+        default: "0"
       from_run:
         description: "merge the measurements a finished run saved (its run id), without measuring again"
         default: ""
@@ -39,7 +48,7 @@ jobs:
       - run: |
           ALL=${{ github.event.inputs.all || '0' }}
           if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" = "7" ]; then ALL=1; fi
-          ALL=$ALL python tools/trim.py measure ${{ matrix.shard }} 16
+          ALL=$ALL SRCS="${{ github.event.inputs.sources }}" IDS="${{ github.event.inputs.ids }}" DUMP="${{ github.event.inputs.dump }}" python tools/trim.py measure ${{ matrix.shard }} 16
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -48,7 +57,7 @@ jobs:
           if-no-files-found: ignore
   merge:
     needs: measure
-    if: always()
+    if: ${{ always() && github.event.inputs.dump != '1' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

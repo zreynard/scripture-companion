@@ -222,7 +222,8 @@ def measure(k, n):
     have = {}
     for f in glob.glob(os.path.join(HERE, "data", "intro_skip", "trim_*.json")):
         if not f.endswith("_end.json"): have.update(json.load(open(f)))
-    todo = [i for i in items() if os.environ.get("ALL") == "1" or i["id"] not in have][k::n]
+    SR = {x for x in os.environ.get("SRCS", "").split(",") if x}; ID = {x for x in os.environ.get("IDS", "").split(",") if x}
+    todo = [i for i in items() if (not SR or i["src"] in SR) and (not ID or i["id"] in ID) and (os.environ.get("ALL") == "1" or ID or i["id"] not in have)][k::n]
     os.makedirs(os.path.join(HERE, "trim"), exist_ok=True)
     out, path = {}, os.path.join(HERE, "trim", f"{k}.json")
     print(f"shard {k}/{n}: {len(todo)} recordings", flush=True)
@@ -241,6 +242,16 @@ def measure(k, n):
                 tl = decode(tail)[-rule.get("tail", WIN) * 16000:]
             tw = words_of(tl, model); TL = len(tl) / 16000
             s, e = find_start(hw, rule), find_end(tw, rule, TL)
+            if os.environ.get("DUMP") == "1":                    # the words with their times, to write rules from
+                def lines(ws, off=0):
+                    row, t = [], None
+                    for w in ws:
+                        if t is None: t = w[0]
+                        row.append(w[2])
+                        if re.search(r"[.?!]$", w[2]): print(f"    {t + off:7.1f}  {' '.join(row)}"); row, t = [], None
+                    if row: print(f"    {t + off:7.1f}  {' '.join(row)}")
+                print(f"=== {it['id']} {it['src']} {it['t']!r}  start={s} end_before={e}  (tail window {TL:.0f}s)\n  HEAD"); lines([w for w in hw if w[0] < 240])
+                print("  TAIL (seconds from the window start)"); lines(tw)
             if s > 300 or e > 300: s, e = min(s, 0), min(e, 0)   # never cut more than a publisher's intro/outro could be
             out[it["id"]] = [s, e]
             nxt = " ".join(w[2] for w in hw if w[0] >= s)[:70]
