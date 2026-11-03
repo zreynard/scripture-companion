@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 85  # bump on every shipped build; also busts the service-worker cache
+VERSION = 86  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -123,6 +123,9 @@ def main():
             if set(bks) == set(order[order.index(a):order.index(z)+1]): return lab
         idx = sorted(order.index(b) for b in bks)
         return f"{order[idx[0]]}–{order[idx[-1]]}" if idx[-1]-idx[0] == len(idx)-1 else ", ".join(bks)
+    # TWR360 rebroadcasts Secret Church nights cut into four parts: where the podcast has the whole night, one copy is enough
+    pod_nights = {e.get("sc_season") for e in usable if e["source"] == "secret_church_podcast" and e.get("sc_season")}
+    usable = [e for e in usable if not (e["source"] == "twr360_secret_church" and e.get("sc_season") in pod_nights)]
     for e in usable:
         it = {"id": e["id"], "t": e["title"], "who": "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Skip" if skip_guest(e) else e["speaker"] if e["speaker"] in ("Davey", "Skip") else "Platt"),
               "show": config.SHOWS.get(e["source"]),
@@ -233,13 +236,14 @@ def main():
             return 2
         return 1 if title_states[i] else 0
     TOPICAL, NEVER = re.compile(config.TOPICAL_TITLE_RE, re.I), re.compile(config.NEVER_ON_ROAD_RE, re.I)
+    WHY = {}
     def on_road(i, book):
         it = items[i]
-        if NEVER.search(it["t"]): return False
+        if NEVER.search(it["t"]): WHY[i] = "never: " + NEVER.search(it["t"]).group(0); return False
         if it["tr"] != "sermon": return True
         parallel = set(item_books[i]) <= {"1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles"} or set(item_books[i]) <= {"Matthew", "Mark", "Luke", "John"}
-        if ref_how[i] == "description-first" and cited[i] > 1 and focus(i, book) < 2 and not parallel: return False  # several passages, none named the text, not in a series
-        if TOPICAL.search(it["t"]) and focus(i, book) < 2 and it["src"] != "secret_church_podcast": return False  # one-off topical message (Secret Church sessions are placed on purpose)
+        if ref_how[i] == "description-first" and cited[i] > 1 and focus(i, book) < 2 and not parallel: WHY[i] = "several passages"; return False  # several passages, none named the text, not in a series
+        if TOPICAL.search(it["t"]) and focus(i, book) < 2 and it["src"] != "secret_church_podcast": WHY[i] = "topical: " + TOPICAL.search(it["t"]).group(0); return False  # one-off topical message (Secret Church sessions are placed on purpose)
         return True
     off_road = set()
     for (book, c), lst in by_chapter.items():
@@ -312,7 +316,7 @@ def main():
     open(OUT, "w", encoding="utf-8").write(html)
     n_audio = sum(1 for i in items.values() if i["audio"])
     print(f"wrote {OUT}: {len(items)} items, {n_audio} with in-app audio; off the road: {len(off_road)}")
-    json.dump(sorted(items[i]["t"] for i in off_road), open(os.path.join(HERE, "out", "off_road.json"), "w"), indent=0, ensure_ascii=False)
+    json.dump(sorted(f'{items[i]["t"]}  [{WHY.get(i, "")}]' for i in off_road), open(os.path.join(HERE, "out", "off_road.json"), "w"), indent=0, ensure_ascii=False)
     write_site(html)
 
 def blk(t, book):
