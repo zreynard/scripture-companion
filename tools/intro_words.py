@@ -39,7 +39,9 @@ def main():
             print(f"\n## {e['title']}: {type(x).__name__}", flush=True); continue
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-t", str(SECS), "-i", mp3, "-ac", "1", "-ar", "16000", wav], check=False)
         if not os.path.exists(wav): print(f"\n## {e['title']}: no audio"); continue
-        segs, _ = model.transcribe(wav, beam_size=1, language="en", vad_filter=True, word_timestamps=False)
+        import wave, numpy as np
+        with wave.open(wav) as w: pcm = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
+        segs, _ = model.transcribe(pcm, beam_size=1, language="en", vad_filter=True, word_timestamps=False)
         lines = [(round(s.start, 1), round(s.end, 1), s.text.strip()) for s in segs]
         out[e["id"]] = {"title": e["title"], "skip": skips.get(e["id"]), "lines": lines}
         print(f"\n## {e['id']} {e['title']}  (skip now {skips.get(e['id'])})", flush=True)
