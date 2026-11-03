@@ -69,15 +69,16 @@ def main():
     check("every placement matches the teaching's passage", bad, len(placed))
     bad = []
     _core = lambda t: re.sub(r"[^a-z0-9]+", " ", re.sub(r"\([^)]*\)", " ", (t or "").lower())).strip()
-    placed_core = {(_core(I[j]["t"]), I[j]["who"]) for j in placed if placed[j]}
+    placed_core = {(_core(I[j]["t"]), I[j]["who"], bk, c) for j in placed for bk, c in placed[j]}
     for i in road:
         t = {r.book: r.chapters for r in parse_refs(I[i]["t"]) if not r.whole_book}
         if not t or E[i]["track"] == "overview": continue
-        if not placed[i] and (_core(I[i]["t"]), I[i]["who"]) in placed_core: continue  # a better form of the same sermon stands there
+
         got = defaultdict(set)
         for bk, c in placed[i]:
             if isinstance(c, int): got[bk].add(c)
         for bk, chs in t.items():
+            chs = [c for c in chs if (_core(I[i]["t"]), I[i]["who"], bk, c) not in placed_core]  # its full-length form stands there
             if not set(chs) <= got[bk]: bad.append(f"{I[i]['t'][:60]} names {bk} {sorted(chs)[:4]} but sits at {sorted(got[bk])[:4]}")
     check("every passage named in a title is on the road where it says", bad)
     bad = [f"{bk} {c}" for b in B for c in b["ch"] for bk in [b["name"]] if not (1 <= c["c"] <= b["n"])]
