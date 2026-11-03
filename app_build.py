@@ -23,7 +23,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 106  # bump on every shipped build; also busts the service-worker cache
+VERSION = 107  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -347,18 +347,19 @@ def main():
     sys.path.insert(0, os.path.join(HERE, "tools"))
     from narrative_check import sections as _nsec
     rec = json.load(open(os.path.join(HERE, "data", "narrative_audio.json"))) if os.path.exists(os.path.join(HERE, "data", "narrative_audio.json")) else {}
-    intro = {}
+    intro, intro_txt = {}, {}
     os.makedirs(os.path.join(SITE, "narrative"), exist_ok=True)
     for _name, abbr, _n, _t, _ in BOOKS:
         sec, _d, files = _nsec(abbr)
         if not files: continue
         texts = {("0" if k == "intro" else k): v for k, v in sec.items() if v}
         json.dump(texts, open(os.path.join(SITE, "narrative", abbr + ".json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+        intro_txt[abbr] = sorted(int(c) for c in texts)
         for c, t in texts.items():
             r = (rec.get(abbr) or {}).get(c)
             if r and r[1] == hashlib.sha1(t.encode("utf-8")).hexdigest()[:12]:
                 intro.setdefault(abbr, {})[c] = round(r[0])
-    data = {"built": __import__("datetime").date.today().isoformat(), "items": items, "books": books, "narr": narr, "intro": intro,
+    data = {"built": __import__("datetime").date.today().isoformat(), "items": items, "books": books, "narr": narr, "intro": intro, "itx": intro_txt,
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items),
             "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst})}
     html = TEMPLATE.replace("__VERSION__", str(VERSION)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
@@ -1519,8 +1520,8 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  h+=`<div class="jv-art" id="jart">${heroArt(x,350,230,'ja')}<div class="jv-cap">${!c.intro&&lm?`<i>${esc(lm[1])}</i>`:''}<div class="cs">${rich(c.intro?(b.bl||''):(c.sl||''))}</div></div></div>`;
  const bk=BACK&&BACK.from!==i&&w[BACK.from]?BACK.from:null;
  h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1" aria-label="Back to ${esc(stopName(w[bk]))}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M9 14 4 9l5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>${esc(stopName(w[bk]))}</button>`:''}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
- const ii=stopIntro(x),iiF=ii?(isDone(ii)||SKIP[ii]?1:Math.min(.95,heardPct(ii)/100)):0;
- const segs=[...(ii?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['overview','Overview',stepFrac(i,s.ov)],['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',stepFrac(i,s.teach)]])];
+ const ii=stopIntro(x),itx=hasIntroText(x),iiF=ii?(isDone(ii)||SKIP[ii]?1:Math.min(.95,heardPct(ii)/100)):0;
+ const segs=[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['overview','Overview',stepFrac(i,s.ov)],['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',stepFrac(i,s.teach)]])];
  h+=`<div class="jv-seg">${segs.map(([k,l,f])=>`<button data-jseg="${k}" class="${a&&a.step===k?'now':''}" aria-label="Go to ${l}"><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</button>`).join('')}</div>`;
  if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
   h+=`<button class="jv-next" id="jnext"><span class="jv-pp">${icon(pl?'pause':'play',20,0,'#fff')}</span><span class="jv-nt"><small>${pl?'Playing':left?'Resume':'Up next'}${a.step==='intro'?' · Introduction':a.step==='overview'&&!c.intro?' · Overview':''}</small><b>${esc(dispTitle(it))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}</em></span></button><div class="jv-alt"><button data-skipnext="${a.id}">Skip for now</button></div>`}
@@ -1533,7 +1534,7 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  /* the stop's whole list: overview, scripture, teaching, in order; heard ones stay, quietly ticked */
  const cap=n=>JV.more?n:Math.min(n,8);let rows='',shown=0,total=0;
  const sec=(t,list,k)=>{if(!list.length)return'';let o=`<div class="jv-sec" id="js-${k}">${t}</div>`,last=null;list.forEach(g=>{total++;if(shown>=cap(1e9))return;if(g.h&&g.h!==last&&c.intro){o+=`<div class="jv-sub">${esc(g.h)}</div>`;last=g.h}o+=jRow(g.id,g.r?vbadge(g.r):'',up);shown++});return o};
- if(ii)rows+=`<div class="jv-sec" id="js-intro">Introduction</div>${jRow(ii,'',up)}<button class="jv-rd" id="jrd" aria-expanded="false">Read the introduction</button><div class="jv-itx" id="jitx" hidden></div>`;
+ if(ii||itx)rows+=`<div class="jv-sec" id="js-intro">Introduction</div>${ii?jRow(ii,'',up):`<div class="jw"><span class="jpb off" aria-hidden="true">${icon('book',13,1.8,'currentColor')}</span><div class="jw-t"><b>${esc(c.intro?'Introducing '+b.name:stopName(x)+' · Introduction')}</b><span>The Narrator · narration coming soon</span></div></div>`}<button class="jv-rd" id="jrd" aria-expanded="false">Read the introduction</button><div class="jv-itx" id="jitx" hidden></div>`;
  rows+=sec(c.intro?'Teaching on the book':'Overview',G.overview,'overview');
  if(!c.intro){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec" id="js-scripture">Scripture</div><div class="jw${rd?' heard':''}"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
  rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;if(!G.overview.length&&!c.intro)rows=`<div id="js-overview"></div>`+rows;
@@ -1880,6 +1881,7 @@ const introId=(abbr,c)=>NI[abbr]&&NI[abbr][String(c)]?'int:'+abbr+':'+c:null;
 D.books.forEach(b=>Object.entries(NI[b.abbr]||{}).forEach(([c,d])=>{const id='int:'+b.abbr+':'+c;I[id]={id,t:+c?b.name+' '+c+' · Introduction':'Introducing '+b.name,who:'Narrator',by:'The Narrator',tr:'intro',dur:d,blob:1,
  audio:NRAW+'intro_'+b.abbr+'_'+String(c).padStart(3,'0')+'.mp3',intro:{abbr:b.abbr,c:+c,book:b.name}}}));
 const stopIntro=x=>x?introId(x.b.abbr,x.c.intro?0:x.c.c):null;
+const ITX=D.itx||{},hasIntroText=x=>!!x&&(ITX[x.b.abbr]||[]).includes(x.c.intro?0:x.c.c);
 function introText(abbr){return NTX[abbr]||(NTX[abbr]=fetch('narrative/'+abbr+'.json').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(e=>{delete NTX[abbr];throw e}))}
 function introParas(t){return (t||'').split(/\n\s*\n/).map(p=>`<p>${esc(p.trim())}</p>`).join('')}
 function narDur(abbr,c){const n=NARR[abbr];return n&&n.d?n.d[n.c.indexOf(c)]||0:0}
