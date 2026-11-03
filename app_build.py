@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 90  # bump on every shipped build; also busts the service-worker cache
+VERSION = 91  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -702,7 +702,34 @@ body.mapopen #sheet{z-index:24}
 #tabs button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0 0;border:0;background:none;color:#5a6280;font:500 11px -apple-system,system-ui,sans-serif;cursor:pointer;min-height:52px}
 #tabs button.on{color:var(--gold2);font-weight:650}
 #tabs button.on svg{stroke-width:2.1}
-body:not([data-v="walk"]) > #bookhd,body:not([data-v="walk"]) > div.top{display:none!important}
+body > #bookhd,body:not([data-z="road"]) > div.top,body[data-z="road"] .top #gear,body[data-z="road"] #clearing{display:none!important}
+body[data-z="road"] > div.top{top:calc(env(safe-area-inset-top) + 50px);padding-top:8px}
+body[data-z="road"].hidehd > div.top{transform:none}
+#zt{position:fixed;left:0;right:0;top:0;z-index:7;display:flex;gap:10px;align-items:center;padding:calc(env(safe-area-inset-top) + 8px) 16px 8px 20px;background:rgba(244,239,227,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+#zt[hidden]{display:none}
+.zt-seg{flex:1;min-width:0;display:flex;height:40px;padding:3px;border-radius:20px;background:rgba(27,36,64,.07);box-sizing:border-box}
+.zt-seg button{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:17px;background:none;color:#4a5272;font:600 14px -apple-system,system-ui,sans-serif;cursor:pointer;padding:0 8px}
+.zt-seg button span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.zt-seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(27,36,64,.14)}
+.zt-more{flex:none;width:36px;height:36px;border-radius:50%;border:0;background:rgba(27,36,64,.06);color:#4a5272;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.jvz{padding-top:calc(env(safe-area-inset-top) + 70px)!important;transition:transform .2s}
+.jvz .jv-eb{margin-right:0}.jvz .jv-t{margin-right:0}
+@keyframes jvl{from{transform:translateX(36px);opacity:.3}to{transform:none;opacity:1}}@keyframes jvr{from{transform:translateX(-36px);opacity:.3}to{transform:none;opacity:1}}
+.jv.in-l{animation:jvl .26s ease-out}.jv.in-r{animation:jvr .26s ease-out}
+.jv-back{color:#7a5c16!important;font-weight:650!important;background:rgba(154,117,36,.12)!important;border-radius:16px;padding:6px 12px!important}
+body[data-z="road"] .world{padding-top:calc(env(safe-area-inset-top) + 40px)}
+#here{position:fixed;left:14px;right:14px;bottom:calc(var(--tabh) + var(--npH,0px) + 12px);z-index:7;display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px;border-radius:22px;background:#fffdf8;box-shadow:0 12px 30px rgba(27,36,64,.16);max-width:520px;margin:0 auto}
+.here-t{flex:1;min-width:0;display:flex;flex-direction:column;border:0;background:none;padding:0;text-align:left;color:var(--ink);cursor:pointer;font:inherit}
+.here-t small{font:650 10.5px -apple-system,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7a5c16}
+.here-t b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:20px;font-weight:500}
+.here-t em{font:normal 12.5px -apple-system,system-ui,sans-serif;color:#5a6280;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.here-p{flex:none;width:46px;height:46px;border-radius:50%;border:0;background:#9a7524;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.bk-ov{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:16px;padding:12px 14px;border:0;border-radius:16px;background:#fffdf8;box-shadow:0 2px 10px rgba(27,36,64,.06);cursor:pointer;font:inherit;color:var(--ink)}
+.bk-ov span{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:17px}.bk-ov em{font-style:normal;font-size:12.5px;font-weight:700;color:#9a7524}.bk-ov.cur{box-shadow:0 0 0 2px #c9a24a}
+.bk-g{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.bk-g button{height:40px;border:0;border-radius:12px;background:rgba(27,36,64,.05);font:500 14.5px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums}
+.bk-g button.done{background:rgba(201,162,74,.18);color:#7a5c16}
+.bk-g button.cur{background:#9a7524;color:#fff;font-weight:700;box-shadow:0 0 0 3px rgba(201,162,74,.3)}
 body.bpsopen{overflow:hidden}
 #np.mini{left:10px;right:10px;bottom:calc(var(--tabh) + 8px);border-radius:20px;background:#1b2440;color:#fff;border:0;box-shadow:0 12px 28px rgba(27,36,64,.32);padding:10px 14px 6px;row-gap:0}
 #np.mini .grab{display:none}
@@ -819,7 +846,7 @@ body.bpsopen{overflow:hidden}
 <div id="topbar" aria-hidden="true"></div><button id="bookhd" aria-label="Go to this book's opening stop"></button><div class="top"><span id="pct" style="display:none"></span><button id="srch" aria-label="Search or go to a chapter"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Search</span></button><button id="mapbtn" aria-label="Map of the journey"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Zm0 0v13m6-10.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button><button id="gear">⋯</button></div>
 <div id="sheetbg" hidden></div><div id="sheet" role="dialog" aria-modal="true" hidden><div class="sh-grab"></div><div class="sh-top"><button id="shback" aria-label="Back" hidden>‹</button><span class="sh-kind" id="shkind"></span><button id="shx" aria-label="Close">✕</button></div><div id="shbody"></div></div>
 <div id="jump" role="dialog" aria-modal="true" aria-label="Go to" hidden><div class="jp-top"><label class="jp-field"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="jq" type="search" placeholder="Nehemiah, John 3:16, Goliath" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="Search"></label><button id="jx">Close</button></div><div id="jbody"></div></div><div id="mapv" role="dialog" aria-modal="true" aria-label="Map of the journey" hidden><svg id="mapsvg" preserveAspectRatio="xMidYMid meet"></svg><div class="mv-top"><button id="mvx" aria-label="Close map">✕</button><div class="mv-title" id="mvtitle">Your journey</div></div><div class="mv-panel" id="mvpanel"><div class="mv-card" id="mvcard"></div><div class="mv-legs" id="mvlegs" aria-label="Legs of the journey"></div></div></div>
-<div id="main"></div><nav id="tabs" aria-label="Main"></nav><div id="bps" hidden></div>
+<div id="zt" hidden></div><div id="main"></div><nav id="tabs" aria-label="Main"></nav><div id="bps" hidden></div>
 <div id="np"><div class="grab"></div>
 <div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="cls" aria-label="Stop and close">✕</button></div>
 <div class="art" id="np-art"></div><div class="np-d" id="np-d"></div>
@@ -1009,7 +1036,7 @@ function openJump(mode){const el=$('#jump');el.hidden=false;document.body.classL
  const q=$('#jq');q.value='';if(mode==='search')q.focus();atlas().then(()=>{if(JP.open)renderJump()}).catch(()=>{});renderJump()}
 function closeJump(){$('#jump').hidden=true;document.body.classList.remove('jumpopen');JP.open=false;$('#jq').blur()}
 function chDoneAt(x){return !!read[x.b.abbr+x.c.c]||x.c.ids.some(isDone)}
-function jumpGo(i,o={}){closeJump();if(view==='journey'){jMove(i);if(o.sid){JM=false;BPM=null;PLAYSTOP=i;play(o.sid)}else if(o.hl){const x=walk()[i];if(x&&!x.c.intro&&hasNar(x.b.abbr,x.c.c))narPlay(x.b,x.c.c,o.hl.from,{load:true,full:true})}return}if(o.hl){HL=o.hl;TAB='scripture';S.set('tab',TAB)}if(o.listen){TAB='teaching';S.set('tab',TAB);if(o.lk){LK=o.lk;S.set('lk2',LK)}}go(i)}
+function jumpGo(i,o={}){closeJump();if(view==='journey'){JZ='stop';S.set('jz',JZ);jMove(i);if(o.sid){JM=false;BPM=null;PLAYSTOP=i;play(o.sid)}else if(o.hl){const x=walk()[i];if(x&&!x.c.intro&&hasNar(x.b.abbr,x.c.c))narPlay(x.b,x.c.c,o.hl.from,{load:true,full:true})}return}if(o.hl){HL=o.hl;TAB='scripture';S.set('tab',TAB)}if(o.listen){TAB='teaching';S.set('tab',TAB);if(o.lk){LK=o.lk;S.set('lk2',LK)}}go(i)}
 function renderJump(){const body=$('#jbody'),q=$('#jq').value.trim(),w=walk(),cur=w[camp||0];let h='';
  if(q&&/secret|platt.*church/i.test(q))h+=`<button class="jr" id="jsc"><span class="jr-ic">▶</span><span class="jr-t"><b>Secret Church</b><span>${scGroups().length} nights · every session in order</span></span></button>`;
  if(!q){if(JP.list){h+=`<div class="jp-h">All books</div>`;let land='';for(const b of D.books){const L=(LANDS.slice().reverse().find(l=>D.books.indexOf(b)>=D.books.findIndex(bb=>bb.name===l[0]))||[,''])[1];
@@ -1367,16 +1394,34 @@ function doCont(){const i=jpIdx();if(camp!==i){go(i);return}const a=nextAction(i
 function contRefresh(){const b=$('#cont');if(!b||camp!==jpIdx())return;const a=nextAction(camp);if(a&&a.kind==='play'&&a.id===cur){const ic=b.querySelector('.cont-ic'),sm=b.querySelector('small');if(ic)ic.innerHTML=icon(audio.paused?'play':'pause',22,0,'#1b2440');if(sm)sm.textContent=(audio.paused?'Resume · ':'Playing · ')+sm.textContent.replace(/^(Playing|Resume) · /,'')}}
 function note(t){let n=$('#note');if(!n){n=document.createElement('div');n.id='note';n.setAttribute('role','status');document.body.appendChild(n)}n.textContent=t;n.classList.add('on');clearTimeout(note.t);note.t=setTimeout(()=>n.classList.remove('on'),3800)}
 /* ======== Four places along the bottom: Journey · Big Picture · Explore (the road) · Library. Settings sit behind ⋯ ======== */
-const TABS=[['journey','Journey'],['bigpicture','Big Picture'],['walk','Explore'],['library','Library']];
+const TABS=[['journey','Journey'],['bigpicture','Big Picture'],['library','Library']];
+let JZ=S.get('jz','stop')==='road'?'road':'stop',BACK=null;
 const TAB_IC={journey:'<path d="M12 6.5C9.8 5 7 4.6 3.5 5v13c3.5-.4 6.3 0 8.5 1.5 2.2-1.5 5-1.9 8.5-1.5V5c-3.5-.4-6.3 0-8.5 1.5z"/><path d="M12 6.5v13"/>',
  bigpicture:'<path d="M3 17h18"/><path d="M7 17a5 5 0 0 1 10 0"/><path d="M12 6v2M5.6 9.6l1.4 1.4M18.4 9.6 17 11M3 13.5h1.5M19.5 13.5H21"/>',
  walk:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',library:'<path d="M4 5h4v15H4zM10 5h4v15h-4zM16.5 5.5l3.6-.9 3 14.5-3.6.9z"/>'};
 let PREV='journey';
-function tabOf(v){return v==='sc'?'library':v}
-function tabsPaint(){const t=$('#tabs');if(!t)return;if(!t.dataset.on){t.dataset.on=1;t.innerHTML=TABS.map(([k,l])=>`<button data-tab2="${k}"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TAB_IC[k]}</svg><span>${l}</span></button>`).join('');
+function tabOf(v){return v==='sc'?'library':v==='walk'?'journey':v}
+function tabsPaint(){ztPaint();const t=$('#tabs');if(!t)return;if(!t.dataset.on){t.dataset.on=1;t.innerHTML=TABS.map(([k,l])=>`<button data-tab2="${k}"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TAB_IC[k]}</svg><span>${l}</span></button>`).join('');
   t.querySelectorAll('[data-tab2]').forEach(b=>b.onclick=()=>{const v=b.dataset.tab2;if(v===view){window.scrollTo({top:0,behavior:'smooth'});return}setView(v)})}
  t.querySelectorAll('[data-tab2]').forEach(b=>{const on=b.dataset.tab2===tabOf(view);b.classList.toggle('on',on);b.setAttribute('aria-current',on?'page':'false')});document.body.dataset.v=view}
-function setView(v){if(view!=='settings')PREV=view;view=v;S.set('view',v);if(v==='walk'){decorate.first=true;const jp=S.get('jp','');if(jp!==setView.jp||camp==null)camp=jpIdx();setView.jp=jp}render();if(v!=='walk')window.scrollTo(0,0)}
+function setView(v){if(v==='walk'){v='journey';JZ='road';S.set('jz',JZ)}if(view!=='settings')PREV=view;view=v;S.set('view',v);if(v==='journey'&&JZ==='road'){decorate.first=true;camp=jpIdx()}render();if(!(v==='journey'&&JZ==='road'))window.scrollTo(0,0)}
+function setZoom(z){JZ=z;S.set('jz',z);if(z==='road'){camp=jpIdx();decorate.first=true}else closeSeries();render();if(z==='stop')window.scrollTo(0,0)}
+/* the bar at the top of Journey: [ your stop | The Road ] and settings */
+function ztPaint(){let el=$('#zt');const on=view==='journey';document.body.dataset.z=on?JZ:'';if(!el)return;el.hidden=!on;if(!on)return;const x=walk()[jpIdx()];
+ el.innerHTML=`<div class="zt-seg" role="group" aria-label="Zoom"><button data-z="stop" class="${JZ==='stop'?'on':''}" aria-pressed="${JZ==='stop'}">${icon('book',15,1.9,'currentColor')}<span>${esc(stopName(x))}</span></button><button data-z="road" class="${JZ==='road'?'on':''}" aria-pressed="${JZ==='road'}">${icon('map',15,1.9,'currentColor')}<span>The Road</span></button></div><button class="zt-more" data-settings aria-label="Settings"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></svg></button>`;
+ el.querySelectorAll('[data-z]').forEach(b=>b.onclick=()=>{if(b.dataset.z===JZ){if(JZ==='stop')window.scrollTo({top:0,behavior:'smooth'});return}setZoom(b.dataset.z)});el.querySelector('[data-settings]').onclick=()=>setView('settings')}
+/* The Road: a book opens its chapters in a sheet; a chapter on the road opens its player */
+function roadPick(i){const w=walk(),x=w[i];if(!x)return;if(x.c.intro){openBook(x.b);return}JZ='stop';S.set('jz',JZ);jMove(i)}
+function openBook(b){const w=walk(),el=$('#bps'),j=jpIdx(),here=w[j],bi=w.findIndex(x=>x.b===b&&x.c.intro),land=landOf(b);
+ el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh" role="dialog" aria-modal="true" aria-label="${esc(b.name)}"><button class="grab2" data-bpsx aria-label="Close"></button>
+  <div class="jv-eb" style="margin:4px 2px 0">${esc(land)}${b.yr?' · '+esc(b.yr):''}</div><div class="bps-t" style="font-size:34px;margin:2px 2px 0">${esc(b.name)}</div>${b.bl?`<p class="bps-d" style="font-family:'Iowan Old Style',Palatino,Georgia,serif;font-size:17px">${esc(plainT(b.bl))}</p>`:''}
+  <button class="bk-ov${here.b===b&&here.c.intro?' cur':''}" data-pick="${bi}"><span>Book overview</span><em>${stopRead(w[bi])?'✓ heard':''}</em></button>
+  <div class="jv-sec" style="margin-top:18px">${b.ch.length} chapter${b.ch.length>1?'s':''}</div><div class="bk-g">${b.ch.map(c=>{const k=w.findIndex(x=>x.b===b&&x.c===c),dn=!!read[b.abbr+c.c]||c.ids.some(isDone);return `<button data-pick="${k}" class="${k===j?'cur':dn?'done':''}" aria-label="${esc(b.name)} ${c.c}${dn?', read':''}">${c.c}</button>`}).join('')}</div>
+  <p class="bps-n" style="text-align:center;margin-top:14px">Tap a chapter to go there.</p></div>`;
+ el.hidden=false;document.body.classList.add('bpsopen');requestAnimationFrame(()=>el.classList.add('on'));el.querySelectorAll('[data-bpsx]').forEach(x=>x.onclick=closeSeries);
+ el.querySelectorAll('[data-pick]').forEach(x=>x.onclick=()=>{const k=+x.dataset.pick;el.classList.remove('on');document.body.classList.remove('bpsopen');el.hidden=true;el.innerHTML='';JZ='stop';S.set('jz',JZ);jMove(k)})}
+function hereCard(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);let sub='';if(a.kind==='play')sub='Up next · '+dispTitle(I[a.id])+' · '+teacher(I[a.id]);else if(a.kind==='scripture')sub='Up next · Read '+stopName(x);else if(a.kind==='walk')sub='Next · '+stopName(w[a.to]);
+ return `<div id="here"><button class="here-t" data-z2="stop"><small>You are here · tap to open</small><b>${esc(stopName(x))}</b><em>${esc(sub)}</em></button>${a.kind==='play'||a.kind==='scripture'?`<button class="here-p" id="herep" aria-label="Play">${icon('play',15,0,'#fff')}</button>`:''}</div>`}
 const moreBtn=()=>`<button class="vmore" data-settings aria-label="Settings">${'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></svg>'}</button>`;
 
 /* ---- the illustration at the top of a stop: a dawn over the land, tinted by its part of the Bible ---- */
@@ -1399,9 +1444,10 @@ function jRow(id,badge,up){const it=I[id];if(!it)return'';const done=isDone(id),
  return `<div class="jw${done?' heard':''}${up===id?' up':''}"><button class="jpb${it.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(it))}"${it.audio?'':' disabled'}>${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(it))}</b><span>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}${it.audio?'':' · audio soon'}</span></div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':badge?`<span class="vb">${badge}</span>`:''}</div>`}
 function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(i),s=stepsOf(i),G=listenGroups(b,c),lm=LANDMARKS[b.abbr+c.c],up=a&&a.kind==='play'?a.id:null;
  const pv=w[i-1],nx2=w[i+1];
- let h=`<div class="jv">${moreBtn()}<div class="jv-eb">${esc(landOf(b))}${(c.y||b.yr)?' · '+esc(c.y||b.yr):''}</div><h1 class="jv-t"><button id="jpick" aria-label="Choose a book or chapter">${esc(stopName(x))}<svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></h1>`;
+ let h=`<div class="jv jvz${jMove.dir?' in-'+jMove.dir:''}" id="jv"><div class="jv-eb">${esc(landOf(b))}${(c.y||b.yr)?' · '+esc(c.y||b.yr):''}</div><h1 class="jv-t"><button id="jpick" aria-label="Choose a book or chapter">${esc(stopName(x))}<svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></h1>`;
  h+=`<div class="jv-art" id="jart">${heroArt(x,350,230,'ja')}<div class="jv-cap">${!c.intro&&lm?`<i>${esc(lm[1])}</i>`:''}<div class="cs">${rich(c.intro?(b.bl||''):(c.sl||''))}</div></div></div>`;
- h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
+ const bk=BACK&&BACK.from!==i&&w[BACK.from]?BACK.from:null;
+ h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1">↩ Back to ${esc(stopName(w[bk]))}</button>`:''}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
  const segs=c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['overview','Overview',stepFrac(i,s.ov)],['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',stepFrac(i,s.teach)]];
  h+=`<div class="jv-seg">${segs.map(([k,l,f])=>`<div class="${a&&a.step===k?'now':''}"><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</div>`).join('')}</div>`;
  if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
@@ -1424,12 +1470,15 @@ function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;
  if(a.kind==='play'){if(cur===a.id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;play(a.id)}
  else if(a.kind==='scripture'){const id=narId(x.b.abbr,x.c.c);if(cur===id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;narPlay(x.b,x.c.c,null,{jm:true,full:true})}
  else if(a.kind==='walk'){const fr=x,nx=w[a.to];setJP(a.to);camp=a.to;S.set('camp',camp);if(nx.b!==fr.b&&!fr.c.intro)note('You have walked through '+fr.b.name+'.');JV.more=false;render();window.scrollTo({top:0,behavior:'smooth'})}}
-function jMove(i){const w=walk();if(!w[i])return;setJP(i);camp=i;S.set('camp',camp);JV.more=false;render();window.scrollTo({top:0})}
+function jMove(i,back){const w=walk(),f=jpIdx();if(!w[i])return;if(back)BACK=null;else if(Math.abs(i-f)>1)BACK={from:f};else if(BACK&&i===BACK.from)BACK=null;
+ jMove.dir=i>f?'l':i<f?'r':'';setJP(i);camp=i;S.set('camp',camp);JV.more=false;render();jMove.dir='';window.scrollTo({top:0})}
 function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
- document.querySelectorAll('[data-jgo]').forEach(b=>b.onclick=()=>jMove(+b.dataset.jgo));
+ document.querySelectorAll('[data-jgo]').forEach(b=>b.onclick=()=>jMove(+b.dataset.jgo,!!b.dataset.back));
  const pk=$('#jpick');if(pk)pk.onclick=()=>{camp=jpIdx();openJump('browse')};
  document.querySelectorAll('.jv [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
- const art=$('#jart');if(art){let t0=null;art.ontouchstart=e=>{t0=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY,t:Date.now()}:null};art.ontouchend=e=>{if(!t0)return;const t=e.changedTouches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y,ok=Date.now()-t0.t<700;t0=null;if(ok&&Math.abs(dx)>60&&Math.abs(dx)>2*Math.abs(dy))jMove(jpIdx()+(dx<0?1:-1))}}const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
+ /* swipe anywhere on the player: left = on to the next stop, right = back one */
+ const jv=$('#jv');if(jv){let t0=null;jv.ontouchstart=e=>{t0=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY,t:Date.now()}:null};jv.ontouchmove=e=>{if(!t0)return;const dx=e.touches[0].clientX-t0.x,dy=e.touches[0].clientY-t0.y;if(Math.abs(dx)>14&&Math.abs(dx)>1.5*Math.abs(dy))jv.style.transform=`translateX(${dx*.35}px)`};
+  jv.ontouchend=e=>{if(!t0)return;const t=e.changedTouches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y,ok=Date.now()-t0.t<900;t0=null;jv.style.transform='';if(ok&&Math.abs(dx)>55&&Math.abs(dx)>1.6*Math.abs(dy)){const to=jpIdx()+(dx<0?1:-1);if(walk()[to])jMove(to)}};jv.ontouchcancel=()=>{t0=null;jv.style.transform=''}}const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
  document.querySelectorAll('[data-jread]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()];read[scrKey(x)]=true;S.set('read',read);render()});
  document.querySelectorAll('[data-jscr]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()],id=narId(x.b.abbr,x.c.c);BPM=null;if(cur===id){setMini(false);return}const a=nextAction(jpIdx());JM=!!(a&&a.kind==='scripture');narPlay(x.b,x.c.c,null,{jm:JM,full:true})})}
 
@@ -1486,7 +1535,7 @@ function openTeacher(k){const el=$('#bps'),by={};Object.values(I).forEach(i=>{if
  el.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;play(b.dataset.play)})}
 function wireLib(){document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2))}
 
-function render(){const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='journey'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
+function render(){const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
  migrateCamp();const w=walk();let first=jpIdx();if(camp==null||camp>=w.length)camp=first;  /* the road is walked up to your place */
  const rd=w.filter(x=>!x.c.intro&&read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
@@ -1504,7 +1553,7 @@ function render(){const m=$('#main');if(!render.boot){render.boot=true;view='jou
   <g id="labels"></g><g id="marker" style="pointer-events:none"></g></g></svg>
   <div class="clearing" id="clearing"></div>
   <svg id="w2" viewBox="0 0 390 ${H}" preserveAspectRatio="xMidYMin meet"><use href="#scene"/></svg></div>`;
- decorate(w,first);wire()}
+ decorate(w,first);wire();if(view==='journey'){m.insertAdjacentHTML('beforeend',hereCard());const ht=m.querySelector('[data-z2]');if(ht)ht.onclick=()=>setZoom('stop');const hp=$('#herep');if(hp)hp.onclick=()=>{jCont();render()}}}
 function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road.getTotalLength(),POS=render.POS,TOT=render.TOT,at=i=>road.getPointAtLength(L*POS[Math.max(0,Math.min(w.length-1,Math.round(i)))]/TOT);
  // labels with collision avoidance: short books alternate sides and get pushed apart, with leader lines back to the road
  const labs=[];let lands='',idx=0,prevSide=null,prevShort=false;
@@ -1570,7 +1619,7 @@ function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road
  $('#hit').onclick=e=>{const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse());let best=0,bd=1e12;for(let i=0;i<w.length;i++){const q=at(i),dd=(q.x-p.x)**2+(q.y-p.y)**2;if(dd<bd){bd=dd;best=i}}go(best)};
  document.querySelectorAll('.bl[data-camp], #labels g[data-camp]').forEach(t=>t.onclick=e=>{e.stopPropagation();go(+t.dataset.camp)})}
 let LK=['overview','chapter','verses'].includes(S.get('lk2','overview'))?S.get('lk2','overview'):'overview',FOLD=false,TAB=(t=>({summary:'overview',read:'scripture',listen:'teaching'})[t]||(['overview','scripture','teaching','map'].includes(t)?t:'overview'))(S.get('tab','overview'));  /* folding is for this stop only; every stop (and every app open) starts with its voices showing */
-function go(i){{const w=walk(),here=camp!=null&&w[camp];if(here&&here.c.intro&&i>camp&&!read[here.b.abbr+'0']){read[here.b.abbr+'0']=true;S.set('read',read)}}camp=i;FOLD=false;decorate.more=false;decorate.follow=true;S.set('camp',camp);if(i===jpIdx()){const a=nextAction(i);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}render()}
+function go(i){if(view==='journey'&&JZ==='road'){roadPick(i);return}{const w=walk(),here=camp!=null&&w[camp];if(here&&here.c.intro&&i>camp&&!read[here.b.abbr+'0']){read[here.b.abbr+'0']=true;S.set('read',read)}}camp=i;FOLD=false;decorate.more=false;decorate.follow=true;S.set('camp',camp);if(i===jpIdx()){const a=nextAction(i);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}render()}
 /* one step along the road: from your place that is walking on; anywhere else it is just looking */
 function stepTo(to){go(to)}
 function bkForm(again){return `<form id="bkf" class="bkf" autocomplete="on"><input type="text" name="username" autocomplete="username" value="Scripture Companion backup" readonly class="bk-u" tabindex="-1" aria-hidden="true"><input type="password" name="password" id="bkkey" autocomplete="current-password" placeholder="${again?'Paste a new GitHub key':'Paste your GitHub key'}" required><input type="text" id="bkrepo" value="${esc(bkRepo())}" aria-label="Backup repo (owner/name)" autocapitalize="off" spellcheck="false"><button class="btn" type="submit">${again?'Use this key':'Turn on backup'}</button><p class="note" id="bkmsg"></p></form>`}
@@ -1654,7 +1703,7 @@ $('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NAR=null;document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));narBar();NP().classList.remove('on');roomForPlayer();render()};
 /* player sheet: swipe down or tap the page to shrink it to a bar; tap or swipe up the bar to open it */
 function NP(){return $('#np')}
-function roomForPlayer(){requestAnimationFrame(()=>{const np=NP(),tb=($('#tabs')||{}).offsetHeight||0;if(!np.classList.contains('on')){document.body.style.paddingBottom=tb+'px';return}document.body.style.paddingBottom=(tb+(np.classList.contains('mini')?np.offsetHeight+16:0))+'px'})}
+function roomForPlayer(){requestAnimationFrame(()=>{const np=NP(),tb=($('#tabs')||{}).offsetHeight||0;if(!np.classList.contains('on')){document.documentElement.style.setProperty('--npH','0px');document.body.style.paddingBottom=tb+'px';return}const mh=np.classList.contains('mini')?np.offsetHeight+16:0;document.documentElement.style.setProperty('--npH',mh+'px');document.body.style.paddingBottom=(tb+mh)+'px'})}
 /* the full-screen player's cover: the passage on the teacher's colour, with their medallion mark */
 const ART_C={Platt:['#1b2440','#3b5578'],PAM:['#4a1f3a','#8a3b5c'],Davey:['#1f3b33','#3f6b5a'],Skip:['#5a3417','#a8662e']};
 function npArt(id){const i=I[id],c=ART_C[i.who]||['#1b2440','#a8812a'],d=i.date?new Date(i.date+'T12:00:00'):null;
