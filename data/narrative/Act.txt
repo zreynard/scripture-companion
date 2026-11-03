@@ -1,7 +1,7 @@
 === intro
 The book of Acts is the second volume of Luke's work, and it begins where his gospel ends. Once again it is addressed to Theophilus. Once again the setting is Jerusalem, with a small group of Jesus' followers waiting, as he told them to, for power from on high. From that room the story runs outward for some thirty years, from the early thirties of the first century to the early sixties, and from the temple courts of Jerusalem to a rented house in Rome.
 
-The traditional title, the Acts of the Apostles, was added later, and it promises more than the book sets out to give. Most of the Twelve are hardly mentioned after the opening chapters. Luke follows two men above all, Peter in the first half of the book and Paul in the second, and behind both of them the Holy Spirit, who drives the story on at every turn. The writer himself appears at intervals. In several passages, beginning in chapter sixteen, the narrative changes from they to we, and the writer is evidently travelling with Paul. Those passages include the long voyage to Rome at the end of the book.
+The traditional title, the Acts of the Apostles, was added later, and it promises more than the book sets out to give. Most of the Twelve are hardly mentioned after the opening chapters. Luke follows two men above all, Peter in the first half of the book and Paul in the second, and behind both of them the Holy Spirit, who drives the story on at every turn. The writer himself appears at intervals. In several passages, beginning in chapter sixteen, the narrative changes from they to we, and the writer himself is travelling with Paul. Those passages include the long voyage to Rome at the end of the book.
 
 Jesus' last words to his disciples, near the start of chapter one, give the book its map. You will be my witnesses in Jerusalem, and in all Judea and Samaria, and to the ends of the earth. The first seven chapters stay in Jerusalem. The coming of the Spirit at Pentecost, the first preaching, the life of the first community and the growing opposition of the temple authorities lead to the death of Stephen, the first to die for his faith in Jesus. In chapters eight to twelve the believers are scattered by persecution, and the message moves out into Judea and Samaria and beyond. Philip preaches to Samaritans and to an Ethiopian official. Saul of Tarsus, a fierce persecutor, is stopped on the road to Damascus. Peter is sent to the house of a Roman centurion in Caesarea, and Gentiles receive the Spirit. In Antioch, the great city of Syria, a mixed congregation of Jews and Gentiles grows up, and there the disciples are first called Christians.
 
@@ -9,11 +9,11 @@ From chapter thirteen the story belongs to Saul, now known by his Roman name, Pa
 
 The world of these journeys is the Roman Empire at the height of its peace. Roman roads and shipping lanes tie it together, and Greek is spoken in every port. In almost every city there is a Jewish community with its synagogue, and often Gentiles who worship Israel's God without becoming Jews. Paul usually begins there. Luke names Roman officials with care, proconsuls, city magistrates and governors, and his titles have often been confirmed by inscriptions. One of them, naming the proconsul Gallio, allows Paul's time in Corinth to be dated to the early fifties, a fixed point for the whole chronology.
 
-Acts never mentions that Paul wrote letters, but many of them belong inside its story, and following Acts makes them easier to place. The letters to the Thessalonians were written from Corinth, not long after Paul had been driven out of Thessalonica. The first letter to the Corinthians was written from Ephesus, the second from Macedonia, and Romans from Corinth, as Paul prepared to carry a gift of money to Jerusalem. Galatians may belong close to the council of chapter fifteen, though its date is debated. Ephesians, Philippians, Colossians and Philemon were written in prison, traditionally in Rome, though some think of Caesarea or Ephesus.
+Acts never mentions that Paul wrote letters, but many of them belong inside its story, and following Acts makes them easier to place. The letters to the Thessalonians were written from Corinth, not long after Paul had been driven out of Thessalonica. The first letter to the Corinthians was written from Ephesus, the second from Macedonia, and Romans from Corinth, as Paul prepared to carry a gift of money to Jerusalem. Galatians was written to the churches of the first journey, and it fights the same battle that the council of chapter fifteen settles. Ephesians, Philippians, Colossians and Philemon were written in prison in Rome.
 
 The last quarter of the book slows down. Paul goes up to Jerusalem knowing that trouble awaits him, and he is seized in the temple courts and rescued from the mob by Roman soldiers. Two years of custody follow at Caesarea, the Roman capital of Judea, where he defends himself before the governors Felix and Festus and before King Agrippa. Appealing to Caesar, he is sent to Rome by sea, and Luke's account of the voyage and the shipwreck off Malta is one of the most vivid descriptions of ancient seafaring to survive.
 
-Acts ends with Paul in Rome under house arrest for two years, receiving visitors and preaching openly. Luke does not say how his trial ended. Early Christian tradition holds that both Peter and Paul died in Rome in the sixties, in the reign of Nero, but that lies beyond the book.
+Acts ends with Paul in Rome under house arrest for two years, receiving visitors and preaching openly. Luke does not say how his trial ended. Both Peter and Paul died in Rome in the sixties, in the reign of Nero, but that lies beyond the book.
 
 In the New Testament, Acts stands between the gospels and the letters, and it joins them. It tells how a movement that began among the Jewish followers of a crucified teacher from Galilee came, within a single generation, to be found in the great cities of the empire, among Jews and Gentiles alike.
 
@@ -32,7 +32,7 @@ When the Spirit comes, with a sound like a rushing wind and what look like tongu
 Then Peter stands up with the other apostles and gives the first sermon of the church. A few weeks earlier he had denied knowing Jesus in a high priest's courtyard. Now he speaks to the crowds of Jerusalem about the man they crucified, drawing on the prophet Joel and on the Psalms of David. The chapter ends with a portrait of the community that forms in the days that follow.
 
 === 3
-The believers are still meeting daily in the temple courts. Now Luke tells one story from those days. Peter and John are going up to the temple for the afternoon prayer, at the ninth hour, about three o'clock. At the gate called Beautiful, probably one of the gates leading into the inner courts, sits a man who has been lame from birth, carried there every day to beg from the worshippers.
+The believers are still meeting daily in the temple courts. Now Luke tells one story from those days. Peter and John are going up to the temple for the afternoon prayer, at the ninth hour, about three o'clock. At the gate called Beautiful, one of the gates leading into the inner courts, sits a man who has been lame from birth, carried there every day to beg from the worshippers.
 
 Peter and John appear together often in these early chapters. They had been partners in the fishing business on the Sea of Galilee, and they were among the three closest to Jesus. Now they are leaders in Jerusalem.
 
@@ -57,7 +57,7 @@ The believers in Jerusalem are growing fast, and growth brings strain. The commu
 
 The answer is to appoint seven men to oversee the work. All seven have Greek names, and one, Nicolas, is a convert from Antioch. Two of them will matter greatly in the chapters ahead. One is Philip, not the apostle of that name but a different man. The other is Stephen, full of faith and of the Holy Spirit.
 
-Stephen's preaching soon brings him into conflict with members of the Synagogue of the Freedmen, probably descendants of Jews once enslaved and later freed, with links to Cyrene, Alexandria, Asia and Cilicia, the province that included Saul's home city of Tarsus. They bring him before the Sanhedrin with charges that echo those once brought against Jesus: that he speaks against the temple and the law.
+Stephen's preaching soon brings him into conflict with members of the Synagogue of the Freedmen, descendants of Jews once enslaved and later freed, with links to Cyrene, Alexandria, Asia and Cilicia, the province that included Saul's home city of Tarsus. They bring him before the Sanhedrin with charges that echo those once brought against Jesus: that he speaks against the temple and the law.
 
 === 7
 Stephen stands before the Sanhedrin, accused of speaking against the temple and the law of Moses. The high priest asks him whether the charges are true. What follows is the longest speech in Acts.
@@ -99,12 +99,12 @@ While Barnabas and Saul are carrying famine relief to Judea, Luke turns back to 
 
 Herod has James, the brother of John, put to death with the sword. He is the first of the Twelve to die for his faith. Then, at Passover time, Herod arrests Peter and holds him under heavy guard.
 
-Two new names appear in this chapter. Mary, in whose house the believers are praying, is the mother of John, also called Mark, who will soon travel with Barnabas and Saul and is traditionally the author of the second gospel. And James, to whom Peter sends word, is the brother of Jesus, now a leader of the church in Jerusalem.
+Two new names appear in this chapter. Mary, in whose house the believers are praying, is the mother of John, also called Mark, who will soon travel with Barnabas and Saul and will one day write the second gospel. And James, to whom Peter sends word, is the brother of Jesus, now a leader of the church in Jerusalem.
 
 The chapter ends in Caesarea with Herod's sudden death, an event the Jewish historian Josephus also describes, and which he places in the year forty-four. Then Barnabas and Saul return to Antioch, bringing Mark with them.
 
 === 13
-Barnabas and Saul are back in Antioch, and the church there has grown into a community with prophets and teachers of its own. Luke names them: Barnabas from Cyprus, Simeon called Niger, Lucius from Cyrene in North Africa, Manaen, who had been brought up with Herod Antipas, and Saul. Now, during worship, the Spirit calls Barnabas and Saul to a new work, and the church sends them out. This is the beginning of what is usually called Paul's first missionary journey, probably in the late forties of the first century.
+Barnabas and Saul are back in Antioch, and the church there has grown into a community with prophets and teachers of its own. Luke names them: Barnabas from Cyprus, Simeon called Niger, Lucius from Cyrene in North Africa, Manaen, who had been brought up with Herod Antipas, and Saul. Now, during worship, the Spirit calls Barnabas and Saul to a new work, and the church sends them out. This is the beginning of what is usually called Paul's first missionary journey, in the late forties of the first century.
 
 They sail from Seleucia, the port of Antioch, to Cyprus, Barnabas' home island, with John Mark as their helper. At Paphos, the seat of the Roman governor, they meet the proconsul Sergius Paulus, and from this point Luke calls Saul by his Roman name, Paul. Soon it is no longer Barnabas and Saul but Paul and his companions.
 
@@ -120,7 +120,7 @@ The welcome does not last. Before the chapter ends, the missionaries retrace the
 === 15
 Paul and Barnabas are back in Antioch, and not everyone welcomes their news. Some men come down from Judea and teach the Gentile believers that unless they are circumcised according to the law of Moses, they cannot be saved. The question is enormous: whether a Gentile must become a Jew in order to belong to Israel's Messiah.
 
-The church at Antioch sends Paul and Barnabas up to Jerusalem to put the matter to the apostles and elders, and this chapter records the meeting usually called the Council of Jerusalem, probably around the year forty-nine. Peter speaks, recalling the house of Cornelius; it is his last appearance in Acts. Then James, the brother of Jesus, gives the judgement, drawing on the prophet Amos. Paul's letter to the Galatians wrestles with the same question, and some think it was written shortly before this meeting.
+The church at Antioch sends Paul and Barnabas up to Jerusalem to put the matter to the apostles and elders, and this chapter records the meeting usually called the Council of Jerusalem, around the year forty-nine. Peter speaks, recalling the house of Cornelius; it is his last appearance in Acts. Then James, the brother of Jesus, gives the judgement, drawing on the prophet Amos. Paul's letter to the Galatians wrestles with the same question.
 
 The decision is sent to Antioch in a letter, carried by two leaders of the Jerusalem church. One of them is Silas, a prophet, called Silvanus in Paul's letters, and like Paul a Roman citizen. The chapter ends with a sharp disagreement between Paul and Barnabas over John Mark, who had left them on the first journey. They part, and Paul sets out with Silas.
 
@@ -129,10 +129,10 @@ Paul and Silas have set out from Antioch on what is usually called the second mi
 
 Twice the Spirit closes a door, first to the province of Asia and then to Bithynia in the north, and the travellers come down to Troas, a port near the site of ancient Troy. There Paul has a vision of a man of Macedonia appealing for help. At this point the narrative quietly changes from they to we. The writer has joined the party.
 
-They cross the sea into Macedonia, in northern Greece, and come to Philippi, a Roman colony settled with retired soldiers. There seem to be few Jews and no synagogue, only a place of prayer by the river outside the gate. Among the women gathered there is Lydia, a trader in costly purple cloth from Thyatira in Asia Minor. Years later Paul will write to the church that begins in her house, in the letter to the Philippians.
+They cross the sea into Macedonia, in northern Greece, and come to Philippi, a Roman colony settled with retired soldiers. Luke mentions no synagogue, only a place of prayer by the river outside the gate. Among the women gathered there is Lydia, a trader in costly purple cloth from Thyatira in Asia Minor. Years later Paul will write to the church that begins in her house, in the letter to the Philippians.
 
 === 17
-Released from prison and asked to leave Philippi, Paul and Silas travel west along the Via Egnatia, the great Roman road across Macedonia, to Thessalonica, the capital of the province and a busy port. Timothy is with them, though the narrator seems to have stayed behind in Philippi, for the we passages end in Philippi and resume there years later.
+Released from prison and asked to leave Philippi, Paul and Silas travel west along the Via Egnatia, the great Roman road across Macedonia, to Thessalonica, the capital of the province and a busy port. Timothy is with them, but Luke stays behind in Philippi, for the we passages end there and resume there years later.
 
 In Thessalonica Paul preaches in the synagogue for three Sabbaths, and both Jews and God-fearing Greeks believe. A mob attacks the house of a believer named Jason, and the charge laid before the city officials is political: that these men proclaim another king besides Caesar. Paul is sent away by night, first to Berea, where the hearers examine the Scriptures daily, and then, as trouble follows him, south to Athens.
 
@@ -150,12 +150,12 @@ Meanwhile a new figure arrives in Ephesus: Apollos, a learned and eloquent Jew f
 === 19
 Paul's third missionary journey has brought him overland through the interior of Asia Minor to Ephesus. Ephesus was the leading city of the province of Asia, a great port near the western coast of what is now Turkey. Its pride was the temple of the goddess Artemis, one of the seven wonders of the ancient world, and the city was also known for its magicians and their spells.
 
-Paul stays here longer than anywhere else on his travels, some three years in all. He begins with a small group of disciples who know only John's baptism, then preaches for three months in the synagogue, and then, when opposition grows, teaches daily for two years in a lecture hall belonging to a man named Tyrannus. Luke says that from Ephesus the message reached the whole province, and it was probably in these years that churches were founded in nearby towns such as Colossae. It was also from Ephesus that Paul wrote the letter we call First Corinthians.
+Paul stays here longer than anywhere else on his travels, some three years in all. He begins with a small group of disciples who know only John's baptism, then preaches for three months in the synagogue, and then, when opposition grows, teaches daily for two years in a lecture hall belonging to a man named Tyrannus. Luke says that from Ephesus the message reached the whole province, and in these years churches were founded in nearby towns such as Colossae. It was also from Ephesus that Paul wrote the letter we call First Corinthians.
 
 Near the end of his stay Paul resolves to go to Jerusalem by way of Macedonia and Greece, and then to see Rome. Before he leaves, a dispute about the trade in silver shrines of Artemis fills the great theatre of Ephesus with an angry crowd.
 
 === 20
-The riot in Ephesus is over, and Paul leaves for Macedonia. Luke covers the next year briefly, but Paul's letters fill it in. It was in Macedonia that he wrote Second Corinthians. Then he spends three months in Greece, almost certainly at Corinth, and it was during that winter that he wrote his letter to the Romans, telling them he was about to carry a gift for the poor believers in Jerusalem.
+The riot in Ephesus is over, and Paul leaves for Macedonia. Luke covers the next year briefly, but Paul's letters fill it in. It was in Macedonia that he wrote Second Corinthians. Then he spends three months in Greece, at Corinth, and it was during that winter that he wrote his letter to the Romans, telling them he was about to carry a gift for the poor believers in Jerusalem.
 
 A plot against his life makes him change his route, and he goes back north through Macedonia with a group of companions from the churches he has founded. They may well be the delegates who carry that gift. At Philippi the narrative returns to we: the writer is with Paul again, and he will stay with him to the end of the book.
 
@@ -169,7 +169,7 @@ In Jerusalem, James and the elders welcome Paul, but they are worried. Rumours h
 It is there that Paul is recognised by Jews from Asia, who accuse him of bringing a Gentile into the inner courts. Stone notices, some of which have been found, warned that any Gentile who passed beyond the barrier would have himself to blame for his death. The city erupts, and Roman soldiers rush down from the fortress overlooking the temple to rescue Paul from the crowd.
 
 === 22
-Paul has been rescued from the mob in the temple courts and carried up the steps toward the Roman barracks, in the Antonia fortress that overlooked the temple from the north-west. Now, standing on the steps, Paul asks to address the crowd, and when he speaks to them in Hebrew, probably meaning Aramaic, the everyday language of Judea, they fall silent.
+Paul has been rescued from the mob in the temple courts and carried up the steps toward the Roman barracks, in the Antonia fortress that overlooked the temple from the north-west. Now, standing on the steps, Paul asks to address the crowd, and when he speaks to them in Hebrew, in their own tongue, they fall silent.
 
 This is the second of three accounts in Acts of what happened on the road to Damascus, and this time Paul tells it himself, shaped for the people in front of him. He stresses everything that makes him one of them: born in Tarsus but brought up in Jerusalem, trained under Gamaliel, as zealous for God as they are, once a persecutor of the very people he now belongs to. The crowd listens until he reaches one particular word.
 
@@ -187,7 +187,7 @@ Five days after Paul's arrival in Caesarea, his accusers come down from Jerusale
 
 Paul answers each point. In passing he mentions why he came to Jerusalem at all, to bring gifts for the poor of his nation. It is the only time Acts refers to the collection he had gathered from the Gentile churches, a project that fills several pages of his letters.
 
-Felix knows more about the Way than he lets on, and he adjourns the case. His wife Drusilla is Jewish, a daughter of the Herod Agrippa whose death Luke described in chapter twelve. Felix sends for Paul often, partly out of curiosity and partly, Luke says, in hope of a bribe. Two years pass with Paul in custody, until a new governor, Porcius Festus, arrives, probably around the year fifty-nine or sixty.
+Felix knows more about the Way than he lets on, and he adjourns the case. His wife Drusilla is Jewish, a daughter of the Herod Agrippa whose death Luke described in chapter twelve. Felix sends for Paul often, partly out of curiosity and partly, Luke says, in hope of a bribe. Two years pass with Paul in custody, until a new governor, Porcius Festus, arrives, around the year fifty-nine.
 
 === 25
 Porcius Festus has just taken office as governor of Judea, and he inherits Paul's case, unresolved after two years. He would govern only briefly before dying in office, but the Jewish historian Josephus remembered him as a more conscientious ruler than Felix. Within days he goes up to Jerusalem, where the chief priests press him to bring Paul there for trial, planning to have him killed on the way.
@@ -206,7 +206,7 @@ Paul then sets out the commission he received, to the Jewish people and to the G
 === 27
 The decision has been made to send Paul to Rome by sea. The we passages continue, so the narrator is on board, with Aristarchus from Thessalonica. Paul and other prisoners are placed in the charge of a centurion named Julius.
 
-They work their way up the coast to Sidon and along the south of Asia Minor to Myra, where Julius finds a ship from Alexandria bound for Italy, almost certainly one of the grain ships that carried Egypt's wheat to feed the city of Rome. Against stubborn winds they creep along the south coast of Crete to a harbour called Fair Havens. By now it is after the Fast, the Day of Atonement, which fell in late September or early October. After that, sailing on the open Mediterranean was considered dangerous, and from about November it all but stopped until the spring.
+They work their way up the coast to Sidon and along the south of Asia Minor to Myra, where Julius finds a ship from Alexandria bound for Italy, one of the grain ships that carried Egypt's wheat to feed the city of Rome. Against stubborn winds they creep along the south coast of Crete to a harbour called Fair Havens. By now it is after the Fast, the Day of Atonement, which fell in late September or early October. After that, sailing on the open Mediterranean was considered dangerous, and from about November it all but stopped until the spring.
 
 Paul warns against going on, but the ship's master and owner want to reach a better harbour for the winter. They set out, and a violent wind from the north-east sweeps down from the mountains of Crete. What follows is two weeks of storm, with two hundred and seventy-six people on board.
 
@@ -215,4 +215,4 @@ The ship has broken up on a sandbar, but everyone on board has reached the shore
 
 After three months, when the sailing season reopens in early spring, they board another Alexandrian ship that has wintered on the island, with the twin gods Castor and Pollux, the patrons of sailors, as its figurehead. They call at Syracuse and Rhegium and land at Puteoli on the Bay of Naples. From there they travel by road up the Appian Way. Believers from the church in Rome, the church to which Paul had written his letter some three years before, walk out as far as the Forum of Appius and the Three Taverns to meet him, some forty and thirty miles from the city.
 
-In Rome Paul is allowed to live in lodgings of his own, chained to a soldier. He calls together the leaders of the Jewish community, and the book ends with him there for two full years, welcoming all who come. Long tradition places his letters to the Philippians, the Colossians, the Ephesians and Philemon in these years, though some scholars link them with an earlier imprisonment.
+In Rome Paul is allowed to live in lodgings of his own, chained to a soldier. He calls together the leaders of the Jewish community, and the book ends with him there for two full years, welcoming all who come. In these years he writes his letters to the Philippians, the Colossians, the Ephesians and Philemon.

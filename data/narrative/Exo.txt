@@ -5,7 +5,7 @@ The name Exodus comes from the Greek for a way out, or a departure, and the book
 
 The central human figure is Moses himself. He is born under a death sentence, rescued from the Nile, raised in Pharaoh's household, and then driven into exile in the wilderness of Midian, where he spends long years as a shepherd. He is eighty when he stands before Pharaoh. Beside him are his elder brother Aaron, who speaks on his behalf and later becomes Israel's first high priest, and his sister Miriam. Opposite him stands Pharaoh, king of the most powerful nation of the age, who is never named. The book is not interested in his name. It is interested in the contest between the one who claims to own Israel and the Lord who says, let my people go.
 
-When this happened is debated. Exodus says Israel lived in Egypt for four hundred and thirty years. Some scholars place the departure in the fifteenth century before Christ, others in the thirteenth, during the reign of the great builder kings of Egypt's New Kingdom, and the evidence can be read either way. The route out of Egypt and the exact location of Mount Sinai are also uncertain; several mountains in the Sinai peninsula and beyond have been proposed, and the book's own place names are hard to map with confidence.
+Exodus says Israel lived in Egypt for four hundred and thirty years, and the departure belongs to the age of Egypt's New Kingdom, when great builder kings ruled along the Nile. From Egypt the people go out into the wilderness of the Sinai peninsula, to the mountain where God first spoke to Moses.
 
 The story moves in three great stages. The first is in Egypt. God calls Moses from a burning bush at Horeb, the mountain of God, and reveals his personal name, the Lord. Moses returns to Egypt, and through a series of ten plagues the Lord breaks Pharaoh's grip, until on the night of the Passover the firstborn of Egypt die and Israel goes free. Pharaoh's army pursues them to the sea, and the waters that open for Israel close over the chariots of Egypt.
 
@@ -41,7 +41,7 @@ The conversation that follows is honest and very human. God's plan has Moses at 
 === 4
 The conversation at the burning bush continues, and Moses is still full of objections. What if the Israelites do not believe him? God gives him signs to perform, beginning with the shepherd's staff in his hand. Then Moses protests that he has never been a good speaker, and finally he simply asks God to send someone else. God's patience gives way to anger, but he provides a helper: Moses' brother Aaron, who speaks well.
 
-Moses returns to Jethro and sets out for Egypt with Zipporah and his sons, carrying what is now called the staff of God. On the way comes one of the strangest episodes in the Bible. The Lord meets Moses at a lodging place and is about to kill him, and Zipporah saves him by circumcising their son. The few lines are difficult, and interpreters have long discussed them, but they turn on the sign of the covenant made with Abraham, which Moses has neglected in his own family.
+Moses returns to Jethro and sets out for Egypt with Zipporah and his sons, carrying what is now called the staff of God. On the way comes one of the strangest episodes in the Bible. The Lord meets Moses at a lodging place and is about to kill him, and Zipporah saves him by circumcising their son. The few lines are brief and abrupt, but they turn on the sign of the covenant made with Abraham, which Moses has neglected in his own family.
 
 The chapter ends with a reunion at the mountain of God, as Aaron comes out to meet his brother, and then with the elders of Israel in Egypt, who hear the message, see the signs and bow down in worship.
 
@@ -71,7 +71,7 @@ The Nile has run red with blood for seven days. Now the plagues come one after a
 
 This chapter holds three plagues. First come frogs, swarming out of the rivers into the palace, the bedrooms and the ovens. The magicians can produce frogs too, but they cannot take them away, and for the first time Pharaoh asks Moses to pray for him and promises to let the people go. Next comes a plague of gnats, which arrives without warning, and here the magicians admit defeat. They tell Pharaoh that this is the finger of God.
 
-The third plague in the chapter, swarms of flies, brings something new. The land of Goshen, where the Israelites live, is spared, and from now on the line between Egypt and Israel is drawn more clearly. Pharaoh begins to bargain. The Israelites may sacrifice, he says, but here in Egypt, and then perhaps in the wilderness, but not too far away.
+The third plague in the chapter, swarms of flies, brings something new. The land of Goshen, where the Israelites live, is spared, and from now on the line between Egypt and Israel is drawn more clearly. Pharaoh begins to bargain. The Israelites may sacrifice, he says, but here in Egypt; then, in the wilderness, but not too far away.
 
 === 9
 Pharaoh has gone back on his word again after the plague of flies. The pressure on Egypt now grows heavier, and the plagues begin to strike at the country's wealth and its people's bodies.
@@ -109,7 +109,7 @@ Because the Lord struck down the firstborn of Egypt and spared those of Israel, 
 Then the journey begins. The quickest road to Canaan ran along the Mediterranean coast, through the land of the Philistines, but God does not want his people facing war so soon. Instead he leads them south and east toward the wilderness and the Red Sea. Moses carries with him the bones of Joseph, keeping the oath made at the end of Genesis. And from now on, the Lord goes before them in a pillar of cloud by day and a pillar of fire by night.
 
 === 14
-The Israelites have reached the edge of the wilderness, guided by the pillar of cloud and fire. Now God gives a strange order. They are to turn back and camp by the sea, at a place called Pi-hahiroth, between Migdol and the sea. These places can no longer be located with any certainty, and nor can the exact body of water. The Hebrew name, traditionally the Red Sea, can also be translated the Sea of Reeds.
+The Israelites have reached the edge of the wilderness, guided by the pillar of cloud and fire. Now God gives a strange order. They are to turn back and camp by the sea, at a place called Pi-hahiroth, between Migdol and the sea. This is the Red Sea, in Hebrew the Sea of Reeds.
 
 The purpose of the order is to draw Pharaoh out. He will think the Israelites are lost and trapped by the wilderness. And in Egypt the loss of a whole workforce has begun to sink in. Pharaoh and his officials ask themselves what they have done, and the king gathers his chariots, the most advanced military force of the age, and goes in pursuit.
 
@@ -160,7 +160,7 @@ When the voice falls silent, the people are terrified. They beg Moses to speak t
 === 21
 Moses has gone into the thick darkness on the mountain, and God continues to speak to him. What follows, running through to the end of chapter twenty-three, is a collection of laws that later in the book is called the Book of the Covenant. If the Ten Commandments are the foundation, these are the case laws that apply them to the ordinary life of an ancient farming community.
 
-The laws open, perhaps surprisingly, with the treatment of servants, and with limits on how long a Hebrew may be held in service. For a people just freed from slavery, that is where justice begins. Then come laws dealing with violence: murder and manslaughter, with places of refuge for those who kill by accident, injuries in a fight, and the principle of an eye for an eye, which in its setting set a limit on revenge and required that a penalty fit the harm done.
+The laws open with the treatment of servants, and with limits on how long a Hebrew may be held in service. For a people just freed from slavery, that is where justice begins. Then come laws dealing with violence: murder and manslaughter, with places of refuge for those who kill by accident, injuries in a fight, and the principle of an eye for an eye, which in its setting set a limit on revenge and required that a penalty fit the harm done.
 
 The chapter closes with the problems of a world of livestock and open land: an ox that gores, a pit left uncovered. Similar collections of law survive from elsewhere in the ancient Near East, the code of the Babylonian king Hammurabi being the best known, and Israel's laws share their form while differing at many points, especially in the value they set on human life.
 
@@ -209,7 +209,7 @@ The chapter ends with a brief command that leads into the next subject. The Isra
 === 28
 God has described the tabernacle, its furniture and its courtyard. Now he turns to the people who will serve there. Aaron and his four sons, Nadab, Abihu, Eleazar and Ithamar, are to be set apart as priests, and this chapter describes their clothing, made by skilled craftsmen, for glory and for beauty.
 
-Aaron, as the high priest, is to wear a set of garments unlike anyone else's. Over a blue robe goes the ephod, a richly woven garment rather like an apron or vest, with two onyx stones on its shoulders, each engraved with the names of six of the tribes of Israel. On his chest he wears the breastpiece of judgment, set with twelve precious stones, each engraved with the name of a tribe. Inside it are the Urim and Thummim, objects used to seek God's will, whose exact form is not known. So whenever Aaron enters the sanctuary he carries the names of Israel on his shoulders and over his heart.
+Aaron, as the high priest, is to wear a set of garments unlike anyone else's. Over a blue robe goes the ephod, a richly woven garment rather like an apron or vest, with two onyx stones on its shoulders, each engraved with the names of six of the tribes of Israel. On his chest he wears the breastpiece of judgment, set with twelve precious stones, each engraved with the name of a tribe. Inside it are the Urim and Thummim, objects used to seek God's will. So whenever Aaron enters the sanctuary he carries the names of Israel on his shoulders and over his heart.
 
 Golden bells hang from the hem of his robe. On his turban he wears a gold plate engraved with the words: holy to the Lord. Aaron's sons are given simpler garments of their own.
 

@@ -1,5 +1,5 @@
 === intro
-Isaiah lived in Jerusalem in the second half of the eighth century before Christ, and for something like forty years he spoke for God in the streets of the city and in the courts of the temple. He was the son of a man named Amoz, he was married to a woman the book calls the prophetess, and he gave his sons names that were themselves messages. He seems to have had ready access to the royal court, and he spoke to kings face to face. His book is one of the longest in the Bible, and one of the richest in its poetry.
+Isaiah lived in Jerusalem in the second half of the eighth century before Christ, and for something like forty years he spoke for God in the streets of the city and in the courts of the temple. He was the son of a man named Amoz, he was married to a woman the book calls the prophetess, and he gave his sons names that were themselves messages. He had ready access to the royal court, and he spoke to kings face to face. His book is one of the longest in the Bible, and one of the richest in its poetry.
 
 To understand his world, we need to go back to the books of Kings. Two centuries earlier, after the death of Solomon, the people of Israel had split in two. In the north stood the kingdom of Israel, often called Ephraim after its leading tribe, with its capital at Samaria. In the south stood the smaller kingdom of Judah, ruled from Jerusalem by the descendants of David. Isaiah belongs to Judah, and the four kings named in his opening line, Uzziah, Jotham, Ahaz and Hezekiah, are the kings of Jerusalem in his lifetime. His story runs alongside the later chapters of Second Kings, and he was a contemporary of Amos and Hosea in the north and of Micah in Judah.
 
@@ -9,21 +9,21 @@ The great events of his lifetime appear in the book. Under King Ahaz, the kings 
 
 The book moves in great blocks rather than in strict order of time. The first twelve chapters address Judah and Jerusalem, with Isaiah's call and the crisis under Ahaz at their centre, and with promises of a child and a king from David's line. Then comes a long series of oracles against the nations, Babylon, Assyria, Philistia, Moab, Damascus, Egypt, Tyre and others, followed by visions of judgement and a great feast on a scale that takes in the whole earth. Further warnings follow from the years when Hezekiah's court was seeking an alliance with Egypt. Chapters thirty-six to thirty-nine then tell the story of Sennacherib's siege, Hezekiah's illness and the visit of envoys from Babylon, closing with a prediction that Judah's treasures and some of the king's descendants will one day be carried to Babylon.
 
-At chapter forty the horizon changes. The voice now speaks comfort to a people whose city lies in ruins and who are living in exile in Babylon, a situation that came about more than a century after Isaiah, when Nebuchadnezzar destroyed Jerusalem in five hundred and eighty-six before Christ. The Persian king Cyrus, who would conquer Babylon and let the exiles go home, is named. Here, too, are the songs of the servant of the Lord, who suffers for others and is vindicated. The final chapters turn to a community that has returned but is still waiting, and the book ends with new heavens and a new earth. Many scholars since the eighteenth century have held that these later chapters come from prophets who lived during and after the exile, while others, following long Jewish and Christian tradition, read the whole book as the work of Isaiah himself.
+At chapter forty the horizon changes. The prophet now looks far ahead and speaks comfort to a people whose city lies in ruins and who are living in exile in Babylon, a situation that would come about more than a century after Isaiah's day, when Nebuchadnezzar destroyed Jerusalem in five hundred and eighty-six before Christ. The Persian king Cyrus, who would conquer Babylon and let the exiles go home, is named. Here, too, are the songs of the servant of the Lord, who suffers for others and is vindicated. The final chapters turn to a community that has returned but is still waiting, and the book ends with new heavens and a new earth.
 
-However it was assembled, the book holds together around one vision of God. Isaiah's favourite title for him is the Holy One of Israel, a name heard throughout the book and seldom found anywhere else. Its poetry moves between the courtroom and the lament, the taunt song and the love song, and its scenes range from Jerusalem's waterworks to the courts of heaven.
+The whole book holds together around one vision of God. Isaiah's favourite title for him is the Holy One of Israel, a name heard throughout the book and seldom found anywhere else. Its poetry moves between the courtroom and the lament, the taunt song and the love song, and its scenes range from Jerusalem's waterworks to the courts of heaven.
 
 Few books mattered more to the first Christians. The New Testament quotes Isaiah more often than any other prophet, and Jesus himself read from it in the synagogue at Nazareth. It also survives in one of the most remarkable manuscripts ever found: among the Dead Sea Scrolls is a complete copy of Isaiah, written in the second century before Christ. We begin, though, in Jerusalem, with the kingdom of Judah still standing and its temple courts crowded with worshippers.
 
 === 1
 The book opens with its own title page: the vision of Isaiah son of Amoz concerning Judah and Jerusalem, across the reigns of four kings. Then, without further introduction, the prophet calls heaven and earth to listen, as if they were witnesses in a court of law. The Lord has raised children, and they have rebelled. Even an ox knows its owner.
 
-The nation Isaiah describes has already been beaten almost senseless. The land lies desolate, the cities are burned, and Jerusalem is left like a lonely shelter in a field. It is not certain when this oracle was first spoken; many think it reflects the Assyrian devastation of Judah late in Isaiah's life, set here at the front as an overture to the whole book.
+The nation Isaiah describes has already been beaten almost senseless. The land lies desolate, the cities are burned, and Jerusalem is left like a lonely shelter in a field. This is Judah after the Assyrian devastation late in Isaiah's life, and the oracle is set here at the front as an overture to the whole book.
 
 What troubles God is not a lack of religion. The temple courts are crowded with sacrifices, festivals and prayers, offered by hands covered with blood, while the widow and the orphan go undefended. Yet the chapter also holds out an invitation to come and reason together, and a promise that the faithful city, now fallen so far, will be purged and called faithful again.
 
 === 2
-A new heading marks a new message, and it begins far in the future. In the last days, the mountain of the Lord's house in Jerusalem will be raised above all others, and the nations will stream to it to be taught. Swords will be beaten into ploughshares. The same oracle appears almost word for word in the book of Micah, Isaiah's contemporary, and no one can say for certain which prophet first spoke it.
+A new heading marks a new message, and it begins far in the future. In the last days, the mountain of the Lord's house in Jerusalem will be raised above all others, and the nations will stream to it to be taught. Swords will be beaten into ploughshares. The same oracle appears almost word for word in the book of Micah, Isaiah's contemporary.
 
 Then the vision snaps back to the present, and the contrast is deliberate. The land of Jacob is full of silver and gold, horses and chariots, fortune tellers and idols. This sounds like the prosperous Judah of Uzziah's long reign, confident in its wealth and its defences.
 
@@ -60,7 +60,7 @@ The commission he receives is a hard one: to speak to a people who will hear wit
 === 7
 The scene moves forward several years, into the reign of Uzziah's grandson Ahaz, around seven hundred and thirty-four before Christ. Two northern neighbours have formed an alliance against the growing power of Assyria: Rezin, king of Aram, with its capital at Damascus, and Pekah son of Remaliah, king of Israel, here called Ephraim. They want Judah to join them, and when Ahaz refuses, they march on Jerusalem to put a king of their own choosing on David's throne.
 
-God sends Isaiah to meet Ahaz by the aqueduct of the upper pool, perhaps where the king was inspecting the city's water supply against a siege. Isaiah brings his son, whose name, Shear-jashub, means a remnant will return. His message is to stay calm: these two kings are only smouldering stubs of firewood.
+God sends Isaiah to meet Ahaz by the aqueduct of the upper pool, part of the city's water supply and vital in a siege. Isaiah brings his son, whose name, Shear-jashub, means a remnant will return. His message is to stay calm: these two kings are only smouldering stubs of firewood.
 
 Offered any sign he cares to ask for, Ahaz refuses in pious language; Second Kings records that he sent silver and gold to the king of Assyria to buy his help. Isaiah answers with a sign of God's choosing: a child to be called Immanuel, God with us, words Matthew's Gospel sees fulfilled in the birth of Jesus. Meanwhile the very power Ahaz is courting will come against Judah itself, like a razor hired from beyond the Euphrates.
 
@@ -102,23 +102,23 @@ The people will draw water with joy from the springs of salvation, and they will
 === 13
 With this chapter the book enters a long new section. For the next eleven chapters Isaiah turns from Judah to the nations around it, and each message is introduced as a burden, a weighty pronouncement laid on the prophet to deliver. The series is addressed to foreign peoples, but it would have been heard in Jerusalem, by a small kingdom tempted to fear its neighbours or to trust them.
 
-It is striking that the first nation named is Babylon. In Isaiah's day, Babylon was an ancient and proud city, but it lay under Assyrian control and rebelled against it more than once. Only later would it become the great empire that destroyed Jerusalem. Interpreters differ over which fall of Babylon this oracle first had in view, but it names the Medes as the attackers, and the Medes would one day help to bring both Assyria and Babylon down.
+It is striking that the first nation named is Babylon. In Isaiah's day, Babylon was an ancient and proud city, but it lay under Assyrian control and rebelled against it more than once. Only later would it become the great empire that destroyed Jerusalem. The oracle names the Medes as the attackers, and the Medes would one day help to bring both Assyria and Babylon down.
 
 The poem begins with the sound of an army gathering on the mountains, mustered by the Lord of Hosts himself. The Day of the Lord is described in the language of a shaken universe, with stars and sun and moon going dark. It ends with Babylon, the jewel of the kingdoms, left to jackals and wild goats.
 
 === 14
 The burden against Babylon continues, and it begins with a promise to Israel. The Lord will have compassion on Jacob and settle his people in their own land again, and on the day they are given rest, they will raise a taunt song over the fallen king of Babylon.
 
-The whole earth breaks into singing, and even the cedars of Lebanon rejoice that no woodcutter comes against them any more. Down in Sheol, the realm of the dead, the departed kings rise from their thrones to greet the newcomer: you too have become as weak as we are. The proud ruler who said he would climb above the stars of God is addressed as day star, son of the dawn. An old Latin translation rendered that title as Lucifer, and later Christian tradition often read the passage as a picture of Satan's fall, but here the taunt is aimed at a human king.
+The whole earth breaks into singing, and even the cedars of Lebanon rejoice that no woodcutter comes against them any more. Down in Sheol, the realm of the dead, the departed kings rise from their thrones to greet the newcomer: you too have become as weak as we are. The proud ruler who said he would climb above the stars of God is addressed as day star, son of the dawn. An old Latin translation rendered that title as Lucifer, but here the taunt is aimed at a human king, the king of Babylon.
 
-Two shorter oracles follow. The first promises that Assyria will be broken in the Lord's own land. The second is dated to the year King Ahaz died, and warns the Philistines not to celebrate too soon because some rod that struck them has been broken. Which ruler that rod represents is uncertain.
+Two shorter oracles follow. The first promises that Assyria will be broken in the Lord's own land. The second is dated to the year King Ahaz died, and warns the Philistines not to celebrate too soon because the rod that struck them has been broken.
 
 === 15
 The next burden is against Moab, Judah's neighbour on the high plateau east of the Dead Sea. The Moabites traced their descent from Lot, Abraham's nephew, and their relations with Israel had swung for centuries between kinship, rivalry and open war. Moab had at times been subject to Israel, and had broken away.
 
 The poem is a lament. Disaster has fallen suddenly, and town after town is named as the cry passes across the land: Ar and Kir, destroyed in a night, then Dibon, Nebo and Medeba, Heshbon and Elealeh, until the refugees are streaming south toward Zoar with their possessions, across the Brook of the Willows. Heads are shaved and beards cut off, the customary signs of mourning.
 
-The enemy who brings this ruin is never named, and the occasion cannot be fixed with certainty; Moab suffered at the hands of Assyria more than once. What stands out is the voice of the prophet himself. This is a foreign people and an old enemy, yet he says that his heart cries out for Moab.
+The enemy who brings this ruin is never named; Moab suffered at the hands of Assyria more than once. What stands out is the voice of the prophet himself. This is a foreign people and an old enemy, yet he says that his heart cries out for Moab.
 
 === 16
 The lament for Moab continues, and now the refugees appear at the fords of the Arnon, the river gorge that marked Moab's northern border, like birds pushed out of the nest. In their distress they turn toward Jerusalem. Send tribute lambs to the ruler of the land, the poem begins. More than a century earlier, Moab's king had paid his tribute to the kings of Israel in lambs and rams.
@@ -132,10 +132,10 @@ The burden against Damascus takes us back to the days of chapter seven, when Ara
 
 Isaiah uses two pictures from the farming year. Israel will be like a field after the reapers have passed, or like an olive tree beaten for its fruit, with only a few olives left at the top. Those few will turn at last from the altars and Asherah poles they have made, and look to the Holy One of Israel.
 
-The last verses change their subject. Isaiah hears the roaring of many nations, like the noise of crashing seas, but at the rebuke of God they scatter like chaff. In the evening there is terror, and by morning they are gone. Many readers have heard in these lines an anticipation of what would happen to the Assyrian army outside Jerusalem, described later in the book.
+The last verses change their subject. Isaiah hears the roaring of many nations, like the noise of crashing seas, but at the rebuke of God they scatter like chaff. In the evening there is terror, and by morning they are gone. These lines anticipate what would happen to the Assyrian army outside Jerusalem, described later in the book.
 
 === 18
-This chapter is addressed to Cush, the land along the upper Nile, south of Egypt, in what is now Sudan. In Isaiah's day kings from Cush had taken control of Egypt itself, and many in the region looked to them for help against Assyria. Their envoys come by water in papyrus boats, very probably seeking allies in Jerusalem.
+This chapter is addressed to Cush, the land along the upper Nile, south of Egypt, in what is now Sudan. In Isaiah's day kings from Cush had taken control of Egypt itself, and many in the region looked to them for help against Assyria. Their envoys come by water in papyrus boats, seeking allies in Jerusalem.
 
 Isaiah describes the Cushites with evident respect, a tall people with smooth skin, feared far and wide, whose land is divided by rivers. But he sends the messengers home with a different message. God is not anxious, and he needs no alliance. He looks on quietly from his dwelling place, like shimmering heat or a cloud of dew, waiting for the right moment. Then, like a vine dresser before harvest, he will cut away the shoots, and the carcasses will be left for the birds.
 
@@ -151,21 +151,21 @@ Then the chapter takes an unexpected turn. In a series of sayings, each beginnin
 === 20
 For once, an oracle comes with a precise historical setting. Sargon, king of Assyria, sent his chief commander against Ashdod, one of the Philistine cities on the coast, which had led a revolt against him in the hope of Egyptian support. Assyrian records confirm the campaign, and date the fall of Ashdod to around seven hundred and eleven before Christ. This is the only place in the Bible where Sargon is named.
 
-Isaiah's role in these events is a strange and costly one. For three years before Ashdod fell, the Lord had told him to take off his sackcloth and sandals and walk about naked and barefoot, probably stripped to a loincloth, in the dress of a prisoner of war.
+Isaiah's role in these events is a strange and costly one. For three years before Ashdod fell, the Lord had told him to take off his sackcloth and sandals and walk about naked and barefoot, in the dress of a prisoner of war.
 
 Its meaning is now explained. That is how the king of Assyria will lead away the captives of Egypt and Cush, young and old, to their shame. Judah, like Ashdod, was being urged to lean on those southern powers. The people of the coastland are left looking at the fate of the allies they had trusted and asking how they can possibly escape.
 
 === 21
 This chapter contains three short oracles, each with a cryptic title. The first is the burden against the Desert by the Sea, and it soon becomes clear that the subject is Babylon, set among the marshes and waters of southern Mesopotamia.
 
-The prophet describes the vision in intensely personal terms. Pain grips him like the pains of labour, and the twilight he had longed for has turned to horror. Elam and Media are summoned to the attack while the princes of Babylon are still at their feast. A lookout is posted on the watchtower, and at last the riders come with the news: fallen, fallen is Babylon. Babylon fell more than once, and it is not certain which fall this oracle first had in view. The cry itself is echoed in the book of Revelation.
+The prophet describes the vision in intensely personal terms. Pain grips him like the pains of labour, and the twilight he had longed for has turned to horror. Elam and Media are summoned to the attack while the princes of Babylon are still at their feast. A lookout is posted on the watchtower, and at last the riders come with the news: fallen, fallen is Babylon. The cry itself is echoed in the book of Revelation.
 
 The other two oracles are brief. Dumah was an oasis in northern Arabia, and its name also means silence. Someone calls from Seir, the land of Edom, to ask the watchman how much of the night is left, and receives only an enigmatic reply. The last oracle concerns the tribes and oases of Arabia, Dedan, Tema and Kedar, whose caravans and refugees are caught up in the wars of the empires.
 
 === 22
 After Babylon, Edom and Arabia, the next burden is addressed to the Valley of Vision, and it soon becomes clear that this is Jerusalem itself. The holy city takes its place among the nations under judgement.
 
-The city is in uproar. Crowds have climbed onto the rooftops in a mood of revelry, while its leaders have fled and been captured without a fight. The occasion is debated, but many think of the Assyrian invasion late in Isaiah's career. Jerusalem's defences are described in detail: weapons from the armoury called the House of the Forest, walls patched with stone from demolished houses, water stored in a new reservoir, all of which fits what Kings and Chronicles say of Hezekiah's preparations. But no one looked to the One who had planned it all long ago. Instead they say, let us eat and drink, for tomorrow we die, words Paul later quotes.
+The city is in uproar. Crowds have climbed onto the rooftops in a mood of revelry, while its leaders have fled and been captured without a fight. This is the time of the Assyrian invasion late in Isaiah's career. Jerusalem's defences are described in detail: weapons from the armoury called the House of the Forest, walls patched with stone from demolished houses, water stored in a new reservoir, all of which fits what Kings and Chronicles say of Hezekiah's preparations. But no one looked to the One who had planned it all long ago. Instead they say, let us eat and drink, for tomorrow we die, words Paul later quotes.
 
 Last comes a message for two royal officials. Shebna, the steward of the palace, is carving himself a grand tomb, and he will be thrown out of office. Eliakim son of Hilkiah will receive his robe and the key of the house of David. Both men will reappear in the story of the siege.
 
@@ -174,7 +174,7 @@ The last of the oracles against the nations is aimed at Tyre, the great Phoenici
 
 We first see those ships on their way home, hearing the news when they reach Cyprus: Tyre is laid waste, without house or harbour. Who planned this against the crowning city, whose merchants are princes? The answer comes back plainly. The Lord of Hosts planned it, to humble the pride of all its glory. An aside points to the land of the Chaldeans, already ruined by Assyria, as a warning of what an empire can do.
 
-Tyre was attacked by Assyria and later by Babylon, and the oracle cannot be tied to one siege with certainty. Its ending is unexpected. Tyre will be forgotten for seventy years, and then, like an old harlot singing in the streets to be remembered, she will return to her trade. But this time her profits will be set apart for the Lord.
+Tyre was attacked by Assyria and later by Babylon. Its ending is unexpected. Tyre will be forgotten for seventy years, and then, like an old harlot singing in the streets to be remembered, she will return to her trade. But this time her profits will be set apart for the Lord.
 
 === 24
 The oracles against individual nations are over. Now the vision widens to take in the whole earth. These next four chapters are often read together as a unit, and unlike the burdens before them, they name almost no particular nation or event.
@@ -188,7 +188,7 @@ After the ruin of the earth comes praise. The prophet speaks as one who has watc
 
 Out of that praise grows one of the great visions of the Old Testament. On this mountain, Mount Zion, the Lord of Hosts will prepare a feast for all peoples, with the richest food and the finest aged wine. The shroud that covers the nations will be removed, and death itself will be swallowed up forever. The Lord God will wipe away the tears from every face. Paul quotes the promise about death being swallowed up when he writes of the resurrection, and the book of Revelation echoes the wiping away of tears.
 
-The response of the people is simple: this is our God, we have waited for him, and he has saved us. A brief word against Moab closes it; here Moab seems to stand for every proud enemy of God's people, brought down into the dust.
+The response of the people is simple: this is our God, we have waited for him, and he has saved us. A brief word against Moab closes it; here Moab stands for every proud enemy of God's people, brought down into the dust.
 
 === 26
 The vision of the whole earth continues, but now it becomes a song, one that will be sung in the land of Judah on the day of salvation. It begins with a strong city whose walls are salvation itself, and gates opened for a righteous nation to enter. It is the counterpart to the shattered city of chaos earlier in this section.
@@ -209,17 +209,17 @@ After the wide vision of the last four chapters, Isaiah comes back to the politi
 
 The first woe is aimed at Samaria, the capital of the northern kingdom, set on its hill above a fertile valley like a garland on a drunkard's head. It will be swallowed like an early fig. This places the oracle before Samaria's fall in seven hundred and twenty-two before Christ.
 
-Then Isaiah turns on Jerusalem's own leaders, and they turn on him. Priests and prophets reel with wine and mock his teaching as baby talk, a matter of rules upon rules and line upon line, words that sound in Hebrew like a nursery chant. Very well, says the Lord, he will speak to them through people with foreign tongues. The rulers boast that they have made a covenant with death, probably their pact with Egypt, and the Lord answers by laying a tested cornerstone in Zion, a passage quoted by Paul and Peter. A closing parable about a farmer shows that God's judgements, too, are measured and purposeful.
+Then Isaiah turns on Jerusalem's own leaders, and they turn on him. Priests and prophets reel with wine and mock his teaching as baby talk, a matter of rules upon rules and line upon line, words that sound in Hebrew like a nursery chant. Very well, says the Lord, he will speak to them through people with foreign tongues. The rulers boast that they have made a covenant with death, their pact with Egypt, and the Lord answers by laying a tested cornerstone in Zion, a passage quoted by Paul and Peter. A closing parable about a farmer shows that God's judgements, too, are measured and purposeful.
 
 === 29
-The next woe is addressed to Ariel, the city where David camped, which is clearly Jerusalem. The name probably plays on a word for an altar hearth, the place where the fire burns. Jerusalem's festivals go on year after year, but the Lord himself will lay siege to the city and bring it so low that its voice will whisper from the dust.
+The next woe is addressed to Ariel, the city where David camped, which is clearly Jerusalem. The name plays on a word for an altar hearth, the place where the fire burns. Jerusalem's festivals go on year after year, but the Lord himself will lay siege to the city and bring it so low that its voice will whisper from the dust.
 
 Then, suddenly, the scene reverses. The nations besieging Zion will vanish like a dream at waking, like a hungry man who dreams of food and wakes up still hungry. The Assyrian siege that Isaiah's book will describe later is never far from these chapters.
 
 The deeper problem is the blindness of the people. Their prophets are asleep, and the vision is like a sealed scroll that no one can read. They honour the Lord with their lips while their hearts are far from him, words Jesus quoted against the religious leaders of his own day. The clay presumes to instruct the potter. But this chapter too ends in hope, with the deaf hearing the words of the scroll, the blind seeing, and the house of Jacob no longer ashamed.
 
 === 30
-Here the reason for so many of Isaiah's warnings comes into the open. Judah's leaders, probably in the reign of Hezekiah, have sent envoys to Egypt to seek an alliance against Assyria, without asking the Lord. Their princes have reached Zoan and Hanes, cities of the Nile delta and the region south of it.
+Here the reason for so many of Isaiah's warnings comes into the open. Judah's leaders, in the reign of Hezekiah, have sent envoys to Egypt to seek an alliance against Assyria, without asking the Lord. Their princes have reached Zoan and Hanes, cities of the Nile delta and the region south of it.
 
 A short oracle pictures the cost. Through the dry southern desert, a land of lions and snakes, donkeys and camels carry Judah's treasures to a nation that cannot help them. Isaiah gives Egypt a mocking name, Rahab Who Sits Still. Rahab was a sea monster of ancient poetry, a different word from the name of the woman of Jericho, and here the great dragon of the south does nothing.
 
@@ -289,7 +289,7 @@ Hezekiah is flattered, and he shows the envoys everything, his silver and gold, 
 The prophet's answer introduces the name that will dominate the next part of the book. One day everything in the palace will be carried off to Babylon, and some of Hezekiah's own descendants will serve in the palace of its king. At the time Babylon was a junior player and Assyria the great threat. A little over a century later, Nebuchadnezzar would carry off both the treasures and the royal family. Hezekiah's reply, quiet and unsettling, has the last word.
 
 === 40
-Between the last chapter and this one, the horizon of the book shifts dramatically. Chapter thirty-nine ended with the warning that Jerusalem's treasures and royal sons would be taken to Babylon. Chapter forty speaks as though that has already happened. Jerusalem lies in ruins, the people of Judah are in exile in Babylon in the sixth century before Christ, and Isaiah himself is not mentioned again. Whether these words came to Isaiah long in advance or from a later prophet in his tradition, the chapter does not stop to say. It simply begins.
+Between the last chapter and this one, the horizon of the book shifts dramatically. Chapter thirty-nine ended with the warning that Jerusalem's treasures and royal sons would be taken to Babylon. Chapter forty speaks as though that has already happened. Jerusalem lies in ruins, the people of Judah are in exile in Babylon in the sixth century before Christ, and Isaiah himself is not mentioned again. Isaiah is speaking to a generation not yet born, and the chapter does not stop to explain. It simply begins.
 
 Comfort, comfort my people. Jerusalem's hard service is over, and her sin is pardoned. A voice calls for a highway to be prepared in the wilderness for the Lord, words that all four Gospels apply to John the Baptist. All flesh is grass, but the word of our God stands forever.
 
@@ -303,7 +303,7 @@ The first exhibit is a conqueror stirred up from the east, who turns nations to 
 In the middle of the trial, the Lord turns tenderly to his own people. You, Israel, my servant, Jacob, whom I have chosen, offspring of Abraham my friend, do not fear. This is the first appearance of a title that will become central in the coming chapters, the servant of the Lord, and here the servant is the nation itself, small and weak, called a worm, yet held by God's right hand. Finally the idols are challenged to predict the future, and they fall silent.
 
 === 42
-The idols have been left silent and empty. In their place the Lord points to someone else: here is my servant, whom I uphold, my chosen one, in whom my soul delights. Since the nineteenth century, scholars have picked out four poems in these chapters that describe this servant in particular, and they have become known as the servant songs. This is the first of them.
+The idols have been left silent and empty. In their place the Lord points to someone else: here is my servant, whom I uphold, my chosen one, in whom my soul delights. Four poems in these chapters describe this servant in particular, and they are known as the servant songs. This is the first of them.
 
 The servant will bring justice to the nations, but not by conquest. He will not shout in the streets. He will not break a bruised reed or snuff out a smouldering wick. He will be a covenant for the people and a light to the nations. Matthew's Gospel quotes this song at length to describe the quiet ministry of Jesus.
 
@@ -319,7 +319,7 @@ For the first time in this part of the book, Babylon is named outright, together
 === 44
 The promises continue, addressed to Jacob my servant and to Jeshurun, an old poetic name for Israel found in the song of Moses. God will pour out his Spirit on their descendants, and people will proudly write on their hands, belonging to the Lord. I am the first and I am the last, he says, and there is no other Rock.
 
-At the centre of the chapter is perhaps the most biting satire on idolatry in the Bible. The exiles were living among the great temples and processions of Babylon, and the prophet takes them into the workshop. A blacksmith sweats over his coals and grows faint with hunger. A carpenter measures and carves a figure of a man. Half of a tree goes into the fire to bake bread and roast meat, and from the other half the carpenter makes a god and prays to it, save me.
+At the centre of the chapter is the most biting satire on idolatry in the Bible. The exiles were living among the great temples and processions of Babylon, and the prophet takes them into the workshop. A blacksmith sweats over his coals and grows faint with hunger. A carpenter measures and carves a figure of a man. Half of a tree goes into the fire to bake bread and roast meat, and from the other half the carpenter makes a god and prays to it, save me.
 
 Against such gods stands the Lord who made all things and who confirms the word of his messengers. At the very end, the conqueror hinted at in chapter forty-one is finally named. He is Cyrus, the Lord's shepherd, who will order Jerusalem to be rebuilt and the foundations of the temple to be laid.
 
@@ -352,7 +352,7 @@ The Lord explains why he announced events long before they happened. Had he not 
 A ringing command follows. Leave Babylon, flee from the Chaldeans, shout it to the ends of the earth. As in the wilderness after Egypt, God will split the rock and give them water. A solemn line closes it: there is no peace for the wicked. The same words will return at the end of chapter fifty-seven.
 
 === 49
-With Babylon's fall announced, the focus moves from Cyrus to the servant of the Lord, and to Zion. The servant himself now speaks, in the second of the servant songs, addressing the islands and the distant peoples. The Lord called him before he was born and made his mouth like a sharp sword. He is called Israel, and yet his mission is to bring Jacob back to God, so here the servant seems to be one who embodies Israel rather than the nation as a whole.
+With Babylon's fall announced, the focus moves from Cyrus to the servant of the Lord, and to Zion. The servant himself now speaks, in the second of the servant songs, addressing the islands and the distant peoples. The Lord called him before he was born and made his mouth like a sharp sword. He is called Israel, and yet his mission is to bring Jacob back to God, so here the servant is one who embodies Israel rather than the nation as a whole.
 
 He confesses that he has laboured in vain, but the Lord answers that restoring Israel is too small a task. He will be a light to the nations, bringing salvation to the ends of the earth. In the book of Acts, Paul and Barnabas quote these words when they turn to the Gentiles.
 
@@ -384,7 +384,7 @@ The fourth servant song, which began at the end of the last chapter, continues h
 
 He grew up like a tender shoot from dry ground, with nothing in his appearance to attract anyone. He was despised and rejected, a man of sorrows. They assumed that God had struck him down. Only later did they see that he was pierced for their transgressions and crushed for their iniquities. He went silently like a lamb to the slaughter, was cut off from the land of the living, and was given a grave with the wicked and with a rich man. Yet the song ends not in death but in vindication, as the servant sees his offspring and justifies many.
 
-Jewish interpreters have often understood the servant as Israel, or as a faithful remnant within it. The New Testament reads it as a portrait of Jesus. In the book of Acts, an Ethiopian court official is reading this very chapter in his chariot when Philip asks him if he understands it, and the official asks who the prophet is speaking about.
+The New Testament reads it as a portrait of Jesus. In the book of Acts, an Ethiopian court official is reading this very chapter in his chariot when Philip asks him if he understands it, and the official asks who the prophet is speaking about.
 
 === 54
 The song of the suffering servant is followed, without a pause, by a song of joy for Zion. The city is addressed as a barren woman who has never given birth, and she is told to sing, because her children will outnumber those of the woman who has a husband. Paul quotes this opening in his letter to the Galatians.
@@ -401,16 +401,16 @@ What the Lord offers is life, and an everlasting covenant, the faithful love he 
 The call follows to seek the Lord while he may be found, to forsake wicked ways and return to the God who freely pardons. His thoughts are not our thoughts, and his word is like the rain and snow that water the earth: it does not return empty. Its last picture is of the exiles going out in joy, while the mountains sing and the trees clap their hands.
 
 === 56
-The book now moves into its final part, and the setting seems to shift again. The exile is no longer the main concern. Instead these chapters speak to a community living in the land, with Sabbaths to keep and a house of God to gather in, still waiting for the full promises to come true. Many readers place them in the years after the first exiles returned, when Haggai, Zechariah, Ezra and Nehemiah were at work, though the setting is not stated.
+The book now moves into its final part, and the setting shifts again. The exile is no longer the main concern. Instead these chapters speak to a community living in the land, with Sabbaths to keep and a house of God to gather in, still waiting for the full promises to come true.
 
-First comes a question about who belongs to God's people. Two groups had reason to fear exclusion. Foreigners who had joined themselves to the Lord might expect to be shut out, and the law of Moses barred eunuchs from the assembly; some Jewish men in foreign courts may have been made eunuchs, as Isaiah had told Hezekiah his descendants would be. Now the Lord promises both a place in his house. My house will be called a house of prayer for all nations. Jesus quoted those words when he drove the traders out of the temple.
+First comes a question about who belongs to God's people. Two groups had reason to fear exclusion. Foreigners who had joined themselves to the Lord might expect to be shut out, and the law of Moses barred eunuchs from the assembly, and Isaiah had told Hezekiah that some of his own descendants would be made eunuchs in the palace of the king of Babylon. Now the Lord promises both a place in his house. My house will be called a house of prayer for all nations. Jesus quoted those words when he drove the traders out of the temple.
 
 The last verses turn abruptly to the leaders of Israel. Its watchmen are blind and its shepherds are like dogs that cannot bark, greedy for wine and gain.
 
 === 57
 The condemnation of Israel's leaders runs on into this chapter. Righteous people are dying, and no one takes it to heart. Then the Lord summons a group he calls the children of a sorceress, and describes their worship in harsh, graphic language: rites beneath the sacred trees, offerings to the smooth stones of the valley, beds on the high hills, envoys sent to Molech, and children slaughtered in the ravines.
 
-These are practices the prophets condemned in Judah before the exile, especially in the reign of Hezekiah's son Manasseh, and it is not clear whether this oracle addresses that earlier age or a community after the return in which the old ways had survived. Either way, the charge is the same: they have forgotten the Lord and feared everyone but him.
+These are practices the prophets condemned in Judah before the exile, especially in the reign of Hezekiah's son Manasseh, and the old ways have not died. The charge is plain: they have forgotten the Lord and feared everyone but him.
 
 Suddenly the voice softens. The One who is high and lifted up, who lives forever and whose name is Holy, says that he dwells in the high and holy place and also with the crushed and lowly in spirit. He will heal them and bring peace, peace to those far and near, a phrase Paul echoes in his letter to the Ephesians. The refrain heard at the close of chapter forty-eight returns to end it: there is no peace for the wicked.
 
@@ -440,7 +440,7 @@ At the centre of the book's final section, a single voice speaks in the first pe
 
 This is the passage Jesus read aloud in the synagogue at Nazareth, as Luke's Gospel tells it. He stopped in the middle of a line, before the words about the day of vengeance, rolled up the scroll, and said that this Scripture was fulfilled that day in their hearing.
 
-The rest of the chapter describes the transformation the speaker announces. The mourners of Zion receive a crown of beauty instead of ashes, a play on two similar-sounding words in Hebrew. They will be called oaks of righteousness, rebuild the ancient ruins, and be known among the nations as priests of the Lord. In the final verses a voice, perhaps the city herself, rejoices, dressed in salvation like a bride and bridegroom on their wedding day.
+The rest of the chapter describes the transformation the speaker announces. The mourners of Zion receive a crown of beauty instead of ashes, a play on two similar-sounding words in Hebrew. They will be called oaks of righteousness, rebuild the ancient ruins, and be known among the nations as priests of the Lord. In the final verses a voice rejoices, dressed in salvation like a bride and bridegroom on their wedding day.
 
 === 62
 The voice that spoke in the last chapter refuses to fall silent. For Zion's sake I will not keep silent, until her righteousness shines out like the dawn. The chapter is one long promise of a new identity for Jerusalem.

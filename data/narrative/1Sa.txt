@@ -1,9 +1,9 @@
 === intro
 The book of Judges ended with a refrain that hung in the air like an unanswered question: in those days there was no king in Israel. The book of Ruth ended with a name, David, the great-grandson of a Moabite widow and a farmer from Bethlehem. First Samuel brings those two threads together. It tells how Israel moved from the loose federation of tribes we have seen under the judges to a kingdom with a crown, and how the crown passed, by a long and painful road, from the first king to the man God had chosen.
 
-First and Second Samuel were originally one book in the Hebrew Bible. They were divided later, when the Scriptures were translated into Greek and the long scroll was split in two. The book is named after Samuel, its great figure in the early chapters, but Samuel cannot have written all of it, since his death is recorded halfway through. The author is unknown. Later Scripture mentions records kept by Samuel and by the prophets Nathan and Gad, and the book may draw on sources like these, but who gave it its final form, and when, we cannot say.
+First and Second Samuel were originally one book in the Hebrew Bible. They were divided later, when the Scriptures were translated into Greek and the long scroll was split in two. The book is named after Samuel, its great figure in the early chapters, and his death is recorded halfway through. Later Scripture says that the acts of David were written in the records of Samuel the seer, Nathan the prophet and Gad the seer, and Jewish tradition holds that these three men gave us this book.
 
-The events belong roughly to the eleventh century before Christ. Israel's tribes are settled in the hill country on both sides of the Jordan, but they are under growing pressure. The Philistines, whom we met in the days of Samson, now dominate the coastal plain from their five cities and push steadily into the hills. They are well organised, well armed, and they control the working of iron. Israel has no army beyond whatever the tribes can muster, and its leadership has grown weak. At Shiloh, where the tabernacle stands, the old priest Eli presides, but his sons, who serve as priests, are corrupt.
+The events belong to the eleventh century before Christ. Israel's tribes are settled in the hill country on both sides of the Jordan, but they are under growing pressure. The Philistines, whom we met in the days of Samson, now dominate the coastal plain from their five cities and push steadily into the hills. They are well organised, well armed, and they control the working of iron. Israel has no army beyond whatever the tribes can muster, and its leadership has grown weak. At Shiloh, where the tabernacle stands, the old priest Eli presides, but his sons, who serve as priests, are corrupt.
 
 Three lives dominate the book. The first is Samuel himself. He is born in answer to a mother's prayer, given to the Lord as a small child, and raised at Shiloh. He becomes a prophet, a priest-like leader at Israel's altars, and the last of the judges. Samuel is a bridge between two eras. He is the one who warns Israel what a king will cost them, and he is the one who anoints, first, Saul, and then David.
 
@@ -23,7 +23,7 @@ Every year the family goes up to Shiloh to worship and offer sacrifice at the ta
 Elkanah loves Hannah, and he cannot understand why he is not enough for her. One year at Shiloh, after the sacrificial meal, Hannah goes to the sanctuary to pray, weeping, while Eli sits watching by the doorpost. Her prayer includes a vow that echoes the story of Samson: if God gives her a son, no razor will touch his head, and the boy will belong to the Lord for life. Eli's first reaction to her is a misunderstanding, but his last word to her is a blessing.
 
 === 2
-Hannah has kept her vow. Once her son Samuel was weaned, perhaps at two or three years old, she brought him to Shiloh and gave him to the Lord's service, under the care of Eli. Now she prays again, but this time with joy.
+Hannah has kept her vow. Once her son Samuel was weaned, she brought him to Shiloh and gave him to the Lord's service, under the care of Eli. Now she prays again, but this time with joy.
 
 Her prayer is a song that reaches far beyond her own story. It celebrates a God who turns the world upside down, who breaks the bows of the mighty, feeds the hungry, lifts the poor from the dust and gives children to the barren. It ends with a word that is surprising in a book that opens without a king: the Lord will give strength to his king and exalt the horn of his anointed. Many centuries later Mary's song in the Gospel of Luke would echo Hannah's.
 
@@ -100,7 +100,7 @@ Samuel begins by asking the people to testify to his own integrity. Has he taken
 To underline his words, Samuel calls on the Lord to send thunder and rain. It is the wheat harvest, early in the summer, a season when rain in that land is rare. The people are terrified, and they ask Samuel to pray for them. His answer combines warning with reassurance, and with a promise that he will not stop praying for them.
 
 === 13
-Saul is king, and the war with the Philistines that has shadowed the whole story now begins in earnest. The chapter opens with a note on Saul's age and the length of his reign; the Hebrew text of that verse has come down to us damaged, and translations fill in the numbers in different ways.
+Saul is king, and the war with the Philistines that has shadowed the whole story now begins in earnest. The chapter opens with a note on Saul's age and the length of his reign.
 
 We also meet a new character, introduced without explanation: Jonathan, Saul's son, already old enough to command a thousand men. The setting is the hill country of Benjamin a few miles north of Jerusalem, where Geba and Michmash face each other across a deep ravine. Jonathan attacks a Philistine outpost at Geba, and the Philistines respond in overwhelming force, with chariots, horsemen and troops like the sand on the seashore. Many Israelites hide in caves and cisterns, and some flee across the Jordan.
 
@@ -134,7 +134,7 @@ David has been anointed in secret and taken into Saul's service as a musician. N
 
 From the Philistine ranks comes a champion named Goliath, from Gath, enormously tall and armed in bronze, with a spear whose shaft is like a weaver's beam. He proposes that the war be settled by single combat, and for forty days, morning and evening, he repeats his challenge. No one in Israel will face him, not even Saul, the man the people chose because he stood head and shoulders above everyone else.
 
-The story then reintroduces David as if for the first time, the youngest of Jesse's eight sons. His three eldest brothers are with the army, and Jesse sends him with food for them. He arrives just as Goliath steps out again, and what David says, to the soldiers, to his brother Eliab and to King Saul, shows what the Lord saw in his heart. At the end of the chapter Saul asks whose son this young man is, a question that has long puzzled readers, since David has already served at his court.
+The story then reintroduces David as if for the first time, the youngest of Jesse's eight sons. His three eldest brothers are with the army, and Jesse sends him with food for them. He arrives just as Goliath steps out again, and what David says, to the soldiers, to his brother Eliab and to King Saul, shows what the Lord saw in his heart. At the end of the chapter Saul asks whose son this young man is, though David has already served at his court.
 
 === 18
 Goliath is dead, and David, still holding the giant's head, has been brought before Saul. From this moment the young shepherd from Bethlehem moves into the centre of Israel's life, and this chapter traces how different people respond to him.
@@ -155,19 +155,19 @@ David has escaped from Naioth, and he goes in search of Jonathan. His question i
 
 The two young men devise a test. The next day is the New Moon, the start of a new month, marked with a religious feast at which David, as a member of the king's household, would be expected at Saul's table. David will stay away and hide in the fields, and Jonathan will give an excuse for his absence and watch how his father reacts. If the news is bad, Jonathan will send a signal using arrows shot near a stone where David is hiding.
 
-In the middle of these plans, Jonathan asks David for something. He seems to understand already that David, not he, will one day be king, and he asks David to swear that he will show kindness to Jonathan's family forever, even when the Lord has cut off all David's enemies. The promise will matter long after this chapter, in Second Samuel.
+In the middle of these plans, Jonathan asks David for something. He already senses that David, not he, will one day be king, and he asks David to swear that he will show kindness to Jonathan's family forever, even when the Lord has cut off all David's enemies. The promise will matter long after this chapter, in Second Samuel.
 
 Then comes the feast, and Saul's reaction. Last comes the meeting at the stone in the field, where the two friends say goodbye.
 
 === 21
-David is now a fugitive, alone and without food or weapons. His first stop is Nob, a town just north of Jerusalem where the priests of the Lord now serve, perhaps since the loss of Shiloh. The chief priest is Ahimelech, another descendant of Eli. He is alarmed to see David arrive without an escort, and David answers with a story about a secret mission for the king.
+David is now a fugitive, alone and without food or weapons. His first stop is Nob, a town just north of Jerusalem where the priests of the Lord now serve. The chief priest is Ahimelech, another descendant of Eli. He is alarmed to see David arrive without an escort, and David answers with a story about a secret mission for the king.
 
 Ahimelech has no ordinary bread to give him, only the consecrated bread, the Bread of the Presence, which had been set out before the Lord and was meant for the priests. Centuries later Jesus would refer to this very episode when he was criticised for allowing his disciples to pick grain on the Sabbath. The priest also has a sword to offer: the sword of Goliath, kept wrapped in a cloth behind the ephod.
 
-One detail should not be missed. Among those present that day is Doeg, an Edomite, Saul's chief shepherd. Then David does something surprising. He flees to Gath, Goliath's home city, and to its Philistine king Achish, apparently hoping no one there will know him. He is recognised at once. A psalm, Psalm thirty-four, is linked by its heading to this moment.
+One detail should not be missed. Among those present that day is Doeg, an Edomite, Saul's chief shepherd. Then David does something surprising. He flees to Gath, Goliath's home city, and to its Philistine king Achish, hoping no one there will know him. He is recognised at once. A psalm, Psalm thirty-four, is linked by its heading to this moment.
 
 === 22
-David has escaped from Gath by pretending to be mad, and now he takes refuge in the cave of Adullam, in the foothills of Judah, south-west of Bethlehem. His family come to join him, perhaps because they too are in danger, and so do others: the distressed, those in debt, the discontented. Soon there are about four hundred men, the beginnings of David's own fighting force.
+David has escaped from Gath by pretending to be mad, and now he takes refuge in the cave of Adullam, in the foothills of Judah, south-west of Bethlehem. His family come to join him, and so do others: the distressed, those in debt, the discontented. Soon there are about four hundred men, the beginnings of David's own fighting force.
 
 For safety David takes his parents across the Dead Sea to the king of Moab, which may not be chance, since his great-grandmother Ruth was a Moabite. A prophet named Gad, who will remain at David's side for many years, tells him to return to the land of Judah.
 
@@ -195,7 +195,7 @@ Then the story returns to David in the wilderness of southern Judah. His band of
 Nabal, whose name means fool, refuses with contempt, and David straps on his sword. The listener is told at the outset that Nabal has a wife named Abigail, who is intelligent and beautiful, and it is she who steps into the gap. Her speech to David on the mountain path is one of the longest by a woman in the Old Testament, full of wisdom and insight into David's future. A closing note records David's wives, and the news that Saul has given David's first wife, Michal, to another man.
 
 === 26
-Once again the men of Ziph come to Saul at Gibeah to tell him where David is hiding, on the hill of Hachilah, and once again Saul sets out with three thousand chosen men. The scene closely resembles the encounter at En-gedi. Some readers see two separate events, others two tellings of one memory, but the book presents them as two occasions, and the differences between them matter.
+Once again the men of Ziph come to Saul at Gibeah to tell him where David is hiding, on the hill of Hachilah, and once again Saul sets out with three thousand chosen men. The scene closely resembles the encounter at En-gedi. Yet this is a second occasion, and the differences between them matter.
 
 This time David goes looking for Saul, slipping into the royal camp by night with one companion. He is Abishai, son of David's sister Zeruiah, and brother of Joab, who will later command David's army. Saul lies asleep in the middle of the camp, his spear stuck in the ground beside his head, with Abner, his commander, and the troops around him. A deep sleep from the Lord has fallen on them all.
 
@@ -204,7 +204,7 @@ Abishai offers to finish the king with a single thrust. David's answer is again 
 === 27
 Saul has gone home promising never to harm David again, but David does not believe him. The chapter opens with David talking to himself, and his conclusion is bleak: sooner or later Saul will kill him, and the only safe place is among the Philistines. It is a strange decision for the man who killed Goliath, and the narrative records no word from the Lord guiding it.
 
-So David returns to Achish, king of Gath, the same king before whom he once pretended to be mad. This time he comes not as a lone fugitive but as the leader of six hundred fighting men with their families, and Achish welcomes him, apparently seeing a useful ally against Saul. David asks for a town of his own, and Achish gives him Ziklag, on the southern edge of the land, where David lives for sixteen months.
+So David returns to Achish, king of Gath, the same king before whom he once pretended to be mad. This time he comes not as a lone fugitive but as the leader of six hundred fighting men with their families, and Achish welcomes him, seeing a useful ally against Saul. David asks for a town of his own, and Achish gives him Ziklag, on the southern edge of the land, where David lives for sixteen months.
 
 What David does from Ziklag is a dangerous double game. He raids the desert peoples to the south, old enemies of Israel such as the Amalekites, and leaves no survivors to tell the tale. Then he reports to Achish that he has been raiding the south of Judah. Achish believes him, and thinks David has made himself so hated by his own people that he will serve Gath forever.
 
@@ -220,7 +220,7 @@ The story steps back a little in time, to the days before the battle, when the P
 
 The other Philistine commanders are not as trusting as the king of Gath. They see a company of Hebrews in their ranks and demand to know what they are doing there. Achish vouches for David, but the commanders remember the song the Israelite women sang, about Saul and his thousands and David and his tens of thousands. What better way, they ask, for David to win back his master's favour than by turning on them in the middle of the battle?
 
-So David is sent back. He protests, perhaps sincerely, perhaps not; the text leaves his true intentions unspoken. But the outcome spares him from an impossible choice: fighting against his own people, or betraying the king who sheltered him. At dawn David and his men set off south, and the Philistines go north to Jezreel.
+So David is sent back. He protests, though the text leaves his true intentions unspoken. But the outcome spares him from an impossible choice: fighting against his own people, or betraying the king who sheltered him. At dawn David and his men set off south, and the Philistines go north to Jezreel.
 
 === 30
 Dismissed by the Philistine commanders, David and his men march for three days back to Ziklag. They arrive to find the town burned and empty. While they were away, the Amalekites have raided the south and carried off everyone in Ziklag, including all the women and children, among them David's two wives, Ahinoam and Abigail.

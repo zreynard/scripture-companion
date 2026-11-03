@@ -1,7 +1,7 @@
 === intro
 With the book of Job we leave behind the Persian court and the rebuilt walls of Jerusalem, and step into a different kind of book altogether. Job is the first of the Bible's books of poetry and wisdom, and its story stands apart from the history of Israel. It opens like an old tale: there was a man in the land of Uz whose name was Job.
 
-Where Uz lay is not certain. Most likely it was somewhere east of the Jordan, toward Edom or the desert fringes of Arabia, among the people the book calls the people of the East. Job's world is one of great flocks and herds, of raiding bands from the desert, of a father who rises early to offer sacrifices for his children. Moses, the Law, the temple and the kings of Israel are never mentioned, and Job himself does not appear to be an Israelite. Many readers have felt that his world resembles that of Abraham and the patriarchs, but the book gives no date, and none should be invented for it. By the time of the exile his name was already known in Israel, for the prophet Ezekiel speaks of Noah, Daniel and Job as men of outstanding righteousness. Who wrote the book, and when, are unknown, and scholarly guesses range across many centuries.
+Uz lay east of the Jordan, toward Edom and the desert fringes of Arabia, among the people the book calls the people of the East. Job's world is one of great flocks and herds, of raiding bands from the desert, of a father who rises early to offer sacrifices for his children. Moses, the Law, the temple and the kings of Israel are never mentioned, and Job himself is not an Israelite. His world resembles that of Abraham and the patriarchs, though the book itself gives no date and does not name its author. By the time of the exile his name was already known in Israel, for the prophet Ezekiel speaks of Noah, Daniel and Job as men of outstanding righteousness.
 
 The book begins with a question, and it is not quite the one people expect. In a scene in the court of heaven, the Lord points to Job as a man without equal on earth, blameless and upright, and the accuser, called Satan, replies: does Job fear God for nothing? Take away everything he has, and he will curse you to your face. What follows tests that claim. Job loses his wealth, his children and his health, and the rest of the book wrestles with what it means to suffer without explanation and how a person may rightly speak to God, and about God, in the dark.
 
@@ -9,9 +9,9 @@ The shape of the book matters for following it. It is framed by prose. The openi
 
 Three friends come to comfort Job: Eliphaz the Temanite, Bildad the Shuhite and Zophar the Naamathite. After a week of silence, Job breaks out in a lament, and a long debate follows. It moves in three rounds. In each, the friends speak one after another, and Job answers each of them in turn. The first round runs from chapter four to chapter fourteen, the second from fifteen to twenty-one, and the third from twenty-two to twenty-seven, though by then the pattern is breaking down: Bildad's last speech is very short, and Zophar does not speak a third time. A poem about the hiddenness of wisdom follows, and then Job makes a long closing defence, ending with a solemn oath that he is innocent. A younger man named Elihu, who has not been mentioned before, then speaks at length. Finally the Lord himself answers Job out of a whirlwind, in two great speeches, each followed by a brief reply from Job.
 
-The friends' argument rests on a conviction found throughout the ancient world, and in parts of Scripture too: that God rewards the righteous and punishes the wicked. From that they reason backwards. If Job is suffering so terribly, he must have sinned terribly, and his only hope is to repent. Job, who knows he has not done what they imply, refuses to confess to it. Instead he protests, accuses, pleads and demands a hearing. The language of the law court runs all through his speeches: he wants to state his case, he longs for a witness, an advocate, someone to stand between him and God. As the rounds go on, the friends grow harsher and Job grows more desperate, though moments of startling hope break through. At the end, the Lord tells the friends that they have not spoken of him rightly, as his servant Job has, a verdict that has given readers much to ponder.
+The friends' argument rests on a conviction found throughout the ancient world, and in parts of Scripture too: that God rewards the righteous and punishes the wicked. From that they reason backwards. If Job is suffering so terribly, he must have sinned terribly, and his only hope is to repent. Job, who knows he has not done what they imply, refuses to confess to it. Instead he protests, accuses, pleads and demands a hearing. The language of the law court runs all through his speeches: he wants to state his case, he longs for a witness, an advocate, someone to stand between him and God. As the rounds go on, the friends grow harsher and Job grows more desperate, though moments of startling hope break through. At the end, the Lord tells the friends that they have not spoken of him rightly, as his servant Job has, and that Job will pray for them.
 
-The poetry of Job is some of the finest, and most difficult, in the Old Testament. Its Hebrew contains many rare words, and translators are uncertain about some lines. Its imagery is drawn from the whole of creation: stars and storms, rivers and deserts, lions, ostriches and wild donkeys, mining and weaving. One small detail is worth listening for. In the prose frame and in the Lord's speeches the narrator uses God's covenant name, the Lord. In the debate the speakers mostly say God or the Almighty.
+The poetry of Job is some of the finest, and most difficult, in the Old Testament. Its Hebrew contains many rare words, some found nowhere else in the Bible. Its imagery is drawn from the whole of creation: stars and storms, rivers and deserts, lions, ostriches and wild donkeys, mining and weaving. One small detail is worth listening for. In the prose frame and in the Lord's speeches the narrator uses God's covenant name, the Lord. In the debate the speakers mostly say God or the Almighty.
 
 In English Bibles, Job is followed by the other poetic books: Psalms, Proverbs, Ecclesiastes and the Song of Songs. Its position after Esther is not chronological; it simply begins a new section of the Bible. Much later, the letter of James will point to Job as an example of endurance, and of the Lord's compassion and mercy toward him.
 
@@ -37,7 +37,7 @@ This is not the patient Job of the first two chapters. He does not curse God, bu
 The lament ends with questions without answers. Why is light given to those in misery, who long for a death that does not come? The thing he feared has come upon him, and he has no rest. It is these words that his friends now feel they must answer.
 
 === 4
-Job's lament has been heard, and now the first round of the debate begins. Eliphaz the Temanite speaks first, probably as the eldest of the friends.
+Job's lament has been heard, and now the first round of the debate begins. Eliphaz the Temanite speaks first.
 
 He begins gently. Job has steadied and strengthened many others in their troubles; now trouble has come to him, and he is dismayed. Should not his reverence for God be his confidence? Then Eliphaz states the conviction on which all three friends will build: no innocent person has ever perished, and those who plough evil reap what they sow.
 
@@ -102,7 +102,7 @@ Job is still answering his friends, and his tone sharpens. He has heard their ar
 
 He accuses the friends of whitewashing the truth with lies. They are worthless physicians, and their wisest course would be silence. Would they speak falsely on God's behalf, and do they think God will thank them for it? Their maxims, he says, are proverbs of ashes.
 
-Then Job resolves to risk everything and take his life in his hands. The chapter contains a line many readers know by heart, traditionally rendered, though he slay me, yet will I hope in him; the Hebrew can be read in more than one way. Job sets out his case like a man preparing for trial, asks God to name his sins, and then turns once more to address God directly.
+Then Job resolves to risk everything and take his life in his hands. The chapter contains a line many readers know by heart: though he slay me, I will hope in him. Job sets out his case like a man preparing for trial, asks God to name his sins, and then turns once more to address God directly.
 
 === 14
 Job's long reply, and with it the first round of the debate, comes to a close in this chapter. It is a meditation on human frailty, spoken to God.
@@ -123,7 +123,7 @@ Job answers Eliphaz, and his reply runs on into the next chapter. He has heard a
 
 Then he describes what God has done to him in some of the most violent images in the book. God has torn him in anger and gnashed his teeth at him; he has seized him by the neck and set him up as a target for his archers; he rushes at him like a warrior. Job sits in sackcloth with his face red from weeping, though his hands are free of violence.
 
-He calls on the earth not to cover his blood, so that his cry may go on being heard. And then comes a startling turn. Even now, Job says, my witness is in heaven, and my advocate is on high. Who this witness is, Job does not say, and readers have long debated it.
+He calls on the earth not to cover his blood, so that his cry may go on being heard. And then comes a startling turn. Even now, Job says, my witness is in heaven, and my advocate is on high. Who this witness is, Job does not say.
 
 === 17
 Job is still speaking. The hope of the last chapter, a witness in heaven, has flickered, and now his mood sinks again. His spirit is broken, his days are almost over, and the grave is waiting.
@@ -179,7 +179,7 @@ Job is still speaking, and now he widens his complaint beyond his own suffering 
 
 He gives a bleak survey of the poor and the people who prey on them. Boundary stones are moved and flocks stolen. The orphan's donkey and the widow's ox are taken. The poor forage like wild donkeys in the wasteland, sleep naked in the mountain rain, and carry the harvest while going hungry. A fatherless baby is snatched from the breast for debt. The dying groan in the city, and God charges no one with wrong. Then come those who love the darkness: the murderer, the adulterer and the burglar.
 
-The final verses sound more like the friends, describing the wicked being swept away. Interpreters differ over whether Job is quoting them, conceding a point or saying something else. He ends with a challenge: who can prove me wrong?
+The final verses sound more like the friends, describing the wicked being swept away. He ends with a challenge: who can prove me wrong?
 
 === 25
 Bildad speaks for the third and final time, and his speech is only six verses long, the shortest in the book.
@@ -200,7 +200,7 @@ A new heading marks a fresh speech: Job continued his discourse. Zophar, whose t
 
 Job begins with a solemn oath. As surely as God lives, the God who has denied him justice, Job will not speak falsely. He will never admit that his friends are right. He will hold on to his integrity, he says, until he dies.
 
-The second half of the chapter is harder to place. It describes the fate of the wicked, the heritage the ruthless receive from the Almighty, in terms very like those the friends have used: children destined for the sword, wealth heaped up and taken by others, a house as flimsy as a moth's cocoon, and an east wind sweeping the wicked man away. Some interpreters think these words originally belonged to Zophar's missing third speech. Others read them as Job agreeing that the wicked will face judgement, while insisting that he is not one of them.
+The second half of the chapter describes the fate of the wicked, the heritage the ruthless receive from the Almighty, in terms very like those the friends have used: children destined for the sword, wealth heaped up and taken by others, a house as flimsy as a moth's cocoon, and an east wind sweeping the wicked man away.
 
 === 28
 The debate has run its course, and now comes a poem unlike anything around it. No speaker is named, and its mood is calm and reflective after all the arguing. Many readers hear it as an interlude in the narrator's voice, though it can also be read as part of Job's speech.
@@ -296,7 +296,7 @@ But the Lord speaks again out of the whirlwind, with a second speech. Its openin
 Then the Lord points to a creature called Behemoth, a massive beast that lies among the reeds and is unafraid when the river rages. It is often identified with the hippopotamus, though the poetry paints it on a grander scale.
 
 === 41
-The Lord's second speech reaches its climax with a single creature, Leviathan, who fills the whole chapter. Job had mentioned Leviathan in his first lament, and elsewhere in the Old Testament the name is used for a monster of the sea, a figure of chaos that only God can master. Some readers see in the description features of the crocodile, but the portrait goes far beyond any ordinary animal.
+The Lord's second speech reaches its climax with a single creature, Leviathan, who fills the whole chapter. Job had mentioned Leviathan in his first lament, and elsewhere in the Old Testament the name is used for a monster of the sea, a figure of chaos that only God can master. The portrait that follows goes far beyond any ordinary animal.
 
 The chapter opens with questions. Can Job catch Leviathan with a fishhook, put a rope through his nose, make him a pet or sell him in the market? No one is fierce enough to rouse him. Then who, the Lord asks, could stand against me?
 
@@ -305,6 +305,6 @@ The rest is a description of overwhelming power: scales sealed tight, eyes like 
 === 42
 The Lord has spoken twice, and now Job answers him for the last time. These are his final words in the book, and they are still poetry.
 
-Job acknowledges that God can do all things and that no purpose of his can be thwarted. He quotes the Lord's own words back to him and admits that he spoke of things too wonderful for him to know. Then comes the line that sums up what has happened to him: my ears had heard of you, but now my eyes have seen you. The closing words of his reply can be translated in more than one way, and readers have long weighed their meaning.
+Job acknowledges that God can do all things and that no purpose of his can be thwarted. He quotes the Lord's own words back to him and admits that he spoke of things too wonderful for him to know. Then comes the line that sums up what has happened to him: my ears had heard of you, but now my eyes have seen you. He ends by saying that he despises himself and repents in dust and ashes.
 
 Then the book returns to prose for its ending. The Lord speaks to Eliphaz and his two friends, and his verdict on them is not what they would have expected. The Lord also restores Job's fortunes and gives him a new family. The narrator lingers over his three daughters, names them, and records that their father gave them an inheritance alongside their brothers. Job's story ends with words used in Genesis of the patriarch Isaac: he died, old and full of years.

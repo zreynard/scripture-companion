@@ -3,7 +3,7 @@ Second Samuel opens with a messenger running from a lost battle. Saul, the first
 
 The listener who has come through First Samuel knows how we got here. The prophet Samuel anointed Saul as Israel's first king, and then, when Saul turned from the Lord's commands, anointed a shepherd boy from Bethlehem in his place. David killed Goliath, served at Saul's court, married Saul's daughter Michal, and became so popular that Saul tried again and again to kill him. For years David lived as a fugitive in the wilderness of Judah, gathering a band of outcasts and fighting men, twice sparing Saul's life when he could have taken it, and finally taking refuge among the Philistines themselves. Samuel has died. Now Saul is gone too, and this book tells what David does with the kingdom.
 
-In the Hebrew Bible, First and Second Samuel were a single book. The division came later, when the work was translated into Greek and copied onto scrolls of manageable length. The book takes its name from Samuel, but he dies before the second half begins, and no author is named. Later Scripture mentions records kept by Samuel, by the prophet Nathan and by the seer Gad, and the writer may have drawn on sources like these. The account itself has the closeness of eyewitness memory: private conversations, family quarrels, the exact words of messengers and the grief of a father.
+In the Hebrew Bible, First and Second Samuel were a single book. The division came later, when the work was translated into Greek and copied onto scrolls of manageable length. The book takes its name from Samuel, but he dies before the second half begins, and no author is named. Later Scripture says that David's acts were written in the records of Samuel, of the prophet Nathan and of the seer Gad, and Jewish tradition holds that these men gave us the book. The account itself has the closeness of eyewitness memory: private conversations, family quarrels, the exact words of messengers and the grief of a father.
 
 The setting is Israel in the time around a thousand years before Christ. The great powers of the age, Egypt to the south and Assyria in the north-east, are in a period of weakness, and that leaves room for a small kingdom to grow. The tribes of Israel are still a loose alliance, with Judah in the south often standing apart from the northern tribes. The Philistines hold the coastal plain and have just crushed Saul's army. In the hill country stands a Canaanite fortress that no Israelite tribe has ever taken, a city called Jebus, which David will make his own as Jerusalem.
 
@@ -58,7 +58,7 @@ David gathers thirty thousand chosen men and sets out to bring it up to Jerusale
 Three months pass before he tries again. The second procession is very different, and David himself, dressed in a linen ephod, dances before the Lord with all his might. Watching from a window is Michal, Saul's daughter, and the chapter ends in a bitter exchange between husband and wife.
 
 === 7
-The ark is in Jerusalem, resting in the tent David pitched for it. The king is settled in his cedar palace, and the writer notes that the Lord has given him rest from his enemies on every side. The order of events in these chapters is not always strictly chronological, and some of the wars described next may well have come before this moment, but the book places this scene here deliberately, as the high point of David's rise.
+The ark is in Jerusalem, resting in the tent David pitched for it. The king is settled in his cedar palace, and the writer notes that the Lord has given him rest from his enemies on every side. The book places this scene here deliberately, as the high point of David's rise.
 
 For the first time we meet Nathan the prophet, who will be a steady presence at David's court for the rest of his life. David shares a thought with him that seems entirely natural. It is not right that the king lives in a house of cedar while the ark of God stays in a tent. Nathan's first answer is warm approval. But that night the word of the Lord comes to him, and the message he brings back turns David's plan on its head.
 
@@ -79,7 +79,7 @@ In the ancient world a new dynasty often removed every possible rival from the o
 Mephibosheth comes before David expecting the worst. Both he and Ziba will reappear later, at the most dangerous moment of David's reign, and what is arranged in this chapter will matter then.
 
 === 10
-The story turns east, across the Jordan, to the kingdom of Ammon and its capital Rabbah, on the site of modern Amman. The Ammonite king Nahash has died. A Nahash of Ammon was Saul's first enemy, the king who besieged Jabesh-gilead, and at some point he had shown David kindness, perhaps because they shared an enemy in Saul. David sends envoys to console his son Hanun.
+The story turns east, across the Jordan, to the kingdom of Ammon and its capital Rabbah, on the site of modern Amman. The Ammonite king Nahash has died. This Nahash was Saul's first enemy, the king who besieged Jabesh-gilead, and he had once shown David kindness. David sends envoys to console his son Hanun.
 
 Hanun's advisers persuade him that the envoys are spies, and he sends them home humiliated, with half their beards shaved off and their garments cut short. In that culture it was an insult that could only mean war. The Ammonites know it, and they hire Aramean troops from the kingdoms to the north, including the forces of Hadadezer of Zobah, whom David has already defeated once.
 
@@ -102,7 +102,7 @@ David's response is very different from Saul's when he was confronted by Samuel.
 === 13
 The war with Ammon is over, and David is back in Jerusalem with the crown of Rabbah on his head. Now the story moves inside the palace, among the king's children, and the words Nathan spoke, that the sword would never depart from David's house, begin to come true.
 
-David's sons were born to different wives, and each mother's household was its own world. Amnon is the eldest, the son of Ahinoam, and so the likely heir. Absalom is the third son, whose mother Maacah was a princess, the daughter of the king of Geshur, a small Aramean kingdom north-east of the Sea of Galilee. Absalom has a full sister named Tamar. We also meet a cousin, Jonadab, the son of David's brother, described as a very shrewd man.
+David's sons were born to different wives, and each mother's household was its own world. Amnon is the eldest, the son of Ahinoam, and so first in line for the throne. Absalom is the third son, whose mother Maacah was a princess, the daughter of the king of Geshur, a small Aramean kingdom north-east of the Sea of Galilee. Absalom has a full sister named Tamar. We also meet a cousin, Jonadab, the son of David's brother, described as a very shrewd man.
 
 This is one of the hardest chapters in the Bible to read, and the narrator tells it plainly, giving Tamar her own voice. Twice in this chapter David hears what has happened in his family, and both times the listener will notice what he feels and what he fails to do. By the end, two years have passed, one son is dead, and another is in exile with his grandfather in Geshur.
 
@@ -116,7 +116,7 @@ The second half of the chapter brings Absalom back into the light. He is describ
 === 15
 Absalom has been received by his father with a kiss, and he is back at the heart of the court. Now he begins, quietly and patiently, to build something of his own. He takes a chariot and horses, and fifty men to run ahead of him, the outward show of a man who expects to be king.
 
-Then he goes to work at the city gate, where people came to have their disputes heard. The northern tribes in particular may have felt that the king in Jerusalem had little time for them, and Absalom makes the most of it. After four years, he asks permission to go to Hebron, the city where David was first made king, and there he raises the trumpet of rebellion. With him is Ahithophel, the most respected counsellor in Israel.
+Then he goes to work at the city gate, where people came to have their disputes heard. Many who come there feel that the king has no time for them, and Absalom makes the most of it. After four years, he asks permission to go to Hebron, the city where David was first made king, and there he raises the trumpet of rebellion. With him is Ahithophel, the most respected counsellor in Israel.
 
 What follows is one of the most vividly told days in the whole Old Testament. David leaves Jerusalem on foot, crossing the Kidron Valley and climbing the Mount of Olives, and along the way he meets a series of people, each of whom reveals something about loyalty. Psalm three bears the title, a psalm of David when he fled from his son Absalom.
 
@@ -130,7 +130,7 @@ In Jerusalem, David's friend Hushai presents himself to Absalom as a loyal serva
 === 17
 Absalom holds Jerusalem, and David is somewhere in the wilderness east of the city, near the fords of the Jordan, with a weary band of loyal followers. Everything now depends on what Absalom does next, and he has two advisers in the room.
 
-Ahithophel speaks first. His plan is swift and ruthless, and it may well have worked. Then Absalom calls for Hushai, the man David sent back to the city for exactly this moment. The contest of counsel between them is the turning point of the rebellion, and the narrator pauses to explain what lies behind it: the Lord had determined to defeat the good advice of Ahithophel.
+Ahithophel speaks first. His plan is swift and ruthless. Then Absalom calls for Hushai, the man David sent back to the city for exactly this moment. The contest of counsel between them is the turning point of the rebellion, and the narrator pauses to explain what lies behind it: the Lord had determined to defeat the good advice of Ahithophel.
 
 The rest of the chapter moves fast. A secret chain of messengers, the sons of the priests Zadok and Abiathar, must get word to David, and their errand turns into a chase. David crosses the Jordan and makes his base at Mahanaim, the same town where Ish-bosheth once reigned. Absalom appoints a new commander, his cousin Amasa, and follows with his army. And at Mahanaim, David's need is met by three men from east of the Jordan: a son of Nahash the Ammonite, old Barzillai of Gilead, and Machir of Lo-debar, the man who once sheltered Mephibosheth.
 
@@ -156,7 +156,7 @@ David is back in his palace in Jerusalem, and he deals first with the ten concub
 The pursuit runs to the far north of the land, to the town of Abel-beth-maacah, near the sources of the Jordan. There the chapter's last voice is a wise woman on the city wall, speaking for her town. It closes with a list of David's officials, and Joab's name stands at the top once more.
 
 === 21
-The main story of David's reign has reached its end, and the last four chapters of the book stand apart from it. They gather six pieces from different times in David's reign: two stories, two lists of warriors, and two poems, arranged with care around one another. They are not in chronological order, and the first story probably belongs to an earlier part of his reign.
+The main story of David's reign has reached its end, and the last four chapters of the book stand apart from it. They gather six pieces from different times in David's reign: two stories, two lists of warriors, and two poems, arranged with care around one another. They are not in chronological order.
 
 It begins with a famine that lasts three years. When David seeks the Lord, the answer points back to Saul. The Gibeonites were a Canaanite people who, in Joshua's day, tricked Israel into swearing a treaty that protected them. Saul, the text now reveals, tried to wipe them out, breaking that oath. Nothing of this was told in First Samuel. David asks the Gibeonites what will make amends, and their answer falls on Saul's descendants. David spares Mephibosheth, because of his oath to Jonathan. Rizpah, Saul's concubine, whose name came up long ago in the quarrel between Abner and Ish-bosheth, keeps a long and lonely vigil, and her devotion moves David to give Saul and Jonathan an honourable burial at last.
 
@@ -177,7 +177,7 @@ The rest of the chapter is a roll of honour: David's mighty men, the warriors wh
 Several names on this list will be familiar. Joab's brother Asahel, who fell in chapter two, is here. So is an Eliam son of Ahithophel, the counsellor who joined Absalom; Bathsheba's father, too, was called Eliam. And the last name on the list is Uriah the Hittite.
 
 === 24
-The book's final chapter returns to the theme of the opening story in chapter twenty-one: the Lord's anger against Israel, and a disaster that David must answer for. Again we are not told exactly when it happened. The chapter opens by saying that the Lord incited David to count the people. When the book of Chronicles tells the same story, it says that Satan incited him. Neither account explains exactly why the census was wrong, though it may have been a matter of pride in military strength, and even Joab, no stranger to hard choices, protests against it.
+The book's final chapter returns to the theme of the opening story in chapter twenty-one: the Lord's anger against Israel, and a disaster that David must answer for. Again we are not told exactly when it happened. The chapter opens by saying that the Lord incited David to count the people. When the book of Chronicles tells the same story, it says that Satan incited him. Neither account explains exactly why the census was wrong, but even Joab, no stranger to hard choices, protests against it.
 
 The census takes almost ten months, and it traces the borders of David's kingdom, from Dan in the far north to Beersheba in the south. When it is done, David's conscience strikes him. The prophet Gad, who has been with David since his fugitive days, brings him a hard choice between three judgements.
 

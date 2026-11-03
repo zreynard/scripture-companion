@@ -1,7 +1,7 @@
 === intro
 The book of Joshua closed with a nation at rest. The tribes had their land, the old leader had made them promise at Shechem to serve the Lord alone, and Joshua, Joseph's bones and Eleazar the priest were laid in their graves. The book of Judges opens in the generation that follows, and it tells what became of that promise.
 
-The answer is not a happy one. Judges covers the long stretch of time between the settlement of Canaan and the rise of Israel's first king, a period of perhaps two centuries, though its exact length and dates are uncertain. Israel in these years is not a kingdom but a loose federation of tribes, each living on its own allotted land, with no capital, no standing army and no central government. The tabernacle stands at Shiloh in the hill country of Ephraim, but most of the time the tribes act alone, and sometimes against each other.
+The answer is not a happy one. Judges covers the long stretch of time between the settlement of Canaan and the rise of Israel's first king. Israel in these years is not a kingdom but a loose federation of tribes, each living on its own allotted land, with no capital, no standing army and no central government. The tabernacle stands at Shiloh in the hill country of Ephraim, but most of the time the tribes act alone, and sometimes against each other.
 
 They also share the land with others. Joshua warned that the Canaanites who remained would become a snare, and Judges opens by listing, tribe by tribe, the towns they failed to take. Canaanite cities still hold the fertile valleys and the coast, with their iron chariots and their gods: Baal, the storm god who was believed to bring the rains and the harvest, and the goddesses Asherah and Ashtoreth. Around the edges of Israel's territory press other peoples, Moabites and Ammonites from across the Jordan, Midianite raiders from the desert, and, increasingly, the Philistines, who had settled on the southern coastal plain and would become Israel's most dangerous enemy.
 
@@ -11,7 +11,7 @@ The stories follow a pattern that the second chapter spells out in advance. Isra
 
 The final chapters drop the pattern altogether. There are no more deliverers, only two disturbing stories from the life of the tribes. One concerns a household shrine, a wandering Levite and the migration of the tribe of Dan. The other concerns a crime at Gibeah in Benjamin so terrible that it leads to civil war. Through these chapters runs a refrain: in those days there was no king in Israel, and everyone did what was right in his own eyes.
 
-That refrain suggests the book took its final shape when Israel did have a king, looking back on the years before. The author is not named. Jewish tradition credited Samuel, and the book certainly belongs with the histories that follow it, but beyond that we cannot say. Nor did the judges necessarily follow one another in a neat line. Most were local figures, and some of their careers may have overlapped in different parts of the land.
+That refrain looks back on these years from a time when Israel did have a king. The author is not named. Jewish tradition credits Samuel, and the book belongs with the histories that follow it. Nor do the judges follow one another in a neat line. Most were local figures, leading their own tribes in their own parts of the land.
 
 Judges is one of the most honest books in the Bible about the failures of God's people, and it does not soften them. Yet through all of it God keeps answering their cries and raising up rescuers, however flawed. The gentle story of Ruth is set in these same years, and the book of First Samuel will carry the history on, through the last of the judges, toward the question the refrain keeps raising: what kind of king Israel needs.
 
@@ -94,7 +94,7 @@ Now the elders who rejected him come asking for help, and Jephthah drives a hard
 
 Before going to war, Jephthah tries diplomacy. His message to the king of Ammon is a careful history lesson, recalling Israel's journey from Egypt, the refusal of Edom and Moab to let them pass, and the defeat of the Amorite king Sihon, whose land Israel took. He claims Israel has held that land for three hundred years.
 
-Then the Spirit of the Lord comes on Jephthah, and he marches. But before the battle he makes a vow, and its consequences turn his victory into one of the saddest scenes in the Old Testament. Interpreters have long debated exactly what the vow led to; the text itself is spare and restrained.
+Then the Spirit of the Lord comes on Jephthah, and he marches. But before the battle he makes a vow, and its consequences turn his victory into one of the saddest scenes in the Old Testament. The text tells what follows in spare and restrained words.
 
 === 12
 Jephthah has defeated the Ammonites, but there is no peace. Once again the tribe of Ephraim feels slighted. They complained to Gideon for not calling them sooner, and Gideon calmed them with a soft answer. Now they cross the Jordan to confront Jephthah with the same complaint, and with a threat to burn his house down around him.
@@ -159,7 +159,7 @@ The Levite's terrible summons has gone out to all the tribes, and Israel respond
 
 The Levite tells his story to the assembly, and the tribes demand that Benjamin hand over the men of Gibeah who did this. Benjamin refuses, and instead the whole tribe gathers to defend the town. Among its soldiers are seven hundred left-handed slingers who never miss, a reminder of Ehud, the left-handed Benjamite who once saved Israel.
 
-The war that follows is fought over three days. Israel inquires of God at Bethel, where the ark of the covenant is kept at this time, and where Phinehas, the grandson of Aaron, serves as priest. That detail suggests these events took place early in the period of the judges, even though they are told at the end. The losses on both sides are staggering, and the chapter ends with Benjamin almost wiped out.
+The war that follows is fought over three days. Israel inquires of God at Bethel, where the ark of the covenant is kept at this time, and where Phinehas, the grandson of Aaron, serves as priest. That detail places these events early in the period of the judges, even though they are told at the end. The losses on both sides are staggering, and the chapter ends with Benjamin almost wiped out.
 
 === 21
 The war is over, and Israel's victory has left a hole in the nation. Only six hundred men of Benjamin survive, hiding at the rock of Rimmon in the wilderness, and the other tribes have sworn an oath at Mizpah that none of them will give a daughter in marriage to a Benjamite. Now they realise what that means: one of the twelve tribes is about to disappear.
