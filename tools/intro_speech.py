@@ -26,7 +26,7 @@ HANDOFF = re.compile(r"here'?s\s*$", re.I)          # "... Now here's" + "Stephe
 GREET = re.compile(r"thank(s| you) for joining|welcome (back )?to (the )?wisdom journey|wisdom journey with stephen|"
                    r"lesson (is )?(called|titled|entitled)|today'?s lesson is|stephen (returns|continues|takes (us|you)|is back|brings|walks|leads)|"
                    r"stephen dav[a-z]* is (taking|teaching|walking)|66 books|over three years|this is the wisdom journey|"
-                   r"on (today'?s|this) (episode|wisdom journey)", re.I)
+                   r"on (today'?s|this) (episode|wisdom journey)|glad you'?ve joined us|joining us (today|again)", re.I)
 _model = None
 
 
@@ -87,9 +87,13 @@ def ending(url):
             pcm = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
     pcm = pcm[-TAIL * 16000:]
     L = len(pcm) / 16000
-    amens = [w for w in words_of(pcm) if re.fullmatch(r"amen[.!,]?", w[2], re.I)]
+    ws = words_of(pcm)
+    amens = [w for w in ws if re.fullmatch(r"amen[.!,]?", w[2], re.I)]
     if not amens: return None
     left = L - amens[-1][1]
+    if os.environ.get("N"):  # trial: show what the cut would leave out
+        print("      before:", " ".join(w[2] for w in ws if w[1] <= amens[-1][1])[-160:], flush=True)
+        print("      after: ", " ".join(w[2] for w in ws if w[0] > amens[-1][1])[:400], flush=True)
     return round(left - 0.6, 1) if 3 < left < 120 else None
 
 
