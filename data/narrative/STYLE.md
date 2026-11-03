@@ -14,6 +14,15 @@ Orient the listener in the story, so that when the chapter is read they know who
 are, what has just happened and why this passage matters next. Like a superb historical documentary
 narrator: informed, clear, warm, reverent, never preachy.
 
+## The two rules above all
+
+1. Biblically accurate, totally. Every statement about the biblical story matches the Berean text: who is
+   present, who speaks, what is said, where it happens, in what order, family relationships, numbers. Nothing
+   added that the text does not say, nothing moved to the wrong chapter, no blending in details from another
+   book unless named as such ("Kings tells the same story").
+2. Engaging, like a great narrator telling a story. Scenes, people and stakes; momentum from one chapter to
+   the next; the listener wants to hear what happens. Never a lecture, a list or a summary report.
+
 ## Voice
 
 - Natural, flowing, written for the ear. Mostly medium-length sentences; vary the rhythm.
