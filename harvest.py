@@ -58,6 +58,31 @@ def harvest_feed(key: str, feed_url: str, era: str = "platt") -> list[dict]:
     _log(f"{key}: {len(out)} items")
     return out
 
+# ---------- Fearless Church (Spring Hill, TN): praise.global feed; the preacher and the passage are named in each description ----------
+def harvest_fearless() -> list[dict]:
+    r = get(config.FEARLESS_FEED, timeout=60)
+    if not r.ok:
+        _log(f"fearless: feed fetch failed {r.status} {r.note}")
+        return []
+    from refs import parse_refs, merge_refs, refs_to_text
+    out = []
+    for it in parse_rss(r.text):
+        url = it.get("link") or it.get("enclosure")
+        if not url or not it.get("enclosure"):
+            continue
+        desc = it["description"] or ""
+        who = re.search(r"\bPastor\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)", desc)
+        refs = parse_refs(re.sub(r"\b(?:chapters?)\s+(\d+)", r"\1", desc))
+        first = refs_to_text(merge_refs(refs[:1])) if refs else ""   # the passage the sermon walks through is named first
+        e = make_entry(source="fearless", source_url=config.FEARLESS_FEED, url=url, title=it["title"], description="",
+                       published=it["pubdate"], duration=it["duration"], author="Fearless Church", era="fearless", extra_ref_text=first)
+        e["description"] = desc
+        e["speaker"], e["speaker_evidence"] = ("fearless:" + who.group(1), "description-names-pastor") if who else ("fearless:Fearless Church", "church-feed")
+        e["audio_override"] = it["enclosure"]
+        out.append(e)
+    _log(f"fearless: {len(out)} sermons")
+    return out
+
 # ---------- Skip Heitzig feeds (Subsplash audio; the episode's mp3 address is its link) ----------
 def harvest_skip(key: str, feed_url: str) -> list[dict]:
     r = get(feed_url, timeout=60)
@@ -553,7 +578,7 @@ def harvest_youtube_audio() -> list[dict]:
     return out
 
 # ---------- orchestration ----------
-ALL_SOURCES = ["brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
+ALL_SOURCES = ["fearless", "brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
                "youtube_2819", "youtube_pam", "youtube_victory", "victory_podcast"]
 
 def run(sources: list[str], radical_limit: int | None = None):
@@ -580,6 +605,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "brookhills": entries = harvest_brookhills(); entries += harvest_brookhills_archive(entries)
             elif s == "radical": entries = harvest_radical(radical_limit)
             elif s == "secret_church_podcast": entries = harvest_itunes_podcast("secret_church_podcast", config.PODCAST_SEARCH_TERMS["secret_church"], r"secret church", "platt", channel_default="Platt")
+            elif s == "fearless": entries = harvest_fearless()
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt") + harvest_mclean_api()
             elif s in config.DAVEY_FEEDS:
                 sid, feed = config.DAVEY_FEEDS[s]

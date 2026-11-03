@@ -22,7 +22,7 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 92  # bump on every shipped build; also busts the service-worker cache
+VERSION = 93  # bump on every shipped build; also busts the service-worker cache
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -102,7 +102,7 @@ def main():
     skip_guest = lambda e: e["source"].startswith("skip_") and e["speaker"].startswith("guest:")  # Calvary Church guests keep Skip's series unbroken
     # Skip Heitzig: his verse-by-verse walk-throughs and Bible from 30,000 Feet, not his topical Sunday sermons
     skip_kept = lambda e: not e["source"].startswith("skip_") or is_walk(e["title"]) or re.match(r"\s*Flight\b", e["title"])
-    usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["source"] not in config.OFF_ROAD_SOURCES and skip_kept(e) and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e))]
+    usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["source"] not in config.OFF_ROAD_SOURCES and skip_kept(e) and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e) or e["speaker"].startswith("fearless:"))]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
     CH, WALK, VS = {}, {}, {}  # chapters per book for each item; WALK = titled only by its passage (a walk-through message); VS = verses
     VC = {}
@@ -155,10 +155,10 @@ def main():
     pod_nights = {e.get("sc_season") for e in usable if e["source"] == "secret_church_podcast" and e.get("sc_season")}
     usable = [e for e in usable if not (e["source"] == "twr360_secret_church" and e.get("sc_season") in pod_nights)]
     for e in usable:
-        it = {"id": e["id"], "t": e["title"], "who": "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Skip" if skip_guest(e) else e["speaker"] if e["speaker"] in ("Davey", "Skip") else "Platt"),
+        it = {"id": e["id"], "t": e["title"], "who": "Fearless" if e["speaker"].startswith("fearless:") else "PAM" if (e["speaker"] == "PAM" or e["speaker"] in team) else ("Skip" if skip_guest(e) else e["speaker"] if e["speaker"] in ("Davey", "Skip") else "Platt"),
               "show": config.SHOWS.get(e["source"]),
               **({"s": INTROS[e["id"]]} if INTROS.get(e["id"]) else {"s": 13} if e["source"] == "skip_archive" and re.match(r"\s*Flight\b", e["title"]) else {"s": config.INTRO_SKIP[e["source"]]} if config.INTRO_SKIP.get(e["source"]) else {}),
-              "by": e["speaker"].split(":", 1)[1] if (e["speaker"] in team or skip_guest(e)) else None,
+              "by": ("Pastor " + e["speaker"].split(":", 1)[1] if e["speaker"] != "fearless:Fearless Church" else None) if e["speaker"].startswith("fearless:") else e["speaker"].split(":", 1)[1] if (e["speaker"] in team or skip_guest(e)) else None,
               "era": e["era"], "tr": e["track"], "src": e["source"], "url": e.get("primary_url") or e["url"],
               "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() else 0,
               "date": iso_date(e.get("published")), "pass": e.get("refs_text", ""), "tier": e["tier"],
@@ -1342,7 +1342,7 @@ function stopIds(x){return x.c.intro?[...(x.b.spans||[]).map(s=>s.id),...x.b.ov]
 function stopRead(x){return x.c.intro?!!(read[x.b.abbr+'0']||x.b.ch.some(cc=>read[x.b.abbr+cc.c]||cc.ids.some(id=>((prog[id]||{}).heard||0)>0))):!!read[x.b.abbr+x.c.c]}
 /* saved places from before book stops existed: move them once onto the same chapter */
 function migrateCamp(){if(S.get('camp2'))return;if(camp!=null){let cum=0,bi=0;for(const b of books()){if(camp<cum+b.n){camp=camp+bi+1;break}cum+=b.n;bi++}S.set('camp',camp)}S.set('camp2',1)}
-const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Davey',Skip:'Skip Heitzig'};
+const NAMES={Platt:'David Platt',PAM:'Philip Anthony Mitchell',Davey:'Stephen Davey',Skip:'Skip Heitzig',Fearless:'Fearless Church'};
 function teacher(i){return i.by||NAMES[i.who]}
 function dispTitle(i){let t=(i.sc?(i.t||'').replace(/^\s*\d+\.\d+\s*[–—-]\s*/,''):(i.t||''));if(i.sc&&/^(introduction|conclusions?|critical conclusions|gospel foundations|gospel conclusions|practical takeaways|applications|the gospel|concluding challenges)\b/i.test(t)){const ev=(D.sc.events||[]).find(e=>e.n===i.sc[0]);if(ev)t=ev.title+': '+t}const fl=t.match(/^Flight\s+([1-3]?[A-Z]{2,4}?)(\d{1,2})\b(?:\s*-\s*(Part\s+\w+))?/);if(fl){const ord=books().map(x=>x.name),bk=fl[1]==='INT'?['Between the Testaments']:(i.pass||'').split(';').map(x=>x.replace(/the book of/i,'').replace(/\s+\d+(?:\s*[-–]\s*\d+)?\s*$/,'').trim()).filter(Boolean).sort((p,q)=>ord.indexOf(p)-ord.indexOf(q));return ['Bible from 30,000 Feet',bk.join(', ')+(+fl[2]>1?' ('+(+fl[2])+')':''),fl[3]].filter(Boolean).join(' · ')}if(!t.includes('|'))return t;const parts=t.split('|').map(x=>x.trim()).filter(Boolean),who=(teacher(i)||'').toLowerCase();
  const keep=parts.filter(x=>!/^(?:[1-3]\s?)?[A-Za-z]+\.?\s*\d+(?::\d+)?(?:\s*[-–]\s*\d+(?::\d+)?)?$/.test(x)&&!(who&&x.toLowerCase().replace(/^(elder|pastor|minister)\s+/,'')===who.replace(/^(elder|pastor|minister)\s+/,''))&&!/^(philip anthony mitchell|pam)$/i.test(x));
@@ -1522,12 +1522,12 @@ function closeSeries(){const el=$('#bps');el.classList.remove('on');document.bod
 function wireBP(){document.querySelectorAll('#main [data-bps]').forEach(b=>b.onclick=()=>openSeries(b.dataset.bps));document.querySelectorAll('#main [data-bpcont]').forEach(b=>b.onclick=()=>{const t=bpGet(b.dataset.bpcont);bpPlay(t.id,bpIds(t)[bpAt(t)])})}
 
 /* ---- Library: Secret Church, the four teachers, what you played lately ---- */
-const TCH_C={Platt:'#2f4a6b',PAM:'#7a4b2a',Skip:'#5b4a7a',Davey:'#3c5a4c'};
+const TCH_C={Platt:'#2f4a6b',PAM:'#7a4b2a',Skip:'#5b4a7a',Davey:'#3c5a4c',Fearless:'#6b5320'};
 function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotional'&&i.audio&&!i.nar)cnt[i.who]=(cnt[i.who]||0)+1});
  const bpOf=id=>bpList().find(s=>bpIds(s).includes(id));
  const rec=Object.entries(prog).filter(([id,p])=>I[id]&&!I[id].nar&&p&&p.at).sort((a,z)=>z[1].at-a[1].at).slice(0,6);
  let h=`<div class="jv lib">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Library</h1><button class="lib-sc" id="opensc"><b>Secret Church</b><span>David Platt · all ${scGroups().length} nights · ${D.sc.ids.length} sessions ›</span></button>`;
- h+=`<div class="jv-sec">Teachers</div>`+['Platt','PAM','Skip','Davey'].map(k=>`<button class="lib-t" data-tch="${k}"><span class="av" style="background:${TCH_C[k]}">${(n=>n[0][0]+n[n.length-1][0])(NAMES[k].split(' '))}</span><span><b>${NAMES[k]}</b><em>${(cnt[k]||0).toLocaleString()} teachings</em></span><i>›</i></button>`).join('');
+ h+=`<div class="jv-sec">Teachers</div>`+['Platt','PAM','Skip','Davey','Fearless'].filter(k=>cnt[k]).map(k=>`<button class="lib-t" data-tch="${k}"><span class="av" style="background:${TCH_C[k]}">${(n=>n[0][0]+n[n.length-1][0])(NAMES[k].split(' '))}</span><span><b>${NAMES[k]}</b><em>${(cnt[k]||0).toLocaleString()} teachings</em></span><i>›</i></button>`).join('');
  if(rec.length)h+=`<div class="jv-sec">Recently played</div><div class="lib-rec">${rec.map(([id,p])=>{const s=bpOf(id),left=leftOf(id);return `<button data-${s?'bpplay2':'play'}="${id}"${s?` data-sid="${s.id}"`:''}><small>${s?'Big Picture':'Journey'}</small><b>${esc(s?bpName(s,id):dispTitle(I[id]))}</b><em>${esc(teacher(I[id]).split(' ').slice(-1)[0])} · ${p.done?'heard':left?atSpd(left)+' left':'started'}</em></button>`}).join('')}</div>`;
  const sk=Object.keys(SKIP).length;if(sk)h+=`<button class="lnk lib-sk" id="unskip">${sk} skipped for now — bring them back</button>`;
  return h+'</div>'}
@@ -1709,7 +1709,7 @@ $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('s
 function NP(){return $('#np')}
 function roomForPlayer(){requestAnimationFrame(()=>{const np=NP(),tb=($('#tabs')||{}).offsetHeight||0;if(!np.classList.contains('on')){document.documentElement.style.setProperty('--npH','0px');document.body.style.paddingBottom=tb+'px';return}const mh=np.classList.contains('mini')?np.offsetHeight+16:0;document.documentElement.style.setProperty('--npH',mh+'px');document.body.style.paddingBottom=(tb+mh)+'px'})}
 /* the full-screen player's cover: the passage on the teacher's colour, with their medallion mark */
-const ART_C={Platt:['#1b2440','#3b5578'],PAM:['#4a1f3a','#8a3b5c'],Davey:['#1f3b33','#3f6b5a'],Skip:['#5a3417','#a8662e']};
+const ART_C={Platt:['#1b2440','#3b5578'],PAM:['#4a1f3a','#8a3b5c'],Davey:['#1f3b33','#3f6b5a'],Skip:['#5a3417','#a8662e'],Fearless:['#2c2f36','#8a6a2a']};
 function npArt(id){const i=I[id],c=ART_C[i.who]||['#1b2440','#a8812a'],d=i.date?new Date(i.date+'T12:00:00'):null;
  $('#np-art').style.background=`linear-gradient(150deg,${c[1]},${c[0]})`;
  $('#np-art').innerHTML=`<svg class="a-m" viewBox="0 0 48 48"><path d="${MEDAL_ICON[{Platt:'apostle',PAM:'prophet',Davey:'writer',Skip:'patriarch'}[i.who]]||''}" fill="none" stroke="#fff" stroke-width="2"/></svg><div class="a-w">${esc(teacher(i))}</div><div class="a-p">${esc(where(id))}</div>${i.show?`<div class="a-s">${esc(i.show)}</div>`:''}`;
@@ -1817,7 +1817,7 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
  const back=$('#back');if(back)back.onclick=()=>setView(PREV==='settings'?'journey':PREV);const us=$('#unskip');if(us)us.onclick=()=>{SKIP={};S.set('skip',SKIP);note('Everything you skipped is waiting again where it belongs.');render()};
  const osc=$('#opensc');if(osc)osc.onclick=()=>{view='sc';S.set('view',view);render();window.scrollTo(0,0)};
  const scb=$('#scback');if(scb)scb.onclick=()=>setView('library');
- document.querySelectorAll('details.sce').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.sck):OPEN.delete(d.dataset.sck)});const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
+ document.querySelectorAll('details.sce').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.sck):OPEN.delete(d.dataset.sck)});const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip','Fearless'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
  const io=$('#io');if(io){$('#exp').onclick=()=>io.value=JSON.stringify({prog,read,cfg});$('#imp').onclick=()=>{try{const v=JSON.parse(io.value);prog=v.prog||prog;read=v.read||read;S.set('prog',prog);S.set('read',read);render()}catch(e){io.value='Could not read that JSON.'}};
   const bkf=$('#bkf');if(bkf)bkf.onsubmit=async e=>{e.preventDefault();const key=$('#bkkey').value.trim(),repo=$('#bkrepo').value.trim().replace(/^https?:\/\/github\.com\//,'').replace(/\.git$|\/$/g,''),msg=$('#bkmsg');msg.textContent='Checking…';
    try{const r=await bkGH('',{},key,repo);if(r.status===401)throw 'GitHub did not accept that key.';if(r.status===404)throw 'Could not open '+repo+' with that key: check the repo exists and the key was given access to it.';if(!r.ok)throw 'GitHub said '+r.status+'.';
