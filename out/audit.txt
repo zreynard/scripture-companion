@@ -36,12 +36,12 @@ PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
 PASS  no dates in the future
 FAIL  feed episodes on the road all carry a date  (108)
-        - Introducing an Ordinary Man (Nehemiah 1:1) (davey_archive)
-        - Learning the Art of Refusal (Titus 3:9) (davey_archive)
-        - A Chain Reaction of Praise (1 Peter 1:3–5) (davey_archive)
-        - Following the Footprints (James 5:10–11) (davey_archive)
-        - Passion (Titus 1:1b) (davey_archive)
-        - The Character of a Con Artist (Titus 1:10–14) (davey_archive)
+        - Blood, Sweat & Tears (Nehemiah 2:11–20) (davey_archive)
+        - Learning to Say the Right Words (Titus 2:11–14) (davey_archive)
+        - True Faith Works (Romans 1:5) (davey_archive)
+        - Construction Sites & Church Cafeterias (Nehemiah 3 (davey_archive)
+        - Don’t Be a Snob! (James 2:1–7) (davey_archive)
+        - Supernatural Joy & Genuine Love (1 Peter 1:6–9) (davey_archive)
 PASS  every id is the hash of its link (progress keys stable)
 PASS  every shipped entry from the original catalog still exists (same id)
 PASS  nothing unverified (PENDING / FAIL) on the road
