@@ -18,13 +18,7 @@ PASS  only David Platt, PAM, Stephen Davey and Skip Heitzig (each with their chu
 PASS  Stephen Davey teaching comes only from his own feeds, and his feeds only from him
 PASS  Skip Heitzig teaching comes only from his own feeds, and his feeds only from him
 PASS  2819 teaching shows the preacher named in its title
-FAIL  David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources  (13)
-        - The Cosmic Cause of Christ from brookhills_archive
-        - A Sovereign God and an Unstoppable Gospel from brookhills_archive
-        - Good to Be Near God from brookhills_archive
-        - God on the Move from brookhills_archive
-        - The Cross and Christian Resurrection from brookhills_archive
-        - The Gospel for Generations Past and Future from brookhills_archive
+PASS  David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources
 FAIL  McLean episodes on the road name David Platt  (1)
         - MBC Loudoun || Three Days That Change History - Including Yours (Revel
 
@@ -42,9 +36,7 @@ PASS  Secret Church podcast sessions numbered without gaps
 PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
 PASS  no dates in the future
-FAIL  feed episodes on the road all carry a date  (2)
-        - The Cosmic Cause of Christ (brookhills_archive)
-        - A Sovereign God and an Unstoppable Gospel (brookhills_archive)
+PASS  feed episodes on the road all carry a date
 PASS  every id is the hash of its link (progress keys stable)
 PASS  every shipped entry from the original catalog still exists (same id)
 PASS  nothing unverified (PENDING / FAIL) on the road
@@ -64,4 +56,4 @@ PASS  overviews and points stay short (22 words or fewer)
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-35 of 38 checks pass
+37 of 38 checks pass
