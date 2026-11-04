@@ -767,7 +767,7 @@ body[data-z="road"].hidehd > div.top{transform:none}
 .jvz{padding-top:calc(env(safe-area-inset-top) + 70px)!important;touch-action:pan-y}
 .jvz .jv-eb{margin-right:0}.jvz .jv-t{margin-right:0}
 @keyframes jvl{from{transform:translateX(36px);opacity:.3}to{transform:none;opacity:1}}@keyframes jvr{from{transform:translateX(-36px);opacity:.3}to{transform:none;opacity:1}}
-.jv.in-l{animation:jvl .26s ease-out}.jv.in-r{animation:jvr .26s ease-out}
+.jv.in-l{animation:jvl .26s ease-out}.jv.in-r{animation:jvr .26s ease-out}.jv-list.in-l{animation:jvl .22s ease-out}.jv-list.in-r{animation:jvr .22s ease-out}
 .jv-back{color:#7a5c16!important;font-weight:650!important;background:rgba(154,117,36,.12)!important;border-radius:16px;padding:6px 12px!important}
 body[data-z="road"] .world{padding-top:calc(env(safe-area-inset-top) + 40px)}
 #here{position:fixed;left:14px;right:14px;bottom:calc(var(--tabh) + var(--npH,0px) + 12px);z-index:7;display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px;border-radius:22px;background:#fffdf8;box-shadow:0 12px 30px rgba(27,36,64,.16);max-width:520px;margin:0 auto}
@@ -1685,7 +1685,7 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  if(shown<total)rows+=`<button class="jv-more" id="jmore">${total-shown} more</button>`;
  const tp=c.intro?[]:(D.topics||[]).filter(t=>t.keys.some(k=>k.b===b.name&&c.c>=k.c&&c.c<=k.to));
  if(tp.length&&show('teaching'))rows+=`<div class="jv-tp"><span>Explore this topic</span>${tp.map(t=>`<button data-topic="${t.id}">${esc(t.name)} ›</button>`).join('')}</div>`;
- return h+`<div class="jv-list${tab?' jv-tabbed':''}${coreOn()&&tab==='teaching'&&JV.deep?' jv-deep':''}">${rows}</div></div>`}
+ return h+`<div class="jv-list${tab?' jv-tabbed':''}${JV.anim?' in-'+JV.anim:''}${coreOn()&&tab==='teaching'&&JV.deep?' jv-deep':''}">${rows}</div></div>`}
 /* Teaching at a stop: Core (the one exposition to hear) or Go Deeper (everything else, optional) */
 /* Go Deeper at a stop: everything shown there besides Core, in the order shown */
 function deepGroups(x,G){const {b,c}=x,k=b.abbr+':'+c.c,u=coreHere(x),lt=coreLater(x),cs=new Set([...(u!=null?coreIdsOf(u):[]),...(lt!=null?coreIdsOf(lt):[])]),dp=c.intro?{alt:(G||listenGroups(b,c)).overview.map(g=>g.id)}:(CORE.deep[k]||{});
@@ -1717,6 +1717,22 @@ function jCont(o={}){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;JV
 function jMove(i,back){const w=walk(),f=jpIdx();if(!w[i])return;if(back)BACK=null;else if(Math.abs(i-f)>1)BACK={from:f};else if(BACK&&i===BACK.from)BACK=null;
  jMove.dir=i>f?'l':i<f?'r':'';setJP(i);camp=i;S.set('camp',camp);JV.more=false;render();jMove.dir='';window.scrollTo({top:0})}
 addEventListener('scroll',()=>{const g=$('#jseg');if(!g)return;const t=$('.jv-t');g.classList.toggle('stuck',!!t&&t.getBoundingClientRect().bottom<parseFloat(getComputedStyle(g).top)+8)},{passive:true});
+/* a sideways swipe anywhere on the Journey screen steps through the stop's tabs (introduction, scripture, teaching),
+   then on to the next stop's first tab; back the same way. Passive, so scrolling stays the phone's own. */
+function stopTabs(i){const x=walk()[i];if(!x)return[];const {b,c}=x,t=[];if(stopIntro(x)&&I[stopIntro(x)]||hasIntroText(x))t.push('intro');
+ if(c.intro){if(CORE.bk[b.abbr]||listenGroups(b,c).overview.length)t.push('teaching')}else t.push('scripture','teaching');return t}
+function jSwipe(dir){const i=jpIdx(),w=walk();
+ if(coreOn()){const T=stopTabs(i),g=document.querySelector('#jseg [data-jseg].on'),k=g?T.indexOf(g.dataset.jseg):-1;
+  if(k>=0&&k+dir>=0&&k+dir<T.length){JV.tabFor=stopKey(w[i]);JV.tab=T[k+dir];JV.anim=dir>0?'l':'r';const y=scrollY;render();JV.anim='';window.scrollTo(0,y);return}
+  const to=i+dir;if(!w[to])return;const T2=stopTabs(to);if(T2.length){JV.tabFor=stopKey(w[to]);JV.tab=dir>0?T2[0]:T2[T2.length-1]}jMove(to);return}
+ const to=i+dir;if(w[to])jMove(to)}
+{let t0=null;const o={passive:true};
+ document.addEventListener('touchstart',e=>{t0=null;if(view!=='journey'||e.touches.length!==1||!$('#jv'))return;const t=e.touches[0];
+  if(t.clientX<22||(e.target.closest&&e.target.closest('#np,#sheet,#bps,#jump,#gsr,#tabs,input,textarea,select,.jv-pps')))return;t0={x:t.clientX,y:t.clientY,lx:t.clientX,ly:t.clientY,t:Date.now(),y0:scrollY}},o);
+ document.addEventListener('touchmove',e=>{if(t0&&e.touches.length===1){t0.lx=e.touches[0].clientX;t0.ly=e.touches[0].clientY}},o);
+ document.addEventListener('touchend',e=>{if(!t0)return;const t=e.changedTouches[0]||{},ex=t.clientX!=null&&t.clientX!==t0.x?t.clientX:t0.lx,ey=t.clientY!=null&&t.clientX!==t0.x?t.clientY:t0.ly,dx=ex-t0.x,dy=ey-t0.y,ok=Date.now()-t0.t<900&&Math.abs(scrollY-t0.y0)<16;t0=null;
+  if(ok&&Math.abs(dx)>50&&Math.abs(dx)>1.7*Math.abs(dy))jSwipe(dx<0?1:-1)},o);
+ document.addEventListener('touchcancel',()=>{t0=null},o)}
 function wireJourney(){corePaint();{const g=$('#jseg');if(g)g.classList.remove('stuck')}const n=$('#jnext');if(n)n.onclick=e=>jCont({full:!e.target.closest('.jv-pp')});
  document.querySelectorAll('[data-deep]').forEach(b=>b.onclick=()=>{JV.deep=b.dataset.deep==='1';const y=scrollY;render();window.scrollTo(0,y)});
  document.querySelectorAll('[data-mkcore]').forEach(b=>b.onclick=()=>{const [u,id]=b.dataset.mkcore.split('|'),set=coreSet();set[u]=[id];S.set('coreSet',set);JV.deep=false;const y=scrollY;render();window.scrollTo(0,y)});
@@ -1736,12 +1752,8 @@ function wireJourney(){corePaint();{const g=$('#jseg');if(g)g.classList.remove('
  const pk=$('#jpick');if(pk)pk.onclick=()=>{camp=jpIdx();openJump('browse')};
  document.querySelectorAll('.jv [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});ppWire();
  /* swipe anywhere on the player: left = on to the next stop, right = back one */
- /* listened to passively, so scrolling stays the phone's own; a clearly sideways flick steps once the finger lifts */
- const jv=$('#jv');if(jv){let t0=null;const o={passive:true};
-  jv.addEventListener('touchstart',e=>{t0=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY,t:Date.now(),y0:scrollY}:null},o);
-  jv.addEventListener('touchend',e=>{if(!t0)return;const t=e.changedTouches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y,ok=Date.now()-t0.t<700&&Math.abs(scrollY-t0.y0)<12;t0=null;
-   if(ok&&Math.abs(dx)>60&&Math.abs(dx)>2.2*Math.abs(dy)&&!(e.target.closest&&e.target.closest('input,textarea,.jv-pps'))){const to=jpIdx()+(dx<0?1:-1);if(walk()[to])jMove(to)}},o);
-  jv.addEventListener('touchcancel',()=>{t0=null},o)}const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
+ /* swiping: see jSwipe (one listener for the whole Journey screen) */
+const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
  document.querySelectorAll('[data-jread]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()];read[scrKey(x)]=true;S.set('read',read);render()});
  const scr=full=>{const x=walk()[jpIdx()],id=narId(x.b.abbr,x.c.c);BPM=null;DEEP=null;if(cur===id){if(full)setMini(false);else audio.paused?audio.play().catch(()=>{}):audio.pause();return}const a=nextAction(jpIdx());JM=!!(a&&a.kind==='scripture');narPlay(x.b,x.c.c,null,{jm:JM,full})};
  document.querySelectorAll('[data-jscr]').forEach(b=>b.onclick=e=>{e.stopPropagation();scr(false)});
