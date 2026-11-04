@@ -1,817 +1,3943 @@
 {
  "914a1cfead98": {
-  "ref": "Genesis 1",
+  "ref": null,
+  "score": 0.09,
   "quote": "you have his word, then I invite you to open with me to Genesis 1.  I want to show you his wonder in his word today.  There is so much in these first 11 c",
-  "title": "Prologue: Creation"
+  "title": "Prologue: Creation",
+  "candidates": [
+   {
+    "ref": "Genesis 1",
+    "score": 0.09,
+    "quote": "you have his word, then I invite you to open with me to Genesis 1.  I want to show you his wonder in his word today.  There is so much in these first 11 c"
+   }
+  ]
  },
  "d32218d4fde1": {
-  "ref": "Psalm 67",
-  "quote": "d I hope you do,  I wanna invite you to open with me to Psalm, 67.  Right, in the middle of the book there,  Open with me to Psalm 67.  We're gonna do thi",
-  "title": "Ultimate Dissconect"
+  "ref": "Psalms 67",
+  "score": 0.63,
+  "quote": "nd I hope you do, I wanna invite you to open with me  to Psalm, 67, right?  In the middle of the book there,  Open with me to Psalm 67.  We're gonna do th",
+  "title": "Ultimate Dissconect",
+  "candidates": [
+   {
+    "ref": "Psalms 67",
+    "score": 0.63,
+    "quote": "nd I hope you do, I wanna invite you to open with me  to Psalm, 67, right?  In the middle of the book there,  Open with me to Psalm 67.  We're gonna do th"
+   },
+   {
+    "ref": "Psalms 67:1",
+    "score": 0.44,
+    "quote": "Don't put a period on it there.  If you look in Psalm 67:1, it doesn't say,  may God be gracious to us, bless us and make us find a face shine upon us, pe"
+   }
+  ]
  },
  "309a17513569": {
   "ref": null,
-  "quote": null,
-  "title": "Elders Servant Leaders of the Church"
+  "score": 0.3,
+  "quote": "e elders even as early as Acts 11,  but look at Acts 14:23.  It says, Paul and Barnabas,  they were traveling around different places,  planting churches,",
+  "title": "Elders Servant Leaders of the Church",
+  "candidates": [
+   {
+    "ref": "Acts 14:23",
+    "score": 0.3,
+    "quote": "e elders even as early as Acts 11,  but look at Acts 14:23.  It says, Paul and Barnabas,  they were traveling around different places,  planting churches,"
+   },
+   {
+    "ref": "Acts 20",
+    "score": 0.05,
+    "quote": "re leading the church.  In fact, if you look down in verse 28, come back to Acts 20 with me.  Verse 28, you see another word in this passage that's often"
+   },
+   {
+    "ref": "1 Timothy 3",
+    "score": 0.15,
+    "quote": "ou overseers.  That word you can circle in your Bible.  It's often used interchangeably with elders.  In fact, in 1 Timothy 3, we see qualifications for elders and"
+   }
+  ]
  },
  "54f33642d6b9": {
-  "ref": "Genesis 19",
-  "quote": "ite and why this was such  a big deal.  Look at Genesis 19.  Genesis 19, I want you to see the beginning of the Moabites, the people of Moab.  I want you",
-  "title": "God and the Destitute"
+  "ref": "Deuteronomy 23",
+  "score": 0.61,
+  "quote": "ess, they're a picture of godlessness.  Turn over to Deuteronomy 23.  Genesis, Exodus, Leviticus, Numbers, then Deuteronomy.  to Deuteronomy 23.  I want y",
+  "title": "God and the Destitute",
+  "candidates": [
+   {
+    "ref": "Genesis 19",
+    "score": 0.09,
+    "quote": "ite, and why this was such a big deal.  Look at Genesis 19.  Genesis 19,  I want you to see the beginning of the Moabites, the people of Moab.  I want you"
+   },
+   {
+    "ref": "Deuteronomy 23",
+    "score": 0.61,
+    "quote": "ess, they're a picture of godlessness.  Turn over to Deuteronomy 23.  Genesis, Exodus, Leviticus, Numbers, then Deuteronomy.  to Deuteronomy 23.  I want y"
+   },
+   {
+    "ref": "Ruth 1",
+    "score": 0.22,
+    "quote": "otes out to the side if you've got room in your Bible in Ruth 1, write  these verses out there so you'll remember that there's a foundation here that's in some  of"
+   },
+   {
+    "ref": "Judges 3",
+    "score": 0.23,
+    "quote": "with them.  Let me show you one more.  Look over in Judges, the book right before Ruth.  Judges 3.  One more instance of the Moabites and the conflict, r"
+   },
+   {
+    "ref": "Judges 3:12",
+    "score": 0.37,
+    "quote": "es, Moab invaded Israel.  I want you to look at what happened in Judges 3:12.  Judges 3:12.  Listen to what happened during the time of the judges.  Once"
+   },
+   {
+    "ref": "Numbers 25",
+    "score": 0.52,
+    "quote": "re passage that shows you why that is.  Go back to the left of Numbers.  This is Exodus Leviticus Numbers.  Look at Numbers 25.  I want you to see the i"
+   }
+  ]
  },
  "34a34b412702": {
-  "ref": null,
-  "quote": null,
-  "title": "Community"
+  "ref": "Nehemiah 12:27",
+  "score": 0.8,
+  "quote": "God  for what he has done among them.  Look at Nehemiah 12:27.  Follow along with me.  Picture this scene, the dedication of the wall of Jerusalem.  The",
+  "title": "Community",
+  "candidates": [
+   {
+    "ref": "Nehemiah 12",
+    "score": 0.0,
+    "quote": "I hope you do, I want to invite you to open with me to Old Testament  book of Nehemiah 12.  Feel free to use your table of confidence if you need to find"
+   },
+   {
+    "ref": "Nehemiah 12:27",
+    "score": 0.8,
+    "quote": "God  for what he has done among them.  Look at Nehemiah 12:27.  Follow along with me.  Picture this scene, the dedication of the wall of Jerusalem.  The"
+   }
+  ]
  },
  "635534050f6c": {
-  "ref": "1 John  4",
-  "quote": "and I hope you do let me invite you to open with me to 1 John  4  1 John in the end of the New Testament  Right before 2 John fine 1 John 4 and let me en",
-  "title": "Gods Story in a Fear Based Culture"
+  "ref": null,
+  "score": 0.15,
+  "quote": "and I hope you do, let me invite you to open with me to 1 John  4  1 John in the end of the New Testament  Right before 2 John  Find the 1 John 4 and let",
+  "title": "Gods Story in a Fear Based Culture",
+  "candidates": [
+   {
+    "ref": "1 John 4",
+    "score": 0.15,
+    "quote": "and I hope you do, let me invite you to open with me to 1 John  4  1 John in the end of the New Testament  Right before 2 John  Find the 1 John 4 and let"
+   }
+  ]
  },
  "c38c59ec279f": {
-  "ref": "Colossians 1, 24",
-  "quote": "passage of Scripture.  And we're gonna look at Colossians 1, 24 through 29,  but we're really gonna camp out in one verse,  Colossians chapter one verse",
-  "title": "The Disciples Identity Part 2 Christ in You"
+  "ref": null,
+  "score": 0.22,
+  "quote": "'ve got a lot of ground to cover  as we look at a deep and  and penetrating passage of Scripture.  We're gonna look at Colossians 1, 24 through 29,  but w",
+  "title": "The Disciples Identity Part 2 Christ in You",
+  "candidates": [
+   {
+    "ref": "Colossians 1",
+    "score": 0.22,
+    "quote": "'ve got a lot of ground to cover  as we look at a deep and  and penetrating passage of Scripture.  We're gonna look at Colossians 1, 24 through 29,  but w"
+   }
+  ]
  },
  "f7d23fc1159d": {
-  "ref": "Psalm 19, 7",
-  "quote": "udy the Bible, session 1.  I want us to read Psalm 19, 7 through 11 together.  You've got it listed there on the front page of your notes.  Let's read thi",
-  "title": "How To Study The Bible Part 1"
+  "ref": null,
+  "score": 0.13,
+  "quote": "udy the Bible, session 1.  I want us to read Psalm 19, 7 through 11 together. You've got it listed there on the front page of  your notes. Let's read this",
+  "title": "How To Study The Bible Part 1",
+  "candidates": [
+   {
+    "ref": "Psalms 7",
+    "score": 0.13,
+    "quote": "udy the Bible, session 1.  I want us to read Psalm 19, 7 through 11 together. You've got it listed there on the front page of  your notes. Let's read this"
+   }
+  ]
  },
  "fb7e296e954c": {
-  "ref": "Isaiah 58; Isaiah 62",
-  "quote": "people of God fasting.  In fact, we're looking at Isaiah 62, just a few chapters before this, when Isaiah 58, the  people of God are being addressed in thei",
-  "title": "A Church Whose God Can Not Rest"
+  "ref": null,
+  "score": 0.22,
+  "quote": "t expect us to fast.  In fact, when you go to the Sermon on the Mount, Matthew 5th of 7, Matthew 6, Jesus puts fasting  in the same category in his conv",
+  "title": "A Church Whose God Can Not Rest",
+  "candidates": [
+   {
+    "ref": "Isaiah 62",
+    "score": 0.06,
+    "quote": "people of God fasting.  In fact, we're looking at Isaiah 62, just a few chapters before this, when I was Isaiah  58, the people of God are being addressed i"
+   },
+   {
+    "ref": "Isaiah 58",
+    "score": 0.05,
+    "quote": "people of God fasting.  In fact, we're looking at Isaiah 62, just a few chapters before this, when I was Isaiah  58, the people of God are being addressed i"
+   },
+   {
+    "ref": "Matthew 5",
+    "score": 0.22,
+    "quote": "t expect us to fast.  In fact, when you go to the Sermon on the Mount, Matthew 5th of 7, Matthew 6, Jesus puts fasting  in the same category in his conv"
+   },
+   {
+    "ref": "Matthew 6",
+    "score": 0.16,
+    "quote": "t expect us to fast.  In fact, when you go to the Sermon on the Mount, Matthew 5th of 7, Matthew 6, Jesus puts fasting  in the same category in his conv"
+   }
+  ]
  },
  "cbd460e3b20a": {
-  "ref": "Isaiah 6",
-  "quote": "in God.  Now I want to show you this, turn me to Isaiah 6.  This is another one of those instances where I want to show you the difference between why",
-  "title": "Who is God Part 2"
+  "ref": null,
+  "score": 0.22,
+  "quote": "he's saying, I guarantee my word.  You look at Genesis 28, verse three,  Genesis 35:11, this is God speaking to Jacob.  And which, by the way, isn't that",
+  "title": "Who is God Part 2",
+  "candidates": [
+   {
+    "ref": "Isaiah 6",
+    "score": 0.2,
+    "quote": "in God.  Now I want to show you this.  Turn on me to Isaiah 6.  This is another one of those instances where I want to show you the difference between wh"
+   },
+   {
+    "ref": "Isaiah 6:1",
+    "score": 0.18,
+    "quote": "to know these different names of God.  Look at Isaiah 6:1, and you got to show it to you in your Bible and you  might be able to mark the difference betw"
+   },
+   {
+    "ref": "Isaiah 1",
+    "score": 0.16,
+    "quote": "tween the two.  And it's key.  When you look at Isaiah 6, 1, and it says, in the year that King Yuziah died, King Yuziah  had been a great king for most o"
+   },
+   {
+    "ref": "Genesis 28",
+    "score": 0.2,
+    "quote": "he's saying, I guarantee my word.  You look at Genesis 28, verse three,  Genesis 35:11, this is God speaking to Jacob.  And which, by the way, isn't that"
+   },
+   {
+    "ref": "Genesis 35:11",
+    "score": 0.22,
+    "quote": "he's saying, I guarantee my word.  You look at Genesis 28, verse three,  Genesis 35:11, this is God speaking to Jacob.  And which, by the way, isn't that"
+   }
+  ]
  },
  "e8ac459ce7e2": {
-  "ref": "1 Corinthians  7; 1 Corinthians 7",
-  "quote": "I hope you do, I want to invite you to open with me to 1 Corinthians  7.  And while you're finding 1 Corinthians 7, I encourage you to pull out the forev",
-  "title": "The Gospel and Divorce"
+  "ref": "Matthew 19:3",
+  "score": 0.86,
+  "quote": "nt places.  Same truth.  We're going to look at Matthew 19:3.  Listen to what happened there.  Some Pharisees came to Jesus to test him.  And they asked,",
+  "title": "The Gospel and Divorce",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 7",
+    "score": 0.08,
+    "quote": "I hope you do, I want to invite you to open with me to 1 Corinthians  7.  And while you're finding 1 Corinthians 7, I encourage you to pull out the forev"
+   },
+   {
+    "ref": "Matthew 19",
+    "score": 0.68,
+    "quote": "s in the gospels.  And so I want you to turn me back to the left to find Matthew 19.  This is actually not the place where Jesus, or Paul, is most likely"
+   },
+   {
+    "ref": "Matthew 19:3",
+    "score": 0.86,
+    "quote": "nt places.  Same truth.  We're going to look at Matthew 19:3.  Listen to what happened there.  Some Pharisees came to Jesus to test him.  And they asked,"
+   },
+   {
+    "ref": "Deuteronomy 24",
+    "score": 0.44,
+    "quote": "Old Testament.  So I want you to keep turning left and come with me to Deuteronomy 24.  It's the fifth book in the Bible, Deuteronomy 24.  The whole questi"
+   },
+   {
+    "ref": "Deuteronomy 2",
+    "score": 0.07,
+    "quote": "Old Testament.  So I want you to keep turning left and come with me to Deuteronomy 24.  It's the fifth book in the Bible, Deuteronomy 24.  The whole questi"
+   },
+   {
+    "ref": "Genesis 2:24",
+    "score": 0.73,
+    "quote": "n this series.  If it is not underlined in your Bible, I would encourage you to underline it.  Genesis 2:24.  This is so foundational.  What was going on here in t"
+   }
+  ]
  },
  "84f370bb941b": {
-  "ref": "Job  32; Job 32",
-  "quote": "and I hope you do, then I invite you to open with me to Job  32  Job 32 and I invite you to pull out the notes through in the worship guide you received w",
-  "title": "The Gospel Gods Purpose and Suffering"
+  "ref": "Job 32:10",
+  "score": 0.67,
+  "quote": "He uses suffering to refine our faith.  Go back with me to Job 32:10.  This is the very beginning.  And one of the things that a lie who tries to do at",
+  "title": "The Gospel Gods Purpose and Suffering",
+  "candidates": [
+   {
+    "ref": "Job 32",
+    "score": 0.16,
+    "quote": "and I hope you do, let me invite you to open with me to Job, 32.  Job 32, and I invite you to pull out the notes through in the worship guide you  receive"
+   },
+   {
+    "ref": "Job 38",
+    "score": 0.08,
+    "quote": "we're going to close out the series and look at the triumphant picture of God that  is in Job 38 through 42 and we're going to celebrate the greatness of"
+   },
+   {
+    "ref": "Job 32:10",
+    "score": 0.67,
+    "quote": "He uses suffering to refine our faith.  Go back with me to Job 32:10.  This is the very beginning.  And one of the things that a lie who tries to do at"
+   }
+  ]
  },
  "c5daeaf2e86c": {
   "ref": "Galatians 5:16-26",
-  "quote": "that they've shown in this.  want us to look at Galatians 5:16-26. And as you're finding your place there,  I'll also ask you to go and flip over to Roman",
-  "title": "Free to Live"
+  "score": 0.8,
+  "quote": "at they've shown in this.  I want us to look at Galatians 5:16-26.  And as you're finding your place there, I'll also ask you to go ahead and flip over to",
+  "title": "Free to Live",
+  "candidates": [
+   {
+    "ref": "Galatians 5:16-26",
+    "score": 0.8,
+    "quote": "at they've shown in this.  I want us to look at Galatians 5:16-26.  And as you're finding your place there, I'll also ask you to go ahead and flip over to"
+   },
+   {
+    "ref": "Romans 8",
+    "score": 0.32,
+    "quote": "your place there, I'll also ask you to go ahead and flip over to Romans 8  and hold your place there in Romans 8.  We'll be flipping back and forth qui"
+   },
+   {
+    "ref": "Galatians 5",
+    "score": 0.16,
+    "quote": "e through 15.  This week we're gonna be looking at just one part  of last week's text that Paul focuses on  in Galatians 5, 16 through 26.  But before we get"
+   }
+  ]
  },
  "75c87a7968e4": {
   "ref": "Acts 20:7",
+  "score": 0.72,
   "quote": "s what I'm thinking.  You don't need to turn here, but I just want to read your text from Acts 20:7.  Just listen to this picture.  On the first day of th",
-  "title": "Secret Church The Cross of Christ"
+  "title": "Secret Church The Cross of Christ",
+  "candidates": [
+   {
+    "ref": "Acts 20:7",
+    "score": 0.72,
+    "quote": "s what I'm thinking.  You don't need to turn here, but I just want to read your text from Acts 20:7.  Just listen to this picture.  On the first day of th"
+   }
+  ]
  },
  "ffd48967d550": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Sent Out"
+  "title": "Sent Out",
+  "candidates": []
  },
  "af527ce2e58b": {
-  "ref": "Matthew 4, 23",
-  "quote": "creen,  End of Matthew chapter four, so read verse 23,  so now just turn back a couple pages.  Matthew 4, 23 says, Jesus went throughout all Galilee,  tea",
-  "title": "MBC Loudoun || The Decision We All Must Make (And the Danger of Deception In It)"
+  "ref": null,
+  "score": 0.15,
+  "quote": "up on the screen, end of Matthew 4.  So read verse 23, so now just turn back a couple of pages.  Matthew 4, 23 says, Jesus went throughout all Galilee  te",
+  "title": "MBC Loudoun || The Decision We All Must Make (And the Danger of Deception In It)",
+  "candidates": [
+   {
+    "ref": "Matthew 4",
+    "score": 0.15,
+    "quote": "up on the screen, end of Matthew 4.  So read verse 23, so now just turn back a couple of pages.  Matthew 4, 23 says, Jesus went throughout all Galilee  te"
+   }
+  ]
  },
  "5c8547431930": {
-  "ref": "Revelation 21",
-  "quote": "I hope you do, I want to invite you to open with me to the book of Revelation  Revelation 21  As you're turning there, I  I've told you a few times that",
-  "title": "Life After Death"
+  "ref": null,
+  "score": 0.27,
+  "quote": "imagery right here in Revelation 21 but turn me back to chapters. I want  you to look at Revelation 19. Look at Revelation 19, read with me in  verse 6. L",
+  "title": "Life After Death",
+  "candidates": [
+   {
+    "ref": "Revelation 21",
+    "score": 0.24,
+    "quote": "I hope you do, I want to invite you to open with me to the book of Revelation  Revelation 21  As you're turning there, I  I've told you a few times that"
+   },
+   {
+    "ref": "Revelation 19",
+    "score": 0.27,
+    "quote": "imagery right here in Revelation 21 but turn me back to chapters. I want  you to look at Revelation 19. Look at Revelation 19, read with me in  verse 6. L"
+   }
+  ]
  },
  "3062cebae038": {
   "ref": "Acts 6:1",
-  "quote": "ning is all about in the New Testament. Look in Acts 6:1,  those days when the number of disciples was increasing, the Grecian Jews among them  complained",
-  "title": "Deacons Leading Servants in the Church"
+  "score": 0.67,
+  "quote": "ho are leading servants.  I want you to look with me in Acts 6:1.  And we're going to see a picture here of a passage that really begins to give us an ide",
+  "title": "Deacons Leading Servants in the Church",
+  "candidates": [
+   {
+    "ref": "Acts 6:1",
+    "score": 0.67,
+    "quote": "ho are leading servants.  I want you to look with me in Acts 6:1.  And we're going to see a picture here of a passage that really begins to give us an ide"
+   }
+  ]
  },
  "de23db863e28": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "The Success of Servant Leaders"
+  "title": "The Success of Servant Leaders",
+  "candidates": []
  },
  "ac55bde41b78": {
   "ref": "Revelation 19",
-  "quote": "I hope you do, I want to invite you to open with me  to Revelation 19.  Revelation 19, we started this series on corporate worship,  awakened, last week",
-  "title": "Humility"
+  "score": 0.63,
+  "quote": "I hope you do, I want to invite you to open with me to  through Revelation 19.  Revelation 19, we started this series  on corporate worship, awaken, last",
+  "title": "Humility",
+  "candidates": [
+   {
+    "ref": "Revelation 19",
+    "score": 0.63,
+    "quote": "I hope you do, I want to invite you to open with me to  through Revelation 19.  Revelation 19, we started this series  on corporate worship, awaken, last"
+   },
+   {
+    "ref": "Revelation 17",
+    "score": 0.26,
+    "quote": "wer that question,  we actually have to look back at the two chapters before this,  Revelation 17 and 18.  And basically, what's happening in those two ch"
+   }
+  ]
  },
  "8aa61e2cdf56": {
-  "ref": "Luke 4",
-  "quote": "and I hope you do, let me invite you to open with me to  Luke 4.  Will you thank God with me for providing Jason Wallace to lead us in musical worship tod",
-  "title": "Gods Story in a Shame Based Culture"
+  "ref": null,
+  "score": 0.0,
+  "quote": "bles and I hope you do, I invite you to open with me to Luke  4.  Will you thank God with me for providing Jason Wallace to lead us in musical worship  to",
+  "title": "Gods Story in a Shame Based Culture",
+  "candidates": [
+   {
+    "ref": "Luke 4",
+    "score": 0.0,
+    "quote": "bles and I hope you do, I invite you to open with me to Luke  4.  Will you thank God with me for providing Jason Wallace to lead us in musical worship  to"
+   }
+  ]
  },
  "1bb469f2d0c3": {
-  "ref": "Galatians 1",
-  "quote": "nd I hope you do.  Let me invite you to open with me to Galatians 1.  Galatians 1, I was struggling trying to decide between a couple of different texts",
-  "title": "the Disciples Mission"
+  "ref": null,
+  "score": 0.14,
+  "quote": "h that picture, I want to invite you to turn with me to the gospel, Matthew, Matthew  9, and we're going to start in verse 35.  We're going to look at an",
+  "title": "the Disciples Mission",
+  "candidates": [
+   {
+    "ref": "Matthew 9",
+    "score": 0.14,
+    "quote": "h that picture, I want to invite you to turn with me to the gospel, Matthew, Matthew  9, and we're going to start in verse 35.  We're going to look at an"
+   }
+  ]
  },
  "f0fd17a22dea": {
-  "ref": "Psalm 136",
-  "quote": ", phrases or clauses are repeated.  You go to Psalm 136, I don't think these are in there, but Psalm 136, and you see over and  over and over again, his",
-  "title": "How To Study The Bible Part 2"
+  "ref": "2 Corinthians 1",
+  "score": 0.54,
+  "quote": "to his people.  It's incredible just by looking for what the word repeats.  You look at 2 Corinthians 1, 3 through 7.  Let's ask the question, is this text r",
+  "title": "How To Study The Bible Part 2",
+  "candidates": [
+   {
+    "ref": "Psalms 136",
+    "score": 0.26,
+    "quote": ", phrases or clauses are repeated.  You go to Psalm 136, I don't think these are in there, but Psalm 136, and you see over  and over and over again, his"
+   },
+   {
+    "ref": "Matthew 5",
+    "score": 0.09,
+    "quote": "orever, his love  endures forever.  You look at the Sermon on the Mount in Matthew 5, and you count out the number of  times that Jesus refers to God as F"
+   },
+   {
+    "ref": "2 Corinthians 1",
+    "score": 0.54,
+    "quote": "to his people.  It's incredible just by looking for what the word repeats.  You look at 2 Corinthians 1, 3 through 7.  Let's ask the question, is this text r"
+   },
+   {
+    "ref": "Romans 12:1",
+    "score": 0.26,
+    "quote": "They tie it together, connections.  You look at Romans 12:1, first word is, therefore, new underline.  That's a major connector.  Paul has just been 11 ch"
+   },
+   {
+    "ref": "Galatians 2:20",
+    "score": 0.39,
+    "quote": "lf on our behalf, for us.  Now you just go through there and you've got a good quiet time in Galatians 2:20.  Just by looking at prepositions.  Look at"
+   },
+   {
+    "ref": "Romans 1",
+    "score": 0.26,
+    "quote": "quiet time in Galatians 2:20.  Just by looking at prepositions.  Look at the next verse Romans 5, 1 and 2, this also is loaded.  Therefore since we have bee"
+   },
+   {
+    "ref": "Galatians 5",
+    "score": 0.19,
+    "quote": "a,  goes from specific to general.  You look at Galatians 5, 16 through 23.  He says, so I'd say, says Paul talk  and live by the spirit and you will not"
+   },
+   {
+    "ref": "Job 38",
+    "score": 0.32,
+    "quote": "answered,  sometimes they're not.  You look at Job 38, this is the key turning point.  At the very end of this book, God comes to Job  and he says, who i"
+   }
+  ]
  },
  "85b0eace6e4e": {
   "ref": "Exodus 33:1",
+  "score": 0.64,
   "quote": "r, then we'll fill in the blanks as we  go along.  Listen to what God said to Moses.  Exodus 33:1, the Lord said to Moses, leave this place, you and the",
-  "title": "Desperate For His Spirit"
+  "title": "Desperate For His Spirit",
+  "candidates": [
+   {
+    "ref": "Exodus 33:1",
+    "score": 0.64,
+    "quote": "r, then we'll fill in the blanks as we  go along.  Listen to what God said to Moses.  Exodus 33:1, the Lord said to Moses, leave this place, you and the"
+   }
+  ]
  },
  "30d7145bd85a": {
-  "ref": "Exodus 20",
-  "quote": "s why, one of the reasons why, when you look at Exodus 20 and the 10 commandments and  you see images and idols forbidden.  It's because God is unlike any",
-  "title": "Who is God Part 3"
+  "ref": null,
+  "score": 0.12,
+  "quote": "nt of an infinite and eternal God.  You look at Psalm 90.  I would encourage you to go back and look at that song that starts off by saying from everlasti",
+  "title": "Who is God Part 3",
+  "candidates": [
+   {
+    "ref": "Exodus 20",
+    "score": 0.11,
+    "quote": "'s why, one of the reasons why when you look at Exodus 20 and the 10 commandments and  you see images and idols forbidden.  It's because God is unlike any"
+   },
+   {
+    "ref": "Psalms 90",
+    "score": 0.12,
+    "quote": "nt of an infinite and eternal God.  You look at Psalm 90.  I would encourage you to go back and look at that song that starts off by saying from everlasti"
+   }
+  ]
  },
  "1dbed556e2ac": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "The Gospel and Homosexuality"
+  "title": "The Gospel and Homosexuality",
+  "candidates": []
  },
  "205c1b78ac40": {
   "ref": null,
-  "quote": null,
-  "title": "The Gospel Gods Purpose and Suffering Part 2"
+  "score": 0.36,
+  "quote": "s power is great.  His power is great.  Go back to Job 38 with me.  We're going to unpack this picture.  Job 38.  We've read through 37 chapters now, di",
+  "title": "The Gospel Gods Purpose and Suffering Part 2",
+  "candidates": [
+   {
+    "ref": "Job 38",
+    "score": 0.36,
+    "quote": "s power is great.  His power is great.  Go back to Job 38 with me.  We're going to unpack this picture.  Job 38.  We've read through 37 chapters now, di"
+   },
+   {
+    "ref": "Job 38:1",
+    "score": 0.36,
+    "quote": "nt you to see how God responds to him.  Look at Job 38:1.  And the Lord answered Joe out of the storm.  So here's God's answer.  Joe's been asking questio"
+   }
+  ]
  },
  "5642887745e1": {
-  "ref": "Galatians  6",
+  "ref": null,
+  "score": 0.18,
   "quote": "and I hope you do let me invite you to open with me to Galatians  6 had  The opportunity two summers ago at a conference where I was preaching to meet Aa",
-  "title": "Galatians 61 10"
+  "title": "Galatians 61 10",
+  "candidates": [
+   {
+    "ref": "Galatians 6",
+    "score": 0.18,
+    "quote": "and I hope you do let me invite you to open with me to Galatians  6 had  The opportunity two summers ago at a conference where I was preaching to meet Aa"
+   }
+  ]
  },
  "a6400e645d90": {
-  "ref": "John 12",
-  "quote": "glory of God drove Jesus to the cross.  Look at John 12, what shall I say?  Father, save me from this hour.  It was for this very reason I came to the sou",
-  "title": "Secret Church The Cross of Christ"
+  "ref": null,
+  "score": 0.04,
+  "quote": "glory of God drove Jesus to the cross.  Look at John 12.  What shall I say?  Father, save me from this hour.  No.  very reason I came to this hour. Father",
+  "title": "Secret Church The Cross of Christ",
+  "candidates": [
+   {
+    "ref": "John 12",
+    "score": 0.04,
+    "quote": "glory of God drove Jesus to the cross.  Look at John 12.  What shall I say?  Father, save me from this hour.  No.  very reason I came to this hour. Father"
+   }
+  ]
  },
  "1cf653381a27": {
-  "ref": "Luke 10",
+  "ref": null,
+  "score": 0.03,
   "quote": "and I hope you do let me invite you to open with me to Luke 10  I'm gonna have to ask you to bear with me in less than a hundred percent voice yet again",
-  "title": "Empower The Poor"
+  "title": "Empower The Poor",
+  "candidates": [
+   {
+    "ref": "Luke 10",
+    "score": 0.03,
+    "quote": "and I hope you do let me invite you to open with me to Luke 10  I'm gonna have to ask you to bear with me in less than a hundred percent voice yet again"
+   }
+  ]
  },
  "a4493759c109": {
-  "ref": "1 Corinthians 1",
+  "ref": null,
+  "score": 0.11,
   "quote": "ou or somebody around you does, you can look on  with.  Let me invite you to open with me to 1 Corinthians 1.  1 Corinthians 1 and hopefully you received",
-  "title": "The Church at Brook Hills - Part 1"
+  "title": "The Church at Brook Hills - Part 1",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 1",
+    "score": 0.11,
+    "quote": "ou or somebody around you does, you can look on  with.  Let me invite you to open with me to 1 Corinthians 1.  1 Corinthians 1 and hopefully you received"
+   },
+   {
+    "ref": "1 Corinthians 12",
+    "score": 0.11,
+    "quote": "ch about the church.  I mean, our Bible reading today is in 1 Corinthians 12,  which is one of the most powerful passages in,  you don't have to turn there,"
+   }
+  ]
  },
  "9ceaeaa6fecc": {
   "ref": "Isaiah 66",
+  "score": 0.66,
   "quote": "I hope you do, I want to invite you to open with me to the book of Isaiah 66  If you don't have a Bible with you, let me encourage you to find somebody a",
-  "title": "An Awe Inspired Mission"
+  "title": "An Awe Inspired Mission",
+  "candidates": [
+   {
+    "ref": "Isaiah 66",
+    "score": 0.66,
+    "quote": "I hope you do, I want to invite you to open with me to the book of Isaiah 66  If you don't have a Bible with you, let me encourage you to find somebody a"
+   },
+   {
+    "ref": "Psalms 119",
+    "score": 0.05,
+    "quote": "God, but his word. Pretty interesting. Turn me over to Psalm 119.  This is a chapter that has some rich stuff on what it means to learn from the Word of"
+   },
+   {
+    "ref": "Psalms 1",
+    "score": 0.03,
+    "quote": "od,  to meditate on the Word of God, to read it, to digest it.  Look at Psalm 1 19.  I want you to look with me.  Look with me there at verse 48.  Psalm 1"
+   },
+   {
+    "ref": "Psalms 119:4",
+    "score": 0.12,
+    "quote": "Word of God, to read it, to digest it.  Look at Psalm 1 19.  I want you to look with me.  Look with me there at verse 48.  Psalm 119:48.  I want you to se"
+   },
+   {
+    "ref": "Psalms 119:48",
+    "score": 0.19,
+    "quote": "it.  Look at Psalm 1 19.  I want you to look with me.  Look with me there at verse 48.  Psalm 119:48.  I want you to see what the Bible says about God's W"
+   },
+   {
+    "ref": "Psalms 119:97",
+    "score": 0.17,
+    "quote": "his commands, to his law, to his word.  Look over later in that same chapter Psalm 119:97.  Psalm 119:97.  Look at me at what it says there, this is one o"
+   },
+   {
+    "ref": "Psalms 119:120",
+    "score": 0.21,
+    "quote": "than you love security?  I want you to look later, Psalm 119:120.  Look at this.  Psalm says, my flesh trembles in fear of you.  And I stand in awe, not"
+   }
+  ]
  },
  "3714934de6e2": {
-  "ref": "Acts 2",
+  "ref": null,
+  "score": 0.08,
   "quote": "want to invite you to keep your Bibles open there to Acts 2 and you've got some notes  in your celebration guide that you can pull out.  There's still so",
-  "title": "Speak Boldly"
+  "title": "Speak Boldly",
+  "candidates": [
+   {
+    "ref": "Acts 2",
+    "score": 0.08,
+    "quote": "want to invite you to keep your Bibles open there to Acts 2 and you've got some notes  in your celebration guide that you can pull out.  There's still so"
+   }
+  ]
  },
  "5df663af7150": {
-  "ref": "Philippians 2",
-  "quote": "d I hope you do I want to invite you to open with me to  Philippians 2  I don't know if you realize that song was written in the 12th century in Latin  An",
-  "title": "Incarnation Hope of Glory"
+  "ref": null,
+  "score": 0.11,
+  "quote": "I hope you do, I want to invite you to open with me to  Philippians 2. I don't know if you realize that song was written in the 12th century in Latin  An",
+  "title": "Incarnation Hope of Glory",
+  "candidates": [
+   {
+    "ref": "Philippians 2",
+    "score": 0.11,
+    "quote": "I hope you do, I want to invite you to open with me to  Philippians 2. I don't know if you realize that song was written in the 12th century in Latin  An"
+   }
+  ]
  },
  "3070550ee980": {
-  "ref": "John 4",
-  "quote": "and I hope you do, let me invite you to open with me to the book of  John, John 4.  I want to invite you to pull out those notes from the celebration guid",
-  "title": "Honesty"
+  "ref": "Malachi 1:6",
+  "score": 0.56,
+  "quote": "at the priests, the leaders were doing. Look at Malachi 1:6. This is God speaking to his people. He said,  As son honors his father and a servant, his mas",
+  "title": "Honesty",
+  "candidates": [
+   {
+    "ref": "John 4",
+    "score": 0.06,
+    "quote": "and I hope you do, let me invite you to open with me to the book of  John, John 4.  I want to invite you to pull out those notes from the celebration guid"
+   },
+   {
+    "ref": "Malachi 1",
+    "score": 0.25,
+    "quote": "he first book in the Old Testament.  So go to the last book in the Old Testament, the book of Malachi.  Look at Malachi 1, easiest way to find it, just"
+   },
+   {
+    "ref": "Malachi 1:6",
+    "score": 0.56,
+    "quote": "at the priests, the leaders were doing. Look at Malachi 1:6. This is God speaking to his people. He said,  As son honors his father and a servant, his mas"
+   }
+  ]
  },
  "dcf26f7b7762": {
-  "ref": "Luke 24",
+  "ref": null,
+  "score": 0.08,
   "quote": "and I hope you do, let me invite you to open with me to Luke 24.  Luke 24, we're going to do things a little different this morning.  It was about a year",
-  "title": "Gods Story Our Story"
+  "title": "Gods Story Our Story",
+  "candidates": [
+   {
+    "ref": "Luke 24",
+    "score": 0.08,
+    "quote": "and I hope you do, let me invite you to open with me to Luke 24.  Luke 24, we're going to do things a little different this morning.  It was about a year"
+   }
+  ]
  },
  "6388ccae162b": {
-  "ref": null,
-  "quote": null,
-  "title": "The Disciples Mind"
+  "ref": "Romans 12",
+  "score": 0.5,
+  "quote": "Christ do in our minds?  I want you to look with me at Romans 12.  We're going to look at verse two, we're going to read verse one, make sure we got the",
+  "title": "The Disciples Mind",
+  "candidates": [
+   {
+    "ref": "Romans 12",
+    "score": 0.5,
+    "quote": "Christ do in our minds?  I want you to look with me at Romans 12.  We're going to look at verse two, we're going to read verse one, make sure we got the"
+   }
+  ]
  },
  "ef4a6220e263": {
   "ref": null,
-  "quote": null,
-  "title": "How To Study The Bible Part 3"
+  "score": 0.0,
+  "quote": "ow the geographic conditions.  When you read John 4, 3 through 4, and it says, when the Lord learned of this, He left Judea  and went back once more to Ga",
+  "title": "How To Study The Bible Part 3",
+  "candidates": [
+   {
+    "ref": "John 3",
+    "score": 0.0,
+    "quote": "ow the geographic conditions.  When you read John 4, 3 through 4, and it says, when the Lord learned of this, He left Judea  and went back once more to Ga"
+   }
+  ]
  },
  "9b7840910d9e": {
-  "ref": "Joshua 7",
-  "quote": "a Bible and I hope you do, I might just open with me to Joshua 7.  Feel free to use your table of contents there in the Old Testament if you need to.  And",
-  "title": "Sin in the Camp Part 2B"
+  "ref": null,
+  "score": 0.06,
+  "quote": "ible and I hope you do and I might just open with me to Joshua 7.  Feel free to use your table of contents there in the Old Testament if you need to.  And",
+  "title": "Sin in the Camp Part 2B",
+  "candidates": [
+   {
+    "ref": "Joshua 7",
+    "score": 0.06,
+    "quote": "ible and I hope you do and I might just open with me to Joshua 7.  Feel free to use your table of contents there in the Old Testament if you need to.  And"
+   }
+  ]
  },
  "17060ab876c3": {
-  "ref": "1 Corinthians 4",
+  "ref": null,
+  "score": 0.21,
   "quote": "ding musical harmony.  And so there you go.  Thank you, John Calvin.  1 Corinthians 4, a minute to regard us as servants of Christ and those entrusted w",
-  "title": "Who is God Part 4"
+  "title": "Who is God Part 4",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 4",
+    "score": 0.21,
+    "quote": "ding musical harmony.  And so there you go.  Thank you, John Calvin.  1 Corinthians 4, a minute to regard us as servants of Christ and those entrusted w"
+   },
+   {
+    "ref": "Genesis 11",
+    "score": 0.07,
+    "quote": "let us create man in our image.  Let us go down, Genesis 11.  Whom shall I send who will go for us?  Isaiah 6.  You've got a plural picture of God.  Thr"
+   },
+   {
+    "ref": "Isaiah 6",
+    "score": 0.04,
+    "quote": "let us create man in our image.  Let us go down, Genesis 11.  Whom shall I send who will go for us?  Isaiah 6.  You've got a plural picture of God.  Thr"
+   },
+   {
+    "ref": "John 16",
+    "score": 0.21,
+    "quote": "t.  But the Spirit is a person.  You're looking John 16, and He is referred to  masculine pronouns, not neuter or neutral pronouns.  He's referred to with ma"
+   }
+  ]
  },
  "c259e446d6ca": {
-  "ref": "Romans 1",
-  "quote": "and I hope you do let me invite you to open with me to Romans 1  Let me invite you to pull out the notes that you received in the worship guide when you",
-  "title": "The Gospel and Personal Evangelism"
+  "ref": "Romans 1:1-17",
+  "score": 0.87,
+  "quote": "rt of Paul in Romans 1.  We're going to read introductions of this book, Romans 1:1-17.  And then I want to give you some reminders, some foundations, ess",
+  "title": "The Gospel and Personal Evangelism",
+  "candidates": [
+   {
+    "ref": "Romans 1",
+    "score": 0.18,
+    "quote": "and I hope you do let me invite you to open with me to Romans 1  Let me invite you to pull out the notes that you received in the worship guide when you"
+   },
+   {
+    "ref": "Romans 1:1-17",
+    "score": 0.87,
+    "quote": "rt of Paul in Romans 1.  We're going to read introductions of this book, Romans 1:1-17.  And then I want to give you some reminders, some foundations, ess"
+   }
+  ]
  },
  "4215d69ab4e1": {
   "ref": "John 4:27",
+  "score": 0.92,
   "quote": "th a  life of Christ in one another. So we're in John 4:27. We're going to read  forward here. Just then his disciples returned and were surprised to find him",
-  "title": "The Gospel Demands Radical Urgency"
+  "title": "The Gospel Demands Radical Urgency",
+  "candidates": [
+   {
+    "ref": "John 4:27",
+    "score": 0.92,
+    "quote": "th a  life of Christ in one another. So we're in John 4:27. We're going to read  forward here. Just then his disciples returned and were surprised to find him"
+   }
+  ]
  },
  "49e196c96964": {
-  "ref": "Ephesians 4",
-  "quote": "and I hope you do, let me invite you to open with me to Ephesians 4.  Pull out those notes during the worship guide you received when you came in. We're g",
-  "title": "The Gospel and Church Membership"
+  "ref": "Ephesians 1:22",
+  "score": 0.75,
+  "quote": "ripture.  In fact, you've got Ephesians open here.  Look at Ephesians 1, Ephesians 1:22.  Nine different times in the book of Ephesians.  We see the churc",
+  "title": "The Gospel and Church Membership",
+  "candidates": [
+   {
+    "ref": "Ephesians 4",
+    "score": 0.11,
+    "quote": "and I hope you do, let me invite you to open with me to Ephesians 4.  Pull out those notes during the worship guide you received when you came in. We're g"
+   },
+   {
+    "ref": "1 Corinthians 12",
+    "score": 0.19,
+    "quote": "is word membership, even that word, you look at 1 Corinthians 12.  There are 10 different times, almost 10 different times, in that one chapter where Paul"
+   },
+   {
+    "ref": "Ephesians 1",
+    "score": 0.14,
+    "quote": "ripture.  In fact, you've got Ephesians open here.  Look at Ephesians 1, Ephesians 1:22.  Nine different times in the book of Ephesians.  We see the churc"
+   },
+   {
+    "ref": "Ephesians 1:22",
+    "score": 0.75,
+    "quote": "ripture.  In fact, you've got Ephesians open here.  Look at Ephesians 1, Ephesians 1:22.  Nine different times in the book of Ephesians.  We see the churc"
+   },
+   {
+    "ref": "Acts 11",
+    "score": 0.0,
+    "quote": "t me show this to you.  Take a left and go back with me to the book of Acts.  Just a few books back to the left.  Go to Acts 11.  Church is both univers"
+   },
+   {
+    "ref": "Acts 11:22",
+    "score": 0.05,
+    "quote": "s.  Just a few books back to the left.  Go to Acts 11.  Church is both universal and local.  Acts 11:22 and I just want to, this is in book after book a"
+   }
+  ]
  },
  "5ee9a9a284d9": {
-  "ref": "Matthew 26",
+  "ref": null,
+  "score": 0.17,
   "quote": "you got to Bible, let me invite you to turn to me to Matthew 26.  Matthew 26, what we're going to do is we're going to take three more steps in the Passi",
-  "title": "Secret Church The Cross of Christ"
+  "title": "Secret Church The Cross of Christ",
+  "candidates": [
+   {
+    "ref": "Matthew 26",
+    "score": 0.17,
+    "quote": "you got to Bible, let me invite you to turn to me to Matthew 26.  Matthew 26, what we're going to do is we're going to take three more steps in the Passi"
+   }
+  ]
  },
  "93bfedc47f06": {
-  "ref": null,
-  "quote": null,
-  "title": "Angels Demons And Spiritual Warfare Hour 1"
+  "ref": "2 Kings 6:8",
+  "score": 0.64,
+  "quote": "want you to see what's happening here.  Look at 2 Kings 6:8. Follow along. Elisha is the man of God here, the  prophet. Now the king of Aaron was at war w",
+  "title": "Angels Demons And Spiritual Warfare Hour 1",
+  "candidates": [
+   {
+    "ref": "2 Kings 6",
+    "score": 0.15,
+    "quote": "piritual world. I want to invite you to turn me to 2 Kings 6. Now we're going to turn to some different passages, not  really a ton of passages, but there"
+   },
+   {
+    "ref": "2 Kings 6:8",
+    "score": 0.64,
+    "quote": "want you to see what's happening here.  Look at 2 Kings 6:8. Follow along. Elisha is the man of God here, the  prophet. Now the king of Aaron was at war w"
+   }
+  ]
  },
  "47d573149a10": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "The Most Astounding Claim in All History"
+  "title": "The Most Astounding Claim in All History",
+  "candidates": []
  },
  "c08ad05013ec": {
-  "ref": "Acts 4",
-  "quote": "u, I hope  you do. Let me invite you to open with me to Acts 4. Acts 4, as you're  turning there, I really just want to shoot straight with you this morni",
-  "title": "Prayer And Persecution"
+  "ref": null,
+  "score": 0.21,
+  "quote": "to be a follower of Jesus  Christ.  4, look within the verse 23, the context, Acts 3, a lame man is healed miraculously.  Peter and John were part of tha",
+  "title": "Prayer And Persecution",
+  "candidates": [
+   {
+    "ref": "Acts 4",
+    "score": 0.19,
+    "quote": "u, I hope you do.  Let me invite you to open with me to Acts 4.  Acts 4, as you're turning there, I really just want to shoot straight with you this  morn"
+   },
+   {
+    "ref": "Acts 3",
+    "score": 0.21,
+    "quote": "to be a follower of Jesus  Christ.  4, look within the verse 23, the context, Acts 3, a lame man is healed miraculously.  Peter and John were part of tha"
+   }
+  ]
  },
  "da752d6cf330": {
   "ref": "Acts 3",
-  "quote": "we're gonna do this week is we're gonna look  an illustration of that in Acts 3 that comes right on the heel of the passage we've  been studying and then",
-  "title": "Care Sacrificially"
+  "score": 0.85,
+  "quote": "going to do this week is we're going to look at an illustration of that in Acts  3 that comes right on the heel of the passage we've been studying.  And t",
+  "title": "Care Sacrificially",
+  "candidates": [
+   {
+    "ref": "Acts 2",
+    "score": 0.11,
+    "quote": "me of the topic that we're going to be looking at this week  and next week, as we dive deeper into Acts 2, to really see what Biblical community  is all abo"
+   },
+   {
+    "ref": "Acts 3",
+    "score": 0.85,
+    "quote": "going to do this week is we're going to look at an illustration of that in Acts  3 that comes right on the heel of the passage we've been studying.  And t"
+   }
+  ]
  },
  "d5cbb1065a1b": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Incarnation Marvel of Nature"
+  "title": "Incarnation Marvel of Nature",
+  "candidates": []
  },
  "d037d3d0f282": {
-  "ref": "Psalm 19",
-  "quote": "e your Bibles, and I hope you do  Let's open them to Psalm 19 and  See his glory. I want to thank God  publicly for the men and women who have been pourin",
-  "title": "Clarity"
+  "ref": null,
+  "score": 0.33,
+  "quote": "So what we're gonna do is we're gonna look at Psalm 19  and we're gonna let that catapult us into Psalm 119.  And I want us to see the importance,  the",
+  "title": "Clarity",
+  "candidates": [
+   {
+    "ref": "Psalms 19",
+    "score": 0.1,
+    "quote": "e your Bibles, and I hope you do  Let's open them to Psalm 19 and  See his glory. I want to thank God  publicly for the men and women who have been pourin"
+   },
+   {
+    "ref": "Psalms 119",
+    "score": 0.33,
+    "quote": "So what we're gonna do is we're gonna look at Psalm 19  and we're gonna let that catapult us into Psalm 119.  And I want us to see the importance,  the"
+   },
+   {
+    "ref": "Romans 1",
+    "score": 0.13,
+    "quote": "over the hills  of Birmingham, wherever we are in the world,  it is shouting the greatness of God.  It's the same thing Romans 1 tells us.  since the creation"
+   }
+  ]
  },
  "5853f428ba08": {
-  "ref": "Psalm 96",
-  "quote": "all found up in the same answer.  Let's look together in Psalm 96.  And I guess if David were here, he would say what?  Turn in your Bible, which I hope y",
-  "title": "Declaring Gods Glory Among the Nations"
+  "ref": null,
+  "score": 0.43,
+  "quote": "all found up in the same answer.  Let's look together in Psalm 96.  And I guess if David were here, he would say what?  in your Bible, which I hope you ha",
+  "title": "Declaring Gods Glory Among the Nations",
+  "candidates": [
+   {
+    "ref": "Psalms 96",
+    "score": 0.43,
+    "quote": "all found up in the same answer.  Let's look together in Psalm 96.  And I guess if David were here, he would say what?  in your Bible, which I hope you ha"
+   },
+   {
+    "ref": "Psalms 19",
+    "score": 0.39,
+    "quote": "y through demonstrations of His power.  Look back a couple of chapters there in Psalms,  Psalm 19.  Just keep hanging the left there and you'll run into P"
+   }
+  ]
  },
  "55a5ebab2f27": {
-  "ref": "John 6",
+  "ref": null,
+  "score": 0.11,
   "quote": "and I hope you do, let me invite you to open with me to  John 6. I encourage you to pull out those notes that were in your worship guide that you received",
-  "title": "The Disciples Emotions"
+  "title": "The Disciples Emotions",
+  "candidates": [
+   {
+    "ref": "John 6",
+    "score": 0.11,
+    "quote": "and I hope you do, let me invite you to open with me to  John 6. I encourage you to pull out those notes that were in your worship guide that you received"
+   }
+  ]
  },
  "b2c3e18f7da7": {
-  "ref": "Mark 11; Matthew 2",
-  "quote": "nces, apparent discrepancies.  When you look at Jesus' conversation with the disciples  about the fig tree in Mark 11 and in Matthew 21,  there's some dif",
-  "title": "How To Study The Bible Part 4"
+  "ref": null,
+  "score": 0.15,
+  "quote": "tories and discourses together  and you look for connections.  You look at end of Luke, parable the good Samaritan.  Luke 10, you got the parable of the g",
+  "title": "How To Study The Bible Part 4",
+  "candidates": [
+   {
+    "ref": "Mark 11",
+    "score": 0.1,
+    "quote": "nces, apparent discrepancies.  When you look at Jesus' conversation with the disciples  about the fig tree and Mark 11 and Matthew 21,  There's some diffe"
+   },
+   {
+    "ref": "Matthew 21",
+    "score": 0.05,
+    "quote": "nces, apparent discrepancies.  When you look at Jesus' conversation with the disciples  about the fig tree and Mark 11 and Matthew 21,  There's some diffe"
+   },
+   {
+    "ref": "Luke 10",
+    "score": 0.15,
+    "quote": "tories and discourses together  and you look for connections.  You look at end of Luke, parable the good Samaritan.  Luke 10, you got the parable of the g"
+   },
+   {
+    "ref": "Mark 4",
+    "score": 0.1,
+    "quote": "mple of that in just a sec.  Well, I'll go ahead and give you an example of that.  Mark 4, 35 through 41.  Remember when Jesus, there's disciples on a b"
+   }
+  ]
  },
  "98b45f44eb70": {
-  "ref": "Exodus  32",
-  "quote": "hope you do, I'm going to invite you to open with me to Exodus  32.  Let me encourage you to pull out the notes that we're in.  Your worship guide, Exodus",
-  "title": "Does God Change His Mind"
+  "ref": "Hebrews 1:10",
+  "score": 0.59,
+  "quote": "hange.  His perfection are unchanging.  Look with me in Hebrews 1:10.  Listen to what it says there about God.  So that's verse 10, he also says, in the b",
+  "title": "Does God Change His Mind",
+  "candidates": [
+   {
+    "ref": "Exodus 32",
+    "score": 0.3,
+    "quote": "hat we're going to do is we're going to look at Exodus 32 and then look at all the Scripture.  What is Scripture?  What does the Bible teach about this qu"
+   },
+   {
+    "ref": "Numbers 23",
+    "score": 0.06,
+    "quote": "oing to turn to these right now.  We'll turn to one of them in a minute.  But you might write them down.  Numbers 23.  Numbers 23:19 says this.  God is no"
+   },
+   {
+    "ref": "Numbers 23:19",
+    "score": 0.15,
+    "quote": "oing to turn to these right now.  We'll turn to one of them in a minute.  But you might write them down.  Numbers 23.  Numbers 23:19 says this.  God is no"
+   },
+   {
+    "ref": "Hebrews 1:10",
+    "score": 0.59,
+    "quote": "hange.  His perfection are unchanging.  Look with me in Hebrews 1:10.  Listen to what it says there about God.  So that's verse 10, he also says, in the b"
+   },
+   {
+    "ref": "Hebrews 13",
+    "score": 0.08,
+    "quote": "back there.  That's how Hebrew starts.  Go to the end of the book of Hebrews.  Go to Hebrews 13.  The perfections of God that are unchanging are applied"
+   },
+   {
+    "ref": "Malachi 3:6",
+    "score": 0.04,
+    "quote": "es.  Same thing, Malachi 3:6.  We won't turn there.  Malachi 3:6, God says, I the Lord do not change.  In fact, you keep going, turn one more page over th"
+   },
+   {
+    "ref": "James 1",
+    "score": 0.02,
+    "quote": "o not change.  In fact, you keep going, turn one more page over the right, you'll come to James 1.  Look at James 1:17.  Listen to what James says.  It sa"
+   },
+   {
+    "ref": "James 1:17",
+    "score": 0.27,
+    "quote": "o not change.  In fact, you keep going, turn one more page over the right, you'll come to James 1.  Look at James 1:17.  Listen to what James says.  It sa"
+   }
+  ]
  },
  "2f098d520931": {
-  "ref": "Titus  2",
-  "quote": "and I hope you do let me invite you to open with me to Titus  2  You might need to use your table of contents to find Titus. It's really small on the bac",
-  "title": "The Gospel and Womanhood"
+  "ref": "Titus 2",
+  "score": 0.57,
+  "quote": "and I hope you do let me invite you to open with me to Titus  2  You might need to use your table of contents to find Titus. It's really small in the bac",
+  "title": "The Gospel and Womanhood",
+  "candidates": [
+   {
+    "ref": "Titus 2",
+    "score": 0.57,
+    "quote": "and I hope you do let me invite you to open with me to Titus  2  You might need to use your table of contents to find Titus. It's really small in the bac"
+   }
+  ]
  },
  "f275cd31fdaa": {
-  "ref": "Romans 3",
+  "ref": null,
+  "score": 0.12,
   "quote": "d I hope you do I want to invite you to open  with me to Romans 3 and pull out those notes that are in the worship guide you  received when you came in.",
-  "title": "The Character of God and the Sinfulness of Man"
+  "title": "The Character of God and the Sinfulness of Man",
+  "candidates": [
+   {
+    "ref": "Romans 3",
+    "score": 0.12,
+    "quote": "d I hope you do I want to invite you to open  with me to Romans 3 and pull out those notes that are in the worship guide you  received when you came in."
+   }
+  ]
  },
  "e32e5d00617d": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Exploring the Holy Spirit Part 1"
+  "title": "Exploring the Holy Spirit Part 1",
+  "candidates": []
  },
  "561c44f72496": {
-  "ref": "Revelation 19",
-  "quote": "if you have a Bible.  I hope you do to open them with me to Revelation 19 and pull out those notes through  in the worship guide that you received when y",
-  "title": "We Glorify Christ"
+  "ref": null,
+  "score": 0.2,
+  "quote": "n we look in the book of Acts,  when we look at books like First and 2 Corinthians,  when we look at Hebrews 10,  we see that it's important for the peopl",
+  "title": "We Glorify Christ",
+  "candidates": [
+   {
+    "ref": "Revelation 19",
+    "score": 0.07,
+    "quote": "if you have a Bible.  I hope you do to open them with me to Revelation 19 and pull out those notes through the worship guide that you received when you c"
+   },
+   {
+    "ref": "Hebrews 10",
+    "score": 0.2,
+    "quote": "n we look in the book of Acts,  when we look at books like First and 2 Corinthians,  when we look at Hebrews 10,  we see that it's important for the peopl"
+   }
+  ]
  },
  "efe4c45b959e": {
-  "ref": "1 Timothy 2, 5, and 6",
-  "quote": "o be the Savior of the world.  And even the text we're looking at 1 Timothy 2, 5, and 6.  It's kind of been our foundational text for all.  So General Atoneme",
-  "title": "Secret Church The Cross of Christ"
+  "ref": null,
+  "score": 0.23,
+  "quote": "o be the Savior of the world.  And even the text we're looking at 1 Timothy 2, 5, and 6, it's kind of been our foundational  text for all.  So General Atoneme",
+  "title": "Secret Church The Cross of Christ",
+  "candidates": [
+   {
+    "ref": "1 Timothy 2",
+    "score": 0.23,
+    "quote": "o be the Savior of the world.  And even the text we're looking at 1 Timothy 2, 5, and 6, it's kind of been our foundational  text for all.  So General Atoneme"
+   }
+  ]
  },
  "5b6028fd2a37": {
-  "ref": "Matthew 28",
-  "quote": "ntatives.  The one the Lord has sent to go out throughout the earth.  They accomplish God's work.  Matthew 28, angel of the Lord came down from heaven a",
-  "title": "Angels Demons And Spiritual Warfare Hour 2"
+  "ref": null,
+  "score": 0.25,
+  "quote": "lks about the ones the Lord has sent to go out throughout the earth.  They accomplish God's work.  Matthew 28, angel of the Lord came down from heaven a",
+  "title": "Angels Demons And Spiritual Warfare Hour 2",
+  "candidates": [
+   {
+    "ref": "Matthew 28",
+    "score": 0.25,
+    "quote": "lks about the ones the Lord has sent to go out throughout the earth.  They accomplish God's work.  Matthew 28, angel of the Lord came down from heaven a"
+   }
+  ]
  },
  "fa434e2f6073": {
-  "ref": "Genesis  37",
-  "quote": "e and I hope you do and I invite you to open with me to Genesis  37  Told you I wasn't gonna talk too much about India tonight, but I I  Do want to give y",
-  "title": "Chapter 2 Pain and Providence"
+  "ref": "Genesis 37",
+  "score": 0.76,
+  "quote": "e and I hope you do and I invite you to open with me to Genesis 37  Told you I wasn't gonna talk too much about India tonight, but I I  Do want to give yo",
+  "title": "Chapter 2 Pain and Providence",
+  "candidates": [
+   {
+    "ref": "Genesis 37",
+    "score": 0.76,
+    "quote": "e and I hope you do and I invite you to open with me to Genesis 37  Told you I wasn't gonna talk too much about India tonight, but I I  Do want to give yo"
+   }
+  ]
  },
  "87d4f0781c71": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Story Of Love"
+  "title": "Story Of Love",
+  "candidates": []
  },
  "0ad5f1bc1a40": {
-  "ref": null,
-  "quote": null,
-  "title": "Chapter 17 The Promise Of A Kingdom"
+  "ref": "2 Samuel 7",
+  "score": 0.73,
+  "quote": "and I hope you do, let me invite you to open with me to 2 Samuel 7,  2 Samuel 7.  This week's Scripture reading is not the most ideal Scripture reading le",
+  "title": "Chapter 17 The Promise Of A Kingdom",
+  "candidates": [
+   {
+    "ref": "2 Samuel 7",
+    "score": 0.73,
+    "quote": "and I hope you do, let me invite you to open with me to 2 Samuel 7,  2 Samuel 7.  This week's Scripture reading is not the most ideal Scripture reading le"
+   },
+   {
+    "ref": "2 Samuel 7:1",
+    "score": 0.7,
+    "quote": "sound good?  Ready?  All right, here we go.  2 Samuel 7:1.  We're going to read through the chapter and then we're going to consider how huge this is  f"
+   }
+  ]
  },
  "defad51ab8d9": {
-  "ref": "Isaiah 52; Isaiah 53",
-  "quote": "e and I hope you do, I mean if I try to open with me to Isaiah 53  We're really going to start at the very end of Isaiah 52  It really is lumped into and",
-  "title": "Chapter 28 The Scandal Of The Gospel"
+  "ref": "Isaiah 52:13",
+  "score": 0.75,
+  "quote": "is scandal is a servant.  I want you to look at Isaiah 52:13.  That's where we're going to start in just a second.  We're going to read through the end of",
+  "title": "Chapter 28 The Scandal Of The Gospel",
+  "candidates": [
+   {
+    "ref": "Isaiah 53",
+    "score": 0.04,
+    "quote": "le and I hope you do I mean if I try to open with me to  Isaiah 53  Really gonna start at the very end of Isaiah 52  It really is lumped into and you hear"
+   },
+   {
+    "ref": "Isaiah 52",
+    "score": 0.02,
+    "quote": "le and I hope you do I mean if I try to open with me to  Isaiah 53  Really gonna start at the very end of Isaiah 52  It really is lumped into and you hear"
+   },
+   {
+    "ref": "Isaiah 52:13",
+    "score": 0.75,
+    "quote": "is scandal is a servant.  I want you to look at Isaiah 52:13.  That's where we're going to start in just a second.  We're going to read through the end of"
+   }
+  ]
  },
  "d0e4dd5978d0": {
-  "ref": "John  6",
-  "quote": "and I hope you do let me invite you to open with me to John  6 and pull out the  worship guide you receive when you came in this morning John 6 in just a",
-  "title": "Chapter 40 The All Satisfying Christ"
+  "ref": null,
+  "score": 0.07,
+  "quote": "and I hope you do let me invite you to open with me to John  6 and pull out the  Worship guide you receive when you came in this morning John 6 in just a",
+  "title": "Chapter 40 The All Satisfying Christ",
+  "candidates": [
+   {
+    "ref": "John 6",
+    "score": 0.07,
+    "quote": "and I hope you do let me invite you to open with me to John  6 and pull out the  Worship guide you receive when you came in this morning John 6 in just a"
+   }
+  ]
  },
  "d97a232e84e3": {
   "ref": "1 Corinthians 1",
-  "quote": "alled 1 Corinthians is written to.  You look at the very beginning of 1 Corinthians 1, you see the author and audience  from the start.  Paul, he's writin",
-  "title": "Chapter 46 The Cross Centered Life"
+  "score": 0.59,
+  "quote": "alled 1 Corinthians is written to.  You look at the very beginning of 1 Corinthians 1, you see the author and audience from  the start.  Paul is writing t",
+  "title": "Chapter 46 The Cross Centered Life",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 1",
+    "score": 0.59,
+    "quote": "alled 1 Corinthians is written to.  You look at the very beginning of 1 Corinthians 1, you see the author and audience from  the start.  Paul is writing t"
+   }
+  ]
  },
  "9a6d8cb9ad55": {
   "ref": null,
-  "quote": null,
-  "title": "Crucifixion Salvation and the Glory of God Session 1"
+  "score": 0.06,
+  "quote": "e not.  People that would be shocked to find out on that day that they were not going to heaven.  Reality here in Matthew 7, it is possible to fool oursel",
+  "title": "Crucifixion Salvation and the Glory of God Session 1",
+  "candidates": [
+   {
+    "ref": "Matthew 7",
+    "score": 0.06,
+    "quote": "e not.  People that would be shocked to find out on that day that they were not going to heaven.  Reality here in Matthew 7, it is possible to fool oursel"
+   }
+  ]
  },
  "c0412af1e29e": {
-  "ref": "Psalm 67",
-  "quote": "le and I hope you do I mean if I should open with me to Psalm 67 and  Turn over in the notes that you have in your worship guide to a pretty full page  Cr",
-  "title": "Brook Hills Vision Mission and Goal"
+  "ref": "Psalms 67:1",
+  "score": 0.63,
+  "quote": "ad this together.  When in doubt, let's go to the Word.  All right, let's read this together.  Psalm 67:1, may God be gracious to us and bless us and ma",
+  "title": "Brook Hills Vision Mission and Goal",
+  "candidates": [
+   {
+    "ref": "Psalms 67",
+    "score": 0.56,
+    "quote": "le and I hope you do I mean if I should open with me to Psalm 67 and  Turn over in the notes that you have in your worship guide to a pretty full page  Cr"
+   },
+   {
+    "ref": "Psalms 67:1",
+    "score": 0.63,
+    "quote": "ad this together.  When in doubt, let's go to the Word.  All right, let's read this together.  Psalm 67:1, may God be gracious to us and bless us and ma"
+   }
+  ]
  },
  "b89d53a023e8": {
-  "ref": "Matthew 2",
-  "quote": "and I hope you do let me invite you to open with me to Matthew 2 and  Pull out those notes that you received  And your worship guide when you came in  Ma",
-  "title": "The Magi and the Messiah"
+  "ref": null,
+  "score": 0.32,
+  "quote": "e show you one other place.  Isaiah 60. Turn the over to the right a little further into the Old Testament. Get  to Isaiah 60. This is near the end of Isa",
+  "title": "The Magi and the Messiah",
+  "candidates": [
+   {
+    "ref": "Matthew 2",
+    "score": 0.3,
+    "quote": "and I hope you do let me invite you to open with me to Matthew 2 and  Pull out those notes that you received  And your worship guide when you came in  Ma"
+   },
+   {
+    "ref": "Numbers 22",
+    "score": 0.16,
+    "quote": "r place here in Matthew chapter two and go back with me to numbers 22.  Hold your place in Matthew two, go back to numbers 22.  Fourth book in the Bible"
+   },
+   {
+    "ref": "Numbers 23:7",
+    "score": 0.29,
+    "quote": "prophet named Beelom.  Now, Balaam, we find out in Numbers 23:7, was from the Eastern mountains.  And he was summoned by Balaak.  The reason for that was"
+   },
+   {
+    "ref": "Isaiah 60",
+    "score": 0.32,
+    "quote": "e show you one other place.  Isaiah 60. Turn the over to the right a little further into the Old Testament. Get  to Isaiah 60. This is near the end of Isa"
+   }
+  ]
  },
  "b8719da192a6": {
-  "ref": "Matthew  11",
-  "quote": "hope you do, I'm going to invite you to open with me to Matthew  11 and pull out those notes from your worship guide.  You know, even amidst a triumphant",
-  "title": "When Faith is Hard and the Burden is Heavy"
+  "ref": null,
+  "score": 0.22,
+  "quote": "about that back in Matthew 4 and we'll find out why when we get to Matthew 14. But by this time he'd been in  prison for a while and he was probably perp",
+  "title": "When Faith is Hard and the Burden is Heavy",
+  "candidates": [
+   {
+    "ref": "Matthew 11",
+    "score": 0.14,
+    "quote": "and I hope you do, then I invite you to open with me to Matthew 11 and  pull out those notes  from your worship guide. You know even amidst a  triumphant"
+   },
+   {
+    "ref": "Matthew 14",
+    "score": 0.22,
+    "quote": "about that back in Matthew 4 and we'll find out why when we get to Matthew 14. But by this time he'd been in  prison for a while and he was probably perp"
+   },
+   {
+    "ref": "Isaiah 35",
+    "score": 0.02,
+    "quote": "of the Messiah.  We won't have time to turn to him,  but you go to Isaiah 35,  you go to Isaiah 61, Isaiah 29.  All of these promises of the coming Messi"
+   },
+   {
+    "ref": "Isaiah 61",
+    "score": 0.0,
+    "quote": "of the Messiah.  We won't have time to turn to him,  but you go to Isaiah 35,  you go to Isaiah 61, Isaiah 29.  All of these promises of the coming Messi"
+   },
+   {
+    "ref": "Isaiah 29",
+    "score": 0.0,
+    "quote": "of the Messiah.  We won't have time to turn to him,  but you go to Isaiah 35,  you go to Isaiah 61, Isaiah 29.  All of these promises of the coming Messi"
+   }
+  ]
  },
  "75e4ad3fa494": {
-  "ref": "Isaiah 9:7",
-  "quote": "one of these and the promise that we're looking at tonight  in this Advent guide that we've been walking through is Isaiah 9:7.  I want to make sure we get t",
-  "title": "Christmas Eve 2013"
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Christmas Eve 2013",
+  "candidates": []
  },
  "05b14bca0dc0": {
-  "ref": "Hebrews 13",
-  "quote": "nd I hope you do, I won't invite you to open them with me to  Hebrews.  Hebrews 13, that's why in the back of your Bible if you're not familiar with  wher",
-  "title": "Outside the Camp"
+  "ref": null,
+  "score": 0.31,
+  "quote": "e here on Hebrews 13.  You got a Bible, turn me back to Numbers 13.  I encourage you to do this.  If you don't have a Bible, try to find somebody around y",
+  "title": "Outside the Camp",
+  "candidates": [
+   {
+    "ref": "Hebrews 13",
+    "score": 0.1,
+    "quote": "nd I hope you do, I won't invite you to open them with me to  Hebrews.  Hebrews 13, that's why in the back of your Bible if you're not familiar with  wher"
+   },
+   {
+    "ref": "Numbers 13",
+    "score": 0.31,
+    "quote": "e here on Hebrews 13.  You got a Bible, turn me back to Numbers 13.  I encourage you to do this.  If you don't have a Bible, try to find somebody around y"
+   }
+  ]
  },
  "57b2609c9530": {
-  "ref": "Acts 2:42-47",
-  "quote": "h.  What's interesting is that when you look in this summary statement that we've been looking  at in Acts 2:42-47, you never see the word worship mention",
-  "title": "Worship Wholeheartedly"
+  "ref": null,
+  "score": 0.32,
+  "quote": "vers come  together. You can circle him in your Bible. Look at 1 Corinthians 11:18.  Just to give you a picture of the context, he says in 1 Corinthians 11, 18, in",
+  "title": "Worship Wholeheartedly",
+  "candidates": [
+   {
+    "ref": "Acts 2:42-47",
+    "score": 0.27,
+    "quote": "h.  What's interesting is that when you look in this summary statement that we've been looking  at in Acts 2:42-47, you never see the word worship mention"
+   },
+   {
+    "ref": "Luke 22",
+    "score": 0.24,
+    "quote": "So what I want us to do is I want us to look at three different passages this morning.  Luke 22, which is Jesus having the Lord's Supper with his disciple"
+   },
+   {
+    "ref": "1 Corinthians 11",
+    "score": 0.09,
+    "quote": "the early church, and then we're gonna go and see Paul  talk about the Lord's Supper in 1 Corinthians 11.  The Lord's Supper, communion, the Eucharist,"
+   },
+   {
+    "ref": "1 Corinthians 11:18",
+    "score": 0.32,
+    "quote": "vers come  together. You can circle him in your Bible. Look at 1 Corinthians 11:18.  Just to give you a picture of the context, he says in 1 Corinthians 11, 18, in"
+   }
+  ]
  },
  "6db22d919714": {
-  "ref": "Philippians 2",
-  "quote": "I hope you do, I want to invite you to open with me to Philippians 2.  As you're turning there, let me encourage you to pull out those notes from your ce",
-  "title": "Incarnation Wonder of Grace"
+  "ref": null,
+  "score": 0.37,
+  "quote": "ent  to death even death on the cross.  Look at John 10:17.  The reason my Father loves me is that I lay down my life only to take it up again.  Listen to",
+  "title": "Incarnation Wonder of Grace",
+  "candidates": [
+   {
+    "ref": "Philippians 2",
+    "score": 0.28,
+    "quote": "I hope you do, I want to invite you to open with me to Philippians 2  As you're turning there, let me encourage you to pull out those notes from your cel"
+   },
+   {
+    "ref": "John 10",
+    "score": 0.11,
+    "quote": "ing.  I want you to hold your place and turn to the left.  I want you to go back to John 10.  I want you to see this.  I want you to see the intentionalit"
+   },
+   {
+    "ref": "John 10:17",
+    "score": 0.37,
+    "quote": "ent  to death even death on the cross.  Look at John 10:17.  The reason my Father loves me is that I lay down my life only to take it up again.  Listen to"
+   },
+   {
+    "ref": "John 3:17",
+    "score": 0.29,
+    "quote": "erything was submissive to the Father.  Look at John 3:17.  We're getting a picture here in John 3 of the fact that God the Father sent God the  Son to th"
+   },
+   {
+    "ref": "John 3",
+    "score": 0.17,
+    "quote": "erything was submissive to the Father.  Look at John 3:17.  We're getting a picture here in John 3 of the fact that God the Father sent God the  Son to th"
+   },
+   {
+    "ref": "John 5:19",
+    "score": 0.33,
+    "quote": "ers to the right and you'll come to 5.  Look at 5:19.  See how Jesus describes his life and his ministry.  In John 5:19, he's claiming to be equal to God,"
+   }
+  ]
  },
  "4e8192b124c5": {
-  "ref": "Revelation  7",
-  "quote": "and I hope you do, let me invite you to open with me to Revelation  7.  Last book in the Bible, what is corporate worship in heaven?  What does it look li",
-  "title": "Diversity"
+  "ref": "Genesis 12",
+  "score": 0.45,
+  "quote": "Hold your place in Revelation 7.  Let's go back to Genesis.  First book in the Bible.  I want you to turn me back to Genesis 12.  I look at Revelation 7",
+  "title": "Diversity",
+  "candidates": [
+   {
+    "ref": "Revelation 7",
+    "score": 0.2,
+    "quote": "and I hope you do, let me invite you to open with me to Revelation  7.  Last book in the Bible, what is corporate worship in heaven?  What does it look li"
+   },
+   {
+    "ref": "Genesis 12",
+    "score": 0.45,
+    "quote": "Hold your place in Revelation 7.  Let's go back to Genesis.  First book in the Bible.  I want you to turn me back to Genesis 12.  I look at Revelation 7"
+   },
+   {
+    "ref": "Genesis 11",
+    "score": 0.26,
+    "quote": "to see these two passages as bookends.  Go to Genesis 12.  Remember the chapter before this, Genesis 11  is when they tried to build the tower of Babel"
+   },
+   {
+    "ref": "Genesis 13",
+    "score": 0.21,
+    "quote": "Abraham in Genesis 12:3.  I want you to look at the next chapter,  Genesis 13.  Look at verse 16, you might underline these verses.  We started with Genes"
+   },
+   {
+    "ref": "Genesis 3",
+    "score": 0.13,
+    "quote": "look at the next chapter,  Genesis 13.  Look at verse 16, you might underline these verses.  We started with Genesis 12, 3.  Look at Genesis 13, 16.  God"
+   },
+   {
+    "ref": "Genesis 15",
+    "score": 0.39,
+    "quote": "Revelation chapter seven, verse nine.  Go two more chapters over, Genesis 15.  Look at Genesis 15, verse four and five.  God says this again to Abraham"
+   },
+   {
+    "ref": "Genesis 26",
+    "score": 0.33,
+    "quote": "braham had a son.  His name was Isaac.  Go to Genesis 26.  Look at Genesis 26.  God had made this promise over and over again to Abraham.  Was it just A"
+   },
+   {
+    "ref": "Genesis 26:4",
+    "score": 0.31,
+    "quote": "t just Abraham?  I don't think it was.  Look at Genesis 26:4.  You might underline this verse.  I will make your descendants Isaac as numerous as the star"
+   }
+  ]
  },
  "45ef1af3d5f9": {
-  "ref": "John 17",
-  "quote": "I hope you do, and let me invite you to open with  me to John, John 17.  He didn't do that in the first service.  Maybe they thought they wouldn't be back",
-  "title": "Small Groups Engage in Christ"
+  "ref": "John 17:20",
+  "score": 0.65,
+  "quote": "t of a local church.  And I want you to read with me,  starting in John 17:20.  This is a prayer that Jesus is praying,  the predominant focus of his pray",
+  "title": "Small Groups Engage in Christ",
+  "candidates": [
+   {
+    "ref": "John 17",
+    "score": 0.27,
+    "quote": "and I hope you do, let me invite you to open with me to  John 17.  2017. He didn't do that in the first service. Maybe they thought they wouldn't be back"
+   },
+   {
+    "ref": "John 17:20",
+    "score": 0.65,
+    "quote": "t of a local church.  And I want you to read with me,  starting in John 17:20.  This is a prayer that Jesus is praying,  the predominant focus of his pray"
+   },
+   {
+    "ref": "Genesis 1",
+    "score": 0.26,
+    "quote": "e.  Hold your place here in John 17 and go back with me to Genesis 1.  Very first book in the Bible, Genesis.  Look at 1:26.  I want us to look at the c"
+   },
+   {
+    "ref": "Genesis 1:2",
+    "score": 0.14,
+    "quote": "oly Spirit,  even in this picture.  You look at Genesis 1:2, it says,  The Spirit of God was hovering over the waters.  You've obviously got the Father he"
+   }
+  ]
  },
  "e6f7b431b9e4": {
-  "ref": "1 Corinthians  6",
-  "quote": "le and I hope you do, I'm invite you to open with me to 1 Corinthians  6. Pull out those notes that in your worship guide, before we dive in this morning,",
-  "title": "The Disciples Emotions Part 2"
+  "ref": null,
+  "score": 0.14,
+  "quote": "e and I hope you do, I'm  invite you to open with me to 1 Corinthians 6. Pull out those notes that in your worship  guide, before we dive in this morning,",
+  "title": "The Disciples Emotions Part 2",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 6",
+    "score": 0.14,
+    "quote": "e and I hope you do, I'm  invite you to open with me to 1 Corinthians 6. Pull out those notes that in your worship  guide, before we dive in this morning,"
+   },
+   {
+    "ref": "Genesis 1",
+    "score": 0.13,
+    "quote": "o, just like we had the last two weeks, go back to where this  whole picture started and Genesis 1 and 2 and God created man, end of Genesis 1.  And he"
+   }
+  ]
  },
  "431da0bbd3d8": {
-  "ref": "Acts 21",
-  "quote": "and I hope you do, let me invite you to open with me to Acts, the  book of Acts 21.  And as you're turning to Acts 21, you may pull out the notes from you",
-  "title": "A Mission Only the Church Could Stop"
+  "ref": null,
+  "score": 0.44,
+  "quote": "ght be trouble when he gets there.  You look in Acts 20:22 just before this chapter we're about to read you hear him say these words  He's gathered togeth",
+  "title": "A Mission Only the Church Could Stop",
+  "candidates": [
+   {
+    "ref": "Acts 21",
+    "score": 0.17,
+    "quote": "and I hope you do, let me invite you to open with me to Acts, the book  of Acts 21.  And as you're turning to Acts 21, you may pull out the notes from you"
+   },
+   {
+    "ref": "Acts 20:22",
+    "score": 0.44,
+    "quote": "ght be trouble when he gets there.  You look in Acts 20:22 just before this chapter we're about to read you hear him say these words  He's gathered togeth"
+   },
+   {
+    "ref": "Acts 11",
+    "score": 0.11,
+    "quote": "to do to come to faith in Christ?  You look at the beginning of Acts 11,  and it is a picture of the church literally against the nations.  We're not sur"
+   }
+  ]
  },
  "f7c4ca73d5bc": {
-  "ref": "Exodus 34",
-  "quote": "nd I hope you do,  let me invite you to open them with me  to Exodus 34.  Exodus 34, and I say that at the beginning,  I don't want to remind you, if you",
-  "title": "The Glory of His Name"
+  "ref": null,
+  "score": 0.22,
+  "quote": "destroy them.  What happens?  We didn't read this.  At the end of Exodus 32, two things in particular first,  3,000 men are struck down dead.  It's not a",
+  "title": "The Glory of His Name",
+  "candidates": [
+   {
+    "ref": "Exodus 34",
+    "score": 0.02,
+    "quote": "nd I hope you do,  let me invite you to open them with me  to Exodus 34.  Exodus 34, and I say that at the beginning,  I don't want to remind you, if you"
+   },
+   {
+    "ref": "Exodus 32",
+    "score": 0.22,
+    "quote": "destroy them.  What happens?  We didn't read this.  At the end of Exodus 32, two things in particular first,  3,000 men are struck down dead.  It's not a"
+   },
+   {
+    "ref": "Exodus 33",
+    "score": 0.13,
+    "quote": "Moses prayed and he said, God, we can't go without you.  We're not going to go one step without your presence.  You get to Exodus 33, look with me at ve"
+   }
+  ]
  },
  "1833e30623c0": {
-  "ref": "Luke  13",
-  "quote": "d I hope you do I want to invite you to open with me to Luke  13 our plan this morning  was to  Continue our series looking at  the gospel and our familie",
-  "title": "How Do We Respond to Natural Disasters"
+  "ref": null,
+  "score": 0.08,
+  "quote": "d I hope you do I want to invite you to open with me to Luke  13 our plan this morning  was to  Continue our series looking at the gospel and our families",
+  "title": "How Do We Respond to Natural Disasters",
+  "candidates": [
+   {
+    "ref": "Luke 13",
+    "score": 0.08,
+    "quote": "d I hope you do I want to invite you to open with me to Luke  13 our plan this morning  was to  Continue our series looking at the gospel and our families"
+   }
+  ]
  },
  "2780f7a76de1": {
-  "ref": "Romans 3",
-  "quote": "ble, and I hope you do, I invite you to open with  me to Romans 3.  We're going to dive this morning and to the next two threads of the gospel.  We're tal",
-  "title": "The Sufficiency of Christ and the Necessity of Faith"
+  "ref": "Romans 5:18-19",
+  "score": 1.0,
+  "quote": "d see these components  of the gospel.  Look at Romans 5:18-19.  I want you to see how he compares Jesus and Adam.  When he talks about the one man that b",
+  "title": "The Sufficiency of Christ and the Necessity of Faith",
+  "candidates": [
+   {
+    "ref": "Romans 3",
+    "score": 0.16,
+    "quote": "ble, and I hope you do, I invite you to open with  me to Romans 3.  We're going to dive this morning into the next two threads of the gospel.  We're talki"
+   },
+   {
+    "ref": "Romans 1",
+    "score": 0.32,
+    "quote": "told you there'd be a quiz.  So here we go.  We talked about the character of God in Romans 1 through 8 and we said that God is the, that's  very deflat"
+   },
+   {
+    "ref": "Romans 5:18-19",
+    "score": 1.0,
+    "quote": "d see these components  of the gospel.  Look at Romans 5:18-19.  I want you to see how he compares Jesus and Adam.  When he talks about the one man that b"
+   },
+   {
+    "ref": "Romans 8",
+    "score": 0.68,
+    "quote": "s of another that is attributed to us.  Turn over to Romans 8.  I can Romans 8:1-4.  You see this even clearer.  When it talks about, Paul's talking here"
+   },
+   {
+    "ref": "Romans 8:1-4",
+    "score": 0.74,
+    "quote": "s of another that is attributed to us.  Turn over to Romans 8.  I can Romans 8:1-4.  You see this even clearer.  When it talks about, Paul's talking here"
+   }
+  ]
  },
  "5e314c3f4eeb": {
-  "ref": "Numbers  11",
-  "quote": "ear.  He makes its presence known.  You look, these are just a couple of instances when the Spirit rested on these men in Numbers  11 and they prophesied.",
-  "title": "Exploring the Holy Spirit Part 2"
+  "ref": null,
+  "score": 0.2,
+  "quote": "he Spirit gives life to all creatures.  Look at Job 33, verse four there.  The Spirit of God has made me.  This is where the Spirit is acquainted  with th",
+  "title": "Exploring the Holy Spirit Part 2",
+  "candidates": [
+   {
+    "ref": "Numbers 11",
+    "score": 0.1,
+    "quote": "ear.  He makes its presence known.  You look, these are just a couple of instances when the Spirit rested on these men in Numbers  11 and they prophesied."
+   },
+   {
+    "ref": "Job 33",
+    "score": 0.2,
+    "quote": "he Spirit gives life to all creatures.  Look at Job 33, verse four there.  The Spirit of God has made me.  This is where the Spirit is acquainted  with th"
+   }
+  ]
  },
  "737be5b3b803": {
-  "ref": "Matthew 28",
+  "ref": null,
+  "score": 0.17,
   "quote": "and I hope you do let me invite you to open with me to Matthew 28  We are continuing this process tonight that we started a couple of weeks ago membershi",
-  "title": "By Making Disciples"
+  "title": "By Making Disciples",
+  "candidates": [
+   {
+    "ref": "Matthew 28",
+    "score": 0.17,
+    "quote": "and I hope you do let me invite you to open with me to Matthew 28  We are continuing this process tonight that we started a couple of weeks ago membershi"
+   }
+  ]
  },
  "d1245fc73ad6": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "The Ultimate Question Did Jesus Rise From the Dead"
+  "title": "The Ultimate Question Did Jesus Rise From the Dead",
+  "candidates": []
  },
  "da93396a1087": {
-  "ref": "1 Kings 16:33",
-  "quote": "is you've gone back to Ahab's sin.  You go back to 1 Kings 16:33, you find out that Ahab did more to provoke  the Lord the God of Israel to anger than i",
-  "title": "Angels Demons And Spiritual Warfare Hour 3"
+  "ref": "Daniel 10:12",
+  "score": 0.45,
+  "quote": "at least a little glimpse of this.  So turn with me to Daniel 10.  And I want us to read Daniel 10:12.  12 through 14.  The whole book of Daniel really g",
+  "title": "Angels Demons And Spiritual Warfare Hour 3",
+  "candidates": [
+   {
+    "ref": "1 Kings 16:33",
+    "score": 0.3,
+    "quote": "is you've gone back to Ahab's sin.  You go back to 1 Kings 16:33, you find out that Ahab did more to provoke  the Lord the God of Israel to anger than i"
+   },
+   {
+    "ref": "Zechariah 3",
+    "score": 0.11,
+    "quote": "sness.  At the end of this passage, you look at the end of Zechariah 3, you see one of the most  beautiful promises of Christ, the Messiah who is going to"
+   },
+   {
+    "ref": "Daniel 10",
+    "score": 0.12,
+    "quote": "at least a little glimpse of this.  So turn with me to Daniel 10.  And I want us to read Daniel 10:12.  12 through 14.  The whole book of Daniel really g"
+   },
+   {
+    "ref": "Daniel 10:12",
+    "score": 0.45,
+    "quote": "at least a little glimpse of this.  So turn with me to Daniel 10.  And I want us to read Daniel 10:12.  12 through 14.  The whole book of Daniel really g"
+   }
+  ]
  },
  "a8d486e46bc3": {
   "ref": "Exodus 3",
-  "quote": "a Bible and I hope you do invite you to open with me to  Exodus 3 that song  launches us into  the story that we are  beginning to now read through Exodus",
-  "title": "Chapter 4 Yahweh"
+  "score": 0.71,
+  "quote": "the I AM.  So what we're going to do is look.  Starting in Exodus 3, Exodus 1 and 2,  give us 400 years of history in two chapters.  400 years, slaves, su",
+  "title": "Chapter 4 Yahweh",
+  "candidates": [
+   {
+    "ref": "Exodus 3",
+    "score": 0.71,
+    "quote": "the I AM.  So what we're going to do is look.  Starting in Exodus 3, Exodus 1 and 2,  give us 400 years of history in two chapters.  400 years, slaves, su"
+   },
+   {
+    "ref": "Exodus 1",
+    "score": 0.16,
+    "quote": "the I AM.  So what we're going to do is look.  Starting in Exodus 3, Exodus 1 and 2,  give us 400 years of history in two chapters.  400 years, slaves, su"
+   }
+  ]
  },
  "fe2b0a3e41b9": {
-  "ref": "1 Samuel  17",
-  "quote": "and I hope you do, let me invite you to open with me to 1 Samuel  17.  And before we dive into this text tonight, I want to share something with you just",
-  "title": "Chapter 13 The Improbable Champion"
+  "ref": "1 Samuel 17:1",
+  "score": 0.68,
+  "quote": "ended by this passage.  So I want us to read the story and think about what it really means.  So 1 Samuel 17:1, Now the Philistines gathered their armies",
+  "title": "Chapter 13 The Improbable Champion",
+  "candidates": [
+   {
+    "ref": "1 Samuel 17:1",
+    "score": 0.68,
+    "quote": "ended by this passage.  So I want us to read the story and think about what it really means.  So 1 Samuel 17:1, Now the Philistines gathered their armies"
+   }
+  ]
  },
  "779b3fdd63ee": {
-  "ref": "Isaiah 62",
-  "quote": "you have a Bible.  And I hope you do to open them with me to Isaiah 62.  Isaiah 62 and you may not have a worship guide, but hopefully you got some notes",
-  "title": "Day Of Prayer And Fasting"
+  "ref": null,
+  "score": 0.09,
+  "quote": "you have a Bible.  And I hope you do to open them with me to Isaiah 62.  Isaiah 62, and you may not have a worship guide,  but hopefully you got some note",
+  "title": "Day Of Prayer And Fasting",
+  "candidates": [
+   {
+    "ref": "Isaiah 62",
+    "score": 0.09,
+    "quote": "you have a Bible.  And I hope you do to open them with me to Isaiah 62.  Isaiah 62, and you may not have a worship guide,  but hopefully you got some note"
+   }
+  ]
  },
  "b7e522567380": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Chapter 30 Repenting Of Sin And Returning To God"
+  "title": "Chapter 30 Repenting Of Sin And Returning To God",
+  "candidates": []
  },
  "7b0f0ad43e5c": {
-  "ref": "Mark 11",
-  "quote": "and I hope you do, let me invite you to open with me to Mark 11.  We do want to welcome you to worship this evening with the  Church at Brook Hills and es",
-  "title": "Chapter 42 A Fast For The Nations"
+  "ref": null,
+  "score": 0.12,
+  "quote": "and I hope you do, let me invite you to open with me to Mark 11.  I do want to welcome you to worship this evening with the  Church at Brook Hills and esp",
+  "title": "Chapter 42 A Fast For The Nations",
+  "candidates": [
+   {
+    "ref": "Mark 11",
+    "score": 0.12,
+    "quote": "and I hope you do, let me invite you to open with me to Mark 11.  I do want to welcome you to worship this evening with the  Church at Brook Hills and esp"
+   }
+  ]
  },
  "a673c7e376da": {
   "ref": "Romans 9",
-  "quote": "s 9. And so this last week we have been reading  through Romans and I thought, okay, there's Romans 9. I began to think, maybe I'll take  the next chance I h",
-  "title": "Chapter 47 The Marvel Of Gods Mercy"
+  "score": 0.71,
+  "quote": "9. And so this last week we have been reading through Romans and I thought, okay, there's  Romans 9. I began to think, maybe I'll take the next chance I ha",
+  "title": "Chapter 47 The Marvel Of Gods Mercy",
+  "candidates": [
+   {
+    "ref": "Romans 9",
+    "score": 0.71,
+    "quote": "9. And so this last week we have been reading through Romans and I thought, okay, there's  Romans 9. I began to think, maybe I'll take the next chance I ha"
+   }
+  ]
  },
  "5d281f54e5ba": {
   "ref": null,
-  "quote": null,
-  "title": "Crucifixion Salvation and the Glory of God Session 2"
+  "score": 0.07,
+  "quote": "roken.  Our relationship with God.  You look in Genesis 3 after the fall of man.  In a relationship that was once marked by love, and joy,  and peace and",
+  "title": "Crucifixion Salvation and the Glory of God Session 2",
+  "candidates": [
+   {
+    "ref": "Genesis 3",
+    "score": 0.07,
+    "quote": "roken.  Our relationship with God.  You look in Genesis 3 after the fall of man.  In a relationship that was once marked by love, and joy,  and peace and"
+   }
+  ]
  },
  "b51962e2d5cc": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "SC11 session1"
+  "title": "SC11 session1",
+  "candidates": []
  },
  "08309423d4a1": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Christmas Eve 2011"
+  "title": "Christmas Eve 2011",
+  "candidates": []
  },
  "96e809da2fa1": {
-  "ref": "Matthew 15",
+  "ref": null,
+  "score": 0.21,
   "quote": "and I hope you do, I may invite you to open with me to Matthew 15,  and pull out those notes that you received in the worship guide when you came in.  Ma",
-  "title": "Commissioning the Best"
+  "title": "Commissioning the Best",
+  "candidates": [
+   {
+    "ref": "Matthew 15",
+    "score": 0.21,
+    "quote": "and I hope you do, I may invite you to open with me to Matthew 15,  and pull out those notes that you received in the worship guide when you came in.  Ma"
+   }
+  ]
  },
  "0d24605483ce": {
   "ref": "Isaiah 6",
-  "quote": "body around you does, let me invite  to find with me Isaiah 6. In the Old Testament Isaiah 6. So love is a strange thing  and love makes you do strange th",
-  "title": "Four Reasons to Say Yes to God"
+  "score": 0.71,
+  "quote": "but love makes you do crazy things.  So look with me in Isaiah 6.  Again, a familiar, maybe a dangerously over familiar passage of Scripture to many.  So",
+  "title": "Four Reasons to Say Yes to God",
+  "candidates": [
+   {
+    "ref": "Isaiah 6",
+    "score": 0.71,
+    "quote": "but love makes you do crazy things.  So look with me in Isaiah 6.  Again, a familiar, maybe a dangerously over familiar passage of Scripture to many.  So"
+   }
+  ]
  },
  "b23492cf1b29": {
-  "ref": "Matthew 16",
+  "ref": null,
+  "score": 0.14,
   "quote": "I hope you do. Let me invite you to open with me to Matthew 16. I want to thank you on behalf  of Heather and myself for even just the last week, the",
-  "title": "Christ the Center"
+  "title": "Christ the Center",
+  "candidates": [
+   {
+    "ref": "Matthew 16",
+    "score": 0.14,
+    "quote": "I hope you do. Let me invite you to open with me to Matthew 16. I want to thank you on behalf  of Heather and myself for even just the last week, the"
+   }
+  ]
  },
  "7d66ca6e8365": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Pray Desperately Part 2"
+  "title": "Pray Desperately Part 2",
+  "candidates": []
  },
  "c646ba591df4": {
-  "ref": "Philippians 2, 9-11",
-  "quote": "elves a hand there.  All right, here we go.  I want us to dive into the last three verses here,  Philippians 2, 9-11, therefore God exalted him  to the",
-  "title": "Incarnation Lord of All"
+  "ref": "Psalms 83:18",
+  "score": 1.0,
+  "quote": "show us a picture  of who the Lord is. Look at Psalm 83:18. Here we've got a picture about how the Lord  is exalted above all the earth.  Look at this.",
+  "title": "Incarnation Lord of All",
+  "candidates": [
+   {
+    "ref": "Philippians 2",
+    "score": 0.14,
+    "quote": "elves a hand there.  All right, here we go.  I want us to dive into the last three verses here,  Philippians 2, 9-11.  Therefore, God exalted him to the"
+   },
+   {
+    "ref": "Psalms 86",
+    "score": 0.07,
+    "quote": "igh God belongs to Jesus. I want you to turn back  to the Old Testament when they go to Psalms. Psalms 86. If you don't know where Psalms,  they just kind"
+   },
+   {
+    "ref": "Psalms 83",
+    "score": 0.15,
+    "quote": "your Bible. It's a big book and you'll find it there.  Look at Psalms chapter, sorry, I said 86. Go to Psalm 83. Psalms 83. And I want to take  you just"
+   },
+   {
+    "ref": "Psalms 83:18",
+    "score": 1.0,
+    "quote": "show us a picture  of who the Lord is. Look at Psalm 83:18. Here we've got a picture about how the Lord  is exalted above all the earth.  Look at this."
+   },
+   {
+    "ref": "Psalms 97",
+    "score": 0.32,
+    "quote": "ord, the most high over all the earth.  Look at Psalm 97.  Look at Psalm 97.  Look with me at verse five.  Psalm 97, verse five says, the mountains  melt"
+   },
+   {
+    "ref": "Psalms 95",
+    "score": 0.61,
+    "quote": "bove everything.  He alone is exalted.  Turn back to the left two chapters.  You come to Psalm 95.  I want you to see how the Bible tells us  that God is"
+   },
+   {
+    "ref": "Psalms 103",
+    "score": 0.1,
+    "quote": "creation.  It gets even deeper though.  Go to Psalm 103,  103, look at verse 19.  Not just over all creation,  but all the heavenly hosts,  all the ange"
+   },
+   {
+    "ref": "Psalms 103:19",
+    "score": 0.62,
+    "quote": "e angelic beings bow down to the Lord.  Look at Psalm 103:19.  Here you're gonna see Lord in just about every verse.  The Lord has established his throne"
+   }
+  ]
  },
  "1f4bbd230af5": {
-  "ref": "Genesis 3",
-  "quote": "and I hope you do, let me invite you to open with me to Genesis 3  I'll try to go ahead and strap your seat belts on. I didn't get to preach last week. So",
-  "title": "Gods Story Our Story"
+  "ref": null,
+  "score": 0.0,
+  "quote": "and I hope you do let me invite you to open with me to Genesis 3  You should go ahead and strap your seat belts on I didn't get to preach last week  So w",
+  "title": "Gods Story Our Story",
+  "candidates": [
+   {
+    "ref": "Genesis 3",
+    "score": 0.0,
+    "quote": "and I hope you do let me invite you to open with me to Genesis 3  You should go ahead and strap your seat belts on I didn't get to preach last week  So w"
+   }
+  ]
  },
  "18f300945bab": {
-  "ref": "2 Corinthians 1",
+  "ref": null,
+  "score": 0.11,
   "quote": "Let me invite you to open with me to 2 Corinthians 1.  If you need to, feel free to use your table of contents.  Find 2 Corinthians.  C",
-  "title": "Small Groups Engage in Care"
+  "title": "Small Groups Engage in Care",
+  "candidates": [
+   {
+    "ref": "2 Corinthians 1",
+    "score": 0.11,
+    "quote": "Let me invite you to open with me to 2 Corinthians 1.  If you need to, feel free to use your table of contents.  Find 2 Corinthians.  C"
+   }
+  ]
  },
  "d908f63f9cc5": {
   "ref": null,
-  "quote": null,
-  "title": "The Disciples Will"
+  "score": 0.08,
+  "quote": "and I hope you do, let me invite you to open with me to Galatians  2.  Feel free to use your table of contents if you need to, to find Galatians.  I encou",
+  "title": "The Disciples Will",
+  "candidates": [
+   {
+    "ref": "Galatians 2",
+    "score": 0.08,
+    "quote": "and I hope you do, let me invite you to open with me to Galatians  2.  Feel free to use your table of contents if you need to, to find Galatians.  I encou"
+   }
+  ]
  },
  "e7bf017c52b2": {
   "ref": "Hebrews 12",
+  "score": 0.55,
   "quote": "and I hope you do let me invite you to open with me to  Hebrews 12  You need to feel free to use your table of contents to find Hebrews. It's in the back",
-  "title": "Creating the Future at Brook Hills"
+  "title": "Creating the Future at Brook Hills",
+  "candidates": [
+   {
+    "ref": "Hebrews 12",
+    "score": 0.55,
+    "quote": "and I hope you do let me invite you to open with me to  Hebrews 12  You need to feel free to use your table of contents to find Hebrews. It's in the back"
+   }
+  ]
  },
  "e242294bee1e": {
   "ref": null,
-  "quote": null,
-  "title": "The Gospel Why Its Important"
+  "score": 0.06,
+  "quote": "you think Jesus could say that to you?  Look with me if you have a Bible and I hope you too to Matthew 7.  This is Jesus speaking to his disciples.  This",
+  "title": "The Gospel Why Its Important",
+  "candidates": [
+   {
+    "ref": "Matthew 7",
+    "score": 0.06,
+    "quote": "you think Jesus could say that to you?  Look with me if you have a Bible and I hope you too to Matthew 7.  This is Jesus speaking to his disciples.  This"
+   }
+  ]
  },
  "3fa9f1f3adb4": {
-  "ref": "Ephesians  5",
-  "quote": "and I hope you do, let me invite you to open with me to Ephesians  5.  I want us to pick up this morning where we left off and our series on attachment, t",
-  "title": "The Gospel and Marriage"
+  "ref": "Ephesians 5:22",
+  "score": 0.91,
+  "quote": "with you to show you how these truths  look in your lives.  And so with that understanding, let's dive into Ephesians 5:22.  Wives,\" the Bible says, \"...",
+  "title": "The Gospel and Marriage",
+  "candidates": [
+   {
+    "ref": "Ephesians 5",
+    "score": 0.11,
+    "quote": "and I hope you do, let me invite you to open with me to Ephesians 5.  I want us to pick up this morning  where we left off and our series on attachment, t"
+   },
+   {
+    "ref": "Ephesians 5:22",
+    "score": 0.91,
+    "quote": "with you to show you how these truths  look in your lives.  And so with that understanding, let's dive into Ephesians 5:22.  Wives,\" the Bible says, \"..."
+   }
+  ]
  },
  "4dbbc8acd32a": {
-  "ref": "1 Timothy 3",
-  "quote": "ave opened it up, then I invite you  to open with me to 1 Timothy 3 and pull out those notes that look like you need a lunch  for this morning.  And I wan",
-  "title": "The Gospel and Church Leadership"
+  "ref": null,
+  "score": 0.22,
+  "quote": "want you to hear what he says to them.  Look at Acts 20:25.  Now I know that none of you among whom I have gone about preaching the kingdom will ever  see",
+  "title": "The Gospel and Church Leadership",
+  "candidates": [
+   {
+    "ref": "1 Timothy 3",
+    "score": 0.08,
+    "quote": "ave opened it up, then I invite you  to open with me to 1 Timothy 3 and pull out those notes that look like you need a lunch  for this morning.  And I wan"
+   },
+   {
+    "ref": "Acts 20",
+    "score": 0.07,
+    "quote": "hold your place here in 1 Timothy 3 and turn the over to Acts 20.  We're going to start with this picture of elders.  Elders is common term in Scripture,"
+   },
+   {
+    "ref": "Acts 20:25",
+    "score": 0.22,
+    "quote": "want you to hear what he says to them.  Look at Acts 20:25.  Now I know that none of you among whom I have gone about preaching the kingdom will ever  see"
+   }
+  ]
  },
  "9228dc2af00e": {
-  "ref": "Acts 2",
+  "ref": null,
+  "score": 0.3,
   "quote": "he spirit on Christ, and then now we're looking at the spirit in the church.  And we've just seen the real inauguration of that in Acts 2.  In your notes the",
-  "title": "Exploring the Holy Spirit Part 3"
+  "title": "Exploring the Holy Spirit Part 3",
+  "candidates": [
+   {
+    "ref": "Acts 2",
+    "score": 0.3,
+    "quote": "he spirit on Christ, and then now we're looking at the spirit in the church.  And we've just seen the real inauguration of that in Acts 2.  In your notes the"
+   },
+   {
+    "ref": "John 3",
+    "score": 0.28,
+    "quote": "scriptures like Acts 16 there, the Lord opening  Lydia's heart.  But what you've got in John 3 is Nicodemus, a member of the Jewish ruling council, Pharisee."
+   },
+   {
+    "ref": "Ezekiel 36",
+    "score": 0.06,
+    "quote": "pirit.  What's that talking about?  You look at the Old Testament background here.  Look at Ezekiel 36.  I will take you out of the nations.  I will gathe"
+   }
+  ]
  },
  "bbc7e7b11e41": {
-  "ref": "Genesis 1",
-  "quote": "and I hope you do, let me invite you to open with me to Genesis 1.  I remember sitting on a scorching November day in the middle of southern Sudan, sippin",
-  "title": "Of All Nations"
+  "ref": "Genesis 12",
+  "score": 0.47,
+  "quote": "reated.  And it is all over Scripture.  Go with me to the right, Genesis 12.  Genesis 12, we're gonna run through  and you've got some space there in yo",
+  "title": "Of All Nations",
+  "candidates": [
+   {
+    "ref": "Genesis 1",
+    "score": 0.09,
+    "quote": "and I hope you do, let me invite you to open with me to Genesis 1.  I remember sitting on a scorching November day in the middle of southern Sudan, sippin"
+   },
+   {
+    "ref": "Genesis 12",
+    "score": 0.47,
+    "quote": "reated.  And it is all over Scripture.  Go with me to the right, Genesis 12.  Genesis 12, we're gonna run through  and you've got some space there in yo"
+   },
+   {
+    "ref": "Genesis 12:1",
+    "score": 0.47,
+    "quote": ", pouring out His grace for His glory.  Look in Genesis 12:1,  the Lord said to Abram,  leave your country, your people in your father's house  holding go"
+   },
+   {
+    "ref": "Genesis 26",
+    "score": 0.42,
+    "quote": "m's son's name was Isaac.  Genesis 26.  Go to Genesis 26.  Let's look at Isaac.  I want you to see how God continues this in the line of Abraham and the"
+   },
+   {
+    "ref": "Genesis 28:14",
+    "score": 0.39,
+    "quote": "ntly  to show my glory to all nations.  Go over two chapters to the right, Genesis 28:14.  Isaac's son Jacob, God comes to Jacob and says,  Jacob, Genes"
+   },
+   {
+    "ref": "Exodus 14:4",
+    "score": 0.18,
+    "quote": "book after book.  We won't have time to turn to all these.  Exodus 14:4.  Remember when God led his people out of slavery in Egypt?  They were slaves in E"
+   }
+  ]
  },
  "c9e9ba2f1e21": {
   "ref": null,
-  "quote": null,
-  "title": "A Church In Covenant"
+  "score": 0.03,
+  "quote": "om now, they're coming.  We're going to look at these passages where Jesus outlines a process, Matthew 18, and the  1 Corinthians 5 is a New Testament imp",
+  "title": "A Church In Covenant",
+  "candidates": [
+   {
+    "ref": "Matthew 18",
+    "score": 0.03,
+    "quote": "om now, they're coming.  We're going to look at these passages where Jesus outlines a process, Matthew 18, and the  1 Corinthians 5 is a New Testament imp"
+   },
+   {
+    "ref": "1 Corinthians 5",
+    "score": 0.02,
+    "quote": "om now, they're coming.  We're going to look at these passages where Jesus outlines a process, Matthew 18, and the  1 Corinthians 5 is a New Testament imp"
+   }
+  ]
  },
  "09b1e5ff79ee": {
-  "ref": "Ephesians 6",
-  "quote": "two concluding challenges.  So here we go.  Ready?  Engagement in warfare.  And what we've got here in Ephesians 6 is a picture of the armor of God.  A",
-  "title": "Angels Demons And Spiritual Warfare Hour 4"
+  "ref": null,
+  "score": 0.12,
+  "quote": "two concluding challenges.  So here we go, ready?  Engagement in warfare.  And what we've got here in Ephesians 6  is a picture of the armor of God.  A",
+  "title": "Angels Demons And Spiritual Warfare Hour 4",
+  "candidates": [
+   {
+    "ref": "Ephesians 6",
+    "score": 0.12,
+    "quote": "two concluding challenges.  So here we go, ready?  Engagement in warfare.  And what we've got here in Ephesians 6  is a picture of the armor of God.  A"
+   }
+  ]
  },
  "8af60d507011": {
   "ref": "John 14",
-  "quote": "d I hope you do,  I wanna invite you to turn to me to John 14.  What I want us to do is I want us this morning  dive into what I believe is one of the mos",
-  "title": "Is There Glory In A Narrow Gospel"
+  "score": 0.91,
+  "quote": "I hope you do, I want to invite  you to turn to me to John 14. What I want us to do is I want us this  morning to dive into what I believe is one of the m",
+  "title": "Is There Glory In A Narrow Gospel",
+  "candidates": [
+   {
+    "ref": "John 14",
+    "score": 0.91,
+    "quote": "I hope you do, I want to invite  you to turn to me to John 14. What I want us to do is I want us this  morning to dive into what I believe is one of the m"
+   }
+  ]
  },
  "f48ec20b305d": {
-  "ref": "Ephesians 2:16",
-  "quote": "hat the church is the body  of Christ.  Look at Ephesians 2:16.  I'll kind of start at the end of verse 15 just to get the context.  It says, his purpose",
-  "title": "A Radical Redefinition of the Church"
+  "ref": "Ephesians 1",
+  "score": 0.74,
+  "quote": "creeped into the church.  I want you to look at Ephesians 1.  I want you to look at verse 3 and how Paul starts this letter.  I want to show you something",
+  "title": "A Radical Redefinition of the Church",
+  "candidates": [
+   {
+    "ref": "Ephesians 1",
+    "score": 0.74,
+    "quote": "creeped into the church.  I want you to look at Ephesians 1.  I want you to look at verse 3 and how Paul starts this letter.  I want to show you something"
+   }
+  ]
  },
  "4c5bb17bea24": {
-  "ref": "Acts 2",
-  "quote": "I hope you do.  I want to invite you to open with me to Acts 2.  So we come to the last two weeks in this series.  I know some of you are depressed that w",
-  "title": "Multiply Exponentially"
+  "ref": "Acts 2:42-47",
+  "score": 0.76,
+  "quote": "fferent and how that affects the way we look different in our culture  today.  We've been studying Acts 2:42-47.  a lot of you have been memorizing it and",
+  "title": "Multiply Exponentially",
+  "candidates": [
+   {
+    "ref": "Acts 2",
+    "score": 0.16,
+    "quote": "I hope you do.  I want to invite you to open with me to Acts 2.  So we come to the last two weeks in this series.  I know some of you are depressed that w"
+   },
+   {
+    "ref": "Acts 2:42-47",
+    "score": 0.76,
+    "quote": "fferent and how that affects the way we look different in our culture  today.  We've been studying Acts 2:42-47.  a lot of you have been memorizing it and"
+   },
+   {
+    "ref": "Acts 9",
+    "score": 0.12,
+    "quote": "and  the church scatters and begins to go to the regions that had never been before.  Then we come to Acts 9.  Acts 9:31.  Acts 1:8, it told us the gos"
+   },
+   {
+    "ref": "Acts 9:31",
+    "score": 0.38,
+    "quote": "and  the church scatters and begins to go to the regions that had never been before.  Then we come to Acts 9.  Acts 9:31.  Acts 1:8, it told us the gos"
+   },
+   {
+    "ref": "Acts 1:8",
+    "score": 0.19,
+    "quote": "and  the church scatters and begins to go to the regions that had never been before.  Then we come to Acts 9.  Acts 9:31.  Acts 1:8, it told us the gos"
+   },
+   {
+    "ref": "Acts 16",
+    "score": 0.23,
+    "quote": "spread.  Let me show you a couple more, look in Acts 16, Acts 16:5.  By this time, Paul and Barnabas have gone out and they started churches and they're m"
+   },
+   {
+    "ref": "Acts 16:5",
+    "score": 0.3,
+    "quote": "spread.  Let me show you a couple more, look in Acts 16, Acts 16:5.  By this time, Paul and Barnabas have gone out and they started churches and they're m"
+   },
+   {
+    "ref": "Acts 19",
+    "score": 0.19,
+    "quote": "ly in numbers.  The gospel continues to go to Acts 19.  Look at Acts 19:20.  The gospel now goes to other areas of Europe and Greece and Asia Minor.  Yo"
+   }
+  ]
  },
  "2fd8c44a20fa": {
   "ref": "1 Corinthians 1",
+  "score": 0.96,
   "quote": ", you find your comfort in prayer.  You find your comfort in prayer.  I want us to start in 1 Corinthians 1.  Here's the verses for that.  1 Corinthians 1",
-  "title": "How Do You Respond To Moral Failure In the Church"
+  "title": "How Do You Respond To Moral Failure In the Church",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 1",
+    "score": 0.96,
+    "quote": ", you find your comfort in prayer.  You find your comfort in prayer.  I want us to start in 1 Corinthians 1.  Here's the verses for that.  1 Corinthians 1"
+   },
+   {
+    "ref": "Malachi 2:1-9",
+    "score": 0.06,
+    "quote": "in his eyes.  If you don't believe me, go back and look at Malachi 2:1-9 where  He boldly addresses the hypocrisy of the priest in that day.  The langu"
+   },
+   {
+    "ref": "Matthew 18",
+    "score": 0.18,
+    "quote": "the  sake of time I want to ask you to turn there but let me read to you Matthew 18.  This is a passage that may be familiar to you.  It's a passage that"
+   }
+  ]
  },
  "2d9e97e64717": {
-  "ref": "John 5:16",
-  "quote": "relates to our lives across this room.  Look with me at John 5:16.  The context in this passage is Jesus heals a guy who  hasn't walked, and then some rel",
-  "title": "Gods Work Our Work"
+  "ref": null,
+  "score": 0.17,
+  "quote": "taught  me.  Let me show you one more.  Look over in 14.  John 14, look at verse 10.  John 14, look at verse 10.  This is Jesus explaining to his disciple",
+  "title": "Gods Work Our Work",
+  "candidates": [
+   {
+    "ref": "John 14",
+    "score": 0.17,
+    "quote": "taught  me.  Let me show you one more.  Look over in 14.  John 14, look at verse 10.  John 14, look at verse 10.  This is Jesus explaining to his disciple"
+   }
+  ]
  },
  "748d479d6538": {
   "ref": "Romans 12",
+  "score": 0.84,
   "quote": "and I hope you do let me invite you to open with me to Romans 12 community  May not be the easiest thing in the world  You get together with a group of p",
-  "title": "Small Groups Engage in Community"
+  "title": "Small Groups Engage in Community",
+  "candidates": [
+   {
+    "ref": "Romans 12",
+    "score": 0.84,
+    "quote": "and I hope you do let me invite you to open with me to Romans 12 community  May not be the easiest thing in the world  You get together with a group of p"
+   }
+  ]
  },
  "162ea967b06b": {
-  "ref": "Colossians  3",
-  "quote": "and I hope you do, let me invite you to open with me to Colossians  3.  We were in Galatians.  One of Paul's letters, last week, it's a couple letters to",
-  "title": "The Disciples Relationships"
+  "ref": "Colossians 3:1",
+  "score": 0.85,
+  "quote": "works in us to affect those around us.  Look with me at Colossians 3:1.  Remember, this is where we studied a couple of weeks ago in Colossians 1, 27, whe",
+  "title": "The Disciples Relationships",
+  "candidates": [
+   {
+    "ref": "Colossians 3",
+    "score": 0.18,
+    "quote": "and I hope you do, let me invite you to open with me to Colossians  3.  We were in Galatians.  One of Paul's letters, last week, it's a couple letters to"
+   },
+   {
+    "ref": "Colossians 3:1",
+    "score": 0.85,
+    "quote": "works in us to affect those around us.  Look with me at Colossians 3:1.  Remember, this is where we studied a couple of weeks ago in Colossians 1, 27, whe"
+   },
+   {
+    "ref": "Galatians 2",
+    "score": 0.08,
+    "quote": "lked about this some last week, we were looking at Galatians 2, 20, I've been  crucified with Christ. This is not in your notes here, this is little extra, n"
+   }
+  ]
  },
  "9de607cd0ca0": {
-  "ref": "Genesis 15",
-  "quote": "an idea of the gravity of its meaning.  Go back to the very first book in the Bible,  Genesis 15, you might,  this is what I do when I'm looking at cert",
-  "title": "To Look After"
+  "ref": "Genesis 50:24-25",
+  "score": 0.89,
+  "quote": "minds you what this word is all about.  Look at Genesis 50:24-25.  It's used twice there.  And Joseph is talking about, Joseph's about to die, coming to t",
+  "title": "To Look After",
+  "candidates": [
+   {
+    "ref": "Genesis 15",
+    "score": 0.16,
+    "quote": "an idea of the gravity of its meaning.  Go back to the very first book in the Bible,  Genesis 15, you might,  this is what I do when I am looking at cer"
+   },
+   {
+    "ref": "Genesis 50:24-25",
+    "score": 0.89,
+    "quote": "minds you what this word is all about.  Look at Genesis 50:24-25.  It's used twice there.  And Joseph is talking about, Joseph's about to die, coming to t"
+   },
+   {
+    "ref": "James 1",
+    "score": 0.1,
+    "quote": ".  It's the same word that's translated look after in James 1 and 27.  Come to your aid.  He will look after you and take you up out of this land.  He pro"
+   },
+   {
+    "ref": "Psalms 106",
+    "score": 0.35,
+    "quote": "he is concerned about his people.  Then go to Psalm 106.  Look at Psalm 106,  and we see a prayer that is asking God  to look after us, to care for, to"
+   },
+   {
+    "ref": "Psalms 106:4",
+    "score": 0.3,
+    "quote": "ng responsibility for  our well-being.  Look at Psalm 106:4.  Remember me, O Lord, when you show favor to your people, and here it is, come to my aid.  Yo"
+   },
+   {
+    "ref": "Acts 7:23",
+    "score": 0.26,
+    "quote": "r the Israelites.  Why did he do that?  Look in Acts 7:23.  When Moses was 40 years old, listen to this, he decided to visit.  There it is.  Circle it rig"
+   },
+   {
+    "ref": "Acts 15:14",
+    "score": 0.18,
+    "quote": "looks after and cares for his people.  Look in Acts 15:14,  it says, Simon has described to us  how God at first showed his concern.  There it is right t"
+   },
+   {
+    "ref": "Acts 15:36",
+    "score": 0.29,
+    "quote": "you get to the, later in the chapter,  look at Acts 15:36.  This is kind of like the Moses picture.  Paul and Barnabas had been traveling around together"
+   }
+  ]
  },
  "a30e510ffaa3": {
-  "ref": "Ephesians 1",
-  "quote": "going to get you guys next  week.  So, turn with me to Ephesians 1 and verse 3 through 14 is what we're going to  look at.  Ephesians 1:3-14 and we're go",
-  "title": "Who Are We Identity"
+  "ref": null,
+  "score": 0.14,
+  "quote": "he's gonna get you guys next week.  So, turn with me to Ephesians 1 and verse 3 through 14 is what we're going to  look at.  Ephesians 1:3-14 and we're go",
+  "title": "Who Are We Identity",
+  "candidates": [
+   {
+    "ref": "Ephesians 1",
+    "score": 0.14,
+    "quote": "he's gonna get you guys next week.  So, turn with me to Ephesians 1 and verse 3 through 14 is what we're going to  look at.  Ephesians 1:3-14 and we're go"
+   },
+   {
+    "ref": "Ephesians 1:3-14",
+    "score": 0.14,
+    "quote": "se 3 through 14 is what we're going to  look at.  Ephesians 1:3-14 and we're going to continue the series entitled  Life Blood where we're looking at the"
+   }
+  ]
  },
  "3e2f281cd365": {
-  "ref": "Ephesians  6",
+  "ref": null,
+  "score": 0.09,
   "quote": "and I hope you do let me invite you to open with me to Ephesians  6 I  Would say at the start that we have a lot of ground to cover today in the word, bu",
-  "title": "The Gospel and Parents"
+  "title": "The Gospel and Parents",
+  "candidates": [
+   {
+    "ref": "Ephesians 6",
+    "score": 0.09,
+    "quote": "and I hope you do let me invite you to open with me to Ephesians  6 I  Would say at the start that we have a lot of ground to cover today in the word, bu"
+   }
+  ]
  },
  "eef5c9c57d2c": {
-  "ref": "Job  1",
-  "quote": "I hope you do, I want to invite you to open with me to Job  1. For the next four Sundays we're going to look at the gospel and suffering in  the book of",
-  "title": "The Gospel Gods Sovereignty and Suffering"
+  "ref": null,
+  "score": 0.04,
+  "quote": "I hope you do, I want to invite you to open with me to Job  1. For the next four Sundays, we're going to look at the gospel and suffering  in the book of",
+  "title": "The Gospel Gods Sovereignty and Suffering",
+  "candidates": [
+   {
+    "ref": "Job 1",
+    "score": 0.04,
+    "quote": "I hope you do, I want to invite you to open with me to Job  1. For the next four Sundays, we're going to look at the gospel and suffering  in the book of"
+   }
+  ]
  },
  "6f20b5a6c9ce": {
-  "ref": "numbers 11; numbers 24,  2",
-  "quote": "icture here.  What's interesting is you look through those passages  in the Old Testament, numbers 11, numbers 24,  2nd, Timothy 20, 2 Samuel 23, Ezekiel",
-  "title": "Exploring the Holy Spirit Part 4"
+  "ref": "Matthew 12:31-32",
+  "score": 0.73,
+  "quote": "rophecy,  tongues and healing.  Here we go.  Blasphemy against the spirit.  Matthew 12:31-32.  Jesus says, so I tell you, every sin in blasphemy will be",
+  "title": "Exploring the Holy Spirit Part 4",
+  "candidates": [
+   {
+    "ref": "Numbers 11",
+    "score": 0.08,
+    "quote": "icture here.  What's interesting is you look through those passages  in the Old Testament, numbers 11, numbers 24,  2nd, 2nd, Samuel 23, Ezekiel 11.  They"
+   },
+   {
+    "ref": "Numbers 2",
+    "score": 0.03,
+    "quote": "icture here.  What's interesting is you look through those passages  in the Old Testament, numbers 11, numbers 24,  2nd, 2nd, Samuel 23, Ezekiel 11.  They"
+   },
+   {
+    "ref": "Matthew 12:31-32",
+    "score": 0.73,
+    "quote": "rophecy,  tongues and healing.  Here we go.  Blasphemy against the spirit.  Matthew 12:31-32.  Jesus says, so I tell you, every sin in blasphemy will be"
+   }
+  ]
  },
  "9d16b4f66dae": {
-  "ref": "Luke 22",
-  "quote": "nd I hope you do.  Let me invite you to open with me to Luke 22.  We're gonna jump into the word a little bit earlier  than we normally do in our worship",
-  "title": "The Lords Supper Celebration Of The New Covenant Dr"
+  "ref": null,
+  "score": 0.13,
+  "quote": "th his disciples.  And then we're gonna go to 1 Corinthians 11.  And we're gonna see how Paul reminded the New Testament  of Church of how the Lord's su",
+  "title": "The Lords Supper Celebration Of The New Covenant Dr",
+  "candidates": [
+   {
+    "ref": "Luke 22",
+    "score": 0.12,
+    "quote": "nd I hope you do.  Let me invite you to open with me to Luke 22.  We're gonna jump into the word a little bit earlier  than we normally do in our worship"
+   },
+   {
+    "ref": "Acts 13",
+    "score": 0.1,
+    "quote": "res of that in scripture,  but when you look at places like Acts chapter four,  verse four, Acts 13, 48,  you see people who were believed and it doesn't"
+   },
+   {
+    "ref": "1 Corinthians 11",
+    "score": 0.13,
+    "quote": "th his disciples.  And then we're gonna go to 1 Corinthians 11.  And we're gonna see how Paul reminded the New Testament  of Church of how the Lord's su"
+   }
+  ]
  },
  "a3580c2e9575": {
-  "ref": "2 Corinthians 13",
-  "quote": "and I hope you do let me invite you to open with me to  2 Corinthians 13. We have spent the last four months exploring God's  Word to see what is unique",
-  "title": "A Covenant Blessing"
+  "ref": null,
+  "score": 0.06,
+  "quote": "nd I hope you do,  let me invite you to open with me  to 2 Corinthians 13.  We have spent the last four months  exploring God's Word to see what is unique",
+  "title": "A Covenant Blessing",
+  "candidates": [
+   {
+    "ref": "2 Corinthians 13",
+    "score": 0.06,
+    "quote": "nd I hope you do,  let me invite you to open with me  to 2 Corinthians 13.  We have spent the last four months  exploring God's Word to see what is unique"
+   }
+  ]
  },
  "d85b88edad0a": {
-  "ref": "Matthew 28",
-  "quote": ".  We talk about the Great Commission.  Turn there, Matthew 28.  We know this text.  We talk about it all the time.  And we should talk about it all the t",
-  "title": "Engage The Lost"
+  "ref": null,
+  "score": 0.33,
+  "quote": "We've looked at these passages before.  Go to Revelation.  Last book in the Bible.  Revelation 5.  Let me show you what the end is about.  That's what t",
+  "title": "Engage The Lost",
+  "candidates": [
+   {
+    "ref": "Matthew 28",
+    "score": 0.11,
+    "quote": ".  We talk about the Great Commission.  Turn there, Matthew 28.  We know this text.  We talk about it all the time.  And we should talk about it all the t"
+   },
+   {
+    "ref": "Matthew 24",
+    "score": 0.14,
+    "quote": "actually a few chapters before  this.  Go back to the left to Matthew 24.  And Matthew 24, Jesus is talking about when he's going to come back.  And he"
+   },
+   {
+    "ref": "Revelation 5",
+    "score": 0.33,
+    "quote": "We've looked at these passages before.  Go to Revelation.  Last book in the Bible.  Revelation 5.  Let me show you what the end is about.  That's what t"
+   },
+   {
+    "ref": "Revelation 14",
+    "score": 0.23,
+    "quote": "has saved them.  It's the same thing.  Go to Revelation 14, just over and over again.  Revelation 14:6, I saw another angel flying in mid-air and they"
+   },
+   {
+    "ref": "Revelation 14:6",
+    "score": 0.33,
+    "quote": "has saved them.  It's the same thing.  Go to Revelation 14, just over and over again.  Revelation 14:6, I saw another angel flying in mid-air and they"
+   }
+  ]
  },
  "3360ae56ddc8": {
   "ref": "Exodus 33",
+  "score": 0.47,
   "quote": "a Bible and I hope you do invite you to open with me to Exodus 33 we're gonna  dive into the word a little bit earlier than normal in our worship gatherin",
-  "title": "Chapter 6 Where Glory Dwells"
+  "title": "Chapter 6 Where Glory Dwells",
+  "candidates": [
+   {
+    "ref": "Exodus 33",
+    "score": 0.47,
+    "quote": "a Bible and I hope you do invite you to open with me to Exodus 33 we're gonna  dive into the word a little bit earlier than normal in our worship gatherin"
+   },
+   {
+    "ref": "Exodus 40",
+    "score": 0.12,
+    "quote": "odus 25 through 40.  And so we're gonna look at two main texts,  Exodus 33 and Exodus 40.  And based on those two texts,  I want to ask us as a church,  a"
+   }
+  ]
  },
  "ebc804acfe36": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "The Gospel Possessions And Prosperity Session 1"
+  "title": "The Gospel Possessions And Prosperity Session 1",
+  "candidates": []
  },
  "7ae7d5d57014": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Chapter 19 Sex In Salvation History"
+  "title": "Chapter 19 Sex In Salvation History",
+  "candidates": []
  },
  "d9f099a927ee": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Chapter 32 Questioning God"
+  "title": "Chapter 32 Questioning God",
+  "candidates": []
  },
  "d6766a6fc4f4": {
-  "ref": "Hebrews 11:26",
-  "quote": "ent believers believe in Christ?  Well, look at Hebrews 11:26,  how not Moses?  Moses considered the reproach of Christ  or suffering for Christ greater w",
-  "title": "The Body Of Christ Session 2"
+  "ref": null,
+  "score": 0.19,
+  "quote": "ent believers believe in Christ?  Well, look at Hebrews 11:26, how about Moses?  Moses considered the reproach of Christ or suffering for Christ greater w",
+  "title": "The Body Of Christ Session 2",
+  "candidates": [
+   {
+    "ref": "Hebrews 11:26",
+    "score": 0.19,
+    "quote": "ent believers believe in Christ?  Well, look at Hebrews 11:26, how about Moses?  Moses considered the reproach of Christ or suffering for Christ greater w"
+   }
+  ]
  },
  "4b05acbab283": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Christmas Eve 2010 Worship Gathering"
+  "title": "Christmas Eve 2010 Worship Gathering",
+  "candidates": []
  },
  "0bbb2cb29a2e": {
-  "ref": "1 John 3",
+  "ref": null,
+  "score": 0.18,
   "quote": "st, we become like Christ.  The more we look at Him, the more we become like Him.  That's why 1 John 3 says what it does.  We're sanctified by God the Fat",
-  "title": "Crucifixion Salvation and the Glory of God Session 4"
+  "title": "Crucifixion Salvation and the Glory of God Session 4",
+  "candidates": [
+   {
+    "ref": "1 John 3",
+    "score": 0.18,
+    "quote": "st, we become like Christ.  The more we look at Him, the more we become like Him.  That's why 1 John 3 says what it does.  We're sanctified by God the Fat"
+   },
+   {
+    "ref": "1 Corinthians 10",
+    "score": 0.03,
+    "quote": "old our  hearts and empower our lives.  Look at 1 Corinthians 15-10.  This is a great example.  Paul says, by the grace of God I am what I am and his grac"
+   },
+   {
+    "ref": "Colossians 1",
+    "score": 0.05,
+    "quote": "ueled work.  Does that make sense?  You look in Colossians 1, 27.  Christ in you, the hope of glory.  Him we proclaim, warning and teaching everyone  with"
+   }
+  ]
  },
  "03fc6d9dd643": {
-  "ref": "Deuteronomy 6",
-  "quote": "for teaching his son.  And then what we read just a second ago in Deuteronomy 6 makes clear.  We must have a verbal commitment to the word in our homes.",
-  "title": "SC11 session3"
+  "ref": null,
+  "score": 0.41,
+  "quote": "Train up a child on the way, he should go. Even when he is old, he will not depart  from it. Ephesians 6 says, bring them up in the discipline of the L",
+  "title": "SC11 session3",
+  "candidates": [
+   {
+    "ref": "Deuteronomy 6",
+    "score": 0.13,
+    "quote": "for teaching his son.  And then what we read just a second ago in Deuteronomy 6 makes clear, we must  have a verbal commitment to the word in our homes."
+   },
+   {
+    "ref": "Ephesians 6",
+    "score": 0.41,
+    "quote": "Train up a child on the way, he should go. Even when he is old, he will not depart  from it. Ephesians 6 says, bring them up in the discipline of the L"
+   }
+  ]
  },
  "c8584e1a5216": {
-  "ref": "Matthew 3",
-  "quote": "ble and I hope you do I'm invite you to open with me to Matthew 3 and  Pull out that  Worship guy that you received when you came in  Matthew 3 on this Ne",
-  "title": "Repentance and Resolutions"
+  "ref": "Malachi 4:5-6",
+  "score": 0.88,
+  "quote": "t, you might turn back just a few pages in your Bible to the left and you'll come  to the very last verses of the Old Testament, Malachi 4:5-6.  And I want to remi",
+  "title": "Repentance and Resolutions",
+  "candidates": [
+   {
+    "ref": "Matthew 3",
+    "score": 0.07,
+    "quote": "ble and I hope you do I'm invite you to open with me to Matthew 3 and  Pull out that  Worship guy that you received when you came in  Matthew 3 on this Ne"
+   },
+   {
+    "ref": "Malachi 4:5-6",
+    "score": 0.88,
+    "quote": "t, you might turn back just a few pages in your Bible to the left and you'll come  to the very last verses of the Old Testament, Malachi 4:5-6.  And I want to remi"
+   },
+   {
+    "ref": "Matthew 11",
+    "score": 0.14,
+    "quote": "o a prophet named John the Baptist. Now turn one more place real  quick. Go to Matthew 11 and I want you to see what Jesus says about John the  the Baptis"
+   },
+   {
+    "ref": "Matthew 11:7",
+    "score": 0.72,
+    "quote": "bout John the  the Baptist. Matthew 11, look with me at verse 7. Matthew 11:7,  and I want you to hear Jesus' commentary on John. He says as they went awa"
+   },
+   {
+    "ref": "Exodus 9:27",
+    "score": 0.08,
+    "quote": "t your sin, that alone is useless.  You look in Exodus 9:27, and Pharaoh is acknowledging his sin before the  Lord.  Joshua 7:20, Aiken is admitting his s"
+   },
+   {
+    "ref": "Joshua 7:20",
+    "score": 0.08,
+    "quote": "t your sin, that alone is useless.  You look in Exodus 9:27, and Pharaoh is acknowledging his sin before the  Lord.  Joshua 7:20, Aiken is admitting his s"
+   }
+  ]
  },
  "e589653ede9a": {
   "ref": null,
-  "quote": null,
-  "title": "Session2 audio 1 2 1 2"
+  "score": 0.18,
+  "quote": "ow you Obid in Redemptive History.  You read Ruth 4, Oaz took Ruth, she became his wife.  He went to her, the Lord gave her conception.  She bore her son.",
+  "title": "Session2 audio 1 2 1 2",
+  "candidates": [
+   {
+    "ref": "Ruth 4",
+    "score": 0.18,
+    "quote": "ow you Obid in Redemptive History.  You read Ruth 4, Oaz took Ruth, she became his wife.  He went to her, the Lord gave her conception.  She bore her son."
+   }
+  ]
  },
  "da7357366792": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Heaven Hell and the End of the World Secret Church 13 Part 2"
+  "title": "Heaven Hell and the End of the World Secret Church 13 Part 2",
+  "candidates": []
  },
  "dd5ac717af97": {
-  "ref": "1 Corinthians  13",
-  "quote": "and I hope you do, let me invite you to open with me to 1 Corinthians  13  Feel free to use table of contents if you need to to find 1 Corinthians  13 and",
-  "title": "The Cross and the Christian Love"
+  "ref": "1 Corinthians 13:1",
+  "score": 0.57,
+  "quote": "before we do that, let's start by just reading the whole chapter we want to see this  text in its context.  1 Corinthians 13:1, and the Bible says, If I spe",
+  "title": "The Cross and the Christian Love",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 13",
+    "score": 0.14,
+    "quote": "and I hope you do let me invite you to open with me to 1 Corinthians  13  Feel free to use table of contents if you need to to find 1 Corinthians  13 and"
+   },
+   {
+    "ref": "1 Corinthians 13:1",
+    "score": 0.57,
+    "quote": "before we do that, let's start by just reading the whole chapter we want to see this  text in its context.  1 Corinthians 13:1, and the Bible says, If I spe"
+   }
+  ]
  },
  "e7cb955577e5": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Secret Church 14 Session 4"
+  "title": "Secret Church 14 Session 4",
+  "candidates": []
  },
  "66862f058394": {
-  "ref": "Luke 9",
-  "quote": "I want us to do this morning is take a look at Christ.  And I want you to see His worth in Luke 9.  Now, you've got to know the context of what we're abo",
-  "title": "Jesus Is Worthy Of"
+  "ref": null,
+  "score": 0.13,
+  "quote": "I want us to do this morning is take a look at Christ  and I want you to see His worth in Luke 9. Now you've got to know the context of what we're  about",
+  "title": "Jesus Is Worthy Of",
+  "candidates": [
+   {
+    "ref": "Luke 9",
+    "score": 0.13,
+    "quote": "I want us to do this morning is take a look at Christ  and I want you to see His worth in Luke 9. Now you've got to know the context of what we're  about"
+   }
+  ]
  },
  "5b698cbf4dc7": {
-  "ref": "Ephesians 4",
-  "quote": "I hope you do, I want to invite you to open with me to Ephesians 4.  I am increasingly convinced that the me-centeredness that is so prevalent in our chu",
-  "title": "A Radical Redifinition of the Church Part 2"
+  "ref": null,
+  "score": 0.4,
+  "quote": "so small, they're meeting in a house.  Turn on the over one page in your Bible  to 1 Corinthians chapter one.  1 Corinthians 1:2, here it is again,  to t",
+  "title": "A Radical Redifinition of the Church Part 2",
+  "candidates": [
+   {
+    "ref": "Ephesians 4",
+    "score": 0.04,
+    "quote": "I hope you do, I want to invite you to open with me to Ephesians 4.  I am increasingly convinced that the me-centeredness that is so prevalent in our chu"
+   },
+   {
+    "ref": "Acts 11",
+    "score": 0.05,
+    "quote": ". Hold your place here in Ephesians and turn it back to Acts 11. Look at Acts 11. You can underline these verses in your Bible. Put a little  note out to"
+   },
+   {
+    "ref": "Acts 11:22",
+    "score": 0.34,
+    "quote": "constantly refers to the local church. Look at Acts 11:22.  This is talking about how the church and Antioch had gathered together, but listen to this in"
+   },
+   {
+    "ref": "Romans 16",
+    "score": 0.33,
+    "quote": "re gathered together in a local  place. Turn me to the next book, Romans 16. Look at Romans 16. I want you to look  with me at verses 3, 4, and 5 and see"
+   },
+   {
+    "ref": "1 Corinthians 1:2",
+    "score": 0.4,
+    "quote": "so small, they're meeting in a house.  Turn on the over one page in your Bible  to 1 Corinthians chapter one.  1 Corinthians 1:2, here it is again,  to t"
+   }
+  ]
  },
  "04dba1c92172": {
-  "ref": "Genesis 3",
-  "quote": "going to see Unfold  in Genesis 3. I'll go ahead and warn you, this is a passage that may be familiar  to many of us. Genesis 3 is the fall of man, the",
-  "title": "Proto Euangelion The First Gospel"
+  "ref": "Genesis 2:4",
+  "score": 0.83,
+  "quote": "s. We're  in Genesis now. I want you to go back one chapter to Genesis 2. And I want you  Genesis 2:4 says, this is the account of the heavens and the e",
+  "title": "Proto Euangelion The First Gospel",
+  "candidates": [
+   {
+    "ref": "Genesis 3",
+    "score": 0.13,
+    "quote": "and invites you not to open to the book of Acts.  I want to invite you to open to the book of Genesis, Genesis 3.  We're going to pick up"
+   },
+   {
+    "ref": "Genesis 2",
+    "score": 0.53,
+    "quote": "s. We're  in Genesis now. I want you to go back one chapter to Genesis 2. And I want you  Genesis 2:4 says, this is the account of the heavens and the e"
+   },
+   {
+    "ref": "Genesis 2:4",
+    "score": 0.83,
+    "quote": "s. We're  in Genesis now. I want you to go back one chapter to Genesis 2. And I want you  Genesis 2:4 says, this is the account of the heavens and the e"
+   }
+  ]
  },
  "f8f2969be2d4": {
-  "ref": "Galatians  4",
+  "ref": null,
+  "score": 0.23,
   "quote": "I hope you do, I want to invite you to open with me to Galatians  4.  If you don't have a Bible with you, I've done something a little different today.",
-  "title": "Adoption The Heart of the Easter Story"
+  "title": "Adoption The Heart of the Easter Story",
+  "candidates": [
+   {
+    "ref": "Galatians 4",
+    "score": 0.23,
+    "quote": "I hope you do, I want to invite you to open with me to Galatians  4.  If you don't have a Bible with you, I've done something a little different today."
+   }
+  ]
  },
  "8c9badb79bc1": {
-  "ref": "Romans 8",
-  "quote": "and I hope you do. Let me invite you to open with me to Romans 8  Right after you got the gospels and then acts and then the book of Romans  8, let me als",
-  "title": "Gods Story in a Guilt Based Culture"
+  "ref": null,
+  "score": 0.14,
+  "quote": "and I hope you do let me invite you to open with me to Romans 8  Right after you got the gospels and then acts and then the book of Romans  8, let me als",
+  "title": "Gods Story in a Guilt Based Culture",
+  "candidates": [
+   {
+    "ref": "Romans 8",
+    "score": 0.14,
+    "quote": "and I hope you do let me invite you to open with me to Romans 8  Right after you got the gospels and then acts and then the book of Romans  8, let me als"
+   }
+  ]
  },
  "7e4d84c42e36": {
-  "ref": "Romans 12",
-  "quote": "m with me this morning.  We're going to look at Romans 12, part of the text we looked at last week, we're going  to focus on verses 3 through 8, and I wan",
-  "title": "Small Groups Engage in Calling"
+  "ref": null,
+  "score": 0.1,
+  "quote": "I hope you do. Let me invite you to open with me to Romans 12.  Let me invite you to pull out those notes from the worship guide you received when you",
+  "title": "Small Groups Engage in Calling",
+  "candidates": [
+   {
+    "ref": "Romans 12",
+    "score": 0.1,
+    "quote": "I hope you do. Let me invite you to open with me to Romans 12.  Let me invite you to pull out those notes from the worship guide you received when you"
+   }
+  ]
  },
  "aedc553ccdf6": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Shine Roundtable Testimonies"
+  "title": "Shine Roundtable Testimonies",
+  "candidates": []
  },
  "b3bcc817d1a5": {
-  "ref": "Genesis  28; Genesis 28",
-  "quote": "and I hope you do, let me invite you to open with me to Genesis  28, first book in the Bible.  Genesis 28, and I'd say pull out the notes that are in your",
-  "title": "Twenty Miles Short"
+  "ref": null,
+  "score": 0.02,
+  "quote": "and I hope you do, let me invite you to open with me to Genesis  28 first book in the Bible  Genesis 28 and I'd say pull out the notes that are in your wo",
+  "title": "Twenty Miles Short",
+  "candidates": [
+   {
+    "ref": "Genesis 28",
+    "score": 0.02,
+    "quote": "and I hope you do, let me invite you to open with me to Genesis  28 first book in the Bible  Genesis 28 and I'd say pull out the notes that are in your wo"
+   }
+  ]
  },
  "1881526ae913": {
   "ref": null,
+  "score": 0,
   "quote": null,
-  "title": "Who is God Part 1"
+  "title": "Who is God Part 1",
+  "candidates": []
  },
  "7e19361b5d2d": {
-  "ref": "1 Corinthians 7",
-  "quote": "ible and I hope you do, I invite you to open with me to 1 Corinthians 7.  And I invite you to pull out those notes that are in the worship guide that you",
-  "title": "The Gospel and Singleness"
+  "ref": null,
+  "score": 0.16,
+  "quote": "ble, and I hope you do, I invite you to open with me to 1 Corinthians 7.  And I invite you to pull out those notes that are in the worship guide that you",
+  "title": "The Gospel and Singleness",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 7",
+    "score": 0.16,
+    "quote": "ble, and I hope you do, I invite you to open with me to 1 Corinthians 7.  And I invite you to pull out those notes that are in the worship guide that you"
+   }
+  ]
  },
  "6ec9f1467073": {
-  "ref": "Job 3",
+  "ref": null,
+  "score": 0.18,
   "quote": "and I hope you do, let me invite you to open with me to Job 3.  And if you don't have a Bible, I'm going to encourage you whenever you come in to this  wo",
-  "title": "The Gospel Gods Sufficiency and Suffering"
+  "title": "The Gospel Gods Sufficiency and Suffering",
+  "candidates": [
+   {
+    "ref": "Job 3",
+    "score": 0.18,
+    "quote": "and I hope you do, let me invite you to open with me to Job 3.  And if you don't have a Bible, I'm going to encourage you whenever you come in to this  wo"
+   },
+   {
+    "ref": "Job 2",
+    "score": 0.11,
+    "quote": "42.  And that's how many people try to read this book.  Everything's good, but there's a journey that happens between Job 2 and Job 42 that is real.  And"
+   },
+   {
+    "ref": "Job 4",
+    "score": 0.17,
+    "quote": "42.  And that's how many people try to read this book.  Everything's good, but there's a journey that happens between Job 2 and Job 42 that is real.  And"
+   }
+  ]
  },
  "450eb2d86f78": {
-  "ref": "Exodus 33",
+  "ref": null,
+  "score": 0.15,
   "quote": "and I hope you do them,  invite you to open with me to Exodus 33.  I mentioned, for those of you who were here last week,  that we are going to do someth",
-  "title": "We Glorify Christ By Making Desciples of All Nations"
+  "title": "We Glorify Christ By Making Desciples of All Nations",
+  "candidates": [
+   {
+    "ref": "Exodus 33",
+    "score": 0.15,
+    "quote": "and I hope you do them,  invite you to open with me to Exodus 33.  I mentioned, for those of you who were here last week,  that we are going to do someth"
+   }
+  ]
  },
  "4a89bf41eeaa": {
-  "ref": "Hebrews 1",
-  "quote": "and I hope you do, let me invite you to open with me to Hebrews 1.  Hebrews 1, near the end of the New Testament there, feel free to use your table of con",
-  "title": "Life of Christ"
+  "ref": null,
+  "score": 0.15,
+  "quote": "w hold your place here in Hebrews 1 and turn me to Acts 3.  Go with me to Acts 3. I want you to see just one instance where Jesus is shown, demonstrated t",
+  "title": "Life of Christ",
+  "candidates": [
+   {
+    "ref": "Hebrews 1",
+    "score": 0.1,
+    "quote": "and I hope you do, let me invite you to open with me to Hebrews 1.  Hebrews 1, near the end of the New Testament there, feel free to use your table  of co"
+   },
+   {
+    "ref": "Acts 3",
+    "score": 0.15,
+    "quote": "w hold your place here in Hebrews 1 and turn me to Acts 3.  Go with me to Acts 3. I want you to see just one instance where Jesus is shown, demonstrated t"
+   },
+   {
+    "ref": "Numbers 22",
+    "score": 0.07,
+    "quote": "o keep coming back to home plate here,  Go with me to Numbers, Numbers 22.  Numbers 22, you think about it.  God spoke in all kinds of ways in the Old T"
+   }
+  ]
  },
  "4a9fe0d5aaf9": {
-  "ref": "James 1",
-  "quote": "e study this text,  We're only going to go, James 1 19 through 25.  I had planned on us going all the way through verse 27,  but we're going to stop at",
-  "title": "Faith Works"
+  "ref": null,
+  "score": 0.21,
+  "quote": "e study this text.  We're only going to go, James 1 19-25.  I had planned on us going all the way through verse 27,  but we're going to stop at verse 25",
+  "title": "Faith Works",
+  "candidates": [
+   {
+    "ref": "James 1",
+    "score": 0.21,
+    "quote": "e study this text.  We're only going to go, James 1 19-25.  I had planned on us going all the way through verse 27,  but we're going to stop at verse 25"
+   }
+  ]
  },
  "317201804ac7": {
-  "ref": "Galatians  6",
-  "quote": "and I hope you do, let me invite you to open with me to Galatians  6. This morning we're going to do something a little different than our usual and  inte",
-  "title": "One Life With A Global Gospel"
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "One Life With A Global Gospel",
+  "candidates": []
  },
  "e8fc74830b88": {
-  "ref": "Leviticus 16",
+  "ref": null,
+  "score": 0.02,
   "quote": "and I hope you do let me invite you to open with me to Leviticus 16  Quite a week in Leviticus, huh? I know that you are shocked that  I'm not going to p",
-  "title": "Chapter 7 The Wonder Of Atonement"
+  "title": "Chapter 7 The Wonder Of Atonement",
+  "candidates": [
+   {
+    "ref": "Leviticus 16",
+    "score": 0.02,
+    "quote": "and I hope you do let me invite you to open with me to Leviticus 16  Quite a week in Leviticus, huh? I know that you are shocked that  I'm not going to p"
+   }
+  ]
  },
  "10dfc970dd74": {
-  "ref": "Proverbs 22",
-  "quote": "collection of universal promises.  Now look at Proverbs 22.11, he who loves purity of heart and who speech is gracious will have  the king as his friend.",
-  "title": "The Gospel Possessions And Prosperity Session 2"
+  "ref": null,
+  "score": 0.08,
+  "quote": "tion  of universal promises.  Now, like look at Proverbs 22.11,  he who loves purity of heart and who speech is gracious  will have the king as his friend",
+  "title": "The Gospel Possessions And Prosperity Session 2",
+  "candidates": [
+   {
+    "ref": "Proverbs 22",
+    "score": 0.08,
+    "quote": "tion  of universal promises.  Now, like look at Proverbs 22.11,  he who loves purity of heart and who speech is gracious  will have the king as his friend"
+   }
+  ]
  },
  "cfbb1b603a88": {
-  "ref": "Proverbs 1",
-  "quote": "I hope you do, I want to invite you to open with me to Proverbs 1.  If you're not sure where Proverbs is, just kind of open up to the middle.  You'll be",
-  "title": "Chapter 20 Walking In Wisdom"
+  "ref": "1 Kings 4:29",
+  "score": 0.55,
+  "quote": "sest.  And that's exactly what we see.  Go over to 1 Kings 4:29.  This is the last paragraph we read before we pause to go  into Proverbs and Song of So",
+  "title": "Chapter 20 Walking In Wisdom",
+  "candidates": [
+   {
+    "ref": "Proverbs 1",
+    "score": 0.09,
+    "quote": "I hope you do, I want to invite you to open with me to Proverbs 1.  If you're not sure where Proverbs is, just kind of open up to the middle.  You'll be"
+   },
+   {
+    "ref": "Proverbs 9:10",
+    "score": 0.19,
+    "quote": "peated again.  It's kind of bookended.  Look at Proverbs 9:10, the fear of the Lord is the beginning of wisdom.  You might underline it there.  That's, th"
+   },
+   {
+    "ref": "Genesis 1",
+    "score": 0.04,
+    "quote": "ading  through the story of Scripture.  Go back to creation with me.  You got this in your notes.  Think about Genesis 1 and 2.  We saw man in complete"
+   },
+   {
+    "ref": "1 Kings 3",
+    "score": 0.22,
+    "quote": "here we stopped in redemptive history.  Turn back with me to 1 Kings 3, I want us to look at 1 Kings 3 and 4  to remind ourselves of what's going on when"
+   },
+   {
+    "ref": "1 Kings 3:5",
+    "score": 0.53,
+    "quote": "I want us to hear where it came from.  Look at 1 Kings 3:5.  We read the parallel version of this in 2 Chronicles 1 a couple of weeks ago.  But you might"
+   },
+   {
+    "ref": "2 Chronicles 1",
+    "score": 0.13,
+    "quote": "I want us to hear where it came from.  Look at 1 Kings 3:5.  We read the parallel version of this in 2 Chronicles 1 a couple of weeks ago.  But you might"
+   },
+   {
+    "ref": "1 Kings 4:29",
+    "score": 0.55,
+    "quote": "sest.  And that's exactly what we see.  Go over to 1 Kings 4:29.  This is the last paragraph we read before we pause to go  into Proverbs and Song of So"
+   },
+   {
+    "ref": "1 Kings 4",
+    "score": 0.03,
+    "quote": "st paragraph we read before we pause to go  into Proverbs and Song of Solomon.  Remember what it said.  Verse 29, 1 Kings 4,  God gave Solomon wisdom an"
+   }
+  ]
  },
  "4db913bc84c6": {
-  "ref": "Ezekiel  36; Ezekiel 36",
-  "quote": "and I hope you do, let me invite you to open with me to Ezekiel  36  Ezekiel 36  Why why does God love us?  Why does God love you?  The reality is there i",
-  "title": "Chapter 34 Our God Centered God"
+  "ref": null,
+  "score": 0.16,
+  "quote": "and I hope you do, let me invite you to open with me to Ezekiel  36 and Ezekiel 36  Why?  Why does God love us?  Why does God love you?  The reality is th",
+  "title": "Chapter 34 Our God Centered God",
+  "candidates": [
+   {
+    "ref": "Ezekiel 36",
+    "score": 0.16,
+    "quote": "and I hope you do, let me invite you to open with me to Ezekiel  36 and Ezekiel 36  Why?  Why does God love us?  Why does God love you?  The reality is th"
+   }
+  ]
  },
  "384aa8b6ffcb": {
-  "ref": "2 Corinthians 4",
-  "quote": "d gravity.  And you think about it, oh, look at 2 Corinthians 4.  This is an amazing three verses together.  Verse 4, the God of this world has blinded th",
-  "title": "The Body Of Christ Session 3"
+  "ref": null,
+  "score": 0.42,
+  "quote": "gravity.  And you think about it.  Oh, look at 2 Corinthians 4.  This is an amazing three verses together.  Verse 4, the God of this world has blinded th",
+  "title": "The Body Of Christ Session 3",
+  "candidates": [
+   {
+    "ref": "2 Corinthians 4",
+    "score": 0.42,
+    "quote": "gravity.  And you think about it.  Oh, look at 2 Corinthians 4.  This is an amazing three verses together.  Verse 4, the God of this world has blinded th"
+   },
+   {
+    "ref": "Nehemiah 13:23",
+    "score": 0.32,
+    "quote": "ake the principles there and we try  to find them in Nehemiah.  And the problem is when you get to Nehemiah 13:23, okay, this is Scott's textbook  on lead"
+   },
+   {
+    "ref": "Psalms 4",
+    "score": 0.1,
+    "quote": "word,  almost like it's too important.  Look at Psalm 56, 4, you've got to skip down a little bit.  In God, whose word I praise.  Says it again in verse 1"
+   }
+  ]
  },
  "04d11a49671b": {
   "ref": null,
-  "quote": null,
-  "title": "Chapter 49 Not By Bread Alone"
+  "score": 0.24,
+  "quote": "nd I hope you do,  let me invite you to open with me to Exodus 16.  The main text we're gonna look at is in 2 Timothy,  I want to start and give you a bri",
+  "title": "Chapter 49 Not By Bread Alone",
+  "candidates": [
+   {
+    "ref": "Exodus 16",
+    "score": 0.24,
+    "quote": "nd I hope you do,  let me invite you to open with me to Exodus 16.  The main text we're gonna look at is in 2 Timothy,  I want to start and give you a bri"
+   }
+  ]
  },
  "828e3bbfdb32": {
-  "ref": "Romans 6",
+  "ref": null,
+  "score": 0.17,
   "quote": "assage of scripture that we're going to read in a second if you have a Bible and like to look in there  Go to Romans 6. I  Want to want to be honest with",
-  "title": "Religion and Resurrection"
+  "title": "Religion and Resurrection",
+  "candidates": [
+   {
+    "ref": "Romans 6",
+    "score": 0.17,
+    "quote": "assage of scripture that we're going to read in a second if you have a Bible and like to look in there  Go to Romans 6. I  Want to want to be honest with"
+   }
+  ]
  },
  "5785c0bce358": {
-  "ref": "Genesis 1 and 2",
-  "quote": "and God's ways.  It's interesting.  You go back to Genesis 1 and 2, you see God's pattern for marriage, which is clearly between  a male and a female.",
-  "title": "SC11 session4"
+  "ref": null,
+  "score": 0.09,
+  "quote": "God and God's ways.  It's interesting.  go back to Genesis 1 and 2, you see God's pattern for marriage, which is clearly between  a male and a female.",
+  "title": "SC11 session4",
+  "candidates": [
+   {
+    "ref": "Genesis 1",
+    "score": 0.09,
+    "quote": "God and God's ways.  It's interesting.  go back to Genesis 1 and 2, you see God's pattern for marriage, which is clearly between  a male and a female."
+   }
+  ]
  },
  "93289c9d904c": {
-  "ref": "Matthew  4",
-  "quote": "and I hope you do, then I invite you to open with me to Matthew  4 and we'll start in a minute in verse 12 I would  invite you to pull out those notes  fr",
-  "title": "Two Simple Words"
+  "ref": null,
+  "score": 0.1,
+  "quote": "and I hope you do, let me invite you to open with me to Matthew  4  We'll start  in a minute in verse 12 I would  invite you to pull out those notes  from",
+  "title": "Two Simple Words",
+  "candidates": [
+   {
+    "ref": "Matthew 4",
+    "score": 0.1,
+    "quote": "and I hope you do, let me invite you to open with me to Matthew  4  We'll start  in a minute in verse 12 I would  invite you to pull out those notes  from"
+   }
+  ]
  },
  "c79a3d47a048": {
-  "ref": "Isaiah 7",
-  "quote": "will restore all peoples.  Isaiah says, look for a spectacular sign.  He prophesies in Isaiah 7, a virgin bearing a son,  whose name should be called a ma",
-  "title": "Session3 audio 1 2 1 2 1 2"
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Session3 audio 1 2 1 2 1 2",
+  "candidates": []
+ },
+ "993ce657552c": {
+  "ref": "1 John 2:28",
+  "score": 0.77,
+  "quote": "it in its context.  And we're going to read actually starting back in 1 John 2:28.  go all the way to chapter three verse 10,  and then kind of take that",
+  "title": "He Came To Destroy The Devil",
+  "candidates": [
+   {
+    "ref": "1 John 2:28",
+    "score": 0.77,
+    "quote": "it in its context.  And we're going to read actually starting back in 1 John 2:28.  go all the way to chapter three verse 10,  and then kind of take that"
+   }
+  ]
+ },
+ "9bafc8db95a1": {
+  "ref": null,
+  "score": 0.07,
+  "quote": "and I hope you do let me invite you to open with me to Numbers 13 and  Pull out the notes you received when you came in we're actually gonna spend  Some",
+  "title": "Chapter 8 Fear Or Faith",
+  "candidates": [
+   {
+    "ref": "Numbers 13",
+    "score": 0.07,
+    "quote": "and I hope you do let me invite you to open with me to Numbers 13 and  Pull out the notes you received when you came in we're actually gonna spend  Some"
+   }
+  ]
+ },
+ "1ebb56e80c98": {
+  "ref": null,
+  "score": 0.05,
+  "quote": "e extremely important.  Two treasuries, look at Matthew 6, 19,  do not lay up for yourselves treasures on earth,  where moth and rust destroy,  where thie",
+  "title": "The Gospel Possessions And Prosperity Session 3",
+  "candidates": [
+   {
+    "ref": "Matthew 6",
+    "score": 0.05,
+    "quote": "e extremely important.  Two treasuries, look at Matthew 6, 19,  do not lay up for yourselves treasures on earth,  where moth and rust destroy,  where thie"
+   }
+  ]
+ },
+ "f91abecd7853": {
+  "ref": null,
+  "score": 0.39,
+  "quote": "tain and all the people are terrified.  Look at what Exodus 20:18 says.  Now when all the people saw the thunder and the flashes of lightning and the soun",
+  "title": "Chapter 23 Christ Our Prophet",
+  "candidates": [
+   {
+    "ref": "Exodus 20",
+    "score": 0.11,
+    "quote": "ble, I hope you do let me invite you to open with me to Exodus  20  The main text that we're going to study tonight actually starts in first King 17, but"
+   },
+   {
+    "ref": "1 Kings 17",
+    "score": 0.05,
+    "quote": "And what I want us to do tonight is to look at Elijah,  which we're gonna get to in a second, in 1 Kings 17,  as a pattern of these prophets who are to c"
+   },
+   {
+    "ref": "Genesis 12",
+    "score": 0.1,
+    "quote": "ith God, everything changes.  And we've read, we've seen how God called out a people  Genesis 12 for himself and called out Abraham to be his representati"
+   },
+   {
+    "ref": "Exodus 20:18",
+    "score": 0.39,
+    "quote": "tain and all the people are terrified.  Look at what Exodus 20:18 says.  Now when all the people saw the thunder and the flashes of lightning and the soun"
+   },
+   {
+    "ref": "1 Kings 16:29",
+    "score": 0.38,
+    "quote": "Let's start.  I know you asked you to turn to 1 Kings 17.  Go to the very end of 1 Kings 16:29.  I just want you to see the context that leads up to our"
+   }
+  ]
+ },
+ "c16aa842665e": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Chapter 35 The God Centered Life",
+  "candidates": []
+ },
+ "92c28bcbc1b7": {
+  "ref": "Revelation 19",
+  "score": 0.76,
+  "quote": "d the Lord's death until He comes.  You look at Revelation 19, there's a wedding supper  of the lamb that's coming.  And we're looking forward to the day",
+  "title": "The Body Of Christ Session 4",
+  "candidates": [
+   {
+    "ref": "Revelation 19",
+    "score": 0.76,
+    "quote": "d the Lord's death until He comes.  You look at Revelation 19, there's a wedding supper  of the lamb that's coming.  And we're looking forward to the day"
+   }
+  ]
+ },
+ "08c32a69b3b1": {
+  "ref": null,
+  "score": 0.08,
+  "quote": "and I hope you do, let me invite you to open with me to Revelation 21 as  we come to the end of our year-long journey through the Bible together this year",
+  "title": "Re Creation",
+  "candidates": [
+   {
+    "ref": "Revelation 21",
+    "score": 0.08,
+    "quote": "and I hope you do, let me invite you to open with me to Revelation 21 as  we come to the end of our year-long journey through the Bible together this year"
+   }
+  ]
+ },
+ "6c79b1529ff9": {
+  "ref": null,
+  "score": 0.15,
+  "quote": "I hope you do, I want to invite you to open with me to  Job 1 and  Luke 13. We're gonna be in both of those  Context this morning during our time togethe",
+  "title": "Tornadoes and the Trustworthiness of God",
+  "candidates": [
+   {
+    "ref": "Job 1",
+    "score": 0.15,
+    "quote": "I hope you do, I want to invite you to open with me to  Job 1 and  Luke 13. We're gonna be in both of those  Context this morning during our time togethe"
+   },
+   {
+    "ref": "Luke 13",
+    "score": 0.14,
+    "quote": "I hope you do, I want to invite you to open with me to  Job 1 and  Luke 13. We're gonna be in both of those  Context this morning during our time togethe"
+   }
+  ]
+ },
+ "189fccebcf43": {
+  "ref": null,
+  "score": 0.1,
+  "quote": "ord, and I hope you do, I invite you to open with me to Acts 13 and  Pull out the notes that are there in your worship guide  Acts 13 and while you're whi",
+  "title": "Fasting for Church Multiplication",
+  "candidates": [
+   {
+    "ref": "Acts 13",
+    "score": 0.1,
+    "quote": "ord, and I hope you do, I invite you to open with me to Acts 13 and  Pull out the notes that are there in your worship guide  Acts 13 and while you're whi"
+   }
+  ]
+ },
+ "e4ad36fd5715": {
+  "ref": null,
+  "score": 0.16,
+  "quote": "But it's even more than that when you look  Leviticus 13 and 14, and you see laws concerning leprosy.  You realize that leprosy was not just a physical",
+  "title": "The Kings Authority Part 1",
+  "candidates": [
+   {
+    "ref": "Matthew 4",
+    "score": 0.08,
+    "quote": "ord, and I hope you do, I invite you to open with me to Matthew 4.  I know your notes say Matthew 8, and we will get there momentarily, but we're going to"
+   },
+   {
+    "ref": "Matthew 8",
+    "score": 0.05,
+    "quote": "ord, and I hope you do, I invite you to open with me to Matthew 4.  I know your notes say Matthew 8, and we will get there momentarily, but we're going to"
+   },
+   {
+    "ref": "Matthew 9",
+    "score": 0.11,
+    "quote": "trait that I want to show you of Jesus  today in Matthew 8 and then next week,  Lord willing in Matthew 9.  So here's the deal.  You are, we together are, a p"
+   },
+   {
+    "ref": "Leviticus 13",
+    "score": 0.16,
+    "quote": "But it's even more than that when you look  Leviticus 13 and 14, and you see laws concerning leprosy.  You realize that leprosy was not just a physical"
+   }
+  ]
+ },
+ "e506413130c6": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Session4 audio 1 2 1 2 1 2 1 2",
+  "candidates": []
+ },
+ "e0f329e7e6a8": {
+  "ref": null,
+  "score": 0.16,
+  "quote": "h as we know it be obliterated? And you look at verses  like I've listed here, Psalm 102, Luke 21, Hebrews 1, 2 Peter 3, these verses seem to  indicate th",
+  "title": "Heaven Hell and the End of the World Secret Church 13 Part 4",
+  "candidates": [
+   {
+    "ref": "John 3",
+    "score": 0.14,
+    "quote": "st God's creation, but God's name.  You look at John 3 where John says, all that we receive.  received from heaven. So the references to the Kingdom of He"
+   },
+   {
+    "ref": "Psalms 102",
+    "score": 0.06,
+    "quote": "h as we know it be obliterated? And you look at verses  like I've listed here, Psalm 102, Luke 21, Hebrews 1, 2 Peter 3, these verses seem to  indicate th"
+   },
+   {
+    "ref": "Luke 21",
+    "score": 0.06,
+    "quote": "h as we know it be obliterated? And you look at verses  like I've listed here, Psalm 102, Luke 21, Hebrews 1, 2 Peter 3, these verses seem to  indicate th"
+   },
+   {
+    "ref": "Hebrews 1",
+    "score": 0.06,
+    "quote": "h as we know it be obliterated? And you look at verses  like I've listed here, Psalm 102, Luke 21, Hebrews 1, 2 Peter 3, these verses seem to  indicate th"
+   },
+   {
+    "ref": "2 Peter 3",
+    "score": 0.16,
+    "quote": "h as we know it be obliterated? And you look at verses  like I've listed here, Psalm 102, Luke 21, Hebrews 1, 2 Peter 3, these verses seem to  indicate th"
+   }
+  ]
+ },
+ "86c153b2a523": {
+  "ref": null,
+  "score": 0.08,
+  "quote": "word and I hope you do  I invite you to open with me  to 2 Corinthians 8 and  Maybe pull out that worship guide you received when you  came in I know  Gro",
+  "title": "The Cross and Christian Generostity",
+  "candidates": [
+   {
+    "ref": "2 Corinthians 8",
+    "score": 0.08,
+    "quote": "word and I hope you do  I invite you to open with me  to 2 Corinthians 8 and  Maybe pull out that worship guide you received when you  came in I know  Gro"
+   }
+  ]
+ },
+ "b2618d91a6a1": {
+  "ref": null,
+  "score": 0.22,
+  "quote": "opy of the Bible,  let me invite you to open with me to Psalm 82, Psalm 82,  as we continue our immersion in these Psalms,  different Psalms being preache",
+  "title": "A Plea for Justice",
+  "candidates": [
+   {
+    "ref": "Psalms 82",
+    "score": 0.22,
+    "quote": "opy of the Bible,  let me invite you to open with me to Psalm 82, Psalm 82,  as we continue our immersion in these Psalms,  different Psalms being preache"
+   }
+  ]
+ },
+ "4851e80aad93": {
+  "ref": "Luke 14:25",
+  "score": 0.51,
+  "quote": "Jesus is scattering the crowds at every turn.  Look at Luke 14:25.  Great crowds accompany him, him being Jesus.  And he turned to them and said,  If anyo",
+  "title": "The Radical Experiment 2010",
+  "candidates": [
+   {
+    "ref": "Luke 14",
+    "score": 0.11,
+    "quote": "even a new one.  And then write you to open with me to Luke 14.  And let me invite you to pull out the bag that you received when you came in and to pull"
+   },
+   {
+    "ref": "Luke 14:25",
+    "score": 0.51,
+    "quote": "Jesus is scattering the crowds at every turn.  Look at Luke 14:25.  Great crowds accompany him, him being Jesus.  And he turned to them and said,  If anyo"
+   }
+  ]
+ },
+ "780d982373c6": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Chapter 10 Courage That Conquers",
+  "candidates": []
+ },
+ "88e0f7effe6a": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "The Gospel Possessions And Prosperity Session 4",
+  "candidates": []
+ },
+ "4d4f96e039f1": {
+  "ref": null,
+  "score": 0.16,
+  "quote": "und, 2 Kings 14, 25.  You don't have to turn there.  But in 2 Kings 14, 25, what we discover is that the Word of the Lord came to Jonah the  prophet.  And",
+  "title": "Chapter 24 Fish Food And The Fourth Of July",
+  "candidates": [
+   {
+    "ref": "Jonah 1",
+    "score": 0.07,
+    "quote": "and I hope you do them, I invite you to open with me to Jonah 1.  I don't think it is a coincidence that we come to this book on this day, Jonah 4th of Ju"
+   },
+   {
+    "ref": "2 Kings 14",
+    "score": 0.16,
+    "quote": "und, 2 Kings 14, 25.  You don't have to turn there.  But in 2 Kings 14, 25, what we discover is that the Word of the Lord came to Jonah the  prophet.  And"
+   }
+  ]
+ },
+ "f0fb344e9f6d": {
+  "ref": "Haggai 1:1",
+  "score": 0.73,
+  "quote": "f this historic moment, I invite you to read with me.  with me. Haggai 1:1. In the second year of Darius the king, in the sixth  month, on the first day o",
+  "title": "Chapter 36 Christ Our Priest And King",
+  "candidates": [
+   {
+    "ref": "Haggai 1:1",
+    "score": 0.73,
+    "quote": "f this historic moment, I invite you to read with me.  with me. Haggai 1:1. In the second year of Darius the king, in the sixth  month, on the first day o"
+   },
+   {
+    "ref": "Haggai 2",
+    "score": 0.02,
+    "quote": "relationship with God, which is what we find  out in Haggai 2.  They were impure apart from God.  They were not clean before God.  Ultimately though, the"
+   }
+  ]
+ },
+ "abc59fcc95a9": {
+  "ref": "Luke 24:36",
+  "score": 0.74,
+  "quote": "believe it.  He goes and runs and has a look for himself,  and then you get over to verse 36.  Luke 24:36, like just imagine this scene.  Put yourself in",
+  "title": "Chapter 43 Redeemed For A Reason",
+  "candidates": [
+   {
+    "ref": "Luke 23",
+    "score": 0.2,
+    "quote": "hope you do, I'm going to invite you to open the back up with  me to Luke 23 and 24 where we left off.  So here's the question.  What does it mean to be r"
+   },
+   {
+    "ref": "Luke 24:36",
+    "score": 0.74,
+    "quote": "believe it.  He goes and runs and has a look for himself,  and then you get over to verse 36.  Luke 24:36, like just imagine this scene.  Put yourself in"
+   },
+   {
+    "ref": "Luke 24",
+    "score": 0.1,
+    "quote": "pter one, verse one.  We're gonna kinda go back and forth a little bit  between Acts one and Luke 24.  Acts chapter one says, in the first book, Otheoph"
+   }
+  ]
+ },
+ "7c44c160fc88": {
+  "ref": null,
+  "score": 0.16,
+  "quote": "le, I hope you do, then I invite you to open with me to  Acts 1 and to pull out the  notes that you received and well, they're not really notes  This page",
+  "title": "The Churchs Blank Check",
+  "candidates": [
+   {
+    "ref": "Acts 1",
+    "score": 0.16,
+    "quote": "le, I hope you do, then I invite you to open with me to  Acts 1 and to pull out the  notes that you received and well, they're not really notes  This page"
+   }
+  ]
+ },
+ "d25df64f0309": {
+  "ref": null,
+  "score": 0.33,
+  "quote": "on,  we would start in Psalm 78.  I was reading, meditating, praying on Psalm 78.  And it says, it's just a reminder,  you don't have to turn there, you can'",
+  "title": "The Child Yet Unborn",
+  "candidates": [
+   {
+    "ref": "Psalms 139",
+    "score": 0.16,
+    "quote": "and I hope you do, let me invite you to open with me to Psalm 139.  Let me invite you to pull out those notes that you received when you came in tonight."
+   },
+   {
+    "ref": "Psalms 78",
+    "score": 0.33,
+    "quote": "on,  we would start in Psalm 78.  I was reading, meditating, praying on Psalm 78.  And it says, it's just a reminder,  you don't have to turn there, you can'"
+   }
+  ]
+ },
+ "32e24c80ca3d": {
+  "ref": "Matthew 7:28",
+  "score": 0.8,
+  "quote": "t.  the end of the Sermon on the Mount, look at Matthew 7:28.  Matthew writes, when Jesus, and you might underline this verse,  because this is going to b",
+  "title": "The King and His Kingdom",
+  "candidates": [
+   {
+    "ref": "Matthew 7",
+    "score": 0.13,
+    "quote": "in emphases.  Let me show this to you.  Turn with me real quick to the end of Matthew 7.  What I want to show you, and maybe you underline some different"
+   },
+   {
+    "ref": "Matthew 7:28",
+    "score": 0.8,
+    "quote": "t.  the end of the Sermon on the Mount, look at Matthew 7:28.  Matthew writes, when Jesus, and you might underline this verse,  because this is going to b"
+   },
+   {
+    "ref": "Matthew 13:53",
+    "score": 0.11,
+    "quote": "rent parables.  And at the end of that, go to Matthew 13:53.  Matthew says, and when Jesus had finished these parables,  he went on from there.  So it's"
+   },
+   {
+    "ref": "Matthew 1:17",
+    "score": 0.21,
+    "quote": "enerations are skipped for  a purpose.  Go down to, go ahead and jump down to Matthew 1:17.  Where Matthew points this out.  He says, so all the generat"
+   }
+  ]
+ },
+ "eb121189bbaf": {
+  "ref": null,
+  "score": 0.18,
+  "quote": "is word and I hope you do invite you to open with me to Matthew 9 and  pull out those notes  that  You received when you came in Matthew 9 as we pick up o",
+  "title": "The Kings Authority Part 2",
+  "candidates": [
+   {
+    "ref": "Matthew 9",
+    "score": 0.18,
+    "quote": "is word and I hope you do invite you to open with me to Matthew 9 and  pull out those notes  that  You received when you came in Matthew 9 as we pick up o"
+   }
+  ]
+ },
+ "8a66f53cb844": {
+  "ref": "Matthew 28:16",
+  "score": 0.8,
+  "quote": "unreached people group.  So I want to read this text and then I want to lead us in prayer toward that end.  Matthew 28:16, Matthew writes, Now the 11 di",
+  "title": "Commissioned By the King",
+  "candidates": [
+   {
+    "ref": "Matthew 28",
+    "score": 0.19,
+    "quote": "and I hope you do, let me invite you to open with me to Matthew 28  and pull out those notes that you received and  worship guide when you came in  tonigh"
+   },
+   {
+    "ref": "Matthew 28:16",
+    "score": 0.8,
+    "quote": "unreached people group.  So I want to read this text and then I want to lead us in prayer toward that end.  Matthew 28:16, Matthew writes, Now the 11 di"
+   }
+  ]
+ },
+ "340102f496b1": {
+  "ref": "Revelation 20",
+  "score": 0.86,
+  "quote": "nd Christ will reign for  1,000 years.  Read Revelation 20 with me.  And then I saw, first few verses here, then I saw an angel coming down from heaven, h",
+  "title": "Heaven Hell and the End of the World Secret Church 13 Part 5",
+  "candidates": [
+   {
+    "ref": "Revelation 1",
+    "score": 0.46,
+    "quote": "hopeful obedience in the present.  You look at John Revelation 1-3, John says,  bless is the one who reads aloud the words of this prophecy  and blesses"
+   },
+   {
+    "ref": "Revelation 20",
+    "score": 0.86,
+    "quote": "nd Christ will reign for  1,000 years.  Read Revelation 20 with me.  And then I saw, first few verses here, then I saw an angel coming down from heaven, h"
+   }
+  ]
+ },
+ "0daf98478d0b": {
+  "ref": null,
+  "score": 0.16,
+  "quote": "ebody else around you does that you can look on let me invite you to open it with me to  Genesis 22 the first book in the Bible  22  And then let me also",
+  "title": "REAP",
+  "candidates": [
+   {
+    "ref": "Genesis 22",
+    "score": 0.16,
+    "quote": "ebody else around you does that you can look on let me invite you to open it with me to  Genesis 22 the first book in the Bible  22  And then let me also"
+   },
+   {
+    "ref": "Matthew 14",
+    "score": 0.0,
+    "quote": "that the step you're going to take?  We read a couple weeks ago, Peter,  walking on water in Matthew 14.  This mean you need to go out to the lake  or a p"
+   }
+  ]
+ },
+ "d095544f4357": {
+  "ref": null,
+  "score": 0.16,
+  "quote": "he Bible are actually part of our Bible reading  from this last week in Psalm 119.  So Psalm 119:14 describes meditation as repeating God's word even musical",
+  "title": "Meditating on Gods Presence",
+  "candidates": [
+   {
+    "ref": "Joshua 1",
+    "score": 0.09,
+    "quote": "e somebody around you does that you can look on with.  Let me invite you to open with me to Joshua 1.  You're going to want to follow along.  So find some"
+   },
+   {
+    "ref": "Psalms 119",
+    "score": 0.05,
+    "quote": "he Bible are actually part of our Bible reading  from this last week in Psalm 119.  So Psalm 119:14 describes meditation as repeating God's word even musical"
+   },
+   {
+    "ref": "Psalms 119:14",
+    "score": 0.16,
+    "quote": "he Bible are actually part of our Bible reading  from this last week in Psalm 119.  So Psalm 119:14 describes meditation as repeating God's word even musical"
+   }
+  ]
+ },
+ "c1c10a221e67": {
+  "ref": "Genesis 12",
+  "score": 0.75,
+  "quote": "If you would please open your Bibles to Genesis 12.  We're going to be going to three different places in Genesis.  They're very close",
+  "title": "Chapter 1 Believing God",
+  "candidates": [
+   {
+    "ref": "Genesis 12",
+    "score": 0.75,
+    "quote": "If you would please open your Bibles to Genesis 12.  We're going to be going to three different places in Genesis.  They're very close"
+   },
+   {
+    "ref": "Genesis 12:1",
+    "score": 0.75,
+    "quote": "nesis 17.  So let's be ready to kind of turn together.  But we'll start there in Genesis 12:1.  Now the Lord said to Abram, go from your country and your"
+   },
+   {
+    "ref": "James 2",
+    "score": 0.09,
+    "quote": "d your place  in Genesis 12 with me and turn over to James 2, where we were studying this last  fall.  And I want to show you something.  James 2:14-26."
+   },
+   {
+    "ref": "James 2:14",
+    "score": 0.68,
+    "quote": "ting right now.  So if you got a Bible, look with me at James 2:14.  We're going to get back to Genesis in a second.  I want to show you something that ju"
+   }
+  ]
+ },
+ "4c4e2b1a3ad8": {
+  "ref": "Judges 2:10",
+  "score": 0.56,
+  "quote": "book of Judges is about.  I want you to look with me at Judges 2:10.  And we're going to read from verse 10 to the end of the chapter.  And this right her",
+  "title": "Chapter 11 Depravity And Deliverance",
+  "candidates": [
+   {
+    "ref": "Judges 2",
+    "score": 0.22,
+    "quote": "ible and I hope you do, I invite you to open with me to Judges  2  Praise God for His salvation  We are going to do things a little different  during the"
+   },
+   {
+    "ref": "Judges 1",
+    "score": 0.2,
+    "quote": "of previewing where we're going to be  reading over the next week.  We just got to Judges 1 yesterday in our Bible reading plan.  And what I want us to do i"
+   },
+   {
+    "ref": "Judges 2:10",
+    "score": 0.56,
+    "quote": "book of Judges is about.  I want you to look with me at Judges 2:10.  And we're going to read from verse 10 to the end of the chapter.  And this right her"
+   }
+  ]
+ },
+ "adb245b9c87b": {
+  "ref": null,
+  "score": 0.17,
+  "quote": "ble, and I hope you do, I invite you to open with me to Psalm 23.  We're going to jump into the Word a little earlier tonight so that we have good time to",
+  "title": "Chapter 16 The Shepherd Who Satisfies",
+  "candidates": [
+   {
+    "ref": "Psalms 23",
+    "score": 0.17,
+    "quote": "ble, and I hope you do, I invite you to open with me to Psalm 23.  We're going to jump into the Word a little earlier tonight so that we have good time to"
+   }
+  ]
+ },
+ "0dbccf1bbf14": {
+  "ref": "Isaiah 6",
+  "score": 0.75,
+  "quote": "n the book of Isaiah.  Now I want us to turn over to Isaiah 6.  Here's the deal.  I was trying to think through how can we cover Isaiah in a day?  And thi",
+  "title": "Chapter 27 Hope In God",
+  "candidates": [
+   {
+    "ref": "Isaiah 1",
+    "score": 0.18,
+    "quote": "and I hope you do, let me invite you to open with me to Isaiah 1.  I am thankful for what God is showing us during these weeks as we're walking through th"
+   },
+   {
+    "ref": "Isaiah 6",
+    "score": 0.75,
+    "quote": "n the book of Isaiah.  Now I want us to turn over to Isaiah 6.  Here's the deal.  I was trying to think through how can we cover Isaiah in a day?  And thi"
+   }
+  ]
+ },
+ "37d115bc55f8": {
+  "ref": null,
+  "score": 0.05,
+  "quote": "in Ezra the Nehemiah, which we've been reading this last week.  I want you to go with me to Nehemiah 10.  The reality is Nehemiah is actually the end of Old",
+  "title": "Chapter 37 The Sin Of Man And The Silence Of God",
+  "candidates": [
+   {
+    "ref": "Nehemiah 10",
+    "score": 0.05,
+    "quote": "in Ezra the Nehemiah, which we've been reading this last week.  I want you to go with me to Nehemiah 10.  The reality is Nehemiah is actually the end of Old"
+   }
+  ]
+ },
+ "8d560a94279c": {
+  "ref": null,
+  "score": 0.23,
+  "quote": "maybe encourage you to  to underline it in your Bible.  It's just a great summary of the church in Acts.  Acts 9:31, says the church,  throughout all Judea and Gal",
+  "title": "Chapter 44 The Church For The Nations",
+  "candidates": [
+   {
+    "ref": "Acts 9",
+    "score": 0.07,
+    "quote": "and I hope you do, let me invite you to open with me to Acts 9.  I mentioned last week that tonight we were going to spend some time as a faith family  ta"
+   },
+   {
+    "ref": "Matthew 28",
+    "score": 0.19,
+    "quote": "Acts and early  in what decibel making look like in Acts.  How Jesus commanded Matthew 28, transfers over  in Acts 1 through 28, and to really think abou"
+   },
+   {
+    "ref": "Acts 1",
+    "score": 0.22,
+    "quote": "Acts and early  in what decibel making look like in Acts.  How Jesus commanded Matthew 28, transfers over  in Acts 1 through 28, and to really think abou"
+   },
+   {
+    "ref": "Acts 9:31",
+    "score": 0.23,
+    "quote": "maybe encourage you to  to underline it in your Bible.  It's just a great summary of the church in Acts.  Acts 9:31, says the church,  throughout all Judea and Gal"
+   }
+  ]
+ },
+ "0da7b9e0899c": {
+  "ref": "Acts 20:17",
+  "score": 0.7,
+  "quote": "nto challenging them.  So I want you to look with me at Acts 20:17.  We're gonna read through what happens  between Paul and the Ephesian elders.  I just",
+  "title": "From Birmingham to Seattle",
+  "candidates": [
+   {
+    "ref": "Acts 20",
+    "score": 0.11,
+    "quote": "ble, and I hope you do, I invite you to open with me to Acts 20.  Today is a great day for the Church of Brookills.  Almost two years ago, I found myself"
+   },
+   {
+    "ref": "Acts 20:17",
+    "score": 0.7,
+    "quote": "nto challenging them.  So I want you to look with me at Acts 20:17.  We're gonna read through what happens  between Paul and the Ephesian elders.  I just"
+   }
+  ]
+ },
+ "25b237e7584f": {
+  "ref": null,
+  "score": 0.09,
+  "quote": "and I hope you do, let me invite you to open with me to Job 2 and  Hopefully when you came in tonight you received those extra notes in  Addition to the n",
+  "title": "The Gospel and September 11",
+  "candidates": [
+   {
+    "ref": "Job 2",
+    "score": 0.09,
+    "quote": "and I hope you do, let me invite you to open with me to Job 2 and  Hopefully when you came in tonight you received those extra notes in  Addition to the n"
+   }
+  ]
+ },
+ "2739b36929ff": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Our Mysterious and Majestic King",
+  "candidates": []
+ },
+ "a1d9ddf276df": {
+  "ref": null,
+  "score": 0.2,
+  "quote": "ith judgment.  So we don't have time to turn to some of these places,  but Isaiah 17:10-11 says,  the harvest will be a heap and a day of sickliness and i",
+  "title": "Sent by the King",
+  "candidates": [
+   {
+    "ref": "Matthew 9",
+    "score": 0.11,
+    "quote": "and I hope you do, let me invite you to open with me to Matthew 9.  We're going to start in just a minute in verse 35, the end of Matthew 9.  And pull out"
+   },
+   {
+    "ref": "Matthew 5",
+    "score": 0.17,
+    "quote": "s basically a summary of everything  we read in Matthew 5 through 9:36 gives us a portrait of Jesus. When he saw the crowds,  he had compassion on them be"
+   },
+   {
+    "ref": "Isaiah 17:10-11",
+    "score": 0.2,
+    "quote": "ith judgment.  So we don't have time to turn to some of these places,  but Isaiah 17:10-11 says,  the harvest will be a heap and a day of sickliness and i"
+   }
+  ]
+ },
+ "4b27d0b1e4fe": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Contemplating the Eternal at Christmas",
+  "candidates": []
+ },
+ "f6e9cec7fc11": {
+  "ref": "1 Corinthians 2",
+  "score": 0.7,
+  "quote": "So, church, if you'll turn to that passage of Scripture in 1 Corinthians 2, let's honor  the Lord through worship and studying His Word.",
+  "title": "The Cross and Christian Preaching Part 2 Jim Shaddix",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 2",
+    "score": 0.7,
+    "quote": "So, church, if you'll turn to that passage of Scripture in 1 Corinthians 2, let's honor  the Lord through worship and studying His Word."
+   }
+  ]
+ },
+ "aea7a6d9cc38": {
+  "ref": null,
+  "score": 0.17,
+  "quote": "e, but hold your place for a second and turn it Romans 15.  Because this is one of those letters that Paul who writes the book of Romans, one of those  le",
+  "title": "Our Obligation to the Unreached",
+  "candidates": [
+   {
+    "ref": "Romans 1",
+    "score": 0.13,
+    "quote": "and I hope you do, let me invite you to open with me to Romans  1.  I've got to admit this is almost too good to be true, to be in Ruth last week.  This w"
+   },
+   {
+    "ref": "Romans 15",
+    "score": 0.17,
+    "quote": "e, but hold your place for a second and turn it Romans 15.  Because this is one of those letters that Paul who writes the book of Romans, one of those  le"
+   }
+  ]
+ },
+ "3be1ddc47be7": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Christmas Eve Service",
+  "candidates": []
+ },
+ "bae329e81901": {
+  "ref": "1 Corinthians 5",
+  "score": 0.73,
+  "quote": "word and I hope you do, I invite you to open with me to 1 Corinthians 5.  Feel free to use Table of Contents if you need to to find 1 Corinthians in the N",
+  "title": "The Cross and Christian Discipline",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 5",
+    "score": 0.73,
+    "quote": "word and I hope you do, I invite you to open with me to 1 Corinthians 5.  Feel free to use Table of Contents if you need to to find 1 Corinthians in the N"
+   },
+   {
+    "ref": "Matthew 7:1",
+    "score": 0.06,
+    "quote": "is one is legalistic.  It's judgmental. Look at Matthew 7:1.  Third reason why we don't practice church this one is because people will leave the church i"
+   },
+   {
+    "ref": "Matthew 18",
+    "score": 0.08,
+    "quote": "re in a few minutes, but we're going to go for a little  bit over to Matthew.  So go turn with me over to Matthew 18.  So the first book in the New Test"
+   }
+  ]
+ },
+ "e5d265f7c0ec": {
+  "ref": null,
+  "score": 0.37,
+  "quote": "his people, and making himself a name.  Look at 2 Kings, 1934.  I will defend this city to save it for my own sake.  Look at Psalm 23, this beloved psalm,",
+  "title": "Secret Church 14 Session 1",
+  "candidates": [
+   {
+    "ref": "Genesis 12",
+    "score": 0.3,
+    "quote": "that is permeated by this purpose.  You look at other passages in Genesis, Genesis 12.  God says to Abraham, I will make you a great nation,  I will bless"
+   },
+   {
+    "ref": "1 Samuel 12",
+    "score": 0.12,
+    "quote": "hat drives God throughout all history.  Look at 1 Samuel 12, 22.  The Lord will not forsake his people.  Why?  For his great names sake.  2 Samuel 7, 23."
+   },
+   {
+    "ref": "Psalms 23",
+    "score": 0.37,
+    "quote": "his people, and making himself a name.  Look at 2 Kings, 1934.  I will defend this city to save it for my own sake.  Look at Psalm 23, this beloved psalm,"
+   }
+  ]
+ },
+ "6b63e3ef9c32": {
+  "ref": null,
+  "score": 0.22,
+  "quote": "hat we see happening in the Bible.  You look at Acts 13, the church at Antioch  is worshiping fasting and praying,  and the Spirit says, set apart for me,",
+  "title": "The Church at Brook Hills",
+  "candidates": [
+   {
+    "ref": "Acts 13",
+    "score": 0.22,
+    "quote": "hat we see happening in the Bible.  You look at Acts 13, the church at Antioch  is worshiping fasting and praying,  and the Spirit says, set apart for me,"
+   }
+  ]
+ },
+ "21fc07494f09": {
+  "ref": null,
+  "score": 0.24,
+  "quote": "een  just because we don't have time to turn there tonight.  Acts 11:22 talks about a report  that came to the ears of the church in Jerusalem.  So that's",
+  "title": "Every Member a Disciple Maker",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 12",
+    "score": 0.22,
+    "quote": "and I hope you do let me invite you to open with me to 1 Corinthians 12  Feel free to use the table of contents there in your Bible if you need to and in"
+   },
+   {
+    "ref": "Acts 11:22",
+    "score": 0.24,
+    "quote": "een  just because we don't have time to turn there tonight.  Acts 11:22 talks about a report  that came to the ears of the church in Jerusalem.  So that's"
+   }
+  ]
+ },
+ "c5248bcb365d": {
+  "ref": null,
+  "score": 0.14,
+  "quote": "ed up in 10:14.  You might underline it in your Bible.  Just like Paul said in 1 Corinthians 6,  flee sexual immorality.  We spend time talking about that.  Here h",
+  "title": "The Cross and the Christians Sports",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 10",
+    "score": 0.13,
+    "quote": "ble and I hope you do and invite you to open with me to 1 Corinthians 10  It is good to be back from the Middle East  My heart is full I came back  Yester"
+   },
+   {
+    "ref": "1 Corinthians 6",
+    "score": 0.14,
+    "quote": "ed up in 10:14.  You might underline it in your Bible.  Just like Paul said in 1 Corinthians 6,  flee sexual immorality.  We spend time talking about that.  Here h"
+   }
+  ]
+ },
+ "cc534f441727": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Secret Church 14 Session 2",
+  "candidates": []
+ },
+ "5cda1eb7e61c": {
+  "ref": null,
+  "score": 0.22,
+  "quote": "Bible and I hope you do I invite you to open with me to Exodus 12  and the story that  Choir has just sung about you know the problem with this Bible read",
+  "title": "Chapter 5 Blood That Satisfies",
+  "candidates": [
+   {
+    "ref": "Exodus 12",
+    "score": 0.22,
+    "quote": "Bible and I hope you do I invite you to open with me to Exodus 12  and the story that  Choir has just sung about you know the problem with this Bible read"
+   },
+   {
+    "ref": "Exodus 24",
+    "score": 0.19,
+    "quote": "t I want to do instead  is I want us to look, kind of bird's eye view  at two particular chapters, Exodus 12  and Exodus 24.  And I want us to trace a the"
+   }
+  ]
+ },
+ "ac95d21bdd44": {
+  "ref": null,
+  "score": 0.03,
+  "quote": "ve a Bible. I hope you do invite you to open with me to Psalm 10  The first Sunday I ever preached here at brachills  Heather and I had begun the process",
+  "title": "Chapter 15 Father To The Fatherless",
+  "candidates": [
+   {
+    "ref": "Psalms 10",
+    "score": 0.03,
+    "quote": "ve a Bible. I hope you do invite you to open with me to Psalm 10  The first Sunday I ever preached here at brachills  Heather and I had begun the process"
+   }
+  ]
+ },
+ "77a5a6e449c0": {
+  "ref": null,
+  "score": 0.06,
+  "quote": "ible and I hope you do, I invite you to open with me to 1 Chronicles 29.  I am so grateful for the time we had together last week as a faith family as we",
+  "title": "Chapter 18 Giving In The History Of Redemption",
+  "candidates": [
+   {
+    "ref": "1 Chronicles 29",
+    "score": 0.06,
+    "quote": "ible and I hope you do, I invite you to open with me to 1 Chronicles 29.  I am so grateful for the time we had together last week as a faith family as we"
+   }
+  ]
+ },
+ "4b4d682f509a": {
+  "ref": null,
+  "score": 0.07,
+  "quote": "and I hope you do let me invite you to open with me to Jeremiah  31  Jeremiah 31 a fairly depressing book at times. Yes  As we have been reading through",
+  "title": "Chapter 31 The New Covenant In The Old Testament",
+  "candidates": [
+   {
+    "ref": "Jeremiah 31",
+    "score": 0.07,
+    "quote": "and I hope you do let me invite you to open with me to Jeremiah  31  Jeremiah 31 a fairly depressing book at times. Yes  As we have been reading through"
+   }
+  ]
+ },
+ "a3e439a3d138": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "The Body Of Christ Session 1",
+  "candidates": []
+ },
+ "aecfbce983be": {
+  "ref": null,
+  "score": 0.14,
+  "quote": "in him,  will never perish, will never turn alive,  we're gonna believe that.  And when we see an Ephesians 1 that God chose us in him  for the creation",
+  "title": "Chapter 48 The Mystery Of Christmas",
+  "candidates": [
+   {
+    "ref": "Ephesians 1",
+    "score": 0.14,
+    "quote": "in him,  will never perish, will never turn alive,  we're gonna believe that.  And when we see an Ephesians 1 that God chose us in him  for the creation"
+   }
+  ]
+ },
+ "0913cbb935a8": {
+  "ref": null,
+  "score": 0.18,
+  "quote": "hows us the beauty of forgiveness.  You read Psalm 32, it's a powerful, powerful chapter there that Paul quotes in the New Testament  to talk about how we",
+  "title": "Crucifixion Salvation and the Glory of God Session 3",
+  "candidates": [
+   {
+    "ref": "Psalms 32",
+    "score": 0.18,
+    "quote": "hows us the beauty of forgiveness.  You read Psalm 32, it's a powerful, powerful chapter there that Paul quotes in the New Testament  to talk about how we"
+   }
+  ]
+ },
+ "b274d9884680": {
+  "ref": null,
+  "score": 0.09,
+  "quote": "econd, look at the design of creation.  Look at how woman was created.  God didn't immediately create woman here in Genesis 2.  Instead, God parades all t",
+  "title": "SC11 session2",
+  "candidates": [
+   {
+    "ref": "Genesis 2",
+    "score": 0.09,
+    "quote": "econd, look at the design of creation.  Look at how woman was created.  God didn't immediately create woman here in Genesis 2.  Instead, God parades all t"
+   }
+  ]
+ },
+ "98486f2fd05c": {
+  "ref": null,
+  "score": 0.22,
+  "quote": "Matthew quotes from the Old Testament.  Look first in Matthew 2:15.  Right after Joseph takes his family to Egypt.  Matthew says, this was to fulfill what",
+  "title": "Christmas Pleasure Amidst Worldly Pain",
+  "candidates": [
+   {
+    "ref": "Matthew 2:15",
+    "score": 0.22,
+    "quote": "Matthew quotes from the Old Testament.  Look first in Matthew 2:15.  Right after Joseph takes his family to Egypt.  Matthew says, this was to fulfill what"
+   }
+  ]
+ },
+ "31485259f3e2": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Session1 audio 1 2",
+  "candidates": []
+ },
+ "9edb2f009005": {
+  "ref": null,
+  "score": 0.21,
+  "quote": "f time in a grave for four days.  I was reading the other day, 2 Corinthians 12 describes being caught up in heaven, but  he gave no details.  Something up i",
+  "title": "Heaven Hell and the End of the World Secret Church 13 Part 1",
+  "candidates": [
+   {
+    "ref": "2 Corinthians 12",
+    "score": 0.21,
+    "quote": "f time in a grave for four days.  I was reading the other day, 2 Corinthians 12 describes being caught up in heaven, but  he gave no details.  Something up i"
+   }
+  ]
+ },
+ "eaa0d24bfeb6": {
+  "ref": "Genesis 1:26",
+  "score": 0.8,
+  "quote": "es.  God himself designed our work.  So read with me Genesis 1:26.  On the sixth day of creation, this is the work God does.  God said, let us make man in",
+  "title": "The Cross and the Christians Work",
+  "candidates": [
+   {
+    "ref": "1 Corinthians 10",
+    "score": 0.13,
+    "quote": "word and I hope you do I invite you to open with me to 1 Corinthians 10 and  As you're finding 1 Corinthians 10  Let me invite you to pull out the notes"
+   },
+   {
+    "ref": "Genesis 1:26",
+    "score": 0.8,
+    "quote": "es.  God himself designed our work.  So read with me Genesis 1:26.  On the sixth day of creation, this is the work God does.  God said, let us make man in"
+   },
+   {
+    "ref": "Ephesians 6",
+    "score": 0.09,
+    "quote": "to  in a little bit.  You don't have to go there now, but just to mention in Ephesians 6,  we are exhorted to serve, to work wholeheartedly  as if we we"
+   }
+  ]
+ },
+ "c2f87531a105": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "Secret Church 14 Session 3",
+  "candidates": []
+ },
+ "0aa5d5e53285": {
+  "ref": null,
+  "score": 0.2,
+  "quote": "g.  This is challenging because when we look in Revelation, you look in Revelation 15,  15, Revelation 16, Revelation 19, passage and revelation.  Talk ab",
+  "title": "Heaven Hell and the End of the World Secret Church 13 Part 3",
+  "candidates": [
+   {
+    "ref": "Revelation 15",
+    "score": 0.17,
+    "quote": "g.  This is challenging because when we look in Revelation, you look in Revelation 15,  15, Revelation 16, Revelation 19, passage and revelation.  Talk ab"
+   },
+   {
+    "ref": "Revelation 16",
+    "score": 0.2,
+    "quote": "g.  This is challenging because when we look in Revelation, you look in Revelation 15,  15, Revelation 16, Revelation 19, passage and revelation.  Talk ab"
+   },
+   {
+    "ref": "Revelation 19",
+    "score": 0.17,
+    "quote": "g.  This is challenging because when we look in Revelation, you look in Revelation 15,  15, Revelation 16, Revelation 19, passage and revelation.  Talk ab"
+   }
+  ]
+ },
+ "85a554347d71": {
+  "ref": "Romans 15:8",
+  "score": 0.8,
+  "quote": "omans 15 and 16 so we're gonna actually read most of it  We're gonna start in Romans 15:8 and then we're not gonna walk  verse by verse through a study of",
+  "title": "The Cross and the Christians Calling",
+  "candidates": [
+   {
+    "ref": "Romans 15",
+    "score": 0.31,
+    "quote": "round you  Does I want to invite you to open with me to Romans 15  Romans 15 I mentioned the last couple of weeks that would be pausing and our studying 1"
+   },
+   {
+    "ref": "Romans 15:8",
+    "score": 0.8,
+    "quote": "omans 15 and 16 so we're gonna actually read most of it  We're gonna start in Romans 15:8 and then we're not gonna walk  verse by verse through a study of"
+   }
+  ]
+ },
+ "c71e03706b33": {
+  "ref": null,
+  "score": 0,
+  "quote": null,
+  "title": "The Most Astounding Claim In All Of HIstory",
+  "candidates": []
  }
 }
