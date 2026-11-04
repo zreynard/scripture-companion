@@ -350,7 +350,31 @@ class Engine:
                 g["verse"].sort(key=lambda i: min((v for (cc, v) in (self.VS.get(i) or {}).get(name, ()) if cc == c), default=0))
                 g["broad"].sort(key=lambda i: len({cc for cc, _ in (self.VS.get(i) or {}).get(name, ())}) or 99)
                 deep[f"{abbr}:{c}"] = {k: v for k, v in g.items() if v}
-        return {"app": {"u": units, "at": at, "deep": deep, "alt": {str(k): v for k, v in alts.items()}}, "rows": rows}
+        return {"app": {"u": units, "at": at, "deep": deep, "alt": {str(k): v for k, v in alts.items()}, "bk": self.book_core()}, "rows": rows}
+
+    def book_core(self):
+        """Each book's opening stop: Skip's Bible from 30,000 Feet flight on it (in its parts) is Core; a flight over
+        several books is the Core of each, offered at the first of them. Every other overview stays in Go Deeper."""
+        order = [b["name"] for b in self.books]
+        abbr = {b["name"]: b["abbr"] for b in self.books}
+        groups = defaultdict(list)
+        for i, it in self.items.items():
+            if it["src"] != "skip_archive" or not it.get("audio") or not re.match(r"\s*Flight\b", it["t"] or ""): continue
+            code = re.sub(r"^\s*Flight\s*", "", it["t"])
+            stem = re.sub(r"\d$", "", code) if re.match(r"^\d", code) else re.sub(r"\d+$", "", code)
+            groups[stem].append((code, i))
+        out = defaultdict(lambda: {"ids": [], "q": []})
+        for stem, xs in groups.items():
+            ids = [i for _, i in sorted(xs)]
+            books = sorted({b for i in ids for b in (self.VS.get(i) or {}) if b in abbr}, key=order.index)
+            if not books: continue
+            for b in books:
+                out[abbr[b]]["ids"] += ids
+                if b == books[0]: out[abbr[b]]["q"] += ids
+        for v in out.values():      # "Between the Testaments" before the Gospels' own flight
+            v["ids"].sort(key=lambda i: (0 if "INT" in self.items[i]["t"] else 1, self.items[i]["t"]))
+            v["q"].sort(key=lambda i: (0 if "INT" in self.items[i]["t"] else 1, self.items[i]["t"]))
+        return dict(out)
 
 
 def select(books, items, VS, ref_how, cited, item_books, VC, mode=None):

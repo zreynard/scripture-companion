@@ -1030,14 +1030,14 @@ const okWho=id=>!cfg.who||I[id].who===cfg.who;
    A passage spanning chapters plays at the last of them, once its Scripture has been read. Your choices persist:
    coreSet {unit or "k:<abbr>:<chapter>": [ids]} replaces a Core, cfg.corePref prefers one teacher, cfg.core=false is the
    previous Journey (every teaching queued). */
-const CORE=D.core||{u:[],at:{},deep:{},alt:{}};
+const CORE=D.core||{u:[],at:{},deep:{},alt:{},bk:{}};CORE.bk=CORE.bk||{};
 const coreOn=()=>cfg.core!==false&&CORE.u.length>0;
 const coreSet=()=>S.get('coreSet',{});
-function coreKey(x){if(!x||x.c.intro)return null;const k=x.b.abbr+':'+x.c.c,u=CORE.at[k];return u!=null?u:('k:'+k)}
-function coreIdsOf(u){const set=coreSet()[u];if(set)return set.filter(id=>I[id]&&okWho(id));if(typeof u==='string')return[];
+function coreKey(x){if(!x)return null;if(x.c.intro)return CORE.bk[x.b.abbr]?'b:'+x.b.abbr:null;const k=x.b.abbr+':'+x.c.c,u=CORE.at[k];return u!=null?u:('k:'+k)}
+function coreIdsOf(u){const set=coreSet()[u];if(set)return set.filter(id=>I[id]&&okWho(id));if(typeof u==='string')return u.startsWith('b:')?((CORE.bk[u.slice(2)]||{}).ids||[]).filter(id=>I[id]&&okWho(id)):[];
  const p=cfg.corePref;if(p&&CORE.u[u][0]){const a=(CORE.alt[u]||[]).find(z=>z[2]===p);if(a)return a[0].filter(id=>I[id]&&okWho(id))}
  return CORE.u[u][3].filter(id=>I[id]&&okWho(id))}
-function coreHere(x){const u=coreKey(x);if(u==null)return null;if(typeof u==='string')return coreSet()[u]?u:null;return CORE.u[u][2]===x.c.c?u:null}
+function coreHere(x){const u=coreKey(x);if(u==null)return null;if(typeof u==='string')return coreSet()[u]||u.startsWith('b:')?u:null;return CORE.u[u][2]===x.c.c?u:null}
 function coreLater(x){const u=coreKey(x);return u!=null&&typeof u!=='string'&&CORE.u[u][2]!==x.c.c?u:null}
 function coreWhy(u){if(coreSet()[u])return null;if(typeof u==='string')return null;const p=cfg.corePref;if(p&&(CORE.alt[u]||[]).some(z=>z[2]===p))return'Your preferred teacher for Core.';return CORE.u[u][4]}
 // --- denser scenery: terrain everywhere, per-book motifs, more vignettes, celestial bodies, rivers ---
@@ -1515,7 +1515,7 @@ function jpIdx(){const w=walk(),k=S.get('jp',null);let i=k?w.findIndex(x=>stopKe
  if(i<0){i=camp!=null&&w[camp]?camp:w.findIndex(x=>!stopRead(x));if(i<0)i=0;S.set('jp',stopKey(w[i]))}return i}
 function setJP(i){const w=walk();if(w[i])S.set('jp',stopKey(w[i]))}
 function stepsOf(i){const x=walk()[i];if(!x)return null;
- if(coreOn()){const u=coreHere(x);return {x,ov:[],teach:u==null?[]:coreIdsOf(u),u}}
+ if(coreOn()){const u=coreHere(x),bq=u&&String(u).startsWith('b:')&&!coreSet()[u]?new Set(CORE.bk[x.b.abbr].q):null;return {x,ov:[],teach:u==null?[]:coreIdsOf(u).filter(id=>!bq||bq.has(id)),u}}
  const G=listenGroups(x.b,x.c);return {x,ov:G.overview.map(g=>g.id),teach:[...G.chapter,...G.verses].map(g=>g.id)}}
 const queued=(id,i)=>(coreOn()||firstAt()[id]===i)&&!!I[id]&&!!I[id].audio&&!isDone(id)&&!SKIP[id];
 const scrDone=x=>!!read[scrKey(x)]||!!SKIP['S:'+scrKey(x)];
@@ -1605,7 +1605,7 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  const bk=BACK&&BACK.from!==i&&w[BACK.from]?BACK.from:null;
  h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1" aria-label="Back to ${esc(stopName(w[bk]))}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M9 14 4 9l5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>${esc(stopName(w[bk]))}</button>`:''}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
  const ii=stopIntro(x),itx=hasIntroText(x),iiF=ii?(isDone(ii)||SKIP[ii]?1:Math.min(.95,heardPct(ii)/100)):0;
- const segs=coreOn()?[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?(G.overview.length?[['teaching','Teaching',1]]:[]):[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',s.teach.length?stepFrac(i,s.teach):(coreLater(x)!=null?stepFrac(i,coreIdsOf(coreLater(x))):1)]])]:[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['overview','Overview',stepFrac(i,s.ov)],['teaching','Teaching',stepFrac(i,s.teach)]])];
+ const segs=coreOn()?[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?(CORE.bk[b.abbr]||G.overview.length?[['teaching','Teaching',s.teach.length?stepFrac(i,s.teach):1]]:[]):[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',s.teach.length?stepFrac(i,s.teach):(coreLater(x)!=null?stepFrac(i,coreIdsOf(coreLater(x))):1)]])]:[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['overview','Overview',stepFrac(i,s.ov)],['teaching','Teaching',stepFrac(i,s.teach)]])];
  /* Core: the steps are tabs, one section at a time; the tab follows where you are unless you pick one */
  const tabs=segs.map(z=>z[0]),TABK=stopKey(x),tab=coreOn()?(JV.tabFor===TABK&&tabs.includes(JV.tab)?JV.tab:a&&tabs.includes(a.step)?a.step:tabs.includes('teaching')&&a&&a.kind==='walk'?'teaching':tabs[0]):null;
  h+=`<div class="jv-seg"${coreOn()?' role="tablist"':''}>${segs.map(([k,l,f])=>`<button data-jseg="${k}" class="${!tab&&a&&a.step===k?'now':''}${tab===k?' on':''}"${coreOn()?` role="tab" aria-selected="${tab===k}"`:` aria-label="Go to ${l}"`}><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</button>`).join('')}</div>`;
@@ -1634,14 +1634,14 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  return h+`<div class="jv-list${tab?' jv-tabbed':''}">${rows}</div></div>`}
 /* Teaching at a stop: Core (the one exposition to hear) or Go Deeper (everything else, optional) */
 function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,u=coreHere(x),later=coreLater(x);
- const ids=u!=null?coreIdsOf(u):[],cs=new Set(ids),dp=c.intro?{broad:G.overview.map(g=>g.id)}:(CORE.deep[k]||{});
- const uk=coreKey(x),orig=uk!=null&&typeof uk!=='string'?CORE.u[uk][3]:[];
+ const ids=u!=null?coreIdsOf(u):[],cs=new Set(ids),dp=c.intro?{alt:G.overview.map(g=>g.id)}:(CORE.deep[k]||{});
+ const uk=coreKey(x),orig=uk!=null&&typeof uk!=='string'?CORE.u[uk][3]:(uk&&String(uk).startsWith('b:')?(CORE.bk[b.abbr]||{}).ids||[]:[]);
  const extra=orig.filter(id=>!cs.has(id)&&I[id]);                          /* the suggested Core when you replaced it */
- const groups=[['Other expositions',[...extra,...(dp.alt||[])]],['Verse by verse',dp.verse||[]],[c.intro?'Book overviews':'Broader teaching',dp.broad||[]],['Pray the Word and devotionals',dp.dev||[]]]
+ const groups=[[c.intro?'Other overviews':'Other expositions',[...extra,...(dp.alt||[])]],['Verse by verse',dp.verse||[]],[c.intro?'Book overviews':'Broader teaching',dp.broad||[]],['Pray the Word and devotionals',dp.dev||[]]]
   .map(([t,l])=>[t,l.filter(id=>I[id]&&okWho(id)&&!cs.has(id))]).filter(g=>g[1].length);
  const nDeep=groups.reduce((a,g)=>a+g[1].length,0);
- let o=`<div class="jv-sec jv-tsec" id="js-teaching"><span>${c.intro?'Teaching on the book':'Teaching'}</span>${c.intro?'':`<span class="jv-tg" role="tablist"><button role="tab" data-deep="0" aria-selected="${!deepOn}" class="${deepOn?'':'on'}">Core</button><button role="tab" data-deep="1" aria-selected="${deepOn}" class="${deepOn?'on':''}">Go Deeper${nDeep?' · '+nDeep:''}</button></span>`}</div>`;
- if(!deepOn&&!c.intro){
+ let o=`<div class="jv-sec jv-tsec" id="js-teaching"><span>Teaching</span>${`<span class="jv-tg" role="tablist"><button role="tab" data-deep="0" aria-selected="${!deepOn}" class="${deepOn?'':'on'}">Core</button><button role="tab" data-deep="1" aria-selected="${deepOn}" class="${deepOn?'on':''}">Go Deeper${nDeep?' · '+nDeep:''}</button></span>`}</div>`;
+ if(!deepOn){
   if(ids.length){ids.forEach(id=>{o+=jRow(id,'',up)});
    if(coreSet()[u])o+=`<p class="jv-why">You chose this one. <button class="lnk" data-coreback="${u}">Back to the suggested teaching</button></p>`}
   else if(later!=null){const L=CORE.u[later],nx=walk().find(w=>w.b.abbr===L[0]&&w.c.c===L[2]),lids=coreIdsOf(later);
@@ -1650,7 +1650,7 @@ function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,
    if(lids.length&&!lids.every(isDone))o+=`<p class="jv-why">Covers ${esc(b.name)} ${L[1]}–${L[2]}. Up next offers it after you read ${esc(nx?stopName(nx):b.name+' '+L[2])}.</p>`}
   else o+=`<p class="jv-none">No focused teaching on ${esc(stopName(x))} alone.${nDeep?' Go Deeper has '+nDeep+' related message'+(nDeep>1?'s':'')+'.':''}</p>`}
  else{if(!nDeep)o+=`<p class="jv-none">Nothing more on ${esc(stopName(x))} yet.</p>`;
-  groups.forEach(([t,l])=>{o+=`<div class="jv-sub">${t}</div>`;l.forEach(id=>{o+=jRow(id,'',up)+(c.intro?'':`<div class="jv-mk"><button class="lnk" data-mkcore="${esc(String(uk))}|${id}">Make this Core</button></div>`)})})}
+  groups.forEach(([t,l])=>{o+=`<div class="jv-sub">${t}</div>`;l.forEach(id=>{o+=jRow(id,'',up)+(uk==null?'':`<div class="jv-mk"><button class="lnk" data-mkcore="${esc(String(uk))}|${id}">Make this Core</button></div>`)})})}
  return o}
 function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;JV.tabFor=null;
  if(a.kind==='play'){if(cur===a.id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;play(a.id)}
@@ -2066,7 +2066,7 @@ function npArt(id){const i=I[id],c=ART_C[i.who]||['#1b2440','#a8812a'],d=i.date?
    The player's next and back move through it (back restarts what is playing first). */
 function stopSteps(i){const x=walk()[i];if(!x)return[];const st=[],ii=stopIntro(x);if(ii&&I[ii])st.push({k:'intro',id:ii});
  if(!x.c.intro&&hasNar(x.b.abbr,x.c.c))st.push({k:'scripture',id:narId(x.b.abbr,x.c.c)});
- if(!x.c.intro){const u=coreHere(x);if(u!=null)coreIdsOf(u).forEach(id=>{if(I[id]&&I[id].audio)st.push({k:'teaching',id})})}return st}
+ stepsOf(i).teach.forEach(id=>{if(I[id]&&I[id].audio)st.push({k:'teaching',id})});return st}
 function seqWhere(id){const i0=jpIdx(),w=walk();for(const d of [0,1,-1,2,-2]){const i=i0+d;if(i<0||i>=w.length)continue;const k=stopSteps(i).findIndex(z=>z.id===id);if(k>=0)return[i,k]}return null}
 function jStep(dir){const p=seqWhere(cur);if(!p)return false;let [i,k]=p;const w=walk();k+=dir;
  while(i>=0&&i<w.length){const st=stopSteps(i);if(k<0){i--;if(i<0)return true;k=stopSteps(i).length-1;continue}if(k>=st.length){i++;k=0;continue}
