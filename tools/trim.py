@@ -64,9 +64,11 @@ RULES = {
                     "end": [r"thank(s| you)( so much)? for joining us (for|in) (this|today'?s) (message|teaching)", r"for more resources from calvary",
                             r"share your story", r"my ?story at", r"support this bible teaching ministry", r"visit (www\.)?calvary", r"give at calvary"]},
     "skip_connect": {"start": [r"let'?s (dive into|get started with) today'?s (teaching|message) from pastor skip", r"as we join skip( \w+)? for today'?s (teaching|message)",
-                               r"now (let'?s turn to|we'?re in) [^.]{0,60} (as we join|with) skip"],
+                               r"now (let'?s turn to|we'?re in) [^.]{0,60} (as we join|with) skip",
+                               r"here'?s today'?s (message|teaching) from pastor skip[^.?!]*[.?!]", r"as pastor skip (begins|continues) today'?s (teaching|message)[^.?!]*[.?!]"],
                      "end": [r"thank(s| you) for (listening to|joining us)( today)?( on)? connect", r"that (concludes|wraps up) " + SKIPN, r"that'?s " + SKIPN + r" with a message",
-                             r"\b800[- ]?922", r"connect ?with ?sk\w*\.com", r"is a presentation of connection communications", r"(see you|join us|tune in) (next time|tomorrow)"]},
+                             r"\b800[- ]?922", r"connect ?with ?sk\w*\.com", r"is a presentation of connection communications", r"(see you|join us|tune in) (next time|tomorrow)",
+                             r"before you go,? don'?t forget", r"here'?s how to (pre-?order|get|request)", r"when you give \$? ?\d+ or more"]},
     # Stephen Davey. Both daily shows open with a ministry message ending "Now here's Stephen."
     "davey_journey": {"pre": [r"now,? here'?s stephen\.?"], "gap": (8, 40, 100), "floor": 80,
                       "start": [r"here'?s stephen with today'?s lesson", r"lesson (for you )?called [^.?!]*[.?!]", r"as we open god'?s word( now)?",
