@@ -97,10 +97,9 @@ def big_picture(items):
         if i.get("who") == "Platt": platt[key(i["t"])].append(i)
     ids, names = [], {}
     for x in sos["parts"]:
-        cand = [i for i in platt.get(key(x["title"]), []) if not x.get("mp3") or i["src"] == "sos_radical"]
+        cand = list(platt.get(key(x["title"]), []))
         cand.sort(key=lambda i: (not i.get("audio"), i["src"] == "ptw"))
         if not cand: continue
-        if x.get("check") and x["check"] not in (cand[0].get("pass") or ""): continue   # heard to preach the book it should
         ids.append(cand[0]["id"]); names[cand[0]["id"]] = x["title"]
     out.insert(1, {"id": "sos", "title": "The Story of Scripture", "by": "David Platt", "art": "sos", "group": "bp", "unit": "part",
                    "desc": "Genesis to Revelation over forty Sundays: God bringing his people to his place for his purpose, from creation to new creation. McLean Bible Church, 2019.",
@@ -215,7 +214,7 @@ def main():
         return re.sub(r"\bpart (\w+)\b", r"part \1", t)
     SRC_PREF = {"platt_messages": 0, "ptw": 0, "2819_podcast": 0, "secret_church_podcast": 0, "twr360_secret_church": 1,
                 "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3, "radical_vimeo": 1, "street_preachers": 2,
-                "davey_archive": 0, "davey_sermons": 0, "davey_wfth": 1, "brookhills_ia": 1, "sos_radical": 1, "davey_journey": 0, "skip_archive": 0, "skip_church": 1, "skip_connect": 2}
+                "davey_archive": 0, "davey_sermons": 0, "davey_wfth": 1, "brookhills_ia": 1, "davey_journey": 0, "skip_archive": 0, "skip_church": 1, "skip_connect": 2}
     def one_each(lst):  # one teaching, one entry: keep the best form of same-titled items
         best = {}
         for i in lst:

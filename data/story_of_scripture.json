@@ -3,7 +3,7 @@
  "by": "David Platt",
  "church": "McLean Bible Church",
  "year": 2019,
- "note": "Platt's parts, in preaching order (the series' own numbers; guest Sundays left out). Sources: the transcripts and Sunday audio Radical publishes (cdn.radical.net), and McLean's oceans.com listings. 'mp3' = audio for a part the podcast feed does not carry; 'check' = the book the part must be heard to preach before it joins the series.",
+ "note": "David Platt's parts, in preaching order, with the series' own numbers. The other Sundays were preached by guests (listed under 'guests', from the transcripts Radical publishes) and are left out; no recording or transcript was found for parts 28, 37 and 38.",
  "parts": [
   {
    "n": 1,
@@ -14,13 +14,6 @@
    "n": 2,
    "date": "2019-02-10",
    "title": "Our Suffering and God's Sovereignty: The Life of Job"
-  },
-  {
-   "n": 3,
-   "date": "2019-02-17",
-   "title": "Abraham and the Promises of God",
-   "mp3": "https://cdn.radical.net/images/20190224191450/ABRAHAM-THE-PROMISES-OF-GOD.mp3",
-   "refs": "Genesis 12:1-3; Genesis 15:7-21"
   },
   {
    "n": 4,
@@ -48,14 +41,6 @@
    "title": "The Mystery of Prayer and Our Purpose in the World"
   },
   {
-   "n": 9,
-   "date": "2019-03-31",
-   "title": "Why We Need Leviticus",
-   "mp3": "https://cdn.radical.net/images/20190403101434/http___link.theplatform.com_s_IfSiAC_ygdvvmDOCMfDmetafilefalse.mp3",
-   "refs": "",
-   "check": "Leviticus"
-  },
-  {
    "n": 10,
    "date": "2019-04-07",
    "title": "Created to Work and Rest for the Glory of God"
@@ -69,13 +54,6 @@
    "n": 12,
    "date": "2019-04-28",
    "title": "You, Goliath, and God"
-  },
-  {
-   "n": 13,
-   "date": "2019-05-05",
-   "title": "The Lord Is My Shepherd",
-   "mp3": "https://cdn.radical.net/images/20190510095311/http___link.theplatform.com_s_IfSiAC_GpdCmru_qdYUmetafilefalse.mp3",
-   "refs": "Psalm 23"
   },
   {
    "n": 14,
@@ -106,28 +84,6 @@
    "n": 19,
    "date": "2019-06-30",
    "title": "What's So Radical about Christianity?"
-  },
-  {
-   "n": 20,
-   "date": "2019-07-07",
-   "title": "The Blessing of the Faithful Provider",
-   "mp3": "https://cdn.radical.net/images/20190719101325/TheBlessingOfAFaithfulFather.mp3",
-   "refs": ""
-  },
-  {
-   "n": 21,
-   "date": "2019-07-14",
-   "title": "Should We Give Up on the Church?",
-   "mp3": "https://cdn.radical.net/images/20190722083244/Should-We-Give-Up-on-the-Church.mp3",
-   "refs": "Zechariah 4:1-14"
-  },
-  {
-   "n": 22,
-   "date": "2019-07-21",
-   "title": "Are You Willing to Fully Commit Your Life to Jesus?",
-   "mp3": "https://cdn.radical.net/images/20190723103543/20190721_2.mp3",
-   "refs": "",
-   "check": "Nehemiah"
   },
   {
    "n": 23,
@@ -198,6 +154,40 @@
    "n": 40,
    "date": "2019-12-01",
    "title": "The Story of All Stories"
+  }
+ ],
+ "guests": [
+  {
+   "n": 3,
+   "by": "Mike Kelsey"
+  },
+  {
+   "n": 9,
+   "by": "Mike Kelsey"
+  },
+  {
+   "n": 13,
+   "by": "Mike Kelsey"
+  },
+  {
+   "n": 20,
+   "by": "Edgar Aponte"
+  },
+  {
+   "n": 21,
+   "by": "Mike Kelsey"
+  },
+  {
+   "n": 22,
+   "by": "Mike Kelsey"
+  },
+  {
+   "n": 27,
+   "by": "Crew"
+  },
+  {
+   "n": 32,
+   "by": "Mike Kelsey"
   }
  ]
 }

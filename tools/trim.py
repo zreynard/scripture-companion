@@ -43,7 +43,6 @@ RULES = {
     "mclean_podcast": {"start": [], "end": []},
     "brookhills": {"start": [], "end": []},
     "brookhills_ia": {"start": [], "end": COMMON_OUT},
-    "sos_radical": {"start": [], "end": COMMON_OUT},
     "2819_podcast": {"start": [], "anchor": r"(mighty|majestic|matchless).{0,30}name of (our )?soon[- ]?coming king",
                      "end": [r"give (him|god) (a )?(radical )?praise", r"take the roof off", r"put your hands together", r"on your feet",
                              r"overflow (room|seating)", r"lobby", r"gift for you", r"next steps", r"we don'?t do membership", r"baptism sunday",
