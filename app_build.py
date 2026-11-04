@@ -1603,7 +1603,14 @@ function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
  const rd=$('#jrd');if(rd)rd.onclick=()=>{const bx=$('#jitx'),x=walk()[jpIdx()],open=bx.hidden;bx.hidden=!open;rd.setAttribute('aria-expanded',open);rd.textContent=open?'Hide the introduction':'Read the introduction';
   if(open&&!bx.innerHTML)introText(x.b.abbr).then(T=>{bx.innerHTML=introParas(T[String(x.c.intro?0:x.c.c)])}).catch(()=>{bx.textContent='The text did not load. Check your connection.'})};document.querySelectorAll('#jv [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));
  document.querySelectorAll('[data-jgo]').forEach(b=>b.onclick=()=>jMove(+b.dataset.jgo,!!b.dataset.back));
- document.querySelectorAll('[data-jseg]').forEach(b=>b.onclick=()=>{const k=b.dataset.jseg,t=$('#js-'+k)||$('.jv-list');if(!t)return;if(k!=='overview'||$('#js-overview')){const y=t.getBoundingClientRect().top+scrollY-(($('#zt')||{}).offsetHeight||0)-12;window.scrollTo({top:Math.max(0,y),behavior:'smooth'});const row=t.nextElementSibling&&t.nextElementSibling.classList.contains('jw')?t.nextElementSibling:t;row.classList.remove('flash');void row.offsetWidth;row.classList.add('flash')}});
+ document.querySelectorAll('[data-jseg]').forEach(b=>b.onclick=()=>{const k=b.dataset.jseg,t=$('#js-'+k)||$('.jv-list');
+  /* a step with one thing to do opens it: the reading, the introduction, the overview; Teaching (a choice of sermons) shows its list */
+  {const i=jpIdx(),x=walk()[i],st=stepsOf(i);BPM=null;
+   const open=id=>{if(cur===id){if(audio.paused)audio.play().catch(()=>{});setMini(false);return true}JM=true;PLAYSTOP=i;play(id,{full:true});return true};
+   if(k==='scripture'&&x&&!x.c.intro){const id=narId(x.b.abbr,x.c.c);if(cur===id){if(audio.paused)audio.play().catch(()=>{});setMini(false);return}JM=true;narPlay(x.b,x.c.c,null,{jm:true,full:true});return}
+   if(k==='intro'&&x){const ii=stopIntro(x);if(ii&&I[ii]&&open(ii))return}
+   if(k==='overview'&&st){const ok=id=>I[id]&&I[id].audio,id=st.ov.find(id=>ok(id)&&!isDone(id))||st.ov.find(ok);if(id&&open(id))return}}
+  if(!t)return;if(k!=='overview'||$('#js-overview')){const y=t.getBoundingClientRect().top+scrollY-(($('#zt')||{}).offsetHeight||0)-12;window.scrollTo({top:Math.max(0,y),behavior:'smooth'});const row=t.nextElementSibling&&t.nextElementSibling.classList.contains('jw')?t.nextElementSibling:t;row.classList.remove('flash');void row.offsetWidth;row.classList.add('flash')}});
  const pk=$('#jpick');if(pk)pk.onclick=()=>{camp=jpIdx();openJump('browse')};
  document.querySelectorAll('.jv [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
  /* swipe anywhere on the player: left = on to the next stop, right = back one */
