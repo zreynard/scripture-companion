@@ -377,7 +377,8 @@ def main():
                 intro.setdefault(abbr, {})[c] = round(r[0])
     data = {"built": __import__("datetime").date.today().isoformat(), "items": items, "books": books, "narr": narr, "intro": intro, "itx": intro_txt,
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items),
-            "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst})}
+            "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst}),
+            "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]}}
     html = TEMPLATE.replace("__VERSION__", str(VERSION)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
@@ -927,7 +928,38 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 .t-sort button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(27,36,64,.14)}
 .t-q{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:20px;background:#fff;border:1px solid rgba(27,36,64,.1);color:#5a6280}
 .t-q input{flex:1;min-width:0;border:0;background:none;font:15px -apple-system,system-ui,sans-serif;color:var(--ink);outline:none}
-.tr2{display:flex;align-items:center;gap:12px;padding:10px 2px}.tr2[data-open]{cursor:pointer}.tr2[data-open]:active{background:rgba(27,36,64,.04)}.tr2+.tr2{border-top:1px solid rgba(27,36,64,.07)}
+.tr2{display:flex;align-items:center;gap:12px;padding:10px 2px}
+.vsrch{position:absolute;top:calc(env(safe-area-inset-top) + 16px);right:60px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(27,36,64,.06);color:#4a5272;display:flex;align-items:center;justify-content:center;cursor:pointer}
+#np .np-top #np-srch{margin-left:auto;color:var(--mute)}#np.mini #np-srch{display:none}
+#gsr{position:fixed;inset:0;z-index:30;background:#f4efe3;display:flex;flex-direction:column;opacity:0;transform:translateY(12px);transition:opacity .18s,transform .18s}
+#gsr.on{opacity:1;transform:none}
+#gsr .sh{display:flex;gap:10px;align-items:center;padding:calc(env(safe-area-inset-top) + 10px) 16px 10px}
+#gsr .sbox{flex:1;min-width:0;display:flex;align-items:center;gap:8px;height:44px;padding:0 14px;border-radius:22px;background:#fff;box-shadow:0 1px 0 rgba(27,36,64,.06),0 0 0 1px rgba(27,36,64,.08)}
+#gsr input::-webkit-search-cancel-button,#gsr input::-webkit-search-decoration{-webkit-appearance:none;appearance:none;display:none}#gsr input{flex:1;-webkit-appearance:none;appearance:none;min-width:0;border:0;outline:0;background:none;font:17px -apple-system,system-ui,sans-serif;color:var(--ink)}
+#gsr .sx{border:0;background:none;color:var(--mute);font-size:15px;padding:6px;cursor:pointer}
+#gsr .scan{flex:none;border:0;background:none;color:var(--gold2);font:600 16px -apple-system,system-ui,sans-serif;padding:8px 2px;cursor:pointer}
+#gsr .sr{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:4px 16px calc(30px + env(safe-area-inset-bottom))}
+#gsr .sg{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin:18px 4px 6px}
+#gsr .si{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:0;background:none;padding:11px 4px;border-top:1px solid rgba(27,36,64,.07);cursor:pointer;color:var(--ink);font:inherit}
+#gsr .si:active{background:rgba(27,36,64,.04)}
+#gsr .si b{display:block;font:400 17px/1.3 'Iowan Old Style',Palatino,Georgia,serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#gsr .si span{display:block;font-size:13px;color:var(--mute);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#gsr .si .vt{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+#gsr .si i{font-style:normal;color:var(--mute);margin-left:auto;flex:none}
+#gsr .si .sk{flex:none;width:30px;height:30px;border-radius:50%;background:rgba(27,36,64,.06);display:flex;align-items:center;justify-content:center;color:#4a5272}
+#gsr .si>div{min-width:0;flex:1}
+#gsr mark{background:rgba(201,162,74,.28);color:inherit;border-radius:3px;padding:0 1px}
+#gsr .pc{background:#fff;border-radius:18px;padding:16px 16px 14px;margin:10px 0 4px;box-shadow:0 1px 0 rgba(27,36,64,.05),0 0 0 1px rgba(27,36,64,.06)}
+#gsr .pc h3{margin:0;font:400 24px 'Iowan Old Style',Palatino,Georgia,serif;color:var(--ink)}
+#gsr .pc p{margin:8px 0 0;font:16px/1.5 'Iowan Old Style',Palatino,Georgia,serif;color:#3a4160}
+#gsr .pc p sup{color:var(--gold2);font:600 10px -apple-system,system-ui,sans-serif;margin-right:2px}
+#gsr .pa{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+#gsr .pa button{border:0;border-radius:18px;height:36px;padding:0 14px;font:600 14px -apple-system,system-ui,sans-serif;cursor:pointer;background:rgba(27,36,64,.07);color:var(--ink)}
+#gsr .pa button.pri{background:var(--gold);color:#fff}
+#gsr .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+#gsr .chips button{border:0;border-radius:16px;padding:8px 12px;background:rgba(27,36,64,.06);color:var(--ink);font:14px -apple-system,system-ui,sans-serif;cursor:pointer}
+#gsr .more{border:0;background:none;color:var(--gold2);font:600 14px -apple-system,system-ui,sans-serif;padding:12px 4px;cursor:pointer}
+#gsr .none{color:var(--mute);margin:28px 4px;font-size:15px}.tr2[data-open]{cursor:pointer}.tr2[data-open]:active{background:rgba(27,36,64,.04)}.tr2+.tr2{border-top:1px solid rgba(27,36,64,.07)}
 .tr2 .jw-t .t3{font-size:12px;color:#7a5c16}.tr2.heard .jw-t b{color:#5a6280}
 </style></head><body>
 <div id="topbar" aria-hidden="true"></div><button id="bookhd" aria-label="Go to this book's opening stop"></button><div class="top"><span id="pct" style="display:none"></span><button id="srch" aria-label="Search or go to a chapter"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>Search</span></button><button id="mapbtn" aria-label="Map of the journey"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5v13L9 17l6 2.5 6-2.5v-13L15 6.5 9 4Zm0 0v13m6-10.5v13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button><button id="gear">⋯</button></div>
@@ -935,7 +967,7 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 <div id="jump" role="dialog" aria-modal="true" aria-label="Go to" hidden><div class="jp-top"><label class="jp-field"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="jq" type="search" placeholder="Nehemiah, John 3:16, Goliath" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="Search"></label><button id="jx">Close</button></div><div id="jbody"></div></div><div id="mapv" role="dialog" aria-modal="true" aria-label="Map of the journey" hidden><svg id="mapsvg" preserveAspectRatio="xMidYMid meet"></svg><div class="mv-top"><button id="mvx" aria-label="Close map">✕</button><div class="mv-title" id="mvtitle">Your journey</div></div><div class="mv-panel" id="mvpanel"><div class="mv-card" id="mvcard"></div><div class="mv-legs" id="mvlegs" aria-label="Legs of the journey"></div></div></div>
 <div id="zt" hidden></div><div id="main"></div><nav id="tabs" aria-label="Main"></nav><div id="bps" hidden></div>
 <div id="np"><div class="grab"></div>
-<div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="cls" aria-label="Stop and close">✕</button></div>
+<div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="np-srch" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button><button id="cls" aria-label="Stop and close">✕</button></div>
 <div class="art" id="np-art"></div><div class="np-d" id="np-d"></div>
 <div class="t serif" id="np-t"></div><div class="s" id="np-s"></div><div id="np-read" aria-label="Reader"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
@@ -1496,8 +1528,8 @@ function setView(v){if(v==='walk'){v='journey';JZ='road';S.set('jz',JZ)}if(view!
 function setZoom(z){JZ=z;S.set('jz',z);if(z==='road'){camp=jpIdx();decorate.first=true}else closeSeries();render();if(z==='stop')window.scrollTo(0,0)}
 /* the bar at the top of Journey: [ your stop | The Road ] and settings */
 function ztPaint(){let el=$('#zt');const on=view==='journey';document.body.dataset.z=on?JZ:'';if(!el)return;el.hidden=!on;if(!on)return;const x=walk()[jpIdx()];
- el.innerHTML=`<div class="zt-seg" role="group" aria-label="Zoom"><button data-z="stop" class="${JZ==='stop'?'on':''}" aria-pressed="${JZ==='stop'}">${icon('book',15,1.9,'currentColor')}<span>${esc(stopName(x))}</span></button><button data-z="road" class="${JZ==='road'?'on':''}" aria-pressed="${JZ==='road'}">${icon('map',15,1.9,'currentColor')}<span>The Road</span></button></div><button class="zt-more" data-settings aria-label="Settings"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></svg></button>`;
- el.querySelectorAll('[data-z]').forEach(b=>b.onclick=()=>{if(b.dataset.z===JZ){if(JZ==='stop')window.scrollTo({top:0,behavior:'smooth'});return}setZoom(b.dataset.z)});el.querySelector('[data-settings]').onclick=()=>setView('settings')}
+ el.innerHTML=`<div class="zt-seg" role="group" aria-label="Zoom"><button data-z="stop" class="${JZ==='stop'?'on':''}" aria-pressed="${JZ==='stop'}">${icon('book',15,1.9,'currentColor')}<span>${esc(stopName(x))}</span></button><button data-z="road" class="${JZ==='road'?'on':''}" aria-pressed="${JZ==='road'}">${icon('map',15,1.9,'currentColor')}<span>The Road</span></button></div><button class="zt-more" data-srch aria-label="Search">${SRCH_IC}</button><button class="zt-more" data-settings aria-label="Settings"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></svg></button>`;
+ el.querySelectorAll('[data-z]').forEach(b=>b.onclick=()=>{if(b.dataset.z===JZ){if(JZ==='stop')window.scrollTo({top:0,behavior:'smooth'});return}setZoom(b.dataset.z)});el.querySelector('[data-settings]').onclick=()=>setView('settings');el.querySelector('[data-srch]').onclick=()=>openSearch()}
 /* The Road: a book opens its chapters in a sheet; a chapter on the road opens its player */
 function roadPick(i){const w=walk(),x=w[i];if(!x)return;if(x.c.intro){openBook(x.b);return}JZ='stop';S.set('jz',JZ);jMove(i)}
 function openBook(b){const w=walk(),el=$('#bps'),j=jpIdx(),here=w[j],bi=w.findIndex(x=>x.b===b&&x.c.intro),land=landOf(b);
@@ -1510,7 +1542,7 @@ function openBook(b){const w=walk(),el=$('#bps'),j=jpIdx(),here=w[j],bi=w.findIn
  el.querySelectorAll('[data-pick]').forEach(x=>x.onclick=()=>{const k=+x.dataset.pick;el.classList.remove('on');document.body.classList.remove('bpsopen');el.hidden=true;el.innerHTML='';JZ='stop';S.set('jz',JZ);jMove(k)})}
 function hereCard(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);let sub='';if(a.kind==='play')sub='Up next · '+dispTitle(I[a.id])+' · '+teacher(I[a.id]);else if(a.kind==='scripture')sub='Up next · Read '+stopName(x);else if(a.kind==='walk')sub='Next · '+stopName(w[a.to]);
  return `<div id="here"><button class="here-t" data-z2="stop"><small>You are here · tap to open</small><b>${esc(stopName(x))}</b><em>${esc(sub)}</em></button>${a.kind==='play'||a.kind==='scripture'?`<button class="here-p" id="herep" aria-label="Play">${icon('play',15,0,'#fff')}</button>`:''}</div>`}
-const moreBtn=()=>`<button class="vmore" data-settings aria-label="Settings">${'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></svg>'}</button>`;
+const moreBtn=()=>`<button class="vsrch" data-srch aria-label="Search">${SRCH_IC}</button><button class="vmore" data-settings aria-label="Settings">${'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="5" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="19" cy="12" r="1.8" fill="currentColor"/></svg>'}</button>`;
 
 /* ---- the illustration at the top of a stop: a dawn over the land, tinted by its part of the Bible ---- */
 const LAND_HUE={'The Law':['#c8b183','#f2e2ba','#a8946c','#8a7756'],'History':['#b9ae8c','#efe6c6','#9c8f6a','#7d7254'],'Wisdom & Song':['#c3b59a','#f3e9cf','#a59575','#86775b'],
@@ -1679,6 +1711,79 @@ const fmtDate=d=>{try{return d?new Date(d+'T12:00:00').toLocaleDateString('en-US
 function tItems(k){const w=walk(),fa=firstAt();return Object.values(I).filter(i=>i.who===k&&i.tr!=='devotional'&&!i.nar&&i.audio).map(i=>{const st=w[fa[i.id]],bk=st?st.b.name:'Other teaching';return {i,bk,bi:st?D.books.indexOf(st.b):999,r:st?prange(i.pass,bk):null}})}
 function tRow(x,k){const i=x.i,id=i.id,done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id),ps=i.pass&&!/^the book of/i.test(i.pass)?shortPass(i.pass):(i.pass||'').replace(/^the book of /i,''),who=k?(i.by&&i.by!==NAMES[k]?i.by:''):teacher(i);
  return `<div class="tr2${done?' heard':''}"${i.audio?` data-open="${id}"`:''}><button class="jpb${i.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(i))}">${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(i))}</b><span>${[ps,fmtDate(i.date),left?atSpd(left)+' left':i.dur?durTxt(+i.dur):''].filter(Boolean).map(esc).join(' · ')}</span>${(sh=>who||sh?`<span class="t3">${esc([who,sh].filter(Boolean).join(' · '))}</span>`:'')(i.show&&i.show!==NAMES[k]?i.show:'')}</div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':''}</div>`}
+/* Search, from every tab and from the player: a passage ("John 3:16", "rom 8", "ps 23"), words in the Bible
+   ("love is patient"), sermons (title, passage, teacher, show), series, topics, teachers and books. */
+const SRCH_IC='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>';
+const SR={q:'',ctx:null,more:{},bible:null,t:0};
+const srNorm=t=>(t||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9: -]+/g,' ').replace(/\s+/g,' ').trim();
+function srBook(name){const A=D.alias||{},n=name.replace(/\./g,'').trim().toLowerCase();let k=A[n]||A[n.replace(/\s+/g,'')];
+ if(!k&&n.replace(/\s/g,'').length>=3){const c=D.books.filter(b=>b.name.toLowerCase().replace(/\s/g,'').startsWith(n.replace(/\s/g,'')));if(c.length)k=c[0].name}
+ return k?D.books.find(b=>b.name===k):null}
+/* "John 3:16", "1 cor 13 4-7", "ps 23", "romans" -> {b, c, v, e} */
+function srRef(q){let s=q.trim().toLowerCase().replace(/\./g,'').replace(/\s+/g,' ').replace(/^(1st|first|i) /,'1 ').replace(/^(2nd|second|ii) /,'2 ').replace(/^(3rd|third|iii) /,'3 ').replace(/\bchapter /,'').replace(/ verses? /,':');
+ const m=s.match(/^([123] ?)?([a-z][a-z ]*?) ?(\d{1,3})?(?:(?: ?: ?| )(\d{1,3})(?: ?[-–] ?(\d{1,3}))?)?$/);if(!m)return null;
+ const b=srBook((m[1]||'')+m[2]);if(!b)return null;const c=m[3]?+m[3]:0;if(c>b.n)return null;
+ if(!c&&srNorm(b.name)!==srNorm((m[1]||'')+m[2])&&!(D.alias||{})[((m[1]||'')+m[2]).trim()])return null;   // a bare word only as a whole book name ("Romans", "rom"), not "job hunting"
+ return {b,c,v:m[4]?+m[4]:0,e:m[5]?+m[5]:0}}
+function srBible(){return SR.bible||(SR.bible=Promise.all(D.books.map(b=>loadBook(b.name).then(d=>[b,d]).catch(()=>[b,null]))))}
+function srClose(){const el=$('#gsr');if(!el)return;el.classList.remove('on');setTimeout(()=>el.remove(),180)}
+function srRecent(q){try{const r=S.get('srecent',[]).filter(x=>x!==q);r.unshift(q);S.set('srecent',r.slice(0,6))}catch(e){}}
+function openSearch(){if($('#gsr'))return;SR.ctx=NAR&&cur===NAR.id&&NP().classList.contains('on')&&!NP().classList.contains('mini')?{b:NAR.b,c:NAR.c}:null;SR.more={};
+ const el=document.createElement('div');el.id='gsr';el.setAttribute('role','dialog');el.setAttribute('aria-label','Search');
+ el.innerHTML=`<div class="sh"><label class="sbox">${SRCH_IC}<input id="sq" type="search" enterkeyhint="search" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="${SR.ctx?'Search '+esc(SR.ctx.b.name+' '+SR.ctx.c)+', the Bible, sermons':'Passage, words, sermon…'}"><button class="sx" hidden aria-label="Clear">✕</button></label><button class="scan">Cancel</button></div><div class="sr" id="sres"></div>`;
+ document.body.appendChild(el);requestAnimationFrame(()=>el.classList.add('on'));
+ const inp=$('#sq'),sx=el.querySelector('.sx');inp.value=SR.q;sx.hidden=!SR.q;
+ const run=()=>{SR.q=inp.value;sx.hidden=!SR.q;clearTimeout(SR.t);srPaint(true);SR.t=setTimeout(()=>srPaint(false),220)};
+ inp.oninput=run;sx.onclick=()=>{inp.value='';run();inp.focus()};el.querySelector('.scan').onclick=srClose;
+ inp.onkeydown=e=>{if(e.key==='Escape')srClose();if(e.key==='Enter'){e.preventDefault();inp.blur();const f=el.querySelector('#sres [data-go]');if(f)f.click()}};
+ srPaint(false);setTimeout(()=>{inp.focus();inp.select()},60)}
+/* leave the search for a place in the app: shrink the full player first, so sheets and the Journey show */
+function srLeave(){srRecent(SR.q.trim());srClose();if(NP().classList.contains('on')&&!NP().classList.contains('mini'))setMini(true)}
+function srGo(kind,a,b,c){if(kind==='read'){srRecent(SR.q.trim());srClose();const bk=D.books.find(x=>x.name===a);narPlay(bk,+b,+c||null,{full:true});return}
+ if(kind==='play'){srRecent(SR.q.trim());srClose();if(cur===a){setMini(false);return}JM=false;BPM=null;PLAYSTOP=null;play(a,{full:true});return}
+ srLeave();if(kind==='stop')goStop(a,+b||1);else if(kind==='series')openSeries(a);else if(kind==='topic')openTopic(a);else if(kind==='teacher')openTeacher(a);else if(kind==='book')openLibBook(a);else if(kind==='sc')openSCNight(+a)}
+const srHi=(t,ws)=>{let h=esc(t);for(const w of ws.filter(w=>w.length>1).sort((a,b)=>b.length-a.length)){h=h.replace(new RegExp('(?![^<]*>)('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>')}return h};
+/* a long verse shown around its match, so the words searched for are in view */
+function srSnip(t,ph,W){const L=t.toLowerCase();let k=L.indexOf(ph);if(k<0)k=Math.min(...W.map(w=>{const j=L.indexOf(w);return j<0?1e9:j}));if(k>=1e9||k<70||t.length<120)return t;const st=t.lastIndexOf(' ',k-35);return '…'+t.slice(st<0?0:st+1)}
+function srRow(go,ic,title,sub,ws,cls){return `<button class="si" data-go="${esc(go)}"><span class="sk">${ic}</span><div><b>${srHi(title,ws)}</b>${sub?`<span class="${cls||''}">${srHi(sub,ws)}</span>`:''}</div><i>›</i></button>`}
+function srPaint(quick){const box=$('#sres');if(!box)return;const q=SR.q.trim(),n=srNorm(q),ws=n.split(' ').filter(Boolean);let h='';
+ if(!q){const r=S.get('srecent',[]);h+=SR.ctx?`<div class="sg">Reading ${esc(SR.ctx.b.name+' '+SR.ctx.c)}</div><div class="chips"><button data-q="${esc(SR.ctx.b.name+' '+SR.ctx.c)}">Teaching on this chapter</button></div>`:'';
+  if(r.length)h+=`<div class="sg">Recent</div><div class="chips">${r.map(x=>`<button data-q="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
+  h+=`<div class="sg">Try</div><div class="chips">${['John 3:16','Psalm 23','Romans 8','love is patient','grace','Platt Ephesians','Secret Church','prayer'].map(x=>`<button data-q="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
+  box.innerHTML=h;srWire(box);return}
+ const ref=srRef(q);
+ if(ref){const {b,c,v,e}=ref,lab=b.name+(c?' '+c+(v?':'+v+(e?'–'+e:''):''):'');
+  h+=`<div class="pc"><h3>${esc(lab)}</h3><p id="spv">${c?'…':esc((b.ch[0]&&b.ch[0].sl)||'')}</p><div class="pa">${c?`<button class="pri" data-go="read|${esc(b.name)}|${c}|${v||''}">${icon('play',12,0,'currentColor')} Read${v?' from verse '+v:''}</button>`:''}<button data-go="stop|${esc(b.name)}|${c||1}">Go to ${esc(c?b.name+' '+c:b.name)}</button><button data-go="book|${esc(b.name)}">Sermons on ${esc(b.name)}</button></div></div>`;
+  const ch=c?b.ch.find(x=>x.c===c):null,ids=(ch?ch.ids:[]).filter(id=>I[id]&&I[id].audio);
+  if(ids.length)h+=`<div class="sg">Teaching on ${esc(b.name+' '+c)}</div>`+ids.slice(0,8).map(id=>srRow('play|'+id,icon('play',11,0,'currentColor'),dispTitle(I[id]),[teacher(I[id]),I[id].pass&&shortPass(I[id].pass)].filter(Boolean).join(' · '),[])).join('');
+  if(c)loadBook(b.name).then(d=>{const p=$('#spv');if(!p||SR.q.trim()!==q)return;const vs=(d.chapters[c-1]||[]).filter(x=>v?x.v>=v&&x.v<=(e||v):x.v<=3);p.innerHTML=vs.map(x=>`<sup>${x.v}</sup>${esc(x.t)}`).join(' ')+(!v&&(d.chapters[c-1]||[]).length>3?' …':'')}).catch(()=>{})}
+ // series, topics, teachers, books by name
+ const has=t=>{const x=srNorm(t);return ws.every(w=>x.includes(w))};
+ const named=[];(D.bp||[]).forEach(x=>{if(has(x.title+' '+x.by))named.push(srRow('series|'+x.id,icon('star',13,1.8,'currentColor'),x.title,'Series · '+x.by,ws))});
+ (D.topics||[]).forEach(x=>{if(has(x.name))named.push(srRow('topic|'+x.id,icon('star',13,1.8,'currentColor'),x.name,'Topic',ws))});
+ Object.entries(NAMES).forEach(([k,v])=>{if(has(v)||has(k))named.push(srRow('teacher|'+k,`<b style="font:600 11px -apple-system,system-ui">${v.split(' ').map(w=>w[0]).join('').slice(0,2)}</b>`,v,'Teacher · all teachings',ws))});
+ if(/secret|church/.test(n)&&has('secret church'))named.push(srRow('sc|1',icon('star',13,1.8,'currentColor'),'Secret Church','David Platt · all nights',ws));
+ if(named.length)h+=`<div class="sg">Series, topics, teachers</div>`+named.slice(0,6).join('');
+ // sermons
+ const hits=[];for(const i of Object.values(I)){if(!i.audio||i.nar||i.blob||i.tr==='devotional')continue;const tt=srNorm(i.t),hay=tt+' '+srNorm((i.pass||'')+' '+teacher(i)+' '+(i.show||'')+' '+(i.by||''));
+  if(!ws.every(w=>hay.includes(w)))continue;let sc=0;if(tt.includes(n))sc+=4;if(tt.startsWith(n))sc+=2;ws.forEach(w=>{if(tt.includes(w))sc+=1});hits.push([sc,i])}
+ hits.sort((a,z)=>(z[0]-a[0])||((z[1].date||'')>(a[1].date||'')?1:-1));
+ const words=n.replace(/[0-9:]/g,'').trim(),bibFirst=SR.ctx&&!ref&&words.length>=3;if(bibFirst)h+='<div id="sbib"></div>';
+ if(hits.length){const k=SR.more.s?60:(ref?5:8);h+=`<div class="sg">Sermons · ${hits.length.toLocaleString()}</div>`+hits.slice(0,k).map(([_,i])=>srRow('play|'+i.id,icon('play',11,0,'currentColor'),dispTitle(i),[teacher(i),i.pass&&shortPass(i.pass),fmtDate(i.date)].filter(Boolean).join(' · '),ws)).join('')+(hits.length>k?`<button class="more" data-more="s">Show ${Math.min(60,hits.length)-k>0&&!SR.more.s?'more':''} sermons</button>`:'')}
+ // the Bible's words (not for a bare reference)
+ if(!ref&&words.length>=3){const wait=`<div class="sg">In the Bible</div><p class="none" style="margin:8px 4px">${quick?'…':'Searching the Bible…'}</p>`;h=bibFirst?h.replace('<div id="sbib"></div>',`<div id="sbib">${wait}</div>`):h+`<div id="sbib">${wait}</div>`;
+  if(!quick)srBible().then(all=>{const el=$('#sbib');if(!el||SR.q.trim()!==q)return;const ph=[],aw=[];const W=words.split(' ');
+   const look=(b,d,cs)=>{for(const c of cs){const vs=d.chapters[c-1]||[];for(const x of vs){const t=srNorm(x.t);if(t.includes(words))ph.push([b,c,x]);else if(W.length>1&&W.every(w=>t.includes(w)))aw.push([b,c,x])}}};
+   if(SR.ctx){const d=all.find(([b])=>b.name===SR.ctx.b.name);if(d&&d[1])look(d[0],d[1],[SR.ctx.c])}const inCh=ph.length+aw.length;
+   for(const [b,d] of all){if(!d)continue;look(b,d,d.chapters.map((_,k)=>k+1).filter(c=>!(SR.ctx&&b.name===SR.ctx.b.name&&c===SR.ctx.c)))}
+   const L=[...ph,...aw];if(!L.length){el.innerHTML=hits.length||named.length?'':`<p class="none">Nothing found for “${esc(q)}”.</p>`;return}
+   const k=SR.more.b?120:12;
+   el.innerHTML=`<div class="sg">In the Bible · ${L.length.toLocaleString()} verse${L.length>1?'s':''}</div>`+L.slice(0,k).map(([b,c,x],j)=>(SR.ctx&&j===0&&inCh?`<div class="sg" style="margin-top:6px">In ${esc(SR.ctx.b.name+' '+SR.ctx.c)}</div>`:'')+(SR.ctx&&inCh&&j===inCh?`<div class="sg" style="margin-top:10px">Elsewhere</div>`:'')+srRow(`read|${b.name}|${c}|${x.v}`,icon('book',13,1.8,'currentColor'),`${b.name} ${c}:${x.v}`,srSnip(x.t,words,W),W,'vt')).join('')+(L.length>k?`<button class="more" data-more="b">Show more verses</button>`:'');srWire(el)})}
+ if(!h)h=`<p class="none">Nothing found for “${esc(q)}”.</p>`;
+ box.innerHTML=h;srWire(box)}
+function srWire(box){box.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{const [k,a,x,y]=b.dataset.go.split('|');srGo(k,a,x,y)});
+ box.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{const i=$('#sq');i.value=b.dataset.q;i.dispatchEvent(new Event('input'))});
+ box.querySelectorAll('[data-more]').forEach(b=>b.onclick=()=>{SR.more[b.dataset.more]=1;srPaint(false)})}
 // tapping a sermon's row (not its play button) opens it in the full player
 function wireOpen(el){el.querySelectorAll('#tlist [data-open]').forEach(r=>r.onclick=()=>{const id=r.dataset.open;if(cur===id){setMini(false);return}JM=false;BPM=null;PLAYSTOP=null;play(id,{full:true})})}
 function tList(){const k=TS.k,q=TS.q.trim().toLowerCase();let L=tItems(k);
@@ -1867,7 +1972,7 @@ $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.targ
 const setSpeed=v=>{speed=Math.round(Math.min(3,Math.max(0.5,v))*100)/100;AUDIO_EL.forEach(a=>a.playbackRate=speed);$('#spd').textContent=spdLabel();S.set('speed',speed);retime()};
 function retime(){document.querySelectorAll('[data-dur]').forEach(e=>e.textContent=durTxt(+e.dataset.dur));document.querySelectorAll('[data-hrs]').forEach(e=>{const [h,a]=e.dataset.hrs.split(',').map(Number);e.textContent=hrsTxt(h,a)});if(cur&&audio.duration)$('#rem').textContent='-'+fmt(Math.max(0,audio.duration-audio.currentTime-tail())/speed)}$('#spd').onclick=e=>{e.stopPropagation();if(NP().classList.contains('mini')){const L=[.7,.8,.9,1,1.25,1.5,1.75,2],k=L.findIndex(v=>Math.abs(v-speed)<.01);setSpeed(L[(k+1)%L.length]);return}setSpeed(1)};$('#spd-dn').onclick=e=>{e.stopPropagation();setSpeed(speed-0.05)};$('#spd-up').onclick=e=>{e.stopPropagation();setSpeed(speed+0.05)};
 let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};
-$('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};
+$('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};$('#np-srch').onclick=e=>{e.stopPropagation();openSearch()};
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NAR=null;document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));narBar();NP().classList.remove('on');roomForPlayer();render()};
 /* player sheet: swipe down or tap the page to shrink it to a bar; tap or swipe up the bar to open it */
 function NP(){return $('#np')}
@@ -1986,7 +2091,7 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
    /* folding while scrolled down inside a long stop: keep the stop's top in view instead of the page jumping */
    const cl=$('#clearing');if(cl){const t=cl.getBoundingClientRect().top;if(t<60||t>innerHeight-120)window.scrollTo({top:scrollY+t-70})}};const ct=$('#chT');if(ct){ct.onclick=e=>{e.stopPropagation();openJump('browse')};ct.setAttribute('role','button');ct.setAttribute('aria-label','Choose a chapter')}}
  const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
- const g=$('#gear');g.onclick=()=>setView(view==='settings'?PREV:'settings');document.querySelectorAll('[data-settings]').forEach(b=>b.onclick=()=>setView('settings'));
+ const g=$('#gear');g.onclick=()=>setView(view==='settings'?PREV:'settings');document.querySelectorAll('[data-settings]').forEach(b=>b.onclick=()=>setView('settings'));document.querySelectorAll('[data-srch]').forEach(b=>b.onclick=()=>openSearch());
  const back=$('#back');if(back)back.onclick=()=>setView(PREV==='settings'?'journey':PREV);const us=$('#unskip');if(us)us.onclick=()=>{SKIP={};S.set('skip',SKIP);note('Everything you skipped is waiting again where it belongs.');render()};
  const osc=$('#opensc');if(osc)osc.onclick=()=>{view='sc';S.set('view',view);render();window.scrollTo(0,0)};
  const scb=$('#scback');if(scb)scb.onclick=()=>setView('library');
