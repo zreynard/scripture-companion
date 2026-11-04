@@ -7,8 +7,8 @@ The choice, book by book:
      open for other teaching as well.
   1. Candidates for the other chapters: full sermons placed on the chapter by PAM, Platt, Skip or Davey, Davey's
      Wisdom Journey lessons (short, consecutive studies through the Bible), sermons in parts taken together, one
-     teacher's studies of parts of a chapter taken together, and a preferred teacher's partial study paired with a
-     second sermon on the rest of the chapter. Not candidates: Secret Church sessions, devotionals (Pray the Word),
+     teacher's series run through a chapter taken together (consecutive messages of one source). Never two
+     unrelated sermons or two teachers in one Core. Not candidates: Secret Church sessions, devotionals (Pray the Word),
      book overviews, sermons spread over several books or scattered passages.
   2. What a candidate is worth: for each chapter it covers, a completeness credit (whole chapter 1.0, most of it 0.85,
      a substantial part 0.65, a section 0.45, less = a little), times
@@ -48,6 +48,15 @@ LESSON_SRC = {"davey_journey"}
 NOT_SERMON = re.compile(r"^\s*bonus\b|\binterview\b|conversation with|roundtable|panel discussion|\bq ?& ?a\b", re.I)   # never Core
 PART = re.compile(r"^(.*?)[\s\-–—:,(]*\bPart\s+([A-Z]|\d+)\b\)?\s*$", re.I)
 SPEED = 0.9
+
+
+SERIES_GAP = 21              # days between messages of one series run
+
+
+def _days(a, b):
+    from datetime import date
+    try: return abs((date.fromisoformat(b[:10]) - date.fromisoformat(a[:10])).days)
+    except ValueError: return 9999
 
 
 def minutes(it, med):
@@ -184,25 +193,27 @@ class Engine:
         for x in singles: by[x["a"]].append(x)
         for c, xs in by.items():
             Vc = V[c - 1]
-            # one teacher's studies of parts of the chapter, together
+            # one teacher's series through the chapter, its messages together (consecutive weeks of one source)
             per = defaultdict(list)
             for x in xs:
-                if len(x["cov"]) < 0.6 * Vc: per[(x["who"], x["lesson"])].append(x)
-            for (who, _), ys in per.items():
+                if len(x["cov"]) < 0.6 * Vc: per[(x["who"], x["lesson"], items[x["ids"][0]]["src"])].append(x)
+            runs = []
+            for ys in per.values():
+                ys = sorted([y for y in ys if items[y["ids"][0]].get("date")], key=lambda y: items[y["ids"][0]]["date"])
+                run = []
+                for y in ys:
+                    if run and _days(items[run[-1]["ids"][0]]["date"], items[y["ids"][0]]["date"]) > SERIES_GAP:
+                        runs.append(run); run = []
+                    run.append(y)
+                if run: runs.append(run)
+            for ys in runs:
                 ys = sorted(ys, key=lambda y: (min(v for _, v in y["cov"]), y["ids"][0]))
                 grp, have = [], set()
                 for y in ys:
                     if len(y["cov"] & have) <= 0.3 * len(y["cov"]): grp.append(y); have |= y["cov"]
                 if len(grp) >= 2 and len(have) >= 0.6 * Vc:
                     out.append(self.make(book, [i for y in grp for i in y["ids"]], c, c, have, "group"))
-            # a favourite teacher's study of a section, with a second sermon on the rest of the chapter
-            fav = [x for x in xs if x["who"] in ("PAM", "Platt") and 0.2 <= len(x["cov"]) / Vc < 0.8]
-            for p in fav:
-                rest = sorted([y for y in xs if y is not p and len(y["cov"] & p["cov"]) <= 0.25 * len(y["cov"])
-                               and len((y["cov"] | p["cov"])) >= len(p["cov"]) + 0.3 * Vc], key=lambda y: -y["value"])[:3]
-                for y in rest:
-                    ids = sorted(p["ids"] + y["ids"], key=lambda i: min((v for (cc, v) in (self.VS[i].get(book) or ()) if cc == c), default=0))
-                    out.append(self.make(book, ids, c, c, p["cov"] | y["cov"], "pair"))
+            # never two unrelated sermons together: Core is one teaching, or one sermon's parts, or one series' run
         return out
 
     # ---- a book as a whole
@@ -363,18 +374,21 @@ class Engine:
             code = re.sub(r"^\s*Flight\s*", "", it["t"])
             stem = re.sub(r"\d$", "", code) if re.match(r"^\d", code) else re.sub(r"\d+$", "", code)
             groups[stem].append((code, i))
-        out = defaultdict(lambda: {"ids": [], "q": []})
+        # one flight per book (its parts together): the one most its own, never "Between the Testaments"
+        flights = []
         for stem, xs in groups.items():
             ids = [i for _, i in sorted(xs)]
             books = sorted({b for i in ids for b in (self.VS.get(i) or {}) if b in abbr}, key=order.index)
-            if not books: continue
-            for b in books:
-                out[abbr[b]]["ids"] += ids
-                if b == books[0]: out[abbr[b]]["q"] += ids
-        for v in out.values():      # "Between the Testaments" before the Gospels' own flight
-            v["ids"].sort(key=lambda i: (0 if "INT" in self.items[i]["t"] else 1, self.items[i]["t"]))
-            v["q"].sort(key=lambda i: (0 if "INT" in self.items[i]["t"] else 1, self.items[i]["t"]))
-        return dict(out)
+            if books and stem != "INT": flights.append((stem, ids, books))
+        pick = {}
+        for b in order:
+            mine = [f for f in flights if b in f[2]]
+            if mine: pick[b] = min(mine, key=lambda f: (len(f[2]), f[0]))
+        out = {}
+        for b, (stem, ids, books) in pick.items():
+            first = next(x for x in books if pick.get(x, (None,))[0] == stem)
+            out[abbr[b]] = {"ids": ids, "q": ids if b == first else []}
+        return out
 
 
 def select(books, items, VS, ref_how, cited, item_books, VC, mode=None):
