@@ -91,7 +91,8 @@ RULES = {
                            r"hardback", r"order (yours|that set|the set)", r"that was stephen dav", r"stephen (davey )?is (examining|exploring|taking us|walking us)", r"discount", r"online store", r"free resources tab", r"free of charge", r"smartphone app", r"right back here next time"],
                    "back_gap": (8, 30)},
     "davey_sermons": {"pre": [r"now,? here'?s stephen\.?"], "start": [], "end": []},
-    "davey_archive": {"pre": [r"now,? here'?s stephen\.?"], "start": [r"this (message|lesson|sermon) is from the (teaching )?ministry of", r"for (more )?information,? (please )?visit wisdom ?online"], "end": COMMON_OUT + [r"wisdom ?online", r"wisdom international"]},
+    "davey_archive": {"pre": [r"now,? here'?s stephen\.?"], "start_exact": True,   # "...visit wisdomonline.org" often runs straight into his first sentence
+                      "start": [r"this (message|lesson|sermon) (is|comes) from the (\w+ )?ministry of (stephen|steven) \w+", r"for (more )?information,? (please )?visit wisdom ?online(?: ?\.? ?org)?"], "end": COMMON_OUT + [r"wisdom ?online", r"wisdom international"]},
 }
 
 def words_of(pcm, model):
@@ -147,14 +148,15 @@ def sentence_start(ws, k):
     while j > 0 and not re.search(r"[.?!]$", ws[j - 1][2]): j -= 1
     return j
 
-def after_last(ws, text, spans, pats, lo, hi):
-    """Index of the word after the sentence holding the last match (beginning between lo and hi seconds), or None."""
+def after_last(ws, text, spans, pats, lo, hi, exact=False):
+    """Index of the word after the sentence holding the last match (beginning between lo and hi seconds), or None.
+    exact: the word right after the match itself, for an announcer line speech recognition runs into the sermon."""
     last = None
     for pat in pats:
         for m in re.finditer(pat, text, I):
             k = word_at(spans, m.end() - 1)
             if lo <= ws[word_at(spans, m.start())][0] <= hi and (last is None or k > last): last = k
-    return None if last is None else sentence_end(ws, last) + 1
+    return None if last is None else (last + 1 if exact else sentence_end(ws, last) + 1)
 
 def find_start(ws, rule):
     if not ws: return 0.0
@@ -168,7 +170,7 @@ def find_start(ws, rule):
     jp = after_last(ws, text, spans, rule.get("pre", []), 0, 60) or 0
     gapped = j0 > 0 and rule.get("gap") and j0 != jp
     t0 = ws[jp][0] if jp < len(ws) else WIN                    # hand-offs count from the end of the ministry message
-    j = after_last(ws, text, spans, rule.get("start", []), t0 if jp else 0, rule.get("start_by", WIN))
+    j = after_last(ws, text, spans, rule.get("start", []), t0 if jp else 0, rule.get("start_by", WIN), rule.get("start_exact", False))
     if j is None and gapped and rule.get("floor"):             # teaser, music, then an announcer with no hand-off line
         j = next((k for k in range(j0, len(ws)) if ws[k][0] >= rule["floor"] and (k == 0 or re.search(r"[.?!]$", ws[k - 1][2]))), j0)
     j = j0 if j is None else j
