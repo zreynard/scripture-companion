@@ -117,6 +117,8 @@ def main():
         if f.endswith("_opening.json"): continue
         (OUTROS if f.endswith("_end.json") else INTROS).update(json.load(open(f, encoding="utf-8")))
     entries = [json.loads(l) for l in open(VERIFIED, encoding="utf-8")]
+    _dp = os.path.join(HERE, "data", "durations.json")   # lengths read from the audio files where a feed gives none (tools/durations.py)
+    DURS = json.load(open(_dp)) if os.path.exists(_dp) else {}
     narr = {(o["book"], o["chapter"]): o["seq"] for o in json.load(open(NARR))}
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
     skip_guest = lambda e: e["source"].startswith("skip_") and e["speaker"].startswith("guest:")  # Calvary Church guests keep Skip's series unbroken
@@ -181,7 +183,7 @@ def main():
                  ({"s": INTROS[e["id"]]} if INTROS[e["id"]] else {}) if e["id"] in INTROS else {"s": config.INTRO_SKIP[e["source"]]} if config.INTRO_SKIP.get(e["source"]) else {}),
               "by": ("Pastor " + e["speaker"].split(":", 1)[1] if e["speaker"] != "fearless:Fearless Church" else None) if e["speaker"].startswith("fearless:") else e["speaker"].split(":", 1)[1] if (e["speaker"] in team or skip_guest(e)) else None,
               "era": e["era"], "tr": e["track"], "src": e["source"], "url": e.get("primary_url") or e["url"],
-              "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() else 0,
+              "audio": audio_url(e), "dur": int(e["duration"]) if str(e["duration"]).isdigit() and int(e["duration"]) else DURS.get(e["id"], 0),
               "date": iso_date(e.get("published")), "pass": e.get("refs_text", ""), "tier": e["tier"],
               "sc": [e.get("sc_season"), e.get("sc_episode")] if e.get("sc_season") else None,
               **({"e": OUTROS[e["id"]]} if OUTROS.get(e["id"]) else {})}
@@ -378,7 +380,13 @@ def main():
             r = (rec.get(abbr) or {}).get(c)
             if r and r[1] == hashlib.sha1(t.encode("utf-8")).hexdigest()[:12]:
                 intro.setdefault(abbr, {})[c] = round(r[0])
-    data = {"built": __import__("datetime").date.today().isoformat(), "items": items, "books": books, "narr": narr, "intro": intro, "itx": intro_txt,
+    # Core: one primary exposition per chapter or passage, the rest kept for Go Deeper (core.py)
+    import core as _core
+    if os.environ.get("CORE_DUMP"):
+        import pickle; pickle.dump({"books": books, "items": items, "VS": VS, "ref_how": ref_how, "cited": cited, "item_books": item_books,
+                                    "VC": {b[0]: [vcount(b[0], c) for c in range(1, b[2] + 1)] for b in BOOKS}}, open(os.environ["CORE_DUMP"], "wb"))
+    CORE = _core.select(books, items, VS, ref_how, cited, item_books, {b[0]: [vcount(b[0], c) for c in range(1, b[2] + 1)] for b in BOOKS})
+    data = {"built": __import__("datetime").date.today().isoformat(), "core": CORE["app"], "items": items, "books": books, "narr": narr, "intro": intro, "itx": intro_txt,
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items),
             "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst}),
             "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]}}
@@ -826,6 +834,13 @@ body.bpsopen{overflow:hidden}
 .jv-go{display:flex;align-items:center;justify-content:center;gap:10px;height:52px;border-radius:26px;background:#9a7524;color:#fff;font-size:17px;font-weight:600;margin-top:16px}
 .jv-sec{font-size:10.5px;font-weight:650;letter-spacing:.2em;text-transform:uppercase;color:#7a5c16;margin:24px 2px 4px}
 .jv-sub{font-size:12px;font-weight:600;color:#4a5272;margin:12px 2px 2px}
+.cprefs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 4px}.cprefs .btn{padding:6px 12px}.cprefs .btn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.jv-tsec{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.jv-tg{display:inline-flex;padding:2px;border-radius:14px;background:rgba(27,36,64,.07);letter-spacing:normal;text-transform:none}
+.jv-tg button{border:0;background:none;font:600 12.5px -apple-system,system-ui,sans-serif;color:#4a5272;padding:5px 11px;border-radius:12px;cursor:pointer}
+.jv-tg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(27,36,64,.12)}
+.jv-why{font-size:12.5px;line-height:1.45;color:#5a6280;margin:2px 2px 6px 56px}.jv-why b{color:#4a5272;font-weight:650}
+.jv-mk{margin:-8px 2px 6px 56px}.jv-mk .lnk{font-size:12px;color:#7b8199;text-decoration:none;font-weight:600}.jv-mk .lnk::before{content:"↑ "}
 .jv-sec:empty{display:none}
 .jw{display:flex;align-items:center;gap:12px;padding:10px 2px}
 .jr+.jw{border-top:1px solid rgba(27,36,64,.07)}
@@ -933,7 +948,8 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 .t-q input{flex:1;min-width:0;border:0;background:none;font:15px -apple-system,system-ui,sans-serif;color:var(--ink);outline:none}
 .tr2{display:flex;align-items:center;gap:12px;padding:10px 2px}
 .vsrch{position:absolute;top:calc(env(safe-area-inset-top) + 16px);right:60px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(27,36,64,.06);color:#4a5272;display:flex;align-items:center;justify-content:center;cursor:pointer}
-#np .np-top #np-srch{margin-left:auto;color:var(--mute)}#np.mini #np-srch{display:none}
+#np .np-top #np-fav{margin-left:auto;color:var(--mute)}#np .np-top #np-fav.on{color:var(--gold2)}#np .np-top #np-fav.on path{fill:currentColor}#np .np-top #np-fav[hidden]+#np-srch{margin-left:auto}
+#np .np-top #np-srch{color:var(--mute)}#np.mini #np-srch,#np.mini #np-fav{display:none}
 #gsr{position:fixed;inset:0;z-index:30;background:#f4efe3;display:flex;flex-direction:column;opacity:0;transform:translateY(12px);transition:opacity .18s,transform .18s}
 #gsr.on{opacity:1;transform:none}
 #gsr .sh{display:flex;gap:10px;align-items:center;padding:calc(env(safe-area-inset-top) + 10px) 16px 10px}
@@ -970,7 +986,7 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 <div id="jump" role="dialog" aria-modal="true" aria-label="Go to" hidden><div class="jp-top"><label class="jp-field"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="jq" type="search" placeholder="Nehemiah, John 3:16, Goliath" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="Search"></label><button id="jx">Close</button></div><div id="jbody"></div></div><div id="mapv" role="dialog" aria-modal="true" aria-label="Map of the journey" hidden><svg id="mapsvg" preserveAspectRatio="xMidYMid meet"></svg><div class="mv-top"><button id="mvx" aria-label="Close map">✕</button><div class="mv-title" id="mvtitle">Your journey</div></div><div class="mv-panel" id="mvpanel"><div class="mv-card" id="mvcard"></div><div class="mv-legs" id="mvlegs" aria-label="Legs of the journey"></div></div></div>
 <div id="zt" hidden></div><div id="main"></div><nav id="tabs" aria-label="Main"></nav><div id="bps" hidden></div>
 <div id="np"><div class="grab"></div>
-<div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="np-srch" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button><button id="cls" aria-label="Stop and close">✕</button></div>
+<div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="np-fav" aria-label="Save this teaching" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v16l-5-3.6L7 20z"/></svg></button><button id="np-srch" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button><button id="cls" aria-label="Stop and close">✕</button></div>
 <div class="art" id="np-art"></div><div class="np-d" id="np-d"></div>
 <div class="t serif" id="np-t"></div><div class="s" id="np-s"></div><div id="np-read" aria-label="Reader"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
@@ -1009,6 +1025,20 @@ function bkWeight(d){return Object.keys((d&&d.prog)||{}).length+Object.keys((d&&
 
 let prog=S.get('prog',{}),read=S.get('read',{}),cfg=Object.assign(S.get('cfg',{who:''}),{order:'canon'}),view=S.get('view','walk'),camp=S.get('camp',null);
 const okWho=id=>!cfg.who||I[id].who===cfg.who;
+/* Core (core.py): one primary exposition for each chapter or passage, chosen book by book; everything else is Go Deeper.
+   A passage spanning chapters plays at the last of them, once its Scripture has been read. Your choices persist:
+   coreSet {unit or "k:<abbr>:<chapter>": [ids]} replaces a Core, cfg.corePref prefers one teacher, cfg.core=false is the
+   previous Journey (every teaching queued). */
+const CORE=D.core||{u:[],at:{},deep:{},alt:{}};
+const coreOn=()=>cfg.core!==false&&CORE.u.length>0;
+const coreSet=()=>S.get('coreSet',{});
+function coreKey(x){if(!x||x.c.intro)return null;const k=x.b.abbr+':'+x.c.c,u=CORE.at[k];return u!=null?u:('k:'+k)}
+function coreIdsOf(u){const set=coreSet()[u];if(set)return set.filter(id=>I[id]&&okWho(id));if(typeof u==='string')return[];
+ const p=cfg.corePref;if(p&&CORE.u[u][0]){const a=(CORE.alt[u]||[]).find(z=>z[2]===p);if(a)return a[0].filter(id=>I[id]&&okWho(id))}
+ return CORE.u[u][3].filter(id=>I[id]&&okWho(id))}
+function coreHere(x){const u=coreKey(x);if(u==null)return null;if(typeof u==='string')return coreSet()[u]?u:null;return CORE.u[u][2]===x.c.c?u:null}
+function coreLater(x){const u=coreKey(x);return u!=null&&typeof u!=='string'&&CORE.u[u][2]!==x.c.c?u:null}
+function coreWhy(u){if(coreSet()[u])return null;if(typeof u==='string')return null;const p=cfg.corePref;if(p&&(CORE.alt[u]||[]).some(z=>z[2]===p))return'Your preferred teacher for Core.';return CORE.u[u][4]}
 // --- denser scenery: terrain everywhere, per-book motifs, more vignettes, celestial bodies, rivers ---
 const MOTIF={'The Law':'palm','History':'town','Wisdom & Song':'olive','Major Prophets':'cedar','Minor Prophets':'town','The Gospels':'olive','The Church Begins':'sail','Letters of Paul':'column','General Letters':'fire','The New Beginning':'tree'};
 function motif(kind,x,y,sc=1){const d=x<195?1:-1;return `<g transform="translate(${x} ${y}) scale(${d*sc} ${sc})" fill="none" stroke="${G}.28)" stroke-width="1" stroke-linecap="round"><path d="M0 0 c14 -10 30 -8 38 4 c6 10 -4 18 -12 12 c-6 -6 2 -14 8 -8 M0 0 c-8 -12 -8 -26 2 -36 c8 -8 20 -6 22 4 c2 8 -8 12 -12 6 c-3 -5 3 -10 8 -6"/><circle cx="26" cy="8" r="1.4" fill="${G}.5)" stroke="none"/><circle cx="4" cy="-30" r="1.4" fill="${G}.5)" stroke="none"/></g>`}
@@ -1483,8 +1513,10 @@ function firstAt(){if(FIRSTAT)return FIRSTAT;const m={};walk().forEach((x,i)=>st
 function jpIdx(){const w=walk(),k=S.get('jp',null);let i=k?w.findIndex(x=>stopKey(x)===k):-1;
  if(i<0){i=camp!=null&&w[camp]?camp:w.findIndex(x=>!stopRead(x));if(i<0)i=0;S.set('jp',stopKey(w[i]))}return i}
 function setJP(i){const w=walk();if(w[i])S.set('jp',stopKey(w[i]))}
-function stepsOf(i){const x=walk()[i];if(!x)return null;const G=listenGroups(x.b,x.c);return {x,ov:G.overview.map(g=>g.id),teach:[...G.chapter,...G.verses].map(g=>g.id)}}
-const queued=(id,i)=>firstAt()[id]===i&&!!I[id]&&!!I[id].audio&&!isDone(id)&&!SKIP[id];
+function stepsOf(i){const x=walk()[i];if(!x)return null;
+ if(coreOn()){const u=coreHere(x);return {x,ov:[],teach:u==null?[]:coreIdsOf(u),u}}
+ const G=listenGroups(x.b,x.c);return {x,ov:G.overview.map(g=>g.id),teach:[...G.chapter,...G.verses].map(g=>g.id)}}
+const queued=(id,i)=>(coreOn()||firstAt()[id]===i)&&!!I[id]&&!!I[id].audio&&!isDone(id)&&!SKIP[id];
 const scrDone=x=>!!read[scrKey(x)]||!!SKIP['S:'+scrKey(x)];
 function nextAction(i){const s=stepsOf(i);if(!s)return null;const x=s.x;
  const ii=stopIntro(x);if(ii&&!isDone(ii)&&!SKIP[ii])return{kind:'play',id:ii,step:'intro'};
@@ -1562,7 +1594,7 @@ function heroArt(x,w,h,id){const c=LAND_HUE[landOf(x.b)]||LAND_HUE['The Law'],sd
 
 /* ---- Journey: your place, the next step, and the whole stop beneath it, on one screen ---- */
 let JV={more:false};
-function stepFrac(i,list){const q=list.filter(id=>firstAt()[id]===i&&I[id]&&I[id].audio);if(!q.length)return 1;return q.filter(id=>isDone(id)||SKIP[id]).length/q.length}
+function stepFrac(i,list){const q=list.filter(id=>(coreOn()||firstAt()[id]===i)&&I[id]&&I[id].audio);if(!q.length)return 1;return q.filter(id=>isDone(id)||SKIP[id]).length/q.length}
 function jRow(id,badge,up){const it=I[id];if(!it)return'';const done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id);
  return `<div class="jw${done?' heard':''}${up===id?' up':''}"><button class="jpb${it.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(it))}"${it.audio?'':' disabled'}>${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(it))}</b><span>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}${it.audio?'':' · audio soon'}</span></div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':badge?`<span class="vb">${badge}</span>`:''}</div>`}
 function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(i),s=stepsOf(i),G=listenGroups(b,c),lm=LANDMARKS[b.abbr+c.c],up=a&&a.kind==='play'?a.id:null;
@@ -1572,7 +1604,7 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  const bk=BACK&&BACK.from!==i&&w[BACK.from]?BACK.from:null;
  h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1" aria-label="Back to ${esc(stopName(w[bk]))}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M9 14 4 9l5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>${esc(stopName(w[bk]))}</button>`:''}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
  const ii=stopIntro(x),itx=hasIntroText(x),iiF=ii?(isDone(ii)||SKIP[ii]?1:Math.min(.95,heardPct(ii)/100)):0;
- const segs=[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['overview','Overview',stepFrac(i,s.ov)],['teaching','Teaching',stepFrac(i,s.teach)]])];
+ const segs=coreOn()?[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',s.teach.length?stepFrac(i,s.teach):(coreLater(x)!=null?0:1)]])]:[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['overview','Overview',stepFrac(i,s.ov)],['teaching','Teaching',stepFrac(i,s.teach)]])];
  h+=`<div class="jv-seg">${segs.map(([k,l,f])=>`<button data-jseg="${k}" class="${a&&a.step===k?'now':''}" aria-label="Go to ${l}"><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</button>`).join('')}</div>`;
  if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
   h+=`<button class="jv-next" id="jnext"><span class="jv-pp">${icon(pl?'pause':'play',20,0,'#fff')}</span><span class="jv-nt"><small>${pl?'Playing':left?'Resume':'Up next'}${a.step==='intro'?' · Introduction':a.step==='overview'&&!c.intro?' · Overview':''}</small><b>${esc(dispTitle(it))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}</em></span></button><div class="jv-alt"><button data-skipnext="${a.id}">Skip for now</button></div>`}
@@ -1587,12 +1619,30 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  const sec=(t,list,k)=>{if(!list.length)return'';let o=`<div class="jv-sec" id="js-${k}">${t}</div>`,last=null;list.forEach(g=>{total++;if(shown>=cap(1e9))return;if(g.h&&g.h!==last&&c.intro){o+=`<div class="jv-sub">${esc(g.h)}</div>`;last=g.h}o+=jRow(g.id,g.r?vbadge(g.r):'',up);shown++});return o};
  if(ii||itx)rows+=`<div class="jv-sec" id="js-intro">Introduction</div>${ii?jRow(ii,'',up):`<div class="jw"><span class="jpb off" aria-hidden="true">${icon('book',13,1.8,'currentColor')}</span><div class="jw-t"><b>${esc(c.intro?'Introducing '+b.name:stopName(x)+' · Introduction')}</b><span>The Narrator · narration coming soon</span></div></div>`}<button class="jv-rd" id="jrd" aria-expanded="false">Read the introduction</button><div class="jv-itx" id="jitx" hidden></div>`;
  if(!c.intro){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec" id="js-scripture">Scripture</div><div class="jw${rd?' heard':''}"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
- rows+=G.overview.length||c.intro?sec(c.intro?'Teaching on the book':'Overview',G.overview,'overview'):'<div id="js-overview"></div>';
- rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;
+ if(!coreOn())rows+=G.overview.length||c.intro?sec(c.intro?'Teaching on the book':'Overview',G.overview,'overview'):'<div id="js-overview"></div>';
+ if(coreOn())rows+=coreRows(x,i,G,sec,up);else{rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;}
  if(shown<total)rows+=`<button class="jv-more" id="jmore">${total-shown} more</button>`;
  const tp=c.intro?[]:(D.topics||[]).filter(t=>t.keys.some(k=>k.b===b.name&&c.c>=k.c&&c.c<=k.to));
  if(tp.length)rows+=`<div class="jv-tp"><span>Explore this topic</span>${tp.map(t=>`<button data-topic="${t.id}">${esc(t.name)} ›</button>`).join('')}</div>`;
  return h+`<div class="jv-list">${rows}</div></div>`}
+/* Teaching at a stop: Core (the one exposition to hear) or Go Deeper (everything else, optional) */
+function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,u=coreHere(x),later=coreLater(x);
+ const ids=u!=null?coreIdsOf(u):[],cs=new Set(ids),dp=c.intro?{broad:G.overview.map(g=>g.id)}:(CORE.deep[k]||{});
+ const uk=coreKey(x),orig=uk!=null&&typeof uk!=='string'?CORE.u[uk][3]:[];
+ const extra=orig.filter(id=>!cs.has(id)&&I[id]);                          /* the suggested Core when you replaced it */
+ const groups=[['Other expositions',[...extra,...(dp.alt||[])]],['Verse by verse',dp.verse||[]],[c.intro?'Book overviews':'Broader teaching',dp.broad||[]],['Pray the Word and devotionals',dp.dev||[]]]
+  .map(([t,l])=>[t,l.filter(id=>I[id]&&okWho(id)&&!cs.has(id))]).filter(g=>g[1].length);
+ const nDeep=groups.reduce((a,g)=>a+g[1].length,0);
+ let o=`<div class="jv-sec jv-tsec" id="js-teaching"><span>${c.intro?'Teaching on the book':'Teaching'}</span>${c.intro?'':`<span class="jv-tg" role="tablist"><button role="tab" data-deep="0" aria-selected="${!deepOn}" class="${deepOn?'':'on'}">Core</button><button role="tab" data-deep="1" aria-selected="${deepOn}" class="${deepOn?'on':''}">Go Deeper${nDeep?' · '+nDeep:''}</button></span>`}</div>`;
+ if(!deepOn&&!c.intro){
+  if(ids.length){ids.forEach(id=>{o+=jRow(id,'',up)});const why=coreWhy(u);
+   o+=`<p class="jv-why">${why?'<b>Why this one.</b> '+esc(why):'You chose this one.'}${coreSet()[u]?` <button class="lnk" data-coreback="${u}">Back to the suggested teaching</button>`:''}</p>`}
+  else if(later!=null){const L=CORE.u[later],nx=walk().find(w=>w.b.abbr===L[0]&&w.c.c===L[2]),t=L[3].map(id=>I[id]).filter(Boolean);
+   o+=`<p class="jv-none">The teaching for ${esc(stopName(x))} covers ${esc(b.name)} ${L[1]}–${L[2]}, so it plays after you read ${esc(nx?stopName(nx):b.name+' '+L[2])}${t.length?`: <b>${esc(dispTitle(t[0]))}</b> · ${esc(teacher(t[0]))}`:''}.</p>`}
+  else o+=`<p class="jv-none">No focused teaching on ${esc(stopName(x))} alone.${nDeep?' Go Deeper has '+nDeep+' related message'+(nDeep>1?'s':'')+'.':''}</p>`}
+ else{if(!nDeep)o+=`<p class="jv-none">Nothing more on ${esc(stopName(x))} yet.</p>`;
+  groups.forEach(([t,l])=>{o+=`<div class="jv-sub">${t}</div>`;l.forEach(id=>{o+=jRow(id,'',up)+(c.intro?'':`<div class="jv-mk"><button class="lnk" data-mkcore="${esc(String(uk))}|${id}">Make this Core</button></div>`)})})}
+ return o}
 function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;
  if(a.kind==='play'){if(cur===a.id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;play(a.id)}
  else if(a.kind==='scripture'){const id=narId(x.b.abbr,x.c.c);if(cur===id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;narPlay(x.b,x.c.c,null,{jm:true,full:true})}
@@ -1600,6 +1650,9 @@ function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;
 function jMove(i,back){const w=walk(),f=jpIdx();if(!w[i])return;if(back)BACK=null;else if(Math.abs(i-f)>1)BACK={from:f};else if(BACK&&i===BACK.from)BACK=null;
  jMove.dir=i>f?'l':i<f?'r':'';setJP(i);camp=i;S.set('camp',camp);JV.more=false;render();jMove.dir='';window.scrollTo({top:0})}
 function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
+ document.querySelectorAll('[data-deep]').forEach(b=>b.onclick=()=>{JV.deep=b.dataset.deep==='1';const y=scrollY;render();window.scrollTo(0,y)});
+ document.querySelectorAll('[data-mkcore]').forEach(b=>b.onclick=()=>{const [u,id]=b.dataset.mkcore.split('|'),set=coreSet();set[u]=[id];S.set('coreSet',set);JV.deep=false;const y=scrollY;render();window.scrollTo(0,y)});
+ document.querySelectorAll('[data-coreback]').forEach(b=>b.onclick=()=>{const set=coreSet();delete set[b.dataset.coreback];S.set('coreSet',set);const y=scrollY;render();window.scrollTo(0,y)});
  const rd=$('#jrd');if(rd)rd.onclick=()=>{const bx=$('#jitx'),x=walk()[jpIdx()],open=bx.hidden;bx.hidden=!open;rd.setAttribute('aria-expanded',open);rd.textContent=open?'Hide the introduction':'Read the introduction';
   if(open&&!bx.innerHTML)introText(x.b.abbr).then(T=>{bx.innerHTML=introParas(T[String(x.c.intro?0:x.c.c)])}).catch(()=>{bx.textContent='The text did not load. Check your connection.'})};document.querySelectorAll('#jv [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));
  document.querySelectorAll('[data-jgo]').forEach(b=>b.onclick=()=>jMove(+b.dataset.jgo,!!b.dataset.back));
@@ -1687,6 +1740,8 @@ function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotion
  const rec=Object.entries(prog).filter(([id,p])=>I[id]&&!I[id].nar&&p&&p.at).sort((a,z)=>z[1].at-a[1].at).slice(0,6);
  h+=`<button class="lib-sc" id="opensc"><b>Secret Church</b><span>David Platt · all ${scGroups().length} nights · ${D.sc.ids.length} sessions ›</span></button>`;
  h+=`<div class="jv-sec">Teachers</div>`+['Platt','PAM','Skip','Davey','Fearless'].filter(k=>cnt[k]).map(k=>`<button class="lib-t" data-tch="${k}"><span class="av" style="background:${TCH_C[k]}">${(n=>n[0][0]+n[n.length-1][0])(NAMES[k].split(' '))}</span><span><b>${NAMES[k]}</b><em>${(cnt[k]||0).toLocaleString()} teachings</em></span><i>›</i></button>`).join('');
+ const fav=Object.entries(S.get('fav',{})).filter(([id])=>I[id]).sort((a,z)=>z[1]-a[1]);
+ if(fav.length)h+=`<div class="jv-sec">Saved</div><div class="lib-rec">${fav.slice(0,12).map(([id])=>{const left=leftOf(id);return `<button data-play="${id}"><small>${esc(teacher(I[id]).split(' ').slice(-1)[0])}</small><b>${esc(dispTitle(I[id]))}</b><em>${esc(I[id].pass?shortPass(I[id].pass):'')}${isDone(id)?' · heard':left?' · '+atSpd(left)+' left':''}</em></button>`}).join('')}</div>`;
  if(rec.length)h+=`<div class="jv-sec">Recently played</div><div class="lib-rec">${rec.map(([id,p])=>{const s=bpOf(id),left=leftOf(id);return `<button data-${s?'bpplay2':'play'}="${id}"${s?` data-sid="${s.id}"`:''}><small>${s?'Series':'Journey'}</small><b>${esc(s?bpName(s,id):dispTitle(I[id]))}</b><em>${esc(teacher(I[id]).split(' ').slice(-1)[0])} · ${p.done?'heard':left?atSpd(left)+' left':'started'}</em></button>`}).join('')}</div>`;
  const sk=Object.keys(SKIP).length;if(sk)h+=`<button class="lnk lib-sk" id="unskip">${sk} skipped for now — bring them back</button>`;
  return h+'</div>'}
@@ -1908,9 +1963,12 @@ function stepTo(to){go(to)}
 function bkForm(again){return `<form id="bkf" class="bkf" autocomplete="on"><input type="text" name="username" autocomplete="username" value="Scripture Companion backup" readonly class="bk-u" tabindex="-1" aria-hidden="true"><input type="password" name="password" id="bkkey" autocomplete="current-password" placeholder="${again?'Paste a new GitHub key':'Paste your GitHub key'}" required><input type="text" id="bkrepo" value="${esc(bkRepo())}" aria-label="Backup repo (owner/name)" autocapitalize="off" spellcheck="false"><button class="btn" type="submit">${again?'Use this key':'Turn on backup'}</button><p class="note" id="bkmsg"></p></form>`}
 function settingsView(){
  return `<div class="settings"><button class="sccard" id="opensc"><span class="serif">Secret Church</span><small>${scGroups().length} nights · every session in order ›</small></button><h2 class="serif" style="margin:0 0 8px">Your journey</h2><p class="note">${(()=>{const w=walk(),j=jpIdx(),rd=w.filter(x=>!x.c.intro&&read[scrKey(x)]).length,hh=Math.round(Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0)/3600),sk=Object.keys(SKIP).length;
-  return `You are at <b>${esc(stopName(w[j]))}</b>${rd?`, with ${rd.toLocaleString()} chapter${rd>1?'s':''} of Scripture read`:''}${hh?` and ${hh.toLocaleString()} hour${hh>1?'s':''} of teaching heard`:''}.</p><p class="note">Each stop on the road has three steps: an <b>Overview</b> (the book, or a stretch of chapters), the <b>Scripture</b> itself to read or hear, and <b>Teaching</b>: the whole chapter first, then verse by verse. Continue always offers the next one. A teaching that covers several chapters waits at the first of them, and the next chapter waits for you.${sk?` <button class="lnk" id="unskip">Bring back the ${sk} you skipped</button>`:''}`})()}</p>
+  return `You are at <b>${esc(stopName(w[j]))}</b>${rd?`, with ${rd.toLocaleString()} chapter${rd>1?'s':''} of Scripture read`:''}${hh?` and ${hh.toLocaleString()} hour${hh>1?'s':''} of teaching heard`:''}.</p><p class="note">${coreOn()?`Each stop has three steps: the narrator's <b>Introduction</b>, the <b>Scripture</b> to read or hear, and one <b>Core</b> teaching on it, chosen for how well it explains the passage. Everything else on the chapter is in <b>Go Deeper</b>, optional. A teaching that covers several chapters plays after the last of them. Any sermon in Go Deeper can be made Core with a tap.`:`Each stop on the road has three steps: an <b>Overview</b> (the book, or a stretch of chapters), the <b>Scripture</b> itself to read or hear, and <b>Teaching</b>: the whole chapter first, then verse by verse. Continue always offers the next one. A teaching that covers several chapters waits at the first of them, and the next chapter waits for you.`}${sk?` <button class="lnk" id="unskip">Bring back the ${sk} you skipped</button>`:''}`})()}</p>
  <p>
  <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who?NAMES[cfg.who]+' only':'everyone'} — switch</span></p>
+ ${CORE.u.length?`<p class="note" style="margin-top:14px"><b>Core teacher.</b> ${coreOn()?`Core picks the teaching that best explains each passage, favouring ${esc(cfg.corePref?NAMES[cfg.corePref]:'Platt, then Mitchell, then Heitzig, then Davey')}.`:'Off: every teaching on a chapter is queued, as before.'}</p>
+ <div class="cprefs" role="group" aria-label="Preferred teacher for Core">${[['','Suggested'],['Platt','Platt'],['PAM','Mitchell'],['Skip','Heitzig'],['Davey','Davey']].map(([k,l])=>`<button class="btn${coreOn()&&(cfg.corePref||'')===k?' on':''}" data-cpref="${k}">${l}</button>`).join('')}<button class="btn${coreOn()?'':' on'}" data-cpref="off">Every teaching</button></div>
+ ${Object.keys(coreSet()).length?`<p class="note"><button class="lnk" id="corereset">Undo the ${Object.keys(coreSet()).length} Core choice${Object.keys(coreSet()).length>1?'s':''} you made</button></p>`:''}`:''}
  <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).</p><h2 class="serif" style="margin:22px 0 8px">Backup</h2>${bkOn()?`<p class="note" id="bkst">${bkStatus()}</p><button class="btn" id="bknow">Back up now</button><button class="btn" id="bkrest">Restore from backup</button><button class="btn" id="bkoff">Turn off</button>${BK.err?bkForm(true):''}`:`<p class="note">Your progress lives only on this phone. Turn on backup and it saves itself to a private GitHub repo you own; on a new phone, paste the same key and everything comes back.</p>
  <ol class="note bk-steps"><li><a href="https://github.com/new?name=scripture-companion-backup&visibility=private" target="_blank" rel="noopener">Create the private repo</a> (name and Private are filled in: tap <b>Create repository</b>).</li><li><a href="https://github.com/settings/personal-access-tokens/new?name=Scripture%20Companion%20backup&description=Lets%20the%20app%20save%20listening%20progress&expires_in=none&contents=write" target="_blank" rel="noopener">Make a key</a>: under <b>Repository access</b> pick <b>Only select repositories</b> → scripture-companion-backup; check <b>Contents: Read and write</b>; tap <b>Generate</b> and copy it.</li><li>Paste it here. Your iPhone offers to save it in Passwords, so a new phone fills it in.</li></ol>${bkForm(false)}`}
  <p class="note" style="margin-top:18px">By hand:</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
@@ -1950,7 +2008,7 @@ function useAudioFor(i){const fx=levelFor(i)&&leveler(),want=fx?$('#audiofx'):$(
  if(want!==audio){try{audio.pause()}catch(e){}audio=want;audio.playbackRate=speed}if(fx){lvl=null;lvlFast=40}}$('#spd').textContent=spdLabel();
 function where(id){if(I[id]&&I[id].nar)return I[id].nar.book+' '+I[id].nar.c;if(I[id]&&I[id].intro)return I[id].intro.book+(I[id].intro.c?' '+I[id].intro.c:'');for(const b of D.books){if(b.ov.includes(id)||(b.spans||[]).some(x=>x.id===id))return b.name;for(const c of b.ch)if(c.ids.includes(id))return b.name+' '+c.c}return ''}
 function play(id,o={}){const i=I[id];if(!i.audio)return;let wait=false;if(cur!==id){cur=id;NP().classList.toggle('reading',!!i.nar);$('.np-lab').textContent=i.nar?'Reading':'Now playing';if(!i.nar)NAR=null;ready=false;const p=i.nar?{}:prog[id]||{},saved=p.pos||0;useAudioFor(i);const meta=()=>{const st=i.s||0;if(i.nar){if(narAt)audio.currentTime=narAt;narAt=null;narRetry=0;ready=true;narMark(true);return}if(saved&&saved>st&&saved<audio.duration-5)audio.currentTime=saved;else if(st&&st<audio.duration-30)audio.currentTime=st;ready=true};const setSrc=u=>{audio.src=u;narWait=false;audio.addEventListener('loadedmetadata',meta,{once:true})};if(!i.nar&&!i.blob)setSrc(i.audio);else if(NB[id]&&NB[id].u)setSrc(NB[id].u);else{narWait=true;wait=true;if(audio.src!==SILENT)try{audio.pause()}catch(e){}$('#cur').textContent='Loading…';narBlob(id).then(u=>{if(cur!==id)return;setSrc(u);if(!o.load)audio.play().catch(()=>{})}).catch(()=>{if(cur!==id)return;narWait=false;$('#np-s').textContent='This chapter did not load — check your connection and tap play.'})}  /* fresh plays start after the intro */
-  $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=i.nar?'\u00a0':teacher(i)+' · '+where(id);npArt(id);if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!!i.nar&&!o.full)}else if(o.full)setMini(false);if(i.nar)readerFill(true);if(i.intro){NP().classList.add('reading');const box=$('#np-read');box.innerHTML='';introText(i.intro.abbr).then(T=>{if(cur!==id)return;box.innerHTML=`<section class="itx"><h3 class="rc first">${esc(dispTitle(i))}</h3>${introParas(T[String(i.intro.c)])}</section>`}).catch(()=>{})}setPP();
+  $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=i.nar?'\u00a0':teacher(i)+' · '+where(id);npArt(id);favPaint();if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!!i.nar&&!o.full)}else if(o.full)setMini(false);if(i.nar)readerFill(true);if(i.intro){NP().classList.add('reading');const box=$('#np-read');box.innerHTML='';introText(i.intro.abbr).then(T=>{if(cur!==id)return;box.innerHTML=`<section class="itx"><h3 class="rc first">${esc(dispTitle(i))}</h3>${introParas(T[String(i.intro.c)])}</section>`}).catch(()=>{})}setPP();
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',()=>skipTrack(1),'previoustrack',()=>skipTrack(-1)].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  if(o.load||wait)return;audio.paused?audio.play().catch(()=>{}):audio.pause()}
 function next(){if(BPM&&cur){const s=bpGet(BPM),ids=s?bpIds(s):[],k=ids.indexOf(cur);if(k>=0){if(k+1<ids.length)bpPlay(s.id,ids[k+1]);else{BPM=null;note('That is the end of '+s.title+'.')}render();return}BPM=null}
@@ -1982,7 +2040,7 @@ $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.targ
 const setSpeed=v=>{speed=Math.round(Math.min(3,Math.max(0.5,v))*100)/100;AUDIO_EL.forEach(a=>a.playbackRate=speed);$('#spd').textContent=spdLabel();S.set('speed',speed);retime()};
 function retime(){document.querySelectorAll('[data-dur]').forEach(e=>e.textContent=durTxt(+e.dataset.dur));document.querySelectorAll('[data-hrs]').forEach(e=>{const [h,a]=e.dataset.hrs.split(',').map(Number);e.textContent=hrsTxt(h,a)});if(cur&&audio.duration)$('#rem').textContent='-'+fmt(Math.max(0,audio.duration-audio.currentTime-tail())/speed)}$('#spd').onclick=e=>{e.stopPropagation();if(NP().classList.contains('mini')){const L=[.7,.8,.9,1,1.25,1.5,1.75,2],k=L.findIndex(v=>Math.abs(v-speed)<.01);setSpeed(L[(k+1)%L.length]);return}setSpeed(1)};$('#spd-dn').onclick=e=>{e.stopPropagation();setSpeed(speed-0.05)};$('#spd-up').onclick=e=>{e.stopPropagation();setSpeed(speed+0.05)};
 let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};
-$('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};$('#np-srch').onclick=e=>{e.stopPropagation();openSearch()};
+$('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};$('#np-srch').onclick=e=>{e.stopPropagation();openSearch()};$('#np-fav').onclick=e=>{e.stopPropagation();if(!cur)return;const f=S.get('fav',{});if(f[cur])delete f[cur];else f[cur]=Date.now();S.set('fav',f);favPaint()};
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NAR=null;document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));narBar();NP().classList.remove('on');roomForPlayer();render()};
 /* player sheet: swipe down or tap the page to shrink it to a bar; tap or swipe up the bar to open it */
 function NP(){return $('#np')}
@@ -2069,6 +2127,8 @@ function narNext(){const was=NAR;if(!was)return;read[was.b.abbr+was.c]=true;S.se
  if(here&&!here.c.intro&&here.b.name===was.b.name&&here.c.c===was.c){const k=w.findIndex(x=>!x.c.intro&&x.b.name===nx[0].name&&x.c.c===nx[1]);if(k>=0){TAB='scripture';S.set('tab',TAB);go(k)}}else render();
  narPlay(nx[0],nx[1],0)}
 let fullAtScroll=0;
+/* teaching you mark as particularly valuable: kept in the Library under Saved */
+function favPaint(){const b=$('#np-fav');if(!b)return;const it=I[cur],ok=it&&!it.nar&&!it.blob;b.hidden=!ok;const on=ok&&!!S.get('fav',{})[cur];b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.setAttribute('aria-label',on?'Saved: tap to remove':'Save this teaching')}
 function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;roomForPlayer();if(!m&&NAR&&cur===NAR.id){narUser=0;readerFill(true);setTimeout(()=>narMark(true),60)}}
 (()=>{const np=NP();let y0=null,x0=0,dy=0,dx=0,tb=null,bx=0,by=0;
  /* buttons act the moment the finger lifts: an iPhone can drop the click while the reader moves, and a button press never drags the player */
@@ -2105,7 +2165,9 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
  const back=$('#back');if(back)back.onclick=()=>setView(PREV==='settings'?'journey':PREV);const us=$('#unskip');if(us)us.onclick=()=>{SKIP={};S.set('skip',SKIP);note('Everything you skipped is waiting again where it belongs.');render()};
  const osc=$('#opensc');if(osc)osc.onclick=()=>{view='sc';S.set('view',view);render();window.scrollTo(0,0)};
  const scb=$('#scback');if(scb)scb.onclick=()=>setView('library');
- document.querySelectorAll('details.sce').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.sck):OPEN.delete(d.dataset.sck)});const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip','Fearless'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
+ document.querySelectorAll('details.sce').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.sck):OPEN.delete(d.dataset.sck)});const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};document.querySelectorAll('[data-cpref]').forEach(b=>b.onclick=()=>{const k=b.dataset.cpref;if(k==='off')cfg.core=false;else{cfg.core=true;cfg.corePref=k}S.set('cfg',cfg);render()});
+ const cr=$('#corereset');if(cr)cr.onclick=()=>{S.set('coreSet',{});render()};
+ const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip','Fearless'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
  const io=$('#io');if(io){$('#exp').onclick=()=>io.value=JSON.stringify({prog,read,cfg});$('#imp').onclick=()=>{try{const v=JSON.parse(io.value);prog=v.prog||prog;read=v.read||read;S.set('prog',prog);S.set('read',read);render()}catch(e){io.value='Could not read that JSON.'}};
   const bkf=$('#bkf');if(bkf)bkf.onsubmit=async e=>{e.preventDefault();const key=$('#bkkey').value.trim(),repo=$('#bkrepo').value.trim().replace(/^https?:\/\/github\.com\//,'').replace(/\.git$|\/$/g,''),msg=$('#bkmsg');msg.textContent='Checking…';
    try{const r=await bkGH('',{},key,repo);if(r.status===401)throw 'GitHub did not accept that key.';if(r.status===404)throw 'Could not open '+repo+' with that key: check the repo exists and the key was given access to it.';if(!r.ok)throw 'GitHub said '+r.status+'.';
