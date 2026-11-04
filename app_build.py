@@ -1606,7 +1606,7 @@ const TAB_IC={journey:'<path d="M12 6.5C9.8 5 7 4.6 3.5 5v13c3.5-.4 6.3 0 8.5 1.
  bigpicture:'<path d="M3 17h18"/><path d="M7 17a5 5 0 0 1 10 0"/><path d="M12 6v2M5.6 9.6l1.4 1.4M18.4 9.6 17 11M3 13.5h1.5M19.5 13.5H21"/>',
  walk:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',library:'<path d="M4 5h4v15H4zM10 5h4v15h-4zM16.5 5.5l3.6-.9 3 14.5-3.6.9z"/>'};
 let PREV='journey';
-function tabOf(v){return v==='sc'?'library':v==='walk'?'journey':v}
+function tabOf(v){return v==='sc'?'bigpicture':v==='walk'?'journey':v}
 function tabsPaint(){ztPaint();const t=$('#tabs');if(!t)return;if(!t.dataset.on){t.dataset.on=1;t.innerHTML=TABS.map(([k,l])=>`<button data-tab2="${k}"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TAB_IC[k]}</svg><span>${l}</span></button>`).join('');
   t.querySelectorAll('[data-tab2]').forEach(b=>b.onclick=()=>{const v=b.dataset.tab2;if(v===view){window.scrollTo({top:0,behavior:'smooth'});return}setView(v)})}
  t.querySelectorAll('[data-tab2]').forEach(b=>{const on=b.dataset.tab2===tabOf(view);b.classList.toggle('on',on);b.setAttribute('aria-current',on?'page':'false')});document.body.dataset.v=view}
@@ -1792,7 +1792,9 @@ function bpView(){const L=bpList(),ls=bpGet(S.get('bplast',''));let h=`<div clas
   h+=`<button class="bp-cont" data-bpcont="${ls.id}">${bpCover(ls.art,64)}<span class="bp-ct"><small>Continue · ${esc(ls.title)}</small><b>${esc(bpName(ls,id))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':` · ${k+1} of ${unitN(ls,ids.length)}`}</em></span><span class="bp-pp">${icon(pl?'pause':'play',16,0,'#1b2440')}</span></button>`}
  const row=s=>{const ids=bpIds(s),st=!!BP[s.id],k=bpAt(s),f=ids.filter(isDone).length/ids.length,U={session:'Session',flight:'Flight'}[s.unit];
   return `<button class="bp-row" data-bps="${s.id}">${bpCover(s.art,104)}<span class="bp-rt"><b>${esc(s.title)}</b><span class="by">${esc(s.by)}</span><span class="ds">${esc(s.desc.split('. ')[0].replace(/\.$/,''))}.</span><span class="pr"><i><b style="width:${f>0?Math.max(3,Math.round(100*f)):0}%"></b></i>${st||f>0?(U?`${U} ${k+1} of ${ids.length}`:`${k+1} of ${unitN(s,ids.length)}`):`${unitN(s,ids.length)} · not started`}</span></span></button>`};
- [['bp','Big Picture','The whole story of Scripture, start to finish'],['growth','Spiritual Growth','Teaching to grow by, one series at a time']].forEach(([g,t,sub])=>{const G=L.filter(s=>(s.group||'bp')===g);if(G.length)h+=`<div class="jv-sec">${t}</div><p class="bp-gs">${sub}</p>`+G.map(row).join('')});
+ [['bp','Big Picture','The whole story of Scripture, start to finish'],['sc','Secret Church','David Platt’s six-hour nights of Bible study, every session in order'],['growth','Spiritual Growth','Teaching to grow by, one series at a time']].forEach(([g,t,sub])=>{
+  if(g==='sc'){if(D.sc&&D.sc.ids.length){const n=D.sc.ids.filter(isDone).length;h+=`<div class="jv-sec">${t}</div><p class="bp-gs">${sub}</p><button class="lib-sc" id="opensc"><b>Secret Church</b><span>David Platt · all ${scGroups().length} nights · ${D.sc.ids.length} sessions${n?` · ${n} heard`:''} ›</span></button>`}return}
+  const G=L.filter(s=>(s.group||'bp')===g);if(G.length)h+=`<div class="jv-sec">${t}</div><p class="bp-gs">${sub}</p>`+G.map(row).join('')});
  return h+'</div>'}
 function openSeries(sid){const s=bpGet(sid);if(!s)return;const ids=bpIds(s),k=bpAt(s),el=$('#bps'),st=!!BP[s.id];
  let list='';s.parts.forEach(([t,p])=>{if(t)list+=`<div class="jv-sub">${esc(t)}</div>`;p.filter(id=>I[id]).forEach(id=>{const j=ids.indexOf(id),done=isDone(id),left=leftOf(id),now=j===k&&st;
@@ -1831,7 +1833,7 @@ function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotion
   const grid=bs=>`<div class="lib-bk">${bs.map(b=>`<button data-lbook="${esc(b.name)}"><b>${esc(b.name)}</b><em>${n[b.name]||0}</em></button>`).join('')}</div>`;const mi=D.books.findIndex(b=>b.name==='Matthew'),ot=D.books.slice(0,mi),nt=D.books.slice(mi);
   return h+`<div class="jv-sec">Old Testament</div>${grid(ot)}<div class="jv-sec">New Testament</div>${grid(nt)}</div>`}
  const rec=Object.entries(prog).filter(([id,p])=>I[id]&&!I[id].nar&&p&&p.at).sort((a,z)=>z[1].at-a[1].at).slice(0,6);
- h+=`<button class="lib-sc" id="opensc"><b>Secret Church</b><span>David Platt · all ${scGroups().length} nights · ${D.sc.ids.length} sessions ›</span></button>`;
+
  h+=`<div class="jv-sec">Teachers</div>`+['Platt','PAM','Skip','Davey','Fearless'].filter(k=>cnt[k]).map(k=>`<button class="lib-t" data-tch="${k}"><span class="av" style="background:${TCH_C[k]}">${(n=>n[0][0]+n[n.length-1][0])(NAMES[k].split(' '))}</span><span><b>${NAMES[k]}</b><em>${(cnt[k]||0).toLocaleString()} teachings</em></span><i>›</i></button>`).join('');
  const fav=Object.entries(S.get('fav',{})).filter(([id])=>I[id]).sort((a,z)=>z[1]-a[1]);
  if(fav.length)h+=`<div class="jv-sec">Saved</div><div class="lib-rec">${fav.slice(0,12).map(([id])=>{const left=leftOf(id);return `<button data-full="${id}"><small>${esc(teacher(I[id]).split(' ').slice(-1)[0])}</small><b>${esc(dispTitle(I[id]))}</b><em>${esc(I[id].pass?shortPass(I[id].pass):'')}${isDone(id)?' · heard':left?' · '+atSpd(left)+' left':''}</em></button>`}).join('')}</div>`;
@@ -2073,7 +2075,7 @@ function scGroups(){const by={};D.sc.ids.forEach(id=>{const i=I[id];if(!i||!i.sc
   return {ev,ids:ids.slice().sort((a,b)=>(I[a].sc[1]||0)-(I[b].sc[1]||0))}}).filter(g=>g.ids.length)}
 function scSeq(){return scGroups().flatMap(g=>g.ids).filter(id=>I[id].audio)}
 function scView(){const G=scGroups(),tot=G.reduce((a,g)=>a+g.ids.length,0);
- let h=`<div class="settings scl"><button class="btn" id="scback">‹ Library</button><h2 class="serif" style="margin:14px 0 4px">Secret Church</h2>
+ let h=`<div class="settings scl"><button class="btn" id="scback">‹ Series</button><h2 class="serif" style="margin:14px 0 4px">Secret Church</h2>
  <p class="note">David Platt · ${G.length} nights of deep teaching, ${tot} sessions, in order. Sessions that teach a stretch of the Bible also sit on the road.</p>`;
  G.forEach(({ev,ids})=>{const done=ids.filter(isDone).length,k='sc:'+ev.n;
   h+=`<details class="sce" data-sck="${k}"${OPEN.has(k)?' open':''}><summary><span class="sce-n">${ev.n}</span><span class="sce-t">${esc(ev.title)}</span><span class="sce-p">${done===ids.length?'✓':done+' / '+ids.length}</span></summary><div class="sce-b">${ids.map(id=>voiceHTML(id,(I[id].sc||[])[0]+'.'+(I[id].sc||[])[1])).join('')}</div></details>`});
@@ -2292,7 +2294,7 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
  const g=$('#gear');g.onclick=()=>setView(view==='settings'?PREV:'settings');document.querySelectorAll('[data-settings]').forEach(b=>b.onclick=()=>setView('settings'));document.querySelectorAll('[data-srch]').forEach(b=>b.onclick=()=>openSearch());
  const back=$('#back');if(back)back.onclick=()=>setView(PREV==='settings'?'journey':PREV);const us=$('#unskip');if(us)us.onclick=()=>{SKIP={};S.set('skip',SKIP);note('Everything you skipped is waiting again where it belongs.');render()};
  const osc=$('#opensc');if(osc)osc.onclick=()=>{view='sc';S.set('view',view);render();window.scrollTo(0,0)};
- const scb=$('#scback');if(scb)scb.onclick=()=>setView('library');
+ const scb=$('#scback');if(scb)scb.onclick=()=>setView('bigpicture');
  document.querySelectorAll('details.sce').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.sck):OPEN.delete(d.dataset.sck)});const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};document.querySelectorAll('[data-cpref]').forEach(b=>b.onclick=()=>{const k=b.dataset.cpref;if(k==='off')cfg.core=false;else{cfg.core=true;cfg.corePref=k}S.set('cfg',cfg);render()});
  const cr=$('#corereset');if(cr)cr.onclick=()=>{S.set('coreSet',{});render()};
  const wh=$('#who');if(wh)wh.onclick=()=>{const order=['','Platt','PAM','Davey','Skip','Fearless'];cfg.who=order[(order.indexOf(cfg.who)+1)%order.length];S.set('cfg',cfg);render()};
