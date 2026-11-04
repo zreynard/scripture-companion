@@ -1691,7 +1691,7 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
 function deepGroups(x,G){const {b,c}=x,k=b.abbr+':'+c.c,u=coreHere(x),lt=coreLater(x),cs=new Set([...(u!=null?coreIdsOf(u):[]),...(lt!=null?coreIdsOf(lt):[])]),dp=c.intro?{alt:(G||listenGroups(b,c)).overview.map(g=>g.id)}:(CORE.deep[k]||{});
  const uk=coreKey(x),orig=uk!=null&&typeof uk!=='string'?CORE.u[uk][3]:(uk&&String(uk).startsWith('b:')?(CORE.bk[b.abbr]||{}).ids||[]:[]);
  const extra=orig.filter(id=>!cs.has(id)&&I[id]);                          /* the suggested Core when you replaced it */
- return [[c.intro?'Other overviews':'Other expositions',[...extra,...(dp.alt||[])]],['Verse by verse',dp.verse||[]],[c.intro?'Book overviews':'Broader teaching',dp.broad||[]],['Pray the Word and devotionals',dp.dev||[]]]
+ return [[c.intro?'Other overviews':'Other expositions',[...extra,...(dp.alt||[])]],['Verse by verse',dp.verse||[]],[c.intro?'Book overviews':'Broader teaching',dp.broad||[]],['Devotionals',dp.dev||[]]]
   .map(([t,l])=>[t,[...new Set(l)].filter(id=>I[id]&&okWho(id)&&!cs.has(id))]).filter(g=>g[1].length)}
 function deepIds(i){const x=walk()[i];return x?deepGroups(x).flatMap(g=>g[1]).filter(id=>I[id].audio):[]}
 const inDeep=()=>!!(DEEP&&coreOn()&&cur&&deepIds(DEEP.i).includes(cur));
