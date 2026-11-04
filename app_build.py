@@ -1508,7 +1508,7 @@ let W=null; // cached world geometry
    chapter, then verse by verse). A teaching that covers several chapters waits at the first of them; once heard or
    skipped it is not asked for again (it stays in the lists). Nothing walks on by itself: the next chapter waits for you. */
 Object.assign(ICON,{book:'<path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v15H5.5A1.5 1.5 0 0 0 4 19.5z"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H20"/>',arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',map:'<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>'});
-let SKIP=S.get('skip',{}),JM=false,FIRSTAT=null,PLAYSTOP=null;
+let SKIP=S.get('skip',{}),JM=false,FIRSTAT=null,PLAYSTOP=null,DEEP=null;   /* DEEP {i}: playing through the Go Deeper list at stop i */
 const stopKey=x=>x.b.abbr+':'+(x.c.intro?0:x.c.c),scrKey=x=>x.b.abbr+x.c.c;
 function firstAt(){if(FIRSTAT)return FIRSTAT;const m={};walk().forEach((x,i)=>stopIds(x).forEach(id=>{if(!(id in m))m[id]=i}));return FIRSTAT=m}
 function jpIdx(){const w=walk(),k=S.get('jp',null);let i=k?w.findIndex(x=>stopKey(x)===k):-1;
@@ -1633,12 +1633,16 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  if(tp.length&&show('teaching'))rows+=`<div class="jv-tp"><span>Explore this topic</span>${tp.map(t=>`<button data-topic="${t.id}">${esc(t.name)} ›</button>`).join('')}</div>`;
  return h+`<div class="jv-list${tab?' jv-tabbed':''}">${rows}</div></div>`}
 /* Teaching at a stop: Core (the one exposition to hear) or Go Deeper (everything else, optional) */
-function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,u=coreHere(x),later=coreLater(x);
- const ids=u!=null?coreIdsOf(u):[],cs=new Set(ids),dp=c.intro?{alt:G.overview.map(g=>g.id)}:(CORE.deep[k]||{});
+/* Go Deeper at a stop: everything shown there besides Core, in the order shown */
+function deepGroups(x,G){const {b,c}=x,k=b.abbr+':'+c.c,u=coreHere(x),cs=new Set(u!=null?coreIdsOf(u):[]),dp=c.intro?{alt:(G||listenGroups(b,c)).overview.map(g=>g.id)}:(CORE.deep[k]||{});
  const uk=coreKey(x),orig=uk!=null&&typeof uk!=='string'?CORE.u[uk][3]:(uk&&String(uk).startsWith('b:')?(CORE.bk[b.abbr]||{}).ids||[]:[]);
  const extra=orig.filter(id=>!cs.has(id)&&I[id]);                          /* the suggested Core when you replaced it */
- const groups=[[c.intro?'Other overviews':'Other expositions',[...extra,...(dp.alt||[])]],['Verse by verse',dp.verse||[]],[c.intro?'Book overviews':'Broader teaching',dp.broad||[]],['Pray the Word and devotionals',dp.dev||[]]]
-  .map(([t,l])=>[t,l.filter(id=>I[id]&&okWho(id)&&!cs.has(id))]).filter(g=>g[1].length);
+ return [[c.intro?'Other overviews':'Other expositions',[...extra,...(dp.alt||[])]],['Verse by verse',dp.verse||[]],[c.intro?'Book overviews':'Broader teaching',dp.broad||[]],['Pray the Word and devotionals',dp.dev||[]]]
+  .map(([t,l])=>[t,[...new Set(l)].filter(id=>I[id]&&okWho(id)&&!cs.has(id))]).filter(g=>g[1].length)}
+function deepIds(i){const x=walk()[i];return x?deepGroups(x).flatMap(g=>g[1]).filter(id=>I[id].audio):[]}
+const inDeep=()=>!!(DEEP&&coreOn()&&cur&&deepIds(DEEP.i).includes(cur));
+function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,u=coreHere(x),later=coreLater(x);
+ const ids=u!=null?coreIdsOf(u):[],uk=coreKey(x),groups=deepGroups(x,G);
  const nDeep=groups.reduce((a,g)=>a+g[1].length,0);
  let o=`<div class="jv-sec jv-tsec" id="js-teaching"><span>Teaching</span>${`<span class="jv-tg" role="tablist"><button role="tab" data-deep="0" aria-selected="${!deepOn}" class="${deepOn?'':'on'}">Core</button><button role="tab" data-deep="1" aria-selected="${deepOn}" class="${deepOn?'on':''}">Go Deeper${nDeep?' · '+nDeep:''}</button></span>`}</div>`;
  if(!deepOn){
@@ -1758,7 +1762,7 @@ function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotion
 /* a sheet over the page (#bps) holding a list of teachings; rows play in place */
 function openListSheet(label,inner,list,after){   /* a sheet of sermons (topic, book); openSheet is the atlas's people and places */const el=$('#bps');el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh" role="dialog" aria-modal="true" aria-label="${esc(label)}"><button class="grab2" data-bpsx aria-label="Close"></button>${inner}<div id="tlist">${list()}</div></div>`;
  el.hidden=false;document.body.classList.add('bpsopen');requestAnimationFrame(()=>el.classList.add('on'));el.querySelectorAll('[data-bpsx]').forEach(b=>b.onclick=closeSeries);
- const wireL=()=>{el.querySelectorAll('#tlist [data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=null;play(b.dataset.play);setTimeout(()=>{$('#tlist').innerHTML=list();wireL()},60)});wireOpen(el);if(after)after(el,()=>{$('#tlist').innerHTML=list();wireL()})};wireL();return el}
+ const wireL=()=>{el.querySelectorAll('#tlist [data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=null;DEEP=null;play(b.dataset.play);setTimeout(()=>{$('#tlist').innerHTML=list();wireL()},60)});wireOpen(el);if(after)after(el,()=>{$('#tlist').innerHTML=list();wireL()})};wireL();return el}
 /* a topic: what it is, the key passages (each opens that stop on the Journey), the Secret Church night on it, essential teaching, then the rest by teacher */
 function goStop(bk,c){const w=walk(),i=w.findIndex(x=>x.b.name===bk&&!x.c.intro&&x.c.c===c);if(i<0)return;closeSeries();JZ='stop';S.set('jz',JZ);if(view!=='journey'){if(view!=='settings')PREV=view;view='journey';S.set('view',view)}jMove(i)}
 function openSCNight(n){closeSeries();OPEN.add('sc:'+n);view='sc';S.set('view',view);render();setTimeout(()=>{const d=document.querySelector(`[data-sck="sc:${n}"]`);if(d){d.open=true;d.scrollIntoView({block:'start'})}},40)}
@@ -1815,7 +1819,7 @@ function openSearch(){if($('#gsr'))return;SR.ctx=NAR&&cur===NAR.id&&NP().classLi
 /* leave the search for a place in the app: shrink the full player first, so sheets and the Journey show */
 function srLeave(){srRecent(SR.q.trim());srClose();if(NP().classList.contains('on')&&!NP().classList.contains('mini'))setMini(true)}
 function srGo(kind,a,b,c){if(kind==='read'){srRecent(SR.q.trim());srClose();const bk=D.books.find(x=>x.name===a);narPlay(bk,+b,+c||null,{full:true});return}
- if(kind==='play'){srRecent(SR.q.trim());srClose();if(cur===a){setMini(false);return}JM=false;BPM=null;PLAYSTOP=null;play(a,{full:true});return}
+ if(kind==='play'){srRecent(SR.q.trim());srClose();if(cur===a){setMini(false);return}JM=false;BPM=null;PLAYSTOP=null;DEEP=null;play(a,{full:true});return}
  srLeave();if(kind==='stop')goStop(a,+b||1);else if(kind==='series')openSeries(a);else if(kind==='topic')openTopic(a);else if(kind==='teacher')openTeacher(a);else if(kind==='book')openLibBook(a);else if(kind==='sc')openSCNight(+a)}
 const srHi=(t,ws)=>{let h=esc(t);for(const w of ws.filter(w=>w.length>1).sort((a,b)=>b.length-a.length)){h=h.replace(new RegExp('(?![^<]*>)('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>')}return h};
 /* a long verse shown around its match, so the words searched for are in view */
@@ -1860,7 +1864,7 @@ function srWire(box){box.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>
  box.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{const i=$('#sq');i.value=b.dataset.q;i.dispatchEvent(new Event('input'))});
  box.querySelectorAll('[data-more]').forEach(b=>b.onclick=()=>{SR.more[b.dataset.more]=1;srPaint(false)})}
 // tapping a sermon's row (not its play button) opens it in the full player
-function wireOpen(el){el.querySelectorAll('#tlist [data-open]').forEach(r=>r.onclick=()=>{const id=r.dataset.open;if(cur===id){setMini(false);return}JM=false;BPM=null;PLAYSTOP=null;play(id,{full:true})})}
+function wireOpen(el){el.querySelectorAll('#tlist [data-open]').forEach(r=>r.onclick=()=>{const id=r.dataset.open;if(cur===id){setMini(false);return}JM=false;BPM=null;PLAYSTOP=null;DEEP=null;play(id,{full:true})})}
 function tList(){const k=TS.k,q=TS.q.trim().toLowerCase();let L=tItems(k);
  if(q){const ws=q.split(/\s+/).map(w=>/^\d+$/.test(w)?new RegExp('(^|[^0-9])'+w+'([^0-9]|$)'):w);L=L.filter(x=>{const t=(x.i.t+' '+(x.i.pass||'')+' '+(x.i.by||'')+' '+(x.i.show||'')+' '+x.bk).toLowerCase();return ws.every(w=>typeof w==='string'?t.includes(w):w.test(t))})}
  if(!L.length)return `<p class="bps-n" style="margin:16px 4px">Nothing matches “${esc(TS.q)}”.</p>`;
@@ -1878,7 +1882,7 @@ function openTeacher(k){const el=$('#bps');if(TS.k!==k){TS.k=k;TS.q='';TS.more=0
   <label class="t-q"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="tq" type="search" placeholder="Search these sermons" value="${esc(TS.q)}" autocomplete="off" aria-label="Search this teacher"></label></div>
   <div id="tlist">${tList()}</div></div>`;
  el.hidden=false;document.body.classList.add('bpsopen');requestAnimationFrame(()=>el.classList.add('on'));el.querySelectorAll('[data-bpsx]').forEach(b=>b.onclick=closeSeries);
- const wireL=()=>{el.querySelectorAll('#tlist [data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=null;play(b.dataset.play);setTimeout(()=>{$('#tlist').innerHTML=tList();wireL()},60)});wireOpen(el);const m=$('#tmore');if(m)m.onclick=()=>{TS.more++;$('#tlist').innerHTML=tList();wireL()}};wireL();
+ const wireL=()=>{el.querySelectorAll('#tlist [data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=null;DEEP=null;play(b.dataset.play);setTimeout(()=>{$('#tlist').innerHTML=tList();wireL()},60)});wireOpen(el);const m=$('#tmore');if(m)m.onclick=()=>{TS.more++;$('#tlist').innerHTML=tList();wireL()}};wireL();
  el.querySelectorAll('[data-tsort]').forEach(b=>b.onclick=()=>{TS.sort=b.dataset.tsort;S.set('tsort',TS.sort);TS.more=0;el.querySelectorAll('[data-tsort]').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});$('#tlist').innerHTML=tList();wireL()});
  const q=$('#tq');let tt=null;q.oninput=()=>{clearTimeout(tt);tt=setTimeout(()=>{TS.q=q.value;TS.more=0;$('#tlist').innerHTML=tList();wireL()},150)}}
 function wireLib(){document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('[data-lt]').forEach(b=>b.onclick=()=>{LT=b.dataset.lt;S.set('libtab',LT);render()});document.querySelectorAll('#main [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));document.querySelectorAll('[data-lbook]').forEach(b=>b.onclick=()=>openLibBook(b.dataset.lbook));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2))}
@@ -2021,7 +2025,12 @@ function play(id,o={}){const i=I[id];if(!i.audio)return;let wait=false;if(cur!==
   $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=i.nar?'\u00a0':teacher(i)+' · '+where(id);npArt(id);favPaint();if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!!i.nar&&!o.full)}else if(o.full)setMini(false);if(i.nar)readerFill(true);if(i.intro){NP().classList.add('reading');const box=$('#np-read');box.innerHTML='';introText(i.intro.abbr).then(T=>{if(cur!==id)return;box.innerHTML=`<section class="itx"><h3 class="rc first">${esc(dispTitle(i))}</h3>${introParas(T[String(i.intro.c)])}</section>`}).catch(()=>{})}setPP();
   if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',()=>skipTrack(1),'previoustrack',()=>skipTrack(-1)].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
  if(o.load||wait)return;audio.paused?audio.play().catch(()=>{}):audio.pause()}
-function next(){if(BPM&&cur){const s=bpGet(BPM),ids=s?bpIds(s):[],k=ids.indexOf(cur);if(k>=0){if(k+1<ids.length)bpPlay(s.id,ids[k+1]);else{BPM=null;note('That is the end of '+s.title+'.')}render();return}BPM=null}
+function next(){if(inDeep()){const i=DEEP.i,ids=deepIds(i),k=ids.indexOf(cur),nx=ids.slice(k+1).find(id=>!isDone(id)&&!SKIP[id]);
+  if(nx){PLAYSTOP=i;play(nx);render();return}
+  const t=stopSteps(i).find(z=>z.k==='teaching'&&!isDone(z.id)&&!SKIP[z.id]);DEEP=null;
+  if(t){JM=true;PLAYSTOP=i;if(jpIdx()===i)JV.deep=false;play(t.id);render();return}
+  note('That is everything in Go Deeper for '+stopName(walk()[i])+'. Walk on when you’re ready.');render();return}
+ if(BPM&&cur){const s=bpGet(BPM),ids=s?bpIds(s):[],k=ids.indexOf(cur);if(k>=0){if(k+1<ids.length)bpPlay(s.id,ids[k+1]);else{BPM=null;note('That is the end of '+s.title+'.')}render();return}BPM=null}
  if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq();for(let j=q.indexOf(cur)+1;j<q.length;j++)if(!isDone(q[j])&&okWho(q[j])){play(q[j]);return}return}
  if(JM){const i=jpIdx(),a=nextAction(i),here=camp===i;
   if(a.kind==='play'){if(here){TAB=a.step;S.set('tab',TAB)}play(a.id);if(here){decorate.moving=true;render();decorate.moving=false}return}
@@ -2068,12 +2077,20 @@ function stopSteps(i){const x=walk()[i];if(!x)return[];const st=[],ii=stopIntro(
  if(!x.c.intro&&hasNar(x.b.abbr,x.c.c))st.push({k:'scripture',id:narId(x.b.abbr,x.c.c)});
  stepsOf(i).teach.forEach(id=>{if(I[id]&&I[id].audio)st.push({k:'teaching',id})});return st}
 function seqWhere(id){const i0=jpIdx(),w=walk();for(const d of [0,1,-1,2,-2]){const i=i0+d;if(i<0||i>=w.length)continue;const k=stopSteps(i).findIndex(z=>z.id===id);if(k>=0)return[i,k]}return null}
-function jStep(dir){const p=seqWhere(cur);if(!p)return false;let [i,k]=p;const w=walk();k+=dir;
+function jStep(dir){const p=seqWhere(cur);if(!p)return false;let [i,k]=p;return jWalk(i,k+dir,dir)}
+function swipe(dir){const np=NP();np.classList.remove('sw-l','sw-r');void np.offsetWidth;np.classList.add(dir>0?'sw-l':'sw-r');setTimeout(()=>np.classList.remove('sw-l','sw-r'),320)}
+function jWalk(i,k,dir){const w=walk();DEEP=null;JV.deep=false;
  while(i>=0&&i<w.length){const st=stopSteps(i);if(k<0){i--;if(i<0)return true;k=stopSteps(i).length-1;continue}if(k>=st.length){i++;k=0;continue}
   const z=st[k];setJP(i);JV.tabFor=null;JM=true;BPM=null;PLAYSTOP=i;const np=NP();np.classList.remove('sw-l','sw-r');void np.offsetWidth;np.classList.add(dir>0?'sw-l':'sw-r');setTimeout(()=>np.classList.remove('sw-l','sw-r'),320);
   if(z.k==='scripture'){const x=w[i];narPlay(x.b,x.c.c,0,{jm:true})}else play(z.id);if(view==='journey')render();return true}
  return true}
-function skipTrack(dir){if(coreOn()&&cur&&!BPM&&!(I[cur]&&I[cur].sc&&scSeq().includes(cur))&&seqWhere(cur)){if(dir<0&&audio.currentTime>5){audio.currentTime=I[cur]&&I[cur].nar?0:((I[cur]&&I[cur].s)||0);return}if(jStep(dir))return}if(BPM&&cur&&!(I[cur]&&I[cur].nar)){const s=bpGet(BPM),ids=s?bpIds(s):[],j=ids.indexOf(cur)+dir;if(dir<0&&audio.currentTime>5){audio.currentTime=(I[cur]&&I[cur].s)||0;return}if(ids.includes(cur)){if(j>=0&&j<ids.length)bpPlay(s.id,ids[j]);return}}if(cur&&I[cur].nar&&NAR&&NAR.id===cur){narStep(dir);return}if(dir<0&&audio.currentTime>5&&cur){audio.currentTime=(I[cur]&&I[cur].s)||0;return}
+/* in Go Deeper, next / back move through its list; past the end comes the next Core item */
+function deepStep(dir){if(!inDeep())return false;const i=DEEP.i,ids=deepIds(i),k=ids.indexOf(cur);
+ if(dir<0&&audio.currentTime>5){audio.currentTime=(I[cur]&&I[cur].s)||0;return true}
+ const j=k+dir;if(j>=0&&j<ids.length){setJP(i);JV.tabFor=stopKey(walk()[i]);JV.tab='teaching';JV.deep=true;JM=false;BPM=null;PLAYSTOP=i;swipe(dir);play(ids[j]);if(view==='journey')render();return true}
+ const st=stopSteps(i);if(dir>0){const t=st.findIndex(z=>z.k==='teaching'&&!isDone(z.id)&&!SKIP[z.id]);swipe(1);return jWalk(t>=0?i:i+1,t>=0?t:0,1)}
+ swipe(-1);return jWalk(i,st.length-1,-1)}
+function skipTrack(dir){if(deepStep(dir))return;if(coreOn()&&cur&&!BPM&&!(I[cur]&&I[cur].sc&&scSeq().includes(cur))&&seqWhere(cur)){if(dir<0&&audio.currentTime>5){audio.currentTime=I[cur]&&I[cur].nar?0:((I[cur]&&I[cur].s)||0);return}if(jStep(dir))return}if(BPM&&cur&&!(I[cur]&&I[cur].nar)){const s=bpGet(BPM),ids=s?bpIds(s):[],j=ids.indexOf(cur)+dir;if(dir<0&&audio.currentTime>5){audio.currentTime=(I[cur]&&I[cur].s)||0;return}if(ids.includes(cur)){if(j>=0&&j<ids.length)bpPlay(s.id,ids[j]);return}}if(cur&&I[cur].nar&&NAR&&NAR.id===cur){narStep(dir);return}if(dir<0&&audio.currentTime>5&&cur){audio.currentTime=(I[cur]&&I[cur].s)||0;return}
  if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq(),j=q.indexOf(cur)+dir;if(j>=0&&j<q.length){const np=NP();np.classList.remove('sw-l','sw-r');void np.offsetWidth;np.classList.add(dir>0?'sw-l':'sw-r');play(q[j])}return}
  const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;seq.push(...orderedIds(x.b,x.c))});
  let k=cur?seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]):-1;if(k<0&&cur)k=seq.indexOf(cur);
@@ -2173,7 +2190,7 @@ function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.on
  document.querySelectorAll('.pref').forEach(b=>b.onclick=e=>{e.stopPropagation();const x=walk()[camp];const r=versesFor(b.dataset.pass,x.b.name,x.c.c);
   HL=r?{book:x.b.name,ch:x.c.c,...r}:null;TAB='scripture';S.set('tab',TAB);decorate.moving=true;render();decorate.moving=false;
   const d=document.querySelector('details.readx');if(d)setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'start'}),60)});
- const bh=$('#bookhd');if(bh)bh.onclick=()=>{if(view!=='walk'){view='walk';S.set('view',view)}go(+bh.dataset.camp)};document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=view==='journey'?jpIdx():camp;if(SKIP[b.dataset.play]){delete SKIP[b.dataset.play];S.set('skip',SKIP)}play(b.dataset.play)});
+ const bh=$('#bookhd');if(bh)bh.onclick=()=>{if(view!=='walk'){view='walk';S.set('view',view)}go(+bh.dataset.camp)};document.querySelectorAll('[data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=view==='journey'?jpIdx():camp;DEEP=view==='journey'&&coreOn()&&JV.deep&&deepIds(jpIdx()).includes(b.dataset.play)?{i:jpIdx()}:null;if(SKIP[b.dataset.play]){delete SKIP[b.dataset.play];S.set('skip',SKIP)}play(b.dataset.play)});
  
  document.querySelectorAll('[data-read]').forEach(b=>b.onclick=()=>{const was=!!read[b.dataset.read];read[b.dataset.read]=!was;S.set('read',read);decorate.moving=true;render();decorate.moving=false});
  document.querySelectorAll('.acts [data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;stepTo(+b.dataset.camp)});document.querySelectorAll('.nv[data-camp], .myplace[data-camp]').forEach(b=>b.onclick=()=>{decorate.more=false;go(+b.dataset.camp)});
