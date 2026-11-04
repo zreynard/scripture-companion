@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install -q requests
+      - run: sudo apt-get install -y -q poppler-utils >/dev/null 2>&1 || true
       - run: python tools/platt_probe.py ${{ github.event.inputs.which }}
       - name: Save findings to the diag branch
         if: always()
