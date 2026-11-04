@@ -978,7 +978,7 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 .jv .jv-sub{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5a6280;margin:18px 4px 10px}
 .jv-deep .jw{margin-bottom:7px;padding:8px 13px 8px 9px}.jv-deep .jv-sub{margin:12px 4px 7px}.jv-deep>.jv-sec{margin-bottom:8px}
 .jv .jv-why{margin:-4px 4px 12px 4px}
-#np .np-top .np-core{margin-left:auto;white-space:nowrap;flex:none;height:32px;padding:0 12px;border-radius:16px;border:1px solid rgba(154,117,36,.4);background:none;color:var(--gold2);font:600 12.5px -apple-system,system-ui,sans-serif;cursor:pointer}
+#np .np-top:has(.np-core:not([hidden])) .np-lab{display:none}#np .np-top button.np-core{width:auto;margin-left:auto;white-space:nowrap;flex:none;height:32px;padding:0 12px;border-radius:16px;border:1px solid rgba(154,117,36,.4);background:none;color:var(--gold2);font:600 12.5px -apple-system,system-ui,sans-serif;cursor:pointer}
 #np .np-top .np-core:not([hidden])+#np-fav{margin-left:8px}#np.mini .np-core{display:none}
 .jv-tp button{height:34px;padding:0 14px;border:1px solid rgba(154,117,36,.35);border-radius:17px;background:#fffdf8;color:#1b2440;font:600 13.5px -apple-system,system-ui,sans-serif;cursor:pointer}
 .bp-gs{font-size:13px;color:#5a6280;margin:0 2px 2px}
