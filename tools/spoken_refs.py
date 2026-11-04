@@ -16,7 +16,9 @@ sys.path.insert(0, HERE)
 from refs import parse_refs, merge_refs, refs_to_text  # noqa: E402
 
 OUT = os.path.join(HERE, "data", "spoken_refs.json")
-MINUTES = 14            # long enough for a story or a welcome before the text
+MINUTES = 20            # long enough for a story, a welcome or a long introduction before the text
+V = 2                   # scoring version: entries heard with an older one are heard again
+TEXT = os.path.join(HERE, "data", "spoken_text")   # what was heard, by entry id, so the checks can be re-run without the audio
 READS = 0.45            # share of the passage's words he must say after announcing it (classify.py applies the same bar)
 UA = "scripture-companion (personal Bible app; github.com/zreynard/scripture-companion)"
 CUE = re.compile(r"\b(?:turn(?:ing)?|open(?:ing)?|look(?:ing)?|find|go|join me|read(?:ing)?|we(?:'re| are) in|our (?:text|passage)|the (?:text|passage)|"
@@ -51,22 +53,41 @@ def words(t):
     return {w for w in re.findall(r"[a-z]+", t.lower()) if len(w) >= 4 and w not in STOP}
 
 
-def passage_words(book, ch, v1=None, v2=None):
-    """Distinctive words of the verses announced (or the opening verses of the chapter): the reading should contain them."""
+def chapter(book, ch):
     if book not in _BIBLE:
         p = os.path.join(HERE, "data", "bible", f"{book}.json")
         _BIBLE[book] = json.load(open(p, encoding="utf-8"))["chapters"] if os.path.exists(p) else []
     chs = _BIBLE[book]
-    if not 1 <= ch <= len(chs): return set()
-    vs = [x for x in chs[ch - 1] if v1 is None or v1 <= x["v"] <= (v2 or v1 + 5)][:6]
+    return chs[ch - 1] if 1 <= ch <= len(chs) else []
+
+
+def passage_words(book, ch, v1=None, v2=None):
+    """Distinctive words of the verses announced (or the opening verses of the chapter): the reading should contain them."""
+    vs = [x for x in chapter(book, ch) if v1 is None or v1 <= x["v"] <= (v2 or v1 + 5)][:6]
     return words(" ".join(x["t"] for x in vs))
+
+
+def best_reading(book, ch, v1, v2, heard):
+    """The five-verse stretch of the passage he reads most of (he may read a later part of the chapter, or start a few
+    verses on): its first verse, its share of words heard, and how many words it has."""
+    vs = chapter(book, ch)
+    if v1: vs = [x for x in vs if v1 <= x["v"] <= (v2 or len(vs))] or vs
+    best = (None, 0.0, 0)
+    for i in range(max(1, len(vs) - 4)):
+        w = words(" ".join(x["t"] for x in vs[i:i + 5]))
+        if len(w) < 5: continue
+        sc = len(w & heard) / len(w)
+        if sc > best[1]: best = (vs[i]["v"], round(sc, 2), len(w))
+    return best
 
 
 def candidates(text):
     """Every passage he announces in the opening minutes, scored by how much of it he then reads aloud."""
     t = norm(text); out, seen = [], set()
     for m in CUE.finditer(t):
-        win = t[m.start():m.end() + 90]
+        e = m.end() + 90
+        while e < len(t) and not t[e].isspace(): e += 1   # never cut a number in half ("Romans 8:2" of "8:28")
+        win = t[m.start():e]
         for r in parse_refs(win):
             if r.whole_book or not r.chapters: continue
             ch = min(r.chapters)
@@ -75,11 +96,11 @@ def candidates(text):
             key = (r.book, ch, v1)
             if key in seen: continue
             seen.add(key)
-            want = passage_words(r.book, ch, v1, v2)
-            heard = words(t[m.end():m.end() + 3000])   # about the next three minutes
-            score = round(len(want & heard) / len(want), 2) if len(want) >= 5 else 0.0
-            ref = f"{r.book} {ch}" + (f":{v1}" + (f"-{v2}" if v2 else "") if v1 else "")
-            out.append({"ref": ref, "score": score, "quote": t[max(0, m.start() - 40):m.end() + 110].strip()})
+            heard = words(t[m.end():m.end() + 6000])   # about the next six minutes
+            at, score, n = best_reading(r.book, ch, v1, v2, heard)
+            if v1: ref = f"{r.book} {ch}:{v1}" + (f"-{v2}" if v2 else "")
+            else: ref = f"{r.book} {ch}" + (f":{at}" if at and at > 1 and score >= READS else "")   # where in the chapter he read
+            out.append({"ref": ref, "score": score, "words": n, "quote": t[max(0, m.start() - 40):m.end() + 110].strip()})
     return out
 
 
@@ -117,7 +138,7 @@ def review():
         m = re.match(r"(.+?) (\d+)(?::(\d+)(?:-(\d+))?)?$", c["ref"])
         b, ch = m.group(1), int(m.group(2))
         v1, v2 = (int(m.group(3)), int(m.group(4)) if m.group(4) else None) if m.group(3) else (None, None)
-        if len(passage_words(b, ch, v1, v2)) < 12:
+        if (c.get("words") if "words" in c else len(passage_words(b, ch, v1, v2))) < 12:
             why = "a verse quoted, not a passage read"
         named = [r.book for r in parse_refs(x.get("title", ""))]
         if not why and named and b not in named:
@@ -150,7 +171,7 @@ def main(k=0, n=1):
     rows = [json.loads(l) for l in open(os.path.join(HERE, "data", "catalog_verified.jsonl"), encoding="utf-8")]
     done = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
     todo = [e for e in rows if e.get("speaker") == "Platt" and e.get("track") == "sermon" and not e.get("refs")
-            and "score" not in done.get(e["id"], {}) and audio_of(e)]
+            and done.get(e["id"], {}).get("v") != V and audio_of(e)]
     todo = todo[k::n]
     out = OUT if n == 1 else os.path.join(HERE, "data", f"spoken_refs.{k}.json")
     if n > 1: done = {}
@@ -180,7 +201,9 @@ def main(k=0, n=1):
         cands = candidates(text)
         best = max(cands, key=lambda c: c["score"], default=None)   # the passage he reads, not the first one he mentions
         ok = best if best and best["score"] >= READS else None
-        done[e["id"]] = {"ref": ok["ref"] if ok else None, "score": best["score"] if best else 0, "quote": (best or {}).get("quote"),
+        os.makedirs(TEXT, exist_ok=True)
+        open(os.path.join(TEXT, f"{e['id']}.txt"), "w", encoding="utf-8").write(text)
+        done[e["id"]] = {"v": V, "ref": ok["ref"] if ok else None, "score": best["score"] if best else 0, "quote": (best or {}).get("quote"),
                          "title": e["title"], "candidates": cands[:8]}
         if ok: found += 1
         print(f"  [{i}/{len(todo)}] {e['title'][:55]!r}: {ok['ref'] if ok else '-'}"
