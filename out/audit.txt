@@ -18,7 +18,13 @@ PASS  only David Platt, PAM, Stephen Davey, Skip Heitzig (each with their church
 PASS  Stephen Davey teaching comes only from his own feeds, and his feeds only from him
 PASS  Skip Heitzig teaching comes only from his own feeds, and his feeds only from him
 PASS  2819 teaching shows the preacher named in its title
-PASS  David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources
+FAIL  David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources  (49)
+        - Chapter 2 Pain and Providence from brookhills_ia
+        - He Came To Destroy The Devil from brookhills_ia
+        - Diversity from brookhills_ia
+        - Is There Glory In A Narrow Gospel from brookhills_ia
+        - Chapter 27 Hope In God from brookhills_ia
+        - Does God Change His Mind from brookhills_ia
 PASS  McLean episodes on the road name David Platt
 
 == Order inside each chapter
@@ -36,14 +42,20 @@ PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
 PASS  no dates in the future
 FAIL  feed episodes on the road all carry a date  (108)
-        - More than a Motto (James 2:19–20) (davey_archive)
-        - Learning the Art of Refusal (Titus 3:9) (davey_archive)
-        - From Riches to Rags (Hebrews 11:23–28) (davey_archive)
-        - Passion (Titus 1:1b) (davey_archive)
+        - Surprising Saints (James 2:25–26) (davey_archive)
+        - Following the Footprints (James 5:10–11) (davey_archive)
+        - The Truth about Trouble (James 1:2–12) (davey_archive)
+        - But, If Not . . . (Daniel 3) (davey_archive)
         - Peace (Romans 1:7c) (davey_archive)
-        - Beyond the Cherubim (Hebrews 11:4) (davey_archive)
+        - In the Country of the Blind (Titus 2:15) (davey_archive)
 PASS  every id is the hash of its link (progress keys stable)
-PASS  every shipped entry from the original catalog still exists (same id)
+FAIL  every shipped entry from the original catalog still exists (same id)  (59 of 11975)
+        - Ultimate Dissconect
+        - The Disciples Identity Part 2 Christ in You
+        - the Disciples Mission
+        - The Disciples Mind
+        - The Disciples Emotions
+        - The Disciples Will
 PASS  nothing unverified (PENDING / FAIL) on the road
 PASS  no teaching twice in one chapter
 
@@ -61,4 +73,4 @@ PASS  overviews and points stay short (22 words or fewer)
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-37 of 38 checks pass
+35 of 38 checks pass
