@@ -900,6 +900,12 @@ body.bpsopen{overflow:hidden}
 #bps.on .bps-bg{opacity:1}#bps.on .bps-sh{transform:none}
 .grab2{display:block;width:60px;height:24px;margin:0 auto;border:0;background:none;position:relative;cursor:pointer}.grab2::after{content:'';position:absolute;left:12px;right:12px;top:9px;height:5px;border-radius:3px;background:rgba(27,36,64,.22)}
 .bps-hd{display:flex;gap:16px;align-items:flex-end;margin-top:10px}
+.tp-back{border:0;background:none;padding:8px 0;margin:4px 0 2px;font:600 14px -apple-system,system-ui,sans-serif;color:#7a5c16;cursor:pointer}
+.tp-ph{display:flex;align-items:center;gap:14px;justify-content:space-between;margin:4px 0 12px}
+.tp-pl{flex:none;width:48px;height:48px;border-radius:50%;border:0;background:#c9a24a;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.tp-tx{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;line-height:1.6;color:#1b2440}.tp-tx p{margin:0 0 12px}.tp-tx sup{font:700 10.5px -apple-system,system-ui,sans-serif;color:#a8812a;margin-right:3px}
+.tp-ch{font:700 11px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7a5c16;margin:18px 0 8px}.tp-hh{font:600 13px -apple-system,system-ui,sans-serif;color:#5a6280;margin:14px 0 6px}
+.tp-j{display:block;margin:14px 0 8px;border:0;background:none;padding:10px 0;font:600 14px -apple-system,system-ui,sans-serif;color:#4a5272;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(90,98,128,.35);text-underline-offset:3px}
 .bps-hd .bpc{border-radius:22px;box-shadow:0 14px 28px rgba(27,36,64,.25)}
 .bps-t{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:25px;line-height:1.15}
 .bps-by{font-size:13.5px;font-weight:650;color:#7a5c16;margin-top:4px}
@@ -1855,7 +1861,27 @@ function openTopic(id){const t=(D.topics||[]).find(x=>x.id===id);if(!t)return;co
  const list=()=>{const row=id=>tRow({i:I[id]},null);let h=`<div class="jv-sec">Essential teaching</div>${t.ess.map(row).join('')}`;
   if(t.more.length){const by={};t.more.forEach(id=>(by[I[id].who]=by[I[id].who]||[]).push(id));h+=`<div class="jv-sec">More teaching</div>`+Object.entries(by).map(([k,l])=>`<details class="tch-b"><summary>${esc(NAMES[k]||k)}<span>${l.length}</span></summary>${l.map(row).join('')}</details>`).join('')}return h};
  openListSheet(t.name,`<div class="tp-hd">${topicIc(t.id,44)}<div class="bps-t">${esc(t.name)}</div></div><p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,el=>{
-  el.querySelectorAll('[data-kgo]').forEach(b=>b.onclick=()=>{const [bk,c]=b.dataset.kgo.split('|');goStop(bk,+c)});el.querySelectorAll('[data-scn]').forEach(b=>b.onclick=()=>openSCNight(+b.dataset.scn))})}
+  el.querySelectorAll('[data-kgo]').forEach((b,j)=>b.onclick=()=>{const sh=el.querySelector('.bps-sh');topicPassage(t,t.keys[j],sh?sh.scrollTop:0)});el.querySelectorAll('[data-scn]').forEach(b=>b.onclick=()=>openSCNight(+b.dataset.scn))})}
+/* a key passage, read inside the topic: the verses, a play button, and back to the topic where you were */
+function keyRange(k){const r=k.ref.replace(/^.*?\s(?=\d+(?::|–|$))/,'');let m;
+ if((m=r.match(/^(\d+):(\d+)–(\d+):(\d+)$/)))return[[+m[1],+m[2]],[+m[3],+m[4]]];
+ if((m=r.match(/^(\d+):(\d+)–(\d+)$/)))return[[+m[1],+m[2]],[+m[1],+m[3]]];
+ if((m=r.match(/^(\d+):(\d+)$/)))return[[+m[1],+m[2]],[+m[1],+m[2]]];
+ if((m=r.match(/^(\d+)–(\d+)$/)))return[[+m[1],1],[+m[2],999]];
+ return[[k.c,1],[k.to||k.c,999]]}
+function topicPassage(t,k,y){const el=$('#bps'),sh=el.querySelector('.bps-sh');if(!sh)return;const B=D.books.find(x=>x.name===k.b);if(!B)return;
+ const [[c1,v1],[c2,v2]]=keyRange(k),can=hasNar(B.abbr,c1),pl=()=>NAR&&NAR.b===B&&cur===narId(B.abbr,c1)&&!audio.paused;
+ sh.innerHTML=`<button class="grab2" data-bpsx aria-label="Close"></button><button class="tp-back" id="tpback">‹ ${esc(t.name)}</button>
+  <div class="tp-ph"><div><div class="bps-t">${esc(k.ref)}</div><div class="bps-n">${esc(k.note)}</div></div>${can?`<button class="tp-pl" id="tppl" aria-label="Listen to ${esc(k.ref)}">${icon(pl()?'pause':'play',16,0,'#1b2440')}</button>`:''}</div>
+  <div class="tp-tx" id="tptx">Loading…</div><button class="tp-j" data-kj="1">Open ${esc(k.b)} ${c1} in the Journey ›</button>`;
+ sh.scrollTop=0;sh.querySelectorAll('[data-bpsx]').forEach(b=>b.onclick=closeSeries);
+ $('#tpback').onclick=()=>{openTopic(t.id);const s2=$('#bps .bps-sh');if(s2)s2.scrollTop=y||0};
+ sh.querySelector('[data-kj]').onclick=()=>goStop(k.b,c1);
+ const p=$('#tppl');if(p)p.onclick=()=>{const id=narId(B.abbr,c1);if(cur===id){audio.paused?audio.play().catch(()=>{}):audio.pause()}else{JM=false;BPM=null;DEEP=null;narPlay(B,c1,v1>1?v1:null,{})}setTimeout(()=>{const q=$('#tppl');if(q)q.innerHTML=icon(pl()?'pause':'play',16,0,'#1b2440')},400)};
+ loadBook(k.b).then(d=>{const box=$('#tptx');if(!box)return;let h='';
+  for(let c=c1;c<=c2;c++){const vs=(d.chapters[c-1]||[]).filter(x=>(c>c1||x.v>=v1)&&(c<c2||x.v<=v2));if(c2>c1)h+=`<div class="tp-ch">${esc(k.b)} ${c}</div>`;
+   h+=`<p>${vs.map(x=>`${x.h&&c2-c1+(v2-v1)>8?`</p><div class="tp-hh">${esc(x.h)}</div><p>`:''}<sup>${x.v}</sup>${esc(x.t)} `).join('')}</p>`}
+  box.innerHTML=h.replace(/<p><\/p>/g,'')}).catch(()=>{const box=$('#tptx');if(box)box.textContent='The passage did not load. Check your connection.'})}
 /* a book: every teaching on it from every teacher, in passage order, by chapter */
 let LB={t:'all'};
 function openLibBook(name){const b=D.books.find(x=>x.name===name);if(!b)return;const w=walk(),fa=firstAt();if(LB.b!==name){LB={b:name,t:'all'}}
