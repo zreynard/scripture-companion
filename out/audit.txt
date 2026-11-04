@@ -34,6 +34,7 @@ PASS  Secret Church podcast sessions numbered without gaps
 == Audio, dates, ids, duplicates
 PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
+PASS  no two script functions share a name
 PASS  no dates in the future
 PASS  feed episodes on the road all carry a date
 PASS  every id is the hash of its link (progress keys stable)
@@ -55,4 +56,4 @@ PASS  overviews and points stay short (22 words or fewer)
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-38 of 38 checks pass
+39 of 39 checks pass
