@@ -1,10 +1,10 @@
 {
-  "started": "2026-11-04T00:10:19.600816+00:00",
+  "started": "2026-11-04T00:23:09.806702+00:00",
   "sources": {
-    "davey_archive": {
-      "count": 368,
-      "seconds": 0.1
+    "brookhills_ia": {
+      "count": 371,
+      "seconds": 1.9
     }
   },
-  "catalog_total": 12062
+  "catalog_total": 12003
 }
