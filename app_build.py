@@ -1485,8 +1485,8 @@ const queued=(id,i)=>firstAt()[id]===i&&!!I[id]&&!!I[id].audio&&!isDone(id)&&!SK
 const scrDone=x=>!!read[scrKey(x)]||!!SKIP['S:'+scrKey(x)];
 function nextAction(i){const s=stepsOf(i);if(!s)return null;const x=s.x;
  const ii=stopIntro(x);if(ii&&!isDone(ii)&&!SKIP[ii])return{kind:'play',id:ii,step:'intro'};
- for(const id of s.ov)if(queued(id,i))return{kind:'play',id,step:'overview'};
  if(!x.c.intro&&!scrDone(x))return{kind:'scripture',step:'scripture'};
+ for(const id of s.ov)if(queued(id,i))return{kind:'play',id,step:'overview'};
  for(const id of s.teach)if(queued(id,i))return{kind:'play',id,step:'teaching'};
  return i+1<walk().length?{kind:'walk',to:i+1,step:null}:{kind:'end',step:null}}
 function stepState(i){const s=stepsOf(i),pend=l=>l.some(id=>queued(id,i));return{overview:{n:s.ov.length,done:!pend(s.ov)},scripture:{n:1,done:s.x.c.intro||scrDone(s.x)},teaching:{n:s.teach.length,done:!pend(s.teach)}}}
@@ -1569,7 +1569,7 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  const bk=BACK&&BACK.from!==i&&w[BACK.from]?BACK.from:null;
  h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1" aria-label="Back to ${esc(stopName(w[bk]))}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M9 14 4 9l5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>${esc(stopName(w[bk]))}</button>`:''}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
  const ii=stopIntro(x),itx=hasIntroText(x),iiF=ii?(isDone(ii)||SKIP[ii]?1:Math.min(.95,heardPct(ii)/100)):0;
- const segs=[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['overview','Overview',stepFrac(i,s.ov)],['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',stepFrac(i,s.teach)]])];
+ const segs=[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['overview','Overview',stepFrac(i,s.ov)],['teaching','Teaching',stepFrac(i,s.teach)]])];
  h+=`<div class="jv-seg">${segs.map(([k,l,f])=>`<button data-jseg="${k}" class="${a&&a.step===k?'now':''}" aria-label="Go to ${l}"><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</button>`).join('')}</div>`;
  if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
   h+=`<button class="jv-next" id="jnext"><span class="jv-pp">${icon(pl?'pause':'play',20,0,'#fff')}</span><span class="jv-nt"><small>${pl?'Playing':left?'Resume':'Up next'}${a.step==='intro'?' · Introduction':a.step==='overview'&&!c.intro?' · Overview':''}</small><b>${esc(dispTitle(it))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}</em></span></button><div class="jv-alt"><button data-skipnext="${a.id}">Skip for now</button></div>`}
@@ -1579,13 +1579,13 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
   h+=`<p class="jv-done">${c.intro?`That’s the overview of ${esc(b.name)}.`:`You’ve walked through ${esc(stopName(x))}.`} ${esc(stopName(nx))} is ready whenever you are.</p>
   <button class="jv-nextstop" id="jnext"><span class="jv-art sm">${heroArt(nx,350,150,'jn')}</span><span class="jv-ns"><small>${nx.c.intro?'A new book':'Next stop'}${nlm?' · '+esc(nlm[1]):''}</small><b>${esc(stopName(nx))}</b><em>${esc(plainT(nx.c.intro?(nx.b.bl||''):(nx.c.sl||'')))}</em><span class="jv-go">Begin ${esc(stopName(nx))} ${icon('arrow',18,2.2,'#fff')}</span></span></button>`}
  else h+=`<p class="jv-done">You have walked the whole of Scripture.</p>`;
- /* the stop's whole list: overview, scripture, teaching, in order; heard ones stay, quietly ticked */
+ /* the stop's whole list: introduction, scripture, overview, teaching, in order; heard ones stay, quietly ticked */
  const cap=n=>JV.more?n:Math.min(n,8);let rows='',shown=0,total=0;
  const sec=(t,list,k)=>{if(!list.length)return'';let o=`<div class="jv-sec" id="js-${k}">${t}</div>`,last=null;list.forEach(g=>{total++;if(shown>=cap(1e9))return;if(g.h&&g.h!==last&&c.intro){o+=`<div class="jv-sub">${esc(g.h)}</div>`;last=g.h}o+=jRow(g.id,g.r?vbadge(g.r):'',up);shown++});return o};
  if(ii||itx)rows+=`<div class="jv-sec" id="js-intro">Introduction</div>${ii?jRow(ii,'',up):`<div class="jw"><span class="jpb off" aria-hidden="true">${icon('book',13,1.8,'currentColor')}</span><div class="jw-t"><b>${esc(c.intro?'Introducing '+b.name:stopName(x)+' · Introduction')}</b><span>The Narrator · narration coming soon</span></div></div>`}<button class="jv-rd" id="jrd" aria-expanded="false">Read the introduction</button><div class="jv-itx" id="jitx" hidden></div>`;
- rows+=sec(c.intro?'Teaching on the book':'Overview',G.overview,'overview');
  if(!c.intro){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec" id="js-scripture">Scripture</div><div class="jw${rd?' heard':''}"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
- rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;if(!G.overview.length&&!c.intro)rows=`<div id="js-overview"></div>`+rows;
+ rows+=G.overview.length||c.intro?sec(c.intro?'Teaching on the book':'Overview',G.overview,'overview'):'<div id="js-overview"></div>';
+ rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;
  if(shown<total)rows+=`<button class="jv-more" id="jmore">${total-shown} more</button>`;
  const tp=c.intro?[]:(D.topics||[]).filter(t=>t.keys.some(k=>k.b===b.name&&c.c>=k.c&&c.c<=k.to));
  if(tp.length)rows+=`<div class="jv-tp"><span>Explore this topic</span>${tp.map(t=>`<button data-topic="${t.id}">${esc(t.name)} ›</button>`).join('')}</div>`;
