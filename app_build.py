@@ -817,7 +817,7 @@ body.bpsopen{overflow:hidden}
 .jv-cap i{display:block;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:21px}
 .jv-cap .cs{font-size:13.5px;line-height:1.4;color:#2c3554}
 .jv-cap button{font-size:inherit}
-.jv-seg{display:flex;gap:8px;margin:16px 0 18px}
+.jv-seg{margin:22px 0 6px}.jv-sgr{display:flex;gap:10px}
 .jvz .jv-seg{position:sticky;top:calc(env(safe-area-inset-top) + 56px);z-index:3;background:rgba(244,239,227,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);margin:10px -20px 14px;padding:2px 20px 4px}
 .jv-seg button{flex:1;font:11.5px -apple-system,system-ui,sans-serif;color:#5a6280;display:flex;flex-direction:column;gap:6px;border:0;background:none;padding:6px 0 4px;text-align:left;cursor:pointer}
 .jv-seg button.now{color:var(--ink);font-weight:650}
@@ -952,6 +952,34 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 .jv-itx{margin:4px 2px 6px 44px;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:17px;line-height:1.55;color:#2c3554}.jv-itx p{margin:0 0 .8em}
 .itx p{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;line-height:1.6;margin:0 0 .9em}
 .jv-tp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:22px 2px 4px}.jv-tp span{width:100%;font-size:10.5px;font-weight:650;letter-spacing:.2em;text-transform:uppercase;color:#7a5c16}
+/* the Journey stop: a calm header, then one card style for every row (introduction, scripture, core, go deeper) */
+.jv-tr{display:flex;align-items:center;gap:10px;margin:6px 0 18px}
+.jv .jv-tr .jv-t{flex:1;min-width:0;margin:0;font-size:38px}
+.jv-ar{flex:none;width:42px;height:42px;border-radius:21px;border:0;background:rgba(27,36,64,.07);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}.jv-ar:disabled{opacity:.3;cursor:default}
+.jv-ban svg{height:128px}.jv-ban .jv-cap{padding:30px 16px 14px}.jv-ban .jv-cap .cs{font-size:14.5px;line-height:1.42}
+.jv-cast{margin:16px 0 0}.jv-cast:empty{display:none}
+.jv-ppr{display:flex;align-items:center;gap:8px;margin-right:-20px}.jv-pps{flex:1;min-width:0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 20px 2px 0;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}.jv-pps::-webkit-scrollbar{display:none}
+.jv-pl{flex:none;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5a6280;margin-right:4px}
+.jv-chip{flex:none;display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 13px 0 5px;border-radius:19px;border:1px solid rgba(168,129,42,.35);background:#fff;font:600 14px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}
+.jv-chip span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.jv-chip .medal{flex:none}.jv-chip.more{flex:none;padding:0 14px;color:#7a5c16}
+.jv-nav:empty{display:none}
+.jv-seg button{font-size:13px;gap:8px}.jv-seg i{height:4px}
+.jv-st{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:19px;line-height:1.2;color:var(--ink);height:0;opacity:0;overflow:hidden;transition:height .18s,opacity .18s,margin .18s}
+.jvz .jv-seg{margin:22px -20px 6px;padding:4px 20px 8px}.jvz .jv-seg.stuck{border-bottom:1px solid rgba(27,36,64,.06)}.jv-seg.stuck .jv-st{height:24px;opacity:1;margin:0 0 8px}
+.jv-tabbed>.jv-sec{margin:18px 2px 12px;font-size:11.5px;letter-spacing:.18em}
+.jv-sk{border:0;background:none;padding:6px 0;font:600 12.5px -apple-system,system-ui,sans-serif;letter-spacing:normal;text-transform:none;color:#5a6280;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(90,98,128,.35);text-underline-offset:3px}
+.jv .jw{background:#fffdf8;border-radius:16px;box-shadow:0 3px 12px rgba(27,36,64,.06);padding:10px 14px 10px 10px;margin:0 0 12px;gap:12px}
+.jv .jpb{width:40px;height:40px;background:rgba(27,36,64,.07)}
+.jv .jw.pl .jpb{background:rgba(168,129,42,.18);color:#7a5c16}
+.jv .jw-t b{font-size:17px}.jv .jw-t span{margin-top:2px}.jv .jw-t span+span{white-space:normal}
+.jv .jw.up .jw-t b{color:inherit}
+.jw-up{font-style:normal;color:#7a5c16;font-weight:650}
+.jw-go{flex:none;color:#a8812a}
+.jv .jv-sub{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5a6280;margin:18px 4px 10px}
+.jv-deep .jw{margin-bottom:7px;padding:8px 13px 8px 9px}.jv-deep .jv-sub{margin:12px 4px 7px}.jv-deep>.jv-sec{margin-bottom:8px}
+.jv .jv-why{margin:-4px 4px 12px 4px}
+#np .np-top .np-core{margin-left:auto;white-space:nowrap;flex:none;height:32px;padding:0 12px;border-radius:16px;border:1px solid rgba(154,117,36,.4);background:none;color:var(--gold2);font:600 12.5px -apple-system,system-ui,sans-serif;cursor:pointer}
+#np .np-top .np-core:not([hidden])+#np-fav{margin-left:8px}#np.mini .np-core{display:none}
 .jv-tp button{height:34px;padding:0 14px;border:1px solid rgba(154,117,36,.35);border-radius:17px;background:#fffdf8;color:#1b2440;font:600 13.5px -apple-system,system-ui,sans-serif;cursor:pointer}
 .bp-gs{font-size:13px;color:#5a6280;margin:0 2px 2px}
 .t-sort button{flex:1;height:34px;border:0;border-radius:15px;background:none;font:600 13.5px -apple-system,system-ui,sans-serif;color:#4a5272;cursor:pointer}
@@ -998,7 +1026,7 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 <div id="jump" role="dialog" aria-modal="true" aria-label="Go to" hidden><div class="jp-top"><label class="jp-field"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="jq" type="search" placeholder="Nehemiah, John 3:16, Goliath" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-label="Search"></label><button id="jx">Close</button></div><div id="jbody"></div></div><div id="mapv" role="dialog" aria-modal="true" aria-label="Map of the journey" hidden><svg id="mapsvg" preserveAspectRatio="xMidYMid meet"></svg><div class="mv-top"><button id="mvx" aria-label="Close map">✕</button><div class="mv-title" id="mvtitle">Your journey</div></div><div class="mv-panel" id="mvpanel"><div class="mv-card" id="mvcard"></div><div class="mv-legs" id="mvlegs" aria-label="Legs of the journey"></div></div></div>
 <div id="zt" hidden></div><div id="main"></div><nav id="tabs" aria-label="Main"></nav><div id="bps" hidden></div>
 <div id="np"><div class="grab"></div>
-<div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="np-fav" aria-label="Save this teaching" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v16l-5-3.6L7 20z"/></svg></button><button id="np-srch" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button><button id="cls" aria-label="Stop and close">✕</button></div>
+<div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="np-core" class="np-core" hidden>Make Core</button><button id="np-fav" aria-label="Save this teaching" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v16l-5-3.6L7 20z"/></svg></button><button id="np-srch" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button><button id="cls" aria-label="Stop and close">✕</button></div>
 <div class="art" id="np-art"></div><div class="np-d" id="np-d"></div>
 <div class="t serif" id="np-t"></div><div class="s" id="np-s"></div><div id="np-read" aria-label="Reader"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
@@ -1607,17 +1635,14 @@ function heroArt(x,w,h,id){const c=LAND_HUE[landOf(x.b)]||LAND_HUE['The Law'],sd
 /* ---- Journey: your place, the next step, and the whole stop beneath it, on one screen ---- */
 let JV={more:false};
 function stepFrac(i,list){const q=list.filter(id=>(coreOn()||firstAt()[id]===i)&&I[id]&&I[id].audio);if(!q.length)return 1;return q.filter(id=>isDone(id)||SKIP[id]).length/q.length}
-function jRow(id,badge,up){const it=I[id];if(!it)return'';const done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id);
- return `<div class="jw${done?' heard':''}${up===id?' up':''}"${it.audio?` data-row="${id}"`:''}><button class="jpb${it.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(it))}"${it.audio?'':' disabled'}>${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(it))}</b><span>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}${it.audio?'':' · audio soon'}</span></div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':badge?`<span class="vb">${badge}</span>`:''}</div>`}
+function jRow(id,badge,up,note){const it=I[id];if(!it)return'';const done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id);
+ const tag=pl?'<em class="jw-up">Playing</em> · ':up===id&&!done?'<em class="jw-up">Up next</em> · ':'';
+ return `<div class="jw${done?' heard':''}${up===id?' up':''}${pl?' pl':''}"${it.audio?` data-row="${id}"`:''}><button class="jpb${it.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(it))}"${it.audio?'':' disabled'}>${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(it))}</b><span>${tag}${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}${it.audio?'':' · audio soon'}</span>${note?`<span>${note}</span>`:''}</div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':badge?`<span class="vb">${badge}</span>`:it.audio?'<svg class="jw-go" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>':''}</div>`}
 /* People on a Journey stop: who is in this chapter (or, at a book's opening, the book's main people). Tap to open them all. */
 let PPO=S.get('ppOpen',false);
 const castOf=x=>ATL_D&&ATL_D.cast?(ATL_D.cast[x.c.intro?'book '+x.b.name:x.b.name+' '+x.c.c]||[]).map(e=>{const [s,n]=e.split('|');return {s,n:n||(ATL_D.p[s]||{}).n}}).filter(e=>ATL_D.p[e.s]):null;
-function ppHTML(x){const L=castOf(x),where=x.c.intro?x.b.name:stopName(x);
- if(L&&!L.length)return'';
- const stk=L?`<span class="stk">${L.slice(0,4).map(e=>medal(ATL_D.p[e.s],28)).join('')}</span>`:`<span class="stk">${icon('people',18,1.8)}</span>`;
- let o=`<button class="jv-cast-b" id="jppb" aria-expanded="${!!(PPO&&L)}">${stk}<span class="lb">People in ${esc(where)}</span>${L?`<span class="n">${L.length}</span>`:''}<svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
- if(PPO&&L)o+=`<div class="jv-cast-l">${L.map(e=>{const p=ATL_D.p[e.s];return `<button class="chip" data-nk="p" data-ns="${e.s}">${medal(p,28)}<span><b>${esc(e.n)}</b>${p.role?`<small>${esc(p.role)}</small>`:''}</span></button>`}).join('')}</div>`;
- return o}
+function ppHTML(x){const L=castOf(x);if(!L||!L.length)return'';
+ return `<div class="jv-ppr"><span class="jv-pl">People</span><div class="jv-pps">${L.map(e=>`<button class="jv-chip" data-nk="p" data-ns="${e.s}">${medal(ATL_D.p[e.s],26)}<span>${esc(e.n)}</span></button>`).join('')}</div></div>`}
 function ppWire(){const el=$('#jpp');if(!el)return;const x=walk()[jpIdx()];
  const paint=()=>{const e=$('#jpp');if(!e)return;e.innerHTML=ppHTML(walk()[jpIdx()]);ppWire()};
  const b=$('#jppb');if(b)b.onclick=()=>{PPO=!PPO;S.set('ppOpen',PPO);if(ATL_D)paint();else atlas().then(paint).catch(()=>{PPO=false;note('People did not load. Check your connection.')})};
@@ -1625,19 +1650,21 @@ function ppWire(){const el=$('#jpp');if(!el)return;const x=walk()[jpIdx()];
  if(!ATL_D){const go=()=>atlas().then(()=>{if(walk()[jpIdx()]===x)paint()}).catch(()=>{});window.requestIdleCallback?requestIdleCallback(go,{timeout:2500}):setTimeout(go,800)}}
 function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(i),s=stepsOf(i),G=listenGroups(b,c),lm=LANDMARKS[b.abbr+c.c],up=a&&a.kind==='play'?a.id:null;
  const pv=w[i-1],nx2=w[i+1];
- let h=`<div class="jv jvz${jMove.dir?' in-'+jMove.dir:''}" id="jv"><div class="jv-eb">${esc(landOf(b))}${(c.y||b.yr)?' · '+esc(c.y||b.yr):''}</div><h1 class="jv-t"><button id="jpick" aria-label="Choose a book or chapter">${esc(stopName(x))}<svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></h1>`;
- h+=`<div class="jv-art" id="jart">${heroArt(x,350,230,'ja')}<div class="jv-cap">${!c.intro&&lm?`<i>${esc(lm[1])}</i>`:''}<div class="cs">${rich(c.intro?(b.bl||''):(c.sl||''))}</div></div></div>`;
+ let h=`<div class="jv jvz${jMove.dir?' in-'+jMove.dir:''}" id="jv"><div class="jv-eb">${esc(landOf(b))}${(c.y||b.yr)?' · '+esc(c.y||b.yr):''}</div><div class="jv-tr"><h1 class="jv-t"><button id="jpick" aria-label="Choose a book or chapter">${esc(stopName(x))}<svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></h1>`
+  +`<button class="jv-ar" ${pv?`data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}"`:'disabled aria-label="Back"'}><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="jv-ar" ${nx2?`data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}"`:'disabled aria-label="On"'}><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>`;
+ h+=`<div class="jv-art jv-ban" id="jart">${heroArt(x,350,128,'ja')}<div class="jv-cap"><div class="cs">${rich(c.intro?(b.bl||''):(c.sl||''))}</div></div></div>`;
  h+=`<div class="jv-cast" id="jpp">${ppHTML(x)}</div>`;
  const bk=BACK&&BACK.from!==i&&w[BACK.from]?BACK.from:null;
- h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1" aria-label="Back to ${esc(stopName(w[bk]))}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M9 14 4 9l5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>${esc(stopName(w[bk]))}</button>`:''}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
+ h+=`<div class="jv-nav">${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1" aria-label="Back to ${esc(stopName(w[bk]))}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M9 14 4 9l5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>${esc(stopName(w[bk]))}</button>`:''}</div>`;
  const ii=stopIntro(x),itx=hasIntroText(x),iiF=ii?(isDone(ii)||SKIP[ii]?1:Math.min(.95,heardPct(ii)/100)):0;
  const segs=coreOn()?[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?(CORE.bk[b.abbr]||G.overview.length?[['teaching','Teaching',s.teach.length?stepFrac(i,s.teach):1]]:[]):[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',s.teach.length?stepFrac(i,s.teach):(coreLater(x)!=null?stepFrac(i,coreIdsOf(coreLater(x))):1)]])]:[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['overview','Overview',stepFrac(i,s.ov)],['teaching','Teaching',stepFrac(i,s.teach)]])];
  /* Core: the steps are tabs, one section at a time; the tab follows where you are unless you pick one */
  const tabs=segs.map(z=>z[0]),TABK=stopKey(x),tab=coreOn()?(JV.tabFor===TABK&&tabs.includes(JV.tab)?JV.tab:a&&tabs.includes(a.step)?a.step:tabs.includes('teaching')&&a&&a.kind==='walk'?'teaching':tabs[0]):null;
- h+=`<div class="jv-seg"${coreOn()?' role="tablist"':''}>${segs.map(([k,l,f])=>`<button data-jseg="${k}" class="${!tab&&a&&a.step===k?'now':''}${tab===k?' on':''}"${coreOn()?` role="tab" aria-selected="${tab===k}"`:` aria-label="Go to ${l}"`}><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</button>`).join('')}</div>`;
+ h+=`<div class="jv-seg" id="jseg"><div class="jv-st" aria-hidden="true">${esc(stopName(x))}</div><div class="jv-sgr"${coreOn()?' role="tablist"':''}>${segs.map(([k,l,f])=>`<button data-jseg="${k}" class="${!tab&&a&&a.step===k?'now':''}${tab===k?' on':''}"${coreOn()?` role="tab" aria-selected="${tab===k}"`:` aria-label="Go to ${l}"`}><i><b style="width:${Math.round(100*f)}%"></b></i>${l}${f>=1?' ✓':''}</button>`).join('')}</div></div>`;
  /* with tabs, Up next sits on the tab it belongs to; the walk-on card on the last tab */
  const card=!tab||(a&&tab===a.step)||(a&&(a.kind==='walk'||a.kind==='end')&&tab===tabs[tabs.length-1])||tabs.length===0;
  if(!card){}
+ else if(coreOn()&&(a.kind==='play'||a.kind==='scripture')){}
  else if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
   h+=`<button class="jv-next" id="jnext"><span class="jv-pp">${icon(pl?'pause':'play',20,0,'#fff')}</span><span class="jv-nt"><small>${pl?'Playing':left?'Resume':'Up next'}${a.step==='intro'?' · Introduction':a.step==='overview'&&!c.intro?' · Overview':''}</small><b>${esc(dispTitle(it))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}</em></span></button><div class="jv-alt"><button data-skipnext="${a.id}">Skip for now</button></div>`}
  else if(a.kind==='scripture'){const n=narDur(b.abbr,c.c),pl=cur===narId(b.abbr,c.c)&&!audio.paused;
@@ -1650,14 +1677,16 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  const cap=n=>JV.more?n:Math.min(n,8);let rows='',shown=0,total=0;
  const sec=(t,list,k)=>{if(!list.length)return'';let o=`<div class="jv-sec" id="js-${k}">${t}</div>`,last=null;list.forEach(g=>{total++;if(shown>=cap(1e9))return;if(g.h&&g.h!==last&&c.intro){o+=`<div class="jv-sub">${esc(g.h)}</div>`;last=g.h}o+=jRow(g.id,g.r?vbadge(g.r):'',up);shown++});return o};
  const show=k=>!tab||tab===k;
- if((ii||itx)&&show('intro'))rows+=`<div class="jv-sec" id="js-intro">Introduction</div>${ii?(tab&&card&&a.id===ii?'':jRow(ii,'',up)):`<div class="jw"><span class="jpb off" aria-hidden="true">${icon('book',13,1.8,'currentColor')}</span><div class="jw-t"><b>${esc(c.intro?'Introducing '+b.name:stopName(x)+' · Introduction')}</b><span>The Narrator · narration coming soon</span></div></div>`}<button class="jv-rd" id="jrd" aria-expanded="false">Read the introduction</button><div class="jv-itx" id="jitx" hidden></div>`;
- if(!c.intro&&show('scripture')&&!(tab&&card&&a.kind==='scripture')){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec" id="js-scripture">Scripture</div><div class="jw${rd?' heard':''}" data-scrrow="1"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
+ const skipL=(st,key)=>coreOn()&&a&&a.step===st&&(a.kind==='play'||a.kind==='scripture')?`<button class="jv-sk" data-skipnext="${key}">Skip for now</button>`:'';
+ if((ii||itx)&&show('intro'))rows+=`<div class="jv-sec jv-tsec" id="js-intro"><span>Introduction</span>${ii?skipL('intro',ii):''}</div>${ii?(!coreOn()&&tab&&card&&a.id===ii?'':jRow(ii,'',up)):`<div class="jw"><span class="jpb off" aria-hidden="true">${icon('book',13,1.8,'currentColor')}</span><div class="jw-t"><b>${esc(c.intro?'Introducing '+b.name:stopName(x)+' · Introduction')}</b><span>The Narrator · narration coming soon</span></div></div>`}${ii&&coreOn()?'':`<button class="jv-rd" id="jrd" aria-expanded="false">Read the introduction</button><div class="jv-itx" id="jitx" hidden></div>`}`;
+ if(!c.intro&&show('scripture')&&!(!coreOn()&&tab&&card&&a.kind==='scripture')){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused,nup=a&&a.kind==='scripture',nd=narDur(b.abbr,c.c);
+  rows+=`<div class="jv-sec jv-tsec" id="js-scripture"><span>Scripture</span>${skipL('scripture','S:'+scrKey(x))}</div><div class="jw${rd?' heard':''}${pl?' pl':''}" data-scrrow="1"><button class="jpb" data-jscr="1" aria-label="${pl?'Pause':'Listen to'} ${esc(stopName(x))}">${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>${pl?'<em class="jw-up">Reading</em> · ':nup&&!rd?'<em class="jw-up">Up next</em> · ':''}Read or listen${nd?' · '+durTxt(nd):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':'<svg class="jw-go" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'}</div>`}
  if(!coreOn())rows+=G.overview.length||c.intro?sec(c.intro?'Teaching on the book':'Overview',G.overview,'overview'):'<div id="js-overview"></div>';
  if(coreOn()){if(show('teaching'))rows+=coreRows(x,i,G,sec,up)}else{rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;}
  if(shown<total)rows+=`<button class="jv-more" id="jmore">${total-shown} more</button>`;
  const tp=c.intro?[]:(D.topics||[]).filter(t=>t.keys.some(k=>k.b===b.name&&c.c>=k.c&&c.c<=k.to));
  if(tp.length&&show('teaching'))rows+=`<div class="jv-tp"><span>Explore this topic</span>${tp.map(t=>`<button data-topic="${t.id}">${esc(t.name)} ›</button>`).join('')}</div>`;
- return h+`<div class="jv-list${tab?' jv-tabbed':''}">${rows}</div></div>`}
+ return h+`<div class="jv-list${tab?' jv-tabbed':''}${coreOn()&&tab==='teaching'&&JV.deep?' jv-deep':''}">${rows}</div></div>`}
 /* Teaching at a stop: Core (the one exposition to hear) or Go Deeper (everything else, optional) */
 /* Go Deeper at a stop: everything shown there besides Core, in the order shown */
 function deepGroups(x,G){const {b,c}=x,k=b.abbr+':'+c.c,u=coreHere(x),lt=coreLater(x),cs=new Set([...(u!=null?coreIdsOf(u):[]),...(lt!=null?coreIdsOf(lt):[])]),dp=c.intro?{alt:(G||listenGroups(b,c)).overview.map(g=>g.id)}:(CORE.deep[k]||{});
@@ -1676,11 +1705,11 @@ function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,
    if(coreSet()[u])o+=`<p class="jv-why">You chose this one. <button class="lnk" data-coreback="${u}">Back to the suggested teaching</button></p>`}
   else if(later!=null){const L=CORE.u[later],nx=walk().find(w=>w.b.abbr===L[0]&&w.c.c===L[2]),lids=coreIdsOf(later);
    /* a sermon on several chapters is the Core teaching of each; Up next offers it once all its Scripture is read */
-   lids.forEach(id=>{o+=jRow(id,'',up)});
-   if(lids.length&&!lids.every(isDone))o+=`<p class="jv-why">Covers ${esc(b.name)} ${L[1]}–${L[2]}. Up next offers it after you read ${esc(nx?stopName(nx):b.name+' '+L[2])}.</p>`}
+   const nt=lids.every(isDone)?'':`Covers ${esc(b.name)} ${L[1]}–${L[2]} · plays after ${esc(nx?stopName(nx):b.name+' '+L[2])}`;
+   lids.forEach(id=>{o+=jRow(id,'',up,nt)})}
   else o+=`<p class="jv-none">No focused teaching on ${esc(stopName(x))} alone.${nDeep?' Go Deeper has '+nDeep+' related message'+(nDeep>1?'s':'')+'.':''}</p>`}
  else{if(!nDeep)o+=`<p class="jv-none">Nothing more on ${esc(stopName(x))} yet.</p>`;
-  groups.forEach(([t,l])=>{o+=`<div class="jv-sub">${t}</div>`;l.forEach(id=>{o+=jRow(id,'',up)+(uk==null?'':`<div class="jv-mk"><button class="lnk" data-mkcore="${esc(String(uk))}|${id}">Make this Core</button></div>`)})})}
+  groups.forEach(([t,l])=>{o+=`<div class="jv-sub">${t}</div>`;l.forEach(id=>{o+=jRow(id,'',up)})})}
  return o}
 function jCont(o={}){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;JV.tabFor=null;DEEP=null;
  if(a.kind==='play'){if(cur===a.id){if(o.full)setMini(false);else audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;play(a.id,o.full?{full:true}:{})}
@@ -1688,7 +1717,8 @@ function jCont(o={}){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;JV
  else if(a.kind==='walk'){const fr=x,nx=w[a.to];setJP(a.to);camp=a.to;S.set('camp',camp);if(nx.b!==fr.b&&!fr.c.intro)note('You have walked through '+fr.b.name+'.');JV.more=false;render();window.scrollTo({top:0,behavior:'smooth'})}}
 function jMove(i,back){const w=walk(),f=jpIdx();if(!w[i])return;if(back)BACK=null;else if(Math.abs(i-f)>1)BACK={from:f};else if(BACK&&i===BACK.from)BACK=null;
  jMove.dir=i>f?'l':i<f?'r':'';setJP(i);camp=i;S.set('camp',camp);JV.more=false;render();jMove.dir='';window.scrollTo({top:0})}
-function wireJourney(){const n=$('#jnext');if(n)n.onclick=e=>jCont({full:!e.target.closest('.jv-pp')});
+addEventListener('scroll',()=>{const g=$('#jseg');if(!g)return;const t=$('.jv-t');g.classList.toggle('stuck',!!t&&t.getBoundingClientRect().bottom<parseFloat(getComputedStyle(g).top)+8)},{passive:true});
+function wireJourney(){corePaint();{const g=$('#jseg');if(g)g.classList.remove('stuck')}const n=$('#jnext');if(n)n.onclick=e=>jCont({full:!e.target.closest('.jv-pp')});
  document.querySelectorAll('[data-deep]').forEach(b=>b.onclick=()=>{JV.deep=b.dataset.deep==='1';const y=scrollY;render();window.scrollTo(0,y)});
  document.querySelectorAll('[data-mkcore]').forEach(b=>b.onclick=()=>{const [u,id]=b.dataset.mkcore.split('|'),set=coreSet();set[u]=[id];S.set('coreSet',set);JV.deep=false;const y=scrollY;render();window.scrollTo(0,y)});
  document.querySelectorAll('[data-coreback]').forEach(b=>b.onclick=()=>{const set=coreSet();delete set[b.dataset.coreback];S.set('coreSet',set);const y=scrollY;render();window.scrollTo(0,y)});
@@ -1711,7 +1741,7 @@ function wireJourney(){const n=$('#jnext');if(n)n.onclick=e=>jCont({full:!e.targ
  const jv=$('#jv');if(jv){let t0=null;const o={passive:true};
   jv.addEventListener('touchstart',e=>{t0=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY,t:Date.now(),y0:scrollY}:null},o);
   jv.addEventListener('touchend',e=>{if(!t0)return;const t=e.changedTouches[0],dx=t.clientX-t0.x,dy=t.clientY-t0.y,ok=Date.now()-t0.t<700&&Math.abs(scrollY-t0.y0)<12;t0=null;
-   if(ok&&Math.abs(dx)>60&&Math.abs(dx)>2.2*Math.abs(dy)&&!(e.target.closest&&e.target.closest('input,textarea'))){const to=jpIdx()+(dx<0?1:-1);if(walk()[to])jMove(to)}},o);
+   if(ok&&Math.abs(dx)>60&&Math.abs(dx)>2.2*Math.abs(dy)&&!(e.target.closest&&e.target.closest('input,textarea,.jv-pps'))){const to=jpIdx()+(dx<0?1:-1);if(walk()[to])jMove(to)}},o);
   jv.addEventListener('touchcancel',()=>{t0=null},o)}const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
  document.querySelectorAll('[data-jread]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()];read[scrKey(x)]=true;S.set('read',read);render()});
  const scr=full=>{const x=walk()[jpIdx()],id=narId(x.b.abbr,x.c.c);BPM=null;DEEP=null;if(cur===id){if(full)setMini(false);else audio.paused?audio.play().catch(()=>{}):audio.pause();return}const a=nextAction(jpIdx());JM=!!(a&&a.kind==='scripture');narPlay(x.b,x.c.c,null,{jm:JM,full})};
@@ -2093,7 +2123,7 @@ $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.targ
 const setSpeed=v=>{speed=Math.round(Math.min(3,Math.max(0.5,v))*100)/100;AUDIO_EL.forEach(a=>a.playbackRate=speed);$('#spd').textContent=spdLabel();S.set('speed',speed);retime()};
 function retime(){document.querySelectorAll('[data-dur]').forEach(e=>e.textContent=durTxt(+e.dataset.dur));document.querySelectorAll('[data-hrs]').forEach(e=>{const [h,a]=e.dataset.hrs.split(',').map(Number);e.textContent=hrsTxt(h,a)});if(cur&&audio.duration)$('#rem').textContent='-'+fmt(Math.max(0,audio.duration-audio.currentTime-tail())/speed)}$('#spd').onclick=e=>{e.stopPropagation();if(NP().classList.contains('mini')){const L=[.7,.8,.9,1,1.25,1.5,1.75,2],k=L.findIndex(v=>Math.abs(v-speed)<.01);setSpeed(L[(k+1)%L.length]);return}setSpeed(1)};$('#spd-dn').onclick=e=>{e.stopPropagation();setSpeed(speed-0.05)};$('#spd-up').onclick=e=>{e.stopPropagation();setSpeed(speed+0.05)};
 let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};
-$('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};$('#np-srch').onclick=e=>{e.stopPropagation();openSearch()};$('#np-fav').onclick=e=>{e.stopPropagation();if(!cur)return;const f=S.get('fav',{});if(f[cur])delete f[cur];else f[cur]=Date.now();S.set('fav',f);favPaint()};
+$('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};$('#np-core').onclick=e=>{e.stopPropagation();const u=e.currentTarget.dataset.u;if(u==null||!cur)return;const set=coreSet();set[u]=[cur];S.set('coreSet',set);JV.deep=false;DEEP=null;note('Now Core for '+stopName(walk()[jpIdx()])+'.');corePaint();render()};$('#np-srch').onclick=e=>{e.stopPropagation();openSearch()};$('#np-fav').onclick=e=>{e.stopPropagation();if(!cur)return;const f=S.get('fav',{});if(f[cur])delete f[cur];else f[cur]=Date.now();S.set('fav',f);favPaint()};
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NAR=null;document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));narBar();NP().classList.remove('on');roomForPlayer();render()};
 /* player sheet: swipe down or tap the page to shrink it to a bar; tap or swipe up the bar to open it */
 function NP(){return $('#np')}
@@ -2201,7 +2231,9 @@ function narNext(){const was=NAR;if(!was)return;read[was.b.abbr+was.c]=true;S.se
  narPlay(nx[0],nx[1],0)}
 let fullAtScroll=0;
 /* teaching you mark as particularly valuable: kept in the Library under Saved */
-function favPaint(){const b=$('#np-fav');if(!b)return;const it=I[cur],ok=it&&!it.nar&&!it.blob;b.hidden=!ok;const on=ok&&!!S.get('fav',{})[cur];b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.setAttribute('aria-label',on?'Saved: tap to remove':'Save this teaching')}
+function corePaint(){const b=$('#np-core');if(!b)return;let ok=false;
+ if(coreOn()&&cur&&I[cur]&&!I[cur].nar){const x=walk()[jpIdx()],uk=x?coreKey(x):null;ok=uk!=null&&deepIds(jpIdx()).includes(cur);if(ok)b.dataset.u=String(uk)}b.hidden=!ok}
+function favPaint(){corePaint();const b=$('#np-fav');if(!b)return;const it=I[cur],ok=it&&!it.nar&&!it.blob;b.hidden=!ok;const on=ok&&!!S.get('fav',{})[cur];b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.setAttribute('aria-label',on?'Saved: tap to remove':'Save this teaching')}
 function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;roomForPlayer();if(!m&&NAR&&cur===NAR.id){narUser=0;readerFill(true);setTimeout(()=>narMark(true),60)}}
 (()=>{const np=NP();let y0=null,x0=0,dy=0,dx=0,tb=null,bx=0,by=0;
  /* buttons act the moment the finger lifts: an iPhone can drop the click while the reader moves, and a button press never drags the player */
