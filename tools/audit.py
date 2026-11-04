@@ -187,6 +187,9 @@ def main():
     bad += [f"{v} given to two titles" for v, n in Counter(fx.values()).items() if n > 1]
     bad += [f"{I[k]['t'][:45]} does not carry its recording" for k, v in fx.items() if k in I and I[k].get("aid") != v]
     check("recordings the publisher mislabelled play under their own titles", bad, len(fx))
+    nr = json.load(open(os.path.join(HERE, "data", "audio_fixes.json"), encoding="utf-8")).get("_no_recording", {})
+    bad = [f"{I[k]['t'][:45]} still plays or is on the road" for k in nr if k in I and (I[k].get("audio") or k in road)]
+    check("listings with no recording of their own are off the road", bad, len(nr))
     # two script functions with one name: the later silently replaces the earlier (it once disabled the people and places sheet)
     names = Counter(re.findall(r"(?:^|[;}\s])function\s+([A-Za-z_$][\w$]*)\s*\(", html))
     check("no two script functions share a name", [f"{n} ×{k}" for n, k in names.items() if k > 1])

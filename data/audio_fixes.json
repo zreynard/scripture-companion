@@ -1,9 +1,25 @@
 {
- "_why": "The publisher attached these recordings to the wrong episode titles. Each key (the episode as titled) gets the recording of the value (the episode whose listing holds that sermon). Heard with tools/pam_check.py: in each file he announces the passage, and in five of the six says the sermon's title aloud.",
+ "_why": "The publisher attached these recordings to the wrong episode titles. Each key (the episode as titled) gets the recording of the value (the episode whose listing holds that sermon). Heard with tools/pam_check.py: in each file he announces the passage, and in five of the six says the sermon's title aloud. Davey's Nehemiah series (Wisdom International): from file 04 on, each file is the sermon listed one place earlier, and file 16 is 'In Jesus' Name, Amen' (heard in tools/pam_check.py: he says 'Nehemiah was a real McCoy' in file 05, reads the list of builders of chapter 3 in file 07, and so on).",
  "9d6ac773bc7d": "b0bacefcf33e",
  "93a76ba9bc70": "9d6ac773bc7d",
  "b0bacefcf33e": "40468c3b5c4f",
  "40468c3b5c4f": "93a76ba9bc70",
  "64c8992d9dad": "5b1cb5f255e5",
- "5b1cb5f255e5": "64c8992d9dad"
+ "5b1cb5f255e5": "64c8992d9dad",
+ "347b1449d660": "5bdc816065f0",
+ "5bdc816065f0": "d28fc19d993a",
+ "d28fc19d993a": "2df74fa339ca",
+ "2df74fa339ca": "fdc7c2b19485",
+ "fdc7c2b19485": "aa6788637ee5",
+ "aa6788637ee5": "c775fa3edd52",
+ "c775fa3edd52": "a5567bdf117b",
+ "a5567bdf117b": "b00ff24d11cb",
+ "b00ff24d11cb": "b0544aa1153c",
+ "b0544aa1153c": "bb35440101e7",
+ "bb35440101e7": "b1914cecdefd",
+ "b1914cecdefd": "7d4e358eea2d",
+ "7d4e358eea2d": "347b1449d660",
+ "_no_recording": {
+  "3cf9d0e7ab2c": "Wisdom's Genesis07-Genesis5.mp3 is a copy of Genesis08 (Ingredients of Integrity, Genesis 6); the Genesis 5 sermon is not online"
+ }
 }

@@ -4,7 +4,7 @@ books → chapters → episodes with progress bars, Secret Church in order, Pray
 Progress lives in localStorage; export/import as JSON. Run: python app_build.py
 """
 from __future__ import annotations
-import json, os, re, shutil, sys
+import glob, json, os, re, shutil, sys
 from collections import defaultdict
 from canon import BOOKS, CHAPTERS, TESTAMENT
 from refs import parse_refs
@@ -208,6 +208,7 @@ def main():
                 for c in d["chapters"]:
                     by_chapter[(book, c)].append(it["id"])
     # recordings the publisher attached to the wrong episode titles: each title gets the recording that is that sermon
+    NOFILE = {}
     _fp = os.path.join(HERE, "data", "audio_fixes.json")
     if os.path.exists(_fp):
         _fx = {k: v for k, v in json.load(open(_fp, encoding="utf-8")).items() if not k.startswith("_")}
@@ -218,6 +219,13 @@ def main():
                     if v is None: items[t].pop(f, None)
                     else: items[t][f] = v
                 items[t]["aid"] = src
+        # listings whose file on the publisher's server is another sermon, with no right copy anywhere: no audio, off the road
+        _none = json.load(open(_fp, encoding="utf-8")).get("_no_recording", {})
+        for t, why in _none.items():
+            if t in items:
+                for f in ("dur", "s", "e"): items[t].pop(f, None)
+                items[t]["audio"] = None
+                NOFILE[t] = why
     def core(t):  # title without episode numbers, "| Speaker" tails, or (Bible reference) brackets
         t = re.sub(r"^\s*#?[\d,]+\s*[\u2013\u2014-]\s*", "", t or "")
         t = re.sub(r"^\s*Expound:\s*", "", t, flags=re.I)  # Skip's radio labels his Expound series
@@ -304,6 +312,7 @@ def main():
     def on_road(i, book):
         it = items[i]
         if NEVER.search(it["t"]): WHY[i] = "never: " + NEVER.search(it["t"]).group(0); return False
+        if i in NOFILE: WHY[i] = "no recording: " + NOFILE[i]; return False
         if it["tr"] != "sermon": return True
         parallel = set(item_books[i]) <= {"1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles"} or set(item_books[i]) <= {"Matthew", "Mark", "Luke", "John"}
         if ref_how[i] == "description-first" and cited[i] > 1 and focus(i, book) < 2 and not parallel: WHY[i] = "several passages"; return False  # several passages, none named the text, not in a series
@@ -322,10 +331,15 @@ def main():
             if k == len(ds) or ds[k] - ds[k - 1] > 90:
                 for x in ds[start:k]: run_end[(book, who, x)] = ds[k - 1]
                 start = k
+    # Davey's archive has no dates: its lessons play in the order of the recordings (the file names are numbered in preaching order)
+    LESSON = {}
+    for _f in sorted(glob.glob(os.path.join(HERE, "data", "davey_archive", "*.json"))):
+        for _x in json.load(open(_f, encoding="utf-8")).get("sermons", []):
+            if _x.get("mp3"): LESSON[_x["mp3"]] = _x["n"]
     def rank(book):
         def key(i):
             it, d, f = items[i], _day(i) or 0, focus(i, book)
-            series = (-run_end.get((book, it["who"], d), d), d) if f == 2 else ((0, d) if it["src"] == "davey_journey" else (0, -d))  # the Journey walks forward day by day
+            series = (-run_end.get((book, it["who"], d), d), d) if f == 2 else ((0, d) if it["src"] == "davey_journey" else (0, LESSON.get(it["audio"], 0)) if it["src"] == "davey_archive" else (0, -d))  # the Journey walks forward day by day; the archive (no dates) in lesson order
             return (it["tr"] != "sermon", not it["audio"], -f, it["who"] != "Platt", series, i)
         return key
     books = []
