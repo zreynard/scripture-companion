@@ -89,6 +89,22 @@ def big_picture(items):
     out[1]["names"] = names
     out[0]["unit"], out[1]["unit"] = "session", "flight"
     out[0]["group"] = out[1]["group"] = "bp"
+    # The Story of Scripture (Platt, McLean 2019): Genesis to Revelation over forty Sundays, in preaching order
+    sos = json.load(open(os.path.join(HERE, "data", "story_of_scripture.json"), encoding="utf-8"))
+    key = lambda t: re.sub(r"[^a-z0-9]", "", re.sub(r"[’']", "", (t or "").lower()))
+    platt = defaultdict(list)
+    for i in items.values():
+        if i.get("who") == "Platt": platt[key(i["t"])].append(i)
+    ids, names = [], {}
+    for x in sos["parts"]:
+        cand = [i for i in platt.get(key(x["title"]), []) if not x.get("mp3") or i["src"] == "sos_radical"]
+        cand.sort(key=lambda i: (not i.get("audio"), i["src"] == "ptw"))
+        if not cand: continue
+        if x.get("check") and x["check"] not in (cand[0].get("pass") or ""): continue   # heard to preach the book it should
+        ids.append(cand[0]["id"]); names[cand[0]["id"]] = x["title"]
+    out.insert(1, {"id": "sos", "title": "The Story of Scripture", "by": "David Platt", "art": "sos", "group": "bp", "unit": "part",
+                   "desc": "Genesis to Revelation over forty Sundays: God bringing his people to his place for his purpose, from creation to new creation. McLean Bible Church, 2019.",
+                   "parts": [["", ids]], "names": names})
     return [x for x in out if any(ids for _, ids in x["parts"])]
 
 def main():
@@ -199,7 +215,7 @@ def main():
         return re.sub(r"\bpart (\w+)\b", r"part \1", t)
     SRC_PREF = {"platt_messages": 0, "ptw": 0, "2819_podcast": 0, "secret_church_podcast": 0, "twr360_secret_church": 1,
                 "mclean_podcast": 2, "radical_message": 3, "victory_podcast": 3, "radical_vimeo": 1, "street_preachers": 2,
-                "davey_archive": 0, "davey_sermons": 0, "davey_wfth": 1, "brookhills_ia": 1, "davey_journey": 0, "skip_archive": 0, "skip_church": 1, "skip_connect": 2}
+                "davey_archive": 0, "davey_sermons": 0, "davey_wfth": 1, "brookhills_ia": 1, "sos_radical": 1, "davey_journey": 0, "skip_archive": 0, "skip_church": 1, "skip_connect": 2}
     def one_each(lst):  # one teaching, one entry: keep the best form of same-titled items
         best = {}
         for i in lst:
@@ -1574,6 +1590,7 @@ function bpNum(s,id){const it=I[id];return it.sc?it.sc[0]+'.'+it.sc[1]:String(bp
 function bpCover(art,sz){const v={survey:`<rect width="104" height="104" fill="#1b2440"/><g fill="#f0d79a"><circle cx="18" cy="20" r="1.2"/><circle cx="40" cy="12" r="1"/><circle cx="78" cy="18" r="1.4"/><circle cx="90" cy="40" r="1"/><circle cx="14" cy="50" r="1"/><circle cx="64" cy="30" r="1"/></g><circle cx="52" cy="64" r="30" fill="#c9a24a" opacity=".14"/><path d="M52 46 C 46 54 46 60 52 64 C 58 60 58 54 52 46Z" fill="#e9cf8c"/><path d="M44 66h16v18H44z" fill="none" stroke="#e9cf8c" stroke-width="2"/><text x="52" y="96" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="7" letter-spacing="1.6" fill="#e9cf8c">OT · NT</text>`,
   chronicle:`<rect width="104" height="104" fill="#e7dbbd"/><path d="M16 86 C 36 66 28 50 50 46 C 72 42 66 22 88 16" fill="none" stroke="#9a7524" stroke-width="3" stroke-linecap="round"/><g transform="translate(16 86)" fill="none" stroke="#4f5f3f" stroke-width="1.8" stroke-linecap="round"><path d="M0 0 V-16"/><path d="M0 -12 C -9 -18 -12 -26 -5 -30 C 0 -33 6 -31 7 -26 C 15 -28 16 -18 10 -14 C 6 -12 3 -12 0 -13"/></g><path d="M78 22h20v-12h-4v-5h-4v5h-4v-8h-4v8h-4z" fill="#1b2440"/>`,
   legacies:`<rect width="104" height="104" fill="#2e4639"/><circle cx="52" cy="40" r="30" fill="#f0d79a" opacity=".12"/><circle cx="52" cy="40" r="17" fill="#f0d79a" opacity=".16"/><path d="M52 24 C 46 32 46 38 52 42 C 58 38 58 32 52 24Z" fill="#f0d79a"/><rect x="47" y="44" width="10" height="34" rx="2" fill="#e9dfc6"/><path d="M36 80h32" stroke="#c9a24a" stroke-width="3" stroke-linecap="round"/><text x="52" y="96" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="7" letter-spacing="1.6" fill="#e9cf8c">LIVES OF FAITH</text>`,
+  sos:`<rect width="104" height="104" fill="#22304f"/><path d="M10 78 C 26 50 40 70 52 46 S 80 30 94 22" fill="none" stroke="#c9a24a" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="1 6"/><g fill="#f0d79a"><circle cx="10" cy="78" r="3.2"/><circle cx="23" cy="60" r="2.4"/><circle cx="36" cy="64" r="2.4"/><circle cx="48" cy="52" r="2.4"/><circle cx="60" cy="40" r="2.4"/><circle cx="72" cy="35" r="2.4"/><circle cx="84" cy="27" r="2.4"/><circle cx="94" cy="22" r="3.6"/></g><text x="12" y="20" font-family="-apple-system,system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1" fill="#f0d79a">CREATION → NEW CREATION</text>`,
   '30k':`<rect width="104" height="104" fill="#dfe6df"/><g fill="none" stroke="#8fa08a" stroke-width="1.2"><path d="M-4 30 C 20 20 40 36 60 26 S 96 22 110 30"/><path d="M-4 46 C 22 36 42 54 64 42 S 98 38 110 46"/><path d="M-4 62 C 24 52 44 70 66 58 S 98 56 110 62"/><path d="M-4 78 C 26 68 46 86 68 74 S 98 72 110 78"/><path d="M-4 94 C 28 84 48 100 70 90 S 98 88 110 94"/></g><path d="M14 90 C 34 70 50 64 60 52 S 84 26 92 14" fill="none" stroke="#9a7524" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/><path d="M88 10 l8 2 -6 6z" fill="#1b2440"/><text x="12" y="20" font-family="-apple-system,system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1" fill="#1b2440">30,000 FT</text>`}[art]||'';
  return `<svg viewBox="0 0 104 104" width="${sz}" height="${sz}" class="bpc" aria-hidden="true">${v}</svg>`}
 function bpLen(s){const ids=bpIds(s),known=ids.filter(id=>+I[id].dur>0),sec=known.reduce((t,id)=>t+ +I[id].dur,0);

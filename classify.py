@@ -22,6 +22,8 @@ def detect_speaker(source: str, title: str, description: str, author: str, chann
         if m and not PLATT_RE.search(m.group(3)):  # "a message from David Platt" is his own
             return f"guest:{m.group(3)}", "feed-description"
         return "Platt", "feed-owner"
+    if source == "sos_radical":    # Platt's own Story of Scripture Sundays (data/story_of_scripture.json)
+        return "Platt", "series-list"
     if source == "brookhills_ia":   # the church's Sunday files, each named for its preacher; this source keeps David Platt's only
         return "Platt", "file-name"
     if source.startswith("radical") or source == "secret_church":

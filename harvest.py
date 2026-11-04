@@ -146,6 +146,25 @@ def harvest_brookhills_ia() -> list[dict]:
     _log(f"brookhills_ia: {len(out)} David Platt sermons")
     return out
 
+# ---------- The Story of Scripture (McLean, 2019): the parts the podcast feed never carried, from the Sunday audio Radical
+# publishes (data/story_of_scripture.json) ----------
+def harvest_story_of_scripture() -> list[dict]:
+    from datetime import datetime
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "story_of_scripture.json")
+    d = json.load(open(p, encoding="utf-8"))
+    out = []
+    for x in d["parts"]:
+        if not x.get("mp3"): continue
+        pub = datetime.strptime(x["date"], "%Y-%m-%d").strftime("%a, %d %b %Y 11:00:00 -0500")
+        e = make_entry(source="sos_radical", source_url="https://radical.net/", url=x["mp3"], title=x["title"],
+                       description=f"{d['series']}, part {x['n']}. {d['by']} at {d['church']}, {x['date']}.", published=pub,
+                       author=d["by"], era="platt", channel_default="Platt", series=d["series"], extra_ref_text=x.get("refs", ""))
+        e["audio_override"] = x["mp3"]
+        out.append(e)
+    _log(f"sos_radical: {len(out)} parts of {d['series']}")
+    return out
+
+
 def _ia_key(t):
     t = re.sub(r"\([^)]*\)", " ", (t or "").lower()).replace("’", "").replace("'", "")
     t = re.sub(r"\bpt\b\.?", "part", re.sub(r"[^a-z0-9]+", " ", t))
@@ -678,7 +697,7 @@ def harvest_youtube_audio() -> list[dict]:
     return out
 
 # ---------- orchestration ----------
-ALL_SOURCES = ["fearless", "davey_archive", "brookhills_ia", "brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
+ALL_SOURCES = ["fearless", "davey_archive", "brookhills_ia", "sos_radical", "brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
                "youtube_2819", "youtube_pam", "youtube_victory", "victory_podcast"]
 
 def run(sources: list[str], radical_limit: int | None = None):
@@ -708,6 +727,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "fearless": entries = harvest_fearless()
             elif s == "davey_archive": entries = harvest_davey_archive()
             elif s == "brookhills_ia": entries = harvest_brookhills_ia()
+            elif s == "sos_radical": entries = harvest_story_of_scripture()
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt") + harvest_mclean_api()
             elif s in config.DAVEY_FEEDS:
                 sid, feed = config.DAVEY_FEEDS[s]
