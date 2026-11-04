@@ -36,12 +36,12 @@ PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
 PASS  no dates in the future
 FAIL  feed episodes on the road all carry a date  (108)
-        - In the Court of Public Opinion (James 2:21–24) (davey_archive)
-        - The Vanishing Life (James 4:13–17) (davey_archive)
-        - Bringing God to Life (Titus 3:8) (davey_archive)
-        - Chasing Sticks (Romans 1:8) (davey_archive)
-        - Saints Alive (Romans 1:6–7) (davey_archive)
-        - Just Do It! (James 1:22–25) (davey_archive)
+        - More than a Motto (James 2:19–20) (davey_archive)
+        - Learning the Art of Refusal (Titus 3:9) (davey_archive)
+        - From Riches to Rags (Hebrews 11:23–28) (davey_archive)
+        - Passion (Titus 1:1b) (davey_archive)
+        - Peace (Romans 1:7c) (davey_archive)
+        - Beyond the Cherubim (Hebrews 11:4) (davey_archive)
 PASS  every id is the hash of its link (progress keys stable)
 PASS  every shipped entry from the original catalog still exists (same id)
 PASS  nothing unverified (PENDING / FAIL) on the road
