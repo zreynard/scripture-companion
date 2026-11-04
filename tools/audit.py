@@ -181,6 +181,12 @@ def main():
         if I[i]["audio"]: seen[re.sub(r"\?.*$", "", I[i]["audio"])].append(i)
     bad = [" / ".join(I[i]["t"][:35] for i in v) for v in seen.values() if len(v) > 1]
     check("no audio file on the road twice under different entries", bad)
+    # recordings moved to their own titles (data/audio_fixes.json): every one exists, each recording is used once, and it plays under the new title
+    fx = {k: v for k, v in json.load(open(os.path.join(HERE, "data", "audio_fixes.json"), encoding="utf-8")).items() if not k.startswith("_")}
+    bad = [f"{k} or {v} missing" for k, v in fx.items() if k not in I or v not in I]
+    bad += [f"{v} given to two titles" for v, n in Counter(fx.values()).items() if n > 1]
+    bad += [f"{I[k]['t'][:45]} does not carry its recording" for k, v in fx.items() if k in I and I[k].get("aid") != v]
+    check("recordings the publisher mislabelled play under their own titles", bad, len(fx))
     # two script functions with one name: the later silently replaces the earlier (it once disabled the people and places sheet)
     names = Counter(re.findall(r"(?:^|[;}\s])function\s+([A-Za-z_$][\w$]*)\s*\(", html))
     check("no two script functions share a name", [f"{n} ×{k}" for n, k in names.items() if k > 1])
