@@ -65,6 +65,7 @@ class Atlas:
             for s in d["pe"]: book_count[b]["p:" + s] += 1
             for s in d["pl"]: book_count[b]["l:" + s] += 1
         self.book_top = {b: [k for k, _ in c.most_common(60)] for b, c in book_count.items()}
+        self.book_cnt = book_count
 
     # ---------- names ----------
     def _names(self, kind, slug, all_aka=False):
@@ -238,7 +239,74 @@ class Atlas:
         for sl, lv in within.items():
             if sl in L and lv: L[sl]["in"] = lv[:3]
         base = {k: v for k, v in (self.map or {}).items() if k not in ("journey", "paul")} or None
-        return {"p": P, "l": L, "map": base, "here": {k: v for k, v in here.items() if v}, "trip": self.trip(pr) if pr else None}
+        return {"p": P, "l": L, "map": base, "here": {k: v for k, v in here.items() if v}, "trip": self.trip(pr) if pr else None, "cast": self.cast(P)}
+
+    def cast(self, P):
+        """Who is in each chapter ("Daniel 1") and each book ("book Daniel"), for the People list on a Journey stop:
+        the chapter's tags, plus any of the book's main people named in its text, under the name the text uses
+        ("slug|Abednego" when that differs from the card's name)."""
+        skip = {"god_1324", "holy_spirit_7400"}
+        def ok(s, book):
+            if s not in P or s in skip: return False
+            base = s.rsplit("_", 1)[0].replace("_", " ").title()
+            return not (base in TRIBAL and book != "Genesis")     # outside Genesis "Israel" is the nation
+        texts = {}
+        def text(book):
+            if book not in texts:
+                f = os.path.join(HERE, "data", "bible", book + ".json")
+                ch = json.load(open(f, encoding="utf-8"))["chapters"] if os.path.exists(f) else []
+                texts[book] = [" ".join(v.get("t", "") for v in c) for c in ch]
+            return texts[book]
+        def hits(s, t):
+            out = {}
+            for n in self._names("p", s, all_aka=True):
+                if n in TRIBAL: continue
+                ms = [m.start() for m in re.finditer(r"(?<![\w'’-])" + re.escape(n) + r"(?![\w]|-\w)", t)]
+                if ms: out[n] = ms
+            return out
+        def entry(s, h):
+            if not h: return s
+            n = P[s]["n"] if P[s]["n"] in h else max(h, key=lambda k: len(h[k]))
+            return s if n == P[s]["n"] else f"{s}|{n}"
+        def pname(x):
+            return (self.prof_l.get(x) or {}).get("name") or (self.src_l.get(x) or {}).get("n")
+        bplaces = defaultdict(set)
+        for key, d in self.chap.items():
+            bplaces[key.rsplit(" ", 1)[0]] |= {pname(x) for x in d["pl"]} - {None}
+        out = {}
+        for key, d in self.chap.items():
+            b, c = key.rsplit(" ", 1)
+            T = text(b); t = T[int(c) - 1] if c.isdigit() and int(c) <= len(T) else ""
+            pool = list(dict.fromkeys(d["pe"] + [k[2:] for k in self.book_top.get(b, []) if k[0] == "p"]))
+            places = {pname(x) for x in d["pl"]} - {None}
+            tagged = {m for x in d["pe"] for n in self._names("p", x, all_aka=True) for m in (n, re.split(r" (?:of|the) ", n)[0])}
+            rows = []
+            for s in pool:
+                if not ok(s, b): continue
+                h = hits(s, t)
+                if h and all(n in places for n in h): continue          # "Canaan" here is the land
+                if s not in d["pe"] and any(n in tagged for n in h): continue   # "Mary" here is Mary of Bethany
+                at = min((m for v in h.values() for m in v), default=10 ** 9)
+                if s in d["pe"] and not h:     # "Mary of Bethany" is "Mary" in the text: place her where she first appears
+                    short = {re.split(r" (?:of|the) ", n)[0] for n in self._names("p", s, all_aka=True)}
+                    at = min((m.start() for n in short for m in re.finditer(r"(?<![\w'’-])" + re.escape(n) + r"(?!\w)", t)), default=at)
+                if s in d["pe"] or h: rows.append((at, entry(s, h)))
+            seen, xs = set(), []
+            for _, e in sorted(rows, key=lambda r: r[0]):
+                n = e.split("|")[1] if "|" in e else P[e]["n"]
+                if n not in seen: seen.add(n); xs.append(e)                # one "Pharaoh"
+            if xs: out[key] = xs
+        for b, ks in self.book_top.items():
+            n_ch = sum(1 for k in self.chap if k.rsplit(" ", 1)[0] == b)
+            t = " ".join(text(b))
+            xs, seen = [], set()
+            for k in ks:
+                if k[0] != "p" or not ok(k[2:], b) or not (n_ch <= 4 or self.book_cnt[b][k] >= 2): continue
+                e = entry(k[2:], hits(k[2:], t)); n = e.split("|")[1] if "|" in e else P[e]["n"]
+                if n in bplaces[b] and b != "Genesis": continue             # Canaan, Dan: the land, the tribe's town
+                if n not in seen: seen.add(n); xs.append(e)
+            if xs: out["book " + b] = xs[:30]
+        return out
 
     def trip(self, pr):
         """The journey map's legs (journey.py) with each stop placed on the map."""

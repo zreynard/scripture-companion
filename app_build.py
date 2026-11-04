@@ -374,7 +374,9 @@ def main():
         sec, _d, files = _nsec(abbr)
         if not files: continue
         texts = {("0" if k == "intro" else k): v for k, v in sec.items() if v}
-        json.dump(texts, open(os.path.join(SITE, "narrative", abbr + ".json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+        # names in the introductions link to their cards, each name at its first mention in a paragraph
+        lk = lambda c, t: "\n\n".join((ATLAS.link_book(p, _name) if c == "0" else ATLAS.link_chapter(p, _name, int(c))) for p in re.split(r"\n\s*\n", t)) if ATLAS.ok else t
+        json.dump({c: lk(c, t) for c, t in texts.items()}, open(os.path.join(SITE, "narrative", abbr + ".json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
         intro_txt[abbr] = sorted(int(c) for c in texts)
         for c, t in texts.items():
             r = (rec.get(abbr) or {}).get(c)
@@ -802,6 +804,14 @@ body.bpsopen{overflow:hidden}
 .jv-nav button{border:0;background:none;padding:8px 0;font:inherit;font-size:13.5px;color:#4a5272;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:48%}
 .jv-art{display:block;position:relative;border-radius:24px;overflow:hidden;box-shadow:0 12px 30px rgba(27,36,64,.12);background:#efe3c5}
 .jv-art svg{display:block;width:100%;height:230px}
+.jv-cast{margin:10px 0 0}
+.jv-cast-b{display:flex;align-items:center;gap:10px;width:100%;min-height:46px;padding:7px 14px 7px 9px;border-radius:18px;border:1px solid rgba(27,36,64,.09);background:rgba(255,255,255,.6);font:inherit;font-size:14.5px;color:var(--ink);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.jv-cast-b .stk{display:flex;align-items:center;min-width:28px;justify-content:center}.jv-cast-b .stk .medal{margin-left:-9px;box-shadow:0 0 0 2px #fbf7ec,inset 0 0 0 3px #fbf5e6}.jv-cast-b .stk .medal:first-child{margin-left:0}
+.jv-cast-b .lb{flex:1;text-align:left;font-weight:600}.jv-cast-b .n{color:#5a6280;font-size:13.5px}
+.jv-cast-b .chev{color:var(--gold2);transition:transform .2s}.jv-cast-b[aria-expanded=true] .chev{transform:rotate(180deg)}
+.jv-cast-l{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;padding:10px 0 2px}
+.jv-cast-l .chip{display:flex;align-items:center;gap:9px;min-height:48px;padding:6px 10px 6px 7px;border-radius:16px;border:1px solid rgba(168,129,42,.32);background:#fff;font:inherit;color:var(--ink);text-align:left;cursor:pointer;min-width:0}
+.jv-cast-l .chip span{display:flex;flex-direction:column;min-width:0}.jv-cast-l .chip b{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.jv-cast-l .chip small{font-size:11.5px;color:#5a6280;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .jv-art.sm svg{height:150px}
 .jv-cap{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(180deg,rgba(246,238,218,0),rgba(246,238,218,.78) 38%,rgba(246,238,218,.92));color:var(--ink)}
 .jv-cap i{display:block;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:21px}
@@ -1109,7 +1119,7 @@ function vignette(kind,x,y,i){const L=x<195;const side=L?1:-1;
  case 'whale':return `<g transform="translate(${x} ${y})"><path d="M-130 10 q60 -16 130 0 t130 0 v40 h-260z" fill="${B}.18)"/><path d="M-40 10 c20 -24 60 -24 80 0 l24 -16 -6 16 6 16 -24 -16" fill="rgba(27,36,64,.25)"/></g>`;
  default:return ''}}
 
-const ICON={sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/>',
+const ICON={people:'<circle cx="9" cy="8" r="3.2"/><path d="M3 19c.6-3.4 3-5 6-5s5.4 1.6 6 5"/><circle cx="17" cy="9" r="2.6"/><path d="M15.5 14.2c2.6-.3 4.8 1.2 5.5 4.3"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/>',
 serpent:'<path d="M4 17c3-5 6 5 9 0s4-6 7-2M20 15l-1-1"/>',rain:'<path d="M7 14h10a4 4 0 0 0 0-8 5 5 0 0 0-9.6 1A3.5 3.5 0 0 0 7 14zM9 17v3M13 17v3M17 17v3"/>',
 tent:'<path d="M3 20h18L12 5zM12 5v15"/>',flame:'<path d="M12 3c3 4 6 6 6 11a6 6 0 0 1-12 0c0-3 1-4 2-6 1 2 2 3 3 3 0-3 0-5 1-8z"/>',
 coat:'<path d="M8 4h8l3 4-3 1v11H8V9L5 8zM12 4v16"/>',waves:'<path d="M2 9c3-2 5-2 8 0s5 2 8 0 3-1 4 0M2 15c3-2 5-2 8 0s5 2 8 0 3-1 4 0"/>',
@@ -1598,10 +1608,25 @@ let JV={more:false};
 function stepFrac(i,list){const q=list.filter(id=>(coreOn()||firstAt()[id]===i)&&I[id]&&I[id].audio);if(!q.length)return 1;return q.filter(id=>isDone(id)||SKIP[id]).length/q.length}
 function jRow(id,badge,up){const it=I[id];if(!it)return'';const done=isDone(id),pl=cur===id&&!audio.paused,left=leftOf(id);
  return `<div class="jw${done?' heard':''}${up===id?' up':''}"><button class="jpb${it.audio?'':' off'}" data-play="${id}" aria-label="${pl?'Pause':'Play'} ${esc(dispTitle(it))}"${it.audio?'':' disabled'}>${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(dispTitle(it))}</b><span>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}${it.audio?'':' · audio soon'}</span></div>${done?'<i class="jw-ok" aria-label="heard">✓</i>':badge?`<span class="vb">${badge}</span>`:''}</div>`}
+/* People on a Journey stop: who is in this chapter (or, at a book's opening, the book's main people). Tap to open them all. */
+let PPO=S.get('ppOpen',false);
+const castOf=x=>ATL_D&&ATL_D.cast?(ATL_D.cast[x.c.intro?'book '+x.b.name:x.b.name+' '+x.c.c]||[]).map(e=>{const [s,n]=e.split('|');return {s,n:n||(ATL_D.p[s]||{}).n}}).filter(e=>ATL_D.p[e.s]):null;
+function ppHTML(x){const L=castOf(x),where=x.c.intro?x.b.name:stopName(x);
+ if(L&&!L.length)return'';
+ const stk=L?`<span class="stk">${L.slice(0,4).map(e=>medal(ATL_D.p[e.s],28)).join('')}</span>`:`<span class="stk">${icon('people',18,1.8)}</span>`;
+ let o=`<button class="jv-cast-b" id="jppb" aria-expanded="${!!(PPO&&L)}">${stk}<span class="lb">People in ${esc(where)}</span>${L?`<span class="n">${L.length}</span>`:''}<svg class="chev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`;
+ if(PPO&&L)o+=`<div class="jv-cast-l">${L.map(e=>{const p=ATL_D.p[e.s];return `<button class="chip" data-nk="p" data-ns="${e.s}">${medal(p,28)}<span><b>${esc(e.n)}</b>${p.role?`<small>${esc(p.role)}</small>`:''}</span></button>`}).join('')}</div>`;
+ return o}
+function ppWire(){const el=$('#jpp');if(!el)return;const x=walk()[jpIdx()];
+ const paint=()=>{const e=$('#jpp');if(!e)return;e.innerHTML=ppHTML(walk()[jpIdx()]);ppWire()};
+ const b=$('#jppb');if(b)b.onclick=()=>{PPO=!PPO;S.set('ppOpen',PPO);if(ATL_D)paint();else atlas().then(paint).catch(()=>{PPO=false;note('People did not load. Check your connection.')})};
+ wireNames(el);
+ if(!ATL_D){const go=()=>atlas().then(()=>{if(walk()[jpIdx()]===x)paint()}).catch(()=>{});window.requestIdleCallback?requestIdleCallback(go,{timeout:2500}):setTimeout(go,800)}}
 function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(i),s=stepsOf(i),G=listenGroups(b,c),lm=LANDMARKS[b.abbr+c.c],up=a&&a.kind==='play'?a.id:null;
  const pv=w[i-1],nx2=w[i+1];
  let h=`<div class="jv jvz${jMove.dir?' in-'+jMove.dir:''}" id="jv"><div class="jv-eb">${esc(landOf(b))}${(c.y||b.yr)?' · '+esc(c.y||b.yr):''}</div><h1 class="jv-t"><button id="jpick" aria-label="Choose a book or chapter">${esc(stopName(x))}<svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></h1>`;
  h+=`<div class="jv-art" id="jart">${heroArt(x,350,230,'ja')}<div class="jv-cap">${!c.intro&&lm?`<i>${esc(lm[1])}</i>`:''}<div class="cs">${rich(c.intro?(b.bl||''):(c.sl||''))}</div></div></div>`;
+ h+=`<div class="jv-cast" id="jpp">${ppHTML(x)}</div>`;
  const bk=BACK&&BACK.from!==i&&w[BACK.from]?BACK.from:null;
  h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1" aria-label="Back to ${esc(stopName(w[bk]))}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M9 14 4 9l5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>${esc(stopName(w[bk]))}</button>`:''}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
  const ii=stopIntro(x),itx=hasIntroText(x),iiF=ii?(isDone(ii)||SKIP[ii]?1:Math.min(.95,heardPct(ii)/100)):0;
@@ -1667,7 +1692,7 @@ function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
  document.querySelectorAll('[data-mkcore]').forEach(b=>b.onclick=()=>{const [u,id]=b.dataset.mkcore.split('|'),set=coreSet();set[u]=[id];S.set('coreSet',set);JV.deep=false;const y=scrollY;render();window.scrollTo(0,y)});
  document.querySelectorAll('[data-coreback]').forEach(b=>b.onclick=()=>{const set=coreSet();delete set[b.dataset.coreback];S.set('coreSet',set);const y=scrollY;render();window.scrollTo(0,y)});
  const rd=$('#jrd');if(rd)rd.onclick=()=>{const bx=$('#jitx'),x=walk()[jpIdx()],open=bx.hidden;bx.hidden=!open;rd.setAttribute('aria-expanded',open);rd.textContent=open?'Hide the introduction':'Read the introduction';
-  if(open&&!bx.innerHTML)introText(x.b.abbr).then(T=>{bx.innerHTML=introParas(T[String(x.c.intro?0:x.c.c)])}).catch(()=>{bx.textContent='The text did not load. Check your connection.'})};document.querySelectorAll('#jv [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));
+  if(open&&!bx.innerHTML)introText(x.b.abbr).then(T=>{bx.innerHTML=introParas(T[String(x.c.intro?0:x.c.c)]);wireNames(bx)}).catch(()=>{bx.textContent='The text did not load. Check your connection.'})};document.querySelectorAll('#jv [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));
  document.querySelectorAll('[data-jgo]').forEach(b=>b.onclick=()=>jMove(+b.dataset.jgo,!!b.dataset.back));
  document.querySelectorAll('[data-jseg]').forEach(b=>b.onclick=()=>{const k=b.dataset.jseg,t=$('#js-'+k)||$('.jv-list');
   if(coreOn()){JV.tabFor=stopKey(walk()[jpIdx()]);JV.tab=k;const y=scrollY;render();window.scrollTo(0,y);return}
@@ -1679,7 +1704,7 @@ function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
    if(k==='overview'&&st){const ok=id=>I[id]&&I[id].audio,id=st.ov.find(id=>ok(id)&&!isDone(id))||st.ov.find(ok);if(id&&open(id))return}}
   if(!t)return;if(k!=='overview'||$('#js-overview')){const y=t.getBoundingClientRect().top+scrollY-(($('#zt')||{}).offsetHeight||0)-12;window.scrollTo({top:Math.max(0,y),behavior:'smooth'});const row=t.nextElementSibling&&t.nextElementSibling.classList.contains('jw')?t.nextElementSibling:t;row.classList.remove('flash');void row.offsetWidth;row.classList.add('flash')}});
  const pk=$('#jpick');if(pk)pk.onclick=()=>{camp=jpIdx();openJump('browse')};
- document.querySelectorAll('.jv [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
+ document.querySelectorAll('.jv [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});ppWire();
  /* swipe anywhere on the player: left = on to the next stop, right = back one */
  /* listened to passively, so scrolling stays the phone's own; a clearly sideways flick steps once the finger lifts */
  const jv=$('#jv');if(jv){let t0=null;const o={passive:true};
@@ -2113,7 +2138,8 @@ D.books.forEach(b=>Object.entries(NI[b.abbr]||{}).forEach(([c,d])=>{const id='in
 const stopIntro=x=>x?introId(x.b.abbr,x.c.intro?0:x.c.c):null;
 const ITX=D.itx||{},hasIntroText=x=>!!x&&(ITX[x.b.abbr]||[]).includes(x.c.intro?0:x.c.c);
 function introText(abbr){return NTX[abbr]||(NTX[abbr]=fetch('narrative/'+abbr+'.json').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(e=>{delete NTX[abbr];throw e}))}
-function introParas(t){return (t||'').split(/\n\s*\n/).map(p=>`<p>${esc(p.trim())}</p>`).join('')}
+function introParas(t){return (t||'').split(/\n\s*\n/).map(p=>`<p>${rich(p.trim())}</p>`).join('')}
+const wireNames=el=>el.querySelectorAll('[data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
 function narDur(abbr,c){const n=NARR[abbr];return n&&n.d?n.d[n.c.indexOf(c)]||0:0}
 function narTimes(abbr){return NT[abbr]||(NT[abbr]=fetch('narration/'+abbr+'.json').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(e=>{delete NT[abbr];throw e}))}
 function narItem(b,c){const id=narId(b.abbr,c);if(!I[id])I[id]={id,t:b.name+' '+c,audio:NRAW+b.abbr+'_'+String(c).padStart(3,'0')+'.mp3',who:'Alistair',by:'The Bible',nar:{abbr:b.abbr,c,book:b.name}};return id}
