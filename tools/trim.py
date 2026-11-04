@@ -91,7 +91,7 @@ RULES = {
                            r"hardback", r"order (yours|that set|the set)", r"that was stephen dav", r"stephen (davey )?is (examining|exploring|taking us|walking us)", r"discount", r"online store", r"free resources tab", r"free of charge", r"smartphone app", r"right back here next time"],
                    "back_gap": (8, 30)},
     "davey_sermons": {"pre": [r"now,? here'?s stephen\.?"], "start": [], "end": []},
-    "davey_archive": {"pre": [r"now,? here'?s stephen\.?"], "start": [], "end": COMMON_OUT + [r"wisdom ?online", r"wisdom international"]},
+    "davey_archive": {"pre": [r"now,? here'?s stephen\.?"], "start": [r"this (message|lesson|sermon) is from the (teaching )?ministry of", r"for (more )?information,? (please )?visit wisdom ?online"], "end": COMMON_OUT + [r"wisdom ?online", r"wisdom international"]},
 }
 
 def words_of(pcm, model):
