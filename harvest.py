@@ -754,7 +754,8 @@ def run(sources: list[str], radical_limit: int | None = None):
             old_e = existing.get(e["url"])
             if old_e is None:
                 twin = by_title.get(_n(e["title"]))
-                if twin and urlparse(twin["url"]).netloc != urlparse(e["url"]).netloc and e["source"] != "davey_archive" and twin.get("source") != "davey_archive":
+                same_voice = twin and (twin.get("speaker") == e.get("speaker") or "unknown" in (twin.get("speaker"), e.get("speaker")))   # one title, two preachers: two sermons
+                if twin and same_voice and urlparse(twin["url"]).netloc != urlparse(e["url"]).netloc and e["source"] != "davey_archive" and twin.get("source") != "davey_archive":
                     old_e = twin  # same episode published on another host: keep the shipped id/url
                     if e["url"] not in twin.setdefault("alt_urls", []):
                         twin["alt_urls"].append(e["url"])
