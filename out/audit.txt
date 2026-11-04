@@ -36,12 +36,12 @@ PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
 PASS  no dates in the future
 FAIL  feed episodes on the road all carry a date  (108)
-        - Blood, Sweat & Tears (Nehemiah 2:11–20) (davey_archive)
-        - Learning to Say the Right Words (Titus 2:11–14) (davey_archive)
-        - True Faith Works (Romans 1:5) (davey_archive)
-        - Construction Sites & Church Cafeterias (Nehemiah 3 (davey_archive)
-        - Don’t Be a Snob! (James 2:1–7) (davey_archive)
-        - Supernatural Joy & Genuine Love (1 Peter 1:6–9) (davey_archive)
+        - In the Court of Public Opinion (James 2:21–24) (davey_archive)
+        - The Vanishing Life (James 4:13–17) (davey_archive)
+        - Bringing God to Life (Titus 3:8) (davey_archive)
+        - Chasing Sticks (Romans 1:8) (davey_archive)
+        - Saints Alive (Romans 1:6–7) (davey_archive)
+        - Just Do It! (James 1:22–25) (davey_archive)
 PASS  every id is the hash of its link (progress keys stable)
 PASS  every shipped entry from the original catalog still exists (same id)
 PASS  nothing unverified (PENDING / FAIL) on the road
