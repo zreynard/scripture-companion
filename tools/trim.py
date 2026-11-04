@@ -231,6 +231,8 @@ def items():
         for _, ids in s["parts"]: road |= set(ids)
     # Stephen Davey's recordings everywhere in the app (the Library, search), not only on the road: his intros are in all of them
     road |= {i for i, it in D["items"].items() if it["src"] in ("davey_archive", "davey_sermons", "davey_wfth", "davey_journey")}
+    # and every Bible from 30,000 Feet flight, the radio versions in parts too
+    road |= {i for i, it in D["items"].items() if it["src"].startswith("skip_") and re.match(r"\s*Flight\b", it["t"] or "")}
     return sorted([D["items"][i] for i in road if i in D["items"] and D["items"][i].get("audio") and D["items"][i]["src"] in RULES], key=lambda i: i["id"])
 
 def measure(k, n):
