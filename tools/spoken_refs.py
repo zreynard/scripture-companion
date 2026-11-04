@@ -6,7 +6,8 @@ our text is ..." phrase followed by a book and chapter. Nothing is guessed from 
 
     python tools/spoken_refs.py            -> data/spoken_refs.json  {entry id: {ref, quote, at}}
     python tools/spoken_refs.py K N        -> share K of N only, into data/spoken_refs.K.json
-    python tools/spoken_refs.py merge      -> fold the shares into data/spoken_refs.json
+    python tools/spoken_refs.py merge      -> fold the shares into data/spoken_refs.json, then review
+    python tools/spoken_refs.py review     -> hold back any placement that fails the checks below
 Runs on GitHub's servers (needs ffmpeg and faster-whisper)."""
 import json, os, re, subprocess, sys, tempfile
 
@@ -94,6 +95,46 @@ def announced(text):
     return None, None
 
 
+def review():
+    """Before a heard passage places a sermon: it must be a passage read, not a verse quoted (enough of its words); not
+    contradict a book the title names; and not break a run of Sundays in another book (a series outlier). What fails is
+    held back, with the reason, and the sermon stays in the Library only."""
+    from datetime import datetime
+    from email.utils import parsedate_to_datetime
+    done = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
+    rows = {e["id"]: e for e in (json.loads(l) for l in open(os.path.join(HERE, "data", "catalog_verified.jsonl"), encoding="utf-8"))}
+    def day(i):
+        try: return parsedate_to_datetime(rows[i]["published"]).date()
+        except Exception: return None
+    def heard(x):  # the best candidate, whether or not it was placed
+        c = max(x.get("candidates") or [], key=lambda c: c["score"], default=None)
+        return c if c and c["score"] >= READS else None
+    book = lambda ref: re.match(r"(.+?) \d", ref).group(1)
+    placed = {i: heard(x) for i, x in done.items() if heard(x) and i in rows}
+    held = 0
+    for i, c in placed.items():
+        x, why = done[i], None
+        m = re.match(r"(.+?) (\d+)(?::(\d+)(?:-(\d+))?)?$", c["ref"])
+        b, ch = m.group(1), int(m.group(2))
+        v1, v2 = (int(m.group(3)), int(m.group(4)) if m.group(4) else None) if m.group(3) else (None, None)
+        if len(passage_words(b, ch, v1, v2)) < 12:
+            why = "a verse quoted, not a passage read"
+        named = [r.book for r in parse_refs(x.get("title", ""))]
+        if not why and named and b not in named:
+            why = f"the title names {named[0]}"
+        d = day(i)
+        if not why and d and not re.match(r"Chapter \d+", x.get("title", "")):
+            near = [book(placed[j]["ref"]) for j in placed if j != i and day(j) and 0 < abs((day(j) - d).days) <= 21]
+            top = max(set(near), key=near.count) if near else None
+            if top and top != b and near.count(top) >= 3:
+                why = f"the Sundays around it are a series in {top}"
+        x["ref"] = None if why else c["ref"]; x["score"] = c["score"]
+        if why: x["held"] = why; held += 1
+        else: x.pop("held", None)
+    json.dump(done, open(OUT, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    print(f"{len(placed) - held} placed, {held} held back for review")
+
+
 def merge():
     done = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
     import glob
@@ -101,6 +142,7 @@ def merge():
         done.update(json.load(open(p, encoding="utf-8"))); os.remove(p)
     json.dump(done, open(OUT, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"{len(done)} sermons listened to, {sum(1 for v in done.values() if v.get('ref'))} with an announced passage")
+    review()
 
 
 def main(k=0, n=1):
@@ -151,5 +193,6 @@ def main(k=0, n=1):
 if __name__ == "__main__":
     a = sys.argv[1:]
     if a[:1] == ["merge"]: merge()
+    elif a[:1] == ["review"]: review()
     elif len(a) == 2: main(int(a[0]), int(a[1]))
     else: main()

@@ -178,6 +178,8 @@ def _ia_twins(existing: dict) -> list[str]:
             twin = others[near[0]] if near else None
         if not twin: continue
         if url not in twin.setdefault("alt_urls", []): twin["alt_urls"].append(url)
+        if x.get("refs") and not twin.get("refs"):   # the passage heard in this recording places the same sermon
+            twin["refs"], twin["refs_text"], twin["ref_how"] = x["refs"], x.get("refs_text", ""), x.get("ref_how", "spoken")
         del existing[url]; gone.append(url)
     return gone
 
