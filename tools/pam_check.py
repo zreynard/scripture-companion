@@ -27,13 +27,16 @@ MIN = int(os.environ.get("PAM_MINUTES", "25"))
 def items():
     t = open(os.path.join(HERE, "out", "site", "index.html"), encoding="utf-8").read()
     D, _ = json.JSONDecoder().raw_decode(t[t.index("const D=") + 8:])
-    place = {}
+    place, road = {}, set()
     for b in D["books"]:
+        road |= set(b["ov"])
         for c in b["ch"]:
+            road |= set(c["ids"])
             for i in c["ids"]: place.setdefault(i, []).append(f"{b['name']} {c['c']}")
+    who = set((os.environ.get("CHECK_WHO") or "PAM").split(","))
     out = []
     for i, it in D["items"].items():
-        if it.get("who") == "PAM" and it.get("audio"):
+        if it.get("who") in who and it.get("audio") and (os.environ.get("CHECK_ROAD") != "1" or i in road):
             out.append({**it, "placed": place.get(i, [])})
     return sorted(out, key=lambda x: x["id"])
 
@@ -152,7 +155,7 @@ def report():
         if why: flags.append({"id": i, "t": r["t"], "why": why, "placed": r.get("placed")})
     out = {"n": len(ids), "duplicates": [{"sim": s, "a": a, "b": b, "ta": res[a]["t"], "tb": res[b]["t"]} for s, a, b in sorted(dups, reverse=True)],
            "flags": flags, "all": {i: {k: v for k, v in res[i].items() if k != "fp"} for i in ids}}
-    json.dump(out, open(os.path.join(HERE, "data", "pam_check.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    json.dump(out, open(os.path.join(HERE, "data", os.environ.get("CHECK_OUT") or "pam_check.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print(f"{len(ids)} recordings checked; {len(dups)} possible duplicate pairs; {len(flags)} flagged")
     for d in out["duplicates"]: print(f"  DUP {d['sim']}: {d['ta'][:60]}  ==  {d['tb'][:60]}")
     for f in flags: print(f"  FLAG {f['t'][:70]}: {'; '.join(f['why'])}")

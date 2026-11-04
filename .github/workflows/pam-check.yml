@@ -10,6 +10,12 @@ on:
       source:
         description: "only this source (e.g. 2819_podcast)"
         default: ""
+      who:
+        description: "teachers (comma list, e.g. Skip,Davey; empty = PAM)"
+        default: ""
+      road:
+        description: "1 = only recordings on the road"
+        default: "0"
 permissions:
   contents: write
 jobs:
@@ -19,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        k: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        k: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -28,10 +34,12 @@ jobs:
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg libchromaprint-tools >/dev/null
       - run: pip install -q -r requirements.txt faster-whisper numpy
       - run: python app_build.py >/dev/null
-      - run: timeout 340m python tools/pam_check.py ${{ matrix.k }} 16 || true
+      - run: timeout 340m python tools/pam_check.py ${{ matrix.k }} 20 || true
         env:
           PAM_MINUTES: ${{ inputs.minutes }}
           PAM_SRC: ${{ inputs.source }}
+          CHECK_WHO: ${{ inputs.who }}
+          CHECK_ROAD: ${{ inputs.road }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -53,12 +61,14 @@ jobs:
           path: pam_check
           merge-multiple: true
       - run: python tools/pam_check.py report
+        env:
+          CHECK_OUT: ${{ inputs.who && 'listen_check.json' || 'pam_check.json' }}
       - name: Save
         run: |
-          mkdir -p data/pam_text && cp pam_check/text/*.txt data/pam_text/ 2>/dev/null || true
+          if [ -z "${{ inputs.who }}" ]; then mkdir -p data/pam_text && cp pam_check/text/*.txt data/pam_text/ 2>/dev/null || true; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
-          rm -f data/pam_text/*.txt.full; git add data/pam_check.json data/pam_text
+          git add data/pam_check.json data/pam_text data/listen_check.json 2>/dev/null || git add data/listen_check.json
           git diff --cached --quiet && exit 0
-          git commit -q -m "PAM recordings checked by listening"
+          git commit -q -m "Recordings checked by listening"
           for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
