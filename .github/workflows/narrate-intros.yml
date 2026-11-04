@@ -9,7 +9,7 @@ on:
         default: ""
       shards:
         description: "Machines to split the work over"
-        default: "16"
+        default: "8"
 permissions:
   contents: write
   actions: write

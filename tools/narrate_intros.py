@@ -61,10 +61,23 @@ def recorded():
     return {os.path.basename(f): json.load(open(f)) for f in glob.glob(os.path.join(tmp, "intro_*.json"))}
 
 
+_START = None
+
+
+def first_open():
+    """The first release with room (one API call), so uploads do not knock on full ones first."""
+    global _START
+    if _START is None:
+        r = subprocess.run(["gh", "api", f"repos/{REPO}/releases?per_page=100", "-q", '.[]|"\\(.tag_name) \\(.assets|length)"'], capture_output=True, text=True)
+        n = dict(l.split() for l in r.stdout.splitlines() if l.strip())
+        _START = next((i for i, t in enumerate(TAGS) if int(n.get(t, 0)) < 990), 0)
+    return _START
+
+
 def upload(files):
     import time
-    for tag in TAGS:
-        for k in range(5):
+    for tag in TAGS[first_open():]:
+        for k in range(12):
             r = subprocess.run(["gh", "release", "upload", tag, *files, "--clobber", "-R", REPO], capture_output=True, text=True)
             if not r.returncode: return
             if "file_count limited" in r.stderr: break
@@ -72,7 +85,8 @@ def upload(files):
                 subprocess.run(["gh", "release", "create", tag, "-R", REPO, "--title", f"The Bible Narrative ({tag})",
                                 "--notes", "Book and chapter introductions read by Alistair. Made by tools/narrate_intros.py."], capture_output=True)
                 continue
-            print("  upload retry", r.stderr[:200], flush=True); time.sleep(5 * (k + 1))
+            wait = 60 * (k + 1) if "rate limit" in r.stderr.lower() else 5 * (k + 1)   # GitHub asks us to slow down: wait it out
+            print("  upload retry in", wait, "s:", r.stderr[:120], flush=True); time.sleep(wait)
         else:
             raise RuntimeError("upload failed")
     raise RuntimeError("every release is full")
@@ -104,8 +118,9 @@ def todo_list(only=""):
     if only:
         want = {tuple(s.split(":")) for s in only.split(",") if s}
         xs = [x for x in xs if (x["a"], str(x["c"])) in want]
-    have = recorded()
-    return [x for x in xs if (have.get(asset(x["a"], x["c"], "json")) or {}).get("h") != x["h"]]
+    # what is already recorded, from the record the app reads (no downloads, so no API calls)
+    rec = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
+    return [x for x in xs if ((rec.get(x["a"]) or {}).get(str(x["c"])) or [None, None])[1] != x["h"]]
 
 
 def run(k, shards, only=""):
