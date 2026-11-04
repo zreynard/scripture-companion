@@ -45,6 +45,7 @@ MODE = "balanced"
 PROTECTED = [("PAM", "2819_podcast", "Matthew")]   # (teacher, source, book): the series is Core whole
 SURVEY_SRC = {"secret_church", "secret_church_podcast", "twr360_secret_church", "youtube_radical"}
 LESSON_SRC = {"davey_journey"}
+NOT_SERMON = re.compile(r"^\s*bonus\b|\binterview\b|conversation with|roundtable|panel discussion|\bq ?& ?a\b", re.I)   # never Core
 PART = re.compile(r"^(.*?)[\s\-–—:,(]*\bPart\s+([A-Z]|\d+)\b\)?\s*$", re.I)
 SPEED = 0.9
 
@@ -149,6 +150,7 @@ class Engine:
                 it = items[i]
                 lesson = it["src"] in LESSON_SRC
                 if not (it["tr"] == "sermon" or lesson) or not it.get("audio") or it["who"] not in W or it["src"] in SURVEY_SRC: continue
+                if NOT_SERMON.search(it["t"] or ""): continue
                 cov_all = VS.get(i) or {}
                 cov = {(c_, v) for (c_, v) in (cov_all.get(book) or ()) if 1 <= c_ <= len(V)}
                 if not cov: continue
