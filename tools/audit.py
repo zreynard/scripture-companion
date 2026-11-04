@@ -181,6 +181,9 @@ def main():
         if I[i]["audio"]: seen[re.sub(r"\?.*$", "", I[i]["audio"])].append(i)
     bad = [" / ".join(I[i]["t"][:35] for i in v) for v in seen.values() if len(v) > 1]
     check("no audio file on the road twice under different entries", bad)
+    # two script functions with one name: the later silently replaces the earlier (it once disabled the people and places sheet)
+    names = Counter(re.findall(r"(?:^|[;}\s])function\s+([A-Za-z_$][\w$]*)\s*\(", html))
+    check("no two script functions share a name", [f"{n} ×{k}" for n, k in names.items() if k > 1])
     bad = [f"{I[i]['t'][:50]} {I[i]['date']}" for i in road if I[i]["date"] and I[i]["date"] > today]
     check("no dates in the future", bad)
     bad = [f"{I[i]['t'][:50]} ({E[i]['source']})" for i in road if not I[i]["date"] and E[i]["source"] not in ("secret_church", "mclean_oceans", "radical_message", "youtube_radical", "twr360_secret_church", "davey_archive")]   # the archive's lists from spreadsheets carry lesson numbers, not dates

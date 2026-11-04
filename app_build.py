@@ -1748,7 +1748,7 @@ function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotion
  const sk=Object.keys(SKIP).length;if(sk)h+=`<button class="lnk lib-sk" id="unskip">${sk} skipped for now — bring them back</button>`;
  return h+'</div>'}
 /* a sheet over the page (#bps) holding a list of teachings; rows play in place */
-function openSheet(label,inner,list,after){const el=$('#bps');el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh" role="dialog" aria-modal="true" aria-label="${esc(label)}"><button class="grab2" data-bpsx aria-label="Close"></button>${inner}<div id="tlist">${list()}</div></div>`;
+function openListSheet(label,inner,list,after){   /* a sheet of sermons (topic, book); openSheet is the atlas's people and places */const el=$('#bps');el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh" role="dialog" aria-modal="true" aria-label="${esc(label)}"><button class="grab2" data-bpsx aria-label="Close"></button>${inner}<div id="tlist">${list()}</div></div>`;
  el.hidden=false;document.body.classList.add('bpsopen');requestAnimationFrame(()=>el.classList.add('on'));el.querySelectorAll('[data-bpsx]').forEach(b=>b.onclick=closeSeries);
  const wireL=()=>{el.querySelectorAll('#tlist [data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();JM=false;BPM=null;PLAYSTOP=null;play(b.dataset.play);setTimeout(()=>{$('#tlist').innerHTML=list();wireL()},60)});wireOpen(el);if(after)after(el,()=>{$('#tlist').innerHTML=list();wireL()})};wireL();return el}
 /* a topic: what it is, the key passages (each opens that stop on the Journey), the Secret Church night on it, essential teaching, then the rest by teacher */
@@ -1759,7 +1759,7 @@ function openTopic(id){const t=(D.topics||[]).find(x=>x.id===id);if(!t)return;co
  const nights=t.sc.map(n=>G.find(g=>g.ev.n===n)).filter(Boolean).map(g=>`<button class="tp-sc" data-scn="${g.ev.n}"><small>Secret Church ${g.ev.n}</small><b>${esc(g.ev.title)}</b><span>David Platt · ${g.ids.length} sessions ›</span></button>`).join('');
  const list=()=>{const row=id=>tRow({i:I[id]},null);let h=`<div class="jv-sec">Essential teaching</div>${t.ess.map(row).join('')}`;
   if(t.more.length){const by={};t.more.forEach(id=>(by[I[id].who]=by[I[id].who]||[]).push(id));h+=`<div class="jv-sec">More teaching</div>`+Object.entries(by).map(([k,l])=>`<details class="tch-b"><summary>${esc(NAMES[k]||k)}<span>${l.length}</span></summary>${l.map(row).join('')}</details>`).join('')}return h};
- openSheet(t.name,`<div class="tp-hd">${topicIc(t.id,44)}<div class="bps-t">${esc(t.name)}</div></div><p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,el=>{
+ openListSheet(t.name,`<div class="tp-hd">${topicIc(t.id,44)}<div class="bps-t">${esc(t.name)}</div></div><p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,el=>{
   el.querySelectorAll('[data-kgo]').forEach(b=>b.onclick=()=>{const [bk,c]=b.dataset.kgo.split('|');goStop(bk,+c)});el.querySelectorAll('[data-scn]').forEach(b=>b.onclick=()=>openSCNight(+b.dataset.scn))})}
 /* a book: every teaching on it from every teacher, in passage order, by chapter */
 let LB={t:'all'};
@@ -1770,7 +1770,7 @@ function openLibBook(name){const b=D.books.find(x=>x.name===name);if(!b)return;c
   L.sort((a,z)=>(z.ov-a.ov)||(R(a).sc-R(z).sc)||(R(a).sv-R(z).sv)||(R(a).ec-R(z).ec)||((a.i.date||'')<(z.i.date||'')?-1:1));
   const g=[];L.forEach(x=>{const k=x.ov||!x.r?'The whole book':'Chapter '+x.r.sc;const l=g[g.length-1];if(l&&l.k===k)l.l.push(x);else g.push({k,l:[x]})});
   return g.map(x=>`<details class="tch-b"${g.length<=2||L.length<=12?' open':''}><summary>${esc(x.k)}<span>${x.l.length}</span></summary>${x.l.map(y=>tRow(y,null)).join('')}</details>`).join('')};
- openSheet(name,`<div class="bps-t" style="margin:6px 4px 0">${esc(name)}</div><div class="bps-n" style="margin:2px 4px 12px">${all.length} teaching${all.length===1?'':'s'}${b.bl?' · '+esc(plainT(b.bl)).split('. ')[0]:''}</div>${who.length>1?`<div class="t-sort t-who" role="group" aria-label="Teacher">${[['all','All'],...who.map(k=>[k,k])].map(([v,l])=>`<button data-lbt="${v}" class="${LB.t===v?'on':''}" aria-pressed="${LB.t===v}">${esc(l)}</button>`).join('')}</div>`:''}`,list,(el,re)=>{
+ openListSheet(name,`<div class="bps-t" style="margin:6px 4px 0">${esc(name)}</div><div class="bps-n" style="margin:2px 4px 12px">${all.length} teaching${all.length===1?'':'s'}${b.bl?' · '+esc(plainT(b.bl)).split('. ')[0]:''}</div>${who.length>1?`<div class="t-sort t-who" role="group" aria-label="Teacher">${[['all','All'],...who.map(k=>[k,k])].map(([v,l])=>`<button data-lbt="${v}" class="${LB.t===v?'on':''}" aria-pressed="${LB.t===v}">${esc(l)}</button>`).join('')}</div>`:''}`,list,(el,re)=>{
   el.querySelectorAll('[data-lbt]').forEach(x=>x.onclick=()=>{LB.t=x.dataset.lbt;el.querySelectorAll('[data-lbt]').forEach(y=>{y.classList.toggle('on',y===x);y.setAttribute('aria-pressed',y===x)});re()})})}
 /* a teacher's whole collection: sort by Bible order (passage order inside each book), newest or oldest; search; full details */
 let TS={k:null,sort:S.get('tsort','bible'),q:'',more:0};
