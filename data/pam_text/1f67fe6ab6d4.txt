@@ -1,352 +1,1048 @@
-    0.0  It's about to be the greatest year of your life. You can leave that on the floor if you want. I'm taking all of that for me.
-    7.0  For some of you, man, I'm talking to you right now. You've been through too much.
-   13.1  And you survived too much. And you've come through too much. And you've worked too hard.
-   19.1  I said I prophesied to you, it's about to be the greatest year of your life.
-   24.1  You sacrifice too much and you pray too much and you sow too much and you believe
-   32.0  too much. Imma take that for me. Sill up, you pray too much. You sow too much.
-   43.0  You sacrifice too much. You gave up too much. You worked too hard. This year is
-   49.3  gonna be a ripping year for you and the name of Jesus.
-   52.5  You're gonna read pen the name of Jesus
-   61.7  This ain't more prosperity gospel and I ain't proper lying. I'm talking to people in this room
-   75.3  This is gonna be a hard fishing for you and the name of Jesus. I'm taking that for me
-   81.5  The scripture says seed time and harvest
-   93.9  For some of y'all we've already done that first two part. I take that for me
-  128.4  I've been through too much
-  130.1  lost too much
-  134.2  and gave up too much.
-  139.4  Number stabbed too much.
-  143.6  Been abandoned too much.
-  148.4  Then shed too many tears.
-  153.1  Then bruise my knees too often.
-  157.2  I just feel what...
-  161.9  For me, what the Spirit says to me, I give it to you.
-  165.6  23 is gonna be a harvest year.
-  168.7  Whatever you already be seated.
-  178.6  I'm waiting on you.
-  183.0  Yo, the Lord responds to faith.
-  202.3  He's not deaf. He can hear everyone who's serious about the word that's going forward.
-  207.9  Like, Lord, I want all of that for me. I receive all of that for me. I'm not sitting here in this room by accident on this day.
-  216.3  I'm taking all of that for me. He ain't deaf. Somebody just said too much.
-  234.7  Come on. Somebody shake your head like too much. Welcome my 28-19 family.
-  249.0  I'm in online where we're watching cities around the country and a few pockets around
-  269.8  the world to our family, local and to our family abroad.
-  273.4  We welcome you to the first gathering of our harvest year.
-  277.5  I'm going to keep saying that.
-  278.9  This is our harvest year in the name of Jesus.
-  282.4  I believe this is going to be a radical year where God is going to give us new brothers
-  286.4  and sisters a mighty harvest of new disciples, new brothers, new sisters, new mothers, new
-  292.2  fathers, that there'll be no place to stand left in this room by the end of the year from
-  299.4  the harvest that's going to come in in the name of Jesus.
-  302.7  And I want to encourage someone doing this room who's been sitting in this gathering
-  306.8  for years and complaining that nothing's changing.
+    0.0  It's about to be the greatest year of your life.
+    4.0  You can leave that on the floor if you want.
+    5.6  I'm taking all of that for me.
+    9.9  For some of you, man, I'm talking to you right now.
+   11.7  You've been through too much.
+   14.0  And you survived too much.
+   16.0  And you've come through too much.
+   18.0  And you've worked too hard.
+   19.6  I said I prophesied to you.
+   21.6  It's about to be the greatest year of your life.
+   25.1  You sacrificed too much.
+   27.1  And you prayed too much.
+   29.1  And you saw too much.
+   31.1  And you believe too much.
+   34.9  I'ma take that from me.
+   37.9  Sill up.
+   38.9  You pray too much.
+   41.3  You've sewn too much.
+   43.3  You've sacrificed too much.
+   45.3  You gave up too much.
+   47.1  You've worked too hard.
+   48.7  This year's gonna be a ripping year for you in the name of Jesus.
+   58.9  You're gonna reap in the name of Jesus.
+   69.6  This ain't more prosperity gospel.
+   71.8  And I ain't proffalion.
+   73.6  I'm talking to people in this room. This is gonna be a hard fishing for you.
+   78.0  And the name of Jesus, I'm taking that from me. The scripture says seed, time, and harvest.
+   94.0  For some of y'all we've already done that first two part. I take that from me. I've been through too much.
+  132.2  I lost too much. I gave up too much. I'm been stabbed too much. I've been abandoned too much.
+  147.8  than shed too many tears then proves my knees too often I just feel what for me
+  162.6  what the spirit says to me I give it to you 23 is gonna be a heartless year
+  168.3  whatever you already be seated I'm waiting on you yo the Lord responds to
+  201.7  faith that he's not deaf he can hear everyone who's serious about the word
+  206.6  that's going forward. Like, Lord, I want all of that for me. I receive all of that for me.
+  213.1  I'm not sitting here in this room by accident on this day. I'm taking all of that for me. He ain't
+  221.2  deaf. Somebody just said too much. Come on. Somebody shake your head like too much. Welcome my 2819 family.
+  249.8  I'm in online wherever you're watching in cities around the country. There's a few pockets around
+  269.7  the world to our family local and to our family abroad. We welcome you to the first gathering of
+  276.1  our harvest year. I'm gonna keep saying that. This is our harvest year in the name of Jesus.
+  281.8  You know and I believe this is gonna be a radical year where God is gonna give us new brothers and
+  286.5  sisters. A mighty harvest of new disciples, new brothers, new sisters, new mothers, new fathers.
+  295.4  There'll be no place to stand left in this room by the end of the year. From the harvest,
+  299.9  I was going to come in in the name of Jesus.
+  302.7  And I want to encourage some of you in this room who've been sitting in this gathering for
+  307.0  years and complaining that nothing's changing.
   310.2  Nothing's changing because you're not changing.
-  313.8  And if you want things to change, you need to change.
+  313.7  And if you want things to change, you need to change.
   317.1  You need to stop presuming upon God.
   319.6  Have some things that you're responsible for.
-  322.3  I'm gonna lean on you right here in the beginning.
-  325.1  No cap that you gotta do some work this year.
+  321.7  So I'm going to lean on you right here in the beginning.
+  325.2  No cap that you've got to do some work this year.
   328.9  For some of you, this is the year for you to be known.
-  331.9  I know what it feels like to not wanna be known,
-  334.4  to wanna come in and slip out and remain anonymous
+  332.0  I know what it feels like to not wanna be known,
+  334.4  to wanna come in and slip out and remain anonymous,
   337.5  because you're afraid that if people knew your lifestyle
-  340.1  or what you was about you, be judged.
+  340.2  or what you was about you, be judged.
   341.8  Ain't no judgment here.
   343.8  Man, the person with the microphone got issues.
   347.4  I repent of my own sin from the platform.
-  350.1  We all are work in progress.
+  350.2  We all are work in progress.
   352.0  We all got issues.
   353.4  We all got mess.
-  354.4  Ain't nobody perfect.
-  355.7  Except the one who hung on the cross.
-  357.5  So for some of you, this is the year for you to be known.
-  360.3  Come out the dark.
-  361.6  Man, one of the greatest things you'll ever have is friends.
+  354.5  Ain't nobody perfect except the one who hung on the cross.
+  357.6  So for some of you, this is the year for you to be known.
+  360.4  Come out the dark, man, one of the greatest things
+  362.8  you'll ever have is friends.
   365.2  Relationships, shoulders to lean on.
-  368.4  So when you cry, you don't cry alone.
-  370.5  And when you got to pray, you don't got to pray alone.
-  372.7  And when you're in trouble, you don't fall down alone.
-  375.2  This might be the year instead of running in and running out.
-  377.6  You jump into a squat.
+  368.5  So when you cry, you don't cry alone.
+  370.5  And when you gotta pray, you don't gotta pray alone.
+  372.8  And when you in trouble, you don't fall down alone.
+  375.2  This might be the year instead of running in
+  376.9  and running out, you jump into a squat.
   379.5  You join a small group.
-  381.2  And you be known, you have friends,
-  384.4  you have shoulders for when you go through.
-  387.1  And it don't matter about your money
-  388.7  or your socioeconomic status,
-  390.2  problems just coming for everybody.
-  392.1  And when problems come, you know what you need,
-  393.9  not money, you need shoulders.
-  397.8  You need ears that can listen.
+  381.3  And you be known, you have friends.
+  384.5  You have shoulders for when you go through.
+  387.2  I don't matter about your money or your socioeconomic status.
+  390.2  Problems is coming for everybody.
+  392.2  And when problems come, you know what you need?
+  394.0  Not money, you need shoulders.
+  397.9  You need ears that can listen.
   400.2  You need people that won't judge you
   401.9  and won't make you feel ashamed because you got issues.
-  405.2  For some of you, this might be the year
-  406.7  man to jump on a team.
+  405.3  For some of you, this might be the year man
+  406.9  to jump on a team.
   408.3  Do a common thing where other people serve.
-  411.1  For some of you, this is gonna be the year, man.
-  413.0  You come off some of that green gods.
-  415.2  You support 2819.
+  411.1  For some of you, this is gonna be the year man.
+  413.1  You come off some of that green gods.
+  415.3  You support 2819.
   417.4  You be a faithful giver.
-  419.2  You see what God does in your finances
-  421.5  as you honor Him and keep Him first.
-  425.8  For some of you, this might be the year
-  427.2  of perfect attendance where you don't miss a gathering.
+  419.3  You see what God does in your finances
+  421.6  as you honor Him and keep Him first.
+  425.9  For some of you, this might be the year of perfect attendance
+  428.5  where you don't miss a gathering.
   436.6  For some of you, this might be the year where you take notes.
   439.1  And instead of listening to me talk every week,
   441.2  you actually go home and apply what's being taught.
-  444.0  And say, while God, I heard this message,
-  446.1  I did what I heard.
-  447.7  Something actually changed in my life.
-  450.0  Ain't I changed you with wishful thinking?
-  454.1  It's hard work and application.
-  456.8  Tweet that.
-  458.0  Ain't I changed you with wishful thinking?
-  460.4  It's hard work and application.
-  468.5  After today, at least seven days,
-  470.3  for some of you, this will be the first time
-  471.6  you fast for seven days.
-  473.2  You consecrate, you turn down your plate.
-  476.0  You turn your face towards God.
-  477.5  You see what God does in seven days.
-  479.1  He might speak to you and give you a brand new vision
-  481.1  for the year.
-  482.0  He might make your vision greater for the year.
-  484.4  He might take the business idea you have, the ministry idea you have, and make it even greater.
-  488.8  He might drop something in your spirit you didn't even think of.
-  496.0  Amen, family.
-  498.1  So today is the opening weekend of a brand new series called The King is Here.
-  509.0  And this is the first leg of teaching through a series through the book of Matthew.
-  515.6  Every Sunday this year, Jesus will be our explicit focus.
-  521.1  Sunday this year Jesus will be the message. Every Sunday this year Jesus will be proclaimed.
-  528.2  Every Sunday this year we will look at Jesus and marvel at Jesus and be in all of Jesus and
-  535.0  beat Jesus and wonder about Jesus and scratch our heads around Jesus and learn to like Jesus
-  541.6  and love Jesus and surrender to Jesus and be tight with Jesus and be empowered by Jesus.
-  548.2  52 weeks of Jesus. Oh Jesus. We ain't going nowhere else. I said the King is here. Never
-  567.7  been done before. Don't know what God is going to do, but every Sunday they share the message
-  574.1  is Jesus. So you're going to camp out in one book for the whole year? Yes. Really? One whole
-  582.7  year in a book? Yes. Oh, they're going to get bored. We're going to see? We're going to
-  593.6  find out. I ain't never been done before in Atlanta. We about to find out. You tell everybody,
-  602.1  we're going to be camped out in one book for a year. Oh, Jesus, until December 31st. Spread
-  609.4  the word. It's about to get real in here. Spread the word. This first series is focused on Matthew
-  619.7  chapters one through four. Okay? Who was Matthew? Why was his book so important? Why are we camping
-  630.3  I'm out in this book.
-  631.3  Before I talk about this Matthew, I want to shout out to one of my best friends in 30
-  635.3  years, another Matthew in the room, MG the Mortgage God, shout out to my brother in the
-  640.3  room.
-  642.9  The most influential mortgage loan officer in the nation.
-  647.9  If you're looking for a crib, MG the Mortgage God on everything, been rocking with that
-  652.9  dude since he was in the streets of 12, shooting in selling dope.
-  657.9  God has been very good to both of us.
-  667.5  But this Matthew, we shouldn't be here today.
-  687.8  But this Matthew, who was he?
-  690.2  Why did he write this book?
-  692.3  Why is the book he wrote so important?
-  695.0  This Matthew I'm going to be talking about was a Jew who lived in the first century AD.
-  700.8  He was a man, unfortunately, was a very corrupt man.
-  705.8  He worked as a subcontractor for the government of Rome.
-  709.8  At one time the most powerful nation on Earth, they ruled the world for fifteen hundred years from Africa to India.
-  716.8  Matthew had a job as a subcontractor working for the IRS for the government of Rome as a tax collector.
-  724.8  So he was responsible for collecting taxes from the Jewish people.
-  730.0  And most of the tax collectors of his days were very corrupt men.
-  734.0  So they were overcharged people on their taxes.
-  737.2  They were payroll, what was owed them, and they were pocket the rest.
-  741.4  This Matthew, who are we going to be talking about?
-  743.6  Because he was corrupt and rich himself as a tax collector,
-  747.6  he was an extremely wealthy man.
-  750.8  Don't crib. Don't close.
-  753.8  Don't choose Cologne.
-  756.1  He had all the accoutrements of what the average person did not have in his day.
-  761.2  As a Jewish sas collector, not only was he wealthy, but men in those days who were
-  766.6  tax collectors were despised by their own people.
-  769.7  So he was unloved.
-  771.9  He was unliked.
-  773.3  Listen to me.
-  774.5  He was hated.
-  776.3  He probably had no friends.
-  778.7  No social equity.
-  780.8  Parents probably was disconnected from him.
-  783.4  Probably had no girlfriend.
-  785.4  To a history's knowledge he had no wife.
-  787.5  He was single.
+  444.0  And say, while God, I heard this message.
+  446.2  I did what I heard.
+  447.4  Something actually changed in my life.
+  452.4  Ain't I changed it with wishful thinking?
+  454.1  hard work and application. Tweet that.
+  457.7  Ain't not changing with wishful thinking. It's hard work and application. After today,
+  469.4  at least seven days, for some of you, this will be the first time you fast for seven days.
+  473.3  You consecrate. You turn down your plate. You turn your face towards God. You see what God
+  478.1  does in seven days. He might speak to you and give you a brand new vision for the year.
+  481.9  He might make your vision greater for the year. He might take the business idea you have,
+  486.5  ministry idea you have and make it even greater. He might drop something in your spirit you didn't even think of. Amen family.
+  497.1  So today is the opening weekend of a brand new series called The King is Here.
+  503.1  And this is the first leg of teaching through a series through the book of Matthew.
+  514.6  Every Sunday this year Jesus will be our explicit focus. Every Sunday this year Jesus will be the message.
+  524.1  Every Sunday this year, Jesus will be proclaimed.
+  527.9  Every Sunday this year, we will look at Jesus and marvel at Jesus and be in all of Jesus
+  534.6  and peop Jesus and wonder about Jesus and scratch our heads around Jesus and learn to
+  540.6  like Jesus and love Jesus and surrender to Jesus and be tight with Jesus and be empowered
+  547.5  by Jesus.
+  548.5  52 weeks of Jesus.
+  551.0  All Jesus.
+  558.0  Jesus we ain't going nowhere else. I said the king is here never been done before
+  569.6  Don't know what God is gonna do but every Sunday they share the message is Jesus
+  575.9  So you're gonna camp out in one book for the whole year. Yes
+  581.5  Really one whole year in a book. Yes. Oh, they're gonna get bored. We're gonna see we're gonna find out
+  594.1  I ain't never been done before in Atlanta.
+  598.1  We about to find out.
+  601.4  You tell everybody we're going to be camped out in one book for a year.
+  605.0  Oh, Jesus, until December 31st.
+  609.4  Spread the word.
+  610.4  It's about to get real in here.
+  612.3  Spread the word.
+  616.8  This first series is focused on Matthew chapters one through four.
+  622.3  Who was Matthew?
+  626.6  Why was his book so important?
+  629.6  Robby Kempern out in this book.
+  631.9  Before I talk about this Matthew, I want to shout out to him.
+  634.2  One of my best friends in 30 years, another Matthew in the room,
+  637.1  MG the Mortgage God, shout out to my brother in the room.
+  640.1  The most influential mortgage loan officer in the nation.
+  648.2  If you're looking for a crib, MG the Mortgage guy on everything.
+  651.8  Been rocking with that dude since he was in the streets of 12,
+  655.1  shooting and selling dope.
+  661.2  God has been very good to both of us.
+  664.0  But this Matthew, yo, yo, yo, we shouldn't be here today.
+  687.2  But this Matthew, who was he?
+  689.7  Why did he write this book?
+  691.7  Why is the book he wrote so important?
+  694.5  This Matthew, what I'm going to be talking about was a Jew who lived in the first century AD.
+  701.1  He was a man, unfortunately, was a very corrupt man.
+  706.3  He worked as a subcontractor for the government of Rome.
+  710.5  At one time, the most powerful nation on Earth,
+  712.8  they ruled the world for 1500 years,
+  715.3  from Africa to India.
+  717.2  Matthew had a job as a subcontractor,
+  720.1  working for the IRS, for the government of Rome,
+  723.3  as a tax collector.
+  725.1  So he was responsible for collecting taxes
+  728.4  from the Jewish people.
+  730.3  And most of the tax collectors of his days were very corrupt men, so they were overcharged
+  735.7  people on their taxes.
+  737.5  They were payroll, what was owed them, and they were pocket the rest.
+  741.8  This Matthew who we going to be talking about because he was corrupt enriched himself as
+  746.6  a tax collector, he was an extremely wealthy man.
+  751.6  Don't crib, don't close, don't shoes, cologne.
+  756.4  He had all the accoutrements of what the average person did not have in his day.
+  761.6  As a Jewish sas collector, not only was he wealthy, but men in those days who were tax
+  766.9  collectors were despised by their own people.
+  770.1  So he was unloved.
+  772.2  He was unliked.
+  773.2  Listen to me.
+  774.9  He was hated.
+  775.9  He probably had no friends.
+  779.1  No social equity.
+  781.5  Parents probably was disconnected from him.
+  783.7  He had no girlfriend.
+  785.5  To a estuaries knowledge, he had no wife.
+  787.6  He was single.
   788.6  We don't know if he ever had a female mate.
-  791.1  He was despised by the people around him.
-  793.6  Probably lonely.
-  795.4  A loner, an outcast, a person who would come into a room
-  798.6  for the people and still feel isolated.
-  800.8  You know what it feels like to be in a room and feel lonely.
-  808.6  But Jesus one day was walking by Matthew's office.
-  812.5  He looked Matthew in the eyes and he said, Matthew,
-  815.9  I want you to follow me.
-  818.7  And from his own record, he heard the words of Jesus.
-  821.4  He left everything in that text, both.
-  824.5  He followed the Lord Jesus Christ,
-  827.2  a decision that changed his life forever.
-  830.1  Changed his legacy because of that we're talking
-  832.9  about him some 2000 years later.
-  835.4  I wonder where Matthew would be had he not made
-  837.9  that decision to follow Jesus.
-  840.3  We don't know, but his life was changed.
-  843.3  A former outcast as a Jew wrote the one gospel
-  847.1  that's dedicated to Jews.
-  849.4  That God has a great sense of humor.
-  851.4  He took an outcast Jew and made an outcast Jew
-  854.9  write the only gospel dedicated to Jews.
-  860.7  Because God knows how to take the foolish things
-  862.8  of the world, the things that people think can't be done
-  866.0  and use it to make people confused.
-  868.2  How could God take an outcast Jew
-  871.1  and use them to write the only gospel dedicated to Jews.
-  877.8  And so although the book is actually anonymous,
-  880.9  Matthew is credited with writing the book,
-  883.3  the authorship around the year AD 55 or AD 60.
-  889.7  It is the second of four gospels
-  891.9  that was written in the first gospel
-  893.2  that was ever recorded,
+  791.2  He was despised by the people around him, probably lonely.
+  795.4  A loner, an outcast, a person who would come into a room for the people and still feel
+  800.0  isolated.
+  801.0  You know what it feels like to be in a room and feel lonely.
+  803.8  But Jesus, one day was walking by Matthew's office.
+  812.1  He looked Matthew in the eyes and he said, Matthew, I want you to follow me.
+  818.0  And from his own record, he heard the words of Jesus.
+  821.4  He left everything in that tax booth.
+  823.5  He followed the Lord Jesus Christ, a decision that changed his life forever, changed his
+  830.6  legacy.
+  831.6  Because of that, we're talking about him some two thousand years later.
+  835.4  I wonder where Matthew would be had he not made that decision to follow Jesus.
+  840.4  We don't know, but his life was changed.
+  843.2  A former outcast as a Jew wrote the one gospel that's dedicated to Jews.
+  849.5  That God has a great sense of humor.
+  851.5  He took an outcast Jew and made an outcast Jew write the only gospel dedicated to Jews.
+  860.8  Because God knows how to take the foolish things of the world.
+  864.0  The things that people think can't be done and use it to make people confused.
+  868.4  Look at God taking out cash, Jew, and use him to write the only gospel dedicated to
+  874.2  Jews.
+  875.2  And so although the book is actually anonymous, Matthew is credited with writing the book,
+  883.4  the authorship around the year AD 55 or AD 60.
+  887.2  It is the second of four gospels that was written, the first gospel that was ever recorded,
   894.4  the narratives of Jesus Christ.
-  896.1  In this book, we have preserved for us
-  898.5  four narratives of Jesus Christ.
-  901.1  Matthew, Mark, Luke, and John.
+  896.1  In this book, we have preserved for us four narratives of Jesus Christ.
+  901.2  Matthew, Mark, Luke, and John.
   903.2  Mark was written first.
-  905.7  Matthew was written second,
-  907.3  taking some of Mark's works and expounding on it.
-  911.2  When we look at Mark's gospel,
-  913.4  we see Jesus as a servant.
+  905.8  Matthew was written second, taking some of Mark's works
+  909.1  and expounding on it.
+  911.2  When we look at Mark's gospel, we see Jesus as a servant.
   915.9  So he's pictured as an ox in biblical literature.
-  920.1  In Matthew's gospel, we see Jesus as a coming king.
-  924.8  So he's pictured like a lion in biblical literature.
-  928.5  In John's gospel, he's pictured as divine
-  931.7  or the son of God.
-  932.7  So we see our ego in biblical literature,
-  936.7  and in Luke's gospel he's called the Son of Man.
-  938.9  So we see the picture of a face showing that he was human.
-  941.8  He understood the things we go through.
-  943.5  He had problems, he had challenges.
-  945.8  He has felt everything that you felt.
-  950.7  But it is Matthew's gospel among the four.
-  953.0  It is the longest gospel, the most detailed gospel.
-  957.0  Because as a task collector, Matthew was trained
-  959.5  in record keeping and he was a skilled writer.
-  963.2  It is the gospel that the church used for 1700 years
-  967.9  as the primary text for instruction in discipleship.
-  972.3  Now this makes sense to you.
-  974.1  Let me repeat this.
-  975.9  Matthew's gospel was the document
-  979.1  that the church used for 1700 years
-  983.1  as the chief document for discipleship of followers of Jesus.
-  988.4  So they wanted to ground people in the faith
-  991.4  For 1,700 years, they used the book of Matthew
-  996.0  to create for people who watch this a firm foundation.
- 1001.5  1,700 years, they used the book of Matthew
- 1004.9  as their primary document.
- 1006.8  So for us, we're gonna use Matthew for one year
- 1009.9  to lay a brand new foundation in our church.
- 1017.8  For one whole year, you're gonna look back on this year,
- 1022.2  and I promise you, your life is gonna be radically changed.
- 1025.7  You'll never be the same after this year.
- 1028.7  Pastor Philip, you're wilding out.
+  920.2  In Matthew's gospel, we see Jesus as a coming king.
+  924.9  So he's pictured like a lion in biblical literature.
+  928.6  And John's Gospel he's pitching as defined,
+  931.7  or the Son of God.
+  932.8  So we see our ego in biblical literature.
+  936.7  And in Luke's Gospel he's called the Son of Man.
+  939.0  So we see the picture of a face showing that he was human.
+  941.9  He understood the things we go through.
+  943.5  He had problems.
+  944.5  He had challenges.
+  945.9  He has felt everything that you felt.
+  950.7  But it is Matthew's Gospel among the four.
+  953.1  It is the longest Gospel, the most detailed Gospel.
+  957.1  Because as it tasks, collect the Matthew
+  958.8  trained in record keeping and he was a skilled writer. It is the gospel that the
+  965.1  church used for 1700 years as the primary text for instruction in
+  970.3  discipleship. Now this makes sense to you. Let me let me repeat this. Matthew's gospel
+  976.9  was the document that the church used for 1700 years as the chief document for
+  985.3  discipleship of followers of Jesus. So they wanted to ground people in the faith. For 1,700 years,
+  994.0  they used the Book of Matthew to create for people washes a firm foundation.
+ 1001.6  1,700 years, they used the Book of Matthew as their primary document. So for us, we're going to use
+ 1008.1  Matthew for one year to lay a brand new foundation in our church.
+ 1012.9  For one whole year, you're going to look back on this year and I promise you your life is
+ 1023.5  going to be radically changed.
+ 1025.8  You'll never be the same after this year.
+ 1028.9  Past the Philip, you're wilding out.
  1030.2  Yes, I'm wilding all the way out.
- 1033.3  We're gonna
- 1034.8  commit that the church used for 1700 years
- 1038.0  to create a new foundation for our church.
- 1043.2  Not that we had a bad one,
- 1044.7  but we're about to have a greater one.
- 1051.4  We're gonna explore the teachings of Jesus
- 1053.7  that leads us into human flourishing,
- 1055.9  better relationships, how to do business,
- 1058.5  how to do marriage, how to handle money,
- 1061.0  How to handle problems. We're gonna get teachers are gonna teach you how to flourish in life.
- 1066.9  It's gonna give you awareness of the kingdom you belong to. That you are a citizen of America
- 1071.8  and a citizen of a greater kingdom. It's gonna raise your awareness of that kingdom,
- 1079.5  solidify your identity so you're not confused about who you are. It's gonna
- 1084.7  embolden you in the area of mission. You can not you exist for purpose. You can't
- 1091.6  read this book or study this book and not be changed, your life will be transformed.
- 1096.0  So I want to open up the book with this first message titled,
- 1099.6  A Royal and Ratchet Family Tree.
- 1104.3  We're going to start our teaching through Matthew with this first message called,
- 1113.6  A Royal and Ratchet Family Tree.
- 1117.8  A lot of us, we could just sit right there like,
- 1122.2  that's me right there. Anybody?
- 1126.8  A royal and ratchet family tree, spirit of the living God.
- 1139.8  We feel your presence in the room and in the chat.
- 1144.7  Walk in the eyes and the road.
- 1146.0  We feel you like the hairs on the back of our neck.
- 1149.2  We know that you are alive and that you are present in the room.
- 1153.2  Help me, this weak vessel, teach the truth of this eternal word.
- 1159.0  To display the glory of the Lord Jesus Christ, help me Holy Spirit to teach.
- 1166.5  In Jesus name I pray.
- 1168.8  Amen.
- 1169.8  First message in the series, one year through Matthew, a royal and ratchet family tree.
- 1181.9  If you got kids in this room, it's going to be some part of this message that's going
- 1185.2  to go beyond PG.
- 1186.2  That's why we got a children's church.
- 1188.8  So I don't, I gave you a disclaimer.
- 1191.0  Don't send me no DM or no emails.
- 1193.5  It's a part of this message going to go beyond PG.
- 1198.5  Family, I just want to start with some honesty from the very jump that as I was thinking about
- 1204.5  this message, I thought to myself that, you know, I've never met a forward thinking person
- 1209.6  that did not like the word new.
- 1211.7  Now, I know some people that are stuck in tradition and stuck in all ways and they don't
- 1218.4  want to move on for where they are.
- 1220.0  I personally have never met a forward thinking person that did not like the word new.
- 1226.8  Consequently, most of us are attracted, naturally drawn with some sense of excitement and anticipation when we hear the word new.
- 1235.8  Or whenever we see something that's tagged with the word new, a new idea creates excitement and anticipation.
- 1242.8  A new business creates excitement and anticipation.
- 1246.4  A new ministry creates excitement and anticipation, a new name, halo.
- 1252.1  Creates excitement and anticipation, a new boo, a new spouse, a new boyfriend or girlfriend.
- 1257.8  Creates a measure of excitement and anticipation.
- 1260.6  However, one of the greatest anchors for the emergence of anything that is new is the necessity for the case of its legitimacy.
- 1273.4  Let me repeat myself.
- 1274.6  that although we get excited about things that are new, one of the most important
- 1279.6  anchors to be attached to anything that is new is the anchor for the
- 1284.1  legitimacy of the thing that is new. Whenever something emerges that is new,
- 1290.0  we ask ourselves questions. Is this for real? Are they for real? Are they cabin?
- 1296.7  Or are they keeping it real? When a new product comes to market, investors want
- 1302.3  to know is the product for real.
- 1305.0  When a new business comes to market, angel investors and
- 1308.7  venture capitalists want to know, is this new company for real?
- 1313.0  Can we invest in this new company?
- 1316.0  When a startup company is seeking its first rounds of
- 1319.2  investments, man, investors wants to know, man, is this company
- 1322.7  real?
- 1323.4  Is it legitimate?
- 1324.9  Is it going to last?
- 1329.3  When a man or woman pops up with a new ministry, people always
- 1332.2  want to know, are they legitimate?
- 1334.0  as the company legitimate, as the new brand legitimate,
- 1337.2  is this new company, is this new idea, is it legitimate?
+ 1033.5  We're going to make that the church used for 1700 years to create a new foundation for our
+ 1040.6  church.
+ 1043.4  Not that we had a bad one, but we're about to have a greater one.
+ 1046.4  We're going to explore the teachings of Jesus that leads us into human flourishing, better
+ 1056.1  relationships, how to do business, how to do marriage, how to handle money, how to handle
+ 1062.3  problems.
+ 1063.3  We're going to get teachers that are going to teach you how to flourish in life.
+ 1066.8  It's going to give you awareness of the Kingdom you belong to, that you are a citizen of America
+ 1071.8  and a citizen of a greater Kingdom.
+ 1073.9  It's gonna raise your awareness of that kingdom solidify your identity so you're not confused about who you are
+ 1084.0  It's gonna embolden you in the area of mission. You can know that you exist for a purpose
+ 1090.8  You can't read this book or study this book and not be changed your life will be transformed
+ 1096.0  So I want to open up the book with this first message titled
+ 1099.4  a royal and ratchet family tree.
+ 1104.4  We're going to start our teaching through Matthew with this first message called a royal
+ 1114.9  and ratchet family tree.
+ 1120.2  A lot of us can sit right there like that's me right there.
+ 1125.8  Anybody, a royal and ratchet family tree, spirit of the living God.
+ 1139.8  feel your presence in the room and in the chat, walking the
+ 1145.0  aisles in the road.
+ 1145.9  We feel you like the hairs on the back of our neck.
+ 1149.0  We know that you are alive and that you are present in the
+ 1151.3  room.
+ 1152.9  Help me, this week, vessel, teach the truth of this eternal
+ 1157.7  word.
+ 1158.9  To display the glory of the Lord Jesus Christ.
+ 1162.9  Help me, Holy Spirit, to teach.
+ 1166.4  In Jesus' name I pray.
+ 1168.8  Amen. First message in the series, one year through Matthew, a royal and ratchet family
+ 1177.6  tree. If you got kids in this room, it's going to be some part of this message that's going
+ 1185.2  to go beyond PG. That's why we got a children's church. So I gave you a disclaimer. Don't send
+ 1191.8  me no DM or no emails. It's a part of this message going to go beyond PG. Family, I just
+ 1199.9  want to start with some honesty from the very jump that as I was thinking about this message,
+ 1205.2  I thought to myself that, you know, I've never met a forward thinking person that did not like the
+ 1210.6  word new. Now, I know some people that are stuck in tradition and stuck in all ways and they don't
+ 1218.4  want to move on for where they are, but I personally have never met a forward thinking person that did
+ 1223.9  not like the word new. Consequently, most of us are attracted, naturally drawn with some sense of
+ 1231.8  excitement and anticipation when we hear the word new or whenever we see
+ 1236.6  something that's tagged with the word new. A new idea creates excitement and
+ 1241.6  anticipation. A new business creates excitement and anticipation. A new
+ 1246.7  ministry creates excitement and anticipation, a new name, halo, creates
+ 1252.4  excitement and anticipation, a new boo, a new spouse, a new boyfriend or girlfriend,
+ 1257.6  create some measure of excitement and anticipation.
+ 1260.5  However, one of the greatest anchors for the emergence of anything that is new
+ 1266.7  is the necessity for the case of its legitimacy.
+ 1270.1  Let me repeat myself. That although we get excited about things that are new,
+ 1278.2  one of the most important anchors to be attached to anything that is new
+ 1282.8  is the anchor for the legitimacy of the thing that is new.
+ 1286.4  Whenever something emerges that is new, we ask ourselves questions.
+ 1291.4  Is this for real?
+ 1293.4  Are they for real?
+ 1295.4  Are they capping?
+ 1296.4  Or are they keeping it real?
+ 1298.4  When a new product comes to market, investors want to know is the product for real?
+ 1304.4  When a new business comes to market, angel investors and venture capitalists want to know,
+ 1310.4  is this new company for real?
+ 1312.4  Can we invest in this new company?
+ 1315.4  When a startup company is seeking its first rounds of investments,
+ 1319.9  man investors wants to know, man, is this company real?
+ 1323.3  Is it legitimate?
+ 1324.8  Is it gonna last?
+ 1329.3  When a man or woman pops up with a new ministry, people always wanna know,
+ 1332.5  are they legitimate?
+ 1333.9  Is the company legitimate?
+ 1335.4  Is the new brand legitimate?
+ 1337.1  Is this new company?
+ 1338.4  Is this new idea?
+ 1339.4  Is it legitimate?
  1340.8  We know that it is new, but is it legitimate?
- 1343.9  We know it is new, but watch this, can it be trusted?
- 1358.1  When a luminary figure emerges with claims
- 1362.1  that the world has never heard before,
- 1364.5  there's naturally gonna be speculation
- 1366.4  around the legitimacy of that figure.
- 1369.6  So the greatest thing that can happen
- 1373.2  for the argument of legitimacy is not when a person argues about their own legitimacy,
- 1378.4  but one of the greatest things that can anchor legitimacy is when other people argue for the
- 1382.6  legitimacy of another person. This is why when we write new books, we always seek out people to
- 1390.2  give us a review. So we throw 10 people on the back of our new book and what are we asking them
- 1395.0  to do? We're asking them to legitimize the offer that what they're telling us watch can be trusted.
- 1401.0  So one of the greatest arguments for legitimacy is not what comes out of the mouth of the person
- 1407.9  who is new, but one of the greatest arguments for legitimacy is what comes out of the mouths
- 1413.1  of other people who establish the legitimacy of another person.
- 1417.1  That person right there, they're for real.
+ 1343.8  We know it is new, but watch this, can it be trusted?
+ 1358.1  When a luminary figure emerges with claims that the world has never heard before,
+ 1364.1  there's naturally going to be speculation around the legitimacy of that figure.
+ 1369.1  So the greatest thing that can happen for the argument of legitimacy
+ 1375.1  is not when a person argues about their own legitimacy,
+ 1378.1  but one of the greatest things that can anchor legitimacy
+ 1381.1  is when other people argue for the legitimacy of another person.
+ 1387.2  This is why when we write new books,
+ 1389.0  we always seek out people to give us a review.
+ 1391.4  So we throw 10 people on the back of our new book,
+ 1394.0  and what are we asking them to do?
+ 1395.6  We're asking them to legitimize the offer
+ 1398.5  that what they're telling us watch can be trusted.
+ 1402.5  So one of the greatest arguments for legitimacy
+ 1405.7  is not what comes out of the mouth of the person
+ 1407.9  who is new, but one of the greatest arguments
+ 1410.9  for legitimacy is what comes out of the mouths
+ 1413.1  of other people who establish the legitimacy
+ 1416.0  of another person.
+ 1417.0  Yo, that person right there, they're for real.
  1419.2  Or that dude right there, he's for real.
- 1421.5  Or Shorty right there, she's for real.
- 1423.6  Or that brother right there, man, he's for real.
- 1425.8  is what other people say, oftentimes,
+ 1421.4  Or Shorty right there, she's for real.
+ 1423.5  Or that brother right there, man, he's for real.
+ 1425.7  It's what other people say, oftentimes,
  1428.0  is the best anchor for the legitimacy of somebody else.
- 1431.5  You can talk a good game about you,
+ 1431.4  You can talk a good game about you,
  1433.6  but what does other people say about you?
- 1441.1  You can tell me the iPhone is dope,
- 1442.9  but what does other people say about the iPhone
- 1445.7  that is better than Android?
- 1447.0  Yeah, but yeah.
- 1448.3  And if you're smart and saved, you got an iPhone
- 1451.3  that re-review people that turn the group chat green.
- 1463.0  The market has spoken, Apple is the best phone
- 1465.8  on the market.
- 1466.8  It is legitimate. We don't care what Apple has to say. What does the people have to
- 1472.5  say about the product? Chipotle ain't dope because it's dope. It's dope because
- 1479.3  we say it is. So one of the best things to establish legitimacy is not what comes
- 1490.1  out of the mouth of the person that's arguing is what's coming out of the
- 1492.8  mouths of other people that's arguing for the legitimacy of the person that he
- 1496.2  MURCHED.
- 1497.2  //
+ 1441.0  You can tell me the iPhone is dope,
+ 1442.8  but what does other people say about the iPhone?
+ 1445.6  That is better than Android.
+ 1448.2  And if you're smart and saved, you got an iPhone.
+ 1451.2  that we rebuke people that turn the group chat green.
+ 1463.0  The market has spoken, Apple is the best phone on the market.
+ 1466.7  It is legitimate.
+ 1469.7  We don't care what Apple has to say,
+ 1471.2  what does the people have to say about the product?
+ 1476.8  Chipotle ain't dope because it's dope,
+ 1478.7  it's dope because we say it is.
+ 1486.7  So one of the best things to establish legitimacy
+ 1489.4  is not what comes out of the mouth of the person
+ 1491.2  that's arguing, it's what's coming out of the mouth
+ 1493.2  of other people that's arguing for the legitimacy
+ 1495.5  of the person that emerged.
+ 1500.3  In the first century AD, a slim Galilean came walking
+ 1504.4  over Judean countryside claiming to be the son of God,
+ 1512.2  claiming to be the long awaited Jewish Messiah,
+ 1517.0  claiming to be the embodiment
+ 1519.3  of all of the Old Testament prophecies,
+ 1522.5  claiming to be the one that people were talking about
+ 1525.8  for thousands of years, claiming to be the fulfillment
+ 1530.0  of everything from the Old Testament.
+ 1531.8  He came claiming to establish a kingdom
+ 1535.2  that was gonna last forever.
+ 1537.8  He came claiming to be this person
+ 1540.1  who died in the first century AD, the Son of God.
+ 1544.2  Now Matthew, in the first century,
+ 1546.8  was an eyewitness of that person.
+ 1549.7  He was friends with that person for three and a half years.
+ 1554.2  Travel with that person for three and a half years.
+ 1556.6  Eight food with that person for three and a half years.
+ 1559.2  broke bread with that person for three and a half years.
+ 1562.2  Moved around the country with that person
+ 1564.2  for three and a half years.
+ 1565.4  Laughed with that person, joked with that person,
+ 1568.0  listened to that person, sawed that person
+ 1570.1  for three and a half years.
+ 1571.4  Matthew, around the year AD 60, is an old man.
+ 1575.2  It's 30 years after the death and resurrection of Jesus Christ.
+ 1579.5  Matthew now is looking back over his life.
+ 1582.5  He's thinking about everything he saw, everything he heard.
+ 1586.5  He's thinking about when Jesus raised a man from the dead.
+ 1590.0  He's thinking about when Jesus touched eyes
+ 1592.0  and made people who are blind to see.
+ 1594.5  He's thinking about when Jesus touched people's ears
+ 1596.8  and made them, so he's looking back at all of the miracles,
+ 1600.0  all of the teachings, all of the things that Jesus did.
+ 1603.3  And he's thinking to himself, man, truly this dude
+ 1606.0  who I was running with for three and a half years,
+ 1608.2  he was not just a prophet, like Muhammad or Confucius
+ 1612.3  or Joseph Smith.
+ 1613.9  He was not just an ordinary man.
+ 1616.0  Something was different about this dude that I was running with for three and a half years.
+ 1619.9  I got to sit down and tell a story about him.
+ 1624.3  So in the year AD 60 or 65, Matthew has all been before he was beheaded, martyred for what
+ 1632.6  he believed and saw, sat down, and he took a pen to parchment and he began to write what
+ 1639.1  became the book of Matthew, his narrative about the life of the person of Jesus Christ. And
+ 1649.5  in his attempt, oh my God, to convince Jewish people that the person you have been writing
+ 1658.6  about for thousands of years actually came and you rejected him like he was a sucker.
+ 1667.1  Now I want to convince Jewish people that the men I've been talking about for generations
+ 1673.5  actually came and lived and taught and died and rose and it's still alive and it's directing
+ 1684.8  the course of history.
+ 1687.0  That man that you're rejecting, I want to reintroduce you to that man since you're rejecting him.
+ 1692.0  So Matthew takes a pen and parchment in the year AD 60 or 65 a few years before he was
+ 1698.3  beheaded and he writes the book of Matthew and listen, watch how he starts the book of Matthew
+ 1705.0  to Jewish people. Matthew chapter 1 verse 1, the book of the genealogy of Jesus Christ,
+ 1718.2  the son of David, the son of Abraham, pause. Now nobody in his room got excited because most
+ 1727.1  see all the black. I'm going somewhere with this. So we in the room, we here, we here,
+ 1736.7  we here at the beginning of the genealogy of Jesus Christ, the son of Abraham, the son
+ 1743.2  of David. And we say, I, cool. But if a Jew heard that, they would be like, Whoa, Whoa,
+ 1748.9  Whoa, Whoa, Whoa, The son of Abraham, the son of David, the beginning of the genealogy
+ 1757.2  of Jesus Christ. Whoa, whoa, whoa, Matthew, you got to prove that to us, Matthew. You're
+ 1762.0  saying some really outlandish stuff right now. You're trying to tell me this Jew who
+ 1767.8  came was the son of Abraham and the son of David. And then what you're about to write
+ 1773.7  to me is the beginning of his family tree. Genealogy means family tree like ancestor.com.
+ 1784.4  The purpose of a genealogy is to trace lineage back to ancestors.
+ 1790.3  The purpose of a genealogy is to establish birthright.
+ 1794.5  Purpose of a genealogy is to say you have ownership and inheritance.
+ 1805.7  In the days of Jesus, if you wanted to be a priest or pastor, you needed to produce an
+ 1810.7  accurate genealogy linking you all the way back to the tribe of Levi.
+ 1816.0  If you wanted to own land, because somebody died, you needed to produce a genealogy to
+ 1820.5  say, this land belongs to me.
+ 1822.8  You can't roll up on somebody and say, give me that land.
+ 1825.2  No, produce the genealogy.
+ 1829.6  Somebody died, you wanted the inheritance.
+ 1831.4  You couldn't claim that inheritance.
+ 1833.0  You had to produce a genealogy saying you are the rightful owner of that inheritance.
+ 1841.5  So genealogies were necessary to prove ownership and inheritance and the scriptures are littered
+ 1847.1  with genealogy.
+ 1848.3  The longest one in first chronicles, almost nine chapters.
+ 1853.8  Now why is this important?
+ 1855.5  Because in the Old Testament days,
+ 1858.5  hundreds of years before Christ came into the world,
+ 1861.3  the last prophet who ever preached was not Philip,
+ 1865.3  but a man I named my son after named Malachi.
+ 1869.3  Malachi was preaching hundreds of years before Jesus
+ 1872.2  was born and his primary message was honor.
+ 1875.5  He was speaking on behalf of God, all y'all people.
+ 1878.0  If I'm a father, where is the honor do me?
+ 1881.0  Put some respect on my name.
+ 1883.4  That was Matthew, so that was Malachi's whole message
+ 1886.1  from God through the people.
+ 1887.5  If I'm a father, put some respect on my name.
+ 1890.0  Watch, honor me.
+ 1891.8  So his whole message was to God's people and to the priest,
+ 1895.2  show me some respect, show me some honor.
+ 1897.4  Now watch this, how important is honor to God?
+ 1900.5  After Matthew died, God didn't say another word
+ 1903.5  in the earth for 400 years.
+ 1906.2  I'm going somewhere with this.
+ 1909.5  After Malachi died and his ministry was over, God didn't say another word in world history
+ 1918.1  for 400 years.
+ 1922.8  So in your Bible, when you flip from Malachi to Matthew, that little white page is 400 years
+ 1928.7  of silence in which in world history God said nothing in the earth.
+ 1934.1  He didn't send a prophet, he didn't send a speech, he sent a minister, he said no one.
+ 1939.0  For 400 years God shut his mouth on humanity.
+ 1943.2  He said nothing.
+ 1944.2  Y'all gonna think about honor for 400 years.
+ 1957.8  He goes silent for 400 years.
+ 1960.7  During those 400 years, three world empires fight for dominance.
+ 1964.9  By the time the 400 years is done, Rome has emerged as the world empire.
+ 1970.1  You go outside the Bible, Google, Rome emerges as the world, watch this, as the world empire during those 400 years.
+ 1978.6  Rome rules for 1500 years from India to Africa.
+ 1982.1  Just Rome gives people modern technology.
+ 1986.1  They create roads and streets, watches, and mail systems to make messages travel easy.
+ 1993.1  They dominate the whole entire world.
+ 1999.9  They create prophecies around the whole world and they create systems for any message to travel the whole world with ease
+ 2007.2  Who gave a dream to a man named Daniel saw in a vision the succession of world empires
+ 2019.8  Rome being in that dream that God showed a man a dream that Rome would dominate the whole world because the Bible is not just a religious book
+ 2026.8  It's full of prophecies that have come to pass
+ 2028.8  It is the only accurate religious book with prophecies that have come to pass
+ 2033.2  Not the pearl of great price, not the Quran, not anything you got from Google, the word and the word of God, only has prophecies that have
+ 2042.5  accurately come to pass. God gave a man named Daniel a vision of a statue and part of the statue has an empire of Rome.
+ 2050.5  Now Rome has come to pass, Rome creates all of the things that are necessary for the Gospel to spread.
+ 2056.8  God is the best chess player of all time. He's the best chess player of all time.
+ 2070.0  how he moves the pieces of things around the world to bring about his purposes at his will.
+ 2074.6  Want to make sure by the time his son emerged, message of him can travel around the whole world.
+ 2079.9  So Matthew's open line, look at Matthew's open line, it says in Matthew chapter 1,
+ 2090.3  the beginning of the genealogy of Jesus Christ. Now pause.
+ 2094.7  You read this in English and all you see is the word genealogy.
+ 2099.2  But this word genealogy in Greek is the same Hebrew word that we have for the English word, Genesis.
+ 2105.6  which means the beginning.
+ 2111.7  Another word we get is new thing.
+ 2116.1  So what is Matthew saying?
+ 2117.4  He's not only about to introduce Jesus' family tree,
+ 2120.9  but he's telling Jews watch after 400 years of silence,
+ 2124.1  a new thing has dawned.
+ 2127.1  A new thing has come into the world.
+ 2129.9  A new kingdom has come into the world.
+ 2132.2  Something cataclysmic has happened that is so new,
+ 2135.2  It's about to change everything forever.
+ 2138.3  This is the best brand new thing ever.
+ 2141.7  The world has ever known.
+ 2143.1  He's not saying here is just a family tree of Jesus.
+ 2146.1  Here is the beginning of something brand new.
+ 2148.6  Something y'all been waiting for for thousands of years.
+ 2151.3  Something that's gonna topple every other kingdom in the end.
+ 2155.2  So this in Hebrew and Greek really says the genesis of Jesus or his kingdom.
+ 2161.0  Not that he's a creative being, but the beginning of his rule forever.
+ 2167.2  So Matthew introduces God's kingdom through Christ as a new beginning.
+ 2173.1  Here is the kingdom of heaven coming new to the kingdom of earth.
+ 2178.1  A spiritual kingdom that would eventually dominate the whole world in the end.
+ 2182.3  It is the beginning of the reign of a brand new king.
+ 2185.9  He's going to rule forever.
+ 2187.7  Watch.
+ 2188.7  You are who are saved are citizens of that kingdom.
+ 2193.4  Let me talk to you for a second.
+ 2195.5  You're so confused about your identity.
+ 2198.0  Everyone who's placed their faith in Jesus Christ, you're not only a citizen of the country
+ 2202.5  you were born in, you are a citizen of the kingdom.
+ 2206.4  Matthew's gospel teaches us about the laws and the principles and the government and the
+ 2211.2  economy of that kingdom.
+ 2213.1  Some of you are not flourishing because you don't understand the kingdom you live in.
+ 2219.6  Some of you are struggling really bad because you don't know how to work the principles of
+ 2223.2  the kingdom you live in.
+ 2225.9  Some of you are complaining about your lifestyle because you don't know how to operate the economy
+ 2230.3  of the kingdom you live in.
+ 2233.0  You can't go to another country and don't understand their laws, their customs, their
+ 2237.4  currency.
+ 2238.4  You would get locked up.
+ 2243.6  You can't travel to the Netherlands and act like an American.
+ 2247.5  If you don't work their laws and principles, you're not going to flourish.
+ 2251.0  In the same way all of you who are saved, you've been not only saved out of the world or saved
+ 2255.4  from hell and damnation, you've been saved into a kingdom.
+ 2259.4  And if you don't understand the King and the Kingdom you belong to, you won't know how
+ 2263.1  to work the laws and the principles of the Kingdom.
+ 2266.7  Some of you are complaining not knowing if you just tweak one principle, something in your
+ 2270.2  life will change.
+ 2273.4  If you don't know the principles, you don't know how to work them.
+ 2275.8  If you don't know the laws, you don't know how to work them.
+ 2277.8  If you don't know the regulations, you don't know how to work them.
+ 2279.8  If you don't know what was promised to you, you won't know how to claim it.
+ 2286.4  That's like you complaining about being in Parvish, but you got an inheritance in the
+ 2289.9  bank.
+ 2290.9  But don't know how to use the ATM card because you don't read.
+ 2296.2  You don't read.
+ 2297.2  You don't know your contract.
+ 2298.8  So you don't know what's available to you.
+ 2300.9  Man, who am I talking to?
+ 2305.2  You don't read the contract.
+ 2306.8  So you don't know what's available to you.
+ 2308.6  What to claim because you ain't read the contract.
+ 2320.6  You don't know how to fight because you ain't read the contract.
+ 2323.5  You don't know what you can make a demand on because you ain't read the contract.
+ 2327.5  You don't even know who your savior really is because you ain't read the contract.
+ 2335.4  You don't even know the kind of force you got behind you because you ain't never read the
+ 2338.9  contract.
+ 2339.9  You don't know what happens when you pray because you ain't read the contract.
+ 2343.9  You don't know what happens when you fast because you ain't read the contract.
+ 2346.9  You don't know how to work your money because you ain't read the contract.
+ 2350.9  You ain't know how to discern a good business partner from a bad business partner because
+ 2358.9  you ain't read the contract. So you keep getting shafted because you don't have no
+ 2367.7  discernment when you walk in a room because you ain't never read the contract.
+ 2371.0  You don't even know you full of the Holy Spirit, the person that knows everything.
+ 2374.4  You went to up by the Holy Spirit, the person that knows everything, but you don't
+ 2383.3  know how to work your sixth sense because you ain't read your contract. So how do
+ 2392.2  you know not to sign that deal? Because I know my contract. That's why because of
+ 2398.5  my contract watch, I already know what to say no to before I walk into a room.
+ 2402.6  My nose already predetermined because I know the contract.
+ 2408.8  I got standards because I know the contract.
+ 2411.8  I know what to accept and what not to put up with because I know the contract.
+ 2415.7  No, they don't want me to teach.
+ 2425.1  Let me finish.
+ 2426.1  They don't want me to teach.
+ 2433.5  Thank you.
+ 2434.5  I'm a triceps.
+ 2439.7  No, let me.
+ 2440.7  So when you understand the contract, you know how to work the principles, you acquire what's
+ 2443.7  called human flourishing.
+ 2444.7  So now watch what Matthew does.
+ 2447.7  I'm almost done.
+ 2448.7  He tags three titles to Jesus.
+ 2450.7  First he calls him the Christ.
+ 2453.1  So not only he said a new thing is coming,
+ 2454.8  but he gives him three titles.
+ 2456.2  Three titles.
+ 2457.1  He calls him number one.
+ 2458.2  He calls him the Christ.
+ 2460.2  The word Christ is not Jesus' last name.
+ 2463.9  It's not like Philip Anthony Mitchell.
+ 2465.7  His last name is not Christ.
+ 2467.2  He was Jesus from Nazareth.
+ 2469.9  He had no last name.
+ 2471.2  The word Christ is the Greek word for the Hebrew word Messiah,
+ 2475.4  which means the anointed one.
+ 2478.2  The promised one, the one who has spoken up for thousands of years through the Old Testament.
+ 2485.5  See, the world is filled with multiple religions, but Matthew is saying much.
+ 2490.4  There's only one God, he has only one Son, and there is only one eternal kingdom, and
+ 2495.8  he is the man.
+ 2497.7  He is not a Christ.
+ 2499.6  He is definitive article, the Christ.
+ 2507.1  Let me go over here.
+ 2508.1  Matthew is saying, I know there's multiple religions in the world.
+ 2511.6  It don't matter how many religions there's a Matthew's trying to say there's only one God
+ 2516.0  He has only one son. There's only one road to heaven and he is Jesus the Christ not a Christ the Christ
+ 2526.3  The definitive article so he calls him Jesus Christ
+ 2539.7  Jesus the Messiah Jesus the anointed one the second tag he gives them he calls him the son of Abraham
+ 2546.6  Abraham. Now we're not Jewish, but why does this so important? Abraham was the father
+ 2551.3  of the Jewish nation, the pro-Chende of the Jews. Watch. God gave Abraham a promise in
+ 2558.2  his lifetime. He said, Abraham, I'm going to give you a son, not the biological boys
+ 2563.3  you have. Another son is coming in your lineage. Watch. And through him and him only every
+ 2569.5  person on the planet can and will be blessed. Now, bad preachers take that line and then
+ 2576.1  make it prosperity gospel to save you so a seed God is going to make you rich lies.
+ 2580.7  When God said to Abraham through him all of the nations of the world will be blessed
+ 2586.8  that is through the sun I'm going to give you Abraham every human being will have a chance
+ 2591.9  to enter into my kingdom be blessed by my principles and then live with me in heaven
+ 2597.9  and in glory forever through him and him only everyone has the opportunity to be blessed.
+ 2605.9  So God promised Abraham a son through which that son would be the Messiah to bless the whole world.
+ 2616.3  Matthew says to all you Jews, Jesus is the son of Abraham.
+ 2620.8  He is the one that's been promised.
+ 2624.3  Then Matthew gives him another title.
+ 2626.5  He says he is the son of David.
+ 2629.6  to what you they will understand David was the greatest history of Israel. David was the greatest
+ 2638.8  king in the history of Israel. Now watch, God gave David a promise in his lifetime. He said,
+ 2645.8  David, you rule right now. Watch it. But when you die, a person is coming through your lineage.
+ 2652.9  Watch this. He's going to sit on your throne. Watch. And of his kingdom, there will be no
+ 2660.8  end. Now watch, David had a son named Solomon. He died. And Solomon had a son. He died. And
+ 2672.3  that son had a son. He died. And then they died. And then they all died. But one son came
+ 2678.4  through that lineage who is not dead but alive, who called himself the King of Kings and the Lord
+ 2693.2  of Lords. And Isaiah said of his kingdom, there will be no end. So Matthew writes to this Jewish
+ 2703.7  audience that man that Isaiah told us about 700 years ago, it was Jesus. It's the son of David,
+ 2712.0  the king who will rule forever.
+ 2717.4  How about that for starting a family tree?
+ 2719.5  That's against the way to start a family tree.
+ 2726.3  Now let's finish up, okay?
+ 2728.1  Then he goes on to verse two.
+ 2730.3  Paul, let me just say this.
+ 2731.7  If you missed the principle of the text,
+ 2735.5  the gem is God keeps his promises.
+ 2740.3  If he said it, he don't lie.
+ 2746.7  So if there's anybody who's legitimate, is God Almighty.
+ 2752.0  Now let's finish up.
+ 2753.6  Verse two through 17.
+ 2755.8  That's how you start a family tree.
+ 2757.3  Now he goes on with the rest of the family tree,
+ 2759.0  watch, royal and ratchet.
+ 2761.1  Then he says, Abraham was the father of Isaac.
+ 2763.2  Y'all know Abraham?
+ 2764.7  He had a son named Isaac who he waited 25 years for.
+ 2768.1  And Isaac was the father of Jacob.
+ 2769.7  Jacob who was a corrupt dude, so corrupt,
+ 2772.2  God had to change his name to Israel.
+ 2774.1  And Jacob was the father of Judah who was a womanizer.
+ 2777.7  You're gonna see why I'm doing this.
+ 2779.3  Let me talk about your family.
+ 2780.9  What about Jesus' family?
+ 2782.3  Talk about your family.
+ 2791.4  See, you're passing, I'm not gonna do it your future.
+ 2793.6  Your ass don't gotta hinder your future.
+ 2805.8  I don't care where you came from.
+ 2808.0  I don't care if you're the product of a bottle of Hennessina
+ 2810.8  broken condom.
+ 2812.4  Your past don't have to hinder your future.
+ 2814.8  My father was a bottle of Hennessina.
+ 2818.3  My mother was a broken condom.
+ 2819.8  It don't matter.
+ 2820.9  And we've got to handle your future.
+ 2826.2  All right.
+ 2827.4  Abraham, who was a liar and the father of Isaac.
+ 2830.9  Isaac the father of Jacob, who was so corrupt,
+ 2833.3  God had to change his name.
+ 2834.9  Jacob the father of Judah, who was a womanizer.
+ 2839.6  Judah was the father of Perez and Zerah by Tamar.
+ 2842.6  Wait till I come back to that.
+ 2843.9  And Perez, the father of his run, and his run,
+ 2846.4  the father of Graham, and ran the father of a minidadab.
+ 2849.2  And a minidab the father of Neshon.
+ 2851.0  And they show the father of Solomon, not salmon,
+ 2854.0  salmon, no salmon in white wine, salmon.
+ 2867.4  Was the father of,
+ 2869.1  salmon was the father of Boaz by Rahab, a prostitute.
+ 2878.5  Talk about your family.
+ 2880.4  Salmon was the father of Boaz by Rahab,
+ 2883.5  who was a whore and a prostitute.
+ 2886.3  Boaz was the father of Obed by Ruth,
+ 2888.6  and Obed was the father of Jesse,
+ 2890.4  who did not believe in his own son, David, who did not properly affirm his own son.
+ 2896.8  Talk about your family.
+ 2898.4  And Jesse was the father of David, the king who was a murderer and an adulterer.
+ 2903.9  And David was the father of Solomon who had a thousand women and went crazy at the end
+ 2908.0  of his life.
+ 2909.0  Your family tree, right?
+ 2912.5  Saw me by the wife of Uriah who was murdered by David for his wife.
+ 2917.2  Solomon was the father of Raya Boem who had bad counselors and he listened to the wrong
+ 2922.7  people.
+ 2923.7  Raya Boem was the one that split the kingdom in half.
+ 2925.7  He was the father of Abaija and Abaija the father of Asa.
+ 2928.6  Asa the father of Jihosaphat.
+ 2930.4  Jihosaphat was the father of Jhorom.
+ 2932.1  Jhorom the father of Yuzaya who died and because of his death, Isaiah saw the Lord.
+ 2937.2  Sometimes things have to die for you to see.
+ 2943.7  Sometimes things have to die for you to see.
+ 2946.8  I don't have no clarity.
+ 2948.2  Kill something and then you might see better.
+ 2955.4  And Jotun was the father of A-Haz who was evil.
+ 2958.4  And he was the father of Hezekiah who was a coward king.
+ 2962.3  And Hezekiah was the father of Manasseh who was wicked.
+ 2966.2  And Manasseh was the father of Amos,
+ 2967.8  and Amos the father of Josiah who was a good man.
+ 2971.0  Josiah the father of Cechania, underlined him.
+ 2973.9  And his brothers and at the time of the deportation
+ 2976.1  of Babylon.
+ 2977.1  And after the deportation of Babylon,
+ 2978.9  enalia was the father Siauht l. and Siauht l was the father of helia Pan, who
+ 2982.9  was the priest who helped rebuild the temple. So Mariplfifo was the father of
+ 2987.1  994 and a beehook was the father of Iliakim and My Maltra, Muslim Fatab
+ 2994.7  allowed the father of Elia chord, and it was both forthcast and then he was the father of
+ 3007.9  And Jacob was the father of Joseph, the husband of Mary, whom was born.
+ 3014.9  Jesus was born who was called the Christ.
+ 3017.4  Let me finish up.
+ 3020.6  Thank you, daughter.
+ 3022.0  So all the generations from Abraham to David were 14 generations.
+ 3025.9  From David to the deportation was 14 generations.
+ 3029.1  And from the deportation of Babylon to the Christ, the Christ, not A Christ,
+ 3034.0  the Christ was 14 generations.
+ 3037.0  Now, I want to draw your attention to a few powerful elements of this genealogy, and then
+ 3040.6  I'm going to be done.
+ 3042.1  First, I just want you to notice the literary structure.
+ 3044.9  Matthew is a genius.
+ 3046.5  He creates three groups of 14 generations, three groups of 14 people.
+ 3052.1  Now if you trace history, he excludes some people.
+ 3055.1  He omits some people, so he does not put everybody.
+ 3057.6  They're not writing to create an accurate history line.
+ 3060.6  He's writing to show the important people in each three stages of Jewish history.
+ 3066.1  The first stage from Abraham to David, one error.
+ 3069.8  From David to the deportation one error, from the deportation to the Christ one error, and
+ 3075.2  he fills in all of the important people in between in those errors.
+ 3079.2  Okay?
+ 3080.2  So I want you to see that Matthew creates a detailed list of key people in three errors,
+ 3086.9  and he uses watch.
+ 3088.6  14, 14, and 14.
+ 3090.5  Consequently, David's name in Hebrew has a numeric acrostic 6, 4, and 4 that if you put it together it means 14.
+ 3097.5  And David is the 14th person mentioned in the family tree. Matthew is a genius.
+ 3106.1  Also the significance of this genealogy, he's trying to anchor Jesus all the way back to Abraham.
+ 3112.1  Now, I want you to notice something of the members of the family tree.
+ 3115.1  Some of them were great people like Abraham. Some of them were evil people like Manasseh.
+ 3120.1  Some of them were ordinary people like Jesse.
+ 3123.1  All of them had issues.
+ 3124.6  Jesus did not come from a stellar family.
+ 3127.1  He came from a mixed family with good people, evil people, ordinary people,
+ 3133.1  unknown people, famous people, because your family tree does not have to determine
+ 3138.1  what's going to happen in your life.
+ 3139.6  So if you came from a great family, listen to me.
+ 3142.1  If you came from a great family, take it to the next level with your last name.
+ 3146.1  And if you came from a dysfunctional family, change your generation, change your legacy.
+ 3152.0  Say this trap right here is going to stop with me.
+ 3157.3  Now almost finished.
+ 3159.4  This is, I got to bring this to your attention before I close.
+ 3162.2  I want you to notice that Matthew, writing in a patriarchal society, this is huge, mentions
+ 3169.6  four women.
+ 3171.8  This is abnormal because no other genealogy in the Bible mentions women.
+ 3176.1  all mentioned men, the father of another father, the father of another. There's no
+ 3179.8  genealogy that mentions women. Now pause, this is dope. All my ladies lean in.
+ 3183.9  Why does Matthew mention four women in the genealogy? He breaks, Matthew, if
+ 3194.4  you got a baby, you probably want to take them out. I'm about to go past PG,
+ 3197.1  okay? Matthew breaks writing protocol and he throws four women in the genealogy.
+ 3204.2  Now pause.
+ 3205.2  You can't just read those names and you got to scratch your head because he is through
+ 3211.2  four righteous women in there.
+ 3221.5  He talks for women in there who got controversial backgrounds, controversial stories.
+ 3227.4  They got stories surrounding their name, some ratchet stuff with all of these women and
+ 3233.9  immorality and stuff surrounding their name.
+ 3236.1  Like some of y'all don't know the history so let me break it down for you.
+ 3238.7  The first woman he mentions is Tamar.
+ 3240.7  That's a dope name.
+ 3242.9  Hold on.
+ 3243.9  Do you know what Tamar did?
+ 3246.7  There was a man named Judah.
+ 3248.4  He was a womanizer.
+ 3249.8  He had three sons.
+ 3251.2  Tamar was married to the first son.
+ 3254.0  Watch.
+ 3255.0  The first son was so evil God killed him.
+ 3258.8  But he had no children with Tamar so there was no lineage to continue.
+ 3263.2  So what's supposed to happen is that she's supposed to marry the next son, a man named
+ 3266.2  Onan.
+ 3267.2  And Odin is supposed to have a baby with Tamar according to the custom so that a son could come through the lineage.
+ 3273.8  But Odin knows because of Levrin marriage, if I have a son with Tamar, the son is going to get the throne and I won't.
+ 3280.3  So the scripture says, not Philip, okay, you ready?
+ 3283.2  Every time he go in, he pulls out and he spills his semen on the floor.
+ 3287.7  The Bible ain't sanitized.
+ 3289.7  So the scripture says, Odin keeps sleeping with Tamar, but right before he pulls out and he spills all his semen on the floor.
+ 3293.2  But right before he pulls out and he spills all his semen on the floor, he won't bust inside
+ 3299.1  a Tamar, he won't give her a baby.
+ 3301.4  Why?
+ 3302.4  Because he don't want her child to get thrown because he want to throw.
+ 3305.6  God says you so wicked God kills him for spilling his seed on the floor.
+ 3310.6  Now watch, Tamar has no son and now Judah won't give Tamar the third son.
+ 3316.7  Say, oh you lying.
+ 3318.6  So Tamar dresses a prostitute.
+ 3320.6  She goes, she hang out at the bar in the corner.
+ 3323.0  Judah come strolling through downtown.
+ 3324.8  He see Tamar hanging out by the bar.
+ 3326.8  He say, yo, let's go to this hotel.
+ 3328.6  He takes Tamar to the hotel, sleeps with Tamar,
+ 3332.7  gets her pregnant in the hotel.
+ 3334.6  And she says, listen, before you leave,
+ 3336.0  give me your ring and give me your staff.
+ 3337.8  That's like, give me your identification.
+ 3341.7  Promise me you're gonna give me some goat.
+ 3343.7  So I'm gonna give you a goat.
+ 3344.6  Okay, but I need some collateral.
+ 3346.3  Give me your ID.
+ 3348.1  Leave your ID with me so I can get my goat.
+ 3350.5  She takes this stuff.
+ 3352.4  Now she comes back and says, Judah,
+ 3354.1  You owe me something.
+ 3355.1  He says, man, let the woman who did this be killed.
+ 3357.7  And then she pulls out his ring.
+ 3361.4  And then when she sees the ring, Judas says, wow, this woman has been more righteous than
+ 3365.2  me.
+ 3366.5  That is, she pulls as a prostitute to get pregnant.
+ 3373.6  And by that one act, she continues the line of Jesus.
+ 3376.2  Hey, I'm over my time.
+ 3393.2  I need like 15 minutes.
+ 3395.9  I need like 15 minutes.
+ 3397.3  It's Matt Gangster.
+ 3400.1  Yo, I need 15 minutes.
+ 3402.2  If she don't pull a prostitute card, the line of Jesus is cut off.
+ 3415.3  I'm going to mean something to you in a second.
+ 3419.8  He mentions Rahab, another prostitute.
+ 3422.9  When the spies of Jerusalem comes into a hometown, she hides them in her house.
+ 3427.7  A prostitute says, listen, when y'all come back to take the land, kill everybody, but
+ 3431.6  not me and my family, and preserves her family.
+ 3434.2  A prostitute, a hoe, is entered into the line of Jesus because she hides two dudes in her
+ 3440.3  crib. He mentions Ruth, a woman from the hood from a place called Moabite where
+ 3451.5  nothing good comes from. She's from a rat's neighborhood from the projects.
+ 3455.8  Ruth marries a dude who dies. She stays with the mother-in-law. She goes to the
+ 3461.1  mother-law's town called Bethlehem. She slips underneath the sheets of a
+ 3464.9  man named Boaz. I'm like, yo, marry me. Mad scandalous. Like, yo, she just slips
+ 3470.1  under the sheets. Have you got that red? She just slips in under his sheets. She's like,
+ 3477.4  yo, who's that? She's like, yo, marry me. Like, what the, what you doing here? She's under
+ 3485.9  his sheets like, yo, marry me. Like, yo, you mad boy. I need, I need 10 minutes. And then
+ 3501.0  he mentions a woman not by name called Bathsheba, a woman who was bathing naked when Davis
+ 3505.8  saw he was like, hey, kills her husband, takes the wife for himself. Now watch, why
+ 3514.0  in God's name would Matthew mention such ratchet women in a genealogy who got
+ 3522.4  drama surrounding their name? Why would he do that? I'm almost done. Why would
+ 3527.0  Matthew break all protocol to put four ratchet women in a royal genealogy? Why
+ 3535.0  would he do that? Because you got to keep reading, because he mentioned a
+ 3538.3  who also got scandal around her name.
+ 3541.3  Her name was Mary, the mother of Jesus,
+ 3544.8  who was engaged to a man in Joseph
+ 3546.8  and comes up pregnant as a virgin.
+ 3549.3  Joseph is like, who you been boning?
+ 3551.3  Mary's like, it's the Holy Spirit.
+ 3553.3  Joseph is like, I don't believe that.
+ 3555.3  We going downtown, so the scripture says he tried to divorce her,
+ 3561.3  quietly. Why? Because now this story
+ 3564.3  surrounding her name, that Mary was unfaithful to Joseph.
+ 3567.3  But God sends an angel to Joseph's nun and she's not pregnant by some other dude.
+ 3574.1  She pregnant by the Holy Spirit.
+ 3575.7  The person that's in it will be the Son of God.
+ 3577.6  Is it possible that to legitimize the Son of Mary, a woman who was considered ratchet, that
+ 3586.5  Matthew and his genius would throw four other women in there with ratchet stories to show
+ 3591.0  all the Jews that if God could walk through all these other women, could work through two
+ 3606.0  prostitutes, an adulterer, and a woman who slips on the sheets, and God can work
+ 3616.2  through those kind of people. You better believe he can work through Mary to
+ 3622.9  bring about the Son of Jesus, that you cannot discredit who God can work through.
+ 3634.2  Eved the line of Jesus through two prostitutes, a woman slipping on the sheets
+ 3647.3  and an adulterous, but you think everybody got to be perfect to be used by God.
+ 3655.1  The perfect background, the perfect story, the perfect family tree.
+ 3661.8  Everybody, a family got to be righteous and right.
+ 3670.6  This gives me hope for my own dysfunction and my own past.
+ 3674.8  That it does not matter where you came from.
+ 3679.5  It only matters what you do it right now and where you going.
+ 3694.4  You know, I'm done, I'm done, I'm done.
+ 3702.2  Let me, let me just close with some,
+ 3704.8  some gems from the family tree of Jesus.
+ 3707.6  Seven of them, they ain't coming up on the screen,
+ 3710.2  I just wanna tell you them real quick.
+ 3712.1  You know what we learn from the family tree of Jesus,
+ 3715.4  I'm done.
+ 3716.8  We see how God works through generations
+ 3718.8  to accomplish His will.
+ 3721.5  He works through generations to accomplish His will.
+ 3725.1  You know what else we've learned from the family tree of Jesus?
+ 3727.5  We see that when God looks down on humanity, he doesn't see a faceless mass of people.
+ 3732.5  He sees names of people he knows personally.
+ 3735.9  He knows Matthew.
+ 3737.1  He knows Philip.
+ 3738.1  He knows Don.
+ 3739.0  He knows you personally.
+ 3740.3  He knows Inez.
+ 3741.5  He knows Jatana.
+ 3742.6  He knows you personally.
+ 3745.0  Taylor.
+ 3747.7  He knows you.
+ 3749.3  He knows where you are, what you've been through, what you're going through.
+ 3752.2  He knows you personally.
+ 3754.1  You know what we learn from the family tree of Jesus?
+ 3756.2  We see how God uses righteous people and evil people and famous people and unknown people
+ 3761.6  for His glory and for His purposes.
+ 3763.5  You know what else we learn through the family tree of Jesus?
+ 3766.6  We see that a dysfunctional family tree does not hinder your future.
+ 3772.3  You know what else we see in the family tree of Jesus?
+ 3774.9  We see how God uses ordinary people through history to bring about great missions in the
+ 3780.0  earth.
+ 3783.2  You know what else we see through the family tree of Jesus?
+ 3787.1  You see how God can use people deemed unworthy by others to be associated with Jesus.
+ 3794.2  Have you ever felt unworthy?
+ 3796.7  Have you ever felt like man, there's no way God can use a person like me.
+ 3799.6  You know what I've done, you know what I've been through, you know what I've said, you
+ 3802.1  know what I've done.
+ 3803.1  You have no idea what I've done.
+ 3804.1  There's no way God can use a person like me.
+ 3810.4  But the last one I want to give you and I'm done, probably the most important thing we
+ 3813.4  see in the family line of Jesus, this one means everything to me.
+ 3817.0  see how important your faithfulness in your generation is.
+ 3821.0  Because you have no idea how your decisions in this life and how your
+ 3825.6  faithfulness is going to impact the children coming behind you, their children,
+ 3829.8  and their children. My children, look, their lives have been completely, look,
+ 3834.3  their lives have been set on a course because of the decisions I've made,
+ 3839.1  the actions I've taken. You have listened to me, this is serious. You have no idea
+ 3844.2  the impact you can have on the people coming out of your loins behind you by the
+ 3848.9  decisions you make today. Your faithfulness is important today. That's why you need to
+ 3853.3  run your race. It's important for you to run your race to be faithful in your
+ 3861.6  generation to take your baton of faith and hand it off to the next person.
+ 3866.0  Listen, you have, listen, some of y'all are building businesses and building things
+ 3870.0  that's going to change your generations forever. You have no idea. That's why you
+ 3873.6  You gotta do you while you hear now,
+ 3876.4  according to God's purposes for your life.
+ 3879.9  You have no idea how your faithfulness
+ 3881.7  is gonna impact people coming behind you.
+ 3884.5  So I wanna say to somebody as I close,
+ 3886.5  your life counts.
+ 3888.8  That's what we see in the genealogy.
+ 3890.6  I'm closing.
+ 3891.5  I'm talking to you, my brother.
+ 3892.8  I'm talking to you, my sister.
+ 3894.0  I'm done.
+ 3894.9  Listen to me.
+ 3895.7  Don't move.
+ 3896.5  Listen.
+ 3897.9  Listen to me.
+ 3899.6  Look right at me.
+ 3901.0  Christian, look right at me.
+ 3902.9  Unbeliever, look right at me. Look at me. Look at me. Your life matters. And what you do
+ 3912.8  with it, it matters. It counts for something. We are unwise to live every day aimlessly
+ 3922.7  without any kind of goals or vision. Your life matters. Your decisions matter. Your actions
+ 3929.8  matter what I do with this one life I get it matters. Can I can I go deeper? You
+ 3938.4  have no idea how your decisions is gonna shift your whole family forever.
+ 3943.6  Washes, I'm gonna talk to me you take this for you. There's gonna be some kids
+ 3949.6  four generations from now they gonna remember Phillip Anthony Blichy. They gonna
+ 3955.3  say it was that dude my great great great grandfather who changed everything for
+ 3960.4  Our family left us in the heritage.
+ 3962.3  Bill Wealth gave us a legacy of faith.
+ 3964.4  Fill in your blank.
+ 3966.6  Your life matters.
+ 3971.9  Your life matters.
+ 3973.0  All y'all women that we talking about, what my boy has.
+ 3975.1  I want my boy has.
+ 3976.4  His mother was great at the prostitute.
+ 3980.7  Even your child is going to matter.
+ 3990.8  That's why you got to play your part.
+ 3992.0  I'm done.
+ 3993.8  Some of you have come from great families.
+ 3997.3  And some of you have come from dysfunctional families,
+ 4000.6  but the greatest family you will ever be a part of
+ 4003.6  is the family of God.
+ 4006.5  And it's the greatest family.
+ 4011.4  Now every head bowed and every eye closed, I'm done.
+ 4016.3  Nobody move it.
+ 4019.5  Some of you have come from dysfunctional paths,
+ 4023.2  but the greatest family you'll ever be a part of
+ 4026.6  is the family of God.
+ 4028.3  Some of you have come from great families.
+ 4030.9  Praise God for your name and your wealth.
+ 4033.1  But the greatest family you will ever be a part of
+ 4036.6  is the family of God.
+ 4037.6  Why?
+ 4038.1  Because every family is going into eternity.
+ 4041.7  And the only families that's going to survive the judgment,
+ 4045.2  the only family that's not going to end up
+ 4047.0  in eternal damnation, the only family that's not going to hell
+ 4050.9  is those who are in the family of God.
+ 4054.0  That's not matter your past, your background
+ 4056.2  or where you came from.
+ 4057.9  You need to at some point in search your life into the family of God that's your only insurance when you die
+ 4065.1  Your money can't help you when you die
+ 4067.2  Your connections can't help you when you die
+ 4069.5  Your status can't help you when you die and you're going to die and the only family has gonna end up in heaven and live in glory forever
+ 4077.3  As those who are connected to the family of God today right now in this moment
+ 4082.8  I'm going to give you an opportunity to place your name in the family of God.
+ 4088.6  You say, how?
+ 4089.6  I got to go to church every week.
+ 4090.8  Nope.
+ 4091.8  I got to be religious.
+ 4092.8  Nope.
+ 4093.8  I got to be perfect.
+ 4094.8  Nope.
+ 4095.8  All you got to do is keep it real.
+ 4098.8  Just keep it real with no count.
+ 4100.6  Here it is.
+ 4101.6  Here is the gospel.
+ 4102.6  You and I are sinners.
+ 4104.9  We have broken God's laws and we were born in sin.
+ 4109.1  The scripture says if anyone dies in sin, they're going to be separated from God for
+ 4114.2  all eternity, but God in His love not wanting you to die and be damned, sent His son, the
+ 4122.8  Lord Jesus Christ, who died a sacrificial death in your place. He took upon Himself all your
+ 4130.0  sin, all your mistakes, all your failures. Then God says if anyone would turn, trust,
+ 4137.5  and put their faith in Jesus, I from heaven will forgive them of their sins.
+ 4144.5  And I will put them in my family tree.
+ 4147.5  I will make you my son, my daughter.
+ 4150.5  That can happen for you right now.
+ 4152.5  It's happening to you right now on your seat.
+ 4154.5  I want to pray for everyone who says that's it.
+ 4156.5  I want to live my life with purpose.
+ 4158.5  I want my name in God's family.
+ 4159.5  I want to be able to pray and God hears my prayers.
+ 4162.5  I want to walk out here knowing I can pillow my head tonight
+ 4165.5  that my name is part of God's family. If I'm talking to you, I want to pray for you.
+ 4169.9  I'm not going to embarrass you. I'm not going to bring you down here. Nobody can't see you.
+ 4174.3  This is between you and God. It's private. If you say, preach it, that's me. I want to be a part of God's family.
+ 4180.3  I want to repent of my sins. I want to live a life of purpose. I'm leaving here a brand new man, a brand new woman.
+ 4184.7  If that's you, I'm going to count to three. When I say three, I just want you to throw your hand up and throw it back down.
+ 4189.9  Nobody's gonna see you.
+ 4191.3  Okay, three, God, one, God is calling you.
+ 4195.2  Two, you can leave here a brand new man or brand new woman.
+ 4198.3  Three, throw your hand up in the air.
+ 4200.1  Leave it there, I see that hand.
+ 4201.2  Leave it there, I'm trying to count.
+ 4202.4  I see that hand one, see that hand, God, two.
+ 4204.9  I see that hand three, I see that hand four,
+ 4206.9  see that hand five, six, seven, eight, nine, 10, 11, 12, 13,
+ 4211.8  14, 15, I see that hand, 16, 17, 18, 19, I see that hand, 20,
+ 4217.6  21, 22, 23.
+ 4219.5  I see that hand 24, 25, 26.
+ 4222.9  I see that hand 27, 28, 29, 30.
+ 4226.6  I see that hand 31, 32, 33, 34, 35, 36.
+ 4234.0  I see that 37, 38.
+ 4236.6  I see that hand, 39.
+ 4238.6  I see that hand.
+ 4241.1  39, I see that, 40.
+ 4243.0  I see that hand.
+ 4245.5  40, I see that hand.
+ 4249.2  Put your hands down right in your chair.
+ 4252.8  Everybody just pray this precedent.
+ 4254.3  They don't got a prayer alone.
+ 4255.1  Just say, Lord, forgive me of all my s***,
+ 4259.4  all my wrong doing.
+ 4261.1  I'm sorry.
+ 4262.6  I repent of my sin.
+ 4265.4  I put my faith in you now.
+ 4270.6  In Christ's name, amen.
+ 4273.2  If I follow the name of Jesus, I pray for every person
+ 4276.0  that just put their faith in you.
+ 4277.7  A prayer don't save them.
+ 4279.2  Only the Holy Spirit does that sovereignly from what you preordained before the beginning
+ 4283.3  of time.
+ 4284.3  I pray you fill them with your spirit, seal them as a son and daughter.
+ 4287.7  I pray you change their family tree forever.
+ 4290.1  Father, you said when one sinner repents all of heaven rejoices, so right now we were
+ 4294.2  choice with all forty people that just put their faith in the Lord Jesus Christ.
+ 4300.9  Come on, we were choice right now.
+ 4303.1  We were choice.
+ 4304.1  Somebody help me praise.
+ 4306.1  Somebody give God praise for all four.

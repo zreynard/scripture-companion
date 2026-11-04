@@ -1,4 +1,4 @@
-    0.0  If you're a guest with us this morning, we want to welcome you to 2819 Church.
+    0.0  If you are a guest with us this morning, we want to welcome you to the 2018 church.
     4.5  We want to welcome all of our digital disciples who are watching right now live, cities all
    27.1  across this country, pockets all around the world.
    37.2  We welcome you to the presence of God.
@@ -6,13 +6,13 @@
    43.5  To all of the unbelievers in the room, we know that you're in here.
    47.9  Those watching and listening, we welcome you as well.
    54.0  I want to first just thank all of those who joined us yesterday and serve M25.
-   71.7  Hundreds of men and women from this church left these four walls because the church is
-   80.2  not a building.
-   81.2  The church is a people.
-   83.2  That's why we never refer to the building as a church, which is called it a facility.
-   89.3  She stops saying we're going to church.
+   71.7  Hundreds of men and women from this church left these four walls because the church is not
+   80.4  a building.
+   81.9  The churches are people.
+   85.5  So we never refer to the building as a church, which is called a facility.
+   89.3  We should stop saying we're going to church.
    91.5  We are the church.
-   92.5  We're going to our gathering location.
+   93.1  We're going to our gathering location.
    95.7  And hundreds of us went out into the streets yesterday to be the tangible hands and feet
   103.2  of the Lord Jesus Christ in serving and outreach across the city.
   111.2  This morning it's emotional for me because in my time out there in the streets over these
@@ -21,250 +21,1163 @@
   129.3  family's from Trinidad, I was the first person in my family born in the US and
   134.1  she had a very difficult life. Some of the outreaches that we do out in the
   140.6  streets reminds me of the importance of loving on people who are in need, caring
-  148.9  for those who are in need and looking into the eyes and seeing the humanity of people
-  156.8  who are in need and not looking down upon them. Because most of us are just one check
-  162.5  away from being under a bridge and for a lot of our boasting. The only reason you have a
-  173.5  roof over your head and a vehicle to drive and food on the table, a jacket on your back.
-  180.8  It's not because you all of that.
-  184.2  You are no greater than God's grace.
-  186.3  You are no greater than God's grace.
-  195.7  We are the products of grace.
-  198.2  You could take credit for nothing good in your life.
-  203.2  And I want us to be a people that don't drive by the homeless and look down upon them with
-  208.9  condescending attitudes like they're lazy or they're despicable.
-  215.5  Well out there is some mother who lost a job because some man left and she could not pay her bills.
-  222.5  And she lost her house.
-  225.5  And she lost her car and she goes out in the street to eat from a trash can for one night not knowing that night would turn to two years.
-  234.5  And then you meet her in her broken state and look down upon her because you're going back to her house.
-  239.5  God forbid that his children would treat those who are less fortunate than not.
+  148.9  for those who are in need and looking into the eyes and seeing the humanity of people who
+  156.9  are in need and not looking down upon them. Because most of us are just one check away
+  162.7  from being under a bridge and for a lot of our boasting. The only reason you have a roof
+  173.9  over your head and a vehicle to drive and food on the table, a jacket on your back. It's not
+  181.4  because you all of that. You are no greater than God's grace. We are the products of grace.
+  197.7  You could take credit for nothing good in your life. I want us to be a people that don't
+  204.8  drive by the homeless and look down upon them with condescending attitudes like they're lazy
+  214.0  or they're despicable.
+  216.3  Well, out there is some mother who lost a job because some man left.
+  220.8  She could not pay her bills.
+  223.9  She lost her house.
+  226.3  She lost her car.
+  227.4  And she goes out in the street to eat from a trash can for one night,
+  231.7  not knowing that night would turn to two years.
+  234.7  And then you meet her in her broken state and look down upon her
+  237.7  because you're going back to a house.
+  240.4  God forbid that His children would treat those who are less fortunate than not.
   245.9  And so for our house, we want to be a people that are not just chained to chairs and comfort,
-  254.7  that it does not take Serf M25 for us to live as the hands and feet of Jesus wherever
-  260.5  we are.
-  273.1  So I'm thankful for all of us who joined Serf M25 and those of you who are helping us
-  280.8  to spread the gospel through those physical means.
-  285.4  I also want to make mention of the fact that a spiritual son of mine was going to be preaching
-  291.1  here in the summertime.
-  293.6  Just recently, text me and said, he had a dream, and in his dream he saw the sky open
-  300.0  up.
-  302.6  He saw the Lord Jesus coming on the clouds.
-  306.8  And he heard loud trumpets in his dream blowing.
-  311.0  And as I read his text messages, I burst into tears because just in the space of the last
-  316.3  couple weeks, I've heard the chorus of that growing. People have envisions of Christ,
-  322.7  and open skies, and hearing trumpets. That is a chorus that is growing in our nation.
-  329.8  It's actually growing around the world. That people are having dreams of the resurrected
-  335.4  Savior. They have been dreams of an open expanse. They're having dreams of hearing
-  340.6  trumpets. And I think for those of us who have a prayer life, for those of us who are
-  347.5  sensitive, I believe what God is doing is letting the world know that time is running
-  353.2  out and that he is preparing the world for the return of his son and for the rapture
-  360.1  of his church. And my question to you is, are you paying attention? Are you just doing
-  369.5  services like I thought about these dreams. I see on social media that people keep having
-  375.7  these dreams and they keep hearing trumpets and then I wonder what is all it is for?
+  254.7  that it does not take Serv M25 for us to live as the hands and feet of Jesus where ever we
+  260.8  are.
+  273.4  So I'm thankful for all of us who joined Serv M25 and those of you who are helping us to
+  281.0  spread the gospel through those physical means.
+  283.7  I also want to make mention of the fact that a spiritual son of mine
+  289.9  Was gonna be preaching here in the summertime
+  293.1  Just recently text me and said he had a dream
+  297.6  And in his dream he saw the sky open up. He saw the Lord Jesus coming on the clouds
+  306.1  And he heard loud trumpets in his dream blowing
+  310.4  And as I read his text messages
+  312.5  I burst into tears because just in the space of the last couple weeks, I've heard the chorus
+  318.8  of that growing.
+  320.0  People have visions of Christ and open skies and hearing trumpets.
+  326.5  That that is a chorus that is growing in our nation, is actually growing around the world.
+  332.0  That people are having dreams of the resurrected Savior, they have been dreams of an open expanse,
+  339.1  They have in dreams of hearing trumpets.
+  343.1  And I think for those of us who have a prayer life, for those of us who are sensitive, I
+  348.1  believe what God is doing is letting the world know that time is running out and that he is
+  356.3  preparing the world for the return of his son and for the rapture of his church.
+  361.2  And my question to you is are you paying attention?
+  368.6  Are you just doing services?
+  370.6  I thought about these dreams.
+  372.6  I see on social media that people keep having these dreams and they keep here trumpets.
+  378.1  And then I wonder what is all it is for?
   381.9  And I listen to the preaching in America and I ask myself to what end are we preaching?
-  388.7  Like what does the end go of our preaching? What does the end go of our ministry? We're
-  394.6  doing all of this for what? What are we preparing Christians for today? Are we
-  402.8  just preparing them to beg God for all that stuff that they want? Or are we
-  407.6  preparing you for tribulation that's coming? Are we preparing you to stand in
-  412.3  the face of adversity? Are we preparing you for the rapture like how many of you
-  417.3  are going to be the virgin with the oil into our preaching minds and everybody
-  430.6  across this country and I'm asking myself like we preach them for what purpose? All
-  437.9  of our different series we're trying to build into what into our people. We're turning Christians
-  444.6  into consumers. We're making Christians more introspective, more self-absorbed and narcissistic.
-  456.7  Now we think this whole thing is about you and about me and about what you want.
-  463.8  And all we teach in Christians to do is twist God's arm to bless your monument.
+  388.7  Like what does the end go of our preaching?
+  392.4  What does the end go of our ministry?
+  394.6  We're doing all of this for what?
+  398.3  What are we preparing Christians for today?
+  402.6  Are we just preparing them to beg God for all that stuff that they want?
+  407.4  Are we preparing you for tribulation that's coming?
+  410.7  Are we preparing you to stand in the face of adversity?
+  414.4  Are we preparing you for the rapture?
+  416.1  Like, how many of you are going to be the virgin with the oil into our preaching minds
+  429.8  and everybody else across this country and I'm asking myself, like, we're preaching for
+  434.0  what purpose?
+  435.0  All of our different series, we're trying to build into what, into our people.
+  443.7  Returning Christians into consumers, we're making Christians more introspective, more self-absorbed
+  453.8  and narcissistic.
+  456.9  That we think this whole thing is about you and about me and about what you want.
+  466.0  And all we teach in Christians to do is twist God's arm to bless your monument.
   479.1  God saved you for your glory.
-  482.6  No, He rescued you for His glory in whatever state you find yourself.
-  497.2  Clothes are naked, abounding or abased in a crib or under a bridge.
-  505.2  We've been rescued for His glory and His glory alone on a regular basis.
+  483.0  No, He rescued you for His glory.
+  493.2  In whatever state you find yourself, clothes are naked, abounding or abased, in a crib
+  503.5  or under a bridge.
+  506.1  We've been rescued for His glory and His glory alone on a regular basis.
   515.0  Some of you, you don't even know yourself because you're trying to discover yourself
   519.0  in all of these other things.
   521.8  And I pray you would learn identity through seeing Christ clearly.
   526.2  You want to know who you really are?
   527.7  See Christ for who He is.
   530.0  And then you see yourself for who you are.
-  532.1  See?
-  533.1  And as I say that, you get in visions of your vision board because you have not read Isaiah
-  536.8  that when Isaiah saw the Lord, how I had lifted up, when he saw the Lord right, he saw himself
-  549.2  right, a sinner in need of grace and in response to salvation, there was only one response to
-  559.7  salvation.
-  561.7  Check Isaiah 6, it's only one.
-  566.9  Here am I.
-  575.0  Bless me.
-  579.5  Here am I.
-  581.6  Give me.
-  584.4  There's only one response to being rescued from death.
-  588.2  Here am I.
-  589.9  That's an offering.
-  595.2  Send me.
-  598.8  I wish I had a hundred people that I would just say right now.
-  601.5  Lord, send me.
-  605.5  I wish I had 300 people.
-  607.5  500.
-  608.5  A thousand of you.
-  609.5  I said, Lord, here I am.
-  611.2  That's a dangerous prayer.
-  618.0  Here I am.
-  619.0  So you're afraid.
-  620.8  Here I am.
-  626.7  Send me.
-  628.0  I put my life on the altar of your service.
-  631.8  It's my only response to salvation.
+  532.6  And as I say that, you get in visions of your vision board because you have not read Isaiah
+  537.0  6.
+  538.0  that when Isaiah saw the Lord, how I had lifted up, when he saw the Lord right, he saw himself right,
+  549.4  a sinner in need of grace and in response to salvation, there was only one response to salvation.
+  560.4  Check Isaiah 6, it's only one. Here am I, bless me. Here am I, give me. There's only one response
+  585.3  to be rescued from death.
+  587.8  Here am I, that's an offering.
+  594.9  Send me.
+  598.8  I wish I had a hundred people
+  600.1  that would just say right now,
+  601.5  Lord send me.
+  605.4  I wish I had 300 people, 500, a thousand of you.
+  609.8  Say Lord, here I am.
+  615.6  That's a dangerous prayer.
+  617.8  Here I am, so you're afraid.
+  620.4  Here I am, send me.
+  627.9  I put my life on the altar of your service.
+  631.7  It's my only response to salvation.
   637.8  And if we ain't building Christians up towards that end,
-  640.7  then what are we doing?
+  640.6  then what are we doing?
   645.1  Our mouths will quit and turn the church over
   647.9  to a pulpit puppet.
   652.7  Are we ministers or moguls?
   656.1  Are we preachers or puppets?
-  660.0  What are we doing?
+  659.9  What are we doing?
   662.0  What are we talking about?
-  664.9  Are we in here trying to accomplish?
+  664.8  What are we in here trying to accomplish?
   677.5  What a welcome.
   687.9  You know what I wish some of y'all would do?
   690.0  I wish you would stop listening to so many preachers.
-  693.3  And I wish you would just start reading your Bible.
-  700.4  I wish some of y'all would stop swinging
-  704.5  on the testicles of so many preachers
-  708.5  and treating them like gods in the flesh.
+  693.4  And I wish you would just start reading your Bible.
+  700.4  I wish some of y'all would stop swinging on the testicles
+  705.6  of so many preachers.
+  708.5  And treating them like gods in the flesh.
   711.0  I wish you would stop doing that.
-  713.5  Now sweat them to death.
+  713.5  I sweat them to death.
   715.5  And I wish you would just open up the New Testament
   717.5  and just start reading for yourself.
   723.9  I don't care.
   725.9  I don't care.
   726.5  I said that.
-  727.9  I wish you stopped swinging on the testicles
-  730.1  at so many preachers.
-  732.1  It was so tight on the struck.
-  734.0  It was so platform struck.
-  735.7  It was so light struck.
-  738.4  And so they so struck.
+  727.9  I wish you stop swinging on the testicles
+  730.1  at so many preachers who so title struck
+  734.0  and so platform struck and so light struck.
+  738.4  And so they so struck,
   739.7  I wish you would stop swinging on their testicles
   742.3  and start reading the New Testament for yourself.
-  746.2  And find Jesus in the pages of the Word of God for yourself.
-  750.5  and start chicken behind the nonsense that you're listening to.
-  758.2  I want to God you curl up next to a New Testament letter this week.
-  764.4  I don't care.
-  766.5  I don't care.
-  772.4  I said that.
-  776.3  Stop swinging on them and read the Bible.
-  796.4  Today, I want to preach to you two teachings.
-  805.4  My hope is that they'll be both very short.
-  807.9  And I know as I say that, you don't believe me.
-  816.8  I want to preach to you two teachings
-  818.7  with the hope that this first one will be the shortest message
-  821.5  you ever preach in 28, 19 history.
-  824.2  And then at the end of the first message,
-  830.8  I want everybody to stay in your seat.
-  833.6  I'm gonna preach to you a second message.
-  838.6  Y'all ready?
-  844.8  We are in the final episode of season one
-  848.3  of a new series called Wisdom and Wonder.
-  856.3  And as a church, we are walking through
-  859.2  the Gospel of Matthew together.
-  861.6  Matthew was a first century Jewish outcast who was converted to Christianity by the Lord
+  746.2  And find Jesus in the pages of the Word of God
+  748.9  for yourself and start checking behind the nonsense
+  752.9  that you're listening to.
+  758.2  I want to God you curl up next to a New Testament letter
+  761.4  this week. I don't care. I don't care. I said that. Stop swinging on them and read the Bible.
+  796.2  Today, I want to preach to you two teachings. My hope is that they will be both very short.
+  808.1  And I know as I say that, you don't believe me. I want to preach to you two teachings with
+  818.9  the hope that this first one will be the shortest message I ever preached in 28, 19 history.
+  829.2  And then at the end of the first message, I want everybody to stay in your seat.
+  833.6  I'm going to preach to you a second message.
+  838.3  You all ready?
+  844.9  We are in the final episode of season one of a new series called Wisdom and Wonder.
+  856.4  And as a church, we are walking through the Gospel of Matthew together.
+  863.0  Matthew was a first century Jewish outcast who was converted to Christianity by the Lord
   869.0  Jesus Christ became one of his chief apostles and an eyewitness of his ministry.
-  875.5  He wrote the gospel narrative that bears his name and as a church we are studying that
-  881.8  narrative together because I want you to be more enamored with the word of God than with
-  888.7  oratory. Last night my wife and I were listening to one of Paul's letters in
-  893.9  which he said he was not a great speaker but that his letters were weighty that
-  899.8  he was more impressive with his writing than with his preaching. I think that's
-  904.3  so interesting because when we think of Paul we think of him as a great preacher
-  907.9  but he himself said y'all was not impressed with my preaching you was
-  911.8  impressed with my letters. I want you to be more impressed with the written word
-  915.5  than with the oratory of men.
-  920.3  I wanna be able to read it and you be in awe of God
-  923.8  and the Lord Jesus Christ.
-  925.6  Without you needing entertainment to keep you awake.
+  875.5  He wrote the gospel narrative that bears his name and as a church we are studying that narrative
+  882.3  together because I want you to be more enamored with the word of God than with oratory.
+  890.5  Last night my wife and I were listening to one of Paul's letters in which he said he was
+  895.2  not a great speaker, but that his letters were weighty, that he was more impressive with
+  901.2  his writing than with his preaching.
+  903.9  I think that's so interesting because when we think of Paul, we think of him as a great
+  907.5  preacher, but he himself said, y'all was not impressed with my preaching, you was impressed
+  912.2  with my letters.
+  913.2  I want you to be more impressed with the written word than with the oratory of men.
+  920.3  I want to be able to read it and you'll be in awe of God and the Lord Jesus Christ.
+  925.7  Don't you need entertainment to keep you awake.
   929.8  See, churches that are full of entertainment,
   932.7  they reduce the spiritual maturity of their people.
   937.5  I need to say that one more time.
   939.6  Churches that love entertainment,
   941.6  what they're really doing is reducing
-  943.6  the spiritual maturity of their people.
-  946.3  They're telling their people you can't focus on teaching
-  949.1  without gimmicks.
+  943.7  the spiritual maturity of their people.
+  946.3  They're telling their people you can't focus
+  948.3  on teaching without gimmicks.
   954.2  And that I'm not against props and illustrations,
-  956.5  but the greatest prop for the gathered body will always be.
-  961.9  An open bible.
-  964.0  Here is my prop.
-  978.8  I see a prodigal daughter in the room.
-  981.0  I won't call her name.
-  982.9  I'll just say shout out to you.
-  984.9  And I want you and I love you.
-  987.1  I prayed for you.
-  988.6  And God showed me in a vision you would be in here today.
- 1016.1  Can I say something to y'all?
- 1020.2  Not only is time running out,
- 1023.0  and Jesus is returning,
- 1025.3  but life is too short for grudges,
- 1028.5  and unforgiveness,
- 1031.0  and holding people forever.
- 1033.5  I want us to be a people that love well, live well,
- 1037.7  forgive well, move on well,
- 1040.7  because we're all, well, I ain't gonna say we all,
- 1043.0  hopefully we all go into the same place.
- 1048.3  Some of us will not be there.
- 1058.7  I thank God for a spiritual daughter.
- 1061.7  Return to the house even for a visit.
- 1065.7  I honor you, I celebrate you, I love you.
- 1071.1  I praise God for you.
- 1105.9  I thank God for what he's doing in your life.
- 1110.9  I thank God for how he's blushed you.
- 1114.9  If husband and child, I thank God for your ministry
- 1118.6  and the fruitfulness.
- 1120.1  I thank God for our interaction and my DMs.
- 1123.0  I don't even go in there and I just stumbled on your message and you stumbled on to minds
- 1129.5  and the Lord showed me in my prayer time you would be here today.
- 1142.9  Y'all need to stop giving glory to the word coincidence.
- 1149.3  The word coincidence robs God of what belongs to Him.
- 1153.3  There are too many things that happen in our life that we chalk it up as just coincidence.
- 1158.7  Coincidence is a thief of glory.
- 1160.9  Tweet that.
- 1162.7  Post that, put that in your story.
- 1164.6  Coincidence is a thief of glory that belongs to Jesus.
- 1171.1  No, when I look at all the fine details of all of his movements,
- 1175.3  I trace things back and I say, God gets glory for that.
- 1179.3  Ain't no coincidence.
- 1180.3  Throw that in your IG story.
- 1182.1  Coincidence is a thief of glory that belongs to Jesus.
- 1187.1  There ain't no coincidence the Lord engineers and orchestrates.
- 1192.8  And when we look over the details of our life,
+  956.5  But the greatest prop for the gathered body will always be an open Bible.
+  964.3  Here is my prop.
+  965.3  I see a prodigal daughter in the room.
+  980.9  I won't call her name.
+  982.8  I'll just say shout out to you and I want you to know I love you.
+  987.0  I prayed for you and God showed me in a vision you would be in here today.
+ 1016.2  Can I say something to y'all?
+ 1020.4  Not only is time running out and Jesus is returning.
+ 1025.4  life is too short for grudges and unforgiveness and holding people forever.
+ 1033.0  I want us to be a people that love well, live well, forgive well, move on well,
+ 1039.9  because we're all well, I ain't gonna say we all hopefully, we all go into the same
+ 1044.8  place. Some of us will not be there. I thank God for a spiritual daughter,
+ 1061.0  return to the house even for a visit. I honor you, I celebrate you, I love you, I
+ 1070.5  praise God for you. I thank God for what he's doing in your life. I thank God for
+ 1111.6  how he's blushed you. Husband and child, I thank God for your ministry and the
+ 1118.7  fruitfulness. I thank God for our interaction and my DMs and I don't even
+ 1125.5  going there and I just stumbled on your message and you stumbled on to minds and
+ 1130.0  and the Lord showed me in my prayer time you would be here today y'all I need to
+ 1145.0  stop giving glory to the word coincidence the word coincidence robs God of what
+ 1152.2  belongs to him there are too many things that happen in our life that we
+ 1156.4  chalk it up as just coincidence coincidence is a thief of glory tweet that
+ 1161.9  Post that, put that in your story.
+ 1164.3  Coincidence is a thief of glory that belongs to Jesus.
+ 1169.4  No, when I look at all the fine details of all of his movements, I trace things back and
+ 1176.6  I say God gets glory for that.
+ 1179.0  Ain't no coincidence.
+ 1180.4  Throw that in your IG story.
+ 1182.3  Coincidence is the thief of glory that belongs to Jesus.
+ 1187.0  Ain't no coincidence the Lord engineers and orchestrates.
+ 1190.6  And when we look over the details of our life,
  1194.7  I shall make us be in more in awe of Him.
- 1199.5  And I just keep marveling every time I get a glimpse of Him.
+ 1199.5  And I just keep marveling every time
+ 1201.2  I get a glimpse of Him.
  1202.3  I marvel over who He is and how He operates.
- 1210.0  First message.
- 1212.1  Matthew 12, verse 46 through 50.
+ 1210.0  First message, Matthew 12, verse 46 through 50.
  1217.0  One verse is missing in your Bible.
  1219.2  I will explain to you why.
  1220.7  So we're gonna unpack four quick verses together.
- 1223.9  And then I'm gonna preach to you a second message,
+ 1224.0  And then I'm gonna preach to you a second message.
  1233.0  title of this text, who is my true family?
  1243.4  Some of y'all gonna be vindicated today.
  1247.8  From some of the people that got your last name
  1250.0  and persecute you.
  1252.4  Who is my true family?
- 1257.4  Is the title of today's message,
- 1259.1  or the title of the first message?
- 1264.9  Spirit of the living God.
- 1269.8  Feel your presence in this room.
- 1273.4  We've come to this divine solemn moment together as a church.
- 1279.0  Pray that you would help this weakened Earth and vessel
- 1288.4  to indicate the depths of these deep spiritual truths.
- 1295.6  And Father, what I'm asking for is that you would topple the idols in this room
- 1303.8  across this camera that are competing for the supremacy with the Lord Jesus Christ.
- 1310.8  I'm asking you to take our hearts of stone and give us hearts of flesh.
- 1317.8  I'm asking you to open blinded eyes.
- 1320.8  I'm asking you to minister to hardened hearts.
- 1324.8  I'm asking you to give your children spiritual stamina.
- 1329.8  I'm asking you to purify our hearts as the Word is going forward.
- 1339.8  I'm asking you to make this moment glorious.
- 1345.7  I ask you this in the mighty, which means supreme greatness and the majestic supreme
- 1362.8  beauty, supreme power, and the matchless name unrivaled, no equal. No one can claim those titles
- 1375.4  asking the mighty and majestic and the matchless name of our Lord and Savior Jesus Christ.
- 1382.2  If you agree with me, shout amen. Come on, shout amen. Somebody just praise God right there. Just
- 1390.2  Just praise Him just I feel praise just praise Him with that praise Him
- 1417.6  Let everything that has breath praise Him
- 1420.8  Leluya somebody shout hallelujah I feel God somebody shout hallelujah
- 1432.1  Somebody shout hallelujah
- 1450.4  Thank you so much I'll hallelujah give it to him brother
- 1490.5  Yeah give him all that give him all that stuff don't have to be right in my life to do that
- 1499.7  I just...
+ 1257.4  Is the title of today's message
+ 1259.0  or the title of the first message?
+ 1264.9  Spirit of the living God, feel your presence in this room.
+ 1272.2  We've come to this divine, solemn moment together as a church.
+ 1279.1  Pray that you would help this weakened Earth and vessel.
+ 1290.1  Unitek the depths of these deep spiritual truths.
+ 1296.5  And Father, what I'm asking for is that you would topple the idols in this room across
+ 1304.5  this camera that are competing for the supremacy with the Lord Jesus Christ.
+ 1312.1  I'm asking you to take our hearts of stone and give us hearts of flesh. I'm asking you to open
+ 1319.8  blinded eyes. I'm asking you to minister to hardened hearts. I'm asking you to give your
+ 1326.7  children spiritual stamina. I'm asking you to purify our hearts as the Word is going
+ 1334.5  Going forward, I'm asking you to make this moment glorious.
+ 1350.6  I ask you this in the mighty, which means supreme greatness and the majestic supreme beauty,
+ 1363.8  supreme power and the matchless name unrivaled, no equal.
+ 1372.6  I don't want to claim those titles asking the mighty and majestic and the matchless name of
+ 1380.1  our Lord and Savior Jesus Christ.
+ 1382.5  If you agree with me, shout amen.
+ 1386.0  Come on, shout amen.
+ 1388.6  Somebody just praise God right there.
+ 1391.2  Just praise Him.
+ 1392.8  I feel praise.
+ 1413.7  Just praise Him with that praise Him.
+ 1419.1  Let everything that has breath praise Him.
+ 1427.4  Somebody shout hallelujah.
+ 1429.4  I feel God.
+ 1430.4  Somebody shout hallelujah.
+ 1432.4  Somebody shout hallelujah.
+ 1434.4  Thank you, sir.
+ 1451.0  Somebody shout hallelujah.
+ 1477.2  Give it to him, brother.
+ 1490.9  Yeah, give him all that.
+ 1493.9  Give him all that.
+ 1497.2  Stuff don't have to be right in my life to do that.
+ 1499.2  I just need breath in my lungs to do that.
+ 1502.2  Message one.
+ 1510.5  You ready?
+ 1511.5  Yes, sir.
+ 1512.5  And then message two.
+ 1514.5  In his State of the Union address in 1985, one of my favorite presidents,
+ 1530.2  President Ronald Reagan, said these powerful words,
+ 1533.3  it's going to come up on the screen.
+ 1535.1  He says, as the family goes, so goes our civilization.
+ 1545.8  As the family goes, so goes our civilization.
+ 1551.2  This is a profound statement with powerful truth for our nation, both in the natural and
+ 1564.4  in the spiritual.
+ 1567.6  For it was God and not society and not some psychological doctorate was God, who in the
+ 1575.9  beginning created, the family is one of the greatest institutions and building blocks of
+ 1584.7  society.
+ 1585.7  Digital design, according to the scriptures, the family consisted of one husband, a male,
+ 1598.0  one wife, a female, and offspring children.
+ 1604.4  And together there was a family unit, and the family unit was the catalyst to introduce
+ 1611.9  human beings first to the deep dynamics of community and loyalty and modeling for mental
+ 1621.9  and emotional and spiritual formation.
+ 1628.9  But since the beginning of its origins, the concept known as Family has been under attack
+ 1637.2  by an unseen force in the demonic realm
+ 1640.8  that has manifested itself in the scene realm.
+ 1645.5  For since the very beginning,
+ 1647.2  from the very first murder between two siblings,
+ 1651.6  the family that God created as that construct
+ 1655.3  has been constantly under attack
+ 1658.7  and under attack to dismantle
+ 1662.0  both its original design and its expression
+ 1666.5  in our society.
+ 1669.8  And since the beginning of time,
+ 1671.5  you and I, no one can clearly see
+ 1675.0  that the traditional family as God designed it
+ 1678.0  has been eroding from generation to generation.
+ 1682.3  And at the center of that erosion are two powerful questions.
+ 1686.0  One, what is a family?
+ 1690.1  And the second question, who is my family?
+ 1695.4  Let's unpack them together.
+ 1696.9  First, what is a family?
+ 1700.8  Is it two males and a child?
+ 1704.4  Is it two females and a child?
+ 1708.8  Should we be marrying anybody as ministers of the gospel?
+ 1715.8  Is it three people and a child?
+ 1718.1  Is it an orgy and a child?
+ 1720.5  What is a family?
+ 1724.1  In its most broadest biological terms, a family is any group of people.
+ 1730.3  that has been united together by blood, by marriage, and by adoption, in which that type
+ 1741.5  of family dynamic we have parents, and grandparents, and siblings, and cousins, and drunk aunts,
+ 1749.8  and uncles, drunk uncles, and drunk aunts, and a step family, and step cousins, and step
+ 1764.1  fathers and stepmothers and is brought as biological term that is a family.
+ 1773.4  But it's the second question that's at the center of this text in which Jesus blows up
+ 1784.9  the first century world with one of the most revolutionary statements ever recorded from
+ 1790.7  his mouth that would go on to not only change the world but give the world new language.
+ 1797.7  God, this is so powerful.
+ 1800.1  And a new construct for what we define as who is my family.
+ 1807.2  You remember season one, Matthew records in chapter 12, the beginning of the opposition
+ 1815.0  of the ministry of Jesus with the religious elite called the Pharisees.
+ 1820.1  They confront him in a grain field.
+ 1822.6  That battle bleeds into a synagogue, a man with a withered hand is healed.
+ 1828.1  Jesus leaves that city, he pulls up in another city, the battle continues with another group
+ 1834.3  of Pharisees.
+ 1835.8  He argues with them about his divine power, whether it's from the Holy Spirit or from demonic
+ 1841.4  forces.
+ 1842.4  He heals a man who was full of demon possession, who was blind and mute.
+ 1848.0  He talks to them about knowing trees by the fruit that they bear and not by the Instagram
+ 1852.6  following.
+ 1858.9  And then he talks to them last week about demons that leave and come back and about the
+ 1863.9  spiritual state of Israel and then Matthew finishes this discourse of Jesus with these
+ 1869.8  four verses we're about to unpack.
+ 1876.2  Give me 15 minutes.
+ 1880.3  Take my time.
+ 1886.7  Do you all say that to say that?
+ 1888.0  Do you say that because you really want to hear the preaching of God's Word?
+ 1893.0  I just want to know.
+ 1897.9  I want to know if that's cliche or you really want to know God's word.
+ 1909.8  So Matthew records about the sign of Jonah, about demonic warfare, and then he finishes
+ 1922.7  this section of his gospel with these four verses.
+ 1925.3  Listen carefully.
+ 1926.5  Verse 46, while he, Jesus, was still speaking.
+ 1936.0  What was he talking about?
+ 1937.4  He was talking about the unclean spirit that goes out of a man that comes back.
+ 1943.2  He was just talking about what spiritual will form without spiritual reform.
+ 1948.0  He was talking about, I'm sorry, social reform without spiritual reform.
+ 1952.1  He was talking about having morality without being saved.
+ 1956.0  You need to pay attention because there were no chapters and verses in the original manuscripts.
+ 1961.4  It's all one thought.
+ 1963.5  So he's talking about being moral,
+ 1965.6  Jesus talking about being moral without being saved.
+ 1969.8  And it says, while he was still speaking
+ 1972.6  to the people, behold, which means pay attention.
+ 1977.7  His mother and his brothers stood outside asking
+ 1982.1  to speak to him, stop.
+ 1985.1  So Jesus, if we lean into the scenario,
+ 1988.5  we will learn in verse 13, chapter 13 verse.
+ 1991.9  He's in a house.
+ 1994.0  And as he's in a house, he's teaching in the house.
+ 1996.6  So everything we taught last week was happening in a house.
+ 1999.7  The house is packed, Jesus is preaching and teaching.
+ 2003.5  And Matthew says, in the middle of his sermon,
+ 2007.0  his mother shows up and his brother shows up.
+ 2011.2  And they're outside asking the people,
+ 2013.5  can y'all go and get Jesus and bring him to us?
+ 2017.6  We need to talk to him right now.
+ 2020.3  in the middle of the sermon.
+ 2025.3  Now there are four things in this verse
+ 2027.2  I wanna just bring to your attention.
+ 2029.4  Four things I want you to consider.
+ 2031.5  I want you to consider the family of Jesus,
+ 2034.4  the location of that family,
+ 2036.2  the condition of that family,
+ 2037.8  the interruption of that family.
+ 2040.7  Let's unpack them together.
+ 2042.1  First, the family of Jesus.
+ 2044.9  Jesus was the son of God in the flesh,
+ 2049.4  but he was born in the first century into a Jewish family.
+ 2056.1  According to the scriptures,
+ 2057.6  Jesus was born of a virgin named Mary who was Jewish
+ 2061.2  and he had a stepfather who never touched Mary,
+ 2065.9  named Joseph.
+ 2067.6  Joseph is not mentioned in the text
+ 2069.8  because of the writing at that time,
+ 2071.6  we make an assumption of the text
+ 2073.3  that Joseph has died by this time.
+ 2076.3  And if Joseph has died by this time,
+ 2078.5  Jesus being the first child of his mother would not be responsible for the financial upkeep of the house.
+ 2086.1  According to the scriptures, we know that Jesus had four biological brothers who the scriptures mentioned by name.
+ 2094.1  Two of them would go on to write new testament letters that bear their name, one man named James,
+ 2101.0  and one man named Jude.
+ 2104.3  The scripture also tells us that Jesus had sisters,
+ 2107.4  and that doesn't tell us the name of the sisters,
+ 2109.8  or how many, but it just says sisters,
+ 2112.2  so we know at minimum he had at least two sisters or more.
+ 2116.2  So in the home of Jesus, we know there is Jesus,
+ 2119.6  there were four brothers, five boys,
+ 2122.4  and at least minimum two girls, seven children total minimum.
+ 2127.4  So the Catholic doctrine of Mary being a permanent virgin,
+ 2131.3  we know it's false doctrine and heresy.
+ 2133.5  Because Mary did not remain a virgin, because after she gave birth to Christ, she had at
+ 2141.3  least minimum six other biological children.
+ 2145.6  One of them, Divine Christ, six of them came from a natural union, Joseph and Mary.
+ 2151.1  They got busy and had kids.
+ 2152.9  They were fruitful and they multiplied.
+ 2154.8  They created a biological family.
+ 2158.2  I'm going somewhere with this.
+ 2160.8  Pay attention.
+ 2161.9  They created a biological family.
+ 2163.9  Joseph is getting busy in that bedroom.
+ 2165.8  Babies are being born.
+ 2167.2  Mary is a mother of seven children, minimum.
+ 2170.5  Are you paying attention?
+ 2177.8  I want you to notice the location of the family.
+ 2181.6  They are not inside the room where he's teaching.
+ 2185.6  They are outside the room.
+ 2188.0  For me as a student of the world,
+ 2189.7  this is not only descriptive, but it's also symbolic.
+ 2193.7  For Matthew tells me instead of listening
+ 2195.9  to the sun preach, his own family is outside
+ 2200.7  of the church gathering.
+ 2203.9  So never mind they thought it important
+ 2205.8  to be in the room to hear him talk.
+ 2208.9  Watch, they are outside the house physically.
+ 2213.3  Can I go deeper?
+ 2215.2  They are outside the kingdom spiritually.
+ 2220.1  Not only are they physically outside,
+ 2222.5  they are spiritually outside.
+ 2224.7  Well, how do I know that?
+ 2225.8  Because John writes in chapter seven
+ 2227.9  that his brothers did not believe he was the son of God.
+ 2233.4  that his own family was watched, unbelievers.
+ 2238.3  I'm going somewhere with this.
+ 2239.8  The family of Jesus were unbelievers
+ 2242.6  and they did not put their faith in him
+ 2244.3  until he was raised from the dead.
+ 2247.2  Until they saw a man come out of a tomb
+ 2250.2  with prince in his hand and feet,
+ 2251.9  then his brothers put their faith
+ 2254.5  in the Lord Jesus Christ.
+ 2259.7  It took a resurrected Jesus for them to believe.
+ 2263.2  So whose faith is greater, yours or this?
+ 2269.0  But can I go deeper?
+ 2270.6  But it also shows you how you could be so close to the Lord and still not know Him.
+ 2279.9  And as I'm reading this text, I get a flashback of something Matthew wrote about Jesus when
+ 2284.4  he said on that day, Matthew chapter 7, many is going to come and say, Lord, Lord, it was
+ 2293.5  close.
+ 2294.5  God, did we not prophesy in your name?
+ 2299.7  And did we not perform many miracles in your name?
+ 2303.4  And did we not cast out demons in your name?
+ 2306.5  Was we not in gatherings every Sunday?
+ 2309.4  Was we not listening to Christian podcasts?
+ 2312.1  Was we not writing Christian books?
+ 2314.3  Was we not performing signs and wonders?
+ 2319.0  And deceiving people to sew into my ministry because I'm selling you water that came from
+ 2323.7  Jerusalem?
+ 2324.7  Was I'm not selling you water that came from my tap in my kitchen and saying it came
+ 2332.0  from Jordan River.
+ 2333.2  Was we not selling you claws that I bought at Walmart?
+ 2336.1  That saying there was a Neutem, because I wiped my sweat on them.
+ 2339.7  Was we not doing all these things?
+ 2341.3  And the Lord is going to say to many people,
+ 2343.3  sitting and gathering all across this country,
+ 2346.6  you was this close.
+ 2348.3  Book is open.
+ 2355.3  Keep playing around.
+ 2356.3  And I don't see your name in it.
+ 2358.4  You had services without relationship.
+ 2364.5  You had religion without relationship.
+ 2368.0  You had Christian lingo without relationship.
+ 2371.4  You had a little bit of Christian behavior
+ 2373.6  without relationship.
+ 2374.8  You were never born again, never filled with the spirit.
+ 2378.2  You never became one of my followers.
+ 2380.2  Depart from me.
+ 2381.6  Wow, you're over time now.
+ 2383.2  You work on a viniquity.
+ 2385.5  I never knew you.
+ 2386.7  One of the most terrifying verses in all of scripture.
+ 2389.7  Imagine going to church a whole life, dying.
+ 2394.7  Like my aunt who slipped into eternity.
+ 2396.6  I know she's in heaven, but imagine slipping into eternity thinking you were saved
+ 2401.9  Only to not find your name in the book and then to cry out to God for mercy and here there is no second chance
+ 2408.1  And we are here preaching about what and we prepare and people for what and we do in church for what purpose
+ 2420.1  Unsuspecting people are sitting gatherings right now on Sunday morning thinking they're on their way to glory
+ 2428.9  that if the Lord cracked the sky right now this Sunday.
+ 2437.2  And so how do you raise in the same house
+ 2441.8  with the Son of God?
+ 2445.3  You saw Him at 12 reasoning with scribes in the temple,
+ 2449.7  running in the yard with the Son of God.
+ 2454.3  How did you hear the story that your mother got pregnant
+ 2457.2  with Him when she was a virgin?
+ 2459.2  You're not talking to me.
+ 2460.9  How in God's name do siblings are raised in a home
+ 2465.4  With one of your siblings was born when your father never touched your mother.
+ 2468.8  Did you hear stories of angels showing up in a field and announcing to your mom that
+ 2475.6  she was going to be pregnant with the Son of God?
+ 2477.8  How do you be that close for 30 years and still not believe?
+ 2494.1  And this is why the scripture tells you and me.
+ 2496.0  Look right at me.
+ 2498.9  Examine yourself.
+ 2501.5  I'm talking to everybody in this room.
+ 2503.0  Look at me.
+ 2504.0  Look at me.
+ 2505.0  I know you in here.
+ 2506.8  You can sit in a car.
+ 2507.9  You can sit in a garage all day.
+ 2508.9  day that'll make you a car and you could sit in this room all day that'll make
+ 2512.2  you a Christian that's why the scripture says examine yourself to see
+ 2517.2  are you really in the face I want to hear people say I tried Jesus and he
+ 2526.0  didn't work for me you would never save to begin with you ain't tried nothing you
+ 2531.4  tried religion I'm gonna get to that next week when we get to the first set of
+ 2536.9  the power of the power of the sower.
+ 2543.0  I'm getting ahead of myself.
+ 2545.6  Because by Jesus' math, when the word goes forth,
+ 2548.4  only one fourth of the people are getting it.
+ 2553.3  I almost said, who's the one fourth in this room?
+ 2555.1  But I don't want to do that.
+ 2556.7  I almost said that.
+ 2561.2  You're going to laugh until you die.
+ 2565.6  It won't be no laughing then.
+ 2572.7  The family of Jesus, the location of the family,
+ 2576.1  the spiritual condition of the family,
+ 2577.6  they're not born again.
+ 2579.1  They're not believers.
+ 2580.5  I would even tell you, can we deviate for just a second?
+ 2584.3  Mark chapter three, verse 20.
+ 2589.6  It says, is it Mark's telling another count?
+ 2592.8  Then when he went home and the crowd gathered again
+ 2596.1  so that they could not even eat.
+ 2597.8  And when his family heard it,
+ 2599.8  they went out to seize him for they were saying
+ 2602.1  he is out of his mind.
+ 2605.2  So in his own hometown, people are calling him crazy.
+ 2608.1  and his family secretly probably believed the same.
+ 2611.4  Why is my brother walking around saying he's the Son of God?
+ 2616.0  And they go to see him, I guess, trying to help him
+ 2618.5  or protect him, but maybe they thought he was crazy too.
+ 2621.5  So I want you to notice you can be as close as you want
+ 2624.1  to Jesus and still not be a follower.
+ 2628.1  So he's speaking, they're outside.
+ 2632.4  And then the fourth thing is, what about the interruption?
+ 2635.6  Was not his message important enough to let him finish? No, but you watch.
+ 2640.0  You don't have no regard for what he's talking about.
+ 2643.5  So you think what he's talking about is not important that you have the nerve and the audacity
+ 2648.9  to interrupt him in the middle of his message while he's proclaiming the gospel to people who
+ 2653.9  actually want to hear what he has to say. It shows that there are people with hunger in the room
+ 2659.9  people with disregard outside of the room that we got hungry people in the room
+ 2667.0  and people who disregard what he got to say outside the room that we got people
+ 2671.7  who value what he says in the room and people who don't value what he says
+ 2676.6  outside of the room that we got people who value what he says who prioritize the
+ 2683.9  gathering and people who don't value what he says who care less about the
+ 2687.8  gathering. Instead of interrupting him trying to get him to come out, why don't y'all slip in and
+ 2693.9  hear what he has to say? It shows how easy you and I do the same thing before you look down your nose
+ 2706.2  at his followers. You and I do the same thing where we don't have regard for the things that he's
+ 2711.3  saying. We treat it like common, we treat it like ordinary. You take all these words that are
+ 2717.4  in red and you treat it as common and ordinary. There's no awe, there's no wonder, there's no leaning
+ 2722.6  There's no let me try to get close so I can hear what he's saying to me. So I want to say to you
+ 2734.8  Let us not just be close physically. Let us be close spiritually. Let us not just creep in on a robe
+ 2740.6  But let us creep into our prayer closet
+ 2743.0  Now you will notice in the verse there's no 47 and the ESV it has been footnoted
+ 2752.6  Because it did not show up in some of the earlier manuscripts of the Bible
+ 2756.1  So the translators of the EZ through at the bottom is not important theologically.
+ 2761.1  It's just a restatement of verse 46.
+ 2763.6  A man came to Jesus and said, your mother and your brothers are outside.
+ 2768.1  Okay?
+ 2769.1  We're going to skip that.
+ 2770.1  Go straight to verse 48.
+ 2771.1  Okay?
+ 2772.1  Three verses and I'm done with the first message.
+ 2775.6  But he replied to the man who told him, everybody pay attention.
+ 2797.1  This is so powerful to me.
+ 2799.7  They come to him and said, Jesus, excuse me, your mother and your brothers are outside.
+ 2808.9  He turns to the man who interrupts and says, who is my mother?
+ 2813.0  Who is my brothers?
+ 2816.3  It's what he says.
+ 2819.0  Who is my mother?
+ 2821.0  And who are my brothers?
+ 2822.4  Stop.
+ 2823.4  He asked the man of course, who is my mother?
+ 2825.9  Who is my brothers?
+ 2827.7  If I'm the man, I'm thinking the woman outside, the dudes outside.
+ 2842.4  What are you all from Nazareth?
+ 2851.8  But Jesus asked a rhetorical question
+ 2853.6  because he's not looking for an answer.
+ 2857.1  The Lord asked a rhetorical question of the man
+ 2859.7  to try to leverage the question to gain his attention.
+ 2864.4  And he leveraged that question to gain his attention
+ 2867.5  to teaching something he's about to teach us.
+ 2870.6  For he's about to create a brand new construct
+ 2873.5  That revolutionized the first century world.
+ 2876.8  This is so powerful.
+ 2879.6  You're feeling the effects of it right now as I'm talking to you.
+ 2884.1  Watch.
+ 2885.1  And the new construct he created, man, it will remain among us until we all die and end up
+ 2890.2  in glory.
+ 2892.2  So he says to the man, this is so powerful, Peter, who is my mother?
+ 2897.1  Watch.
+ 2898.1  Who are my brothers?
+ 2900.1  You know he's asking, who is my family?
+ 2902.9  Oh, you think my family is my biological mother?
+ 2909.2  And my biological brothers, and you think that is the only family that I have.
+ 2918.1  And so what Jesus is doing right here, he asks him a question to gain the room's attention
+ 2924.5  because he's about to shift the culture forever with his statement.
+ 2934.1  The purpose of the question is for you to pay attention.
+ 2943.8  He says, who was my family?
+ 2950.5  the last two verses, everybody look.
+ 2954.0  See, I'm almost done.
+ 2955.4  You didn't think I can do it.
+ 2960.0  No, look.
+ 2962.1  And stretching out his hand toward his disciples,
+ 2967.2  he said, here is my mother.
+ 2970.8  Here are my brothers for whoever
+ 2973.8  does the will of my father.
+ 2978.1  I should say only in heaven is my mother,
+ 2984.3  And it's my brother and my sisters and my mother.
+ 2997.5  So what Jesus does, and listen, I'm landing the plane,
+ 3002.0  he makes a distinction between your biological family
+ 3007.3  and your spiritual family.
+ 3012.8  And not only does he make a distinction between them,
+ 3015.3  but he almost silently rebukes his mother and brothers
+ 3019.9  for interrupting him, but watch what he does.
+ 3022.3  Now, I'm about to mess on me up and I don't care.
+ 3028.0  The fact that he were questioned the man about his mother and his brothers being outside
+ 3032.9  showed you where he placed his priority.
+ 3041.8  That while we have biological family, I'm a short message.
+ 3047.5  I can't even do it just the way I want to.
+ 3049.8  The Lord placed a greater priority, greater emphasis on his spiritual family.
+ 3061.8  That he says now that you're in the kingdom of God.
+ 3066.2  true family are those who do the will of the Father.
+ 3071.9  Now Jesus also said, I did not come to bring peace on the earth.
+ 3077.1  This first go around.
+ 3078.1  It's going to make sense in a second.
+ 3080.0  I came to bring watch a sword of what separation between those who are for me and those who
+ 3088.5  against me even the people that got your own last name that there is a different
+ 3097.2  type of blood much stronger than your biological blood. I said for some of you
+ 3108.4  don't even realize your spiritual family are more of your sisters and your brothers
+ 3114.3  than your unsaved biological family. Then where I don't got a safe father I got
+ 3124.2  spiritual fathers. And where I don't have a saved mother, I got spiritual mothers.
+ 3132.0  And when I have parents who don't understand me, I got spiritual parents who get me that I'm
+ 3138.5  probably tighter with people in this room than people who got my last name. I could depend more
+ 3145.4  on people in this room. I'm done Sam. Get up here. Then people with my last name, bonds.
+ 3156.6  When people are my spiritual family, then people who got my last name should be thinking very
+ 3169.0  deeply about how we treat the people in this room.
+ 3172.1  Oh, it's not a male or a female.
+ 3181.0  If they're saying, that is your sister.
+ 3188.2  That is your brother.
+ 3191.6  It's my mother.
+ 3193.6  That is my father.
+ 3195.5  You are my sister.
+ 3198.8  And Jesus said those bonds are even prioritized.
+ 3208.1  in your own biological family. For some of you, you got greater. You could trust more. Who are
+ 3223.1  your spiritual brothers and sisters? You could even trust them more than some of your family who
+ 3227.7  has rejected you for the faith, abandoned you for the faith, disrespect you for the faith.
+ 3236.1  And some of you all, because you don't read the Bible, you give even more honor to people that
+ 3243.0  don't respect your God, because they got your same last name than the people that are sitting on the
+ 3248.8  the row next to you who grinding out in the kingdom with you.
+ 3260.0  I'm going to mesh you up.
+ 3261.3  That when the phone call comes between the atheist sister, who we went to college together
+ 3268.0  and joined an organization that we should denounce, and my spiritual sister who's in the church
+ 3274.5  and who wants me to pray with her at 2 a.m.
+ 3278.5  Because her family's under attack.
+ 3279.8  Which phone call do I answer?
+ 3287.8  Which phone call becomes my priority?
+ 3290.1  But phone call becomes more important in that moment.
+ 3295.9  I ain't the sister who don't respect the God that I serve, or my sister in the faith who's
+ 3308.7  going to get the same crown as me when we die.
+ 3327.6  And some of us are so foolish.
+ 3330.9  You keep crying about the dysfunction of your biological family and you won't even lean
+ 3337.4  into the gift God has given you in your spiritual family.
+ 3343.5  That you don't even realize some of the greatest blessings you will ever have in your life.
+ 3350.3  It's sitting right next to you.
+ 3352.2  And they don't need the blood that came from your DNA.
+ 3355.1  They got the blood that came from the cross.
+ 3357.8  That's it.
+ 3373.1  The spiritual family of believers above the biological family.
+ 3378.2  Yes, you got my last name, but I'm prepared to die with the people that grinded it out
+ 3383.3  with me right here in this room.
+ 3385.4  I ain't dying with you.
+ 3387.0  I love you. I'm dying with you. I'm going to die with Kenny and I'm going to die with
+ 3391.6  Don and I'm going to rock it out with Tiana and Rhonda, my spiritual family.
+ 3398.8  We got blood in our veins that came from the cross of Christ. Watch.
+ 3411.1  And before you start throwing your arm around the person next to you, look at the details
+ 3415.8  in the text pointing to his, pointing to his, he's, ah, my brothers and sisters and mother,
+ 3440.4  not pointing to Christians by name, oh, not pointing to a profile and pointing to him.
+ 3457.8  So he gives a criteria for who you can call spiritual family, disciples, then you should
+ 3467.9  be asking a question of the text. What is a disciple? A church goer? No. A Bible
+ 3479.4  reader. No. A conference attender. No. A Christian poster. No. A disciple is a learner
+ 3490.1  of Jesus. A follower of Jesus. They do the will of Jesus. They love the people of
+ 3501.6  of Jesus. So you, you, now I don't care. You are Christian, but you hate the church. You
+ 3521.2  are Christian, but you hate the church. And you hate the gathering of God's people, but
+ 3526.9  you are Christian. And I'm supposed to call you my sister and my brother. No, the Lord gave
+ 3531.5  a criteria for even the people in the room. He points to his followers, learners, do words
+ 3539.9  of his word and he said these are my brothers and my sisters. I'm done Sam and my mother.
+ 3559.2  How then should we be thinking about our spiritual family? Is it just a service I run
+ 3566.1  in and out on Sunday? Listen to me, yo. I'm serious now. Don't move. Christ exalted your
+ 3577.2  The spiritual family even above the people that got your last name.
+ 3584.5  I'm sorry.
+ 3585.9  That divides a marriage between a saved wife and an unbelieving husband.
+ 3591.3  He's not your family.
+ 3592.5  He's your husband, but he's not your spiritual family.
+ 3595.1  And it's hard trying to be submitted to a man that's not submitted to God.
+ 3603.2  I'm sorry.
+ 3605.8  I'm going to keep him real.
+ 3607.4  There is a division there.
+ 3610.0  Whole One Note.
+ 3611.0  Give me a pad.
+ 3612.0  Just Whole One Note.
+ 3615.1  I have devised friends, gym buddies, work buddies,
+ 3625.7  as people on my social media page,
+ 3627.8  people I run with all out for people
+ 3635.0  who are enemies of God.
+ 3638.5  I don't show that same love to brothers and sisters
+ 3641.7  who are prepared to die for the Lord Jesus Christ.
+ 3644.4  What's wrong with us?
+ 3646.4  How then have God exalted this as my family?
+ 3650.8  And elder Milton is my family.
+ 3651.9  How then should I be thinking about elder Milton
+ 3655.2  as my spiritual brother?
+ 3660.5  How does affect my love for you and your love for me?
+ 3665.3  How does affect how we serve together?
+ 3671.5  Pray together, brine together.
+ 3678.5  And when we have fights, how does affect how we forgive
+ 3681.9  one another?
+ 3683.7  How do we pick up the word that the father gave to his children?
+ 3688.8  The 61 of us where he says, love covers a multitude of sin.
+ 3694.2  where he says carry each other's burdens,
+ 3698.7  where he says restore each other gently,
+ 3703.0  where he says pray for one another,
+ 3705.0  and outdo one another, and honor all of the 61 anothers
+ 3710.0  about how we're supposed to interact with one another,
+ 3713.8  how we lean deeply into these relationships,
+ 3718.4  and how we keep robbing ourselves
+ 3720.7  by running in and out, in and out, in and out,
+ 3723.1  In and out and never realizing that the best of what God has for you is locked up in.
+ 3730.5  I'm going to take a stronghold and tear it down.
+ 3739.7  You think you're doing your best right now in ISO and being a recluse.
+ 3747.2  You think you're doing your best.
+ 3748.2  When you don't even know the best of what God has for you is locked up in washes word.
+ 3754.1  covenant relationships with your brothers and your sisters and your mothers and fathers in the faith.
+ 3770.1  That Rhonda Johnson is one of the best things that ever happened to my life because of the blood of Christ.
+ 3780.1  That Philip Anthony Mitchell is one of the best things that ever happened for Tiana
+ 3787.1  because of the blood of Christ that when I see them I see my spiritual family so
+ 3801.2  watch we eat together and we open our house and we let you crash on the couch
+ 3808.0  we help pay each other's bills because watch they share all things in common
+ 3814.9  keep each other accountable my sister you involve in a lot of sin that's not
+ 3824.0  fitting for a disciple of Christ. Now before I out you, let's pray about this so we can lift you
+ 3832.0  from this dark hole that you've been in. That's how you treat brothers and sisters. I see you struggling
+ 3841.0  and I pray you out. I see you struggling and I pay you out. I see you struggling and I lift you out.
+ 3847.6  You disappeared from the family.
+ 3850.7  I run and I get you and I bring you back to the family.
+ 3857.3  I fight to keep us, watch this word together.
+ 3864.2  And when you hurt me and when I hurt you, we go back to the authority, the Word of God,
+ 3874.2  teaches me to forgive how many times 70 times 70 and I walk into these
+ 3889.4  gatherings and I see a white face and a black face and an Asian face and I said
+ 3898.1  this is my brother that is my sister and I love them deeply in my heart because
+ 3907.3  Because we have been joined together by what?
+ 3914.1  Not just blood, definitive article.
+ 3916.8  The blood.
+ 3927.6  Who is your family?
+ 3932.0  Your dysfunctional cousins?
+ 3934.9  Your drunk uncles and crazy aunts?
+ 3938.3  The people who hate the God you serve?
+ 3940.3  That's your family?
+ 3942.2  Yeah, by DNA.
+ 3944.6  But God exalted something above them.
+ 3954.4  Your spiritual.
+ 3955.4  Your spiritual family, watch.
+ 3964.2  I'm closing.
+ 3965.8  First message.
+ 3967.2  Look at me.
+ 3968.4  Look at me.
+ 3971.9  So if you're really saved, why do you keep trying to destroy the unity of this family?
+ 3981.8  When you see things out of order, instead of gossiping and being a busy body in the dark,
+ 3990.5  If you care about the family of Jesus, the body of the Lord Jesus Christ, pray for her.
+ 4000.6  Love her.
+ 4002.6  Forgive her and to seed for her.
+ 4006.0  Have conversations with her.
+ 4012.1  Fight for her.
+ 4015.4  Provide for her.
+ 4018.5  Stand with her.
+ 4027.7  Die with her.
+ 4031.1  We talked about this washes.
+ 4033.2  Walk off the field with her.
+ 4036.4  get retired as old people together saying,
+ 4038.6  man, we've been rocking with Jesus for 60 years.
+ 4042.4  And we've seen miracles for 60 years.
+ 4045.6  And we've seen God answer prayers for 60 years.
+ 4048.2  And we've discipled each other's children,
+ 4050.3  like your kingdom relationships are your greatest
+ 4055.9  relationships.
+ 4068.5  It's origin.
+ 4069.2  Look at me.
+ 4070.8  I love how the Father sowed His Son, the Lord Jesus Christ,
+ 4077.8  in death that according to the Scriptures he would be raised the first brother, that he
+ 4084.9  would harvest to himself more brothers and sisters, that because of the death, burial
+ 4091.1  and resurrection of Christ through the resurrection we have been empowered to live together.
+ 4097.3  Somebody look at me as a what, as a f... I ain't got time to judge you to death and critique
+ 4109.0  you to death.
+ 4110.6  I don't like that in you, Danielle.
+ 4112.8  I'm going to pray for you.
+ 4116.1  I can't speak for no other church,
+ 4118.3  because I don't know the angel of those houses
+ 4120.6  and what the heck they teach it.
+ 4122.9  But for 28, 19, this end time, body of believers,
+ 4132.7  on mission for the Lord Jesus Christ,
+ 4136.3  we're going to spread this glory as gospel
+ 4139.9  and fight and stand together.
+ 4141.9  For this faith in the power of the resurrection of the Lord Jesus Christ until we walk off
+ 4150.2  the field together as spiritual brothers and sisters.
+ 4157.3  Because we are a, we are a, we are a, more than just the church I attend now, a twenty
+ 4165.1  In the 19 and 8 church you attend, it's the church you are a part of.
+ 4170.1  Because we are a family.
+ 4175.9  Bow your heads.
+ 4176.9  Eternal God and never wise father.
+ 4178.3  Don't move.
+ 4181.5  Don't disrespect me.
+ 4185.6  Don't disrespect the Holy Spirit.
+ 4187.1  Stay still.
+ 4189.4  Everybody watching online, stay still.
+ 4198.5  Heavenly Father, I pray over these, your sons and daughters, my brothers and sisters.
+ 4210.4  that you would so deepen the bonds of intimacy and unity among us. I pray you
+ 4218.8  would destroy the works of the devil that attempts to dismantle the move of God
+ 4225.8  called 2819 and the unity of the saints that you have given us. I pray you would
+ 4233.3  help us to mature spiritually and that we would fight for this union and pray
+ 4238.9  for this union and support this union and believe in this union that we will grind it out with our brothers and sisters
+ 4246.5  both locally and abroad that wherever we go and find Christians who have been born again
+ 4254.1  we have found our true brothers our true sisters and our family would you in this moment deepen our love
+ 4261.5  of the sacred family of believers,
+ 4268.0  and may in the resurrected power of Jesus,
+ 4272.8  may we live this out as family according to the scriptures,
+ 4277.1  in the mighty and majestic and the matchless name
+ 4281.6  of our Lord and Savior Jesus Christ.
+ 4284.4  If you receive that, say amen.
+ 4294.9  Everybody be seated.
+ 4298.2  Stay right there, Sam.
+ 4301.7  Everybody online, all of our digital disciples,
+ 4304.2  Everybody in the overflow look right at me.
+ 4309.3  Everybody in this room look right at me.
+ 4327.1  I believe that family should care for family,
+ 4334.4  and that family should provide for family.
+ 4339.6  That those children down there in that basement,
+ 4342.3  they are our responsibility.
+ 4346.0  And what we're doing in this room,
+ 4347.2  this is our responsibility.
+ 4350.9  That as a family, we have to take ownership
+ 4353.4  for providing for ourselves as a family.
+ 4359.6  And we gotta see the importance of caring
+ 4361.6  of the needs of our family.
+ 4368.4  We've come to a solemn moment in the history of this church in which I'm getting ready
+ 4376.1  to make an ask of you as a family I've never made in ten years of pastoral ministry.
+ 4383.9  And I've sat in rooms when I was prepared to obey and I didn't need a long speech to
+ 4388.1  obey.
+ 4390.4  And so I'm not going to give you a speech, but what I do want to do is read to you the
+ 4396.0  word of God so that everything we do would be founded on the word of God and not on the
+ 4404.2  opinions of men.
+ 4409.4  The Apostle Paul, who was a former murderer converted to Christianity, he wrote letters
+ 4417.1  to New Testament churches.
+ 4422.4  One of the things the Apostle Paul did is that he helped the church to have a theology of
+ 4429.4  caring for the ministry of the spread of the gospel and caring for each other.
+ 4438.0  And so Paul would travel to the churches, both the ones he planted and the ones he supported
+ 4443.2  as an overseer, and he would challenge them in generosity to care for the ministry of the
+ 4448.4  church.
+ 4452.2  One of the letters in the New Testament has preserved from you as a letter called Philippians.
+ 4459.2  That is a letter that Paul wrote to a church from prison
+ 4462.0  as a thank you for their generosity
+ 4465.3  in the support of gospel ministry.
+ 4468.2  This is where you get the verse from,
+ 4469.7  my God shall supply all of your needs
+ 4472.8  according to his riches and glory.
+ 4474.8  He said that to people who were supporting the spread
+ 4477.9  of the gospel, not to people who were hoarders,
+ 4483.6  but there was a church that Paul had a problem with
+ 4487.2  who had a struggle with generosity.
+ 4490.6  It was a church in the ancient city of Corinth.
+ 4494.6  And I want to read to you, not teach to you,
+ 4497.5  read to you what Paul wrote to the church in Corinth.
+ 4501.3  And I just want you to listen to his heart
+ 4503.6  as he wrote to this church.
+ 4505.9  And second Corinthians chapter eight and verse one,
+ 4516.4  he said to them,
+ 4518.4  we that is Paul and his followers
+ 4521.2  want you to know brothers,
+ 4523.8  as Kingdom language family, about the grace of God that has been given among the churches
+ 4530.6  of Macedonia.
+ 4533.7  For in severe test and affliction, they were poor.
+ 4538.8  Their abundance of joy and their extreme poverty, it has overflowed in a wealth of generosity
+ 4548.6  on their part, that he's saying here are a group of churches that were struggling financially,
+ 4555.1  but they were overwhelming Paul with generosity in the spread of the gospel.
+ 4561.2  Verse 3, For they gave according to their means, as I can testify, watch this, beyond
+ 4569.3  their means they gave of their own accord, begging us earnestly for the favor of taking
+ 4577.1  part in the relief of the saints. That is the people of Macedonia were begging for what
+ 4583.0  can we do to help other Christians? And this not as we expected. Now watch this part carefully,
+ 4593.3  but they gave themselves first to the Lord so they could have a right heart. And then by
+ 4600.4  the will of God to us. Accordingly we urge Titus that as he started, so he should complete
+ 4608.9  among you this act of grace.
+ 4611.3  He's talking to the church at Corinth.
+ 4613.1  That is, you see what the Macedonians have done?
+ 4616.7  Now we want you to follow in their example.
+ 4620.1  Now watch what he says, but as you excel,
+ 4623.2  he's talking to a gifted church.
+ 4625.0  In everything, y'all are strong in faith,
+ 4629.7  in speech, in knowledge, in earnestness,
+ 4635.8  and in love, in our love for you,
+ 4638.2  You're strong in all of that, but watch.
+ 4640.6  Now see that you excel in this act of grace also.
+ 4646.6  So Paul saying, Yala gifted.
+ 4649.2  You preach in tongues, you speak in tongues,
+ 4651.5  you preach great messages.
+ 4653.4  You serve faithfully every Sunday.
+ 4657.1  Yala have dynamic outpours of the Holy Spirit.
+ 4660.5  Yala do all of that.
+ 4661.5  You excel in everything except this one area.
+ 4664.9  And I want you to excel in this one area also.
+ 4668.1  I want you to excel in generosity just the same.
+ 4673.4  And then in verse 9, chapter 9, he says to them,
+ 4677.7  now it is superfluous.
+ 4679.4  That is, it is not necessary for me to overdo this.
+ 4683.3  For me to write to you about the ministry for the saints.
+ 4689.0  For I know your readiness, I believe
+ 4691.2  us in the room, of which I boast about you
+ 4694.3  to the people of Macedonia, saying that a cayor has been
+ 4698.1  ready since last year and your zeal has stirred up most of them.
+ 4703.1  But I'm sending the brothers so that I will boasting about you,
+ 4706.8  not prove empty.
+ 4708.7  That is, please don't let me down in this moment.
+ 4714.5  I've talked about 28, 19 in rooms across the country.
+ 4718.5  Please don't let me down in this moment is what he's saying.
+ 4724.7  Verse 4, otherwise if some Macedonians come with me
+ 4728.0  and find that you are not ready,
+ 4730.9  we would be humiliated to say nothing of you
+ 4734.9  for being so confident.
+ 4737.7  So I thought it necessary to urge you
+ 4740.6  that the brothers to go ahead of you
+ 4743.0  and arrange in advance for you the gift you have promised
+ 4749.3  so that it may be ready as a willing gift,
+ 4752.8  not as an exaction, that is,
+ 4755.0  I don't wanna fight you over this.
+ 4757.8  You knew this was coming.
+ 4760.7  Let's do this without manipulation.
+ 4763.5  It's what he's saying to them.
+ 4765.2  Verse six, here is the whole point.
+ 4768.8  Whoever souls sparingly will also reap sparingly.
+ 4774.9  And whoever souls bountifully will also reap bountifully.
+ 4780.3  Each one must give as he has decided in his heart to do,
+ 4785.2  not reluctantly or under compulsion.
+ 4789.4  That's why we don't want to manipulate people
+ 4791.4  with tithe challenges and a thousand lines.
+ 4794.2  And if you give a thousand, God is gonna give you two thousand.
+ 4796.8  No, no, no, no, no, no, no, no, no, no, no, no, no,
+ 4798.7  no manipulation.
+ 4800.8  For God loves a cheerful giver.
+ 4805.1  He adores one.
+ 4807.8  And God is able, God.
+ 4810.2  That is, nothing you give is not gonna hurt
+ 4812.5  your bank account or your house.
+ 4815.2  For God is able to make all grace abound to you.
+ 4819.7  So that having all sufficiency in all things,
+ 4824.2  at all times, you may abound in every good work
+ 4828.6  as it is written.
+ 4830.8  Whew, he has distributed freely,
+ 4833.6  and he has given to the poor his righteousness
+ 4836.2  and doors for ever, verse 10.
+ 4837.8  He who supplies seed to the sower.
+ 4841.9  That is, I'll take care of everyone who supports the ministry.
+ 4845.6  And bread for food will supply and multiply your seed
+ 4850.9  for sowing and increase the harvests of your righteousness.
+ 4858.3  You will be enriched in every way to be generous in every way
+ 4866.8  which through us will produce thanksgiving to God.
+ 4870.7  for the ministry of this service is not only supplying the needs of the saints,
+ 4877.2  but also overflowing in many things giving to God by their approval of this
+ 4888.3  service. They will glorify God because of your submission that comes from your
+ 4896.1  confession of the gospel of Christ and the generosity of your contribution for
+ 4904.5  them and for all others. And now family we've come to this solemn moment. I'm asked
+ 4922.2  everybody to take out your phone. We've come to one of the most important
+ 4941.6  moments in the life of our church, of how well can we care for our own family. We
+ 4952.2  have children in a basement. They need a facility. We have adults sitting in a
+ 4963.3  room that doesn't belong to us. We need a facility. A team of ladies and
+ 4972.6  myself in private are working on the birth of the 2819 Institute. They're
+ 4982.1  meeting every month doing so much work behind the scenes. We have no place to
+ 4986.4  have classes. We can't gather during the week. We can't do anything outside of
+ 4996.7  what we're allowed to do. And after 10 years of being in the wilderness as a
+ 5002.7  setup and breakdown church, we are finally believing God with a step of
+ 5006.6  faith to raise the capital necessary to secure and put ourselves in position for our first
+ 5014.1  facility. We do not know where it is, but you don't wait for the rain to build an ark.
+ 5022.2  You build an ark in preparation for the rain. We believe the rain of God's blessing is coming.
+ 5031.1  Together we want to prepare our arc of resources so that when the door opens, we will be ready.
+ 5043.3  So we come to this solemn moment where we institute what Paul did for these churches,
+ 5050.5  we call our gospel expansion offering.
+ 5054.2  Once a year, we will ask that you go above your regular giving with a sacrificial gift
+ 5061.0  to help the family of the brothers and sisters of the household of faith.
+ 5067.1  We've talked about this.
+ 5073.3  At this point, if you're not prepared, there's nothing I do.
+ 5076.1  I can do to change your mind.
+ 5079.1  If the Holy Spirit has not spoken to you by now, if you have not been convinced by the
+ 5085.9  hundreds of souls that have been saved, the squads that you attend every week, the relationships
+ 5093.2  that you have, the teaching that you're getting, the things your children have.
+ 5097.9  If you have not been convinced by the miracles we have seen and the fact that God's hand
+ 5103.4  is upon this house, if you have not been convinced by the move of God we're witnessing, the overflow
+ 5108.8  in the room and I would need for gospel expansion, then there's no sermon I can say to convince
+ 5116.2  you.
+ 5117.2  If you're that hard enough, there's nothing, if God can't convince you, what can I do?
+ 5124.9  If you don't believe in what we do in the 2819,
+ 5128.1  if you don't believe I'm a man or God,
+ 5130.5  if you don't hear my tears and hear me crying out
+ 5132.9  from this pulpit, if you don't see God's hand in here,
+ 5135.7  then I can't do nothing to convince you.
+ 5142.6  So whatever you had bowed, and every eye closed,
+ 5146.5  and all of our digital disciples, thousands of you,
+ 5152.6  and to everybody on our campus,
+ 5155.2  this growing body of disciples,
+ 5158.0  almost a thousand of us now,
+ 5162.8  Take a moment and search your heart.
+ 5167.1  What has God spoken to you in this moment?
+ 5173.6  For my wife and I, as a four figure seed,
+ 5176.6  is gonna hurt us.
+ 5179.2  For you, it can be four figures, five figures, three,
+ 5181.8  it can be five dollars.
+ 5183.6  What has God said to you in this moment?
+ 5185.6  What sacrificial gift has He put on your heart?
+ 5188.1  Just sit there for just a moment.
+ 5197.1  Are we living in dark times?
+ 5202.1  It's time running out.
+ 5206.1  Does the gospel have to spread?
+ 5210.1  Will we fight with better technology
+ 5212.6  to see the gospel go from this house
+ 5214.9  to the darkest corners of the world?
+ 5218.4  Will we fight to see the light of Jesus' teaching
+ 5221.1  invade the dark strongholds of the East?
+ 5225.2  Will we provide a house for our children,
+ 5229.7  for our brothers and sisters?
+ 5231.1  Will we do something today that makes Jesus proud
+ 5237.5  when we make history farther in this moment?
+ 5248.6  I've done what you've told me to do.
+ 5253.2  I've said what I needed to say.
+ 5256.0  And now I trust you and I trust your people.
+ 5262.7  I trust all of our digital disciples.
+ 5266.6  I trust the pastors of churches
+ 5268.5  who watch every week and are learning and growing
+ 5271.3  from this ministry.
+ 5273.2  I trust everyone around the world
+ 5276.9  who was eating from this house.
+ 5281.0  I trust you now to speak to their heart.
+ 5286.3  May the excel in the grace of generosity.
+ 5292.5  And may we do something today that makes you proud.
+ 5298.2  Thousands of you watching online,
+ 5301.9  almost a thousand of you who call 2819 home locally.
+ 5306.2  Father now, I stretch out my hand to my family,
+ 5312.2  locally and abroad.
+ 5315.3  I pray a blessing over these seeds,
+ 5318.5  these seeds.
+ 5320.9  for the spread of the gospel,
+ 5326.0  for the expansion of the ministry of Jesus,
+ 5330.8  for the abilding of the kingdom of God
+ 5332.7  in the hearts of men,
+ 5334.9  not for form or for fashion,
+ 5337.2  and not to make a past the rich
+ 5344.6  that we may be prepared
+ 5347.5  for the facility and the land.
+ 5349.2  Yes, the land, the acres,
+ 5358.7  that you have spoken to me in private,
+ 5362.6  that I speak now in public,
+ 5363.9  the acres you have prepared for 28, 19 church,
+ 5368.5  this end time ministry.
+ 5373.0  Would you do it, Lord, now, through your people?
+ 5377.7  And like the widow who threw in her last coins,
+ 5380.2  will we make you stop today in heaven?
+ 5384.9  I pray a blessing over the gift and the giver,
+ 5389.5  may it be done cheerfully with no manipulation.
+ 5395.1  In the mighty and the majestic and the matchless name
+ 5409.0  of our soon-coming King, the Lord Jesus Christ.
+ 5414.0  Now a QR code is coming up on the screen.
+ 5423.9  A QR code is coming up in the lower thirds.
+ 5426.1  Did I do right?
+ 5429.1  Okay.
+ 5430.1  You can scan the QR code and you can sew your seed right now.
+ 5438.9  If any reason you have trouble someone you seed because we're in a cement box that doesn't
+ 5446.9  belong to us, that will change one day.
+ 5451.9  If you have trouble, are you doing ours?
+ 5456.6  you're doing hours right now?
+ 5458.6  Okay.
+ 5461.1  If you have trouble sewing your seat,
+ 5463.2  as soon as you see the sky,
+ 5471.0  as soon as you see the sky,
+ 5473.8  sit in your car or stand outside, look up to Jesus,
+ 5478.3  and sew your seat.
+ 5482.1  All of our digital disciples,
+ 5483.5  thousands of you watching right now,
+ 5485.1  there's a QR code on the screen.
+ 5489.3  You can sew your seat from your house, your living room,
+ 5491.9  you can pull over if you're driving and do it in your car.
+ 5497.2  If you're catching this message later on in the afternoon,
+ 5500.2  you can still sow your seed.
+ 5504.3  If you're having trouble with the QR code,
+ 5506.2  you could just go to 2819church.org
+ 5509.8  and just click the link that says Giving.
+ 5512.2  And you see a box that pops up that says Gospel Expansion
+ 5515.7  Offering.
+ 5517.2  And you can sow your seed there.
+ 5520.5  If you eat from this house,
+ 5523.4  and you've been fed from this house,
+ 5526.3  and you are part of this house virtually,
+ 5529.1  Help us now with this gospel expansion offering,
+ 5534.7  and may be credited to you
+ 5537.5  and to your heavenly bank account,
+ 5539.4  some 30, some 60, some hundred fold,
+ 5544.3  a harvest of righteousness.
+ 5547.6  No promise that God is gonna give you
+ 5549.5  the more money that you gave.
+ 5551.3  No American manipulation.
+ 5554.7  I pray the greatest gift you get back will be joy
+ 5558.1  that you was a part of something that was bigger than yourself.
+ 5564.9  Joy.
+ 5567.1  Do I got anybody that received that?
+ 5568.8  We want joy for being a part of something
+ 5572.6  that was bigger than ourselves.
+ 5579.9  Is it in the screen?
+ 5580.7  If you're in the overflow room, I'm sorry,
+ 5583.6  if you're in the overflow,
+ 5584.9  there should be a QR code on the screen,
+ 5589.4  in the overflow room.
+ 5592.6  Yes, it should be a QR code on the screen
+ 5595.6  In the overflow room, you can do that too if you're sitting in the overflow room.
+ 5599.6  If you go also text 28, 19, and 97,000.
+ 5629.1  Can you do me a favor?
+ 5633.6  Can you stand without walking?
+ 5635.6  Oh, build my life upon your...
+ 5654.8  It is a firm foundation.
+ 5661.8  I'd be shaken and I will mind, I will put my trust.
+ 5764.7  Let me say this to you.
+ 5770.4  We are in the middle of what Ashley called a move of God.
+ 5775.7  And we've outgrown this room, our parking lot.
+ 5781.4  And we want to be good stewards of the souls.
+ 5786.7  One of the things that I prayed is that God would make
+ 5788.5  28, 19, a great sickle, that he used his church to chop down the harvest.
+ 5797.4  In our city and we will take seriously the great commission of the Lord Jesus Christ.
+ 5802.4  I'm prepared to die for that.
+ 5805.2  And next week we're going to experiment what's the word I used?
+ 5811.9  With adding another jar for more souls.
+ 5814.3  If it works, praise God, if it don't work, we'll pull it.
+ 5820.4  I don't want to do it, but we have no more space.
+ 5826.3  So while we're working on a second location, next week we add a second gathering.
+ 5839.2  On your way out, you'll get a little card that has the new gathering times.
+ 5843.9  For all of our digital disciples, we'll be gathering at 9 a.m. and 11.30 a.m.
+ 5850.2  And we're going to experiment with that to see if it works for us as a church.
+ 5855.0  If it don't feel good, and if it don't feel right, and if it's not right, we bring the
+ 5861.7  family back together like this until God gives us a bigger facility.
+ 5867.1  So I, not the Lord, are experimenting to handle the influx of people that's coming to our church.
+ 5875.6  Again, it is a what?
+ 5877.8  Experiment.
+ 5880.9  will be the same. Praise and worship, growth track, saturate. Okay? So if you come for
+ 5888.0  saturate, show up and let's pray together before we open the doors. We'll saturate twice.
+ 5893.5  We'll worship God twice. We'll preach the gospel twice. Amen, everybody. See, we have
+ 5899.9  in technical difficulties right now is why we need our own facility. Not a shame about
+ 5906.5  We need better technology that we can't afford.
+ 5910.5  Maybe we will be able to afford after today.
+ 5914.5  I'm not embarrassed. The screen just shut off right in front of you.
+ 5921.9  We need better technology. We can't afford it.
+ 5925.9  We're doing the best we can with what we got.
+ 5929.9  I'm being honest. We're doing the best we can with what we got.
+ 5935.9  You know what's dope? Remember I talked about glory consciousness and
+ 5943.8  and not giving things to coincidence.
+ 5946.8  Notice it ain't shut off while I was preaching.
+ 5949.8  So you can read the Word of God with me
+ 5953.2  while I was preaching.
+ 5954.2  So maybe the Lord let us shut off for this moment.
+ 5966.4  So you get a card on the way out and next week.
+ 5972.9  All the people who chose 9am.
+ 5974.9  All of my brothers and sisters.
+ 5976.9  I want to see you here at 8.30 for Saturate.
+ 5979.9  And all of you who chose the 11.30 gathering.
+ 5981.9  We want to see you at 11.00 for Saturate.
+ 5985.9  We will exhort Jesus twice, preach the scriptures twice, sing twice, pray twice, and make room
+ 5994.9  for more souls.
+ 5996.0  And if it don't work, and if it don't feel good, we'll cut it, we'll come back together,
+ 6005.0  and we'll put people in the aisles until we have a bigger location.
+ 6009.4  And that's that.
+ 6010.9  And I don't care.
+ 6015.1  I'm done with trying to impress people.
+ 6016.8  I'm too old for that.
+ 6018.3  We just tell the truth and keep it real.
+ 6019.9  If it don't work, it don't work.
+ 6030.2  I love you.
+ 6036.0  Next week we start season two of our series.
+ 6042.7  It's gonna, I've been waiting to preach season two.
+ 6045.9  The parables.
+ 6048.2  The parables.
+ 6050.0  The parables.
+ 6051.8  Powerful, powerful parables.
+ 6054.6  You wanna be here?
+ 6056.0  Take the car that you get and give it away to somebody
+ 6058.5  and bring somebody with you to the gathering you choose.
+ 6061.3  Let's put our hands together and stay still for our MCs for just a moment.
+ 6067.1  I love you.

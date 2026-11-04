@@ -56,136 +56,221 @@
   188.5  Look at what the Lord has done!
   190.5  I did I so paid
   199.0  Body slave won't be
-  202.4  Chasing bodies burnt
+  202.4  Chasing bodies broke
   205.2  Looking with the Lord head
   211.8  Lost souls with the heart
-  364.9  Now shot
-  368.3  Representing the key to
-  625.8  The building we now own
+  367.2  Now shot
+  368.3  Representing the key to the building we now own
   627.8  And three pieces of property
-  629.7  A year ago this was
-  679.3  Not even a possibility
-  683.1  But God, and on behalf of my wife and I, I want to take this opportunity to express
-  706.9  my most heartfelt gratitude for all of the local and digital disciples of
-  717.8  2819 Church and the different ministries that partner with us to make this moment possible
-  727.3  But after 12 years of being nomadic
-  729.7  and being put out of facilities that God has changed the trajectory of our ministry with
-  741.4  the stroke of a pen.
-  754.2  And I believe the place where God is sending us, it has a dark history and a dark past,
-  761.4  but God is sending a light, a beacon of light in that place.
-  770.5  My wife said earlier that that building is not attractive.
-  774.4  You want to tell them for yourself?
-  776.2  Yeah, you grab that microphone right there and just tell them.
-  779.9  What's up family?
-  784.7  Guys, yeah, like my husband was saying,
-  789.0  the building, the area, it's been a lot of recklessness
-  796.3  in that area.
-  798.8  The building is not pretty, but we, as a people,
-  805.0  are going to build God a house.
-  807.9  Come on.
-  808.9  Come on.
-  810.9  Come on, hallelujah.
-  814.6  Yes, we're gonna build God a beautiful house
-  818.1  for the presence of God dwells,
-  820.7  where men, women, children come into it, are safe.
-  825.1  Come on, I see visions of babies running around kids,
-  830.7  and families, and husbands, and wives, and single people,
-  834.8  and all people, white people, black people, Asian people,
-  838.6  Hispanic people, come on.
-  841.3  Come on.
-  844.6  If you are a person with a heartbeat, we'll take you.
-  848.1  Come on, we'll take anybody that God sends.
-  851.1  And I just want to thank everybody who has trusted us,
-  855.4  who's believed in us.
-  857.4  It's not just us, it's all of us as a spiritual family.
-  861.3  We have done this.
-  863.2  And yes, so we are making a mark in this city.
-  866.7  We are making a mark on this world.
-  870.0  and I'm in it until all I have heard.
-  872.8  Come on.
-  891.1  Oh yeah, bless God.
-  903.0  If you are a guest at 2019,
-  906.1  we're not gonna apologize for today.
-  911.5  And because I am not a knightal
-  925.0  and I won't let you make me one.
-  933.8  And what I mean by that is that in America,
-  937.8  church is so highly programmed
-  940.8  that we have almost pushed the Holy Spirit out of our gatherings.
-  945.8  And just like Ryan was talking about the things that God does in worship,
-  953.3  that the God that you and I serve,
-  956.3  one of the things he wants from us, is sacrifices,
-  960.3  of praise, of worship.
-  965.8  And they're telling me right now my time is up, and here's what I'm saying.
-  968.8  I believe we could survive a Sunday without a sermon.
-  971.8  I believe we could survive a Sunday without a sermon and that you don't have to be disappointed
-  989.8  that I didn't preach, that we can't just gloss over the fact that we've been nomadic for 12
-  998.1  long years.
+  629.7  A year ago this was not even a possibility
+  685.7  But God, and on behalf of my wife and I, I want to take this opportunity to express
+  709.8  my most heartfelt gratitude for all of the local and digital disciples of 2819 Church and
+  719.8  the different ministries that partner with us to make this moment possible.
+  727.5  But after 12 years of being nomadic and being put out of facilities that God has changed the
+  739.9  trajectory of our ministry with the stroke of a pet. And I believe the place
+  755.0  where God is sending us. It has a dark history and a dark past, but God is sending
+  762.1  a light, a beacon of light in that place. My wife said earlier that that
+  771.9  building is not attractive. You want to tell them for yourself? Yeah, you grab that
+  777.5  microphone right there and just tell them. What's up family? Yeah, guys, yeah, like my
+  787.4  has been with saying the building, the area, it's been a lot of recklessness in that area.
+  797.4  It's not the building is not pretty, but we as a people are going to build God a house.
+  808.1  Come on.
+  809.1  Come on.
+  810.1  Hallelujah.
+  811.1  Come on.
+  812.1  Hallelujah.
+  813.1  Yes, we're going to build God a beautiful house for the presence of God dwells where
+  820.9  men, women, children come into it are safe.
+  825.2  Come on.
+  826.2  I see visions of babies running around kids and families and husbands and wives and single
+  834.2  people and all people, white people, black people, Asian people, Hispanic people.
+  840.4  Come on.
+  841.4  If you are a person with a heartbeat, we'll take you.
+  848.2  Come on.
+  849.2  We'll take anybody that God sends.
+  851.6  And I just want to thank everybody who has trusted us, who's believed in us.
+  857.5  It's not just us.
+  858.5  It's all of us as a spiritual family.
+  861.4  We have done this.
+  863.7  And yes, so we are making a mark in this city.
+  866.9  We are making a mark on this world.
+  870.6  I'm in it until all have heard. Come on. Oh, yeah, bless God. If you are a guest at 2019,
+  906.1  we're not going to apologize for today. And because I am not a knightal and I won't let
+  926.9  you make me one. And what I mean by that is that in America, church is so highly programmed
+  942.1  that we have almost pushed the Holy Spirit out of our gatherings.
+  949.7  And just like Ryan was talking about the things that God does in worship,
+  954.4  that the God that you and I serve,
+  956.6  one of the things he wants from us is sacrifices, of praise, of worship.
+  966.0  And they're telling me right now my time is up and here's what I'm saying.
+  969.2  I believe we could survive a Sunday without a sermon.
+  985.1  I believe we could survive a Sunday without a sermon and that you don't have to be disappointed
+  989.8  that I didn't preach, that we can't just gloss over the fact that we've been nomadic for
+  997.4  12 long years.
  1005.0  And with the stroke of a pen this week, we own three pieces of land and a building.
- 1013.0  One for the Father and one for the Son and that what we feel today, what God deserves,
- 1039.5  a pause on preaching that we could be a house of presence and give him a sacrifice of praise
+ 1013.0  One for the Father, one for the Son, and that what we feel today, what God deserves, is a
+ 1039.7  pause on preaching that we could be a house of presence and give him a sacrifice of praise
  1047.4  for what he has done.
- 1060.3  Now, now hear me.
+ 1060.4  Now hear me.
  1064.7  I shared this with your family earlier and I want to share this with you.
  1071.2  I want to confess sin before you that during those twelve years, and this is going to help
- 1080.1  somebody and I wrestle with the sin of jealousy and I wrestle with the sin watch of covetousness
- 1096.8  and anger my heart towards God.
- 1100.7  Why is it that church gets a building and why do you open that door for them and why have
- 1109.9  you done that for them and why haven't you done this for Lena and I and for our ministry
- 1116.0  Watch.
- 1117.0  Haven't we been faithful, Lord?
- 1121.5  Have we been sacrificial, Lord?
- 1125.0  Are we not paying a price in private, Lord?
- 1129.0  Are we not trying to have integrity in private, Lord, and complaining and sinning against God?
- 1139.2  And in this week with the stroke of that pen, I was reminded of this truth that God is never
- 1147.2  late. Listen. And that even when he says no, he's being good to you. And that even when
- 1169.3  he says wait, he's being good to you. That what leader and I was begging for in a previous
- 1178.3  season, we did not have the character for. Didn't have the team for, the structure for,
- 1189.0  the knowledge for, the wisdom for, the maturity for. And that sometimes God would love you
- 1194.5  so much he'll make you wait for another season while he's perfecting your character
- 1202.2  perfecting your face watch delivering you from idolatry so that he can hand
- 1217.9  you a multi-million dollar investment and it not become a god to you he couldn't
- 1223.6  do that five years ago he couldn't do that seven years ago he couldn't do that
- 1230.0  10 years ago and I just need to encourage somebody in this room. Hear me. God has not forgotten about
- 1237.2  your prayers. No. He has not forgotten about your tears that there is a passage in the Old Testament
- 1246.9  in Psalm 126 that says those who sow in tears a season is coming where they're going to reap with
- 1256.6  Shouts of joy.
- 1258.9  And what we are reaping right now is the shouts of joy.
- 1263.8  That I can look back on that 12-year wait for our first facility and I can tell you
- 1285.3  Man, just run your lane
- 1288.1  Hear me. I
- 1289.8  Guess I'm preaching right now run your race
- 1293.0  Watch this stop looking to the left and to the right of what everybody else got
- 1299.5  And trust God what He has for you.
- 1304.2  And that He'll bring it to pass in the right season for no parent with wisdom.
- 1314.1  Gives a 10-year-old child a vehicle.
- 1317.6  Although you have every desire to give it to them.
- 1320.9  You know if you gave a 10-year-old child a vehicle, they would kill themselves.
- 1326.1  But in your love, you wait for that child to grow until they come to an age of maturity
- 1332.7  where they can now handle the thing they've been asking for.
+ 1080.1  somebody, and I wrestle with the sin of jealousy.
+ 1089.8  And I wrestle with the sin watch of covetousness and anger my heart towards God.
+ 1100.7  Why is it that church gets a building?
+ 1105.2  And why do you open that door for them?
+ 1109.4  And why have you done that for them?
+ 1112.5  And why haven't you done this for Lena and I?
+ 1114.8  And for our ministry?
+ 1116.8  Watch.
+ 1117.8  Haven't we been faithful?
+ 1119.3  Lord?
+ 1121.5  we've been sacrificial Lord? Are we not paying a price in private Lord? Are we not
+ 1129.4  trying to have integrity in private Lord and complaining and sinning against God?
+ 1135.8  And in this week with the stroke of that pen I was reminded of this truth that
+ 1146.4  God is never late. Listen, and that even when he says no he's being good to you.
+ 1166.8  And that even when he says, wait, he's being good to you, that what leader not was begging
+ 1177.3  for in a previous season, we did not have the character for, didn't have the team for, the
+ 1187.5  structure for, the knowledge for, the wisdom for, the maturity for.
+ 1193.2  And that sometimes God would love you so much, he'll make you wait for another season while
+ 1200.2  he's perfecting your character.
+ 1203.6  your face. Watch. Delivering you from idolatry so that he can hand you a
+ 1218.2  multi-million dollar investment and it not become a God to you. He couldn't do
+ 1223.8  that five years ago. He couldn't do that seven years ago. He couldn't do that ten
+ 1230.3  years ago. And I just need to encourage somebody in this room. Hear me. God has
+ 1235.9  not forgotten about your prayers? No. He has not forgotten about your tears that
+ 1244.9  there is a passage in the Old Testament in Psalm 126 that says those who sow in
+ 1251.1  tears a season is coming where they're going to reap with shouts of joy and
+ 1259.5  what we are reaping right now is the shouts of joy that I can look back on
+ 1280.0  that 12-year wait for our first facility and I can tell you, man, just run your lane.
+ 1288.7  Hear me.
+ 1289.7  I guess I'm preaching right now.
+ 1291.6  Run your race.
+ 1293.6  Watch this.
+ 1294.6  Stop looking to the left and to the right of what everybody else got.
+ 1301.6  And trust God what He has for you.
+ 1305.7  And that He'll bring it to pass in the right season for no parent with wisdom gives a
+ 1314.2  ten-year-old child a vehicle.
+ 1317.5  Although you have every desire to give it to them, you know if you gave a ten-year-old
+ 1322.4  child a vehicle, they would kill themselves.
+ 1326.1  But in your love, you'll wait for that child to grow until they come to an age of maturity
+ 1332.6  where they can now handle the thing they've been asking for.
  1336.2  And I don't know who this is for or who's waiting on God right now.
  1343.2  But let's wait without complaining.
  1347.7  And let's wait without jealousy.
  1350.1  And let's wait without covetousness.
  1353.3  And let's trust that God who is sovereign, who knows the end from the beginning, who is
- 1358.4  He's the author and the finisher who has gone ahead of you and has engineered your whole
- 1364.0  future that all you got to do is be faithful until you catch up with what was already done.
+ 1358.4  the author and the finisher, who has gone ahead of you and has engineered your whole future,
+ 1366.2  all you got to do is be faithful until you catch up with what was already done.
  1380.4  And maybe somebody brought you here to say, oh come here Philip Anthony Mitchell preach,
- 1384.5  oh he's just a man.
+ 1384.3  oh he's just a man.
  1386.4  Come feel God's presence is much better.
- 1393.9  No, just come feel God's presence with what this is called Jubilee.
+ 1394.0  No, just come feel God's presence.
+ 1396.8  This is called Jubilee.
  1400.4  This is called, watch the God, thank you.
- 1403.5  This is us giving him a sacrifice of praise.
- 1409.2  This is us saying, God, you've been so good to us in what you just did this week, that
- 1416.0  we can pause for a singular Sunday and not idolize a preacher, that we can pause for
- 1428.0  One Sunday to say thank you for what you have done watch
- 1435.8  For us as a family is that all right? Are you sure?
- 1445.8  They're telling me my time is up. I want to do something special for you silver and gold. I do not have
- 1462.2  But what I do have
- 1465.6  I'm gonna ask God if he's willing
- 1468.2  that he'll transfer that to you and
- 1470.7  And what I do have, and I don't know why he has done it.
- 1477.2  I don't know.
- 1478.9  But God has bestowed upon Lena and I an unusual favor that we're doing our best to steward
- 1488.2  hear me this intangible gift.
+ 1403.5  This is us giving Him a sacrifice of praise.
+ 1409.2  This is us saying, God, you've been so good to us in what you just did this week that we
+ 1416.1  can pause for a singular Sunday and not idolize a preacher, that we can pause for it one
+ 1428.6  Sunday to say thank you for what you have done.
+ 1435.2  Watch.
+ 1436.2  For us as a family.
+ 1441.4  Is that all right?
+ 1444.5  Are you sure?
+ 1445.5  They're telling me my time is up.
+ 1452.4  I want to do something special for you.
+ 1459.1  Silver and gold, I do not have.
+ 1462.2  But what I do have, I'm going to ask God if He's willing, that He'll transfer that to
+ 1470.0  you.
+ 1472.2  And what I do have, and I don't know why He has done it, I don't know.
+ 1478.9  God is, He has bestowed upon Lena and I an unusual favor that we're doing our best to
+ 1487.3  stewart.
+ 1488.3  Hear me, this intangible gift.
  1492.0  Because we spend so much time as American Christians begging God for only materialistic
- 1498.5  things. How?
+ 1498.5  things, houses and cars.
+ 1506.0  But we never think about what's more powerful are the intangible things like wisdom and
+ 1512.2  character and integrity and favor.
+ 1520.5  Favor could do more for you than a house.
+ 1529.6  Favor could do more for you than a vehicle.
+ 1532.6  Favor will put you in rooms you don't belong in.
+ 1536.9  Favor will intersect you with people you have no business
+ 1539.8  knowing.
+ 1541.6  Favor would open doors for you.
+ 1543.3  You could not open for yourself.
+ 1548.0  And for whatever reason, in this season of our lives,
+ 1552.0  I don't know.
+ 1553.7  God has poured out on Lena and I,
+ 1556.8  an unusual favor for whatever reason.
+ 1565.2  And what I wanna do in this moment
+ 1567.8  is if God would allow,
+ 1570.6  I wanna pray a transfer of this intangible gift upon you,
+ 1582.3  and upon your homes, and upon your marriages,
+ 1586.9  and upon your children.
+ 1589.1  And if you don't want it, just reject it.
+ 1592.1  But I'm gonna pray by faith that God would pour out favor
+ 1597.9  on the sons and daughters.
+ 1601.8  Watch, who have the humility to care
+ 1606.8  about something intangible,
+ 1610.0  that God would perfect your character,
+ 1611.9  that you can carry that,
+ 1614.4  that he would purify your heart,
+ 1616.4  that you can carry that,
+ 1618.1  that he would do something on the inside.
+ 1620.2  He would work out of you, the ugliness of your heart,
+ 1623.3  that you can carry that.
+ 1629.6  So a sermon I don't have for you today.
+ 1632.7  But what I do have, I'm gonna pray God bless
+ 1635.4  as many people as he chooses to be stowed at upon.
+ 1641.8  So if that's you, if that's you,
+ 1650.2  and you have enough faith for a more powerful,
+ 1652.7  intangible gift than a house,
+ 1656.0  Then a bag, then a business.
+ 1661.6  If you have enough humility in this moment
+ 1664.0  to value an intangible gift,
+ 1670.5  I want you to move towards God with a step of faith
+ 1672.5  by turning your palms up.
+ 1676.7  It's just a position to receive.
+ 1678.6  It's just an act of faith.
+ 1682.4  And you ain't gotta lift your hands high,
+ 1684.0  you can just turn your palms up.
+ 1694.5  Tangible blessings are far more powerful
+ 1697.7  and all the things we're begging God for.
+ 1701.3  It could transform a marriage, it can transform a home.
+ 1704.7  Favor can go and snatch a wayward child.
+ 1710.8  It could bring something into your life
+ 1712.7  you've been believing for years.
+ 1715.7  My life has changed in a singular year.
+ 1718.4  My whole life has been transformed because of God's favor.
+ 1725.2  And so Father, in the name of Yashua,
+ 1731.3  I pray over every palm that's turned up local and abroad.
+ 1738.0  that Father you would perfect in our hearts' purity,
+ 1743.7  that you would work out of our hearts' idolatry
+ 1748.3  and wickedness and evil and rebellion.
+ 1753.3  I pray you would create in these hearts consecration
+ 1760.3  and give us clean hands before you even right now.
+ 1764.5  And Father, if you are willing of transformed hearts,
+ 1771.2  You will pour out upon these sons and daughters the intangible gift of favor.
+ 1778.7  Hallelujah God, doors that cannot open.
+ 1786.7  It would bring them into spaces that could not begin on their own.
+ 1791.1  It would bring it to their lives, people they need in this season and for the future.
+ 1799.2  It would bring saved loved ones into the kingdom that will transform marriages and children
+ 1805.6  and homes it would bring about joy, unspeakable, like Mary and others who found favor in your
+ 1820.4  sight.
+ 1821.9  I pray with deep intimacy with you, and that Father by this time next year there will be
+ 1830.7  testimonies of transformed lives because of the intangible gift of favor.
+ 1838.6  Father, if you're willing, I pray what you have trusted Lena and I in the Spirit, you
+ 1843.7  would pour out on our brothers and sisters on the backside of hearts being purified for
+ 1853.0  you.
+ 1857.5  I pray favor over every person under the sound of my voice.
+ 1864.2  I pray it would resurrect businesses.
+ 1867.5  It will resurrect ministries.
+ 1870.6  It will resurrect hope, dreams, and visions.
+ 1875.1  I pray for people who have been striving that that would cease and that favor God would
+ 1880.5  walk them through open doors like electronic doors would just open one after the other.
+ 1889.2  And that you would give them humility and integrity to store the intangible gift, a favor.
+ 1900.7  Lord do as you will.
+ 1903.5  And we thank you for that.
+ 1904.8  I see people on their knees, God, give it to them, Lord.
+ 1910.9  Give it to them, Lord.
+ 1912.7  I asked that over my family in the mighty and the majestic and the matchless name of our
+ 1925.0  Lord and Savior Jesus Christ.
+ 1928.7  Now hear me.
+ 1930.3  Sometimes you got to act like it's already done.
+ 1932.4  Would you praise him right now like it's already done.

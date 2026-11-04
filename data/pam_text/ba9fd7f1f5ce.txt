@@ -1,394 +1,838 @@
     0.0  Hey, welcome to 2819 Church.
    10.9  My name is Eric Hayes.
-   12.0  I am one of the two elders here.
+   12.0  I'm one of the two elders here.
    22.8  God bless you.
-   29.0  We are church is the house of prayer, proclamation and presence.
+   29.0  We are churches, the House of Prayer, proclamation and presence.
    38.5  That is the culture and DNA that we're going to continue to bake into here.
-   42.6  And to this old ecclesia.
-   44.2  We follow a sweep in Jesus.
-   47.9  We come.
-   52.4  I want to welcome our online community.
-   53.9  I just know the cycles.
+   42.6  Into this whole ecclesia.
+   44.2  We follow a sleeping Jesus when it comes.
+   52.4  I want to welcome my online community.
+   53.9  I'm digital disciples.
    55.4  We pray for you and we appreciate you.
-   75.3  And also welcome to unbelieving.
-   78.8  Right?
-   79.8  Cause we're a church that believes in you.
-   86.8  We're a church that believes you can belong before you.
-   91.1  Right?
-   92.1  We're a church that believes it's actually good when unbelievers come to squads.
-   95.1  Right?
-   97.4  When you invite your coworker, when you invite your cousin, when you invite someone, hey,
-  101.4  let's come check us out, man.
-  102.4  We're trying to expose them with the gospel of Jesus Christ.
-  105.4  Christ. The gospel and the Holy Spirit that actually saved us is the same working as you.
-  111.6  So we welcome you. I definitely want to shout out Pastor Philip Anthony Mitchell.
-  122.0  You know why that's where the Kyosh is here?
-  140.6  Met each other in a church in Durham, brought him to come and stretch.
-  146.2  And I'll be honest with you, he was the same Philip Anthony Mitchell is.
-  152.4  And as he is now, so I don't think that he done got a church in me and tried to get radical
-  157.4  know.
-  158.4  Can I tell you something?
-  160.8  I was actually dating a girl that was in his evangelism ministry and she told me that
-  166.4  he was just walking up to people and preaching to the gospel.
-  169.5  And I come from a Baptist church, they teach them some good, but a lot of them are just
-  174.1  religion.
-  175.1  I was like, people just go over to people and just start preaching to the gospel.
-  179.1  Because of that, I don't know if he knows this, because of that testimony, I was leading
-  183.5  people to the Lord in Walmart and during North Carolina.
-  189.7  Just because there was somebody right up there,
-  191.3  just walking up like, hey man, you ever heard of Jesus?
-  196.4  It's like 2007, 2008.
-  197.9  So his impact was, as he told some of you,
-  205.4  he's actually a way, he was gifted a trip
-  207.3  to what is now modern day Turkey.
-  210.1  I think it was biblical Smyrna,
-  212.1  so he's actually went over there.
-  214.1  And as you said, he's a low-key archeological nerd.
-  217.4  I'm a low-key nerd myself, so I understand.
-  219.8  So I pray that he's actually squeezed everything
-  222.3  that the Lord would have.
-  223.7  And get out of that trip.
-  226.0  So you watch your son, we love you.
-  228.2  God bless you.
-  231.2  And we are continuing in season one
-  232.8  in a series that is called, wisdom and wonder.
-  237.5  And I have the honest honor and privilege
-  239.4  of delivering the third episode of this series to you.
-  243.0  And the title that we've given it is,
-  245.9  Righteous Division.
+   75.3  And I also want to welcome the unbeliever, right?
+   79.8  Because we're a church that believes in you.
+   86.8  We're a church that believes you can belong before you, right?
+   91.1  We're a church that believes it's actually good when unbelievers come to squads, right?
+   97.4  When you invite your coworker, when you invite your cousin,
+  100.4  when you invite someone, hey, let's come check us out, man.
+  103.4  We're trying to expose them with the gospel of Jesus Christ.
+  106.4  The Gospel and the Holy Spirit that actually saved us is the same working as you.
+  112.2  So we welcome you.
+  116.4  I definitely want to shout out Pastor Philip Anthony Mitchell.
+  120.1  I'm coming to church and I'll be honest with you, he was the same Philip Anthony Mitchell
+  152.2  as he is now. So I don't think that he didn't got a church in me and try to get radical. No.
+  157.6  Can I tell you something? I was actually dating a girl that was in his evangelism ministry.
+  164.5  And she told me that he was just walking up to people and preaching to the gospel. And I come from
+  170.8  a Baptist church. They teach them some good, but a lot of them just religion. I was like,
+  174.4  people just go to the people and just start preaching the gospel. Because of that, I don't know if he knows this,
+  180.5  Because of that testimony, I was leading people to the Lord in Walmart and during North Carolina.
+  186.5  Just because there was somebody right up there, just walking up this walk, I'm like,
+  192.0  hey man, you ever heard of Jesus?
+  193.0  It's like 2007, 2008.
+  197.5  So his impact was, as he told some of you, he's actually a way he was gifted a trip to what is now modern day Turkey.
+  209.8  I think it was biblical Smyrna, so he's actually went over there.
+  213.8  And as you say, these low key archeological nerds,
+  217.0  I'm a low key nerd myself, so I understand.
+  219.7  So I pray that he's actually squeezed everything
+  222.2  that the Lord would have in mind.
+  225.0  Take it out of that trip.
+  226.4  So you watch your son, we love you.
+  228.1  God bless you.
+  231.1  And we are continuing in season one in a series
+  233.3  that is called Wisdom and Wonder.
+  237.4  And I have the honest honor and privilege
+  239.3  of delivering the third episode of this series to you.
+  243.0  And the title that we've given it is Righteous Division.
   250.4  Righteous Division.
-  252.1  Please, bow your head, allow me to pray for us as we get to the Word of God.
-  257.1  Holy Father, we do your holy Spirit.
-  277.4  We want your truth.
-  281.0  Shower your love on us now.
-  290.4  Do you show the revelation of the love that you showed us?
-  297.9  Cal, pray God that it will go deep in the heart of every believer,
-  304.1  that is here, or even watching.
-  306.1  That was prayed early.
-  308.9  I prayed again, God.
-  309.9  I just, I decreased God.
-  311.9  Decreased.
-  315.1  So you may increase in this moment.
-  317.1  You would have your way ultimately.
-  319.9  That you will be glorified through the sun.
-  324.5  It's until this day we pray. Amen.
-  327.1  I know you got up this morning, you came to church.
-  336.8  And anybody that's trying to walk with the Lord,
-  341.8  trying to walk with the Lord.
-  343.8  Okay.
-  344.8  Even if you ain't doing all that you should do,
-  346.8  you're making an effort.
-  347.8  You say, Lord, I'm trying to meet you halfway.
-  352.2  But I want to take you back to a time
-  354.2  where you were in the argument with somebody.
-  356.2  Some of y'all didn't have to remember that long ago.
-  359.9  It was real.
-  360.9  It was real reset.
-  361.9  Real reset.
-  362.9  No judging when you're here together, right?
-  364.9  Hopefully it wasn't very recent, but a time where you were just having just an argument or disagreement.
-  372.9  And then somebody said something so disrespectful.
-  380.3  And this even the season says that it didn't brought you all the way up out of character.
-  385.3  I'll go over here. I'm talking about somebody.
-  390.9  They said something so disrespectful.
-  393.9  Like if you're a mother, that came out and called you a bad mother to your face.
-  398.9  I'm talking about within striking distance, right?
-  405.7  And we in the South, right?
-  406.9  And sometimes we got some, you know,
-  409.2  some racism in hearts, right?
-  410.5  Somebody hit you with a racial slur with a hard R.
-  417.6  Then you try to back up and say,
-  418.9  hey, I'm talking about a hard R.
-  420.9  They landed on it.
-  427.0  I'm not even a fighter, but still within like striking distance.
-  440.0  You've been holding your piece
-  441.2  and you've been trying to let the Lord fight your battle.
-  447.6  And you were like, no, I need to address this.
+  253.6  Please bow your head aloud,
+  254.8  me to pray for us as we get to the Word of God.
+  257.2  Holy Father, we do your Holy Spirit.
+  280.4  We want your truth.
+  289.2  Shower your love on us now.
+  295.0  Do you show the revelation of the love that you showed us?
+  298.1  Cal, pray God, that it will go deep in the heart
+  303.4  of every believer that is here, or you can watch it.
+  306.9  That was prayed early.
+  309.7  I prayed again, God.
+  310.7  I just, I decreased God.
+  314.4  decrease so you may increase in this moment would have your way ultimately that you
+  322.6  will be glorified through the sun. It's in Jesus name we pray amen. I know you got up
+  335.4  this morning you came to church and anybody that's trying to walk with the Lord
+  341.5  trying to walk with the Lord okay if you ain't doing all that you should do you
+  346.4  just you're making an effort you said Lord I'm trying to meet you halfway but I
+  352.1  want to take you back to a time where you were in the argument with somebody
+  356.0  Some of y'all didn't have to remember that long ago.
+  360.1  It was real recent, real recent.
+  362.8  No judging me when we were together, right?
+  365.5  Hopefully it wasn't very recent.
+  366.7  But a time where you were just having
+  370.1  just an argument or disagreement.
+  373.5  And then somebody said something so disrespectful.
+  380.5  And this even the season says that it
+  382.9  didn't brought you all the way up out of character.
+  388.3  I'll go over here.
+  389.3  I'm talking about somebody.
+  390.5  They said something so disrespectful, like if you're a mother, that came out and called
+  396.8  you a bad mother to your faith.
+  399.6  I'm talking about within striking distance.
+  402.1  We're in the South, right?
+  407.1  Sometimes we got some racism in hearts, right?
+  410.8  Somebody hit you with a racial slur with a hard R.
+  414.7  They didn't even try to back up and say, hey, I'm talking about a hard R. They landed on
+  421.8  it.
+  427.4  to fight it, but still within like striking distance.
+  440.0  You've been holding your peace and you've been trying
+  441.7  to let the Lord fight your battle.
+  443.4  And you were like, no, I need to address this.
   451.6  And I need to address this right now.
   454.4  Now, I'm not gonna ask you to tell me exactly
   456.3  how you addressed it.
-  457.2  I don't wanna put you in a condemnation.
-  460.9  You just wanna repent for the Lord you ain't did it yet.
-  463.0  Do it on your breath.
+  457.1  I don't wanna put you in a condemnation.
+  460.8  You just wanna repent for the Lord you ain't did it yet.
+  462.9  Do it on your breath.
   463.8  I'm not gonna ask for all of that, right?
   466.9  But I'm gonna tell you that in some of these exchanges
-  470.9  that the Lord was dealing with
-  472.4  that we're gonna about to jump into,
+  470.9  that the Lord was dealing with,
+  472.5  that we're gonna body jump into.
   473.9  He was dealing with serious disrespect.
-  479.0  Like imagine this, imagine being God
-  484.0  And being there when they ooh, breath into clay
-  490.5  and made clay a living soul.
-  496.4  And then watched from heaven for 42 generations
+  479.1  Like imagine this, imagine being God
+  484.0  and being there when they grew breath into clay
+  491.1  and made clay a living soul.
+  496.5  And then watched from heaven for 42 generations
   502.0  and then came and embodied a body just like them
   506.9  and just walked around the earth.
-  510.6  I wanna give you that revelation of who Jesus is
-  512.7  Emmanuel God with us.
-  516.1  That's the translation of that.
-  518.7  To walk and eat and fellowship
-  521.1  and then get disrespected to the face again
-  528.2  within striking distance, okay?
-  533.0  I'm gonna dig into that, right?
-  533.9  So we're gonna be covering Matthew 12, chapter 22 through 32.
-  540.0  I got some things to deal with.
+  510.7  I want to give you that revelation of who Jesus is,
+  512.7  Emmanuel, God, with us.
+  516.2  That's the translation of that.
+  518.7  To walk and eat and fellowship, and then
+  521.6  get disrespected to the face again within striking distance.
+  532.0  OK?
+  532.5  I'm going to dig into that, right?
+  533.9  So we're going to be covering Matthew 12, chapter 22 through 32.
+  540.0  I've got some things to deal with.
   542.9  If I had a praying church, please pray for me.
   545.0  We got a lot to deal with in this section, right?
   547.4  So we're actually gonna jump into verse 22, verse 22.
-  558.7  And we're coming out of the section of Pastor Phil taught last week.
-  562.3  And then it says, then, a demon oppressed man who was blind and mute,
-  568.2  say blind and mute, was brought to him meaning Jesus.
-  572.7  And he healed him so that the man spake and saw.
-  586.3  Blind and mute, he was demon oppressed.
-  592.2  And now he speaks and he sees.
-  595.8  I have to address something real quick,
-  600.3  because in modern day America,
-  602.9  sometimes we don't believe that some physical maladies
-  607.4  are still a demon.
-  617.0  Sometimes it's just a demon.
-  623.3  I'm gonna stay right there, right?
-  626.0  Cause like me, like you like me,
-  627.4  we jump on Google and we look at the symptoms,
-  629.3  we try to, you know, try to look at some,
-  631.0  we look at WebMD and we YouTube it
-  633.4  and we try to, you know, get some CMOS
-  635.8  And me and my family, we've been killing that elderberry.
-  644.4  Everybody gets something, everybody gets.
-  647.4  You're gonna take that elderberry, okay?
-  649.9  And listen, listen, I'm with it.
-  656.5  Take your minerals, take your vitamins,
-  659.2  go to counseling, I do counseling,
-  661.3  get on somebody couch, talk to them.
-  664.4  But if it does not budge,
-  670.5  if you went through the bounce approach,
-  672.2  I'm not saying don't know, go to a doctor,
-  674.4  get to x-ray, get the first opinion.
-  676.4  It's not the last opinion who you are dealing with something in your body and your
-  680.9  As a believer you need to know that you can reach back and say in the power of Jesus when I said that
-  707.5  Probably feeling about three camps. I'm gonna dress all three. Oh, I just gave you the truth of the word of God
-  716.0  But some of y'all knew
-  718.0  That's a lot of y'all knew we'd actually we preach the gospel here
-  720.8  So a lot of y'all are new in the faith and praise the Lord
-  723.3  Praise the Lord for you, God bless
-  725.3  Hey man, but some of y'all, you like,
-  731.5  hey, listen man, I been saved three weeks,
-  733.8  I'm trying to get through the book of Hebrews.
-  741.3  I'm not trying to jump in the varsity of casting out a demon.
-  746.9  Hey, now how you think you did the super sakes?
+  558.7  And we're coming out of the section
+  559.9  that Pastor Phil taught last week.
+  562.4  And then it says, then, a demon oppressed man
+  566.8  who was blind and mute, say blind and mute,
+  570.8  was brought to him meaning Jesus,
+  572.7  and he healed him so that the man
+  576.6  spake and saw. Blind enemy, he was demon oppressed and now he speaks and he sees. I have to address
+  598.6  something real quick because in modern day America sometimes we don't believe that some physical
+  606.1  maladies are still a demon. Sometimes it's just a demon. I'm going to stay right there.
+  624.1  Right?
+  625.1  Because like me, like you like me, we jump on Google and we look at the symptoms, we try
+  629.4  to, you know, try to look at some, we look at WebMD and we YouTube it and we try to, you
+  634.2  know, get some CMOS and me and my family, we've been killing that elderberry, like everybody
+  645.6  gets some, everybody gets some.
+  646.7  You're gonna take that elderberry, okay?
+  649.5  Okay?
+  650.5  And listen, listen, I'm with it.
+  656.6  Take your minerals, take your vitamins, go to counseling, I do counseling.
+  661.4  somebody couch talk to them but if it does not budge if you went through the
+  671.4  balance approach I'm not saying don't know go to a doctor get to x-ray get the
+  675.8  first opinion it is not the last opinion who you are dealing with something in
+  679.4  your body and your body as a believer you need to know that you can reach back
+  683.9  and say in the power of Jesus when I said that probably fell in about three camps
+  709.0  I'm gonna dress all three of them.
+  713.1  I just gave you the truth of the word of God.
+  716.4  But some of y'all knew,
+  718.5  that's a lot of y'all knew we'd be excellent.
+  719.8  We preached the gospel here.
+  720.8  So a lot of y'all are new in the faith
+  721.9  and praise the Lord.
+  723.6  Praise the Lord for new converts.
+  726.2  Amen.
+  729.9  But some of y'all, you're like,
+  731.5  hey, listen man, I been saved three weeks, all right?
+  739.8  I'm just trying to get through the book of Hebrews.
+  743.9  I'm not trying to jump in the varsity
+  745.5  of casting out a demon.
+  748.5  Hey, now how you think you did the super saints?
   750.0  Everybody on the front row, you know, demon, call somebody.
-  753.2  He called you and sent you out there.
-  761.3  I'll say it again.
-  762.5  You get a demon, listen, you called?
-  764.5  I know somebody that, you know, ain't gonna point out.
-  766.9  But some people read it, they read it,
-  768.6  At any given time.
-  772.0  At any given time.
-  773.3  Okay, all right, I'm gonna just shoot me the adi.
-  775.8  I'm on the way.
+  753.2  He called you and sent you out, man.
+  761.4  I'll say it again.
+  762.5  You get a demon, listen, you call?
+  764.5  I know somebody that, you know, I ain't gonna point out,
+  767.0  but some people read it, they read it.
+  768.7  At any given time.
+  772.1  At any given time, okay.
+  773.8  All right, I'm gonna just shoot me the adi.
+  775.9  I'm on the way.
   780.9  Right?
-  782.8  And listen, we gonna support you.
-  785.0  And we gonna love on you.
-  786.5  Right?
+  781.9  And listen, we're gonna support you.
+  785.0  And we're gonna love on you, right?
   787.6  But I'm gonna tell you this, it's a couple of here.
-  789.8  They actually had a house.
-  791.6  They have a house.
-  792.4  And they came up to me, I'm not gonna name the name.
-  794.8  They said, hey, older, can you come and bless the house?
-  798.4  I said, here my heart, here my heart, right?
+  789.8  They actually had a house, they have a house.
+  792.5  And they came up to me, I'm not gonna name the name.
+  794.9  They said, hey, Elder, can you come and bless the house?
+  798.5  I said, here's my heart, here's my heart, right?
   802.0  I said, I can, but you can bless it too.
   812.9  I said, it's the same Holy Spirit.
   817.2  I'm not gonna come and apply anything
   819.1  you don't already have access to.
   830.6  He's giving you the power of the Holy Spirit
-  834.3  that lives only inside of you.
-  835.7  The same one we're talking about that empowers us
-  837.9  to live holy and powers us against the evil
-  841.6  dark forces of the enemy.
-  844.3  You just don't have confidence in the year.
-  852.4  Matter of fact, I said, hey, fam,
-  853.4  I said, that's how I feel.
-  854.5  I said, hey, let's do this.
-  855.9  Go through the fast.
-  857.5  And if you still want me to do it,
-  859.4  just let me know and I'll come.
-  861.7  I said, but you can do it.
-  862.7  I haven't heard from them,
-  863.5  but they still want to hit me up after this.
-  865.0  I will come, right?
-  866.5  But it's the same teaching.
-  869.4  Some things are the enemy, all right?
-  871.7  Some of y'all scared, all right?
-  873.0  Some of y'all, you want to cast a devil out of the door now.
-  878.0  Like, I'm gonna tell a story real quick, quick story.
-  885.1  Listen, listen, listen, look straight ahead.
-  886.9  You all know I'm talking to you.
-  887.8  It's a sister, somebody else on the tell me,
-  890.0  it's a sister, Kenny gonna fall out.
-  894.1  We were praying on stage actually at the same building
-  898.6  that Pastor was talking about last week, right?
-  901.2  And she was like, open up the doors,
-  905.0  we're gonna run the devil out of here.
-  912.9  And I think I look around.
-  916.3  And I was like, I'm gonna say, but sometime, right?
-  920.2  I was like, I don't think we need to open up the doors
+  834.4  that lives only inside of you,
+  835.8  The same when we're talking about that empowers us to live holy and powers us against the evil dark forces of the enemy
+  844.0  You just don't have confidence in it yet
+  852.1  Matter of fact, I said hey, that's how I feel. I said hey, let's do this go through the fast
+  856.7  And if you still want me to do it, just let me know and I'll come I
+  861.5  Said but you can do it now. I haven't heard from them
+  863.5  But they still want to hit me up after this I will come right, but it's the same teaching
+  867.8  Some things are the enemy.
+  871.4  Some of y'all scared.
+  873.1  Some of y'all, you wanna cast a devil out of the door now.
+  878.1  I'm gonna tell a story real quick, quick story.
+  885.1  Listen, listen, look straight ahead,
+  886.9  you wanna know what I'm talking about?
+  887.8  It's a sister, some of y'all gonna tell y'all.
+  889.9  It's a sister, Kenny gonna fall out.
+  894.1  We were praying on stage, actually,
+  897.6  at the same building that Pastor was talking about last week.
+  901.2  And she was like, open up the doors.
+  905.0  What about the run the devil out of here?
+  912.8  And I think I looked around.
+  916.2  And I was like, I'ma say, but sometime, right?
+  920.1  I was like, I don't think we need to open up the doors
   923.5  to run the devil out of here.
-  925.0  But family, she said it with such conviction.
-  928.6  I was like, open up the door, look at me.
+  926.5  But family, she said it with such conviction.
+  928.6  I was like, open up the door.
+  929.5  Look at me.
   930.3  She said open up the doors.
-  932.1  We about to run the double idea.
-  933.9  Look at me four.
-  943.2  I love this with my faith.
+  932.1  We about to run the devil out of here.
+  935.4  Look at me four.
+  943.2  I love it.
+  943.5  She's with my faith.
   944.2  So she's not one of those people, right?
-  946.1  But what I'm saying is some people believe in a lot.
-  949.6  We've been taught a lot of stuff when it comes to demon
-  952.8  exercise and things of that nature.
-  954.3  Hopefully we, oh, I may let this go.
-  958.9  We still look at that prayer conference.
-  961.1  I may leak that. Okay, we may hopefully we can write that down.
-  964.1  And pray it's a deliverance and put that in there.
-  966.1  Hey man, somebody write that down. Okay.
-  968.1  Right, so I'm not going to get into that right now, but you have the power in the Holy Spirit to do that right now. Okay?
-  974.1  All right. And then there are those that are too intellectual to think that they're actual demons.
-  981.1  Surely, Elton, you don't expect me to believe in 2023.
-  988.6  They're actually demons.
-  994.2  Yeah.
-  995.1  Yeah.
+  946.1  But what I'm saying is some people believe in a lot of stuff
+  950.8  when it comes to demon exercise and things of that nature.
+  954.3  Hopefully, I may let this go.
+  958.7  We still look at that prayer conference.
+  961.1  I may let that.
+  961.8  OK, we may.
+  962.7  Hopefully we can write that down.
+  964.5  Pray it's a deliverance.
+  965.4  Put that in there.
+  966.1  Amen?
+  966.3  Somebody write that down.
+  967.4  OK.
+  968.2  Right, so I'm not going to get into that right now.
+  969.8  But you have the power in the Holy Spirit
+  971.9  to do that right now.
+  972.9  OK?
+  974.3  All right?
+  975.7  And then there are those that are too intellectual
+  978.9  to think that they're actual demons.
+  985.4  Surely, Elton, you don't expect me to believe in 2023.
+  989.3  They're actually demons.
+  994.3  Yeah.
   996.0  This is why, right?
   999.5  The most famous person in all the world
  1001.7  in the most printed book in all of history.
  1004.3  And my elder told me that, and I researched that every year
- 1007.6  it's the best-selling book and most soul of all time.
+ 1007.6  it's the best-selling book in most soul of all time.
  1010.8  Did you know that?
  1012.1  The Bible.
  1015.1  So much so, it'll be done every day,
- 1016.5  it's kind of taken off, right?
- 1019.3  The most popular person in all the world
- 1021.4  in all of history, Jesus, in the most popular book
- 1026.4  best-selling of all time. It's not even close.
- 1031.4  I told you, gave you the account that there was a demon-possessed man.
- 1038.8  You can't go with that. You can't believe anything in any book that was ever written.
- 1049.7  From an unbeliever standpoint, if you try to discredit that.
- 1058.6  So, yes, get all of your degrees. Three masters, a PhD, double associates,
- 1064.6  is get all of them. But you don't have enough knowledge to trump the word about it. Okay,
- 1072.3  that's going to be a balance in my approach. Y'all wouldn't be beloved. And lastly, I just
- 1079.7  want to put this. Christ said, I saw Satan falling like lightning. I was building up your theology
- 1088.3  so you know that Christ is above the evil one. The Holy Spirit is above the evil one. So you don't
- 1096.5  think you out there by yourself ignorant of your spiritual weapons and also ignorant of his devices.
- 1104.2  What is it going to do?
+ 1016.5  just kind of take it off, right?
+ 1019.3  The most popular person in all the world,
+ 1021.4  in all of history, Jesus,
+ 1024.8  in the most popular book,
+ 1026.6  Best Selling of All Time.
+ 1029.5  It's not even close.
+ 1032.1  Told you, gave you the account
+ 1037.3  that there was a demon-possessed man.
+ 1044.3  You can't go with that.
+ 1046.7  You can't believe anything in any book that was ever written
+ 1052.3  from an unbeliever standpoint
+ 1056.4  if you try to discredit that.
+ 1059.6  So yes, get all of your degrees.
+ 1062.2  Three masters, a PhD, double associates, get all of them.
+ 1066.7  But you don't have enough knowledge
+ 1069.0  to trump the word of knowledge.
+ 1072.1  Okay, that's gonna be a balance in my approach.
+ 1073.6  Y'all with me, beloved?
+ 1079.3  And last time I just wanna put this,
+ 1080.8  Christ said I saw Satan fall like lightning.
+ 1086.8  I'm just building up your theology.
+ 1088.4  So you know that Christ is above the evil one.
+ 1093.9  The Holy Spirit is above the evil one.
+ 1096.2  So you don't think you out there by yourself,
+ 1099.7  ignorant of your spiritual weapons.
+ 1102.6  And also ignorant of his devices.
+ 1104.4  You know what you're gonna do?
  1105.2  Try to put doubt in your head.
- 1106.2  Listen, you are a lie here by yourself.
+ 1106.2  Listen, you all lie here by yourself.
  1107.6  The devil is a liar.
- 1108.8  No, literally the devil is a liar.
- 1111.8  All right?
+ 1108.9  No, literally the devil is a liar.
+ 1111.9  All right.
  1113.1  Let's go to Luke 10, 17.
- 1121.7  It says, I'm going to keep brook reading 17 through 19.
- 1124.6  It says, the 72, a lot of you guys only
- 1126.6  think that it was 12 disciples.
- 1128.0  No.
- 1128.5  That's it, 72 disciples.
- 1129.8  You sent them out two by two.
- 1131.8  Return with joy, say, Lord, even the demons
- 1134.5  are subject to us in your name.
- 1140.1  That's not Jesus.
- 1141.5  That's not even the special 12.
- 1143.6  that 72 disciples.
- 1150.4  And he, being Jesus, said to them,
- 1152.9  I saw Satan fall like lightning from heaven.
- 1156.4  Behold, I have given you authority
- 1158.9  to tread on serpents and scorpions
- 1161.5  and over all the power, say all the power
- 1165.1  of the enemy and nothing shall hurt you.
- 1167.5  Nevertheless, do not rejoice in this.
- 1170.1  I love coming to the word of God
- 1171.4  because Jesus will give you a firm foundation.
- 1176.3  Listen, you would come back excited too.
- 1179.3  You was talking to them because they were just fleeing.
- 1182.3  They would be excited.
- 1183.3  There you go.
- 1184.3  You said something.
- 1186.3  They left.
- 1187.3  You go and try it one more time.
- 1189.3  Whoa, this thing really worked.
- 1193.0  Hey, Jesus.
- 1194.0  Yeah, yeah, yeah.
- 1195.0  I actually saw Satan fall like lightning.
- 1197.0  It's nothing new to him.
- 1199.0  He was created in authority.
- 1201.0  And we also are seated in heavenly places in him at the right hand side of the Father.
- 1214.9  Jesus said, nevertheless, do not rejoice in this
- 1217.8  that the spirits are subject to you,
- 1220.2  but rejoice that your names are written in heaven.
- 1229.4  Let's go back to the text.
- 1230.6  Let's jump into verse 23.
- 1234.5  And as a result of the demon of the press man
- 1236.1  who was blind and you being healed,
- 1239.6  in verse 23 it says, and all the people were amazed
- 1244.3  and said, can this be the son of David?
- 1248.3  All right, once you let you know,
- 1249.4  son of David, what is that, me?
- 1250.5  All right, primarily the title son of David
- 1253.0  is more than a statement of physical genealogy.
- 1255.3  Yes, he actually comes from a genealogy.
- 1257.0  Like, it's the born part of the Bible.
- 1259.0  We are somebody but get somebody,
- 1261.0  but get somebody, but get somebody,
- 1263.1  but get somebody, but get somebody.
- 1265.0  You just wanna skip it.
- 1266.2  You don't wanna tell nobody you skip it.
- 1267.9  You just forget somebody.
- 1269.1  I, okay, okay.
- 1271.5  There's a reason that the Bible puts that in there.
- 1274.5  So you know that actually David, from the Old Testament,
- 1277.7  Jesus is actually in his genealogy.
- 1280.5  Okay, but that's just not it, right?
- 1284.9  It says, it's a messianic title.
- 1287.9  When they say son of David, they're talking about the Messiah.
+ 1121.7  It says, I'm gonna keep, keep reading 17 through 19.
+ 1124.6  It says the 72, a lot of you guys only think that it was 12 disciples.
+ 1128.0  No, that's he said 72 disciples, he sent them out two by two, right?
+ 1131.8  Return with joy, say Lord, even the demons are subject to us in your name.
+ 1140.1  That's not Jesus, that's not even the special 12.
+ 1143.6  That's 72 disciples.
+ 1150.4  And he, being Jesus, said to them, I saw Satan fall like lightning from heaven.
+ 1156.5  Behold, I have given you authority to tread on serpents and scorpions, and over all the
+ 1162.6  power, say all the power of the enemy and nothing shall hurt you.
+ 1167.8  Nevertheless do not rejoice in this.
+ 1170.0  I love coming to the Word of God because Jesus will give you a firm foundation.
+ 1175.2  Listen, you would come back excited too.
+ 1180.6  You was talking to them because they were just fleeing.
+ 1182.2  It would be exciting.
+ 1183.2  There you go.
+ 1184.2  There you go.
+ 1185.2  You said something.
+ 1186.2  They left.
+ 1187.2  You go in and try it one more time.
+ 1189.2  Whoa, this thing really worked.
+ 1192.8  Hey, Jesus.
+ 1193.8  Yeah, yeah, yeah.
+ 1194.8  I actually saw Satan fall like lightning.
+ 1196.8  It's nothing new to him.
+ 1199.5  He was created in authority.
+ 1201.4  And we also are seated in heavenly places in him at the right hand side of the Father.
+ 1214.8  And Jesus said, nevertheless, do not rejoice in this that the spirits are subject to you,
+ 1220.3  rejoice that your names are written in heaven. Let's go back to the text. Let's
+ 1230.7  jump into verse 23. And as a result of the demon of press man who was blind and
+ 1236.9  you being healed in verse 23 it says, and all the people were amazed and said, can
+ 1245.5  this be the son of David? All right. Once you let you know son of David, what is that
+ 1250.3  mean? All right. Primarily the title son of David is more than a statement of
+ 1254.3  physical genealogy. Yes, he actually comes from a genealogy like this the born
+ 1258.0  part of the Bible, where you are somebody but get somebody, but get somebody, but get somebody,
+ 1263.8  but get somebody, but get somebody, you just want to skip it, you don't want to tell nobody,
+ 1266.9  you skip it. You just forget somebody. Okay? Okay? There's a reason that the Bible puts
+ 1273.2  that in there. So you know that actually David from the Old Testament, Jesus is actually
+ 1278.5  in his genealogy. Okay? But that's just not it, right? It says it's a messianic title.
+ 1287.9  And this is son of David, they're talking about the Messiah.
  1291.3  He's talking about Jewish people.
- 1292.8  They know the Torah.
- 1294.0  They know the small prophets, the larger prophets.
- 1297.6  They know that one has been prophesied
- 1302.1  that is going to come and deliver them.
- 1306.1  So they see this wild miracle and they're saying,
- 1318.0  Now we know in hindsight, we look back at the cross,
- 1320.2  it absolutely was here.
- 1321.8  But that's where they are, right?
- 1326.5  Even in Revelation 22, 16, it says,
- 1329.5  I am the root, Jesus speaking.
+ 1292.9  They know the Torah.
+ 1294.1  They know the small prophets, the larger prophets.
+ 1297.9  They know that one has been prophesied that is going to come and deliver them.
+ 1306.2  So they see this wild miracle and they're saying, now we know in hindsight, we look back at
+ 1319.8  the cross, it absolutely was here.
+ 1321.9  But that's where they are, right?
+ 1326.7  in Revelation 22 16, it says, I am the root, Jesus speaking.
  1331.5  I am the root and offspring of David.
- 1335.5  That is, he is both creator of David
- 1339.1  and also simultaneously the descendant of David.
+ 1335.5  That is, he is both creator of David and also simultaneously,
+ 1341.3  the descendant of David.
  1345.2  Only the son of God, Jesus can make that happen.
- 1347.5  Let me stop there, let me stop there.
- 1353.4  Only someone godly could have that happen.
- 1356.2  I was here before you and I also am his descent.
- 1367.4  That's what they're thinking.
- 1368.3  Could this be him?
- 1369.3  Could this be him?
- 1370.3  Okay.
- 1371.3  All right.
- 1372.3  And I'm going to tell you right now.
- 1373.3  I don't like this people that we talk about right now.
- 1374.3  All right.
- 1375.3  All right.
- 1376.3  It says, and also before we go, let me hit this point.
- 1377.3  Listen, it says the people are amazed.
+ 1347.5  Let me stop there.
+ 1348.4  It's only someone godly could have that happen.
+ 1356.2  Not in the root of David.
+ 1358.2  I was here before him and I also am his descendant.
+ 1367.3  That's what they're thinking.
+ 1368.2  Could this be him?
+ 1369.2  Could this be him?
+ 1370.2  Okay.
+ 1371.2  All right.
+ 1372.2  And I'm going to tell you right now, I don't like this people that we talk about right now.
+ 1374.4  All right.
+ 1375.4  All right.
+ 1376.4  It says, and also before we go, let me hit this point.
+ 1377.4  Listen, it says the people are amazed.
  1380.6  It's important to us as believers that when miraculous things happen in our lives, that
  1386.0  we point to the miracle worker.
- 1388.0  It's a natural tendency for people when they see a miracle, they say, well, where did you get that from?
- 1398.0  Perhaps they will work one in my life.
- 1402.2  Can I tell you something? It's beloved. Please don't come here and just sit through sermons
- 1407.4  like it's just a sermon. It's literally the spirit of God moving. Can I tell you something?
- 1412.0  I have long dealt with procrastination. Long dealt with. Since my youth, like fifth grade,
- 1420.1  I remember just waiting till last minute to do homework.
- 1422.7  All right?
- 1423.7  How about I sat there, right there, when Pastor was talking about last week, he said he stretched
- 1427.9  out his hand in the withered hand.
- 1429.6  Listen, I applied that to my life and there was a break in procrastination this week.
- 1440.1  Right?
- 1441.1  Because I want to re-teach the sermon, but all of us have something that is withered.
- 1445.0  You don't put the balm on or you don't went to the doctors and it hasn't worked yet, but
- 1453.3  That's the power of the Holy Spirit that can be applied when the Word of God is being preached
- 1461.6  We really want to raise you as disciples
- 1465.2  It's not Christmauf because you can come in and you get hyped for the music and then you can fall asleep during the sermon
- 1470.5  Not knowing that the power of God is present in both. It's our job
- 1482.8  You can God be a real a real dope preacher. Hey, man
- 1486.0  This is what God did for me. Maybe he could do it for you
- 1488.2  But the most important things that you get saved. That's a sermon beloved. Let's go to 25
+ 1387.9  Because it's a natural tendency for people when they see a miracle, they say, well, where
+ 1396.1  did you get that from?
+ 1398.6  They will work one in my life.
+ 1402.3  Can I tell you something?
+ 1403.3  It's beloved.
+ 1405.0  Please don't come here and just sit through sermons
+ 1407.4  like it's just a sermon.
+ 1408.9  It's literally the spirit of God moving.
+ 1411.0  Can I tell you something?
+ 1411.9  I have long dealt with procrastination, long dealt with,
+ 1418.1  since my youth, like fifth grade.
+ 1420.1  I remember just waiting till the last minute to do homework.
+ 1423.2  How about I sat there, right there,
+ 1425.3  when Pastor was talking about last week,
+ 1427.1  He said he stretched out his hand in the withered hand.
+ 1430.3  Listen, I applied that to my life,
+ 1432.1  and there was a break in procrastination this week.
+ 1439.8  Right?
+ 1441.1  Because now I want to re-teach the sermon,
+ 1442.6  but all of us have something that is withered.
+ 1448.5  You don't put the balm on, you don't wint to the doctors,
+ 1451.1  and it hasn't worked yet,
+ 1453.1  but that's the power of the Holy Spirit
+ 1458.7  that can be applied when the Word of God is being preached.
+ 1463.6  We really want to raise you as disciples,
+ 1465.2  just not Christmassy, because you can come in
+ 1467.1  and you get hype for the music,
+ 1468.6  And then you can fall asleep during the sermon, not knowing that the power of God is present in both.
+ 1473.4  It's our job. You can God be a real dope preacher.
+ 1485.6  Hey man, this is what God did for me. Maybe he can do it for you.
+ 1488.5  But the most important things that you get saved, that's the sermon, beloved.
+ 1499.2  Let's go to 24. 24. But when the Pharisees heard it, they said,
+ 1513.9  It is only by Beelzebel the prince of demons that this man cast out demons.
+ 1521.1  Take it off.
+ 1522.1  Actually leave it up.
+ 1523.1  Leave it up.
+ 1537.5  Leave it up.
+ 1538.5  You just saw that man.
+ 1540.4  You saw him being blind and mute.
+ 1544.2  You saw him also seen and speaking.
+ 1548.4  You heard the people point to the Messiah.
+ 1551.7  Now you're gonna say one of the most disrespectful things in all of scripture.
+ 1560.0  I'd rather you say it didn't even happen and try to gaslight the situation.
+ 1566.2  No he didn't.
+ 1569.0  No he didn't.
+ 1572.9  It's both crazy but I left, okay, they just in there.
+ 1576.3  No, no, no, no.
+ 1577.3  They actually said, yeah, nice, Dr. Messiah.
+ 1583.2  He actually cast that demon out by the power of Satan himself.
+ 1588.6  He didn't even say this a regular demon.
+ 1605.8  He said, nah, he actually did it.
+ 1607.7  He's in cahoots with the prints of demons, Satan,
+ 1610.7  bells above.
+ 1620.0  Man, if I'm Jesus, if there's one time I'm calling down,
+ 1623.8  fire in brimstone.
+ 1630.2  This make the list beloved.
+ 1631.9  I saw him fall like lightning out of the kingdom
+ 1638.8  and me and my father.
+ 1640.0  I came out here to save you.
+ 1641.8  And you're going to tell me I'm in partnership
+ 1643.5  with Satan himself.
+ 1646.2  Not that you can shake my confidence because I'm Jesus.
+ 1649.8  but you're trying to divert the will of the people.
+ 1651.8  You're trying to confuse them.
+ 1656.2  You got that stronghold of power and your religious power.
+ 1659.9  Is that serious?
+ 1661.3  Shit, you be excited that I'm the Messiah
+ 1663.3  and I'm in front of you right now?
+ 1668.8  And you're gonna look at me with a straight face
+ 1670.6  and say that to me.
+ 1671.7  I'm glad that Jesus is a mercier
+ 1681.3  because he didn't even have to talk to me.
+ 1682.4  He could have dealt with him another way.
+ 1683.6  All right, look at how Jesus handles them
+ 1687.1  with such poise, intellect and a sense of royalty.
+ 1691.1  Let's jump under the verse 25.
+ 1699.4  The scripture says, knowing their thoughts,
+ 1702.9  he said to them,
+ 1705.0  petitons in every kingdom divided against itself
+ 1709.2  is laid waste.
+ 1712.3  And no city or house divided against itself will stand.
+ 1719.3  Knowing their thoughts, Jesus said to them,
+ 1720.7  every kingdom divided against itself is laid waste.
+ 1723.3  And no city or house divided against itself will stand.
+ 1727.5  Jesus opens in his royal nature with just a very general statement about kingdoms.
+ 1736.0  He didn't even jump all the way in. Just a very general statement about kingdoms.
+ 1740.8  And this is the truth on how communities work. He said, Kingdom, City, House, Kingdom, City,
+ 1749.1  house kingdom, city, house top, palace, your house.
+ 1756.9  So this is about kingdoms, all right?
+ 1758.9  I'm gonna come out of left field
+ 1760.4  and I'm gonna talk about another kingdom.
+ 1762.0  We're gonna talk about the kingdom of God.
+ 1764.0  It's actually not gonna come up.
+ 1765.0  I'm gonna read this from the Amplified Bible.
+ 1767.4  In James 3, 16 and 17, it says,
+ 1771.6  for where jealousy and selfish ambition exist.
+ 1776.6  There is disorder, unrest, rebellion, and every evil thing and morally negate
+ 1784.9  grading practice. But the wisdom from above is first pure, to stand up for
+ 1789.8  a five-version, morally and spiritually undefiled, then peace-loving, courteous,
+ 1795.4  considerate, gentle, and reasonable. Talking about the wisdom from above and
+ 1800.9  and willing to listen, full of compassion and good fruits.
+ 1806.0  Right, that's the wisdom from above.
+ 1807.2  I'm gonna jump back and read 16 again.
+ 1808.9  For where jealousy and selfish ambition exist,
+ 1812.3  there is disorder, unrest, rebellion,
+ 1815.1  and every evil thing and morally degrading practice
+ 1828.4  who cares about the kingdom of God
+ 1831.6  should keep that in their heart.
+ 1835.4  Because Christ has made a very general statement
+ 1837.9  about kingdoms.
+ 1841.8  No one who cares about the kingdom of God
+ 1845.4  should hide jealousy and envy and rebellion in their heart.
+ 1851.5  If you wanna, we wanna store it,
+ 1853.0  this revival of sorts that we're dealing with,
+ 1856.4  and we figured about the external being
+ 1857.9  our greatest enemy, no.
+ 1863.2  When we're dealing with each other in squads,
+ 1865.1  don't hide envy and backbiting and gossip
+ 1870.2  and all those things of the heart that we just coddled.
+ 1872.3  We just kinda coddled those things.
+ 1873.8  We jump on for an occasion.
+ 1875.0  We just coddle envy.
+ 1879.3  Homosexuality, jump on it.
+ 1881.2  No, we just coddle.
+ 1883.3  We just coddle, you know, I'm just a little jealous.
+ 1889.6  It tears down, King goes.
+ 1896.3  Now the word says the increase of his government
+ 1898.2  will never end, so you'll never kill the kingdom of God
+ 1901.6  and the work of God, but you can damage somebody
+ 1903.7  in the process.
+ 1907.7  That's not how we act in our kingdom.
+ 1909.0  You with me, beloved?
+ 1911.0  All right.
+ 1912.5  And give your tip, say you are dealing with that.
+ 1916.0  You're dealing with something in your heart.
+ 1917.4  And you know it's not right.
+ 1918.8  I'm just very, very, very straightforward.
+ 1921.3  Pray.
+ 1923.5  Pray.
+ 1924.4  Your scripture talks about us purifying ourselves.
+ 1927.6  Passion's always talking about how he's in front of God.
+ 1930.0  Ring in his heart out.
+ 1933.2  We, when we find something in our hearts,
+ 1935.7  should do the same thing.
+ 1937.7  That's definitely including the person in the poor.
+ 1940.8  All right.
+ 1941.6  Pray.
+ 1942.5  God help me get this out of my heart.
+ 1943.8  Even though people don't,
+ 1944.8  they don't put a lot of emphasis on it.
+ 1946.6  your word does and I know this can't stand here.
+ 1951.4  Help me to be holy in this area.
+ 1954.7  By the power of the Holy Spirit,
+ 1955.7  you've already planted on the inside of me.
+ 1957.5  You see how you can hear the word of God
+ 1959.0  and that shakes your theology
+ 1960.5  and how you actually walk out your life?
+ 1970.5  All right, now we're gonna jump into 26 and 27.
+ 1972.5  He's about to address the Pharisees directly here.
+ 1975.3  Verse 26, 26, it says,
+ 1978.0  and if Satan costs cast out Satan,
+ 1982.4  if Satan casts out Satan,
+ 1983.9  He's addressing the Pharisees now.
+ 1985.7  He is divided against himself.
+ 1990.2  How then will this kingdom stand?
+ 1993.2  You out here talking crazy.
+ 1998.3  And if I cast out demons by a beelzebel,
+ 2001.3  by whom do your sons cast them out?
+ 2010.9  Therefore they will be your judges.
+ 2013.5  So what spirit you operate in?
+ 2018.8  Let's go to 28 and 29.
+ 2020.5  It says, but if it is by the spirit of God
+ 2023.8  that I cast out demons,
+ 2026.0  then the kingdom of God has come upon you.
+ 2031.2  That's what you're afraid of.
+ 2033.6  You're gonna lose your power.
+ 2036.5  You're gonna lose your prestige.
+ 2039.5  You're gonna lose your hold on the people.
+ 2042.1  When you should be worshiping me,
+ 2044.4  you're trying to divert the glory back to yourself
+ 2046.9  and keep people in bondage.
+ 2052.4  Can I tell you?
+ 2053.2  That's the spirit of religion.
+ 2057.3  That's why those that just really just blood-bought believers,
+ 2060.1  you kinda, you hate it.
+ 2062.8  Anybody hate religion?
+ 2067.9  This is what a keep people bound.
+ 2071.5  He's only one Messiah and He is here.
+ 2083.7  Or verse 29 gives him another option.
+ 2086.4  How can someone enter a strong man's house
+ 2088.3  and plunder his goods unless he first binds the strong man?
+ 2094.0  Then indeed he may plunder his house.
+ 2095.7  What he's saying is if I don't have power over Satan
+ 2099.8  and I'm working in conjunction with him,
+ 2103.2  how can I set that man free?
+ 2108.3  We're talking about plunder.
+ 2109.1  Whenever coming out of Egypt,
+ 2110.3  it's that they plundered Egypt and brought out the gold.
+ 2115.0  In this case, the gold is the freedom of the man.
+ 2120.1  Jesus is interested in the freedom of man.
+ 2125.5  Jesus is interested in freedom of man.
+ 2129.6  That's why it's so big that we just don't wallow in sin.
+ 2137.3  Yeah, you feel, or you do it.
+ 2149.8  I'm gonna tell you something.
+ 2150.7  First of all, did not our hearts burn
+ 2152.7  when worship pastor Ryan preached on Christmas?
+ 2157.4  Don't watch it again, it's good.
+ 2158.7  One of the things he actually wasn't even from it,
+ 2160.2  and he said, his father said,
+ 2161.6  He said, just because you feel it don't mean you got to do it.
+ 2164.2  I could, I could have ran around this place four times in a row.
+ 2173.6  He just gave you so much biblical truth in one quick saying,
+ 2176.3  just because you feel it don't mean you got to do it.
+ 2179.6  That's where the enemy is tricking a lot of you guys.
+ 2182.8  You feel the zest, so strong.
+ 2185.5  You're saying, I got to do it.
+ 2186.8  No, you don't.
+ 2196.3  Can I tell you something else?
+ 2198.6  Communicator Courtney just says self-control.
+ 2200.3  Can I tell you something that's where I'm expecting a Lord
+ 2202.8  to move more in my life here.
+ 2206.0  Right, one of the fruits, not fruits, the fruit of the Spirit is indeed self-control.
+ 2214.9  And that's not get deep.
+ 2216.8  When you walk with God and the Spirit of God, listen, if a temptation hits you as soon as
+ 2225.5  you step in the park a lot, you know and I know coming out of worship, you have more power
+ 2230.4  to say no.
+ 2231.4  Now about Tuesday at 10 p.m.
+ 2235.3  I just gonna be real on a Sunday morning.
+ 2239.6  You like, ahhhh.
+ 2243.1  Because your last worship session was Sunday morning.
+ 2249.5  God's power did not delude itself.
+ 2259.8  God's wolf in your life didn't just take a back seat.
+ 2262.8  You looked in the mirror, walked away, and forgot who you were.
+ 2268.9  I'm preaching in there. You forgot who you were.
+ 2271.9  I'm talking about how you get out of the cage of sin. I been there. I been there.
+ 2283.2  I've been there. I've had temptation.
+ 2287.9  Grab me at 11 o'clock at night.
+ 2289.9  No, you not jumping in the car.
+ 2294.4  No, you not. No, you not.
+ 2297.0  No, you not. And you better learn how to talk to yourself too.
+ 2305.9  No, you not. I'm not going there.
+ 2307.9  I got to answer the text. No, you do not.
+ 2312.6  But what they gonna think. What does Jesus think?
+ 2323.8  Because you know I'm not doing it.
+ 2324.7  Once you fall, you got to dig.
+ 2326.2  Y'all know that. So you got to dig yourself all the way back up.
+ 2329.0  And Lord, that's how y'all coming here and sending more than I'm cool with.
+ 2331.4  I'm holy, but I don't feel holy.
+ 2334.4  It's the... I know God loves me, but I don't feel like he loves me.
+ 2338.2  It's the same thing they went through in the garden.
+ 2350.0  They went and hid themselves from the very creative that made them with leaves.
+ 2365.9  This function on this, with leaves and Adam out here naming the very animals, but leaves I feel.
+ 2378.7  On the how long they sat there with leaves, just sitting, looking crazy.
+ 2385.8  So when a lady's gonna come ask me,
+ 2387.5  because usually we'd be walking in the cooler the day right now,
+ 2390.1  but I'm up with it.
+ 2397.1  Anytime, usually I would be enjoying this presence right now,
+ 2401.3  but I feel the stain of sin.
+ 2410.0  Surely he don't want to meet with me no more lie.
+ 2412.3  Surely he don't want to kill with me no more lie.
+ 2420.0  Surely they create for the worship lie,
+ 2431.3  and we bathe ourselves in the lie of the enemy.
+ 2441.6  Let me tell you something.
+ 2442.9  Jesus is not step through 42 generations.
+ 2446.9  Live 33, check me out.
+ 2448.7  Like nobody likes a downgrade.
+ 2454.0  If I take you from a three bedroom to a two bedroom,
+ 2456.2  it could be in the same apartment complex.
+ 2458.1  Like I feel cramped.
+ 2465.7  Could barely afford the furniture three bedroom.
+ 2468.2  You still like I have my space.
+ 2470.1  Space, I don't, I'm moving out,
+ 2474.8  but I didn't call me to this.
+ 2481.7  Imagine downgrading from heaven to earth.
+ 2497.0  And this isn't a quick visit.
+ 2498.1  We talk about Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Monday, Tuesday, Wednesday, Thursday.
+ 2511.1  Having to deal with mess like this. Yes, the sacrifice on Calvary, crazy.
+ 2528.7  The whipping post, we skipped that crazy. In the garden, sweating with a few straps of blue crazy.
+ 2550.2  We can't even fathom what heaven is like.
+ 2553.1  I don't know if you've seen this man, it's actually pretty dope.
+ 2555.1  I still, heaven still beats it.
+ 2557.0  Like y'all ever seen those new AI pictures,
+ 2562.0  where they plug it into like chat GPT and something like,
+ 2564.3  you know, scripture and they just come up with a version,
+ 2567.1  and it's something the dopest thing you will ever see.
+ 2569.5  It's still on match heaven.
+ 2580.7  Peter stepped through all of that.
+ 2582.8  Go through those weeks, 30 without the power
+ 2587.7  of the Holy Spirit being landed on him
+ 2589.3  for a supernatural ministry to die for you.
+ 2593.9  go sit on the right hand side of the father.
+ 2596.8  You seen anything changes mind about you.
+ 2599.2  It was like that.
+ 2609.2  Stayed in heaven.
+ 2610.5  I'm giving you something to combat the lives of the enemy
+ 2616.3  and your flesh and yourself in the heat of the battle
+ 2619.9  between holiness and sin.
+ 2628.6  They say, no where in my notes, I just had to give you something.
+ 2633.2  Because as humans, some of you aren't
+ 2635.7  going to be able to not be able to.
+ 2637.9  you're not gonna feel like you can walk with the Lord
+ 2641.8  until you get some consistent wins
+ 2644.6  and then you build up your confidence.
+ 2647.3  Hear me, that's not how God thinks, that's how you think.
+ 2660.4  Until you actually put the blunt down,
+ 2662.5  until you quit abusing alcohol,
+ 2664.7  until you quit for the K, you four nights in a row.
+ 2668.3  Then I can, I feel like I can do this thing.
+ 2678.8  Two more nights, three more nights, you fall.
+ 2682.0  But he loves me.
+ 2689.4  Yes, that feels good, but the scripture say,
+ 2692.3  at his right hand, our pleasures forevermore.
+ 2695.2  And I can get married and have sex with that marriage.
+ 2703.3  So he's not even asking me to give that up permanently.
+ 2707.3  He's just saying, use it in my context.
+ 2715.1  Check me out.
+ 2716.7  He created me and he created the mechanism in which we even
+ 2721.5  populate.
+ 2723.1  So God is the author of sex.
+ 2725.9  So he's just saying enjoy yourself just in the proper context.
+ 2731.4  Neil, you out there?
+ 2732.9  Okay.
+ 2733.9  I just want to see if my wife was in the back.
+ 2738.4  I'm preaching here.
+ 2739.6  I see we got four kids.
+ 2742.6  We definitely win.
+ 2744.1  Okay.
+ 2746.8  I stay focused.
+ 2747.8  She did not like the fact that I said that.
+ 2755.2  Anyway, I'm going to use a preacher term delay.
+ 2761.0  It's not denial.
+ 2762.0  Right?
+ 2765.0  This is how you arm yourself.
+ 2767.0  against his not my notes.
+ 2768.2  This is how you arm yourself to walk holy and see things
+ 2773.4  that the Lord has for you.
+ 2774.5  Amen?
+ 2775.0  Y'all want me to beloved?
+ 2776.0  Amen.
+ 2784.4  Verse 30.
+ 2789.2  He's already approached the Pharisees, gave them
+ 2793.0  their crazy arguments, talks about how I am powerful.
+ 2798.8  I can plunder the house.
+ 2802.9  And at 30 he says something that all of us should pay attention
+ 2805.2  to.
+ 2808.1  Verse 30 it says, whoever is not with me is against me.
+ 2817.1  And whoever does not gather with me, there ain't no fence,
+ 2829.7  beloved.
+ 2833.0  Can I talk to you?
+ 2833.9  I'm not even trying to condemn you on this.
+ 2836.4  Anybody just want to admit that you're a quiet Christian?
+ 2840.6  You want to serve the Lord, but you don't really
+ 2842.2  want to rough no feathers.
+ 2844.9  Come on, we family.
+ 2845.8  Some of y'all in there, everybody.
+ 2848.0  Some people are posting 25 times a day about Jesus.
+ 2851.4  And you're like, I ain't about the nine, but I know.
+ 2853.8  Somebody ask me, listen, listen, listen, listen.
+ 2856.7  Listen, there is no neutral position in the spirit.
+ 2864.6  Stay with me, I'm not trying to continue.
+ 2866.0  I'm just letting you know.
+ 2867.0  You ever heard like sitting on the fence,
+ 2869.4  Christ kicked over the fence here.
+ 2873.5  Just pull it right apart the ground, ain't no fence.
+ 2879.5  If you're not with me, you are against me.
+ 2881.3  And whoever does not gather with me, scatters.
+ 2884.2  I'll pray about this.
+ 2885.0  I'll go in use here, right?
+ 2886.7  So what I will not name the name,
+ 2888.9  very recently the last couple of months,
+ 2890.2  there was an older preacher.
+ 2895.5  Probably I think his heyday was in the 80s and 90s,
+ 2898.2  And he was actually sick for a time, right?
+ 2900.0  And just stay with him to a quick story.
+ 2903.1  And he's a preacher.
+ 2905.3  A lot of people know him.
+ 2906.4  Your parents and grandparents will know him, right?
+ 2908.3  But right in the middle of his ministry,
+ 2911.1  I would say that he was deceived by the enemy, right?
+ 2914.9  And he started preaching something
+ 2916.1  called Gospel of Inclusion.
+ 2920.5  That was essentially saying you don't
+ 2921.7  have to apply your faith to the death
+ 2927.7  at the burial and resurrection of Jesus,
+ 2929.8  ultimately all men will be saved.
+ 2933.8  And he was like, I don't believe in hell anymore.
+ 2941.4  And unfortunately he passed and he was dealing
+ 2943.7  with a terrible sickness.
+ 2946.5  And I want to approach this with grace.
+ 2948.7  All right, give me some grace in even how I approach this.
+ 2952.0  And I kept hearing like big name preachers,
+ 2955.7  and I don't really care about that.
+ 2960.2  They were saying how we need to show this person honor
+ 2963.4  for what they did.
+ 2966.3  And I kept hearing this,
+ 2967.1  we need to show this person honor for what they did and honor, you know, for what they
+ 2972.0  did in the ministry.
+ 2973.0  I guess the things they did before he made that turn, right?
+ 2976.3  But I was not hearing anybody come out and call him a heretic.
+ 2983.3  I was, I was, I was, I was, I was grieved about that.
+ 2995.2  Why would you give him more honor than Jesus?
+ 3001.8  And much like the Pharisees, when you let bad doctrine reign, there will ultimately be
+ 3006.4  people that will, because of their position of authority, will go and follow them to the
+ 3010.7  very hell that he said he don't even believe in them.
+ 3013.5  If you don't gather with me, you'll scatter.
+ 3027.0  Maybe you do honor him for the things that he did, but out of the sake and for the love
+ 3030.7  of the people in the body of Christ that you shepherd, you have to call out bad doctrine
+ 3036.2  for what it is and correct that.
+ 3044.1  There's no neutral position as an unbeliever.
+ 3048.6  You are an object of child of wrath.
+ 3053.2  Does that sound neutral to you?
+ 3061.3  I'm not a salvation of Jesus.
+ 3064.8  Desperately, my place is not faith in him.
+ 3076.7  This is actually a touchy subject as well as we land the plane here.
+ 3080.7  I'm going to go to verse 31 and 32.
+ 3084.7  Therefore I tell you, every sin and blasphemy will be forgiven people, but the blasphemy against the spirit will not be forgiven.
+ 3098.8  And whoever speaks a word against the Son of Man will be forgiven.
+ 3105.5  But whoever speaks against the Holy Spirit will not be forgiven.
+ 3109.5  will not be forgiven either in this age or in the age to come.
+ 3119.1  Help me, amen.
+ 3124.3  When going through descriptions,
+ 3125.4  I'm just gonna say,
+ 3126.2  when going through descriptions,
+ 3127.1  this is why you should actually very much respect pastors
+ 3129.7  that go line by line.
+ 3130.8  Because ultimately you're gonna run into something like this
+ 3132.5  that you gotta deal with.
+ 3133.3  Yeah.
+ 3135.3  If you's gonna wake up and talk about me and Maya
+ 3137.5  and then jump to Paul,
+ 3138.5  you can just skirt around, have these situations.
+ 3142.9  All right?
+ 3151.8  I'm dealing with this issue with many of called
+ 3153.6  or titled the importantable sin.
+ 3156.0  It's important to note that in this context,
+ 3157.9  what Christ is calling blasphemy
+ 3160.2  of the Holy Spirit in this account.
+ 3162.7  Okay, because He's saying there will be no forgiveness.
+ 3166.3  First look at the account,
+ 3167.3  let's look at the account in Mark as well,
+ 3169.3  because it's gonna give us an important piece
+ 3171.3  of information, all right?
+ 3172.7  So all I'm gonna do is I'm gonna go to another book
+ 3174.6  in the Bible with the same account of this story, right?
+ 3177.8  It's gonna give us an additional piece of information
+ 3180.6  and we're gonna come back and talk about it, okay?
+ 3182.9  All right, so it's Mark 3rd chapter 28 through 30th verse.
+ 3187.6  28, Christ says,
+ 3188.5  "'Verily I say unto you, all sins shall be forgiven
+ 3191.5  "'till the sons of men, and blasphemies,
+ 3195.2  "'were with soever they shall blaspheme.'"
+ 3197.9  But he that shall blaspheme against the Holy Ghost,
+ 3201.1  Holy Ghost hath never forgiven us,
+ 3204.6  but is in danger of eternal damnation.
+ 3208.1  Verse 30, it says,
+ 3210.1  Because they said he hath an unclean spirit.
+ 3214.7  Okay?
+ 3216.0  So many of you when you're thinking of blaspheming against the Holy Ghost,
+ 3218.3  now I was talking to you as well, I want to give it to you in context using the Bible, right?
+ 3222.3  That blaspheming that Jesus was talking about, you will not get forgiveness.
+ 3226.9  They actually said he had an unclean spirit and Satan,
+ 3230.5  he actually used Satan to be able to do the work of God.
+ 3233.4  When it was clearly the Holy Spirit.
+ 3239.2  Some of y'all took a deep breath, because y'all know if I said some of the Holy Spirit.
+ 3243.4  Okay, I'm willing to put a whole lot of money that none of y'all said that.
+ 3250.8  Jesus actually did miracles by the power of Satan and he had a demon and that's how we
+ 3256.8  did his miracles.
+ 3258.8  Okay, but even with that, we conclude, I actually talked a past about this because it's very,
+ 3266.6  very heavy, right?
+ 3267.6  Right, there is some debate on what we should bring out of this scripture and use for today.
+ 3273.2  Okay, right.
+ 3274.9  concluded that because in this particular context they actually saw Jesus with their
+ 3279.9  own eyes.
+ 3281.7  They saw this man was blind and mute.
+ 3284.9  They saw him deliver the demon and they saw the man see and speak and then said he had
+ 3291.1  a demon that we actually relegate that to just those people that were around at that time
+ 3295.9  when Jesus woke the earth.
+ 3302.2  So if you have like a nagging theory, you read this in the Bible, I don't want you up
+ 3304.7  at one o'clock in the morning and I say no, that's not for you.
+ 3311.2  Okay, because some things in the Bible are descriptive and some things in the Bible are prescriptive.
+ 3315.9  Okay?
+ 3318.6  Now, should you absolutely have respect in regard for the Holy Spirit and watch your mouth?
+ 3324.1  Yes.
+ 3327.6  Because think about it or else what we would have to do is we would present it in the Gospel.
+ 3331.4  We would have to say, hey man, do you remember in 1987 whether you said something about the
+ 3334.9  Holy Spirit?
+ 3337.4  If you did, that means the Gospel is not for you.
+ 3340.0  If we took that and applied that to today, Jesus died for all sins.
+ 3350.4  Blasphemy will be forgiven for the believer in modern day.
+ 3356.3  And even more so, he was addressing the religious leaders that knew better.
+ 3364.5  No forgiveness for you or it gets me.
+ 3403.8  You either gather with me as we're endeavoring to do here or you scatter.
+ 3410.7  Jesus came to plunder hell and set the cactus free.
+ 3416.4  That includes me and you.
+ 3420.0  And now because he's been watched clean, the Holy Spirit can come by faith in Jesus Christ,
+ 3429.4  live on the inside of us and empower us to walk as believers. Let me pray for us as we close.
+ 3438.9  Holy Father, thank you for this word today. To edify the soul of the believer,
+ 3451.1  even inform the unbeliever about who Jesus is. Thank you for your grace and your mercy.
+ 3462.8  This body believer and body of believers that use us in the body, even though we feel like we're
+ 3493.9  Unworthy and unholy. Your blood has made us move. Our frankly god asked them to take this word.

@@ -1,428 +1,969 @@
     0.0  Well, grandmothers and mothers, all of our guests, welcome to the 2018 church.
-    4.9  Everybody watch me right now online, our entire online family watching in cities,
-    9.9  around the country and a few pockets around the world.
-   13.1  We are in the back half of a series called Kingdom Gems.
-   18.6  And we are in the last three weeks of a series called Kingdom Gems,
-   23.6  and it is exactly that.
-   25.2  These are gems.
-   27.0  We are studying line by line verse by verse,
-   30.0  the full length sermon of the Lord Jesus Christ
-   33.1  giving on a hillside just outside the city of Jerusalem,
-   36.9  affectionately called the sermon on the Mount.
-   39.6  And I'm gonna say this for the last three weeks,
-   41.6  I'm gonna shout this from the rooftops.
-   43.1  A lot of us, man, we are frustrated
-   44.7  with the state of our lives,
-   46.2  and I don't know how to tell you this any other way.
-   50.2  We are trying to build lives outside of the wisdom
-   52.6  of God's work.
-   55.6  And then we keep switching our heads,
-   57.4  why things are not working.
-   59.6  I want to say to you as a pastor and as a teacher,
-   63.3  that the sermon on the Mount,
-   64.8  if you read it and reread it and obey it,
-   69.1  it is a blueprint, listen for the best life possible
-   75.3  in the eyes of God.
+    4.8  Everybody watch me right now online, our entire online family watching in cities, around the
+   10.3  country and a few pockets around the world.
+   13.3  We are in the back half of a series called Kingdom Gems.
+   20.2  We are in the last three weeks of a series called Kingdom Gems and it is exactly that.
+   25.4  These are gems.
+   27.1  We are studying line by line verse by verse, the full length sermon of the Lord Jesus Christ
+   33.0  giving on a hillside just outside the city of Jerusalem, affectionately called the sermon
+   38.2  on the Mount.
+   39.7  And I'm going to say this for the last three weeks, I'm going to shout this from the rooftops.
+   43.0  A lot of us, man, we are frustrated with the state of our lives and I don't know how to
+   47.0  tell you this any other way.
+   50.3  We are trying to build lives outside of the wisdom of God's work.
+   55.7  and we keep scratching our heads why things are not working.
+   59.6  I want to say to you as a pastor and as a teacher
+   63.2  that the Sermon on the Mount, if you read it and reread it
+   67.0  and obey it, it is a blueprint.
+   70.5  Listen for the best life possible in the eyes of God.
    77.0  If you want to flourish in your mind, in your heart,
    80.1  in your relationship, in your finances,
-   82.4  the sermon on the Mount is the blueprint, the architect,
-   87.4  the manual for the best life possible in the eyes of God,
-   92.8  not in the eyes of the world, in the eyes of God.
-   97.5  And so we are in the final three weeks
-   99.2  of a series called Kingdom Gems.
-  101.6  And for all my note takers,
-  108.3  we're gonna be unpacking today, Matthew chapter seven,
-  113.8  verses 15 through 20, Matthew chapter seven,
-  121.4  verses 15 through 20,
-  126.4  and for this corpus of scripture,
-  128.7  for this periscope of what's word.
-  132.1  We're just gonna tag a title to this text
-  134.1  and we're gonna call it,
-  136.4  be aware of these,
-  139.8  be aware of these.
-  144.3  Let's pray,
-  145.3  eternal God and of a wise Father.
-  151.0  We thank you Lord for first
-  152.6  all of the mothers and grandmothers,
-  155.3  the generational matriarchs of the churches,
-  158.1  of the body, the families.
-  161.6  Just pray that they would all feel loved and honored today.
-  164.6  First by you, by your presence, and by those of us who are in the earth who love them.
-  172.1  I know today they're not going to hear a Mother's Day message, but they are going to
-  176.2  hear the teaching of your word.
-  180.7  Lord, in my weakness and in my sickness, I appeal to you for strength and for help before
-  190.3  these brothers and sisters.
-  192.8  I appeal to you as earnestly as I can, that you would open their eyes, that you would agitate
+   82.4  the Sermon on the Mount is the blueprint,
+   84.5  the architect, the manual for the best life possible in the eyes of God, not in the eyes
+   93.4  of the world, in the eyes of God.
+   97.7  And so we are in the final three weeks of a series called Kingdom Gems.
+  101.8  And for all my note takers, we're going to be unpacking today, Matthew chapter 7, verses
+  114.3  15 through 20.
+  120.6  chapter 7 verses 15 through 20 and for this corpus of scripture, for this
+  129.0  periscope of what's word, we're just gonna tag a title to this text and we're gonna call it
+  134.8  beware of these, beware of these. Let's pray, eternal God and of a wise Father.
+  146.9  We thank you Lord for first all of the mothers and grandmothers, the generational
+  156.2  matriarchs of the churches of the body, families.
+  161.6  Just pray that they would all feel loved and honored today,
+  164.6  first by you, by your presence, and by those of us
+  168.1  who are in the earth who love them.
+  172.2  I know today they're not going to hear a Mother's Day message,
+  175.7  but they are going to hear the teaching of your word.
+  180.9  Lord, in my weakness and in my sickness,
+  185.6  I appeal to you for strength and for help before these brothers and sisters.
+  192.6  I appeal to you as earnestly as I can that you would open their eyes, that you would agitate
   200.6  their hearts, that you would minister to them as your word goes forward.
-  209.3  This uncomfortable and awkward truth for a Mother's Day, yet you taught it.
+  209.3  This uncomfortable and awkward truth for Mother's Day, yet you taught it.
   215.6  You wanted us to know it.
-  217.0  And so I pray you'd help me to expound upon it.
-  221.0  And your mighty name I pray.
-  223.8  Amen.
-  224.8  Thank you, Frank.
-  233.4  be aware of these.
-  238.8  A family in the early days of my walk with the Lord Jesus, maybe around the mid-2000s or early-2000s.
-  248.9  There was a man of God who came to me and shared with me a story about a church that invited
-  255.9  a very popular preacher on a Caribbean island to come and preach at their church.
-  263.2  This man of God supposedly came and he preached at this church.
-  267.3  He preached the first night at this church in the Caribbean at a very popular island.
-  272.2  He preached the first night, took up the offering and went back to his hotel.
-  277.9  He came back the next day and he preached the second night, took up the offering.
-  281.2  He went back to his hotel.
-  285.2  On the third night, he came, he preached, but before he took up the offering, at the end
-  291.3  of his message, he lifted up his shirt in front of the entire congregation.
-  296.6  And all his chest was a satanic tattoo.
-  302.5  He took the last few moments of that preaching segment to mock the church and to mock the
-  308.8  leaders of that church to show them how easy it was for a Satan worshiper to slip into
-  315.2  their pulpit.
-  316.6  It created an uproar in that church.
+  216.6  And so I pray you'd help me to expound upon it.
+  220.6  And your mighty name I pray.
+  223.6  Amen.
+  225.6  Thank you, Frank.
+  228.8  Beware of these.
+  234.9  Our family, in the early days of my walk with the Lord Jesus,
+  243.2  maybe around the mid-2000s or early-2000s,
+  248.2  there was a man of God who came to me and shared with me
+  251.2  with me a story about a church that invited a very popular preacher on a
+  257.9  Caribbean island to come and preach at their church. This man of God, or
+  264.1  supposedly came and he preached at this church, he preached the first night at
+  268.5  this church in the Caribbean at a very popular island, he preached the first
+  272.9  night, took up the offering and went back to his hotel. He came back the next day
+  279.1  and he preached the second night, took up the offering, he went back to his hotel.
+  282.6  On the third night he came, he preached, but before he took up the offering, at the end of his message,
+  291.9  he lifted up his shirt in front of the entire congregation, and all his chest was a satanic tattoo.
+  298.9  And he took the last few moments of that preaching segment to mock the church,
+  307.1  and to mock the leaders of that church, to show them how easy it was for a Satan worshiper to slip into their pulpit.
+  316.2  It created an uproar in that church.
   321.1  It created an uproar in that community.
-  324.5  And that Satan worshipping went on mocking that church for how easily he was able to get
-  329.8  into their midst.
-  333.8  the leaders of that church lack discernment. And while some of us will judge those leaders
-  341.2  and judge that church on the island of Jamaica, if I can be honest with you, the exact same
-  347.1  thing in subtle ways is happening right now all across this nation. It's happening right
-  353.6  now in pulpits this Sunday morning, as I'm talking to you, it's happening across YouTube
-  360.1  and in podcasts, and in conferences, and groupmies,
-  365.2  and group chats, and group texts all across this nation,
+  324.3  And that's saying worship went on mocking that church
+  327.4  for how easily he was able to get into the amidst.
+  333.6  What the delete of that church lack?
+  336.3  Discernment.
+  338.4  And while some of us will judge those leaders
+  341.2  and judge that church on the island of Jamaica,
+  344.9  if I can be honest with you,
+  346.1  the exact same thing in subtle ways,
+  348.9  It's happening right now all across this nation.
+  352.3  It's happening right now in pulpits this Sunday morning,
+  355.6  as I'm talking to you.
+  357.5  It's happening across YouTube, and in podcasts,
+  361.9  and in conferences, and group Me's, and group chats,
+  366.7  and group texts all across this nation,
   369.1  people listening across this camera,
-  371.0  the exact same thing is happening all across this nation.
-  374.8  That for some of you in this room,
-  377.5  for some of you watching across the camera,
+  371.0  the exact same thing is happening all across this nation,
+  374.8  that for some of you in this room,
+  377.5  For some of you watching across the camera,
   380.5  all of us men, some of us have been guilty
-  382.5  of this very same thing, that for a lot of us,
-  385.6  we are playing around with the health of our soul,
-  388.3  and the direction of our lives because we keep lending our ears and our heart to wrong
-  395.1  voices.
-  399.7  People we call friends, people we call preachers, people we call evangelists, apostles and prophets,
-  406.8  we keep lending our ears to wrong voices and subconsciously we don't realize, man, we
-  413.7  are playing around with the health of our soul and the direction of our lives.
-  420.9  the Lord Jesus Christ, the Lord God Almighty, who throughout the scriptures have
-  428.9  been given many titles God is holy, God is faithful, God is merciful, but of all the
-  437.4  titles God has been given perhaps one of the greatest titles God has ever been
-  441.5  given was written to us by a angel apostle named John when he said God is love.
-  447.8  love. And all of God's dealings with human beings is motivated by love. And in this earthly
-  457.9  ministry, all the dealings of Jesus with human beings was motivated by love. And one of the
-  464.5  greatest outgrowths or offshoots or byproducts of love is the desire for those who love people
-  473.2  to watch, protect those they love from danger.
-  478.9  We see this in devoted mothers
-  481.8  who try to protect their children from danger.
-  484.7  We see this in devoted fathers
-  486.8  who try to protect their children from danger.
-  489.7  We see this in the Lord Jesus Christ,
-  492.2  who's done everything he can to try to protect his children,
-  495.2  his people from danger.
-  498.9  This is what's behind the heart of the Lord Jesus.
-  502.8  when he gives us this furious command born out of love
-  507.0  and attempt to protect you and I from danger.
-  512.2  So you know where we are right now.
+  382.5  of this very same thing,
+  384.7  that for a lot of us, we are playing around
+  386.6  with the health of our soul,
+  389.4  and the direction of our lives,
+  391.7  because we keep lending our ears
+  393.7  and our heart to wrong voices.
+  399.5  People we call friends, people we call preachers,
+  403.7  people we call evangelists, apostles and prophets,
+  406.8  we keep lending our ears to wrong voices,
+  410.2  and subconsciously we don't realize, man,
+  413.1  we are playing around with the health of our soul
+  417.5  and the direction of our lives.
+  420.6  Enter the Lord Jesus Christ, the Lord God Almighty
+  427.3  who throughout the scriptures have been given
+  429.7  many titles, God is holy, God is faithful,
+  434.7  God is merciful, but of all the titles God has been given
+  438.8  perhaps one of the greatest titles God has ever been given was written to us by
+  443.6  a age apostle named John when he said God is love and all of God's dealings with
+  453.1  human beings is motivated by love and in his earthly ministry all the
+  458.9  dealings of Jesus with human beings was motivated by love and one of the greatest
+  465.0  outgrowths or offshoots or by products of love is a desire for those who love people to watch
+  473.8  protect those they love from danger.
+  479.0  We see this in devoted mothers who try to protect their children from danger.
+  484.8  We see this in devoted fathers who try to protect their children from danger.
+  489.7  We see this in the Lord Jesus Christ who has done everything he can to try to protect his
+  494.5  his children, his people from danger.
+  498.9  This is what's behind the heart of the Lord Jesus
+  502.9  when he gives us this furious command born out of love
+  507.1  and attempt to protect you and I from danger.
+  512.3  So you know where we are right now.
   514.0  The Lord Jesus is seated on a hillside
-  517.9  in front of him, a thousands of people.
-  520.4  They've been following him because of his miracles
+  518.0  in front of him, a thousands of people.
+  520.5  They've been following him because of his miracles
   522.8  and his teaching.
   524.3  He climbs up this hillside, he sits down,
   526.7  he begins to teach them what we have been studying
   529.0  called the sermon on the Mount.
-  531.7  He teaches them the Beatitudes,
-  533.7  but we would just call Kingdom character.
+  531.8  He teaches them the Beatitudes,
+  533.8  but we would just call Kingdom character.
   536.6  He teaches them salt and light,
   538.3  what I would call Kingdom identity.
   541.2  He teaches them about the word,
   542.9  what I would call your Kingdom foundation.
   545.8  He teaches them about Kingdom discipline,
-  548.8  about fasting, praying, and giving.
-  552.6  He teaches them about Kingdom stewardship,
-  555.0  about storidum treasures in Heaven.
-  557.7  He teaches them about Kingdom soul care.
+  548.8  about fasting, praying and giving.
+  552.6  He teaches them about kingdom stewardship,
+  555.0  about storidum treasures in heaven.
+  557.7  He teaches them about kingdom soul care.
   560.1  We like that word, not massage envy, the scriptures.
-  567.2  He teaches them about kingdom, soul care,
-  569.0  when he says, don't be anxious for nothing.
-  572.1  He teaches them about dealings with other people
+  567.2  He teaches them about kingdom soul care
+  569.0  when he says don't be anxious for nothing.
+  572.1  He teaches them about dealings with other people,
   574.0  about right judgments and wrong judgments.
   576.9  He teaches them about being aggressive
   578.6  and asking, seeking and knocking.
   581.0  Then he teaches them about the golden rule
-  582.8  and how to deal with each other.
-  584.4  And then after, now watch, on the heels of all of that,
-  591.2  Jesus looks at them and he demands
-  593.2  of them what he demands of you and I.
+  582.8  on how to deal with each other.
+  584.5  And then after, now watch, on the heels of all of that,
+  591.3  Jesus looks at them and he demands of them
+  593.9  what he demands of you and I.
   595.4  And that is my sermon is too salient, too powerful,
   601.3  too serious for just an amen and friendly platitudes.
   604.4  No, now that you have heard everything that I've taught you,
   608.1  I demand from you a decision.
-  611.3  Everybody listen to me, I'm serious this morning.
-  614.0  Listen, after Jesus taught the sermon on the mount,
-  619.1  after I've shed all these months teaching you
-  621.4  discernment on the mount.
-  623.1  What Jesus demands from you and I
+  611.3  Everybody listen to me.
+  612.8  I'm serious this morning.
+  614.0  Listen, after Jesus taught the sermon on the Mount,
+  619.1  after I've shed all these months
+  620.9  teaching you the sermon on the Mount,
+  623.1  what Jesus demands from you and I
   625.6  is what he demanded of the people of those day,
-  627.8  not amen, but he demands from you a decision
+  627.7  not amen, but he demands from you a decision
   632.0  to either follow the ways of the Pharisees
   634.4  down a broad road or follow the narrow road of discipleship.
   639.8  It's not enough to just hear my words
-  641.9  and go and get your mother's day meal.
-  644.2  I want from all of you a decision
-  647.0  on what you plan to do with discernment on the mount.
-  652.7  So he says to them in Matthew 7 verse 13,
-  656.1  he says to them,
-  657.1  not that you have heard everything I said to you,
+  641.8  and go and get your Mother's Day meal.
+  644.1  I want from all of you a decision
+  647.0  on what you plan to do with the sermon on the Mount.
+  652.6  So he says to them in Matthew chapter seven verse 13,
+  656.0  he says to them,
+  657.0  not that you have heard everything I said to you,
   659.5  he says to them,
-  660.4  enter by the narrow gate.
-  663.1  For the gate is wide
-  664.6  and the way is easy that leads to destruction.
+  660.3  enter by the narrow gate.
+  663.0  For the gate is wide and the way is easy
+  665.7  that leads to destruction.
   667.8  And those who enter by it are many,
   670.3  that is the crowds of the world.
-  672.2  There are millions of people on the broad gate.
-  675.3  They are entrepreneurs on the broad gate.
+  672.1  There are millions of people on the broad gate.
+  675.2  They are entrepreneurs on the broad gate.
   678.4  There are influencers on the broad gate,
   680.8  athletes on the broad gate on the broad way.
-  684.2  They are loved ones on the broad way,
+  684.2  There are loved ones on the broad way,
   686.0  family members on the broad way.
-  687.8  They are people who've been in church
-  689.1  their whole life on the broad way.
-  693.6  They're people who think that was baptized
-  695.3  as a baby on the broad way.
-  700.1  He says, but for the Gators narrow
+  687.8  There are people who've been in church
+  689.0  their whole life on the broad way.
+  693.6  There are people who think that was baptized
+  695.2  as a baby on the broad way.
+  700.1  He says, but for the gate is narrow
   702.4  and the way to life is hard that leads to life
-  705.3  or the way is hard that leads to life
-  706.7  and those who find there are few.
-  708.1  Now family, look right at me.
-  710.0  Jesus talks about these two gates.
+  705.3  or the way it's hard at least like,
+  706.7  and those who find it are few.
+  708.1  Now, family, look right at me.
+  710.0  Jesus talks about these two gates,
   712.4  talks about these two ways and these two permanent endings.
-  715.1  And the truth be told, in his day and in I day,
+  715.1  And the truth be told, in His day and in I day,
   717.6  you know what's standing right outside of those gates?
-  720.3  Voices.
-  723.5  Voices are standing outside those gates.
+  720.2  Voices, voices are standing outside those gates.
   725.8  They were standing outside those gates in the first century.
   728.5  They're standing outside those gates right now.
   731.0  On one side are the voices that are leading people
   733.7  down the broad way.
-  734.8  They're telling you, God is love, God is grace,
-  737.3  God is kindness.
-  738.5  Don't worry about sin.
-  740.4  Don't worry about the stuff that you're doing.
-  742.6  Don't worry, God knows your heart.
-  744.7  Men followed this way, man made rules,
+  734.8  They're telling you God is love, God is grace,
+  737.3  God is kindness, don't worry about sin,
+  740.4  don't worry about the stuff that you're doing,
+  742.6  don't worry God knows your heart,
+  744.7  man followed this way, man made rules,
   746.8  man made doctrines, all of the Pharisees
-  749.3  and the religious elite, those voices
-  751.4  pointing people down the gate of the broad way.
-  754.6  They're standing outside the gate right now.
-  756.8  And the other side of the gate are the real preachers
+  749.3  and the religious elite, those voices pointing people
+  752.2  down the gate of the broad way.
+  754.5  They're standing outside the gate right now,
+  756.7  and the other side of the gate are the real preachers
   759.2  that are trying to lead people down the narrow way
   761.4  of discipleship.
   763.0  So they step on your toes every now and then.
-  765.2  They tell you things you don't wanna hear every now and then.
-  767.4  They confront you, but you're sin every now and then.
-  769.4  Man, you hear teachings that get in your face
-  771.7  every now and then.
-  777.9  But the Lord Jesus watch in his love
-  781.3  and furious protection for his followers
-  785.2  wanted to bring watch,
+  765.1  They tell you things you don't wanna hear every now and then.
+  767.4  They confront you but you're sin every now and then.
+  769.4  Man, you hear teachings that get in your face every now and then.
+  777.9  But the Lord Jesus watch and his love
+  781.2  and furious protection for his followers
+  785.1  wanted to bring watch,
   786.5  attention to the group on the left side,
   789.2  not the right side of favor,
-  790.9  the voices that were trying to lead people down
-  793.7  the broad way through those broad gates.
-  796.7  So he gives them this furious command.
-  798.8  Everybody listen carefully.
-  800.4  The Lord is looking at thousands of people
-  803.4  who they will head down the broad way of a life of ease
+  790.8  the voices that were trying to leave people down
+  793.6  the broad way through those broad gates.
+  796.6  So he gives them this furious command.
+  798.8  Now everybody listen carefully.
+  800.3  The Lord is looking at thousands of people
+  803.3  who they will head down the broad way of a life of ease
   807.8  and end up in damnation separated from God.
   811.0  He sees the voices standing outside the gates
-  813.9  and in the act of love and protection,
-  816.5  he gives them the only warning in the sermon on the Mount.
+  813.9  and in an act of love and protection.
+  816.5  He gives them the only warning in the Sermon on the Mount.
   821.3  How many warnings?
-  822.8  The only warning in the sermon on the Mount.
-  825.1  Listen to his warning as he's landing the plane
-  827.6  on his sermon, Matthew chapter seven, verse 15.
-  831.4  Be aware of false prophets who come to you in sheep's clothing, but inwardly they are ravenous wolves.
-  845.5  So what he's saying is that the most dangerous threat to the heirs of real believers are the voices of fake ones.
-  853.5  Let me go over here.
-  856.5  That the most dangerous threat to the heirs of real believers are the voices of fake ones.
-  862.5  And so I want to use the passage today to bring your attention to five things.
-  869.2  I made them all A's so it would be easy for you to remember for my note takers.
-  874.5  The first A I want to talk to you about is called the awareness of false prophets.
-  881.1  The awareness of false prophets.
-  884.8  That is like, you'll wake up, yo.
-  887.4  Watch.
-  888.6  False prophets exist.
-  890.9  The word false prophet is a very serious term.
-  894.8  It's not as more than a term we just
-  896.6  hurl as an insult at preachers we don't like.
-  900.5  Or we try to slip into somebody's comments.
-  902.7  And because they say it's something we don't like,
-  904.4  we post in their comments, you are false prophet.
-  907.4  So the word false prophet is more than just an insult.
-  910.4  It's more than something we put in the comments.
-  912.8  No false prophets actually exist.
-  917.9  The nation is filled with false prophets.
-  921.4  They're in puppets right now?
-  923.9  They morning.
-  924.7  Right now as I'm talking to you,
-  926.1  this mother's day morning,
-  927.4  they're false prophets standing in puppets.
-  930.3  They're on YouTube.
-  932.8  They're on podcasts.
-  934.8  They're writing books.
-  936.6  They're doing conferences.
-  938.7  They're in group meets.
-  940.5  They're in group chats.
-  942.2  They're in text messages.
-  943.9  They might be on your robe.
-  952.8  They exist.
-  954.8  And the truth is for some of us who are very ignorant.
-  957.4  If you take all the preachers, all the teachers,
-  960.1  all the apostles, all the prophets, all the avengers,
-  963.0  if you take everyone who feels called to communicate
-  965.4  and put them in an arena,
-  967.5  in that room will be the voices of those God has chosen
-  974.4  and the voices of those the devil has influenced.
-  979.5  They are not only in the room, they're in churches,
-  982.8  they're on television, they're on radio,
-  984.7  they're everywhere in America,
-  986.6  this United States is saturated
-  989.2  with the voice of false prophets.
-  991.2  But the Lord wanted his people to watch to be aware of false prophets.
+  822.8  The only warning in the Sermon on the Mount.
+  825.0  Listen to his warning as he's landing the plane on his sermon.
+  828.4  Matthew chapter seven verse 15.
+  832.4  Beware, beware of false prophets who come to you
+  841.5  in sheep's clothing, but inwardly they are ravenous wolves.
+  847.1  So what he's saying that the most dangerous threat
+  849.4  to the heirs of real believers are the voices of fake ones.
+  854.8  Let me go over here.
+  857.1  that the most dangerous threat to the ears of real believers
+  860.6  are the voices of fake ones.
+  862.6  That's my God.
+  864.0  And so I want to use the passage today
+  866.4  to bring your attention to five things.
+  869.2  I made them all A's so it'd be easy for you
+  871.8  to remember for my note takers.
+  874.4  The first A I want to talk to you about
+  876.1  is called the awareness of false prophets.
+  880.5  Okay, the awareness of false prophets.
+  884.6  That is like, yo, wake up, yo.
+  887.1  Watch false prophets exist the word false prophet is a very serious term
+  894.3  It's not as more than a term. We just hurl as an insult
+  898.4  Preaches we don't like or we try to slip into somebody's comments and because they said something we don't like repulsing their comments
+  905.3  You are false prophet
+  907.0  So the word false prophet is more than just an insult is more than something we put in the comments no false prophets actually
+  914.9  exist
+  916.1  The nation is filled with false prophets. They're in puppets right now
+  923.4  They morning right now as I'm talking to you this mother's day morning. They're false prophets standing in puppets
+  929.9  They're on YouTube
+  932.3  They're on podcasts
+  934.4  They're writing books. They're doing conferences. They're in group meets. They're in group chats
+  941.8  They're in text messages. They might be on your robe
+  944.9  So they exist and the truth is for some of us who are very ignorant.
+  957.5  If you take all the preachers, all the teachers, all the apostles, all the prophets, all the
+  962.9  evangelists, if you take everyone who feels calm to communicate and put them in an arena,
+  967.7  in that room will be the voices of those God has chosen and the voices of those the devil
+  976.2  has influenced.
+  977.2  They are not only in the room, they are in churches, they are on television, they are on
+  984.0  radio to everywhere in America.
+  986.6  This United States is saturated with the voice of false prophets.
+  991.3  But the Lord wanted his people to watch to be aware of false prophets.
   998.4  So he gives them this one command.
- 1000.1  He says watch be aware of false prophets.
- 1003.8  Let's talk about this word. Be where this word be where is a very strong word.
+ 1000.1  He says watch.
+ 1001.0  Be aware of false prophets.
+ 1003.8  Let's talk about this word.
+ 1005.2  Be aware.
+ 1006.6  This word, be aware is a very strong word.
  1009.5  In the original language, this is an imperative, a command from Jesus.
- 1015.5  It's not a suggestion. It's not an option.
- 1019.4  It is a command.
+ 1015.5  It's not a suggestion, it's not an option, it is a command.
  1020.5  It is the Lord shouting from you through the pages of eternity.
- 1023.6  Beware of false prophets like watch.
- 1027.0  Look out for them.
- 1029.5  Be cautious of them.
- 1032.3  Be discerning of them.
- 1035.0  Keep your eyes open for them.
- 1038.0  Like I'm from New York, right?
- 1039.7  And in New York, like you'll be going in people's yards,
- 1042.3  like you're going to go see a homeboy,
- 1043.7  and people be having these signs on the gate that says,
- 1046.1  be aware of dog.
- 1048.6  Anybody ever seen these?
- 1050.4  Right? And as soon as you see it, what did you do?
- 1052.3  You stop.
- 1054.5  You pause.
- 1055.4  Watch.
- 1056.2  You don't open the gate and walk in, pass a sign that says,
- 1058.4  beware.
- 1059.8  Man, there might be a pit bull on the other side of that gate.
- 1062.8  There might be a rut while on the other side of that gate.
- 1065.4  So when we see the words, beware and orange on a sign,
- 1068.3  the first thing that we think to us is what?
- 1070.2  Danger.
- 1072.9  Watch.
- 1073.7  Can I go further?
- 1074.8  If I cross this sign, I might get hurt.
- 1082.2  So Jesus says, beware and peritive in the original language.
- 1086.0  warning, beware of false prophets, why?
- 1091.7  Because they exist.
- 1093.5  So he wants us to be aware of them.
- 1095.8  They're in churches, they're in conferences,
- 1099.0  they're writing books, they're on YouTube.
- 1101.2  He says, I want you to be aware of them.
- 1104.1  I want you to know them, spot them, look out for them,
- 1107.7  be cautious of them.
- 1109.0  I would even say run from them, turn down your ears
- 1112.2  from them, guard your heart from them.
- 1118.7  Which brings us to the second A I want to use in the text.
- 1121.9  He says, B, way of the false prophets,
- 1123.8  so that is a witness.
- 1125.0  The second A is the appearance of false prophets.
- 1130.9  The appearance of false prophets.
- 1134.5  The Lord Jesus says, watch, they come to you
- 1137.6  in sheep's clothing.
- 1140.4  Now I want you to notice what the Lord said,
- 1142.0  it's so powerful, right?
- 1143.8  He said in verse 15, you can put it back up there,
- 1146.7  They come to you.
- 1149.6  Watch.
- 1150.3  You don't have to find them.
- 1154.6  False prophets come to you.
- 1157.6  They find you.
- 1160.3  The Apostle John wrote words like this.
+ 1024.0  Beware of false prophets like watch.
+ 1027.3  Look out for them.
+ 1029.8  Be cautious of them.
+ 1032.6  Be discerning of them.
+ 1035.4  Keep your eyes open for them.
+ 1038.3  Like I'm from New York, right?
+ 1040.0  And in New York, like you'll be going in people's yards,
+ 1042.5  that you're going to go see a homeboy,
+ 1044.0  And people be having these signs on the gate that says,
+ 1046.4  beware of dog.
+ 1048.8  Anybody ever seen these?
+ 1050.7  Right?
+ 1051.5  And as soon as you see it, what did you do?
+ 1052.4  You stop.
+ 1054.7  You pause, watch.
+ 1056.0  You don't open the gate and walk in, pass a sign that says,
+ 1058.5  beware.
+ 1060.0  Man, there might be a pit bull on the other side of that gate.
+ 1063.0  They might be a rut while on the other side of that gate.
+ 1065.5  So when we see the words, beware and orange on a sign,
+ 1068.4  the first thing that we think to us is what?
+ 1070.3  Danger.
+ 1073.0  Watch.
+ 1073.9  Can I go further?
+ 1075.0  If I cross this sign, I might get hurt.
+ 1082.4  So Jesus says, be aware, imperative in the original language.
+ 1086.8  Warning, beware of false prophets, why?
+ 1091.8  Because they exist.
+ 1093.6  So He wants us to be aware of them.
+ 1096.0  They're in churches.
+ 1097.7  They're in conferences.
+ 1098.7  They're writing books.
+ 1100.2  They're on YouTube.
+ 1101.3  He says, I want you to be aware of them.
+ 1104.1  I want you to know them.
+ 1106.1  Spot them.
+ 1107.1  for them, be cautious of them. I would even say run from them, turn down your ears from
+ 1112.4  them, guard your heart from them. Which brings us to the second A I want to use in the text.
+ 1122.0  He says be way of the false prophets. So that is awareness. The second A is the appearance
+ 1127.5  of false prophets. The appearance of false prophets. The Lord Jesus says, watch, they come
+ 1136.8  to you in sheep's clothing. Now I want you to notice what the Lord said, it's so powerful, right?
+ 1143.7  He said in verse 15, you can put it back up there, they come to you. Watch it. You don't have to find
+ 1151.6  them. False prophets come to you. They find you. The apostle John wrote words like this,
  1162.2  They slip in among you.
- 1165.8  They come into churches.
+ 1164.4  They come into churches.
+ 1167.4  Right?
  1168.8  They slip in among brothers and sisters.
- 1171.5  They slide into your DMs.
- 1174.1  They slide into your text messages.
- 1176.5  They slide into your algorithm.
- 1179.0  They slide into your YouTube.
- 1180.9  He said they come to you.
- 1182.3  You don't have to find them.
- 1183.5  A false prophet will always find people and make them listen.
- 1193.4  But I want you to notice the appearance of the false prophet.
- 1196.5  He says they come to you how?
+ 1171.2  They slide into your DMs.
+ 1173.6  They slide into your text messages.
+ 1176.2  They slide into your algorithm.
+ 1178.6  They slide into your YouTube.
+ 1180.8  He said they come to you.
+ 1182.2  You don't have to find them.
+ 1183.4  A false prophet will always find people and make them listen.
+ 1187.0  But I want you to notice the appearance of the false prophet.
+ 1196.3  He says, they come to you how?
  1198.7  In sheep's clothing.
- 1201.5  Now historically sheep's clothing,
- 1205.3  sheep's clothing was worn by shepherds
+ 1201.5  Now, historically, sheep's clothing,
+ 1205.3  sheep's clothing was worn by shepherds,
  1209.6  so they could watch, identify with sheep.
- 1212.2  They would take the outer garment of a sheep and put it on themselves so when they come
- 1219.4  among sheep they would be identified as a sheep.
- 1223.4  Jesus says watch, false prophets, they come to you in sheep's clothing.
- 1229.0  Now let's talk about sheep and clothing.
- 1231.4  This word sheep is a metaphor for you.
- 1236.5  It's a metaphor for the people of God.
- 1243.2  And I don't know if you've ever studied sheep.
- 1245.9  Sheep are the most unintelligent animals.
- 1252.5  calls you sheep and he calls me sheep and they are among some of the most
- 1256.5  unintelligent animals in the animal kingdom. What else do we know about sheep?
- 1261.1  They have no natural defense mechanism against predators. It's why they need
- 1269.3  shepherds to protect them. When sheep come into a pack they are known to nip at
- 1281.0  each other all the time. Nip nip nip nip nip nip. And if one sheep jump over
- 1286.5  a cliff the other sheep would follow. Sound like the American church to you? And I've
- 1295.0  been to Israel and I've seen shepherds with sheep. This is why they will have a stick.
- 1300.5  They will beat off threats with the stick. They will beat off threats with the stick.
- 1305.8  They will beat off threats with rods. And they will protect sheep with rods. And they
- 1315.9  They would call out predators with rods.
- 1319.8  And they would drive sheep into pens and lay in the gate.
- 1327.3  While the sheep are in the hedges, the shepherds were laying the gate to make sure no predators
- 1331.3  came through the gate.
- 1337.7  This is why in John 10, 10, the Lord Jesus says when we say the thief comes to kill, steal,
- 1342.3  and destroy, I know we always say the devil and that makes for good preaching but he's
- 1346.5  not really talking about Satan.
+ 1212.4  They would take the outer garment of a sheep
+ 1217.4  and put it on themselves,
+ 1218.7  so when they come among sheep,
+ 1220.2  they would be identified as a sheep.
+ 1223.3  Jesus says, watch, false prophets,
+ 1225.5  they come to you in sheep's clothing.
+ 1229.3  Now let's talk about sheep and clothing.
+ 1231.2  This word sheep is a metaphor for you.
+ 1236.4  It's a metaphor for the people of God.
+ 1243.0  And I don't know if you ever studied sheep.
+ 1245.5  Sheep are the most unintelligent animals.
+ 1252.3  God calls you sheep and he calls me sheep.
+ 1255.2  And they are among some of the most unintelligent animals
+ 1258.5  in the animal kingdom.
+ 1260.0  What else do we know about sheep?
+ 1261.3  They have no natural defense mechanism against predators.
+ 1268.4  It's why they need shepherds to protect them.
+ 1278.0  When sheep come into a pack,
+ 1279.7  they are known to nip at each other all the time.
+ 1282.4  Nip, nip, nip, nip, nip, nip, nip, nip.
+ 1285.3  And if one sheep jump over a cliff,
+ 1286.8  the other sheep would follow.
+ 1289.0  Sound like the American church to you?
+ 1294.7  And I've been to Israel, and I've seen shepherds with sheep.
+ 1297.9  This is why they will have a stick.
+ 1300.4  They will beat off threat with the stick.
+ 1302.9  They will beat off threats with the stick.
+ 1305.8  They will beat off threats with rods.
+ 1311.5  And they will protect sheep with rods.
+ 1315.7  And they will call out predators with rods.
+ 1319.7  And they will drive sheep into pens and lay in the gate.
+ 1327.2  While the sheep are in the hedges,
+ 1328.7  The shepherds were laying the gate to make sure no predators came through the gate.
+ 1337.7  This is why in John 10, 10, the Lord Jesus says when we say the thief comes to kill stealing
+ 1342.2  destroy, I know we always say the devil and that makes for good preaching but he's not
+ 1346.8  really talking about Satan.
  1347.9  You got to read the whole thing in context.
- 1349.8  He's talking about false prophets and bad teaching.
- 1353.0  come to steal, kill and destroy. That's why he calls himself in that passage watch, the good shepherd
- 1360.7  who lays down his for the sheep, the unintelligent animals. So let's stick with the appearance of
- 1373.8  the false prophets. They come to you and sheep's clothing. What does that mean? Sheep's clothing
- 1378.1  is a metaphor like they look just like genuine believers. They talk like genuine believers.
- 1384.6  They preach like genuine believers.
- 1386.9  They text you like genuine believers.
- 1389.9  They slip into the church looking like genuine believers.
- 1392.8  They're in community.
+ 1349.8  He's talking about false prophets and bad teaching that come to steal, kill and destroy.
+ 1355.3  That's why he calls himself in that passage watch for good shepherd who lays down his
+ 1361.9  is black for the sheep, the unintelligent animals.
+ 1371.9  So let's stick with the appearance of the false prophets.
+ 1374.7  They come to you in sheep's clothing.
+ 1376.7  What does that mean?
+ 1377.5  Sheep's clothing is a metaphor like,
+ 1379.3  they look just like genuine believers.
+ 1382.2  They talk like genuine believers.
+ 1384.7  They preach like genuine believers.
+ 1387.0  They text you like genuine believers.
+ 1390.0  They slip into the church looking like genuine believers.
+ 1392.9  They're in community.
  1394.0  They're in small groups.
- 1395.3  They're on platforms.
- 1396.5  They're in conferences.
- 1397.9  They're writing books.
- 1399.0  They're in YouTube.
- 1400.1  They got their own Facebook lives.
- 1402.7  I don't even know why you're on Facebook.
- 1403.8  But they got Instagram lives and all of that.
- 1406.2  And they sound like believers and talk like believers
- 1409.5  and walk like believers and dress like believers.
- 1412.8  And because we are unintelligent animals,
- 1415.2  we just give them an acceptance pass to say,
- 1417.8  oh, she's a real brother or sister.
- 1422.0  What?
- 1423.3  Because they look, sound like, smell like, talk like,
- 1427.3  flow like, move like, just like a genuine believer.
- 1433.7  So we have the awareness of false prophets, they exist.
- 1438.2  We have the appearance of false prophets.
- 1440.6  They look just like brothers and sisters.
- 1443.5  The third one is sitting right in his text,
- 1445.5  the agenda of false prophets.
- 1457.1  Look what Jesus says.
- 1459.1  They come to you in chief clothing, but what he says,
+ 1395.5  They're on platforms, they're in conferences,
+ 1397.9  they're writing books, they're in YouTube,
+ 1400.2  they got their own Facebook lives,
+ 1402.7  I don't even know why you're on Facebook,
+ 1403.9  but they got Instagram lives and all of that, man.
+ 1406.3  And they sound like believers and talk like believers
+ 1409.6  and walk like believers and dress like believers
+ 1412.9  and because we're unintelligent animals,
+ 1415.3  we just give them an acceptance pass to say,
+ 1417.9  oh, she's a real brother or sister.
+ 1422.1  What?
+ 1423.5  because they look, sound like, smell like, talk like, flow like, move like, just like
+ 1430.0  a genuine believer.
+ 1433.8  So we have the awareness of false prophets, they exist.
+ 1438.3  We have the appearance of false prophets, they look just like brothers and sisters.
+ 1443.6  The third one is sitting right in his text, the agenda of false prophets.
+ 1457.2  Look what Jesus says.
+ 1459.2  They come to you in sheep clothing, but what he says,
  1461.5  but inwardly they are what?
- 1463.6  Ravenous wolves.
- 1467.2  He called false prophets ravenous wolves.
- 1470.4  Let's talk about the relationship
- 1471.5  between a sheep and a wolf.
- 1473.0  In Israel where I saw sheep,
- 1475.2  these unintelligent animals
- 1477.4  with no natural defense mechanism,
- 1480.6  They're number one predator of wolves who roam the countryside looking for an easy meal.
- 1486.7  And they always seize on the sheep that get away from the pack.
- 1493.8  The sheep that go astray from the community of the herd.
- 1499.8  They may...
+ 1463.7  Ravenous wolves.
+ 1467.3  He called false prophets ravenous wolves.
+ 1470.5  Let's talk about the relationship
+ 1471.6  between a sheep and a wolf.
+ 1473.1  In Israel where I saw sheep,
+ 1475.3  these unintelligent animals with no natural defense mechanism,
+ 1480.7  they're number one predator of wolves
+ 1482.8  who roam the countryside looking for an easy meal.
+ 1486.6  And they always seize on the sheep that get away from the pack.
+ 1493.8  The sheep that go astray from the community of the herd,
+ 1499.8  they make themselves easy prey for wolves to get them.
+ 1504.2  There's no one of them people who disconnect from the church.
+ 1507.4  They want nothing to do with community,
+ 1509.2  nothing to do with the body of Christ.
+ 1511.8  And we look at five years later, now you got body.
+ 1515.0  Now you're 5% up.
+ 1516.8  Now you're trusting in crystals.
+ 1518.7  Man, you've been seized on by the teaching of wolves.
+ 1525.6  What do we know about wolves?
+ 1526.6  Wolves are ravenous beasts.
+ 1529.8  They have insatiable appetites.
+ 1534.0  They are merciless.
+ 1536.1  They eat till they kill.
+ 1540.2  They hunt.
+ 1541.6  They look for.
+ 1543.5  They take down sheep.
+ 1546.4  This is the attitude of the false prophet.
+ 1548.2  Everybody look at me,
+ 1549.5  because I know you love them, right?
+ 1553.0  You always sending money to the ministry.
+ 1557.4  You like everything they put on social media.
+ 1559.7  Some of y'all sitting in this room looking at me with your eyes crossed knowing your life
+ 1562.6  is filled with false prophets.
+ 1566.4  That's why you don't like my voice.
+ 1570.6  I'm telling you what I know about the spirit.
+ 1572.2  Some of y'all my voice agitate you because a false prophet is in your air.
+ 1577.4  I know what I know about the spirit.
+ 1579.0  They allow you to swim.
+ 1580.2  You got to issue with my voice because in your hair and in your heart is the voice of a
+ 1585.7  Some male, some female that made you feel some kind of way about me.
+ 1592.7  This is the job of the false prophet, like a ravenous wolf.
+ 1599.9  They are seeking watch.
+ 1600.9  They own influence.
+ 1602.9  They got their own agenda.
+ 1604.9  They love influence.
+ 1607.9  They love division.
+ 1609.9  They love to pick off sheep.
+ 1611.9  They slip into relationships and divide friends and all of that.
+ 1615.9  and all of that and now with the proliferation of social media
+ 1619.4  beyond slipping into the church, man,
+ 1621.2  they build their own platforms
+ 1625.0  and they tell you, come to my conferences
+ 1627.5  and buy my books and sew into my ministry,
+ 1631.2  man, they're everywhere.
+ 1635.8  And we like unintelligent sheep,
+ 1638.9  with no discernment,
+ 1640.9  we're just running behind wolves
+ 1644.0  because they have a big Instagram following
+ 1649.3  or they got status,
+ 1653.4  Or they got money, or they eloquent a speech.
+ 1662.0  Or they got five degrees.
+ 1664.2  And you think, you think, you think, you know, let me help all of you.
+ 1671.6  There's wolves with degrees, money, status, prestige, power, influences,
+ 1678.9  all they keep craving for on the inside, man.
+ 1681.4  I know one in Atlanta, I could call his name right now.
+ 1684.8  And all of you would send me DM saying, oh, pass the fill up.
+ 1687.7  You're so judgmental.
+ 1688.9  Yeah, we sold affirming a false prophet that real prophets can't even call them out without
+ 1696.1  y'all getting mad and saying we being judgmental.
+ 1700.5  So we can't even protect the unintelligent sheep from the wolves because as soon as the
+ 1705.3  wolves get called out by name, man, the real prophet is judgmental.
+ 1711.9  So because we create a cancel culture in the church, false prophets keep roaming the countryside
+ 1717.4  and tearing up unintelligent sheep.
+ 1725.2  It's like one of my best friends lives in Florida,
+ 1727.8  and he and I, we got guns and we shoot,
+ 1730.0  and he told me like, yo bro, you know,
+ 1731.5  we not allowed to kill alligators in Florida.
+ 1733.5  I was like, what?
+ 1736.6  One time I was at his house,
+ 1737.5  an alligator was on the backyard.
+ 1739.4  Comes, they come out of ponds,
+ 1741.0  they're being people's backyards
+ 1742.3  or on the front steps.
+ 1744.8  And I'm like, yo, you can't shoot these beasts?
+ 1752.4  He said, no, watch, they're protected.
+ 1754.9  So you mean to tell me, this ravenous beast that be killing your dogs and killing your cats
+ 1768.8  and snatching two-year-olds at Disney World, true story, you can't shoot them, you can't
+ 1777.6  bring home to this thing that is ruining your communities?
+ 1783.9  We act the same way.
+ 1784.9  Man, you got people who are serial adulterer, a serial scandal, you're all about money,
+ 1797.6  You're always popping up with some new scheme. You're hopping from state to state. You're all over the place
+ 1802.3  You have no signs of repentance no sign of remorse
+ 1805.7  You keep you keep you keep fleecing people for more money
+ 1809.1  You keep fleecing people for more houses and and and we just say oh god knows his heart
+ 1815.3  Yeah, God does know his heart they inside he's a ravenous wolf a
+ 1821.2  False prophet. I'm trying to sister. What was the first a the awareness of false prophets?
+ 1842.6  They exist.
+ 1844.6  What was the second A?
+ 1846.6  The appearance of false prophets.
+ 1848.6  They look just like believers, talk like believers,
+ 1850.6  sound like believers, slip in amongst believers.
+ 1853.6  They make friends with believers, they smile at believers,
+ 1856.6  they're so nice to believers until they sink their fans in you
+ 1860.6  and divide you from the body, draw you out to their ministry,
+ 1865.6  and then kill you out in the wilderness.
+ 1868.6  This fourth one, so watch the wisdom of Jesus.
+ 1882.3  Jesus. I'm almost done. I only got two more A's, right? Their parents, their awareness,
+ 1889.3  their agenda. So if they're wolves and sheep's clothing, if they're in the church, if they're
+ 1895.1  on social media, right, if they're on YouTube, right, how are we supposed to know what they
+ 1900.8  look like? Man, they look, they talk like Philip. So I don't even know, is Philip one?
+ 1906.9  is they want, I don't know, but isn't Jesus a love and shepherd?
+ 1913.4  So he gives us this fourth aid, the assessment of the false prophet.
+ 1922.4  Look what he says, verse 16 through 18.
+ 1927.4  How will you know them?
+ 1928.5  Verse 16, Matthew 7 verse 16.
+ 1930.8  How will you know a false prophet?
+ 1932.4  You will recognize them by their fruits, plural, with an S.
+ 1939.9  I'm going to come back to that.
+ 1941.7  Now watch the wisdom of Jesus.
+ 1943.5  Our grapes gathered from thorn bushes
+ 1946.1  or figs from thistles.
+ 1948.0  So every healthy tree bears good fruit.
+ 1951.1  But the disease tree bears bad fruit.
+ 1954.7  A healthy tree cannot bear bad fruit.
+ 1960.3  Nor can a disease tree bear good fruit.
+ 1964.3  So he says, watch, verse 16,
+ 1965.7  you will recognize them by their fruits with an S,
+ 1969.8  Not fruit.
+ 1972.6  Fruits with a nest, plural.
+ 1975.3  That's unpack the word fruits.
+ 1977.1  The word fruits, my wife loves this word.
+ 1979.4  It's one of her favorite words in our house.
+ 1981.7  So man, they blah, blah, blah, blah, blah.
+ 1983.7  And tah, blah, blah, blah, man.
+ 1985.2  We need to wait and look for a fruit.
+ 1991.1  We've been in this for 10 years.
+ 1992.2  Dah, dah, dah, dah, dah.
+ 1993.1  And they said, dah, dah, dah, dah.
+ 1994.2  We need to just wait and watch for their fruit, huh?
+ 2000.6  She said this to me all the time.
+ 2002.1  And I know they talented and they gifted me honey.
+ 2004.3  We need to just wait and watch for the fruit.
+ 2012.3  Y'all been around it for 10 years, y'all ready?
+ 2016.0  That's what?
+ 2017.2  That's what?
+ 2018.3  Wisdom, you need to wait and watch for the fruit.
+ 2020.3  Now watch what Jesus says, everybody watch,
+ 2021.9  I'm almost done.
+ 2022.8  He says you will know them, watch this,
+ 2024.2  by their ssss with an s.
+ 2026.6  You know what fruits were the s's?
+ 2028.3  It is the body of their words and deeds.
+ 2031.4  Fruits is a tag word for character.
+ 2040.4  You will know them by their character.
+ 2043.6  You need to listen to the words coming out of your mouths,
+ 2047.5  and the actions and the deeds of your life.
+ 2050.9  And he said, by their fruits, by their character,
+ 2054.5  the body of their words and actions,
+ 2056.9  you wouldn't be able to disrupt real prophets
+ 2059.7  from false prophets.
+ 2061.3  Now everybody look right at me.
+ 2062.8  Watch the wisdom of, this is so dope to me.
+ 2065.1  I love the Scriptures.
+ 2066.2  You watch the wisdom of Jesus.
+ 2067.9  He could have used anything for an analogy, brother Neil.
+ 2070.8  But he chose a tree.
+ 2077.5  I don't get this. Watch. I never seen somebody plant a tree and it bear fruit in a week. You
+ 2092.0  ain't never planted a tree and it gives fruit in a week. You don't get it yet. A tree takes
+ 2104.2  time. A tree takes time to grow, to sprout it, as branches, then it starts bearing fruit.
+ 2125.9  It takes what? Time! So before we start just labeling people as
+ 2130.2  here, they're real. You gotta watch them for a season!
+ 2138.6  And tell me, tell me, and send in the money and go to that conference.
+ 2142.3  You have not watched them for a season. Thanks for 20 years.
+ 2149.2  I've been pregnant for 10 years. My fruit is hanging from the tree.
+ 2156.0  But one false prophet get in your air and you don't like my voice.
+ 2159.4  They've been saved for a week. You don't even know them.
+ 2163.2  you just met them. You ain't been around them for 10 years. You don't know they pass.
+ 2168.0  They ain't been around long enough to grow and sprout their trees, their branches and
+ 2172.7  bare fruit. And the reason you don't think like this is because we're sheep. We're
+ 2181.1  unintelligent animals. Can I go deeper? Listen to me. Everybody look right at me.
+ 2196.1  I never seen oranges hanging on an apple tree. I never in my life watched seen
+ 2207.9  oranges hanging on apple tree. When I was in Queens, they had these trees with these
+ 2211.6  little orange things, they were like stink bombs. When they hit the floor on
+ 2214.3  bursts, they smell. I walk up to those stink bombs in the schoolyard and I'll
+ 2220.1  never see apples there. I know how much I say this is an apple tree. No, it's a
+ 2227.4  stink bomb tree. This is an apple tree. No, it's a stink bomb tree. Because it
+ 2235.8  doesn't matter how much I try to like their posts.
+ 2240.2  They will never be other than the fruit that comes from the root of who they are.
+ 2244.6  If their roots is corrupt, they will bear bad character.
+ 2253.2  If their root is pure, they will bear good character.
+ 2257.7  The Lord says there is no other option.
+ 2261.3  So no matter how much you like their posts, send their money, go to their conferences,
+ 2265.8  If you're staring at the stink bomb, you keep giving them grace.
+ 2270.8  I know they be talking like that, but grace.
+ 2272.8  I know they be acting like that, but grace.
+ 2274.8  I know they so mad sees the division, but grace.
+ 2276.8  I know they are serious, adult or all, but grace.
+ 2278.8  I know they are a serious scandal, but grace.
+ 2281.8  Grace, how long you gonna keep staring at that stink bomb tree
+ 2284.8  and try to force it to be an apple tree?
+ 2287.8  I'm trying to help some of y'all, especially those who are younger in the faith.
+ 2307.5  You give too much credit to people that just popped up on the scene.
+ 2311.5  They just got a new title behind their name.
+ 2314.9  You need to watch for a season to determine are they real or phony?
+ 2320.0  You will only know a tree by the fruit that is beers and a tree does not bear fruit when
+ 2324.3  it's first planted.
+ 2325.3  It could be planted in a city or plant a church.
+ 2328.9  You need to watch it for a period of time before you just give it to your a's in your heart.
+ 2333.8  Pass because that's your friend.
+ 2349.2  That's my homeboy.
+ 2350.2  That's my prophet.
+ 2352.0  That's my apostle.
+ 2353.4  That's my bishop, that's my fill in the blank.
+ 2356.0  All right, keep giving them credence.
+ 2357.7  I don't care.
+ 2358.8  Let them keep getting away with fooling you and fooling the
+ 2361.6  body.
+ 2362.6  That's all right.
+ 2363.6  You know who they're not going to fool?
+ 2364.6  They're not going to fool the Lord Jesus Christ, which brings me
+ 2367.4  to the final A, the account of the false prophet.
+ 2376.2  That's all right.
+ 2377.4  You can get over on the body.
+ 2379.0  You will not get over on the Lord Jesus Christ.
+ 2381.8  The account of the false, the awareness, the appearance, the
+ 2386.3  agenda, y'all taking notes.
+ 2391.7  The assessment, the last one has the account.
+ 2395.8  Verse 19, thank you very much, brother.
+ 2401.1  Verse 19, you can fool man, you won't fool Jesus.
+ 2403.7  This is what Jesus says about the false prophet.
+ 2405.7  False prophet, y'all listening, every tree that does not bear good fruit is cut down.
+ 2410.9  He's coming for you.
+ 2413.6  If you don't repent from your mouth and your waist and it's thrown into the fire, then she
+ 2419.8  will recognize them by their fruits.
+ 2422.1  Now, y'all can, y'all can, y'all so soft.
+ 2424.9  You can try to pat a cake all you want.
+ 2427.1  He says, if I find a tree when I come that has not repented, that keeps taking advantage
+ 2432.9  of my unintelligent sheep, when I come you're going to be cut down and you're going to be
+ 2437.7  thrown in the fire.
+ 2439.8  a pretty word for eternal damn nation. The reward for the reward for beguiling sheep is damn nation.
+ 2449.8  That's why Paul said, if any man preaches any other gospel, and the one that I preach, let that man be
+ 2457.8  damned. A cursed. If you hear anybody preaching any other gospel, then the one that Paul preached
+ 2466.7  Let that person be damned.
+ 2469.8  See, let me lean in right here by the spirit.
+ 2472.8  Some of us would love for a prophet so much
+ 2474.8  because of their 3 a.m. revelation.
+ 2476.5  Let me tell you something right now.
+ 2478.2  Look right at me.
+ 2479.9  I don't care how big their Instagram is,
+ 2482.7  how famous they are, how much money they got,
+ 2485.8  their builders they got.
+ 2487.1  I don't care if they're well-known or popular.
+ 2490.0  The Holy Spirit will never tell you to do something
+ 2493.5  or say something that's contrary to the Word of God.
+ 2497.6  You are a liar.
+ 2499.2  You did not hear from God.
+ 2500.8  You heard from your flesh.
+ 2503.8  The Holy Spirit is the author of the Word of God
+ 2507.1  through 40 different men, 1,500 years,
+ 2510.6  three different continents, three different languages.
+ 2514.5  The Holy Spirit would never tell a man or woman
+ 2517.7  to say something or do something that is contrary
+ 2521.1  to the Word.
+ 2521.9  Why? Because God is not a liar.
+ 2523.9  It's why he can only swear by himself.
+ 2527.9  So you can't tell me your prophets say it such and such,
+ 2530.3  and they're a scripture that goes against what your prophets said.
+ 2534.1  Your apostle said, your pastor said, your teacher said.
+ 2540.0  This is why the best way to deal with false prophets
+ 2542.6  is to be informed about the word of God.
+ 2545.6  This is why Jesus was teaching you about praying
+ 2548.0  before he got to this section.
+ 2549.3  Why? The more you pray, the more sensitive you are
+ 2552.3  to the spirit and the more scriptures you know,
+ 2558.4  the easier it is to discern a lie.
+ 2561.3  But a lot of us men are always duped by false prophets.
+ 2565.1  I gotta hurt you because we are biblically illiterate.
+ 2572.1  Watch, you love churches that move your emotions
+ 2574.7  but you get bored with teaching.
+ 2579.2  You love to jump off the chair,
+ 2581.0  but you don't like teaching.
+ 2582.3  So you fall asleep on teachers
+ 2584.0  while wolves are ravaging your soul.
+ 2586.2  The more word you know when you hear a lie, it sounds like static in your soul.
+ 2623.1  Can I say one more thing to you before I land the plane?
+ 2628.1  There is hope though.
+ 2629.1  Look right at me.
+ 2630.6  Because wherever there is a phony of something that means the real thing exists.
+ 2637.2  If there is a knockoff Louis Vuitton bag that means the real Louis bag exists.
+ 2645.7  So the existence of the false prophet means there are real prophets.
+ 2655.4  So because I love you, I want to give you how much time I got.
+ 2662.6  Can I give these to you really quick?
+ 2665.0  Seven marks of a real prophet.
+ 2667.9  We don't got time.
+ 2668.9  Put the first one up there.
+ 2671.5  I said put the first one up there.
+ 2672.8  Thank you very much.
+ 2674.7  I just want you to take pictures really quickly.
+ 2677.0  prophets has a life that displays great character. Watch. I didn't say a moment. I said a life.
+ 2688.5  Let me help you. You could take this list and then filter your favorite preachers through them.
+ 2694.7  Put the second one up there. True prophets speak messages that align with the will
+ 2701.1  and the word of God. So if they're speaking things that does not align with the Bible,
+ 2707.1  That is a false prophet or false teaching.
+ 2712.5  But the third one up there.
+ 2714.8  A true prophet speaks declarations that come to pass.
+ 2718.9  They told you four years ago, it was the year of so-and-so.
+ 2722.0  But that ain't happening in your life though.
+ 2724.4  It's the year where every Christian get wealthy,
+ 2726.2  but you still struggle it.
+ 2727.9  It's the year everybody gonna get married,
+ 2729.7  but you're still single.
+ 2731.7  You ever notice how somebody's prophets?
+ 2733.8  They keep telling you how to have a life of wealth and ease,
+ 2736.2  and you're only one profiting from the prophet's ministry,
+ 2738.8  is the Prophet and you keep funding their conferences and funding their books and
+ 2747.3  like in this and they keep telling this is the year of this and I'm I'm praying an
+ 2751.1  anointing over everybody for this and three years later that didn't happen yet
+ 2754.4  and you still liking their stuff but in words are falling to the floor put the
+ 2763.4  fourth one up there. A true Prophet speaks hard messages that inspire Godly
+ 2769.1  change so they only keep telling you what your it's your a is want to hear
+ 2776.2  That's not a real prophet. You can't find one prophet in the Bible that told people what they wanted to hear
+ 2783.0  Profits in the Bible gave people messages to lead them towards godly change
+ 2788.1  Real prophets don't stroke the flesh
+ 2792.5  They put wounds in the flesh
+ 2796.7  Put the fifth one up there a true prophet does not tailor messages to suit fleshly passions
+ 2807.2  They don't twist the word to make you feel comfortable put the sixth one up there a
+ 2816.3  A true prophet has spirit led discernment into the lives of others.
+ 2821.3  It ain't gonna fool me.
+ 2829.3  I know you because I'm in prayer.
+ 2832.7  I'm gonna watch you with the last one up there.
+ 2839.9  A true prophet today is a strong pointer to the greatest prophet.
+ 2851.4  I'll be listening to some of these people that call themselves prophet and everything you say is about you.
+ 2858.6  You better be.
+ 2861.2  Check the prophets of the Bible.
+ 2863.2  They were pointers.
+ 2864.2  Yes, they were seeers.
+ 2865.2  But they were and most of their pointing was towards God. So when you're listening to real profit
+ 2869.7  They're always pointing you not to themselves to the Lord Jesus Christ
+ 2874.6  So I ask you about your profit listen to them. How often do you hear Jesus in their message?
+ 2880.2  Are they spending 50 minutes drawing you to themselves?
+ 2885.2  Are they spending 50 minutes pointing you towards the greatest profit the world has ever known the Lord Jesus Christ?
+ 2892.9  the shepherd who laid down his life
+ 2896.7  for the unintelligent sheep.
+ 2904.6  You know what, I know I'm under my time
+ 2906.2  but I gotta share this with you because I just have to.
+ 2909.0  I'm sorry, I need five minutes.
+ 2911.7  No, no, I can't take my time.
+ 2913.1  I need five minutes.
+ 2915.4  Y'all got my reference scriptures.
+ 2917.2  Romans chapter 16 verses, where am I?
+ 2921.5  17.
+ 2923.6  Y'all got that?
+ 2924.8  Paul wrote to the church in Rome,
+ 2925.8  I appeal to you brothers to watch out, watch out,
+ 2928.9  Watch out for those who cause divisions and who create obstacles, contrary to the doctrine
+ 2935.9  that you have been taught.
+ 2937.4  Watch the next words, avoid them.
+ 2940.4  For such persons do not serve the Lord Christ, but their own appetites.
+ 2945.1  And by washes word, smooth talk and flat to read, they deceive the hearts of the naive,
+ 2954.4  unintelligent sheep. First John, he's a men of God, right? First John chapter 4, verse 1,
+ 2965.7  beloved, do not believe every spirit, but test the spirit to see whether they are from God.
+ 2973.1  For many false prophets have gone out into the world. By this you know the spirit of God.
+ 2979.8  Every spirit that confess that Jesus Christ has come in the flesh is from God. And every spirit
+ 2985.2  that does not confess Jesus, it's not from God.
+ 2988.3  This is the spirit of the Antichrist,
+ 2990.7  which you have heard coming,
+ 2992.4  and is now in the world already,
+ 2994.0  man, it's false prophets all over the place,
+ 2995.8  like Joseph Smith, who was a false prophet,
+ 3002.1  who gave birth to the Mormon church, a false religion.
+ 3006.7  Can I give you two more?
+ 3008.6  Really quickly, where am I?
+ 3011.5  Jeremiah chapter 14.
+ 3015.1  Jeremiah chapter 14, verse,
+ 3017.5  Oh, you know what I'm going Kenny?
+ 3020.7  Verse 13, let's do it, let's do it.
+ 3023.2  Then I said, watch, our Lord, behold, the prophets say to them,
+ 3027.7  now everybody watch, look at what the false prophets say,
+ 3030.6  you shall not see the sword.
+ 3033.0  Ease, ease, ease, wealth, ease, wealth, ease.
+ 3037.2  This is the year of, nor shall you have famine,
+ 3041.5  but I will give you a short piece in this place.
+ 3044.8  And the Lord said to me, the prophets are prophesying lies in my name.
+ 3050.1  I did not send them nor did I command them to speak to them.
+ 3053.9  They are prophesying to you a lying vision, worthless divinations,
+ 3058.9  and the deceit of their own minds.
+ 3062.3  Therefore, dust says the Lord concerning the prophets who prophesy in my name,
+ 3067.1  although I did not send them and who say,
+ 3070.1  sword and famine shall not come upon this land by the sword and famine.
+ 3074.5  those prophets shall be consumed.
+ 3077.7  You prophesy lies and ease and comfort and only blessings.
+ 3081.8  You are liar.
+ 3086.2  I don't think God is serious about this.
+ 3087.7  The last verse, Deuteronomy 1820.
+ 3090.5  See somebody are looking at me cross-eyed
+ 3092.0  because I'm stepping tolls on your favorite prophet.
+ 3098.5  It's just unintelligent sheep.
+ 3100.9  That's why you don't like me.
+ 3102.9  I already know a prophet beneath your ear.
+ 3106.3  Look at this last one.
+ 3107.6  That's how serious God is about Deuteronomy 1820.
+ 3111.2  I want to go to my Bible.
+ 3118.2  Turn around.
+ 3123.4  But the prophet who presumes to speak a word, my name, that I have not commanded him to speak
+ 3131.0  or who speaks in the name of other gods.
+ 3134.2  That same prophet what?
+ 3135.6  Shout out.
+ 3137.4  So serious is God about protecting you from bad voices.
+ 3140.9  He said in the old days, if you find a false prophet, kill them.
+ 3149.8  That's how serious the Lord is about protecting your air gates and your heart.
+ 3156.0  I'm so serious the Lord says about guarding your heart that in the old time, if I found
+ 3160.5  a false prophet, I say, kill them.
+ 3168.0  So here is the voice of a real prophet.
+ 3171.1  Take all your favorite prophets and run them through that criteria.
+ 3174.1  And if they don't meet the criteria, you need to back off and watch for fruit for a
+ 3179.9  season.
+ 3184.4  And if you start seeing words and character that is not
+ 3186.6  biblical, you might need to kill that voice in your air.
+ 3193.4  Say, but man, they're my friend though, keep them.
+ 3197.2  It's your is, it's your soul, it's the future of your life.
+ 3203.1  You've heard today from a real prophet, short choice.
+ 3207.0  You'll email his comment.
+ 3228.7  I already know people are offended.
+ 3238.4  I don't even know how to pray right now.
+ 3241.3  I just feel tension in the room.
+ 3253.0  I don't even know how to pray.
+ 3254.5  How do I pray?
+ 3256.0  I feel tension in the room.
+ 3257.2  I feel tension.
+ 3258.6  I feel tension because of your affinity
+ 3261.7  for false prophets.
+ 3265.8  I feel tension in the room.
+ 3269.3  Every head bound, every eye closed.
+ 3270.7  I, spirit of the living God.
+ 3283.5  You who are the author of the word of God.
+ 3290.6  You who gave us these holy words.
+ 3296.8  And you, Lord Jesus,
+ 3299.1  The third person of the Trinity, the greatest prophet, the world has ever known, who loves
+ 3305.1  your sheep.
+ 3307.2  God, I pray for all of these under the sound of my voice.
+ 3315.6  In these last days where there is a multitude God, a voice is everywhere.
+ 3323.5  Lord, I pray now for your sons and daughters that you would greatly increase their discernment
+ 3340.7  that they would be aware that they would see the appearance, that they would avoid the
+ 3347.6  agenda, that they would run them through the assessment, that we pray for the repentance
+ 3356.9  of those who's headed for the account who are false prophets.
+ 3362.3  We pray God, you will turn them from their wicked ways
+ 3365.3  and save them, God, who belong to you.
+ 3370.2  Father, I pray for people in this room
+ 3371.6  who are offended at me right now.
+ 3375.3  They're really offended at the truth of your word.
+ 3379.2  I pray they will look past me to the scriptures
+ 3382.0  and wrestle in their own soul,
+ 3384.4  but the person they love, God, Lord,
+ 3386.7  who is the false prophet.
+ 3389.7  I pray you will deliver men and women in this room
+ 3393.6  from the change, the mental, emotional, and spiritual slavery
+ 3400.6  of wrong voices. Set them free Lord.
+ 3408.2  I don't care if those voices are in their family. Set them free Lord.
+ 3412.2  Father God, I pray that we would keep running towards those voices that are leading us down the path
+ 3422.9  that is narrow that leads to life. Not just pray in explosion or a spirit of discernment
+ 3430.6  A spirit of prayer, a spirit of awareness
+ 3434.2  come upon my brothers and sisters.
+ 3447.9  I feel like we need to pray.
+ 3449.2  Can you just help me stir the room for just a moment?
+ 3452.2  Just, I feel like I'm fighting chains.
+ 3455.5  Your grandmother said, your grandfather said,
+ 3458.8  your friend said, your favorite apostle said,
+ 3461.9  your favorite bishop said, Lord, I pray you will break chains.
+ 3466.1  Mental, emotional, and spiritual chains
+ 3469.9  from the voices of false prophets.
+ 3472.8  And no matter how much we like them,
+ 3474.7  I pray you a shadow chains God in this room,
+ 3478.5  over eyes and ears and hearts in the name of Jesus.
+ 3483.3  I pray we would watch God for fruit,
+ 3486.5  of words and character.
+ 3490.6  And that we would run everybody we love,
+ 3493.1  even Philip and the Mitchell,
+ 3497.2  through the criteria of the word
+ 3499.6  That is forever settled in heaven.
+ 3509.3  I pray not one sheep in this house would be lost.
+ 3513.0  Not one more would be ravished.
+ 3516.8  I pray we would be ferocious in discernment.
+ 3521.3  And ferocious in guarding our eyes, our ears,
+ 3526.8  and our hearts from that teaching and false prophets.
+ 3541.3  There's some minus room right now.
+ 3543.5  The greatest prophet the world has ever known
+ 3545.4  calling you saying I want you my son my daughter you've done church your whole
+ 3552.5  life but you don't belong to me somebody brought you in here you don't belong to
+ 3557.6  me I want to be a father to you I want to heal you from your wounds I want to
+ 3563.2  give you a new life I want to make you a new creature I want to be there for you
+ 3568.4  I want to hear your voice and help you with all your problems I want to be your
+ 3572.8  Lord who died for you and your Savior. I want to guide you for the rest of your life. I want to
+ 3579.4  change the direction of your life. I want to snatch you from that broad way. I don't want to put you on
+ 3584.7  the narrow way that is going towards eternal life. I'm trying to rescue you right now. Come to me,
+ 3590.9  my new shepherd. Come to me, my new son or my daughter. If that's you, the Lord right now is
+ 3596.7  calling you out of sin, out of that broad way. I want to pray for you right now. If that's you,
+ 3602.7  I want you to do on the count of three.
+ 3604.7  I want you to throw your hands in the air.
+ 3606.7  Lord, pray for me.
+ 3607.7  I'm surrendering my life to you.
+ 3609.7  One, the real prophet is calling you.
+ 3611.7  Two, he's about to leave you into a brand new life.
+ 3614.7  Three, throw your hands in the air that you leave it there.
+ 3617.7  One, I see that hand. Leave it there too.
+ 3619.7  I see that hand.
+ 3620.7  Leave it there. Three, leave it there.
+ 3622.7  Leave it there. Leave it there.
+ 3624.7  Four, five. I see that hand.
+ 3626.7  Six, seven, eight, nine. I see that hand.
+ 3629.7  Leave it there.
+ 3630.7  10 11 12 I see that hand in the back. I see you my brother 13 leave it there
+ 3637.5  I see you sister 14 15
+ 3641.8  16 I see you my brother 17
+ 3646.5  17 oh I see you my sister 18 oh I see you my sister 19 I see you
+ 3653.9  19
+ 3655.8  19 19
+ 3657.8  19, 19, 19, 19, you 19 men and women.
+ 3664.1  Just start, right now the devil is a lot.
+ 3667.0  I don't need a microphone.
+ 3668.4  Just tell God you're sorry.
+ 3670.4  Tell him you're sorry for all your sin.
+ 3672.6  Put your faith in him right.
+ 3673.8  Oh, I see you 20.
+ 3675.0  Tell him you're sorry.
+ 3676.8  21, I see you put your faith in him.
+ 3679.1  Say Lord, I'm sorry for all my sin.
+ 3681.3  Forgive me for my life a sin.
+ 3683.1  Surrender your life to him right now.
+ 3684.8  Just put your faith in him.
+ 3686.0  He can hear you.
+ 3687.8  He can hear you.
+ 3689.8  He can hear you.
+ 3693.3  He can hear you.
+ 3694.3  Come on, surrender to Him.
+ 3701.4  He can hear you.
+ 3702.4  I see that hand in the back.
+ 3703.4  21.
+ 3704.4  I see you.
+ 3705.4  I see you surrender to Him.
+ 3707.9  He can hear you.
+ 3708.9  He can hear you.
+ 3709.9  He can hear you.
+ 3710.9  Surrender to Him.
+ 3711.9  He's 21. I see you. I see you surrender to Him. He can hear you. He can hear you. Surrender to Him.
+ 3726.4  He can hear you. Surrender. Jesus you change every hill. Come on, surrender. He can get to Him.
+ 3740.9  I see tears falling all around this room. I want you to know God is catching those tears.
+ 3770.1  He sees them.
+ 3772.1  Those are the tears of repentance.
+ 3774.1  I see all of y'all shedding tears.
+ 3775.1  I see wiping your eyes.
+ 3777.1  Those are the tears of repentance.
+ 3784.4  Pray, Christians.
+ 3786.4  Come on, pray.
+ 3787.4  Father, in the name of Jesus, I pray over these 21 brothers and sisters that you're filling them right now with your spirit.
+ 3797.4  I pray you will lead them and guide them down the paths of righteousness, that narrow path that leads to life.
+ 3805.2  snatched them from that broad way that leads to hell.
+ 3808.8  I pray you were surrounded with godly community.
+ 3813.4  You would reveal yourself to them in a real and powerful way.
+ 3817.6  I pray they would know you, God, as a father,
+ 3821.0  and you would know them as a son or daughter.
+ 3823.0  I thank you that their names have been recorded
+ 3826.3  in the Lamb's Book of Life, that they are brand new creatures,
+ 3830.8  and that you said they've been one cedar repents,
+ 3833.6  all of heaven rejoices.
+ 3835.6  To Father Right Now we were Joyce!
+ 3837.6  We were Joyce!

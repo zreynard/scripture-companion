@@ -1,342 +1,935 @@
     0.0  I guess we want to welcome you to a 28-19 church.
-    4.5  For everybody watching me live right now
-   13.2  across Atlanta and across this country and around the world
-   17.1  we want to welcome all of you on digital disciples who stream in every single week.
-   21.7  Thousands of you who are part of our family.
-   25.3  We're so thankful that you get to join us
-   28.8  through that camera and the spread of the gospel.
-   31.6  And if you're in the room right now and you're not a follower of Jesus Christ, you are still
+    4.5  For everybody watching me live right now across Atlanta and across this country and around the world.
+   17.0  We want to welcome all of you on digital disciples who stream in every single week.
+   21.9  Thousands of you who are part of our family.
+   25.4  We're so thankful that you get to join us through that camera and the spread of the gospel.
+   31.7  And if you're in the room right now and you're not a follower of Jesus Christ, you are still
    40.0  an unbeliever.
    41.0  You're still exploring the claims of Christ.
    46.9  If you're watching me in the overflow, everybody's sitting in that overflow room right now.
    53.4  We want to welcome you sitting in that overflow room.
    56.5  We welcome you to 2819 Church.
-   62.1  And for the unbeliever, we know that you're in the room.
-   64.5  probably an unbeliever or maybe you're not a follow-up crisis sitting in that
-   67.7  overflow room. You're watching me across this camera, you're still trying to figure
-   72.1  out the claims of Christ. We're so thankful that you are here. You can
-   78.6  belong before you believe. We hope you hear something today that speaks to your
-   90.6  heart. Today is the beginning of season three of our brand new series Wisdom and
-   97.6  Wonder in which we are walking through the gospel of Matthew together
-  101.8  specifically Matthew chapter 12 through 20. And I don't want to presume that you know who Matthew is.
-  108.7  Matthew was an outcast Jew who lived in the first century AD. He was converted to Christianity by
-  115.0  the Lord Jesus Christ. He went on to become an apostle and an eyewitness of the life of Jesus in
-  121.4  the ministry of Jesus. He wrote for us the gospel that bears his name preserved in the New Testament
-  128.2  and placed first in the New Testament.
-  130.8  It was his book that was used for over a thousand years
-  133.8  to crown the Christian church in discipleship.
-  137.2  And we are walking through that book together as a church,
-  140.9  a two and a half year journey.
-  143.4  And I wanna say during that journey,
-  146.3  although we were nervous about launching into it,
-  148.8  God has added to his church, sons and daughters,
-  152.9  servants of the Lord, and we thank the Lord Jesus
-  155.2  for what he is doing.
-  156.2  He is the builder of the church and we are stewards of His grace.
-  161.6  For all of our note-takers today, we will be in Matthew 14.
-  170.0  We will unpack together verses 1 through 12.
-  177.5  We're going to tag a title to this text.
-  189.0  I'm just going to call it the high price of truth.
-  192.8  Would you pray for me as I pray for you?
-  200.4  Eternal God, another wise Father.
-  202.7  Lord, we humble ourselves right now before your mighty presence.
-  212.9  We feel your power in this room.
-  214.9  We feel your power in that overflow.
-  217.5  I know people can feel you across that camera.
-  222.3  Lord, I am praying right now in these last days
-  225.9  of the church age that there would be an outpouring
-  229.4  of an awakening on the sons and daughters
-  232.7  of the kingdom in this hour.
-  236.1  Lord, I am asking you for an outpouring of repentance
-  239.9  on the sons and daughters of the kingdom in this hour.
-  243.8  I am asking you, God, that you would trouble us in our souls,
-  247.4  that you would open our blinded eyes,
-  249.6  that you would unstuck our deaf ears.
-  252.7  Lord, I am asking you this very morning
-  255.7  that you would throw down from heaven
-  257.5  something like calls of fire, God, too.
+   62.0  And for the unbeliever, we know that you're in the room.
+   64.4  probably an unbeliever or maybe you're not a follow of Christ is sitting in that overflow room.
+   69.2  You're watching me across this camera. You're still trying to figure out the claims of Christ.
+   74.7  We're so thankful that you are here. You can belong before you believe. We hope you hear
+   89.2  something today that speaks to your heart. Today is the beginning of season three of our brand new
+   96.4  series Wisdom and Wonder in which we are walking through the gospel of Matthew together specifically
+  103.0  Matthew 12 through 20.
+  105.5  And I don't want to presume that you know who Matthew is.
+  108.6  Matthew was an outcast Jew who lived in the first century AD.
+  112.9  He was converted to Christianity by the Lord Jesus Christ.
+  117.0  He went on to become an apostle and an eyewitness of the life of Jesus and the ministry of Jesus.
+  123.2  He wrote for us the gospel that bears his name, preserve in the New Testament and place first in the New Testament.
+  130.6  It was his book that was used for over a thousand years to crown the Christian Church in discipleship,
+  137.0  and we are walking through that book together as a church, a two and a half year journey.
+  143.7  And I want to say during that journey, although we were nervous about launching into it, God has
+  149.3  added to his church, sons and daughters, servants of the Lord, and we thank the Lord Jesus for what
+  155.4  what he is doing. He is the builder of the church and we are stewards of his grace. For
+  161.7  all of our note-takers today we will be in Matthew 14. We will unpack together verses 1
+  176.9  through 12. We are going to tag a title to this text. I'm just going to call it the high
+  191.3  price of truth. Would you pray for me as I pray for you? Eternal God and otherwise, Father,
+  207.1  Lord, we humble ourselves right now before your mighty presence.
+  210.7  We feel your power in this room.
+  214.8  We feel your power in that overflow.
+  217.4  I know people can feel you across that camera.
+  222.2  Lord, I am praying right now in these last days of the church age that there would be an outpouring of an awakening on the sons and daughters of the kingdom in this hour.
+  235.5  Lord, I am asking you for an outpouring of repentance on the sons and daughters of the
+  241.4  kingdom in this hour.
+  243.7  I am asking you, God, that you would trouble us in our souls, that you would open our blinded
+  249.2  eyes, that you would unstuck our deaf ears.
+  252.7  Lord, I am asking you this very morning that you would throw down from heaven something
+  257.9  like coals of fire, God too.
   260.5  Burn us in our lips and burn us in our hearts.
-  264.2  Father, God, I pray, God, in this moment
-  267.1  that we spend together, apathy would be driven out
-  270.2  of this room.
-  270.9  The lethargy would be driven out of this room.
-  273.3  Luke warned this would be driven out of this room.
-  278.5  Out of this moment in the name of your son, Lord,
-  282.4  I pray in my weakness, God, Lord, you would be made strong.
-  288.8  In my sickness, God, you would be made strong.
-  293.1  I pray not the heat of this room, not the sickness in my body,
-  298.2  not any demonic force would hinder the proclamation
-  301.9  the spread of your word in this moment. Lord, I pray some way somehow you would cultivate
-  312.7  now in this room across that camera in the overflow hearts of good ground. The word God
-  320.7  would not be stolen by the adversary would not fall temporarily God and be lost from
-  326.6  the cares of his life. Some way somehow I pray it would fall on the good soil of receptive
-  333.1  hearts and that God in our lives, in our posting, in our words, in our actions, some
-  341.0  way somehow what would come from this message is a fruit of bonus, some dirty,
-  349.7  some 60, some hundred full. Jesus you be glorified in this moment. Yes it is hot,
-  361.8  but we thank you we have a place to gather and we thank you that at the right
-  372.1  time in the right place, you would open that right door. We believe, we believe. Now, Lord,
-  383.0  have your way. I ask the Spirit of the living God, move throughout the aisles and have your
-  388.5  way. I pray right now in the mighty, look up that word, and the majestic, look up that
-  397.6  word and the matchless look of that word name that is above every name the name
-  407.3  of the Lord Jesus the Christ and with all the sons and daughters wherever they
-  414.9  are if you agree with this prayer would you just shout me down and say amen
-  421.6  Amen. Amen. The high price of truth be glorified Lord. Family, when I was praying
-  440.6  and reading over this passage, I was reminded by the Spirit of God that there
-  448.4  was a time when this English version of the scriptures was not available to me.
-  454.5  where the English versions of the scriptures that sit on your lap and on your
-  459.5  devices was not available to you. For they were held bound by the papacy of Roman
-  467.7  Catholicism who had the scriptures chained in secret places in Greek and
-  474.1  Latin and there was not available for common people who did not have access to
-  479.9  the Word of God. It was the Roman Catholic Church who had a monopoly on the Scriptures,
-  487.3  who exercised the secrecy of the Bible to exhort the authority and dominance over the people
-  494.7  of God and the Church at that time. And in the secrecy of the Scriptures, they filled
-  501.9  the church with heresies and life and man-made doctrines
-  507.1  to exert their power and dominance over men and women
-  511.7  who loved Christ but was ignorant of the Word of God.
-  520.8  It was during this time in the 1500s
-  524.6  that God raised up an educated man in the scriptures,
-  529.3  a man of God who had studied the Word
-  531.5  in his original language from the beginning
-  533.8  of the Old Testament to the new.
-  536.3  God raised up that man in the 1500s and put inside of him
-  541.1  a righteous indignation against the Roman Catholic Church.
-  545.9  And when he saw the abuse of the Roman Catholic Church,
-  549.1  when he saw the abuse of the papacy,
-  552.5  when he saw the abuse of the Popes and the bishops,
-  555.7  he was grieved in his heart because, man,
-  557.8  they were living in vanity,
-  560.1  and they were exercising authority
-  562.1  that the Scriptures had not given them.
-  564.4  and they exalted themselves above men.
-  567.7  And he was grieved in his heart when he saw them.
-  570.0  He even said, he thought that all of the troubles
-  572.7  in the church was a direct result of the fact
-  575.3  that the common people did not have access
-  577.5  to the Word of God.
-  579.4  And so in his frustration and in his righteous indignation,
-  583.8  he began watch this to speak out against the papacy
-  588.6  and speak out against the Roman Catholic church.
-  591.9  And he began to call out their errors and their false doctrines.
-  595.9  He would reason with people in his home
-  598.9  and reason with people in the streets
-  600.9  as he tried to show them this is what the word of God says,
-  603.9  which is antithetical to the things that you've been taught.
-  608.1  When opposition against this outcry begin to grow,
-  611.8  he moved out of England and went to Germany.
-  615.5  And it was in Germany, he found a place of hiding.
-  618.8  And it was in that place he made a decision
-  621.0  that he would give his life to translate the entire scriptures
-  624.9  from the Old Testament to the New Testament in English
-  629.5  and in a common language so that the common person can
-  632.8  have access to the Word of God.
-  635.3  He set out on that project to do that
-  637.9  because he cared deeply about the church.
-  640.4  History tells us that on one occasion he was traveling
-  643.3  across the sea and in a shipwreck he lost all
-  646.3  of his documents and his manuals.
-  648.7  And when he got back to his home,
-  650.1  he had to start all over again,
-  651.7  but he was determined to give the world
-  653.9  an English copy of these holy documents.
-  658.2  He would go on, listen to me, family,
-  661.1  to translate the entire Old Testament into English.
-  665.4  He translated the entire New Testament into English,
-  669.1  and he would go on to write a summary introduction
-  672.3  of every chapter of the Old Testament
-  674.4  so the common person can pick up the word of God
-  677.3  understand it for themselves because it's very important for you to have
-  682.0  knowledge of the Word of God. For the more word you know the more error you
-  686.6  will discern. And there is a lot of us who listen to heresies. We listen to men
-  692.2  preach heresy eloquently because we don't know the scriptures we can't discern
-  696.7  lies from the pulpit. And this is why I keep encouraging you, man, to don't just
-  703.6  Listen to me and believe me.
-  705.5  Man, go behind me.
-  706.7  Go behind your false prophets and your apostles.
-  709.8  Man, and read and study the Word of God for yourself.
-  716.0  Man, the more knowledge you know from God's Word,
-  719.0  the easier you will be able to discern lies.
-  722.4  You would hear things that are not true
-  724.1  and it would be like static in your soul.
-  726.7  So this man spread the first English copies of the Bible.
-  731.9  They begin to show up in England
-  733.6  and on the streets of London.
-  735.4  And when the papacy heard about what he was doing,
-  738.4  they was angry, and so the power was that B-set and plan
-  742.6  in motion a plan to have this man killed.
-  745.8  So they arranged for a person to befriend him.
-  748.8  You better be careful about your associates.
-  751.5  They arranged for a person to befriend him.
-  754.5  This person got access to his heart.
-  757.3  He started to trust this person.
-  759.6  He brought this person into his home.
-  761.8  Now they knew where his hideout was.
-  764.5  And then this person who would of papacy arrange,
-  767.3  led this man out of his home,
-  769.7  and this man of God was captured,
-  772.2  and he was placed in prison for the spread of the gospel.
-  776.7  Although a revival or revolution was breaking out at the time
-  780.8  because people are now seeing the Bible for themselves,
-  784.1  man, he's sitting languishing in a prison,
-  787.1  but he was not dismayed.
+  264.1  Father God, I pray God in this moment that we spent together.
+  268.2  Abblessy would be driven out of this room.
+  270.9  Letherghe would be driven out of this room.
+  273.2  Luke, warmness would be driven out of this room.
+  278.5  Out of this moment in the name of your Son, Lord, I pray.
+  283.6  In my weakness, God, Lord, you would be made strong.
+  287.4  In my sickness, God, you would be made strong.
+  293.1  I pray not the heat of this room, not the sickness of my body, not any demonic force would hinder
+  300.6  the proclamation of the spread of your word in this moment.
+  305.1  Lord, I pray some way somehow you would cultivate now in this room across that camera in the
+  315.9  overflow hearts of good ground that the word God would not be stolen by the adversary would
+  322.9  not fall temporarily God and be lost from the cares of his life.
+  328.8  Some way somehow I pray it would fall on the good soil
+  332.4  of receptive hearts and that God in our lives,
+  336.4  in our posting, in our words, in our actions,
+  340.8  some way somehow what would come from this message
+  344.8  is a fruit of bonus, some dirty, some 60, some hundred full.
+  351.7  some hundredfold. Jesus, you be glorified in this moment. Yes, it is hot, but we thank
+  363.1  you. We have a place together and we thank you that at the right time in the
+  372.8  right place you would open that right door. We believe, we believe. Now Lord have
+  383.2  your way. I ask the Spirit of the living God, move throughout the
+  387.6  the aisles and have your way. I pray right now in the mighty look up that word and the majestic
+  397.1  look up that word and the matchless look up that word name that is above every name.
+  407.0  The name of the Lord Jesus the Christ and with all the sons and daughters wherever they
+  414.8  If you agree with this prayer, would you just shout me down and say amen?
+  421.8  Amen.
+  422.8  Amen.
+  423.8  Amen.
+  424.8  The high price of truth be glorified, Lord.
+  436.9  Family.
+  437.9  When I was praying and reading over this passage, I was reminded by the Spirit of God that there
+  448.4  There was a time when this English version of the Scriptures was not available to me, where
+  455.5  the English versions of the Scriptures that sit on your lap and on your devices was not
+  460.7  available to you.
+  462.7  For they were held bound by the papacy of Roman Catholicism who had the Scriptures trained
+  471.6  in secret places in Greek and Latin,
+  474.8  and it was not available for common people
+  478.0  who did not have access to the Word of God.
+  481.6  It was the Roman Catholic Church
+  484.1  who had a monopoly on the Scriptures,
+  487.3  who exercised the secrecy of the Bible
+  490.2  to exhort the authority and dominance
+  493.8  over the people of God and the church at that time,
+  496.9  and in the secrecy of the Scriptures,
+  500.1  They filled the church with heresies and life and man-made doctrines to exert their power
+  508.9  and dominance over men and women who loved Christ but was ignorant of the Word of God.
+  520.9  It was during this time in the 1500s that God raised up an educated man in the Scriptures,
+  529.2  a man of God who had studied the Word in his original language from the beginning of the
+  534.0  Old Testament to the new. God raised up that man in the 1500s and put inside of him a righteous
+  542.0  indignation against the Roman Catholic Church. And when he saw the abuse of the Roman Catholic
+  548.7  Church, when he saw the abuse of the papacy, when he saw the abuse of the Popes and the bishops,
+  555.6  he was grieved in his heart because man, they were living in vanity and they were exercising
+  561.4  authority that the Scriptures had not given them, and they exalted themselves above men.
+  567.8  And he was grieved in his heart when he saw them.
+  570.0  He even said he thought that all of the troubles in the church was a direct result of the fact
+  575.2  that the common people did not have access to the Word of God.
+  579.5  And so in his frustration and in his righteous indignation, he began watch this to speak out
+  586.8  against the papacy and speak out against the Roman Catholic Church.
+  592.1  He began to call out their errors and their false doctrines.
+  596.1  He would reason with people in his home and reason with people in the streets as he tried
+  601.6  to show them this is what the word of God says, which is antithetical to the things that you
+  606.3  have been taught.
+  608.2  When opposition against this outcry began to grow, he moved out of England and went to Germany.
+  615.7  And it was in Germany he found the place of hiding, and it was in that place he made a
+  620.4  decision that he would give his life to translate the entire scriptures from the Old Testament
+  625.9  to the New Testament in English and in a common language so that the common person can have
+  633.0  access to the Word of God.
+  635.4  He set out on that project to do that because he cared deeply about the church.
+  640.5  History tells us that on one occasion he was traveling across the sea, and in a shipwreck
+  645.4  He lost all of his documents and his manuals, and when he got back to his home, he had to
+  650.4  start all over again, but he was determined to give the world an English copy of these
+  655.3  holy documents.
+  658.3  He would go on, listen to me, family, to translate the entire Old Testament into English.
+  665.4  He translated the entire New Testament into English, and he would go on to write a summary
+  671.3  introduction of every chapter of the Old Testament so the common person can pick up the Word of God and understand it for themselves.
+  679.3  Because it's very important for you to have knowledge of the Word of God.
+  683.8  For the more word you know, the more error you will discern.
+  688.3  And there is a lot of us who listen to heresies.
+  691.3  We listen to men preach heresies eloquently because we don't know the scriptures. We can't discern lies from the pulpit.
+  698.3  And this is why I keep encouraging you, man, to don't just listen to me and believe me.
+  705.8  Man, go behind me.
+  706.8  Go behind your false prophets and your apostles.
+  709.9  Man, and read and study the Word of God for yourself.
+  715.7  Man, the more knowledge you know from God's Word, the easier you will be able to discern
+  721.2  life.
+  722.6  You would hear things that are not true and it would be like static in your soul.
+  726.8  So this man spread the first English copies of the Bible.
+  732.1  They begin to show up in England and on the streets of London.
+  735.6  And when the papacy heard about what he was doing, they was angry.
+  739.6  And so the power was that beset and plan, and motion, a plan to have this man killed.
+  745.9  So they arranged for a person to befriend him.
+  748.9  You better be careful about your associates.
+  751.7  They arranged for a person to befriend him.
+  754.6  person that got access to his heart. He started to trust this person. He brought this person
+  760.7  into his home. Now they knew where his hideout was. And then this person who the papacy arranged
+  767.3  led this man out of his home and this man of God was captured and he was placed in prison
+  774.6  for the spread of the gospel. Although a revival or revolution was breaking out at the time
+  780.8  because people are now seeing the Bible for themselves.
+  784.0  Man, he's sitting languishing in a prison,
+  787.0  but he was not dismayed.
   789.0  History tells us he pushed the gospel to the jailers,
-  792.5  so much so that even the jailer and members of his family converted to Christianity.
-  801.7  And when the enemy was furious with this man of God, on October 6, 1536, in a small town
-  810.1  in the Netherlands, the papacy brought that man of God out.
-  814.9  They dragged him down to a place of execution.
-  817.9  They strapped him to a stake.
-  820.3  They choked him within an inch of his life and he looked down as they set his body on
-  831.5  fire.
-  834.1  As his body burned, he shouted from the top of his lungs before he died, O Lord, open
-  839.6  the eyes of the King of England.
+  792.5  so much so that even the jailer and members of his family
+  795.5  converted to Christianity.
+  801.4  And when the enemy was furious with this man of God,
+  805.4  on October 6, 1536, in a small town in the Netherlands,
+  811.4  Man, the papacy brought that man a God out.
+  814.8  They dragged him down to a place of execution.
+  818.0  They strapped him to a stake.
+  820.3  They choked him within an inch of his life.
+  828.0  And he looked down as they set his body on fire.
+  834.3  As his body burned, he shouted from the top of his lungs before he died, O Lord, open the
+  839.7  eyes of the King of England.
   843.0  It would be no accident that sometime later we were getting our hands, the King James
-  847.1  Version, the first English copy of the Bible.
-  856.5  That reformer, his name was William Tyndale.
-  860.4  He was a hero of the faith that you and I belong to.
-  864.0  And he was God's first vessel to translate the Scriptures into English.
-  872.4  It was men like William Tyndale who was a voice against evil in the church.
-  878.9  And if you check the church history, our history, the people of God, our history is
-  884.4  replete with men and women of God who stood ten toes down against corruption in the church.
-  892.8  foolishness in the church and against persecution, against opposition, against
-  898.3  being rejected. They stood and spoke up against evil. They spoke out against
-  903.8  heresy. Men like Martin Luther who nailed the 95 pieces to the written book church.
-  909.4  So all throughout our history there were men and women, men who stood up against
-  914.3  evil. Many of them died for the faith that you and I have right now that every
-  919.6  Every time you pick up this English Bible, I want you to remember a man named William
-  923.8  Tyndale gave his life for you to have a copy of the Word of God.
-  930.2  The copy you don't read.
-  932.6  The copy that's dusty.
-  934.8  The copy you won't open up for yourself.
-  937.4  The copy you got sitting on the floorboard of your car.
-  940.0  A man died to translate this into English.
-  945.0  So every time you read it, we're understanding.
-  947.6  a brother in the faith before you gave his life for you to have an English copy of the Bible.
-  956.6  Friends, this is the kind of conviction man the people of God should have.
-  961.6  This is the kind of conviction the people of God should live with.
-  965.1  Men and people of God should be known for having convictions about holiness and righteousness
-  969.9  and what is right in the sight of God. For the only alternative is compromise. And compromise
-  977.9  is the default of the flesh, it is the life of the Christian coward who is afraid to take
-  983.6  a stand for the Lord Jesus Christ.
-  988.6  And what God needs in this hour more than any other time is for the people of God to
-  993.6  rise up and be a voice for him in this land that we're living in right now.
-  999.1  Listen to me, convictions around righteousness, holiness, character, integrity, fidelity
- 1008.2  to the scriptures, this should be common testimony of the people of God.
+  847.1  version, the first English copy of the Bible. That reformer, his name was William Tyndale.
+  860.3  He was a hero of the faith that you and I belong to. And he was God's first vessel to
+  866.1  translate the scriptures into English. It was men like William Tyndale, who was a voice
+  875.7  against evil in the church. And if you check the church history, our history, the people
+  882.4  of God. Our history is replete with men and women of God who stood ten toes down against
+  889.4  corruption in the church and foolishness in the church and against persecution, against opposition,
+  897.9  against being rejected. They stood and spoke up against evil. They spoke out against heresy,
+  905.0  men like Martin Luther who nailed the 95 pieces to the Witten Book Church. So all throughout
+  910.9  I was history, there were men and women, men who stood up against evil.
+  915.0  Many of them died for the faith that you and I have right now that every time you pick up
+  920.4  this English Bible, I want you to remember a man named William Tyndale gave his life for
+  927.8  you to have a copy of the Word of God.
+  930.2  The copy you don't read, the copy that's dusty, the copy you won't open up for yourself, the
+  937.5  copy you got sitting on the floor board of your car, a man died to translate this into
+  944.3  English.
+  945.3  So every time you read it, we're understanding, remember a brother in the faith before you
+  949.3  gave his life for you to have an English copy of the Bible.
+  956.8  Friends, this is the kind of conviction man the people of God should have.
+  961.9  This is the kind of conviction that people of God should live with.
+  965.4  Men and people of God should be known for having convictions about holiness and righteousness
+  969.9  and what is right in the sight of God.
+  974.1  For the only alternative is compromise.
+  977.1  And compromise is the default of the flesh.
+  980.1  It is the life of the Christian coward
+  982.5  who is afraid to take a stand for the Lord Jesus Christ.
+  988.5  And what God needs in this hour, more than any other time,
+  992.4  is for the people of God to rise up and be a voice for Him
+  995.8  in this land that we're living in right now.
+  998.9  Listen to me, convictions around righteousness, holiness, character, integrity, fidelity to
+ 1008.3  the scriptures.
+ 1009.8  This should be common testimony of the people of God.
  1014.8  This should be your testimony.
  1017.0  This should be my testimony.
- 1018.8  Listen, this is the testimony of the man of God at the center of our text.
- 1025.9  Matthew writes in Matthew chapter 14 and beginning in verse 1, Matthew says, at that time, what
- 1035.2  time?
- 1036.8  At the time that Jesus' ministry was growing, his fame was growing.
- 1042.7  He had just began speaking in parables as a judgment against the Pharisees and the religious
- 1048.0  elite and the people who rejected his doctrines.
- 1051.2  At the time the ministry of Jesus was flourishing and at the time the ministry of Jesus was
- 1056.4  headed towards the cross.
- 1058.8  For the back half of Matthew would take Jesus to the cross.
- 1062.6  At that time Herod, the tetrauch heard about the fame of Jesus and he said to his servants,
- 1072.3  wait, this is John the Baptist.
+ 1018.9  Listen, this is the testimony of the man of God at the center of our text.
+ 1025.8  Matthew writes in Matthew chapter 14 and beginning in verse 1, Matthew says,
+ 1033.1  at that time, what time? At the time that Jesus' ministry was growing, his fame was
+ 1041.4  growing, he had just began speaking in parables as a judgment against the
+ 1046.6  Pharisees and the religious elite and the people who rejected his doctrines. At the
+ 1051.4  time the ministry of Jesus was flourishing and at the time the ministry of Jesus
+ 1056.2  was headed towards the cross, for the back half of Matthew would take Jesus to the cross.
+ 1062.6  At that time Herod, the Tetrak, heard about the fame of Jesus, and he said to his servants,
+ 1072.4  wait, this is John the Baptist.
  1075.8  He has been raised from the dead.
  1079.0  That is why these miraculous powers are at work in him.
  1084.1  This is John the Baptist.
  1086.1  And so now I want you to see that Matthew is writing in reflection.
  1090.3  He was reflecting on a time when Herod realized that he had done something wrong.
- 1096.9  He is reflecting on a time when King Herod realized, man, who was this man Jesus?
+ 1097.0  He is reflecting on a time when King Herod realized, man, who was this man Jesus?
  1102.6  Why is he performing all these miraculous deeds?
- 1105.7  He must be John the Baptist, the man that I killed, the man that I put to death, the
- 1113.6  cousin of Christ, the forerunner of Christ, the person who was raised around Christ, the
- 1121.6  person who God raised up to be the first voice to prepare a
- 1125.6  nation for the ministry of Christ.
- 1128.3  The man who came preaching repent for the kingdom of
- 1131.5  heaven is at hand.
- 1134.0  The man who came preaching repent for the kingdom of
- 1136.7  heaven is at hand.
- 1138.3  The man who came preaching repent for the kingdom of
- 1140.8  heaven is at hand.
- 1142.1  That man, John, is who he's talking about.
- 1144.4  So Matthew watch is writing, reflecting on Herod's heart
- 1148.4  being troubled about this man that he had killed.
- 1153.1  Now I want to draw your attentions to a few things
- 1155.2  in the text.
- 1156.4  First, who is this man, Herod?
- 1158.8  If you read the New Testament, you
- 1160.4  will bump into this name many times in the New Testament.
- 1164.4  The first time we see the name Herod in our study
- 1167.8  is at the beginning of the book of Matthew,
- 1170.3  where we read a man called Herod the Great.
- 1174.1  It was Herod the Great who was in power during the days
- 1177.5  Jesus when he was born.
+ 1105.7  He must be John the Baptist, the man that I killed, the man that I put to death, the cousin
+ 1114.0  of Christ, the forerunner of Christ, the person who was raised around Christ, the person who
+ 1122.1  God raised up to be the first voice to prepare a nation for the ministry of Christ, the man
+ 1128.7  who came preaching repent for the kingdom of heaven is at hand, the man who came preaching
+ 1135.1  repent for the kingdom of heaven is at hand, the man who came preaching repent for the kingdom
+ 1140.6  of Heaven in his hand, that man John is who he's talking about. So Matthew Watch is
+ 1145.4  writing, reflecting on Herod's heart being troubled about this man that he had
+ 1151.5  killed. Now I want to draw your attentions to a few things in the text. First, who is
+ 1157.1  this man, Herod? If you read the New Testament, you will bump into this name
+ 1161.5  many times in the New Testament. The first time we see the name Herod in our
+ 1166.6  study is at the beginning of the book of Matthew where we read a man called Herod the Great.
+ 1173.6  It was Herod the Great who was in power during the days of Jesus when he was born.
  1179.7  Herod was an evil man.
- 1182.1  Herod was a murderous man.
+ 1182.3  Herod was a murderous man.
  1185.0  Herod was a man drunk on power.
- 1188.0  It was King Herod who, according to history,
- 1191.7  killed his wife.
- 1193.9  It was King Herod according to history who killed two sons.
- 1198.6  It was King Herod according to history who killed political
- 1202.3  opponents because he did anything he needed to to maintain
- 1205.7  his power.
- 1206.9  Listen, it was this Herod who was called the king of the Jews who ordered the genocide of
- 1215.6  little children two years and older boys because he heard from the announcement of the wise men
- 1221.0  that the real king of the Jews had been born. And so he ordered the slaughter of all children,
- 1228.1  bail children two years and older in an attempt to kill the Lord Jesus Christ.
- 1232.7  When that Herod died in 4 BC, his kingdom was divided between three sons.
- 1241.1  To one son was given his name was Herod Arcalaeus.
- 1245.2  He got half of Herod's great kingdom.
- 1247.9  To another son was given some territory.
- 1250.0  His name was Herod Philip.
- 1252.4  He was married to a woman named Herodius who was his niece.
+ 1188.3  It was King Herod who, according to history, killed his wife.
+ 1194.1  It was King Herod according to history who killed two sons.
+ 1198.8  It was King Herod according to history who killed political opponents because he did
+ 1203.9  anything he needed to to maintain his power.
+ 1207.2  Listen, it was this Herod who was called the king of the Jews who ordered the genocide
+ 1215.4  of little children two years and older boys because he heard from the announcement of the
+ 1220.5  wise men that the real king of the Jews had been born. And so he ordered the slaughter
+ 1226.2  of all children, bail children two years and older in an attempt to kill the Lord Jesus
+ 1232.3  Christ. When that Herod died in 4 B.C., his kingdom was divided between three sons. To
+ 1241.1  one son was given his name was Herod Arkelaus. He got half of Herod Great's kingdom. To another
+ 1248.2  After some was given some territory, his name was Herod Philip.
+ 1252.4  He was married to a woman named Herodias who was his niece.
  1256.9  To another one was given Herod Antipas.
- 1260.1  As this Herod we see right here in the text, this was the Herod that ruled over Galilee
- 1265.2  and Perea during the ministry of Jesus.
+ 1260.1  That's this Herod we see right here in the text.
+ 1262.9  This was the Herod that ruled over Galilee and Perea during the ministry of Jesus.
  1268.2  It would be this Herod who Jesus stood before on the day that he was executed.
  1273.7  And I want you to see that this family you will continue to run in Herod's.
- 1277.0  They love to name people Herod in their family.
- 1280.6  If you keep reading the New Testament, you will bump into another Herod in Acts.
- 1284.8  Herod a dripper who the apostle Paul stood before and gave a gospel account.
- 1290.1  Now Herod Philip was married to a woman named Herodias.
- 1295.0  She was his niece.
- 1298.2  But Herod Antipas, this Herod, left his wife,
- 1302.2  did not divorce her, left his wife,
- 1305.0  and seduced the wife of his brother,
- 1308.0  and took Herod, and took Herod Philip's wife,
- 1310.6  and brought Herod wife back to himself.
- 1313.1  So Herod Antipas seduced Herod Philip's wife,
- 1317.4  and he took that wife for himself.
- 1319.7  So one uncle married Anise, another uncle stole that niece,
- 1324.3  and married that niece for himself.
- 1332.3  So one uncle married Anise, another uncle stole that niece,
- 1338.4  and married that niece for himself.
- 1340.9  So you see that the Harris was a dysfunctional family.
- 1353.4  They're drunk on power.
- 1355.4  They're marrying relatives.
- 1357.6  They call themselves Jews.
- 1360.1  Now I wanna draw your attention to something in the text.
- 1363.1  I want you to notice in the text that Herod is troubled
- 1367.0  by the ministry of Jesus.
- 1369.4  He fears that this man Jesus is John the Baptist
- 1373.0  who he killed risen from the dead.
- 1375.6  Now this is very powerful to me as a student of the word
- 1378.9  because what is trouble in Herod right now?
- 1382.0  Herod is battling the guilty conscience
- 1385.5  of murdering a man of God called John.
- 1388.6  Now this is powerful to me that Herod is battling a guilty conscious because Herod is not a follower of Christ.
- 1395.6  Watch, he is not filled with the Spirit and yet his conscious is trouble in him because he murdered an innocent man.
- 1403.6  Now this is very powerful to me because it speaks to all of the atheists and all of the people that deny God,
- 1411.6  that God hardwired into every human being a conscious
- 1418.0  That communicates the existence of God the moral code of God a
- 1423.3  Communicates what is right or wrong that God has given every man a conscience a
- 1428.7  C.O.N. Science the word con means with the word science means knowledge that God has given every human being a conscience a
- 1436.9  with knowledge that he exists and there is a moral code that operates in them that
- 1443.7  came from an authority above them. This is why even in lands where they don't have
- 1453.6  the gospel people feel guilty for murder. You feel guilty for lying. You feel guilty
- 1459.7  for cheating. You feel guilty for doing wrong. Where is that guilt coming from?
- 1463.6  It's coming from the conscience. It's coming from the with knowledge. The moral
- 1468.3  That God is written on the hearts of every person.
- 1471.2  So man, I say to an atheist that says,
- 1473.2  well, God doesn't exist.
- 1474.8  Have you ever felt bad for something you did?
- 1477.0  Yeah.
- 1477.8  But where did that morality come from?
- 1480.3  How is it that ungodly people feel bad for murder?
- 1485.8  Or feel bad for doing this wrong?
- 1487.4  Why?
- 1488.0  Because God has proven himself even to man, even in the conscience,
- 1491.8  that he was written on the hearts of man, a moral code,
- 1496.4  that they know, intuitively, what is right and what is wrong?
+ 1277.0  love to name people Herod in their family. If you keep reading the New Testament, you'll
+ 1282.2  bump into another Herod in Acts. Herod a dripper who the apostle Paul stood before and gave a
+ 1288.3  gospel account. Now Herod Philip was married to a woman named Herodius. She was his niece.
+ 1298.3  But Herod and to pass this Herod left his wife did not divorce or left his wife and seduced
+ 1306.0  the wife of his brother and took Herod and took Herod Phillips' wife and brought Herod
+ 1311.8  wife back to himself. So Herod and to pass seduced Herod Phillips' wife and he took that
+ 1318.0  wife for himself. So one uncle married Anise, another uncle stole that Anise and married
+ 1324.9  that Anise for himself. So one uncle married Anise, another uncle stole that Anise and married
+ 1339.1  that needs for himself. So you see that the Herod's was a dysfunctional family.
+ 1344.3  They're drunk on power. They're marrying relatives. They call themselves Jews. Now I
+ 1360.2  want to draw your attention to something in the text. I want you to notice in the
+ 1364.2  text that Herod is troubled by the ministry of Jesus. He fears that this
+ 1370.9  man Jesus is John the Baptist who he killed risen from the dead. Now this is
+ 1376.2  very powerful to me as a student of the word because what is trouble in Herod right now?
+ 1382.5  Herod is battling the guilty conscious of murdering a man of God called John.
+ 1388.7  Now this is powerful to me that Herod is battling a guilty conscious because Herod is not a
+ 1394.0  follower of Christ.
+ 1395.7  Watch, he is not filled with the Spirit and yet his conscious is trouble in him because
+ 1401.7  he murdered an innocent man.
+ 1404.2  This is very powerful to me because it speaks to all of the atheists and all of the people that deny God
+ 1411.6  that God hardwired into every human being a
+ 1416.5  conscious
+ 1418.0  That communicates the existence of God
+ 1420.7  The moral code of God it communicates what is right or wrong that God has given every man a conscience a
+ 1427.8  A C-O-N science, the word con means with.
+ 1432.3  The word science means knowledge that God has given every human being a conscience, a with
+ 1437.5  knowledge that he exists, and there is a moral code that operates in them that came from
+ 1444.1  an authority above them.
+ 1451.6  This is why even in lands where they don't have the gospel, people feel guilty for murder.
+ 1457.1  You feel guilty for lying.
+ 1459.0  You feel guilty for cheating.
+ 1460.9  You feel guilty for doing wrong.
+ 1462.5  Where is that guilt coming from?
+ 1464.0  It's coming from the conscience.
+ 1465.9  It's coming from the with knowledge.
+ 1467.8  The moral code that God has written on the hearts of every person.
+ 1471.1  So man, I say to an atheist that says, well, God doesn't exist.
+ 1475.2  Have you ever felt bad for something you did?
+ 1477.4  Yeah.
+ 1478.4  Where did that morality come from?
+ 1483.0  How is it that ungodly people feel bad for murder or feel bad for doing this wrong?
+ 1487.9  Why?
+ 1488.9  Because God has proven himself even to man, even in the conscience, that he was written on
+ 1493.1  in the hearts of man, a moral code that they know
+ 1497.3  intuitively what is right and what is wrong,
+ 1500.2  and that that communicates that there is an authority
+ 1502.8  above man, a creator above man, that wired into man,
+ 1508.3  a conscience.
+ 1509.7  That's why when you're mature, you should always be thankful
+ 1512.3  when you feel convicted by sin.
+ 1518.8  Because some people, man, you cry over conviction,
+ 1521.5  and you feel guilty over conviction.
+ 1523.0  But I'm going to tell you what's worse than feeling convicted.
+ 1525.5  What's worse is what Paul alluded to in the church at Rome,
+ 1528.5  that some people, man, in order to do evil,
+ 1530.8  you have to suppress that conscience.
+ 1533.0  You have to suppress that inner voice on the inside of you.
+ 1536.8  And when you suppress that inner voice, man,
+ 1538.5  you have to do that in order to produce sin.
+ 1541.8  And the worst place you can be is not feeling convicted of sin.
+ 1545.0  The worst place you can be is when you feel nothing at all.
+ 1548.1  That where you don't want to be is when God says,
+ 1550.1  you love your sin so much, you love your idolatry so much.
+ 1553.5  Let me just give you all of what you want.
+ 1559.0  Man, that's why, man, I'm so thankful.
+ 1561.5  Every time God punches me in my soul,
+ 1564.2  I feel thankful that I'm still in the hand of God.
+ 1567.1  I feel thankful that I can still feel
+ 1568.8  the conviction of God.
+ 1570.3  It's anybody in the room thankful
+ 1572.7  that you still feel the conviction of God in your heart.
+ 1581.7  I'm telling you right now what you don't want
+ 1583.7  is for God to take his hand off of you.
+ 1590.4  And so if you feel convicted,
+ 1592.8  If you feel your conscious dealing with you,
+ 1596.1  man, that means you're still in a place
+ 1597.5  where your heart is sensitive enough
+ 1600.3  to be convicted, challenged, and changed.
+ 1603.0  But I think it's so powerful in the text
+ 1608.8  that Herod is dealing with a guilty conscience.
+ 1612.4  It testifies of a creator.
+ 1615.0  It testifies of a moral code.
+ 1617.4  It testifies of an authority above mankind.
+ 1623.6  Verse 52.
+ 1627.3  Verse what?
+ 1628.4  I'm just testing y'all to see where y'all at.
+ 1630.4  There's no iPad up here.
+ 1644.0  I'm just testing you to see where you at.
+ 1647.0  Verse 3, for Herod had seized John and bound him
+ 1655.6  and put him in prison for the sake of Herodias,
+ 1658.8  his brother, Philip's wife.
+ 1661.0  Because John had been saying to him, John had been saying to him,
+ 1666.4  John had been saying to him, John had been speaking out
+ 1670.3  against his idolatry. John had been speaking out against his adultery. John had been speaking
+ 1676.3  out against his sin and his lawlessness because John did not turn a blind eye to sin. So he
+ 1685.4  bound him and put him in prison for the sake of Herodias, his brother Philip's wife, because
+ 1690.5  John had been saying to him, it is not lawful for you to have her. And though he wanted
+ 1696.6  to put him to death, he faired the people because they held him to be a prophet.
+ 1702.6  Now there are four things I want to draw your attention to in this text.
+ 1706.0  I want you to notice first that John did not stay silent when he saw a man carrying himself
+ 1712.2  in an evil way.
+ 1713.2  Now you say, well why would John speak to a pagan king about morality?
+ 1718.1  But this pagan king claimed to be Jewish.
+ 1720.3  He claimed to practice the laws of Israel.
+ 1723.0  Well since you want to hold yourself to a standard, I need to confront you when you
+ 1726.6  you fall short of that standard. So I want you to notice that John Saul, King
+ 1731.4  Herod, commit something that was not lawful in the Word of God and he did not
+ 1736.4  remain silent. Listen to me, he did not turn a blind eye to sin. He did not make a
+ 1742.3  habit of turning a blind eye to sin. Man, I want to awaken some of you in this room.
+ 1747.3  I know you feel uncomfortable about what I'm saying, but we got to get to a point
+ 1751.4  where we stop turning a blind eye to sin.
+ 1756.5  No, I'm serious about this.
+ 1758.6  Don't pat and take me, I'm serious.
+ 1760.9  We gotta get to the point where we have a righteous indignation.
+ 1763.9  First, about the sin in you.
+ 1766.5  You gotta be angry about the sin you see in you.
+ 1769.9  I don't wanna keep lusting this way.
+ 1772.1  I don't wanna be jealous all the time.
+ 1774.4  I don't wanna be judgmental.
+ 1775.8  I don't wanna be critical.
+ 1777.3  You can't keep turning a blind eye to your sin.
+ 1782.5  Something in you got to be angry about the sin in you.
+ 1787.8  And then as the people of God, as the image bearers of God,
+ 1791.4  something about us in the church got to be have a righteous
+ 1794.6  indignation about the sin we see in the church and in the world.
+ 1798.7  On did not turn a blind eye to the sin of Herod, but John saw evil.
+ 1809.5  He saw somebody doing something that was antithetical to the word and
+ 1813.8  And he stood ten toes down and he confronted that king and said what you're doing is not
+ 1818.4  lawful and for that he was thrown in prison.
+ 1821.5  Now I want to tell you Mark's account of the same incident tells us something.
+ 1826.0  It tells us that Herod respected John.
+ 1829.4  He actually enjoyed listening to him talk.
+ 1832.7  And at the same time he hated him and wanted to kill him.
+ 1835.8  They have this strange relationship.
+ 1837.2  It's like I like listening to you but I hate you.
+ 1840.3  Man, I like the doctrines but I hate you.
+ 1843.8  Man, you tell truth, but I hate feeling convicted.
+ 1846.8  So it was like, man, I don't know what to do with you.
+ 1848.8  I don't want to kill you.
+ 1849.8  So in my attempt to silence the preaching of the Word,
+ 1852.8  I'm just going to imprison him.
+ 1854.8  But I think John sets an example for you and I.
+ 1867.5  And his mom was like this, like, we don't want to hear.
+ 1869.5  And I don't care if you feel convicted.
+ 1872.5  And I don't care if you feel offended.
+ 1874.5  My brothers and sisters, man, we see examples in the Word of God
+ 1877.5  of how we ought to live.
+ 1879.5  And John the Baptist did not turn a blind eye to sin.
+ 1882.2  Listen to me.
+ 1883.2  He said something.
+ 1884.2  And man, if the people of God don't start saying something, if we don't speak out against
+ 1890.8  evil, if we are not the heralds of truth, who is going to be the heralds of truth?
+ 1898.5  If we don't speak out against ungodliness in our nation, if we don't call out idolatry,
+ 1904.8  if we don't challenge people to live in holiness, if we don't carry that, who's going
+ 1909.5  to carry that. You said, well, past the when should I speak? When should I do
+ 1915.0  something? I think when you are led by the Spirit or when you are led by the Word or
+ 1920.3  when a moment demands a voice to rise up, we need to speak out against hypocrisy
+ 1926.9  in the church. We need to speak out against compromise. Can I go deeper? We need to
+ 1942.7  speak out against fake orthodoxy.
+ 1946.8  That's not Christianity, that's American.
+ 1949.8  We need to speak out against that stuff.
+ 1952.7  And it doesn't always have to be aggressively negative.
+ 1955.7  It could be just preaching the truth so that somebody
+ 1958.4  is a hero of what is right in every circumstance.
+ 1964.3  So like John, I think the people of God
+ 1966.8  has a moral right in obligation, man,
+ 1969.7  to speak up, to speak truth, to speak truth,
+ 1973.1  And to understand men that people coming so that's your truth and that's my truth.
+ 1976.7  You don't have no truth.
+ 1981.1  Tired of people saying, well that's your truth.
+ 1983.1  No it's not.
+ 1983.7  You don't have no truth.
+ 1985.7  Well I'm gonna live my truth and you live your truth.
+ 1988.3  No, we live one truth.
+ 1994.3  Jesus said I am the way, the life and the truth definitive article.
+ 2005.3  There is no your truth and my truth.
+ 2009.9  There is one truth and there are lies that masquerade as truth.
+ 2022.2  No, I'm serious.
+ 2023.7  Look at me.
+ 2025.4  If we, the people of God, are not heralds of truth,
+ 2031.4  and posters of truth, and speakers of truth,
+ 2035.1  who is going to stand for truth in our generation?
+ 2042.3  So like John, look at me.
+ 2044.7  We can't turn a blind eye to sin.
+ 2047.3  And we got to know when times call us to step up
+ 2050.7  and say something about it.
+ 2054.6  Like there's a sister in our church, I won't call her name.
+ 2056.8  God has given her a unique burden
+ 2058.7  to call out the idolatry of organizations.
+ 2061.9  And people persecute her for that every single day.
+ 2064.6  And they can't silence her.
+ 2066.4  And they can't shut her up.
+ 2068.1  And she just continues to call out the idolatry
+ 2070.4  of these organizations.
+ 2071.4  She will not shut up.
+ 2072.5  God gave her a burden to be a herald of truth in times
+ 2076.3  when we have idolatry, when we got people kneeling
+ 2079.6  before other altars.
+ 2083.9  What you're talking about?
+ 2085.5  You got people kneeling before other altars.
+ 2088.7  You sat in the high places in your heart.
+ 2091.8  And these things are behind the guise of brotherhood that need to be torn down in our
+ 2096.6  nation.
+ 2109.4  You know Satan is a seducing spirit.
+ 2114.3  Your insecurity to lead you away from God into idolatry of things that's anti-trites.
+ 2120.9  Man, take this off of me.
+ 2123.8  Take it off.
+ 2130.7  Don't you know the devil is a seducing spirit?
+ 2136.6  He will dance in front of you and hypnotize you and lead you right to an altar away from
+ 2143.0  God.
+ 2154.5  Y'all got to give me grace because I don't use these.
+ 2157.7  It's mad uncomfortable.
+ 2172.4  Now I want to draw your attention to something else that is not explicit but is implicit
+ 2177.7  in the text.
+ 2180.3  Where is John when Matthew is thinking he's recording what happened in the past, John
+ 2185.2  was sitting in prison.
+ 2188.9  history tells us that John after he was in prison, my Herod, he sat there for about a year.
+ 2195.9  Now what happened to John when he was sitting in prison before he was executed?
+ 2201.1  I want to show you in Matthew chapter 11.
+ 2203.4  Can we look there for a second?
+ 2206.9  In Matthew chapter 11 and verse one, this is a message I preached to you earlier in our study.
+ 2217.1  It says, when Jesus had finished instructing his 12 disciples,
+ 2220.6  He went out from there to teach and preach in their cities.
+ 2224.4  Now when John had heard in prison, when John had heard in prison, when John had heard where?
+ 2231.4  In prison, about the deeds of Christ, he sent word by his disciples and said to him, this
+ 2240.5  is insane to me.
+ 2242.4  Are you the one who is to come?
+ 2246.0  Or shall we look for another?
+ 2248.8  John the Baptist, watch, watch, watch,
+ 2253.3  who was raised around Jesus, watch,
+ 2257.8  who knew that he was the Son of God, watch,
+ 2261.3  who preached to people, there is the Lamb,
+ 2263.6  who takes away the Son of the world,
+ 2265.9  the one who baptized his cousin,
+ 2268.5  the one who said, I must decrease, so he does increase.
+ 2272.1  The one who said all of that now is sitting in prison
+ 2275.2  and in a moment of discouragement,
+ 2277.5  He starts to deny the identity of Christ when God doesn't move the way you want him to move
+ 2292.4  Or some door doesn't open the way you want it to open or some relationship failed or some marriage failed or some prayer
+ 2300.4  He didn't answer
+ 2302.2  Some loved one he didn't spare something you've been believing for that hasn't happened for a long time
+ 2307.6  Some thorn he won't take out of your flesh man as we get agitated with our
+ 2312.6  misplaced
+ 2313.6  Expectations of God we have a tendency to be angry at him because of our misplaced expectations
+ 2323.4  I know what it is me personally Philip Anthony Mitchell to feel pain and
+ 2331.3  Frustration and even be mad at God because I'm believing him for something that's disconnected from the word of God
+ 2338.1  So my expectations of him are based on some sermon. I heard some
+ 2342.7  Prophet I heard some
+ 2344.4  Prophetess that told me this was the year of filling the blank and a year later go by and I'm still in the same situation
+ 2349.7  And now I'm mad at God
+ 2352.2  So John why he was in this prison God discouraged and disillusioned because his expectations of God was wrong
+ 2367.3  He thought the Lord would come with a military kingdom
+ 2370.5  Overthrown free him from prison. They'll be rocking together. No John you must decrease
+ 2375.9  that I must increase. Your ministry ends when my mind begins. Why am I showing this to you?
+ 2389.2  How? Why everybody watch? Because you've been here where a prayer is not answered. You feel
+ 2394.4  discouraged. You feel disillusioned. You feel like God is not coming through for me. You've
+ 2399.6  been there. Look at me. You've been there. How did Jesus encourage John? John, everything
+ 2411.9  is going to be okay? No. John, I'm coming to get you out? No. John, I'm going to send angels
+ 2418.5  to break you out of prison? No. How did he encourage John? Look at the next verses. I don't
+ 2425.7  know if this is on the screen because I don't know if I sent it to them or not. And Jesus
+ 2430.7  answered him. Go and tell John what you hear and what you see. This is powerful. The blind
+ 2438.0  received their sight.
+ 2439.6  Whoo!
+ 2441.1  The lame, they walk.
+ 2444.7  The lepers, they are cleansed, and the death they hear.
+ 2451.1  And the dead are raised up, and the poor have good news preached to them.
+ 2457.9  And blessed is the one who is not offended by me.
+ 2470.6  Jesus quoted the prophet Isaiah.
+ 2473.0  He said, preach, I don't get it.
+ 2475.4  He comforts John with the word.
+ 2481.1  He uses the preaching of Isaiah to say, you see the things that I'm doing?
+ 2486.4  That's evidence that I'm the Messiah.
+ 2488.7  I am the man that you preached about John.
+ 2491.5  So he did not comfort John with cotton candy and false platitudes.
+ 2497.2  He comforted John with the scriptures.
+ 2500.6  comforted John with the word of God because when your heart is bruised and
+ 2506.9  when your soul is bruised, thank God for a tweet and a post but you need to know
+ 2512.1  how to get comfort from the word of God, from the word, from bad sermons and bad
+ 2537.5  doctrines. So you've got unrealistic expectations of God. You save thinking
+ 2545.7  you're never gonna have problems when Jesus promised you in this life you will
+ 2550.2  have tribulation. You say I'm thinking everybody's gonna like you when Jesus said
+ 2557.4  to you if they hated me they will hate you too. Man I wish somebody would just
+ 2563.9  give God praise for the word of God. The word on anti-platitudes, not
+ 2584.4  He's not heresies. Jesus comforted John in his pain with the word. Can I go deeper? He did not tell John you're getting out.
+ 2598.3  And we know he didn't because Herod killed him. So even in a circumstance that God was not going to change, I am not going to change this.
+ 2616.3  but I will change you in this through the word that I gave.
+ 2624.1  So watch, sometimes you can't pray yourself
+ 2627.5  out of a circumstance,
+ 2629.2  but you can pray yourself into peace
+ 2631.7  in the middle of the circumstance.
+ 2643.9  I need to say that's why I turned off.
+ 2646.9  I'm tired of hearing these little fluffy,
+ 2649.7  Jesus loves me this I know for the,
+ 2652.4  I'm tired of hearing that little fluffy stuff
+ 2654.2  in the middle of my heart.
+ 2655.4  I don't want you to keep telling me about how I'm going to get out of everything all the time.
+ 2659.4  Listen, it was David who said it was good for me that I was afflicted, that I might learn
+ 2665.6  your ways.
+ 2666.6  The Lord may not change everything the way that you want it.
+ 2670.0  He may not heal my ear, but he can comfort me in his word, although I still struggle with
+ 2675.4  a damaged left ear.
+ 2676.6  A father to be healed from cancer, so he would see what became of his son.
+ 2686.4  Father died three months after we started this church, but I am comforted in the
+ 2690.8  Word that he is in the presence of Almighty God, that he received his
+ 2696.8  crown, that he is freed from his labors telling you you need to start training
+ 2709.4  yourself watch to deal with your hurts through the Word of God, your confusion
+ 2714.4  through the Word of God, your expectations through the Word of God, your
+ 2719.6  pain through the word of God.
+ 2722.5  Man, that brother ain't going to praise by himself.
+ 2749.8  Let's give God praise for his word.
+ 2756.5  Somebody praise God for his word, his word, his word, his word, his word.
+ 2782.6  But Kiyosha, Kiyosha here, rave at me.
+ 2786.1  What do you want?
+ 2787.1  Though they slay you, though they slay you, though God allows them to slay you.
+ 2798.9  Yet shall you trust him.
+ 2801.2  Man, I gotta finish but I feel something in my spirit like what do I feel I feel I
+ 2820.1  Gotta take a pause. I feel I feel gratitude for the word of God
+ 2847.7  I'm sorry and
+ 2876.8  transform my love and I the word transform my life. It is my shield
+ 2893.5  My strong time would hide in place. I'm sorry
+ 2906.3  You gotta give me a second. I'm sorry. No, I feel this in my heart, man
+ 2912.8  You have no idea how many tears I've shed on the pages of Bibles and
+ 2923.0  dark times
+ 2925.0  In the midst of betrayal in the midst of great pain
+ 2930.0  Great loss great confusion. You have no idea how many tears I've shed on the pages of these sacred documents
+ 2938.5  not
+ 3088.9  not man-made doctrine
+ 3090.9  Not empty prophecies, not sermons full of heresy.
+ 3099.4  The Word of God has pulled me out of so many dark nights.
+ 3110.3  Pull me out of depression.
+ 3112.8  Pull me out of suicide.
+ 3115.7  Pull me out of grief and pain has given me guidance.
+ 3121.5  has protected me from bad decisions,
+ 3125.1  have helped me determine what type of relationships
+ 3128.0  I need to have in my life.
+ 3130.6  It has shown me the boundaries I need to set around my life.
+ 3138.1  It has shown me things that are dangerous for my life
+ 3141.9  and my marriage and my family.
+ 3146.1  It has delivered me.
+ 3152.3  Some of us are going to continue.
+ 3154.6  I'm about to finish.
+ 3155.9  I know, especially in the black context,
+ 3157.8  You love deliverance ministry.
+ 3159.9  I know.
+ 3160.9  And you think everything is a demon.
+ 3162.8  Some things is discipline because of the word of God.
+ 3167.4  You don't need deliverance.
+ 3168.8  You need discipline with the word of God.
+ 3176.2  Everything is not a demon.
+ 3178.1  Some things are bad character that needs to be transformed by the word of God.
+ 3188.6  I don't care.
+ 3190.4  I don't care.
+ 3191.7  That's a cop-out to blame everything on a demon.
+ 3194.9  Know some things you need character transformation by the absorbing of the Word of God.
+ 3207.2  I don't care.
+ 3209.0  I don't care.
+ 3210.1  That's what I said, me hating male or you want.
+ 3211.8  I don't care.
+ 3213.0  Stop blaming everything on a demon.
+ 3215.6  No, you got bad character.
+ 3219.0  That's why you keep dealing with all these problems.
+ 3221.4  That's not the devil's fault.
+ 3222.9  It's your fault.
+ 3224.1  Because you have bad character.
+ 3225.7  And it needs to be transformed by the Word of God.
+ 3230.2  My character has to be transformed by the Word of God.
+ 3236.4  Now let me finish.
+ 3239.3  No, I can't take my time.
+ 3249.3  I'm sorry, I'll take my own praise break
+ 3251.8  after the gathering in the future.
+ 3255.5  No, I'm serious, this thing transformed my life.
+ 3266.6  All right, let's finish the text.
+ 3269.9  I'm coming for all you parents now.
+ 3273.0  Verse six, but when Herod's birthday came,
+ 3281.5  The daughter of Herodias, her name was Salome.
+ 3285.0  She danced before the company and pleased Herod,
+ 3289.2  so that he promised with an oath to give her whatever she might ask,
+ 3295.4  and prompted by her mother, she said,
+ 3301.3  give me the head of John the Baptist here on a plan or stop.
+ 3308.5  So I want you to see what happened.
+ 3309.9  Herod is afraid of the people because they say John is a prophet.
+ 3314.5  Watch.
+ 3315.5  So instead of killing him, he puts him in prison to try to silence him.
+ 3320.7  Now Herodias, the Bible says in Mark chapter 6, had a grudge against John.
+ 3326.2  Because she was mad that John was preaching against her illegal marriage.
+ 3331.0  Because sometimes we'd be mad at the messenger, but the messenger is bringing you truth.
+ 3335.3  Right?
+ 3336.3  So because she had no power to kill John, watch, she manipulated her 14 year old daughter.
+ 3346.2  Watch.
+ 3347.2  Two dance before Herod and the scripture says it pleased him.
+ 3351.5  That word pleased him.
+ 3352.5  The speaking of something sensual, sexual.
+ 3355.6  Herod was aroused by the dance.
+ 3359.2  Your children belong in children's ministry.
+ 3361.4  Herod was aroused by the dance.
+ 3364.3  Watch, watch, it was aroused by the dance.
+ 3366.8  So this woman manipulated her own child.
+ 3369.8  She watched, used her own child as a pawn
+ 3374.9  to get what she wanted.
+ 3376.8  And many of us, we do this right now.
+ 3379.8  Why is your five year old?
+ 3381.3  Why does he have bad credit?
+ 3386.9  Why does your seven year old have bad credit?
+ 3391.1  Why are we using our children and manipulating them
+ 3394.6  for evil things that's in our heart?
+ 3398.4  Why are you using your child as an enemy against your ex-spouse?
+ 3403.9  Why are you filling their minds with lies? Why do some of us manipulate our children?
+ 3431.1  We use them as pawns for our evil instead of protecting them.
+ 3435.3  We incentivize them towards evil to protect them. Children need to be protected, not used.
+ 3440.6  They need to be loved, not used. They need to be protected, not used.
+ 3444.8  They need to betray, not used.
+ 3450.8  She used a 14 year old to beguile a king to get her wicked ways, a man's death.
+ 3459.6  Now pay attention, this man was so aroused by the dance that his logic got trapped by his
+ 3467.5  loins.
+ 3469.0  His logic got trapped by his loins.
+ 3471.9  His logic got trapped by his loins.
+ 3475.3  His logic got trapped by his loins.
+ 3478.6  His logic got trapped by his lusts.
+ 3482.8  And because his logic got trapped by his loins, when he was aroused, he said,
+ 3487.1  Girl, I'll give you anything you want.
+ 3495.0  You see how dangerous it is for your logic to get trapped by your loins.
+ 3500.9  That's why lust has to be controlled because it will lead you to make bad decisions.
+ 3505.8  Don't nobody want to say amen.
+ 3510.8  I don't care.
+ 3519.1  This is a struggle in me.
+ 3521.4  The lust of life, the lust behind females, pornography, all these things I was bound by.
+ 3526.7  And I had to train myself in the Word of God for them to not control my mind.
+ 3533.5  So my logic don't get trapped by my loins.
+ 3542.2  I'm talking to women too.
+ 3547.9  I'm talking to ladies too.
+ 3549.7  Your logic can get trapped by your loins.
+ 3553.3  I know he told Dark and Handsome and his pipe game is tight, but he's no good for you
+ 3567.1  Because his pipe game is tight, when he's no good for you.
+ 3570.6  God is the son of the Nixi and confused.
+ 3603.8  Let me tell you something.
+ 3605.5  I'm about to close.
+ 3607.1  Some of you and some of us keep asking God for clarity,
+ 3611.7  but you won't let go sin that's blocking you in confusion.
+ 3617.4  You confuse because of iniquity.
+ 3627.8  You be amazed what happened when you turn to our holiness.
+ 3635.1  How you sense God's presence at another level.
+ 3638.4  How you have clarity at another level.
+ 3641.1  How your prayer life goes to another level.
+ 3644.4  How the word opens up to you at another level.
+ 3685.1  There's a clarity that follows holiness.
+ 3696.0  This is terrible parenting.
+ 3700.8  Here is a terrible parent,
+ 3703.8  and here's a man whose vices led him astray.
+ 3717.7  Verse nine, and the king was sorry.
+ 3719.9  Well, because of his oaths, because he was a people pleaser.
+ 3727.4  See, sometimes we make bad decisions because we're people pleasers.
+ 3733.3  He did not want to kill John, but he was a people pleaser.
+ 3737.3  See, and when you're a people pleaser, you can't live in freedom.
+ 3742.5  There's a freedom I encounter.
+ 3744.0  There's a freedom that I stand up here with because I got delivered from being a people
+ 3748.7  pleaser.
+ 3750.3  I want to be able to stand up here and say, thus says the Lord, even if it offends you.
+ 3757.2  I want to preach the truth whether it fills up a room or clears out a room.
+ 3764.7  And there are too many of God's people, man, can't stand for truth because we handcuffed
+ 3769.5  by people pleasing.
+ 3776.2  And the King was sorry, I'm closing.
+ 3779.4  But because of his oaths and his guests, his guests, he commanded it to be given.
+ 3787.2  And he sent and had John beheaded in the prison.
+ 3794.8  And his head was brought on a platter and given to the girl.
+ 3800.0  She brought it to her mother.
+ 3811.9  I want to read you something that was written by a Jewish historian.
+ 3816.0  His name was Josephus.
+ 3817.4  Can y'all put Josephus quote up on the screen for me?
+ 3822.8  Josephus was a man who lived in the first century.
+ 3826.8  He was not a Bible writer.
+ 3828.9  He did not write any of the 40 books.
+ 3830.7  He was a historian who lived during the times of Jesus.
+ 3834.0  So if you read the writings of Josephus,
+ 3836.3  you would hear writings from a person outside of the scriptures
+ 3839.2  who was narrating and commentating on things
+ 3842.0  that were happening during the life of Christ.
+ 3845.3  Josephus, a Jewish historian, he wrote this about John.
+ 3850.1  Now, this is outside the scriptures.
+ 3853.0  Watch history.
+ 3856.4  The Bible is not a fairy tale book.
+ 3860.3  Now some of the Jews thought that the destruction of Herod's army came from God as a judgment
+ 3870.6  and that very justly as a punishment of what he did against John that was called the Baptist.
+ 3879.8  For Herod slew him who was a good man and commended the Jews to exercise virtue both as
+ 3889.8  to righteousness towards one another that is John preached righteousness towards one another
+ 3896.4  and piety towards God. And so to come to baptism, he called them in for that the washing with water
+ 3905.5  would be acceptable to him. If they made use of it, not in order to the putting away or the remission
+ 3914.2  of some sins only, but for the purification of the body, supposing still that the soul
+ 3921.7  was thoroughly purified beforehand by righteousness that comes from Christ.
+ 3927.4  This is Josephus.
+ 3929.0  Now when many others came in crowds about him, John, for they were greatly moved and pleased
+ 3937.0  by hearing his words.
+ 3939.7  What was his words?
+ 3940.6  Repent for the kingdom of heaven is at hand.
+ 3944.3  Herod who feared less, that means for fear of,
+ 3949.3  less the great influence of John had over the people
+ 3954.6  might put into his power,
+ 3957.1  an inclination to raise a rebellion against Herod,
+ 3962.1  for they seem ready to do anything he would advise.
+ 3966.7  because he was a righteous man.
+ 3968.2  So he had credibility.
+ 3971.6  They thought it best by putting him to death
+ 3974.6  to prevent any mischief he might cause
+ 3977.6  and not bring himself into difficulties
+ 3980.4  by sparing a man who might make him repent
+ 3986.4  of it when he should be too late.
+ 3990.3  So Josephus writes, accordingly,
+ 3993.5  it was sent the prisoner out of Herod's suspicions temper
+ 3997.6  to make care of us. That's where John was held. The castle I before mentioned in other writings,
+ 4004.6  and it was there put to death. Now the Jews had an opinion that the destruction of this army,
+ 4013.0  Herod's army, was sent as a punishment upon Herod and a mark of God's displeasure against him,
+ 4020.2  that Herod lost his army after he slew John. So Josephus wrote, maybe as a judgment against
+ 4027.2  Herod's murder. He destroyed his army because he crucified John. And verse 12, the last verse
+ 4034.4  says, and his disciples came and they took the body and they buried it. And they went and
+ 4041.8  told Jesus. Now I just want to draw your attention to two things in that last verse and I'm done.
+ 4050.9  Herod dishonored John by taking off his head. The disciples of John honored him by burying
+ 4057.2  his body. It says after they buried his body, they went to go see Christ. Now the
+ 4064.3  scriptures does not tell us why they went to see Christ. So I could only posit a
+ 4069.2  few things. One thing that I know, they had to have been hurting. They had to have
+ 4076.5  been bruised. They lost their leader. They was discouraged. And in the middle of
+ 4082.3  their pain and they heard what direction do they go in? It won to the one who was
+ 4090.6  call the word, my family, listen to me. I want to say this to you before you leave this room,
+ 4107.8  hear my heart. And I'm serious when I say this. You can silence men, but you cannot silence the
+ 4116.7  gospel. And I want you to notice in this verse we see the teachings of Jesus manifested. You
+ 4125.0  remember the parable of the weeds that God plants the Son of righteousness and sainth and plants
+ 4130.3  the sons of the devil? Look what happened to John. The sons of the devil rose up and they
+ 4137.3  worked against a holy man to have him put to death because of the sons of the devil. They
+ 4142.7  are agitating the kingdom of God. There it is, the parable of the weeds on display, the
+ 4147.7  word of God preaching the word of God. And I want to say to everybody in this room, listen
+ 4153.9  to me. I'm serious. Everybody watching me across this camera. Everybody in that overflow
+ 4160.3  Listen, man, we need, I would get down on my knees and beg you.
+ 4167.4  We gotta wake up and realize, man, we're living in the final hours of the church age.
+ 4173.9  Family time is running out.
+ 4177.0  Hear me.
+ 4178.3  Can you not see how the devil is feeling our society with heresies?
+ 4185.7  Feeling our society with bad doctrines.
+ 4189.0  our society with lies and mockery against God. And if the people of God, the sons and daughters
+ 4198.3  of God, are not the voices of God, who is going to be the heralds of truth? If we're not posting
+ 4206.5  about truth and preaching the truth and standing for the truth, who is going to do that in our
+ 4215.0  society. Yes, there is a high cost, there is a high price to truth, and may
+ 4224.1  cost you some friends to take a stand for righteousness. It may cause you some
+ 4229.7  circles, it may cause you some relationships. Some people may not call
+ 4235.7  you to preach or speak, and may cause you some influence. But I would rather lose
+ 4241.7  favor with men that lose favor with God, that we, the people of God, God has
+ 4254.7  started taking a stand for truth in our campus, in our schools, in the locker
+ 4262.7  room, on your teams, in your job, in the gym, on social media, if we are not the
+ 4270.9  heralds of truth, if we are not spreading the word of God, if we are not taking a
+ 4277.4  understand, who is going to do that?
+ 4280.4  Man, I am pleading, pleading, pleading with God that what the Lord will baptize you with
+ 4286.3  is a spirit of righteous indignation, a holy anger against all that is wicked and evil and
+ 4295.6  sinful and ungodly.
+ 4298.2  I want you to hate sin.
+ 4300.7  I want you to hate idolatry.
+ 4303.1  I want you to hate mockery of Jesus.
+ 4307.5  And I want you to not be afraid to take a stand for truth.
+ 4312.3  Man, if we don't post about the word,
+ 4314.9  if we don't exalt Christ, if we're not preaching sound doctrine,
+ 4319.7  if we're not confronting the false prophet,
+ 4322.3  man, the devil is going to run rampant in our nation.
+ 4326.6  Man, you heard the old adage, man, evil flourishes,
+ 4329.6  when good people do nothing?
+ 4331.9  lies flourish when the people of God don't proclamation and don't spread the truth of God's word.
+ 4339.2  So listen to me, man. Christ came, lived a perfect life, died, a sacrificial death was
+ 4346.6  rose in power and became a proclaimer of truth to this day. Proclaiming is truth to us to us to his
+ 4352.5  word. And we who calls ourselves followers, man, we got to follow after him. What good is it going
+ 4358.8  gonna do us family man. What good is it gonna do us? We keep
+ 4365.2  crowded into this room. And when you leave from here, there is no
+ 4370.0  witness, no evidence of Christianity man. Man, I'm serious
+ 4374.7  man. Come on. What good is it gonna do if it's just a service
+ 4379.2  man? It's just a service. It's just a little two hours on a
+ 4383.7  Sunday. I mean, that's so small and so bottom shelf. Is that all
+ 4388.3  Christianity is? Is there anybody under my voice who has a righteous indignation
+ 4395.2  against evil, against sin, against idolatry, against mockery of Jesus? I wish I had
+ 4405.4  800 people that would take a stand for Christ and the hour that we're living in
+ 4410.9  right now. So that is my prayer for you. Father in the name of Jesus. No this is a
+ 4430.7  serious moment. Don't move. Don't move. Father, aim of your holy one. In these last
+ 4448.8  hours of the church age, pray now Lord for all the sons and daughters that
+ 4457.1  something like scales would fall from their eyes, up from heaven, a spirit of
+ 4468.7  righteous indignation against sin and idolatry and lawlessness in the earth.
+ 4477.0  I pray you would burn us in our hearts like you did Isaiah
+ 4483.8  Recomes fire from heaven God I pray
+ 4506.6  God you would ignite us right now with fire God said the hearts of your sons and daughters on fire God
+ 4519.7  Let us hate everything that you hate
+ 4522.6  Let us love everything that you love
+ 4526.4  of. Let us turn from our worldliness and our iniquity and our idolatry God. Let us be freed
+ 4537.0  from our vices, Lord. Lord, let us be filled with your word and filled with your spirit,
+ 4544.4  filled with your love and filled with your fire God in the name of Jesus. Lord, I pray
+ 4552.1  you would burn the sons and daughters of the kingdom that we all would be like the sons of
+ 4559.2  Issachar who rightly discern the times and know what to do about it. Awaken your children in this
+ 4571.1  hour Lord. Our prayer spirit of boldness would come upon us that we would speak out and pray out
+ 4580.1  and stand up for righteousness in this hour.
+ 4583.5  Lord, now in our hearts, in the mighty and the majestic
+ 4597.4  and the mattress name of Jesus, don't move, don't move,
+ 4601.2  don't move, please don't move.
+ 4609.2  There are men and women in this room.
+ 4611.9  We don't got time, but there are men and women in this room.
+ 4616.2  You feel God working in your heart right now.
+ 4620.2  You're being pulled into the kingdom by the power of the Holy Spirit.
+ 4625.2  You feel something supernatural happening on the inside.
+ 4629.2  You're passing from death to life.
+ 4631.2  You feel your eyes were opened, something on the inside of you.
+ 4635.2  Feels alive.
+ 4636.2  You're responding to God in a way you've never felt before.
+ 4640.2  The Lord is drawing you to Himself.
+ 4643.2  You were our sinner and I was too.
+ 4646.2  You've broken God's laws and so have I.
+ 4649.2  And the scripture says if anyone dies in their sin,
+ 4652.2  they're going to be separated from God for all eternity.
+ 4655.2  But the Lord not wanting anyone to perish,
+ 4658.2  sent His Son the Lord Jesus who died a sacrificial death,
+ 4662.2  exchanging His perfect righteousness for your unrighteousness.
+ 4667.2  That He snatches you from hell,
+ 4669.2  snatches you from the kingdom of darkness.
+ 4671.2  He makes you a son and daughter.
+ 4673.2  If you feel the Lord is doing that in you right now,
+ 4675.7  I want to pray for you.
+ 4677.5  If that's you, I said, preacher,
+ 4679.9  I feel something happening.
+ 4681.2  Like there was a young woman who felt that as the word was being proclaimed,
+ 4684.7  she was being burned in her chair.
+ 4686.7  If that's you, you feel like Jesus is winning you to Himself.
+ 4690.2  He's calling you out of darkness.
+ 4692.2  He's leading you into the kingdom.
+ 4694.2  He's changing your eternal address.
+ 4696.7  How was your home and heaven is your future?
+ 4699.7  The eternal state will be your destiny.
+ 4702.7  If that's you, I want to pray for you.
+ 4704.7  On the count of three, I just want you to wave your hand at me.
+ 4707.7  One, the Lord Jesus is working in your heart.
+ 4710.7  Two, respond to the gospel when you hear it.
+ 4713.7  Three, throw your hand in the air if I'm talking to you.
+ 4716.7  I see that hand.
+ 4718.7  I see that hand.
+ 4722.2  I see all those hands.
+ 4724.2  I see all those hands.
+ 4729.8  Listen to me.
+ 4731.8  Don't nobody move.
+ 4733.8  We're about to shame the devil right now.
+ 4735.8  If you lifted your hand for that prep,
+ 4738.8  I want you to come down here right now.
+ 4740.8  I want to talk to you.
+ 4741.8  Come on, run down here right now.
+ 4743.8  Run.
+ 4744.8  If you're in the overflow room,
+ 4746.8  I want you to leave the overflow room
+ 4748.8  and run over here right now.
+ 4750.8  Run down here.
+ 4753.6  Run down here.
+ 4754.6  Run down here.
+ 4762.8  Close.
+ 4773.1  I want you to run over.
+ 4776.1  Come on. Get close.
+ 4778.9  And get close.
+ 4779.9  Let them in. Get close.
+ 4780.9  If you're watching me in the overflow room,
+ 4802.3  We want you to run across here right now.
+ 4805.3  And from my heart to the Jesus.
+ 4842.8  Oh, love.
+ 4849.7  Yes, it's from my Jesus.
+ 4860.0  Be the all of.
+ 4864.1  Everybody at this altar.
+ 4930.6  Please don't look at me.
+ 4932.6  Please don't look at me.
+ 4934.6  I'm not important.
+ 4937.9  God is catching these tears.
+ 4941.9  It's okay.
+ 4942.9  He's catching those tears.
+ 4944.9  It's okay my sister get let that out
+ 4947.9  Let that out. He's catching those tears let that out. It's okay my sister. Let that out. He's catching those tears
+ 4954.5  You're being brought into the kingdom. It's okay sister. Let that out. He's catching those tears. Let that out
+ 4962.1  Let that out
+ 4964.0  Yeah, let that out. He's catching those tears. Let that out. Oh
+ 4970.3  He's catching all these tears. Let that out
+ 4973.3  It's okay cry
+ 4975.6  That's called repentance
+ 4978.1  Those are the tears of joy
+ 4980.2  He's brought you out of darkness into the kingdom of light
+ 4984.3  He's made you a brand new creature
+ 4986.8  Your names have been recorded in the lambs book of life go ahead cry let that out look it out let it out
+ 4993.4  He knew you would be here on this day the rest of your life, and he knew you would be here cry let it out
+ 5001.8  If I thought I'd pray over all of these
+ 5036.1  the ones I don't know what's going on in their heart only you know you know who
+ 5042.9  is truly passed from death to life you know those that you have regenerated
+ 5047.6  and rescue I pray God you would catch all the tears falling at this altar tears of
+ 5053.3  repentance tears of sorrow tears of joy tears of surrender that's what I see on
+ 5059.7  you it's about that time tears of surrender that's right yes right here on
+ 5064.5  that's surrender.
+ 5066.5  Surrender.
+ 5067.5  You've been running for too long.
+ 5069.5  I pray over them, God.
+ 5072.8  I thank you that according to Ephesians 1, you are filling them with your spirit, sealing them as your children for the day of salvation.
+ 5081.8  I thank you that according to Revelation, they've lames have been written in the Lamb's Book of Life.
+ 5086.8  I thank you that according to the letter to the Corinthian Church, you've made them brand new men and brand new women.
+ 5092.8  Brand new women, you separated them from their sin
+ 5096.0  As far as the eases from the West
+ 5098.2  And you made them brand new creatures
+ 5100.4  And now Lord you said we'd want sinner repents
+ 5103.4  All of every choices
+ 5105.4  So we rejoice right now, rejoice

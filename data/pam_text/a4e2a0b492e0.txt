@@ -1,331 +1,968 @@
-    0.0  To our digital disciples watching in cities across the country and places around the world
-    6.4  we welcome you.
-    8.2  To all of the unbelievers in the room who are not followers of Jesus we welcome you.
-   17.1  We don't apologize for how long we've been in God's presence.
-   25.3  No, we don't make no apology for that.
-   31.5  Let me tell you about the power of the gospel.
-   34.9  Kenny was up here last week and he, before he got into this message, she said, he gave
-   41.2  a shout out across the camera to digital disciples across the world and digital disciples in
-   46.6  Ireland and just chose that nation.
-   53.1  And after the gathering, we was in a meeting.
-   57.8  I was doing a training for the productions team and my wife came in there with a gang
-   62.0  of ladies and two of them I had never seen before.
-   67.0  And when the trainer was done, my wife tapped me.
-   68.7  She said, honey, the Lord could not engineer this.
+    0.0  to our digital disciples watching in cities across the country and places around the world we welcome you
+    7.8  To all of the unbelievers in the room who are not followers of Jesus. We welcome you
+   12.8  We don't apologize for how long we've been in God's presence
+   20.6  No
+   26.4  It'll make no apology for that
+   28.5  Yo, let me tell you about the power of the gospel
+   34.4  Yo Kenny was up here
+   36.4  Last week and he before he got into this message. She said
+   40.5  He gave a shout out across the camera to digital disciples across the world and digital disciples in Ireland
+   47.7  And just chose that nation and after the gathering we was in a meeting
+   55.0  I was doing a training for the productions team and my wife came in there with a gang of ladies and
+   63.7  To what I might never seen before
+   66.2  And when the training was done my wife tapped me
+   68.6  She said, honey, the Lord could not engineer this.
    71.3  I mean, you could not engineer this.
    72.5  It had to be all God.
-   74.1  Kenny was talking about shout outs to digital disciples in Ireland.
-   79.4  And two ladies flew from Ireland and were sitting in the room last week.
-   84.7  That's what your generosity is doing.
-  113.3  Like streaming ain't free.
-  115.5  And all this technology is free.
-  117.7  May our prayers and our generosity is allowing the gospel to spread beyond Atlanta
-  123.5  That two women would fly all the way from Ireland to just be in the room
-  128.8  Yo, y'all all of them
-  130.8  You'll stand up. Yo, help me up. They didn't come from Marietta
-  156.4  They came from the other side of the planet to just sit in the room
-  165.4  The room that y'all take for granted
-  168.2  Shout out to all of our digital disciples
-  183.1  around the world across Atlanta. Somebody came today for the first time from Florida.
-  194.2  Where's she at? Where they at? Oh, welcome from Florida. Yo, y'all celebrate them from
-  207.8  Florida. First time. Yeah. May the gospel spread and the number of disciples rapidly increase.
-  222.5  You're also too.
-  229.3  I want to keep reminding y'all that why this church exists to spread the gospel and multiply
-  237.0  disciples.
-  239.3  We serious about that like this ain't no logo I got on my chest.
-  246.6  This is Matthew 28 19.
-  249.2  This is the great commission of Jesus.
-  253.1  So the clothing that we've designed here is not just for fashion.
-  258.0  We want to be walking billboards of what Christ called us to do.
-  263.4  You heard what I said?
-  265.0  I said we want to be walking billboards of what Christ called us to do.
-  269.1  That I'm praying a day is coming that because of our effort,
-  273.2  man, Matthew 28, 19 will be the second most recognized scripture
-  277.4  in the whole world behind John 3 16.
-  282.4  And so we got like new hoodies out there, new shirts, and mission shirts and all that
-  287.4  man, cop that merch and wear that and be billboards for the great commission.
-  294.9  This ain't no money play.
-  296.6  I ain't telling you to get that because I'm trying to get to a bag.
-  303.7  Man, I'm hopping on a plane in a couple of days.
-  305.8  I'm walking through the airport with my sweater on because people are always stopping and asking
-  309.8  me what does that mean?
-  311.4  Oh, there's an open door to stick in the golf sport.
-  317.3  And the grocery store and the airport and the gym.
-  323.1  Men caught them close.
-  325.6  And rock those clothes and be a billboard for the Lord Jesus
+   74.1  Kenny was talking about shout outs
+   76.2  to digital disciples in Ireland.
+   79.2  And two ladies flew from Ireland
+   82.3  and were sitting in the room last week.
+  110.6  That's what your generosity's doing.
+  113.2  Like streaming ain't free.
+  115.5  And all this technology ain't free.
+  118.1  May our prayers and our generosity
+  120.2  is allowing the gospel to spread beyond Atlanta.
+  123.8  that two women would fly all the way from Ireland
+  127.0  to just be in the room.
+  129.1  Yo, y'all, all of them.
+  131.2  You'll stand up.
+  134.6  Yo, help me up.
+  154.0  They didn't come from Marietta.
+  156.8  They came from the other side of the planet
+  163.7  to just sit in the room.
+  165.8  The room that y'all take for granted.
+  180.8  Shout out to all of our digital disciples
+  183.9  around the world across Atlanta.
+  192.1  Somebody came today for the first time from Florida.
+  195.1  Where's she at? Where they at? Oh, welcome from Florida.
+  198.7  Yo, y'all celebrate them from Florida. First time.
+  216.9  Yeah. May the gospel spread and the number of disciples rapidly increase.
+  223.0  Yo, also too. I want to keep reminding y'all that why this church exists to spread the gospel and multiply disciples.
+  238.7  We're serious about that.
+  240.7  Like, this ain't no logo I got on my chest.
+  246.4  This is Matthew 28, 19.
+  248.4  This is the great commission of Jesus.
+  252.4  And so the clothing that we've designed here is not just for fashion.
+  257.4  We want to be walking billboards of what Christ called us to do.
+  262.4  You heard what I said?
+  264.4  I said we want to be walking billboards of what Christ called us to do.
+  268.4  do that I'm praying a day is coming that because of our effort, man Matthew 28
+  274.4  19 will be the second most recognized scripture in the whole world behind John
+  278.9  3 16 and so we got like new hoodies out there and new shirts and mission shirts
+  286.9  and all that man, cop that merch and wear that and be billboards for the great
+  292.0  commission. This ain't no money play. I ain't telling you to get that because I'm
+  300.4  trying to get to a bag.
+  303.6  Man, I'm hopping on a plane in a couple of days.
+  305.8  I'm walking through the airport with my sweater on.
+  308.2  People are always stopping to ask me, what does that mean?
+  311.5  Oh, there's an open door to stick in the golf sport.
+  317.3  In the grocery store in the airport in the gym.
+  323.1  Man, cop them clothes.
+  325.6  Rock those clothes and be a billboard for the Lord Jesus
   329.3  Christ.
   329.6  Somebody say amen.
   341.1  Where we at?
-  342.0  Week 8 of a series called Kingdom Callings.
+  342.1  week eight of a series called Kingdom Callings.
   351.5  Only two more weeks left of this series.
   357.3  And man, I'm all over the place in my mind.
-  368.2  Sometimes I get up on Sunday and I be in my prayer room
+  368.3  Sometimes I get up on Sunday and I be in my prayer room
   372.5  for hours and I just wanna stay there.
   374.4  I don't even wanna come out.
   376.9  And like just this morning,
   378.1  I don't know what it is about this morning.
   379.5  I just feel the presence of Jesus so tangibly around me.
-  386.0  Watch, man, I love him.
+  384.0  Watch, man, I love him.
   392.3  I love him.
   393.9  I'm looking forward to the day where I will be with him.
-  396.7  Like this world has nothing to offer greater than the Lord Jesus Christ.
-  401.3  There's nothing down here greater than the Lord Jesus Christ.
+  397.7  Like this world has nothing to offer greater than the Lord Jesus Christ.
+  401.7  There's nothing down here greater than the Lord Jesus Christ.
   405.6  There's nothing more important than we vire for than an intimate relationship with Christ.
-  419.2  Y'all really want me to do this?
-  422.9  All right.
-  424.4  Let's go.
-  426.4  Proclamation.
+  410.1  Y'all really want me to do this?
+  422.9  Alright, let's go.
+  426.3  Proclamation.
   428.2  Let's do Matthew 11 verses 1 through 19.
-  437.4  11 verses 1 through 19 for all the note takers. I'll do my best to cut it down. I can't promise you
-  444.3  that. No, no. It's been crucified me for years from running off at the mouth. Matthew chapter 11
-  467.3  verses 1 through 19 and I want to tag a title to this text called and discouraged. I feel like
-  483.8  like this message is gonna help a lot of you today.
-  490.8  Because I'm not sure if there's a person in this room
-  493.9  or watching me right now that has never felt discouraged.
-  497.4  And I'm not talking about pre-Christ,
-  499.3  I'm talking about post-Christ.
-  504.1  And I thought when I got saved,
-  505.5  I would never be discouraged again.
-  511.4  False Christ, false gospels, false teachers
-  516.4  false teachers that don't train you to live well and suffer well.
-  531.7  I'm tired.
-  535.0  Eternal God and of a wise Father.
-  537.0  I confess my weariness before my brothers and sisters and I ask for strength to preach
-  546.8  the truth of your eternal Word.
+  437.4  Matthew 11 verses 1 through 19 for all the note takers.
+  441.1  I'll do my best to cut it down.
+  443.5  I can't promise you that.
+  446.3  No, no.
+  450.6  It's been crucified me for years from running off at the mouth.
+  465.0  Matthew chapter 11 verses 1 through 19.
+  469.1  And I want to tag a title to this text called, And Discouraged.
+  483.5  I feel like this message is going to help a lot of you today.
+  487.1  Because I'm not sure if there's a person in this room or watching me right now that has
+  495.2  never felt discouraged.
+  497.5  And I'm not talking about pre-Christ.
+  499.2  I'm talking about post-Christ.
+  501.2  And I thought when I got saved, I would never be discouraged again.
+  511.8  False Christ.
+  513.8  God's, Gospels, false teachers that don't train you to live well and suffer well.
+  531.9  I'm tired.
+  535.2  Eternal God and a wise Father.
+  537.1  I confess my awareness before my brothers and sisters and I ask for strength to preach the
+  547.0  truth of your eternal Word.
   550.3  They are tired.
-  551.3  I ask that you give them spiritual stamina to receive your eternal Word.
-  563.0  spirit we didn't come for a show. We want to be taught. We want to be touched by the
-  572.9  weight of these Holy Scriptures. Do whatever you want to do and how long it's
-  580.6  going to take minister to your people. Asking the mighty look up that word and
-  592.4  majestic look up that word and the matchless name of our Lord and Savior
-  599.7  Jesus Christ. Man, I know we tired, but somebody to give me a good amen. How honest
-  618.6  can I be? I can be straight transparent, straight forward. All right. Let me
-  626.0  let me keep it 100 right here. It was it was January of 2012, 2012. And my wife
-  638.2  and I and 10 other followers of Christ, we set out on a journey to plant what would become
-  646.3  28, 19 church formerly victory church.
-  651.1  We had no money.
-  653.0  We had no experience.
-  654.6  We had no organizational backing.
-  657.7  We really had nothing but a vision and hope, something we had written down on paper.
-  663.8  was convinced that God had told us that time had come to plant this ministry.
-  670.6  We would spend the next nine months traveling the country.
-  674.7  You remember this, Kenny?
-  676.7  We spend the next nine months traveling the country, visiting churches, large and small,
-  681.3  predominantly white congregations, predominantly black congregations, churches with facilities,
+  551.3  I ask that you give them spiritual stamina to receive your eternal word.
+  558.3  Holy Spirit, we didn't come for a show.
+  566.3  We want to be taught.
+  569.0  We want to be touched by the weight of these holy scriptures.
+  577.5  Do whatever you want to do.
+  579.4  And how long is it going to take minister to your people?
+  584.0  asking the mighty, look up that word and majestic, look up that word and the matchless name of
+  598.6  our Lord and Savior Jesus Christ. Man, I know we tired, but somebody give me a good amen.
+  606.4  How honest can I be? I can be straight transparent, straight forward. All right. Let me keep it
+  626.7  100 right here. It was January of 2012, 2012. And my wife and I and 10 other followers of
+  641.2  Christ, we set out on a journey to plant what would become 28, 19 church formerly Victory
+  649.2  church. We had no money, we had no experience, we had no organizational backing. We really
+  658.0  had nothing but a vision and hope, something we had written down on paper. We was convinced
+  664.4  that God had told us that time had come to plant this ministry. We would spend the next
+  671.5  nine months traveling the country. You remember this, Kenny? We spend the next nine months
+  677.8  traveling the country, visiting churches, large and small,
+  681.2  predominantly white congregations,
+  682.9  predominantly black congregations, churches with facilities,
   685.8  churches and schools.
-  687.5  We were sitting in the back and taking notes and just trying to pray that God would give
-  690.8  us a blueprint for the church He was calling us to plant.
-  694.4  Man, we spent time in Bible study every single Wednesday night at my home.
-  699.4  Man, that team of 12, it grew to like 25 people from not mistaken.
-  705.4  Man, there was this sense of like, this deep sense of mission, this deep sense of purpose,
-  709.4  this deep sense of joy.
-  710.4  We had knowing that we felt like God was about to use us to give birth to something that was going to be special.
-  716.4  At the time, my wife and I, we lived down in Clayco.
-  719.4  I don't know if any of you are familiar with Clayco.
-  721.4  Oh, you look like a...
-  725.4  You gotta be thogged out.
-  729.4  We came out from the bottom, right, like...
-  732.4  We was in the trenches in Clayco,
-  734.4  and I'm not just talking about the front side of Clayco.
-  736.4  I'm talking about the back side of Clayco.
-  739.4  Y'all don't know about that.
-  740.4  I mean, we was behind God's back, like,
-  742.4  on the back side of Clayco.
-  744.4  And we lived in this small house.
-  747.4  It was about 800 square feet.
-  748.4  It had three rooms.
-  750.4  One room was my office, one room was my bedroom,
-  754.4  and the last room was for all of my children
-  756.8  stayed in that one room.
-  758.4  You would walk out of those three rooms to a house
-  760.5  that was only 800 square feet.
-  762.0  It was probably even no bigger than the stage.
-  764.4  It was just one little tiny living room in a kitchen,
-  766.7  and we would meet there every Wednesday night,
-  768.4  open in the scriptures, believe in God, praying.
+  687.4  We were sitting in the back and taking notes
+  689.1  and just trying to pray that God would give us a blueprint
+  691.5  for the church He was calling us to plant.
+  695.1  Man, we spent time in Bible study every single Wednesday
+  698.0  night at my home.
+  699.8  Man, that team of 12, it grew to like 25 people
+  703.8  from not mistaken.
+  705.4  And man, there was this sense of like,
+  707.3  this deep sense of mission, this deep sense of purpose,
+  709.7  this deep sense of joy.
+  710.6  We had knowing that we felt like God was about to use us
+  713.5  to give birth to something that was gonna be special.
+  716.7  At the time, my wife and I, we lived down in Clayco.
+  719.6  I don't know if any of y'all familiar with Clayco, y'all.
+  721.6  Oh, Clayco.
+  722.4  You got to be thought down.
+  726.8  Just my life.
+  730.1  We came out from the bottom, right, like,
+  732.6  we was in the trenches in Clayco.
+  734.9  And I'm not just talking about the front side of the clay, I'm talking about the back side of clay.
+  738.9  I don't know about that.
+  740.9  I mean we was behind God's back, like on the back side of clay.
+  744.9  And we lived in this small house, it was about 800 square feet, it had three rooms.
+  749.9  One room was my office, one room was my bedroom, and the last room was for all of my children stayed in that one room.
+  757.9  You would walk out of those three rooms to a house that was only 800 square feet.
+  761.9  There was probably even no bigger than the stage.
+  764.4  It was just one little tiny living room in a kitchen.
+  766.7  And we would meet there every Wednesday night,
+  768.4  opening the scriptures, believing God, praying.
   771.1  Y'all laughing, y'all remember that.
-  772.4  Like, we came out from the bottom,
-  774.8  like, wick, food stamps, all of that.
+  772.4  Like, we came out from the bottom.
+  774.9  Like, wick, food stamps, all of that.
   776.9  Like, government, it was hard times.
   779.8  But there was this sense of joy for what God was calling us to do.
-  787.3  Two doors down from my house, my mother and father lived in a house the same size.
-  795.0  And my father was dying of cancer.
-  802.3  And it was hard for me because we spent nine months giving birth to one thing,
-  812.7  while at the same time in my life something else very important to me is dying.
-  818.6  So one thing is about to be birthed.
-  821.8  Another thing looks like it's about to exit the world.
-  825.0  And I'm wrestling with the dichotomy
-  827.0  between the life on one side that is coming
-  830.2  and the life on the other side that is fleeing.
-  835.5  I remember exercising all the faith
-  838.8  that I had for my father.
+  787.3  Two doors down from my house.
+  790.2  My mother and father lived in a house the same size.
+  795.0  and my father was dying of cancer.
+  802.3  And it was hard for me because we spent nine months
+  806.7  giving birth to one thing,
+  812.7  while at the same time in my life,
+  814.3  something else very important to me is dying.
+  818.6  So one thing is about to be birth.
+  821.7  Another thing looks like it's about to exit the world,
+  824.9  and I'm wrestling with the dichotomy between the life
+  828.5  on one side that is coming and the life
+  830.8  on the other side that is fleeing.
+  832.8  I remember exercising all the faith that I had for my father.
   842.0  And that the one thing he wanted,
-  843.5  he wanted me to make sure that our church
+  843.4  he wanted me to make sure that our church
   845.1  would always be a house of prayer.
-  847.0  He asked me to promise him that.
+  846.9  He asked me to promise him that,
   851.3  and that he knew the life that I lived before the Lord saved me.
-  855.2  He was looking forward to seeing what Jesus would do with his son and his ministry.
-  862.5  I remember three months after this church was founded, my father, my mother called me,
-  867.3  said, son, get down here.
+  855.1  He was looking forward to seeing what Jesus would do
+  857.8  with his son and his ministry.
+  862.5  I remember three months after this church was founded,
+  865.6  My father, my mother called me, said,
+  867.4  son, get down here.
   868.5  I'll go down there.
-  869.4  And we're in the room together as my father takes his last breath.
+  869.4  And we're in the room together, as my father takes his last breath.
   873.3  And I'm staring there at an empty shell.
   875.5  Now the spirit leaves the body.
   877.8  And it's real to me.
-  878.9  Like I'm reminded of how real eternity is that we're just spirits living
-  883.3  in a house and once the Lord, once that last breath leaves the natural, man, your fate is
-  888.4  sealed in whatever direction you went.
-  894.3  And that happened on a Saturday night.
-  897.5  And it was the very next day on a Sunday morning because there is no Kenny, there is no Milton
-  902.3  and Eric, there is no Teana and Ron, there is no communicators.
-  906.6  And my father slips into heaven on a Saturday night around midnight the next morning.
-  911.4  I got to get up and preach God's word.
-  913.7  I gotta preach with the pain in my heart that my father just left.
+  878.8  Like I'm reminded of how real eternity is
+  881.7  that we're just spirits living in a house.
+  884.5  And once the Lord, once that last breath leaves the natural,
+  887.7  man, you'll fade is sealed in whatever direction you went.
+  894.1  And that happened on a Saturday night.
+  897.4  And it was the very next day on a Sunday morning
+  899.8  because there is no Kenny, there is no Milton and Eric,
+  902.8  there is no Tiana and Ron, there is no communicators.
+  906.5  And my father slips into heaven on a Saturday night
+  909.7  around midnight the next morning.
+  911.5  I gotta get up and preach God's word.
+  913.7  I gotta preach with the pain in my heart
+  915.8  that my father just left.
   917.4  And here is what was doing me more damage.
-  922.8  What was doing me more damage is that I'm praying for him to be healed,
+  922.8  What was doing me more damage is that I'm praying
+  925.7  for him to be healed.
   930.2  and the Lord don't answer that prayer in this life.
   933.9  So let's just keep it down here.
   936.2  What I wanted from God down here, he did not do.
-  942.9  And now, a new reality, I have to wrestle with.
-  946.3  Not only for nine months, watch this, but for the next 10 years,
-  949.7  I gotta learn now in my Christian walk to wrestle with a new reality,
-  953.5  the reality of the frustration that God is not moving on my behalf the way I want him to move.
-  959.7  See, nobody want to be honest.
-  962.7  But nobody know what it is to be believing God for something and you feel like he's not coming through.
-  967.7  Been praying about this for how long and you feel like he's not coming through.
-  973.6  He's not listening. He's not moving on my behalf.
-  976.6  And now I learn the real wrestle watch of how can I call this a term I call
-  984.7  detention between expectation and experience. And now as a young pastor
-  996.7  the Lord will continue to teach me when he does not answer all of my prayers. Watch
- 1001.5  how to manage what I call detention in my heart between expectation of God and
- 1009.9  and my human experience.
- 1013.1  And I'm talking about the tension between
- 1014.8  what I'm believing for and what I'm living.
- 1018.9  What I'm praying for and what I'm living.
- 1021.9  What I'm asking him for and what I'm living.
- 1024.9  And the tension in between the fact that
- 1027.1  what I'm believing for is not congruent
- 1029.1  with what I'm living.
- 1030.7  Don't nobody know what this feel like.
- 1033.4  It's only me.
- 1034.6  Let me bring you to the conversation.
- 1036.5  It's the tension between praying for the healing of somebody
- 1041.4  who the Lord does not heal in this life.
- 1046.5  It's the marriage you was fighting for
- 1049.5  on your knees fasting in prayer
- 1051.4  and it still ends up in divorce.
- 1059.9  It's the job you've been believing for
- 1061.7  and it hasn't happened.
- 1063.6  The blessing you want over your company
- 1065.5  and it hasn't happened.
- 1067.2  It's the doors you're asking God to open
- 1070.1  and they have not opened.
- 1072.2  It's the you saying God I'm doing, oh watch,
+  942.9  And now a new reality, I have to wrestle with.
+  946.3  Not only for nine months, watch this,
+  947.9  but for the next 10 years.
+  949.7  I gotta learn now in my Christian walk
+  951.8  to wrestle with a new reality,
+  953.6  the reality of the frustration that God is not moving
+  957.1  on my behalf the way I want him to move.
+  959.7  Nobody want to be honest.
+  962.7  But nobody know what it is to be believing God for something and you feel like he's not
+  966.7  coming through.
+  967.7  Ben Krainer bought this for how long?
+  971.9  And I feel like he's not coming through.
+  974.0  He's not listening.
+  975.3  He's not moving on my behalf.
+  977.2  And now I learn the real wrestle.
+  980.4  Watch of how can I call this.
+  983.5  A term I call detention between expectation and experience.
+  994.3  And now, as a young pastor, the Lord will continue to teach me when he does not answer all of
+ 1000.2  my prayers.
+ 1001.2  Watch.
+ 1002.2  How to manage what I call detention in my heart between expectation of God and my human experience.
+ 1013.2  And I'm talking about the tension between what I'm believing for and what I'm living.
+ 1019.1  What I'm praying for and what I'm living.
+ 1022.1  I'm asking him for and what I'm living and the tension in between the fact that what I'm
+ 1027.2  believing for is not congruent with what I'm living.
+ 1030.2  Don't nobody know what this feel like.
+ 1033.5  It's only me.
+ 1034.5  Let me bring you to the conversation.
+ 1037.0  It's the tension between praying for the healing of somebody who the Lord does not heal
+ 1042.5  in this life.
+ 1043.6  It's the marriage you was fighting for on your knees, fasting in prayer and it still ends
+ 1052.2  up in divorce.
+ 1060.0  It's the job you've been believing for and it hasn't happened.
+ 1063.7  The blessing you want over your company and it hasn't happened.
+ 1066.9  It's the doors you're asking God to open and they have not opened.
+ 1072.3  It's the you saying God I'm doing all watch.
  1074.3  I know how to do.
  1075.3  I'm coming to church.
  1076.8  I'm being faithful.
- 1078.4  I'm giving my tithes and offerings.
- 1081.1  Lord, I'm so in my seed.
+ 1078.3  I'm giving my tithes and offerings.
+ 1080.9  Lord, I'm so in my seed.
  1083.3  I'm serving on a team.
  1085.1  I'm in squads.
- 1086.0  I'm doing all of this.
- 1086.8  And yet I go home and cry over this area of my life
- 1090.5  that I've been believing for, fulfilling the blank.
- 1093.2  And Lord, it seems like you're not moving.
- 1095.3  And I'm wrestling with the tension
- 1096.7  between my expectation of God and my human experience.
- 1101.7  I've got any witnesses in the room.
+ 1086.1  I'm doing all of this.
+ 1087.1  I go home and cry over this area of my life
+ 1090.5  that I've been believing for,
+ 1091.8  fulfilling the blank, and Lord,
+ 1093.7  it seems like you're not moving,
+ 1095.3  and I'm wrestling with the tension
+ 1096.8  between my expectation of God
+ 1101.3  and my human experience.
+ 1102.8  Do I got any witnesses in the room?
  1104.7  Yeah.
- 1109.2  It's the wrestle like, why am I still single when I'm faithful?
- 1113.2  If I'm your man, God, why is my father not here to see what his son became?
- 1123.3  If my heart is pure, God, why would you allow me to go through this hardship and kind of
- 1133.0  sort of like leave me here for like a year?
- 1136.0  Why you let something fall apart all around me and then don't even seem to deliver me from
- 1147.4  I'm just sitting in this mess fulfilling the blank praying and crying and the Lord you're not moving
- 1153.8  Am I the only person in this room know what it feels like?
- 1157.3  To wrestle with the tension between
- 1160.1  expectation of God and your human experience. Well, I've got anybody that's ever felt that tension
- 1165.4  if you've ever felt that tension, highlight me. Anybody's ever felt that tension just
- 1170.2  Wave your head at me. If you've ever felt that tension. I'm expecting this of God, but I don't see that in my life
- 1175.6  Now can we go a little bit deeper? Now it's one thing to deal with that
- 1184.8  tension for a couple weeks or to deal with that tension for a couple months.
- 1190.6  It's another thing to deal with that tension for a year. Two years. Can I put
- 1199.9  me, can I put Philip Anthony Mitchell in this? Ten years. Huh? Yeah.
- 1205.1  Playing for stuff for ten years that has not happened yet. What? Yeah. There's
- 1210.0  things I've been believing in God for ten years that has not happened yet. Can I go
- 1214.3  So deeper, 20 years to real, that has not happened yet.
- 1222.5  And the temptation to watch, be mad and walk away from God.
- 1233.9  I'm the only one that's ever felt that.
- 1236.0  To real for you, the pastor was tempted to walk away from God.
- 1241.8  Yeah, watch, pain will do that to you.
- 1247.7  Let me go deeper, unmitigated, pain will do that to you.
- 1252.3  Because after you've been, do you wrestle with the tension
- 1257.0  between expectation and experience for an extended period of time.
- 1261.5  You know what that can create in the human heart?
- 1264.3  Discouragement?
- 1265.3  Disillusionment?
- 1268.3  Watch.
- 1276.5  Despair?
- 1277.5  Hopelessness?
- 1279.9  Indifference?
- 1280.9  Distrustful God?
- 1281.9  Bitter?
- 1282.9  Y'all felt this?
- 1283.9  Throw that me.
- 1284.9  Bitter?
- 1285.9  Hungry?
- 1286.9  Resentment?
- 1287.9  Confused?
- 1288.9  Huh?
- 1289.9  Envious?
- 1290.9  Envious?
- 1291.9  Envious?
- 1292.9  Envious?
- 1293.9  Envious?
- 1294.9  Envious?
- 1295.9  Envious?
- 1298.3  of how come it's you doing it for them but you you not doing that for me like
- 1305.4  I watch I know I'm more righteous than them not long done that you I know more
- 1311.0  pious than them no they foul and ratchet but you're doing that for them and you
- 1316.8  won't do that for me she ratchet and you gave her husband but you won't give me
- 1321.0  what man I've been fasting and praying and holding down the cookie jar and I'm
- 1325.8  still single to real and in your heart you've never questioned God. You've never questioned God.
- 1347.4  You've never thought, watch it. I won't accuse him but I am asking what is happening here.
- 1356.9  Some of us, we straight accuse him. We angry. Some of us, we fear God so much. We want to
- 1363.3  I'm confused, but we'd be like, I'm confused.
- 1369.0  I'm too afraid to put you on the stand,
- 1371.7  but I'm confused, Lord.
- 1374.8  It's anywhere, like to talk to you
- 1380.1  the way I really want to, I'm confused.
- 1385.0  I'm talking about real life, real life.
- 1391.2  Not Pixie Dust and Church.
+ 1109.3  It's the wrestle like,
+ 1110.7  why am I still single when I'm faithful?
+ 1119.3  If I'm your man, God,
+ 1120.9  why is my father not here to see what his son became?
+ 1129.0  If my heart is pure God, why would you allow me to go through this hardship and kind of
+ 1133.1  sort of like leave me here for like a year?
+ 1141.9  Why you let something fall apart all around me and then don't even seem to deliver me from
+ 1147.4  it?
+ 1148.4  I'm just sitting in this mess fulfilling the blank praying and crying and the Lord you're
+ 1152.8  not moving.
+ 1153.8  Am I the only person in this room know what it feels like to wrestle with the tension between
+ 1159.8  expectation of God and your human experience?
+ 1162.7  Do I've got anybody that's ever felt that tension?
+ 1165.8  If you've ever felt that tension, highlight me.
+ 1167.7  Anybody's ever felt that tension.
+ 1169.2  Just wave your head at me if you've ever felt that tension.
+ 1172.7  I'm expecting this of God, but I don't see that in my life.
+ 1176.2  Now, can we go a little bit deeper?
+ 1182.7  Yes.
+ 1183.2  Now, it's one thing to deal with that tension for a couple of weeks,
+ 1188.4  or to deal with that tension for a couple of months.
+ 1190.8  Yes.
+ 1191.3  It's another thing to deal with that tension for a year.
+ 1195.9  Two years.
+ 1199.3  Can I put me, can I put Philip Anthony Mitchell in this?
+ 1201.6  Yes.
+ 1202.6  Ten years.
+ 1203.6  Huh?
+ 1204.6  Yeah.
+ 1205.6  Playing for stuff for ten years that has not happened yet.
+ 1208.6  What?
+ 1209.6  Yeah.
+ 1210.6  There's things I've been believing in God for ten years that has not happened yet.
+ 1214.1  Can I go deeper?
+ 1215.7  Twenty years.
+ 1218.8  To real.
+ 1221.0  That has not happened yet.
+ 1222.6  And the temptation of watch.
+ 1223.8  Be mad and walk away from God.
+ 1233.3  I'm the only one that's ever felt that.
+ 1236.0  To real for you.
+ 1237.0  The pastor was tempted to walk away from God.
+ 1240.8  Yeah, watch, pain will do that to you.
+ 1247.8  Let me go get unmitigated, pain will do that to you.
+ 1252.5  Because after you've been, do you wrestle with the tension between expectation and experience
+ 1259.5  for an extended period of time, you know what that can create in the human heart?
+ 1264.3  Discouragement, disillusionment, watch despair, hopelessness, indifference, distrust for God,
+ 1285.4  Bitter y'all felt destroyed at me bitter
+ 1289.7  Huh?
+ 1291.1  angry
+ 1292.5  resentment confused
+ 1295.5  Huh? Envious of how come it's you doing it for them, but you you not doing that for me
+ 1304.9  Like I watch I know I'm more righteous than them
+ 1308.6  Now I've done that you I know I'm more pious than them
+ 1312.5  Your day foul and ratchet, but you're doing that for them and you won't do that for me.
+ 1318.1  She ratchet and you gave her husband but you won't give me one.
+ 1321.6  May I be fascinated and praying and holding down the cookie jar and I'm still single to
+ 1329.0  real and in your heart you've never questioned God.
+ 1345.8  You've never questioned God.
+ 1347.6  You've never thought, watch it.
+ 1350.2  I won't accuse him, but I am asking what is happening here.
+ 1354.0  But some of us wish straight accuse him.
+ 1359.7  We angry.
+ 1361.3  Some of us we fear God so much.
+ 1363.1  We want to accuse him, but we be like, I'm confused.
+ 1366.2  I'm too afraid to put you on the stand, but I'm confused Lord.
+ 1373.2  It's anywhere.
+ 1375.6  Like to talk to you the way I really want to.
+ 1381.7  I'm confused.
+ 1384.0  I'm talking about real life.
+ 1390.1  Real life.
+ 1391.1  Not pixie dust and church.
  1393.2  I'm talking about real life.
  1394.8  I'm talking about I'm sitting here
  1396.3  and hell is going on in my life right now.
  1402.9  I'm talking about I'm sitting here
- 1404.6  and I got a laundry list of things I've been believing for
+ 1404.5  and I got a laundry list of things I've been believing for
  1407.0  that has not happened yet.
  1412.1  I'm talking about real life.
- 1417.6  This is the drama, the real feelings,
- 1423.1  at the center of this text.
- 1428.4  Because one of the things that angers me
- 1430.0  in Christian dumb in America
- 1431.9  is we call people in the scriptures characters
- 1434.5  and you think that this is famous
- 1436.8  and bedtime stories.
- 1440.0  So you do two things.
+ 1417.5  This is the drama, the real feelings
+ 1423.0  at the center of this text.
+ 1428.3  Because one of the things that angers me
+ 1429.9  in Christian dumb in America is we call people
+ 1432.7  in the scriptures characters
+ 1434.5  and you think that this is fables
+ 1436.8  and bent time stories.
+ 1440.9  So you do two things.
  1442.2  You either see them as fictitious characters
  1444.8  or you worship them like they're not human beings.
  1452.2  The Lord was a historical person
- 1454.5  And Elijah was a man trying to help some of them.
+ 1454.5  and Elijah was a man.
+ 1457.5  Trying to help some of them.
  1461.7  So we learn from them, but we don't worship them.
- 1469.9  So the Lord, let me run through this.
+ 1470.0  So the Lord, let me run through this.
  1475.7  The Lord calls a group of men like He calls you.
- 1480.2  Changes the way they see,
- 1481.7  like He tries to change the way that you see.
- 1484.9  Gives them instructions on how to carry out ministry,
- 1487.5  like He tries to give you instructions on how to live.
- 1491.8  Annoying them to go out and do work,
- 1493.7  keep starts to prepare them to go out.
- 1495.7  Tails them you will experience persecution
- 1498.1  and people don't not like you when you get out of your.
+ 1478.7  Changes the way they see, like he tries to change the way that you see.
+ 1483.7  Gives them instructions on how to carry out ministry, like he tries to give you instructions on how to live.
+ 1490.7  Annoying them to go out and do work, he starts to prepare them to go out.
+ 1495.7  Tails them you will experience persecution and people don't not like you when you get out of it.
+ 1499.7  Y'all remember all of that.
+ 1501.7  Now, Matthew records the end of that conversation, and then he records attention that we all
+ 1509.1  are familiar with.
+ 1510.1  Now, everybody watch this very carefully.
+ 1512.6  Matthew chapter 11 verse 1, watch.
+ 1515.5  When Jesus had finished instructing his 12 disciples, he went on from there to keyword
+ 1524.8  to teach and preach in their cities.
+ 1527.4  I want you to notice Jesus spent all those last time instructing them. He sends them out
+ 1533.4  two by two to do ministry. They go one way. He goes the other way to continue spreading
+ 1540.1  the gospel. You see that? So we see discipleship calls them, trains them, instructs them, sends
+ 1548.2  them out. They go two by two to various cities. Jesus goes the opposite direction to continue
+ 1554.5  the spread of the gospel.
+ 1555.9  I want to draw your attention to the word two in the text.
+ 1560.7  The word two in the text and what comes behind it
+ 1563.6  to teach and preach is a sign to the reader
+ 1567.0  that the Lord Jesus lived a life of a deep sense
+ 1571.0  of purpose and mission.
+ 1573.2  That here's a man who understands that, okay,
+ 1576.1  my assignment is not done.
+ 1578.0  I have to continue to go on to the next few cities
+ 1582.0  to spread this gospel as far as it will reach.
+ 1584.4  So here's a man we see in the life of our Savior
+ 1587.6  that lives with this deep sense of purpose,
+ 1590.4  this deep sense of mission.
+ 1592.1  I'm sure he wants us to live the same.
+ 1594.2  Even in the mundane, the Lord wants you to live
+ 1597.0  with a sense of meaning and purpose and mission.
+ 1599.9  Like it's the way I talk to my children.
+ 1602.7  It's how you do marriage.
+ 1604.7  It's how you walk into the gym.
+ 1606.4  It's how you walk on campus.
+ 1608.5  It's how you walk into the job.
+ 1610.2  It's how you handle business.
+ 1612.0  You do that like a kingdom representative that no matter what is happening in your life,
+ 1616.8  you have this deep sense like I've been called and I'm living with a deep sense of meaning
+ 1620.8  and purpose.
+ 1621.8  This is how the Lord lived.
+ 1623.9  Everybody following that?
+ 1625.3  Okay.
+ 1626.3  Now, I want you to watch the next verse very carefully.
+ 1632.1  This is insane to me.
+ 1635.7  Verse 2.
+ 1637.1  Gosh, this is heat.
+ 1639.3  Now when John heard in prison about the deeds of the Christ, the anointed one, he sent word
+ 1653.3  by his disciples and said to him, Jesus, watch, are you the one who is to come or shall we
+ 1663.1  look for another person?
+ 1665.4  Stop.
+ 1668.3  This is hate.
+ 1669.3  See, if you knew who John was, this will shake you right now.
+ 1672.8  John, this is John the Baptist.
+ 1681.2  This is the man who was the cousin of Jesus.
+ 1690.4  This is the man whose parents was elderly and was told by an angel,
+ 1695.1  you're going to have a special son.
+ 1697.0  He's going to be filled with the spirit from the room.
+ 1699.5  He will be a forerunner in ministry for Christ.
+ 1703.4  He will prepare the way for the coming of Christ.
+ 1708.8  This is the man who grew up with Jesus.
+ 1713.0  And at some point, I knew that my cousin is the son of the Most High God.
+ 1718.2  This is the man who the prophets wrote about 700 years before he was born,
+ 1726.6  that he was going to come and be the forerunner, the mouthpiece,
+ 1730.9  to prepare the way for the coming of Christ.
+ 1735.1  Can I go deeper? Watch. This is the man whose ministry blew up.
+ 1742.1  This is the man who was wearing locusts.
+ 1745.0  He and locusts a while honey out in the wilderness,
+ 1747.4  and watch, and tens of thousands of people
+ 1750.8  are coming out to him to hear him preach.
+ 1753.7  This is what makes sense to you in a second.
+ 1755.2  This is the man who's following, exploded,
+ 1757.9  ministry exploded.
+ 1759.4  If John was alive right now,
+ 1761.3  this is a man who has a national ministry.
+ 1768.3  This is a man who has a national ministry.
+ 1770.1  Can I go deeper?
+ 1771.7  Can I go deeper?
+ 1772.8  I want you to turn to your Bible real quick.
+ 1775.8  to John chapter three.
+ 1781.9  You said I could teach, right?
+ 1783.8  I don't know if they have it in the booth,
+ 1785.1  but you have a Bible, right?
+ 1787.0  John chapter three, are you out there?
+ 1789.4  All right, now watch.
+ 1791.2  Watch, John chapter three.
+ 1792.5  Look what it says here, verse 22, right?
+ 1795.4  It says, after this Jesus and his disciples
+ 1799.0  went into Judea countryside and he remained there
+ 1802.4  with them and was baptizing.
+ 1804.5  John also was baptizing, this is the synopsis
+ 1807.2  of their ministry.
+ 1809.0  near Salomon because water was plentiful there and people were coming to be baptized
+ 1814.0  for John had not yet been put in prison. Everybody watch. Now a discussion arose between some
+ 1820.2  of John's disciples and Jews over purification and it came to John and said to him, Rabbi,
+ 1828.6  He who is with you across the Jordan talking about Jesus to whom you bore witness. Watch
+ 1840.8  How powerful this is.
+ 1842.7  You were talking about him all the time.
+ 1845.1  Look, he is baptizing and all are going out to him.
+ 1849.4  Now watch, John answered, a person cannot receive even one thing, unless it is given to him
+ 1858.7  from heaven.
+ 1859.7  Now here's a man who knows his identity and his purpose and his calling.
+ 1863.9  Watch.
+ 1864.9  Courtney, you see where I'm going with this.
+ 1868.9  Verse 28, you yourselves bear me witness that I said I am not the Christ.
+ 1877.6  But I have been before him, the one who has the bride is the bridegroom, the friend of the
+ 1890.1  bridegroom who stands and hears and rejoices rejoices rejoices rejoices
+ 1897.5  is going to make sense to you in a second. He rejoices so John has joy in one season.
+ 1903.8  Rejoice is greatly at the bride's groom's voice. Therefore this joy of mine is now complete.
+ 1912.0  Watch John's words.
+ 1913.7  I must, he must.
+ 1917.4  Now go back to Matthew 11.
+ 1927.8  Now it should make sense.
+ 1930.5  Out his own mouth.
+ 1932.9  He said, I'm going to come to preach about this man,
+ 1937.9  whose ministry's blowing up.
+ 1939.9  Watch.
+ 1940.6  My ministry must decrease.
+ 1947.3  His ministry must increase.
+ 1950.8  So John, if you know that, why are you sending people not that you're in prison asking Jesus,
+ 1958.1  are you the Messiah?
+ 1961.4  You send your students to ask Christ, he is the person you were telling everybody, he was.
+ 1972.8  So even John is bipolar, or John is discouraged.
+ 1986.5  And as soon as John feels pain, the God he stood for in one season is the God he's now questioning
+ 2004.8  in another season. You ain't never done that. Josephus, a Jewish historian, tells us that John
+ 2018.4  was locked up in a palace that belonged to Herod and he had been there for about a year.
+ 2025.2  And if you've been sitting in prison for a year, I've been in prison. Man, you've got plenty of time
+ 2029.3  to think. Now look at John's question to him. Are you Christ watch or should we be
+ 2041.9  looking for somebody else? I'm talking to my own family like this. What is John
+ 2051.4  really asking? Why am I your forerunner? It's gonna make sense in a second. Why am I
+ 2061.2  the person who was called to preach before you? Watch. Why am I the person you
+ 2066.8  anointed to let everybody know you're coming. Why am I the person whose ministry was blowing
+ 2072.0  up? Why am I now in here and you have not come to set me out? You've not come to set me free.
+ 2079.1  Why am I in here and you are out there? Why am I locked up and you have not come? Why have
+ 2085.6  you not overthrown Rome? He's really asking Jesus, why are you not moving on my behalf?
+ 2091.3  He's wrestling with his expectation of God and his human experience.
+ 2100.2  In his mind, there is a dissonance between the person I call my cousin and Savior and my
+ 2106.1  imprisonment for him Savior, but I'm locked up.
+ 2116.9  I call him Savior, but I'm in this prison cell.
+ 2120.5  I've been here for a year and you still haven't gotten me out.
+ 2129.6  Everybody watch.
+ 2133.6  Who did he send the message to?
+ 2136.2  Christ, how does the Lord respond to John?
+ 2140.8  Watch the next verse.
+ 2142.4  Look how he responds to John.
+ 2144.2  Look how he responds to John.
+ 2150.2  He says in verse four, and Jesus answered and said,
+ 2153.5  go and tell John what you hear and what you see.
+ 2157.8  The blind received their sight.
+ 2160.6  The lame walk, lepers are cleansed, and the deaf hear,
+ 2166.4  and the dead are raised up,
+ 2168.7  And the poor have the good news preached to them.
+ 2171.8  And blessed is the one who is not offended.
+ 2177.7  God, me.
+ 2189.2  Watch.
+ 2190.0  Jesus doesn't even address his complaint.
+ 2197.5  Watch, but watch this.
+ 2199.3  It's gonna make sense in a second.
+ 2200.6  He says, go back and tell John.
+ 2202.2  Blind people see, deaf people hear,
+ 2204.5  lepers get cleansed, people are walking,
+ 2206.6  the dead are raised.
+ 2207.5  Why did he choose that list?
+ 2209.9  because that list can be found in the book of Isaiah.
+ 2213.9  Where 700 years before Jesus was born, Isaiah prophesied that whenever the Messiah comes,
+ 2219.6  the Son of God comes, He will give sight to the blind.
+ 2224.7  She will give hearing to the deaf.
+ 2227.3  Laid people will walk, lepers will be cleansed, the dad will be raised to life.
+ 2231.8  Jesus chose a list to remind John, I still am who you the person you were preaching about.
+ 2244.1  Now what's the lesson in the text for you?
+ 2247.0  The Lord, the Lord is not addressing what John perceives God is not doing.
+ 2258.2  Instead the Lord is trying to show John what God is doing.
+ 2264.8  That even in the middle of pain we spend a lot of time focusing on what we think God
+ 2269.2  is not doing.
+ 2275.5  Our pain blinds us from what God is doing.
+ 2281.8  So I don't have a husband yet,
+ 2284.7  but God has been transforming my faith and character.
+ 2288.8  I opened his door yet, but he's been protecting my prayer life
+ 2301.2  while I've been waiting.
+ 2308.1  He has not answered this prayer yet,
+ 2310.9  but he's been strengthened in my faith
+ 2313.2  while I've been waiting.
+ 2318.6  And so often, while we think God is not working,
+ 2323.5  we are completely blind to what he is doing.
+ 2330.3  This could be translated like,
+ 2332.4  John, I am not getting you out of prison.
+ 2339.9  But if you heard what I just said to you,
+ 2342.3  I'm working on you while you are in prison.
+ 2347.9  My son, my daughter, I am not taking you out
+ 2350.8  of this circumstance yet, I'm using this circumstance to work something in you.
+ 2366.5  Now can I go deeper?
+ 2367.5  You're not going to like this part.
+ 2372.6  The scripture tells us John never made it out of prison.
+ 2376.7  But because John was a preacher of righteousness that caught up with him, and a man named King
+ 2380.8  Herod was mad because John confronted him about his immorality because King Herod took
+ 2385.5  his brother's wife and took his brother's wife for himself.
+ 2389.2  John confronted King Herod about his immorality, and for that John was put in prison.
+ 2394.4  John spent a year in prison. Jesus never comes to get him. Watch this. And then,
+ 2401.0  Herod's new wife, her daughter, dances in front of the king. The king is overwhelmed by her body
+ 2408.6  and her dancing. The mother says, go tell the king I want a gift. And what is your gift? I want
+ 2415.5  the head of John. Because he makes a vow to the girl, he plucks off the head of John. John is
+ 2422.3  executed in the first century AD. He never makes it out. Now you think Jesus is unfair.
+ 2429.1  But John knew that he must decrease and the Lord's ministry must increase. John
+ 2439.6  should have known that his time, his service unto the Lord had come to an end.
+ 2444.6  And John should have known that not as the stage is too big for two superstars,
+ 2449.8  that the only superstar in the story is the Lord Jesus Christ and when my service
+ 2458.3  to him is over it's over so John died jaded I don't want you to die that way I
+ 2479.8  don't want you to put God on the witness stand because you think he's not fair
+ 2487.0  I'm gonna tell you something else about John's death and his imprisonment it's
+ 2493.9  the will of God for John.
+ 2497.6  And what do you do when the will of God is different than your prayer?
+ 2510.5  Ken is your character strong enough to handle when the will of God for you in any season is
+ 2518.9  different than your prayer.
+ 2522.7  Bless this Lord know I want you to struggle in this season.
+ 2526.3  I'm going to teach you how to be a good steward through lack for a season.
+ 2533.7  I want a husband Lord but if I gave him to you right now you're making my idol and I'll
+ 2537.3  lose you.
+ 2538.5  I'm gonna I want you to myself for a season
+ 2542.9  Like is your character strong enough to still love him and trust him even when you can't trace him
+ 2551.5  Especially when your prayer does not match his will for your life
+ 2554.9  See and this kind of preaching will not make me famous because what you want to hear is anything you ask him for
+ 2565.5  He's gonna do I can make this whole room shout if I spend the next 15 minutes making blanket promises of what the Lord is
+ 2575.6  What's Finnin' to do, about to do, is gonna do, and he won't do.
+ 2582.4  And then, create in your mind a God that does not exist because I lie to move your emotions
+ 2588.9  instead of telling you some things he will not move the way you want him to move.
+ 2595.3  Some prayer is gonna be no, some is gonna be wait according to his will.
+ 2613.5  That part, we don't get taught enough.
+ 2616.5  just get saved and then we try to build our own kingdom and try to force God to
+ 2621.4  bless our kingdom. We forget about that He has a will and what do you do when
+ 2627.6  your will and His will collide and they don't match? Who submits at that point?
+ 2634.5  The Lord ain't never lost that battle so John is beheaded so you can either be
+ 2643.2  jaded by a no or you can trust him in a no. I'm trying to help some of y'all who be mad at God
+ 2653.1  all the time. Take a mature person to say, Lord, you ain't this ain't working the way that I thought
+ 2661.8  it would, but I bless you. I praise you. I will serve you anyhow. Everybody look at me. This conversation
+ 2707.9  is happening in public.
+ 2710.1  John's disciples are listening, Jesus' disciples listen.
+ 2713.8  John's probably, his reputation looks a little shaky right now.
+ 2718.4  Like man, this was the dude whose ministry blew a preach in Jesus,
+ 2721.3  and now he's asking his Christ as the Messiah.
+ 2726.4  Let me show you the love of the Lord for his servants
+ 2730.4  when they talk in bad about you behind your back.
+ 2733.1  Look at verse seven.
+ 2734.6  As they went away, Jesus began to speak to the crowds
+ 2738.4  and said, what did you call our here in the wilderness to see?
+ 2741.3  He's talking about John.
+ 2742.3  A reed shaking in the wind?
+ 2745.2  What then did you go out to see?
+ 2746.4  A man dressed in soft clothing?
+ 2748.9  Behold those who wear soft clothing, they're in King's houses.
+ 2752.1  What did you go out there to see?
+ 2753.3  A prophet?
+ 2753.9  Yes, I tell you, even more than a prophet.
+ 2757.1  This is he who was written, behold, I send my messenger
+ 2761.4  before your face who will prepare the way before you.
+ 2765.6  So you know what Jesus did?
+ 2766.7  a reed shaking in the wind is to say something is weak. He was trying to say John a week, he's human.
+ 2772.4  Damn, this is powerful.
+ 2774.9  Said a man is soft clothes not, John ain't soft, he's human. Y'all gonna play John? No, he's
+ 2780.9  more than a prophet. So the Lord made sure he vindicated John's discouragement. Oh my,
+ 2793.1  that the Lord can see me in my weak place and still hold me down. Lord ensured that John's reputation
+ 2808.5  was not destroyed. He told everybody he's human. Yes, he's discouraged, but he ain't
+ 2813.5  soft. That man was more than a prophet. The Lord vindicated John in his weakness. I'm
+ 2820.2  so thankful that I serve a Lord who vindicates us even in my weakness when they are talking
+ 2830.0  about me and putting me down behind my back and hoping for my downfall and questioning
+ 2835.4  my loyalty to Jesus. I'm so glad that the Lord knows how to whisper in the ears of people
+ 2839.9  and vindicate me and vindicate you even in the moment of weakness. The Lord can still uphold
+ 2847.5  your credibility and your character. This next verse, verse 11, truly I say to you, among those born
+ 2865.1  of women, there has not arisen no one greater than John the Baptist. Yet the one who is least in
+ 2874.4  the kingdom of heaven is greater than He.
+ 2887.1  Everybody look right at me, because this is important.
+ 2890.2  You need to understand His next verse.
+ 2892.2  This is critically important.
+ 2893.9  Everybody look right at me.
+ 2895.7  Listen to the words of Christ.
+ 2898.6  Listen.
+ 2900.2  I'm talking to everybody in here who like me
+ 2902.6  battles with insecurities.
+ 2905.2  I want you to listen very carefully.
+ 2908.2  The Lord said of all the human beings that have ever lived.
+ 2914.3  There is no human being that has ever lived been born of a woman that was greater than John
+ 2921.2  the Baptist.
+ 2922.2  The people that laughed of a lie of a lie of a lie of the prophets.
+ 2931.0  The people that was talking about the coming of Christ, they gave pay attention.
+ 2939.4  Jesus said of all the human beings ever born.
+ 2943.8  human being has ever been born watched who is greater than John the Baptist but
+ 2954.8  the person who is the least in the kingdom of God the new order that Jesus
+ 2960.9  was about to bring then John the Baptist John is the end of an era
+ 2982.8  an era that did not have the indwelling of the Spirit an era that did not see
+ 2988.5  the cross. Jesus comes, dies on a cross, and then now the Spirit of God is poured out on
+ 2999.3  those who are saved. So now any person who is in Christ, a peace of God, lives on the inside
+ 3006.6  of you and the person of the Holy Spirit. We don't have to kill animals for our sin. We
+ 3014.7  We are forgiven of everything we've ever done.
+ 3017.9  God lives on the inside of me, and I am covered by the blood.
+ 3026.0  So the single, the single mother in the back of the room with no money, who only can quote
+ 3032.0  one scripture is greater than Sean the Baptist if she saved.
+ 3038.4  This is insane to me.
+ 3039.9  A room who's safe and call only quote for scriptures is greater than Sean the Baptist.
+ 3054.5  The woman in this room who keeps beating herself up as she stares in the mirror but is saved
+ 3061.9  is greater than Sean the Baptist.
+ 3066.1  The kingdom of God is so powerful that even the person who's at the bottom of the kingdom
+ 3075.1  is greater than John the Baptist.
+ 3086.0  So when you're crucifying yourself for your mistakes
+ 3090.0  and your failures and your hang-ups and your shortcomings,
+ 3093.2  get a glimpse of how great John was.
+ 3096.8  And just say, man, if you're in the kingdom,
+ 3100.3  everybody save, lift your hands, let me see you.
+ 3103.8  Hold them there, wow, don't move.
+ 3107.4  If your hand is lifted and you're saved,
+ 3109.2  You have deified John in the past.
+ 3114.2  Keep your hand.
+ 3115.2  I want you to hold your hand and watch.
+ 3117.2  Here's a man whose life was prophesied about
+ 3121.2  by Old Testament prophets.
+ 3123.2  Yours was it?
+ 3125.2  And yet you're greater than him.
+ 3127.2  Here's a man who was filled with the spirit from the womb
+ 3132.0  to be a full one for Christ.
+ 3134.0  And yet with all your insecurities, you're greater than him.
+ 3138.0  Here's a man who was the biological cousin
+ 3141.0  of the Lord of glory and yet which are crazy, insecure,
+ 3148.8  disobeying God every week self,
+ 3150.9  if you're saved and filled with the Spirit.
+ 3176.1  You can't even believe the Lord see you that way.
+ 3184.3  And all you do is persecute yourself.
+ 3188.8  But yet he says the person at the bottom,
+ 3192.4  the single mom just trying to learn a verse.
+ 3195.8  If she saved and regenerated and filled with the Spirit
+ 3198.7  and in the new kingdom that Jesus built,
+ 3201.2  That person is greater than John the Baptist because we are in an era that thousands of
+ 3208.9  years people were waiting to see.
+ 3210.9  Let me say this to you.
+ 3211.9  You are living right now in an era that people for thousands of years was hoping to see.
+ 3219.9  You just want church.
+ 3220.9  It's so wack.
+ 3223.5  You are living in an era, a dispensation that people for thousands of years was hoping to
+ 3231.1  They were hoping to see a day when they will not have to kill animals for making mistakes.
+ 3237.4  You are living in that.
+ 3239.1  They were hoping for a day when they would be filled with the Holy Spirit.
+ 3242.8  You are living in that.
+ 3244.8  They were hoping for a day when the Messiah would come and they would be on the other side
+ 3248.4  of the cross.
+ 3249.4  You are living in that.
+ 3260.1  And you can even control whatever you would be born in.
+ 3263.7  And we don't have nothing to celebrate and give God praise for and be thankful for that
+ 3269.6  that you sinned yesterday and don't have to kill a cat today
+ 3272.5  for the sin that you did yesterday?
+ 3284.8  This is why when I even think about the kingdom,
+ 3287.4  I could just weep that I'm in it.
+ 3292.3  Huh, London?
+ 3294.1  That the Lord thought I was worth saving
+ 3297.1  to bring me into this thing
+ 3298.5  that people have been believing to see for thousands of years.
+ 3301.6  Yeah, I got some issues, Philip Anthony
+ 3303.7  didn't mention some issues.
+ 3304.8  I'm in the kingdom though.
+ 3310.8  Cheyenne got some issues, but she in the kingdom though,
+ 3316.3  She can't have got some issues, but she and the kingdom though.
+ 3323.4  Can you guys issues?
+ 3326.5  But you and the kingdom though.
+ 3329.3  The Lord took you from the dark and put you in the kingdom though.
+ 3332.0  Can you?
+ 3333.3  Is anybody?
+ 3349.7  But you won't shout for the fact that you've been saved.
+ 3361.5  Stay there, Frank.
+ 3362.2  I'm done.
+ 3370.9  I'm trying to help some of y'all that only you only wait
+ 3373.0  for good things to happen, to be thankful.
+ 3375.8  That's why your Christianity is so boring and whack.
+ 3380.4  Man, I walk out my house.
+ 3382.1  I think to myself, oh snap, I'm in the kingdom.
+ 3385.2  And I could just burst into tears.
+ 3387.2  See, when you change the way you think, you will keep finding things to be thankful for.
+ 3393.0  Gratitude will overwhelm your heart.
+ 3396.8  You keep listening to all this American preaching that makes you feel you've got to get the man,
+ 3402.1  the house, the car, the bag before you can have joy or be thankful.
+ 3406.0  Once and not to be saved, you are something that thousands and millions of people believe
+ 3428.8  to see and never saw.
+ 3430.5  turn your way in. You was not good enough to get in. And with all of your issues and
+ 3441.3  insecurities, God took a piece of Himself in the Holy Spirit. And He's in you, lives in me,
+ 3459.3  in the person of the Spirit. Like I'm in the dispensation when God Almighty took up residency
+ 3465.7  in human beings. I can feel Him wooing me and guiding me and leading me and talking to me and
+ 3475.9  help. Are y'all crazy? Do you know how blessed you are? You think you blessed because of the
+ 3481.2  house of God? Do you know how blessed you are to be in the kingdom of God? The person I was
+ 3499.9  be thankful and he took you from and around you and for you who've been in charge worship
+ 3536.7  and John the Baptist. Never knowing that the Lord and his eyes sees that you're greater than him
+ 3548.8  and not because your work is greater than John. He says you're greater than him because you have
+ 3553.5  tasted of something John could not taste of. The kingdom of heaven. On the backside of the cross,
+ 3570.5  I'll be walking around sometimes like, yo, I'm saved. I talk to the Lord and he hears my voice.
+ 3580.6  Feel the Holy Spirit leading me and guiding me and helping me to make decisions.
+ 3591.9  When my heart is broken, I carry it into God's presence. When I got family
+ 3600.6  who dishonored me. I got brothers and sisters by blood who loved me. I got a whole family
+ 3608.1  sitting in the room. We in the Kingdom, look at all these sisters and brothers and mothers.
+ 3614.4  Like, do you know what the Lord has done for you? By putting you in the Kingdom? I want
+ 3619.3  to hop off the stage and shake the heck out of you. I got people praying for me who are
+ 3634.1  in the Kingdom. I got people holding you down in the spirit that you can't see because
+ 3640.2  you in the kingdom. The Lord is holding back all kind of things from you that
+ 3646.0  will destroy you because you in the kingdom. You know what before I read these
+ 3674.6  last verses we got it okay I'm gonna do this for me. I need I want to take 60
+ 3681.7  seconds and just show God gratitude for the fact that he brought me into the
+ 3686.2  kingdom. Just just thankfulness just gratitude just for just a few seconds
+ 3695.8  It's because he brought me into the kingdom.
+ 3698.3  Like is there anybody who's thankful that you're saved
+ 3702.0  and that you're in the kingdom of...
+ 3710.2  Hold on, hold on.
+ 3712.2  Stop, stop, no, stop.
+ 3717.2  This ain't no sermon, listen man.
+ 3720.4  You go to another level of maturity
+ 3723.1  when you could be thankful for that which is intangible.
+ 3727.5  Anybody could thank God for a stupid phone
+ 3731.3  or a house or car.
+ 3732.8  You could thank them for a bag of business.
+ 3735.2  Man, come on, man, that's easy stuff.
+ 3736.8  The unbeliever could do that.
+ 3739.6  You got unbelievers who give God glory.
+ 3742.1  They stand up there and take that little statue,
+ 3744.0  and I want to thank my Lord and Savior Jesus Christ
+ 3746.6  and your forward from God, man.
+ 3747.7  Unbelievers give God glory for stuff.
+ 3750.6  That's lower level, that's bottom shelf alcohol.
+ 3754.8  Man, we drunk on the spirit on the top shelf.
+ 3757.9  We give God thank them alcohol.
+ 3763.5  This room see the cloud and be gone.
+ 3785.7  I'm thankful God that I'm saved.
+ 3788.3  I'm in the kingdom.
+ 3790.1  You are my father.
+ 3792.0  You live in me through the present of the spirit.
+ 3794.7  My name is Rayden Heaven.
+ 3796.4  You're in the kingdom.
+ 3804.9  What happens to a heart that lives that way?
+ 3810.9  You can walk into anything and still have gratitude.
+ 3814.6  You can sit down in anything and still have gratitude.
+ 3818.1  You can be struggling with bills and still have gratitude.
+ 3821.3  You can be going through the most difficult season
+ 3823.2  your life and still have gratitude. You can be sitting in the middle of a prison and still
+ 3827.5  have gratitude. Man, the day after I got saved, they took me out of my job at the TSA and I'm
+ 3839.6  sitting in prison the very next day. You obtain your government clearance and you've got
+ 3846.7  follow needs on your record. Yeah, I lied on that application. I wasn't saved. I had
+ 3856.2  character like that. The day after I give my life to Christ, I'm sitting in a prison downtown.
+ 3862.6  No, no, this true story behind bars full of peace.
+ 3871.5  What joy in my heart like I see these bars, but something has happened to me though.
+ 3880.1  I'm whatever happens next, I'm going to be okay because I'm in the kingdom now.
+ 3889.6  I'm whatever your bars are. You in the kingdom now.
+ 3896.8  who saved this work has already been done,
+ 3902.1  risking you from darkness.
+ 3917.1  Of all the people born of women,
+ 3918.8  there is none greater than John the Baptist.
+ 3922.3  And even the person who is least in the kingdom
+ 3926.1  is greater than him.
+ 3930.2  Just give me my last few verses
+ 3932.1  so I can send everybody home.
+ 3933.1  Just put them up there.
+ 3934.7  No, no, no, no.
+ 3938.2  From the days of John the Baptist until now,
+ 3940.8  I don't need this.
+ 3941.8  The kingdom of heaven suffered violence
+ 3943.7  and the violent taking by force stop, the word violent,
+ 3949.9  soft, the word force in the Greek.
+ 3955.0  Two Greek words can mean something positive or negative.
+ 3958.4  So the issue with this text,
+ 3959.6  we don't know if the ticket from the positive side
+ 3961.5  or the negative side.
+ 3963.1  So you've been around church,
+ 3964.3  you're the kingdom of heaven suffer violent
+ 3966.5  and the violent take them off and you shout.
+ 3968.8  And that makes for good preaching and that can work
+ 3972.0  because it can go either way.
+ 3973.4  But in its proper context, this was,
+ 3977.9  because Jesus was talking about persecution,
+ 3979.9  this will better translate,
+ 3982.6  people in the kingdom will suffer violence
+ 3989.2  from people outside the kingdom,
+ 3993.2  and violent people will attack those
+ 3997.8  who are in the kingdom.
+ 4000.7  Next verse, keep going, just keep going.
+ 4004.2  For all the prophets in the law prophesied until John,
+ 4006.9  keep going.
+ 4007.8  And if you are willing to accept that he is Elijah who has come saying that John came in the spirit of Elijah
+ 4014.8  The physical Elijah never died. He was taken to heaven. I believe the Lord will send him back during the tribulation
+ 4019.9  Is one of the two witnesses?
+ 4021.8  He who has asked to hear let him hear verse 16 keep going
+ 4026.5  But to what shall I compare this generation it is like children sitting in the marketplace
+ 4031.8  Calling to their playmates now everybody watch keep going we played the flue for you when you did not dare
+ 4037.8  We sang a dirge and you did not come.
+ 4042.8  Keep going.
+ 4043.8  For John came neither eating or drinking.
+ 4046.8  He was holy and you said he had a demon.
+ 4049.8  Keep going.
+ 4050.8  Jesus the son of man came eating and drinking.
+ 4053.8  And joy and fellowship.
+ 4055.8  And you say look at him, a glutton, a drunkard, a friend of tax collectors and sinners.
+ 4060.8  Yet wisdom is justified by her deeds.
+ 4062.8  I don't get it.
+ 4063.8  The Lord said nothing and good enough for your people.
+ 4065.8  people. It don't matter what I do. You still don't accept me. John came and was holding
+ 4074.9  your eyes. You call him a devil. I came having community. You call me a drug. Ain't nothing
+ 4079.5  going to satisfy your soul. You're so miserable. Lord, do I got to play tricks to receive your
+ 4099.9  love? So I want to pray right now over everyone who has ever felt discouraged between what
+ 4110.1  you've been believing God for and what you're actually experiencing. I want to pray for everyone
+ 4116.1  who's battling the tension right now between your expectation of God and your current experience.
+ 4123.6  I want to pray for everybody right now to be released from seeing God as a pawn in your
+ 4129.0  story. You're playing the flute trying to make him dance. You're singing a dirge trying
+ 4134.7  I'm making no no no no no he is God Almighty. Softly father in the name of
+ 4145.0  Yashua I pray over everyone who's battling discouragement in any area
+ 4161.2  disillusionment in any area they've been believing you for something that has
+ 4166.5  not happened there will may be colliding with Charles we don't know it's been on
+ 4173.6  their prayer list for a long time you haven't moved I want to pray for everyone
+ 4177.6  who's in the middle of a difficult season of their life.
+ 4180.8  And it seems like you're not moving.
+ 4182.5  I pray for everyone who's been believing you for something
+ 4185.0  for a very long time.
+ 4187.7  I wanna pray for everyone who's sitting in a prison cell
+ 4190.1  like John and losing confidence in who you are.
+ 4193.2  Lord, we are your sons and daughters, you are good.
+ 4196.6  I pray God right now, Lord, that you administer to the heart
+ 4200.1  of every person who is discouraged.
+ 4202.8  Every person who's going through a hardship.
+ 4205.5  Every person who's in a difficult season.
+ 4208.2  Every person who's been believing for something
+ 4210.4  for a long time and it has not happened yet.
+ 4213.1  Would you continue to strengthen that heart
+ 4215.1  and strengthen that faith?
+ 4217.0  I pray right now for a release, God Lord,
+ 4220.3  of faith to withstand whatever they're dealing with.
+ 4223.6  Hope that tomorrow they will have an expectation
+ 4226.6  for a better future.
+ 4227.7  Love in their heart for you, these three things,
+ 4230.8  they must remain.
+ 4232.2  I come against thoughts of suicide and the spirit of death that is in this room.
+ 4237.8  Father, I pray a release of joy over these, your sons and daughters to just be thankful
+ 4243.4  that they're in the kingdom.
+ 4248.5  Lord, I pray you would snatch right now in this moment everything that is heavy and weighing
+ 4253.7  down our hearts.
+ 4254.7  Whatever it is, would you just snatch it from us in this moment?
+ 4258.6  Change our perspective if you won't change the circumstance.
+ 4261.9  Father would you say the unbeliever in the room right now who is far away from you?
+ 4273.9  They are sinners separated from you you died so that they can be your children
+ 4279.2  I pray right now for the unbeliever in the room right there in their seat that someone will start mumbling surrendering their lives to you
+ 4287.2  Telling you they're sorry for their sin. They want to be in the kingdom. They don't want to live apart from you
+ 4293.0  Not another day. I pray for the person has been in church their whole life and not saved
+ 4297.3  I pray for the person far away who's not saved. I pray for the person headed for damnation
+ 4302.1  They don't even know and then I say I pray for them. I pray for the witch and warlock doesn't try to curse me
+ 4307.8  I pray you would save them in the name of Jesus. I pray you would regenerate people right there in their seat in the name of Jesus
+ 4314.9  And father I pray over this entire
+ 4320.3  Body I pray of our sisters who came from Ireland the couple that came from Florida Lord
+ 4325.1  But here's what I'm asking.
+ 4326.8  When we leave this building and we walk outside,
+ 4330.3  our hearts would explode with joy and thanksgiving,
+ 4335.9  just for being saved and in the kingdom.
+ 4340.0  And may we celebrate that for the rest of the day.
+ 4342.6  I pray 24 hours of joy that no circumstance
+ 4346.9  will steal from us the revelation that you've brought us
+ 4350.5  into the kingdom and that we are your children,
+ 4353.4  your sons and your daughters. I pray God, you would assault us with joy. Assault us with
+ 4360.8  gratitude. Assault us with thanksgiving. No heavy heart walks out of this room or walks
+ 4369.1  out of this stream. What do I want to do? What do I want to do? Faith, man, if you receive
+ 4380.0  that give God a thunderous praise.
+ 4387.9  Come on, nothing rob you of what you feel
+ 4419.9  right now in this moment.
+ 4421.3  I declare, man, 24 hours of gratitude and joy.
+ 4427.9  When you leave here, go eat and drink and get food
+ 4431.0  and love all your wife and your kids.
+ 4432.8  And if you're married, have good sex tonight
+ 4435.0  and all that good stuff.
+ 4436.7  No, come on, I'm serious now.
+ 4439.4  I, I, I, I, be in joy.
+ 4441.7  Go buy a good meal.
+ 4443.2  Go hang out with some girlfriends and some guy friends.
+ 4446.4  Somebody shout joy.
+ 4450.3  Nobody leaves discouraged.
+ 4452.3  Nobody.
+ 4462.7  They ready.
+ 4463.5  Well, hey, look at me.
+ 4465.8  Hey, look at me.
+ 4468.8  Look at me.
+ 4470.5  Hey, look right here.
+ 4472.7  I want to say to you what Jesus said to John.
+ 4475.2  I know you got issues, but don't be offended because of me.
+ 4481.8  Don't be offended at me.
+ 4483.9  I'm good.
+ 4486.4  I'm always good.
+ 4488.1  Even when you don't understand what you're going through, I'm still going, don't be offended at me.
+ 4491.6  Wow.
+ 4492.6  Change your American doctrine to Biblical doctrine.
+ 4495.7  That part.
+ 4503.0  While you're life-ing and adulting, do that with a Biblical worldview that the Lord is good.
+ 4508.9  We will not be offended at our Savior.
+ 4515.4  And now I'm supposed to remind you to be faithful with your giving, with your tides and with
+ 4520.6  your offerings.
+ 4521.6  Now I'm supposed to manipulate you into being generous.
+ 4530.5  The Lord says he loves cheerful givers.
+ 4534.3  Support the spread of the gospel.
+ 4537.2  Give away a percentage of your income to support God's house.
+ 4540.7  And we are trying to raise $5 million for our own facility.
+ 4544.8  If people would just be faithful, we could do that.
+ 4549.0  We got a big giving Sunday coming up in February.
+ 4551.8  We will challenge you to make a sacrifice.
+ 4553.8  Not afraid about that.
+ 4555.6  We are believing for facilities to do more ministry.
+ 4559.6  We can't control anything happening in this place.
+ 4562.8  Spent 10 years in the wilderness.
+ 4564.8  We believe it for a change.
+ 4567.4  Father, bless those who are partnered with you in the gospel.
+ 4572.2  Bless these homes, businesses, entrepreneurial ventures.
+ 4577.4  We pray for millionaires to emerge in this house.
+ 4581.2  We pray for ideas that lead to wealth creation
+ 4584.9  and ideation, God, for new ideas.
+ 4587.6  I pray for courses and books to be written and to be born,
+ 4590.6  songs to be sung, albums to be put out.
+ 4593.2  Bless your children as they continue to be
+ 4595.5  kingdom disciples and kingdom witnesses for you.
+ 4598.4  I pray for jobs and better jobs and new opportunities.
+ 4601.4  Close every wrong door, open every right door.
+ 4604.0  Bless those who are in partnership with you.
+ 4606.8  I pray a blessing over them in the mighty and majestic
+ 4609.6  and matchless name of our Lord and Saint Be Jesus Christ.
+ 4613.3  So my give God praise.

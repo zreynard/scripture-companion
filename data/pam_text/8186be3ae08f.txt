@@ -4,389 +4,1150 @@
    43.4  To all of our digital disciples watching me live right now across the country and around the world, you are our
    50.7  family. I want you to hear my heart. We love you. We pray for you every week.
    55.6  You mean everything to us?
-   57.6  And I just thank you for being a part of this gathering wherever you are.
-   62.6  And if you're not a follower of Christ, if you're outside of the Kingdom, man, I am praying for you
-   70.6  that in a moment during prayer or during worship or during the proclamation of God's Word,
-   76.6  you would hear something that would move you from where you are towards the light,
-   81.6  from darkness towards the light, from the kingdom of darkness towards the kingdom of
-   86.1  God that you will come aboard this arc of safety before it's too late, for tomorrow
-   91.0  is not promised to you, my brother or my sister, for we make plans for tomorrow and we are not
-   98.5  guaranteed to see tomorrow. So if you're sitting in that first overflow, or if you're sitting in that
-  103.9  second overflow, in that double overflow, you're all the way at the back, I'm talking to you right
-  109.6  across this camera. I'm talking to you that today is the day of salvation. Today is the
-  117.0  day to repent. Today is the day to trust in Christ with all of your heart. Today is the
-  123.0  day to know Jesus as your Savior. Today is the day to do that. For you are not even
-  129.6  guaranteed to get home when you leave here today. If an accident will take you when you
-  137.5  left this building would you be prepared to meet the Savior you don't believe in
-  143.7  I'm talking to you in that double overflow I'm talking to you in that second overflow I'm talking
-  148.9  to you in this room I'm talking to you across that camera death should awaken us to our mortality
-  159.1  remind us that we are not finite we are weak individuals
-  164.1  and desperate need of a Savior. We are in the last two messages in a series called
-  174.3  entry and end times. We are walking through Matthew 21 through 25 together. We are
-  182.3  studying the final actions and the final prophetic words of the Lord Jesus Christ
-  187.5  and I want to say to you for the last two times this week and next week God
-  193.3  willing, that final words are very important and that they are more
-  200.9  important when a person is facing death and they are no more more important words
-  206.2  than the final words of the one we call Lord and Savior. And I feel
-  211.0  passionately about these words because of the times that we're living in and I
-  215.2  feel passionately about these words because I want you to do more that just
-  218.9  come to church. I want you to hear the words of Christ and I want you to take them serious.
-  224.9  I want you to hear the words of Christ and I want you to go home and read and study. I
-  229.1  want you to hear the words of Christ and appropriate them in your life. I want for you church to
-  235.1  be more than just gatherings. I want it to be something you hear, the proclamation of God's
-  240.4  Word and something in you wants to go out and live out what you hear and lean into what you
-  245.3  here, that we value the words of people more than we value the words of the one who saved
-  250.8  us.
-  251.8  We put more stock in men than we do the Lord Jesus Christ.
-  255.6  And I want you to get to a place in your life where you learn to love these scriptures.
-  260.0  When you read them for yourself, when you study them, you lean into them, you stop saying,
+   59.6  And I just thank you for being a part of this gathering wherever you are.
+   63.0  And if you're not a follower of Christ, if you're outside of the Kingdom, man, I am praying
+   70.2  for you that in a moment during prayer or during worship or during the proclamation of
+   76.2  God's Word, you would hear something that would move you from where you are towards
+   81.3  the light from darkness towards the light from the kingdom of darkness towards the kingdom
+   86.0  of God that you will come aboard this arc of safety before us too late for tomorrow
+   91.1  is not promised to you my brother or my sister for we make plans for tomorrow and we are
+   98.3  not guaranteed to see tomorrow and so if you're sitting in that first overflow or if you're
+  103.2  sitting in that second overflow in that double overflow you all the way at the back I'm talking
+  109.2  to you right across this camera. I'm talking to you that today is the day of salvation.
+  115.9  Today is the day to repent. Today is the day to trust in Christ with all of your heart.
+  122.3  Today is the day to know Jesus as your Savior. Today is the day to do that. For you are not
+  129.3  even guaranteed to get home when you leave here today. If an accident will take you when
+  137.4  you left this building, would you be prepared to meet the Savior you don't believe in?
+  143.9  I'm talking to you in that double overflow.
+  146.7  I'm talking to you in that second overflow.
+  148.6  I'm talking to you in this room.
+  150.0  I'm talking to you across that camera.
+  154.4  Death should awaken us to our mortality.
+  157.7  It reminds us that we are not finite.
+  161.9  We are weak individuals in desperate need of a Savior.
+  169.9  We are in the last two messages in a series called entry and end times.
+  176.9  We are walking through Matthew 21 through 25 together.
+  182.1  We are studying the final actions and the final prophetic words of the Lord Jesus Christ.
+  187.9  And I want to say to you for the last two times this week and next week, God willing
+  195.5  The final words are very important.
+  199.9  And they are more important when a person is facing death.
+  204.1  And they are no more important words than the final words of the one we call Lord and
+  209.3  Savior.
+  210.3  And I feel passionately about these words because of the times that we're living in
+  215.1  and I feel passionately about these words because I want you to do more than just come
+  219.1  to church.
+  220.7  I want you to hear the words of Christ and I want you to take them serious.
+  224.9  I want you to hear the words of Christ,
+  226.8  and I want you to go home and read and study.
+  229.0  I want you to hear the words of Christ
+  230.9  and appropriate them in your life.
+  233.8  I want for you church to be more than just gatherings.
+  237.2  I want it to be something you hear,
+  239.0  the proclamation of God's Word,
+  240.9  and something in you wants to go out
+  242.7  and live out what you hear and lean into what you hear,
+  246.5  that we value the words of people
+  248.7  more than we value the words of the one who saved us.
+  251.0  We put more stock in men
+  252.9  then we do the Lord Jesus Christ.
+  255.5  And I want you to get to a place in your life
+  257.3  where you learn to love these scriptures.
+  259.9  When you read them for yourself, when you study them,
+  262.5  you lean into them, you stop saying,
   264.8  I can't hear God, but you don't read.
-  269.9  Knowing that all of this book testifies of the Lord Jesus Christ.
-  274.2  research these scriptures for in them that Jesus said to the Pharisees, you're trying
-  279.7  to find life, but it is them that testify of me, all of it, testify of Christ.
-  287.4  And I plead for you that you would love Christ more than anything in this life.
-  291.2  Man, I share tears over you this week.
-  293.5  And I cried out over you and my children sitting over there, that you learned to love Christ
-  298.3  more than any person in this life, more than PAM, more than your favorite preacher.
+  269.7  Knowing that all of this book testifies
+  272.2  of the Lord Jesus Christ.
+  274.2  For we search these scriptures for in them
+  276.8  that Jesus said to the Pharisees,
+  279.1  you're trying to find life,
+  280.4  but it is them that testify
+  282.7  of me, all of it testify of Christ.
+  287.4  And I plead for you that you would love Christ
+  289.7  more than anything in this life.
+  291.2  Man, I should have tears over you this week.
+  293.5  And I cried out over you and my children sitting over there
+  296.7  that you learned to love Christ more than any person
+  299.6  in this life, more than PAM,
+  302.3  more than your favorite preacher.
   303.8  You would love him and adore him.
-  305.6  He would be the object of your worship and your affection.
-  309.2  And you would not make idols out of men, but we would worship and deify the one who rescued
-  313.9  you.
-  314.9  No man did that for you.
-  318.7  And that these would not just be summons, but there would be rally cries from our Savior
-  324.7  to His children.
-  326.3  Amen, anybody.
-  328.9  Our text is coming from Matthew 25 verse 14 through 30.
-  334.0  And the title of our message is don't waste your talents, spirit of the living God.
-  352.0  Minister to us, I pray you would pour unto us a hatred for just the depravity and the
-  359.8  ugliness of humanity.
-  361.2  A hatred for it that would move us towards prayer and tears and brokenness and gospel
-  369.6  witness.
+  305.5  He would be the object of your worship and your affection.
+  309.1  And you would not make idols out of men,
+  311.4  But we would worship and deify the one who rescued you.
+  314.1  No man did that for you.
+  318.6  And that these would not just be summons,
+  322.2  but they would be rally cries from our savior
+  324.8  to his children.
+  327.4  Amen, anybody.
+  329.0  Our text is coming from Matthew chapter 25,
+  332.5  verse 14 through 30.
+  336.7  And the title of our message is Don't Waste Your Talents,
+  343.6  Spirit of the Living God, minister to us.
+  355.7  I pray you would pour unto us a hatred for just the depravity and the ugliness of humanity.
+  361.7  A hatred for it that would move us towards prayer and tears and brokenness and gospel witness.
   371.8  Let us hear your words proclaimed to us today with humble hearts and open ears.
-  376.7  And Lord, you've seen my tears this week and you know my weakness and my frustration.
+  377.2  And Lord, you've seen my tears this week and you know my weakness and my frustration.
   382.5  I want to be home.
-  384.3  But help me, Lord, in my weakness tool, just for the next few moments to share with these
+  383.8  But help me, Lord, in my weakness tool, just for the next few moments to share with these
   390.5  the brothers and sisters I love with my whole heart.
-  395.0  Give a stamina to listen and a heart to take it serious.
-  399.3  I ask in the mighty and the majestic and the matchless name of our Lord and soon coming
-  407.0  King Jesus Christ, Amen and Amen and Amen.
-  413.6  Don't waste your talents.
-  421.6  Last night as I was sitting up in bed and just meditating on this text, I was reminded
-  427.6  that in 2009 when Lena and I lived in Columbus, Ohio,
-  432.2  attending Bible College.
-  434.4  I was reminded how my wife was serving
-  437.1  in the children's ministry at that church.
-  439.8  And I was serving in an outreach ministry
-  442.0  that was responsible for going into the inner city
-  444.6  of Columbus, Ohio, and we would preach the gospel
-  447.9  in the streets and preach the gospel in the projects.
-  450.9  We would give our food and we would give our clothing.
-  453.9  And there was a particular project in downtown Columbus
-  456.9  that we sort of adopted, we have an affinity for this particular projects.
+  395.0  Give us stamina to listen and our heart to take it serious.
+  399.2  I ask in the mighty and the majestic and the matchless name of our Lord and soon coming
+  407.0  King Jesus Christ, amen and amen and amen.
+  413.6  waste your talents. Last night, as I was sitting up in bed and just meditating on this text,
+  426.8  I was reminded that in 2009 when Lena and I lived in Columbus, Ohio attending Bible College,
+  434.4  I was reminded how my wife was serving in the children's ministry at that church, and I
+  440.0  was serving in an outreach ministry that was responsible for going into the inner city of
+  445.2  Columbus, Ohio, and we would preach the gospel in the streets and preach the gospel in the
+  450.4  projects.
+  451.4  We would give our food and we would give our clothing.
+  454.1  And there was a particular project in downtown Columbus that we sort of adopted.
+  458.2  We have an affinity for this particular projects.
   461.7  We would go through those projects and knock on doors and go into homes and sit down with
-  466.1  junky mothers and sit down with junky fathers and we would hold crack babies in our arms.
+  466.2  junkie mothers and sit down with junkie fathers and we would hold crack babies in our arms.
   472.3  We would sit there and let people blow smoke in our face while we try to teach them about
   476.4  the Lord Jesus Christ.
-  477.6  Never judging them for what they did not know but just loving them and meeting them where
+  477.6  Never judging them for what they did not know, but just loving them and meeting them where
   481.4  they are.
-  482.9  It was during that season that my team and I fell in love with a group of teenagers who
-  489.2  became very dear to me.
+  482.9  And it was during that season that my team and I fell in love with a group of teenagers
+  489.1  who became very dear to me.
   490.9  I don't know where any of them are today.
   493.2  They are probably in their 20s or 30s now.
-  495.7  But I had a deep affinity for this specific group of teenagers who most of them had no
-  500.8  father and some of them had no mother.
-  503.3  They were living in homes that were really ratty and torn.
-  506.9  And the only time they felt life is when we would show up each week to just sit with them
-  511.1  and love on them and listen to them.
-  513.5  I just want to remind somebody that sometimes children does not spell love, G-I-F-T, but
-  519.1  they spell love, T-I-M-E.
-  521.7  What they wanted from us was just time, and we would just sit there and enjoy them and
-  526.1  sit in their presence.
-  527.9  On one occasion, when I was leading the Evangelistic Ministry, the campaign on that day, I took that
-  536.1  group of teenagers outside of the projects and we walked towards downtown Columbus and
-  541.2  as we walked we came to a graveyard and I stopped in front of the graveyard and I tapped
-  546.0  all of them and I said look out there in that graveyard and tell me what do you see?
-  550.5  And they responded and they said oh brother Philip we see tombstones and I said good what
-  555.1  else do you see?
-  556.7  We say brother Philip we see memorials I said good what else do you see?
-  561.1  You say, brother Philip, we see grass and trees and flowers.
-  565.1  I said, good.
-  566.1  What else do you see?
-  567.1  We'll see.
-  568.1  Brother Philip, we don't see anything else.
-  569.7  I said, are you sure?
-  570.7  Look again.
-  571.7  Tell me what do you see?
-  572.7  They said, brother Philip, we don't see anything else.
-  575.5  And I will never forget getting those teenagers to focus for just a moment.
-  579.5  And I said, look out there.
-  580.6  Let me tell you what I see.
-  582.7  I see unfulfilled potential.
-  586.9  I see ministries that were never started.
-  591.2  I see books that were never written.
-  594.5  I see marriages that were never formed, children that were never born, visions that were never
-  599.7  realized.
-  601.5  I see wasted potential out there in that graveyard.
-  605.8  I see anointings and giftings and callings that people carried with them to the grave.
-  611.7  I told them, look out there in the graveyard you see now the wealthiest place on earth.
-  616.9  For out there in their graveyard, there are many people who
-  619.8  carried with them to their grave, things that God placed on the inside of them
-  624.9  that were supposed to come out of them while they was in this life.
-  627.8  And for whatever reason, whether excuses, hard times, challenges, ignorance,
-  632.6  they carried with them to their graves, the things that God had intended for them
-  638.7  to do in this life.
-  640.3  And I never forgot that moment.
-  642.9  This is a tragedy of modern humanity that there are people dying every day and going to the grave
-  650.2  carrying inside of them, things that they were supposed to do in this life. This is even a greater
-  657.0  tragedy in Christianity. Of people who talk about callings and talk about gift things and talk
-  663.1  about anointers that have all this show of all these things we're doing, yet there are Christians
-  667.6  leaving this life every week and every day carrying to their grave things that the master intended
-  674.1  for them to do while they were here intended for them to accomplish while they were here
-  678.8  intended for them to pour out while it was here.
-  681.3  But for whatever reason they made excuses they were busy bodies in church man they died
-  687.3  having gone to the grave with the figurative babies that was inside them they were supposed
-  692.3  to give birth to they are boarded those babies for whatever reason and now they got
-  697.1  to give an account to the Messiah for that. This is the tragedy that we approach at the
-  704.1  center of our text, the tragedy happening in this room, in the overflow, in the double overflow.
-  709.9  This is what we approach at the center of our text, a very serious passage of scripture.
-  714.7  But Christ, you know this for the final two weeks, has come to the final days of his life.
-  720.7  He is just days away from being executed for your sins and for mine.
-  726.6  He is on top the Mount of Olives where I was in Jerusalem just outside of the city walls.
-  733.0  And dear, he's surrounded by his followers.
-  736.3  And they're asking him a question at this time, are you going to restore the kingdom back
-  740.9  to Israel?
-  741.9  They're asking him, when will these things be?
-  745.2  They're concerned about the coming of his kingdom.
-  747.4  They want to overthrow Rome.
-  749.1  He begins to prophesy to them about the signs of the end of the age.
-  755.3  And I said to you last week, I said to you this week, and I'm gonna say to you next week,
-  760.2  man, we are seeing the beginning of these things happening right now in our society.
-  765.0  Man, I was sitting with my children last night doing our homework because I gave you homework,
+  495.8  But I had a deep affinity for this specific group of teenagers who most of them had no
+  500.9  father and some of them had no mother and they were living in homes that were really
+  505.1  ratty and torn.
+  506.9  And the only time they felt life is when we would show up each week to just sit with
+  510.9  them and love on them and listen to them.
+  513.6  I just want to remind somebody that sometimes children does not spell love, G-I-F-T, but
+  519.0  they spell love, T-I-M-E.
+  521.6  And what they wanted from us was just time and we would just sit there and enjoy them
+  526.0  and sit in their presence.
+  529.5  And on one occasion, when I was leading the evangelistic ministry, the campaign on that
+  534.9  day, I took that group of teenagers outside of the projects and we walked towards downtown
+  540.3  Columbus.
+  541.3  And as we walked, we came to a graveyard and I stopped in front of the graveyard and I
+  545.6  tapped all of them and I said, look out there in that graveyard and tell me what do you
+  548.8  see?
+  550.5  And they responded, they said, oh, Brother Philip, we see tombstones and I said, good,
+  555.1  what else do you see?
+  556.7  We say, Brother Philip, we see memorials.
+  559.1  I said, good, what else do you see?
+  561.5  I said, brother, Phillip, we see grass and trees and flowers.
+  565.2  I said, good, what else do you see?
+  566.7  We'll see, brother, Phillip, we don't see anything else.
+  569.8  I said, are you sure?
+  570.8  Look again, tell me what do you see?
+  572.4  They said, brother, Phillip, we don't see anything else.
+  575.4  And I will never forget getting those teenagers to focus
+  578.3  for just a moment.
+  579.4  And I said, look out there, let me tell you what I see.
+  582.9  I see unfulfilled potential.
+  585.8  I see ministries that were never started.
+  589.8  I see books that were never written.
+  593.8  I see marriages that were never formed, children that were never born,
+  598.8  visions that were never realized. I see wasted potential out there
+  603.8  in that graveyard. I see anointings and giftings and callings
+  608.8  that people carried with them to the grave. I told them, look out there in the graveyard.
+  613.8  If you are, you see now the wealthiest place on earth,
+  617.4  for out there in their graveyard,
+  618.9  there are many people who carried with them to their grave,
+  622.2  things that God placed on the inside of them
+  625.0  that were supposed to come out of them
+  626.6  while they was in this life.
+  627.8  And for whatever reason, whether excuses, hard times,
+  631.2  challenges, ignorance, they carried with them
+  633.8  to their graves, the things that God had intended
+  638.3  for them to do in this life.
+  640.4  And I never forgot that moment.
+  643.0  This is a tragedy of modern humanity
+  646.6  that there are people dying every day
+  648.7  and going to the grave carrying inside of them
+  652.4  things that they were supposed to do in this life.
+  655.8  This is even a greater tragedy in Christianity.
+  659.3  Are people who talk about callings
+  661.1  and talk about gift things and talk about anointments
+  664.1  that have all the show of all these things we do
+  666.6  and yet they are Christians leaving this life
+  668.6  every week and every day carrying to their grave
+  672.2  Things that the Master intended for them to do while they were
+  675.8  seated intended for them to accomplish while they were
+  678.6  seated intended for them to pour out while it was here.
+  681.1  But for whatever reason, they made excuses.
+  683.9  They were busy bodies in church.
+  685.8  Man, they died.
+  687.3  Haven't gone to the grave with the figurative babies that was
+  691.2  inside them.
+  691.7  They were supposed to give birth to.
+  693.6  They aborted those babies for whatever reason.
+  696.5  And now they got to give an account of the Messiah for that.
+  700.6  This is the tragedy that we approach at the center of our text,
+  705.1  the tragedy happening in this room, in the overflow,
+  707.7  in the double overflow.
+  709.7  This is what we approach at the center of our text,
+  712.3  a very serious passage of scripture.
+  715.0  But Christ, you know this for the final two weeks,
+  718.5  has come to the final days of his life.
+  720.6  He is just days away from being executed for your sins
+  724.4  and for mine.
+  726.4  He is on top the Mount of Olives,
+  728.7  where I was in Jerusalem just outside of the city walls.
+  732.9  And there he surrounded by his followers.
+  736.1  And they're asking him a question at this time,
+  739.0  are you going to restore the kingdom back to Israel?
+  742.0  They're asking him, when will these things be?
+  745.0  They're concerned about the coming of his kingdom.
+  747.3  They want to overthrow Rome.
+  748.9  He begins to prophesy to them about the signs
+  752.5  of the end of the age.
+  755.1  And I said to you last week, I said to you this week,
+  758.6  And I'ma say to you next week, man, we are seeing the beginning of these things happening
+  763.3  right now when I was a society.
+  765.1  Man, I was sitting with my children last night doing our homework because I gave you homework,
   769.9  you know?
-  771.2  And I was sitting with my children right over there reading through Revelation 19, 20, and
-  775.5  21.
-  776.5  I let them read and I taught.
-  777.7  read and I taught and I taught and I've made it aware to them do y'all see some of these things in this text
-  784.4  I'm showing them videos on TikTok and Instagram. Do you see how some of the things happening in society right now?
-  791.2  It's reading right out of the pages of the scripture and they are shock eyes wide open
-  796.2  I'm showing them right now about the increase of another great monotheism
-  801.8  That has taken over all of the east
-  803.8  has taken over all of England,
-  806.4  it's starting to take over American cities.
-  809.1  I've read to them in the text,
-  810.8  if you did your homework,
-  811.9  where it's at during the tribulation period,
-  814.0  Christians will be beheaded for the witness of Christ.
-  817.4  There's only one type of militia,
-  819.1  one type of religion that takes joy
-  821.2  in beheading other people.
-  823.4  It's why they're the fastest growing religion on the planet.
-  826.6  And while we play in church and play in conferences
-  830.5  and not paying attention,
-  831.5  I was showing my children from social media and the scriptures together.
-  835.6  How right now we see all the pieces aligning all over the earth,
-  839.8  God preparing the world for the coming of the sun.
-  842.6  The scripture talks about the alliance between Russia and China.
-  846.5  They are hidden in biblical prophecy.
-  849.0  I show my children on social media how the president of Russia was just with
-  853.4  the president of China just two weeks ago,
-  855.9  while people are not paying attention.
-  857.8  I talk to my children about the rise of cryptocurrency,
-  860.8  and the rise of digital currency and the devaluation of paper money.
-  865.0  The scripture tells us in the last days there will be one world currency,
-  868.8  can't have one world currency with paper.
-  873.0  That's why we see an increase in digital currency and plastic and cards and tap.
-  877.7  Forget cash. Let's just tap. Forget cash. Let's have crypto.
-  880.8  Forget cash. It makes it easier for the Antichrist to control the world.
-  885.2  And I'm showing my kids from the scriptures and from their phone,
-  888.2  How God is allowing things right now all over the earth preparing the world for the coming of the Sun while you just want to sermon.
-  896.2  You want to live omission. Don't want to pray like people omission. You just want to sermon. You want to go to Chick-fil-A and then you want to chill out the rest of the week.
-  910.0  You want to Netflix and chill. Never mind God called you to be omission.
-  916.0  And I'm showing them from the scriptures and from social media,
-  922.2  how the words of God is colliding with the things we see.
-  925.6  And here is the Lord prophesying about these end times,
-  929.2  prophesying about the return of his,
-  930.9  and I'm telling you, we're living in the beginning
-  933.1  of these times now.
-  934.8  We might be the generation that sees the rapture,
-  938.8  the tribulation, and the return of Christ,
-  942.0  which the Lord said all these things
-  943.5  will happen in rapid succession like birth pains.
-  945.8  we might be the generation to see all those things.
-  948.2  And my question for you is, are you ready?
-  955.1  And the Lord prophesies his return,
-  957.7  and on the backside of the prophecy,
-  959.5  he gives his followers and everybody who will listen,
-  961.9  three parables, a trilogy of short stories
-  965.1  to communicate the seriousness of his second coming.
-  969.2  The first one, the parable of the faithful servant,
+  771.3  And I was sitting with my children right over there reading through Revelation 19, 2021.
+  776.0  I let them read and I taught.
+  777.7  They read and I taught.
+  778.9  They read and I taught.
+  780.3  And I made it aware to them.
+  781.9  Do y'all see some of these things in this text?
+  784.5  I'm showing them videos on TikTok and Instagram.
+  788.2  Do you see how some of the things happening in society right now is reading right out of
+  792.2  the pages of the scripture and they are shock eyes wide open.
+  796.3  I'm showing them right now about the increase of another great monotheism that has taken
+  802.6  over all of the East, has taken over all of England, is starting to take over American
+  808.0  cities.
+  809.0  I've read to them in the text.
+  810.9  If you did your homework with that during the tribulation period, Christians will be
+  814.7  be headed for the witness of Christ.
+  817.6  There's only one type of militia, one type of religion that takes joy in beheading other
+  822.2  people.
+  823.2  It's why they're the fastest-growing religion on the planet.
+  826.8  And while we play in church and play in conferences and not paying attention, I will show all
+  832.0  my children from social media and the scriptures together.
+  835.6  How right now we see all the pieces aligning all over the earth, God preparing the world
+  841.2  for the coming of the sun.
+  842.8  The scripture talks about the alliance between Russia and China.
+  846.7  They are hidden in biblical prophecy.
+  849.1  I showed my children on social media how the president of Russia was just with the president
+  854.0  of China just two weeks ago, while people are not paying attention.
+  858.0  I talked to my children about the rise of cryptocurrency and the rise of digital currency
+  862.6  and the devaluation of paper money.
+  865.2  The scripture tells us in the last days there will be one world currency.
+  868.6  Can't have one world currency with paper.
+  873.3  So we see an increase in digital currency and plastic and cards and tap.
+  877.6  Forget cash.
+  878.6  Let's just tap.
+  879.6  Forget cash.
+  880.6  Let's have crypto.
+  881.6  Forget cash.
+  882.6  It makes it easier for the Antichrist to control the world.
+  885.5  And I'm showing my kids from the scriptures and from their phone how God is allowing things
+  890.6  right now all over the earth preparing the world for the coming of the sun while you just
+  895.3  want to sermon.
+  896.3  You want to live omission.
+  903.5  Don't want to pray like people omission.
+  905.6  You just want to sermon.
+  907.1  You want to go to Chick-fil-A and then you want to chill out the rest of the week.
+  910.5  You want to Netflix and chill.
+  912.0  Never mind God called you to be on mission.
+  916.1  And I'm showing them from the scriptures and from social media how the words of God is
+  923.2  colliding with the things we see.
+  925.3  And here is the Lord prophesying about these end times, prophesying about the return of
+  930.6  this.
+  931.6  And I'm telling you, we're living in the beginning of these times.
+  935.0  We might be the generation that sees the rapture, the tribulation, and the return of Christ,
+  942.1  which the Lord said all these things will happen in rapid succession like birth pains.
+  946.0  We might be the generation to see all those things.
+  948.3  And my question for you is, are you ready?
+  955.3  And the Lord prophesies His return, and on the backside of the prophecy, He gives His followers
+  960.6  and everybody who will listen.
+  962.2  Three parables, a trilogy of short stories to communicate the seriousness of His second
+  968.8  The first one, the parable of the faithful servant
   971.8  and the wicked servant to communicate faithfulness.
   974.2  The second one, the parable of the 10 virgins
-  976.8  to communicate some people will be ready,
-  978.9  And some people will not be ready.
-  980.3  And on the heels of that second parable,
-  982.8  He gives us this last parable
-  985.1  before He will be executed.
+  976.8  to communicate some people will be ready
+  978.9  and some people will not be ready.
+  980.4  And on the heels of that second parable,
+  982.8  he gives us this last parable
+  985.1  before he will be executed.
   987.2  The parable of the talents, Matthew chapter 25.
-  990.0  Matthew, who was the eyewitness, recorded this passage.
-  992.7  He recorded what Jesus said, verse 14.
-  995.0  Jesus continues teaching, He says, for it will be like
-  999.6  a man going on a journey
- 1002.2  who called His servants and entrusted to them His property.
- 1007.2  I want to draw your attention to the word it.
- 1009.8  The word it there is speaking of the kingdom of God.
- 1013.0  This is a continuation from the parable of last week.
- 1015.8  He started the parable of the 10 virgins
- 1017.9  by saying the kingdom of heaven will be like 10 virgins.
- 1022.2  He finishes that teaching.
- 1023.4  He goes right into the second one.
- 1025.3  So the kingdom of heaven will also be like a man
- 1029.0  going in a long journey, the kingdom of heaven,
- 1031.6  the sphere of God's rule in the earth.
- 1034.2  And we see in God's rule in the earth,
- 1036.0  There were virgins who were wise and virgins who were foolish because in the sphere of God's rule in the earth
- 1041.4  There are people who are truly saved and people who are not truly saved
- 1045.0  He goes straight into this one
- 1046.5  He says the kingdom of heaven the ending will also be like a man who went on a long journey
- 1051.5  Who called his servants and entrusted to them his property now?
- 1055.8  I want to draw your attention to the man in the text
- 1058.3  He said the man went away on a long journey
- 1061.0  the man we see is akin to a type of Christ who also went away on a long journey.
- 1067.0  The Lord is saying this in the first century AD.
- 1070.0  He's trying to help his followers understand there will be no overthrow right now in the first century.
- 1075.0  My brothers, I am about to bounce for a very long time.
- 1078.0  And what they did not see is what you and I are living in right now.
- 1081.0  The church age, which has been happening for over 2,000, 25 years, this man has been gone for a very long time.
- 1088.0  very long time, too millennia this man has been gone.
- 1091.4  But when the man left, he did not leave his servants empty-handed.
- 1095.4  No, he entrusted to them his property.
- 1099.1  I want to draw your attention to the word, his property,
- 1101.9  and the word entrusted.
+  990.0  Matthew, who was the eyewitness, recorded this passage,
+  992.7  he recorded what Jesus said, verse 14.
+  995.0  Jesus continues teaching, he says,
+  996.8  for it will be like a man going on a journey who called his servants and entrusted to them
+ 1005.9  his property.
+ 1006.9  I want to draw your attention to the word it.
+ 1010.1  The word it there is speaking of the kingdom of God.
+ 1013.3  This is a continuation from the parable of last week.
+ 1016.0  He started the parable of the 10 virgins by saying the kingdom of heaven will be like
+ 1020.2  10 virgins.
+ 1022.4  He finishes that teaching.
+ 1023.6  He goes right into the second one.
+ 1025.6  So the kingdom of heaven will also be like a man going in a long journey.
+ 1030.3  The kingdom of heaven, the sphere of God's rule in the earth.
+ 1034.5  And we see in God's rule in the earth, there were virgins who were wise and virgins who
+ 1038.4  were foolish because in the sphere of God's rule in the earth, there are people who are
+ 1042.3  truly saved and people who are not truly saved.
+ 1045.5  He goes straight into this one.
+ 1046.5  He says the kingdom of heaven, the ending will also be like a man who went in a long
+ 1050.6  journey who called his servants and entrusted to them his property. Now I want
+ 1056.2  to draw your attention to the man in the text. He said the man went away on a
+ 1060.3  long journey. The man we see is akin to a type of Christ who also went away on a
+ 1066.5  long journey. The Lord is saying this in the first century AD. He's trying to help
+ 1071.1  his followers understand. There will be no overthrow right now in the first
+ 1074.5  century. My brothers, I am about to bounce for a very long time and what they
+ 1079.1  did not see is what you and I are living in right now.
+ 1081.9  The church age, which has been happening
+ 1083.9  for over 2,025 years, this man has been gone
+ 1087.5  for a very long time.
+ 1088.9  Two millennia, this man has been gone.
+ 1091.4  But when the man left, he did not leave his servants
+ 1094.7  empty handed, no, he entrusted to them his property.
+ 1099.0  I wanna draw your attention to the word,
+ 1100.8  his property and the word entrusted.
  1103.2  Jesus again reminded his followers,
- 1105.3  and as I remind you, that you and I
- 1107.7  are stewards of everything that God has given to you.
+ 1105.2  and as I remind you that you and I are stewards
+ 1108.6  of everything that God has given to you.
  1111.2  That the earth is the Lord and the fullness thereof.
  1113.2  There is no one under the sound of my voice
- 1115.3  who is a owner of anything.
- 1117.6  But everything under your fingertips you have been given to Stuart.
- 1121.6  And I want to say to you again, and next week I might say to you again,
- 1125.1  that the most important things you are stewarding, write them down.
- 1128.3  You are stewarding your time, your resources, your opportunities,
+ 1115.2  who is a owner of anything.
+ 1117.6  But everything under your fingertips
+ 1119.4  you have been given to Stuart.
+ 1121.6  And I wanna say to you again, and next week
+ 1123.8  I might say to you again,
+ 1125.1  that the most important things you are stewarding,
+ 1127.3  write them down, you are stewarding,
+ 1129.3  your time, your resources, your opportunities,
  1135.1  your assignments, your relationships.
  1137.5  These are the five most important things that you are stewarding.
  1140.7  You are managing these things for the glory of God.
- 1144.1  I want you to notice, he said, his property.
- 1146.9  and his servants because you also are a stewardship,
- 1151.0  your personal life because you belong to the Lord
- 1153.6  if you are saved.
+ 1144.1  I want you to notice, he said, his property and his servants,
+ 1148.5  because you also are a stewardship, your personal life,
+ 1152.1  because you belong to the Lord if you are saved.
  1155.4  So we are only stewards, we are only managers,
  1159.9  and your management is a test in this life
  1163.4  for what you will enjoy in the life to come.
- 1166.3  Verse 15, to one he gave five talents,
- 1170.4  to another two talents, to another one,
- 1175.4  according to his ability, then the master went away.
- 1181.5  So I want you to notice that the man did not leave
- 1183.8  these servants empty handed.
- 1185.9  He did not leave them to be idle,
- 1188.4  but he gave each one of these servants talents plural.
- 1193.0  To one man he gave five talents.
- 1195.7  To another man he gave two talents.
- 1198.1  To another man he gives one talent
+ 1166.3  verse 15, to one he gave five talents, to another two talents,
+ 1173.7  to another one according to his ability,
+ 1178.3  then the master went away.
+ 1181.5  So I want you to notice that the man did not
+ 1183.5  leave these servants empty-handed.
+ 1185.9  He did not leave them to be idle.
+ 1188.4  But he gave each one of these servants talents plural.
+ 1193.1  To one man, he gave five talents.
+ 1195.7  to another man he gave two talents,
+ 1198.1  to another man he gives one talent
  1199.8  then he bounces and been gone for 2,000 years.
  1203.2  Now I want you to notice the talents historically.
- 1207.1  The talents was a sum of money in silver in the first century.
+ 1207.1  The talents was a sum of money in silver
+ 1209.9  in the first century.
  1211.3  It weighed collectively somewhere between 50 and 85 pounds
  1215.3  for one talent.
  1216.8  One talent was equivalent to some 10 to 20 years of wages.
- 1221.3  So to give a person five talents is to give them
- 1223.9  a large sum of money.
+ 1221.3  So to give a person five talents
+ 1223.2  is to give them a large sum of money.
  1226.1  To give a person two talents is to give them
  1228.5  a large sum of money shoot.
  1230.1  To give a person one talent is to give them
  1232.5  a large sum of money.
- 1233.5  So the first thing the Lord entrusted to the servants
+ 1233.5  So the first thing the Lord entrusted to these servants
  1236.1  was resources.
- 1237.8  It's the same thing God has entrusted to you and I.
- 1240.9  One of the most important things God has entrusted to you,
- 1243.4  listen to me, is resources.
+ 1237.8  It's the same thing God hasn't trusted to you and I.
+ 1240.8  One of the most important things God hasn't trusted to you,
+ 1243.3  listen to me, is resources.
  1245.7  I harp on this because this is the only thing
  1247.9  that God ever exalted to the status of a God.
  1250.9  Lord said that you cannot serve God and money at the same time.
- 1254.9  So one of the most important things
- 1256.3  that you are stewarding in this life are resources.
- 1259.3  God gave it to you, your check, your job, your businesses,
- 1263.5  your ministries, all the income that comes into your house
- 1266.8  is the stewardship in the eyes of God.
- 1269.4  Now this is very important because this is the one part
- 1272.0  of your life that is very private.
- 1273.9  See people see your pulse, they see your preaching,
- 1276.7  they see your podcast, they see your ministry,
- 1279.3  they see you serving, they see you online,
- 1281.6  they see you as an usher, they see in the room,
+ 1254.9  So one of the most important things that you are stewarding in this life are resources.
+ 1259.2  God gave it to you, your check, your job, your businesses, your ministries.
+ 1264.7  All the income that comes into your house is a stewardship in the eyes of God.
+ 1269.4  Now this is very important because this is the one part of your life that is very private.
+ 1273.9  See people see your pulse, they see your preaching, they see your podcast, they see your ministry,
+ 1279.2  They see you serving, they see you on the line,
+ 1281.6  they see you as a usher, they see in the room,
  1283.4  but they don't see your bank account.
- 1286.3  And the stewardship of money is very important.
- 1288.5  Listen to me, money is a moral, like a dollar, $20, let's go higher, $100.
- 1295.6  I wish somebody just give me $20, like just give me some money.
- 1302.2  I forgot your gen Z's, your tap.
- 1305.7  Money, come on, you're not getting that back either.
- 1313.4  Money, money is a moral.
- 1317.7  It has no heart, has no eyes.
- 1320.8  It has no soul, it has no thoughts, it has no will.
- 1324.0  But when it lands in the hands of a human being,
- 1326.1  it takes on a personality.
- 1330.1  With this $20, I could go buy groceries,
- 1332.9  and get $5 to the poor, and put a dollar in the orphan,
- 1336.0  or with this $20, I could go get blow,
- 1338.4  and snuff out for the rest of the week.
+ 1286.2  And the stewardship of money is very important.
+ 1288.5  Listen to me, money is a moral, like a dollar, $20,
+ 1293.8  let's go higher, $100.
+ 1295.6  I wish somebody just gave me $20, like,
+ 1298.4  just give me some money.
+ 1302.2  Oh, I forgot your Gen Z's, y'all tap.
+ 1305.7  Money?
+ 1308.2  Oh, come on, you're not getting that back either.
+ 1310.6  Money, money is a moral.
+ 1317.7  It has no heart, has no eyes, it has no soul, has no thoughts, it has no will.
+ 1324.0  But when it lands in the hands of a human being, it takes on a personality.
+ 1330.2  With this $20, I could go buy groceries and get $5 to the poor and put a dollar in the
+ 1335.3  orphan or with this $20, I could go get blow and snuff out for the rest of the week.
  1340.6  The money has no will of its own.
- 1342.4  It only has a will when it lands in the hand of a person.
- 1345.8  Why? Because money reveals what's in the heart.
+ 1342.5  It only has a will when it lands in the hand of a person.
+ 1345.7  Why?
+ 1346.1  Because money reveals what's in the heart.
  1350.6  If you want to know what's in people's heart,
  1352.0  just give them resources.
- 1354.0  As soon as resources lands in the hand, it reveals what's in the heart.
- 1357.4  Where the heart is so your treasure will be also.
+ 1354.0  As soon as resources lands in the hand,
+ 1356.0  it reveals what's in the heart.
+ 1357.8  Where the heart is so your treasure will be also.
  1362.6  So money in and of itself is not evil.
- 1365.4  People are evil.
- 1366.4  And so if you want to know what's in people's hearts, just put money in their hands.
- 1371.2  As soon as resources land in a person's heart, we see what's in their hands.
- 1374.5  We see what's in their heart.
- 1376.7  So the first thing that you are stored in are resources for the glory God.
- 1379.9  No, I didn't beat you up for a tithe.
- 1382.2  I just told you to be a good steward of the resources God has given you.
- 1385.3  Why? Because he's watching how you handle this thing right here is not a God.
- 1389.0  Although some of you worship it and you bow down to it and you exalt it like an
- 1394.4  idol in your heart. You hold it so high. You're afraid to part from it.
- 1398.9  You're afraid to share it. You're afraid to invest it into the kingdom.
- 1402.5  This is so temporary. It's going to be gone.
- 1404.5  You ain't going to be using this in the millennial kingdom.
- 1406.8  The Lord is just allowing you to manage a little bit of it just to see how good you
- 1410.5  can handle it. It's crazy to me that some of you will be praying to be a millionaire,
- 1414.3  But you can't store it a few thousand dollars.
- 1419.9  You pray and forgot to bless your business,
- 1422.1  but you can't store it a check.
- 1423.7  You pray and forgot to increase your finances,
- 1427.5  but you can't store it what you have.
- 1431.3  And so the first thing he gave them to store was resources.
- 1434.8  But I think the parable does not just stop with money.
- 1437.7  I think the parable is broader than money
- 1439.6  because of the keyword ability,
+ 1365.0  People are evil.
+ 1368.1  And so if you want to know what's in people's hearts,
+ 1369.9  just put money in their hands.
+ 1371.2  As soon as resources land in a person's heart,
+ 1373.1  we see what's in their hands.
+ 1374.4  We see what's in their heart.
+ 1376.7  So the first thing that you are storing
+ 1378.1  are resources for the glory God.
+ 1380.0  No, I didn't beat you up for a tithe.
+ 1382.2  I just told you to be a good steward
+ 1383.4  of the resources God has given you.
+ 1385.3  Why?
+ 1386.2  Because he's watching how you handle.
+ 1387.5  This thing right here is not a God,
+ 1389.1  although some of you worship it.
+ 1391.3  And you bow down to it.
+ 1393.2  And you exalt it like an idol in your heart.
+ 1395.7  You hold it so high, Harvey.
+ 1397.2  You're afraid to part from it.
+ 1398.9  You're afraid to share it.
+ 1400.4  You're afraid to invest it into the kingdom.
+ 1402.5  This is so temporary.
+ 1403.8  It's gonna be good.
+ 1404.6  You ain't gonna be using this in the millennial kingdom.
+ 1406.8  The Lord is just allowing you to manage a little bit of it
+ 1409.4  just to see how good you can handle it.
+ 1411.3  It's crazy to me that some of you
+ 1412.9  will be praying to be a millionaire,
+ 1414.5  but you can't store it a few thousand dollars.
+ 1419.9  You're praying for God to bless your business,
+ 1422.2  but you can't store it a check.
+ 1425.2  You're praying for God to increase your finances,
+ 1427.6  but you can't store it what you have.
+ 1431.4  And so the first thing He gave them to store was resources.
+ 1434.9  But I think the parable does not just stop with money.
+ 1437.8  I think the parable is broader than money
+ 1439.7  because of the keyword ability,
  1441.9  which speaks about work and task and assignments.
- 1445.2  So your talents, I believe, are not just only resources,
+ 1445.3  So your talents, I believe, are not just only resources,
  1448.3  but your talents are the opportunities God has given you
- 1451.1  to serve and to have assignments and to do tasks
+ 1451.2  to serve and to have assignments and to do tasks
  1454.5  and to carry out functions.
  1456.2  So what God has given you is the ability
- 1460.2  and the responsibility to steward resources,
- 1464.0  to steward opportunities, to steward assignments.
- 1467.6  Now pay attention, watch.
- 1469.1  In the text, we see that there is a tiered system
+ 1460.3  and the responsibility to store resources,
+ 1464.1  to steward opportunities, to steward assignments,
+ 1467.6  not pay attention, watch.
+ 1469.2  In the text, we see that there is a tiered system
  1471.9  of allocation to one man he gave five talents,
- 1475.1  to another man he gave two, to another man he gave one,
- 1478.0  watch this according to their ability.
- 1481.5  This is very important, this means that for every human being,
- 1484.3  God has already assigned them a certain level of cognitive ability,
- 1488.1  a certain level of acumen, a certain level of work ethic,
- 1491.6  and then he will give them resources and assignment
- 1494.5  according to their ability.
- 1496.5  This is the love of God because he's not gonna give you
- 1498.7  something you cannot handle.
+ 1475.1  to another man he gave two, to another man he gave one.
+ 1478.0  Watch this according to their ability.
+ 1481.5  This is very important.
+ 1482.6  This means that for every human being,
+ 1484.3  God has already assigned them a certain level
+ 1486.3  of cognitive ability, a certain level of acumen,
+ 1490.0  a certain level of work ethic,
+ 1491.6  and then he will give them resources and assignment according to their ability.
+ 1496.6  This is the love of God because he's not going to give you something you cannot handle.
+ 1500.8  This is very important because too many of us be praying and asking God for things that
+ 1504.5  you don't have the character to handle and you don't have the ability to store it.
+ 1508.2  And God gave it to you, it will hurt you.
+ 1511.4  See, I got people around me who are like five talent people.
+ 1514.9  If you give a five talent person a one talent assignment, they're going to be bored and frustrated.
+ 1520.7  If you're given one talent person, a five talent assignment, they're going to feel overwhelmed
+ 1525.0  and crushed.
+ 1526.6  God who is very wise is not going to give a five talent person a one talent assignment.
+ 1531.0  And God who's very wise is not going to give a one talent person a five talent assignment.
+ 1535.1  This is why we need to stop being jealous of other people's assignments.
+ 1539.2  Come on, man.
+ 1541.4  I'm talking to y'all.
+ 1543.0  This ain't about competition and this ain't about condensation or being condescending towards
+ 1548.6  somebody.
+ 1549.6  you watch, having a personal awareness to embrace whatever level you're on and just be
+ 1556.0  faithful on whatever level you're on.
+ 1559.8  The Lord is not asking you for more than what you can give.
+ 1564.2  He just wants you to be faithful on what you're on.
+ 1566.5  So if Billy Graham is a five-talent minister and Philip Anthony Mitchell is a two-talent
+ 1571.2  minister and some other man is a one-talent minister, man, am I jealous of Billy?
+ 1575.6  Should I condemn the one-talent man?
+ 1577.3  No.
+ 1578.3  in the middle trying to be faithful to what God has called me to do.
+ 1581.6  There are some men in the country who got 50 people in his church, but he loves his family,
+ 1586.3  loves his children.
+ 1587.3  He's faithful to the Lord Jesus.
+ 1589.3  He prays.
+ 1590.3  He's a good steward.
+ 1591.4  He's not cheating money from the...
+ 1593.5  He's faithful.
+ 1594.5  Is he any less of a minister than I am?
+ 1599.2  Am I any greater of a minister than he is?
+ 1601.6  No.
+ 1602.6  If we're faithful on our level, that's all God wants from us.
+ 1605.0  All God wants for you.
+ 1606.2  It's for you to be a faithful servant on the level that he's given you.
+ 1610.6  But it's only our brokenness in humanity why that we like to exalt five talent people and
+ 1616.3  make them gods and put down one talent people and make them trash.
+ 1622.5  But why condemn somebody if that's the limit of what God gave them and why exalt them and
+ 1627.4  if that's what God gave them.
+ 1629.0  Man, if that person is a five talent, that's God's grace and if they're one talent, that
+ 1633.3  God's grace.
+ 1634.3  is to be honest about what level we are and just be faithful on our level.
+ 1641.4  I'm trying to, daughter.
+ 1643.3  That's all God wants for us to just be faithful on our level.
+ 1646.6  So I don't have to be jealous of a five-talent person.
+ 1649.8  All I got to do is be faithful with God has given me.
+ 1655.6  Verse 18.
+ 1657.9  But he who had received, well, verse 16.
+ 1664.7  He who had received the five talents went out and at once he traded and he made five
+ 1668.7  talents more.
+ 1670.1  And also the one who had two talents made, he went out and traded and made two talents
+ 1673.9  more.
+ 1674.9  So I just want you to see that the first two servants immediately went out and they begin
+ 1678.6  to trade.
+ 1679.8  They did not wait.
+ 1681.4  Immediately they went out and they begin to multiply their talents.
+ 1684.6  They did not sit on what God gave them, but they multiplied what God gave them.
+ 1688.4  The men who had five, multiplied his talent.
+ 1691.0  The men who had two, he multiplied his talent.
+ 1693.7  They had some sense of purpose, some sense of meaning.
+ 1696.6  They knew God gave them an assignment and immediately they set out to do that assignment.
+ 1701.2  I just want you to draw some attention to you.
+ 1703.3  I want you to draw some attention to some things in the text.
+ 1706.1  I want you to notice the words at once.
+ 1708.3  They did not wait.
+ 1710.1  They recognized that they were saved.
+ 1711.6  They recognized that they were given gifts and talents.
+ 1714.3  Immediately they put their life on the altar.
+ 1715.9  They went out to serve God.
+ 1718.3  The man who had five multiplied.
+ 1719.8  The man who had two multiplied.
+ 1721.8  What does this look like in context?
+ 1723.6  And multiplication looks like in context as you watch,
+ 1726.6  using the potential God has given you
+ 1728.9  and maximizing that potential to do everything
+ 1731.4  God has called you to do.
+ 1732.9  So what this looks like in context,
+ 1734.3  everybody look right, mate, this is,
+ 1735.8  if I've been saved for five years or 20 years,
+ 1738.4  I should be a better husband today
+ 1740.1  than I was when God saved me.
+ 1742.0  I should be a better father today
+ 1743.6  than when I was when God saved me.
+ 1745.5  I should be a better steward today
+ 1747.2  than I was when God saved me.
+ 1748.7  I should be a better preacher today
+ 1750.2  than I was when God saved me.
+ 1751.5  If 20 years go by and you're still the same person,
+ 1754.6  you are not multiplying your talents.
+ 1757.3  If 20 years go by and you're not a good steward with money,
+ 1760.6  you are not multiplying your talents.
+ 1762.7  But if we would multiply our talents,
+ 1765.0  my brothers and my sisters,
+ 1766.4  that as time goes by, you will show fruit
+ 1768.9  that you'll be in transforming different areas.
+ 1771.2  You're becoming a better husband,
+ 1772.8  you're becoming a better wife,
+ 1774.3  you're becoming a better friend,
+ 1775.7  you're becoming a better person who's steward's money,
+ 1777.8  you should be growing,
+ 1779.2  and that's how you multiply the things
+ 1781.2  that God has given you, that is, man, you should be more obedient,
+ 1784.3  you should be more faithful, the Lord should be able to look at you 20 years
+ 1787.9  down the road and say, I don't have to fight you when I talk now.
+ 1790.8  Now when I talk, you obey right away.
+ 1793.2  When I first find you, you had the reason for three months
+ 1795.9  before you carried out anything.
+ 1797.5  But now when I talk to you, you move right away.
+ 1799.9  You don't even need all the answers.
+ 1801.7  You just trust my voice when I speak.
+ 1804.0  God.
+ 1808.9  So if you're becoming better in character,
+ 1812.1  You're becoming more like the person of Christ.
+ 1814.6  You're becoming more obedient.
+ 1816.2  You're becoming more faithful.
+ 1817.8  You're doing the things God has called you to do
+ 1819.9  and your sphere of influence.
+ 1821.4  That is how you multiply your talents.
+ 1823.8  You multiply talents by giving God back
+ 1826.8  something that he has deposited into you.
+ 1830.2  But verse 18,
+ 1833.1  but he who had received the one talent,
+ 1836.1  he went out and he dug in the ground.
+ 1840.0  He buried his master's money.
+ 1841.8  The first two dudes producing what they supposed to and the Lord doesn't work from the five
+ 1847.7  talent person more than what he gave him.
+ 1849.6  He doesn't want from the two talent person more than what he gave him.
+ 1853.0  I want to help some of you who be feeling burdened all the time.
+ 1855.8  You think the Lord wants from you.
+ 1857.1  He did not ask of you.
+ 1858.7  So you crucify yourself all the time.
+ 1860.7  You condemn yourself all the time.
+ 1862.6  You beat yourself all the time.
+ 1864.0  Now, look, the Lord, listen, if you're a two talent person, the Lord is not asking you
+ 1867.2  for five talents.
+ 1868.4  He just wants you to multiply what you have.
+ 1871.0  But then we see this last brother right here.
+ 1873.0  Too many of us are like this last brother.
+ 1874.9  You have gifts, you have abilities, you have talents,
+ 1877.5  you have money, you have resources,
+ 1879.6  but you don't use it for the kingdom of God.
+ 1882.0  You're not developing in character.
+ 1884.2  You're not growing as a man and a woman.
+ 1885.9  That's what this brother is.
+ 1887.1  He goes out and he buries his talent in the ground.
+ 1890.4  Now, burying his talent is not uncommon
+ 1892.3  in the first century.
+ 1893.6  When banks was embryonic and people wanted to protect
+ 1896.4  something that was assets,
+ 1897.8  they would dig a hole in the ground,
+ 1899.5  put that thing in the ground and cover it up and come back and find it later.
+ 1902.5  That's how they protected assets.
+ 1904.3  I just want you to pay attention that the man had to dig a hole in the ground to bury
+ 1909.8  that talent.
+ 1911.9  It takes effort to dig a hole.
+ 1914.7  It is activity to dig a hole.
+ 1916.8  So the brother is busy, but he's not fruitful.
+ 1922.9  The brother has activity, but he's not obeying his master.
+ 1927.3  And there's too many of us who are just like this brother.
+ 1930.0  We have all this activity in our life, but we're not fruitful for the kingdom.
+ 1934.7  We are busy bodies, but we're not fruitful bodies.
+ 1938.0  We're running here and there.
+ 1939.4  We're doing all these things and we're saying yes to all these people.
+ 1943.2  You're building this over here and you're building that over there and you're running
+ 1946.2  here and you're doing all that stuff.
+ 1947.9  My question is, are you doing what God has called you to do?
+ 1951.2  Are you doing what God has purposed you to do?
+ 1953.4  You can be busy and not fruitful.
+ 1955.7  You can be full of activities and not fruitful.
+ 1958.2  Some of you are running from conference to conference, but you still have not obeyed the
+ 1961.7  last thing God called you to do.
+ 1964.5  So I want you to see that this brother dug a hole and he put his resources in the hole
+ 1969.4  and I'm trying to stop some of you from continuing to do that.
+ 1971.9  In fact, I'm trying to strip you of your shovel.
+ 1974.6  My prayer today is some of you will lay down that shovel that you have that you're always
+ 1978.2  busy doing everything other than the Father's business.
+ 1981.4  You got time for everything except the Father's business.
+ 1985.0  Too busy to pray, too busy to read, too busy to fast, too busy to love, too busy for your
+ 1990.8  wife, too busy for your husband, too busy for your children, you're too busy for everything
+ 1995.0  except the word of God.
+ 1996.7  You're too busy for everything.
+ 1997.7  I said, well, God, call me and do my brother, my sister.
+ 1999.8  Listen to me.
+ 2000.8  Man, give me that shovel.
+ 2003.1  Man, leave that shovel in the room today.
+ 2005.8  Leave it in the overflow.
+ 2007.2  Leave it in the second overflow.
+ 2009.0  Leave it on the couch.
+ 2010.0  I'm talking to those of you who are always active, but you're not fruitful.
+ 2013.4  And leave that shovel here today.
+ 2016.2  Lay it down.
+ 2018.2  Take inventory of the things that you're doing
+ 2020.4  and ask yourself a question.
+ 2022.0  Is this in line with what God has called me to do?
+ 2030.3  Verse 19.
+ 2032.9  Now after a long time, the master of those servants came
+ 2037.5  and he settled accounts with them.
+ 2040.6  This is a picture of the second coming of Christ.
+ 2043.8  I want you to know this not because Christ is delayed.
+ 2046.0  That doesn't mean he's the God not coming.
+ 2048.3  Christ is delayed, but Christ is also coming.
+ 2051.1  When the Master comes, look at the first thing that He does.
+ 2053.5  He comes and immediately He settles everyone's accounts.
+ 2057.5  That is nobody is gonna escape Christ.
+ 2060.7  The atheist will not escape Him.
+ 2063.2  The Muslim will not escape Him.
+ 2065.3  The unbeliever will not escape Him.
+ 2067.1  The fake Christian will not escape Him.
+ 2069.1  When the Lord returns and return He shall,
+ 2072.5  He will settle everyone's accounts.
+ 2074.7  If you did your homework, you would have read
+ 2076.5  that books are gonna be open.
+ 2080.0  And in those books, he will look at what everybody
+ 2082.5  has done in his life.
+ 2083.4  And then according to those books,
+ 2085.1  people will either be judged or people will be rewarded.
+ 2087.9  You would have saw that in your homework.
+ 2090.6  That when Christ comes, he's coming to give, watch,
+ 2093.4  a time for everybody to stand before him.
+ 2096.1  And then all of us are gonna have to give an account
+ 2098.1  for how we manage the things of how did you
+ 2100.6  store your children?
+ 2102.3  How did you store your resources?
+ 2104.5  How did you store your time?
+ 2106.0  How did you store your opportunities?
+ 2107.8  We will give an account for how we store the things
+ 2110.5  that he gave us in his life.
+ 2112.1  Nobody escapes that account.
+ 2115.2  Verse 20, and he who had received the five talents
+ 2117.7  came forward during the account,
+ 2119.3  bringing five talents more and saying,
+ 2120.7  Master, you delivered to me five talents here.
+ 2123.7  I have made five more talents, his master said to him,
+ 2126.7  I know you wanna hear these words.
+ 2129.3  Well done, good and faithful servant.
+ 2132.3  You have been faithful over a little.
+ 2135.2  I will now set you over much.
+ 2137.5  Enter into the joy of your master.
+ 2139.8  This is what's gonna happen at the end.
+ 2141.9  The Lord makes it no darkness for us to know, verse 22.
+ 2144.8  And He says to the other one who had two talents.
+ 2147.3  He came to Him saying, master,
+ 2149.1  you deliver to me two talents here.
+ 2151.0  I've made two more.
+ 2152.5  His master said to Him, well done.
+ 2154.4  You good and faithful servant.
+ 2156.1  You have been faithful over a little things.
+ 2157.9  I will now set you over much.
+ 2159.7  Enter into the joy of your master.
+ 2162.7  So I just want you to see from the words of Christ
+ 2165.6  that in the end when we all give an account,
+ 2168.1  man, some people will be commended for what they have done.
+ 2171.4  These two servants, they are ready for their account.
+ 2174.1  They come with excitement in their voice.
+ 2176.3  You can hear it in the text, master, look.
+ 2178.8  You gave me five talents.
+ 2180.3  I give you back 10.
+ 2181.7  You gave me two.
+ 2182.7  I give you back four.
+ 2183.8  We hear in them men who had a sense of assignment,
+ 2186.9  a sense of mission, men who was living on purpose,
+ 2189.8  people who understood that their life mattered.
+ 2192.3  We hear in their men who were serious about the time they spent in the earth.
+ 2196.1  This is what I want for you.
+ 2197.8  This is what I shed tears for you.
+ 2199.3  I want you to be men and women that live with a sense of purpose.
+ 2202.7  Live with a sense of assignment.
+ 2204.3  Live with a sense of mission.
+ 2205.8  I want you to get up in the morning thinking, man, God has anointed me for whatever.
+ 2210.0  Fill in the blank rose he has given you to be a mother, a father, a minister, a speaker,
+ 2214.1  a teacher, whatever it is.
+ 2216.1  These men aren't ready for their account.
+ 2219.1  They say, Lord, look, you made an investment in me.
+ 2221.9  I give you back your investment.
+ 2224.8  This is powerful.
+ 2225.7  This is me being able to stand before the Lord and say,
+ 2228.0  Lord, you saved our brother from Queens.
+ 2231.0  And look at all of the good that has come out of my life.
+ 2233.9  I messed up a few times.
+ 2235.5  I fell down a few times.
+ 2237.3  I made a few mistakes.
+ 2238.5  But look, there's souls in heaven because of my preaching.
+ 2241.2  Look, my children made it because of my discipleship.
+ 2243.9  Look, people love you because of my preaching.
+ 2246.1  Look, they loved the Bible.
+ 2247.3  He wants to see our ROI on your salvation.
+ 2253.2  He wants to know that when I saved you, I got something out of you on the day of judgment.
+ 2258.9  What the Lord wants to see is that once your salvation was not a waste.
+ 2264.0  And He does not have to regret that I saved you from sin.
+ 2266.9  Man, I want to arrive in heaven with the Lord having no regrets like man, that brother,
+ 2271.0  man, he was difficult in the beginning.
+ 2272.6  But man, he cleaned up really good after 20, 20 years.
+ 2275.5  Man, like, man, he really started listening.
+ 2277.3  He really started praying.
+ 2278.6  He was reading.
+ 2279.6  He really started preaching from the Bible.
+ 2281.2  Man, he was serious about study.
+ 2283.0  I want the Lord to, I want to be able to stand before Him,
+ 2285.0  say, Lord, look, you rescued me, this is what you gave me,
+ 2287.5  I give you back more than what you gave me.
+ 2289.7  I want to be able to do that with joy in my heart.
+ 2293.7  And look at the commendation they get.
+ 2295.3  This is the commendation we're living for.
+ 2297.3  Well done.
+ 2299.9  You good and faithful servant.
+ 2302.6  I know you got that on your t-shirt.
+ 2304.2  And I just want to remind you, he didn't say that to people
+ 2306.6  just because they were believers.
+ 2308.6  Well done, my good and faithful servant
+ 2310.4  is not an empty platitude.
+ 2312.1  Well done, my good and faithful servant was attached to good stewardship.
+ 2317.0  And there'll be a lot of believers who might die in a rhyme in heaven and never really
+ 2320.2  hear that.
+ 2321.2  You hear that at every funeral.
+ 2323.2  We always say, man, well done, my good and faithful servant.
+ 2325.6  How are we saying that about somebody in a box that hated Jesus and never went to church?
+ 2331.0  The preacher is a liar.
+ 2332.9  Well done, my good and faithful servant is for believers who were good stewards in this life.
+ 2338.3  So if you want to hear those words from your Savior, you have to start taking serious the
+ 2342.4  stewardship of everything that God has placed under your care.
+ 2345.6  If you will hear from your Savior, well done, my good and faithful servant, you don't hear
+ 2349.6  that for going to church.
+ 2350.9  You hear that for being a good steward.
+ 2353.2  He says, watch, you are faithful over a little.
+ 2356.4  Now I'm going to make you ruler over much.
+ 2358.4  I want you to pay attention to the word little and the word much.
+ 2362.1  He said everything y'all did in this life was little.
+ 2365.1  That means the biggest ministry in this life in the eyes of God little
+ 2371.0  The biggest fortune in this life in the eyes of God little he said everything in this life you were just rulers over things that were little
+ 2379.1  But he says now man coming here. I will make you a ruler over much
+ 2383.4  This is important because I want you to see we're not gonna be in heaven floating around on clouds and playing harps all day and being bored
+ 2390.5  He set them for those who are faithful in this life over little
+ 2393.6  I'm gonna make you ruler over much that your service in this life is gonna translate into a greater service in the next life
+ 2400.6  Man man, this ministry 2019 is little in the eyes of God
+ 2404.7  But I can't even get if he calls this little just imagine what I'm gonna be ruling over when I come into the
+ 2410.8  Into glory with my Savior
+ 2413.4  Man, if you think the things you have now are big just imagine what you're gonna be ruling over when you come into glory
+ 2419.2  And the things we are doing right now are small.
+ 2422.2  They are nothing compared to what God is going to give us.
+ 2425.2  Now the wisdom of Paul makes sense.
+ 2427.2  No eye has seen and no ear has heard.
+ 2430.2  No has it into the heart of men.
+ 2432.2  God has prepared for those of us who love him.
+ 2435.2  The biggest thing you admire in this earth, the biggest ministry is little.
+ 2439.2  If these things are little, just imagine what you will rule over in eternity.
+ 2444.2  We are not going to be flowing on clouds.
+ 2446.2  We're going to have rulership.
+ 2447.8  We'll have assignments.
+ 2449.1  We'll serve God at another capacity.
+ 2451.3  We'll serve Him with joy.
+ 2452.7  And we'll be over things much greater than anything that we can imagine.
+ 2460.2  Enter into the joy and the rest of your master is what he said.
+ 2466.3  Come, now be rewarded for your labors.
+ 2472.5  Verse 24, but he who had received the one talent came in and said,
+ 2476.3  Master, I knew you was a hard man,
+ 2479.5  Reaping where you did not so and gathering where you did not scatter seed
+ 2483.5  So I was afraid and I went and I hid your talent in the ground here. You have what is yours?
+ 2490.8  Family this is a tragedy right here that I'm trying to protect as many people as possible from being in this position
+ 2497.3  That there are too many people look he appeals to the master with two things
+ 2500.6  He appeals to the master with an insult and he appeals to the master with a felt need
+ 2504.9  He's hoping the master is gonna feel sorry for him. He tells the master
+ 2508.7  I knew you was a hard man, reaping what you have not so,
+ 2511.9  and harvesting what you have not planted.
+ 2513.5  He is accusing the master of taking what does not belong to him.
+ 2517.4  Like the scripture didn't say the earth is the Lord
+ 2519.2  and the fullness they're off.
+ 2520.2  He is now arguing with the master based on bad theology.
+ 2524.7  And there are a lot of people, man,
+ 2526.0  who have poor hermeneutics and bad theology.
+ 2529.1  You're gonna arrive in glory before God.
+ 2531.3  You're not gonna be able to get into glory.
+ 2533.6  And in that moment, you're gonna argue with God
+ 2535.6  with bad theology.
+ 2538.1  That's why you should love biblical teaching.
+ 2540.2  That's why you should read the scriptures for yourself.
+ 2543.0  So you don't die and come into a place of shock.
+ 2546.6  This brother now is shocked.
+ 2549.0  He makes an excuse why he wasn't faithful,
+ 2552.0  why he wasn't fruitful.
+ 2553.5  He makes an excuse.
+ 2554.7  I knew he was a hard man.
+ 2556.2  He insults his master.
+ 2558.9  And then he tried to appeal with some felt knee garbage.
+ 2561.6  I was afraid.
+ 2564.4  He said I was afraid.
+ 2566.8  Too many of us like that.
+ 2567.8  with paralyzed with fear.
+ 2570.1  So because of fear, we don't do anything
+ 2572.0  that God is called to do.
+ 2573.1  This man said, I was afraid.
+ 2575.2  And I just want to remind some of you who deal with fear.
+ 2577.6  I need to say this before I finish this text.
+ 2580.3  There's some of you, man.
+ 2581.4  You are waiting for everything to be perfect for you to obey.
+ 2584.9  You're just like this dude, you battle and fear.
+ 2586.5  You're not like the two dudes that immediately went out
+ 2588.4  and did what they was called to do.
+ 2589.6  I want to tell you something and you're not going to like it.
+ 2591.4  Some of you, you're waiting to be ready before you do what God...
+ 2594.7  It ain't coming.
+ 2597.8  You've been dating for 25 years.
+ 2600.7  And you said when we get enough money,
+ 2602.1  then we're gonna get married.
+ 2603.0  It ain't coming.
+ 2604.9  God is calling you to be obedient in some area.
+ 2608.0  And you said when I feel ready,
+ 2609.4  I'll start the ministry, I'll write the book.
+ 2611.2  You're never gonna feel ready.
+ 2613.1  You need to just obey and do it afraid.
+ 2615.7  You need to just be faithful afraid.
+ 2617.6  You need to just jump out on faith and let God catch you.
+ 2621.7  You're waiting for the planets and the stars to align
+ 2624.4  before you choose to be obedient.
+ 2626.9  Man, I'm telling you right now today, some of you what you're waiting for, it ain't coming.
+ 2631.0  When I started this ministry, I wasn't ready.
+ 2633.2  When I changed the name of the church, I wasn't ready.
+ 2635.4  When I started traveling and preaching, I wasn't ready.
+ 2637.5  Everything I'm doing right now, I had to do it afraid.
+ 2641.1  I still get up on Sunday mornings and sometimes feel afraid.
+ 2643.7  I still battle with insecurities.
+ 2645.4  You're never going to feel perfectly ready.
+ 2647.4  What broken you and being is going to feel perfectly ready.
+ 2649.8  You need to just do what God is calling you to do with all of your fears and insecurities.
+ 2653.8  Just do it afraid and do it insecure.
+ 2660.9  He gives the Lord an excuse.
+ 2664.9  I was afraid.
+ 2666.5  So I went and I buried what you,
+ 2668.6  hey Lord, I give you back the talent that you gave me.
+ 2672.1  The Lord don't want back the talent He gave you.
+ 2673.9  He want back more than what He gave you.
+ 2679.9  And this is too many of us right here.
+ 2682.5  I'm talking to you.
+ 2685.6  This is all this is, it's just come in here,
+ 2688.4  listen to PAM.
+ 2690.9  But not going out there and multiply your talents.
+ 2695.7  not being intentional about growing as a man,
+ 2698.8  growing as a woman, growing as a disciple,
+ 2702.0  growing in character, growing in faithfulness,
+ 2705.0  growing in obedience, growing in knowledge of God's word,
+ 2708.4  growing in peer.
+ 2709.3  Where's the intentionality in those areas?
+ 2712.6  The Lord wants to be able to look at you
+ 2715.0  when He calls you home and see that He got something
+ 2717.9  out of your life.
+ 2719.7  I gave you assignments and you carried them out.
+ 2722.8  I whispered to your aunt to be obedient in that area
+ 2725.6  and you carried that out.
+ 2727.2  I told you to be a better husband
+ 2729.1  and you took that serious.
+ 2730.4  I called you to be a better wife
+ 2732.2  and you took that serious.
+ 2733.4  I told you to be a better mother
+ 2735.0  or father to these children
+ 2736.3  and you took that serious.
+ 2737.3  I told you to be faithful at your local church
+ 2739.5  and you took that serious.
+ 2740.4  I told you to start giving some of your income
+ 2742.6  to missions and to gospel ministries
+ 2744.7  and you took like, I wanna get something out of your life.
+ 2748.2  The Lord made an investment in you.
+ 2750.1  He put his spirit in you.
+ 2751.6  He wants something out of you.
+ 2754.3  He does not want to look at you at the end and say,
+ 2756.3  man, I made a mistake in serving way,
+ 2758.9  saving this person.
+ 2759.9  No, man, no.
+ 2763.0  He wants to be able to say, this woman I saved,
+ 2766.4  this man I saved, look how much I got out of them.
+ 2771.1  I got songs out of them and albums out of them
+ 2774.0  and sermons out of them.
+ 2775.3  I got a better husband out of them.
+ 2776.8  I got a better father out of them.
+ 2778.0  Look what I got out of this man.
+ 2780.5  Look what I got out of this woman.
+ 2782.0  Look at all that came out of them
+ 2783.6  when nobody else saw in them what I saw.
+ 2786.4  I saw something in them.
+ 2788.1  I gave them my spirit.
+ 2789.6  I gave them assignments.
+ 2791.1  I pulled out of them.
+ 2798.3  Like this brother who buried his talent.
+ 2801.6  Not like this brother who's gonna give the Lord
+ 2803.6  wrong theological excuses.
+ 2806.1  The Lord said, shoot.
+ 2807.3  If you was gonna do that verse 27,
+ 2809.3  you should have put my money in the bank,
+ 2810.8  Word for this and Brianna,
+ 2811.8  and give me some investment.
+ 2813.3  Give me some interest.
+ 2814.4  Give me something back.
+ 2817.2  That's what the Lord was saying.
+ 2818.1  You're gonna disobey me half your life.
+ 2819.8  At least give me something back.
+ 2821.7  Give me some ROI for saving you.
+ 2825.1  I didn't save you to just sit in rooms like this
+ 2827.4  and be a church goer for 50 years,
+ 2829.4  die and be disobedient.
+ 2831.3  Give me something back for my investment.
+ 2834.1  Give me something back.
+ 2836.2  It's what the Lord said, give me something back.
+ 2843.6  And for those of you who think like,
+ 2847.5  tie to that brother yelling at us,
+ 2848.9  I ain't taking that serious.
+ 2850.8  Yeah, verse 28 and 29 and 30 is for all of you.
+ 2854.9  The Lord says, for the one who comes in the end,
+ 2857.6  so take that talent from him,
+ 2861.6  that wicked and lazy servant,
+ 2864.2  and give it to the one who has 10 talents.
+ 2866.8  For everyone who has will be given more,
+ 2869.6  and he will have an abundance,
+ 2870.8  but from the one who has not,
+ 2873.0  even what he has will be taken away from him.
+ 2876.5  The Lord says in the end,
+ 2877.6  he will strip every disingenuous servant,
+ 2880.0  every fake Christian, everyone who arrives in glory with an excuse, he said he's going
+ 2884.4  to strip people of what they're assignments, he's going to give it to somebody else.
+ 2889.6  Man this is going to happen in the judgment, I like to think man this may even be happening
+ 2893.3  right now.
+ 2894.3  There may be people right now, you are living out somebody else's assignment.
+ 2898.3  Maybe there was somebody else the Lord was trying to get to be obedient and they wouldn't
+ 2901.8  be obedient so you had to strip them of that assignment and give it to you.
+ 2905.4  Maybe there was somebody else that was supposed to change your family, he stripped them of
+ 2909.2  that assignment and he gave it to you.
+ 2910.7  Maybe you are the man to change the trajectory
+ 2913.2  of your family.
+ 2914.2  Maybe you are the woman to change it to direct you.
+ 2917.1  Some of you may be living in assignments
+ 2919.4  that some other person cannot be faithful to.
+ 2921.8  So he gave it to you.
+ 2922.7  Your uncle could not do it.
+ 2924.1  He gave it to you.
+ 2924.9  Your father could not do it.
+ 2926.2  He gave it to you.
+ 2927.1  Your mother could not do it.
+ 2928.2  He gave it to you.
+ 2929.1  Man, people are gonna be stripped of things
+ 2930.7  that were supposed to do.
+ 2932.5  It's gonna be given to people else.
+ 2933.8  And then those of us who are faithful
+ 2935.4  just gonna have an abundance of God's blessing
+ 2937.7  For our faithfulness,
+ 2948.7  verse 30,
+ 2950.9  and cast that worthless servant into out of darkness.
+ 2957.8  And in that place,
+ 2959.9  there will be weeping and gnashing of teeth.
+ 2963.6  The Lord is saying in the end,
+ 2966.1  for those who are gonna bury their talent,
+ 2967.9  they're gonna be poor stewards of money,
+ 2969.8  poor stewards of opportunities,
+ 2971.6  poor stewards of relationships,
+ 2973.1  poor stewards of assignments,
+ 2974.3  those who are not gonna take stewardship serious,
+ 2976.7  those who are not even really believers,
+ 2978.6  They're gonna be exposed in the end
+ 2980.1  when they stand before the Lord.
+ 2982.0  And he's gonna say, take that lazy servant.
+ 2984.1  You didn't give me back what I put in you.
+ 2985.6  Take that, throw him into outer darkness,
+ 2987.7  and in that place, hell,
+ 2990.0  there will be weeping and gnashing of teeth.
+ 2991.7  There will be a consciousness of suffering
+ 2995.1  for not being good stewards.
+ 2997.1  And if we're hearing the voice of our Savior,
+ 2999.6  seriously, man, we go to our houses tonight,
+ 3002.9  we kneel down, we pray, we say, Lord, I repent,
+ 3005.7  I'm sorry for every place.
+ 3007.2  I've been a mismanager of your resources.
+ 3009.3  Lord, help me to be a good steward
+ 3011.8  over everything you've entrusted to me.
+ 3013.4  Lord, you save me.
+ 3014.8  I wanna give you a return on that vestment.
+ 3016.9  Here is my cry for you.
+ 3018.5  I want everybody in this room to die empty.
+ 3023.0  Look at me, this is what I want as your pastor,
+ 3024.9  as your friend and as your brother.
+ 3026.6  I mean this with my whole heart.
+ 3028.5  I'm praying that everybody under the sound of my voice,
+ 3031.3  you die empty.
+ 3034.1  You arrive in glory, not carrying anything
+ 3037.8  that God intended for you to pour out in this life.
+ 3041.2  I want you to arrive before heaven say,
+ 3042.8  Lord, I wrote the book, I made the songs,
+ 3046.9  I did the album, I started the ministry,
+ 3049.9  I did the podcast, I became a man,
+ 3052.3  I'll be looking at Lena, this word to my mother.
+ 3054.8  I'll be looking at her, I'll be looking at her.
+ 3057.0  I'll be looking at bed at night, I'll roll over
+ 3059.5  and I'll be staring at her saying,
+ 3060.7  Lord, I wanna be a better husband to this woman.
+ 3064.1  Man, she's put up with a lot.
+ 3066.2  She's been through a lot.
+ 3067.4  She sacrificed a lot.
+ 3068.6  I've heard her lot.
+ 3069.4  I'll be staring at her like,
+ 3070.6  Lord, I want to be a better husband to these women.
+ 3073.8  I'll be looking at my children like,
+ 3075.3  man, I miss time with them when I was young
+ 3077.6  and trying to build a ministry.
+ 3078.9  I want to be a better father to them.
+ 3080.6  I want to be available to them.
+ 3082.3  Man, I cut my sermon prep short yesterday to hang out with them.
+ 3085.7  And we went to Bartaco and we went to Ponce City Market
+ 3089.7  and we was running the streets.
+ 3091.0  I'm not supposed to be in the house on Saturday.
+ 3093.4  I never go out the house on Saturday,
+ 3095.2  but I'm running the streets with them kids
+ 3096.8  because I'm in there working on my message,
+ 3099.5  and I'm feeling broken, I said,
+ 3100.8  I closed the computer.
+ 3103.2  So I'm gonna go spend some time with these kids,
+ 3104.9  and I text easy, so I'm coming upstairs.
+ 3107.7  I'll take y'all wherever y'all wanna go.
+ 3110.2  I do whatever y'all wanna do.
+ 3111.8  Said, Father, that's why I didn't call me.
+ 3113.3  Father?
+ 3115.8  She don't call me Dad, no more.
+ 3116.8  Father, we wanna go to Bartaco in the city.
+ 3120.1  We want city, we want vibes.
+ 3124.1  We want vibes, Father.
+ 3126.1  I said, I'll be up at three o'clock.
+ 3127.5  Be ready.
+ 3128.6  And we in the streets on Saturday,
+ 3133.2  when I'm supposed to be consecrating and being in the glory,
+ 3135.6  for, no, I'm with them.
+ 3137.6  I miss time with them when they were young.
+ 3139.8  I want to be a better, this is me trying to give God
+ 3141.9  a better return on his investment.
+ 3153.0  I'm back there before this gathering on the floor
+ 3156.2  and the green room crying and saying, Lord, I'm a mess today.
+ 3160.3  I'm all over the place.
+ 3162.3  I'm heavy, I'm frustrated from all the things
+ 3164.7  that happen this week Lord.
+ 3165.8  I feel like my proclamation is like it's off today
+ 3168.1  and I'm saying Lord, I just need to do better.
+ 3171.4  I'm conscious of the fact that I'm stewarding this.
+ 3175.9  And when I suck, I wanna say I wanna do better.
+ 3178.0  I don't wanna just suck and walk off
+ 3179.5  and then go get, go get, go get, uh, Carva?
+ 3182.5  No, I wanna be, Carva's dope.
+ 3184.8  I wanna be greedy, like Carva.
+ 3187.8  Like, I want Carva when I leave, like Carva's dope.
+ 3191.1  But I'm back there crying like, well, I'm struggling today.
+ 3196.9  I'm legit struggling.
+ 3198.7  I want to go home.
+ 3203.1  Lina's out of town.
+ 3204.5  I'm daddy Dekey.
+ 3205.6  I want to just go be my kids better.
+ 3207.3  Like come home, Lina.
+ 3208.4  Like, I want to, I want to, I'm struggling.
+ 3212.9  Struggling today.
+ 3214.7  I'm doing dishes last night.
+ 3216.0  I'm trying to, well, we going to eat for dinner.
+ 3217.9  I'm, I'm, I'm, I'm, the boys.
+ 3219.3  I'm struggling this week.
+ 3224.1  And I'm back there at the eight o'clock.
+ 3226.1  Like Lord, I'm struggling in my preaching.
+ 3228.9  I'm over time.
+ 3229.7  I'm a mess.
+ 3233.4  Help me to do better.
+ 3235.7  I'm talking like that because I'm a steward.
+ 3241.0  That's how stewards talk.
+ 3243.7  They wanna be better managers
+ 3245.8  of the things that God has given them.
+ 3249.8  So, like I would get on my knees and beg you.
+ 3270.3  This is my desire for you,
+ 3274.2  that you would lay down your shovel.
+ 3276.9  You will start being busy and not being fruitful.
+ 3280.9  You will learn to start saying no to things that have nothing to do with you.
+ 3285.9  You will start being faithful to the things God has called you to.
+ 3288.9  You will start looking at your relationships and want to be a better steward.
+ 3291.9  You will look at your marriage and want to be a better steward.
+ 3293.9  You will look at your children and want to be a better steward.
+ 3295.9  You will look at your ministry and want to be a better steward.
+ 3298.9  You will look at your assignments.
+ 3299.9  You want to be better on your job.
+ 3300.9  You want to be better in your service.
+ 3302.9  You want to be better as a servant leader, a better squad leader like Lord.
+ 3305.9  I want to give you more than what you gave me.
+ 3308.3  You're not going to have a wasted investment in me.
+ 3311.3  Your salvation was too priceless.
+ 3313.2  Your spirit was too costly.
+ 3314.6  The cross was too costly.
+ 3317.5  You will get a return out of me.
+ 3320.0  This is my, I lay down the shovel.
+ 3323.1  Be a good story of everything God has entrusted to you.
+ 3334.6  That is my prayer.
+ 3337.2  Eternal God and otherwise, Father, I am.
+ 3340.6  I don't know.
+ 3345.9  I'm just everywhere.
+ 3347.9  God, I pray for my brothers and my sisters.
+ 3353.4  I do pray for them.
+ 3356.7  This will be more than a sermon.
+ 3358.3  Something in them would look in the mirror today and see a steward.
+ 3367.5  They would look around and see all that you have blessed them with.
+ 3371.3  And they would marvel over your goodness and your kindness.
+ 3375.9  And that goodness would bring them to a place of greater accountability.
+ 3379.2  When they said, I want to be better in this area, Lord, you're going to get a return out of me.
+ 3390.5  I pray for the five talent person they would multiply and for the two talent person they
+ 3394.9  would multiply and for the one talent person they would multiply.
+ 3398.1  Deliver us from jealousy and covetousness of other people's talents.
+ 3404.0  Help us to embrace who we are and the level that we are on.
+ 3410.1  I pray there'll be an explosion of fruitfulness in 2019.
+ 3415.1  Now local and digital disciples, I don't know what else to say or do.
+ 3418.8  This is my humble prayer.
+ 3421.2  I pray over them in the mighty, in the majestic, in the matchless name of our Son,
+ 3432.1  coming King, the Lord Jesus Christ, and all the stewards under the Son of my voice said.

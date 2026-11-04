@@ -1,350 +1,904 @@
-    0.9  I cried because I just struggled to just think about the great lengths that God has gone through to demonstrate His love
-   12.2  for you and
-   14.2  just in the hardness of the heart of man.
-   16.9  And man, even his words should be enough.
-   23.6  I just, I could just lay out right here and go home.
-   47.0  I just feel like the weight of this text, it just brings me to tears.
+    0.9  I cried because I just struggled to just think about the great lengths that God has gone through to demonstrate His love for you.
+   13.7  Just in the hardness of the heart of man.
+   16.7  That man, even his words should be enough.
+   23.7  I could just lay out right here and go home.
+   47.8  I just feel like the weight of this text,
+   64.8  it just brings me to tears.
    69.7  I don't fully understand it all.
-   72.9  I don't fully comprehend it all, but just the way the text we approach today
-   78.4  just brings me to tears that overwhelms me.
-   84.4  I'm not even sure my words can do it justice.
-   90.1  That apart from a supernatural revelation of the Holy Spirit, I'm not sure how we even understand it.
-   97.6  I feel like it's strong enough to just read and go home.
-  112.1  If you are guests, we welcome you to 2018-19 where we are serious about the spread of the gospel and the multiplying of disciples.
-  122.4  To all of our digital disciples watching live right now across America and around the world, we welcome you.
-  128.4  You are extended family wherever you are, the city is all across the country and on continents and across the planet.
-  135.4  And if you're in this room or in the overflow, you crept into this chat and you're not a follower of Christ.
-  140.4  My prayer for you is that you would feel the Spirit of God,
-  143.7  woman you to Himself, and that you would come to know the Lord Jesus Christ before time is run out on you.
-  149.4  We are in, we too, of a brand new series called,
-  159.3  in Christ's.
-  161.3  We are walking through the New Testament letter of Ephesians together.
-  165.8  Ephesians, it is in my estimation one of the most sound,
-  178.1  Christological documents ever recorded in the history of man and
-  184.3  preserfers in the New Testament. It exalts the person and work of the Lord
-  190.1  Jesus Christ and it exalts our position in Christ not on the cross but post the
-  196.7  cross in his ascension in his position right now seated at the right hand of
-  201.6  the Father when properly studied and read and understood, you cannot study
-  211.6  eviscience and come out of it and remain the same. It has the power to
-  218.2  transform your identity in Christ and to shape you in identity and in faith and
-  226.0  and practice, I prophesied to you in faith
-  230.2  that at the end of this series,
-  232.3  all 20 something weeks, 30 weeks the way
-  235.8  I'm feeling right now, the couple months that we'll be here,
-  238.4  I'm in no rush, I prophesied to you
-  241.6  that if you sit in these sacred gatherings,
-  244.2  you go home and you read for yourself and study,
-  246.9  I promise you, you will leave this teaching
-  250.6  a stronger disciple, you will leave this teaching
-  253.8  With clearer identity, you will leave this teaching
-  256.3  for some of you, a transformed man and a transformed woman.
-  260.2  You will be a better husband and a better father,
-  262.9  a better leader and a better parent.
+   72.7  I don't fully comprehend it all,
+   75.7  but just the weight of the text we approach today,
+   77.7  it just brings me to tears, it overwhelms me.
+   80.7  I'm not even sure my words can do it justice.
+   86.9  That apart from a supernatural revelation of the Holy Spirit,
+   94.3  I'm not sure how we even understand it.
+   97.3  I feel like it's strong enough to just read and go home.
+  113.6  If you are guess, we welcome you to 2019,
+  117.8  where we are serious about the spread of the gospel
+  120.0  and the multiplying of disciples.
+  122.6  To all of our digital disciples watching live right now
+  125.4  across America, around the world, we welcome you.
+  128.5  You are extended family, wherever you are.
+  131.3  The city's all across the country and on continents,
+  134.4  across the planet.
+  136.1  And if you're in this room or in the overflow,
+  138.0  be crept into this chat, you know, the follow of Christ.
+  141.0  My prayer for you is that you would feel the Spirit of God
+  143.8  warming you to Himself,
+  145.8  and that you would come to know the Lord Jesus Christ
+  147.9  before time is run out on you.
+  151.5  We are in, we too, of a brand new series called,
+  160.1  in Christ's.
+  162.2  We are walking through the New Testament
+  164.1  letter of Ephesians together.
+  170.8  Ephesians, it is, in my estimation,
+  175.6  one of the most sound Christological documents ever recorded
+  183.0  in the history of man and preserfers in the New Testament.
+  186.1  It exalts the person and work of the Lord Jesus Christ
+  191.2  and it exalts our position in Christ,
+  194.7  not on the cross, but post the cross
+  197.9  in his ascension in his position right now,
+  200.6  seated at the right hand of the Father.
+  202.3  When properly studied and read and understood,
+  209.4  you cannot study Ephesians and come out of it
+  214.1  and remain the same.
+  215.2  It has the power to transform your identity in Christ
+  222.8  and to shape you in identity and in faith and practice.
+  226.8  I prophesied to you in faith that at the end of this series,
+  231.8  All 20-something weeks, 30 weeks the way I'm feeling right now.
+  236.8  A couple months that we'll be here.
+  238.4  I'm in no rush.
+  239.6  I prophesied to you that if you sit in these sacred gatherings,
+  244.2  you go home and you read for yourself and study.
+  246.9  I promise you, you will leave this teaching.
+  250.6  A stronger disciple, you will leave this teaching with clear
+  254.4  identity.
+  255.0  You will leave this teaching for some of you,
+  257.2  a transformed man and a transformed woman.
+  260.2  You will be a better husband and a better father, a better leader and a better parent.
   264.9  You will not be the same.
-  266.1  I prophesied that to you.
-  270.0  I hear Sister Sha'li Amen, that ain't churchy.
-  272.5  That means soul let it be, that is Lord.
-  274.5  And what I heard, I want that for myself.
-  285.9  I will text today four short verses,
-  291.2  probably some of the most profound in the New Testament.
-  297.2  Ephesians 1 verses 3 through 6,
-  301.1  Turno God and never wise Father.
-  317.2  What man Lord can do this text any justice.
+  266.0  I prophesied that to you.
+  269.9  I hear Sister Sha'li' Amen.
+  271.4  That ain't churchy.
+  272.4  That means soul let it be.
+  273.8  That is Lord.
+  274.8  What I heard, I want that for myself.
+  285.8  I will text today four short verses, probably some of the most profound in the New Testament.
+  297.1  Ephesians chapter one, verses three through six.
+  301.1  Turn O God and never wise follow.
+  317.3  What man Lord can do this text any justice.
   322.5  I acknowledge Lord that apart from the move
   325.5  of the Holy Spirit, no man can understand
   329.7  the unfathomable depths of these verses.
   334.4  The spirit of the living God, I pray you
   336.3  who authored these words through Paul.
   340.0  You would illuminate them in the eyes
-  342.1  and in the minds of the brothers and sisters,
-  346.0  you would stir up the heart of the unbeliever to believe.
+  342.1  and in the minds of the brothers and sisters.
+  344.7  You would stir up the heart of the unbeliever to believe.
   350.5  You would breathe right now on this holy assembly.
-  354.9  Hallelujah, God.
-  357.4  I pray, God, I plead, and I appeal to you.
-  361.1  You would do a serious work
-  363.2  in the hearts of the brothers and sisters.
-  366.2  When my words will fall short,
-  368.5  I pray your grace will make up the difference.
-  371.0  In illumination and light by the power of the Spirit to each one as they need to see it.
-  379.3  I pray for help in my frail humanity to communicate Lord these words that are beyond comprehension.
-  390.6  Help me Holy Spirit.
-  393.1  I'm asking the mighty and the majestic, I feel the Spirit and the matchless name of our soon
-  401.8  coming King. The Lord Jesus Christ and those who receive say amen. Amen. One of the most powerful
-  428.6  agents of revelation that we have in human communication is the feature we call the rhetorical
-  439.9  question that when utilized properly, the rhetorical question has the power to drive
-  448.5  the human mind and the human heart to deep thought and deep meditation. When used correctly,
-  456.0  the rhetorical question has the power to drive the human mind and the human heart to a deep
-  462.7  revelation to bring that person's mind to a conclusive answer, some finished
-  469.1  revelation in the person's mind. And of all of the rhetorical questions that have
-  475.1  ever been asked in the history of mankind, there is no rhetorical question, more
-  481.3  consequential, more serious in its application than the rhetorical question
-  487.3  that was asked by the Lord Jesus Christ in the first century AD of every single
-  492.6  person across every generation when the Lord asked this powerful rhetorical
-  497.2  question when he said, what will it profit a man to gain the entire world and
-  503.1  then lose his soul? What will it profit you to gain the entire world and then lose
-  510.9  your soul? What would it profit you to climb the corporate ladder, to get to the
-  516.9  bad that you want to, to get everything your heart's desire,
-  521.7  and then in the end lose your soul.
-  523.6  What would it profit somebody to have Elon Musk's money,
-  527.8  or Jeff Bezos' money, or Arnold Belt's money,
+  354.3  Hallelujah God.
+  355.9  I pray, God, I plead, and I appeal to you.
+  361.2  You would do a serious work in the hearts of the brothers' ancestors.
+  366.3  When my words will fall short, I pray your grace will make up the difference in illumination
+  372.9  and light by the power of the Spirit to each one as they need to see it.
+  379.3  I pray for help in my frail humanity to communicate, Lord, these words that are beyond
+  387.9  comprehension.
+  390.6  Help me, Holy Spirit, ask in the mighty and the majestic, I feel the Spirit, and the matchless
+  399.8  name of our soon coming King.
+  404.3  The Lord Jesus Christ and those who receive say amen.
+  410.8  Amen, amen.
+  412.1  Amen.
+  424.9  One of the most powerful agents of revelation
+  432.7  that we have in human communication
+  436.8  is the feature we call the rhetorical question.
+  440.7  that when utilized properly, the rhetorical question
+  446.3  has the power to drive the human mind and the human heart
+  450.6  to deep thought and deep meditation.
+  454.3  When used correctly, the rhetorical question
+  457.6  has the power to drive the human mind and the human heart
+  461.7  to a deep revelation, to bring that person's mind
+  465.9  to a conclusive answer, some finished revelation
+  470.2  in the person's mind.
+  472.1  And of all of the rhetorical questions
+  474.8  that have ever been asked in the history of mankind,
+  478.4  there is no rhetorical question, more consequential,
+  483.0  more serious in its application than the rhetorical question
+  487.4  that was asked by the Lord Jesus Christ
+  490.0  in the first century AD of every single person
+  493.1  across every generation when the Lord asked
+  495.9  this powerful rhetorical question when he said,
+  498.7  What will it profit a man to gain the entire world
+  503.7  and then lose his soul?
+  506.1  What will it profit you to gain the entire world
+  510.3  and then lose your soul?
+  511.7  What would it profit you to climb the corporate ladder,
+  516.3  to get to the bag that you want to,
+  518.9  to get everything your heart's desire
+  521.7  and then in the end lose your soul?
+  523.6  What would it profit somebody to have Elon Musk money
+  527.8  or Jeff Bezos' money or Arnold Belt Money,
   531.0  like any kind of money, what would it profit you
-  533.1  to have all of that, and then die in the end
+  533.1  to have all of that and then die in the end
   535.7  and be eternally separated from God
   538.2  in a conscious state of torment
   540.0  in damnation, fire, and flame?
   542.8  What would it profit you to acquire all the things
   545.9  that your heart desires in this life,
-  549.2  only to lose your soul in the end.
+  550.3  only to lose your soul in the end?
   553.1  The power of that rhetorical question,
-  555.4  it brings the reader to the revelation
+  555.3  It brings the reader to the revelation
   558.3  that a life apart from Christ is futile.
   561.7  It brings the reader to a revelation
-  564.0  that there is nothing in this life
+  563.9  that there is nothing in this life
   565.7  that's more valuable than Christ.
-  567.4  It brings the revelation to the reader.
+  567.3  It brings the revelation to the reader.
   569.8  Here it is right here.
   571.4  The answer to that question,
-  573.1  what will it profit you to gain
-  574.5  anything you want in this world, lose your soul,
-  577.2  the answer to the question is nothing.
-  582.3  That you could have all the money in this world,
-  584.6  and if you don't have Christ, you have nothing.
-  587.8  You can have all the relationships in this world,
-  590.1  and if you don't have Christ, you have nothing.
-  592.9  You can have all of the acclaim, all of the titles,
-  595.9  all of the platforms.
-  597.5  You can have all of the connections in life,
-  599.6  and if you don't have Christ, you have nothing.
+  573.0  what will it profit you to gain anything you want
+  575.3  in this world, lose your soul?
+  577.1  The answer to the question is nothing.
+  582.2  That you could have all the money in this world.
+  584.6  And if you don't have Christ, you have nothing.
+  587.7  You can have all the relationships in this world.
+  590.1  And if you don't have Christ, you have nothing.
+  592.8  You can have all of the acclaim, all of the titles,
+  595.8  all of the platforms.
+  597.5  You can have all of the connections in life.
+  599.6  And if you don't have Christ, you have nothing.
   602.9  You can acquire anything you think
   605.2  will make your heart feel satisfied.
   607.5  And if you don't have Christ, you have nothing.
   611.0  And the deeper revelation of the question
-  613.5  is that if you don't have Christ, you have nothing.
-  616.3  Speaking of material things is when the Lord said,
-  619.3  what does it profit a man to gain the whole world?
-  621.7  He's talking about material things.
-  623.5  If the answer to the question is nothing,
-  626.8  then the deeper revelation is,
+  613.5  is that if you don't have tries to have nothing,
+  616.2  speaking of material things is when the Lord said,
+  619.2  what does it profit a man to gain the whole world?
+  621.6  He's talking about material things.
+  623.4  If the answer to the question is nothing,
+  626.7  then the deeper revelation is,
   628.8  there must be something we call blessings
-  631.6  that's far greater than anything material
-  634.1  that you can pursue in this life,
-  639.5  and that the greatest blessings in this human being
-  644.4  will ever know in this life, not material,
-  649.8  but spiritual is found right here,
-  653.1  in Ephesians chapter one.
-  655.8  Right here in Ephesians,
-  658.4  and what is the longest sentence in the Greek
-  663.4  is found the greatest blessings a human being will ever know.
-  668.8  The Apostle Paul starts the letter of Ephesians
-  672.3  with these words that we read last week,
-  674.4  Paul an apostle of Christ Jesus by the will of God.
-  680.0  To the saints who are in Ephesus
-  683.3  and who are faithful in Christ Jesus,
-  686.1  grace to you and peace from God our Father
-  690.3  and the Lord Jesus Christ.
-  691.6  So in week one of our series, we addressed two things.
-  695.3  We addressed the sender and the recipient of the letter.
-  699.0  How the sender was a man named Paul, first called Saul,
-  702.4  who persecuted the church even unto death.
-  705.5  He was jealous in his education
-  708.0  and on the road to Damascus, a city in Syria.
-  711.1  He was confronted by Christ on that road
-  713.5  and was brought into the faith of Christianity
-  716.4  by the Lord Jesus Christ himself.
-  718.7  He went out to preach the gospel and plant churches.
-  722.0  And on his second missionary journey,
-  723.9  he plants this church in the city of Ephesus,
-  726.9  a city entrenched in the occult,
+  631.5  that's far greater than anything material
+  634.0  that you can pursue in this life.
+  639.5  And that the greatest blessings, any human being,
+  644.5  Whatever know in this life
+  647.5  Not material
+  649.5  But spiritual is found right here in Ephesians chapter 1
+  655.5  Right here in Ephesians and what is the longest?
+  660.9  Sentence in the Greek is found the greatest blessings a human being will ever know
+  667.9  The Apostle Paul starts the letter of Ephesians with these words that we read last week, Paul,
+  675.2  an apostle of Christ Jesus by the will of God to the saints who are in Ephesus and who
+  683.6  are faithful in Christ Jesus, grace to you and peace from God our Father and the Lord
+  690.8  Jesus Christ.
+  691.8  So in week one of our series we address two things.
+  695.4  address the sender and the recipient of the letter.
+  699.0  How the sender was a man named Paul, first called Saul, who persecuted the church even
+  704.1  unto death.
+  705.7  He was jealous in his education and on the road to Damascus, a city in Syria.
+  711.2  He was confronted by Christ on that road and was brought into the faith of Christianity
+  716.3  by the Lord Jesus Christ himself.
+  718.8  He went out to preach the gospel and plant churches and on his second missionary journey
+  723.9  He plants this church in the city of Ephesus,
+  726.8  a city entrenched in the occult,
   729.9  a city entrenched in magic,
-  732.4  a city entrenched in the worship of Artemis,
-  736.0  a massive temple of thank God is called Diana,
-  739.8  in which people came from all around the world
-  742.0  to pray tribute to that false goddess.
-  744.8  On his third missionary journey,
-  746.6  He was spent three years there before he leaves
-  749.0  and some 10 years later, he remembers them
+  732.3  a city entrenched in the worship of Artemis,
+  736.0  a massive temple, a fake goddess called Diana,
+  739.7  in which people came from all around the world
+  741.9  to pray tribute to that false goddess.
+  744.8  On a stirred missionary journey,
+  746.5  he was spent three years there before he leaves,
+  749.0  and some 10 years later, he remembers them,
   751.5  and he writes the letter we call Ephesians.
   754.6  He reminds them right from the beginning
   757.1  of their identity in Christ.
-  758.7  He will form that identity throughout the entire letter.
-  761.4  But from the beginning, he talks to them
-  763.2  about their identity.
-  764.2  He talks about two things.
-  765.9  He calls them saints, which means separated ones
+  758.6  He will form that identity throughout the entire letter.
+  761.3  But from the beginning, he talks to them about their identity.
+  764.1  He talks about two things.
+  765.8  He calls them saints, which means separated ones
   769.1  or holy ones and faithful.
-  772.1  Then he reminds them that they are in two places
-  774.5  at the same time.
-  775.6  They are in Ephesus and they are in Christ.
-  779.2  To remind us that no matter where you are, you are always in Christ.
-  782.5  You are a dual citizen of your nation and the kingdom of heaven at the same time.
-  788.6  So I am in Atlanta, this ungodly, fake, religious, bougie, perverted, church-going city.
-  798.9  But I govern myself with holiness and purity because I'm in Atlanta, but I'm in Christ
-  803.6  at the same time.
-  807.8  So you could be in your job with a blaspheming Christ and talking foolishness and not
-  812.2  partaking that foolishness because you're in your job and in Christ at the same time.
-  817.9  You could be at your family gathering when they're talking foolishness and acting foolish,
-  822.2  but you don't have to be foolish because you have their last name, but you're in Christ
-  825.9  at the same time.
-  829.7  You could be anywhere in America where people are far away from God and not participate
-  834.7  in the deeds of darkness and the words of the flesh and licentiousness because you're
-  838.9  in that city, but you're in Christ at the same time.
-  845.6  And from the very beginning,
-  846.6  he begins to shape our identity.
+  772.0  Then he reminds them that they are in two places
+  774.4  at the same time.
+  775.5  They are in Ephesus and they are in Christ.
+  779.1  To remind us that no matter where you are,
+  781.1  You are always in Christ.
+  782.4  You are a dual citizen of your nation
+  784.9  and the kingdom of heaven at the same time.
+  788.5  So I am in Atlanta, this ungodly,
+  792.0  fake, religious, bougie, perverted, church-going city.
+  798.8  But I govern myself with holiness and purity
+  801.4  because I'm in Atlanta, but I'm in Christ at the same time.
+  807.7  So you could be in your job with a blaspheming Christ
+  810.7  and talking foolishness and not partaking at foolishness
+  813.5  because you're in your job and in Christ at the same time.
+  817.8  You could be at your family gathering
+  819.5  when they're talking foolishness and acting foolish,
+  822.1  but you don't have to be foolish
+  823.5  because you have the last name,
+  824.9  but you're in Christ at the same time.
+  829.7  You could be anywhere in America
+  831.9  where people are far away from God
+  833.5  and not participate in the deeds of darkness
+  836.1  and the words of the flesh and licentiousness
+  838.5  because you're in that city, but you're in Christ.
+  843.1  at the same time.
+  845.6  And from the very beginning, he begins to shape our identity.
   849.8  And then Paul moves past the greeting to these next words
-  856.4  and beginning in verse three through 14.
+  856.5  and beginning in verse three through 14.
   860.0  Paul writes what is the longest sentence
   864.3  in the Greek New Testament.
   866.6  Now, when the English Bible on your lap,
-  868.6  you're gonna bump into periods and comas.
-  871.4  in the Greek New Testament, there are no periods
+  868.6  you're gonna bump into periods and commas.
+  871.5  In the Greek New Testament, there are no periods
   874.1  between three and 14.
   876.1  It is the longest sentence in the New Testament
   880.5  when Paul was just running off at the mouth
-  883.2  from verse three through 14.
+  883.3  from verse three through 14.
   885.2  Obviously he was excited about something.
-  888.4  Obviously he was stirred about something
-  890.8  for him to sit down and write a run-on sentence from three
-  894.1  to 14.
-  895.6  You would try to correct him if he was an English teacher,
+  888.5  Obviously he was stirred about something
+  890.9  for him to sit down and write a run-on sentence
+  893.8  from three to 14.
+  895.6  You would try to correct him if he was an English teacher
   898.1  but something was burning in Paul's heart
-  900.1  That was so serious, the man even put a period.
+  900.1  that was so serious the man even put a period.
   902.7  The man kept going from three all the way to 14.
-  905.8  He was gripped by the Holy Spirit as he kept writing.
-  913.3  That man had to get it out.
-  916.4  It's like that old school had praise.
-  918.9  I got a praise.
-  920.8  I got a praise and a praise.
+  905.9  He was gripped by the Holy Spirit as he kept writing.
+  913.4  That man had to get it out.
+  915.0  It's like that old school had praise.
+  918.3  I got a praise.
+  920.3  I got a praise and a praise.
   928.9  I got a praise.
   930.5  I got a praise and a...
-  945.1  Yeah.
+  945.2  Yeah.
   946.2  All that energy you got?
-  948.5  That's Paul with the pen.
-  953.2  From verse three to 14, he writes to us
-  962.3  about the greatest blessings, focus, lock in.
-  967.4  About to change your life.
-  968.7  He writes to us,
-  971.5  and to the people in that godly city, watch,
-  974.6  a city that was full of watch.
-  977.1  I dollar tree around finance to the temple of Diana.
-  981.7  Know the context so you understand the text.
-  984.1  He writes them not about that garbage they see in a city.
-  987.3  He writes them about blessings that was greater
-  989.1  and the stuff they saw in a city,
-  990.7  all of it right here at three through 14.
-  992.6  It's so powerful, we can't get through it all.
-  995.0  We're going to get through three through six.
-  998.1  And then it might take a whole message just for seven through eight.
- 1000.8  It might take me three weeks just to get through the sentence.
- 1008.0  I like my time corner.
- 1009.5  It's gonna take me maybe three weeks to get through the whole sentence.
- 1012.6  And there's no need to rush because it's so powerful.
- 1016.5  It's so life changing.
- 1018.7  I could barely read it and not cry.
- 1028.1  Paul moves past the greeting and he says to them in verse three,
- 1033.1  this is heat, blessed be the God and Father of our Lord Jesus Christ.
- 1040.1  Stop.
- 1041.1  Paul starts the sentence with the word blessed.
- 1046.1  In the Greek is the same word we get eulogy from, which means to speak well of,
- 1051.1  not condemn them at the funeral.
- 1053.1  The word here in Greek is the word that's an audible praise.
- 1057.1  It's a speaking well of God.
- 1059.1  It's a bragging on God.
- 1061.1  The type of energy that Paul's talking about in this word.
- 1065.1  It's like the same energy we have in our gatherers when we shout them to God
- 1069.1  with the voice of triumph or when I say let's take the roof off with praise.
- 1073.1  It's given that kind of energy.
- 1075.1  All right, let's practice this.
- 1077.1  On the count of three, I want everybody to take the roof off with praise.
- 1079.1  Come on. One, two, three, praise him.
- 1082.1  You see that word? That word is given that kind of energy in Greek.
- 1123.2  But notice we do it backwards, right? We get something and then we sound like that.
- 1129.2  But what I'm about to reach is so powerful, post us with the praise first.
- 1133.2  And then goes into the blessings.
- 1135.2  Come on back.
- 1137.2  You know how you do. You get the new job and then you start blessing God.
- 1142.2  You get engaged and then you start blessing God.
- 1146.2  You get the promotion and then you start blessing God.
+  948.6  That's Paul with the pen.
+  953.3  In verse 3 to 14, he writes to us about the greatest blessings, focus, lock in.
+  966.0  It's about to change your life.
+  968.7  He writes to us, and to the people in that ungodly city, watch a city that was full of
+  975.9  watch.
+  976.9  I dollar tree around finance to the temple of Diana.
+  981.8  Know the context so you understand the text.
+  984.2  He writes it not about that garbage they see in a city.
+  987.4  He writes to them about blessings that was greater than the stuff they saw in 8 City, all of it right here in 3 through 14.
+  992.4  It's so powerful, we can't get through it all. We're going to get through 3 through 6.
+  996.4  And then it might take a whole message just for 7 through 8. It might take me 3 weeks just to get through the sentence.
+ 1003.4  I like my time corner. It's going to take me maybe 3 weeks to get through the whole sentence.
+ 1012.5  And there's no need to rush because it's so powerful.
+ 1015.5  It's so life-changing.
+ 1018.5  Now I could barely read it and not cry.
+ 1027.9  Paul moves past the greeting, and he says to them in verse 3,
+ 1033.0  this is heat, blessed be the God and Father of our Lord Jesus Christ.
+ 1039.8  Stop.
+ 1041.5  Paul starts the sentence with the word blessed.
+ 1046.2  In the Greek is the same word we get eulogy from,
+ 1049.7  which means to speak well of, not condemn them at the funeral.
+ 1053.5  The word here in Greek is the word that's an audible praise.
+ 1058.0  It's a speaking well of God.
+ 1060.3  It's a bragging on God.
+ 1062.3  That the type of energy that Paul's talking about
+ 1064.9  in this word is like the same energy we have
+ 1067.3  in our gatherers when we shout unto God
+ 1069.8  with the voice of triumph or what I say.
+ 1071.6  Let's take the roof off with praise.
+ 1073.3  It's given that kind of energy.
+ 1075.5  All right, let's practice this.
+ 1077.4  On the count of three, I want everybody
+ 1078.8  to take the roof off with praise.
+ 1079.9  Come on.
+ 1080.7  One, two, three, praise him.
+ 1082.8  You see that word? That word is given that kind of energy in Greek. But notice we do it backwards, right?
+ 1125.4  We we get something and then we sound like that
+ 1129.0  But what I'm about to reach is so powerful post us with the praise first and then goes into the blessings
+ 1137.8  You know how you do you get the new job and then you start blessing God
+ 1143.2  You get engaged and then you start blessing God
+ 1145.6  You get the promotion and then you start blessing God.
  1149.5  That's not what natural human response.
  1151.2  God moves and then we bless him.
- 1153.4  But now, what Paul wants to write about was so powerful.
+ 1153.4  But now, what Paul was about to write about was so powerful.
  1158.6  The man didn't start with the blessing.
  1163.8  The man started with the praise.
- 1165.6  How good something got to be for you to run upon somebody before you get the testimony
- 1178.9  out.
- 1179.9  You just start praising God.
- 1180.9  Listen, like Joe, my brother, I got to tell you about this.
- 1187.2  What?
- 1188.2  Hallelujah.
- 1189.2  Hallelujah.
- 1190.2  Hallelujah, Hallelujah, like what, what, what?
- 1192.3  Hallelujah, Hallelujah, what, what?
- 1194.5  What, what, Hallelujah, Hallelujah, Hallelujah.
- 1197.4  Hallelujah, Hallelujah, Hallelujah, Hallelujah,
- 1200.6  Hallelujah, Hallelujah.
- 1202.1  What what, what, Hallelujah.
- 1204.0  Hallelujah.
- 1204.8  Last time somebody rolled up on you like that.
- 1216.7  That God did something so staggering
- 1219.8  that the first thing out their mouth is praise.
- 1224.7  You be like get to the testimony.
- 1226.3  Now I gotta get this praise out first.
- 1228.2  You're like, get to the testimony.
- 1229.8  No, no, no, no, no, no, no, no.
- 1230.9  This is so proud, this is so powerful.
- 1233.7  I gotta get the praise out first.
- 1244.1  Trinity, bless you, Trinity.
- 1249.9  Mighty woman of God.
- 1252.0  I pray God's anointing all over you, Trinity.
- 1257.0  19-year-old Trinity, a school teacher.
- 1260.1  I pray God, thank you, Holy Spirit.
- 1263.0  I pray God's anointing all over you, little Trinity,
- 1266.2  to be a mighty witness for Him.
- 1268.4  And this generation, not going back.
- 1270.5  Jesus mighty name. Somebody give it up for Trinity. So Paul, he sits down, he's thinking
- 1287.3  about all of these spiritual blessings. And before he even writes about the testimony,
- 1292.9  he burst out into praise. This will almost frustrate some of you. For you to send somebody a text.
- 1300.9  He says, yo, I got to tell you what God did. And then you just got like emojis of hallelujahs and
- 1306.5  praise and fire. And you like, go get to the testimony, no, no, no. What just happened to me is so powerful.
- 1314.6  I got to get to praise our first. That's Paul sitting in the prison, meditating on the greatest
- 1323.0  blessings a human being will ever know. And he burst out into praise with the pen first.
- 1327.8  Blessed be the God and Father of our Lord Jesus Christ.
- 1340.0  Then he sets out who has blessed us in Christ with every spiritual blessing in the heavenly
+ 1165.7  How good something got to be for you to run upon somebody before you get the testimony
+ 1178.9  out, you just start praising God.
+ 1181.0  Listen, like Joe, my brother, I got to tell you about this.
+ 1187.4  What?
+ 1188.4  Hallelujah.
+ 1189.4  Hallelujah, Hallelujah, Hallelujah."
+ 1203.8  Last time, somebody rolled up on you like that, that God did something so staggering
+ 1218.1  that the first thing out their mouth is praise.
+ 1223.9  You'll be like, get to the testimony.
+ 1225.9  Now I got to get this praise out first.
+ 1227.9  You'll be like, get to the testimony.
+ 1229.9  No, no, no, no, no, no.
+ 1230.9  This is so proud.
+ 1231.9  This is so powerful.
+ 1232.9  I got to get the praise out first.
+ 1244.2  Trinity, bless you, Trinity.
+ 1250.2  Mighty woman of God.
+ 1252.2  I pray God's anointing all over you, Trinity.
+ 1254.2  Nineteen-year-old Trinity.
+ 1258.6  A school teacher.
+ 1259.6  I pray God.
+ 1260.6  Thank you, Holy Spirit.
+ 1262.6  I pray God's anointing all over you, little Trinity.
+ 1265.6  to be a mighty witness for him and this generation.
+ 1269.2  No going back.
+ 1270.5  And Jesus mighty name.
+ 1272.5  Somebody give it up for Trinity.
+ 1283.4  So Paul, he sits down, he's thinking
+ 1287.4  about all of these spiritual blessings.
+ 1289.3  And before he even writes about the testimony,
+ 1293.0  he burst out into praise.
+ 1296.4  This will almost frustrate some of you.
+ 1299.0  For you to send somebody a text.
+ 1301.1  He says, yo, I gotta tell you what God did.
+ 1303.7  and then you just got like emojis of hallelujahs and praise and fire.
+ 1309.2  And you like, go get to the testimony.
+ 1310.7  No, no, no, no.
+ 1312.6  What just happened to me so powerful, I got to get the praise out first.
+ 1318.7  That's Paul sitting in a prison, meditating on the greatest blessings a
+ 1323.7  human being will ever know.
+ 1325.3  And he burst out into praise with the pen first.
+ 1328.2  Blessed be the God and Father of our Lord Jesus Christ.
+ 1339.4  Then he sets out who has blessed us in Christ with every spiritual blessing in the heavenly
  1348.0  realms.
- 1352.2  He praises God and in right city of fusions in a godly city, you have already been blessed.
- 1359.3  He said, blessed be the Lord and Father of our Lord Jesus Christ,
- 1362.5  who has past tense already finished, who has done one.
+ 1352.2  He praises God and in right city Ephesians in a godly city, say, hold on, you have already
+ 1358.7  been blessed.
+ 1359.7  Blessed be the Lord and Father of our Lord Jesus Christ,
+ 1362.5  who has past tense already finished,
+ 1366.6  who has done one.
  1367.6  Blessed you with what?
  1370.3  Every spiritual blessing in Christ.
- 1375.4  Meaning if you're saved, you're sitting in this room,
- 1378.1  the overflow of the camera.
- 1380.1  Listen to me.
+ 1375.3  Meaning if you're saved,
+ 1377.0  you're sitting in this room, the overflow of the camera.
+ 1379.5  Lock it, listen to me.
  1381.5  If you're saved right now, wherever you are,
- 1384.2  however you feel about yourself, whatever you're going through,
- 1386.9  You are not, you will be.
- 1389.4  Text don't say that.
- 1390.5  Right now as I'm talking to you,
- 1392.5  you are fully blessed every spiritual blessing Jesus.
- 1417.6  Evidence that you have been fully blessed
- 1422.4  with every spiritual blessing in Christ Jesus.
- 1428.0  Now I say that, and some of you will never get excited.
- 1431.8  Because in America, when you heard the word blessing,
- 1434.7  you only think about tangible things you can touch.
- 1438.3  I swear, if I started proffallying and said,
- 1441.0  bring me a hundred dollars and everybody's going to be a million there by next week,
- 1444.6  you're going to be blessed.
- 1445.5  You'll be running down here and throwing all over the altar.
- 1449.3  Because we only like to attach the word blessed to things you can touch.
- 1456.0  And I hate this in America.
- 1459.3  Because we're so overly tethered to this life
- 1462.4  that we can't understand the spiritual realm,
- 1465.0  we don't understand the power of eternity.
- 1467.6  Like these scriptures are replete with passages
- 1473.7  from the Old Testament to the New Testament
- 1475.9  and which God through many servants is trying to lift
- 1479.2  your hearts attachment from this life to the next.
- 1483.0  He's trying to push you from just seeing your life
- 1485.3  in this temporary state to understand
- 1487.1  that is a world that is more real
- 1488.9  than the one you're in right now.
- 1490.6  That spiritual realm that hugs the natural world
- 1493.8  world that eternity should be more of our focus.
+ 1384.2  however you feel about yourself,
+ 1385.7  whatever you're going through, you are, not you will be.
+ 1389.3  Text don't say that.
+ 1390.4  Right now as I'm talking to you, you are fully blessed.
+ 1397.0  Every spiritual blessing, Jesus, evidence that you have been fully blessed with every
+ 1423.5  spiritual blessing in Christ Jesus.
+ 1427.9  Now I say that and some of you will never get excited because in America when you heard
+ 1433.6  the word blessing, you only think about tangible things you can touch. I swear, if I started
+ 1439.8  prophylion and said, bring me a hundred dollars and everybody's going to be a million
+ 1443.7  there by next week, they're going to be blessed. You'll be running down here and throwing
+ 1447.3  all over the altar because we only like to attach the word blessed to things you can touch.
+ 1456.3  And I hate this in America because we're so overly tethered to this life that we can't
+ 1463.9  We don't understand the spiritual realm,
+ 1465.5  we don't understand the power of eternity.
+ 1469.9  Like these scriptures are replete with passages
+ 1474.2  from the Old Testament to the New Testament
+ 1476.2  and which God through many servants
+ 1478.4  is trying to lift your hearts attachment
+ 1481.8  from this life to the next.
+ 1483.4  He's trying to push you from just seeing your life
+ 1485.7  in this temporary state to understand
+ 1487.5  that is a world that is more real
+ 1489.4  than the one you're in right now.
+ 1490.9  That spiritual realm that hugs the natural world,
+ 1496.8  that eternity should be more of our focus.
+ 1500.4  Writing about eternity since the days of old,
+ 1506.7  all the way to the New Testament,
+ 1508.9  when we get passages like sexual mind,
+ 1514.1  on things above, like a thermostat,
+ 1516.8  set it and leave it there, on things above it.
+ 1519.6  Yet we do Christianity and we don't think about the spirit,
+ 1522.8  we don't think about eternity,
+ 1524.9  we don't think about where we're going.
+ 1526.2  We don't think about the fact Jesus said,
+ 1528.3  I go to prepare a place for you.
+ 1531.2  Oh my God, I feel this in my spirit.
+ 1533.1  That where I am, you will be also.
+ 1536.3  How do you claim to love Christ
+ 1538.4  and you have no desire to be where He is?
+ 1541.0  No longing to be with Him.
+ 1550.0  No longing for eternity.
+ 1552.6  It just takes enough hell for you to find it.
+ 1554.9  And so, man, my suffering has taught me
+ 1557.7  that God is meant to prepare something better for me.
+ 1560.2  I'm telling you as your older brother,
+ 1567.7  I'm telling you as the shepherd of this house, you need to hear me.
+ 1570.4  You need to get delivered from all this Western corrupt Christianity
+ 1575.5  that sermon that attaches you so strong to this life.
+ 1580.0  You need to be untethered from this life to understand this life
+ 1583.5  is temporary, that you are what the scriptures call a sirjana,
+ 1587.8  that you are passing through, that you are on your way to somewhere,
+ 1597.2  and that the blessings that Paul is about to unpack for us here
+ 1600.7  goes beyond this life.
+ 1604.0  There are blessings rooted in the spiritual realm
+ 1606.9  that goes into eternity and be, listen to me, man,
+ 1610.0  and because we don't think about eternity,
+ 1612.4  we'll read Ephesians 1 and not get excited at all.
+ 1616.1  You know why?
+ 1616.9  Because if it was prophylion about stuff,
+ 1621.6  you will be writing it on your mirror
+ 1625.3  and making it a devotional every morning.
+ 1627.1  I've never seen anybody make Ephesians 1, they're devotional.
+ 1630.7  Never seen them write this on a mirror.
+ 1633.3  Why?
+ 1633.8  Because it's not strong enough for the American church
+ 1637.2  to boring, not sexy, not exciting, not emotional enough.
+ 1642.9  For you, not for me.
+ 1645.5  I read Ephesians 1, I fall off the chair.
+ 1648.2  I read Ephesians 1, I put my face on the ground.
+ 1650.8  I read Ephesians 1, and I shed tears.
+ 1653.0  I read Ephesians 1, and I am in awe of God Almighty.
+ 1659.8  At the blessings Paul is about to let us know
+ 1664.6  that these next few verses, they pregnant.
+ 1668.8  Three to 14 is pregnant.
+ 1670.7  And it's hard for me because I'll be looking at scripture.
+ 1673.0  I want to deliver all those babies.
+ 1675.8  But there's three babies sitting just underneath
+ 1678.0  the surface of the text.
+ 1679.1  I want to be a good midwife.
+ 1680.8  I want to deliver all those babies to you.
+ 1682.8  And I just want to hand you the baby.
+ 1684.4  May God give you the revelation for yourself.
+ 1689.2  He said, blessed be the God and Father of our Lord Jesus Christ.
+ 1693.6  lock in who has already done, blessed you in Christ with every, not one lacking spiritual
+ 1701.8  blessing. Where are they? In the heavenly realms. In the heavenly places. That means these blessings
+ 1707.9  are above satanic rule. Help us Holy Spirit. These blessings are above your problems, your
+ 1714.0  situations, your trials, your hardships. These blessings are in a place. Watch, but it cannot
+ 1719.6  be corrupted. Verse 4, He gives us the first blessing. Pay attention. Lock in. First blessing
+ 1735.4  in Christ. Even as He, God, this is insane to me. Show us you before the foundation of
+ 1752.4  the world that we should be holy and blameless before Him. Stop, stop, stop, stop, stop, stop,
+ 1758.4  stop. The first blessing that Paul writes about that you have in Christ is that he's
+ 1764.2  God in eternity past shows you before the foundation of the world.
+ 1775.5  So for those of you who are in Christ, listen to me carefully.
+ 1779.3  If you are saved and filled with the Spirit, listen, God did not just come after you in
+ 1784.5  this life.
+ 1785.5  Man, before he said, let there be light.
+ 1792.7  Before he said, let there be light.
+ 1796.7  Before he created a garden.
+ 1798.7  Before he created Adam, he was already pursuing you throughout eternity.
+ 1803.1  He chose you before he even spoke the world into creation.
+ 1815.0  He chose you before you was a churchgoer and far away from God.
+ 1819.0  He chose you before your life of sin and rebellion.
+ 1822.3  He chose you before your mother and father got married and had you.
+ 1825.9  I'ma go deeper.
+ 1826.9  He chose you before two people had a sinful night of passion.
+ 1830.1  I called them broke and you was born.
+ 1831.9  It don't matter how you got here.
+ 1833.8  It shows you before you was insecure, before you had shame, before the divorce, before the
+ 1847.2  abortion, before you was rejected, before you was bullied, before you was abandoned, before
+ 1855.9  you try to commit suicide, before you walked in altar, before you heard the gospel, before
+ 1863.7  you responded yes, God already knew your name, when you would be born, or generation you
+ 1871.3  were reborn in and that he would come after you in this generation and he made that decision
+ 1876.8  before he even said let there be life.
+ 1884.7  All the funerals you've been to and all of the people that have died and been separated
+ 1894.5  from God for all eternity, all the billions of people that are burning in hell right now.
+ 1902.6  See, let's get real.
+ 1904.3  And yet, he made a decision with no merit of your own,
+ 1912.2  no morality or good behavior.
+ 1914.2  For whatever reason, I do not know.
+ 1918.1  It shows you, can I go deeper?
+ 1929.3  That means when you was unsaved
+ 1932.8  and you could have died any day
+ 1935.2  and been eternally damned any day.
+ 1938.4  Watch, he was keeping you alive
+ 1941.1  because he knew the day would come, but, come on man.
+ 1944.9  This is crazy to me.
+ 1948.2  I'm sorry, this is crazy to me.
+ 1950.5  This is crazy to me.
+ 1951.5  He was keeping you alive, knowing the day would come,
+ 1956.8  but you would say yes to him.
+ 1962.1  Family, come on man.
+ 1963.7  Like, I live the reckless life.
+ 1967.3  As I'm talking to you, I got a flashback of a fight
+ 1970.7  I got into on I-75 headed to the bike rally and got shot at.
+ 1976.9  And I always talk about the bullet that grays my right ear,
+ 1980.4  whizzed past my three inches to the left.
+ 1983.0  I'm in a box.
+ 1984.9  I'm eternally inflamed.
+ 1991.6  God sovereignly allowed the bullet to pass me
+ 1996.8  because even when I was wiling out and sin,
+ 2003.1  even when you was wiling out and sin,
+ 2006.0  Even when you was attending church and religious,
+ 2015.7  for I can't even, I don't even understand this theologically,
+ 2020.3  decided to choose you and put you in the group
+ 2028.5  the scriptures will call the elect
+ 2043.4  before you had a chance to preach a sermon,
+ 2045.8  before you did any good deeds.
+ 2048.8  For some reason, we will never know.
+ 2056.3  I mean, think about all your family members
+ 2058.1  who don't know him.
+ 2059.2  He moved through your bloodline and through your...
+ 2062.3  You're talking about generational curses.
+ 2065.5  Curse what?
+ 2067.3  Curse what?
+ 2068.8  Curse what? What are we talking about?
+ 2070.5  Curse what?
+ 2071.9  Can't curse what? Curse what?
+ 2074.6  Talk about generational curses.
+ 2076.5  How about generational blessing?
+ 2078.4  Curse what?
+ 2080.6  Curse what?
+ 2083.1  He was working through my great-grandmother
+ 2085.2  and my grandmother and my mother.
+ 2087.4  He was working through all that bloodline, through all that dysfunction to get to me,
+ 2094.6  to get to you. Come on, man, what are we talking about, man? We're talking about my family's
+ 2105.6  dysfunctional. He was working through all that dysfunction to get to you, me to me. I'm sorry,
+ 2124.8  This is insane to me.
+ 2131.7  It's not insecure, but chosen.
+ 2137.8  I struggle with my thoughts, but chosen.
+ 2141.0  I got issues in my heart, but chosen.
+ 2143.8  I got issues in my life, but chosen, man.
+ 2151.1  I've got financial trouble on every side, but chosen.
+ 2154.4  Enemies more than I can count, man.
+ 2157.4  Chosen.
+ 2159.5  Lies around your name, but chosen.
+ 2169.1  to fill up, move on.
+ 2171.2  No, I need to tattoo this to your heart.
+ 2175.8  You need to understand me.
+ 2178.1  Hear me, man.
+ 2179.3  My words can't do this, no justice.
+ 2181.6  If you are a born-again Christian
+ 2187.6  that did not happen because of any merit of your own
+ 2191.9  that no man can boast.
+ 2194.0  If you are a born-again Christian
+ 2196.9  with all of yourself, hatred and loathing,
+ 2199.8  God chose personally.
+ 2207.1  So what about my sister, my brother, my mother?
+ 2209.2  I don't know.
+ 2210.8  You might be the only one saved in your family
+ 2213.8  for whatever reason he came for you.
+ 2224.9  Now let me ask you a question since you're not in hell.
+ 2230.1  And since you're seated in Christ, saved and chosen.
+ 2233.0  Let me ask you a question.
+ 2233.9  Tell me what in this life is more valuable than that.
+ 2238.4  How much money you're gonna put together
+ 2241.4  That's more valuable than that.
+ 2243.3  There's a lot of rich people in hell right now.
+ 2249.7  Go read Jesus' story about Lazarus and the rich man.
+ 2253.0  A lot of wealthy people could not buy their way into heaven.
+ 2268.2  That is, if I don't even finish,
+ 2270.2  that is enough to cry, weep, meditate, praise, worship.
+ 2279.2  Like, that's enough to drive home
+ 2282.1  with the radio off confused.
+ 2291.5  But listen to me carefully, so I'm not a heretic.
+ 2294.5  You don't just get that for free.
+ 2296.3  It comes with a responsibility and with a big ask.
+ 2301.6  The responsibility and the big ask
+ 2303.7  is the back half of the verse.
+ 2305.3  He did that that you should be holy and blameless
+ 2314.4  with a life without reproach.
+ 2317.1  No, that choosing comes with a responsibility
+ 2320.1  that is if God created an elect group of people
+ 2323.7  to display his glory in the earth,
+ 2326.2  then you should think to yourself what a privilege
+ 2328.2  to have been chosen, and my response to that privilege
+ 2331.5  is to live a life that displaces glory
+ 2334.1  by being holy and blameless everywhere.
+ 2339.3  And holy don't mean a night suit
+ 2342.4  for their people who are suited and ratchet on the inside.
+ 2345.3  No, holy is a desire in my heart to rise every morning,
+ 2350.1  to wanna please my savior, to obey the scriptures
+ 2354.0  to the best of my ability and to obey the promptings
+ 2357.4  of the Holy Spirit.
+ 2358.5  As I do that, I am holy.
+ 2360.3  I am living set apart.
+ 2362.2  Like, holy shouldn't even be a burden.
+ 2364.3  Let's look at me.
+ 2366.2  This is why we need to read scriptures in a context.
+ 2369.4  That we're gonna get to the end
+ 2370.8  where he talks about husbands love your wife
+ 2372.9  as cries love the church
+ 2374.1  and women be submittent to your husbands.
+ 2375.6  Like, don't try to strap that on people
+ 2377.5  and we ain't talk about identity first.
+ 2379.5  See, when we do theology first,
+ 2381.7  Practicality or practice becomes much easier.
+ 2385.7  You have a desire to love your wife as Christ loves the church
+ 2389.9  because you know you have been chosen to display his glory.
+ 2396.0  You have a desire to be a better parent,
+ 2399.5  to be a better disciple because you know you have been chosen.
+ 2402.8  My theology frames my practice.
+ 2407.4  Come on, man.
+ 2413.3  You think I'm radical because I'm special,
+ 2416.4  I'm radical because I read.
+ 2423.1  I read letters like Ephesians
+ 2426.1  and it moves my heart to be radical.
+ 2433.4  Like why would I waste the life I've been given
+ 2436.2  as a chosen son or daughter?
+ 2442.2  But Paul didn't stop there with the blessings.
+ 2447.5  He could have just stopped.
+ 2449.9  The man continues with the second greatest blessing
+ 2453.2  you have in Christ.
+ 2454.4  Verse 5, in love.
+ 2458.5  Now, because there's no sentences, no periods,
+ 2460.9  we don't know where this in love belongs.
+ 2462.8  I don't know if this in love is attached to the last statement
+ 2465.9  about choosing or it's attached to this statement.
+ 2468.3  I don't know.
+ 2470.8  There's no periods in the sentence.
+ 2473.1  The ESV translator puts it connected to this next statement.
+ 2476.1  So we're just gonna keep it connected to the next statement.
+ 2478.7  So in love and an act of love,
+ 2481.5  here's your second great blessing if you're in Christ.
+ 2483.6  and act of love lock in with the text,
+ 2488.5  not only did he choose you, but in act of love,
+ 2491.6  he predestined you strong word for adoption to himself
+ 2498.3  as sons through Jesus Christ,
+ 2501.1  according to the purpose of his will.
+ 2503.3  This is so staggering to me.
+ 2506.3  Listen to me.
+ 2507.7  Election talks about the people.
+ 2510.5  Predestination talks about a purpose.
+ 2514.0  and proper understanding of the text,
+ 2516.1  predestination probably came before election.
+ 2518.8  That is God had a purpose, here is his purpose.
+ 2522.4  One day I'm gonna create for myself of all different races,
+ 2526.0  a group of human beings that I will bring into my presence,
+ 2529.1  and I will be a father to them,
+ 2531.0  and they will be my children,
+ 2532.6  and as my adopted children,
+ 2534.2  I will confer upon them all of the blessings of heaven.
+ 2537.3  I'm gonna do that because I want to purpose,
+ 2539.7  predestination.
+ 2540.6  Now that I purpose to do that,
+ 2542.3  I'm going to search through the billions of people throughout every generation and I'm
+ 2545.9  going to start hand picking.
+ 2559.3  I'm going to start sovereignly picking the people I'm going to adopt.
+ 2565.4  I see people crying.
+ 2566.4  Now it was making sense.
+ 2568.0  The people I'm going to adopt to make them my daughter, my son.
+ 2576.2  Do you know how hard it is to adopt a child?
+ 2582.4  It took the cross.
+ 2584.2  It took a broken body.
+ 2585.8  It took blood.
+ 2587.2  It took thousands of years.
+ 2588.9  It took the plan of redemption to watch, to do all of this work to say, you are mine.
+ 2595.4  I am your father.
+ 2597.0  I protect you.
+ 2598.1  I provide for you.
+ 2599.3  I love you.
+ 2600.3  I affirm you.
+ 2601.5  You are my daughter and you are my son.
+ 2607.9  Now I ask you a question.
+ 2611.4  Why would God go through all that work?
+ 2617.2  predestined you, choose you, adopt you to drop you.
+ 2625.6  And I ask you this rhetorical question,
+ 2627.9  because we complain more about our struggles
+ 2630.3  than the God who adopted us.
+ 2633.3  Some of us be acting like the trials you're going through
+ 2636.0  is gonna shipwreck you, my brother, my sister.
+ 2638.9  If you are in the will of the Father
+ 2641.2  and you have been predestined and chosen,
+ 2643.4  then there is nothing that you're gonna experience
+ 2646.2  in this life that will hinder the plan of God
+ 2650.4  from unfolding in your life.
+ 2654.8  Nothing.
+ 2657.5  This way, watch it with this revelation,
+ 2660.5  you can walk through every valley,
+ 2663.5  every trouble, every circumstance,
+ 2665.7  every issue, every child knowing that the one
+ 2668.1  who adopted you will bring you all the way
+ 2670.4  into the kingdom so long as you stay in his will.
+ 2674.3  This is why we give too much worry and attention to stuff
+ 2677.5  that God already got covered.
+ 2680.2  He's not a chank, whack, sloppy, adopted father
+ 2684.9  that's gonna dump you, look at you for a little while,
+ 2687.4  say I'm tired of changing your diapers and abandon you.
+ 2690.2  No, what is the devil gonna do?
+ 2703.6  With a man or woman in the face of anything
+ 2707.3  that knows, listen, no matter what I go through,
+ 2709.7  young or old, I have been chosen, predestined.
+ 2715.3  I'm supposed to be here right now in the kingdom right now
+ 2719.4  And I am an adopted son of God, an adopted daughter of God who has conferred upon me all
+ 2725.8  of the riches of heaven.
+ 2727.4  And I will fully get my inheritance when I arrive in glory.
+ 2730.3  What is he going to do with somebody to talk, think, move, post, live?
+ 2736.5  Like that.
+ 2737.5  He may knock you down.
+ 2740.0  But you can't stay there because you're adopted.
+ 2742.0  Like he may hit the ground.
+ 2745.0  But you can't stay there because you're like, come on.
+ 2746.8  What is he going to do?
+ 2754.8  And this ain't the time to be arguing about
+ 2757.9  reform theology or decision theology.
+ 2760.6  You know what?
+ 2762.5  The scripture teaches both.
+ 2764.4  That's why we have Ephesians 1 and Romans 10.
+ 2767.3  We have predestination and whosoever will.
+ 2770.2  We have chosen and we have whoever calls in
+ 2772.6  in the name of the Lord shall be saved.
+ 2773.8  You know what?
+ 2774.6  I don't understand at all,
+ 2778.0  but the scripture teaches them both.
+ 2780.3  And I don't understand how God's sovereignty
+ 2782.2  works perfect juxtaposed man's will.
+ 2785.6  I don't understand that.
+ 2788.5  And because we don't understand that,
+ 2790.7  no man has a monopoly on God.
+ 2793.3  Not even the best theologian has a monopoly on God.
+ 2801.3  It says, I don't understand how all of that works,
+ 2803.6  but the Bible teaches both.
+ 2805.1  I don't know everybody who's chosen,
+ 2807.4  but he does.
+ 2808.6  So my responsibility is to keep spreading the gospel,
+ 2811.9  keep sharing Jesus, keep being faithful,
+ 2815.1  keep being a witness, keep being a light.
+ 2817.9  I don't know who he's chosen,
+ 2819.5  mine's just to keep doing what he's told us to do.
+ 2824.2  And then this is for those who are saved
+ 2830.4  to not be prideful, I'm done son,
+ 2834.1  and to not be arrogant,
+ 2836.6  this is for those of us who know are saved
+ 2838.0  to not be in camps when we prideful and arrogant
+ 2841.2  because we're in the elect,
+ 2844.5  and to not look down upon people who are not saved,
+ 2846.8  like why do you want them to go to hell?
+ 2852.6  This is for all of us who are in the elect
+ 2854.6  to still care deeply about those who are not,
+ 2858.3  to still pray for them that God, if His mercy and grace,
+ 2861.2  He might save them.
+ 2863.6  And this is for those of you listening to me
+ 2865.5  who are confused about what I'm saying
+ 2866.9  and you're not saved to not lose hope,
+ 2869.4  that maybe you're still alive
+ 2870.7  because God is gonna pursue you and hunt you down
+ 2873.1  and bring you into this side of the family
+ 2875.5  before you die to have been inseparated from Him.
+ 2883.5  And when you think about just these three blessings,
+ 2886.3  chosen, predestined, adoption,
+ 2890.0  I ask you a rhetorical question, more than one.
+ 2895.0  What is sacrifice then?
+ 2897.8  Nothing.
+ 2900.8  What is being generous in this life?
+ 2903.1  Nothing.
+ 2905.7  What is suffering for him?
+ 2908.0  Nothing.
+ 2910.9  What is laying my life on the altar to be holy?
+ 2914.9  Nothing.
+ 2916.5  What is closing my cookie jar and being sexually pure?
+ 2920.2  Nothing.
+ 2923.1  What is being single for the rest of my life?
+ 2924.8  If that's his will.
+ 2926.0  painful, but nothing.
+ 2930.1  Momentary, light afflictions for the one who chose me,
+ 2944.6  predestined me, adopted you.
+ 2952.5  What is praise?
+ 2953.9  Nothing.
+ 2955.7  What is the lifting of your hands?
+ 2957.0  Nothing.
+ 2958.2  What is serving faithfully on a team?
+ 2959.7  Nothing.
+ 2960.8  What is forgiving somebody that hurts you?
+ 2963.2  Nothing.
+ 2964.4  What is letting people go?
+ 2965.5  Nothing.
+ 2965.9  What is like obeying the Scriptures?
+ 2968.8  Nothing.
+ 2970.2  What do you mean, Philip?
+ 2971.4  These are right responses.
+ 2982.8  What is apologizing?
+ 2985.4  What is not stirring of drama in the church?
+ 2989.2  Not being involved in gossip and do it.
+ 2990.8  Like what is it to obey this?
+ 2992.3  Like what is it to obey the scriptures?
+ 2995.3  What is it to feel convicted by the spirit and just obey?
+ 3000.4  We fight God because we don't understand
+ 3002.7  that we have been, like all jokes is family.
+ 3005.3  When you understand you've been chosen and predestined,
+ 3008.1  something about holiness is like, I wanna be holy.
+ 3011.9  I wanna live right.
+ 3014.1  I wanna ring out my heart from sin.
+ 3016.1  I wanna apologize.
+ 3017.2  I wanna be pleasing to, like,
+ 3018.9  it should be a natural desire in response to the fact
+ 3023.8  that you were chosen, predestined, and adopted.
+ 3029.1  And set apart from the rest of humanity
+ 3031.4  to display his glory.
+ 3045.2  This is my prayer for you.
+ 3047.2  You will get to the place where you,
+ 3050.2  dang, I'm about to cry.
+ 3051.6  Will you think so deeply about this?
+ 3054.2  Don't nobody have to manipulate you to obey?
+ 3060.4  Don't nobody have to come up with some clever words
+ 3062.9  around a sermon to make you obey?
+ 3065.4  Man, you will get to the point where we could just read this,
+ 3068.4  and that would be enough for you without my exposition.
+ 3082.3  And so, Father, we pray for that woman's family
+ 3084.3  who's under spiritual attack.
+ 3088.1  We come against all the forces of the devil.
+ 3090.8  We join forces now with heaven
+ 3095.8  to push back the darkness around her family.
+ 3099.5  We pray God, if you will be so inclined,
+ 3101.9  you would intervene in her family
+ 3104.1  that you will start saving them one by one, 10 by 10,
+ 3107.6  until they all have come out of the kingdom of darkness.
+ 3110.8  We pray you would teach that woman to pray.
+ 3113.0  Teach her to kneel down and pray,
+ 3114.5  but all of the force of heaven behind her.
+ 3117.2  Help it to know she has helped God,
+ 3119.1  and that she is not helpless because she's an adopted daughter.
+ 3122.8  We thank you by faith that you're going to intervene
+ 3125.9  in a mighty and powerful way,
+ 3128.3  and we will even see the fruit of that on the other side of access.
+ 3134.0  And Father, I pray for the rest of my brothers and sisters right now.
+ 3138.0  I pray for every person in the sound of my voice,
+ 3140.8  who you have chosen, predestined, and adopted.
+ 3143.4  I pray you would tattoo that revelation to their heart, that they would be moved with
+ 3152.1  gospel obedience and gospel faithfulness and gospel sacrifice and suffering well and
+ 3158.1  living well.
+ 3159.1  I pray that we would go back and read and weave and shed tears over what you have done
+ 3165.2  from eternity past to bring them into the kingdom.
+ 3168.8  I pray that it would be holy and blameless in the way that they live.
+ 3177.0  I pray for the unbelief on the Son of my voice,
+ 3179.7  they will tremble under the weight of the word.
+ 3182.9  And if you're willing, you would save them even right now
+ 3185.1  and they seat across the camera in the gym,
+ 3187.3  pulled over on the side of the road,
+ 3188.7  sitting on a couch in the living room,
+ 3190.4  watching in tears, sitting in the overflow,
+ 3192.8  the one who was far away and headed to hell.
+ 3195.1  I pray God, you would open their blind and eyes,
+ 3196.9  show them there's nothing that will have in this life
+ 3199.4  if they don't have you as much greater than you.
+ 3201.2  Save them God, but your sovereign will even right now.
+ 3204.4  You can do that.
+ 3208.2  I hear tears falling, save them God in the name of Jesus.
+ 3214.1  And may there be an explosion in the body of Christ.
+ 3217.6  In 2019, across America, believers tattooed with a greater identity.
+ 3223.5  And in the act of response to you, glad submission and joy in living holy and blameless before
+ 3233.0  you.
+ 3234.0  It is our reasonable response for our election.
+ 3237.3  I pray that over everyone in the mighty and the majestic and the matchless name of our soon-coming
+ 3243.1  King, the Lord Jesus Christ.
+ 3245.7  And if you receive that, and maybe I shouldn't say clap, I feel wait.
+ 3254.7  If you receive that, just sit for a second.
+ 3257.1  Forget clapping.
+ 3258.9  If you receive that, just sit still for just a moment.
+ 3262.8  Dang, I want to cry.
+ 3263.9  Just sit still for just a moment and just think, man, what God went through to get you.
+ 3272.9  All mistakes with you, even when you don't feel that way about yourself.
+ 3280.2  See T.S. falling all over this room.
+ 3282.2  Sit there for a second.
+ 3297.3  As you sit there, I talk to our digital disciples six days from now.
+ 3301.8  80,000 of us will gather at AT&T Stadium in Texas for access that powerful hour of prayer.
+ 3309.7  This ain't no joke.
+ 3311.5  Our nation is in trouble.
+ 3313.0  And if there's anything we need right now more than men, we need the help of God.
+ 3318.0  And I believe God moves when we solicit Him in prayer.
+ 3322.0  And I'm calling us to that hour prayer.
+ 3324.4  Now hear me.
+ 3325.4  This ain't 45 minutes of prayer.
+ 3327.1  This ain't 22 minutes of prayer.
+ 3328.9  This is a solid 60 minutes of prayer.
+ 3332.1  So we are in the stadium and in our seats before 7 p.m.
+ 3336.6  Central time.
+ 3338.1  And if you don't have a ticket, man, pull up to the arena,
+ 3341.5  pull up to the stadium and take over the streets of Texas
+ 3344.5  everywhere.
+ 3345.9  In cities all across America and homes all across America and around the world. I'm calling the body of Christ to an hour prayer
+ 3354.5  When we set aside our differences and cry out to God for our nation our family
+ 3360.3  I will save unsafe loved ones we cry out to God your kingdom come
+ 3364.6  You will be done the one who says if my people just ain't no game
+ 3367.7  And if you can't make it and you got your ticket
+ 3372.4  Man, release that ticket so somebody else can get there.
+ 3375.7  Don't sell it, release it and be a blessing to someone else.
+ 3379.0  And if you've got a ticket, it's first come, first serve to the seat from the bottom to
+ 3382.4  the top so you need to get there as quickly as possible.
+ 3387.1  And I'm calling a global FAST.
+ 3389.4  Three days leading into access, you concentrate at whatever level is comfortable for you.
+ 3396.6  I know what I will do.
+ 3398.6  It's Thursday, Friday, Saturday, we consecrate
+ 3402.2  and we prepare ourselves to meet with God in that stadium.
+ 3405.8  We will shake the nation and believe God
+ 3410.4  for signs, wonders and miracles.
+ 3412.1  I saw a brother last year from access,
+ 3414.1  drove, flew all the way into Atlanta
+ 3416.3  with a terminal disease.
+ 3417.5  The doctor said he was going to die.
+ 3419.6  He came all the way to access, believe God for healing.
+ 3422.2  He is alive today.
+ 3423.8  You have no idea what God is gonna do in that room.
+ 3428.4  You have no idea.
+ 3430.4  It's just signs, wonders, and miracles.
+ 3432.4  We were seeing that room.
+ 3433.4  This ain't no joke.
+ 3434.4  Getting in the room, getting in the parking lot.
+ 3437.4  Get on your knees from anywhere in the country.
+ 3440.4  7 p.m. Central.
+ 3442.4  One hour of prayer.
+ 3443.4  Body of Christ.
+ 3445.4  Amen.
+ 3450.9  My brothers and my sisters.
+ 3452.9  I love you, bro.
+ 3458.6  Amen.

@@ -1,24 +1,24 @@
     0.5  You're gonna be seated.
-    2.5  Thank you, Trey.
-    3.5  Thank you, worship team.
-    4.5  God bless y'all.
-    5.5  Good morning.
-   12.8  Y'all happy to be in the presence of the Lord today back in his house today?
-   18.7  Are y'all happy for the 4800 souls that were saved?
-   24.7  Baptized.
-   26.7  Turning.
-   27.7  Turning.
-   28.7  Turning.
-   29.7  No going back for them.
-   34.4  And no going back for you.
-   37.9  No turning back for you.
-   45.1  My name is Milton James.
+    2.4  Thank you, Trey.
+    3.4  Thank you, worship team.
+    4.4  God bless y'all.
+    5.4  Good morning.
+    8.2  Y'all happy to be in the presence of the Lord today back in his house today?
+   18.9  Are y'all happy for the 4800 souls that were saved?
+   24.6  Baptized.
+   25.6  Turning.
+   26.6  Turning.
+   27.6  Turning.
+   28.6  No going back for them.
+   34.6  And no going back for you.
+   38.0  No turning back for you.
+   45.0  My name is Milton James.
    46.3  I'm one of the elders here.
    54.3  I have the honor to stand before you today
    57.1  in this standalone message.
    59.4  Pastor Philip has tapped me for such a time as this.
    66.9  Yeah.
-   70.1  Just want to welcome all my guests,
+   70.0  Just wanna welcome all my guests,
    71.7  all the guests from all around the world
    73.5  and all the digital disciples.
    75.7  We want to say welcome y'all.
@@ -29,7 +29,7 @@
    87.5  the one that is still trying to figure out the claims of Christ.
    91.0  The one that's still struggling with the is Jesus credible,
    98.2  or is all this other stuff credible.
-  102.0  We welcome you.
+  101.9  We welcome you.
   102.9  We ask that you just keep coming.
   106.4  We ask that you with a sincere and open heart.
   110.8  I saw a video, man, he said he's gonna follow Jesus
@@ -38,42 +38,36 @@
   118.1  He said, but he's, I'm gonna do it with a clear and open heart,
   122.5  a genuine heart with no bias.
   126.9  And he ended up giving his life to Christ after their 30 days.
-  133.3  So let that be your testimony,
-  135.3  the one that is wrestling in his soul.
-  139.0  We are a house of prayer, presence and proclamation.
-  142.4  We will stand on that until the Lord Jesus comes back.
-  145.6  And we also would like to honor our lead pastor,
+  133.3  So let that be your testimony, the one that is wrestling in his soul.
+  138.9  We are a house of prayer, presence and proclamation.
+  142.3  We will stand on that until the Lord Jesus comes back.
+  145.5  And we also would like to honor our lead pastor,
   148.9  Philip, Anthony Mitchell, later what this message today is,
   167.5  now we have access.
-  171.8  We have, pray with me,
-  179.4  it's not pray for you.
-  183.1  The Father, great thou art.
-  188.9  Thank you.
-  190.6  And we have a place to worship your holy name
-  194.9  under your mighty pavilion, Holy Spirit.
-  197.7  Have your way in this place,
-  207.7  help my emotions, help my understanding.
-  210.6  Give me revelation from on high God.
-  212.7  I need you Lord.
+  171.8  We have pray with me.
+  179.4  It's not pray for you.
+  183.1  The Father of great thou are,
+  188.9  thank you, and we have a place to worship your holy name
+  194.9  under your mighty pavilion, holy spirit.
+  197.7  Have your way in this place, help my emotions,
+  208.7  help my understanding, give me revelation from on high God.
+  212.8  I need you Lord.
   216.2  I'm just a broken jar, Father.
   221.4  Without you, I am nothing.
-  229.4  Knowledge I have is limited,
-  230.9  but you have all knowledge Lord.
-  233.0  And just ask that you will just pour that out
-  235.4  on your people God.
-  242.2  None of me and all of you,
-  244.7  have your way in this place,
-  245.8  have your way in my heart,
-  246.9  have your way in the hearts of your sons and daughters,
-  253.7  that it will be good ground.
-  255.2  that you will be magnified and glorified.
-  262.1  And all that we do today,
+  229.4  Knowledge I have is limited, but you have all knowledge Lord.
+  232.7  I just ask that you will just pour that out on your people, God.
+  242.3  None of me and all of you have your way in this place,
+  245.9  have your way in my heart, have your way in the hearts
+  251.6  of your sons and daughters, that it will be good ground.
+  256.1  that you will be magnified and glorified.
+  262.0  And all that we do today,
   266.6  help us to love you more, Holy Father.
   269.9  Help us to honor you more, Holy Father.
-  275.9  Help us to depict and pray this, your sons and daughters.
-  284.9  Even myself, Lord, step in and have your way.
-  292.9  Glorify your name and your name alone.
-  298.5  My name means nothing.
+  275.8  Help us to depict and pray this, your sons and daughters,
+  285.3  even myself, Lord.
+  288.6  Step in and have your way.
+  290.4  Glorify your name and your name alone.
+  298.6  My name means nothing.
   304.5  We love you, we honor you.
   306.1  It's in Jesus name, my pray.
   308.4  Jesus name, Jesus name, amen, amen.
@@ -82,104 +76,101 @@
   326.6  my stepfather, his name was Ernest.
   330.0  Ernest Oldham, Julia, he was a good man, a godly man.
   336.7  He really showed me what a godly man should look like.
-  343.7  And we should just sit and just talk about the Bible, sit and just talk about life.
-  350.7  We just commune on the regular.
-  355.2  And unfortunately, me and Ernest's relationship kind of faded away.
-  362.2  I cherish this relationship so much.
-  369.4  And it was nothing that I did, nothing that he did.
-  372.2  It was just, we all know we've had good people in our lives.
-  376.6  We had godly people in our lives.
-  378.8  And just over time, we seem to just start drifting away.
-  384.0  We just start just a separation of time and space
-  388.2  and activities, things was going on in his life
-  391.4  and things were going on in my life.
-  393.6  And slowly but surely the cause started getting further
-  399.4  and further part.
-  404.5  And even now, as you can see, it still bothers me a little bit
-  411.5  that that relationship is no more.
-  415.6  It was just a season.
-  418.0  But I thank God for that relationship because it steward
-  421.1  in me on a godly path on how I should approach the Lord,
-  426.7  how I should love the Lord, how I should obey the Lord,
-  431.5  and trust what He is doing in me.
+  344.7  And we should just sit and just talk about the Bible,
+  348.3  sit and just talk about life.
+  350.4  We just commune on the regular.
+  355.6  And unfortunately, me and Ernest's relationship
+  359.9  kind of faded away.
+  362.9  I cherish this relationship so much.
+  369.5  And it was nothing that I did, nothing that he did.
+  372.4  It was just, we all know we've had good people in our lives.
+  376.8  We had godly people in our lives.
+  378.9  And just over time, we seemed to just start drifting away.
+  384.1  We just start just a separation of time and space
+  388.4  and activities, things was going on in his life
+  391.5  and things were going on in my life.
+  393.7  And slowly but surely the cause started getting further
+  399.5  and further part.
+  404.6  And even now, as you can see,
+  409.0  it still bothers me a little bit
+  412.5  that that relationship is no more.
+  415.7  It was just a season.
+  418.1  But I thank God for that relationship
+  420.3  because it steward in me on a godly path
+  424.3  on how I should approach the Lord,
+  426.8  how I should love the Lord,
+  429.0  how I should obey the Lord and trust what He is doing in me.
   435.7  And just like our earthly relationships
-  437.5  that we cherish so much, how much more
-  440.5  should we cherish our relationship with the Lord Jesus Christ?
-  445.7  God has established a way that we can continue to be
-  449.6  in constant fellowship with Him,
+  437.5  that we cherish so much,
+  439.5  how much more should we cherish our relationship
+  442.0  with the Lord Jesus Christ?
+  445.7  God has established a way that we can continue
+  449.1  to be in constant fellowship with Him,
   451.8  constant communion with Him, and that is by prayer.
-  459.4  Just like our earthly relationships,
-  461.0  that we drift apart, God has established prayer
-  466.6  that we do not drift apart.
-  469.2  He's placed his spirit in us
-  471.7  so that we cannot drift apart.
-  475.0  Even though we may feel that, he is always there.
+  459.5  Just like our earthly relationships have we drift apart?
+  462.8  God has established prayer that we do not drift apart.
+  469.2  He's placed his spirit in us so that we cannot drift apart.
+  475.1  Even though we may feel that, he is always there.
   482.2  We rely on our own wisdom.
   485.0  We stay busy with work and entertainment,
   488.1  and we neglect prayer.
   491.9  Some of us don't pray because of doubt and weariness.
   498.9  We have been praying and praying and praying and praying
-  504.0  and praying and praying
-  506.4  and we still had not received.
-  511.0  And unfortunately that pushes us in a place of hopelessness
+  504.0  and praying and praying and we still had not received.
+  511.1  And unfortunately, that pushes us in a place of hopelessness
   515.4  and we feel like there's no point of prayer.
-  519.3  Shame and guilt from our own sins keeps us away from praying.
-  524.3  We feel like we are unworthy to pray.
-  528.3  We feel like that's why sin is so dangerous.
-  535.0  That's why we got to hate sin.
-  539.0  It keeps us away from prayer.
-  543.0  The Holy Communion that God has established.
-  547.0  Nothing can break that relationship.
-  550.0  Even right now everybody is sitting in here.
-  555.7  And the more we are in Holy Communion with that, the more He will reveal Himself to us.
-  562.7  And the more we will trust Him and be dependent on Him.
-  568.7  And there are times when there is just spiritual opposition.
-  572.7  Yeah, the demonic forces is keeping Him from the Holy Communion.
-  578.7  And there are times when there is just spiritual opposition.
-  582.9  Yeah, demonic forces is keeping you from praying.
-  592.5  Demonic forces is keeping you from praying.
-  595.7  That's why it's so dangerous to play with sin.
-  600.0  We open the door for demonic forces to keep us out of the presence and out of the will
-  606.1  of God.
-  609.0  It's dangerous.
-  612.9  It's dangerous.
-  617.3  We understand prayer goes beyond simply asking for things.
-  621.6  And it really is a two way street for our communion
-  625.8  and our relationship with him.
-  627.8  We will start taking it more seriously.
-  636.4  And we ask ourselves, what happened to fracture
-  641.2  this relationship?
-  645.0  Genesis chapter three, verse eight to 13 is what happened.
+  519.4  Shame and guilt from our own sins keeps us away from praying.
+  525.4  We feel like we are unworthy to pray.
+  529.4  We feel like that's why sin is so dangerous.
+  537.0  That's why we got to hate sin.
+  540.0  It keeps us away from prayer.
+  545.0  The Holy Communion that God has established,
+  548.0  like nothing can break that relationship.
+  551.0  Even right now everybody's sitting in here right now.
+  555.7  You can say, thank you Lord and he hears you.
+  558.7  You can say, I love you Lord and he hears you.
+  562.7  And the more we continue to cultivate that,
+  567.7  the more we are in Holy Communion with that,
+  571.9  the more He will reveal Himself to us.
+  574.9  And the more we will trust Him and be dependent on Him.
+  579.7  And there are times when there is just spiritual opposition.
+  585.3  Yeah, demonic forces is keeping you from praying.
+  592.3  Demonic forces is keeping you from praying.
+  595.6  That's why it's so dangerous to play with sin.
+  599.9  We open the door for demonic forces
+  602.9  to keep us out of the presence and out of the will of God.
+  608.9  It's dangerous, it's dangerous.
+  617.2  When we understand prayer goes beyond simply asking for things,
+  621.6  and it really is a two-way street
+  624.7  for our communion and our relationship with him,
+  627.7  we will start taking it more seriously.
+  636.3  And we ask ourselves, what happened to fracture this relationship?
+  645.0  Genesis chapter 3, verse 8 to 13 is what happened.
   653.9  Jesus Christ.
   657.4  Jesus Christ.
-  661.3  Genesis chapter three, verse 18 to 13.
+  661.2  Genesis chapter 3, verse 18 to 13.
   664.1  And they heard the sound of the Lord God walking in the garden
   668.4  in the cool of the day.
   674.0  And the man and his wife hid themselves
-  676.1  from the presence of the Lord God,
-  678.5  among the trees of the garden.
-  680.8  But the Lord God called to the man and said to him,
+  676.1  from the presence of the Lord God, among the trees of the garden.
+  680.6  But the Lord God called to the man and said to him,
   683.0  where are you?
-  684.6  And he's saying that to us today.
-  689.6  Where are you?
-  693.0  And he said, I heard the sound of you in the garden
-  696.2  and I was afraid.
-  698.6  Because I was naked and I hid myself.
-  700.5  He said, who told you that you were naked?
-  705.2  Have you eaten of the tree of which I command you
+  684.4  And he's saying that to us today.
+  689.4  Where are you?
+  692.8  And he said, I heard the sound of you in the garden
+  696.0  and I was afraid because I was naked and I hid myself.
+  700.4  He said, who told you that you were naked?
+  705.1  Have you eaten of the tree of which I command you
   707.2  not to eat from?
   708.4  The man said, the woman who you gave me,
-  712.1  she gave me the fruit of the tree and I ate.
-  716.4  Then Lord God said to the woman,
-  718.8  what is this that you have done?
-  721.8  The woman said, the serpent deceived me and I ate.
-  727.8  This, this monumental desire
-  734.8  The pastor is what fractured the relationship between man and God.
+  712.0  she gave me the fruit of the tree and I ate.
+  715.2  And Lord God said to the woman, what is this that you have done?
+  721.9  The woman said, the serpent deceived me and I ate.
+  728.1  This monumental disaster is what fractured the relationship between man and God.
   746.5  This is why we have problems framed.
   750.5  The sin in our lives.
-  751.7  This is why everything is fractured.
-  753.4  Like everything I just explained to you, this is why because of the fall of man, because of
-  759.8  sin, we don't pray.
+  751.7  This is why everything is fractured, like everything I just explained to you, this is
+  756.0  why because of the fall of man, because of sin, we don't pray.
   763.4  And we don't pray, but the communication line is always open.
   769.9  It's never blocked.
   770.9  It's always open.
@@ -188,153 +179,781 @@
   782.8  No longer will a holy God come down around sinful men.
   787.1  This is why it's hard to pray.
   792.0  This is why we are distracted when we pray.
-  794.6  Jesus, why everything that we try to do, distractions, work, family, all this stuff
+  794.6  This is why everything that we try to do, distractions, work, family, all this stuff
   803.5  piles up in our lives and it overtakes us and we neglect to pray.
   812.4  What I want to do today is I want to walk through Jesus' prayers.
-  822.0  And actually, as I was looking through this, I didn't even realize how much Jesus prayed.
-  827.2  I was like, good God, Jesus prays.
+  822.0  And actually, as I was looking through this,
+  824.0  I didn't even realize how much Jesus prayed.
+  826.2  I was like, good God, Jesus prays.
   830.8  No, let me, we gonna walk through it.
-  834.0  We gonna walk through it.
-  835.9  We gonna walk through the gospel of Luke,
+  832.5  We gonna walk through it.
+  835.9  We gonna walk through the Gospel of Luke,
   839.3  starting in Luke chapter three, verse 21.
   848.3  It's extraordinary.
-  850.0  It's, ah man, I wish I had the words, man.
-  854.0  It's just such a beautiful thing
-  857.6  to see the Lord Jesus Christ commune with his father.
-  863.7  And as I was studying this, I was like,
-  867.8  man, my prayer life got to get better.
+  850.0  It's, oh man, I wish I had the words, man.
+  854.0  It's just such a beautiful thing to see the Lord Jesus Christ
+  859.7  commune with his Father.
+  863.7  And as I was studying this, I was like, man,
+  868.5  my prayer life got to get better.
   871.7  My prayer life got to get better.
   874.0  My communion with God got to get better.
   878.7  I thought I was doing good.
-  882.0  No condemnation, but I did.
-  883.7  I thought I was doing good
-  884.6  until I started reading Jesus' prayers.
-  887.3  I said, God, help me.
-  890.3  Help your elder do better than this.
-  892.6  I want to commune like Jesus commutes.
-  895.3  This is the whole purpose why the Lord put this on my heart
-  898.8  to share with you today.
-  901.2  It's not a matter of condemnation,
-  903.3  it's a matter of intimacy.
-  905.8  Like if you're lacking, listen, family,
-  910.1  if you're lacking intimacy with the Lord Jesus Christ,
-  914.6  God Almighty, if you feel like you're lacking
-  918.7  in intimacy, lock in Luke chapter 3 verse 21 and 22.
-  926.9  Now when all the people were baptizing,
-  936.1  yeah, now when all the people were baptized
-  939.2  and when Jesus also had been baptized
-  941.2  and was praying, the heavens were open
-  945.8  and the Holy Spirit descended on him
-  947.7  in bodily form like a dove.
-  950.0  And a voice came from heaven,
-  951.6  You are my beloved son with you, I am well pleased.
-  958.6  I didn't read this on how many times
-  961.1  and I never saw that Jesus prayed in his baptism.
-  969.4  And that should tell you and I,
-  972.7  whenever we start any public ministry,
-  976.4  we should be praying and we should be getting affirmation.
-  980.1  Ah, we should be praying first affirmation from God.
-  990.3  God is calling me to do this.
-  994.1  Then we get affirmation from our spiritual authority.
-  998.8  Jesus had spiritual authority.
- 1002.3  This is my son who I'm well pleased.
- 1005.0  He's saying, go start your ministry.
- 1012.2  We cannot circumvent the system.
- 1015.0  God has established this system.
- 1017.2  He established it to cultivate your heart so you don't crush his sons and daughters in
- 1023.2  the process.
- 1031.3  I was talking to Elder this week about this and like those three years at Victory before
- 1036.4  I became an Elder, I said without those three years of serving, putting up flags, being an
- 1044.2  Usher, being a leader over the Ushers, being an armor bearer, being a leader over the armor
- 1048.9  bearer, being a squad leader, being in a squad.
- 1055.5  serving, getting up 4 a.m. or logistics, set up and break down. If I would not have took this process,
- 1063.0  I would not be here today. Now, I could have been here today, but I would have damaged so many
- 1073.1  people. I would have damaged so many people because I aborted the process and did it my way,
- 1084.6  because I had gifts and talents.
- 1088.8  It's dangerous.
- 1091.2  Christ got affirmed.
- 1102.0  Prayer marks His dependency on the Father.
- 1105.5  Even in His affirmation, even in His public ministry,
- 1110.2  He's still depending on the Father.
- 1112.9  The Godhead, the Holy Trinity, on earth at one time,
- 1117.8  establish him to do such a work as this.
- 1125.9  Luke chapter five verse 16,
- 1132.8  Jesus withdrawing to pray alone.
- 1139.7  But he would withdraw to desolate places and pray.
- 1146.1  If God in the flesh had to step away,
- 1154.9  if God in the flesh had to step away,
- 1157.2  how much more do we have to step away?
- 1161.8  To a desolate place to a desolate place
- 1172.7  Like go somewhere private and be with God Almighty
- 1180.8  We are missing out on so much of that great intimacy
- 1191.9  Just like I was talking about my stepfather like how much that grieved me
- 1196.0  It should grieve us just even all the more that we miss out on the Lord God and what he has to say for us
- 1205.1  We're frustrated, we're confused, we're distracted, we're angry, but we have to spend time with
- 1215.3  him.
- 1216.3  It is a great communion.
- 1219.4  It is great intimacy.
- 1221.1  He will reveal himself to you.
- 1225.7  But we have to follow the process on how Jesus did it.
- 1233.2  We have to stay in communion with Him.
+  882.1  No condemnation, but I did.
+  883.7  I thought I was doing good until I started reading Jesus's
+  886.1  prayers. I said, God help me. Help you. I want to commune like Jesus communes. This is the
+  895.6  whole purpose why the Lord put this on my heart to share with you today. It's not a matter
+  901.9  of condemnation. It's a matter of intimacy. Like if you're lacking, listen, family, if you're
+  910.5  lacking intimacy with the Lord Jesus Christ. God Almighty. If you feel like you're lacking
+  918.5  in intimacy, lock in Luke chapter 3 verse 21 and 22. Now when all the people were baptizing,
+  929.5  is that true? Yeah. Now when all the people were baptized, and when Jesus also had been
+  940.4  baptized and was praying. The heavens were open and the Holy Spirit descended on him in bodily form
+  948.6  like a dove. And a voice came from heaven, you are my beloved son with you, I am well-pleased.
+  958.5  I didn't read this on how many times and I never saw that Jesus prayed
+  963.3  in this baptism. And that should tell you and I, whenever we start any public
+  974.9  ministry, we should be praying and we should be getting affirmation. We should
+  985.4  be praying first affirmation from God. God is calling me to do this. Then we get
+  994.8  affirmation from our spiritual authority. Jesus had spiritual authority. This is my son who I'm well
+ 1004.0  pleased. He's saying, go start your ministry. We cannot circumvent the system. God has established
+ 1016.4  this system. He established it to cultivate your heart so you don't crush his sons and daughters
+ 1023.0  in the process. I was talking to Elder this week about this and like those three years at victory
+ 1036.0  before I became an elder, I said, without those three years of serving, putting up flags,
+ 1043.1  being an usher, being a leader over the ushers, being an armor bearer, being a leader over the
+ 1048.6  armor bearer, being a squad leader, being in a squad, serving, getting up 4 a.m., or logistics,
+ 1058.7  set up and break down.
+ 1060.1  If I would not have took this process, I would not be here today.
+ 1064.7  Now, I could have been here today, but I would have damaged so many people.
+ 1074.0  I would have damaged so many people because I aborted the process and did it my way because
+ 1085.0  I had gifts and talents.
+ 1089.0  It's dangerous.
+ 1091.5  Christ got affirmed.
+ 1102.3  where Marx's dependency on the Father.
+ 1105.7  Even in his affirmation, even in his public ministry,
+ 1110.3  he's still depending on the Father, the Godhead,
+ 1115.0  the Holy Trinity on Earth at one time,
+ 1118.8  established him to do such a work as this.
+ 1125.9  Luke 5, verse 16, Jesus was drawing to pray alone,
+ 1134.6  was drawing to pray alone.
+ 1139.7  But he would withdraw to desolate places and pray
+ 1146.1  if God in the flesh had to step away.
+ 1154.9  If God in the flesh had to step away,
+ 1157.2  how much more do we have to step away
+ 1161.7  to a desolate place, to a desolate place?
+ 1173.0  Like go somewhere private
+ 1177.5  and be with God Almighty.
+ 1186.3  We are missing out on so much of that great intimacy.
+ 1192.0  Just like I was talking about my stepfather,
+ 1194.7  like how much that grieved me.
+ 1196.1  It should grieve us just even all the more
+ 1199.2  that we miss out on the Lord God
+ 1202.2  and what He has to say for us.
+ 1206.2  We're frustrated, we're confused, we're distracted,
+ 1210.9  We're angry, but we have to spend time with him.
+ 1216.0  It is a great communion.
+ 1219.3  It is great intimacy.
+ 1220.9  He will reveal himself to you.
+ 1225.6  But we have to follow the process on how Jesus did it.
+ 1233.1  We have to stay in communion with him.
  1236.7  We have to do it.
- 1239.0  It will benefit you, it will benefit God,
- 1242.2  it will benefit the ministry He has called for you to do.
+ 1237.9  It will benefit you.
+ 1239.9  It will benefit God.
+ 1241.9  It will benefit the ministry.
+ 1243.9  He has called for you to do.
  1245.9  You cannot do ministry without the Father.
- 1256.2  Jesus prioritized communion with the Father over ministry.
- 1265.8  Jesus prioritized communion with the Father over ministry.
- 1270.8  ministry, you did not rush Jesus when he went to be with the Father.
- 1278.3  They used to ask, where did Jesus go?
- 1280.1  I don't know where he's at.
- 1282.3  And he would just show up.
- 1286.2  Why?
- 1287.2  Because now he is full of the Father.
- 1290.2  Now he is full of wisdom.
- 1292.5  Now he is full of truth.
- 1294.7  Now he is full of revelation.
- 1296.7  Now he is ready to go and do ministry.
- 1302.6  How much more you and I,
- 1306.1  us being sinful creatures,
- 1307.6  how much more should we be in the presence
- 1310.5  of the Holy One
- 1312.9  before we do any ministry?
+ 1248.9  Jesus prioritized communion with the Father over ministry.
+ 1265.6  Jesus prioritized communion with the Father over ministry.
+ 1271.6  You did not rush Jesus when he went to be with the Father.
+ 1277.6  They used to ask where Jesus go.
+ 1279.6  I don't know where he's at.
+ 1282.6  And he would just show up.
+ 1283.6  Why?
+ 1286.3  Because now he is full of the Father.
+ 1289.3  Now he is full of wisdom.
+ 1291.3  Now he is full of truth.
+ 1294.3  Now he is full of revelation.
+ 1296.3  Now he is ready to go and do ministry.
+ 1300.3  How much more you and I,
+ 1304.7  us being sinful creatures, how much more should we be in the
+ 1308.7  we be in the presence of the Holy One,
+ 1312.9  before we do any ministry.
  1318.9  And I know you were better person
  1321.4  when you go in the presence of the Lord.
  1323.8  You were better, I know my best days
- 1326.8  was when I really labor and spend time with the Lord.
+ 1326.9  was when I really labor and spend time with the Lord.
  1330.1  Those are my best days.
  1335.4  Say that again, would you say great?
- 1337.0  He's a great asleep too.
+ 1337.0  It's a great asleep too.
  1343.4  Prayer was not occasional for Jesus.
  1346.3  It was his rhythm.
  1348.0  Like prayer for Jesus was like air that we breathe.
  1355.1  Prayer for Jesus was like the air that we breathe.
- 1360.4  He's not gonna do anything without communing with the Father.
+ 1360.3  He's not gonna do anything without communing with the Father.
  1366.4  Being in his presence, Luke chapter six, verse 12 through 16.
- 1378.5  through 16.
  1382.0  Man, this blew me away.
  1386.6  In these days, he went out to the mountain to pray.
- 1392.8  Watch this.
+ 1392.9  Watch this.
  1393.9  And all night he continued and prayed to God.
- 1397.4  And when day came, he called his disciples and chose
+ 1397.5  And when day came, he called his disciples and chose
  1400.6  from them 12 whom he named apostles.
  1403.8  Simon, whom he had named Peter and Andrew, his brother
- 1407.5  and James and John and Philip and Bartholomew
- 1410.4  And Matthew and Thomas and James, the son of Althea,
- 1415.3  and Simon, who was called the zealot,
- 1417.5  and Judas, the son of James, and Judas Iscaria,
- 1421.8  who became a traitor.
- 1428.4  When was the last time you prayed all night?
+ 1407.6  and James and John and Philip and Bartholomew
+ 1410.4  and Matthew and Thomas and James, the son of Althea.
+ 1415.3  And Simon, who was called the zealot, and Judas,
+ 1419.2  the son of James, and Judas Iscaria, who became a traitor.
+ 1428.5  When was the last time you prayed all night?
  1435.8  Major decisions.
  1439.5  Listen, God did tell you that.
- 1442.8  Major decisions should be soaked in prayer.
- 1446.3  You need to be ravenous about hearing from the Lord.
- 1452.5  You need to be like a dog on a bone like,
- 1454.9  I gotta get it, I gotta get it.
+ 1442.9  Major decisions should be soaked in prayer.
+ 1447.7  You need to be ravenous about hearing from the Lord.
+ 1452.5  You need to be like a dog on a bone,
+ 1454.7  I gotta get it, I gotta get it.
  1456.4  You gotta go after it.
  1458.3  Jesus prayed all night before picking the disciples.
- 1466.3  Pray it all night, picking the disciples.
- 1472.8  We have major decisions to make and we won't labor
- 1477.1  in the presence of the Lord and we won't wait.
- 1479.7  We won't depend on Him.
- 1482.9  We won't rely on Him.
- 1485.3  Jesus did not you.
+ 1466.2  Pray it all night, picking the disciples.
+ 1472.8  We have major decisions to make
+ 1475.0  and we won't labor in the presence of the Lord
+ 1478.5  and we won't wait.
+ 1481.2  We won't depend on him.
+ 1483.4  We won't rely on him.
+ 1498.8  Jesus did not choose leaders casually.
+ 1504.2  Jesus did not let people be close to Him casually.
+ 1508.2  He's praying about everything.
+ 1511.7  He did not let people be close to Him casually.
+ 1515.1  Father, is this person supposed to be in my life?
+ 1518.2  Father, is these people supposed to be leaders?
+ 1521.2  Father, Father, Father, He did nothing casually.
+ 1530.0  It was always in prayer.
+ 1535.5  All the more, we should be crying out for him.
+ 1546.0  All the more, Lord, show me, tell me, help me.
+ 1549.0  I need to know.
+ 1550.4  I don't know what to do.
+ 1551.6  Lord, show me, tell me, help me.
+ 1556.2  All the more.
+ 1558.7  And Christ is just, this is the model, Christ is setting.
+ 1563.0  For you and I to follow.
+ 1565.1  so that we can be successful in this life.
+ 1568.5  He's not just doing this for himself,
+ 1577.9  even though he is the Son of God.
+ 1581.3  He's still and always model dependencies
+ 1584.9  on the Father's will.
+ 1587.6  Our prayers lining up with the Father's will.
+ 1591.9  Our prayers align with the Father's will.
+ 1601.4  Luke chapter 9 verse 16,
+ 1611.0  Jesus prays before feeding the 5,000.
+ 1617.2  He'd taken the five loaves and the two fishes.
+ 1620.9  He looked up to heaven and said,
+ 1623.3  a blessing over them.
+ 1625.5  Then he broke the loaves and gave them to the disciples,
+ 1628.3  except before the cry.
+ 1634.3  Jesus always acknowledged the Father.
+ 1641.2  Jesus always sees him as a provider.
+ 1644.7  Jesus always sees him as the one who knows all things.
+ 1649.8  Are we seeing God as the one who knows all things,
+ 1652.9  do we know all things? Do we feel like we can control our lives and control the path of our lives?
+ 1659.8  Or do we trust the Father? Are we dependent on Him? Your prayer life shows if you're dependent on Him.
+ 1667.4  Trying to awaken you right now. No condemnation. But just like I was reading this,
+ 1677.1  it awakened me, man, I have to seek the Father's face more before miracles, signs, and wonders.
+ 1695.5  Jesus prayed, like breaking bread, fish and bread to feed 5,000 people.
+ 1710.5  Father, I know you provide all things.
+ 1715.4  I know you can do all things.
+ 1717.5  Feed your sons and daughters.
+ 1727.6  I know it's just a lack of trust in us.
+ 1734.6  It's a lack of trust in us.
+ 1739.4  But thank God for who He is.
+ 1743.0  Thank God that He is a good father.
+ 1745.1  Thank God that we really are little children.
+ 1750.2  And as long as we stick our hand up to hold His hand,
+ 1754.1  He will continue to lead in God us.
+ 1756.2  Thank God.
+ 1759.9  Thank God.
+ 1765.9  Luke chapter nine, verse 18 and 20.
+ 1776.1  Now it happened that He was praying alone, who Jesus,
+ 1781.1  The disciples were with them and he said, asking them,
+ 1786.1  who do the crowds say that I am?
+ 1788.5  And they answered John the Baptist,
+ 1791.3  what others said Elijah and others,
+ 1794.3  that one of the prophets of old has risen.
+ 1797.4  Then he said to them, but who do you say that I am?
+ 1801.3  And Peter answered the Christ of God.
+ 1804.9  Prayers will prepare for revelation.
+ 1812.9  That's why we pray before every meeting. That's why we pray for every spiritual care. That's why we pray for everything because
+ 1824.5  We need spiritual revelation from God
+ 1829.6  Not my faulty wisdom
+ 1833.3  That's why we pray before these gatherings. We need revelation from God like right now what the scriptures are being read
+ 1842.3  Revelation from God is going to you not me
+ 1845.9  I'm just a vessel talking, revelation from God and the Holy Spirit.
+ 1851.9  That's why we pray.
+ 1853.5  That's why we seek His face.
+ 1855.3  That's why we want His presence.
+ 1857.2  That's why we run after Him.
+ 1862.5  I didn't even realize how much Jesus was praying.
+ 1875.0  Chapter 9 verse 28, 36.
+ 1879.7  I mean, just we in chapter 9, he didn't pray three times.
+ 1885.1  We ain't even out in chapter, he didn't.
+ 1889.3  Now about eight days after the saying,
+ 1892.0  he took with him Peter and John and James
+ 1896.2  and went up on the mountain to pray.
+ 1899.3  And as he was praying,
+ 1902.5  who Jesus, and as he was praying,
+ 1907.1  the appearance of his face was altered.
+ 1910.6  And his clothes became dazzling white.
+ 1913.2  And behold, two men were talking with him,
+ 1916.6  Moses and Elijah who appeared in glory and spoke of his departure.
+ 1922.1  Wow, they came and spoke about the cross in the resurrection
+ 1932.8  and his ascension, who appeared in glory and spoke of his departure
+ 1942.0  which he was about to accomplish at Jerusalem.
+ 1946.6  Now Peter and those who were with him were heavy with sleep.
+ 1956.6  I'm guilty.
+ 1961.4  The man of God attacks you for the morning.
+ 1963.6  You'd better be ready.
+ 1966.1  The man of God attacks you three in the morning.
+ 1969.2  Call you three in the morning.
+ 1970.9  Elder, you prayin', no sir or not.
+ 1975.3  No sir, I'm not.
+ 1982.0  Our lead pastor is serious about seeking the Lord's face
+ 1989.2  because he knows the value is so valuable.
+ 1993.5  The communion with the Lord thy God, it is so valuable.
+ 1998.5  Like we missin' out on so much,
+ 2002.2  cause we won't lay before him,
+ 2005.3  and we won't even trust that he will do it.
+ 2009.8  Like, come on, we gotta depend.
+ 2015.6  Jesus is depending on the Father.
+ 2018.7  I gotta go.
+ 2021.2  We got a lot to walk through.
+ 2024.0  Now Peter and those who were with him were heavy with sleep,
+ 2028.2  But when they became fully awake, they saw his glory and the two men who stood with him.
+ 2037.2  And as the men were parting from him, Peter said to Jesus, master it, it is good that we
+ 2045.2  are here.
+ 2046.2  Let us make three tents, one for you and one for Moses and one for Elijah, not knowing what
+ 2053.2  he said.
+ 2054.2  As he was saying these things, a cloud came and overshadowed them.
+ 2059.8  And they were afraid as they entered the cloud.
+ 2063.1  And a voice came out of the cloud saying, this is my son, my chosen one.
+ 2069.4  Listen to him.
+ 2072.8  And when the voice had spoken, Jesus was found alone.
+ 2077.0  And they kept silent and told no one in those days anything of what they have seen.
+ 2090.5  Prayer is connected to revelation of Christ's glory.
+ 2096.3  Like you will fall more in love, more in awe, more in wonder,
+ 2104.6  the more you spend time in Holy Communion with Him.
+ 2108.8  The more you pray.
+ 2111.7  Prayer is just not just you doing all the talking.
+ 2118.4  It's you talking, and the Lord talks back to your soul.
+ 2123.7  Sometimes I'll sit there and just hug my Bible.
+ 2130.2  And I'll be like, Lord, I just want to be close to you.
+ 2135.1  I just want to feel your presence.
+ 2139.4  My soul is at ease.
+ 2141.0  I just need rest.
+ 2144.4  And I'll just sit there.
+ 2145.8  And majority of the time he'll just send me to a scripture.
+ 2150.0  And I'll go to that scripture, I'll read that scripture.
+ 2152.3  And then it's like, it's like a light bulb will go off.
+ 2155.0  And then stuff will just start flowing out of me.
+ 2160.0  Lord, I pray for the nation.
+ 2162.0  Lord, I pray for our persecuted church.
+ 2164.0  Lord, I pray, God, that you will help the people in Pakistan
+ 2167.0  where you help these people that are dealing with natural disasters,
+ 2170.0  floods, and earthquakes, God.
+ 2173.0  It will just start flowing out of you.
+ 2175.0  Luke, chapter 10, verse 21, 21 and 22.
+ 2198.8  In the same hour, he rejoiced, Jesus rejoiced, and the Holy Spirit said,
+ 2206.0  I thank you Father, Lord of heaven and earth, that you have hidden these things from the wise
+ 2212.9  and understanding and revealed them to little children.
+ 2216.9  Yes Father, for such was your gracious will, all things have been handed over to me by my
+ 2224.1  father and no one knows who the son is except the father or who the father is
+ 2230.1  except the son that's just how much they are being in communion. You cannot tell
+ 2236.1  the difference between the father and the son. All an example for you and I. We are
+ 2245.3  more conformed in his presence to whom the son chooses to
+ 2254.9  up, I'm skipping.
+ 2256.5  Father, and no one knows who the son is,
+ 2259.5  except the father or who the father is,
+ 2261.7  except the son and anyone to whom the son chooses
+ 2265.2  to reveal him.
+ 2268.2  Jesus, thank the father for revealing
+ 2272.5  revelation to little children.
+ 2279.4  It's gonna be, no, it's not gonna be.
+ 2282.5  He will not reveal it to proud and to self-sufficient.
+ 2288.4  How can he reveal revelation, knowledge to you
+ 2291.3  when you already think you know it all.
+ 2295.2  When you're already using your gifts and talents
+ 2297.8  out of his will, how do you think God is gonna talk to you?
+ 2306.3  If you're out of the will of how Jesus started
+ 2310.3  his earthly ministry, how Jesus did his things,
+ 2313.4  lined up with the Father, how Jesus prayed,
+ 2316.4  how Jesus even had joy that the Father's plan
+ 2320.2  is much greater than my plan.
+ 2322.6  That he will reveal himself to little children
+ 2325.7  and not to the ones who know it all.
+ 2333.0  Spiritual understanding is a gift from God.
+ 2337.8  It's a gift from God.
+ 2340.0  Jesus with choices in the Father's wisdom and sovereign plan.
+ 2347.4  He rejoices.
+ 2351.9  Let's go Luke chapter 11, verse one through four.
+ 2366.3  Now Jesus was praying in a certain place.
+ 2368.7  And when he finished one of his disciples said to him,
+ 2370.7  Lord, teach us to pray.
+ 2372.7  As John taught his disciples, and he said to them,
+ 2375.5  When you pray, say, Father,
+ 2377.9  halo be your name, your kingdom come.
+ 2380.5  Give us each day our daily bread
+ 2382.1  and forgive us of our sins for we, ourselves,
+ 2385.6  forgive everyone who is indebted to us
+ 2388.4  and let us not lead us not into temptation.
+ 2393.5  Father, prayer begins with relationship with God.
+ 2398.1  Father, who we pray into, the Father,
+ 2402.8  halo be your name, your name is holy.
+ 2407.7  Your kingdom come, we pray for God's rule and reign,
+ 2411.8  be on the earth as it is in heaven.
+ 2414.6  Give us each day our daily bread.
+ 2416.3  We depend on God for everything.
+ 2419.7  Everything.
+ 2422.1  And forgive us of our sins.
+ 2423.3  We continually need mercy and forgiveness.
+ 2429.3  We continually need mercy and forgiveness.
+ 2434.3  forgiveness. For we ourselves forgive everyone who is indebted to us. Forgive people that have
+ 2442.4  sinned against us. Pray, man, God, help us. Pray for the people that have sinned against
+ 2450.3  you and lead us not into temptation. We ask God for spiritual protection from demonic forces.
+ 2469.4  We ask God to protect us even from our own sin.
+ 2473.3  Protect us from demonic activity.
+ 2476.0  Protect us from our flesh
+ 2481.1  that we will not be led away into temptation.
+ 2484.9  Luke chapter 22 verse 31.
+ 2493.2  Luke chapter 22 verse 31 and 32.
+ 2497.8  Simon, Simon, behold Satan demands to have you
+ 2505.4  that he might sift you like wheat.
+ 2508.0  But I have prayed for you, but I have prayed for you,
+ 2511.9  but I have prayed for you, but I have prayed for you.
+ 2515.7  He's praying for you and I, it's such a great joy.
+ 2521.8  I just would encourage me so much,
+ 2523.6  it's such a great joy to know that Jesus Christ
+ 2526.6  is praying for me.
+ 2529.1  I have prayed for you that your faith may not fail.
+ 2532.8  And when you have turned against,
+ 2534.2  Trenton, I just breathed bad that.
+ 2537.3  I've let that.
+ 2538.1  I just breathed by that.
+ 2539.6  And when you have turned again,
+ 2543.9  and when you have turned again, that means you're gonna,
+ 2546.1  Peter, you're gonna get back up.
+ 2550.1  You're gonna fall, but you're gonna get back up.
+ 2552.5  When you have turned again,
+ 2556.2  you're gonna fall, you and I, we're gonna fall.
+ 2560.0  But thanks be to God.
+ 2562.1  We got a high priest in heaven
+ 2564.3  that constantly goes to the Father on our behalf.
+ 2568.3  So when we fall,
+ 2569.7  You're going to get back up and we're going to go the right way.
+ 2574.4  When we fall, because we're going to fall.
+ 2584.5  Strengthen your brothers.
+ 2586.1  Tell your brothers.
+ 2590.0  Encourage your brothers to get up and go.
+ 2601.3  Satan is asking the sift every one of you like weed.
+ 2607.5  But the powerful thing about that is that Satan has to go to Christ.
+ 2616.2  No, no, no, no.
+ 2619.8  Satan just can't come and terrorize and harass you.
+ 2624.0  He has to go to Christ.
+ 2628.6  I want to sift them like we.
+ 2630.7  Okay, you do your thing, but I'm going to pray for them.
+ 2635.2  Jesus is praying for each and every one of you.
+ 2639.9  You will not be sifted as we.
+ 2643.9  You may go through the trial, but he's going to deliver you.
+ 2651.5  Christ's prayer is much greater than any demonic force, any situation, any hardship, any unbelief,
+ 2662.6  any doubt, any sin. He is praying for you, to bring for us. We cannot lose. Do you see that?
+ 2679.0  We cannot lose. No matter what it looks like on this earth, we cannot lose.
+ 2686.1  We have God Almighty, pleading on our behalf.
+ 2693.8  Father, look after my sons and daughters, my brothers and sisters.
+ 2699.0  They are about to go through this trial, but protect their faith that it will not fail,
+ 2704.9  that they will get up and they will be stronger than ever, and they will turn and they will
+ 2708.6  help their brother and help their sister to come out of the darkness.
+ 2712.5  And we will usher you in today marvelous life.
+ 2716.0  You will be with me.
+ 2722.0  He's praying for us.
+ 2723.9  He's in us.
+ 2725.1  He's around us.
+ 2726.5  Like what should we fear?
+ 2731.4  What should we fear?
+ 2736.4  What should we fear?
+ 2741.0  Jesus intercedes with people before your trial.
+ 2746.6  Like man, this will shift our hearts.
+ 2751.3  And when we fall into hardship, automatically we should revert back.
+ 2760.5  Jesus has prayed for me to go through this.
+ 2768.4  When we fall into hardship and we will fall into hardship,
+ 2775.9  I want you to default your heart.
+ 2778.7  Yes, shed tears. Yes, be upset.
+ 2783.1  Yes, go through all the emotions. Go through all of that.
+ 2786.3  But when you come to the end, Jesus has prayed for me that I will endure.
+ 2796.1  Jesus has prayed for me that I will endure. Jesus is walking with me through this that I
+ 2804.3  will endure. We got to remember that man. Peter's restoration was connected to Jesus' prayer.
+ 2818.7  I was thinking about this like, because Jesus never prayed for Judas, but he prays for Peter,
+ 2834.6  Scriptures even teaches.
+ 2839.4  He said, it's only one that I have lost.
+ 2841.4  And that was the one destined for destruction.
+ 2851.7  So you have to remember, when we go through hardships in this life, we have to remember,
+ 2860.7  when we get down on these Lord Jesus, I know you have prayed for me to go through this.
+ 2866.7  It is to conform me into the image of who you are, to get me stronger in my soul and to
+ 2873.5  have greater dependency on you.
+ 2878.3  But we got to get that in our souls and we can't crumble.
+ 2882.6  Yes, cry, shit is, go through it all.
+ 2888.9  But we cannot crumble.
+ 2893.7  God did not call us to stay there.
+ 2896.6  He called us to get up, get up, get up.
+ 2902.1  He has prayed for us.
+ 2903.8  He's got holy ghost power on the inside of you.
+ 2908.2  Get up.
+ 2909.2  Get up.
+ 2910.2  Get up.
+ 2911.2  Do not miss power.
+ 2913.4  The power that destroys like dynamite, that change and rearrange.
+ 2919.8  You got power on the inside of you.
+ 2922.7  Get up, man of God.
+ 2924.4  Get up, woman of God.
+ 2928.5  Pray to the one that can do something about it.
+ 2936.0  I tell people all the time, stop complaining.
+ 2940.0  Pray to the one that can do something about it.
+ 2943.0  We think that's weak.
+ 2945.0  That's not weak.
+ 2946.0  Christ.
+ 2947.0  Christ is praying to the one that can do something about it.
+ 2951.0  Peter, I'm praying for you that your faith will not fail.
+ 2955.0  You just put your name in there.
+ 2961.0  Put your name in there.
+ 2963.0  Pray for you.
+ 2965.0  He's praying for you.
+ 2967.0  That your faith will not fail.
+ 2970.0  John 17, yeah, I'm going to slip John in there real quick.
+ 2981.7  Slip John in there.
+ 2985.9  John 17 verse 20, 26, faith will not fail.
+ 3005.6  You have God Almighty praying for you.
+ 3009.6  You have the Holy Spirit on the inside of you.
+ 3013.6  We have everything in this life to conquer and rule and reign.
+ 3020.6  And we have prayer, the Holy Communion,
+ 3024.6  and intimacy with God.
+ 3026.3  Man, we have everything.
+ 3027.4  We have His Word, we have brothers and sons.
+ 3029.8  Man, we got everything we need to conquer.
+ 3035.7  John 17, verse 20 to 26,
+ 3039.4  I do not ask for these only.
+ 3042.1  But I also, for those who will believe in me
+ 3045.7  through their word, that they may all be one,
+ 3051.2  just as you, Father, are in me and I in you,
+ 3056.6  that they also may be in us, who be in us,
+ 3060.7  us be in the Father, us be in Jesus,
+ 3064.3  us be in the Holy Spirit,
+ 3068.9  so that the world may believe that you have sent me.
+ 3073.6  The glory that you have given me, I have given to them.
+ 3078.2  The glory that He has given me, He has given to us.
+ 3086.8  I have given to them that they may be one even as we are one.
+ 3092.8  I am them and you and me, that they may become perfectly one,
+ 3098.7  so that the world may know that you sit me and love them even as you love me.
+ 3106.1  Father, I desire that they also whom you have given me may be with me,
+ 3112.5  where I am to see my glory that you have given me because you loved me before the foundations of the
+ 3122.6  world. All righteous Father, even though the world does not know you, I know you. And these
+ 3133.3  know that you have sent me. I may know to them your name and I will continue to make it known
+ 3141.3  that the love with which you have loved me may be in them and I in them."
+ 3150.4  Yes, that's worthy. That's Jesus praying, he's praying that his body, his brothers and sisters,
+ 3165.0  sons and daughters will be in him and him and us. That's why it's so damaging to the body of
+ 3172.6  of Christ that we bicker so much about secondary issues.
+ 3177.6  We slander each other on social media,
+ 3180.3  like you're not demonstrating the gospel,
+ 3184.0  you're destroying the gospel,
+ 3185.4  you're destroying the body of Christ
+ 3187.6  when we always at division with each other.
+ 3196.0  If you are in Christ,
+ 3199.0  come on, man, if you are in Christ,
+ 3201.1  why are you keep trying to destroy this unity?
+ 3203.9  The unity that the body has demonstrates the gospel.
+ 3209.5  Like how are all these 6,000 people unified
+ 3215.2  and doing the same thing, loving each other,
+ 3218.0  glorifying God, praying, serving, sacrificing,
+ 3222.8  generosity that we're all doing this as one.
+ 3228.6  This is what Christ is praying for, unity.
+ 3231.8  Just like Jesus and the Father, unity and communion,
+ 3236.8  He wants us to be in unity and communion,
+ 3243.0  that we can represent Him well,
+ 3246.6  that it will show to the world Christ is who He says He is.
+ 3256.4  Luke 22, verse 39 to 46.
+ 3265.4  Luke 22, 39 to 46.
+ 3272.8  Watch out Jesus is praying.
+ 3281.0  Watch out Jesus is praying and his suffering.
+ 3285.3  And he came out and went as was his custom
+ 3288.9  to the Mount of Olives and the disciples followed him.
+ 3293.3  And when he came to the place, he said to them,
+ 3295.1  pray that you may not enter into temptation.
+ 3300.3  And he withdrew from them about a stone throw away,
+ 3303.5  nilt down and pray, saying, Father,
+ 3307.3  If you are willing, remove this cup from me.
+ 3311.3  Nevertheless, ha, nevertheless, nevertheless, nevertheless, nevertheless, nevertheless,
+ 3319.3  where's, where's our nevertheless, where's our nevertheless, not my will, but yours be
+ 3327.4  done.
+ 3328.4  And there appeared to him an angel from heaven, strengthening him.
+ 3333.5  Being in agony, being in agony,
+ 3341.4  he prayed more earnestly.
+ 3344.7  And his sweat became like drops of blood
+ 3346.9  falling down to the ground.
+ 3349.3  And when he rose from prayer,
+ 3351.2  he came to the disciples and found them sleeping again
+ 3355.4  for sorrow because our flesh is weak.
+ 3359.1  Like I'm not knocking the disciples.
+ 3361.8  Their flesh is weak, my flesh is weak.
+ 3364.7  And he said to them, why are you sleeping?
+ 3368.3  Rise and pray that you may not enter into temptation.
+ 3373.5  Jesus prayed in agony before the cross.
+ 3377.7  That's why it's okay for you and I to pray in agony for things that's going on in our lives.
+ 3383.9  It's okay.
+ 3386.1  He said to the Father, if it's possible, let this cup pass from me.
+ 3390.9  But nevertheless, but nevertheless, but nevertheless, Jesus took on the full horror of the cross,
+ 3405.3  that cup of wrath, cup of judgment, cup of humiliation, cup of suffering.
+ 3415.7  So we cannot say, oh, well, Jesus had it easy. Paul said that when we go through our
+ 3426.4  light afflictions compared to what Christ had to go through.
+ 3430.5  And if Christ prayed with agony and earnestly so much so that He was sweating blood, how much
+ 3440.6  more Jesus models, honest prayers and perfect submission.
+ 3455.4  Nevertheless, like I don't want to do this, if there be any other way, show me the truth.
+ 3463.8  me now because it's getting close and I don't want to do this. I don't want a cat
+ 3471.5  of nine tails whipping on my back, ripping flesh off to expose my muscle and bone.
+ 3478.2  I don't want to be spat upon. I don't want thorns pushing through my skull,
+ 3485.8  scraping my bones in my head. I don't want my beard ripped out. I don't want it.
+ 3495.9  So we have to start seeing our pain and suffering and our agony as light afflictions compared
+ 3506.8  to the cross.
+ 3511.5  True prayers bring out desire as under the Father's will, nevertheless.
+ 3518.3  Lord, I see this circumstance.
+ 3521.4  I know I have to go through this.
+ 3524.2  If there be any other way, but nevertheless, then you have to remember Christ is praying
+ 3532.1  for me.
+ 3535.3  Jesus prayed for me before this circumstance even came to play.
+ 3539.6  Christ has prayed for me, prayed that my faith will not fail, prayed that I will come closer
+ 3545.0  to him, prayed that he will strengthen me.
+ 3548.3  We have to believe this.
+ 3552.0  Luke 23, Luke 23 verse 34.
+ 3563.9  Jesus surrendered, submitted to the cross.
+ 3568.9  Jesus on the cross.
+ 3572.3  And Jesus said, Father, forgive them for they know not what they do.
+ 3577.3  And they cast lots to divide his garments.
+ 3580.3  Is that our prayer when people crucify us?
+ 3584.3  Father, forgive them for they know not what they do.
+ 3588.3  When our boss is on our back, Father forgive him for he know not what he do.
+ 3595.0  You being crucified by your coworkers, crucified on law.
+ 3599.0  and crucified on law.
+ 3600.2  Father, forgive them for they know not what they do.
+ 3608.0  Now this is the response of Jesus.
+ 3609.9  How much more should we align ourselves
+ 3613.4  with the Lord Jesus Christ?
+ 3618.0  Father, forgive them for they know.
+ 3623.3  Think right now, I want y'all to think right now,
+ 3625.3  put everybody on your mind right now.
+ 3628.1  That's cause you pain.
+ 3629.4  Did something horrible to you.
+ 3632.4  We're going to be free people.
+ 3639.9  I'm talking horrendous acts towards you.
+ 3644.9  Horrendous acts you didn't tell anybody about.
+ 3647.9  We're going to be free right now.
+ 3655.4  You'll say this out loud.
+ 3656.4  Father, forgive them for they know not what they did.
+ 3663.4  Believe that.
+ 3664.4  If Christ demonstrated that from the cross, if Christ fulfilled his own teaching to love
+ 3679.5  your enemies and pray for the people that persecute you.
+ 3684.6  Christ, Luke 23, verse 46, Christ is on the cross.
+ 3710.2  Christ is on the cross.
+ 3712.1  Family, Christ is a few inches from his life, six hours of, more than that.
+ 3723.0  One night, beating into a minute.
+ 3726.1  Now he's on the cross for six hours.
+ 3729.9  And he's still crying out and praying.
+ 3733.9  Forgive them for they know not what they do.
+ 3740.2  Luke 23, 46, still from the cross.
+ 3742.8  Then Jesus called out with a loud voice,
+ 3745.1  Father, into your hands, I commit my spirit.
+ 3754.4  His death was not defeat, but willing surrender.
+ 3761.1  He remained faithful to the Father, to the end.
+ 3769.2  The more we pray, the more confidence we gain
+ 3773.3  to be faithful to the end.
+ 3779.7  Jesus died trusting the Father.
+ 3784.1  Jesus died believing what the Father divine plan was for you
+ 3789.6  and I to be in salvation, be in his kingdom,
+ 3795.7  be saved, be filled with his spirit.
+ 3798.3  Jesus believed the Father.
+ 3805.0  Luke 24 verse 31, Luke 24, 31.
+ 3818.9  Nope, 30, 30 and 31.
+ 3822.5  Now Jesus has rose from the dead.
+ 3827.6  That's so cool.
+ 3828.7  Like he rose from the dead, he's just walking around.
+ 3832.9  I mean, like, he just walking,
+ 3836.8  he's just walking on the road in me.
+ 3838.2  It's just hanging out with his,
+ 3842.2  with his brothers and sisters.
+ 3844.9  Like everything is fine.
+ 3848.6  It's wild to me.
+ 3850.0  He's just so casual about rising from the dead.
+ 3853.1  Yeah.
+ 3854.1  No problem.
+ 3855.1  You know?
+ 3856.1  Ain't nothing but a thing.
+ 3857.1  I can do this.
+ 3858.1  Something.
+ 3859.1  And he's just walking around like, what?
+ 3863.3  That's mind blowing to me man.
+ 3865.3  Christ's just walking around.
+ 3866.3  Hey, how you doing bro?
+ 3867.3  You all right?
+ 3868.3  You good?
+ 3869.3  Okay.
+ 3870.3  And they're like, what?
+ 3871.3  It's you?
+ 3872.4  And they still not recognizing who he is.
+ 3878.3  He's not blow the trumpet either.
+ 3884.9  Verse 30, when he was at the table with them,
+ 3889.7  these are the disciples he was walking with
+ 3891.3  on the road to Amaeus.
+ 3893.9  They were walking and talking with him
+ 3895.5  and they went to their home.
+ 3899.4  When he was at the table with them,
+ 3901.5  he took the bread and blessed it and broke it
+ 3903.6  and gave it to them and their eyes were opened.
+ 3907.1  And they recognized him and he vanished from their sight.
+ 3913.8  I don't know what I would have done.
+ 3917.7  I probably would have tried to grab on me.
+ 3920.0  He would have been gone.
+ 3921.4  That's, that's, come on y'all.
+ 3923.3  That's some comic book stuff, man.
+ 3925.3  Come on.
+ 3926.4  I mean, I like for, but listen, man, this happened for real.
+ 3931.2  This happened for real like Christ.
+ 3935.1  Oh my God, like it's unbelievable, man.
+ 3937.8  This stuff is unbelievable.
+ 3939.8  He vanished before the site.
+ 3946.6  The risen Christ will build himself to his people.
+ 3950.7  Fellowship with Jesus opens spiritual understanding.
+ 3954.9  Just like Holy Communion,
+ 3957.4  he put them in remembrance of himself.
+ 3960.2  So when he broke the bread,
+ 3962.3  their eyes will open, it was like, oh, it's Jesus.
+ 3964.3  And he was gone.
+ 3966.1  That's wild.
+ 3968.4  That's wild, man.
+ 3969.7  That is wild.
+ 3974.4  Good God Almighty.
+ 3978.2  Man, I couldn't imagine.
+ 3980.3  because they were walking on the road of May,
+ 3981.9  they're talking about what happened.
+ 3984.5  Jesus got crucified and they couldn't find his body.
+ 3987.2  And Jesus walked on him like,
+ 3988.3  Mm-hmm.
+ 3992.0  And they still don't recognize him.
+ 3995.8  I don't know, it was just a veil.
+ 4001.0  Veil of glory.
+ 4004.8  I don't know how none of this work.
+ 4008.1  And they walking with him,
+ 4009.5  and they were so communal
+ 4011.9  whenever they met other believers, they just welcomed them in,
+ 4015.1  and we had done on, and we talked,
+ 4018.1  and when Jesus did that, holy communion, remember me.
+ 4024.7  And He broke that bread.
+ 4030.3  I don't even know how they'll fail in their soul.
+ 4033.9  Revelation, knowledge.
+ 4037.7  And when Jesus recognized that they recognized Him,
+ 4041.7  Just vanished.
+ 4047.1  That's power, man.
+ 4049.5  Like that's like real resurrection power.
+ 4053.7  Like one minute he's there, one minute he's gone.
+ 4058.4  Thomas was talking about, well,
+ 4061.6  I ain't gonna believe until I get to put my hand in this side
+ 4064.4  and see the holes in his hand and all that.
+ 4067.2  And Jesus just appeared.
+ 4071.4  Scriptures say he just appeared in the room.
+ 4074.1  And he said, put your hand in the side.
+ 4077.1  Like he just appeared, man.
+ 4079.1  Like if I'm telling you, y'all would jump ship.
+ 4086.1  Y'all would jump ship.
+ 4087.5  Jesus broke in the middle of his house.
+ 4090.5  We start running.
+ 4091.5  Oh, what?
+ 4095.1  Because we never, see, the sin, the sinful flesh
+ 4100.8  puts a veil up to the glory of God.
+ 4103.9  That's why they always was afraid when they saw angels
+ 4106.8  and spiritual things.
+ 4109.6  If Jesus showed up right now,
+ 4112.2  and this is, y'all would scatter.
+ 4116.4  Because we're not used to being in pure glory and holiness.
+ 4122.2  We're not used to being,
+ 4124.5  and going towards that unapproachable light.
+ 4130.5  And that's what opened their eyes.
+ 4134.7  Luke 24, verse 50 and 53, Luke.
+ 4155.7  And he led them out as far as Bethany
+ 4159.9  and lifted up his hands, he blessed them.
+ 4162.6  While he blessed them, he parted from them
+ 4165.9  and was carried up into heaven.
+ 4168.5  And they worship him and return to Jerusalem with great joy
+ 4173.7  and were continually in the temple, blessing God.
+ 4179.3  Jesus leads his disciples under blessing and not abandonment.
+ 4184.4  His ascension confirms his exaltation.
+ 4188.2  His triumph, his death, his burial, his resurrection, his triumph over everything and being in his
+ 4200.9  heavenly majesty, him sitting on high.
+ 4206.5  The disciples respond with worship and joy.
+ 4210.3  That's why we always try to encourage you to come in here and worship the risen Savior,
+ 4215.2  because he is sitting on the throne and he is going to return.
+ 4225.5  Romans 834, Romans chapter eight verse 34,
+ 4228.2  it's not gonna come on the screen.
+ 4229.9  Not gonna read it, I'm just giving it to you.
+ 4232.6  Hebrews chapter seven verse 25,
+ 4235.5  in first John chapter two verse one,
+ 4237.7  explains how Jesus is still interceding for his believers.
+ 4244.6  He is still advocating as a high priest before the Father.
+ 4250.2  Like so, if you have nobody praying for you,
+ 4252.8  know that the Lord Jesus Christ is praying for you.
+ 4257.8  Believers should be secure in their souls,
+ 4262.3  that they are being represented at all times to the Father.
+ 4265.3  And because of that,
+ 4269.9  because of all that we just walk through,
+ 4271.9  we have access to Him.
+ 4273.9  We have access that nobody can destroy
+ 4277.7  and that Jesus has established and opened up,
+ 4280.7  that we can pray.
+ 4282.7  We can pray.
+ 4284.7  We can pray.
+ 4285.7  We can pray.
+ 4286.7  We can pray.
+ 4287.7  We can pray.
+ 4290.4  Jesus' prayer shows us that prayer is not just asking God for things.
+ 4295.8  Prayer is holy communion with the Father.
+ 4300.2  Surrender to His will,
+ 4302.8  dependence on His strength,
+ 4305.0  interceding for others and desire for God's glory. Ask to see God's glory.
+ 4311.9  Jesus prayed in private.
+ 4314.0  He prayed in public.
+ 4316.0  He prayed before major decisions.
+ 4318.7  He prayed before miracles.
+ 4320.8  He prayed during suffering.
+ 4323.2  He prayed on the cross.
+ 4326.0  And he prayed even in his ascension.
+ 4329.3  And he's praying in heaven.
+ 4333.8  Put on my graphic, please.
+ 4336.1  And now we have an access.
+ 4339.7  We have a great opportunity.
+ 4341.3  Put on my graphic, please.
+ 4342.9  Now we have an access.
+ 4351.8  We have a great opportunity on October 10th,
+ 4358.6  2026, 18 and teen stadium, Dallas, Texas,
+ 4362.6  80,000 of your brothers and sisters.
+ 4366.6  We're gonna get together and we're gonna pray the heavens down.
+ 4371.6  And listen, just because you're not in a building,
+ 4377.1  participate in.
+ 4380.1  We're gonna have 80,000 in a building.
+ 4382.1  We can have millions around the world.
+ 4385.1  We all could be in unison to the Father. We're gonna shake this earth with our prayers
+ 4391.9  We're gonna see miracle signs and wonders
+ 4395.8  Let's not leave here
+ 4398.1  From this day to that day
+ 4402.6  Pray man
+ 4404.8  Pray man
+ 4406.8  And when you get stuck you go back and
+ 4410.5  Read about the prayers of Jesus shake
+ 4418.8  this world. Satan is going to lose on October 10th,
+ 4427.5  2026. He's going to lose big time because the whole world is going to be against him.
+ 4436.1  My brothers and sisters are you already to pay the way for the Lord.
+ 4442.0  Amen. Stand to your feet. Heavenly Father, we have walked through your holy scriptures
+ 4453.7  of prayer. I pray God that it was instilled something in us to have a fervor to pray, a
+ 4461.5  fervor to run after you, a fervor earnest prayers about everything. Jesus prayed about
+ 4473.8  everything. God let us be a praying people. And on October 10, God, we all, everyone around
+ 4482.9  the world. We're going to gather together and pray the
+ 4487.1  heaven's damn God that you will shake this earth. Do a radical
+ 4492.3  work in your people God. May they pray more earnestly, God.
+ 4499.1  Not for just things but to be in your presence and to know who you are. God
+ 4503.6  bless them and encourage them. In Jesus name, I pray.
+ 4507.8  God bless y'all. I love y'all.
+ 4509.7  Amen.
