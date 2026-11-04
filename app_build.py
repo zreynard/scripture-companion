@@ -793,7 +793,7 @@ body[data-z="road"] .world{padding-top:calc(env(safe-area-inset-top) + 40px)}
 .bk-g button{height:40px;border:0;border-radius:12px;background:rgba(27,36,64,.05);font:500 14.5px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums}
 .bk-g button.done{background:rgba(201,162,74,.18);color:#7a5c16}
 .bk-g button.cur{background:#9a7524;color:#fff;font-weight:700;box-shadow:0 0 0 3px rgba(201,162,74,.3)}
-body.bpsopen{overflow:hidden}
+body.bpsopen{overflow:hidden}body.bpsopen #np.on.mini{z-index:13}body.bpsopen.npon #bps .bps-sh{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 #np.mini{left:10px;right:10px;bottom:calc(var(--tabh) + 8px);border-radius:20px;background:#1b2440;color:#fff;border:0;box-shadow:0 12px 28px rgba(27,36,64,.32);padding:10px 14px 6px;row-gap:0}
 #np.mini .grab{display:none}
 #np.mini .t{grid-row:1;color:#fff;font-size:15.5px}#np.mini .s{grid-row:2}#np.mini .ctl2{grid-row:1}#np.mini .times{grid-row:2}
@@ -1861,7 +1861,19 @@ function openTopic(id){const t=(D.topics||[]).find(x=>x.id===id);if(!t)return;co
  const list=()=>{const row=id=>tRow({i:I[id]},null);let h=`<div class="jv-sec">Essential teaching</div>${t.ess.map(row).join('')}`;
   if(t.more.length){const by={};t.more.forEach(id=>(by[I[id].who]=by[I[id].who]||[]).push(id));h+=`<div class="jv-sec">More teaching</div>`+Object.entries(by).map(([k,l])=>`<details class="tch-b"><summary>${esc(NAMES[k]||k)}<span>${l.length}</span></summary>${l.map(row).join('')}</details>`).join('')}return h};
  openListSheet(t.name,`<div class="tp-hd">${topicIc(t.id,44)}<div class="bps-t">${esc(t.name)}</div></div><p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,el=>{
-  el.querySelectorAll('[data-kgo]').forEach((b,j)=>b.onclick=()=>{const sh=el.querySelector('.bps-sh');topicPassage(t,t.keys[j],sh?sh.scrollTop:0)});el.querySelectorAll('[data-scn]').forEach(b=>b.onclick=()=>openSCNight(+b.dataset.scn))})}
+  el.querySelectorAll('[data-kgo]').forEach((b,j)=>b.onclick=()=>{const sh=el.querySelector('.bps-sh');topicPassage(t,t.keys[j],sh?sh.scrollTop:0)});el.querySelectorAll('[data-scn]').forEach(b=>b.onclick=()=>{const sh=el.querySelector('.bps-sh');topicNight(t,+b.dataset.scn,sh?sh.scrollTop:0)})})}
+/* a Secret Church night, inside the topic: its sessions in order, and back to the topic where you were */
+function topicNight(t,n,y){const el=$('#bps'),sh=el.querySelector('.bps-sh'),g=scGroups().find(x=>x.ev.n===n);if(!sh||!g)return;
+ const paint=()=>{const heard=g.ids.filter(isDone).length;
+  sh.innerHTML=`<button class="grab2" data-bpsx aria-label="Close"></button><button class="tp-back" id="tpback">‹ ${esc(t.name)}</button>
+   <div class="tp-ph"><div><div class="bps-n" style="font-weight:650;letter-spacing:.14em;text-transform:uppercase;color:#7a5c16">Secret Church ${n}</div><div class="bps-t">${esc(g.ev.title)}</div><div class="bps-n">David Platt · ${g.ids.length} sessions${heard?` · ${heard} heard`:''}</div></div></div>
+   <div id="tnl">${g.ids.map(id=>tRow({i:I[id]},'Platt')).join('')}</div><button class="tp-j" data-nj="1">Open in Secret Church ›</button>`;
+  sh.querySelectorAll('[data-bpsx]').forEach(b=>b.onclick=closeSeries);
+  $('#tpback').onclick=()=>{openTopic(t.id);const s2=$('#bps .bps-sh');if(s2)s2.scrollTop=y||0};
+  sh.querySelector('[data-nj]').onclick=()=>openSCNight(n);
+  sh.querySelectorAll('#tnl [data-play]').forEach(b=>b.onclick=e=>{e.stopPropagation();playRow(b.dataset.play,false);setTimeout(()=>{const k=sh.scrollTop;paint();sh.scrollTop=k},80)});
+  sh.querySelectorAll('#tnl [data-open]').forEach(r=>r.onclick=e=>{if(e.target.closest('button'))return;playRow(r.dataset.open,true)})};
+ paint();sh.scrollTop=0}
 /* a key passage, read inside the topic: the verses, a play button, and back to the topic where you were */
 function keyRange(k){const r=k.ref.replace(/^.*?\s(?=\d+(?::|–|$))/,'');let m;
  if((m=r.match(/^(\d+):(\d+)–(\d+):(\d+)$/)))return[[+m[1],+m[2]],[+m[3],+m[4]]];
