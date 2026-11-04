@@ -1,9 +1,9 @@
 {
-  "started": "2026-11-03T23:46:10.207531+00:00",
+  "started": "2026-11-04T00:00:49.187342+00:00",
   "sources": {
     "brookhills_ia": {
       "count": 410,
-      "seconds": 0.9
+      "seconds": 0.4
     }
   },
   "catalog_total": 12062
