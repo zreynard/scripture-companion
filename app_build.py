@@ -207,6 +207,17 @@ def main():
             else:
                 for c in d["chapters"]:
                     by_chapter[(book, c)].append(it["id"])
+    # recordings the publisher attached to the wrong episode titles: each title gets the recording that is that sermon
+    _fp = os.path.join(HERE, "data", "audio_fixes.json")
+    if os.path.exists(_fp):
+        _fx = {k: v for k, v in json.load(open(_fp, encoding="utf-8")).items() if not k.startswith("_")}
+        _orig = {v: {f: items[v].get(f) for f in ("audio", "dur", "s", "e")} for v in _fx.values() if v in items}
+        for t, src in _fx.items():   # the recording brings its own start and end points (data/intro_skip is kept by recording)
+            if t in items and src in _orig:
+                for f, v in _orig[src].items():
+                    if v is None: items[t].pop(f, None)
+                    else: items[t][f] = v
+                items[t]["aid"] = src
     def core(t):  # title without episode numbers, "| Speaker" tails, or (Bible reference) brackets
         t = re.sub(r"^\s*#?[\d,]+\s*[\u2013\u2014-]\s*", "", t or "")
         t = re.sub(r"^\s*Expound:\s*", "", t, flags=re.I)  # Skip's radio labels his Expound series

@@ -247,7 +247,7 @@ def measure(k, n):
     for f in glob.glob(os.path.join(HERE, "data", "intro_skip", "trim_*.json")):
         if not f.endswith("_end.json"): have.update(json.load(open(f)))
     SR = {x for x in os.environ.get("SRCS", "").split(",") if x}; ID = {x for x in os.environ.get("IDS", "").split(",") if x}
-    todo = [i for i in items() if (not SR or i["src"] in SR) and (not ID or i["id"] in ID) and (os.environ.get("ALL") == "1" or ID or i["id"] not in have)][k::n]
+    todo = [i for i in items() if (not SR or i["src"] in SR) and (not ID or i["id"] in ID) and (os.environ.get("ALL") == "1" or ID or i.get("aid", i["id"]) not in have)][k::n]
     os.makedirs(os.path.join(HERE, "trim"), exist_ok=True)
     out, path = {}, os.path.join(HERE, "trim", f"{k}.json")
     print(f"shard {k}/{n}: {len(todo)} recordings", flush=True)
@@ -277,7 +277,7 @@ def measure(k, n):
                 print(f"=== {it['id']} {it['src']} {it['t']!r}  start={s} end_before={e}  (tail window {TL:.0f}s)\n  HEAD"); lines([w for w in hw if w[0] < 240])
                 print("  TAIL (seconds from the window start)"); lines(tw)
             if s > 300 or e > 300: s, e = min(s, 0), min(e, 0)   # never cut more than a publisher's intro/outro could be
-            out[it["id"]] = [s, e]
+            out[it.get("aid", it["id"])] = [s, e]   # by recording: a recording moved to another title (audio_fixes.json) keeps its points
             nxt = " ".join(w[2] for w in hw if w[0] >= s)[:70]
             prv = " ".join(w[2] for w in tw if w[1] <= TL - e)[-70:]
             print(f"[{x}/{len(todo)}] {it['src']:20} +{s:5.1f}s -{e:5.1f}s  {it['t'][:40]!r}  starts: {nxt!r}  ends: {prv!r}  why: {getattr(find_end, 'why', '')!r}", flush=True)

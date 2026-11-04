@@ -1,0 +1,9 @@
+{
+ "_why": "The publisher attached these recordings to the wrong episode titles. Each key (the episode as titled) gets the recording of the value (the episode whose listing holds that sermon). Heard with tools/pam_check.py: in each file he announces the passage, and in five of the six says the sermon's title aloud.",
+ "9d6ac773bc7d": "b0bacefcf33e",
+ "93a76ba9bc70": "9d6ac773bc7d",
+ "b0bacefcf33e": "40468c3b5c4f",
+ "40468c3b5c4f": "93a76ba9bc70",
+ "64c8992d9dad": "5b1cb5f255e5",
+ "5b1cb5f255e5": "64c8992d9dad"
+}
