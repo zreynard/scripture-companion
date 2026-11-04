@@ -21,7 +21,7 @@ from spoken_refs import norm, words, best_reading, candidates  # noqa: E402
 
 UA = "scripture-companion (personal Bible app; github.com/zreynard/scripture-companion)"
 OUT = os.path.join(HERE, "pam_check")
-MIN = 25
+MIN = int(os.environ.get("PAM_MINUTES", "25"))
 
 
 def items():
@@ -64,7 +64,9 @@ def fingerprint(path):
 def measure(k, n):
     from faster_whisper import WhisperModel
     import wave, numpy as np
-    todo = items()[k::n]
+    todo = items()
+    if os.environ.get("PAM_SRC"): todo = [i for i in todo if i["src"] == os.environ["PAM_SRC"]]
+    todo = todo[k::n]
     os.makedirs(os.path.join(OUT, "text"), exist_ok=True)
     model = WhisperModel("base.en", device="cpu", compute_type="int8")
     tmp = tempfile.mkdtemp(); res = {}

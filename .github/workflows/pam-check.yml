@@ -1,17 +1,25 @@
 # Listen to every Philip Anthony Mitchell / 2819 Church recording in the app (tools/pam_check.py): the file, its
 # length, the passage read aloud against the passage it is placed on, and an audio fingerprint for duplicates.
 name: Check PAM recordings
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: "minutes of each recording to hear (999 = all of it)"
+        default: "25"
+      source:
+        description: "only this source (e.g. 2819_podcast)"
+        default: ""
 permissions:
   contents: write
 jobs:
   listen:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 350
     strategy:
       fail-fast: false
       matrix:
-        k: [0,1,2,3,4,5,6,7]
+        k: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -20,7 +28,10 @@ jobs:
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg libchromaprint-tools >/dev/null
       - run: pip install -q -r requirements.txt faster-whisper numpy
       - run: python app_build.py >/dev/null
-      - run: timeout 280m python tools/pam_check.py ${{ matrix.k }} 8 || true
+      - run: timeout 340m python tools/pam_check.py ${{ matrix.k }} 16 || true
+        env:
+          PAM_MINUTES: ${{ inputs.minutes }}
+          PAM_SRC: ${{ inputs.source }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -47,7 +58,7 @@ jobs:
           mkdir -p data/pam_text && cp pam_check/text/*.txt data/pam_text/ 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
-          git add data/pam_check.json data/pam_text
+          rm -f data/pam_text/*.txt.full; git add data/pam_check.json data/pam_text
           git diff --cached --quiet && exit 0
           git commit -q -m "PAM recordings checked by listening"
           for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
