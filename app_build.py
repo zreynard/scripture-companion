@@ -71,7 +71,7 @@ def big_picture(items):
     """Big Picture: whole-Bible series heard in order, each with its own place. Episodes are items already in the app."""
     sc = sorted([i for i in items.values() if i["src"] == "secret_church_podcast" and i["sc"] and i["sc"][0] in (1, 2)], key=lambda i: tuple(i["sc"]))
     flights = sorted([i for i in items.values() if i["src"] == "skip_archive" and re.match(r"\s*Flight\b", i["t"])], key=lambda i: (i["date"], i["t"]))
-    out = [{"id": "survey", "title": "Secret Church — Bible Survey", "by": "David Platt", "art": "survey",
+    out = [{"id": "survey", "title": "Bible Survey", "by": "David Platt", "art": "survey",
             "desc": "The whole Bible in two nights. Secret Church 1 surveys the Old Testament; Secret Church 2 the New. The shortest way to see the entire story at once.",
             "parts": [["The Old Testament · Secret Church 1", [i["id"] for i in sc if i["sc"][0] == 1]], ["The New Testament · Secret Church 2", [i["id"] for i in sc if i["sc"][0] == 2]]]},
            {"id": "30k", "title": "The Bible from 30,000 Feet", "by": "Skip Heitzig", "art": "30k",
