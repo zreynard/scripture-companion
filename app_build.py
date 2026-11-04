@@ -1635,8 +1635,8 @@ function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,
  const nDeep=groups.reduce((a,g)=>a+g[1].length,0);
  let o=`<div class="jv-sec jv-tsec" id="js-teaching"><span>${c.intro?'Teaching on the book':'Teaching'}</span>${c.intro?'':`<span class="jv-tg" role="tablist"><button role="tab" data-deep="0" aria-selected="${!deepOn}" class="${deepOn?'':'on'}">Core</button><button role="tab" data-deep="1" aria-selected="${deepOn}" class="${deepOn?'on':''}">Go Deeper${nDeep?' · '+nDeep:''}</button></span>`}</div>`;
  if(!deepOn&&!c.intro){
-  if(ids.length){ids.forEach(id=>{o+=jRow(id,'',up)});const why=coreWhy(u);
-   o+=`<p class="jv-why">${why?'<b>Why this one.</b> '+esc(why):'You chose this one.'}${coreSet()[u]?` <button class="lnk" data-coreback="${u}">Back to the suggested teaching</button>`:''}</p>`}
+  if(ids.length){ids.forEach(id=>{o+=jRow(id,'',up)});
+   if(coreSet()[u])o+=`<p class="jv-why">You chose this one. <button class="lnk" data-coreback="${u}">Back to the suggested teaching</button></p>`}
   else if(later!=null){const L=CORE.u[later],nx=walk().find(w=>w.b.abbr===L[0]&&w.c.c===L[2]),t=L[3].map(id=>I[id]).filter(Boolean);
    o+=`<p class="jv-none">The teaching for ${esc(stopName(x))} covers ${esc(b.name)} ${L[1]}–${L[2]}, so it plays after you read ${esc(nx?stopName(nx):b.name+' '+L[2])}${t.length?`: <b>${esc(dispTitle(t[0]))}</b> · ${esc(teacher(t[0]))}`:''}.</p>`}
   else o+=`<p class="jv-none">No focused teaching on ${esc(stopName(x))} alone.${nDeep?' Go Deeper has '+nDeep+' related message'+(nDeep>1?'s':'')+'.':''}</p>`}
