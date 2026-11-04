@@ -1704,8 +1704,7 @@ function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,
    if(coreSet()[u])o+=`<p class="jv-why">You chose this one. <button class="lnk" data-coreback="${u}">Back to the suggested teaching</button></p>`}
   else if(later!=null){const L=CORE.u[later],nx=walk().find(w=>w.b.abbr===L[0]&&w.c.c===L[2]),lids=coreIdsOf(later);
    /* a sermon on several chapters is the Core teaching of each; Up next offers it once all its Scripture is read */
-   const nt=lids.every(isDone)?'':`Covers ${esc(b.name)} ${L[1]}–${L[2]} · plays after ${esc(nx?stopName(nx):b.name+' '+L[2])}`;
-   lids.forEach(id=>{o+=jRow(id,'',up,nt)})}
+   lids.forEach(id=>{o+=jRow(id,'',up)})}
   else o+=`<p class="jv-none">No focused teaching on ${esc(stopName(x))} alone.${nDeep?' Go Deeper has '+nDeep+' related message'+(nDeep>1?'s':'')+'.':''}</p>`}
  else{if(!nDeep)o+=`<p class="jv-none">Nothing more on ${esc(stopName(x))} yet.</p>`;
   groups.forEach(([t,l])=>{o+=`<div class="jv-sub">${t}</div>`;l.forEach(id=>{o+=jRow(id,'',up)})})}
