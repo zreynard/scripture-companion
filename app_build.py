@@ -835,6 +835,7 @@ body.bpsopen{overflow:hidden}
 .jv-sec{font-size:10.5px;font-weight:650;letter-spacing:.2em;text-transform:uppercase;color:#7a5c16;margin:24px 2px 4px}
 .jv-sub{font-size:12px;font-weight:600;color:#4a5272;margin:12px 2px 2px}
 .cprefs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 4px}.cprefs .btn{padding:6px 12px}.cprefs .btn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.jv-seg button.on{color:var(--ink);font-weight:700}.jv-tabbed>.jv-sec:not(.jv-tsec){display:none}.jv-tabbed{margin-top:8px}
 .jv-tsec{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .jv-tg{display:inline-flex;padding:2px;border-radius:14px;background:rgba(27,36,64,.07);letter-spacing:normal;text-transform:none}
 .jv-tg button{border:0;background:none;font:600 12.5px -apple-system,system-ui,sans-serif;color:#4a5272;padding:5px 11px;border-radius:12px;cursor:pointer}
@@ -1604,9 +1605,14 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  const bk=BACK&&BACK.from!==i&&w[BACK.from]?BACK.from:null;
  h+=`<div class="jv-nav">${pv?`<button data-jgo="${i-1}" aria-label="Back to ${esc(stopName(pv))}">‹ ${esc(stopName(pv))}</button>`:'<span></span>'}${bk!=null?`<button class="jv-back" data-jgo="${bk}" data-back="1" aria-label="Back to ${esc(stopName(w[bk]))}"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M9 14 4 9l5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>${esc(stopName(w[bk]))}</button>`:''}${nx2?`<button data-jgo="${i+1}" aria-label="On to ${esc(stopName(nx2))}">${esc(stopName(nx2))} ›</button>`:'<span></span>'}</div>`;
  const ii=stopIntro(x),itx=hasIntroText(x),iiF=ii?(isDone(ii)||SKIP[ii]?1:Math.min(.95,heardPct(ii)/100)):0;
- const segs=coreOn()?[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',s.teach.length?stepFrac(i,s.teach):(coreLater(x)!=null?stepFrac(i,coreIdsOf(coreLater(x))):1)]])]:[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['overview','Overview',stepFrac(i,s.ov)],['teaching','Teaching',stepFrac(i,s.teach)]])];
- h+=`<div class="jv-seg">${segs.map(([k,l,f])=>`<button data-jseg="${k}" class="${a&&a.step===k?'now':''}" aria-label="Go to ${l}"><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</button>`).join('')}</div>`;
- if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
+ const segs=coreOn()?[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?(G.overview.length?[['teaching','Teaching',1]]:[]):[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['teaching','Teaching',s.teach.length?stepFrac(i,s.teach):(coreLater(x)!=null?stepFrac(i,coreIdsOf(coreLater(x))):1)]])]:[...(ii||itx?[['intro','Introduction',iiF]]:[]),...(c.intro?[['overview','Book overview',stepFrac(i,s.ov)]]:[['scripture','Scripture',scrDone(x)?1:(cur===narId(b.abbr,c.c)&&audio.duration?Math.min(.95,audio.currentTime/audio.duration):0)],['overview','Overview',stepFrac(i,s.ov)],['teaching','Teaching',stepFrac(i,s.teach)]])];
+ /* Core: the steps are tabs, one section at a time; the tab follows where you are unless you pick one */
+ const tabs=segs.map(z=>z[0]),TABK=stopKey(x),tab=coreOn()?(JV.tabFor===TABK&&tabs.includes(JV.tab)?JV.tab:a&&tabs.includes(a.step)?a.step:tabs.includes('teaching')&&a&&a.kind==='walk'?'teaching':tabs[0]):null;
+ h+=`<div class="jv-seg"${coreOn()?' role="tablist"':''}>${segs.map(([k,l,f])=>`<button data-jseg="${k}" class="${!tab&&a&&a.step===k?'now':''}${tab===k?' on':''}"${coreOn()?` role="tab" aria-selected="${tab===k}"`:` aria-label="Go to ${l}"`}><i><b style="width:${Math.round(100*f)}%"></b></i>${l}</button>`).join('')}</div>`;
+ /* with tabs, Up next sits on the tab it belongs to; the walk-on card on the last tab */
+ const card=!tab||(a&&tab===a.step)||(a&&(a.kind==='walk'||a.kind==='end')&&tab===tabs[tabs.length-1])||tabs.length===0;
+ if(!card){}
+ else if(a.kind==='play'){const it=I[a.id],pl=cur===a.id&&!audio.paused,left=leftOf(a.id);
   h+=`<button class="jv-next" id="jnext"><span class="jv-pp">${icon(pl?'pause':'play',20,0,'#fff')}</span><span class="jv-nt"><small>${pl?'Playing':left?'Resume':'Up next'}${a.step==='intro'?' · Introduction':a.step==='overview'&&!c.intro?' · Overview':''}</small><b>${esc(dispTitle(it))}</b><em>${esc(teacher(it))}${left?' · '+atSpd(left)+' left':it.dur?' · '+durTxt(+it.dur):''}</em></span></button><div class="jv-alt"><button data-skipnext="${a.id}">Skip for now</button></div>`}
  else if(a.kind==='scripture'){const n=narDur(b.abbr,c.c),pl=cur===narId(b.abbr,c.c)&&!audio.paused;
   h+=`<button class="jv-next" id="jnext"><span class="jv-pp">${icon(pl?'pause':'play',20,0,'#fff')}</span><span class="jv-nt"><small>${pl?'Reading':'Up next'}</small><b>Read ${esc(stopName(x))}</b><em>Listen along${n?' · '+durTxt(n):''}</em></span></button><div class="jv-alt"><button data-jread="1">I’ve read it</button><button data-skipnext="S:${scrKey(x)}">Skip for now</button></div>`}
@@ -1617,14 +1623,15 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  /* the stop's whole list: introduction, scripture, overview, teaching, in order; heard ones stay, quietly ticked */
  const cap=n=>JV.more?n:Math.min(n,8);let rows='',shown=0,total=0;
  const sec=(t,list,k)=>{if(!list.length)return'';let o=`<div class="jv-sec" id="js-${k}">${t}</div>`,last=null;list.forEach(g=>{total++;if(shown>=cap(1e9))return;if(g.h&&g.h!==last&&c.intro){o+=`<div class="jv-sub">${esc(g.h)}</div>`;last=g.h}o+=jRow(g.id,g.r?vbadge(g.r):'',up);shown++});return o};
- if(ii||itx)rows+=`<div class="jv-sec" id="js-intro">Introduction</div>${ii?jRow(ii,'',up):`<div class="jw"><span class="jpb off" aria-hidden="true">${icon('book',13,1.8,'currentColor')}</span><div class="jw-t"><b>${esc(c.intro?'Introducing '+b.name:stopName(x)+' · Introduction')}</b><span>The Narrator · narration coming soon</span></div></div>`}<button class="jv-rd" id="jrd" aria-expanded="false">Read the introduction</button><div class="jv-itx" id="jitx" hidden></div>`;
- if(!c.intro){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec" id="js-scripture">Scripture</div><div class="jw${rd?' heard':''}"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
+ const show=k=>!tab||tab===k;
+ if((ii||itx)&&show('intro'))rows+=`<div class="jv-sec" id="js-intro">Introduction</div>${ii?(tab&&card&&a.id===ii?'':jRow(ii,'',up)):`<div class="jw"><span class="jpb off" aria-hidden="true">${icon('book',13,1.8,'currentColor')}</span><div class="jw-t"><b>${esc(c.intro?'Introducing '+b.name:stopName(x)+' · Introduction')}</b><span>The Narrator · narration coming soon</span></div></div>`}<button class="jv-rd" id="jrd" aria-expanded="false">Read the introduction</button><div class="jv-itx" id="jitx" hidden></div>`;
+ if(!c.intro&&show('scripture')&&!(tab&&card&&a.kind==='scripture')){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused;rows+=`<div class="jv-sec" id="js-scripture">Scripture</div><div class="jw${rd?' heard':''}"><button class="jpb" data-jscr="1" aria-label="Read ${esc(stopName(x))}">${icon(pl?'pause':'book',13,1.8,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>Read or listen${narDur(b.abbr,c.c)?' · '+durTxt(narDur(b.abbr,c.c)):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':''}</div>`}
  if(!coreOn())rows+=G.overview.length||c.intro?sec(c.intro?'Teaching on the book':'Overview',G.overview,'overview'):'<div id="js-overview"></div>';
- if(coreOn())rows+=coreRows(x,i,G,sec,up);else{rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;}
+ if(coreOn()){if(show('teaching'))rows+=coreRows(x,i,G,sec,up)}else{rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;}
  if(shown<total)rows+=`<button class="jv-more" id="jmore">${total-shown} more</button>`;
  const tp=c.intro?[]:(D.topics||[]).filter(t=>t.keys.some(k=>k.b===b.name&&c.c>=k.c&&c.c<=k.to));
- if(tp.length)rows+=`<div class="jv-tp"><span>Explore this topic</span>${tp.map(t=>`<button data-topic="${t.id}">${esc(t.name)} ›</button>`).join('')}</div>`;
- return h+`<div class="jv-list">${rows}</div></div>`}
+ if(tp.length&&show('teaching'))rows+=`<div class="jv-tp"><span>Explore this topic</span>${tp.map(t=>`<button data-topic="${t.id}">${esc(t.name)} ›</button>`).join('')}</div>`;
+ return h+`<div class="jv-list${tab?' jv-tabbed':''}">${rows}</div></div>`}
 /* Teaching at a stop: Core (the one exposition to hear) or Go Deeper (everything else, optional) */
 function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,u=coreHere(x),later=coreLater(x);
  const ids=u!=null?coreIdsOf(u):[],cs=new Set(ids),dp=c.intro?{broad:G.overview.map(g=>g.id)}:(CORE.deep[k]||{});
@@ -1645,7 +1652,7 @@ function coreRows(x,i,G,sec,up){const {b,c}=x,k=b.abbr+':'+c.c,deepOn=!!JV.deep,
  else{if(!nDeep)o+=`<p class="jv-none">Nothing more on ${esc(stopName(x))} yet.</p>`;
   groups.forEach(([t,l])=>{o+=`<div class="jv-sub">${t}</div>`;l.forEach(id=>{o+=jRow(id,'',up)+(c.intro?'':`<div class="jv-mk"><button class="lnk" data-mkcore="${esc(String(uk))}|${id}">Make this Core</button></div>`)})})}
  return o}
-function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;
+function jCont(){const w=walk(),i=jpIdx(),x=w[i],a=nextAction(i);BPM=null;JV.tabFor=null;
  if(a.kind==='play'){if(cur===a.id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;play(a.id)}
  else if(a.kind==='scripture'){const id=narId(x.b.abbr,x.c.c);if(cur===id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}JM=true;narPlay(x.b,x.c.c,null,{jm:true,full:true})}
  else if(a.kind==='walk'){const fr=x,nx=w[a.to];setJP(a.to);camp=a.to;S.set('camp',camp);if(nx.b!==fr.b&&!fr.c.intro)note('You have walked through '+fr.b.name+'.');JV.more=false;render();window.scrollTo({top:0,behavior:'smooth'})}}
@@ -1659,6 +1666,7 @@ function wireJourney(){const n=$('#jnext');if(n)n.onclick=jCont;
   if(open&&!bx.innerHTML)introText(x.b.abbr).then(T=>{bx.innerHTML=introParas(T[String(x.c.intro?0:x.c.c)])}).catch(()=>{bx.textContent='The text did not load. Check your connection.'})};document.querySelectorAll('#jv [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));
  document.querySelectorAll('[data-jgo]').forEach(b=>b.onclick=()=>jMove(+b.dataset.jgo,!!b.dataset.back));
  document.querySelectorAll('[data-jseg]').forEach(b=>b.onclick=()=>{const k=b.dataset.jseg,t=$('#js-'+k)||$('.jv-list');
+  if(coreOn()){JV.tabFor=stopKey(walk()[jpIdx()]);JV.tab=k;const y=scrollY;render();window.scrollTo(0,y);return}
   /* a step with one thing to do opens it: the reading, the introduction, the overview; Teaching (a choice of sermons) shows its list */
   {const i=jpIdx(),x=walk()[i],st=stepsOf(i);BPM=null;
    const open=id=>{if(cur===id){if(audio.paused)audio.play().catch(()=>{});setMini(false);return true}JM=true;PLAYSTOP=i;play(id,{full:true});return true};
@@ -2054,7 +2062,18 @@ function npArt(id){const i=I[id],c=ART_C[i.who]||['#1b2440','#a8812a'],d=i.date?
  $('#np-art').innerHTML=`<svg class="a-m" viewBox="0 0 48 48"><path d="${MEDAL_ICON[{Platt:'apostle',PAM:'prophet',Davey:'writer',Skip:'patriarch'}[i.who]]||''}" fill="none" stroke="#fff" stroke-width="2"/></svg><div class="a-w">${esc(teacher(i))}</div><div class="a-p">${esc(where(id))}</div>${i.show?`<div class="a-s">${esc(i.show)}</div>`:''}`;
  $('#np-d').textContent=[d&&!isNaN(d)?d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}):'',i.show||''].filter(Boolean).join(' · ')}
 /* previous / next teaching along the road (manual: every teaching in order; ⏮ restarts first if you are past 5 s) */
-function skipTrack(dir){if(BPM&&cur&&!(I[cur]&&I[cur].nar)){const s=bpGet(BPM),ids=s?bpIds(s):[],j=ids.indexOf(cur)+dir;if(dir<0&&audio.currentTime>5){audio.currentTime=(I[cur]&&I[cur].s)||0;return}if(ids.includes(cur)){if(j>=0&&j<ids.length)bpPlay(s.id,ids[j]);return}}if(cur&&I[cur].nar&&NAR&&NAR.id===cur){narStep(dir);return}if(dir<0&&audio.currentTime>5&&cur){audio.currentTime=(I[cur]&&I[cur].s)||0;return}
+/* the Journey as one sequence: each stop's introduction, its Scripture, its Core teaching, then the next stop.
+   The player's next and back move through it (back restarts what is playing first). */
+function stopSteps(i){const x=walk()[i];if(!x)return[];const st=[],ii=stopIntro(x);if(ii&&I[ii])st.push({k:'intro',id:ii});
+ if(!x.c.intro&&hasNar(x.b.abbr,x.c.c))st.push({k:'scripture',id:narId(x.b.abbr,x.c.c)});
+ if(!x.c.intro){const u=coreHere(x);if(u!=null)coreIdsOf(u).forEach(id=>{if(I[id]&&I[id].audio)st.push({k:'teaching',id})})}return st}
+function seqWhere(id){const i0=jpIdx(),w=walk();for(const d of [0,1,-1,2,-2]){const i=i0+d;if(i<0||i>=w.length)continue;const k=stopSteps(i).findIndex(z=>z.id===id);if(k>=0)return[i,k]}return null}
+function jStep(dir){const p=seqWhere(cur);if(!p)return false;let [i,k]=p;const w=walk();k+=dir;
+ while(i>=0&&i<w.length){const st=stopSteps(i);if(k<0){i--;if(i<0)return true;k=stopSteps(i).length-1;continue}if(k>=st.length){i++;k=0;continue}
+  const z=st[k];setJP(i);JV.tabFor=null;JM=true;BPM=null;PLAYSTOP=i;const np=NP();np.classList.remove('sw-l','sw-r');void np.offsetWidth;np.classList.add(dir>0?'sw-l':'sw-r');setTimeout(()=>np.classList.remove('sw-l','sw-r'),320);
+  if(z.k==='scripture'){const x=w[i];narPlay(x.b,x.c.c,0,{jm:true})}else play(z.id);if(view==='journey')render();return true}
+ return true}
+function skipTrack(dir){if(coreOn()&&cur&&!BPM&&!(I[cur]&&I[cur].sc&&scSeq().includes(cur))&&seqWhere(cur)){if(dir<0&&audio.currentTime>5){audio.currentTime=I[cur]&&I[cur].nar?0:((I[cur]&&I[cur].s)||0);return}if(jStep(dir))return}if(BPM&&cur&&!(I[cur]&&I[cur].nar)){const s=bpGet(BPM),ids=s?bpIds(s):[],j=ids.indexOf(cur)+dir;if(dir<0&&audio.currentTime>5){audio.currentTime=(I[cur]&&I[cur].s)||0;return}if(ids.includes(cur)){if(j>=0&&j<ids.length)bpPlay(s.id,ids[j]);return}}if(cur&&I[cur].nar&&NAR&&NAR.id===cur){narStep(dir);return}if(dir<0&&audio.currentTime>5&&cur){audio.currentTime=(I[cur]&&I[cur].s)||0;return}
  if(cur&&I[cur].sc&&scSeq().includes(cur)){const q=scSeq(),j=q.indexOf(cur)+dir;if(j>=0&&j<q.length){const np=NP();np.classList.remove('sw-l','sw-r');void np.offsetWidth;np.classList.add(dir>0?'sw-l':'sw-r');play(q[j])}return}
  const w=walk(),seq=[],start=[];w.forEach((x,i)=>{start[i]=seq.length;seq.push(...orderedIds(x.b,x.c))});
  let k=cur?seq.indexOf(cur,start[Math.max(0,Math.min(camp==null?0:camp,w.length-1))]):-1;if(k<0&&cur)k=seq.indexOf(cur);
