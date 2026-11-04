@@ -19,12 +19,12 @@ PASS  Stephen Davey teaching comes only from his own feeds, and his feeds only f
 PASS  Skip Heitzig teaching comes only from his own feeds, and his feeds only from him
 PASS  2819 teaching shows the preacher named in its title
 FAIL  David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources  (49)
-        - Chapter 2 Pain and Providence from brookhills_ia
-        - He Came To Destroy The Devil from brookhills_ia
-        - Diversity from brookhills_ia
-        - Is There Glory In A Narrow Gospel from brookhills_ia
-        - Chapter 27 Hope In God from brookhills_ia
-        - Does God Change His Mind from brookhills_ia
+        - Honesty from brookhills_ia
+        - God and the Destitute from brookhills_ia
+        - Repentance and Resolutions from brookhills_ia
+        - Chapter 6 Where Glory Dwells from brookhills_ia
+        - Commissioned By the King from brookhills_ia
+        - Small Groups Engage in Community from brookhills_ia
 PASS  McLean episodes on the road name David Platt
 
 == Order inside each chapter
@@ -42,20 +42,14 @@ PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
 PASS  no dates in the future
 FAIL  feed episodes on the road all carry a date  (108)
-        - Surprising Saints (James 2:25–26) (davey_archive)
-        - Following the Footprints (James 5:10–11) (davey_archive)
-        - The Truth about Trouble (James 1:2–12) (davey_archive)
-        - But, If Not . . . (Daniel 3) (davey_archive)
-        - Peace (Romans 1:7c) (davey_archive)
-        - In the Country of the Blind (Titus 2:15) (davey_archive)
+        - Supernatural Joy & Genuine Love (1 Peter 1:6–9) (davey_archive)
+        - Waiting on the Promises of God (Hebrews 11:8–22) (davey_archive)
+        - Holy Preoccupation (1 Peter 1:15–16) (davey_archive)
+        - Ransomed! (1 Peter 1:18–21) (davey_archive)
+        - Weeping Over Humpty Dumpty (Nehemiah 1:1–2) (davey_archive)
+        - A Learner’s Permit for Life (James 3:13–16) (davey_archive)
 PASS  every id is the hash of its link (progress keys stable)
-FAIL  every shipped entry from the original catalog still exists (same id)  (59 of 11975)
-        - Ultimate Dissconect
-        - The Disciples Identity Part 2 Christ in You
-        - the Disciples Mission
-        - The Disciples Mind
-        - The Disciples Emotions
-        - The Disciples Will
+PASS  every shipped entry from the original catalog still exists (same id)
 PASS  nothing unverified (PENDING / FAIL) on the road
 PASS  no teaching twice in one chapter
 
@@ -73,4 +67,4 @@ PASS  overviews and points stay short (22 words or fewer)
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-35 of 38 checks pass
+36 of 38 checks pass
