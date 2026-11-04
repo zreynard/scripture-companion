@@ -23,7 +23,10 @@ SHOW_YEARS = os.environ.get("YEARS", "1") == "1"  # best-estimate years on each 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VERIFIED = os.path.join(HERE, "data", "catalog_verified.jsonl")
 NARR = os.path.join(HERE, "data", "narrative_order.json")
-VERSION = 107  # bump on every shipped build; also busts the service-worker cache
+VERSION = 107  # the app's version name (file names)
+# Every build gets a newer number: the installed app compares it with version.txt when it opens or comes back to the
+# front, and reloads to the new build; it also renews the service-worker cache. (A fixed number kept phones on old builds.)
+BUILD = int(__import__("time").time())
 OUT = os.path.join(HERE, "out", f"scripture-companion-v{VERSION}.html")
 SITE = os.path.join(HERE, "out", "site")  # deploy this folder (Netlify drop / GitHub Pages)
 PWA = os.path.join(HERE, "pwa")
@@ -379,7 +382,7 @@ def main():
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items),
             "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst}),
             "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]}}
-    html = TEMPLATE.replace("__VERSION__", str(VERSION)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
+    html = TEMPLATE.replace("__VERSION__", str(BUILD)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
     n_audio = sum(1 for i in items.values() if i["audio"])
@@ -395,7 +398,7 @@ def write_site(html: str):
     import shutil
     os.makedirs(SITE, exist_ok=True)
     open(os.path.join(SITE, "index.html"), "w", encoding="utf-8").write(html)
-    open(os.path.join(SITE, "version.txt"), "w").write(str(VERSION))
+    open(os.path.join(SITE, "version.txt"), "w").write(str(BUILD))
     if ATLAS.ok:  # people, places and the map: loaded on the first tap of a name or the map button
         json.dump(ATLAS.data(), open(os.path.join(SITE, "atlas.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     # narrator samples page (voices.html): the current round only; men only
@@ -425,7 +428,7 @@ def write_site(html: str):
             shutil.copy(os.path.join(bdir, f), os.path.join(SITE, "bible", f))
     for f in os.listdir(PWA):
         if f == "sw.js":
-            src = open(os.path.join(PWA, f), encoding="utf-8").read().replace("__VERSION__", str(VERSION))
+            src = open(os.path.join(PWA, f), encoding="utf-8").read().replace("__VERSION__", str(BUILD))
             open(os.path.join(SITE, f), "w", encoding="utf-8").write(src)
         elif not f.startswith("."):
             shutil.copy(os.path.join(PWA, f), os.path.join(SITE, f))
@@ -440,7 +443,7 @@ TEMPLATE = r"""<!doctype html>
 <meta name="apple-mobile-web-app-title" content="Companion"><meta name="mobile-web-app-capable" content="yes">
 <style>
 :root{color-scheme:light;--bg:#f4efe3;--ink:#1b2440;--mute:#6b7390;--line:rgba(27,36,64,.12);--gold:#c9a24a;--gold2:#a8812a;--card:rgba(255,255,255,.78)}
-*{box-sizing:border-box}html,body{height:100%}
+*{box-sizing:border-box}html{height:100%}body{min-height:100%}/* min, so the room kept for the player is added after the content, not inside the screen height */
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;overflow-x:hidden}
 .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
 /* world */
@@ -1808,7 +1811,7 @@ function openTeacher(k){const el=$('#bps');if(TS.k!==k){TS.k=k;TS.q='';TS.more=0
  const q=$('#tq');let tt=null;q.oninput=()=>{clearTimeout(tt);tt=setTimeout(()=>{TS.q=q.value;TS.more=0;$('#tlist').innerHTML=tList();wireL()},150)}}
 function wireLib(){document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('[data-lt]').forEach(b=>b.onclick=()=>{LT=b.dataset.lt;S.set('libtab',LT);render()});document.querySelectorAll('#main [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));document.querySelectorAll('[data-lbook]').forEach(b=>b.onclick=()=>openLibBook(b.dataset.lbook));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2))}
 
-function render(){const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
+function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
  migrateCamp();const w=walk();let first=jpIdx();if(camp==null||camp>=w.length)camp=first;  /* the road is walked up to your place */
  const rd=w.filter(x=>!x.c.intro&&read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
