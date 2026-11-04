@@ -116,7 +116,7 @@ def main():
                 bad.append(f"{I[i]['t'][:70]} shown as {shown}")
     check("2819 teaching shows the preacher named in its title", bad)
     PLATT_SOURCES = {"ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360_secret_church", "radical_message",
-                     "youtube_radical", "radical_vimeo", "mclean_podcast", "mclean_oceans", "brookhills"}
+                     "youtube_radical", "radical_vimeo", "mclean_podcast", "mclean_oceans", "brookhills", "brookhills_ia"}
     bad = [f"{I[i]['t'][:60]} from {E[i]['source']}" for i in road if I[i]["who"] == "Platt" and E[i]["source"] not in PLATT_SOURCES]
     check("David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources", bad)
     bad = [I[i]["t"][:70] for i in road if E[i]["source"] in ("mclean_podcast",) and not re.search(r"david\s+platt", I[i]["t"] + " " + E[i].get("description", ""), re.I)]
@@ -183,7 +183,7 @@ def main():
     check("no audio file on the road twice under different entries", bad)
     bad = [f"{I[i]['t'][:50]} {I[i]['date']}" for i in road if I[i]["date"] and I[i]["date"] > today]
     check("no dates in the future", bad)
-    bad = [f"{I[i]['t'][:50]} ({E[i]['source']})" for i in road if not I[i]["date"] and E[i]["source"] not in ("secret_church", "mclean_oceans", "radical_message", "youtube_radical", "twr360_secret_church")]
+    bad = [f"{I[i]['t'][:50]} ({E[i]['source']})" for i in road if not I[i]["date"] and E[i]["source"] not in ("secret_church", "mclean_oceans", "radical_message", "youtube_radical", "twr360_secret_church", "davey_archive")]   # the archive's lists from spreadsheets carry lesson numbers, not dates
     check("feed episodes on the road all carry a date", bad)
     bad = [f"{e['title'][:50]}" for e in cat if e.get("url") and e["id"] != hashlib.sha1(e["url"].encode()).hexdigest()[:12]]
     check("every id is the hash of its link (progress keys stable)", bad, len(cat))
