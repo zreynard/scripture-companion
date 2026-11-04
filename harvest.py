@@ -120,11 +120,17 @@ def harvest_brookhills_ia() -> list[dict]:
     for s in (json.load(open(p)) if os.path.exists(p) else []):
         m = re.match(r"(\d{2})(\d{2})(\d{2})", s.get("file", ""))   # 161204_11AM.mp3 = 4 December 2016
         if m and s.get("verses"): meta.setdefault(f"20{m.group(1)}-{m.group(2)}-{m.group(3)}", s)
-    out = []
-    for f in json.loads(r.text).get("files", []):
+    out, files = [], json.loads(r.text).get("files", [])
+    # the other preachers the files name: a file shared with one ("...-Jim-Shaddix-David-Platt-") is not Platt's sermon
+    others = {m.group(1).replace("-", " ") for f in files for m in [re.search(r"-([A-Z][a-z]+-[A-Z][a-z]+)-\d+\.mp3$", f.get("name", ""))]
+              if m and m.group(1) != "David-Platt"}
+    for f in files:
         m = re.match(r"^(\d{4}-\d{2}-\d{2})-(.+?)-David-Platt-\d+\.mp3$", f.get("name", ""))
         if not m: continue
         day, words = m.group(1), m.group(2).replace("-", " ")
+        if any(words.endswith(" " + o) for o in others): continue
+        # Secret Church nights: the app has every one from its own feed, split into its own sessions
+        if re.search(r"secret church|^SC\d|\bsession\s*\d|\bhour \d", words, re.I): continue
         title = re.sub(r"\bPt\.? ?(\d)", r"Part \1", words).strip()
         try: pub = datetime.strptime(day, "%Y-%m-%d").strftime("%a, %d %b %Y 11:00:00 -0600")
         except ValueError: pub = ""
@@ -160,6 +166,8 @@ def _ia_twins(existing: dict) -> list[str]:
     for url, x in list(existing.items()):
         if x.get("source") != "brookhills_ia": continue
         k = _ia_key(x["title"]); twin = others.get(k)
+        ch = re.match(r"chapter (\d+) ", k)   # The Chronicle of Redemption: "Chapter 1 Believing God" = "Chapter 1: Believing in God"
+        if not twin and ch: twin = next((o for kk, o in others.items() if kk.startswith(f"chapter {ch.group(1)} ")), None)
         if not twin and len(k) >= 15:
             def typo(o):   # one misspelt word, same beginning and ending ("Generostity", "Dissconect"; not "Womanhood"/"Manhood")
                 a, b = k.split(), o.split()
@@ -745,6 +753,9 @@ def run(sources: list[str], radical_limit: int | None = None):
                     old_e["description"] = e["description"]
                 merged += 1
         if s == "brookhills_ia":   # its file names drop apostrophes and colons: fold a sermon the app already has into it
+            keep = {e["url"] for e in entries}   # and files this source now leaves out (Secret Church, shared sermons) go
+            for u in [u for u, x in existing.items() if x.get("source") == "brookhills_ia" and u not in keep and entries]:
+                del existing[u]; added -= 1
             dup = _ia_twins(existing)
             added -= len(dup); merged += len(dup)
         _log(f"{s}: {added} new, {merged} matched existing entries")
