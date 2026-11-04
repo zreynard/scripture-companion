@@ -18,13 +18,7 @@ PASS  only David Platt, PAM, Stephen Davey, Skip Heitzig (each with their church
 PASS  Stephen Davey teaching comes only from his own feeds, and his feeds only from him
 PASS  Skip Heitzig teaching comes only from his own feeds, and his feeds only from him
 PASS  2819 teaching shows the preacher named in its title
-FAIL  David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources  (49)
-        - Honesty from brookhills_ia
-        - God and the Destitute from brookhills_ia
-        - Repentance and Resolutions from brookhills_ia
-        - Chapter 6 Where Glory Dwells from brookhills_ia
-        - Commissioned By the King from brookhills_ia
-        - Small Groups Engage in Community from brookhills_ia
+PASS  David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources
 PASS  McLean episodes on the road name David Platt
 
 == Order inside each chapter
@@ -41,13 +35,7 @@ PASS  Secret Church podcast sessions numbered without gaps
 PASS  every audio link is https
 PASS  no audio file on the road twice under different entries
 PASS  no dates in the future
-FAIL  feed episodes on the road all carry a date  (108)
-        - Supernatural Joy & Genuine Love (1 Peter 1:6–9) (davey_archive)
-        - Waiting on the Promises of God (Hebrews 11:8–22) (davey_archive)
-        - Holy Preoccupation (1 Peter 1:15–16) (davey_archive)
-        - Ransomed! (1 Peter 1:18–21) (davey_archive)
-        - Weeping Over Humpty Dumpty (Nehemiah 1:1–2) (davey_archive)
-        - A Learner’s Permit for Life (James 3:13–16) (davey_archive)
+PASS  feed episodes on the road all carry a date
 PASS  every id is the hash of its link (progress keys stable)
 PASS  every shipped entry from the original catalog still exists (same id)
 PASS  nothing unverified (PENDING / FAIL) on the road
@@ -67,4 +55,4 @@ PASS  overviews and points stay short (22 words or fewer)
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-36 of 38 checks pass
+38 of 38 checks pass
