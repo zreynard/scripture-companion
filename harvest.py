@@ -140,6 +140,39 @@ def harvest_brookhills_ia() -> list[dict]:
     _log(f"brookhills_ia: {len(out)} David Platt sermons")
     return out
 
+def _ia_key(t):
+    t = re.sub(r"\([^)]*\)", " ", (t or "").lower()).replace("’", "").replace("'", "")
+    t = re.sub(r"\bpt\b\.?", "part", re.sub(r"[^a-z0-9]+", " ", t))
+    t = re.sub(r"\s+dr$", "", t.strip())                          # "...New Covenant Dr" (the file name's preacher title)
+    return " ".join(w for w in t.split() if w not in ("the", "a", "an", "of"))
+
+
+def _ia_twins(existing: dict) -> list[str]:
+    """Brook Hills archive files that are a sermon the app already has from another source: same title once
+    punctuation is set aside (or one letter off: "Generostity"), same part numbers. Kept as that entry's alternative
+    audio, not as a second copy."""
+    import difflib
+    others = {}
+    for x in existing.values():
+        if x.get("speaker") == "Platt" and x.get("source") != "brookhills_ia":
+            others.setdefault(_ia_key(x.get("title")), x)
+    gone = []
+    for url, x in list(existing.items()):
+        if x.get("source") != "brookhills_ia": continue
+        k = _ia_key(x["title"]); twin = others.get(k)
+        if not twin and len(k) >= 15:
+            def typo(o):   # one misspelt word, same beginning and ending ("Generostity", "Dissconect"; not "Womanhood"/"Manhood")
+                a, b = k.split(), o.split()
+                d = [(x, y) for x, y in zip(a, b) if x != y]
+                return len(a) == len(b) and len(d) == 1 and min(map(len, d[0])) >= 5 and d[0][0][:2] == d[0][1][:2] \
+                    and d[0][0][-2:] == d[0][1][-2:] and difflib.SequenceMatcher(None, *d[0]).ratio() >= 0.8
+            near = [o for o in difflib.get_close_matches(k, others, 3, 0.9) if typo(o)]
+            twin = others[near[0]] if near else None
+        if not twin: continue
+        if url not in twin.setdefault("alt_urls", []): twin["alt_urls"].append(url)
+        del existing[url]; gone.append(url)
+    return gone
+
 # ---------- Skip Heitzig feeds (Subsplash audio; the episode's mp3 address is its link) ----------
 def harvest_skip(key: str, feed_url: str) -> list[dict]:
     r = get(feed_url, timeout=60)
@@ -711,6 +744,9 @@ def run(sources: list[str], radical_limit: int | None = None):
                 if e.get("description") and len(e["description"]) > len(old_e.get("description") or ""):
                     old_e["description"] = e["description"]
                 merged += 1
+        if s == "brookhills_ia":   # its file names drop apostrophes and colons: fold a sermon the app already has into it
+            dup = _ia_twins(existing)
+            added -= len(dup); merged += len(dup)
         _log(f"{s}: {added} new, {merged} matched existing entries")
         report["sources"][s] = {"count": len(entries), "seconds": round(time.time() - t0, 1)}
     # the same Buzzsprout episode under two link forms (/112848/2213660 and /112848/episodes/2213660-slug):
