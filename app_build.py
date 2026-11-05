@@ -1949,7 +1949,7 @@ const W_IC={back:'<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="t
  apple:'<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l11-2v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="currentColor"/><circle cx="17.5" cy="16" r="2.5" fill="currentColor"/></svg>'};
 /* the key a song is played in: the setlist's choice, else the song's own, else as written; capo turns it into shapes */
 function wKeyOf(song,item){return (item&&item.key)||song.pk||song.key||''}
-function wShape(song,key,capo){const semis=song.key&&key?Worship.semitones(song.key,key):0,sk=capo?Worship.transposeKey(key,-capo):key;return {semis:((semis-(capo||0))%12+12)%12,flats:Worship.useFlats(sk||key),shapeKey:sk}}
+function wShape(song,key,capo){const semis=song.key&&key?Worship.semitones(song.key,key):0,sk=capo?Worship.transposeKey(key,-capo):key;return {semis:((semis-(capo||0))%12+12)%12,flats:sk||key||false,shapeKey:sk}}
 function wParsed(song){return song._p&&song._p.src===song.src?song._p.v:(song._p={src:song.src,v:Worship.parse(song.src)}).v}
 function wOrder(song){const p=wParsed(song);if(!song.arr||!song.arr.trim())return null;const by={};p.sections.forEach((s,i)=>{const k=s.short.toLowerCase();if(!(k in by))by[k]=i;const l=s.label.toLowerCase();if(!(l in by))by[l]=i});
  const o=song.arr.split(/[\s,>→-]+/).map(t=>by[t.toLowerCase()]).filter(i=>i!=null);return o.length?o:null}

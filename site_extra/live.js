@@ -108,7 +108,9 @@
     this.sid = o.sid; this.role = o.role || 'remote'; this.id = o.id || (this.role[0] + hex(rnd(4)));
     this.state = null; this.deck = null; this.peers = {}; this.cb = o; this.pending = false; this.relays = []; this.ended = false;
     this.base = 'scwp1/' + this.sid;
-    this.ready = importKey(unb64u(o.key)).then(function (k) { self.key = k; });
+    var raw; try { raw = unb64u(String(o.key || '')); } catch (e) { raw = null; }
+    if (!raw || raw.length !== 16 || !/^[\w-]{8,40}$/.test(String(o.sid || ''))) throw new Error('bad link');
+    this.ready = importKey(raw).then(function (k) { self.key = k; });
     if (G.BroadcastChannel) {
       try {
         this.bc = new BroadcastChannel('scwp-' + this.sid);

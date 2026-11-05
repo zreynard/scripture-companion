@@ -18,13 +18,32 @@
   }
   function keyName(pc, minor) { pc = ((pc % 12) + 12) % 12; return minor ? KEYS_MIN[pc] : KEYS_MAJ[pc]; }
   function useFlats(key) { var k = keyInfo(key); if (!k) return false; var n = keyName(k.pc, k.minor); return k.minor ? !!FLAT_MIN[n] : !!FLAT_MAJ[n]; }
-  function shiftNote(n, semis, flats) { var pc = NOTE[n]; if (pc == null) return n; pc = ((pc + semis) % 12 + 12) % 12; return (flats ? FLAT : SHARP)[pc]; }
+  /* spelling: 'flats' is a key name (or true/false). Notes in the key use the key's spelling; borrowed b3, b6 and b7 use flats
+     (an F chord in G becomes Bb in C, not A#); anything else follows the key's side (sharps or flats). */
+  function spell(pc, flats) {
+    if (typeof flats !== 'string') return (flats ? FLAT : SHARP)[pc];
+    var k = keyInfo(flats); if (!k) return SHARP[pc];
+    var tonic = k.minor ? (k.pc + 3) % 12 : k.pc, side = useFlats(flats), iv = ((pc - tonic) % 12 + 12) % 12;
+    if ([0, 2, 4, 5, 7, 9, 11].indexOf(iv) >= 0) return (side ? FLAT : SHARP)[pc];
+    if (iv === 3 || iv === 8 || iv === 10) return FLAT[pc];
+    return (side ? FLAT : SHARP)[pc];
+  }
+  function shiftNote(n, semis, flats) { var pc = NOTE[n]; if (pc == null) return n; pc = ((pc + semis) % 12 + 12) % 12; return spell(pc, flats); }
   function transposeChord(c, semis, flats) {
     if (!semis) return c;
     var m = CHORD.exec(c); if (!m) return c;
-    var out = shiftNote(m[1] + (m[2] || ''), semis, flats) + (m[3] || '');
-    if (m[4]) out += '/' + shiftNote(m[4] + (m[5] || ''), semis, flats);
+    var root = shiftNote(m[1] + (m[2] || ''), semis, flats), out = root + (m[3] || '');
+    if (m[4]) out += '/' + bassFor(root, m[4] + (m[5] || ''), m[1] + (m[2] || ''), semis, flats);
     return out;
+  }
+  /* a bass note is spelled from its chord (the third of B is D#, the fifth of Bb is F), so B/D# never becomes B/Eb */
+  var LET = 'CDEFGAB', NAT = [0, 2, 4, 5, 7, 9, 11], STEP = { 2: 1, 3: 2, 4: 2, 5: 3, 7: 4, 8: 5, 9: 5, 10: 6, 11: 6 };
+  function bassFor(root, bass, oldRoot, semis, flats) {
+    var iv = ((NOTE[bass] - NOTE[oldRoot]) % 12 + 12) % 12, st = STEP[iv];
+    if (st == null) return shiftNote(bass, semis, flats);
+    var pc = ((NOTE[bass] + semis) % 12 + 12) % 12, L = LET[(LET.indexOf(root[0]) + st) % 7], d = ((pc - NAT[LET.indexOf(L)]) % 12 + 12) % 12;
+    if (d === 0) return L; if (d === 1) return L + '#'; if (d === 11) return L + 'b';
+    return shiftNote(bass, semis, flats);
   }
   function semitones(from, to) { var a = keyInfo(from), b = keyInfo(to); if (!a || !b) return 0; return ((b.pc - a.pc) % 12 + 12) % 12; }
   function transposeKey(k, semis) { var i = keyInfo(k); return i ? keyName(i.pc + semis, i.minor) : k; }
@@ -33,7 +52,7 @@
   var KINDS = [['pre-chorus', /^pre[- ]?chorus|^prechorus|^pc\b/i, 'PC'], ['chorus', /^chorus|^refrain|^ch\b|^c\b/i, 'C'], ['verse', /^verse|^v\b/i, 'V'],
     ['bridge', /^bridge|^b\b/i, 'B'], ['intro', /^intro/i, 'I'], ['outro', /^outro|^ending|^end\b/i, 'O'], ['tag', /^tag/i, 'T'],
     ['instrumental', /^instrumental|^inst\b|^interlude|^turnaround|^break|^solo/i, 'Inst'], ['vamp', /^vamp/i, 'Vamp'], ['other', /^(?:spontaneous|ad lib|coda)/i, 'X']];
-  var LABEL = /^\s*[\[(]?\s*((?:pre[- ]?chorus|prechorus|chorus|refrain|verse|bridge|intro|outro|ending|tag|instrumental|interlude|turnaround|break|solo|vamp|coda|spontaneous)\s*\d*[a-z]?)\s*[\])]?\s*:?\s*(?:[\[(]?\s*[x×]\s*(\d+)\s*[\])]?)?\s*(.*)$/i;
+  var LABEL = /^\s*[\[(]?\s*((?:pre[- ]?chorus|prechorus|chorus|refrain|verse|bridge|intro|outro|ending|tag|instrumental|interlude|turnaround|break|solo|vamp|coda|spontaneous)(?:\s*\d+[ab]?)?)\s*[\])]?\s*:?\s*(?:[\[(]?\s*[x×]\s*(\d+)\s*[\])]?)?\s*(.*)$/i;
   function kindOf(label) { for (var i = 0; i < KINDS.length; i++) if (KINDS[i][1].test(label.trim())) return KINDS[i]; return ['other', null, 'X']; }
   function tidyLabel(l) { l = l.replace(/\s+/g, ' ').trim(); l = l.replace(/^(\w)/, function (c) { return c.toUpperCase(); }); return l.replace(/^Pre[- ]?chorus/i, 'Pre-Chorus').replace(/^Prechorus/i, 'Pre-Chorus'); }
   function shortOf(label) { var k = kindOf(label), n = (/(\d+)/.exec(label) || [])[1]; return k[2] + (n || ''); }
@@ -77,7 +96,7 @@
         else if (d === 'chorus') { open('Chorus'); cur.ref = 1; }
         continue;
       }
-      if (/^\s*#/.test(line)) continue;
+      if (/^\s*#/.test(line) || /^\s*\{[^}]*\}\s*$/.test(line)) continue;   // comments and unknown directives
       if (!line.trim()) { flushChords(); if (cur && cur.lines.length && cur.lines[cur.lines.length - 1] !== null) cur.lines.push(null); continue; }
       var lm2 = LABEL.exec(line);
       if (lm2 && !hasInline(line) && (!lm2[3] || isChordLine(lm2[3]))) {

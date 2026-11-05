@@ -57,6 +57,14 @@ button{font:inherit;color:inherit;cursor:pointer}
 .list .on .n{background:var(--ink);color:#fff}.list b{font-weight:600}.list small{display:block;color:var(--mute);font-size:13px}
 .toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 16px;border-radius:18px;font-size:14px;font-weight:600;z-index:30;opacity:0;transition:opacity .3s;pointer-events:none}
 .keys{display:none}
+@media (max-height:760px){
+ .top{padding-top:8px;padding-bottom:2px}.song{padding:8px 12px;margin:4px 14px 8px}.song b{font-size:17px}.seg{margin-bottom:8px}.seg button{height:30px}
+ .chips{padding-top:8px}.chip{height:38px}.bar{padding-top:8px}.bar button{height:54px}body{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+ .mon{max-height:calc(100svh - 400px);min-height:92px}.next{margin-top:8px;padding:8px 12px}}
+@media (orientation:landscape) and (max-height:520px){
+ .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:10px;padding:0 6px}.seg{display:none}.chart{display:block!important}
+ .song{display:none}.mon{aspect-ratio:auto;height:calc(100svh - 250px);min-height:80px}.keys{display:none}.wrap .chart{margin-top:0}
+ .chips{padding:6px 10px 2px}.chip{height:34px;min-width:40px;padding:0 10px;font-size:14px}.bar button{height:48px}body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}}
 @media (min-width:900px){
  body{padding-bottom:110px}.wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;padding:0 10px}
  .mon .tx{font-size:clamp(16px,1.9vw,30px)}.seg{display:none}.chart{display:block!important}
@@ -78,7 +86,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 (function () {
   'use strict';
   var $ = function (s) { return document.querySelector(s); }, esc = Worship.esc;
-  function hp() { var o = {}; location.hash.replace(/^#/, '').split('&').forEach(function (kv) { var i = kv.indexOf('='); if (i > 0) o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); }); return o; }
+  function hp() { var o = {}; location.hash.replace(/^#/, '').split('&').forEach(function (kv) { var i = kv.indexOf('='); if (i > 0) { var v = kv.slice(i + 1); try { v = decodeURIComponent(v); } catch (e) {} o[kv.slice(0, i)] = v; } }); return o; }
   var H = hp(), lead = H.lead === '1', sess = null, deck = null, state = null, view = 'lyrics', st = { relays: 0, screens: 0 }, gotFirst = false, base = location.href.replace(/live\/.*$/, '');
   try { view = localStorage.getItem('scwp:view') || (lead ? 'chords' : 'lyrics'); } catch (e) {}
   if (!H.s || !H.k) { $('#app').innerHTML = '<div class="wait"><h2 class="serif">No worship time here</h2><p>Open this from Worship in the app, or from the link someone shared.</p></div>'; return; }
@@ -88,13 +96,13 @@ button{font:inherit;color:inherit;cursor:pointer}
   function remoteURL() { return base + 'live/#s=' + H.s + '&k=' + H.k; }
   if (lead) { $('#back').hidden = false; $('#back').href = base + '#worship'; $('#bEnd').hidden = false; }
   var saved = null; if (lead) try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) saved = w; } catch (e) {}
-  sess = new Live.Session({ sid: H.s, key: H.k, role: lead ? 'lead' : 'remote',
+  try { sess = new Live.Session({ sid: H.s, key: H.k, role: lead ? 'lead' : 'remote',
     onState: function (s) { state = s; if (s.ended && !lead) return ended(); paint(); },
     onDeck: function (d) { deck = d; paint(true); },
     onStatus: function (x) {
       var was = st.relays; st = x; pill();
       if (lead && saved && x.relays > was) sess.send('d', deck, true);   // put the songs back on the relay after any reconnect
-    } });
+    } }); } catch (e) { $('#app').innerHTML = '<div class="wait"><h2 class="serif">This link is broken</h2><p>Ask for the link again, or open Worship in the app.</p></div>'; return; }
   if (lead && saved) { deck = saved.deck; sess.deck = deck; sess.send('d', deck, true); paint(true);   /* the songs are already here: show them now */
     setTimeout(function () { if (!sess.state) sess.set({ song: 0, slide: 0, blank: false }); }, 2500); }
   setTimeout(function () { if (!deck) $('#app').innerHTML = '<div class="wait"><h2 class="serif">Waiting for the songs…</h2><p>If this stays, the worship time may have ended, or this network blocks the live service. Try another Wi‑Fi or your phone’s data.</p></div>'; }, 9000);
@@ -111,18 +119,20 @@ button{font:inherit;color:inherit;cursor:pointer}
   function paint(full) {
     if (!deck) return; $('#bar').hidden = false;
     var c = cur(); if (!c.sg) return;
-    var s = { song: c.s.song || 0, slide: c.s.slide || 0 }, nx = nextOf(s), secs = [], seen = {};
+    var s = { song: c.s.song || 0, slide: c.s.slide || 0 }, nx = nextOf(s), secs = [], seen = {}, side = innerWidth > innerHeight && innerHeight <= 520 && innerWidth < 900;
     c.sg.slides.forEach(function (x) { if (!seen[x.sec]) { seen[x.sec] = 1; secs.push({ sec: x.sec, label: x.s.replace(/ \(\d+\/\d+\)$/, ''), short: c.sg.short[x.sec] }); } });
     var h = '<button class="song" id="bSongs"><span style="min-width:0"><small>Song ' + (s.song + 1) + ' of ' + deck.songs.length + (deck.name ? ' · ' + esc(deck.name) : '') + '</small><b class="serif">' + esc(c.sg.t) + '</b></span>' + (c.sg.key ? '<span class="k">' + esc(c.sg.key) + (c.sg.capo ? ' · capo ' + c.sg.capo : '') + '</span>' : '') + '</button>';
     h += '<div class="seg"><button data-v="lyrics" class="' + (view === 'lyrics' ? 'on' : '') + '">Lyrics</button><button data-v="chords" class="' + (view === 'chords' ? 'on' : '') + '">Chords</button></div>';
     h += '<div class="wrap"><div class="col1"' + (view === 'chords' ? ' data-phone-hide' : '') + '>';
-    h += '<div class="mon' + (c.s.blank ? ' blank' : '') + '"><span class="lab">' + esc(c.sl ? c.sl.s : '') + '</span><div class="tx serif">' + (c.sl ? linesHTML(c.sl.l) : '') + '</div></div>';
+    h += '<div class="mon' + (c.s.blank ? ' blank' : '') + '"><span class="lab">' + esc((side ? c.sg.t + ' · ' : '') + (c.sl ? c.sl.s : '')) + '</span><div class="tx serif">' + (c.sl ? linesHTML(c.sl.l) : '') + '</div></div>';
     h += nx ? '<div class="next"><b>Next' + (nx.song !== s.song ? ' song' : '') + ':</b><span>' + esc(nx.song !== s.song ? nx.sg.t : nx.sg.slides[nx.slide].s) + (nx.sg.slides[nx.slide].l[0] ? ' — ' + esc(nx.sg.slides[nx.slide].l[0]) : '') + '</span></div>' : '<div class="next"><b>End</b><span>This is the last slide</span></div>';
+    var chipsH = '<div class="chips">' + secs.map(function (x) { return '<button class="chip' + (c.sl && c.sl.sec === x.sec ? ' on' : '') + '" data-sec="' + x.sec + '" title="' + esc(x.label) + '">' + esc(x.label.length <= 9 ? x.label : x.short) + '</button>'; }).join('') + '</div>';
+    if (side) h += chipsH;
     h += '<div class="keys"><kbd>→</kbd> next · <kbd>←</kbd> back · <kbd>B</kbd> blank · <kbd>1</kbd>–<kbd>9</kbd> section · <kbd>[</kbd> <kbd>]</kbd> song</div></div>';
-    h += '<div class="col2"><div class="chips">' + secs.map(function (x, i) { return '<button class="chip' + (c.sl && c.sl.sec === x.sec ? ' on' : '') + '" data-sec="' + x.sec + '" title="' + esc(x.label) + '">' + esc(x.label.length <= 9 ? x.label : x.short) + '</button>'; }).join('') + '</div>';
+    h += '<div class="col2">' + (side ? '' : chipsH);
     h += '<div class="chart wfit" id="chart"' + (view === 'chords' || innerWidth >= 900 ? '' : ' style="display:none"') + '><div class="wc">' + (c.sg.chart || '') + '</div><span class="wfit-pg" id="cpg" hidden></span></div></div></div>';
     $('#app').innerHTML = h;
-    if (view === 'chords' && innerWidth < 900) { var c1 = document.querySelector('.col1 .mon'); if (c1) c1.style.display = 'none'; }
+    if (view === 'chords' && innerWidth < 900 && !(innerWidth > innerHeight && innerHeight <= 520)) { var c1 = document.querySelector('.col1 .mon'); if (c1) c1.style.display = 'none'; }
     var on = c.sl ? document.querySelector('#chart [data-sec="' + c.sl.sec + '"]') : null;
     document.querySelectorAll('#chart .wc-s').forEach(function (e) { e.classList.toggle('on', e === on); });
     fitChart(on, c.s.song);
@@ -135,9 +145,9 @@ button{font:inherit;color:inherit;cursor:pointer}
   /* the chord chart fits its space (no scrolling while playing); a long one turns to the page holding the current section */
   var fitFor = null;
   function fitChart(on, song) {
-    var box = $('#chart'); if (!box || box.style.display === 'none') return;
-    var top = box.getBoundingClientRect().top, bar = ($('#bar') || {}).offsetHeight || 0;
-    box.style.height = Math.max(200, innerHeight - top - bar - 10) + 'px';
+    var box = $('#chart'); if (!box || getComputedStyle(box).display === 'none') return;
+    var top = box.getBoundingClientRect().top + scrollY, pad = parseFloat(getComputedStyle(document.body).paddingBottom) || 0, bar = ($('#bar') || {}).offsetHeight || 0;
+    box.style.height = Math.max(110, innerHeight - top - Math.max(pad, bar) - 6) + 'px';
     var key = song + ':' + innerWidth + 'x' + innerHeight;
     if (fitFor !== key || !box._fit) { box._fit = Worship.fit(box); fitFor = key; }
     var info = box._fit, pg = Worship.pageOf(box, on, info); Worship.turn(box, pg, info); box._pg = pg;

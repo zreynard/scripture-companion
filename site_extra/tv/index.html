@@ -41,7 +41,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-seri
   var $ = function (s) { return document.querySelector(s); };
   if (!window.WebSocket || !window.crypto || !crypto.subtle || !window.TextEncoder || !window.Promise) { $('#old').style.display = 'flex'; return; }
   var SKEY = 'scwp:screen', sess = null, deck = null, state = null, shown = '', lp = null, wake = null, downSince = 0;
-  function hp() { var o = {}; location.hash.replace(/^#/, '').split('&').forEach(function (kv) { var i = kv.indexOf('='); if (i > 0) o[kv.slice(0, i)] = decodeURIComponent(kv.slice(i + 1)); }); return o; }
+  function hp() { var o = {}; location.hash.replace(/^#/, '').split('&').forEach(function (kv) { var i = kv.indexOf('='); if (i > 0) { var v = kv.slice(i + 1); try { v = decodeURIComponent(v); } catch (e) {} o[kv.slice(0, i)] = v; } }); return o; }
   function hint(t, ms) { var h = $('#hint'); h.textContent = t; h.style.opacity = 1; clearTimeout(hint.t); hint.t = setTimeout(function () { h.style.opacity = 0; }, ms || 4000); }
   function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
   function cur() { if (!deck || !state) return null; var sg = deck.songs[state.song || 0]; return sg ? { song: sg, slide: sg.slides[state.slide || 0] } : null; }
@@ -64,16 +64,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-seri
   function join(info) {
     if (lp) { lp.stop(); lp = null; }
     try { localStorage.setItem(SKEY, JSON.stringify({ sid: info.sid, key: info.key, at: Date.now() })); } catch (e) {}
-    $('#pair').hidden = true;
-    sess = new Live.Session({ sid: info.sid, key: info.key, role: 'screen',
+    try { sess = new Live.Session({ sid: info.sid, key: info.key, role: 'screen',
       onState: function (s) { state = s; if (s.ended) { paint(); setTimeout(endScreen, 4000); return; } paint(); },
       onDeck: function (d) { deck = d; paint(true); },
       onDeckCleared: function () {},
       onStatus: function (st) {
         if (st.relays) { downSince = 0; $('#dot').classList.remove('show'); if (!join.said) { join.said = 1; hint('Connected · press F for full screen', 5000); } }
         else { if (!downSince) downSince = Date.now(); if (Date.now() - downSince > 8000) $('#dot').classList.add('show'); }
-      } });
-    keepAwake();
+      } }); } catch (e) { try { localStorage.removeItem(SKEY); } catch (x) {} sess = null; pairMode(); return; }
+    $('#pair').hidden = true; keepAwake();
   }
   function endScreen() { if (sess) { sess.close(); sess = null; } try { localStorage.removeItem(SKEY); } catch (e) {} deck = state = null; shown = ''; $('#stage').innerHTML = ''; history.replaceState(null, '', location.pathname); pairMode(); }
   function pairMode() {
