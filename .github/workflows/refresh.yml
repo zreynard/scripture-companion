@@ -58,6 +58,12 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: ./publish.sh "Publish app"
 
+      - name: Confirm the site actually went live (publish again if GitHub's deploy stalls)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
+        run: tools/pages_confirm.sh
+
       - name: Start the link check (its own workflow, so app updates never wait on it)
         if: env.CHECK == 'true'
         env:
