@@ -1,0 +1,25 @@
+# Diagnostics: where Matt Chandler's sermons live and what plays before the preaching (tools/chandler_probe.py).
+# Results go to the diag-chandler branch.
+name: Chandler probe
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q requests faster-whisper numpy
+      - run: python tools/chandler_probe.py
+      - name: Save findings
+        if: always()
+        run: |
+          [ -d chandler ] || exit 0
+          cd chandler && git init -q -b diag-chandler && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "Chandler probe"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag-chandler
