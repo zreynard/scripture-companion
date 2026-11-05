@@ -417,7 +417,7 @@ def main():
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items),
             "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst}),
             "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]},
-            "pray": {"moves": __import__("pray").build(), "music": json.load(open(os.path.join(HERE, "data", "pray_music.json"), encoding="utf-8"))}}
+            "pray": {"moves": __import__("pray").build()}}
     html = TEMPLATE.replace("__VERSION__", str(BUILD)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
@@ -784,6 +784,7 @@ body[data-v=pray] #np{display:none!important}
 .pr-art{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 10px 30px rgba(27,36,64,.12);background:#eadfca;transform:translateZ(0)}
 .pr-art svg{display:block;width:100%;height:100%}
 .pr-still{height:calc(100svh - var(--tabh) - 330px);min-height:280px;max-height:560px}
+.pr-add{text-align:center;margin:26px 0 10px}.pr-addb{min-height:46px;padding:0 26px;border-radius:23px;border:1px solid rgba(27,36,64,.18);background:#fff;color:var(--ink);font:600 15px -apple-system,system-ui,sans-serif;cursor:pointer}.pr-add p{margin:12px 0 0;font-size:13.5px;color:var(--mute)}
 .pr-ctl{display:flex;align-items:center;justify-content:center;gap:36px;margin:28px 0 10px}
 .pr-pp{width:80px;height:80px;border-radius:50%;border:0;background:var(--ink);color:#fbf6ea;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(27,36,64,.22);cursor:pointer;padding:0;transition:transform .2s}
 .pr-pp:active{transform:scale(.96)}
@@ -2072,15 +2073,54 @@ function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
  a.addEventListener('timeupdate',()=>{const n=Date.now();if(n-PM.sv>5000){PM.sv=n;S.set('pmpos',{k:PM.k,t:Math.floor(a.currentTime)})}});
  AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause();if(PM.ms){PM.ms=false;if(cur)msSermon(cur)}}));
  return a}
-function pmOrder(){const n=PRAY.music.length;let o=S.get('pmo',null);if(!Array.isArray(o)||o.length!==n){o=prShuf(n);S.set('pmo',o)}return o}
-function pmTrack(){const o=pmOrder();return PRAY.music[o[PM.k]]}
-function pmLoad(k,t){const a=pmEl(),n=PRAY.music.length;PM.k=((k%n)+n)%n;a.src=pmTrack().u;if(t)a.addEventListener('loadedmetadata',()=>{try{a.currentTime=t}catch(e){}},{once:true})}
-function pmToggle(){if(!PRAY.music.length)return;const a=pmEl();if(!a.getAttribute('src')){const p=S.get('pmpos',null);pmLoad(p?p.k:0,p?p.t:0)}if(a.paused)a.play().catch(()=>{});else a.pause()}
-function pmSkip(d,auto){if(!PRAY.music.length)return;const a=pmEl(),on=auto||!a.paused;pmLoad(PM.k+d,0);S.set('pmpos',{k:PM.k,t:0});if(on)a.play().catch(()=>{});else pmPaint()}
-function pmSession(){if(!('mediaSession' in navigator))return;const t=pmTrack(),a=pmEl();PM.ms=true;try{navigator.mediaSession.metadata=new MediaMetadata({title:t.t,artist:t.a,album:'Pray'})}catch(e){}
+/* the music lives on this phone: albums you bought (MP3s, or the store's ZIP), kept in IndexedDB, never uploaded */
+const PDB={db:null};
+function pdb(){return PDB.db||(PDB.db=new Promise((ok,no)=>{const r=indexedDB.open('sc-pray',1);r.onupgradeneeded=()=>{const d=r.result;d.createObjectStore('meta',{keyPath:'id'});d.createObjectStore('blob')};r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}))}
+function pdbDo(st,mode,f){return pdb().then(d=>new Promise((ok,no)=>{const t=d.transaction(st,mode),q=f(t);t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>no(t.error);t.onabort=()=>no(t.error)}))}
+const PL={list:null,url:null};
+function plSort(a,b){return (a.al||'').localeCompare(b.al||'')||(a.n||1e4)-(b.n||1e4)||a.f.localeCompare(b.f,undefined,{numeric:true})}
+function plLoad(){if(PL.list)return Promise.resolve(PL.list);return pdbDo('meta','readonly',t=>t.objectStore('meta').getAll()).then(r=>{PL.list=(r||[]).sort(plSort);return PL.list}).catch(()=>{PL.list=[];return PL.list})}
+function pmTrack(){return (PL.list||[])[PM.k]}
+function pmLoad(k,t){const a=pmEl(),L=PL.list||[],n=L.length;if(!n)return Promise.resolve();PM.k=((k%n)+n)%n;const tr=L[PM.k];
+ return pdbDo('blob','readonly',x=>x.objectStore('blob').get(tr.id)).then(bl=>{if(!bl)return;if(PL.url)URL.revokeObjectURL(PL.url);PL.url=URL.createObjectURL(bl);a.src=PL.url;PM.cur=tr.id;
+  if(t)a.addEventListener('loadedmetadata',()=>{try{a.currentTime=t}catch(e){}},{once:true})})}
+/* iPhones start sound only straight from a tap, so the piece is made ready before the tap */
+function pmPrime(){return plLoad().then(L=>{if(!L.length||PM.cur&&L.some(x=>x.id===PM.cur))return;const p=S.get('pmpos',null),k=p?Math.max(0,L.findIndex(x=>x.id===p.id)):0;return pmLoad(k,p&&L[k]&&L[k].id===p.id?p.t:0)})}
+function pmToggle(){const a=pmEl();if(!(PL.list||[]).length)return;if(!a.getAttribute('src')){pmPrime().then(()=>a.play().catch(()=>{}));return}if(a.paused)a.play().catch(()=>{});else a.pause()}
+function pmSkip(d,auto){const a=pmEl();if(!(PL.list||[]).length)return;const on=auto||!a.paused;pmLoad(PM.k+d,0).then(()=>{S.set('pmpos',{id:PM.cur,t:0});if(on)a.play().catch(()=>{});else pmPaint()})}
+function pmSession(){if(!('mediaSession' in navigator))return;const t=pmTrack()||{},a=pmEl();PM.ms=true;try{navigator.mediaSession.metadata=new MediaMetadata({title:t.t||'Prayer music',artist:t.a||'',album:t.al||'Pray'})}catch(e){}
  [['play',()=>a.play().catch(()=>{})],['pause',()=>a.pause()],['nexttrack',()=>pmSkip(1)],['previoustrack',()=>pmSkip(-1)],['seekbackward',null],['seekforward',null]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}
 function pmPaint(){const on=!!PM.el&&!PM.el.paused;document.querySelectorAll('[data-pm]').forEach(b=>{b.innerHTML=on?PR_PAUSE:PR_PLAY;b.setAttribute('aria-label',on?'Pause the music':'Play the music')})}
-function prCredits(){const seen=new Set(),c=[];PRAY.music.forEach(m=>{const k=m.a+'|'+m.lic;if(!seen.has(k)){seen.add(k);c.push(`${esc(m.a)} (${esc(m.licn||'')})`)}});return c.length?' Prayer music: '+c.join(', ')+'.':''}
+function prCredits(){return ''}
+/* reading what you picked: ZIPs opened here (stored or deflated entries), and each MP3's own title, artist, album, track */
+const AUD_RE=/\.(mp3|m4a|aac|flac|wav|ogg|opus|aif|aiff)$/i,AUD_T={mp3:'audio/mpeg',m4a:'audio/mp4',aac:'audio/aac',flac:'audio/flac',wav:'audio/wav',ogg:'audio/ogg',opus:'audio/ogg',aif:'audio/aiff',aiff:'audio/aiff'};
+async function unzip(f){const u8=async(a,b)=>new Uint8Array(await f.slice(a,b).arrayBuffer()),dv=x=>new DataView(x.buffer,x.byteOffset,x.byteLength);
+ const tl=Math.min(f.size,66000),t=await u8(f.size-tl,f.size);let e=-1;for(let i=t.length-22;i>=0;i--)if(t[i]===0x50&&t[i+1]===0x4b&&t[i+2]===5&&t[i+3]===6){e=i;break}if(e<0)throw new Error('not a zip');
+ const E=dv(t.subarray(e)),cnt=E.getUint16(10,true),cs=E.getUint32(12,true),co=E.getUint32(16,true),cd=await u8(co,co+cs),D=dv(cd),out=[];let p=0;
+ for(let k=0;k<cnt&&p+46<=cd.length;k++){if(D.getUint32(p,true)!==0x02014b50)break;const m=D.getUint16(p+10,true),csz=D.getUint32(p+20,true),nl=D.getUint16(p+28,true),xl=D.getUint16(p+30,true),cl=D.getUint16(p+32,true),lo=D.getUint32(p+42,true),
+  name=new TextDecoder().decode(cd.subarray(p+46,p+46+nl));p+=46+nl+xl+cl;const base=name.split('/').pop();if(!AUD_RE.test(base)||/^\._|__MACOSX/.test(name))continue;
+  const L=dv(await u8(lo,lo+30)),st=lo+30+L.getUint16(26,true)+L.getUint16(28,true),ext=base.split('.').pop().toLowerCase(),raw=f.slice(st,st+csz);
+  let bl;if(m===0)bl=new Blob([raw],{type:AUD_T[ext]});else if(m===8)bl=new Blob([await new Response(raw.stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer()],{type:AUD_T[ext]});else continue;
+  out.push({f:name,bl})}
+ return out}
+async function id3(bl){const h=new Uint8Array(await bl.slice(0,10).arrayBuffer()),r={};if(h[0]!==73||h[1]!==68||h[2]!==51)return r;const v=h[3],sz=(h[6]<<21)|(h[7]<<14)|(h[8]<<7)|h[9],b=new Uint8Array(await bl.slice(10,10+Math.min(sz,600000)).arrayBuffer());let p=0;
+ const dec=x=>{const e=x[0],y=x.subarray(1);try{return (e===1||e===2?new TextDecoder(e===2?'utf-16be':'utf-16'):new TextDecoder(e===3?'utf-8':'latin1')).decode(y).replace(/\u0000/g,'').trim()}catch(_){return ''}};
+ while(p+10<b.length){const id=String.fromCharCode(b[p],b[p+1],b[p+2],b[p+3]);if(!/^[A-Z0-9]{4}$/.test(id))break;const fs=v===4?(b[p+4]<<21)|(b[p+5]<<14)|(b[p+6]<<7)|b[p+7]:((b[p+4]<<24)>>>0)+(b[p+5]<<16)+(b[p+6]<<8)+b[p+7];
+  const d=b.subarray(p+10,p+10+fs);if(id==='TIT2')r.t=dec(d);else if(id==='TPE1')r.a=dec(d);else if(id==='TALB')r.al=dec(d);else if(id==='TRCK')r.n=parseInt(dec(d))||undefined;p+=10+fs}return r}
+async function prImport(files,say){const got=[];for(const f of files){if(/\.zip$/i.test(f.name)||f.type==='application/zip'){say(`Opening ${f.name}…`);try{(await unzip(f)).forEach(x=>got.push(x))}catch(e){}}else if(AUD_RE.test(f.name)||/^audio\//.test(f.type))got.push({f:f.name,bl:f})}
+ if(!got.length){say('No music found in what you picked.');return 0}
+ try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
+ const have=new Set((await plLoad()).map(x=>x.f+'|'+x.sz));let n=0;
+ for(const [k,x] of got.entries()){say(`Adding ${k+1} of ${got.length}…`);if(have.has(x.f.split('/').pop()+'|'+x.bl.size))continue;const tg=/\.mp3$/i.test(x.f)?await id3(x.bl):{},base=x.f.split('/').pop(),id='m'+Date.now().toString(36)+k+Math.random().toString(36).slice(2,6);
+  const meta={id,f:base,sz:x.bl.size,t:tg.t||base.replace(AUD_RE,'').replace(/^\d+[\s._-]+/,'').replace(/_/g,' '),a:tg.a||'',al:tg.al||'',n:tg.n};
+  await pdbDo(['meta','blob'],'readwrite',t=>{t.objectStore('blob').put(x.bl,id);return t.objectStore('meta').put(meta)});n++}
+ PL.list=null;await plLoad();return n}
+function prPick(after){const i=document.createElement('input');i.type='file';i.multiple=true;i.accept='audio/*,.mp3,.m4a,.flac,.zip,application/zip';i.style.display='none';document.body.appendChild(i);
+ i.onchange=async()=>{const fs=[...i.files];i.remove();if(!fs.length)return;const say=m=>{document.querySelectorAll('[data-prsay]').forEach(e=>{e.textContent=m;e.hidden=false})};
+  try{const n=await prImport(fs,say);say(n?`Added ${n} piece${n>1?'s':''}.`:'Those were already here.')}catch(e){say('That did not work — your phone may be out of space.')}setTimeout(()=>after&&after(),700)};i.click()}
+function prRemoveAll(){const a=pmEl();a.pause();a.removeAttribute('src');a.load();if(PL.url)URL.revokeObjectURL(PL.url);PL.url=null;PM.cur=null;S.set('pmpos',null);return pdbDo(['meta','blob'],'readwrite',t=>{t.objectStore('meta').clear();t.objectStore('blob').clear()}).then(()=>{PL.list=[]})}
+function prMusicNote(){const L=PL.list||[],mb=Math.round(L.reduce((a,x)=>a+(x.sz||0),0)/1048576),al=[...new Set(L.map(x=>x.al).filter(Boolean))];
+ return `<h2 class="serif" style="margin:22px 0 8px">Prayer music</h2><p class="note">${L.length?`${L.length} piece${L.length>1?'s':''}${al.length?' from '+esc(al.slice(0,3).join(', '))+(al.length>3?'…':''):''}, kept on this phone (${mb.toLocaleString()} MB).`:'None yet. Buy an album as a download (MP3 or ZIP), then add it here; it stays on this phone.'}</p><p class="note" data-prsay hidden></p><button class="btn" data-pradd>Add music</button>${L.length?'<button class="btn" data-prrm>Remove all</button>':''}`}
 /* a new time of prayer (half an hour since the last) brings the next supporting passage for each movement */
 function prSession(){const last=S.get('prlast',0);if(Date.now()-last>30*60e3){const st=S.get('prsup',{});PRAY.moves.forEach(m=>{const n=m.sup.length;let x=st[m.k];if(!x||!Array.isArray(x.o)||x.o.length!==n)x={o:prShuf(n),p:0};else if(++x.p>=n)x={o:prShuf(n),p:0};st[m.k]=x});S.set('prsup',st);PR.mv=0}S.set('prlast',Date.now())}
 function prSup(m){const x=S.get('prsup',{})[m.k],n=m.sup.length;return m.sup[x&&Array.isArray(x.o)&&x.o.length===n?x.o[x.p%n]:0]}
@@ -2102,14 +2142,16 @@ function prayArt(id,band){return `<svg viewBox="${band?'0 214 390 196':'0 0 390 
 <path d="M0 446 C90 434 170 440 240 448 C300 455 350 446 390 442 V520 H0Z" fill="#1f2840" opacity=".9"/></svg>`}
 function prayView(){if(PR.mode==='guided')prSession();
  let h=`<div class="jv pray" id="pray">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Pray</h1><div class="t-sort lib-seg pr-seg" role="tablist" aria-label="Pray">${[['still','Stillness'],['guided','Guided']].map(([v,l])=>`<button role="tab" data-prm="${v}" class="${PR.mode===v?'on':''}" aria-selected="${PR.mode===v}">${l}</button>`).join('')}</div>`;
+ if(PR.mode==='still'&&PL.list&&!PL.list.length)return h+`<div class="pr-art pr-still">${prayArt('ps')}</div><div class="pr-add"><button class="pr-addb" data-pradd>Add music</button><p data-prsay hidden></p></div></div>`;
  if(PR.mode==='still')return h+`<div class="pr-art pr-still">${prayArt('ps')}</div><div class="pr-ctl"><button class="pr-sk" data-pms="-1" aria-label="Previous piece">${PR_SKIP(-1)}</button><button class="pr-pp" data-pm aria-label="Play the music">${PR_PLAY}</button><button class="pr-sk" data-pms="1" aria-label="Next piece">${PR_SKIP(1)}</button></div></div>`;
  const m=PRAY.moves[PR.mv]||PRAY.moves[0],s=prSup(m),n=PRAY.moves.length;
- return h+`<div class="pr-art pr-band">${prayArt('pg',1)}<button class="pr-mini" data-pm aria-label="Play the music">${PR_PLAY}</button></div>
+ return h+`<div class="pr-art pr-band">${prayArt('pg',1)}${(PL.list||[]).length?`<button class="pr-mini" data-pm aria-label="Play the music">${PR_PLAY}</button>`:''}</div>
 <section class="pr-g${PR.anim?' in-'+PR.anim:''}" aria-label="${esc(m.label)}"><div class="pr-eb">${esc(m.label)}</div><p class="pr-lp serif">${esc(m.lp)}</p><div class="pr-lpr">${esc(m.lpr)}</div><p class="pr-ins">${esc(m.ins)}</p><div class="pr-rule" aria-hidden="true"></div>
 <figure class="pr-sup"><blockquote class="serif" id="prst">${esc(s.t)}</blockquote><figcaption><button class="pr-supr" id="prsr" aria-label="${esc(s.r)}: show another passage"><span>${esc(s.r)}</span>${PR_TURN}</button></figcaption></figure></section>
 <nav class="pr-nav" aria-label="Movements of the prayer"><button class="pr-ar" data-prmv="-1" aria-label="Previous"${PR.mv?'':' disabled'}>${PR_AR(-1)}</button><span class="pr-dots" aria-hidden="true">${PRAY.moves.map((x,k)=>`<i class="${k===PR.mv?'on':''}"></i>`).join('')}</span><button class="pr-ar" data-prmv="1" aria-label="Next"${PR.mv<n-1?'':' disabled'}>${PR_AR(1)}</button></nav></div>`}
 function prGo(d){const k=PR.mv+d;if(k<0||k>=PRAY.moves.length)return;PR.mv=k;S.set('prlast',Date.now());PR.anim=d>0?'l':'r';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}
-function wirePray(){pmEl();pmPaint();
+function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='pray')render()});return}pmPrime();
+ document.querySelectorAll('[data-pradd]').forEach(b=>b.onclick=()=>prPick(()=>{if(view==='pray')render()}));
  document.querySelectorAll('[data-prm]').forEach(b=>b.onclick=()=>{if(PR.mode===b.dataset.prm)return;PR.mode=b.dataset.prm;S.set('prm',PR.mode);render()});
  document.querySelectorAll('[data-pm]').forEach(b=>b.onclick=pmToggle);
  document.querySelectorAll('[data-pms]').forEach(b=>b.onclick=()=>pmSkip(+b.dataset.pms));
@@ -2215,7 +2257,7 @@ function settingsView(){
  ${CORE.u.length?`<p class="note" style="margin-top:14px"><b>Core teacher.</b> ${coreOn()?`Core picks the teaching that best explains each passage, favouring ${esc(cfg.corePref?NAMES[cfg.corePref]:'Platt, then Mitchell, then Heitzig, then Davey')}.`:'Off: every teaching on a chapter is queued, as before.'}</p>
  <div class="cprefs" role="group" aria-label="Preferred teacher for Core">${[['','Suggested'],['Platt','Platt'],['PAM','Mitchell'],['Skip','Heitzig'],['Davey','Davey']].map(([k,l])=>`<button class="btn${coreOn()&&(cfg.corePref||'')===k?' on':''}" data-cpref="${k}">${l}</button>`).join('')}<button class="btn${coreOn()?'':' on'}" data-cpref="off">Every teaching</button></div>
  ${Object.keys(coreSet()).length?`<p class="note"><button class="lnk" id="corereset">Undo the ${Object.keys(coreSet()).length} Core choice${Object.keys(coreSet()).length>1?'s':''} you made</button></p>`:''}`:''}
- <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).${prCredits()}</p><h2 class="serif" style="margin:22px 0 8px">Backup</h2>${bkOn()?`<p class="note" id="bkst">${bkStatus()}</p><button class="btn" id="bknow">Back up now</button><button class="btn" id="bkrest">Restore from backup</button><button class="btn" id="bkoff">Turn off</button>${BK.err?bkForm(true):''}`:`<p class="note">Your progress lives only on this phone. Turn on backup and it saves itself to a private GitHub repo you own; on a new phone, paste the same key and everything comes back.</p>
+ <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).${prCredits()}</p>${prMusicNote()}<h2 class="serif" style="margin:22px 0 8px">Backup</h2>${bkOn()?`<p class="note" id="bkst">${bkStatus()}</p><button class="btn" id="bknow">Back up now</button><button class="btn" id="bkrest">Restore from backup</button><button class="btn" id="bkoff">Turn off</button>${BK.err?bkForm(true):''}`:`<p class="note">Your progress lives only on this phone. Turn on backup and it saves itself to a private GitHub repo you own; on a new phone, paste the same key and everything comes back.</p>
  <ol class="note bk-steps"><li><a href="https://github.com/new?name=scripture-companion-backup&visibility=private" target="_blank" rel="noopener">Create the private repo</a> (name and Private are filled in: tap <b>Create repository</b>).</li><li><a href="https://github.com/settings/personal-access-tokens/new?name=Scripture%20Companion%20backup&description=Lets%20the%20app%20save%20listening%20progress&expires_in=none&contents=write" target="_blank" rel="noopener">Make a key</a>: under <b>Repository access</b> pick <b>Only select repositories</b> → scripture-companion-backup; check <b>Contents: Read and write</b>; tap <b>Generate</b> and copy it.</li><li>Paste it here. Your iPhone offers to save it in Passwords, so a new phone fills it in.</li></ol>${bkForm(false)}`}
  <p class="note" style="margin-top:18px">By hand:</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>
@@ -2426,7 +2468,7 @@ function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;r
  addEventListener('scroll',()=>{if(np.classList.contains('on')&&!np.classList.contains('mini')&&Math.abs(scrollY-fullAtScroll)>60)setMini(true)},{passive:true});
 })();
 /* wiring */
-function wire(){document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
+function wire(){if(view==='settings'&&!PL.list)plLoad().then(()=>{if(view==='settings')render()});document.querySelectorAll('.settings [data-pradd]').forEach(b=>b.onclick=()=>prPick(()=>{if(view==='settings')render()}));document.querySelectorAll('.settings [data-prrm]').forEach(b=>b.onclick=()=>{if(confirm('Remove all prayer music from this phone?'))prRemoveAll().then(()=>render())});document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
  document.querySelectorAll('details[data-k]').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.k):OPEN.delete(d.dataset.k);if(d.classList.contains('readx'))fillReaders()});
  fillReaders();fillMapTab();
  document.querySelectorAll('.pref').forEach(b=>b.onclick=e=>{e.stopPropagation();const x=walk()[camp];const r=versesFor(b.dataset.pass,x.b.name,x.c.c);
