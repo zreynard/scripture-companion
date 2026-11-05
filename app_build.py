@@ -2148,7 +2148,7 @@ async function prImport(files,say){const got=[];for(const f of files){if(/\.zip$
   const meta={id,f:base,sz:x.bl.size,t:tg.t||base.replace(AUD_RE,'').replace(/^\d+[\s._-]+/,'').replace(/_/g,' '),a:tg.a||'',al:tg.al||'',n:tg.n};
   await pdbDo(['meta','blob'],'readwrite',t=>{t.objectStore('blob').put(x.bl,id);return t.objectStore('meta').put(meta)});n++}
  PL.list=null;await plLoad();return n}
-function prPick(after){const i=document.createElement('input');i.type='file';i.multiple=true;i.accept='audio/*,.mp3,.m4a,.flac,.zip,application/zip';i.style.display='none';document.body.appendChild(i);
+function prPick(after){const i=document.createElement('input');i.type='file';i.multiple=true;i.accept='.mp3,.m4a,.aac,.flac,.wav,.zip';i.style.display='none';document.body.appendChild(i);
  i.onchange=async()=>{const fs=[...i.files];i.remove();if(!fs.length)return;const say=m=>{document.querySelectorAll('[data-prsay]').forEach(e=>{e.textContent=m;e.hidden=false})};
   try{const n=await prImport(fs,say);say(n?`Added ${n} piece${n>1?'s':''}.`:'Those were already here.');if(n)setTimeout(()=>mbSync(true),800)}catch(e){say('That did not work — your phone may be out of space.')}setTimeout(()=>after&&after(),700)};i.click()}
 function prRemoveAll(){const a=pmEl();a.pause();a.removeAttribute('src');a.load();if(PL.url)URL.revokeObjectURL(PL.url);PL.url=null;PM.cur=null;S.set('pmpos',null);return pdbDo(['meta','blob'],'readwrite',t=>{t.objectStore('meta').clear();t.objectStore('blob').clear()}).then(()=>{PL.list=[]})}
