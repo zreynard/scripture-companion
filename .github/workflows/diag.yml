@@ -1,0 +1,13 @@
+# One-off diagnosis scripts that need the real internet (tools/qa/bigdeck.js).
+name: Live diagnosis
+on: workflow_dispatch
+jobs:
+  diag:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tools/qa/bigdeck.js
