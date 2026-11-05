@@ -174,11 +174,13 @@
   Session.prototype.gotPeer = function (p) {
     if (!p || p.id === this.id) return;
     p.seen = Date.now(); this.peers[p.id] = p; if (p.bye) delete this.peers[p.id]; this.status();
+    /* someone is still missing the songs (a piece got lost on the relays): the leader sends them again */
+    if (p.want && this.role === 'lead' && this.deck && Date.now() - (this.resent || 0) > 4000) { this.resent = Date.now(); this.send('d', this.deck, true); }
   };
   Session.prototype.up = function () { return this.relays.filter(function (r) { return r.up; }).length; };
   Session.prototype.screens = function () { var n = Date.now(), c = 0; for (var k in this.peers) if (this.peers[k].role === 'screen' && n - this.peers[k].seen < 20000) c++; return c; };
   Session.prototype.status = function () { if (this.cb.onStatus) this.cb.onStatus({ relays: this.up(), of: BROKERS.length, screens: this.screens(), peers: this.peers, local: !!this.bc }); };
-  var PART = 48000;   // characters per piece of a big songbook (relays take messages far bigger; this keeps every one quick)
+  var PART = 12000;   // characters per piece of a big songbook: measured 5 Nov 2026, HiveMQ drops messages from about 48 KB and EMQX from about 100 KB, both pass bursts of 14 KB
   Session.prototype.send = function (kind, obj, retain) {
     var self = this;
     if (this.bc) try { this.bc.postMessage({ k: kind, d: obj }); } catch (e) {}
@@ -198,7 +200,7 @@
       return sent;
     });
   };
-  Session.prototype.hello = function () { if (this.ended) return; var p = { id: this.id, role: this.role, name: this.name || '', at: Date.now() }, x = this.cb.info && this.cb.info(); if (x) for (var k in x) p[k] = x[k]; this.send('p', p, false); };
+  Session.prototype.hello = function () { if (this.ended) return; var p = { id: this.id, role: this.role, name: this.name || '', at: Date.now(), want: this.deck ? 0 : 1 }, x = this.cb.info && this.cb.info(); if (x) for (var k in x) p[k] = x[k]; this.send('p', p, false); };
   /* a one-off instruction to the screens (refresh), never kept on the relay */
   Session.prototype.cmd = function (m) { m.at = Date.now(); m.by = this.id; return this.send('c', m, false); };
   Session.prototype.setName = function (n) { this.name = String(n || '').slice(0, 30); this.hello(); };
