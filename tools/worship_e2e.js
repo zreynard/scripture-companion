@@ -22,13 +22,14 @@ async function until(fn, ms = 15000) { const t0 = Date.now(); for (;;) { try { c
   await tv.goto(SITE + 'tv/'); const ready = await until(() => tv.evaluate(() => /Ready/.test(document.querySelector('#pst').textContent)), 20000);
   const code = await tv.textContent('#code'); check('A2 TV shows a pairing code and is ready', ready >= 0 && /^[A-Z0-9]{6}$/.test(code), { code, ready });
   await phone.click('#bScreen'); await phone.fill('#cin', code); await phone.click('#cgo');
-  const paired = await until(() => phone.evaluate(() => /Screen connected/.test(document.querySelector('#pill').textContent)), 25000);
+  const paired = await until(() => phone.evaluate(() => /Screen on|screens/.test(document.querySelector('#pill').textContent)), 25000);
   check('A3 phone pairs with the TV by code', paired >= 0, paired);
   await phone.evaluate(() => { const s = document.querySelector('#sh'); if (s) s.hidden = true; });
   const tvLine = () => tv.evaluate(() => { const e = document.querySelectorAll('.slide.on .tx'); return e.length ? e[e.length - 1].innerText.split('\n')[0] : '(blank)'; });
-  await wait(800); console.log('DIAG', JSON.stringify(await phone.evaluate(() => { const r = document.querySelector('#bNext').getBoundingClientRect(), e = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2), bar = document.querySelector('#bar');
+  await wait(800); const diag = await phone.evaluate(() => ({ w: document.documentElement.scrollWidth, vw: innerWidth })); console.log('DIAG', JSON.stringify(await phone.evaluate(() => { const r = document.querySelector('#bNext').getBoundingClientRect(), e = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2), bar = document.querySelector('#bar');
     return { hit: e && (e.id || e.className), r: [r.x, r.y, r.width, r.height], bar: getComputedStyle(bar).display + ' ' + getComputedStyle(bar).position + ' ' + bar.getBoundingClientRect().top, y: scrollY, ih: innerHeight, sh: getComputedStyle(document.querySelector('#sh')).display, zoom: visualViewport.scale }; })));
   await phone.screenshot({ path: 'diag_phone.png' });
+  check('A3b nothing is wider than the phone', diag.w <= diag.vw, diag);
   await phone.click('#bNext', { timeout: 8000 }); const lat = await until(async () => (await tvLine()) === 'Walking on a quiet road,');
   check('A4 Next on the phone shows Verse 1 on the TV', lat >= 0, { lat, tv: await tvLine() }); R.A4_ms = lat;
   check('A5 TV shows lyrics only (no chords, no controls)', await tv.evaluate(() => !document.body.innerText.match(/\b(Em|Next|Blank)\b/) && document.querySelectorAll('button').length === 0));
