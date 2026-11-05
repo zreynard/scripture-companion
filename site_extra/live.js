@@ -105,7 +105,7 @@
   /* ---- a live session ---- */
   function Session(o) {
     var self = this;
-    this.sid = o.sid; this.role = o.role || 'remote'; this.id = o.id || (this.role[0] + hex(rnd(4)));
+    this.sid = o.sid; this.role = o.role || 'remote'; this.name = o.name || ''; this.id = o.id || (this.role[0] + hex(rnd(4)));
     this.state = null; this.deck = null; this.peers = {}; this.cb = o; this.pending = false; this.relays = []; this.ended = false;
     this.base = 'scwp1/' + this.sid;
     var raw; try { raw = unb64u(String(o.key || '')); } catch (e) { raw = null; }
@@ -138,6 +138,7 @@
   }
   Session.prototype.onRelay = function (t, bytes, retained, n) {
     var self = this, kind = t.slice(this.base.length + 1);
+    if (/^d\/\d+$/.test(kind)) { if (bytes.length) open(this.key, bytes).then(function (m) { if (m) self.gotPart(m); }); return; }
     if (kind !== 's' && kind !== 'd' && kind !== 'p') return;
     if (!bytes.length) { if (kind === 'd' && this.cb.onDeckCleared) this.cb.onDeckCleared(); return; }
     open(this.key, bytes).then(function (m) {
@@ -151,7 +152,18 @@
     if (s.ended) this.ended = true;
     if (this.cb.onState) this.cb.onState(s, via);
   };
+  /* a big songbook travels in pieces: a short note on /d says how many, the pieces sit on /d/0, /d/1, … */
+  Session.prototype.gotPart = function (m) {
+    if (!m || !m.dv || m.i == null || !m.n) return;
+    var p = this.parts = this.parts || {}, g = p[m.dv] = p[m.dv] || { n: m.n, c: {} }; g.c[m.i] = m.c; this.tryParts(m.dv);
+  };
+  Session.prototype.tryParts = function (dv) {
+    var g = this.parts && this.parts[dv]; if (!g) return; var all = '';
+    for (var i = 0; i < g.n; i++) { if (g.c[i] == null) return; all += g.c[i]; }
+    delete this.parts[dv]; var d = null; try { d = JSON.parse(all); } catch (e) { return; } this.gotDeck(d);
+  };
   Session.prototype.gotDeck = function (d) {
+    if (d && d.parts && !d.songs) { var p = this.parts = this.parts || {}; if (!p[d.dv]) p[d.dv] = { n: d.parts, c: {} }; p[d.dv].n = d.parts; this.tryParts(d.dv); return; }
     if (!d || (this.deck && (d.dv || 0) <= (this.deck.dv || 0))) return;
     this.deck = d; if (this.cb.onDeck) this.cb.onDeck(d);
   };
@@ -162,20 +174,34 @@
   Session.prototype.up = function () { return this.relays.filter(function (r) { return r.up; }).length; };
   Session.prototype.screens = function () { var n = Date.now(), c = 0; for (var k in this.peers) if (this.peers[k].role === 'screen' && n - this.peers[k].seen < 20000) c++; return c; };
   Session.prototype.status = function () { if (this.cb.onStatus) this.cb.onStatus({ relays: this.up(), of: BROKERS.length, screens: this.screens(), peers: this.peers, local: !!this.bc }); };
+  var PART = 48000;   // characters per piece of a big songbook (relays take messages far bigger; this keeps every one quick)
   Session.prototype.send = function (kind, obj, retain) {
     var self = this;
     if (this.bc) try { this.bc.postMessage({ k: kind, d: obj }); } catch (e) {}
-    return this.ready.then(function () { return seal(self.key, obj); }).then(function (bytes) {
-      var sent = 0; self.relays.forEach(function (r) { if (r.pub(self.base + '/' + kind, bytes, retain)) sent++; }); return sent;
+    var msgs = [[kind, obj]];
+    if (kind === 'd' && obj) {
+      var js = JSON.stringify(obj);
+      if (js.length > PART) {
+        var n = Math.ceil(js.length / PART); msgs = [];
+        for (var i = 0; i < n; i++) msgs.push(['d/' + i, { dv: obj.dv, i: i, n: n, c: js.slice(i * PART, (i + 1) * PART) }]);
+        msgs.push(['d', { dv: obj.dv, parts: n }]);   // the note goes last, after every piece
+        this.lastParts = n;
+      }
+    }
+    return this.ready.then(function () { return Promise.all(msgs.map(function (m) { return seal(self.key, m[1]); })); }).then(function (all) {
+      var sent = 0;
+      self.relays.forEach(function (r) { var ok = true; all.forEach(function (bytes, j) { if (!r.pub(self.base + '/' + msgs[j][0], bytes, retain)) ok = false; }); if (ok) sent++; });
+      return sent;
     });
   };
-  Session.prototype.hello = function () { if (!this.ended) this.send('p', { id: this.id, role: this.role, at: Date.now() }, false); };
+  Session.prototype.hello = function () { if (!this.ended) this.send('p', { id: this.id, role: this.role, name: this.name || '', at: Date.now() }, false); };
+  Session.prototype.setName = function (n) { this.name = String(n || '').slice(0, 30); this.hello(); };
   /* change what is shown: merge into the current state, bump the version, show it here at once, send it everywhere */
   Session.prototype.set = function (patch) {
     if (this.ended) return null;
     var cur = this.state || { v: 0, song: 0, slide: 0, blank: false }, s = {};
     for (var k in cur) s[k] = cur[k]; for (k in patch) s[k] = patch[k];
-    s.v = (cur.v || 0) + 1; s.by = this.id; s.at = Date.now();
+    s.v = (cur.v || 0) + 1; s.by = this.id; s.who = this.name || (this.role === 'lead' ? 'Leader' : ''); s.at = Date.now();
     this.state = s; if (this.cb.onState) this.cb.onState(s, 'me');
     var self = this; this.pending = true;
     this.send('s', s, true).then(function (n) { if (n) self.pending = false; });
@@ -187,12 +213,12 @@
     setTimeout(function () { if (self.pending && self.state && self.state.by === self.id) self.send('s', self.state, true).then(function (n) { if (n) self.pending = false; }); }, 1500);
     this.hello();
   };
-  Session.prototype.publishDeck = function (deck) { deck.dv = Date.now(); this.deck = deck; if (this.cb.onDeck) this.cb.onDeck(deck); return this.send('d', deck, true); };
+  Session.prototype.publishDeck = function (deck) { deck.dv = Math.max(Date.now(), ((this.deck && this.deck.dv) || 0) + 1); this.deck = deck; if (this.cb.onDeck) this.cb.onDeck(deck); return this.send('d', deck, true); };
   Session.prototype.end = function () {
     var self = this;
     var s = this.set({ ended: true, blank: true }); this.ended = true;
     return this.ready.then(function () {
-      self.relays.forEach(function (r) { r.pub(self.base + '/d', new Uint8Array(0), true); });
+      self.relays.forEach(function (r) { r.pub(self.base + '/d', new Uint8Array(0), true); for (var i = 0; i < (self.lastParts || 0); i++) r.pub(self.base + '/d/' + i, new Uint8Array(0), true); });
       self.send('p', { id: self.id, role: self.role, bye: 1 }, false);
       return new Promise(function (r) { setTimeout(r, 600); });
     }).then(function () { self.close(); return s; });
@@ -245,6 +271,20 @@
       });
     });
   }
+  /* moving through the songs: the set the leader chose comes first; a song picked from the songbook returns to the set after it */
+  function setOf(deck) { return deck.set && deck.set.length ? deck.set : deck.songs.map(function (x, i) { return i; }); }
+  function step(deck, st, d) {
+    if (!deck || !deck.songs.length) return null;
+    var s = st.song || 0, sg = deck.songs[s], i = (st.slide || 0) + d, set = setOf(deck), pos = set.indexOf(s);
+    if (sg && i >= 0 && i < sg.slides.length) return { song: s, slide: i, blank: false };
+    var to = d > 0 ? (pos >= 0 ? set[pos + 1] : (st.ret != null ? set[st.ret + 1] : null)) : (pos > 0 ? set[pos - 1] : (pos < 0 && st.ret != null ? set[st.ret] : null));
+    if (to == null || !deck.songs[to]) return null;
+    return { song: to, slide: d > 0 ? 0 : Math.max(0, deck.songs[to].slides.length - 1), blank: false, ret: null };
+  }
+  function songStep(deck, st, d) {
+    var set = setOf(deck), pos = set.indexOf(st.song || 0), to = pos >= 0 ? set[pos + d] : (st.ret != null ? set[d > 0 ? st.ret + 1 : st.ret] : null);
+    return to == null || !deck.songs[to] ? null : { song: to, slide: 0, blank: false, ret: null };
+  }
   function newSession() { return { sid: b64u(rnd(12)), key: b64u(rnd(16)) }; }
-  G.Live = { Session: Session, listenPair: listenPair, sendPair: sendPair, newSession: newSession, code: code, BROKERS: BROKERS, _Relay: Relay };
+  G.Live = { setOf: setOf, step: step, songStep: songStep, Session: Session, listenPair: listenPair, sendPair: sendPair, newSession: newSession, code: code, BROKERS: BROKERS, _Relay: Relay };
 })(typeof window !== 'undefined' ? window : globalThis);

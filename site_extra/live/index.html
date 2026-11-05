@@ -56,6 +56,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 .qr{display:flex;justify-content:center;margin:8px 0 4px}.qr img,.qr svg{width:210px;height:210px;image-rendering:pixelated;background:#fff;padding:10px;border-radius:14px}
 .list button{display:flex;align-items:center;gap:12px;width:100%;padding:12px 10px;border:0;background:none;border-bottom:1px solid var(--line);text-align:left}
 .list .n{width:26px;height:26px;border-radius:13px;background:rgba(27,36,64,.07);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.srch{width:100%;height:46px;border-radius:14px;border:1px solid rgba(27,36,64,.18);background:#fff;padding:0 14px;font-size:16px;margin:4px 0 6px}
+.lh{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:14px 2px 2px}
+.tog{display:flex;align-items:center;gap:12px;padding:12px 2px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:12px 0}.tog span{flex:1}.tog small{display:block;color:var(--mute);font-size:13px}
+.tog input{width:46px;height:28px;flex:none;accent-color:#1b2440}
+.who{color:var(--mute);font-size:14px;margin:8px 2px}.lockb{background:rgba(27,36,64,.07);border-radius:12px;padding:9px 12px;margin:0 0 10px;font-size:14px;color:var(--ink);text-align:center}
+.bar.locked button{opacity:.35}
 .list .on .n{background:var(--ink);color:#fff}.list b{font-weight:600}.list small{display:block;color:var(--mute);font-size:13px}
 .toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 16px;border-radius:18px;font-size:14px;font-weight:600;z-index:30;opacity:0;transition:opacity .3s;pointer-events:none}
 .keys{display:none}
@@ -98,14 +104,15 @@ button{font:inherit;color:inherit;cursor:pointer}
   function remoteURL() { return base + 'live/#s=' + H.s + '&k=' + H.k; }
   if (lead) { $('#back').hidden = false; $('#back').href = base + '#worship'; $('#bEnd').hidden = false; }
   var saved = null; if (lead) try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) saved = w; } catch (e) {}
-  try { sess = new Live.Session({ sid: H.s, key: H.k, role: lead ? 'lead' : 'remote',
-    onState: function (s) { state = s; if (s.ended && !lead) return ended(); paint(); },
+  var myName = ''; try { myName = localStorage.getItem('scwp:name') || ''; } catch (e) {}
+  try { sess = new Live.Session({ sid: H.s, key: H.k, role: lead ? 'lead' : 'remote', name: myName,
+    onState: function (s, via) { var was = state; state = s; if (s.ended && !lead) return ended(); told(was, s, via); paint(); },
     onDeck: function (d) { deck = d; paint(true); },
     onStatus: function (x) {
       var was = st.relays; st = x; pill();
       if (lead && saved && x.relays > was) sess.send('d', deck, true);   // put the songs back on the relay after any reconnect
     } }); } catch (e) { $('#app').innerHTML = '<div class="wait"><h2 class="serif">This link is broken</h2><p>Ask for the link again, or open Worship in the app.</p></div>'; return; }
-  if (lead && saved) { deck = saved.deck; sess.deck = deck; sess.send('d', deck, true); paint(true);   /* the songs are already here: show them now */
+  if (lead && saved) { deck = saved.deck; if (!deck.dv) deck.dv = saved.at || Date.now(); sess.deck = deck; sess.send('d', deck, true); paint(true);   /* the songs are already here: show them now */
     setTimeout(function () { if (!sess.state) sess.set({ song: 0, slide: 0, blank: false }); }, 2500); }
   setTimeout(function () { if (!deck) $('#app').innerHTML = '<div class="wait"><h2 class="serif">Waiting for the songs…</h2><p>If this stays, the worship time may have ended, or this network blocks the live service. Try another Wi‑Fi or your phone’s data.</p></div>'; }, 9000);
   function pill() {
@@ -116,14 +123,27 @@ button{font:inherit;color:inherit;cursor:pointer}
   setInterval(pill, 3000);
   function ended() { $('#bar').hidden = true; $('#app').innerHTML = '<div class="wait"><h2 class="serif">This worship time has ended</h2><p>Thanks for helping lead.</p></div>'; sess.close(); }
   function cur() { var s = state || { song: 0, slide: 0 }; var sg = deck && deck.songs[s.song || 0]; return { s: s, sg: sg, sl: sg && sg.slides[s.slide || 0] }; }
-  function nextOf(s) { var sg = deck.songs[s.song], i = s.slide + 1; if (i < sg.slides.length) return { song: s.song, slide: i, sg: sg }; if (s.song + 1 < deck.songs.length) return { song: s.song + 1, slide: 0, sg: deck.songs[s.song + 1] }; return null; }
+  function nextOf(s) { var n = Live.step(deck, state || s, 1); return n ? { song: n.song, slide: n.slide, sg: deck.songs[n.song] } : null; }
+  /* the chord chart is drawn here from the song's own chart (older links carry it ready-made) */
+  function chartOf(sg) { if (sg.chart) return sg.chart; if (!sg._chart) sg._chart = Worship.chartHTML({ parsed: Worship.parse(sg.src || '') }, { semis: sg.semis || 0, flats: sg.flats, compactRepeats: true }); return sg._chart; }
+  /* every change goes through here: helpers cannot move the lyrics while the leader has shared control turned off */
+  function ctl(p) { if (!lead && state && state.lock) { toast('The leader has paused shared control'); return null; } return sess.set(p); }
+  /* when someone else changes the song or blanks the screen, say who */
+  function told(was, s, via) {
+    if (!was || !deck || via === 'me' || s.by === sess.id) return;
+    var who = s.who || 'Someone', sg = deck.songs[s.song || 0];
+    if ((was.song || 0) !== (s.song || 0) && sg) toast(who + ' → ' + sg.t);
+    else if (!was.blank && s.blank) toast(who + ' blanked the screen');
+    else if (!!was.lock !== !!s.lock && !lead) toast(s.lock ? 'The leader is driving now' : 'You can move the lyrics again');
+  }
+  function songLabel(i) { var set = Live.setOf(deck), p = set.indexOf(i); return p >= 0 ? 'Song ' + (p + 1) + ' of ' + set.length + (deck.name ? ' · ' + esc(deck.name) : '') : 'From the songbook'; }
   function linesHTML(l) { return l.length ? l.map(function (x) { return x ? '<div>' + esc(x) + '</div>' : '<div class="gap"></div>'; }).join('') : '<div style="opacity:.55;font-size:.7em">(no words: instrumental)</div>'; }
   function paint(full) {
     if (!deck) return; $('#bar').hidden = false;
     var c = cur(); if (!c.sg) return;
     var s = { song: c.s.song || 0, slide: c.s.slide || 0 }, nx = nextOf(s), secs = [], seen = {}, side = innerWidth > innerHeight && innerHeight <= 520 && innerWidth < 900;
     c.sg.slides.forEach(function (x) { if (!seen[x.sec]) { seen[x.sec] = 1; secs.push({ sec: x.sec, label: x.s.replace(/ \(\d+\/\d+\)$/, ''), short: c.sg.short[x.sec] }); } });
-    var h = '<button class="song" id="bSongs"><span style="min-width:0"><small>Song ' + (s.song + 1) + ' of ' + deck.songs.length + (deck.name ? ' · ' + esc(deck.name) : '') + '</small><b class="serif">' + esc(c.sg.t) + '</b></span>' + (c.sg.key ? '<span class="k">' + esc(c.sg.key) + (c.sg.capo ? ' · capo ' + c.sg.capo : '') + '</span>' : '') + '</button>';
+    var h = (!lead && state && state.lock ? '<div class="lockb">Following the leader · they have paused shared control</div>' : '') + '<button class="song" id="bSongs"><span style="min-width:0"><small>' + songLabel(s.song) + ' · tap for all songs</small><b class="serif">' + esc(c.sg.t) + '</b></span>' + (c.sg.key ? '<span class="k">' + esc(c.sg.key) + (c.sg.capo ? ' · capo ' + c.sg.capo : '') + '</span>' : '') + '</button>';
     h += '<div class="seg"><button data-v="lyrics" class="' + (view === 'lyrics' ? 'on' : '') + '">Lyrics</button><button data-v="chords" class="' + (view === 'chords' ? 'on' : '') + '">Chords</button></div>';
     h += '<div class="wrap"><div class="col1"' + (view === 'chords' ? ' data-phone-hide' : '') + '>';
     h += '<div class="mon' + (c.s.blank ? ' blank' : '') + '"><span class="lab">' + esc((side ? c.sg.t + ' · ' : '') + (c.sl ? c.sl.s : '')) + '</span><div class="tx serif">' + (c.sl ? linesHTML(c.sl.l) : '') + '</div></div>';
@@ -132,13 +152,14 @@ button{font:inherit;color:inherit;cursor:pointer}
     if (side) h += chipsH;
     h += '<div class="keys"><kbd>→</kbd> next · <kbd>←</kbd> back · <kbd>B</kbd> blank · <kbd>1</kbd>–<kbd>9</kbd> section · <kbd>[</kbd> <kbd>]</kbd> song</div></div>';
     h += '<div class="col2">' + (side ? '' : chipsH);
-    h += '<div class="chart wfit" id="chart"' + (view === 'chords' || innerWidth >= 900 ? '' : ' style="display:none"') + '><div class="wc">' + (c.sg.chart || '') + '</div><span class="wfit-pg" id="cpg" hidden></span></div></div></div>';
+    h += '<div class="chart wfit" id="chart"' + (view === 'chords' || innerWidth >= 900 ? '' : ' style="display:none"') + '><div class="wc">' + chartOf(c.sg) + '</div><span class="wfit-pg" id="cpg" hidden></span></div></div></div>';
     $('#app').innerHTML = h;
     if (view === 'chords' && innerWidth < 900 && !(innerWidth > innerHeight && innerHeight <= 520)) { var c1 = document.querySelector('.col1 .mon'); if (c1) c1.style.display = 'none'; }
     var on = c.sl ? document.querySelector('#chart [data-sec="' + c.sl.sec + '"]') : null;
     document.querySelectorAll('#chart .wc-s').forEach(function (e) { e.classList.toggle('on', e === on); });
     fitChart(on, c.s.song);
     var chip = document.querySelector('.chip.on'); if (chip) chip.scrollIntoView({ inline: 'center', block: 'nearest' });
+    $('#bar').classList.toggle('locked', !lead && !!(state && state.lock));
     $('#bBlank').classList.toggle('on', !!c.s.blank); $('#bBlank').textContent = c.s.blank ? 'Show' : 'Blank';
     $('#bSongs').onclick = songsSheet;
     document.querySelectorAll('.seg [data-v]').forEach(function (b) { b.onclick = function () { view = b.dataset.v; try { localStorage.setItem('scwp:view', view); } catch (e) {} paint(true); }; });
@@ -165,23 +186,36 @@ button{font:inherit;color:inherit;cursor:pointer}
     var curOcc = c.sl ? c.sl.occ : -1;
     for (i = 0; i < c.sg.slides.length; i++) { var x = c.sg.slides[i]; if (x.sec === sec && !x.part && x.occ > curOcc) { idx = i; break; } }
     if (idx < 0) for (i = 0; i < c.sg.slides.length; i++) if (c.sg.slides[i].sec === sec && !c.sg.slides[i].part) { idx = i; break; }
-    if (idx >= 0) sess.set({ slide: idx, blank: false });
+    if (idx >= 0) ctl({ slide: idx, blank: false });
   }
   function go(d) {
-    if (!deck) return; var c = cur(), s = c.s.song || 0, i = (c.s.slide || 0) + d;
-    if (i >= c.sg.slides.length) { if (s + 1 < deck.songs.length) { s++; i = 0; } else return toast('End of the set'); }
-    if (i < 0) { if (s > 0) { s--; i = deck.songs[s].slides.length - 1; } else return; }
-    sess.set({ song: s, slide: i, blank: false });
+    if (!deck) return; var n = Live.step(deck, state || { song: 0, slide: 0 }, d);
+    if (!n) return d > 0 ? toast('End of the set · tap the song name to pick another') : null;
+    ctl(n);
   }
-  function song(d) { var s = ((state && state.song) || 0) + d; if (deck && s >= 0 && s < deck.songs.length) sess.set({ song: s, slide: 0, blank: false }); }
+  function song(d) { var n = deck && Live.songStep(deck, state || { song: 0 }, d); if (n) ctl(n); }
   $('#bNext').onclick = function () { go(1); }; $('#bPrev').onclick = function () { go(-1); };
-  $('#bBlank').onclick = function () { sess.set({ blank: !(state && state.blank) }); };
+  $('#bBlank').onclick = function () { ctl({ blank: !(state && state.blank) }); };
   function sheet(html) { $('#shb').innerHTML = html; $('#sh').hidden = false; }
   $('#sh').onclick = function (e) { if (e.target.id === 'sh' || e.target.closest('[data-close]')) $('#sh').hidden = true; };
+  /* all songs: this set first, then the whole songbook, with search. Picking one puts it on the screen. */
   function songsSheet() {
-    var cs = (state && state.song) || 0;
-    sheet('<h3 class="serif">' + esc(deck.name || 'Songs') + '</h3><div class="list">' + deck.songs.map(function (s, i) { return '<button data-song="' + i + '" class="' + (i === cs ? 'on' : '') + '"><span class="n">' + (i + 1) + '</span><span><b>' + esc(s.t) + '</b><small>' + esc([s.a, s.key].filter(Boolean).join(' · ')) + '</small></span></button>'; }).join('') + '</div><div class="row"><button class="btn wide" data-close>Close</button></div>');
-    document.querySelectorAll('[data-song]').forEach(function (b) { b.onclick = function () { sess.set({ song: +b.dataset.song, slide: 0, blank: false }); $('#sh').hidden = true; }; });
+    var cs = (state && state.song) || 0, set = Live.setOf(deck), q = '';
+    var norm = function (x) { return String(x || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim(); };
+    var row = function (i, n) { var s = deck.songs[i]; return '<button data-song="' + i + '" class="' + (i === cs ? 'on' : '') + '"><span class="n">' + n + '</span><span><b>' + esc(s.t) + '</b><small>' + esc([s.a, s.key].filter(Boolean).join(' · ')) + '</small></span></button>'; };
+    function list() {
+      var w = norm(q).split(' ').filter(Boolean), hit = function (i) { var s = deck.songs[i], t = norm(s.t + ' ' + (s.a || '')); return w.every(function (x) { return t.indexOf(x) >= 0; }); };
+      var inSet = set.filter(hit), rest = deck.songs.map(function (x, i) { return i; }).filter(function (i) { return set.indexOf(i) < 0 && hit(i); });
+      var h = (inSet.length ? (rest.length || set.length < deck.songs.length ? '<div class="lh">' + esc(deck.name || 'This set') + '</div>' : '') + inSet.map(function (i) { return row(i, set.indexOf(i) + 1); }).join('') : '') +
+        (rest.length ? '<div class="lh">Songbook</div>' + rest.map(function (i) { return row(i, '♪'); }).join('') : '') + (!inSet.length && !rest.length ? '<p class="who">No song matches “' + esc(q) + '”.</p>' : '');
+      $('#slist').innerHTML = h;
+      document.querySelectorAll('#slist [data-song]').forEach(function (b) { b.onclick = function () {
+        var i = +b.dataset.song, p = set.indexOf(cs), inS = set.indexOf(i) >= 0;
+        ctl({ song: i, slide: 0, blank: false, ret: inS ? null : (p >= 0 ? p : (state && state.ret != null ? state.ret : null)) }); $('#sh').hidden = true;
+      }; });
+    }
+    sheet('<h3 class="serif">Songs</h3>' + (deck.songs.length > 6 ? '<input class="srch" id="sq" type="search" placeholder="Search ' + deck.songs.length + ' songs" autocomplete="off">' : '') + '<div class="list" id="slist"></div><div class="row"><button class="btn wide" data-close>Close</button></div>');
+    list(); var sq = $('#sq'); if (sq) sq.oninput = function () { q = sq.value; list(); };
   }
   $('#bScreen').onclick = function () {
     var wide = innerWidth >= 900;
@@ -206,10 +240,23 @@ button{font:inherit;color:inherit;cursor:pointer}
   function copy(t) { (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { toast('Link copied'); }).catch(function () { prompt('Copy this link', t); }); }
   $('#bShare').onclick = function () {
     var u = remoteURL(), q = qrcode(0, 'M'); q.addData(u); q.make();
-    sheet('<h3 class="serif">Let someone help</h3><p>Anyone with this link can move the lyrics. No account needed. It only works for this worship time.</p><div class="qr">' + q.createSvgTag({ cellSize: 6, margin: 2, scalable: true }) + '</div><div class="url">' + esc(u) + '</div><div class="row">' + (navigator.share ? '<button class="btn pri" id="sshare">Share…</button>' : '') + '<button class="btn" id="scopy">Copy link</button><button class="btn" data-close>Done</button></div>');
+    sheet('<h3 class="serif">Let someone help</h3><p>Send this link. They see the song you are on, can move the lyrics and pick any song from your songbook. No app or account needed. It works until you end this worship time.</p>' + (lead ? '<label class="tog"><span><b>Let others move the lyrics</b><small>Turn off and everyone else just follows you</small></span><input type="checkbox" id="slock"' + (state && state.lock ? '' : ' checked') + '></label><div class="who" id="swho"></div>' : '') + '<div class="qr">' + q.createSvgTag({ cellSize: 6, margin: 2, scalable: true }) + '</div><div class="url">' + esc(u) + '</div><div class="row">' + (navigator.share ? '<button class="btn pri" id="sshare">Share…</button>' : '') + '<button class="btn" id="scopy">Copy link</button><button class="btn" data-close>Done</button></div>');
     if ($('#sshare')) $('#sshare').onclick = function () { navigator.share({ title: 'Worship remote', url: u }).catch(function () {}); };
     $('#scopy').onclick = function () { copy(u); };
+    if ($('#slock')) { $('#slock').onchange = function () { sess.set({ lock: !$('#slock').checked }); toast($('#slock').checked ? 'Others can move the lyrics' : 'Only you can move the lyrics now'); }; whoList(); }
   };
+  function whoList() {
+    var e = $('#swho'); if (!e || $('#sh').hidden) return; var n = Date.now(), names = [];
+    for (var k in sess.peers) { var p = sess.peers[k]; if (p.role === 'remote' && n - p.seen < 20000) names.push(p.name || 'Someone'); }
+    e.textContent = names.length ? 'Connected now: ' + names.join(', ') : 'Nobody else has joined yet.'; clearTimeout(whoList.t); whoList.t = setTimeout(whoList, 3000);
+  }
+  /* a helper says their name once, so everyone can see who moved the lyrics */
+  function askName() {
+    sheet('<h3 class="serif">Joining worship</h3><p>Your first name, so others can see who moved the lyrics.</p><input class="srch" id="nm" autocomplete="given-name" maxlength="30" placeholder="Your name"><div class="row"><button class="btn pri wide" id="nmok">Join</button></div>');
+    var go2 = function () { var v = $('#nm').value.trim(); if (!v) return $('#nm').focus(); try { localStorage.setItem('scwp:name', v); } catch (e) {} sess.setName(v); $('#sh').hidden = true; };
+    $('#nmok').onclick = go2; $('#nm').onkeydown = function (e) { if (e.key === 'Enter') go2(); };
+  }
+  if (!lead && !myName) setTimeout(askName, 300);
   $('#bEnd').onclick = function () {
     sheet('<h3 class="serif">End worship time?</h3><p>The screen goes blank and the shared remote links stop working.</p><div class="row"><button class="btn pri" id="eok">End</button><button class="btn" data-close>Keep going</button></div>');
     $('#eok').onclick = function () { sess.end().then(function () { try { localStorage.removeItem('sc:wlive'); } catch (e) {} location.href = base + '#worship'; }); };
@@ -219,7 +266,7 @@ button{font:inherit;color:inherit;cursor:pointer}
     if (e.target.tagName === 'INPUT') return; var k = e.key;
     if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'ArrowDown') { e.preventDefault(); go(1); }
     else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'ArrowUp') { e.preventDefault(); go(-1); }
-    else if (k === 'b' || k === 'B' || k === '.') sess.set({ blank: !(state && state.blank) });
+    else if (k === 'b' || k === 'B' || k === '.') ctl({ blank: !(state && state.blank) });
     else if (/^[1-9]$/.test(k) && deck) { var c = cur(), seen = []; c.sg.slides.forEach(function (x) { if (seen.indexOf(x.sec) < 0) seen.push(x.sec); }); if (seen[+k - 1] != null) jump(seen[+k - 1]); }
     else if (k === ']') song(1); else if (k === '[') song(-1);
   });

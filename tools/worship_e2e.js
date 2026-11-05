@@ -40,6 +40,8 @@ async function outage(ctx, page, on) { await ctx.setOffline(on); await page.eval
   // friend opens the shared remote link: no account, no songbook
   const frC = await b.newContext({ ...devices['Pixel 7'] }), fr = await frC.newPage(); fr.on('pageerror', e => errs.push('friend:' + e.message));
   await fr.goto(SITE + 'live/#' + hash.replace('&lead=1', ''));
+  const asked = await until(() => fr.evaluate(() => !!document.querySelector('#nm')), 8000); if (asked >= 0) { await fr.fill('#nm', 'Sam'); await fr.click('#nmok'); }
+  check('B0 friend is asked their first name once', asked >= 0 && await fr.evaluate(() => localStorage.getItem('scwp:name') === 'Sam'));
   const frDeck = await until(() => fr.evaluate(() => document.querySelectorAll('.chip').length > 2), 20000);
   check('B1 friend joins from the link with no account', frDeck >= 0);
   check('B2 friend link does not expose the songbook', await fr.evaluate(() => !localStorage.getItem('sc:wsongs')));

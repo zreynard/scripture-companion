@@ -1970,10 +1970,12 @@ function wParsed(song){return song._p&&song._p.src===song.src?song._p.v:(song._p
 function wOrder(song){const p=wParsed(song);if(!song.arr||!song.arr.trim())return null;const by={};p.sections.forEach((s,i)=>{const k=s.short.toLowerCase();if(!(k in by))by[k]=i;const l=s.label.toLowerCase();if(!(l in by))by[l]=i});
  const o=song.arr.split(/[\s,>→-]+/).map(t=>by[t.toLowerCase()]).filter(i=>i!=null);return o.length?o:null}
 function wDeckSong(song,item){const p=wParsed(song),key=wKeyOf(song,item),capo=item&&item.capo!=null?item.capo:(song.capo||0),sh=wShape(song,key,capo);
- return {id:song.id,t:song.t,a:song.a||'',key,capo,slides:Worship.slides({parsed:p},wOrder(song)),short:p.sections.map(s=>s.short),chart:Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats,compactRepeats:true})}}
+ return {id:song.id,t:song.t,a:song.a||'',key,capo,slides:Worship.slides({parsed:p},wOrder(song)),short:p.sections.map(s=>s.short),src:song.src||'',semis:sh.semis||0,flats:!!sh.flats}}
+/* the link carries the whole songbook: this set first, then every other song (A to Z), so anyone helping can pick any song */
 function wPresent(items,name){const songs=wSongs(),list=items.map(it=>songs[it.id]&&wDeckSong(songs[it.id],it)).filter(Boolean);if(!list.length)return;
+ const inSet=new Set(list.map(s=>s.id)),rest=Object.values(songs).filter(s=>s&&!inSet.has(s.id)).sort((x,y)=>String(x.t).localeCompare(String(y.t))).map(s=>wDeckSong(s,null)),set=list.map((x,i)=>i);
  const b=new Uint8Array(28);crypto.getRandomValues(b);const u=x=>btoa(String.fromCharCode.apply(null,x)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
- const sid=u(b.slice(0,12)),key=u(b.slice(12,28));S.set('wlive',{sid,key,at:Date.now(),name:name||list[0].t,deck:{name:name||'',songs:list}});
+ const sid=u(b.slice(0,12)),key=u(b.slice(12,28));S.set('wlive',{sid,key,at:Date.now(),name:name||list[0].t,deck:{name:name||'',set,songs:list.concat(rest)}});
  location.href='live/#s='+sid+'&k='+key+'&lead=1'}
 function wHead(t){return `<div class="jv wsp">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">${t}</h1>`}
 function worshipView(){
