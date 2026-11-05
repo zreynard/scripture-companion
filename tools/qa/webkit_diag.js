@@ -12,5 +12,11 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await p.evaluate(() => { WS.song = null; WS.edit = 'new'; render(); }); await wait(800);
     const e = await p.evaluate(() => { const s = $('#wf-save'); if (!s) return 'no save button'; s.scrollIntoView({ block: 'center' }); const r = s.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2, top = document.elementFromPoint(x, y);
       return { r: [Math.round(r.left), Math.round(r.top), Math.round(r.width), Math.round(r.height)], vh: innerHeight, hit: top ? (top.id || top.className || top.tagName) : null, same: top === s || s.contains(top), tabs: getComputedStyle($('#tabs')).display, body: document.body.className }; });
-    console.log(dev, 'SAVE', JSON.stringify(e)); await c.close(); }
+    console.log(dev, 'SAVE', JSON.stringify(e));
+    // the editor flow from test U9: fill the fields with harmless injected HTML and save
+    let dlg = ''; p.on('dialog', x => { dlg = x.message(); x.accept(); });
+    try { await p.fill('#wf-t', '<img src=x onerror="window.__pwn=1">'); await p.fill('#wf-a', 'A'); await p.fill('#wf-src', 'Verse 1\nG\nwords'); await p.click('#wf-save', { timeout: 8000 }); await wait(600);
+      console.log(dev, 'EDITOR saved', JSON.stringify(await p.evaluate(() => ({ edit: WS.edit, song: WS.song, n: Object.keys(S.get('wsongs', {})).length, pwn: window.__pwn || 0 }))), 'dialog:', dlg); }
+    catch (er) { console.log(dev, 'EDITOR stuck', er.message.split('\n').slice(0, 12).join(' | ').slice(0, 900)); }
+    await c.close(); }
   await b.close(); })();

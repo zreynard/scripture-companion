@@ -247,7 +247,10 @@
     var W = box.clientWidth, H = box.clientHeight; if (!W || !H) return { pages: 1 };
     var maxCols = o.maxCols || (W >= 1000 ? 3 : W >= 600 ? 2 : 1), minPx = o.min || (W >= 700 ? 13 : 11.5), maxPx = o.max || (W >= 700 ? 26 : 21), gap = Math.round(Math.max(18, W * 0.03));
     inner.style.columnGap = gap + 'px'; inner.style.height = H + 'px'; inner.style.columnFill = 'auto';
-    function fits(cols, px) { inner.style.columnCount = cols; inner.style.fontSize = px + 'px'; var e = extent(inner); return e.w <= W + 2 && e.h <= H + 2; }
+    /* columns are set by width, not count: Safari's engine treats 'one column' as no columns at all, so a long chart grew
+       downward instead of spilling sideways into pages. A set width makes real columns in every engine. */
+    function setCols(cols) { inner.style.columnCount = 'auto'; inner.style.columnWidth = Math.floor((W - (cols - 1) * gap) / cols) + 'px'; }
+    function fits(cols, px) { setCols(cols); inner.style.fontSize = px + 'px'; var e = extent(inner); return e.w <= W + 2 && e.h <= H + 2; }
     var best = null;
     for (var c = 1; c <= maxCols; c++) {
       if (!fits(c, minPx)) continue;
@@ -256,7 +259,7 @@
       if (!best || lo > best.px + 0.75) best = { cols: c, px: Math.floor(lo * 2) / 2 };
     }
     if (best) { fits(best.cols, best.px); box.scrollLeft = 0; return { pages: 1, cols: best.cols, px: best.px, step: W + gap }; }
-    inner.style.columnCount = maxCols; inner.style.fontSize = minPx + 'px';   // still too long: pages, turned by tapping
+    setCols(maxCols); inner.style.fontSize = minPx + 'px';   // still too long: pages, turned by tapping
     return { pages: Math.max(1, Math.round((extent(inner).w + gap) / (W + gap))), cols: maxCols, px: minPx, step: W + gap };
   }
   /* how far the chart really reaches: Safari's engine does not count columns that spill sideways in scrollWidth,

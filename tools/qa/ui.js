@@ -139,13 +139,13 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
   await T('U55 soaking music under the narration: on/off and level in the player; follows play, pause, chapter gaps; never under a sermon', async () => { const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const errs2 = []; X.on('pageerror', e => errs2.push(e.message)); await X.goto(SITE); await wait(1500);
 
   // seed the phone's music store with a 20 s tone, and a 30 s tone as stand-in narration
-  await X.evaluate(async () => {
+  const seeded = await X.evaluate(async () => { try {
     const wav = (sec, hz) => { const sr = 8000, n = sr * sec, buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf); const w = (o, s) => [...s].forEach((ch, i) => v.setUint8(o + i, ch.charCodeAt(0)));
       w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, sr, true); v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
       for (let i = 0; i < n; i++) v.setInt16(44 + i * 2, Math.sin(i / sr * 2 * Math.PI * hz) * 8000, true); return new Blob([buf], { type: 'audio/wav' }); };
     await pdbDo('meta', 'readwrite', t => t.objectStore('meta').put({ id: 'tst', f: 'tone.wav', t: 'Test tone', a: 'Test artist', al: 'Test', n: 1 }));
     await pdbDo('blob', 'readwrite', t => t.objectStore('blob').put(wav(20, 220), 'tst')); PL.list = null;
-    window.__narr = URL.createObjectURL(wav(30, 440)); });
+    window.__narr = URL.createObjectURL(wav(30, 440)); return true; } catch (e) { return String(e.message || e); } }); if (seeded !== true) { await cc.close(); return /not yet supported|DataClone/.test(seeded) ? true : seeded; }
   // turn the music on through the player's own panel
   await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; NP().classList.add('on'); setMini(false); bedSync(); }); await wait(600);
   const shown = await X.evaluate(() => !$('#bedb').hidden); await X.evaluate(() => $('#bedb').scrollIntoView({ block: 'center' })); await X.click('#bedb', { force: true }); await wait(500); 
