@@ -416,7 +416,8 @@ def main():
     data = {"built": __import__("datetime").date.today().isoformat(), "core": CORE["app"], "items": items, "books": books, "narr": narr, "intro": intro, "itx": intro_txt,
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items),
             "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst}),
-            "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]}}
+            "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]},
+            "pray": {"moves": __import__("pray").build(), "music": json.load(open(os.path.join(HERE, "data", "pray_music.json"), encoding="utf-8"))}}
     html = TEMPLATE.replace("__VERSION__", str(BUILD)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
@@ -778,6 +779,35 @@ body.mapopen #sheet{z-index:24}
 #tabs{position:fixed;left:0;right:0;bottom:0;z-index:8;height:var(--tabh);display:flex;justify-content:space-around;align-items:flex-start;background:rgba(250,246,236,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid rgba(27,36,64,.08)}
 #tabs button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0 0;border:0;background:none;color:#5a6280;font:500 11px -apple-system,system-ui,sans-serif;cursor:pointer;min-height:52px}
 #tabs button.on{color:var(--gold2);font-weight:650}
+body[data-v=pray] #np{display:none!important}
+.pray .pr-seg{margin:12px 0 18px}
+.pr-art{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 10px 30px rgba(27,36,64,.12);background:#eadfca;transform:translateZ(0)}
+.pr-art svg{display:block;width:100%;height:100%}
+.pr-still{height:calc(100svh - var(--tabh) - 330px);min-height:280px;max-height:560px}
+.pr-ctl{display:flex;align-items:center;justify-content:center;gap:36px;margin:28px 0 10px}
+.pr-pp{width:80px;height:80px;border-radius:50%;border:0;background:var(--ink);color:#fbf6ea;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(27,36,64,.22);cursor:pointer;padding:0;transition:transform .2s}
+.pr-pp:active{transform:scale(.96)}
+.pr-sk,.pr-ar{width:46px;height:46px;border-radius:50%;border:0;background:rgba(27,36,64,.06);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.pr-ar[disabled]{opacity:.28;cursor:default}
+.pr-band{height:96px}
+.pr-mini svg{width:20px;height:20px}.pr-mini{position:absolute;right:10px;bottom:10px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(251,246,234,.88);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-shadow:0 2px 10px rgba(27,36,64,.12)}
+.pr-g{padding:22px 8px 4px;text-align:center}
+.pr-g.in-l{animation:prin-l .38s ease}.pr-g.in-r{animation:prin-r .38s ease}
+@keyframes prin-l{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}@keyframes prin-r{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+.pr-eb{font-size:11.5px;letter-spacing:.2em;font-weight:700;color:#7a5c16;text-transform:uppercase}
+.pr-lp{font-size:29px;line-height:1.22;margin:12px 0 6px;color:var(--ink);text-wrap:balance}
+.pr-lpr{font-size:13px;color:var(--mute);letter-spacing:.02em}
+.pr-ins{font-size:16px;line-height:1.42;color:#3a4362;margin:14px auto 0;max-width:30ch;text-wrap:balance}
+.pr-rule{width:34px;height:2px;background:var(--gold);opacity:.55;margin:18px auto 16px;border-radius:1px}
+.pr-sup{margin:0}.pr-sup blockquote{margin:0 auto;max-width:34ch;font-size:18px;line-height:1.48;color:#2f3858;text-wrap:pretty;transition:opacity .22s}
+.pr-sup blockquote.fade{opacity:0}
+.pr-supr{margin-top:6px;border:0;background:none;color:var(--gold2);font:600 13.5px -apple-system,system-ui,sans-serif;display:inline-flex;gap:7px;align-items:center;padding:8px 12px;min-height:38px;cursor:pointer;border-radius:19px}
+.pr-supr svg{opacity:.75}
+.pr-nav{display:flex;align-items:center;justify-content:space-between;margin:14px -4px 0;padding:10px 4px 8px;position:sticky;bottom:var(--tabh);background:linear-gradient(rgba(244,239,227,0),var(--bg) 40%);z-index:2}
+.pr-dots{display:flex;gap:7px;align-items:center}.pr-dots i{width:6px;height:6px;border-radius:3px;background:rgba(27,36,64,.16);transition:width .3s,background .3s}.pr-dots i.on{width:18px;background:var(--gold2)}
+.pr-drift{animation:prdrift 80s ease-in-out infinite alternate}.pr-mist{animation:prmist 24s ease-in-out infinite alternate}
+@keyframes prdrift{from{transform:translateX(-14px)}to{transform:translateX(14px)}}@keyframes prmist{from{opacity:.55}to{opacity:.9}}
+@media (prefers-reduced-motion:reduce){.pr-drift,.pr-mist,.pr-g.in-l,.pr-g.in-r{animation:none}}
 #tabs button.on svg{stroke-width:2.1}
 body > #bookhd,body:not([data-z="road"]) > div.top,body[data-z="road"] .top #gear,body[data-z="road"] #clearing{display:none!important}
 body[data-z="road"] > div.top{top:calc(env(safe-area-inset-top) + 50px);padding-top:8px}
@@ -1063,7 +1093,7 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
 <div class="ctl"><button class="side sk" id="prv" aria-label="Previous"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5l-10 7 10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button><button class="side" id="bk">↺ 10</button><button class="big" id="pp" style="display:flex;align-items:center;justify-content:center"></button><button class="side" id="fw">10 ↻</button><button class="side sk" id="nxt" aria-label="Next"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button></div>
 <div id="np-hl" aria-hidden="true"><i></i></div><div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="zz">Sleep off</button></div></div>
-<audio id="audio" preload="metadata"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
+<audio id="audio" preload="metadata"></audio><audio id="praym" preload="none"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
 <script>
 const D=__DATA__,I=D.items;
 const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('sc:'+k,JSON.stringify(v));if(BK_KEYS.includes(k))localStorage.setItem('sc:bkdirty','1')}catch(e){}}};
@@ -1620,11 +1650,12 @@ function doCont(o={}){const i=jpIdx();if(camp!==i){go(i);return}const a=nextActi
 function contRefresh(){const b=$('#cont');if(!b||camp!==jpIdx())return;const a=nextAction(camp);if(a&&a.kind==='play'&&a.id===cur){const ic=b.querySelector('.cont-ic'),sm=b.querySelector('small');if(ic)ic.innerHTML=icon(audio.paused?'play':'pause',22,0,'#1b2440');if(sm)sm.textContent=(audio.paused?'Resume · ':'Playing · ')+sm.textContent.replace(/^(Playing|Resume) · /,'')}}
 function note(t){let n=$('#note');if(!n){n=document.createElement('div');n.id='note';n.setAttribute('role','status');document.body.appendChild(n)}n.textContent=t;n.classList.add('on');clearTimeout(note.t);note.t=setTimeout(()=>n.classList.remove('on'),3800)}
 /* ======== Four places along the bottom: Journey · Big Picture · Explore (the road) · Library. Settings sit behind ⋯ ======== */
-const TABS=[['journey','Journey'],['bigpicture','Series'],['library','Library']];
+const TABS=[['journey','Journey'],['bigpicture','Series'],['library','Library'],['pray','Pray']];
 let JZ=S.get('jz','stop')==='road'?'road':'stop',BACK=null;
 const TAB_IC={journey:'<path d="M12 6.5C9.8 5 7 4.6 3.5 5v13c3.5-.4 6.3 0 8.5 1.5 2.2-1.5 5-1.9 8.5-1.5V5c-3.5-.4-6.3 0-8.5 1.5z"/><path d="M12 6.5v13"/>',
  bigpicture:'<path d="M3 17h18"/><path d="M7 17a5 5 0 0 1 10 0"/><path d="M12 6v2M5.6 9.6l1.4 1.4M18.4 9.6 17 11M3 13.5h1.5M19.5 13.5H21"/>',
- walk:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',library:'<path d="M4 5h4v15H4zM10 5h4v15h-4zM16.5 5.5l3.6-.9 3 14.5-3.6.9z"/>'};
+ walk:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',library:'<path d="M4 5h4v15H4zM10 5h4v15h-4zM16.5 5.5l3.6-.9 3 14.5-3.6.9z"/>',
+ pray:'<path d="M12 2.8c1.7 1.9 2.6 3.4 2.6 4.7a2.6 2.6 0 0 1-5.2 0c0-1.3.9-2.8 2.6-4.7z"/><path d="M9.2 12.5h5.6V21H9.2z"/><path d="M7 21h10"/>'};
 let PREV='journey';
 function tabOf(v){return v==='sc'?'bigpicture':v==='walk'?'journey':v}
 function tabsPaint(){ztPaint();const t=$('#tabs');if(!t)return;if(!t.dataset.on){t.dataset.on=1;t.innerHTML=TABS.map(([k,l])=>`<button data-tab2="${k}"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TAB_IC[k]}</svg><span>${l}</span></button>`).join('');
@@ -2022,7 +2053,73 @@ function openTeacher(k){const el=$('#bps');if(TS.k!==k){TS.k=k;TS.q='';TS.more=0
  const q=$('#tq');let tt=null;q.oninput=()=>{clearTimeout(tt);tt=setTimeout(()=>{TS.q=q.value;TS.more=0;$('#tlist').innerHTML=tList();wireL()},150)}}
 function wireLib(){document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('[data-lt]').forEach(b=>b.onclick=()=>{LT=b.dataset.lt;S.set('libtab',LT);render()});document.querySelectorAll('#main [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));document.querySelectorAll('[data-lbook]').forEach(b=>b.onclick=()=>openLibBook(b.dataset.lbook));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2,true));document.querySelectorAll('#main [data-full]').forEach(b=>b.onclick=e=>{e.stopPropagation();playRow(b.dataset.full,true)})}
 
-function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
+/* Pray (pray.py): Stillness is music and a quiet landscape; Guided walks the Lord's Prayer (Matthew 6:9-13). The music
+   plays on its own element: it pauses a sermon and a sermon pauses it, and it is never kept in listening history */
+const PRAY=D.pray||{moves:[],music:[]};
+const PR={mode:S.get('prm','still')==='guided'?'guided':'still',mv:0,anim:''};
+const PM={el:null,k:0,ms:false,err:0,sv:0};
+const PR_PLAY='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M8.5 5.6v12.8a.8.8 0 0 0 1.2.7l10-6.4a.8.8 0 0 0 0-1.4l-10-6.4a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg>',
+ PR_PAUSE='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/></svg>',
+ PR_SKIP=d=>`<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="transform:scaleX(${d})"><path d="M6 6.5v11l8-5.5z" fill="currentColor"/><rect x="15" y="6.5" width="2.4" height="11" rx="1" fill="currentColor"/></svg>`,
+ PR_AR=d=>`<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="${d<0?'M10 3 5 8l5 5':'M6 3l5 5-5 5'}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+ PR_TURN='<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function prShuf(n){const o=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[o[i],o[j]]=[o[j],o[i]]}return o}
+function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
+ a.addEventListener('play',()=>{AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});pmSession();pmPaint()});
+ a.addEventListener('pause',pmPaint);a.addEventListener('playing',()=>{PM.err=0});
+ a.addEventListener('ended',()=>pmSkip(1,true));
+ a.addEventListener('error',()=>{if(!a.getAttribute('src')||PM.err>3)return;PM.err++;setTimeout(()=>pmSkip(1,true),900)});
+ a.addEventListener('timeupdate',()=>{const n=Date.now();if(n-PM.sv>5000){PM.sv=n;S.set('pmpos',{k:PM.k,t:Math.floor(a.currentTime)})}});
+ AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause();if(PM.ms){PM.ms=false;if(cur)msSermon(cur)}}));
+ return a}
+function pmOrder(){const n=PRAY.music.length;let o=S.get('pmo',null);if(!Array.isArray(o)||o.length!==n){o=prShuf(n);S.set('pmo',o)}return o}
+function pmTrack(){const o=pmOrder();return PRAY.music[o[PM.k]]}
+function pmLoad(k,t){const a=pmEl(),n=PRAY.music.length;PM.k=((k%n)+n)%n;a.src=pmTrack().u;if(t)a.addEventListener('loadedmetadata',()=>{try{a.currentTime=t}catch(e){}},{once:true})}
+function pmToggle(){if(!PRAY.music.length)return;const a=pmEl();if(!a.getAttribute('src')){const p=S.get('pmpos',null);pmLoad(p?p.k:0,p?p.t:0)}if(a.paused)a.play().catch(()=>{});else a.pause()}
+function pmSkip(d,auto){if(!PRAY.music.length)return;const a=pmEl(),on=auto||!a.paused;pmLoad(PM.k+d,0);S.set('pmpos',{k:PM.k,t:0});if(on)a.play().catch(()=>{});else pmPaint()}
+function pmSession(){if(!('mediaSession' in navigator))return;const t=pmTrack(),a=pmEl();PM.ms=true;try{navigator.mediaSession.metadata=new MediaMetadata({title:t.t,artist:t.a,album:'Pray'})}catch(e){}
+ [['play',()=>a.play().catch(()=>{})],['pause',()=>a.pause()],['nexttrack',()=>pmSkip(1)],['previoustrack',()=>pmSkip(-1)],['seekbackward',null],['seekforward',null]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}
+function pmPaint(){const on=!!PM.el&&!PM.el.paused;document.querySelectorAll('[data-pm]').forEach(b=>{b.innerHTML=on?PR_PAUSE:PR_PLAY;b.setAttribute('aria-label',on?'Pause the music':'Play the music')})}
+function prCredits(){const seen=new Set(),c=[];PRAY.music.forEach(m=>{const k=m.a+'|'+m.lic;if(!seen.has(k)){seen.add(k);c.push(`${esc(m.a)} (${esc(m.licn||'')})`)}});return c.length?' Prayer music: '+c.join(', ')+'.':''}
+/* a new time of prayer (half an hour since the last) brings the next supporting passage for each movement */
+function prSession(){const last=S.get('prlast',0);if(Date.now()-last>30*60e3){const st=S.get('prsup',{});PRAY.moves.forEach(m=>{const n=m.sup.length;let x=st[m.k];if(!x||!Array.isArray(x.o)||x.o.length!==n)x={o:prShuf(n),p:0};else if(++x.p>=n)x={o:prShuf(n),p:0};st[m.k]=x});S.set('prsup',st);PR.mv=0}S.set('prlast',Date.now())}
+function prSup(m){const x=S.get('prsup',{})[m.k],n=m.sup.length;return m.sup[x&&Array.isArray(x.o)&&x.o.length===n?x.o[x.p%n]:0]}
+function prAnother(m){const st=S.get('prsup',{});let x=st[m.k];if(!x||!Array.isArray(x.o)||x.o.length!==m.sup.length)x={o:prShuf(m.sup.length),p:0};else if(++x.p>=m.sup.length)x={o:prShuf(m.sup.length),p:0};st[m.k]=x;S.set('prsup',st);S.set('prlast',Date.now())}
+function prayArt(id,band){return `<svg viewBox="${band?'0 214 390 196':'0 0 390 520'}" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs>
+<linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3cedb"/><stop offset=".38" stop-color="#e3dccd"/><stop offset=".56" stop-color="#f5e5c6"/><stop offset=".64" stop-color="#f7ead0"/></linearGradient>
+<radialGradient id="${id}g" cx=".6" cy=".52" r=".42"><stop offset="0" stop-color="#fffaf0"/><stop offset=".25" stop-color="#fdf1d8" stop-opacity=".9"/><stop offset="1" stop-color="#fdf1d8" stop-opacity="0"/></radialGradient>
+<linearGradient id="${id}m" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf4e6" stop-opacity="0"/><stop offset=".5" stop-color="#fbf4e6" stop-opacity=".8"/><stop offset="1" stop-color="#fbf4e6" stop-opacity="0"/></linearGradient>
+<linearGradient id="${id}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#46536f"/><stop offset="1" stop-color="#25304a"/></linearGradient>
+<filter id="${id}b" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="7"/></filter></defs>
+<rect width="390" height="520" fill="url(#${id}s)"/><rect width="390" height="520" fill="url(#${id}g)"/><circle cx="234" cy="270" r="14" fill="#fffbf2" opacity=".95"/>
+<g class="pr-drift" filter="url(#${id}b)" opacity=".75"><ellipse cx="96" cy="150" rx="86" ry="11" fill="#fbf5ea"/><ellipse cx="300" cy="196" rx="104" ry="12" fill="#fbf3e4"/><ellipse cx="190" cy="236" rx="70" ry="8" fill="#fdf6e8"/></g>
+<path d="M0 318 C22 309 34 300 50 299 C68 298 76 309 96 306 C116 303 124 289 142 288 C160 287 168 300 188 297 C206 294 214 283 232 283 C250 283 258 297 278 295 C296 293 304 285 320 286 C340 287 352 299 372 296 C380 295 386 293 390 292 V520 H0Z" fill="#aeb6c4" opacity=".7"/>
+<rect class="pr-mist" x="0" y="300" width="390" height="46" fill="url(#${id}m)"/>
+<path d="M0 340 C40 330 70 322 104 328 C140 334 166 314 206 318 C248 322 270 334 308 328 C342 323 366 330 390 326 V520 H0Z" fill="#8792a8" opacity=".85"/>
+<rect class="pr-mist" x="0" y="334" width="390" height="40" fill="url(#${id}m)" opacity=".7"/>
+<path d="M0 372 C54 358 96 360 140 368 C190 377 222 356 270 360 C318 364 350 376 390 368 V520 H0Z" fill="#5f6b86"/>
+<path d="M0 404 C70 390 120 396 176 404 C236 413 280 398 330 400 C356 401 374 405 390 408 V520 H0Z" fill="url(#${id}f)"/>
+<path d="M0 446 C90 434 170 440 240 448 C300 455 350 446 390 442 V520 H0Z" fill="#1f2840" opacity=".9"/></svg>`}
+function prayView(){if(PR.mode==='guided')prSession();
+ let h=`<div class="jv pray" id="pray">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Pray</h1><div class="t-sort lib-seg pr-seg" role="tablist" aria-label="Pray">${[['still','Stillness'],['guided','Guided']].map(([v,l])=>`<button role="tab" data-prm="${v}" class="${PR.mode===v?'on':''}" aria-selected="${PR.mode===v}">${l}</button>`).join('')}</div>`;
+ if(PR.mode==='still')return h+`<div class="pr-art pr-still">${prayArt('ps')}</div><div class="pr-ctl"><button class="pr-sk" data-pms="-1" aria-label="Previous piece">${PR_SKIP(-1)}</button><button class="pr-pp" data-pm aria-label="Play the music">${PR_PLAY}</button><button class="pr-sk" data-pms="1" aria-label="Next piece">${PR_SKIP(1)}</button></div></div>`;
+ const m=PRAY.moves[PR.mv]||PRAY.moves[0],s=prSup(m),n=PRAY.moves.length;
+ return h+`<div class="pr-art pr-band">${prayArt('pg',1)}<button class="pr-mini" data-pm aria-label="Play the music">${PR_PLAY}</button></div>
+<section class="pr-g${PR.anim?' in-'+PR.anim:''}" aria-label="${esc(m.label)}"><div class="pr-eb">${esc(m.label)}</div><p class="pr-lp serif">${esc(m.lp)}</p><div class="pr-lpr">${esc(m.lpr)}</div><p class="pr-ins">${esc(m.ins)}</p><div class="pr-rule" aria-hidden="true"></div>
+<figure class="pr-sup"><blockquote class="serif" id="prst">${esc(s.t)}</blockquote><figcaption><button class="pr-supr" id="prsr" aria-label="${esc(s.r)}: show another passage"><span>${esc(s.r)}</span>${PR_TURN}</button></figcaption></figure></section>
+<nav class="pr-nav" aria-label="Movements of the prayer"><button class="pr-ar" data-prmv="-1" aria-label="Previous"${PR.mv?'':' disabled'}>${PR_AR(-1)}</button><span class="pr-dots" aria-hidden="true">${PRAY.moves.map((x,k)=>`<i class="${k===PR.mv?'on':''}"></i>`).join('')}</span><button class="pr-ar" data-prmv="1" aria-label="Next"${PR.mv<n-1?'':' disabled'}>${PR_AR(1)}</button></nav></div>`}
+function prGo(d){const k=PR.mv+d;if(k<0||k>=PRAY.moves.length)return;PR.mv=k;S.set('prlast',Date.now());PR.anim=d>0?'l':'r';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}
+function wirePray(){pmEl();pmPaint();
+ document.querySelectorAll('[data-prm]').forEach(b=>b.onclick=()=>{if(PR.mode===b.dataset.prm)return;PR.mode=b.dataset.prm;S.set('prm',PR.mode);render()});
+ document.querySelectorAll('[data-pm]').forEach(b=>b.onclick=pmToggle);
+ document.querySelectorAll('[data-pms]').forEach(b=>b.onclick=()=>pmSkip(+b.dataset.pms));
+ document.querySelectorAll('[data-prmv]').forEach(b=>b.onclick=()=>prGo(+b.dataset.prmv));
+ const r=$('#prsr');if(r)r.onclick=()=>{const m=PRAY.moves[PR.mv];prAnother(m);const s=prSup(m),q=$('#prst');q.classList.add('fade');setTimeout(()=>{q.textContent=s.t;r.querySelector('span').textContent=s.r;r.setAttribute('aria-label',s.r+': show another passage');q.classList.remove('fade')},230)};
+ const g=$('#pray');if(g&&PR.mode==='guided'){let t0=null;
+  g.addEventListener('touchstart',e=>{t0=null;if(e.touches.length!==1)return;const t=e.touches[0];if(t.clientX<22)return;t0={x:t.clientX,y:t.clientY,lx:t.clientX,ly:t.clientY,t:Date.now(),y0:scrollY}},{passive:true});
+  g.addEventListener('touchmove',e=>{if(t0&&e.touches.length===1){t0.lx=e.touches[0].clientX;t0.ly=e.touches[0].clientY}},{passive:true});
+  g.addEventListener('touchend',()=>{if(!t0)return;const dx=t0.lx-t0.x,dy=t0.ly-t0.y,ok=Date.now()-t0.t<900&&Math.abs(scrollY-t0.y0)<16;t0=null;if(ok&&Math.abs(dx)>50&&Math.abs(dx)>1.7*Math.abs(dy))prGo(dx<0?1:-1)},{passive:true})}}
+function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='pray'){m.innerHTML=prayView();wire();wirePray();return}if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
  migrateCamp();const w=walk();let first=jpIdx();if(camp==null||camp>=w.length)camp=first;  /* the road is walked up to your place */
  const rd=w.filter(x=>!x.c.intro&&read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
@@ -2118,7 +2215,7 @@ function settingsView(){
  ${CORE.u.length?`<p class="note" style="margin-top:14px"><b>Core teacher.</b> ${coreOn()?`Core picks the teaching that best explains each passage, favouring ${esc(cfg.corePref?NAMES[cfg.corePref]:'Platt, then Mitchell, then Heitzig, then Davey')}.`:'Off: every teaching on a chapter is queued, as before.'}</p>
  <div class="cprefs" role="group" aria-label="Preferred teacher for Core">${[['','Suggested'],['Platt','Platt'],['PAM','Mitchell'],['Skip','Heitzig'],['Davey','Davey']].map(([k,l])=>`<button class="btn${coreOn()&&(cfg.corePref||'')===k?' on':''}" data-cpref="${k}">${l}</button>`).join('')}<button class="btn${coreOn()?'':' on'}" data-cpref="off">Every teaching</button></div>
  ${Object.keys(coreSet()).length?`<p class="note"><button class="lnk" id="corereset">Undo the ${Object.keys(coreSet()).length} Core choice${Object.keys(coreSet()).length>1?'s':''} you made</button></p>`:''}`:''}
- <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).</p><h2 class="serif" style="margin:22px 0 8px">Backup</h2>${bkOn()?`<p class="note" id="bkst">${bkStatus()}</p><button class="btn" id="bknow">Back up now</button><button class="btn" id="bkrest">Restore from backup</button><button class="btn" id="bkoff">Turn off</button>${BK.err?bkForm(true):''}`:`<p class="note">Your progress lives only on this phone. Turn on backup and it saves itself to a private GitHub repo you own; on a new phone, paste the same key and everything comes back.</p>
+ <p class="note">Bible text: Berean Standard Bible (public domain). People, places and family links adapted from Theographic Bible Metadata (CC BY-SA 4.0). Map: Natural Earth (public domain).${prCredits()}</p><h2 class="serif" style="margin:22px 0 8px">Backup</h2>${bkOn()?`<p class="note" id="bkst">${bkStatus()}</p><button class="btn" id="bknow">Back up now</button><button class="btn" id="bkrest">Restore from backup</button><button class="btn" id="bkoff">Turn off</button>${BK.err?bkForm(true):''}`:`<p class="note">Your progress lives only on this phone. Turn on backup and it saves itself to a private GitHub repo you own; on a new phone, paste the same key and everything comes back.</p>
  <ol class="note bk-steps"><li><a href="https://github.com/new?name=scripture-companion-backup&visibility=private" target="_blank" rel="noopener">Create the private repo</a> (name and Private are filled in: tap <b>Create repository</b>).</li><li><a href="https://github.com/settings/personal-access-tokens/new?name=Scripture%20Companion%20backup&description=Lets%20the%20app%20save%20listening%20progress&expires_in=none&contents=write" target="_blank" rel="noopener">Make a key</a>: under <b>Repository access</b> pick <b>Only select repositories</b> → scripture-companion-backup; check <b>Contents: Read and write</b>; tap <b>Generate</b> and copy it.</li><li>Paste it here. Your iPhone offers to save it in Passwords, so a new phone fills it in.</li></ol>${bkForm(false)}`}
  <p class="note" style="margin-top:18px">By hand:</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>
@@ -2160,10 +2257,11 @@ function where(id){if(I[id]&&I[id].nar)return I[id].nar.book+' '+I[id].nar.c;if(
 function playRow(id,full){if(!I[id]||!I[id].audio)return;JM=false;BPM=null;PLAYSTOP=view==='journey'?jpIdx():view==='walk'?camp:null;
  DEEP=view==='journey'&&coreOn()&&JV.deep&&deepIds(jpIdx()).includes(id)?{i:jpIdx()}:null;if(SKIP[id]){delete SKIP[id];S.set('skip',SKIP)}
  if(full&&cur===id){setMini(false);return}play(id,full?{full:true}:{})}
+function msSermon(id){const i=I[id];if(!i||!('mediaSession' in navigator))return;navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',()=>skipTrack(1),'previoustrack',()=>skipTrack(-1)].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}
 function play(id,o={}){const i=I[id];if(!i.audio)return;let wait=false;if(cur!==id){cur=id;NP().classList.toggle('reading',!!i.nar);$('.np-lab').textContent=i.nar?'Reading':'Now playing';if(!i.nar)NAR=null;ready=false;const p=i.nar?{}:prog[id]||{},saved=p.pos||0;useAudioFor(i);const meta=()=>{const st=i.s||0;if(i.nar){if(narAt)audio.currentTime=narAt;narAt=null;narRetry=0;ready=true;narMark(true);return}const L=isFinite(audio.duration)&&audio.duration>0?audio.duration:(+i.dur||Infinity);   /* some hosts report no length yet */
  if(saved&&saved>st&&saved<L-5)audio.currentTime=saved;else if(st&&st<L-30){audio.currentTime=st;START={id,st}}ready=true};const setSrc=u=>{audio.src=u;narWait=false;audio.addEventListener('loadedmetadata',meta,{once:true})};if(!i.nar&&!i.blob)setSrc(i.audio);else if(NB[id]&&NB[id].u)setSrc(NB[id].u);else{narWait=true;wait=true;if(audio.src!==SILENT)try{audio.pause()}catch(e){}$('#cur').textContent='Loading…';narBlob(id).then(u=>{if(cur!==id)return;setSrc(u);if(!o.load)audio.play().catch(()=>{})}).catch(()=>{if(cur!==id)return;narWait=false;$('#np-s').textContent='This chapter did not load — check your connection and tap play.'})}  /* fresh plays start after the intro */
   $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=i.nar?'\u00a0':teacher(i)+' · '+where(id);npArt(id);favPaint();if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!o.full)}else if(o.full)setMini(false);if(i.nar)readerFill(true);if(i.intro){NP().classList.add('reading');const box=$('#np-read');box.innerHTML='';introText(i.intro.abbr).then(T=>{if(cur!==id)return;box.innerHTML=`<section class="itx"><h3 class="rc first">${esc(dispTitle(i))}</h3>${introParas(T[String(i.intro.c)])}</section>`}).catch(()=>{})}setPP();
-  if('mediaSession' in navigator){navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',()=>skipTrack(1),'previoustrack',()=>skipTrack(-1)].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}}
+  msSermon(id)}
  if(o.load||wait)return;audio.paused?audio.play().catch(()=>{}):audio.pause()}
 function next(){if(inDeep()){const i=DEEP.i,ids=deepIds(i),k=ids.indexOf(cur),nx=ids.slice(k+1).find(id=>!isDone(id)&&!SKIP[id]);
   if(nx){PLAYSTOP=i;play(nx);render();return}
@@ -2204,7 +2302,7 @@ $('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NAR=null;document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));narBar();NP().classList.remove('on');roomForPlayer();render()};
 /* player sheet: swipe down or tap the page to shrink it to a bar; tap or swipe up the bar to open it */
 function NP(){return $('#np')}
-function roomForPlayer(){requestAnimationFrame(()=>{const np=NP(),tb=($('#tabs')||{}).offsetHeight||0;document.body.classList.toggle('npon',np.classList.contains('on')&&np.classList.contains('mini'));if(!np.classList.contains('on')){document.documentElement.style.setProperty('--npH','0px');document.body.style.paddingBottom=tb+'px';return}const mh=np.classList.contains('mini')?np.offsetHeight+16:0;document.documentElement.style.setProperty('--npH',mh+'px');document.body.style.paddingBottom=(tb+mh)+'px'})}
+function roomForPlayer(){requestAnimationFrame(()=>{const np=NP(),tb=($('#tabs')||{}).offsetHeight||0;const npOn=np.classList.contains('on')&&view!=='pray';document.body.classList.toggle('npon',npOn&&np.classList.contains('mini'));if(!npOn){document.documentElement.style.setProperty('--npH','0px');document.body.style.paddingBottom=tb+'px';return}const mh=np.classList.contains('mini')?np.offsetHeight+16:0;document.documentElement.style.setProperty('--npH',mh+'px');document.body.style.paddingBottom=(tb+mh)+'px'})}
 /* the full-screen player's cover: the passage on the teacher's colour, with their medallion mark */
 const ART_C={Platt:['#1b2440','#3b5578'],PAM:['#4a1f3a','#8a3b5c'],Davey:['#1f3b33','#3f6b5a'],Skip:['#5a3417','#a8662e'],Fearless:['#2c2f36','#8a6a2a']};
 function npArt(id){const i=I[id],c=ART_C[i.who]||['#1b2440','#a8812a'],d=i.date?new Date(i.date+'T12:00:00'):null;
