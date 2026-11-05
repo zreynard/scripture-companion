@@ -5,6 +5,8 @@ on:
     inputs:
       urls:
         default: ""
+      step:
+        default: "1"
 permissions:
   contents: write
 jobs:
@@ -14,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install -q requests
-      - run: python tools/music_probe.py ${{ inputs.urls }}
+      - run: if [ "${{ inputs.step }}" = 2 ]; then python tools/music_probe2.py; else python tools/music_probe.py ${{ inputs.urls }}; fi
       - if: always()
         run: |
-          [ -d music ] || exit 0
-          cd music && git init -q -b diag-music && git add -A
+          D=music; [ -d music2 ] && D=music2; [ -d $D ] || exit 0
+          cd $D && git init -q -b diag-music && git add -A
           git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "Music probe"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag-music
