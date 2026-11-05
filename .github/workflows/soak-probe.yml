@@ -1,0 +1,19 @@
+# Diagnostics: free soaking / instrumental worship feeds (tools/soak_probe.py). Results go to the diag-soak branch.
+name: Soak probe
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null && pip install -q requests
+      - run: python tools/soak_probe.py
+      - if: always()
+        run: |
+          [ -d soak ] || exit 0
+          cd soak && git init -q -b diag-soak && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "Soak probe"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag-soak
