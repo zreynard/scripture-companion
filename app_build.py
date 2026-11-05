@@ -462,6 +462,12 @@ def write_site(html: str):
         os.makedirs(os.path.join(SITE, "bible"), exist_ok=True)
         for f in os.listdir(bdir):
             shutil.copy(os.path.join(bdir, f), os.path.join(SITE, "bible", f))
+    xdir = os.path.join(HERE, "site_extra")   # Worship: song engine, live sync, the TV page and the presenter/remote page
+    if os.path.isdir(xdir):
+        for root, _, files in os.walk(xdir):
+            for f in files:
+                src = os.path.join(root, f); dst = os.path.join(SITE, os.path.relpath(src, xdir))
+                os.makedirs(os.path.dirname(dst), exist_ok=True); shutil.copy(src, dst)
     for f in os.listdir(PWA):
         if f == "sw.js":
             src = open(os.path.join(PWA, f), encoding="utf-8").read().replace("__VERSION__", str(BUILD))
@@ -780,6 +786,47 @@ body.mapopen #sheet{z-index:24}
 #tabs button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0 0;border:0;background:none;color:#5a6280;font:500 11px -apple-system,system-ui,sans-serif;cursor:pointer;min-height:52px}
 #tabs button.on{color:var(--gold2);font-weight:650}
 body[data-v=pray] #np{display:none!important}
+.wsp{padding-bottom:30px}
+.w-list{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.w-row{display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px;border-radius:16px;border:0;background:#fffdf8;box-shadow:0 3px 12px rgba(27,36,64,.06);text-align:left;color:var(--ink);cursor:pointer;font:inherit}
+.w-row span{flex:1;min-width:0}.w-row b{display:block;font-size:19px;font-weight:500}.w-row small{display:block;font-size:13px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.w-row i{font-style:normal;color:var(--gold2);font-size:22px}
+.w-empty{color:var(--mute);font-size:15px;line-height:1.5;margin:18px 4px}
+.w-add{display:block;width:100%;height:50px;margin-top:8px;border-radius:25px;border:1px dashed rgba(27,36,64,.25);background:none;font:600 15px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}
+.w-q{width:100%;height:44px;border-radius:22px;border:1px solid var(--line);background:#fff;padding:0 16px;font:inherit;margin:12px 0 0}
+.w-live{display:flex;align-items:center;gap:12px;margin:14px 0 4px;padding:12px 16px;border-radius:16px;background:var(--ink);color:#fff;text-decoration:none}.w-live i{width:9px;height:9px;border-radius:50%;background:#4fc184;box-shadow:0 0 0 4px rgba(79,193,132,.25)}.w-live span{flex:1}.w-live b{display:block}.w-live small{display:block;opacity:.75;font-size:13px}
+.w-back{display:inline-flex;align-items:center;gap:4px;border:0;background:none;color:var(--gold2);font:600 15px -apple-system,system-ui,sans-serif;padding:10px 0;cursor:pointer}
+.w-title{font-size:30px;font-weight:400;line-height:1.15;margin:4px 0 2px}.w-by{color:var(--mute);font-size:15px}
+.w-keys{display:flex;align-items:center;gap:5px;margin:16px 0 0;flex-wrap:nowrap}.w-kl{font:700 11px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7a5c16;margin-right:4px}
+.w-kb{width:36px;height:36px;border-radius:18px;border:1px solid rgba(27,36,64,.15);background:#fff;font-size:20px;line-height:1;color:var(--ink);cursor:pointer;padding:0}.w-kb.s{width:30px;height:30px;font-size:16px}
+.w-kv{min-width:38px;text-align:center;font:700 16px ui-monospace,Menlo,monospace;color:var(--gold2)}
+.w-capo{margin-top:8px;font-size:13.5px;color:var(--mute)}
+.w-acts{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.w-btn{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 18px;border-radius:22px;border:1px solid rgba(27,36,64,.16);background:#fff;color:var(--ink);font:600 15px -apple-system,system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.w-btn.pri{background:var(--ink);border-color:var(--ink);color:#fff}.w-btn[disabled]{opacity:.4}.w-del{color:#b3261e}
+.w-notes{background:rgba(201,162,74,.12);border-radius:12px;padding:10px 12px;font-size:14.5px;margin:0 0 14px}
+.w-chart{margin-top:6px}
+.wc-s{margin:0 0 18px;padding:2px 0}.wc-h{margin:0 0 6px;font:700 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7a5c16}.wc-h i{font-style:normal;color:var(--mute);letter-spacing:0;text-transform:none;font-weight:600}
+.wc-l{display:flex;flex-wrap:wrap;align-items:flex-end;font-size:17.5px;line-height:1.25;margin:0 0 7px}.wc-w{display:inline-flex;flex-direction:column;white-space:pre}
+.wc-c{font:700 14.5px/1.2 ui-monospace,Menlo,monospace;color:#a8812a;min-height:1.2em;padding-right:4px}.wc-t{white-space:pre}.wc-only .wc-t{display:none}.wc-gap{height:12px}
+.w-f{display:block;margin:12px 0}.w-f span{display:block;font-size:13px;font-weight:600;color:var(--mute);margin:0 0 5px}
+.w-f input,.w-f select,.w-f textarea{width:100%;border:1px solid rgba(27,36,64,.16);border-radius:12px;background:#fff;padding:11px 12px;font:16px -apple-system,system-ui,sans-serif;color:var(--ink)}
+.w-f textarea#wf-src{font:14px/1.45 ui-monospace,Menlo,Consolas,monospace;white-space:pre;overflow-x:auto}
+.w-two{display:grid;grid-template-columns:1fr 110px;gap:10px}
+.w-found{font-size:13.5px;color:var(--mute);line-height:1.8}.w-sc{display:inline-block;min-width:26px;padding:0 6px;border-radius:8px;background:rgba(27,36,64,.07);font:700 12px ui-monospace,Menlo,monospace;color:var(--ink);text-align:center}
+.w-hint{font-size:13.5px;color:var(--mute);margin:8px 2px}
+.w-am{display:flex;flex-direction:column;gap:6px;margin-top:10px}.w-am button{display:flex;align-items:center;gap:10px;padding:8px;border-radius:12px;border:1px solid var(--line);background:#fff;text-align:left;font:inherit;color:var(--ink);cursor:pointer}
+.w-am img{width:44px;height:44px;border-radius:6px;flex:none;background:#eee}.w-am span{flex:1;min-width:0}.w-am b{display:block;font-size:14.5px}.w-am small{display:block;font-size:12.5px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.w-am i{font-style:normal;font-size:12px;color:#3f9b6a;font-weight:700;flex:none}
+.w-name{width:100%;border:0;border-bottom:1px solid var(--line);background:none;font-size:28px;padding:6px 0;margin:2px 0 4px;color:var(--ink)}
+.w-items{display:flex;flex-direction:column;gap:8px}
+.w-it{display:flex;align-items:center;gap:8px;padding:10px 10px 10px 12px;border-radius:14px;background:#fffdf8;box-shadow:0 2px 10px rgba(27,36,64,.05)}
+.w-n{width:24px;height:24px;border-radius:12px;background:rgba(27,36,64,.07);font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.w-itt{flex:1;min-width:0;border:0;background:none;text-align:left;font:inherit;color:var(--ink);padding:0;cursor:pointer}.w-itt b{display:block;font-size:17px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.w-itt small{display:block;font-size:12.5px;color:var(--mute)}
+.w-ik{display:flex;align-items:center;gap:4px;flex:none}.w-ik b{min-width:34px;text-align:center;font:700 13px ui-monospace,Menlo,monospace;color:var(--gold2)}
+.w-mv{display:flex;gap:2px;flex:none}.w-mv button{width:30px;height:30px;border:0;border-radius:15px;background:rgba(27,36,64,.05);color:var(--ink);cursor:pointer;padding:0}.w-mv button[disabled]{opacity:.25}
+.w-pick{position:fixed;inset:0;background:rgba(15,22,40,.38);z-index:40;display:flex;align-items:flex-end;justify-content:center}
+.w-pk{background:var(--bg);width:100%;max-width:560px;max-height:80vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(20px + env(safe-area-inset-bottom))}.w-pk h3{margin:0 0 8px;font-weight:400;font-size:22px}
+.w-pl label{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line)}.w-pl input{width:22px;height:22px;flex:none}.w-pl b{display:block;font-weight:600}.w-pl small{display:block;color:var(--mute);font-size:13px}
+
 .pray .pr-seg{margin:12px 0 18px}
 .pr-art{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 10px 30px rgba(27,36,64,.12);background:#eadfca;transform:translateZ(0)}
 .pr-art svg{display:block;width:100%;height:100%}
@@ -1096,13 +1143,14 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 <div class="ctl"><button class="side sk" id="prv" aria-label="Previous"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5l-10 7 10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button><button class="side" id="bk">↺ 10</button><button class="big" id="pp" style="display:flex;align-items:center;justify-content:center"></button><button class="side" id="fw">10 ↻</button><button class="side sk" id="nxt" aria-label="Next"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button></div>
 <div id="np-hl" aria-hidden="true"><i></i></div><div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="zz">Sleep off</button></div></div>
 <audio id="audio" preload="metadata"></audio><audio id="praym" preload="none"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
+<script src="worship.js"></script>
 <script>
 const D=__DATA__,I=D.items;
 const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('sc:'+k,JSON.stringify(v));if(BK_KEYS.includes(k))localStorage.setItem('sc:bkdirty','1')}catch(e){}}};
 /* Automatic backup to the listener's own private GitHub repo. The key never leaves this phone except to GitHub.
    Saved about every 10 minutes while something changed, and whenever the app goes to the background; every backup is
    a commit, so older versions stay in the repo's history. A new phone: paste the key once and everything comes back. */
-const BK_KEYS=['camp','camp2','cfg','jp','level','lk2','narpos','prog','read','skip','speed','tab'],BK={sha:null,busy:false,tried:0,err:S.get('bkerr','')};
+const BK_KEYS=['camp','camp2','cfg','jp','level','lk2','narpos','prog','read','skip','speed','tab','wsongs','wsets'],BK={sha:null,busy:false,tried:0,err:S.get('bkerr','')};
 const bkRepo=()=>S.get('bkrepo','zreynard/scripture-companion-backup'),bkKey=()=>S.get('bkkey',''),bkOn=()=>!!bkKey();
 function bkSnap(){const o={};BK_KEYS.forEach(k=>{try{const v=localStorage.getItem('sc:'+k);if(v!=null)o[k]=JSON.parse(v)}catch(e){}});return o}
 function bkB64(str){const b=new TextEncoder().encode(str);let s='';for(let i=0;i<b.length;i+=0x8000)s+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(s)}
@@ -1652,11 +1700,12 @@ function doCont(o={}){const i=jpIdx();if(camp!==i){go(i);return}const a=nextActi
 function contRefresh(){const b=$('#cont');if(!b||camp!==jpIdx())return;const a=nextAction(camp);if(a&&a.kind==='play'&&a.id===cur){const ic=b.querySelector('.cont-ic'),sm=b.querySelector('small');if(ic)ic.innerHTML=icon(audio.paused?'play':'pause',22,0,'#1b2440');if(sm)sm.textContent=(audio.paused?'Resume · ':'Playing · ')+sm.textContent.replace(/^(Playing|Resume) · /,'')}}
 function note(t){let n=$('#note');if(!n){n=document.createElement('div');n.id='note';n.setAttribute('role','status');document.body.appendChild(n)}n.textContent=t;n.classList.add('on');clearTimeout(note.t);note.t=setTimeout(()=>n.classList.remove('on'),3800)}
 /* ======== Four places along the bottom: Journey · Big Picture · Explore (the road) · Library. Settings sit behind ⋯ ======== */
-const TABS=[['journey','Journey'],['bigpicture','Series'],['library','Library'],['pray','Pray']];
+const TABS=[['journey','Journey'],['bigpicture','Series'],['library','Library'],['worship','Worship'],['pray','Pray']];
 let JZ=S.get('jz','stop')==='road'?'road':'stop',BACK=null;
 const TAB_IC={journey:'<path d="M12 6.5C9.8 5 7 4.6 3.5 5v13c3.5-.4 6.3 0 8.5 1.5 2.2-1.5 5-1.9 8.5-1.5V5c-3.5-.4-6.3 0-8.5 1.5z"/><path d="M12 6.5v13"/>',
  bigpicture:'<path d="M3 17h18"/><path d="M7 17a5 5 0 0 1 10 0"/><path d="M12 6v2M5.6 9.6l1.4 1.4M18.4 9.6 17 11M3 13.5h1.5M19.5 13.5H21"/>',
  walk:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',library:'<path d="M4 5h4v15H4zM10 5h4v15h-4zM16.5 5.5l3.6-.9 3 14.5-3.6.9z"/>',
+ worship:'<path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
  pray:'<path d="M12 3.6c-.9 0-1.6.6-1.8 1.5L8.7 11.6c-.2 1-.9 1.9-1.8 2.3L4 15.3V20l4.2-1.6c2.3-.9 3.8-3.1 3.8-5.6V3.6z"/><path d="M12 3.6c.9 0 1.6.6 1.8 1.5l1.5 6.5c.2 1 .9 1.9 1.8 2.3l2.9 1.4V20l-4.2-1.6c-2.3-.9-3.8-3.1-3.8-5.6"/><path d="M9.3 9.2 11 12.6M14.7 9.2 13 12.6"/>'};
 let PREV='journey';
 function tabOf(v){return v==='sc'?'bigpicture':v==='walk'?'journey':v}
@@ -1880,6 +1929,123 @@ const TOPIC_IC={kingdom:['#6b5320','<path d="M4 17 3 7l5 4 4-6 4 6 5-4-1 10z"/><
  church:['#7a4b2a','<path d="M12 2v4M10 4h4"/><path d="M5 21V11l7-5 7 5v10z"/><path d="M10 21v-4.5a2 2 0 0 1 4 0V21"/>'],
  missions:['#2e4639','<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.5 5.7 3.5 9s-1 6.3-3.5 9c-2.5-2.7-3.5-5.7-3.5-9s1-6.3 3.5-9z"/>']};
 const topicIc=(id,sz)=>{const t=TOPIC_IC[id]||['#4a5272',''];return `<span class="tp-ic" style="background:${t[0]}1a;width:${sz}px;height:${sz}px" aria-hidden="true"><svg viewBox="0 0 24 24" width="${Math.round(sz*.56)}" height="${Math.round(sz*.56)}" fill="none" stroke="${t[0]}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".85">${t[1]}</svg></span>`};
+/* Worship (site_extra/worship.js does the music): a personal songbook, setlists, and Present, which hands the set to
+   live/ (presenter and remote) and tv/ (the screen). Songs and setlists live on this phone and in your private backup. */
+const WS={pane:S.get('wpane','sets'),song:null,edit:null,set:null,q:'',am:null};
+const wSongs=()=>S.get('wsongs',{}),wSets=()=>S.get('wsets',[]);
+function wId(){return 'w'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+function wLive(){const w=S.get('wlive',null);return w&&Date.now()-w.at<12*3600e3?w:null}
+const W_IC={back:'<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ play:'<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z" fill="currentColor"/></svg>',
+ apple:'<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l11-2v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="currentColor"/><circle cx="17.5" cy="16" r="2.5" fill="currentColor"/></svg>'};
+/* the key a song is played in: the setlist's choice, else the song's own, else as written; capo turns it into shapes */
+function wKeyOf(song,item){return (item&&item.key)||song.pk||song.key||''}
+function wShape(song,key,capo){const semis=song.key&&key?Worship.semitones(song.key,key):0,sk=capo?Worship.transposeKey(key,-capo):key;return {semis:((semis-(capo||0))%12+12)%12,flats:Worship.useFlats(sk||key),shapeKey:sk}}
+function wParsed(song){return song._p&&song._p.src===song.src?song._p.v:(song._p={src:song.src,v:Worship.parse(song.src)}).v}
+function wOrder(song){const p=wParsed(song);if(!song.arr||!song.arr.trim())return null;const by={};p.sections.forEach((s,i)=>{const k=s.short.toLowerCase();if(!(k in by))by[k]=i;const l=s.label.toLowerCase();if(!(l in by))by[l]=i});
+ const o=song.arr.split(/[\s,>→-]+/).map(t=>by[t.toLowerCase()]).filter(i=>i!=null);return o.length?o:null}
+function wDeckSong(song,item){const p=wParsed(song),key=wKeyOf(song,item),capo=item&&item.capo!=null?item.capo:(song.capo||0),sh=wShape(song,key,capo);
+ return {id:song.id,t:song.t,a:song.a||'',key,capo,slides:Worship.slides({parsed:p},wOrder(song)),short:p.sections.map(s=>s.short),chart:Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats,compactRepeats:true})}}
+function wPresent(items,name){const songs=wSongs(),list=items.map(it=>songs[it.id]&&wDeckSong(songs[it.id],it)).filter(Boolean);if(!list.length)return;
+ const b=new Uint8Array(28);crypto.getRandomValues(b);const u=x=>btoa(String.fromCharCode.apply(null,x)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+ const sid=u(b.slice(0,12)),key=u(b.slice(12,28));S.set('wlive',{sid,key,at:Date.now(),name:name||list[0].t,deck:{name:name||'',songs:list}});
+ location.href='live/#s='+sid+'&k='+key+'&lead=1'}
+function wHead(t){return `<div class="jv wsp">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">${t}</h1>`}
+function worshipView(){
+ if(WS.edit)return wEditView();if(WS.song)return wSongView();if(WS.set)return wSetView();
+ const live=wLive();let h=wHead('Worship')+`<div class="t-sort lib-seg" role="tablist" aria-label="Worship">${[['sets','Setlists'],['songs','Songs']].map(([v,l])=>`<button role="tab" data-wp="${v}" class="${WS.pane===v?'on':''}" aria-selected="${WS.pane===v}">${l}</button>`).join('')}</div>`;
+ if(live)h+=`<a class="w-live" href="live/#s=${live.sid}&k=${live.key}&lead=1"><i></i><span><b>Live now</b><small>${esc(live.name||'')} · back to the presentation</small></span>${W_IC.play}</a>`;
+ const songs=wSongs(),ids=Object.keys(songs).sort((a,b)=>songs[a].t.localeCompare(songs[b].t));
+ if(WS.pane==='songs'){
+  if(ids.length>8)h+=`<input class="w-q" id="wq" type="search" placeholder="Search your songs" value="${esc(WS.q)}">`;
+  const q=WS.q.trim().toLowerCase(),show=ids.filter(id=>!q||(songs[id].t+' '+(songs[id].a||'')).toLowerCase().includes(q));
+  h+=show.length?`<div class="w-list">${show.map(id=>{const s=songs[id];return `<button class="w-row" data-wsong="${id}"><span><b class="serif">${esc(s.t)}</b><small>${esc([s.a,wKeyOf(s)&&'Key '+wKeyOf(s)].filter(Boolean).join(' · '))}</small></span><i>›</i></button>`}).join('')}</div>`
+   :`<p class="w-empty">${ids.length?'No song matches.':'Your songbook is empty. Add a song by pasting its chord chart: chords above the words, or ChordPro.'}</p>`;
+  return h+`<button class="w-add" data-wnew>Add a song</button></div>`}
+ const sets=wSets();
+ h+=sets.length?`<div class="w-list">${sets.map(st=>`<button class="w-row" data-wset="${st.id}"><span><b class="serif">${esc(st.name||'Untitled set')}</b><small>${st.items.length} song${st.items.length===1?'':'s'}${st.items.length?' · '+esc(st.items.slice(0,3).map(it=>(songs[it.id]||{}).t).filter(Boolean).join(', ')):''}</small></span><i>›</i></button>`).join('')}</div>`
+  :`<p class="w-empty">${ids.length?'Gather songs into a setlist for your next worship time.':'Start by adding songs in the Songs tab, then gather them into a setlist.'}</p>`;
+ return h+`<button class="w-add" data-wnewset>New setlist</button></div>`}
+function wSongView(){const s=wSongs()[WS.song];if(!s){WS.song=null;return worshipView()}
+ const key=wKeyOf(s),capo=s.capo||0,sh=wShape(s,key,capo),p=wParsed(s);
+ return `<div class="jv wsp"><button class="w-back" data-wback>${W_IC.back}Songs</button><h1 class="w-title serif">${esc(s.t)}</h1>${s.a?`<div class="w-by">${esc(s.a)}</div>`:''}
+ <div class="w-keys"><span class="w-kl">Key</span><button class="w-kb" data-wk="-1" aria-label="Key down">−</button><b class="w-kv">${esc(key||'?')}</b><button class="w-kb" data-wk="1" aria-label="Key up">+</button>
+ <span class="w-kl" style="margin-left:auto">Capo</span><button class="w-kb" data-wc="-1" aria-label="Capo down">−</button><b class="w-kv">${capo}</b><button class="w-kb" data-wc="1" aria-label="Capo up">+</button></div>
+ ${capo&&sh.shapeKey?`<div class="w-capo">Capo ${capo}: play ${esc(sh.shapeKey)} shapes, sounds in ${esc(key)}</div>`:''}
+ <div class="w-acts"><button class="w-btn pri" data-wpresent="${s.id}">${W_IC.play}Present</button>${s.am?`<a class="w-btn" href="${esc(s.am)}" target="_blank" rel="noopener">${W_IC.apple}Listen on Apple Music</a>`:''}<button class="w-btn" data-wedit="${s.id}">Edit</button></div>
+ ${s.notes?`<p class="w-notes">${esc(s.notes)}</p>`:''}
+ <div class="w-chart">${p.sections.length?Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats}):'<p class="w-empty">No chart yet. Tap Edit to paste one.</p>'}</div></div>`}
+function wEditView(){const isNew=WS.edit==='new',s=isNew?{t:'',a:'',key:'',capo:0,am:'',notes:'',src:'',arr:''}:wSongs()[WS.edit];if(!s){WS.edit=null;return worshipView()}
+ const keys=[''].concat(Worship.KEYS_MAJ,Worship.KEYS_MIN);
+ return `<div class="jv wsp"><button class="w-back" data-wcancel>${W_IC.back}${isNew?'Songs':'Back'}</button><h1 class="w-title serif">${isNew?'Add a song':'Edit song'}</h1>
+ <label class="w-f"><span>Title</span><input id="wf-t" value="${esc(s.t)}" autocomplete="off"></label>
+ <label class="w-f"><span>Artist or worship collective</span><input id="wf-a" value="${esc(s.a||'')}" autocomplete="off"></label>
+ <div class="w-two"><label class="w-f"><span>Key the chart is written in</span><select id="wf-k">${keys.map(k=>`<option ${k===(s.key||'')?'selected':''} value="${k}">${k||'(from the chart)'}</option>`).join('')}</select></label>
+ <label class="w-f"><span>Capo</span><select id="wf-c">${[0,1,2,3,4,5,6,7].map(c=>`<option ${c===(s.capo||0)?'selected':''}>${c}</option>`).join('')}</select></label></div>
+ <label class="w-f"><span>Chord chart</span><textarea id="wf-src" rows="16" spellcheck="false" autocapitalize="off" placeholder="Paste the chart: chords on their own line above the words, with section names like Verse 1, Chorus, Bridge. ChordPro works too.">${esc(s.src||'')}</textarea></label>
+ <div class="w-found" id="wf-found"></div>
+ <label class="w-f"><span>Order to sing it (optional), e.g. V1 C V2 C B C</span><input id="wf-arr" value="${esc(s.arr||'')}" autocomplete="off" autocapitalize="characters"></label>
+ <label class="w-f"><span>Apple Music link</span><input id="wf-am" value="${esc(s.am||'')}" placeholder="https://music.apple.com/…" autocomplete="off" inputmode="url"></label>
+ <button class="w-btn" id="wf-find">${W_IC.apple}Find on Apple Music</button><div id="wf-res"></div>
+ <label class="w-f"><span>Notes</span><textarea id="wf-n" rows="2">${esc(s.notes||'')}</textarea></label>
+ <div class="w-acts"><button class="w-btn pri" id="wf-save">Save</button><button class="w-btn" data-wcancel>Cancel</button>${isNew?'':'<button class="w-btn w-del" id="wf-del">Delete</button>'}</div></div>`}
+function wSetView(){const sets=wSets(),st=sets.find(x=>x.id===WS.set);if(!st){WS.set=null;return worshipView()}const songs=wSongs();
+ return `<div class="jv wsp"><button class="w-back" data-wback>${W_IC.back}Setlists</button>
+ <input class="w-name serif" id="ws-name" value="${esc(st.name||'')}" placeholder="Name this set">
+ <div class="w-acts"><button class="w-btn pri" data-wpresentset="${st.id}" ${st.items.length?'':'disabled'}>${W_IC.play}Present</button><button class="w-btn" data-wpick>Add songs</button></div>
+ ${st.items.length?`<div class="w-items">${st.items.map((it,i)=>{const s=songs[it.id];if(!s)return '';const key=wKeyOf(s,it);return `<div class="w-it"><span class="w-n">${i+1}</span><button class="w-itt" data-wsong="${s.id}"><b class="serif">${esc(s.t)}</b><small>${esc(s.a||'')}</small></button>
+  <span class="w-ik"><button class="w-kb s" data-wik="${i}|-1" aria-label="Key down">−</button><b>${esc(key||'?')}</b><button class="w-kb s" data-wik="${i}|1" aria-label="Key up">+</button></span>
+  <span class="w-mv"><button data-wmv="${i}|-1" aria-label="Move up" ${i?'':'disabled'}>↑</button><button data-wmv="${i}|1" aria-label="Move down" ${i<st.items.length-1?'':'disabled'}>↓</button><button data-wrm="${i}" aria-label="Remove">✕</button></span></div>`}).join('')}</div>`:'<p class="w-empty">No songs yet. Tap Add songs.</p>'}
+ <div class="w-acts"><button class="w-btn" data-wdup>Duplicate</button><button class="w-btn w-del" data-wdelset>Delete</button></div></div>`}
+function wSaveSet(st){const sets=wSets(),i=sets.findIndex(x=>x.id===st.id);st.at=Date.now();if(i<0)sets.unshift(st);else sets[i]=st;S.set('wsets',sets)}
+function wFound(){const box=$('#wf-found');if(!box)return;const p=Worship.parse($('#wf-src').value);
+ box.innerHTML=p.sections.length?'Found: '+p.sections.map(s=>`<span class="w-sc">${esc(s.short)}</span> ${esc(s.label)}${s.ref?' (repeat)':''}`).join(' · ')+(p.meta.title&&!$('#wf-t').value?` <button class="lnk" id="wf-use">Use “${esc(p.meta.title)}” as the title</button>`:''):'';
+ const u=$('#wf-use');if(u)u.onclick=()=>{$('#wf-t').value=p.meta.title;if(p.meta.artist&&!$('#wf-a').value)$('#wf-a').value=p.meta.artist;if(p.meta.key&&!$('#wf-k').value)$('#wf-k').value=Worship.keyInfo(p.meta.key)?p.meta.key:'';wFound()}}
+/* Apple Music: the store's own search (no account), so you pick the exact recording and artist */
+function wAmSearch(q,cb){const n='amcb'+Date.now();const sc=document.createElement('script');let done=false;window[n]=d=>{done=true;delete window[n];sc.remove();cb((d&&d.results)||[])};
+ sc.src='https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q)+'&callback='+n;sc.onerror=()=>{if(!done){delete window[n];cb(null)}};document.head.appendChild(sc);setTimeout(()=>{if(!done)cb(null)},9000)}
+function wireWorship(){
+ document.querySelectorAll('[data-wp]').forEach(b=>b.onclick=()=>{WS.pane=b.dataset.wp;S.set('wpane',WS.pane);render()});
+ const q=$('#wq');if(q)q.oninput=()=>{WS.q=q.value;const y=q.selectionStart;render();const n=$('#wq');n.focus();n.setSelectionRange(y,y)};
+ document.querySelectorAll('[data-wsong]').forEach(b=>b.onclick=()=>{WS.song=b.dataset.wsong;WS.from=WS.set;WS.set=null;render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wset]').forEach(b=>b.onclick=()=>{WS.set=b.dataset.wset;render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wback]').forEach(b=>b.onclick=()=>{if(WS.song){WS.song=null;if(WS.from){WS.set=WS.from;WS.from=null}}else WS.set=null;render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wnew]').forEach(b=>b.onclick=()=>{WS.edit='new';render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wedit]').forEach(b=>b.onclick=()=>{WS.edit=b.dataset.wedit;render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wcancel]').forEach(b=>b.onclick=()=>{WS.edit=null;render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wnewset]').forEach(b=>b.onclick=()=>{const st={id:wId(),name:'',items:[]};wSaveSet(st);WS.set=st.id;render();scrollTo(0,0);const n=$('#ws-name');if(n)n.focus()});
+ document.querySelectorAll('[data-wpresent]').forEach(b=>b.onclick=()=>wPresent([{id:b.dataset.wpresent}],''));
+ document.querySelectorAll('[data-wpresentset]').forEach(b=>b.onclick=()=>{const st=wSets().find(x=>x.id===b.dataset.wpresentset);if(st)wPresent(st.items,st.name)});
+ const song=WS.song&&wSongs()[WS.song];
+ document.querySelectorAll('[data-wk]').forEach(b=>b.onclick=()=>{const all=wSongs(),s=all[WS.song],k=wKeyOf(s);if(!k){alert('Set the key in Edit first.');return}s.pk=Worship.transposeKey(k,+b.dataset.wk);if(s.pk===s.key)delete s.pk;delete s._p;S.set('wsongs',all);render()});
+ document.querySelectorAll('[data-wc]').forEach(b=>b.onclick=()=>{const all=wSongs(),s=all[WS.song];s.capo=Math.max(0,Math.min(9,(s.capo||0)+ +b.dataset.wc));delete s._p;S.set('wsongs',all);render()});
+ // editor
+ const src=$('#wf-src');if(src){src.oninput=wFound;wFound();
+  $('#wf-find').onclick=()=>{const t=$('#wf-t').value.trim(),a=$('#wf-a').value.trim(),res=$('#wf-res');if(!t){res.innerHTML='<p class="w-hint">Type the title first.</p>';return}res.innerHTML='<p class="w-hint">Searching Apple Music…</p>';
+   wAmSearch(t+' '+a,r=>{if(r===null){res.innerHTML='<p class="w-hint">Apple Music did not answer. Paste the link from the Music app instead (Share → Copy Link).</p>';return}
+    const norm=x=>String(x||'').toLowerCase().replace(/[^a-z0-9]/g,'');r=r.filter(x=>x.trackViewUrl);
+    r.sort((x,y)=>(norm(y.artistName).includes(norm(a))&&a?1:0)-(norm(x.artistName).includes(norm(a))&&a?1:0));
+    res.innerHTML=r.length?`<div class="w-am">${r.slice(0,8).map((x,i)=>`<button data-am="${i}"><img src="${esc(x.artworkUrl60||'')}" alt="" loading="lazy"><span><b>${esc(x.trackName)}</b><small>${esc(x.artistName)} · ${esc(x.collectionName||'')}</small></span>${a&&norm(x.artistName).includes(norm(a))?'<i>✓ artist</i>':''}</button>`).join('')}</div><p class="w-hint">Pick the exact recording. Several artists often record the same song.</p>`:'<p class="w-hint">No match. Try the title alone, or paste the link.</p>';
+    res.querySelectorAll('[data-am]').forEach(b=>b.onclick=()=>{const x=r[+b.dataset.am];$('#wf-am').value=x.trackViewUrl.replace(/[?&]uo=\d+/,'');if(!$('#wf-a').value)$('#wf-a').value=x.artistName;res.innerHTML=`<p class="w-hint">Linked: ${esc(x.trackName)} · ${esc(x.artistName)}</p>`})})};
+  $('#wf-save').onclick=()=>{const t=$('#wf-t').value.trim();if(!t){alert('Give the song a title.');return}const all=wSongs(),id=WS.edit==='new'?wId():WS.edit,o=all[id]||{id};
+   const p=Worship.parse(src.value);let key=$('#wf-k').value||(p.meta.key&&Worship.keyInfo(p.meta.key)?p.meta.key:'');
+   Object.assign(o,{id,t,a:$('#wf-a').value.trim(),key,capo:+$('#wf-c').value||0,src:src.value,arr:$('#wf-arr').value.trim(),am:$('#wf-am').value.trim(),notes:$('#wf-n').value.trim(),at:Date.now()});delete o._p;
+   if(o.am&&!/^https:\/\/(music|itunes)\.apple\.com\//.test(o.am)){alert('That does not look like an Apple Music link (it should start with https://music.apple.com/).');return}
+   all[id]=o;S.set('wsongs',all);WS.edit=null;WS.song=id;render();scrollTo(0,0)};
+  const del=$('#wf-del');if(del)del.onclick=()=>{if(!confirm('Delete this song? It is also taken out of your setlists.'))return;const all=wSongs();delete all[WS.edit];S.set('wsongs',all);S.set('wsets',wSets().map(st=>(st.items=st.items.filter(it=>it.id!==WS.edit),st)));WS.edit=null;WS.song=null;render()}}
+ // setlist
+ const st=WS.set&&wSets().find(x=>x.id===WS.set);
+ if(st){const nm=$('#ws-name');nm.onchange=()=>{st.name=nm.value.trim();wSaveSet(st)};
+  document.querySelectorAll('[data-wmv]').forEach(b=>b.onclick=()=>{const [i,d]=b.dataset.wmv.split('|').map(Number),j=i+d;[st.items[i],st.items[j]]=[st.items[j],st.items[i]];wSaveSet(st);render()});
+  document.querySelectorAll('[data-wrm]').forEach(b=>b.onclick=()=>{st.items.splice(+b.dataset.wrm,1);wSaveSet(st);render()});
+  document.querySelectorAll('[data-wik]').forEach(b=>b.onclick=()=>{const [i,d]=b.dataset.wik.split('|').map(Number),it=st.items[i],s=wSongs()[it.id],k=wKeyOf(s,it);if(!k){alert('Set this song’s key in Edit first.');return}it.key=Worship.transposeKey(k,d);wSaveSet(st);render()});
+  document.querySelectorAll('[data-wdup]').forEach(b=>b.onclick=()=>{const c={id:wId(),name:(st.name||'Set')+' (copy)',items:st.items.map(x=>Object.assign({},x))};wSaveSet(c);WS.set=c.id;render();scrollTo(0,0)});
+  document.querySelectorAll('[data-wdelset]').forEach(b=>b.onclick=()=>{if(!confirm('Delete this setlist? The songs stay in your songbook.'))return;S.set('wsets',wSets().filter(x=>x.id!==st.id));WS.set=null;render()});
+  document.querySelectorAll('[data-wpick]').forEach(b=>b.onclick=()=>{const songs=wSongs(),ids=Object.keys(songs).sort((a,c)=>songs[a].t.localeCompare(songs[c].t));
+   if(!ids.length){alert('Your songbook is empty: add songs in the Songs tab first.');return}
+   const box=document.createElement('div');box.className='w-pick';box.innerHTML=`<div class="w-pk"><h3 class="serif">Add songs</h3><div class="w-pl">${ids.map(id=>`<label><input type="checkbox" value="${id}"><span><b>${esc(songs[id].t)}</b><small>${esc(songs[id].a||'')}</small></span></label>`).join('')}</div><div class="w-acts"><button class="w-btn pri" id="wpk-ok">Add</button><button class="w-btn" id="wpk-x">Cancel</button></div></div>`;
+   document.body.appendChild(box);box.onclick=e=>{if(e.target===box||e.target.id==='wpk-x')box.remove()};
+   $('#wpk-ok').onclick=()=>{box.querySelectorAll('input:checked').forEach(c=>st.items.push({id:c.value}));wSaveSet(st);box.remove();render()}})}}
 function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotional'&&i.audio&&!i.nar)cnt[i.who]=(cnt[i.who]||0)+1});
  const bpOf=id=>bpList().find(s=>bpIds(s).includes(id));
  let h=`<div class="jv lib">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Library</h1><div class="t-sort lib-seg" role="tablist" aria-label="Browse by">${[['teachers','Teachers'],['topics','Topics'],['books','Books']].map(([v,l])=>`<button role="tab" data-lt="${v}" class="${LT===v?'on':''}" aria-selected="${LT===v}">${l}</button>`).join('')}</div>`;
@@ -2204,7 +2370,7 @@ function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='
   g.addEventListener('touchstart',e=>{t0=null;if(e.touches.length!==1)return;const t=e.touches[0];if(t.clientX<22)return;t0={x:t.clientX,y:t.clientY,lx:t.clientX,ly:t.clientY,t:Date.now(),y0:scrollY}},{passive:true});
   g.addEventListener('touchmove',e=>{if(t0&&e.touches.length===1){t0.lx=e.touches[0].clientX;t0.ly=e.touches[0].clientY}},{passive:true});
   g.addEventListener('touchend',()=>{if(!t0)return;const dx=t0.lx-t0.x,dy=t0.ly-t0.y,ok=Date.now()-t0.t<900&&Math.abs(scrollY-t0.y0)<16;t0=null;if(ok&&Math.abs(dx)>50&&Math.abs(dx)>1.7*Math.abs(dy))prGo(dx<0?1:-1)},{passive:true})}}
-function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boot=true;view='journey';S.set('view',view);migrateCamp()}tabsPaint();if(view==='pray'){m.innerHTML=prayView();wire();wirePray();return}if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
+function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boot=true;view=location.hash==='#worship'?'worship':'journey';if(location.hash==='#worship')history.replaceState(null,'',location.pathname);S.set('view',view);migrateCamp()}tabsPaint();if(view==='pray'){m.innerHTML=prayView();wire();wirePray();return}if(view==='worship'){m.innerHTML=worshipView();wire();wireWorship();return}if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
  migrateCamp();const w=walk();let first=jpIdx();if(camp==null||camp>=w.length)camp=first;  /* the road is walked up to your place */
  const rd=w.filter(x=>!x.c.intro&&read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}

@@ -1,7 +1,7 @@
 // Scripture Companion service worker. Caches only the app itself so it opens offline;
 // sermon audio always streams from the publisher (never cached, never proxied).
 const CACHE = 'sc-v__VERSION__';
-const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
+const SHELL = ['./', 'index.html', 'worship.js', 'manifest.webmanifest', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
 });
@@ -14,6 +14,10 @@ self.addEventListener('fetch', e => {
   const u = new URL(e.request.url);
   if (e.request.method !== 'GET' || u.origin !== location.origin) return; // audio + links: straight to network
   if (u.pathname.endsWith('version.txt')) return;                          // version checks never come from cache
+  if (e.request.mode === 'navigate' && /\/(tv|live)\//.test(u.pathname)) {  // the Worship screen and remote pages: never stored as the app
+    e.respondWith(fetch(e.request, { cache: 'no-store' }).catch(() => caches.match(e.request)));
+    return;
+  }
   if (e.request.mode === 'navigate') { // network first so new builds show up; cache when offline
     e.respondWith(fetch(e.request, { cache: 'no-store' }).then(r => {  // always the newest page when online
       const copy = r.clone(); caches.open(CACHE).then(c => c.put('index.html', copy)); return r;

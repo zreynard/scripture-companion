@@ -1,0 +1,13 @@
+# End-to-end test of Worship on the published site and the real relays (tools/worship_e2e.js).
+name: Worship end-to-end
+on: workflow_dispatch
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm i --no-save playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+      - run: node tools/worship_e2e.js

@@ -112,7 +112,14 @@
     if (G.BroadcastChannel) {
       try {
         this.bc = new BroadcastChannel('scwp-' + this.sid);
-        this.bc.onmessage = function (e) { var m = e.data || {}; if (m.k === 's') self.gotState(m.d, 'local'); else if (m.k === 'd') self.gotDeck(m.d, 'local'); else if (m.k === 'p') self.gotPeer(m.d); };
+        this.bc.onmessage = function (e) {
+          var m = e.data || {};
+          if (m.k === 's') self.gotState(m.d, 'local'); else if (m.k === 'd') self.gotDeck(m.d, 'local'); else if (m.k === 'p') self.gotPeer(m.d);
+          else if (m.k === 'q') {   // a window that just opened on this computer asks for the songs and the current slide
+            try { if (self.deck) self.bc.postMessage({ k: 'd', d: self.deck }); if (self.state) self.bc.postMessage({ k: 's', d: self.state }); } catch (x) {}
+          }
+        };
+        try { this.bc.postMessage({ k: 'q' }); } catch (e) {}
       } catch (e) { this.bc = null; }
     }
     this.ready.then(function () {
