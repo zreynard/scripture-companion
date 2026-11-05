@@ -951,6 +951,16 @@ body.bpsopen{overflow:hidden}body.bpsopen #np.on.mini{z-index:13}body.bpsopen.np
 .jv-seg b{display:block;height:100%;background:#9a7524;border-radius:2px;transition:width .4s}
 .jv-next{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px;border:0;border-radius:22px;background:#fffdf8;color:var(--ink);box-shadow:0 6px 20px rgba(27,36,64,.08);cursor:pointer;font:inherit}
 .jv-next:active{transform:scale(.99)}
+.jread{margin:-2px 0 14px;padding:14px 18px 16px;background:#fffdf7;border:1px solid rgba(27,36,64,.08);border-radius:0 0 20px 20px}
+.jr-bar,.jr-end{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.jr-end{margin-top:14px}
+.jr-b{height:36px;padding:0 14px;border-radius:18px;border:1px solid rgba(27,36,64,.14);background:#fff;font:600 14px -apple-system,system-ui,sans-serif;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+.jr-open{width:44px;height:44px;flex:none;border-radius:22px;border:1px solid rgba(27,36,64,.12);background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;margin-left:6px;padding:0}.jr-open.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.jr-fab{position:fixed;right:16px;z-index:7;height:46px;padding:0 18px;border-radius:23px;border:0;background:var(--ink);color:#fff;font:700 15px -apple-system,system-ui,sans-serif;display:flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(27,36,64,.28);opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s}
+.jr-fab.show{opacity:1;pointer-events:auto;transform:none}
+.jr-b.pri{background:var(--ink);color:#fff;border-color:var(--ink)}
+.jr-done{height:40px;padding:0 16px;border-radius:20px;border:0;background:var(--ink);color:#fff;font:700 14px -apple-system,system-ui,sans-serif}.jr-ok{color:var(--gold2);font-weight:700;margin-right:6px}
+.jr-txt{font:19px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--ink);margin-top:12px}.jr-txt h4{font:700 12px -apple-system,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2);margin:16px 0 6px}
+.jr-txt p{margin:0 0 12px}.jr-txt sup{font-size:.62em;color:var(--gold2);font-weight:700;margin-right:3px}.jr-txt .poem{padding-left:14px}
 .jw[data-row],.jw[data-scrrow],.voice[data-row]{cursor:pointer;-webkit-tap-highlight-color:transparent}.jw[data-row]:active,.jw[data-scrrow]:active{opacity:.72}
 .jv-pp{flex:none;width:56px;height:56px;border-radius:50%;background:#9a7524;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(154,117,36,.35)}
 .jv-nt{flex:1;min-width:0;display:flex;flex-direction:column}
@@ -1812,7 +1822,7 @@ function journeyView(){const w=walk(),i=jpIdx(),x=w[i],b=x.b,c=x.c,a=nextAction(
  const skipL=(st,key)=>coreOn()&&a&&a.step===st&&(a.kind==='play'||a.kind==='scripture')?`<button class="jv-sk" data-skipnext="${key}">Skip for now</button>`:'';
  if((ii||itx)&&show('intro'))rows+=`<div class="jv-sec jv-tsec" id="js-intro"><span>Introduction</span>${ii?skipL('intro',ii):''}</div>${ii?(!coreOn()&&tab&&card&&a.id===ii?'':jRow(ii,'',up)):`<div class="jw"><span class="jpb off" aria-hidden="true">${icon('book',13,1.8,'currentColor')}</span><div class="jw-t"><b>${esc(c.intro?'Introducing '+b.name:stopName(x)+' · Introduction')}</b><span>The Narrator · narration coming soon</span></div></div>`}${ii&&coreOn()?'':`<button class="jv-rd" id="jrd" aria-expanded="false">Read the introduction</button><div class="jv-itx" id="jitx" hidden></div>`}`;
  if(!c.intro&&show('scripture')&&!(!coreOn()&&tab&&card&&a.kind==='scripture')){const rd=!!read[scrKey(x)],pl=cur===narId(b.abbr,c.c)&&!audio.paused,nup=a&&a.kind==='scripture',nd=narDur(b.abbr,c.c);
-  rows+=`<div class="jv-sec jv-tsec" id="js-scripture"><span>Scripture</span>${skipL('scripture','S:'+scrKey(x))}</div><div class="jw${rd?' heard':''}${pl?' pl':''}" data-scrrow="1"><button class="jpb" data-jscr="1" aria-label="${pl?'Pause':'Listen to'} ${esc(stopName(x))}">${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>${pl?'<em class="jw-up">Reading</em> · ':nup&&!rd?'<em class="jw-up">Up next</em> · ':''}Read or listen${nd?' · '+durTxt(nd):''}</span></div>${rd?'<i class="jw-ok" aria-label="read">✓</i>':'<svg class="jw-go" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'}</div>`}
+  rows+=`<div class="jv-sec jv-tsec" id="js-scripture"><span>Scripture</span>${skipL('scripture','S:'+scrKey(x))}</div><div class="jw${rd?' heard':''}${pl?' pl':''}" data-scrrow="1"><button class="jpb" data-jscr="1" aria-label="${pl?'Pause':'Listen to'} ${esc(stopName(x))}">${icon(pl?'pause':'play',12,0,'currentColor')}</button><div class="jw-t"><b>${esc(stopName(x))}</b><span>${pl?'<em class="jw-up">Reading</em> · ':nup&&!rd?'<em class="jw-up">Up next</em> · ':''}Read or listen${nd?' · '+durTxt(nd):''}</span></div><button class="jr-open${RDO===scrKey(x)?' on':''}" data-rdopen="1" aria-label="${RDO===scrKey(x)?'Close the text of':'Read the text of'} ${esc(stopName(x))}" aria-expanded="${RDO===scrKey(x)}">${icon('book',18,1.8,'currentColor')}</button>${rd?'<i class="jw-ok" aria-label="read">✓</i>':'<svg class="jw-go" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'}</div>`+(RDO===scrKey(x)?`<div class="jread" id="jread"><div class="jr-bar"><button class="jr-b pri" data-rdlisten="1">${icon('play',12,0,'currentColor')} Listen</button><button class="jr-b" data-rdclose="1">Close</button></div><div class="txt jr-txt" data-book="${esc(b.name)}" data-ch="${c.c}">Opening ${esc(stopName(x))}…</div><button class="jr-fab" data-rdlisten="1" aria-label="Listen from here">${icon('play',13,0,'currentColor')} Listen from here</button><div class="jr-end">${rd?'<span class="jr-ok">✓ Read</span>':`<button class="jr-done" data-jread="1">I’ve read ${esc(stopName(x))} ✓</button>`}<button class="jr-b" data-rdclose="1">Close</button></div></div>`:'')}
  if(!coreOn())rows+=G.overview.length||c.intro?sec(c.intro?'Teaching on the book':'Overview',G.overview,'overview'):'<div id="js-overview"></div>';
  if(coreOn()){if(show('teaching'))rows+=coreRows(x,i,G,sec,up)}else{rows+=sec(c.intro?'':'Teaching · in passage order',[...G.chapter,...G.verses],'teaching');if(!c.intro&&!G.chapter.length&&!G.verses.length)rows+=`<div class="jv-sec" id="js-teaching">Teaching</div><p class="jv-none">No teaching on this chapter alone yet.</p>`;}
  if(shown<total)rows+=`<button class="jv-more" id="jmore">${total-shown} more</button>`;
@@ -1886,10 +1896,16 @@ function wireJourney(){corePaint();{const g=$('#jseg');if(g)g.classList.remove('
  /* swipe anywhere on the player: left = on to the next stop, right = back one */
  /* swiping: see jSwipe (one listener for the whole Journey screen) */
 const mo=$('#jmore');if(mo)mo.onclick=()=>{JV.more=true;render()};
- document.querySelectorAll('[data-jread]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()];read[scrKey(x)]=true;S.set('read',read);render()});
+ document.querySelectorAll('[data-jread]').forEach(b=>b.onclick=()=>{const x=walk()[jpIdx()];read[scrKey(x)]=true;S.set('read',read);RDO=null;render()});
  const scr=full=>{const x=walk()[jpIdx()],id=narId(x.b.abbr,x.c.c);BPM=null;DEEP=null;if(cur===id){if(full)setMini(false);else audio.paused?audio.play().catch(()=>{}):audio.pause();return}const a=nextAction(jpIdx());JM=!!(a&&a.kind==='scripture');narPlay(x.b,x.c.c,null,{jm:JM,full})};
  document.querySelectorAll('[data-jscr]').forEach(b=>b.onclick=e=>{e.stopPropagation();scr(false)});
- document.querySelectorAll('[data-scrrow]').forEach(r=>r.onclick=e=>{if(e.target.closest('button,a'))return;scr(true)})}
+ document.querySelectorAll('[data-scrrow]').forEach(r=>r.onclick=e=>{if(e.target.closest('button,a'))return;scr(true)});
+ /* the book button: the chapter's text opens right here, with no sound */
+ document.querySelectorAll('[data-rdopen]').forEach(b=>b.onclick=e=>{e.stopPropagation();const x=walk()[jpIdx()],k=scrKey(x);RDO=RDO===k?null:k;render();if(RDO){const j=$('#jread');if(j)setTimeout(()=>window.scrollTo({top:j.getBoundingClientRect().top+scrollY-140,behavior:'smooth'}),60)}});
+ /* changed your mind: listen, starting at the verse you have reached */
+ document.querySelectorAll('[data-rdlisten]').forEach(b=>b.onclick=e=>{e.stopPropagation();const x=walk()[jpIdx()],top=[...document.querySelectorAll('#jread .vs')].find(v=>v.getBoundingClientRect().bottom>150),v=top?+top.dataset.v:0;RDO=null;BPM=null;DEEP=null;const a=nextAction(jpIdx());JM=!!(a&&a.kind==='scripture');narPlay(x.b,x.c.c,v>1?v:null,{jm:JM,full:true})});
+ document.querySelectorAll('[data-rdclose]').forEach(b=>b.onclick=e=>{e.stopPropagation();RDO=null;render()});
+ jrFab();const jr=$('#jread .jr-txt');if(jr){const x=walk()[jpIdx()];loadBook(x.b.name).then(d=>{if(jr.isConnected)jr.innerHTML=chapterBody(d,x.c.c,null)}).catch(()=>{jr.textContent='This chapter could not be opened. Check the connection and try again.'})}}
 
 /* ---- Big Picture: whole-Bible series, each heard in order, each keeping its own place ---- */
 let BP=S.get('bp',{}),BPM=null;
@@ -2675,6 +2691,13 @@ function chBefore(b,c){if(c>1)return [b,c-1];const i=D.books.indexOf(b);return i
 function readerSec(b,c,first){return loadBook(b.name).then(d=>{const sec=document.createElement('section');sec.dataset.k=b.abbr+c;
   sec.innerHTML=`<h3 class="rc${first?' first':''}">${esc(b.name)} ${c}</h3><div class="txt${hasNar(b.abbr,c)?' narr':''}" data-book="${esc(b.name)}" data-ch="${c}">${chapterBody(d,c,null)}</div>`;
   if(hasNar(b.abbr,c))wireVerses(sec.querySelector('.txt'),b,c);return sec})}
+/* the chapter open for reading (no sound) on the Journey screen, by stop; null when closed */
+let RDO=null;
+/* while reading, once the top Listen button has scrolled away, a floating one stays in reach (above the tabs and any player) */
+function jrFab(){const f=document.querySelector('#jread .jr-fab'),bar=document.querySelector('#jread .jr-bar'),jr=document.querySelector('#jread');if(!f||!bar||!jr)return;
+ const tb=($('#tabs')||{}).offsetHeight||0,np=$('#np'),npTop=np?np.getBoundingClientRect().top:innerHeight,occ=Math.max(tb,npTop<innerHeight?innerHeight-npTop:0);
+ f.style.bottom=(occ+14)+'px';f.classList.toggle('show',bar.getBoundingClientRect().bottom<130&&jr.getBoundingClientRect().bottom>innerHeight*.55)}
+addEventListener('scroll',()=>jrFab(),{passive:true});
 let RD={busy:false,first:null,last:null};
 function readerFill(reset){const box=$('#np-read');if(!NAR||!box)return;const key=NAR.b.abbr+NAR.c;
  if(reset&&!box.querySelector(`section[data-k="${key}"]`)){if(RD.loading===key)return;box.innerHTML='';RD={busy:true,loading:key,first:[NAR.b,NAR.c],last:[NAR.b,NAR.c]};

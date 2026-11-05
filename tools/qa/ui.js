@@ -125,6 +125,14 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await F.mouse.click(box.x + box.w * 0.75, box.y + box.h / 2); await wait(500); const l1 = await lab(F), a1 = await lab(Lp);
     await F.mouse.click(box.x + box.w * 0.12, box.y + box.h / 2); await wait(500); const l2 = await lab(F);
     await c2.close(); return (!endShown && leadEnd && l1 !== l0 && a1 === l1 && l2 === l0) || { endShown, leadEnd, l0, l1, a1, l2 }; });
+  await T('U54 Scripture card: tap listens, the book opens the text silently, Listen from here starts at the verse you reached', async () => { const X = await open(await ctx());
+    await X.evaluate(() => { window.__np = []; window.narPlay = function () { __np.push([arguments[1], arguments[2] == null ? null : arguments[2], !!(arguments[3] && arguments[3].full)]); }; jumpGo(walk().findIndex(x => x.b.name === 'Hebrews' && x.c.c === 12)); }); await wait(1000);
+    const sb = await X.$('text=Scripture >> nth=0'); if (sb) await sb.click().catch(() => {}); await wait(500);
+    await X.click('[data-scrrow] .jw-t'); await wait(300); const tap = await X.evaluate(() => __np.splice(0));
+    await X.click('[data-rdopen]'); await wait(1500); const rd = await X.evaluate(() => ({ open: !!document.querySelector('#jread'), verses: document.querySelectorAll('#jread .vs').length, np: __np.splice(0).length }));
+    await X.evaluate(() => { const v = document.querySelector('#jread .vs[data-v="10"]'); window.scrollTo(0, v.getBoundingClientRect().top + scrollY - 160); }); await wait(500); await X.evaluate(() => dispatchEvent(new Event('scroll'))); await wait(300);
+    const fab = await X.evaluate(() => document.querySelector('.jr-fab').classList.contains('show')); await X.click('.jr-fab'); await wait(300); const lis = await X.evaluate(() => __np.splice(0));
+    return (tap.length === 1 && tap[0][0] === 12 && tap[0][2] && rd.open && rd.verses > 20 && rd.np === 0 && fab && lis.length === 1 && lis[0][1] === 10) || { tap, rd, fab, lis }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   console.log(R.map(r => (r[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + r[0] + (r[1].startsWith('PASS') ? '' : '  ' + r[1].slice(5))).join('\n'));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
