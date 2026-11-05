@@ -8,10 +8,14 @@ const CHART = ['Intro: G D Em C', '', 'Verse 1', 'G            D', 'Walking on a
 const R = {}, wait = ms => new Promise(r => setTimeout(r, ms)); let fails = 0;
 const check = (name, ok, extra) => { R[name] = ok ? 'PASS' : 'FAIL ' + JSON.stringify(extra || ''); if (!ok) fails++; };
 async function until(fn, ms = 15000) { const t0 = Date.now(); for (;;) { try { const v = await fn(); if (v) return Date.now() - t0; } catch (e) {} if (Date.now() - t0 > ms) return -1; await wait(100); } }
+const CUT = () => { const W = window.WebSocket; window.__ws = []; window.__down = false;
+  window.WebSocket = function (u, p) { if (window.__down) throw new Error('offline'); const w = new W(u, p); window.__ws.push(w); return w; };
+  window.WebSocket.prototype = W.prototype; window.__cut = on => { window.__down = on; if (on) window.__ws.forEach(w => { try { w.close(); } catch (e) {} }); }; };
+async function outage(ctx, page, on) { await ctx.setOffline(on); await page.evaluate(o => { window.__cut(o); window.dispatchEvent(new Event(o ? 'offline' : 'online')); if (!o) document.dispatchEvent(new Event('visibilitychange')); }, on); }
 (async () => {
   const b = await chromium.launch(); const errs = [];
-  const phoneC = await b.newContext({ ...devices['iPhone 14'] }), phone = await phoneC.newPage(); phone.on('pageerror', e => errs.push('phone:' + e.message)); phone.on('dialog', d => d.accept());
-  const tvC = await b.newContext({ viewport: { width: 1920, height: 1080 } }), tv = await tvC.newPage(); tv.on('pageerror', e => errs.push('tv:' + e.message));
+  const phoneC = await b.newContext({ ...devices['iPhone 14'] }); await phoneC.addInitScript(CUT); const phone = await phoneC.newPage(); phone.on('pageerror', e => errs.push('phone:' + e.message)); phone.on('dialog', d => d.accept());
+  const tvC = await b.newContext({ viewport: { width: 1920, height: 1080 } }); await tvC.addInitScript(CUT); const tv = await tvC.newPage(); tv.on('pageerror', e => errs.push('tv:' + e.message));
   await phone.goto(SITE + '?t=' + Date.now()); await wait(1500);
   await phone.evaluate(chart => { S.set('wsongs', { q1: { id: 'q1', t: 'Quiet Road', a: 'Test Artist', key: 'G', src: chart }, q2: { id: 'q2', t: 'Second Song', key: 'D', src: 'Verse 1\nD   A\nsecond song line one,\nsecond song line two.' } });
     S.set('wsets', [{ id: 's1', name: 'Test Night', items: [{ id: 'q1', key: 'A' }, { id: 'q2' }] }]); }, CHART);
@@ -49,18 +53,20 @@ async function until(fn, ms = 15000) { const t0 = Date.now(); for (;;) { try { c
   await phone.click('#bBlank'); check('C2 Blank clears the TV', (await until(async () => (await tvLine()) === '(blank)')) >= 0);
   await phone.click('#bBlank'); check('C3 Show brings the lyrics back', (await until(async () => (await tvLine()) === 'You are near, You are near,')) >= 0);
   // E: the phone loses its connection; the TV keeps its lyrics; the friend keeps leading; the phone catches up
-  await phoneC.setOffline(true); await phone.evaluate(() => window.dispatchEvent(new Event('offline')));
-  await wait(3000); check('E1 TV keeps the lyrics while the phone is offline', (await tvLine()) === 'You are near, You are near,', await tvLine());
+  await outage(phoneC, phone, true);
+  const shows = await until(() => phone.evaluate(() => /Reconnecting/.test(document.querySelector('#pill').textContent)), 10000);
+  check('E0 phone shows it is offline (not a false connected state)', shows >= 0);
+  await wait(1500); check('E1 TV keeps the lyrics while the phone is offline', (await tvLine()) === 'You are near, You are near,', await tvLine());
   await phone.click('#bNext').catch(() => {});   // a tap while offline
   await fr.click('.chip:has-text("Verse 2")'); check('E2 friend still moves the TV', (await until(async () => (await tvLine()) === 'Every valley, every hill,')) >= 0);
-  await wait(1500); await phoneC.setOffline(false); await phone.evaluate(() => { window.dispatchEvent(new Event('online')); document.dispatchEvent(new Event('visibilitychange')); });
+  await wait(5000); await outage(phoneC, phone, false);
   const back = await until(() => phone.evaluate(() => document.querySelector('.mon .lab').textContent === 'Verse 2'), 30000);
   check('E3 phone resyncs after reconnecting (song kept)', back >= 0, await phone.evaluate(() => document.querySelector('.mon .lab').textContent)); R.E3_ms = back;
   check('E4 the offline tap did not override newer changes', (await tvLine()) === 'Every valley, every hill,', await tvLine());
   // the TV loses its connection, then catches up
-  await tvC.setOffline(true); await wait(2000); await phone.click('#bNext');
+  await outage(tvC, tv, true); await wait(3000); await phone.click('#bNext'); await wait(1500);
   check('E5 TV keeps the last lyrics while offline', (await tvLine()) === 'Every valley, every hill,');
-  await tvC.setOffline(false); await tv.evaluate(() => window.dispatchEvent(new Event('online')));
+  await wait(4000); check('E5b TV still showing its lyrics after 5 s offline', (await tvLine()) === 'Every valley, every hill,'); await outage(tvC, tv, false);
   const tvBack = await until(async () => (await tvLine()) === 'You are near, You are near,', 40000);
   check('E6 TV catches up after reconnecting', tvBack >= 0, await tvLine()); R.E6_ms = tvBack;
   // next song from the end of the first
