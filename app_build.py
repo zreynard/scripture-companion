@@ -1106,7 +1106,7 @@ const bkRepo=()=>S.get('bkrepo','zreynard/scripture-companion-backup'),bkKey=()=
 function bkSnap(){const o={};BK_KEYS.forEach(k=>{try{const v=localStorage.getItem('sc:'+k);if(v!=null)o[k]=JSON.parse(v)}catch(e){}});return o}
 function bkB64(str){const b=new TextEncoder().encode(str);let s='';for(let i=0;i<b.length;i+=0x8000)s+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(s)}
 function bkUn64(b64){return new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g,'')),c=>c.charCodeAt(0)))}
-function bkGH(path,opt={},key=bkKey(),repo=bkRepo()){return fetch('https://api.github.com/repos/'+repo+path,{method:opt.method||'GET',body:opt.body,cache:'no-store',headers:Object.assign({Authorization:'Bearer '+key,Accept:'application/vnd.github+json'},opt.body?{'Content-Type':'application/json'}:{})})}
+function bkGH(path,opt={},key=bkKey(),repo=bkRepo()){return fetch('https://api.github.com/repos/'+repo+path,{method:opt.method||'GET',body:opt.body,cache:'no-store',headers:Object.assign({Authorization:'Bearer '+key,Accept:opt.accept==='raw'?'application/vnd.github.raw+json':'application/vnd.github+json'},opt.body?{'Content-Type':'application/json'}:{})})}
 async function bkFetch(){const r=await bkGH('/contents/progress.json');if(r.status===404){BK.sha=null;return null}if(!r.ok)throw r.status;const j=await r.json();BK.sha=j.sha;let c=j.content;
  if(!c||j.encoding!=='base64'){const r2=await bkGH('/git/blobs/'+j.sha);if(!r2.ok)throw r2.status;c=(await r2.json()).content}return JSON.parse(bkUn64(c))}
 function bkFail(e){BK.err=e===401||e===403?'GitHub no longer accepts the backup key: paste a new one in ⋯':e===404?'The backup repo was not found':'';S.set('bkerr',BK.err);bkDot()}
@@ -1656,7 +1656,7 @@ let JZ=S.get('jz','stop')==='road'?'road':'stop',BACK=null;
 const TAB_IC={journey:'<path d="M12 6.5C9.8 5 7 4.6 3.5 5v13c3.5-.4 6.3 0 8.5 1.5 2.2-1.5 5-1.9 8.5-1.5V5c-3.5-.4-6.3 0-8.5 1.5z"/><path d="M12 6.5v13"/>',
  bigpicture:'<path d="M3 17h18"/><path d="M7 17a5 5 0 0 1 10 0"/><path d="M12 6v2M5.6 9.6l1.4 1.4M18.4 9.6 17 11M3 13.5h1.5M19.5 13.5H21"/>',
  walk:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',library:'<path d="M4 5h4v15H4zM10 5h4v15h-4zM16.5 5.5l3.6-.9 3 14.5-3.6.9z"/>',
- pray:'<path d="M12 2.8c1.7 1.9 2.6 3.4 2.6 4.7a2.6 2.6 0 0 1-5.2 0c0-1.3.9-2.8 2.6-4.7z"/><path d="M9.2 12.5h5.6V21H9.2z"/><path d="M7 21h10"/>'};
+ pray:'<path d="M12 3.6c-.9 0-1.6.6-1.8 1.5L8.7 11.6c-.2 1-.9 1.9-1.8 2.3L4 15.3V20l4.2-1.6c2.3-.9 3.8-3.1 3.8-5.6V3.6z"/><path d="M12 3.6c.9 0 1.6.6 1.8 1.5l1.5 6.5c.2 1 .9 1.9 1.8 2.3l2.9 1.4V20l-4.2-1.6c-2.3-.9-3.8-3.1-3.8-5.6"/><path d="M9.3 9.2 11 12.6M14.7 9.2 13 12.6"/>'};
 let PREV='journey';
 function tabOf(v){return v==='sc'?'bigpicture':v==='walk'?'journey':v}
 function tabsPaint(){ztPaint();const t=$('#tabs');if(!t)return;if(!t.dataset.on){t.dataset.on=1;t.innerHTML=TABS.map(([k,l])=>`<button data-tab2="${k}"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${TAB_IC[k]}</svg><span>${l}</span></button>`).join('');
@@ -2092,6 +2092,39 @@ function pmSession(){if(!('mediaSession' in navigator))return;const t=pmTrack()|
  [['play',()=>a.play().catch(()=>{})],['pause',()=>a.pause()],['nexttrack',()=>pmSkip(1)],['previoustrack',()=>pmSkip(-1)],['seekbackward',null],['seekforward',null]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}
 function pmPaint(){const on=!!PM.el&&!PM.el.paused;document.querySelectorAll('[data-pm]').forEach(b=>{b.innerHTML=on?PR_PAUSE:PR_PLAY;b.setAttribute('aria-label',on?'Pause the music':'Play the music')})}
 function prCredits(){return ''}
+/* the prayer music is also kept in your private backup repo (music/<piece>/<part>, 12 MB parts, and music/index.json),
+   so a new or replaced phone gets it back on its own once the backup key is in */
+const MB={busy:false,msg:'',last:0},MB_PART=12*1048576;
+function b64blob(bl){return new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result).split(',')[1]||'');r.onerror=()=>no(r.error);r.readAsDataURL(bl)})}
+async function mbIndex(){const r=await bkGH('/contents/music/index.json');if(r.status===404)return {sha:null,list:[]};if(!r.ok)throw r.status;const j=await r.json();let c=j.content;
+ if(!c||j.encoding!=='base64'){const r2=await bkGH('/git/blobs/'+j.sha);if(!r2.ok)throw r2.status;c=(await r2.json()).content}return {sha:j.sha,list:JSON.parse(bkUn64(c))}}
+async function mbPutIndex(list,sha){const body={message:'Prayer music list',content:bkB64(JSON.stringify(list))};if(sha)body.sha=sha;let r=await bkGH('/contents/music/index.json',{method:'PUT',body:JSON.stringify(body)});
+ if(r.status===409||r.status===422){const cur=await mbIndex();if(cur.sha)body.sha=cur.sha;r=await bkGH('/contents/music/index.json',{method:'PUT',body:JSON.stringify(body)})}if(!r.ok)throw r.status;return (await r.json()).content.sha}
+async function mbPut(path,b64,msg){const body={message:msg,content:b64};let r=await bkGH('/contents/'+path,{method:'PUT',body:JSON.stringify(body)});
+ if(r.status===422||r.status===409){const g=await bkGH('/contents/'+path);if(g.ok){body.sha=(await g.json()).sha;r=await bkGH('/contents/'+path,{method:'PUT',body:JSON.stringify(body)})}}if(!r.ok)throw r.status}
+function mbSay(m){MB.msg=m;document.querySelectorAll('[data-mbst]').forEach(e=>e.textContent=m)}
+const mbKey=x=>x.f+'|'+x.sz;
+async function mbSync(force){if(!bkOn()||MB.busy||(!force&&Date.now()-MB.last<10*60e3))return;MB.busy=true;MB.last=Date.now();try{
+  let L=await plLoad(),{sha,list}=await mbIndex();
+  const here=new Set(L.map(mbKey)),miss=list.filter(x=>!here.has(mbKey(x)));
+  if(miss.length)try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
+  for(const [k,x] of miss.entries()){mbSay(`Bringing back your prayer music: ${k+1} of ${miss.length}…`);const parts=[];
+   for(let i=0;i<x.parts;i++){const r=await bkGH('/contents/music/'+x.id+'/'+i,{accept:'raw'});if(!r.ok)throw r.status;parts.push(await r.blob())}
+   const bl=new Blob(parts,{type:x.ty||'audio/mpeg'}),meta={id:x.id,f:x.f,sz:x.sz,t:x.t,a:x.a,al:x.al,n:x.n};
+   await pdbDo(['meta','blob'],'readwrite',t=>{t.objectStore('blob').put(bl,x.id);return t.objectStore('meta').put(meta)})}
+  if(miss.length){PL.list=null;L=await plLoad();if(view==='pray'||view==='settings')render()}
+  const there=new Set(list.map(mbKey)),up=L.filter(x=>!there.has(mbKey(x)));
+  for(const [k,x] of up.entries()){mbSay(`Backing up your prayer music: ${k+1} of ${up.length}…`);const bl=await pdbDo('blob','readonly',t=>t.objectStore('blob').get(x.id));if(!bl)continue;
+   const n=Math.max(1,Math.ceil(bl.size/MB_PART));
+   for(let i=0;i<n;i++)await mbPut('music/'+x.id+'/'+i,await b64blob(bl.slice(i*MB_PART,(i+1)*MB_PART)),'Prayer music: '+(x.t||x.f)+(n>1?` (${i+1}/${n})`:''));
+   list.push({id:x.id,f:x.f,sz:x.sz,t:x.t,a:x.a,al:x.al,n:x.n,ty:bl.type,parts:n});sha=await mbPutIndex(list,sha)}
+  mbSay(list.length?`Backed up to your private repo, so it comes back on a new phone.`:'');S.set('mbok',list.length)}
+ catch(e){mbSay(e===401||e===403?'Music backup stopped: GitHub no longer accepts the backup key (paste a new one below).':'Music backup paused; it picks up again next time the app is open.');MB.last=0}
+ finally{MB.busy=false}}
+async function mbRemoveAll(){if(!bkOn())return;const {sha,list}=await mbIndex();for(const x of list){const r=await bkGH('/contents/music/'+x.id);if(!r.ok)continue;for(const f of await r.json())await bkGH('/contents/'+f.path,{method:'DELETE',body:JSON.stringify({message:'Remove prayer music',sha:f.sha})})}
+ if(sha)await mbPutIndex([],sha);S.set('mbok',0);mbSay('')}
+setTimeout(()=>mbSync(),6000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')mbSync()});
+
 /* reading what you picked: ZIPs opened here (stored or deflated entries), and each MP3's own title, artist, album, track */
 const AUD_RE=/\.(mp3|m4a|aac|flac|wav|ogg|opus|aif|aiff)$/i,AUD_T={mp3:'audio/mpeg',m4a:'audio/mp4',aac:'audio/aac',flac:'audio/flac',wav:'audio/wav',ogg:'audio/ogg',opus:'audio/ogg',aif:'audio/aiff',aiff:'audio/aiff'};
 async function unzip(f){const u8=async(a,b)=>new Uint8Array(await f.slice(a,b).arrayBuffer()),dv=x=>new DataView(x.buffer,x.byteOffset,x.byteLength);
@@ -2117,10 +2150,10 @@ async function prImport(files,say){const got=[];for(const f of files){if(/\.zip$
  PL.list=null;await plLoad();return n}
 function prPick(after){const i=document.createElement('input');i.type='file';i.multiple=true;i.accept='audio/*,.mp3,.m4a,.flac,.zip,application/zip';i.style.display='none';document.body.appendChild(i);
  i.onchange=async()=>{const fs=[...i.files];i.remove();if(!fs.length)return;const say=m=>{document.querySelectorAll('[data-prsay]').forEach(e=>{e.textContent=m;e.hidden=false})};
-  try{const n=await prImport(fs,say);say(n?`Added ${n} piece${n>1?'s':''}.`:'Those were already here.')}catch(e){say('That did not work — your phone may be out of space.')}setTimeout(()=>after&&after(),700)};i.click()}
+  try{const n=await prImport(fs,say);say(n?`Added ${n} piece${n>1?'s':''}.`:'Those were already here.');if(n)setTimeout(()=>mbSync(true),800)}catch(e){say('That did not work — your phone may be out of space.')}setTimeout(()=>after&&after(),700)};i.click()}
 function prRemoveAll(){const a=pmEl();a.pause();a.removeAttribute('src');a.load();if(PL.url)URL.revokeObjectURL(PL.url);PL.url=null;PM.cur=null;S.set('pmpos',null);return pdbDo(['meta','blob'],'readwrite',t=>{t.objectStore('meta').clear();t.objectStore('blob').clear()}).then(()=>{PL.list=[]})}
 function prMusicNote(){const L=PL.list||[],mb=Math.round(L.reduce((a,x)=>a+(x.sz||0),0)/1048576),al=[...new Set(L.map(x=>x.al).filter(Boolean))];
- return `<h2 class="serif" style="margin:22px 0 8px">Prayer music</h2><p class="note">${L.length?`${L.length} piece${L.length>1?'s':''}${al.length?' from '+esc(al.slice(0,3).join(', '))+(al.length>3?'…':''):''}, kept on this phone (${mb.toLocaleString()} MB).`:'None yet. Buy an album as a download (MP3 or ZIP), then add it here; it stays on this phone.'}</p><p class="note" data-prsay hidden></p><button class="btn" data-pradd>Add music</button>${L.length?'<button class="btn" data-prrm>Remove all</button>':''}`}
+ return `<h2 class="serif" style="margin:22px 0 8px">Prayer music</h2><p class="note">${L.length?`${L.length} piece${L.length>1?'s':''}${al.length?' from '+esc(al.slice(0,3).join(', '))+(al.length>3?'…':''):''}, kept on this phone (${mb.toLocaleString()} MB).`:'None yet. Buy an album as a download (MP3 or ZIP), then add it here; it stays on this phone.'}</p>${L.length?`<p class="note" data-mbst>${bkOn()?esc(MB.msg||(S.get('mbok',0)?'Backed up to your private repo, so it comes back on a new phone.':'Backing up to your private repo…')):'<b>Not backed up yet.</b> Turn on Backup below so this music comes back on a new or replaced phone.'}</p>`:''}<p class="note" data-prsay hidden></p><button class="btn" data-pradd>Add music</button>${L.length?'<button class="btn" data-prrm>Remove all</button>':''}`}
 /* a new time of prayer (half an hour since the last) brings the next supporting passage for each movement */
 function prSession(){const last=S.get('prlast',0);if(Date.now()-last>30*60e3){const st=S.get('prsup',{});PRAY.moves.forEach(m=>{const n=m.sup.length;let x=st[m.k];if(!x||!Array.isArray(x.o)||x.o.length!==n)x={o:prShuf(n),p:0};else if(++x.p>=n)x={o:prShuf(n),p:0};st[m.k]=x});S.set('prsup',st);PR.mv=0}S.set('prlast',Date.now())}
 function prSup(m){const x=S.get('prsup',{})[m.k],n=m.sup.length;return m.sup[x&&Array.isArray(x.o)&&x.o.length===n?x.o[x.p%n]:0]}
@@ -2468,7 +2501,7 @@ function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;r
  addEventListener('scroll',()=>{if(np.classList.contains('on')&&!np.classList.contains('mini')&&Math.abs(scrollY-fullAtScroll)>60)setMini(true)},{passive:true});
 })();
 /* wiring */
-function wire(){if(view==='settings'&&!PL.list)plLoad().then(()=>{if(view==='settings')render()});document.querySelectorAll('.settings [data-pradd]').forEach(b=>b.onclick=()=>prPick(()=>{if(view==='settings')render()}));document.querySelectorAll('.settings [data-prrm]').forEach(b=>b.onclick=()=>{if(confirm('Remove all prayer music from this phone?'))prRemoveAll().then(()=>render())});document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
+function wire(){if(view==='settings'&&!PL.list)plLoad().then(()=>{if(view==='settings')render()});document.querySelectorAll('.settings [data-pradd]').forEach(b=>b.onclick=()=>prPick(()=>{if(view==='settings')render()}));document.querySelectorAll('.settings [data-prrm]').forEach(b=>b.onclick=()=>{if(confirm(bkOn()?'Remove all prayer music from this phone and from your backup?':'Remove all prayer music from this phone?'))prRemoveAll().then(()=>mbRemoveAll().catch(()=>{})).then(()=>render())});document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
  document.querySelectorAll('details[data-k]').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.k):OPEN.delete(d.dataset.k);if(d.classList.contains('readx'))fillReaders()});
  fillReaders();fillMapTab();
  document.querySelectorAll('.pref').forEach(b=>b.onclick=e=>{e.stopPropagation();const x=walk()[camp];const r=versesFor(b.dataset.pass,x.b.name,x.c.c);
@@ -2501,7 +2534,7 @@ function wire(){if(view==='settings'&&!PL.list)plLoad().then(()=>{if(view==='set
     const remote=await bkFetch().catch(()=>null),here=bkSnap();
     if(remote&&remote.data&&bkWeight(remote.data)>0){const when=new Date(remote.at).toLocaleString();
      if(bkWeight(here)===0||confirm('Found a backup from '+when+'. Restore it on this phone? (Cancel keeps this phone\'s progress and backs it up instead.)')){bkApply(remote.data);location.reload();return}}
-    await bkSave();render()}catch(err){msg.textContent=typeof err==='string'?err:'Could not reach GitHub. Check your connection.'}};
+    await bkSave();render();mbSync(true)}catch(err){msg.textContent=typeof err==='string'?err:'Could not reach GitHub. Check your connection.'}};
   const bkn=$('#bknow');if(bkn)bkn.onclick=async()=>{localStorage.setItem('sc:bkdirty','1');$('#bkst').textContent='Backing up…';await bkSave()};
   const bkr=$('#bkrest');if(bkr)bkr.onclick=async()=>{try{const d=await bkFetch();if(!d||!d.data){alert('No backup yet.');return}if(confirm('Replace this phone\'s progress with the backup from '+new Date(d.at).toLocaleString()+'?')){bkApply(d.data);location.reload()}}catch(e){alert('Could not reach the backup.')}};
   const bko=$('#bkoff');if(bko)bko.onclick=()=>{if(confirm('Stop backing up? The backups already saved stay in your repo.')){localStorage.removeItem('sc:bkkey');localStorage.removeItem('sc:bkerr');BK.err='';bkDot();render()}};
