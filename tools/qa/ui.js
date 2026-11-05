@@ -4,7 +4,10 @@ const { chromium, webkit, devices } = require('playwright');
 const ENGINE = process.env.BROWSER === 'webkit' ? webkit : chromium;   // BROWSER=webkit runs everything in Safari's engine
 const SITE = process.env.SITE || 'http://localhost:8765/';
 const R = [], wait = ms => new Promise(r => setTimeout(r, ms));
-async function T(n, f) { try { const r = await f(); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 260)]); } catch (e) { R.push([n, 'FAIL threw ' + String(e.message).split('\n')[0].slice(0, 200)]); } }
+/* each result prints as soon as it is known, and no test may take more than 2 minutes (a stuck one fails, the rest still run) */
+async function T(n, f) { let to; const limit = new Promise((_, no) => { to = setTimeout(() => no(new Error('took over 2 minutes')), 120000); });
+  try { const r = await Promise.race([f(), limit]); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 260)]); } catch (e) { R.push([n, 'FAIL threw ' + String(e.message).split('\n')[0].slice(0, 200)]); }
+  clearTimeout(to); const x = R[R.length - 1]; console.log((x[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + x[0] + (x[1].startsWith('PASS') ? '' : '  ' + x[1].slice(5))); }
 const verse = (n, k) => Array.from({ length: n }, (_, i) => `G        D\nline ${k} ${i} of this song,\nEm       C\nanother line ${i} here.`).join('\n');
 const SONG = (t, extra = '') => `Intro: G D Em C\n\nVerse 1\n${verse(2, 'v1')}\n\nChorus\nC      G\nsing it out, sing it out,\nEm     D\nlift it high.\n\nVerse 2\n${verse(2, 'v2')}\n\nChorus\n\nBridge\nC   D   Em\nhere we stand${extra}`;
 const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n\nBridge\n' + verse(6, 'B') + '\n\nOutro\nG D';
@@ -134,6 +137,5 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const fab = await X.evaluate(() => document.querySelector('.jr-fab').classList.contains('show')); await X.click('.jr-fab'); await wait(300); const lis = await X.evaluate(() => __np.splice(0));
     return (tap.length === 1 && tap[0][0] === 12 && tap[0][2] && rd.open && rd.verses > 20 && rd.np === 0 && fab && lis.length === 1 && lis[0][1] === 10) || { tap, rd, fab, lis }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
-  console.log(R.map(r => (r[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + r[0] + (r[1].startsWith('PASS') ? '' : '  ' + r[1].slice(5))).join('\n'));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
