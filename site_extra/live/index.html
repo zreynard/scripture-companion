@@ -23,7 +23,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .mon{margin:0 14px;border-radius:16px;background:radial-gradient(120% 90% at 50% 40%,#16213a,#0f1628 70%);color:var(--warm);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:4% 6%;position:relative;overflow:hidden}
 .mon .tx{font-size:clamp(13px,4.2vw,26px);line-height:1.3}.mon .tx .gap{height:.5em}
 .mon .lab{position:absolute;left:10px;top:8px;font:700 10px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,239,224,.5)}
-.mon.blank .tx{opacity:.12}.mon.blank::after{content:'Screen blank';position:absolute;inset:auto 0 10px;font:600 12px -apple-system,system-ui,sans-serif;color:rgba(246,239,224,.7)}
+.mon.blank .tx{opacity:.12}.mon.blank::after{content:'Screen blank';position:absolute;top:auto;right:0;bottom:10px;left:0;font:600 12px -apple-system,system-ui,sans-serif;color:rgba(246,239,224,.7)}
 .next{margin:10px 14px 0;padding:10px 12px;border-radius:12px;background:rgba(27,36,64,.05);font-size:14px;color:var(--mute);display:flex;gap:8px}
 .next b{color:var(--ink);font-weight:650;white-space:nowrap}.next span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .chips{display:flex;gap:8px;overflow-x:auto;padding:12px 14px 4px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
@@ -45,7 +45,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .b-blank{width:84px;background:rgba(27,36,64,.07)}.b-blank.on{background:#c4553a;color:#fff}
 .b-prev{width:84px;background:rgba(27,36,64,.07)}.b-next{flex:1;background:var(--ink);color:#fff;font-size:18px}
 .wait{padding:60px 28px;text-align:center;color:var(--mute)}.wait h2{color:var(--ink);font-weight:400;font-size:26px;margin:0 0 10px}
-.sheet{position:fixed;inset:0;background:rgba(15,22,40,.38);display:flex;align-items:flex-end;justify-content:center;z-index:20}
+.sheet{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(15,22,40,.38);display:flex;align-items:flex-end;justify-content:center;z-index:20}
 .sheet[hidden]{display:none}
 .sh{background:var(--bg);width:100%;max-width:560px;max-height:86vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(22px + env(safe-area-inset-bottom))}
 .sh h3{margin:2px 0 6px;font-size:22px;font-weight:400}.sh p{margin:6px 0 12px;color:var(--mute);font-size:14.5px;line-height:1.45}.sh p b{color:var(--ink)}

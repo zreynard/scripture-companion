@@ -75,11 +75,28 @@
     while ((m = re.exec(line))) { if (!isChord(m[1].trim())) continue; text += line.slice(last, m.index); chords.push({ c: m[1].trim(), at: text.length }); last = m.index + m[0].length; }
     text += line.slice(last); return { text: text, chords: chords };
   }
+  /* charts split sung words into syllables ("for - ev - er", "Ho-ly"): put the words back together, chords keep their place */
+  var WORDS = /^(the|and|a|an|you|your|my|me|we|us|our|i|to|of|in|on|oh|is|it|he|his|him|she|her|they|that|this|with|all|now|so|but|be|who|what|how|where|when|not|no|yes|for|from|as|at|by|or|let|come|praise|sing|lord|god|jesus)$/i;
+  function desyl(l) {
+    var t = l.text; if (!t || t.indexOf('-') < 0) return l;
+    var drop = [], re = /[A-Za-zÀ-ɏ'’]+(?:[ ]*-[ ]*[A-Za-zÀ-ɏ'’]+)+/g, m;
+    while ((m = re.exec(t))) {
+      var parts = m[0].split(/[ ]*-[ ]*/), spaced = /\s-|-\s/.test(m[0]);
+      if (!parts.slice(1).every(function (p) { return /^[a-z\u00E0-\u024F]/.test(p); })) continue;   // a syllable carries on in lower case
+      if (spaced && parts.slice(1).some(function (p) { return WORDS.test(p); })) continue;   // "God - the One" is a dash, not a split word
+      if (!(spaced || parts.length > 2 || parts.every(function (p) { return p.length <= 3; }))) continue;
+      var sre = /[ ]*-[ ]*/g, sm; while ((sm = sre.exec(m[0]))) for (var k = 0; k < sm[0].length; k++) drop[m.index + sm.index + k] = 1;
+    }
+    if (!drop.length) return l;
+    var out = '', before = [], n = 0;
+    for (var i = 0; i <= t.length; i++) { before[i] = n; if (i < t.length && !drop[i]) { out += t[i]; n++; } }
+    return { text: out, chords: (l.chords || []).map(function (c) { return { c: c.c, at: c.at <= t.length ? before[c.at] : c.at - (t.length - out.length) }; }) };
+  }
   function parse(src) {
     var meta = {}, sections = [], cur = null, lines = String(src || '').replace(/\r/g, '').split('\n'), pendingChords = null, envLabel = null;
     function open(label, rep) { cur = { label: tidyLabel(label), lines: [], rep: rep || 1 }; sections.push(cur); }
     function ensure() { if (!cur) open('Verse ' + (sections.filter(function (s) { return /^Verse/.test(s.label); }).length + 1)); }
-    function push(l) { ensure(); cur.lines.push(l); }
+    function push(l) { ensure(); cur.lines.push(l && l.text ? desyl(l) : l); }
     function flushChords() { if (pendingChords) { push({ text: '', chords: pendingChords }); pendingChords = null; } }
     for (var i = 0; i < lines.length; i++) {
       var raw = lines[i].replace(/\t/g, '    '), line = raw.replace(/\s+$/, '');
@@ -251,6 +268,6 @@
   }
   function pageOf(box, el, info) { if (!el || !info || info.pages < 2) return 0; var x = el.offsetLeft; return Math.max(0, Math.min(info.pages - 1, Math.floor((x + 4) / info.step))); }
   function turn(box, n, info) { box.scrollLeft = n * info.step; }
-  G.Worship = { snapChords: snapChords, swipe: swipe, fit: fit, pageOf: pageOf, turn: turn, parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
+  G.Worship = { desyl: desyl, snapChords: snapChords, swipe: swipe, fit: fit, pageOf: pageOf, turn: turn, parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
     transposeKey: transposeKey, semitones: semitones, useFlats: useFlats, keyInfo: keyInfo, KEYS_MAJ: KEYS_MAJ, KEYS_MIN: KEYS_MIN, isChord: isChord, shortOf: shortOf, esc: esc };
 })(typeof window !== 'undefined' ? window : globalThis);

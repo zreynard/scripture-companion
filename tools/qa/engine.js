@@ -72,5 +72,10 @@ T('E56 rendered chart never cuts a word between two chord pieces, and keeps ever
     for (let i = 1; i < segs.length; i++) if (/\w$/.test(segs[i - 1]) && /^\w/.test(segs[i])) bad.push(segs[i - 1].slice(-4) + '|' + segs[i].slice(0, 4)); }
   const n = (html.match(/<span class="wc-c">[^<]+<\/span>/g) || []).length;
   return (bad.length === 0 && n === 11) || { bad, n }; });
+// --- words split into syllables are put back together
+T('E57 syllable splits join: spaced, unspaced, many parts', () => eq(['for - ev - er and ev - er', 'Ho-ly, ho-ly', 'Hal-le-lu-jah', 'A - men', 'a - bove'].map(x => W.desyl({ text: x, chords: [] }).text), ['forever and ever', 'Holy, holy', 'Hallelujah', 'Amen', 'above']));
+T('E58 real dashes and compound words stay', () => eq(['Jesus - Lord of all', 'God - the One', 'never-ending love', 'yes - and amen'].map(x => W.desyl({ text: x, chords: [] }).text), ['Jesus - Lord of all', 'God - the One', 'never-ending love', 'yes - and amen']));
+T('E59 chords keep their syllable after joining', () => eq(W.desyl({ text: 'for - ev - er more', chords: [{ c: 'G', at: 0 }, { c: 'D', at: 6 }, { c: 'C', at: 14 }] }).chords, [{ c: 'G', at: 0 }, { c: 'D', at: 3 }, { c: 'C', at: 8 }]));
+T('E60 the TV slides show whole words', () => { const sl = W.slides({ parsed: W.parse('Chorus\nG          D\nwe sing for - ev - er\nC        G\nHal-le-lu-jah') }); const txt = JSON.stringify(sl); return (!/ - [a-z]|[a-z]-[a-z]/.test(txt) && /forever/.test(txt) && /Hallelujah/.test(txt)) || txt.slice(0, 200); });
 console.log(R.map(r => (r[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + r[0] + (r[1].startsWith('PASS') ? '' : '  ' + r[1].slice(5, 300))).join('\n'));
 const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); process.exit(f ? 1 : 0);
