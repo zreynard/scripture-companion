@@ -2002,7 +2002,8 @@ function wFound(){const box=$('#wf-found');if(!box)return;const p=Worship.parse(
  box.innerHTML=p.sections.length?'Found: '+p.sections.map(s=>`<span class="w-sc">${esc(s.short)}</span> ${esc(s.label)}${s.ref?' (repeat)':''}`).join(' · ')+(p.meta.title&&!$('#wf-t').value?` <button class="lnk" id="wf-use">Use “${esc(p.meta.title)}” as the title</button>`:''):'';
  const u=$('#wf-use');if(u)u.onclick=()=>{$('#wf-t').value=p.meta.title;if(p.meta.artist&&!$('#wf-a').value)$('#wf-a').value=p.meta.artist;if(p.meta.key&&!$('#wf-k').value)$('#wf-k').value=Worship.keyInfo(p.meta.key)?p.meta.key:'';wFound()}}
 /* Apple Music: the store's own search (no account), so you pick the exact recording and artist */
-function wAmSearch(q,cb){const n='amcb'+Date.now();const sc=document.createElement('script');let done=false;window[n]=d=>{done=true;delete window[n];sc.remove();cb((d&&d.results)||[])};
+function wAmSearch(q,cb){fetch('https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q),{cache:'no-store'}).then(r=>{if(!r.ok)throw r.status;return r.json()}).then(d=>cb((d&&d.results)||[])).catch(()=>wAmJsonp(q,cb))}
+function wAmJsonp(q,cb){const n='amcb'+Date.now();const sc=document.createElement('script');let done=false;window[n]=d=>{done=true;delete window[n];sc.remove();cb((d&&d.results)||[])};
  sc.src='https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q)+'&callback='+n;sc.onerror=()=>{if(!done){delete window[n];cb(null)}};document.head.appendChild(sc);setTimeout(()=>{if(!done)cb(null)},9000)}
 function wireWorship(){
  document.querySelectorAll('[data-wp]').forEach(b=>b.onclick=()=>{WS.pane=b.dataset.wp;S.set('wpane',WS.pane);render()});
