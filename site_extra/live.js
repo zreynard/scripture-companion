@@ -175,6 +175,8 @@
   Session.prototype.gotPeer = function (p) {
     if (!p || p.id === this.id) return;
     p.seen = Date.now(); this.peers[p.id] = p; if (p.bye) delete this.peers[p.id]; this.status();
+    /* someone has a newer slide than this device (an update got lost on every relay): ask the relays for it again */
+    if ((p.sv || 0) > ((this.state && this.state.v) || 0) && Date.now() - (this.resub || 0) > 3000) { var me = this; this.resub = Date.now(); this.relays.forEach(function (r) { if (r.up) r.sendSub(me.base + '/s'); }); }
     /* someone is still missing the songs (a piece got lost on the relays): the leader sends them again */
     if (p.want && this.role === 'lead' && this.deck && Date.now() - (this.resent || 0) > 4000) { this.resent = Date.now(); this.send('d', this.deck, true); }
   };
@@ -207,7 +209,7 @@
       });
     });
   };
-  Session.prototype.hello = function () { if (this.ended) return; var p = { id: this.id, role: this.role, name: this.name || '', at: Date.now(), want: this.deck ? 0 : 1 }, x = this.cb.info && this.cb.info(); if (x) for (var k in x) p[k] = x[k]; this.send('p', p, false); };
+  Session.prototype.hello = function () { if (this.ended) return; var p = { id: this.id, role: this.role, name: this.name || '', at: Date.now(), want: this.deck ? 0 : 1, sv: this.state ? this.state.v : 0 }, x = this.cb.info && this.cb.info(); if (x) for (var k in x) p[k] = x[k]; this.send('p', p, false); };
   /* a one-off instruction to the screens (refresh), never kept on the relay */
   Session.prototype.cmd = function (m) { m.at = Date.now(); m.by = this.id; return this.send('c', m, false); };
   Session.prototype.setName = function (n) { this.name = String(n || '').slice(0, 30); this.hello(); };
