@@ -11,3 +11,10 @@ jobs:
           node-version: "22"
       - run: npm i --no-save playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
       - run: node tools/worship_e2e.js
+      - if: always()
+        run: |
+          mkdir -p d && cp diag_*.png d/ 2>/dev/null || exit 0
+          cd d && git init -q -b diag-e2e && git add -A && git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m diag
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag-e2e
+permissions:
+  contents: write
