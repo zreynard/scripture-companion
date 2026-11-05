@@ -1,0 +1,23 @@
+# Listen to candidate free worship instrumentals (tools/music_check.py). Results go to the diag-music3 branch.
+name: Music check
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  listen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q requests faster-whisper numpy
+      - run: timeout 280m python tools/music_check.py || true
+      - if: always()
+        run: |
+          [ -d music3 ] || exit 0
+          cd music3 && git init -q -b diag-music3 && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "Music check"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag-music3
