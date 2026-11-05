@@ -52,11 +52,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-seri
     tx.style.fontSize = sz + 'px';
     for (var i = 0; i < 40 && (tx.scrollHeight > box.height || tx.scrollWidth > box.width) && sz > lo; i++) { sz *= 0.95; tx.style.fontSize = sz + 'px'; }
   }
+  /* sizes set in pixels too: some TV browsers ignore parts of the page's CSS */
+  function place(st, el) {
+    var w = innerWidth, h = innerHeight, px = Math.round(w * 0.06), py = Math.round(h * 0.07);
+    st.style.position = 'fixed'; st.style.left = '0px'; st.style.top = '0px'; st.style.width = w + 'px'; st.style.height = h + 'px'; st.style.padding = '0px';
+    el.style.position = 'absolute'; el.style.left = px + 'px'; el.style.top = py + 'px'; el.style.width = (w - 2 * px) + 'px'; el.style.height = (h - 2 * py) + 'px';
+  }
+  /* a screen left on for hours picks up a new version by itself (it rejoins the same worship time after reloading) */
+  var ver = null;
+  function checkVersion() {
+    try { var x = new XMLHttpRequest(); x.open('GET', '../version.txt?' + Date.now(), true);
+      x.onload = function () { var v = (x.responseText || '').trim(); if (x.status !== 200 || !/^\d+$/.test(v)) return; if (ver === null) ver = v; else if (v !== ver) location.reload(); };
+      x.send(); } catch (e) {}
+  }
+  checkVersion(); setInterval(checkVersion, 3 * 60 * 1000);
   function paint(force) {
     var c = cur(), key = !state ? 'none' : state.blank || state.ended ? 'blank' : c && c.slide ? (state.song + ':' + state.slide + ':' + (deck.dv || 0)) : 'none';
     if (key === shown && !force) return; shown = key;
     var st = $('#stage'), olds = Array.prototype.slice.call(st.querySelectorAll('.slide'));
-    var el = document.createElement('div'); el.className = 'slide';
+    var el = document.createElement('div'); el.className = 'slide'; place(st, el);
     if (key !== 'blank' && key !== 'none') el.innerHTML = '<div class="tx serif">' + c.slide.l.map(function (l) { return l ? '<div>' + esc(l) + '</div>' : '<div class="gap"></div>'; }).join('') + '</div>';
     st.appendChild(el); if (el.firstChild) fit(el);
     olds.forEach(function (o) { o.classList.remove('on'); setTimeout(function () { if (o.parentNode) o.parentNode.removeChild(o); }, 450); });

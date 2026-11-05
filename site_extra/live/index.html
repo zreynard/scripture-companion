@@ -112,6 +112,9 @@ button{font:inherit;color:inherit;cursor:pointer}
       var was = st.relays; st = x; pill();
       if (lead && saved && x.relays > was) sess.send('d', deck, true);   // put the songs back on the relay after any reconnect
     } }); } catch (e) { $('#app').innerHTML = '<div class="wait"><h2 class="serif">This link is broken</h2><p>Ask for the link again, or open Worship in the app.</p></div>'; return; }
+  /* songs saved before a fix are tidied (words split into syllables joined back) and sent again */
+  function tidy(d) { var ch = false; (d.songs || []).forEach(function (sg) { (sg.slides || []).forEach(function (sl) { sl.l = (sl.l || []).map(function (x) { if (!x) return x; var y = Worship.desyl({ text: x, chords: [] }).text; if (y !== x) ch = true; return y; }); }); }); return ch; }
+  if (lead && saved && tidy(saved.deck)) { saved.deck.dv = Date.now(); try { localStorage.setItem('sc:wlive', JSON.stringify(saved)); } catch (e) {} }
   if (lead && saved) { deck = saved.deck; if (!deck.dv) deck.dv = saved.at || Date.now(); sess.deck = deck; sess.send('d', deck, true); paint(true);   /* the songs are already here: show them now */
     setTimeout(function () { if (!sess.state) sess.set({ song: 0, slide: 0, blank: false }); }, 2500); }
   setTimeout(function () { if (!deck) $('#app').innerHTML = '<div class="wait"><h2 class="serif">Waiting for the songs…</h2><p>If this stays, the worship time may have ended, or this network blocks the live service. Try another Wi‑Fi or your phone’s data.</p></div>'; }, 9000);
