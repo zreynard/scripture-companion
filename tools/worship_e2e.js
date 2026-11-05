@@ -58,19 +58,20 @@ async function outage(ctx, page, on) { await ctx.setOffline(on); await page.eval
   check('E0 phone shows it is offline (not a false connected state)', shows >= 0);
   await wait(1500); check('E1 TV keeps the lyrics while the phone is offline', (await tvLine()) === 'You are near, You are near,', await tvLine());
   await phone.click('#bNext').catch(() => {});   // a tap while offline
-  await fr.click('.chip:has-text("Verse 2")'); check('E2 friend still moves the TV', (await until(async () => (await tvLine()) === 'Every valley, every hill,')) >= 0);
+  await fr.click('.chip:has-text("Bridge")'); check('E2 friend still moves the TV', (await until(async () => (await tvLine()) === 'Here we stand, here we stand,')) >= 0);
+  check('E2b the phone, offline, is not following yet', await phone.evaluate(() => document.querySelector('.mon .lab').textContent) === 'Verse 2', await phone.evaluate(() => document.querySelector('.mon .lab').textContent));
   await wait(5000); await outage(phoneC, phone, false);
-  const back = await until(() => phone.evaluate(() => document.querySelector('.mon .lab').textContent === 'Verse 2'), 30000);
+  const back = await until(() => phone.evaluate(() => document.querySelector('.mon .lab').textContent === 'Bridge'), 30000);
   check('E3 phone resyncs after reconnecting (song kept)', back >= 0, await phone.evaluate(() => document.querySelector('.mon .lab').textContent)); R.E3_ms = back;
-  check('E4 the offline tap did not override newer changes', (await tvLine()) === 'Every valley, every hill,', await tvLine());
+  await wait(2500); check('E4 the offline tap did not override newer changes', (await tvLine()) === 'Here we stand, here we stand,', await tvLine());
   // the TV loses its connection, then catches up
   await outage(tvC, tv, true); await wait(3000); await phone.click('#bNext'); await wait(1500);
-  check('E5 TV keeps the last lyrics while offline', (await tvLine()) === 'Every valley, every hill,');
-  await wait(4000); check('E5b TV still showing its lyrics after 5 s offline', (await tvLine()) === 'Every valley, every hill,'); await outage(tvC, tv, false);
-  const tvBack = await until(async () => (await tvLine()) === 'You are near, You are near,', 40000);
+  check('E5 TV keeps the last lyrics while offline', (await tvLine()) === 'Here we stand, here we stand,');
+  await wait(4000); check('E5b TV still showing its lyrics after 5 s offline', (await tvLine()) === 'Here we stand, here we stand,'); await outage(tvC, tv, false);
+  const tvBack = await until(async () => (await tvLine()) === 'second song line one,', 40000);
   check('E6 TV catches up after reconnecting', tvBack >= 0, await tvLine()); R.E6_ms = tvBack;
   // next song from the end of the first
-  await phone.click('.song'); await phone.click('[data-song="1"]'); check('S1 next song on the TV', (await until(async () => (await tvLine()) === 'second song line one,')) >= 0, await tvLine());
+  check('S1 Next at the end of a song goes on to the next song', (await phone.evaluate(() => document.querySelector('.song b').textContent)) === 'Second Song');
   // the TV's own keys (laptop on HDMI)
   await tv.keyboard.press('ArrowLeft'); check('K1 laptop keys move everyone', (await until(() => phone.evaluate(() => document.querySelector('.song b').textContent === 'Quiet Road'))) >= 0);
   // end
