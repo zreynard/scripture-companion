@@ -832,6 +832,14 @@ body[data-v=pray] #np{display:none!important}
 .wfit .wc .wc-s{break-inside:avoid;margin:0 0 .65em;padding:.15em .35em .2em;border-radius:.5em}
 .wfit .wc .wc-h{font-size:.6em;margin:0 0 .2em}.wfit .wc .wc-l{font-size:1em;margin:0 0 .22em;line-height:1.16}.wfit .wc .wc-c{font-size:.8em}.wfit .wc .wc-gap{height:.35em}
 .wfit-pg{position:absolute;right:8px;bottom:6px;font:700 12px -apple-system,system-ui,sans-serif;color:var(--mute);background:rgba(244,239,227,.9);padding:3px 8px;border-radius:10px}
+body.wsong-open #tabs{display:none}body.wsong-open{padding-bottom:0!important}
+.wsong .w-st{gap:6px;margin-top:-8px}.wsong .w-back{padding:8px 6px 8px 0}
+.w-tt{flex:1;min-width:0}.w-tt b{display:block;font-size:19px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.w-tt small{display:block;font-size:12px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.w-kchip{flex:none;height:36px;padding:0 12px;border-radius:18px;border:1px solid rgba(201,162,74,.5);background:rgba(201,162,74,.12);color:#7a5c16;font:700 13.5px ui-monospace,Menlo,monospace;cursor:pointer}.w-kchip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.w-tools{margin:6px 0 2px;padding:8px 10px;border-radius:14px;background:#fffdf8;box-shadow:0 2px 10px rgba(27,36,64,.06)}.w-tools .w-keys{margin:0}.w-tools .w-acts{margin:8px 0 0}
+.wfit .wc.inl .wc-l{display:block}.wfit .wc.inl .wc-w{display:inline;white-space:pre-wrap}.wfit .wc.inl .wc-t{display:inline}
+.wfit .wc.inl .wc-c{display:inline;font-size:.66em;vertical-align:.62em;line-height:1;min-height:0;padding:0 .12em 0 0}.wfit .wc.inl .wc-c:empty{display:none}
+.wfit .wc.inl .wc-only .wc-c{font-size:.82em;vertical-align:0;padding-right:.5em}
 .w-pick{position:fixed;inset:0;background:rgba(15,22,40,.38);z-index:40;display:flex;align-items:flex-end;justify-content:center}
 .w-pk{background:var(--bg);width:100%;max-width:560px;max-height:80vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(20px + env(safe-area-inset-bottom))}.w-pk h3{margin:0 0 8px;font-weight:400;font-size:22px}
 .w-pl label{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line)}.w-pl input{width:22px;height:22px;flex:none}.w-pl b{display:block;font-weight:600}.w-pl small{display:block;color:var(--mute);font-size:13px}
@@ -1948,6 +1956,14 @@ const W_IC={back:'<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="t
  play:'<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z" fill="currentColor"/></svg>',
  apple:'<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l11-2v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="currentColor"/><circle cx="17.5" cy="16" r="2.5" fill="currentColor"/></svg>'};
 /* the key a song is played in: the setlist's choice, else the song's own, else as written; capo turns it into shapes */
+const W_SPOT='<svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 9.5c3-1 6.5-.7 9 .9M8 12.6c2.5-.7 5.3-.4 7.4.8M8.6 15.5c2-.5 4-.3 5.7.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
+/* Apple Music: always the song itself (an album link with ?i= becomes the song's own link) */
+function amLink(u){if(!u)return '';const m=/music\.apple\.com\/([a-z]{2})\/album\/[^?]*\?(?:.*&)?i=(\d+)/.exec(u);return m?'https://music.apple.com/'+m[1]+'/song/'+m[2]:u}
+/* Spotify from the Apple Music recording, through song.link (free, no account) */
+function wQ(s){return encodeURIComponent((s.t||'')+' '+(s.a||'')).replace(/%20/g,'+')}
+function wAm(s){return s.am?amLink(s.am):'https://music.apple.com/us/search?term='+wQ(s)}
+function wSp(s){return s.sp||'https://open.spotify.com/search/'+encodeURIComponent((s.t||'')+' '+(s.a||''))}
+function wLinks(s,cls){return `<a class="w-btn ${cls}" href="${esc(wAm(s))}" target="_blank" rel="noopener" aria-label="Listen on Apple Music">${W_IC.apple}</a><a class="w-btn ${cls}" href="${esc(wSp(s))}" target="_blank" rel="noopener" aria-label="Listen on Spotify">${W_SPOT}</a>`}
 function wKeyOf(song,item){return (item&&item.key)||song.pk||song.key||''}
 function wShape(song,key,capo){const semis=song.key&&key?Worship.semitones(song.key,key):0,sk=capo?Worship.transposeKey(key,-capo):key;return {semis:((semis-(capo||0))%12+12)%12,flats:sk||key||false,shapeKey:sk}}
 function wParsed(song){return song._p&&song._p.src===song.src?song._p.v:(song._p={src:song.src,v:Worship.parse(song.src)}).v}
@@ -1976,25 +1992,31 @@ function worshipView(){
   :`<p class="w-empty">${ids.length?'Gather songs into a setlist for your next worship time.':'Start by adding songs in the Songs tab, then gather them into a setlist.'}</p>`;
  return h+`<button class="w-add" data-wnewset>New setlist</button></div>`}
 function wSongView(){const s=wSongs()[WS.song];if(!s){WS.song=null;return worshipView()}
- const key=wKeyOf(s),capo=s.capo||0,sh=wShape(s,key,capo),p=wParsed(s);
- return `<div class="jv wsp wsong"><div class="w-st"><button class="w-back" data-wback>${W_IC.back}Songs</button><span class="sp"></span>
- <button class="w-btn sm pri" data-wpresent="${s.id}">${W_IC.play}Present</button>${s.am?`<a class="w-btn sm ic" href="${esc(s.am)}" target="_blank" rel="noopener" aria-label="Listen on Apple Music">${W_IC.apple}</a>`:''}<button class="w-btn sm" data-wedit="${s.id}">Edit</button></div>
- <h1 class="w-title serif">${esc(s.t)}</h1><div class="w-sub">${esc(s.a||'')}</div>
- <div class="w-keys"><span class="w-kl">Key</span><button class="w-kb" data-wk="-1" aria-label="Key down">−</button><b class="w-kv">${esc(key||'?')}</b><button class="w-kb" data-wk="1" aria-label="Key up">+</button>
+ const key=wKeyOf(s),capo=s.capo||0,sh=wShape(s,key,capo),p=wParsed(s),set=WS.from&&wSets().find(x=>x.id===WS.from),pos=set?set.items.findIndex(it=>it.id===s.id):-1;
+ return `<div class="jv wsp wsong"><div class="w-st"><button class="w-back" data-wback aria-label="Back">${W_IC.back}</button><div class="w-tt"><b class="serif">${esc(s.t)}</b><small>${esc([s.a,set&&pos>=0?'Song '+(pos+1)+' of '+set.items.length:''].filter(Boolean).join(' · '))}</small></div>
+ ${wLinks(s,'sm ic')}<button class="w-kchip${WS.tools?' on':''}" data-wtools aria-expanded="${!!WS.tools}">${esc(key||'Key')}${capo?' · capo '+capo:''} ▾</button></div>
+ ${WS.tools?`<div class="w-tools"><div class="w-keys"><span class="w-kl">Key</span><button class="w-kb" data-wk="-1" aria-label="Key down">−</button><b class="w-kv">${esc(key||'?')}</b><button class="w-kb" data-wk="1" aria-label="Key up">+</button>
  <span class="w-kl" style="margin-left:auto">Capo</span><button class="w-kb" data-wc="-1" aria-label="Capo down">−</button><b class="w-kv">${capo}</b><button class="w-kb" data-wc="1" aria-label="Capo up">+</button></div>
  ${capo&&sh.shapeKey?`<div class="w-capo">Capo ${capo}: play ${esc(sh.shapeKey)} shapes, sounds in ${esc(key)}</div>`:''}
- ${p.sections.length?`<div class="wfit" id="wfit"><div class="wc">${Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats,compactRepeats:true})}</div><span class="wfit-pg" id="wfpg" hidden></span></div>`:'<p class="w-empty">No chart yet. Tap Edit to paste one.</p>'}</div>`}
+ <div class="w-acts"><button class="w-btn sm pri" data-wpresent="${s.id}">${W_IC.play}Present</button><button class="w-btn sm" data-wedit="${s.id}">Edit</button></div></div>`:''}
+ ${p.sections.length?`<div class="wfit" id="wfit"><div class="wc">${Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats,compactRepeats:true})}</div><span class="wfit-pg" id="wfpg" hidden></span></div>`:'<p class="w-empty">No chart yet. Tap the key button, then Edit, to paste one.</p>'}</div>`}
+/* next or previous song when the song was opened from a setlist */
+function wStep(d){const set=WS.from&&wSets().find(x=>x.id===WS.from);if(!set)return false;const ids=set.items.map(it=>it.id).filter(id=>wSongs()[id]),i=ids.indexOf(WS.song),j=i+d;if(i<0||j<0||j>=ids.length)return false;WS.song=ids[j];render();return true}
 /* the chart fills the screen below the header: biggest text that fits, more columns on iPad and sideways; pages turn by a tap at the side */
 function wFitSong(){const box=$('#wfit');if(!box)return;const tb=($('#tabs')||{}).offsetHeight||0,top=box.getBoundingClientRect().top+scrollY;
- box.style.height=Math.max(150,innerHeight-top-tb-8)+'px';const info=Worship.fit(box);box._fit=info;box._pg=0;Worship.turn(box,0,info);
- const pg=$('#wfpg');if(pg){pg.hidden=info.pages<2;pg.textContent='1 / '+info.pages}
- box.onclick=e=>{const i=box._fit;if(!i||i.pages<2)return;const r=box.getBoundingClientRect(),x=e.clientX-r.left;box._pg=Math.max(0,Math.min(i.pages-1,box._pg+(x>r.width/2?1:-1)));Worship.turn(box,box._pg,i);if(pg)pg.textContent=(box._pg+1)+' / '+i.pages}}
+ box.style.height=Math.max(150,innerHeight-top-tb-6)+'px';const info=Worship.fit(box);box._fit=info;box._pg=WS.toLast&&info.pages>1?info.pages-1:0;WS.toLast=false;Worship.turn(box,box._pg,info);
+ const pg=$('#wfpg'),show=()=>{if(pg){pg.hidden=info.pages<2;pg.textContent=(box._pg+1)+' / '+info.pages}};show();
+ const go=d=>{const i=box._fit,n=box._pg+d;if(i&&n>=0&&n<i.pages){box._pg=n;Worship.turn(box,n,i);show();return}if(d<0)WS.toLast=true;if(!wStep(d))WS.toLast=false};
+ box.onclick=e=>{if(box._swiped&&Date.now()-box._swiped<400)return;const i=box._fit;if(!i||i.pages<2)return;const r=box.getBoundingClientRect();go(e.clientX-r.left>r.width/2?1:-1)};
+ if(!box._sw){box._sw=1;Worship.swipe(box,go)}}
 addEventListener('resize',()=>{if(view==='worship'&&WS.song&&!WS.edit){clearTimeout(wFitSong.t);wFitSong.t=setTimeout(wFitSong,150)}});
 /* songs found for you (and any added later) arrive through your private backup: songs/inbox.json; each comes in once */
 async function wsInbox(force){if(!bkOn()||wsInbox.busy||(!force&&Date.now()-(wsInbox.last||0)<10*60e3))return;wsInbox.busy=true;wsInbox.last=Date.now();
  try{const r=await bkGH('/contents/songs/inbox.json');if(!r.ok)return;const j=await r.json();let c=j.content;if(!c||j.encoding!=='base64'){const r2=await bkGH('/git/blobs/'+j.sha);c=(await r2.json()).content}
   const d=JSON.parse(bkUn64(c)),imp=new Set(S.get('wimp',[])),songs=wSongs();let n=0;
-  (d.songs||[]).forEach(x=>{if(imp.has(x.id))return;imp.add(x.id);if(!songs[x.id]){songs[x.id]=Object.assign({},x,{at:Date.now()});n++}});
+  (d.songs||[]).forEach(x=>{const o=songs[x.id];
+   if(o&&(x.rev||0)>(o.rev||0)){o.rev=x.rev;o.am=x.am||o.am;o.sp=x.sp||o.sp;if(!o.edited){o.src=x.src;o.t=x.t;o.a=x.a;o.key=x.key;o.notes=x.notes;delete o._p}n++;return}
+   if(imp.has(x.id))return;imp.add(x.id);if(!o){songs[x.id]=Object.assign({},x,{at:Date.now()});n++}});
   const sets=wSets();(d.sets||[]).forEach(x=>{if(imp.has(x.id))return;imp.add(x.id);if(!sets.some(y=>y.id===x.id)){sets.unshift(Object.assign({},x,{items:x.items.filter(it=>songs[it.id])}));n++}});
   if(n){S.set('wsongs',songs);S.set('wsets',sets)}S.set('wimp',[...imp]);if(n&&view==='worship'){const y=scrollY;render();scrollTo(0,y)}}catch(e){}finally{wsInbox.busy=false}}
 setTimeout(()=>wsInbox(),4000);
@@ -2009,7 +2031,8 @@ function wEditView(){const isNew=WS.edit==='new',s=isNew?{t:'',a:'',key:'',capo:
  <div class="w-found" id="wf-found"></div>
  <label class="w-f"><span>Order to sing it (optional), e.g. V1 C V2 C B C</span><input id="wf-arr" value="${esc(s.arr||'')}" autocomplete="off" autocapitalize="characters"></label>
  <label class="w-f"><span>Apple Music link</span><input id="wf-am" value="${esc(s.am||'')}" placeholder="https://music.apple.com/…" autocomplete="off" inputmode="url"></label>
- <button class="w-btn" id="wf-find">${W_IC.apple}Find on Apple Music</button><div id="wf-res"></div>
+ <label class="w-f"><span>Spotify link</span><input id="wf-sp" value="${esc(s.sp||'')}" placeholder="https://open.spotify.com/track/…" autocomplete="off" inputmode="url"></label>
+ <button class="w-btn" id="wf-find">${W_IC.apple}Find the recording</button><div id="wf-res"></div>
  <label class="w-f"><span>Notes</span><textarea id="wf-n" rows="2">${esc(s.notes||'')}</textarea></label>
  <div class="w-acts"><button class="w-btn pri" id="wf-save">Save</button><button class="w-btn" data-wcancel>Cancel</button>${isNew?'':'<button class="w-btn w-del" id="wf-del">Delete</button>'}</div></div>`}
 function wSetView(){const sets=wSets(),st=sets.find(x=>x.id===WS.set);if(!st){WS.set=null;return worshipView()}const songs=wSongs();
@@ -2028,7 +2051,8 @@ function wFound(){const box=$('#wf-found');if(!box)return;const p=Worship.parse(
 function wAmSearch(q,cb){fetch('https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q),{cache:'no-store'}).then(r=>{if(!r.ok)throw r.status;return r.json()}).then(d=>cb((d&&d.results)||[])).catch(()=>wAmJsonp(q,cb))}
 function wAmJsonp(q,cb){const n='amcb'+Date.now();const sc=document.createElement('script');let done=false;window[n]=d=>{done=true;delete window[n];sc.remove();cb((d&&d.results)||[])};
  sc.src='https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q)+'&callback='+n;sc.onerror=()=>{if(!done){delete window[n];cb(null)}};document.head.appendChild(sc);setTimeout(()=>{if(!done)cb(null)},9000)}
-function wireWorship(){wsInbox();if(WS.song&&!WS.edit)requestAnimationFrame(wFitSong);
+function wireWorship(){wsInbox();document.body.classList.toggle('wsong-open',!!(WS.song&&!WS.edit));if(WS.song&&!WS.edit)requestAnimationFrame(wFitSong);
+ document.querySelectorAll('[data-wtools]').forEach(b=>b.onclick=()=>{WS.tools=!WS.tools;render()});
  document.querySelectorAll('[data-wp]').forEach(b=>b.onclick=()=>{WS.pane=b.dataset.wp;S.set('wpane',WS.pane);render()});
  const q=$('#wq');if(q)q.oninput=()=>{WS.q=q.value;const y=q.selectionStart;render();const n=$('#wq');n.focus();n.setSelectionRange(y,y)};
  document.querySelectorAll('[data-wsong]').forEach(b=>b.onclick=()=>{WS.song=b.dataset.wsong;WS.from=WS.set;WS.set=null;render();scrollTo(0,0)});
@@ -2050,11 +2074,13 @@ function wireWorship(){wsInbox();if(WS.song&&!WS.edit)requestAnimationFrame(wFit
     const norm=x=>String(x||'').toLowerCase().replace(/[^a-z0-9]/g,'');r=r.filter(x=>x.trackViewUrl);
     r.sort((x,y)=>(norm(y.artistName).includes(norm(a))&&a?1:0)-(norm(x.artistName).includes(norm(a))&&a?1:0));
     res.innerHTML=r.length?`<div class="w-am">${r.slice(0,8).map((x,i)=>`<button data-am="${i}"><img src="${esc(x.artworkUrl60||'')}" alt="" loading="lazy"><span><b>${esc(x.trackName)}</b><small>${esc(x.artistName)} · ${esc(x.collectionName||'')}</small></span>${a&&norm(x.artistName).includes(norm(a))?'<i>✓ artist</i>':''}</button>`).join('')}</div><p class="w-hint">Pick the exact recording. Several artists often record the same song.</p>`:'<p class="w-hint">No match. Try the title alone, or paste the link.</p>';
-    res.querySelectorAll('[data-am]').forEach(b=>b.onclick=()=>{const x=r[+b.dataset.am];$('#wf-am').value=x.trackViewUrl.replace(/[?&]uo=\d+/,'');if(!$('#wf-a').value)$('#wf-a').value=x.artistName;res.innerHTML=`<p class="w-hint">Linked: ${esc(x.trackName)} · ${esc(x.artistName)}</p>`})})};
+    res.querySelectorAll('[data-am]').forEach(b=>b.onclick=()=>{const x=r[+b.dataset.am],am='https://music.apple.com/us/song/'+x.trackId;$('#wf-am').value=am;if(!$('#wf-a').value)$('#wf-a').value=x.artistName;
+     res.innerHTML=`<p class="w-hint">Apple Music: ${esc(x.trackName)} · ${esc(x.artistName)}<br>Spotify: the button opens a Spotify search for this song. For the exact track, paste its link (Spotify → Share → Copy Song Link).</p>`})})};
   $('#wf-save').onclick=()=>{const t=$('#wf-t').value.trim();if(!t){alert('Give the song a title.');return}const all=wSongs(),id=WS.edit==='new'?wId():WS.edit,o=all[id]||{id};
    const p=Worship.parse(src.value);let key=$('#wf-k').value||(p.meta.key&&Worship.keyInfo(p.meta.key)?p.meta.key:'');
-   Object.assign(o,{id,t,a:$('#wf-a').value.trim(),key,capo:+$('#wf-c').value||0,src:src.value,arr:$('#wf-arr').value.trim(),am:$('#wf-am').value.trim(),notes:$('#wf-n').value.trim(),at:Date.now()});delete o._p;
+   Object.assign(o,{id,t,a:$('#wf-a').value.trim(),key,capo:+$('#wf-c').value||0,src:src.value,arr:$('#wf-arr').value.trim(),am:amLink($('#wf-am').value.trim()),sp:$('#wf-sp').value.trim(),notes:$('#wf-n').value.trim(),at:Date.now(),edited:1});delete o._p;
    if(o.am&&!/^https:\/\/(music|itunes)\.apple\.com\//.test(o.am)){alert('That does not look like an Apple Music link (it should start with https://music.apple.com/).');return}
+   if(o.sp&&!/^https:\/\/open\.spotify\.com\//.test(o.sp)){alert('That does not look like a Spotify link (it should start with https://open.spotify.com/).');return}
    all[id]=o;S.set('wsongs',all);WS.edit=null;WS.song=id;render();scrollTo(0,0)};
   const del=$('#wf-del');if(del)del.onclick=()=>{if(!confirm('Delete this song? It is also taken out of your setlists.'))return;const all=wSongs();delete all[WS.edit];S.set('wsongs',all);S.set('wsets',wSets().map(st=>(st.items=st.items.filter(it=>it.id!==WS.edit),st)));WS.edit=null;WS.song=null;render()}}
  // setlist
@@ -2394,7 +2420,7 @@ function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='
   g.addEventListener('touchstart',e=>{t0=null;if(e.touches.length!==1)return;const t=e.touches[0];if(t.clientX<22)return;t0={x:t.clientX,y:t.clientY,lx:t.clientX,ly:t.clientY,t:Date.now(),y0:scrollY}},{passive:true});
   g.addEventListener('touchmove',e=>{if(t0&&e.touches.length===1){t0.lx=e.touches[0].clientX;t0.ly=e.touches[0].clientY}},{passive:true});
   g.addEventListener('touchend',()=>{if(!t0)return;const dx=t0.lx-t0.x,dy=t0.ly-t0.y,ok=Date.now()-t0.t<900&&Math.abs(scrollY-t0.y0)<16;t0=null;if(ok&&Math.abs(dx)>50&&Math.abs(dx)>1.7*Math.abs(dy))prGo(dx<0?1:-1)},{passive:true})}}
-function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boot=true;view=location.hash==='#worship'?'worship':'journey';if(location.hash==='#worship')history.replaceState(null,'',location.pathname);S.set('view',view);migrateCamp()}tabsPaint();if(view==='pray'){m.innerHTML=prayView();wire();wirePray();return}if(view==='worship'){m.innerHTML=worshipView();wire();wireWorship();return}if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
+function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boot=true;view=location.hash==='#worship'?'worship':'journey';if(location.hash==='#worship')history.replaceState(null,'',location.pathname);S.set('view',view);migrateCamp()}tabsPaint();if(view==='pray'){m.innerHTML=prayView();wire();wirePray();return}if(view!=='worship')document.body.classList.remove('wsong-open');if(view==='worship'){m.innerHTML=worshipView();wire();wireWorship();return}if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){m.innerHTML=bpView();wire();wireBP();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
  migrateCamp();const w=walk();let first=jpIdx();if(camp==null||camp>=w.length)camp=first;  /* the road is walked up to your place */
  const rd=w.filter(x=>!x.c.intro&&read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}

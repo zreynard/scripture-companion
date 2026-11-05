@@ -33,6 +33,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .wfit{position:relative;overflow:hidden;border-radius:12px}
 .wfit .wc .wc-s{break-inside:avoid;margin:0 0 .65em;padding:.15em .4em .25em;border-radius:.5em}.wfit .wc .wc-s.on{background:rgba(201,162,74,.2)}
 .wfit .wc .wc-h{font-size:.6em;margin:0 0 .2em}.wfit .wc .wc-l{font-size:1em;margin:0 0 .22em;line-height:1.16}.wfit .wc .wc-c{font-size:.8em}.wfit .wc .wc-gap{height:.35em}
+.wfit .wc.inl .wc-l{display:block}.wfit .wc.inl .wc-w{display:inline;white-space:pre-wrap}.wfit .wc.inl .wc-t{display:inline}
+.wfit .wc.inl .wc-c{display:inline;font-size:.66em;vertical-align:.62em;line-height:1;min-height:0;padding:0 .12em 0 0}.wfit .wc.inl .wc-c:empty{display:none}.wfit .wc.inl .wc-only .wc-c{font-size:.82em;vertical-align:0;padding-right:.5em}
 .wfit-pg{position:absolute;right:8px;bottom:6px;font:700 12px -apple-system,system-ui,sans-serif;color:var(--mute);background:rgba(244,239,227,.92);padding:3px 8px;border-radius:10px}
 .wc-s{margin:0 0 16px;padding:8px 10px;border-radius:12px;transition:background .25s}.wc-s.on{background:rgba(201,162,74,.16)}
 .wc-h{margin:0 0 6px;font:700 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7a5c16}.wc-h i{font-style:normal;color:var(--mute);letter-spacing:0;text-transform:none;font-weight:600}
@@ -141,6 +143,7 @@ button{font:inherit;color:inherit;cursor:pointer}
     $('#bSongs').onclick = songsSheet;
     document.querySelectorAll('.seg [data-v]').forEach(function (b) { b.onclick = function () { view = b.dataset.v; try { localStorage.setItem('scwp:view', view); } catch (e) {} paint(true); }; });
     document.querySelectorAll('.chip').forEach(function (b) { b.onclick = function () { jump(+b.dataset.sec); }; });
+    var mon = document.querySelector('.mon'); if (mon) Worship.swipe(mon, function (d) { go(d); });
   }
   /* the chord chart fits its space (no scrolling while playing); a long one turns to the page holding the current section */
   var fitFor = null;
@@ -152,7 +155,8 @@ button{font:inherit;color:inherit;cursor:pointer}
     if (fitFor !== key || !box._fit) { box._fit = Worship.fit(box); fitFor = key; }
     var info = box._fit, pg = Worship.pageOf(box, on, info); Worship.turn(box, pg, info); box._pg = pg;
     var lab = $('#cpg'); if (lab) { lab.hidden = info.pages < 2; lab.textContent = (pg + 1) + ' / ' + info.pages; }
-    box.onclick = function (e) { var i = box._fit; if (!i || i.pages < 2) return; var r = box.getBoundingClientRect(); box._pg = Math.max(0, Math.min(i.pages - 1, box._pg + (e.clientX - r.left > r.width / 2 ? 1 : -1))); Worship.turn(box, box._pg, i); if (lab) lab.textContent = (box._pg + 1) + ' / ' + i.pages; };
+    if (!box._sw) { box._sw = 1; Worship.swipe(box, function (d) { var i = box._fit; if (!i || i.pages < 2) return; box._pg = Math.max(0, Math.min(i.pages - 1, box._pg + d)); Worship.turn(box, box._pg, i); if (lab) lab.textContent = (box._pg + 1) + ' / ' + i.pages; }); }
+    box.onclick = function (e) { if (box._swiped && Date.now() - box._swiped < 400) return; var i = box._fit; if (!i || i.pages < 2) return; var r = box.getBoundingClientRect(); box._pg = Math.max(0, Math.min(i.pages - 1, box._pg + (e.clientX - r.left > r.width / 2 ? 1 : -1))); Worship.turn(box, box._pg, i); if (lab) lab.textContent = (box._pg + 1) + ' / ' + i.pages; };
   }
   addEventListener('resize', function () { clearTimeout(fitChart.t); fitChart.t = setTimeout(function () { fitFor = null; paint(true); }, 150); });
   /* the next time this section comes in the song (after where we are); the first one if it does not come again */

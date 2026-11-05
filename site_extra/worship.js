@@ -145,7 +145,13 @@
   }
   function chartHTML(song, opts) {
     opts = opts || {}; var p = song.parsed || parse(song.src), semis = opts.semis || 0, flats = opts.flats;
+    var sig = {}, same = {};
+    if (opts.compactRepeats) p.sections.forEach(function (s, i) {
+      if (s.ref || !s.lyric) return; var k = s.kind + '|' + s.lines.map(function (l) { return l ? l.text.replace(/\s+/g, ' ').trim().toLowerCase() : ''; }).join('/');
+      if (sig[k] != null) same[i] = p.sections[sig[k]].label; else sig[k] = i;
+    });
     return p.sections.map(function (s, i) {
+      if (same[i]) return '<section class="wc-s" data-sec="' + i + '"><h4 class="wc-h">' + esc(s.label) + ' <i>(same as ' + esc(same[i]) + ')</i></h4></section>';
       return '<section class="wc-s' + (opts.cur === i ? ' on' : '') + '" data-sec="' + i + '"><h4 class="wc-h">' + esc(s.label) + (s.rep > 1 ? ' <i>×' + s.rep + '</i>' : '') + (s.ref ? ' <i>(repeat)</i>' : '') + '</h4>' +
         (s.ref && opts.compactRepeats ? '' : s.lines.map(function (l) { return lineHTML(l, semis, flats); }).join('')) + '</section>';
     }).join('');
@@ -201,6 +207,14 @@
   /* ---- fit a chord chart to its box: the biggest text that fits, in 1-3 columns; pages only if it still cannot fit ----
      box: fixed-size element (overflow hidden) holding one .wc element. Text sizes inside are in em, so one font size scales all. */
   function fit(box, o) {
+    var inner = box.firstElementChild; if (!inner) return { pages: 1 };
+    inner.classList.remove('inl'); var a = fit1(box, o);
+    if (a.pages === 1) return a;
+    inner.classList.add('inl'); var b = fit1(box, o);
+    if (b.pages < a.pages || (b.pages === a.pages && b.px > a.px)) { b.inline = true; return b; }
+    inner.classList.remove('inl'); return fit1(box, o);
+  }
+  function fit1(box, o) {
     o = o || {}; var inner = box.firstElementChild; if (!inner) return { pages: 1 };
     var W = box.clientWidth, H = box.clientHeight; if (!W || !H) return { pages: 1 };
     var maxCols = o.maxCols || (W >= 1000 ? 3 : W >= 600 ? 2 : 1), minPx = o.min || (W >= 700 ? 13 : 11.5), maxPx = o.max || (W >= 700 ? 26 : 21), gap = Math.round(Math.max(18, W * 0.03));
@@ -217,8 +231,15 @@
     inner.style.columnCount = maxCols; inner.style.fontSize = minPx + 'px';   // still too long: pages, turned by tapping
     return { pages: Math.max(1, Math.round((inner.scrollWidth + gap) / (W + gap))), cols: maxCols, px: minPx, step: W + gap };
   }
+  /* swipe on an element: calls go(+1) for a swipe to the left (next), go(-1) to the right */
+  function swipe(el, go) {
+    var t0 = null;
+    el.addEventListener('touchstart', function (e) { t0 = null; if (e.touches.length !== 1) return; var t = e.touches[0]; t0 = { x: t.clientX, y: t.clientY, lx: t.clientX, ly: t.clientY, t: Date.now() }; }, { passive: true });
+    el.addEventListener('touchmove', function (e) { if (t0 && e.touches.length === 1) { t0.lx = e.touches[0].clientX; t0.ly = e.touches[0].clientY; } }, { passive: true });
+    el.addEventListener('touchend', function () { if (!t0) return; var dx = t0.lx - t0.x, dy = t0.ly - t0.y, ok = Date.now() - t0.t < 800; t0 = null; if (ok && Math.abs(dx) > 45 && Math.abs(dx) > 1.6 * Math.abs(dy)) { el._swiped = Date.now(); go(dx < 0 ? 1 : -1); } }, { passive: true });
+  }
   function pageOf(box, el, info) { if (!el || !info || info.pages < 2) return 0; var x = el.offsetLeft; return Math.max(0, Math.min(info.pages - 1, Math.floor((x + 4) / info.step))); }
   function turn(box, n, info) { box.scrollLeft = n * info.step; }
-  G.Worship = { fit: fit, pageOf: pageOf, turn: turn, parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
+  G.Worship = { swipe: swipe, fit: fit, pageOf: pageOf, turn: turn, parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
     transposeKey: transposeKey, semitones: semitones, useFlats: useFlats, keyInfo: keyInfo, KEYS_MAJ: KEYS_MAJ, KEYS_MIN: KEYS_MIN, isChord: isChord, shortOf: shortOf, esc: esc };
 })(typeof window !== 'undefined' ? window : globalThis);
