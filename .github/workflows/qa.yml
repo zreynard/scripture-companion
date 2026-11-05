@@ -1,9 +1,6 @@
 # Worship QA on GitHub's servers: engine, browsers and live sync on the real relays (tools/qa/*.js), plus the end-to-end run.
 name: Worship QA
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "41 22 * * 3,6"   # Wednesday and Saturday 22:41 UTC (evening in the US): a failure emails the owner before Sunday
+on: workflow_dispatch   # run by hand only (no schedule: the owner wants no emails)
 jobs:
   qa:
     runs-on: ubuntu-24.04
