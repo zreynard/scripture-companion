@@ -1,13 +1,14 @@
-# One-off diagnosis scripts that need the real internet (tools/qa/bigdeck.js).
+# One-off diagnosis scripts that need the real internet or another browser engine.
 name: Live diagnosis
 on: workflow_dispatch
 jobs:
   diag:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: node tools/qa/relays.js && node tools/qa/relays.js
+      - run: npm i --no-save playwright@1.48.2 >/dev/null && npx playwright install --with-deps webkit >/dev/null
+      - run: node tools/qa/webkit_diag.js
