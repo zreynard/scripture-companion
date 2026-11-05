@@ -49,9 +49,11 @@
     return chords > 0;
   }
   function chordsAt(line) { var r = [], re = /\S+/g, m; while ((m = re.exec(line))) { var w = m[0].replace(/^\(|\)$/g, ''); if (isChord(w)) r.push({ c: w, at: m.index }); } return r; }
+  /* ChordPro chords sit in brackets ([G], [D/F#]); a bracketed section name ([Chorus], [Bridge]) is not a chord */
+  function hasInline(line) { var re = /\[([^\]\s]{1,12})\]/g, m; while ((m = re.exec(line))) if (isChord(m[1])) return true; return false; }
   function inlineChords(line) {   // ChordPro: [G]Amazing → text without brackets, chords at character positions
     var chords = [], text = '', re = /\[([^\]]+)\]/g, last = 0, m;
-    while ((m = re.exec(line))) { text += line.slice(last, m.index); chords.push({ c: m[1].trim(), at: text.length }); last = m.index + m[0].length; }
+    while ((m = re.exec(line))) { if (!isChord(m[1].trim())) continue; text += line.slice(last, m.index); chords.push({ c: m[1].trim(), at: text.length }); last = m.index + m[0].length; }
     text += line.slice(last); return { text: text, chords: chords };
   }
   function parse(src) {
@@ -78,12 +80,12 @@
       if (/^\s*#/.test(line)) continue;
       if (!line.trim()) { flushChords(); if (cur && cur.lines.length && cur.lines[cur.lines.length - 1] !== null) cur.lines.push(null); continue; }
       var lm2 = LABEL.exec(line);
-      if (lm2 && !/\[[A-G]/.test(line) && (!lm2[3] || isChordLine(lm2[3]))) {
+      if (lm2 && !hasInline(line) && (!lm2[3] || isChordLine(lm2[3]))) {
         flushChords(); open(lm2[1], lm2[2] && +lm2[2]);
         if (lm2[3]) pendingChords = chordsAt(lm2[3]).map(function (c) { return { c: c.c, at: c.at }; });
         continue;
       }
-      if (/\[[A-G][^\]]*\]/.test(line)) { flushChords(); push(inlineChords(line)); continue; }
+      if (hasInline(line)) { flushChords(); push(inlineChords(line)); continue; }
       if (isChordLine(line)) { flushChords(); pendingChords = chordsAt(line); continue; }
       var text = line;
       if (pendingChords) {   // chords sit over this lyric line: keep their columns
@@ -177,6 +179,27 @@
     });
     return out;
   }
-  G.Worship = { parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
+  /* ---- fit a chord chart to its box: the biggest text that fits, in 1-3 columns; pages only if it still cannot fit ----
+     box: fixed-size element (overflow hidden) holding one .wc element. Text sizes inside are in em, so one font size scales all. */
+  function fit(box, o) {
+    o = o || {}; var inner = box.firstElementChild; if (!inner) return { pages: 1 };
+    var W = box.clientWidth, H = box.clientHeight; if (!W || !H) return { pages: 1 };
+    var maxCols = o.maxCols || (W >= 1000 ? 3 : W >= 600 ? 2 : 1), minPx = o.min || (W >= 700 ? 13 : 11.5), maxPx = o.max || (W >= 700 ? 26 : 21), gap = Math.round(Math.max(18, W * 0.03));
+    inner.style.columnGap = gap + 'px'; inner.style.height = H + 'px'; inner.style.columnFill = 'auto';
+    function fits(cols, px) { inner.style.columnCount = cols; inner.style.fontSize = px + 'px'; return inner.scrollWidth <= W + 2 && inner.scrollHeight <= H + 2; }
+    var best = null;
+    for (var c = 1; c <= maxCols; c++) {
+      if (!fits(c, minPx)) continue;
+      var lo = minPx, hi = maxPx;
+      if (fits(c, hi)) lo = hi; else for (var k = 0; k < 9; k++) { var mid = (lo + hi) / 2; if (fits(c, mid)) lo = mid; else hi = mid; }
+      if (!best || lo > best.px + 0.75) best = { cols: c, px: Math.floor(lo * 2) / 2 };
+    }
+    if (best) { fits(best.cols, best.px); box.scrollLeft = 0; return { pages: 1, cols: best.cols, px: best.px, step: W + gap }; }
+    inner.style.columnCount = maxCols; inner.style.fontSize = minPx + 'px';   // still too long: pages, turned by tapping
+    return { pages: Math.max(1, Math.round((inner.scrollWidth + gap) / (W + gap))), cols: maxCols, px: minPx, step: W + gap };
+  }
+  function pageOf(box, el, info) { if (!el || !info || info.pages < 2) return 0; var x = el.offsetLeft; return Math.max(0, Math.min(info.pages - 1, Math.floor((x + 4) / info.step))); }
+  function turn(box, n, info) { box.scrollLeft = n * info.step; }
+  G.Worship = { fit: fit, pageOf: pageOf, turn: turn, parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
     transposeKey: transposeKey, semitones: semitones, useFlats: useFlats, keyInfo: keyInfo, KEYS_MAJ: KEYS_MAJ, KEYS_MIN: KEYS_MIN, isChord: isChord, shortOf: shortOf, esc: esc };
 })(typeof window !== 'undefined' ? window : globalThis);

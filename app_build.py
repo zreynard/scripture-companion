@@ -823,6 +823,15 @@ body[data-v=pray] #np{display:none!important}
 .w-itt{flex:1;min-width:0;border:0;background:none;text-align:left;font:inherit;color:var(--ink);padding:0;cursor:pointer}.w-itt b{display:block;font-size:17px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.w-itt small{display:block;font-size:12.5px;color:var(--mute)}
 .w-ik{display:flex;align-items:center;gap:4px;flex:none}.w-ik b{min-width:34px;text-align:center;font:700 13px ui-monospace,Menlo,monospace;color:var(--gold2)}
 .w-mv{display:flex;gap:2px;flex:none}.w-mv button{width:30px;height:30px;border:0;border-radius:15px;background:rgba(27,36,64,.05);color:var(--ink);cursor:pointer;padding:0}.w-mv button[disabled]{opacity:.25}
+.jv.wsp{max-width:760px}.jv.wsong{max-width:none;padding-bottom:0}@media (min-width:700px){.jv.wsong{padding-left:28px;padding-right:28px}}.w-st{display:flex;align-items:center;gap:8px;margin-top:-4px}.w-st .sp{flex:1}
+.w-btn.sm{height:38px;padding:0 14px;font-size:14px}.w-btn.ic{width:38px;padding:0;justify-content:center}
+.wsong .w-title{font-size:24px;margin:2px 0 0}.w-sub{color:var(--mute);font-size:14px}
+.wsong .w-keys{margin:10px 0 4px}.wsong .w-capo{margin:0 0 4px}
+.wfit{position:relative;overflow:hidden;margin:8px -4px 0;border-radius:12px}
+@media (max-height:520px){.wsong .w-title,.wsong .w-sub,.wsong .w-capo{display:none}.wsong .w-keys{margin:6px 0 0}.jv.wsong{padding-top:calc(env(safe-area-inset-top) + 8px)}}
+.wfit .wc .wc-s{break-inside:avoid;margin:0 0 .65em;padding:.15em .35em .2em;border-radius:.5em}
+.wfit .wc .wc-h{font-size:.6em;margin:0 0 .2em}.wfit .wc .wc-l{font-size:1em;margin:0 0 .22em;line-height:1.16}.wfit .wc .wc-c{font-size:.8em}.wfit .wc .wc-gap{height:.35em}
+.wfit-pg{position:absolute;right:8px;bottom:6px;font:700 12px -apple-system,system-ui,sans-serif;color:var(--mute);background:rgba(244,239,227,.9);padding:3px 8px;border-radius:10px}
 .w-pick{position:fixed;inset:0;background:rgba(15,22,40,.38);z-index:40;display:flex;align-items:flex-end;justify-content:center}
 .w-pk{background:var(--bg);width:100%;max-width:560px;max-height:80vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(20px + env(safe-area-inset-bottom))}.w-pk h3{margin:0 0 8px;font-weight:400;font-size:22px}
 .w-pl label{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line)}.w-pl input{width:22px;height:22px;flex:none}.w-pl b{display:block;font-weight:600}.w-pl small{display:block;color:var(--mute);font-size:13px}
@@ -1968,13 +1977,27 @@ function worshipView(){
  return h+`<button class="w-add" data-wnewset>New setlist</button></div>`}
 function wSongView(){const s=wSongs()[WS.song];if(!s){WS.song=null;return worshipView()}
  const key=wKeyOf(s),capo=s.capo||0,sh=wShape(s,key,capo),p=wParsed(s);
- return `<div class="jv wsp"><button class="w-back" data-wback>${W_IC.back}Songs</button><h1 class="w-title serif">${esc(s.t)}</h1>${s.a?`<div class="w-by">${esc(s.a)}</div>`:''}
+ return `<div class="jv wsp wsong"><div class="w-st"><button class="w-back" data-wback>${W_IC.back}Songs</button><span class="sp"></span>
+ <button class="w-btn sm pri" data-wpresent="${s.id}">${W_IC.play}Present</button>${s.am?`<a class="w-btn sm ic" href="${esc(s.am)}" target="_blank" rel="noopener" aria-label="Listen on Apple Music">${W_IC.apple}</a>`:''}<button class="w-btn sm" data-wedit="${s.id}">Edit</button></div>
+ <h1 class="w-title serif">${esc(s.t)}</h1><div class="w-sub">${esc(s.a||'')}</div>
  <div class="w-keys"><span class="w-kl">Key</span><button class="w-kb" data-wk="-1" aria-label="Key down">−</button><b class="w-kv">${esc(key||'?')}</b><button class="w-kb" data-wk="1" aria-label="Key up">+</button>
  <span class="w-kl" style="margin-left:auto">Capo</span><button class="w-kb" data-wc="-1" aria-label="Capo down">−</button><b class="w-kv">${capo}</b><button class="w-kb" data-wc="1" aria-label="Capo up">+</button></div>
  ${capo&&sh.shapeKey?`<div class="w-capo">Capo ${capo}: play ${esc(sh.shapeKey)} shapes, sounds in ${esc(key)}</div>`:''}
- <div class="w-acts"><button class="w-btn pri" data-wpresent="${s.id}">${W_IC.play}Present</button>${s.am?`<a class="w-btn" href="${esc(s.am)}" target="_blank" rel="noopener">${W_IC.apple}Listen on Apple Music</a>`:''}<button class="w-btn" data-wedit="${s.id}">Edit</button></div>
- ${s.notes?`<p class="w-notes">${esc(s.notes)}</p>`:''}
- <div class="w-chart">${p.sections.length?Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats}):'<p class="w-empty">No chart yet. Tap Edit to paste one.</p>'}</div></div>`}
+ ${p.sections.length?`<div class="wfit" id="wfit"><div class="wc">${Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats,compactRepeats:true})}</div><span class="wfit-pg" id="wfpg" hidden></span></div>`:'<p class="w-empty">No chart yet. Tap Edit to paste one.</p>'}</div>`}
+/* the chart fills the screen below the header: biggest text that fits, more columns on iPad and sideways; pages turn by a tap at the side */
+function wFitSong(){const box=$('#wfit');if(!box)return;const tb=($('#tabs')||{}).offsetHeight||0,top=box.getBoundingClientRect().top+scrollY;
+ box.style.height=Math.max(150,innerHeight-top-tb-8)+'px';const info=Worship.fit(box);box._fit=info;box._pg=0;Worship.turn(box,0,info);
+ const pg=$('#wfpg');if(pg){pg.hidden=info.pages<2;pg.textContent='1 / '+info.pages}
+ box.onclick=e=>{const i=box._fit;if(!i||i.pages<2)return;const r=box.getBoundingClientRect(),x=e.clientX-r.left;box._pg=Math.max(0,Math.min(i.pages-1,box._pg+(x>r.width/2?1:-1)));Worship.turn(box,box._pg,i);if(pg)pg.textContent=(box._pg+1)+' / '+i.pages}}
+addEventListener('resize',()=>{if(view==='worship'&&WS.song&&!WS.edit){clearTimeout(wFitSong.t);wFitSong.t=setTimeout(wFitSong,150)}});
+/* songs found for you (and any added later) arrive through your private backup: songs/inbox.json; each comes in once */
+async function wsInbox(force){if(!bkOn()||wsInbox.busy||(!force&&Date.now()-(wsInbox.last||0)<10*60e3))return;wsInbox.busy=true;wsInbox.last=Date.now();
+ try{const r=await bkGH('/contents/songs/inbox.json');if(!r.ok)return;const j=await r.json();let c=j.content;if(!c||j.encoding!=='base64'){const r2=await bkGH('/git/blobs/'+j.sha);c=(await r2.json()).content}
+  const d=JSON.parse(bkUn64(c)),imp=new Set(S.get('wimp',[])),songs=wSongs();let n=0;
+  (d.songs||[]).forEach(x=>{if(imp.has(x.id))return;imp.add(x.id);if(!songs[x.id]){songs[x.id]=Object.assign({},x,{at:Date.now()});n++}});
+  const sets=wSets();(d.sets||[]).forEach(x=>{if(imp.has(x.id))return;imp.add(x.id);if(!sets.some(y=>y.id===x.id)){sets.unshift(Object.assign({},x,{items:x.items.filter(it=>songs[it.id])}));n++}});
+  if(n){S.set('wsongs',songs);S.set('wsets',sets)}S.set('wimp',[...imp]);if(n&&view==='worship'){const y=scrollY;render();scrollTo(0,y)}}catch(e){}finally{wsInbox.busy=false}}
+setTimeout(()=>wsInbox(),4000);
 function wEditView(){const isNew=WS.edit==='new',s=isNew?{t:'',a:'',key:'',capo:0,am:'',notes:'',src:'',arr:''}:wSongs()[WS.edit];if(!s){WS.edit=null;return worshipView()}
  const keys=[''].concat(Worship.KEYS_MAJ,Worship.KEYS_MIN);
  return `<div class="jv wsp"><button class="w-back" data-wcancel>${W_IC.back}${isNew?'Songs':'Back'}</button><h1 class="w-title serif">${isNew?'Add a song':'Edit song'}</h1>
@@ -2005,7 +2028,7 @@ function wFound(){const box=$('#wf-found');if(!box)return;const p=Worship.parse(
 function wAmSearch(q,cb){fetch('https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q),{cache:'no-store'}).then(r=>{if(!r.ok)throw r.status;return r.json()}).then(d=>cb((d&&d.results)||[])).catch(()=>wAmJsonp(q,cb))}
 function wAmJsonp(q,cb){const n='amcb'+Date.now();const sc=document.createElement('script');let done=false;window[n]=d=>{done=true;delete window[n];sc.remove();cb((d&&d.results)||[])};
  sc.src='https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q)+'&callback='+n;sc.onerror=()=>{if(!done){delete window[n];cb(null)}};document.head.appendChild(sc);setTimeout(()=>{if(!done)cb(null)},9000)}
-function wireWorship(){
+function wireWorship(){wsInbox();if(WS.song&&!WS.edit)requestAnimationFrame(wFitSong);
  document.querySelectorAll('[data-wp]').forEach(b=>b.onclick=()=>{WS.pane=b.dataset.wp;S.set('wpane',WS.pane);render()});
  const q=$('#wq');if(q)q.oninput=()=>{WS.q=q.value;const y=q.selectionStart;render();const n=$('#wq');n.focus();n.setSelectionRange(y,y)};
  document.querySelectorAll('[data-wsong]').forEach(b=>b.onclick=()=>{WS.song=b.dataset.wsong;WS.from=WS.set;WS.set=null;render();scrollTo(0,0)});

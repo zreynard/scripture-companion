@@ -29,7 +29,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .chips{display:flex;gap:8px;overflow-x:auto;padding:12px 14px 4px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
 .chip{flex:none;min-width:48px;height:44px;padding:0 14px;border-radius:22px;border:1px solid rgba(27,36,64,.16);background:#fff;font-weight:650;font-size:15px}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.chart{padding:4px 18px 10px;overflow-x:auto}
+.chart{margin:6px 10px 0}
+.wfit{position:relative;overflow:hidden;border-radius:12px}
+.wfit .wc .wc-s{break-inside:avoid;margin:0 0 .65em;padding:.15em .4em .25em;border-radius:.5em}.wfit .wc .wc-s.on{background:rgba(201,162,74,.2)}
+.wfit .wc .wc-h{font-size:.6em;margin:0 0 .2em}.wfit .wc .wc-l{font-size:1em;margin:0 0 .22em;line-height:1.16}.wfit .wc .wc-c{font-size:.8em}.wfit .wc .wc-gap{height:.35em}
+.wfit-pg{position:absolute;right:8px;bottom:6px;font:700 12px -apple-system,system-ui,sans-serif;color:var(--mute);background:rgba(244,239,227,.92);padding:3px 8px;border-radius:10px}
 .wc-s{margin:0 0 16px;padding:8px 10px;border-radius:12px;transition:background .25s}.wc-s.on{background:rgba(201,162,74,.16)}
 .wc-h{margin:0 0 6px;font:700 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7a5c16}.wc-h i{font-style:normal;color:var(--mute);letter-spacing:0;text-transform:none;font-weight:600}
 .wc-l{display:flex;flex-wrap:wrap;align-items:flex-end;font-size:17px;line-height:1.25;margin:0 0 6px}.wc-w{display:inline-flex;flex-direction:column;white-space:pre-wrap;max-width:100%}
@@ -55,7 +59,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .keys{display:none}
 @media (min-width:900px){
  body{padding-bottom:110px}.wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;padding:0 10px}
- .mon .tx{font-size:clamp(16px,1.9vw,30px)}.seg{display:none}.chart{display:block!important;max-height:calc(100vh - 230px);overflow:auto}
+ .mon .tx{font-size:clamp(16px,1.9vw,30px)}.seg{display:none}.chart{display:block!important}
  .keys{display:block;margin:14px 14px 0;font-size:13px;color:var(--mute)}.keys kbd{font:600 12px ui-monospace,Menlo,monospace;background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--ink)}
  .bar{justify-content:center}.bar button{max-width:220px}.b-next{flex:0 1 320px}
 }
@@ -116,18 +120,31 @@ button{font:inherit;color:inherit;cursor:pointer}
     h += nx ? '<div class="next"><b>Next' + (nx.song !== s.song ? ' song' : '') + ':</b><span>' + esc(nx.song !== s.song ? nx.sg.t : nx.sg.slides[nx.slide].s) + (nx.sg.slides[nx.slide].l[0] ? ' — ' + esc(nx.sg.slides[nx.slide].l[0]) : '') + '</span></div>' : '<div class="next"><b>End</b><span>This is the last slide</span></div>';
     h += '<div class="keys"><kbd>→</kbd> next · <kbd>←</kbd> back · <kbd>B</kbd> blank · <kbd>1</kbd>–<kbd>9</kbd> section · <kbd>[</kbd> <kbd>]</kbd> song</div></div>';
     h += '<div class="col2"><div class="chips">' + secs.map(function (x, i) { return '<button class="chip' + (c.sl && c.sl.sec === x.sec ? ' on' : '') + '" data-sec="' + x.sec + '" title="' + esc(x.label) + '">' + esc(x.label.length <= 9 ? x.label : x.short) + '</button>'; }).join('') + '</div>';
-    h += '<div class="chart" id="chart"' + (view === 'chords' ? '' : ' style="display:none"') + '>' + (c.sg.chart || '') + '</div></div></div>';
+    h += '<div class="chart wfit" id="chart"' + (view === 'chords' || innerWidth >= 900 ? '' : ' style="display:none"') + '><div class="wc">' + (c.sg.chart || '') + '</div><span class="wfit-pg" id="cpg" hidden></span></div></div></div>';
     $('#app').innerHTML = h;
     if (view === 'chords' && innerWidth < 900) { var c1 = document.querySelector('.col1 .mon'); if (c1) c1.style.display = 'none'; }
     var on = c.sl ? document.querySelector('#chart [data-sec="' + c.sl.sec + '"]') : null;
     document.querySelectorAll('#chart .wc-s').forEach(function (e) { e.classList.toggle('on', e === on); });
-    if (on) { var ch = $('#chart'); if (innerWidth >= 900) ch.scrollTo({ top: on.offsetTop - ch.offsetTop - 20, behavior: full ? 'auto' : 'smooth' }); else on.scrollIntoView({ block: 'center', behavior: full ? 'auto' : 'smooth' }); }
+    fitChart(on, c.s.song);
     var chip = document.querySelector('.chip.on'); if (chip) chip.scrollIntoView({ inline: 'center', block: 'nearest' });
     $('#bBlank').classList.toggle('on', !!c.s.blank); $('#bBlank').textContent = c.s.blank ? 'Show' : 'Blank';
     $('#bSongs').onclick = songsSheet;
     document.querySelectorAll('.seg [data-v]').forEach(function (b) { b.onclick = function () { view = b.dataset.v; try { localStorage.setItem('scwp:view', view); } catch (e) {} paint(true); }; });
     document.querySelectorAll('.chip').forEach(function (b) { b.onclick = function () { jump(+b.dataset.sec); }; });
   }
+  /* the chord chart fits its space (no scrolling while playing); a long one turns to the page holding the current section */
+  var fitFor = null;
+  function fitChart(on, song) {
+    var box = $('#chart'); if (!box || box.style.display === 'none') return;
+    var top = box.getBoundingClientRect().top, bar = ($('#bar') || {}).offsetHeight || 0;
+    box.style.height = Math.max(200, innerHeight - top - bar - 10) + 'px';
+    var key = song + ':' + innerWidth + 'x' + innerHeight;
+    if (fitFor !== key || !box._fit) { box._fit = Worship.fit(box); fitFor = key; }
+    var info = box._fit, pg = Worship.pageOf(box, on, info); Worship.turn(box, pg, info); box._pg = pg;
+    var lab = $('#cpg'); if (lab) { lab.hidden = info.pages < 2; lab.textContent = (pg + 1) + ' / ' + info.pages; }
+    box.onclick = function (e) { var i = box._fit; if (!i || i.pages < 2) return; var r = box.getBoundingClientRect(); box._pg = Math.max(0, Math.min(i.pages - 1, box._pg + (e.clientX - r.left > r.width / 2 ? 1 : -1))); Worship.turn(box, box._pg, i); if (lab) lab.textContent = (box._pg + 1) + ' / ' + i.pages; };
+  }
+  addEventListener('resize', function () { clearTimeout(fitChart.t); fitChart.t = setTimeout(function () { fitFor = null; paint(true); }, 150); });
   /* the next time this section comes in the song (after where we are); the first one if it does not come again */
   function jump(sec) {
     var c = cur(); if (!c.sg) return; var at = c.s.slide || 0, i, idx = -1;
