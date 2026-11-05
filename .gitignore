@@ -3,3 +3,6 @@ __pycache__/
 .DS_Store
 out/site/
 out/scripture-companion-*.html
+
+# test screenshots (may show lyrics): never commit
+/*.png
