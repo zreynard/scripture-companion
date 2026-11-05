@@ -1,0 +1,12 @@
+# Diagnostics: how Apple's public search answers (JSONP callback, CORS) for the Worship song editor.
+name: Apple Music search probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          U='https://itunes.apple.com/search?media=music&entity=song&limit=3&term=How+Great+Is+Our+God+Chris+Tomlin'
+          echo "== plain"; curl -sS -D - -o b1 "$U" -H 'Origin: https://zreynard.github.io' | grep -iE "^HTTP|content-type|access-control|location"; head -c 300 b1; echo
+          echo "== callback"; curl -sS -D - -o b2 "$U&callback=cb1" | grep -iE "^HTTP|content-type|x-content-type"; head -c 200 b2; echo
+          echo "== callback, browser-like"; curl -sS -D - -o b3 "$U&callback=cb1" -H 'Referer: https://zreynard.github.io/scripture-companion/' -H 'Sec-Fetch-Dest: script' | grep -iE "^HTTP|content-type|x-content-type|cross-origin"; head -c 120 b3; echo
