@@ -82,6 +82,7 @@ async function outage(ctx, page, on) { await ctx.setOffline(on); await page.eval
   const appC = await b.newContext({ ...devices['iPhone 14'] }), app = await appC.newPage(); app.on('pageerror', e => errs.push('app:' + e.message));
   await app.goto(SITE + '?t=' + Date.now()); await wait(1500);
   const am = await app.evaluate(() => new Promise(r => wAmSearch('How Great Is Our God Chris Tomlin', x => r(x && x.slice(0, 5).map(y => [y.trackName, y.artistName, y.trackViewUrl])))));
+  console.log('AMDIAG', JSON.stringify(await app.evaluate(async () => { try { const r = await fetch('https://itunes.apple.com/search?media=music&entity=song&limit=2&term=How+Great+Is+Our+God', { cache: 'no-store' }); return { status: r.status, type: r.type, ct: r.headers.get('content-type'), body: (await r.text()).slice(0, 120) }; } catch (e) { return { err: String(e) }; } })));
   check('F1 Apple Music search answers with real recordings', !!(am && am.length && am.every(x => /^https:\/\/music\.apple\.com\//.test(x[2]))), am);
   check('F2 the right artist is among the results', !!(am && am.some(x => /Tomlin/i.test(x[1]))), am && am.map(x => x[1]));
   // G: the rest of the app still opens
