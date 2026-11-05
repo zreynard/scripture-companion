@@ -1,6 +1,9 @@
 # Worship QA on GitHub's servers: engine, browsers and live sync on the real relays (tools/qa/*.js), plus the end-to-end run.
 name: Worship QA
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 22 * * 3,6"   # Wednesday and Saturday 22:41 UTC (evening in the US): a failure emails the owner before Sunday
 jobs:
   qa:
     runs-on: ubuntu-24.04
@@ -13,6 +16,9 @@ jobs:
       - run: npm i --no-save playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
       - name: Engine
         run: node tools/qa/engine.js | tail -3
+      - name: Old TV browsers can run the TV code (ES5, no newer built-ins)
+        if: always()
+        run: mkdir -p /tmp/acorn && (cd /tmp/acorn && npm i -q acorn@8.12.1 >/dev/null 2>&1) && NODE_PATH=/tmp/acorn/node_modules node tools/qa/es5.js
       - name: Browsers (published site)
         run: SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/ui.js
       - name: Live sync (real relays)

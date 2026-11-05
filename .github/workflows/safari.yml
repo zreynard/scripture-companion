@@ -1,0 +1,21 @@
+# The Worship app, presenter, remote and TV in WebKit, the engine of Safari on iPhone and iPad.
+name: Safari (WebKit)
+on: workflow_dispatch
+jobs:
+  webkit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm i --no-save playwright@1.48.2 >/dev/null && npx playwright install --with-deps webkit >/dev/null
+      - name: Browsers (published site)
+        run: BROWSER=webkit SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/ui.js
+      - name: Live sync (real relays)
+        if: always()
+        run: BROWSER=webkit node tools/qa/live.js
+      - name: End to end
+        if: always()
+        run: BROWSER=webkit node tools/worship_e2e.js | tail -6

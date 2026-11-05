@@ -9,7 +9,8 @@
   'use strict';
   var BROKERS = [
     { n: 'hivemq', u: 'wss://broker.hivemq.com:8884/mqtt' },
-    { n: 'emqx', u: 'wss://broker.emqx.io:8084/mqtt' }
+    { n: 'emqx', u: 'wss://broker.emqx.io:8084/mqtt' },
+    { n: 'emqx-cn', u: 'wss://broker-cn.emqx.io:8084/mqtt' }   // a separate deployment: measured 5 Nov 2026 as reliable as the others, and it takes bursts
   ];
   /* UTF-8 by hand where an old TV browser has no TextEncoder */
   var TE = G.TextEncoder ? new TextEncoder() : { encode: function (s) { var u = unescape(encodeURIComponent(s)), o = new Uint8Array(u.length); for (var i = 0; i < u.length; i++) o[i] = u.charCodeAt(i); return o; } };
@@ -195,9 +196,15 @@
       }
     }
     return this.ready.then(function () { return Promise.all(msgs.map(function (m) { return seal(self.key, m[1]); })); }).then(function (all) {
-      var sent = 0;
-      self.relays.forEach(function (r) { var ok = true; all.forEach(function (bytes, j) { if (!r.pub(self.base + '/' + msgs[j][0], bytes, retain)) ok = false; }); if (ok) sent++; });
-      return sent;
+      if (all.length < 3) { var sent = 0; self.relays.forEach(function (r) { var ok = true; all.forEach(function (bytes, j) { if (!r.pub(self.base + '/' + msgs[j][0], bytes, retain)) ok = false; }); if (ok) sent++; }); return sent; }
+      /* many pieces: 40 ms apart, which relays that drop fast bursts (HiveMQ) keep up with */
+      return new Promise(function (done) {
+        var ok = self.relays.map(function () { return true; }), j = 0;
+        (function next() {
+          if (j >= all.length) return done(ok.filter(function (x, i) { return x && self.relays[i].up; }).length);
+          self.relays.forEach(function (r, i) { if (!r.pub(self.base + '/' + msgs[j][0], all[j], retain)) ok[i] = false; }); j++; setTimeout(next, 40);
+        })();
+      });
     });
   };
   Session.prototype.hello = function () { if (this.ended) return; var p = { id: this.id, role: this.role, name: this.name || '', at: Date.now(), want: this.deck ? 0 : 1 }, x = this.cb.info && this.cb.info(); if (x) for (var k in x) p[k] = x[k]; this.send('p', p, false); };

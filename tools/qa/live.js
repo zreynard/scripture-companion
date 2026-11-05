@@ -1,6 +1,7 @@
 // QA layer 3: live sync on the published site and the real relays. Made-up songs only.
 // Every device is its own browser. node tools/qa/live.js  (needs internet: run on GitHub's servers)
-const { chromium, devices } = require('playwright');
+const { chromium, webkit, devices } = require('playwright');
+const ENGINE = process.env.BROWSER === 'webkit' ? webkit : chromium;   // BROWSER=webkit runs everything in Safari's engine
 delete globalThis.BroadcastChannel; require('../../site_extra/live.js'); const L = globalThis.Live;
 const SITE = process.env.SITE || 'https://zreynard.github.io/scripture-companion/';
 const R = {}, wait = ms => new Promise(r => setTimeout(r, ms)); let fails = 0;
@@ -10,7 +11,7 @@ const SECRET = 'zephyrlantern';   // a made-up word only in the lyrics: it must 
 const verse = (k) => `G        D\n${k} ${SECRET} line one,\nEm       C\n${k} line two.`;
 const SONG = n => `Intro: G D\n\nVerse 1\n${verse('first')}\n\nChorus\nC      G\nchorus ${n} sings,\nEm     D\nchorus ends.\n\nVerse 2\n${verse('second')}\n\nChorus\n\nBridge\nC   D\nbridge ${n} here.`;
 (async () => {
-  const b = await chromium.launch(), errs = [];
+  const b = await ENGINE.launch(), errs = [];
   async function leader(nSongs = 3, dev = devices['iPhone 14'], setN = nSongs) {
     const c = await b.newContext(dev), p = await c.newPage(); p.on('pageerror', e => errs.push('lead:' + e.message)); p.on('dialog', d => d.accept());
     await p.goto(SITE + '?t=' + Date.now()); await wait(1200);

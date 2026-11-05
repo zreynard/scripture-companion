@@ -1,6 +1,7 @@
 // End-to-end Worship test on the published site and the real relays: phone (leader), TV, and a friend's phone,
 // each its own browser. Lyrics are made up for the test.
-const { chromium, devices } = require('playwright');
+const { chromium, webkit, devices } = require('playwright');
+const ENGINE = process.env.BROWSER === 'webkit' ? webkit : chromium;   // BROWSER=webkit runs everything in Safari's engine
 const SITE = process.env.SITE || 'https://zreynard.github.io/scripture-companion/';
 const CHART = ['Intro: G D Em C', '', 'Verse 1', 'G            D', 'Walking on a quiet road,', 'Em               C', 'morning light is breaking through.', '',
   'Chorus', 'C          G', 'You are near, You are near,', 'Em            D', 'we will rest in You.', '', 'Verse 2', 'G              D', 'Every valley, every hill,', '',
@@ -13,7 +14,7 @@ const CUT = () => { const W = window.WebSocket; window.__ws = []; window.__down 
   window.WebSocket.prototype = W.prototype; window.__cut = on => { window.__down = on; if (on) window.__ws.forEach(w => { try { w.close(); } catch (e) {} }); }; };
 async function outage(ctx, page, on) { await ctx.setOffline(on); await page.evaluate(o => { window.__cut(o); window.dispatchEvent(new Event(o ? 'offline' : 'online')); if (!o) document.dispatchEvent(new Event('visibilitychange')); }, on); }
 (async () => {
-  const b = await chromium.launch(); const errs = [];
+  const b = await ENGINE.launch(); const errs = [];
   const phoneC = await b.newContext({ ...devices['iPhone 14'] }); await phoneC.addInitScript(CUT); const phone = await phoneC.newPage(); phone.on('pageerror', e => errs.push('phone:' + e.message)); phone.on('dialog', d => d.accept());
   const tvC = await b.newContext({ viewport: { width: 1920, height: 1080 } }); await tvC.addInitScript(CUT); const tv = await tvC.newPage(); tv.on('pageerror', e => errs.push('tv:' + e.message));
   await phone.goto(SITE + '?t=' + Date.now()); await wait(1500);

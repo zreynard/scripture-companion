@@ -1,6 +1,7 @@
 // QA layer 2: the app, presenter and TV in real browsers (local server, no internet needed). Made-up songs only.
 // SITE=http://localhost:8765/ node tools/qa/ui.js
-const { chromium, devices } = require('playwright');
+const { chromium, webkit, devices } = require('playwright');
+const ENGINE = process.env.BROWSER === 'webkit' ? webkit : chromium;   // BROWSER=webkit runs everything in Safari's engine
 const SITE = process.env.SITE || 'http://localhost:8765/';
 const R = [], wait = ms => new Promise(r => setTimeout(r, ms));
 async function T(n, f) { try { const r = await f(); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 260)]); } catch (e) { R.push([n, 'FAIL threw ' + String(e.message).split('\n')[0].slice(0, 200)]); } }
@@ -8,7 +9,7 @@ const verse = (n, k) => Array.from({ length: n }, (_, i) => `G        D\nline ${
 const SONG = (t, extra = '') => `Intro: G D Em C\n\nVerse 1\n${verse(2, 'v1')}\n\nChorus\nC      G\nsing it out, sing it out,\nEm     D\nlift it high.\n\nVerse 2\n${verse(2, 'v2')}\n\nChorus\n\nBridge\nC   D   Em\nhere we stand${extra}`;
 const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n\nBridge\n' + verse(6, 'B') + '\n\nOutro\nG D';
 (async () => {
-  const b = await chromium.launch(); const errs = [];
+  const b = await ENGINE.launch(); const errs = [];
   const ctx = async (dev = devices['iPhone 14']) => { const c = await b.newContext(dev); return c; };
   const open = async (c, path = '') => { const p = await c.newPage(); p.on('pageerror', e => errs.push(path + ':' + e.message)); p.on('dialog', d => { p._lastDialog = d.message(); d.accept(); }); await p.goto(SITE + path); await wait(700); return p; };
   const seed = (p, n = 1, src = SONG) => p.evaluate(([n, srcs]) => { const m = {}; for (let i = 0; i < n; i++) m['s' + i] = { id: 's' + i, t: 'Song ' + i, a: 'Artist ' + i, key: 'G', src: srcs[i % srcs.length] }; S.set('wsongs', m); }, [n, [typeof src === 'function' ? src('a') : src]]);

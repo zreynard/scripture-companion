@@ -137,6 +137,10 @@ button{font:inherit;color:inherit;cursor:pointer}
     $('#tvfix').onclick = function () { sess.cmd({ reload: true }); toast('Refreshing the TV…'); w.hidden = true; tvCheck.quiet = Date.now(); };
     if (tvCheck.quiet && n - tvCheck.quiet < 15000) w.hidden = true;
   }
+  /* keep this phone's screen on while it is running worship (a locked phone stops sending) */
+  var wake = null;
+  function keepAwake() { try { if (navigator.wakeLock && navigator.wakeLock.request && document.visibilityState === 'visible' && !wake) { var q = navigator.wakeLock.request('screen'); if (q && q.then) q.then(function (w) { wake = w; w.addEventListener('release', function () { wake = null; }); }, function () {}); } } catch (e) {} }
+  keepAwake(); document.addEventListener('visibilitychange', keepAwake); document.addEventListener('click', keepAwake, true);
   function pill() { try { tvCheck(); } catch (e) {}
     var p = $('#pill'), t, c;
     if (!st.relays) { t = 'Reconnecting…'; c = 'bad'; } else if (st.screens) { t = st.screens > 1 ? st.screens + ' screens' : 'Screen on'; c = 'ok'; } else { t = 'No screen'; c = 'warn'; }
