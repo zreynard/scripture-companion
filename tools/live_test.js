@@ -1,5 +1,5 @@
 // Real-relay check for site_extra/live.js (Node 22: WebSocket and WebCrypto built in).
-require('../site_extra/live.js'); const L = globalThis.Live, wait = ms => new Promise(r => setTimeout(r, ms));
+delete globalThis.BroadcastChannel; require('../site_extra/live.js'); const L = globalThis.Live, wait = ms => new Promise(r => setTimeout(r, ms));
 const out = {};
 (async () => {
   // each relay on its own: connect time
@@ -15,6 +15,10 @@ const out = {};
   const lat = [];
   for (let i = 1; i <= 10; i++) { const t0 = Date.now(); lead.set({ slide: i }); for (let k = 0; k < 60 && !got.find(g => g.slide === i); k++) await wait(25); const g = got.find(g => g.slide === i); lat.push(g ? g.t - t0 : null); await wait(150); }
   out.latency_ms = lat; out.screen_final_slide = screen.state && screen.state.slide;
+  // one relay goes down on the screen: the other carries on
+  screen.relays[0].close(); const lat2 = [];
+  for (let i = 101; i <= 105; i++) { const t0 = Date.now(); lead.set({ slide: i }); for (let k = 0; k < 120 && !got.find(g => g.slide === i); k++) await wait(25); const g = got.find(g => g.slide === i); lat2.push(g ? g.t - t0 : null); await wait(150); }
+  out.latency_one_relay_ms = lat2;
   await lead.publishDeck({ songs: [{ t: 'Amazing Grace', slides: [{ s: 'Verse 1', l: ['Amazing grace how sweet the sound'] }] }] });
   await wait(1500);
   // a phone that joins late gets the current state and deck from the relay
