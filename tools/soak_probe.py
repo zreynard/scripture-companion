@@ -15,6 +15,9 @@ for q in ("soaking worship", "instrumental worship", "soaking music", "worship i
     except Exception as ex: note("search fail", q, ex); continue
     for x in r.get("results", []):
         if x.get("feedUrl"): feeds.setdefault(x["feedUrl"], {"name": x.get("collectionName"), "artist": x.get("artistName"), "genre": x.get("primaryGenreName")})
+import sys
+for u in sys.argv[1:]: feeds.setdefault(u, {"name": u, "artist": "", "genre": ""})
+music_extra = set(sys.argv[1:])
 NS = {"itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd"}
 def dur(s):
     if not s: return None
@@ -25,7 +28,7 @@ def dur(s):
     return v
 music = re.compile(r"soak|instrumental|interlude|pad|piano|worship music|prayer music|ambient", re.I)
 for u, f in list(feeds.items()):
-    if not music.search(f"{f['name']} {f['artist']}"): del feeds[u]; continue
+    if u not in music_extra and not music.search(f"{f['name']} {f['artist']}"): del feeds[u]; continue
     try: r = S.get(u, timeout=40); root = ET.fromstring(r.content)
     except Exception as ex: f["err"] = str(ex)[:100]; note("FAIL", f["name"], u, ex); continue
     eps = []
