@@ -78,6 +78,16 @@ async function outage(ctx, page, on) { await ctx.setOffline(on); await page.eval
   await phone.click('#bEnd'); await phone.click('#eok');
   check('Z1 ending blanks the TV and it goes back to a pairing code', (await until(() => tv.evaluate(() => !document.querySelector('#pair').hidden), 20000)) >= 0);
   check('Z2 the friend sees the session has ended', (await until(() => fr.evaluate(() => /ended/.test(document.body.innerText)), 15000)) >= 0);
+  // F: Apple Music search finds the exact recording (artist matters), and links open music.apple.com
+  const appC = await b.newContext({ ...devices['iPhone 14'] }), app = await appC.newPage(); app.on('pageerror', e => errs.push('app:' + e.message));
+  await app.goto(SITE + '?t=' + Date.now()); await wait(1500);
+  const am = await app.evaluate(() => new Promise(r => wAmSearch('How Great Is Our God Chris Tomlin', x => r(x && x.slice(0, 5).map(y => [y.trackName, y.artistName, y.trackViewUrl])))));
+  check('F1 Apple Music search answers with real recordings', !!(am && am.length && am.every(x => /^https:\/\/music\.apple\.com\//.test(x[2]))), am);
+  check('F2 the right artist is among the results', !!(am && am.some(x => /Tomlin/i.test(x[1]))), am && am.map(x => x[1]));
+  // G: the rest of the app still opens
+  const tabs = {};
+  for (const t of ['journey', 'bigpicture', 'library', 'pray', 'worship']) { await app.click('#tabs [data-tab2=' + t + ']'); await wait(700); tabs[t] = await app.evaluate(() => document.querySelector('#main').innerText.length > 40); }
+  check('G1 Journey, Series, Library, Pray and Worship all open', Object.values(tabs).every(Boolean), tabs);
   check('Z3 no page errors', errs.length === 0, errs);
   console.log(JSON.stringify(R, null, 1)); console.log(fails ? fails + ' FAILED' : 'ALL PASSED'); await b.close(); process.exit(fails ? 1 : 0);
 })().catch(e => { console.log(JSON.stringify(R, null, 1)); console.error(e); process.exit(1); });
