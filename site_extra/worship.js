@@ -247,7 +247,7 @@
     var W = box.clientWidth, H = box.clientHeight; if (!W || !H) return { pages: 1 };
     var maxCols = o.maxCols || (W >= 1000 ? 3 : W >= 600 ? 2 : 1), minPx = o.min || (W >= 700 ? 13 : 11.5), maxPx = o.max || (W >= 700 ? 26 : 21), gap = Math.round(Math.max(18, W * 0.03));
     inner.style.columnGap = gap + 'px'; inner.style.height = H + 'px'; inner.style.columnFill = 'auto';
-    function fits(cols, px) { inner.style.columnCount = cols; inner.style.fontSize = px + 'px'; return inner.scrollWidth <= W + 2 && inner.scrollHeight <= H + 2; }
+    function fits(cols, px) { inner.style.columnCount = cols; inner.style.fontSize = px + 'px'; var e = extent(inner); return e.w <= W + 2 && e.h <= H + 2; }
     var best = null;
     for (var c = 1; c <= maxCols; c++) {
       if (!fits(c, minPx)) continue;
@@ -257,7 +257,14 @@
     }
     if (best) { fits(best.cols, best.px); box.scrollLeft = 0; return { pages: 1, cols: best.cols, px: best.px, step: W + gap }; }
     inner.style.columnCount = maxCols; inner.style.fontSize = minPx + 'px';   // still too long: pages, turned by tapping
-    return { pages: Math.max(1, Math.round((inner.scrollWidth + gap) / (W + gap))), cols: maxCols, px: minPx, step: W + gap };
+    return { pages: Math.max(1, Math.round((extent(inner).w + gap) / (W + gap))), cols: maxCols, px: minPx, step: W + gap };
+  }
+  /* how far the chart really reaches: Safari's engine does not count columns that spill sideways in scrollWidth,
+     so the edges of every section's pieces are measured as well, and the larger answer wins */
+  function extent(inner) {
+    var r = inner.getBoundingClientRect(), R = 0, B = 0, k = inner.children;
+    for (var i = 0; i < k.length; i++) { var rs = k[i].getClientRects(); for (var j = 0; j < rs.length; j++) { if (rs[j].right - r.left > R) R = rs[j].right - r.left; if (rs[j].bottom - r.top > B) B = rs[j].bottom - r.top; } }
+    return { w: Math.max(inner.scrollWidth, Math.ceil(R)), h: Math.max(inner.scrollHeight, Math.ceil(B)) };
   }
   /* swipe on an element: calls go(+1) for a swipe to the left (next), go(-1) to the right */
   function swipe(el, go) {

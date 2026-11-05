@@ -756,12 +756,17 @@ body.mapopen #sheet{z-index:24}
 #np-read .rc{font:600 12px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin:22px 0 2px}#np-read .rc:first-child{margin-top:6px}
 #np-read .txt{font-size:19px;line-height:1.7}#np-read .rmore{display:block;margin:18px auto;border:1px solid var(--line);background:#fff;border-radius:20px;padding:9px 16px;font:14px -apple-system,system-ui,sans-serif;color:var(--ink)}
 .narbar .nx{background:#fff;color:var(--ink);border:1px solid var(--line);padding:9px 12px}
-#np .ctl2{display:flex;justify-content:space-between;margin-top:10px}
+#np .ctl2{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}
+#np #bedb{border:1px solid rgba(27,36,64,.14);border-radius:22px;background:#fff;padding:8px 14px;font-weight:600;color:var(--ink)}#np #bedb.on{background:var(--ink);color:#fff;border-color:var(--ink)}#bedb[hidden],#bedpop[hidden]{display:none}
+#bedpop{margin-top:10px;padding:14px 16px;border-radius:18px;background:#fff;border:1px solid rgba(27,36,64,.1);text-align:left}
+#bedpop .bp-row{display:flex;align-items:center;gap:12px}#bedpop .bp-row span{flex:1}#bedpop b{display:block;font-size:15px}#bedpop small{display:block;color:var(--mute);font-size:13px;margin-top:2px}
+#bedpop input[type=checkbox]{width:48px;height:28px;accent-color:#1b2440;flex:none}#bedpop input[type=range]{width:100%;margin:12px 0 2px;accent-color:#1b2440}
+#bedpop .bp-l{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute)}#bedpop button{margin-top:10px;border:0;background:var(--ink);color:#fff;border-radius:18px;padding:9px 16px;font-weight:700}
 .spd{display:flex;align-items:center;gap:2px;border:1px solid rgba(27,36,64,.14);border-radius:22px;background:#fff}.spd button{min-width:40px;font-weight:600}#np .ctl2 .spd button{padding:8px 10px}#spd{min-width:58px!important}
 #np .ctl2 button{background:none;border:0;color:var(--ink);font:inherit;font-size:15px;padding:10px 4px}
 @keyframes npL{from{transform:translateX(50px);opacity:.2}to{transform:none;opacity:1}}@keyframes npR{from{transform:translateX(-50px);opacity:.2}to{transform:none;opacity:1}}
 #np.sw-l .art,#np.sw-l .t,#np.sw-l .s{animation:npL .28s ease-out}#np.sw-r .art,#np.sw-r .t,#np.sw-r .s{animation:npR .28s ease-out}
-#np.mini .np-top,#np.mini .art,#np.mini .np-d,#np.mini #zz{display:none}
+#np.mini .np-top,#np.mini .art,#np.mini .np-d,#np.mini #zz,#np.mini #bedb,#np.mini #bedpop{display:none!important}
 #np.mini .ctl #nxt{display:flex;padding:6px}
 #np.mini{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto auto auto;column-gap:12px;align-items:center;padding:8px 16px calc(6px + env(safe-area-inset-bottom));cursor:pointer}
 #np.mini .grab{grid-column:1/-1;grid-row:1;margin:0 auto 8px}
@@ -1171,8 +1176,8 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 <div class="t serif" id="np-t"></div><div class="s" id="np-s"></div><div id="np-read" aria-label="Reader"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
 <div class="ctl"><button class="side sk" id="prv" aria-label="Previous"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5l-10 7 10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button><button class="side" id="bk">↺ 10</button><button class="big" id="pp" style="display:flex;align-items:center;justify-content:center"></button><button class="side" id="fw">10 ↻</button><button class="side sk" id="nxt" aria-label="Next"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button></div>
-<div id="np-hl" aria-hidden="true"><i></i></div><div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="zz">Sleep off</button></div></div>
-<audio id="audio" preload="metadata"></audio><audio id="praym" preload="none"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
+<div id="np-hl" aria-hidden="true"><i></i></div><div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="bedb" hidden aria-haspopup="true">♪ Music</button><button id="zz">Sleep off</button></div><div id="bedpop" hidden></div></div>
+<audio id="audio" preload="metadata"></audio><audio id="praym" preload="none"></audio><audio id="bedm" preload="none"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
 <script src="worship.js"></script>
 <script>
 const D=__DATA__,I=D.items;
@@ -2311,6 +2316,40 @@ function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
  a.addEventListener('timeupdate',()=>{const n=Date.now();if(n-PM.sv>5000){PM.sv=n;S.set('pmpos',{k:PM.k,t:Math.floor(a.currentTime)})}});
  AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause();if(PM.ms){PM.ms=false;if(cur)msSermon(cur)}}));
  return a}
+/* Music under the reading: your soaking music (the same files as Pray) plays softly while Bible narration plays.
+   iPhones ignore an audio element's volume, so the music (only the music) goes through a Web Audio gain; the narration
+   itself is never touched, so its lock screen and AirPods controls stay exactly as they are. The music follows the
+   narration: it fades in when the reading plays, out when it pauses or ends (a short gap between chapters is held). */
+const BED={on:!!S.get('bedon',false),lv:+S.get('bedlv',0.2)||0.2,ctx:null,g:null,el:null,unl:false,t:null,url:null,id:null,sv:0,busy:false};
+function bedEl(){if(BED.el)return BED.el;const b=BED.el=$('#bedm');
+ b.addEventListener('ended',()=>bedLoad(1).then(()=>{if(bedWanted())b.play().catch(()=>{})}));
+ b.addEventListener('timeupdate',()=>{const n=Date.now();if(BED.id&&n-BED.sv>5000){BED.sv=n;S.set('bedpos',{id:BED.id,t:Math.floor(b.currentTime)})}});return b}
+function bedCtx(){if(BED.ctx)return BED.ctx;const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;
+ try{BED.ctx=new C();const s=BED.ctx.createMediaElementSource(bedEl());BED.g=BED.ctx.createGain();BED.g.gain.value=0;s.connect(BED.g);BED.g.connect(BED.ctx.destination)}catch(e){BED.ctx=null;BED.g=null}
+ try{if(navigator.audioSession)navigator.audioSession.type='playback'}catch(e){}return BED.ctx}
+function bedGain(v,ms){const b=bedEl();if(BED.g&&BED.ctx){const t=BED.ctx.currentTime,g=BED.g.gain;try{g.cancelScheduledValues(t);g.setValueAtTime(g.value,t);g.linearRampToValueAtTime(v,t+ms/1000)}catch(e){g.value=v}}else{try{b.volume=Math.max(0,Math.min(1,v))}catch(e){}}}
+/* which piece and where: carries on from where it last stopped, track after track */
+function bedLoad(step){return plLoad().then(L=>{if(!L.length)return false;const p=S.get('bedpos',null);let k=p?L.findIndex(x=>x.id===p.id):-1,t=0;
+  if(step){k=(Math.max(k,0)+step)%L.length;t=0}else if(k<0)k=0;else t=p.t||0;const tr=L[k];if(!step&&BED.id===tr.id&&BED.el&&BED.el.getAttribute('src'))return true;
+  return pdbDo('blob','readonly',x=>x.objectStore('blob').get(tr.id)).then(bl=>{if(!bl)return false;const b=bedEl();if(BED.url)URL.revokeObjectURL(BED.url);BED.url=URL.createObjectURL(bl);b.src=BED.url;BED.id=tr.id;S.set('bedpos',{id:tr.id,t});
+   if(t)b.addEventListener('loadedmetadata',()=>{try{b.currentTime=t}catch(e){}},{once:true});return true})}).catch(()=>false)}
+function bedNarr(){return !!(NAR&&cur===NAR.id)}
+function bedWanted(){return BED.on&&bedNarr()&&!audio.paused}
+function bedSync(){const b=bedEl();$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',BED.on);
+ if(bedWanted()){clearTimeout(BED.t);const go=()=>{const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(BED.lv,1500)).catch(()=>{})};
+  if(!b.getAttribute('src')||b.src===SILENT){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())go()})}else go();return}
+ clearTimeout(BED.t);BED.t=setTimeout(()=>{if(bedWanted())return;bedGain(0,700);setTimeout(()=>{if(!bedWanted())b.pause()},750)},2500)}
+/* iPhones only start a sound from a tap: the first tap after turning the music on readies its player */
+function bedUnlock(){if(!BED.on||BED.unl)return;BED.unl=true;const b=bedEl(),c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});
+ if(!b.getAttribute('src')){b.src=SILENT;b.play().then(()=>{if(!bedWanted())b.pause()}).catch(()=>{BED.unl=false})}}
+['touchend','click'].forEach(ev=>document.addEventListener(ev,bedUnlock,true));
+function bedPop(){const p=$('#bedpop');if(!p.hidden){p.hidden=true;return}
+ plLoad().then(L=>{const have=L.length>0,pc=Math.round(BED.lv*100);
+  p.innerHTML=`<label class="bp-row"><span><b>Soaking music under the reading</b><small>${have?esc((L[0].a||'Your music')+' · plays softly behind the narration'):'Your music is not on this phone yet'}</small></span><input type="checkbox" id="bedon"${BED.on?' checked':''}${have?'':' disabled'}></label>`+
+   (have?`<input type="range" id="bedlv" min="3" max="60" step="1" value="${pc}" aria-label="Music level"><div class="bp-l"><span>Softer</span><span id="bedpc">Music level ${pc}%</span><span>Louder</span></div>`:`<button id="bedget">Get it in Pray</button>`);
+  p.hidden=false;const on=$('#bedon');if(on)on.onchange=()=>{BED.on=on.checked;S.set('bedon',BED.on);BED.unl=false;bedUnlock();bedSync()};
+  const lv=$('#bedlv');if(lv)lv.oninput=()=>{BED.lv=+lv.value/100;S.set('bedlv',BED.lv);$('#bedpc').textContent='Music level '+lv.value+'%';if(bedWanted())bedGain(BED.lv,150)};
+  const gt=$('#bedget');if(gt)gt.onclick=()=>{p.hidden=true;setMini(true);const t=document.querySelector('#tabs [data-tab2=pray]');if(t)t.click()}})}
 /* the music lives on this phone: albums you bought (MP3s, or the store's ZIP), kept in IndexedDB, never uploaded */
 const PDB={db:null};
 function pdb(){return PDB.db||(PDB.db=new Promise((ok,no)=>{const r=indexedDB.open('sc-pray',1);r.onupgradeneeded=()=>{const d=r.result;d.createObjectStore('meta',{keyPath:'id'});d.createObjectStore('blob')};r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}))}
@@ -2619,6 +2658,7 @@ $('#pp').onclick=()=>cur&&(audio.paused?audio.play().catch(()=>{}):audio.pause()
 $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.target.value/1000};
 const setSpeed=v=>{speed=Math.round(Math.min(3,Math.max(0.5,v))*100)/100;AUDIO_EL.forEach(a=>a.playbackRate=speed);$('#spd').textContent=spdLabel();S.set('speed',speed);retime()};
 function retime(){document.querySelectorAll('[data-dur]').forEach(e=>e.textContent=durTxt(+e.dataset.dur));document.querySelectorAll('[data-hrs]').forEach(e=>{const [h,a]=e.dataset.hrs.split(',').map(Number);e.textContent=hrsTxt(h,a)});if(cur&&audio.duration)$('#rem').textContent='-'+fmt(Math.max(0,audio.duration-audio.currentTime-tail())/speed)}$('#spd').onclick=e=>{e.stopPropagation();if(NP().classList.contains('mini')){const L=[.7,.8,.9,1,1.25,1.5,1.75,2],k=L.findIndex(v=>Math.abs(v-speed)<.01);setSpeed(L[(k+1)%L.length]);return}setSpeed(1)};$('#spd-dn').onclick=e=>{e.stopPropagation();setSpeed(speed-0.05)};$('#spd-up').onclick=e=>{e.stopPropagation();setSpeed(speed+0.05)};
+$('#bedb').onclick=e=>{e.stopPropagation();bedPop()};AUDIO_EL.forEach(b=>['play','pause','ended','emptied'].forEach(ev=>b.addEventListener(ev,()=>bedSync())));
 let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};
 $('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};$('#np-core').onclick=e=>{e.stopPropagation();const u=e.currentTarget.dataset.u;if(u==null||!cur)return;const set=coreSet();set[u]=[cur];S.set('coreSet',set);JV.deep=false;DEEP=null;note('Now Core for '+stopName(walk()[jpIdx()])+'.');corePaint();render()};$('#np-srch').onclick=e=>{e.stopPropagation();openSearch()};$('#np-fav').onclick=e=>{e.stopPropagation();if(!cur)return;const f=S.get('fav',{});if(f[cur])delete f[cur];else f[cur]=Date.now();S.set('fav',f);favPaint()};
 $('#cls').onclick=e=>{e.stopPropagation();audio.pause();audio.removeAttribute('src');audio.load();cur=null;NAR=null;document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));narBar();NP().classList.remove('on');roomForPlayer();render()};

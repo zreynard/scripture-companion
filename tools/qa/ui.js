@@ -6,7 +6,7 @@ const SITE = process.env.SITE || 'http://localhost:8765/';
 const R = [], wait = ms => new Promise(r => setTimeout(r, ms));
 /* each result prints as soon as it is known, and no test may take more than 2 minutes (a stuck one fails, the rest still run) */
 async function T(n, f) { let to; const limit = new Promise((_, no) => { to = setTimeout(() => no(new Error('took over 2 minutes')), 120000); });
-  try { const r = await Promise.race([f(), limit]); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 260)]); } catch (e) { R.push([n, 'FAIL threw ' + String(e.message).split('\n')[0].slice(0, 200)]); }
+  try { const r = await Promise.race([f(), limit]); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 260)]); } catch (e) { const m = String(e.message), loc = (m.match(/waiting for (locator\([^\n]*\))/) || [])[1] || ''; R.push([n, 'FAIL threw ' + m.split('\n')[0].slice(0, 160) + (loc ? ' · ' + loc.slice(0, 120) : '')]); }
   clearTimeout(to); const x = R[R.length - 1]; console.log((x[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + x[0] + (x[1].startsWith('PASS') ? '' : '  ' + x[1].slice(5))); }
 const verse = (n, k) => Array.from({ length: n }, (_, i) => `G        D\nline ${k} ${i} of this song,\nEm       C\nanother line ${i} here.`).join('\n');
 const SONG = (t, extra = '') => `Intro: G D Em C\n\nVerse 1\n${verse(2, 'v1')}\n\nChorus\nC      G\nsing it out, sing it out,\nEm     D\nlift it high.\n\nVerse 2\n${verse(2, 'v2')}\n\nChorus\n\nBridge\nC   D   Em\nhere we stand${extra}`;
@@ -136,6 +136,28 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await X.evaluate(() => { const v = document.querySelector('#jread .vs[data-v="10"]'); window.scrollTo(0, v.getBoundingClientRect().top + scrollY - 160); }); await wait(500); await X.evaluate(() => dispatchEvent(new Event('scroll'))); await wait(300);
     const fab = await X.evaluate(() => document.querySelector('.jr-fab').classList.contains('show')); await X.click('.jr-fab'); await wait(300); const lis = await X.evaluate(() => __np.splice(0));
     return (tap.length === 1 && tap[0][0] === 12 && tap[0][2] && rd.open && rd.verses > 20 && rd.np === 0 && fab && lis.length === 1 && lis[0][1] === 10) || { tap, rd, fab, lis }; });
+  await T('U55 soaking music under the narration: on/off and level in the player; follows play, pause, chapter gaps; never under a sermon', async () => { const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const errs2 = []; X.on('pageerror', e => errs2.push(e.message)); await X.goto(SITE); await wait(1500);
+
+  // seed the phone's music store with a 20 s tone, and a 30 s tone as stand-in narration
+  await X.evaluate(async () => {
+    const wav = (sec, hz) => { const sr = 8000, n = sr * sec, buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf); const w = (o, s) => [...s].forEach((ch, i) => v.setUint8(o + i, ch.charCodeAt(0)));
+      w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, sr, true); v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
+      for (let i = 0; i < n; i++) v.setInt16(44 + i * 2, Math.sin(i / sr * 2 * Math.PI * hz) * 8000, true); return new Blob([buf], { type: 'audio/wav' }); };
+    await pdbDo('meta', 'readwrite', t => t.objectStore('meta').put({ id: 'tst', f: 'tone.wav', t: 'Test tone', a: 'Test artist', al: 'Test', n: 1 }));
+    await pdbDo('blob', 'readwrite', t => t.objectStore('blob').put(wav(20, 220), 'tst')); PL.list = null;
+    window.__narr = URL.createObjectURL(wav(30, 440)); });
+  // turn the music on through the player's own panel
+  await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; NP().classList.add('on'); setMini(false); bedSync(); }); await wait(600);
+  const shown = await X.evaluate(() => !$('#bedb').hidden); await X.evaluate(() => $('#bedb').scrollIntoView({ block: 'center' })); await X.click('#bedb', { force: true }); await wait(500); 
+  const panel = await X.evaluate(() => ({ chk: !!$('#bedon'), slider: !!$('#bedlv'), text: $('#bedpop').innerText.slice(0, 90) }));
+  await X.click('#bedon'); await X.fill('#bedlv', '30'); await X.dispatchEvent('#bedlv', 'input'); await wait(200);
+  await X.evaluate(() => { audio.src = __narr; audio.play(); }); await wait(2500);
+  const on = await X.evaluate(() => ({ narr: !audio.paused, music: !$('#bedm').paused, gain: BED.g ? +BED.g.gain.value.toFixed(2) : 'no-ctx', ctx: BED.ctx && BED.ctx.state, lv: S.get('bedlv'), saved: S.get('bedon') }));
+  await X.evaluate(() => audio.pause()); await wait(1200); const brief = await X.evaluate(() => !$('#bedm').paused);
+  await X.evaluate(() => audio.play()); await wait(1500); const resumed = await X.evaluate(() => !$('#bedm').paused);
+  await X.evaluate(() => audio.pause()); await wait(3800); const off = await X.evaluate(() => ({ music: !$('#bedm').paused, gain: BED.g ? +BED.g.gain.value.toFixed(2) : 'no-ctx' }));
+  await X.evaluate(() => { cur = Object.keys(I).find(k => I[k].audio && !I[k].nar && k !== NAR.id); audio.play(); bedSync(); }); await wait(3800); const sermon = await X.evaluate(() => ({ music: !$('#bedm').paused, btnHidden: $('#bedb').hidden }));
+    await cc.close(); return (shown && panel.chk && panel.slider && on.narr && on.music && (on.gain === 0.3 || on.gain === 'no-ctx') && on.lv === 0.3 && on.saved === true && brief && resumed && !off.music && !sermon.music && sermon.btnHidden && errs2.length === 0) || { shown, panel, on, brief, resumed, off, sermon, errs2 }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
