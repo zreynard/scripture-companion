@@ -62,5 +62,15 @@ T('E50 secondary dominants keep sharps', () => eq([tr('E/G#', 'C', 'G'), tr('A7'
 T('E51 flat keys stay flat', () => eq(['C', 'Dm', 'Em', 'F', 'G', 'Am'].map(c => tr(c, 'C', 'Bb')), ['Bb', 'Cm', 'Dm', 'Eb', 'F', 'Gm']));
 T('E52 minor key relative spelling', () => eq(['Am', 'C', 'Dm', 'E', 'G'].map(c => tr(c, 'Am', 'Gm')), ['Gm', 'Bb', 'Cm', 'D', 'F']));
 T('E53 slash basses follow their chord', () => eq([tr('C/E', 'C', 'Db'), tr('G/B', 'G', 'Ab'), tr('F/A', 'F', 'E'), tr('D/A', 'D', 'Eb'), tr('Am/G', 'C', 'Bb')], ['Db/F', 'Ab/C', 'E/G#', 'Eb/Bb', 'Gm/F']));
+// --- chords never split words
+T('E54 a chord inside a word moves to the start of that word', () => eq(W.snapChords('walk the town', [{ c: 'G', at: 11 }, { c: 'D', at: 2 }]), [{ c: 'D', at: 0 }, { c: 'G', at: 9 }]));
+T('E55 a chord on the space before a word sits on the word; chords after the words stay put', () => eq(W.snapChords('if you go', [{ c: 'C', at: 6 }, { c: 'D', at: 12 }, { c: 'G', at: 0 }]), [{ c: 'G', at: 0 }, { c: 'C', at: 7 }, { c: 'D', at: 9 }]));
+T('E56 rendered chart never cuts a word between two chord pieces, and keeps every chord', () => {
+  const src = 'Verse 1\n  G     D        Em    C\nwalking slowly across the river\n   C        G   D/F#\nsinging all the way along home  \n\nChorus\nEm  D   C   G\n  carry me further up the hill  G  D';
+  const html = W.chartHTML({ parsed: W.parse(src) }, {}); const bad = [];
+  for (const line of html.split('<div class="wc-l').slice(1)) { const segs = [...line.matchAll(/<span class="wc-t">([^<]*)<\/span>/g)].map(m => m[1].replace(/&nbsp;/g, ' '));
+    for (let i = 1; i < segs.length; i++) if (/\w$/.test(segs[i - 1]) && /^\w/.test(segs[i])) bad.push(segs[i - 1].slice(-4) + '|' + segs[i].slice(0, 4)); }
+  const n = (html.match(/<span class="wc-c">[^<]+<\/span>/g) || []).length;
+  return (bad.length === 0 && n === 11) || { bad, n }; });
 console.log(R.map(r => (r[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + r[0] + (r[1].startsWith('PASS') ? '' : '  ' + r[1].slice(5, 300))).join('\n'));
 const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); process.exit(f ? 1 : 0);

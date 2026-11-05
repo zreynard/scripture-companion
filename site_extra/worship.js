@@ -131,9 +131,20 @@
 
   /* ---- chord chart as HTML (chords above words) ---- */
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  // a chord never splits a word: one that lands inside a word moves to the start of that word,
+  // one that lands on the space before a word moves onto the word
+  function snapChords(t, chords) {
+    var W = /[A-Za-z0-9'\u2019\u00C0-\u024F-]/;
+    return chords.map(function (c) {
+      var a = Math.max(0, Math.min(c.at, t.length));
+      if (a > 0 && a < t.length && W.test(t[a - 1]) && W.test(t[a])) { while (a > 0 && W.test(t[a - 1])) a--; }
+      else if (a < t.length && t[a] === ' ') { var b = a; while (b < t.length && t[b] === ' ') b++; if (b < t.length) a = b; }
+      return { c: c.c, at: a };
+    }).sort(function (x, y) { return x.at - y.at; });
+  }
   function lineHTML(l, semis, flats) {
     if (!l) return '<div class="wc-gap"></div>';
-    var ch = (l.chords || []).slice().sort(function (a, b) { return a.at - b.at; });
+    var ch = snapChords(l.text || '', l.chords || []);
     if (!ch.length) return '<div class="wc-l"><span class="wc-w"><span class="wc-t">' + (esc(l.text) || '&nbsp;') + '</span></span></div>';
     var out = '', t = l.text, pos = 0;
     if (ch[0].at > 0) out += '<span class="wc-w"><span class="wc-c"></span><span class="wc-t">' + esc(t.slice(0, ch[0].at)) + '</span></span>';
@@ -240,6 +251,6 @@
   }
   function pageOf(box, el, info) { if (!el || !info || info.pages < 2) return 0; var x = el.offsetLeft; return Math.max(0, Math.min(info.pages - 1, Math.floor((x + 4) / info.step))); }
   function turn(box, n, info) { box.scrollLeft = n * info.step; }
-  G.Worship = { swipe: swipe, fit: fit, pageOf: pageOf, turn: turn, parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
+  G.Worship = { snapChords: snapChords, swipe: swipe, fit: fit, pageOf: pageOf, turn: turn, parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
     transposeKey: transposeKey, semitones: semitones, useFlats: useFlats, keyInfo: keyInfo, KEYS_MAJ: KEYS_MAJ, KEYS_MIN: KEYS_MIN, isChord: isChord, shortOf: shortOf, esc: esc };
 })(typeof window !== 'undefined' ? window : globalThis);
