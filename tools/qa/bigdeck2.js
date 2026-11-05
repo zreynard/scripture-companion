@@ -1,0 +1,6 @@
+delete globalThis.BroadcastChannel; require('../../site_extra/live.js'); const L = globalThis.Live; const wait = ms => new Promise(r => setTimeout(r, ms));
+(async () => { const s = L.newSession(); const st = []; const A = new L.Session({ sid: s.sid, key: s.key, role: 'lead', onStatus: x => st.push('A' + x.relays) });
+  const songs = []; for (let i = 0; i < 90; i++) songs.push({ id: 'q' + i, t: 'Song ' + i, src: 'x'.repeat(2500), slides: [{ s: 'V', sec: 0, l: ['line ' + i + ' '.repeat(40)] }] });
+  await wait(4000); const deck = { name: 'big', set: [0], songs }; deck.dv = Date.now(); const n = await A.send('d', deck, true); console.log('sent to relays', n, 'json', JSON.stringify(deck).length, 'parts', A.lastParts);
+  await wait(3000); let got = null, parts = 0; const B = new L.Session({ sid: s.sid, key: s.key, role: 'remote', onDeck: d => { got = d; } }); const op = B.gotPart.bind(B); B.gotPart = m => { parts++; op(m); };
+  for (let i = 0; i < 30 && !got; i++) await wait(1000); console.log('B parts pending', JSON.stringify(Object.keys(B.parts || {}).map(k => [k, B.parts[k].n, Object.keys(B.parts[k].c).length]))); console.log('late joiner got deck:', !!got, got && got.songs.length, 'parts seen', parts, 'relays up B', B.up(), 'A', A.up()); A.close(); B.close(); process.exit(0); })();
