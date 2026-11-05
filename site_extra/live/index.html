@@ -14,6 +14,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .pill{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 11px;border-radius:16px;background:rgba(27,36,64,.06);font-size:13px;font-weight:600;color:var(--ink);border:0;white-space:nowrap;min-width:0;flex:0 1 auto;overflow:hidden}.pill span{overflow:hidden;text-overflow:ellipsis}
 .pill i{width:8px;height:8px;border-radius:50%;background:#b8b2a2;flex:none}.pill.ok i{background:#3f9b6a}.pill.warn i{background:#d08a2e}.pill.bad i{background:#c4553a}
 .sp{flex:1}
+[hidden]{display:none!important}
 .ib{width:38px;height:38px;border-radius:19px;border:0;background:rgba(27,36,64,.06);display:flex;align-items:center;justify-content:center;padding:0;flex:none}
 .song{display:flex;align-items:center;gap:10px;margin:6px 14px 10px;padding:12px 14px;border-radius:16px;background:#fffdf8;box-shadow:0 3px 12px rgba(27,36,64,.06);border:0;width:calc(100% - 28px);text-align:left}
 .song b{display:block;font-size:19px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.song small{display:block;font-size:13px;color:var(--mute)}
@@ -21,7 +22,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 .seg{display:flex;background:rgba(27,36,64,.07);border-radius:20px;padding:3px;margin:0 14px 12px}
 .seg button{flex:1;height:34px;border:0;border-radius:17px;background:none;font-weight:600;font-size:14px;color:#4a5272}.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(27,36,64,.14)}
 .mon{margin:0 14px;border-radius:16px;background:radial-gradient(120% 90% at 50% 40%,#16213a,#0f1628 70%);color:var(--warm);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:4% 6%;position:relative;overflow:hidden}
-.mon .tx{font-size:clamp(13px,4.2vw,26px);line-height:1.3}.mon .tx .gap{height:.5em}
+.mon .tx{font-size:clamp(13px,4.2vw,26px);line-height:1.3}
+.mon{cursor:pointer;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+.mon .tz{position:absolute;top:0;bottom:0;display:flex;align-items:center;color:rgba(246,239,224,.28);pointer-events:none}.mon .tz.l{left:6px}.mon .tz.r{right:6px}
+.mon.flash{box-shadow:inset 0 0 0 3px rgba(201,162,74,.55)}
+.taphint{margin:6px 14px 0;font-size:12.5px;color:var(--mute);text-align:center}
+@media (max-height:700px){.taphint{display:none}}.mon .tx .gap{height:.5em}
 .mon .lab{position:absolute;left:10px;top:8px;font:700 10px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,239,224,.5)}
 .mon.blank .tx{opacity:.12}.mon.blank::after{content:'Screen blank';position:absolute;top:auto;right:0;bottom:10px;left:0;font:600 12px -apple-system,system-ui,sans-serif;color:rgba(246,239,224,.7)}
 .next{margin:10px 14px 0;padding:10px 12px;border-radius:12px;background:rgba(27,36,64,.05);font-size:14px;color:var(--mute);display:flex;gap:8px}
@@ -43,7 +49,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:10px;padding:10px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(250,246,236,.96);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1px solid var(--line);z-index:5}
 .bar button{height:64px;border-radius:20px;border:0;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;gap:8px}
 .b-blank{width:84px;background:rgba(27,36,64,.07)}.b-blank.on{background:#c4553a;color:#fff}
-.b-prev{width:84px;background:rgba(27,36,64,.07)}.b-next{flex:1;background:var(--ink);color:#fff;font-size:18px}
+.b-prev{width:100px;background:rgba(27,36,64,.07)}.b-next{flex:1;background:var(--ink);color:#fff;font-size:20px}.b-blank{font-size:14px;width:72px}
 .wait{padding:60px 28px;text-align:center;color:var(--mute)}.wait h2{color:var(--ink);font-weight:400;font-size:26px;margin:0 0 10px}
 .sheet{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(15,22,40,.38);display:flex;align-items:flex-end;justify-content:center;z-index:20}
 .sheet[hidden]{display:none}
@@ -62,6 +68,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .tog input{width:46px;height:28px;flex:none;accent-color:#1b2440}
 .who{color:var(--mute);font-size:14px;margin:8px 2px}.lockb{background:rgba(27,36,64,.07);border-radius:12px;padding:9px 12px;margin:0 0 10px;font-size:14px;color:var(--ink);text-align:center}
 .bar.locked button{opacity:.35}
+.tvw{display:flex;align-items:center;gap:10px;margin:0 14px 10px;padding:10px 12px;border-radius:14px;background:#fff4e0;border:1px solid #e8c98a;font-size:14px;color:#5a4214}.tvw span{flex:1}.tvw button{height:38px;padding:0 14px;border-radius:19px;border:0;background:#1b2440;color:#fff;font-weight:700;font-size:14px}
+#tvw[hidden]{display:none}
 .list .on .n{background:var(--ink);color:#fff}.list b{font-weight:600}.list small{display:block;color:var(--mute);font-size:13px}
 .toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 16px;border-radius:18px;font-size:14px;font-weight:600;z-index:30;opacity:0;transition:opacity .3s;pointer-events:none}
 .keys{display:none}
@@ -85,8 +93,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 <button class="ib" id="bScreen" aria-label="Connect a screen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button>
 <button class="ib" id="bShare" aria-label="Share the remote"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></button>
 <button class="ib" id="bEnd" aria-label="End" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-<div id="app"><div class="wait"><h2 class="serif">Joining…</h2><p>Getting the songs for this worship time.</p></div></div>
-<div class="bar" id="bar" hidden><button class="b-blank" id="bBlank">Blank</button><button class="b-prev" id="bPrev" aria-label="Back"><svg width="22" height="22" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="b-next" id="bNext">Next <svg width="20" height="20" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+<div id="tvw" hidden></div><div id="app"><div class="wait"><h2 class="serif">Joining…</h2><p>Getting the songs for this worship time.</p></div></div>
+<div class="bar" id="bar" hidden><button class="b-blank" id="bBlank">Blank</button><button class="b-prev" id="bPrev" aria-label="Back"><svg width="20" height="20" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back</button><button class="b-next" id="bNext">Next <svg width="20" height="20" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 <div class="sheet" id="sh" hidden><div class="sh" id="shb"></div></div>
 <div class="toast" id="toast"></div>
 <script src="../live.js"></script><script src="../worship.js"></script><script src="../qrcode.js"></script>
@@ -118,7 +126,18 @@ button{font:inherit;color:inherit;cursor:pointer}
   if (lead && saved) { deck = saved.deck; if (!deck.dv) deck.dv = saved.at || Date.now(); sess.deck = deck; sess.send('d', deck, true); paint(true);   /* the songs are already here: show them now */
     setTimeout(function () { if (!sess.state) sess.set({ song: 0, slide: 0, blank: false }); }, 2500); }
   setTimeout(function () { if (!deck) $('#app').innerHTML = '<div class="wait"><h2 class="serif">Waiting for the songs…</h2><p>If this stays, the worship time may have ended, or this network blocks the live service. Try another Wi‑Fi or your phone’s data.</p></div>'; }, 9000);
-  function pill() {
+  var BUILD = '__BUILD__';
+  /* a screen tells us its version and whether its lyrics sit right; if not, one tap refreshes it from here */
+  function tvCheck() {
+    var w = $('#tvw'), n = Date.now(), bad = null;
+    for (var k in sess.peers) { var x = sess.peers[k]; if (x.role !== 'screen' || n - x.seen > 20000) continue;
+      if (x.ok === false) bad = 'The TV is not showing the lyrics properly.'; else if (!bad && (!x.ver || (/^\d+$/.test(BUILD) && /^\d+$/.test(String(x.ver)) && +x.ver < +BUILD))) bad = 'The TV has an older version of the page.'; }
+    if (!lead || !bad) { w.hidden = true; return; }
+    w.className = 'tvw'; w.hidden = false; w.innerHTML = '<span>' + bad + '</span><button id="tvfix">Refresh TV</button>';
+    $('#tvfix').onclick = function () { sess.cmd({ reload: true }); toast('Refreshing the TV…'); w.hidden = true; tvCheck.quiet = Date.now(); };
+    if (tvCheck.quiet && n - tvCheck.quiet < 15000) w.hidden = true;
+  }
+  function pill() { try { tvCheck(); } catch (e) {}
     var p = $('#pill'), t, c;
     if (!st.relays) { t = 'Reconnecting…'; c = 'bad'; } else if (st.screens) { t = st.screens > 1 ? st.screens + ' screens' : 'Screen on'; c = 'ok'; } else { t = 'No screen'; c = 'warn'; }
     p.className = 'pill ' + c; p.querySelector('span').textContent = t;
@@ -139,6 +158,8 @@ button{font:inherit;color:inherit;cursor:pointer}
     else if (!was.blank && s.blank) toast(who + ' blanked the screen');
     else if (!!was.lock !== !!s.lock && !lead) toast(s.lock ? 'The leader is driving now' : 'You can move the lyrics again');
   }
+  function showHint() { try { return +(localStorage.getItem('scwp:taps') || 0) < 3; } catch (e) { return false; } }
+  function tapped() { try { localStorage.setItem('scwp:taps', +(localStorage.getItem('scwp:taps') || 0) + 1); } catch (e) {} }
   function songLabel(i) { var set = Live.setOf(deck), p = set.indexOf(i); return p >= 0 ? 'Song ' + (p + 1) + ' of ' + set.length + (deck.name ? ' · ' + esc(deck.name) : '') : 'From the songbook'; }
   function linesHTML(l) { return l.length ? l.map(function (x) { return x ? '<div>' + esc(x) + '</div>' : '<div class="gap"></div>'; }).join('') : '<div style="opacity:.55;font-size:.7em">(no words: instrumental)</div>'; }
   function paint(full) {
@@ -149,7 +170,7 @@ button{font:inherit;color:inherit;cursor:pointer}
     var h = (!lead && state && state.lock ? '<div class="lockb">Following the leader · they have paused shared control</div>' : '') + '<button class="song" id="bSongs"><span style="min-width:0"><small>' + songLabel(s.song) + ' · tap for all songs</small><b class="serif">' + esc(c.sg.t) + '</b></span>' + (c.sg.key ? '<span class="k">' + esc(c.sg.key) + (c.sg.capo ? ' · capo ' + c.sg.capo : '') + '</span>' : '') + '</button>';
     h += '<div class="seg"><button data-v="lyrics" class="' + (view === 'lyrics' ? 'on' : '') + '">Lyrics</button><button data-v="chords" class="' + (view === 'chords' ? 'on' : '') + '">Chords</button></div>';
     h += '<div class="wrap"><div class="col1"' + (view === 'chords' ? ' data-phone-hide' : '') + '>';
-    h += '<div class="mon' + (c.s.blank ? ' blank' : '') + '"><span class="lab">' + esc((side ? c.sg.t + ' · ' : '') + (c.sl ? c.sl.s : '')) + '</span><div class="tx serif">' + (c.sl ? linesHTML(c.sl.l) : '') + '</div></div>';
+    h += '<div class="mon' + (c.s.blank ? ' blank' : '') + '"><span class="lab">' + esc((side ? c.sg.t + ' · ' : '') + (c.sl ? c.sl.s : '')) + '</span><div class="tx serif">' + (c.sl ? linesHTML(c.sl.l) : '') + '</div><span class="tz l"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tz r"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>' + (showHint() ? '<div class="taphint">Tap the lyrics to go forward · tap the left edge to go back</div>' : '');
     h += nx ? '<div class="next"><b>Next' + (nx.song !== s.song ? ' song' : '') + ':</b><span>' + esc(nx.song !== s.song ? nx.sg.t : nx.sg.slides[nx.slide].s) + (nx.sg.slides[nx.slide].l[0] ? ' — ' + esc(nx.sg.slides[nx.slide].l[0]) : '') + '</span></div>' : '<div class="next"><b>End</b><span>This is the last slide</span></div>';
     var chipsH = '<div class="chips">' + secs.map(function (x) { return '<button class="chip' + (c.sl && c.sl.sec === x.sec ? ' on' : '') + '" data-sec="' + x.sec + '" title="' + esc(x.label) + '">' + esc(x.label.length <= 9 ? x.label : x.short) + '</button>'; }).join('') + '</div>';
     if (side) h += chipsH;
@@ -167,7 +188,9 @@ button{font:inherit;color:inherit;cursor:pointer}
     $('#bSongs').onclick = songsSheet;
     document.querySelectorAll('.seg [data-v]').forEach(function (b) { b.onclick = function () { view = b.dataset.v; try { localStorage.setItem('scwp:view', view); } catch (e) {} paint(true); }; });
     document.querySelectorAll('.chip').forEach(function (b) { b.onclick = function () { jump(+b.dataset.sec); }; });
-    var mon = document.querySelector('.mon'); if (mon) Worship.swipe(mon, function (d) { go(d); });
+    var mon = document.querySelector('.mon'); if (mon) { Worship.swipe(mon, function (d) { go(d); });
+      /* tap the lyrics: forward; tap the left third: back */
+      mon.onclick = function (e) { if (mon._swiped && Date.now() - mon._swiped < 400) return; var r = mon.getBoundingClientRect(); go(e.clientX - r.left < r.width / 3 ? -1 : 1); tapped(); mon.classList.add('flash'); setTimeout(function () { mon.classList.remove('flash'); }, 160); }; }
   }
   /* the chord chart fits its space (no scrolling while playing); a long one turns to the page holding the current section */
   var fitFor = null;

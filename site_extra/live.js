@@ -11,7 +11,10 @@
     { n: 'hivemq', u: 'wss://broker.hivemq.com:8884/mqtt' },
     { n: 'emqx', u: 'wss://broker.emqx.io:8084/mqtt' }
   ];
-  var TE = new TextEncoder(), TD = new TextDecoder();
+  /* UTF-8 by hand where an old TV browser has no TextEncoder */
+  var TE = G.TextEncoder ? new TextEncoder() : { encode: function (s) { var u = unescape(encodeURIComponent(s)), o = new Uint8Array(u.length); for (var i = 0; i < u.length; i++) o[i] = u.charCodeAt(i); return o; } };
+  var TD = G.TextDecoder ? new TextDecoder() : { decode: function (b) { var s = ''; b = new Uint8Array(b.buffer || b, b.byteOffset || 0, b.byteLength); for (var i = 0; i < b.length; i++) s += String.fromCharCode(b[i]); try { return decodeURIComponent(escape(s)); } catch (e) { return s; } } };
+  function cut(b, a, z) { return new Uint8Array(b.subarray(a, z)); }   // a copy of part of the bytes (typed-array slice is newer than some TVs)
   function b64u(b) { var s = ''; b = new Uint8Array(b); for (var i = 0; i < b.length; i++) s += String.fromCharCode(b[i]); return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); }
   function unb64u(s) { s = s.replace(/-/g, '+').replace(/_/g, '/'); while (s.length % 4) s += '='; var r = atob(s), o = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) o[i] = r.charCodeAt(i); return o; }
   function rnd(n) { var a = new Uint8Array(n); crypto.getRandomValues(a); return a; }
@@ -22,7 +25,7 @@
 
   /* ---- MQTT over WebSocket (only what is needed: connect, subscribe, publish QoS 0 with retain, ping) ---- */
   function remLen(n) { var o = []; do { var d = n % 128; n = Math.floor(n / 128); if (n > 0) d |= 128; o.push(d); } while (n > 0); return o; }
-  function strB(s) { var b = TE.encode(s); return [b.length >> 8, b.length & 255].concat(Array.from(b)); }
+  function strB(s) { var b = TE.encode(s); return [b.length >> 8, b.length & 255].concat(Array.prototype.slice.call(b)); }
   function packet(type, flags, body) { var h = [(type << 4) | flags].concat(remLen(body.length)); var o = new Uint8Array(h.length + body.length); o.set(h, 0); o.set(body, h.length); return o; }
   function Relay(def, onMsg, onUp) {
     this.def = def; this.onMsg = onMsg; this.onUp = onUp; this.subs = []; this.up = false; this.ws = null; this.buf = new Uint8Array(0);
@@ -56,7 +59,7 @@
       if (!ok || b.length - i < len) break;
       this.handle(b[p] >> 4, b[p] & 15, b.subarray(i, i + len)); p = i + len;
     }
-    this.buf = b.slice(p);
+    this.buf = cut(b, p);
   };
   Relay.prototype.handle = function (type, flags, body) {
     var self = this;
@@ -72,7 +75,7 @@
       this.onUp();
     } else if (type === 3) {   // PUBLISH (QoS 0)
       var tl = (body[0] << 8) | body[1], topic = TD.decode(body.subarray(2, 2 + tl)), q = (flags >> 1) & 3, at = 2 + tl + (q ? 2 : 0);
-      this.onMsg(topic, body.slice(at), !!(flags & 1), this.def.n);
+      this.onMsg(topic, cut(body, at), !!(flags & 1), this.def.n);
     }
   };
   Relay.prototype.sendSub = function (t) {
@@ -116,7 +119,7 @@
         this.bc = new BroadcastChannel('scwp-' + this.sid);
         this.bc.onmessage = function (e) {
           var m = e.data || {};
-          if (m.k === 's') self.gotState(m.d, 'local'); else if (m.k === 'd') self.gotDeck(m.d, 'local'); else if (m.k === 'p') self.gotPeer(m.d);
+          if (m.k === 's') self.gotState(m.d, 'local'); else if (m.k === 'd') self.gotDeck(m.d, 'local'); else if (m.k === 'p') self.gotPeer(m.d); else if (m.k === 'c' && self.cb.onCmd) self.cb.onCmd(m.d);
           else if (m.k === 'q') {   // a window that just opened on this computer asks for the songs and the current slide
             try { if (self.deck) self.bc.postMessage({ k: 'd', d: self.deck }); if (self.state) self.bc.postMessage({ k: 's', d: self.state }); } catch (x) {}
           }
@@ -139,6 +142,7 @@
   Session.prototype.onRelay = function (t, bytes, retained, n) {
     var self = this, kind = t.slice(this.base.length + 1);
     if (/^d\/\d+$/.test(kind)) { if (bytes.length) open(this.key, bytes).then(function (m) { if (m) self.gotPart(m); }); return; }
+    if (kind === 'c') { if (bytes.length) open(this.key, bytes).then(function (m) { if (m && self.cb.onCmd) self.cb.onCmd(m); }); return; }
     if (kind !== 's' && kind !== 'd' && kind !== 'p') return;
     if (!bytes.length) { if (kind === 'd' && this.cb.onDeckCleared) this.cb.onDeckCleared(); return; }
     open(this.key, bytes).then(function (m) {
@@ -194,7 +198,9 @@
       return sent;
     });
   };
-  Session.prototype.hello = function () { if (!this.ended) this.send('p', { id: this.id, role: this.role, name: this.name || '', at: Date.now() }, false); };
+  Session.prototype.hello = function () { if (this.ended) return; var p = { id: this.id, role: this.role, name: this.name || '', at: Date.now() }, x = this.cb.info && this.cb.info(); if (x) for (var k in x) p[k] = x[k]; this.send('p', p, false); };
+  /* a one-off instruction to the screens (refresh), never kept on the relay */
+  Session.prototype.cmd = function (m) { m.at = Date.now(); m.by = this.id; return this.send('c', m, false); };
   Session.prototype.setName = function (n) { this.name = String(n || '').slice(0, 30); this.hello(); };
   /* change what is shown: merge into the current state, bump the version, show it here at once, send it everywhere */
   Session.prototype.set = function (patch) {
@@ -230,7 +236,7 @@
 
   /* ---- pairing a screen by a short code: the screen shows the code, the phone types it ---- */
   function pairTopic(c) { return sha('scwp-pair-topic:' + c).then(function (h) { return 'scwp1/pair/' + hex(h).slice(0, 24); }); }
-  function pairKey(c) { return sha('scwp-pair-key:' + c).then(function (h) { return importKey(h.slice(0, 16)); }); }
+  function pairKey(c) { return sha('scwp-pair-key:' + c).then(function (h) { return importKey(cut(h, 0, 16)); }); }
   /* screen side: listen for a session on this code; calls got({sid,key}) once */
   function listenPair(c, got, onStatus) {
     var done = false, relays = [];

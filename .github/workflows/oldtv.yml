@@ -1,0 +1,19 @@
+# The TV page in old Chrome versions like the ones built into TVs (tools/qa/oldtv.js).
+name: Old TV browsers
+on: workflow_dispatch
+jobs:
+  oldtv:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        puppeteer: ["1.2.0", "1.7.0", "2.0.0"]   # Chromium 65, 69, 79
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: sudo apt-get update -q >/dev/null && sudo apt-get install -y -q libgbm1 libnss3 libxss1 libasound2 libatk-bridge2.0-0 libgtk-3-0 libx11-xcb1 libgconf-2-4 >/dev/null 2>&1 || true
+      - run: mkdir -p /tmp/pp && cd /tmp/pp && npm init -y >/dev/null && npm i --no-audit --no-fund puppeteer@${{ matrix.puppeteer }} 2>&1 | tail -3
+      - run: NODE_PATH=/tmp/pp/node_modules node tools/qa/oldtv.js

@@ -467,7 +467,10 @@ def write_site(html: str):
         for root, _, files in os.walk(xdir):
             for f in files:
                 src = os.path.join(root, f); dst = os.path.join(SITE, os.path.relpath(src, xdir))
-                os.makedirs(os.path.dirname(dst), exist_ok=True); shutil.copy(src, dst)
+                os.makedirs(os.path.dirname(dst), exist_ok=True)
+                if f.endswith((".html", ".js")):   # pages know which build they are, so a TV can tell it is out of date
+                    open(dst, "w", encoding="utf-8").write(open(src, encoding="utf-8").read().replace("__BUILD__", str(BUILD)))
+                else: shutil.copy(src, dst)
     for f in os.listdir(PWA):
         if f == "sw.js":
             src = open(os.path.join(PWA, f), encoding="utf-8").read().replace("__VERSION__", str(BUILD))
