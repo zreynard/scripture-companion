@@ -1976,7 +1976,7 @@ function wDeckSong(song,item){const p=wParsed(song),key=wKeyOf(song,item),capo=i
  return {id:song.id,t:song.t,a:song.a||'',key,capo,slides:Worship.slides({parsed:p},wOrder(song)),short:p.sections.map(s=>s.short),src:song.src||'',semis:sh.semis||0,flats:!!sh.flats}}
 /* the link carries the whole songbook: this set first, then every other song (A to Z), so anyone helping can pick any song */
 function wPresent(items,name){const songs=wSongs(),list=items.map(it=>songs[it.id]&&wDeckSong(songs[it.id],it)).filter(Boolean);if(!list.length)return;
- const inSet=new Set(list.map(s=>s.id)),rest=Object.values(songs).filter(s=>s&&!inSet.has(s.id)).sort((x,y)=>String(x.t).localeCompare(String(y.t))).map(s=>wDeckSong(s,null)),set=list.map((x,i)=>i);
+ const inSet=new Set(list.map(s=>s.id)),rest=Object.values(songs).filter(s=>s&&!inSet.has(s.id)).sort((x,y)=>String(x.t).localeCompare(String(y.t),undefined,{numeric:true,sensitivity:'base'})).map(s=>wDeckSong(s,null)),set=list.map((x,i)=>i);
  const b=new Uint8Array(28);crypto.getRandomValues(b);const u=x=>btoa(String.fromCharCode.apply(null,x)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
  const sid=u(b.slice(0,12)),key=u(b.slice(12,28));S.set('wlive',{sid,key,at:Date.now(),name:name||list[0].t,deck:{name:name||'',set,songs:list.concat(rest)}});
  location.href='live/#s='+sid+'&k='+key+'&lead=1'}

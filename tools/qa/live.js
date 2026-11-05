@@ -69,9 +69,9 @@ const SONG = n => `Intro: G D\n\nVerse 1\n${verse('first')}\n\nChorus\nC      G\
   for (const x of [S1, S2, BTV, B]) await x.c.close();
   await T('L31 a big songbook (90 songs, sent in pieces) reaches a late helper and the TV', async () => { const C = await leader(90, devices['iPhone 14'], 3); const CT = await screen(C.hash); const H = await remote(C.hash, 'Jo'); const st = {};
     st.helperDeck = await until(() => H.p.evaluate(() => !!document.querySelector('#bSongs')), 40000); if (st.helperDeck < 0) st.helperApp = await H.p.evaluate(() => document.querySelector('#app').innerText.slice(0, 120));
-    if (st.helperDeck >= 0) { await H.p.click('#bSongs'); st.rows = await H.p.$$eval('#slist [data-song]', e => e.length); await H.p.fill('#sq', 'song 88'); await H.p.click('#slist [data-song="88"]'); await wait(800); st.chips = await H.p.$$eval('.chip', e => e.map(x => x.textContent)); const ch = await H.p.$('.chip:has-text("Chorus")'); if (ch) await ch.click(); }
+    if (st.helperDeck >= 0) { await H.p.click('#bSongs'); st.rows = await H.p.$$eval('#slist [data-song]', e => e.length); await H.p.fill('#sq', 'song 88'); st.hits = await H.p.$$eval('#slist [data-song] b', e => e.map(x => x.textContent)); await H.p.click('#slist [data-song]'); await wait(800); st.chips = await H.p.$$eval('.chip', e => e.map(x => x.textContent)); const ch = await H.p.$('.chip:has-text("Chorus")'); if (ch) await ch.click(); }
     st.tv = await until(async () => /chorus 88 sings/.test(await tvLine(CT.p)), 25000); if (st.tv < 0) st.tvLine = await tvLine(CT.p); st.n = await C.p.evaluate(() => JSON.stringify(JSON.parse(localStorage.getItem('sc:wlive')).deck).length);
-    for (const x of [H, CT, C]) await x.c.close(); return (st.helperDeck >= 0 && st.rows === 90 && st.tv >= 0 && st.n > 12000) || st; });
+    for (const x of [H, CT, C]) await x.c.close(); return (st.helperDeck >= 0 && st.rows === 90 && st.hits.join() === 'Song 88' && st.tv >= 0 && st.n > 12000) || st; });
   await T('L23 no page errors on any device', async () => errs.length === 0 || errs.slice(0, 5));
   raw.close();
   const f = Object.values(R).filter(v => !v.startsWith('PASS')).length; console.log(`\n${Object.keys(R).length - f}/${Object.keys(R).length} passed`); await b.close(); process.exit(f ? 1 : 0);
