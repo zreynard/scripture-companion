@@ -2095,7 +2095,8 @@ function pmPaint(){const on=!!PM.el&&!PM.el.paused;document.querySelectorAll('[d
 function prCredits(){return ''}
 /* the prayer music is also kept in your private backup repo (music/<piece>/<part>, 12 MB parts, and music/index.json),
    so a new or replaced phone gets it back on its own once the backup key is in */
-const MB={busy:false,msg:'',last:0},MB_PART=12*1048576;
+const MB={busy:false,msg:'',last:0},MB_PART=2*1048576;   /* GitHub ends any API request after 10 s: small parts finish in time on slow Wi‑Fi */
+const mbWait=ms=>new Promise(r=>setTimeout(r,ms));
 function b64blob(bl){return new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result).split(',')[1]||'');r.onerror=()=>no(r.error);r.readAsDataURL(bl)})}
 async function mbIndex(){const r=await bkGH('/contents/music/index.json');if(r.status===404)return {sha:null,list:[]};if(!r.ok)throw r.status;const j=await r.json();let c=j.content;
  if(!c||j.encoding!=='base64'){const r2=await bkGH('/git/blobs/'+j.sha);if(!r2.ok)throw r2.status;c=(await r2.json()).content}return {sha:j.sha,list:JSON.parse(bkUn64(c))}}
@@ -2110,18 +2111,25 @@ async function mbSync(force){if(!bkOn()||MB.busy||(!force&&Date.now()-MB.last<10
   const here=new Set(L.map(mbKey)),miss=list.filter(x=>!here.has(mbKey(x)));
   if(miss.length)try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist()}catch(e){}
   const tot=miss.reduce((a,x)=>a+x.parts,0);let done=0;if(tot)mbSay('Bringing your prayer music onto this phone… 0%');
-  for(const [k,x] of miss.entries()){const parts=[];
-   for(let i=0;i<x.parts;i++){let r;try{r=await bkGH('/contents/music/'+x.id+'/'+i,{accept:'raw'})}catch(e){throw 'net'}if(!r.ok)throw r.status;parts.push(await r.blob());done++;mbSay(`Bringing your prayer music onto this phone… ${Math.round(done/tot*100)}%`)}
+  for(const [k,x] of miss.entries()){const pk=i=>x.id+'#'+x.parts+'#'+i,parts=[];
+   for(let i=0;i<x.parts;i++){   /* each part is kept as it arrives, so an interrupted download carries on where it stopped */
+    let got=await pdbDo('blob','readonly',t=>t.objectStore('blob').get(pk(i))).catch(()=>null);
+    for(let tr=0;!got;tr++){try{const r=await bkGH('/contents/music/'+x.id+'/'+i,{accept:'raw'});if(!r.ok){if(r.status===401||r.status===403||r.status===404||tr>=4)throw r.status;await mbWait(1500*(tr+1));continue}got=await r.blob()}
+     catch(e){if(typeof e==='number')throw e;if(tr>=4)throw 'net';await mbWait(1500*(tr+1))}}
+    if(!got.size)throw 'net';
+    try{await pdbDo('blob','readwrite',t=>t.objectStore('blob').put(got,pk(i)))}catch(e){throw 'space'}
+    parts.push(got);done++;mbSay(`Bringing your prayer music onto this phone… ${Math.round(done/tot*100)}%`)}
    const bl=new Blob(parts,{type:x.ty||'audio/mpeg'}),meta={id:x.id,f:x.f,sz:x.sz,t:x.t,a:x.a,al:x.al,n:x.n};
-   try{await pdbDo(['meta','blob'],'readwrite',t=>{t.objectStore('blob').put(bl,x.id);return t.objectStore('meta').put(meta)})}catch(e){throw 'space'}}
+   if(bl.size!==x.sz)throw 'size';
+   try{await pdbDo(['meta','blob'],'readwrite',t=>{const st=t.objectStore('blob');st.put(bl,x.id);for(let i=0;i<x.parts;i++)st.delete(pk(i));return t.objectStore('meta').put(meta)})}catch(e){throw 'space'}}
   if(miss.length){PL.list=null;L=await plLoad();if(view==='pray'||view==='settings'){const y=scrollY;render();window.scrollTo(0,y)}}
   const there=new Set(list.map(mbKey)),up=L.filter(x=>!there.has(mbKey(x)));
   for(const [k,x] of up.entries()){mbSay(`Backing up your prayer music: ${k+1} of ${up.length}…`);const bl=await pdbDo('blob','readonly',t=>t.objectStore('blob').get(x.id));if(!bl)continue;
    const n=Math.max(1,Math.ceil(bl.size/MB_PART));
-   for(let i=0;i<n;i++)await mbPut('music/'+x.id+'/'+i,await b64blob(bl.slice(i*MB_PART,(i+1)*MB_PART)),'Prayer music: '+(x.t||x.f)+(n>1?` (${i+1}/${n})`:''));
+   for(let i=0;i<n;i++){const b64=await b64blob(bl.slice(i*MB_PART,(i+1)*MB_PART));for(let tr=0;;tr++){try{await mbPut('music/'+x.id+'/'+i,b64,'Prayer music: '+(x.t||x.f)+(n>1?` (${i+1}/${n})`:''));break}catch(e){if(e===401||e===403||tr>=4)throw typeof e==='number'?e:'net';await mbWait(2000*(tr+1))}}}
    list.push({id:x.id,f:x.f,sz:x.sz,t:x.t,a:x.a,al:x.al,n:x.n,ty:bl.type,parts:n});sha=await mbPutIndex(list,sha)}
   mbSay(list.length?`Backed up to your private repo, so it comes back on a new phone.`:'No prayer music in your backup yet.');S.set('mbok',list.length)}
- catch(e){mbSay(e===401||e===403?'GitHub no longer accepts your backup key: paste a new one in ⋯ → Backup.':e===404?'Your backup repo was not found.':e==='space'?'Your phone is out of room for the music: free up some space, then tap ▶.':e==='net'?'Could not reach your backup: check Wi‑Fi, then tap ▶ to try again.':`Your backup said ${e}: tap ▶ to try again.`);MB.last=0}
+ catch(e){mbSay(e===401||e===403?'GitHub no longer accepts your backup key: paste a new one in ⋯ → Backup.':e===404?'Your backup repo was not found.':e==='space'?'Your phone is out of room for the music: free up some space, then tap ▶.':e==='net'||e instanceof TypeError?'The connection dropped. Tap ▶ to carry on from where it stopped.':e==='size'?'The music arrived incomplete. Tap ▶ to try again.':`Your backup said ${e}: tap ▶ to try again.`);MB.last=0}
  finally{MB.busy=false}}
 async function mbRemoveAll(){if(!bkOn())return;const {sha,list}=await mbIndex();for(const x of list){const r=await bkGH('/contents/music/'+x.id);if(!r.ok)continue;for(const f of await r.json())await bkGH('/contents/'+f.path,{method:'DELETE',body:JSON.stringify({message:'Remove prayer music',sha:f.sha})})}
  if(sha)await mbPutIndex([],sha);S.set('mbok',0);mbSay('')}
