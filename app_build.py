@@ -1571,16 +1571,16 @@ function fly(A,t){const el=$('#mapsvg'),f={x:MV.x,y:MV.y,w:MV.w,h:MV.h},t0=perfo
 function pickLeg(A,i){MV.leg=i;MV.focus=null;$('#mvtitle').textContent='Your journey';mvStrip(A,true);mvCard(A);fly(A,i<0?wholeBox(A):legBox(A,i))}
 function openMap(focus){atlas().then(A=>{if(!A.map||!A.trip)return;if(SHEET.length)closeSheet();$('#mapv').hidden=false;document.body.classList.add('mapopen');const st=standing(A);
   const f=focus&&A.l[focus]&&A.l[focus].x!=null?A.l[focus]:null;MV={x:0,y:0,w:100,h:100,leg:st.leg,focus:f?focus:null,anim:true};
-  $('#mvtitle').textContent=f?f.n:'Your journey';mvStrip(A);mvCard(A);Object.assign(MV,f?boxView(f.x-10,f.y-10,f.x+10,f.y+10,60):legBox(A,st.leg));drawMap(A)})}
+  $('#mvtitle').textContent=f?f.n:'Your journey';mvStrip(A);mvCard(A);Object.assign(MV,f?boxView(f.x-10,f.y-10,f.x+10,f.y+10,60):legBox(A,st.leg));drawMap(A)}).catch(()=>{})}
 function closeMap(){$('#mapv').hidden=true;document.body.classList.remove('mapopen')}
 (()=>{const el=$('#mapsvg'),P=new Map();let start=null,moved=0;
- const zoom=(f,cx,cy)=>{atlas().then(A=>{const r=el.getBoundingClientRect(),s=MV.w/r.width,mx=MV.x+(cx-r.left)*s,my=MV.y+(cy-r.top)*s,nw=Math.min(420,Math.max(14,MV.w*f)),k=nw/MV.w;MV.x=mx-(mx-MV.x)*k;MV.y=my-(my-MV.y)*k;MV.w=nw;MV.h*=k;drawMap(A)})};
+ const zoom=(f,cx,cy)=>{atlas().then(A=>{const r=el.getBoundingClientRect(),s=MV.w/r.width,mx=MV.x+(cx-r.left)*s,my=MV.y+(cy-r.top)*s,nw=Math.min(420,Math.max(14,MV.w*f)),k=nw/MV.w;MV.x=mx-(mx-MV.x)*k;MV.y=my-(my-MV.y)*k;MV.w=nw;MV.h*=k;drawMap(A)}).catch(()=>{})};
  el.addEventListener('pointerdown',e=>{el.setPointerCapture(e.pointerId);P.set(e.pointerId,[e.clientX,e.clientY]);if(P.size===1)moved=0;cancelAnimationFrame(MV.raf);start={x:MV.x,y:MV.y,pts:new Map(P),w:MV.w,h:MV.h}});
  el.addEventListener('pointermove',e=>{if(!P.has(e.pointerId)||!start)return;P.set(e.pointerId,[e.clientX,e.clientY]);const r=el.getBoundingClientRect(),s=start.w/r.width;
   if(P.size===1){const[a]=[...start.pts.values()],[b]=[...P.values()];moved=Math.max(moved,Math.hypot(b[0]-a[0],b[1]-a[1]));MV.x=start.x-(b[0]-a[0])*s;MV.y=start.y-(b[1]-a[1])*s;el.setAttribute('viewBox',`${MV.x} ${MV.y} ${MV.w} ${MV.h}`)}
   else if(P.size===2&&start.pts.size===2){moved=99;const[a1,a2]=[...start.pts.values()],[b1,b2]=[...P.values()];const d0=Math.hypot(a1[0]-a2[0],a1[1]-a2[1]),d1=Math.hypot(b1[0]-b2[0],b1[1]-b2[1]);if(d0>10&&d1>10){MV.w=Math.min(420,Math.max(14,start.w*d0/d1));MV.h=start.h*MV.w/start.w;const cx=(a1[0]+a2[0])/2,cy=(a1[1]+a2[1])/2,mx=start.x+(cx-r.left)*s,my=start.y+(cy-r.top)*s,k=MV.w/start.w,nx=(b1[0]+b2[0])/2,ny=(b1[1]+b2[1])/2;MV.x=mx-(nx-r.left)*s*k;MV.y=my-(ny-r.top)*s*k;el.setAttribute('viewBox',`${MV.x} ${MV.y} ${MV.w} ${MV.h}`)}}});
  const end=e=>{P.delete(e.pointerId);if(P.size){start={x:MV.x,y:MV.y,pts:new Map(P),w:MV.w,h:MV.h};return}start=null;
-  if(moved<8)return;atlas().then(A=>drawMap(A))};
+  if(moved<8)return;atlas().then(A=>drawMap(A)).catch(()=>{})};
  el.addEventListener('click',e=>{if(moved>=8)return;const t=document.elementFromPoint(e.clientX,e.clientY),g=t&&t.closest&&t.closest('[data-pl]');if(g)openSheet('l',g.dataset.pl)});
  el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
  el.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY>0?1.15:1/1.15,e.clientX,e.clientY)},{passive:false});

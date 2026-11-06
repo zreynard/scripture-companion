@@ -19,4 +19,11 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       console.log(dev, 'EDITOR saved', JSON.stringify(await p.evaluate(() => ({ edit: WS.edit, song: WS.song, n: Object.keys(S.get('wsongs', {})).length, pwn: window.__pwn || 0 }))), 'dialog:', dlg); }
     catch (er) { console.log(dev, 'EDITOR stuck', er.message.split('\n').slice(0, 12).join(' | ').slice(0, 900)); }
     await c.close(); }
+  // test U35: an iPad turned sideways; what is taller than the screen afterwards?
+  { const c = await b.newContext(devices['iPad (gen 7)']); const p = await c.newPage(); await p.goto(SITE); await wait(1200);
+    const SONG = 'Intro: G D Em C\n\nVerse 1\n' + verse(2, 'v1') + '\n\nChorus\nC      G\nsing it out,\nEm     D\nlift it high.\n\nVerse 2\n' + verse(2, 'v2') + '\n\nChorus\n\nBridge\nC   D   Em\nhere we stand';
+    await p.evaluate(src => { S.set('wsongs', { L: { id: 'L', t: 'Long', key: 'G', src } }); $('#tabs [data-tab2=worship]').click(); WS.song = 'L'; render(); }, SONG); await wait(800);
+    const snap = () => p.evaluate(() => { const box = $('#wfit'), r = box.getBoundingClientRect(), tall = [...document.querySelectorAll('body *')].filter(e => { const q = e.getBoundingClientRect(); return q.bottom > innerHeight + 2 && q.height > 0 && getComputedStyle(e).position !== 'fixed'; }).slice(0, 6).map(e => (e.id || e.className || e.tagName).toString().slice(0, 30) + ':' + Math.round(e.getBoundingClientRect().bottom));
+      return { vw: innerWidth, vh: innerHeight, docH: document.scrollingElement.scrollHeight, bodyH: document.body.scrollHeight, boxTop: Math.round(r.top), boxBottom: Math.round(r.bottom), boxStyleH: box.style.height, fit: box._fit, body: document.body.className, tabs: getComputedStyle($('#tabs')).display, scrollY, tall }; });
+    console.log('U35 before', JSON.stringify(await snap())); await p.setViewportSize({ width: 1080, height: 810 }); await wait(700); console.log('U35 after', JSON.stringify(await snap())); await wait(1500); console.log('U35 later', JSON.stringify(await snap())); await c.close(); }
   await b.close(); })();
