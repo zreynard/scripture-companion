@@ -2081,7 +2081,12 @@ function wFitSong(){const box=$('#wfit');if(!box)return;const tb=($('#tabs')||{}
  const go=d=>{const i=box._fit,n=box._pg+d;if(i&&n>=0&&n<i.pages){box._pg=n;Worship.turn(box,n,i);show();return}if(d<0)WS.toLast=true;if(!wStep(d))WS.toLast=false};
  box.onclick=e=>{if(box._swiped&&Date.now()-box._swiped<400)return;const i=box._fit;if(!i||i.pages<2)return;const r=box.getBoundingClientRect();go(e.clientX-r.left>r.width/2?1:-1)};
  if(!box._sw){box._sw=1;Worship.swipe(box,go)}}
-addEventListener('resize',()=>{if(view==='worship'&&WS.song&&!WS.edit){clearTimeout(wFitSong.t);wFitSong.t=setTimeout(wFitSong,150)}});
+/* re-fit when the screen changes size or turns: Safari does not always send 'resize' when an iPad turns, so the
+   page's own size is watched too */
+function wRefit(){if(view==='worship'&&WS.song&&!WS.edit){clearTimeout(wFitSong.t);wFitSong.t=setTimeout(wFitSong,150)}}
+addEventListener('resize',wRefit);addEventListener('orientationchange',()=>setTimeout(wRefit,250));
+if(window.visualViewport)visualViewport.addEventListener('resize',wRefit);
+if(window.ResizeObserver){let lw=0,lh=0;new ResizeObserver(()=>{const w=innerWidth,h=innerHeight;if(w===lw&&h===lh)return;lw=w;lh=h;wRefit()}).observe(document.documentElement)}
 /* songs found for you (and any added later) arrive through your private backup: songs/inbox.json; each comes in once */
 async function wsInbox(force){if(!bkOn()||wsInbox.busy||(!force&&Date.now()-(wsInbox.last||0)<10*60e3))return;wsInbox.busy=true;wsInbox.last=Date.now();
  try{const r=await bkGH('/contents/songs/inbox.json');if(!r.ok)return;const j=await r.json();let c=j.content;if(!c||j.encoding!=='base64'){const r2=await bkGH('/git/blobs/'+j.sha);c=(await r2.json()).content}

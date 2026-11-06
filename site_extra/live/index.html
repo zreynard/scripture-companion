@@ -209,7 +209,11 @@ button{font:inherit;color:inherit;cursor:pointer}
     if (!box._sw) { box._sw = 1; Worship.swipe(box, function (d) { var i = box._fit; if (!i || i.pages < 2) return; box._pg = Math.max(0, Math.min(i.pages - 1, box._pg + d)); Worship.turn(box, box._pg, i); if (lab) lab.textContent = (box._pg + 1) + ' / ' + i.pages; }); }
     box.onclick = function (e) { if (box._swiped && Date.now() - box._swiped < 400) return; var i = box._fit; if (!i || i.pages < 2) return; var r = box.getBoundingClientRect(); box._pg = Math.max(0, Math.min(i.pages - 1, box._pg + (e.clientX - r.left > r.width / 2 ? 1 : -1))); Worship.turn(box, box._pg, i); if (lab) lab.textContent = (box._pg + 1) + ' / ' + i.pages; };
   }
-  addEventListener('resize', function () { clearTimeout(fitChart.t); fitChart.t = setTimeout(function () { fitFor = null; paint(true); }, 150); });
+  function refit() { clearTimeout(fitChart.t); fitChart.t = setTimeout(function () { fitFor = null; paint(true); }, 150); }
+  /* Safari does not always send 'resize' when an iPad turns: watch the turn and the page's own size as well */
+  addEventListener('resize', refit); addEventListener('orientationchange', function () { setTimeout(refit, 250); });
+  if (window.visualViewport) visualViewport.addEventListener('resize', refit);
+  if (window.ResizeObserver) { var lw = 0, lh = 0; new ResizeObserver(function () { if (innerWidth === lw && innerHeight === lh) return; lw = innerWidth; lh = innerHeight; refit(); }).observe(document.documentElement); }
   /* the next time this section comes in the song (after where we are); the first one if it does not come again */
   function jump(sec) {
     var c = cur(); if (!c.sg) return; var at = c.s.slide || 0, i, idx = -1;
