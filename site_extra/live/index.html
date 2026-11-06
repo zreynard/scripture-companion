@@ -110,7 +110,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   function toast(t) { var e = $('#toast'); e.textContent = t; e.style.opacity = 1; clearTimeout(toast.t); toast.t = setTimeout(function () { e.style.opacity = 0; }, 2200); }
   function screenURL() { return base + 'tv/#s=' + H.s + '&k=' + H.k; }
   function remoteURL() { return base + 'live/#s=' + H.s + '&k=' + H.k; }
-  if (lead) { $('#back').hidden = false; $('#back').href = base + '#worship'; $('#bEnd').hidden = false; }
+  if (lead) { $('#back').hidden = false; $('#back').href = base + '#worship'; $('#bEnd').hidden = false; } else $('#bScreen').hidden = true;   /* connecting the TV is the leader's job */
   var saved = null; if (lead) try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) saved = w; } catch (e) {}
   /* a TV or friend still on one of this phone's earlier worship times is told to move to this one */
   function moveOld() {
@@ -153,7 +153,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   keepAwake(); document.addEventListener('visibilitychange', keepAwake); document.addEventListener('click', keepAwake, true);
   function pill() { try { tvCheck(); } catch (e) {}
     var p = $('#pill'), t, c;
-    if (!st.relays) { t = 'Reconnecting…'; c = 'bad'; } else if (st.screens) { t = st.screens > 1 ? st.screens + ' screens' : 'Screen on'; c = 'ok'; } else { t = 'No screen'; c = 'warn'; }
+    if (!st.relays) { t = 'Reconnecting…'; c = 'bad'; } else if (st.screens) { t = st.screens > 1 ? st.screens + ' screens' : (lead ? 'Screen on' : 'TV on'); c = 'ok'; } else if (!lead) { t = 'Live'; c = 'ok'; } else { t = 'No screen'; c = 'warn'; }
     p.className = 'pill ' + c; p.querySelector('span').textContent = t;
   }
   setInterval(pill, 3000);
@@ -296,7 +296,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   }
   /* a helper says their name once, so everyone can see who moved the lyrics */
   function askName() {
-    sheet('<h3 class="serif">Joining worship</h3><p>Your first name, so others can see who moved the lyrics.</p><input class="srch" id="nm" autocomplete="given-name" maxlength="30" placeholder="Your name"><div class="row"><button class="btn pri wide" id="nmok">Join</button></div>');
+    sheet('<h3 class="serif">Joining worship</h3><p>You can move the lyrics for everyone: <b>Next</b>, <b>Back</b>, or tap the lyrics. The leader connects the TV.</p><p>Your first name, so others can see who moved the lyrics:</p><input class="srch" id="nm" autocomplete="given-name" maxlength="30" placeholder="Your name"><div class="row"><button class="btn pri wide" id="nmok">Join</button></div>');
     var go2 = function () { var v = $('#nm').value.trim(); if (!v) return $('#nm').focus(); try { localStorage.setItem('scwp:name', v); } catch (e) {} sess.setName(v); $('#sh').hidden = true; };
     $('#nmok').onclick = go2; $('#nm').onkeydown = function (e) { if (e.key === 'Enter') go2(); };
   }
@@ -305,7 +305,7 @@ button{font:inherit;color:inherit;cursor:pointer}
     sheet('<h3 class="serif">End worship time?</h3><p>The screen goes blank and the shared remote links stop working.</p><div class="row"><button class="btn pri" id="eok">End</button><button class="btn" data-close>Keep going</button></div>');
     $('#eok').onclick = function () { sess.end().then(function () { try { localStorage.removeItem('sc:wlive'); } catch (e) {} location.href = base + '#worship'; }); };
   };
-  $('#pill').onclick = function () { pill(); toast(st.relays ? (st.screens ? 'Live: the screen is following along' : 'Live. Connect a screen with the TV button') : 'No connection. Your taps will send when it is back'); };
+  $('#pill').onclick = function () { pill(); toast(st.relays ? (st.screens ? 'Live: the screen is following along' : lead ? 'Live. Connect a screen with the TV button' : 'Live. Your taps move the lyrics for everyone') : 'No connection. Your taps will send when it is back'); };
   addEventListener('keydown', function (e) {
     if (e.target.tagName === 'INPUT') return; var k = e.key;
     if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'ArrowDown') { e.preventDefault(); go(1); }
