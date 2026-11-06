@@ -1373,7 +1373,7 @@ const DONE_AT=0.7,body=id=>{const p=prog[id]||{};return Math.max(1,(p.dur||0)-(I
 let lastT=null,ready=true;const OPEN=new Set();
 /* ---- the Bible text (Berean Standard Bible, public domain): one file per book, fetched once, then offline ---- */
 /* ---- people, places and the map (atlas.json, loaded on first use) ---- */
-let ATL=null,ATL_D=null;function atlas(){return ATL||(ATL=fetch('atlas.json').then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>(ATL_D=d)).catch(e=>{ATL=null;throw e}))}
+let ATL=null,ATL_D=null;function atlas(){if(!ATL){ATL=fetch('atlas.json').then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>(ATL_D=d)).catch(e=>{ATL=null;throw e});ATL.catch(()=>{})}return ATL}   /* a failed or interrupted download is never an unhandled error */
 function rich(t){return esc(t).replace(/⟦([pl]):([^|⟧]+)\|([^⟧]+)⟧((?:(?:&#39;|['’])s)?[.,;:!?)]*)/g,(m,k,sl,tx,tail)=>{const btn=`<button class="nm ${k}" data-nk="${k}" data-ns="${sl}">${tx}</button>`;return tail?`<span class="nw">${btn}${tail}</span>`:btn})}
 const SHEET=[];
 function bookNames(){return D.books.map(b=>b.name)}
