@@ -167,6 +167,13 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     let after = ''; for (let i = 0; i < 30; i++) { await wait(500); after = await tvl(); if (/two/.test(after)) break; }
     const P = await c2.newPage(); await P.goto(SITE + 'tv/?new'); await wait(1500); const fresh = await P.evaluate(() => !document.querySelector('#pair').hidden && /^[A-Z0-9]{6}$/.test(document.querySelector('#code').textContent));
     await c2.close(); return (/one/.test(before) && /two/.test(after) && /forever/.test(after + before) && !/Repeat/.test(after) && fresh) || { before, after, fresh }; });
+  await T('U57 the screen stays on in Guided prayer and on a song chart, and is let go everywhere else', async () => { const X = await open(await ctx());
+    const st = () => X.evaluate(() => ({ why: [...AWAKE.why].sort().join(), vid: !!(AWAKE.vid && !AWAKE.vid.paused), lock: !!AWAKE.lock }));
+    await X.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(400); await X.evaluate(() => { PR.mode = 'guided'; S.set('prm', 'guided'); render(); }); await wait(600); await X.mouse.click(200, 300); await wait(400); const g = await st();
+    await X.evaluate(() => { PR.mode = 'still'; render(); }); await wait(400); const s = await st();
+    await X.evaluate(() => { PR.mode = 'guided'; render(); }); await wait(300); await X.evaluate(() => { $('#tabs [data-tab2=journey]').click(); }); await wait(400); const j = await st();
+    await X.evaluate(() => { S.set('wsongs', { a: { id: 'a', t: 'A', key: 'G', src: 'Verse\nG\nla' } }); WS.song = 'a'; $('#tabs [data-tab2=worship]').click(); }); await wait(600); const w = await st();
+    return (g.why === 'pray' && (g.vid || g.lock) && s.why === '' && !s.vid && j.why === '' && !j.vid && w.why === 'song' && (w.vid || w.lock)) || { g, s, j, w }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
