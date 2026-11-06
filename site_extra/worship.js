@@ -115,9 +115,11 @@
       }
       if (/^\s*#/.test(line) || /^\s*\{[^}]*\}\s*$/.test(line)) continue;   // comments and unknown directives
       if (!line.trim()) { flushChords(); if (cur && cur.lines.length && cur.lines[cur.lines.length - 1] !== null) cur.lines.push(null); continue; }
-      var lm2 = LABEL.exec(line);
-      if (lm2 && !hasInline(line) && (!lm2[3] || isChordLine(lm2[3]))) {
-        flushChords(); open(lm2[1], lm2[2] && +lm2[2]);
+      /* "Repeat Chorus", "(Back to Chorus)" sing that section again; "Verse 4 (bare, then build)" keeps its note with the label */
+      var lm2 = LABEL.exec(line.replace(/^\s*[\[(]?\s*(?:repeat|rpt\.?|back to)\s+/i, '')), note = lm2 && lm2[3] && /^\([^()]*\)$/.test(lm2[3].trim()) ? lm2[3].trim() : '';
+      if (lm2 && !hasInline(line) && (!lm2[3] || isChordLine(lm2[3]) || note)) {
+        if (note) lm2[3] = '';
+        flushChords(); open(lm2[1] + (note ? ' ' + note : ''), lm2[2] && +lm2[2]);
         if (lm2[3]) pendingChords = chordsAt(lm2[3]).map(function (c) { return { c: c.c, at: c.at }; });
         continue;
       }

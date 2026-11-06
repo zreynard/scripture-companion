@@ -112,9 +112,19 @@ button{font:inherit;color:inherit;cursor:pointer}
   function remoteURL() { return base + 'live/#s=' + H.s + '&k=' + H.k; }
   if (lead) { $('#back').hidden = false; $('#back').href = base + '#worship'; $('#bEnd').hidden = false; }
   var saved = null; if (lead) try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) saved = w; } catch (e) {}
+  /* a TV or friend still on one of this phone's earlier worship times is told to move to this one */
+  function moveOld() {
+    var prev = []; try { prev = JSON.parse(localStorage.getItem('sc:wprev') || '[]') || []; } catch (e) {}
+    prev = prev.filter(function (x) { return x && x.sid && x.sid !== H.s && Date.now() - x.at < 12 * 3600e3; }); if (!prev.length) return;
+    prev.forEach(function (x) { var o; try { o = new Live.Session({ sid: x.sid, key: x.key, role: 'lead', name: 'Leader' }); } catch (e) { return; }
+      setTimeout(function () { o.set({ moved: { sid: H.s, key: H.k }, blank: false }); }, 4000);
+      setTimeout(function () { o.set({ moved: { sid: H.s, key: H.k }, blank: false }); }, 12000);
+      setTimeout(function () { o.close(); }, 20000); });
+  }
+  if (lead) setTimeout(moveOld, 1500);
   var myName = ''; try { myName = localStorage.getItem('scwp:name') || ''; } catch (e) {}
   try { sess = new Live.Session({ sid: H.s, key: H.k, role: lead ? 'lead' : 'remote', name: myName,
-    onState: function (s, via) { var was = state; state = s; if (s.ended && !lead) return ended(); told(was, s, via); paint(); },
+    onState: function (s, via) { var was = state; state = s; if (s.moved && s.moved.sid && s.moved.sid !== H.s && !lead) { location.replace(base + 'live/#s=' + s.moved.sid + '&k=' + s.moved.key); location.reload(); return; } if (s.ended && !lead) return ended(); told(was, s, via); paint(); },
     onDeck: function (d) { deck = d; paint(true); },
     onStatus: function (x) {
       var was = st.relays; st = x; pill();

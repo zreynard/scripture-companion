@@ -158,6 +158,15 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
   await X.evaluate(() => audio.pause()); await wait(3800); const off = await X.evaluate(() => ({ music: !$('#bedm').paused, gain: BED.g ? +BED.g.gain.value.toFixed(2) : 'no-ctx' }));
   await X.evaluate(() => { cur = Object.keys(I).find(k => I[k].audio && !I[k].nar && k !== NAR.id); audio.play(); bedSync(); }); await wait(3800); const sermon = await X.evaluate(() => ({ music: !$('#bedm').paused, btnHidden: $('#bedb').hidden }));
     await cc.close(); return (shown && panel.chk && panel.slider && on.narr && on.music && (on.gain === 0.3 || on.gain === 'no-ctx') && on.lv === 0.3 && on.saved === true && brief && resumed && !off.music && !sermon.music && sermon.btnHidden && errs2.length === 0) || { shown, panel, on, brief, resumed, off, sermon, errs2 }; });
+  await T('U56 a TV on an earlier worship time follows when Present starts a new one; tv/?new shows a fresh code', async () => { const c2 = await b.newContext({ viewport: { width: 1280, height: 800 } }); const L = await c2.newPage(); L.on('pageerror', e => errs.push('U56:' + e.message)); await L.goto(SITE); await wait(700);
+    const mk = (n, extra) => `Verse 1\nG\nfirst song ${n} line\n\nChorus\nC\nwe sing for - ev - er ${n}\n\nRepeat Chorus${extra || ''}`;
+    await L.evaluate(src => { S.set('wsongs', { a: { id: 'a', t: 'Old song', key: 'G', src } }); wPresent([{ id: 'a' }], 'One'); }, mk('one')); await L.waitForURL(/live\//); await wait(1500); await L.click('#bNext'); const h1 = L.url().split('#')[1].replace('&lead=1', '');
+    const TV = await c2.newPage(); await TV.goto(SITE + 'tv/#' + h1); await wait(1500); const tvl = () => TV.evaluate(() => { const e = [...document.querySelectorAll('.slide.on .tx')].pop(); return e ? e.innerText.replace(/\n/g, ' / ') : '(none)'; });
+    const before = await tvl();
+    await L.goto(SITE); await wait(700); await L.evaluate(src => { const s = S.get('wsongs', {}); s.b = { id: 'b', t: 'New song', key: 'G', src }; S.set('wsongs', s); wPresent([{ id: 'b' }], 'Two'); }, mk('two')); await L.waitForURL(/live\//); await wait(1200); await L.click('#bNext');
+    let after = ''; for (let i = 0; i < 30; i++) { await wait(500); after = await tvl(); if (/two/.test(after)) break; }
+    const P = await c2.newPage(); await P.goto(SITE + 'tv/?new'); await wait(1500); const fresh = await P.evaluate(() => !document.querySelector('#pair').hidden && /^[A-Z0-9]{6}$/.test(document.querySelector('#code').textContent));
+    await c2.close(); return (/one/.test(before) && /two/.test(after) && /forever/.test(after + before) && !/Repeat/.test(after) && fresh) || { before, after, fresh }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

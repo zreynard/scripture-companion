@@ -90,11 +90,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-s
   }
   function join(info) {
     if (lp) { lp.stop(); lp = null; }
+    if (sess) { try { sess.close(); } catch (e) {} sess = null; deck = state = null; shown = ''; }
     try { localStorage.setItem(SKEY, JSON.stringify({ sid: info.sid, key: info.key, at: Date.now() })); } catch (e) {}
     try { sess = new Live.Session({ sid: info.sid, key: info.key, role: 'screen', name: 'TV keyboard',
       info: function () { return { ver: BUILD, ok: layoutOk, w: innerWidth, h: innerHeight }; },
       onCmd: function (m) { if (m.reload) freshLoad(String(Date.now())); },
-      onState: function (s) { state = s; if (s.ended) { paint(); setTimeout(endScreen, 4000); return; } paint(); },
+      onState: function (s) { if (s.moved && s.moved.sid && s.moved.sid !== info.sid) { join(s.moved); return; } state = s; if (s.ended) { paint(); setTimeout(endScreen, 4000); return; } paint(); },   /* the phone started a new worship time: follow it */
       onDeck: function (d) { deck = d; paint(true); },
       onDeckCleared: function () {},
       onStatus: function (st) {
@@ -129,6 +130,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-s
   function fullscreen(onlyIn) { try { var d = document.documentElement, on = document.fullscreenElement || document.webkitFullscreenElement; if (!on) { var r = (d.requestFullscreen || d.webkitRequestFullscreen || function () {}).call(d); if (r && r.catch) r.catch(function () {}); } else if (!onlyIn) (document.exitFullscreen || document.webkitExitFullscreen || function () {}).call(document); } catch (e) {} }
   addEventListener('resize', function () { paint(true); });
   var h = hp(), saved = null; try { saved = JSON.parse(localStorage.getItem(SKEY) || 'null'); } catch (e) {}
+  if (/[?&]new\b/.test(location.search)) { saved = null; try { localStorage.removeItem(SKEY); } catch (e) {} }   /* tv/?new: a fresh code, whatever it was showing */
   if (h.s && h.k) join({ sid: h.s, key: h.k });
   else if (saved && Date.now() - saved.at < 12 * 3600e3) join(saved);
   else pairMode();
