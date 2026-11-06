@@ -1181,11 +1181,48 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 <script src="worship.js"></script>
 <script>
 const D=__DATA__,I=D.items;
-const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('sc:'+k,JSON.stringify(v));if(BK_KEYS.includes(k))localStorage.setItem('sc:bkdirty','1')}catch(e){}}};
+const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{let old;if(BK_DELK.includes(k))try{old=JSON.parse(localStorage.getItem('sc:'+k)||'null')}catch(e){}localStorage.setItem('sc:'+k,JSON.stringify(v));if(BK_KEYS.includes(k)){localStorage.setItem('sc:bkdirty','1');bkMark(k,old,v)}}catch(e){}}};
 /* Automatic backup to the listener's own private GitHub repo. The key never leaves this phone except to GitHub.
    Saved about every 10 minutes while something changed, and whenever the app goes to the background; every backup is
    a commit, so older versions stay in the repo's history. A new phone: paste the key once and everything comes back. */
-const BK_KEYS=['camp','camp2','cfg','jp','level','lk2','narpos','prog','read','skip','speed','tab','wsongs','wsets','bedon','bedlv','bedpos'],BK={sha:null,busy:false,tried:0,err:S.get('bkerr','')};
+const BK_KEYS=['camp','camp2','cfg','jp','level','lk2','narpos','prog','read','skip','speed','tab','wsongs','wsets','bedon','bedlv','bedpos',
+ 'fav','coreSet','bp','bplast','prm','prsup','prlast','wimp','pmpos','srecent'],BK={sha:null,busy:false,tried:0,err:S.get('bkerr',''),pulled:0};
+/* Sync between devices. Each synced setting remembers when it last changed (sc:bkts), and what was removed from it
+   (sc:bkdel), so two devices merge instead of overwriting each other:
+   - lists of things by id (progress, chapters read, favorites, Core, bookmarks, songs, setlists) are merged item by item;
+     an item removed on one device is removed everywhere, unless the other device changed that list after the removal
+   - listening progress keeps the newest position, and anything finished on either device stays finished
+   - everything else: the most recent change wins
+   - where you are (the stop, tab, view) stays with the device you are using; opening the app takes the newest */
+const BK_MAP=['prog','read','narpos','fav','coreSet','skip','bp','wsongs','prsup'],BK_LIST=['wsets'],BK_UNION=['wimp'],BK_NAV=['camp','camp2','jp','tab','lk2'],BK_DELK=BK_MAP.concat(BK_LIST);
+function bkJ(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}}
+function bkIds(k,v){return !v?[]:BK_LIST.includes(k)?(Array.isArray(v)?v.map(x=>x&&x.id).filter(Boolean):[]):(typeof v==='object'?Object.keys(v):[])}
+function bkMark(k,old,v){const t=Date.now(),ts=bkJ('bkts',{});ts[k]=t;localStorage.setItem('sc:bkts',JSON.stringify(ts));
+ if(!BK_DELK.includes(k)||!old)return;const now=new Set(bkIds(k,v)),gone=bkIds(k,old).filter(id=>!now.has(id));if(!gone.length)return;
+ const del=bkJ('bkdel',{}),m=del[k]=del[k]||{};gone.forEach(id=>m[id]=t);localStorage.setItem('sc:bkdel',JSON.stringify(del))}
+function bkMerge(L,R){const out={data:{},ts:{},del:{}},YEAR=365*864e5,now=Date.now();
+ [L.del,R.del].forEach(d=>Object.keys(d||{}).forEach(k=>{const m=out.del[k]=out.del[k]||{};Object.keys(d[k]).forEach(id=>{const t=d[k][id];if(now-t<YEAR&&(!m[id]||t>m[id]))m[id]=t})}));
+ const keys=new Set([...Object.keys(L.data||{}),...Object.keys(R.data||{})]);
+ keys.forEach(k=>{const lt=L.ts[k]||0,rt=R.ts[k]||0,lv=L.data[k],rv=R.data[k],rNew=rt>lt;out.ts[k]=Math.max(lt,rt);
+  if(lv===undefined){out.data[k]=rv;return}if(rv===undefined){out.data[k]=lv;return}
+  const gone=out.del[k]||{},keep=(id,side)=>!(gone[id]&&gone[id]>=(side==='L'?lt:rt));
+  if(BK_MAP.includes(k)&&typeof lv==='object'&&typeof rv==='object'&&!Array.isArray(lv)){const o={};
+   new Set([...Object.keys(lv),...Object.keys(rv)]).forEach(id=>{const x=lv[id],y=rv[id];
+    if(x!==undefined&&y!==undefined){let v=rNew?y:x;if(k==='prog'&&typeof x==='object'&&typeof y==='object'){const xn=(x.at||0)>=(y.at||0);v=Object.assign({},xn?y:x,xn?x:y);if(x.done||y.done)v.done=true}else if(k==='read')v=x||y;o[id]=v}
+    else if(x!==undefined){if(keep(id,'L'))o[id]=x}else if(keep(id,'R'))o[id]=y});out.data[k]=o;return}
+  if(BK_LIST.includes(k)&&Array.isArray(lv)&&Array.isArray(rv)){const A=rNew?rv:lv,B=rNew?lv:rv,aS=rNew?'R':'L',bS=rNew?'L':'R',ids=new Set(),o=[];
+   A.forEach(x=>{if(x&&x.id&&!ids.has(x.id)&&keep(x.id,aS)){ids.add(x.id);o.push(x)}});B.forEach(x=>{if(x&&x.id&&!ids.has(x.id)&&keep(x.id,bS)){ids.add(x.id);o.push(x)}});out.data[k]=o;return}
+  if(BK_UNION.includes(k)&&Array.isArray(lv)&&Array.isArray(rv)){out.data[k]=[...new Set([...lv,...rv])];return}
+  out.data[k]=rNew?rv:lv});
+ return out}
+/* after a merge brought something new: the app's own copies in memory follow */
+function bkRefresh(keys){const has=k=>keys.includes(k);
+ try{if(has('prog'))prog=S.get('prog',{});if(has('read'))read=S.get('read',{});if(has('cfg'))cfg=Object.assign(S.get('cfg',{who:''}),{order:'canon'});if(has('camp'))camp=S.get('camp',null)}catch(e){}
+ try{if(has('skip'))SKIP=S.get('skip',{})}catch(e){}try{if(has('bp'))BP=S.get('bp',{})}catch(e){}try{if(has('tab'))TAB=S.get('tab',TAB)}catch(e){}
+ try{if(has('speed')){speed=S.get('speed',1);AUDIO_EL.forEach(x=>x.playbackRate=speed)}}catch(e){}
+ try{if(has('bedon'))BED.on=!!S.get('bedon',false);if(has('bedlv'))BED.lv=+S.get('bedlv',0.2)||0.2}catch(e){}
+ const busy=WS.edit||(document.activeElement&&/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName));if(!busy)try{render()}catch(e){}}
+let BK_ID=bkJ('bkdev','');if(!BK_ID){BK_ID='d'+Math.random().toString(36).slice(2,10);localStorage.setItem('sc:bkdev',JSON.stringify(BK_ID))}
 const bkRepo=()=>S.get('bkrepo','zreynard/scripture-companion-backup'),bkKey=()=>S.get('bkkey',''),bkOn=()=>!!bkKey();
 function bkSnap(){const o={};BK_KEYS.forEach(k=>{try{const v=localStorage.getItem('sc:'+k);if(v!=null)o[k]=JSON.parse(v)}catch(e){}});return o}
 function bkB64(str){const b=new TextEncoder().encode(str);let s='';for(let i=0;i<b.length;i+=0x8000)s+=String.fromCharCode.apply(null,b.subarray(i,i+0x8000));return btoa(s)}
@@ -1194,12 +1231,21 @@ function bkGH(path,opt={},key=bkKey(),repo=bkRepo()){return fetch('https://api.g
 async function bkFetch(){const r=await bkGH('/contents/progress.json');if(r.status===404){BK.sha=null;return null}if(!r.ok)throw r.status;const j=await r.json();BK.sha=j.sha;let c=j.content;
  if(!c||j.encoding!=='base64'){const r2=await bkGH('/git/blobs/'+j.sha);if(!r2.ok)throw r2.status;c=(await r2.json()).content}return JSON.parse(bkUn64(c))}
 function bkFail(e){BK.err=e===401||e===403?'GitHub no longer accepts the backup key: paste a new one in ⋯':e===404?'The backup repo was not found':'';S.set('bkerr',BK.err);bkDot()}
-async function bkSave(){if(!bkOn()||BK.busy)return;BK.busy=true;BK.tried=Date.now();try{
-  const body={message:'Backup '+new Date().toISOString().slice(0,16).replace('T',' '),content:bkB64(JSON.stringify({v:1,at:Date.now(),data:bkSnap()}))};
-  if(BK.sha===null)await bkFetch().catch(()=>{});if(BK.sha)body.sha=BK.sha;
-  let r=await bkGH('/contents/progress.json',{method:'PUT',body:JSON.stringify(body)});
-  if(r.status===409||r.status===422){await bkFetch();if(BK.sha)body.sha=BK.sha;r=await bkGH('/contents/progress.json',{method:'PUT',body:JSON.stringify(body)})}
-  if(!r.ok)throw r.status;BK.sha=(await r.json()).content.sha;localStorage.removeItem('sc:bkdirty');S.set('bklast',Date.now());bkFail(0)}
+async function bkSave(){return bkSync('save')}
+/* why: 'open' (app opened or came back: the newest place wins), 'save', 'pull' (in the background while in use) */
+async function bkSync(why){if(!bkOn()||BK.busy)return;BK.busy=true;BK.tried=Date.now();let changed=[];
+ try{for(let tries=0;tries<3;tries++){
+   const remote=await bkFetch(),R=remote&&remote.data?{data:remote.data,ts:remote.ts||{},del:remote.del||{}}:{data:{},ts:{},del:{}},
+    L={data:bkSnap(),ts:bkJ('bkts',{}),del:bkJ('bkdel',{})},M=bkMerge(L,R);
+   /* where you are: the backup always holds the newest place, but a device in use keeps showing its own until it is opened again */
+   changed=Object.keys(M.data).filter(k=>JSON.stringify(M.data[k])!==JSON.stringify(L.data[k])&&(why==='open'||!BK_NAV.includes(k)));
+   changed.forEach(k=>localStorage.setItem('sc:'+k,JSON.stringify(M.data[k])));
+   const tsNow=bkJ('bkts',{});Object.keys(M.ts).forEach(k=>{if(why==='open'||!BK_NAV.includes(k))tsNow[k]=M.ts[k]});localStorage.setItem('sc:bkts',JSON.stringify(tsNow));localStorage.setItem('sc:bkdel',JSON.stringify(M.del));
+   const same=remote&&JSON.stringify(M.data)===JSON.stringify(R.data)&&JSON.stringify(M.del)===JSON.stringify(R.del);
+   if(!same){const body={message:'Sync '+new Date().toISOString().slice(0,16).replace('T',' ')+' from '+BK_ID,content:bkB64(JSON.stringify({v:2,at:Date.now(),dev:BK_ID,data:M.data,ts:M.ts,del:M.del}))};if(BK.sha)body.sha=BK.sha;
+    const r=await bkGH('/contents/progress.json',{method:'PUT',body:JSON.stringify(body)});if(r.status===409||r.status===422){BK.sha=null;continue}if(!r.ok)throw r.status;BK.sha=(await r.json()).content.sha}
+   localStorage.removeItem('sc:bkdirty');S.set('bklast',Date.now());BK.pulled=Date.now();bkFail(0);break}
+  if(changed.length)bkRefresh(changed)}
  catch(e){if(typeof e==='number')bkFail(e)}finally{BK.busy=false;const st=document.getElementById('bkst');if(st)st.innerHTML=bkStatus()}}
 function bkDue(){return bkOn()&&localStorage.getItem('sc:bkdirty')==='1'}
 function bkApply(d){BK_KEYS.forEach(k=>{if(k in d)localStorage.setItem('sc:'+k,JSON.stringify(d[k]))});localStorage.setItem('sc:view',JSON.stringify('walk'));localStorage.removeItem('sc:bkdirty')}
@@ -2825,17 +2871,17 @@ function wire(){if(view==='settings'&&!PL.list)plLoad().then(()=>{if(view==='set
     const j=await r.json();if(!j.private&&!confirm(repo+' is public: anyone could see your listening history. Use it anyway?'))throw 'Make the repo private, then try again.';
     if(j.permissions&&!j.permissions.push)throw 'That key can read the repo but not save to it: give it Contents: Read and write.';
     S.set('bkkey',key);S.set('bkrepo',repo);BK.sha=null;BK.err='';S.set('bkerr','');bkDot();
-    const remote=await bkFetch().catch(()=>null),here=bkSnap();
-    if(remote&&remote.data&&bkWeight(remote.data)>0){const when=new Date(remote.at).toLocaleString();
-     if(bkWeight(here)===0||confirm('Found a backup from '+when+'. Restore it on this phone? (Cancel keeps this phone\'s progress and backs it up instead.)')){bkApply(remote.data);location.reload();return}}
-    await bkSave();render();mbSync(true)}catch(err){msg.textContent=typeof err==='string'?err:'Could not reach GitHub. Check your connection.'}};
+    msg.textContent='Syncing…';await bkSync('open');mbSync(true);location.reload()}catch(err){msg.textContent=typeof err==='string'?err:'Could not reach GitHub. Check your connection.'}};
   const bkn=$('#bknow');if(bkn)bkn.onclick=async()=>{localStorage.setItem('sc:bkdirty','1');$('#bkst').textContent='Backing up…';await bkSave()};
   const bkr=$('#bkrest');if(bkr)bkr.onclick=async()=>{try{const d=await bkFetch();if(!d||!d.data){alert('No backup yet.');return}if(confirm('Replace this phone\'s progress with the backup from '+new Date(d.at).toLocaleString()+'?')){bkApply(d.data);location.reload()}}catch(e){alert('Could not reach the backup.')}};
   const bko=$('#bkoff');if(bko)bko.onclick=()=>{if(confirm('Stop backing up? The backups already saved stay in your repo.')){localStorage.removeItem('sc:bkkey');localStorage.removeItem('sc:bkerr');BK.err='';bkDot();render()}};
-  $('#reset').onclick=()=>{if(confirm('Erase all progress on this device?')){prog={};read={};camp=null;S.set('prog',prog);S.set('read',read);S.set('camp',null);render()}};
+  $('#reset').onclick=()=>{if(confirm(bkOn()?'Erase all progress? This also clears it on your other devices that sync.':'Erase all progress on this device?')){prog={};read={};camp=null;S.set('prog',prog);S.set('read',read);S.set('camp',null);render()}};
   $('#atest').onclick=()=>{const o=$('#atest-out');o.textContent=' testing…';const a=new Audio();a.src=Object.values(I).find(i=>i.audio).audio;a.addEventListener('loadedmetadata',()=>o.textContent=' ✓ streams ('+fmt(a.duration)+')');a.addEventListener('error',()=>o.textContent=' ✗ blocked here');a.load()}}}
 decorate.first=true;render();let lastW=innerWidth;window.addEventListener('resize',()=>{if(innerWidth===lastW)return;lastW=innerWidth;decorate.first=true;render()});
-setInterval(()=>{if(bkDue()&&Date.now()-BK.tried>10*60e3)bkSave()},60e3);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden'&&bkDue())bkSave()});setTimeout(()=>{bkDot();if(bkDue())bkSave()},5000);
+/* sync: on opening, on coming back to the app, every 2 minutes while it is open, and on leaving it */
+setInterval(()=>{if(bkOn()&&document.visibilityState==='visible'&&Date.now()-BK.tried>110e3)bkSync('pull')},30e3);
+document.addEventListener('visibilitychange',()=>{if(!bkOn())return;if(document.visibilityState==='hidden'){if(bkDue())bkSync('save')}else if(Date.now()-BK.tried>20e3)bkSync('open')});
+setTimeout(()=>{bkDot();if(bkOn())bkSync('open')},1500);
 /* home-screen app: offline shell + keep progress from being evicted */
 if('serviceWorker' in navigator&&isSecureContext)navigator.serviceWorker.register('sw.js').catch(()=>{});
 /* pick up new versions: check on open and whenever the app comes back to the front */
