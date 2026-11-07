@@ -61,8 +61,10 @@ def iso_date(s) -> str:
     except Exception:
         return ""
 
+ONE_CH = {"Obadiah", "Philemon", "2 John", "3 John", "Jude"}   # one-chapter books: a study may be titled by the book alone
 def is_walk(title):
-    """A walk-through message: titled only by its passage ("Genesis 1", "Expound: Romans 9-10:4 - Part A")."""
+    """A walk-through message: titled only by its passage ("Genesis 1", "Expound: Romans 9-10:4 - Part A", or "Jude")."""
+    if (title or "").strip() in ONE_CH: return True
     rest = title or ""
     for r in parse_refs(rest): rest = rest.replace(r.raw, " ")
     return bool(parse_refs(title or "")) and not re.search(r"[A-Za-z]{2,}", re.sub(r"\b(?:and|part|review|expound)\b", " ", rest, flags=re.I))
@@ -124,6 +126,10 @@ def main():
     skip_guest = lambda e: e["source"].startswith("skip_") and e["speaker"].startswith("guest:")  # Calvary Church guests keep Skip's series unbroken
     # Skip Heitzig: his verse-by-verse walk-throughs and Bible from 30,000 Feet, not his topical Sunday sermons
     skip_kept = lambda e: not e["source"].startswith("skip_") or is_walk(e["title"]) or re.match(r"\s*Flight\b", e["title"])
+    for e in entries:   # Skip's studies of one-chapter books are titled "Jude", "2 John": give them their passage
+        t = (e.get("title") or "").strip()
+        if e["source"].startswith("skip_") and t in ONE_CH and not e.get("refs"):
+            e["refs"] = {t: {"chapters": [1], "verse_level": False, "whole_book": True, "raw": [t]}}; e["refs_text"] = t + " 1"
     usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["source"] not in config.OFF_ROAD_SOURCES and skip_kept(e) and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e) or e["speaker"].startswith("fearless:"))]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
     CH, WALK, VS = {}, {}, {}  # chapters per book for each item; WALK = titled only by its passage (a walk-through message); VS = verses
