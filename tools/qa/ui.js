@@ -174,6 +174,18 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await X.evaluate(() => { PR.mode = 'guided'; render(); }); await wait(300); await X.evaluate(() => { $('#tabs [data-tab2=journey]').click(); }); await wait(400); const j = await st();
     await X.evaluate(() => { S.set('wsongs', { a: { id: 'a', t: 'A', key: 'G', src: 'Verse\nG\nla' } }); WS.song = 'a'; $('#tabs [data-tab2=worship]').click(); }); await wait(600); const w = await st();
     return (g.why === 'pray' && (g.vid || g.lock) && s.why === '' && !s.vid && j.why === '' && !j.vid && w.why === 'song' && (w.vid || w.lock)) || { g, s, j, w }; });
+  await T('U58 Shuffle: plays a sermon you have not started; length and teacher are respected; started ones are never picked', async () => { const X = await open(await ctx());
+    await X.evaluate(() => { window.__p = []; window.play = (id, o) => { __p.push(id); }; $('#tabs [data-tab2=library]').click(); }); await wait(600);
+    const row = await X.evaluate(() => { const r = document.querySelector('.sh-row'), l = document.querySelector('#shlen'); return !!r && !!l && r === document.querySelector('.lib-t'); });
+    const pickN = (n, k) => X.evaluate(([n, k]) => { __p = []; for (let i = 0; i < n; i++) shuffle(k || null, null); return __p.map(id => ({ id, who: I[id].who, m: shMin(I[id]), nar: !!I[id].nar, heard: shHeard(id) })); }, [n, k]);
+    await X.selectOption('#shlen', 'u20'); await wait(200); const u20 = await pickN(25), label = await X.textContent('#shlent');
+    await X.selectOption('#shlen', '60+'); const long = await pickN(25);
+    await X.selectOption('#shlen', 'any'); await X.click('[data-tch="Platt"]'); await wait(800); await X.evaluate(() => { __p = []; }); await X.click('.sh-tb'); await wait(200); const tb = await X.evaluate(() => __p.map(id => I[id].who));
+    const pl = await pickN(25, 'Platt');
+    const heardSkip = await X.evaluate(() => { const ids = shPool('Fearless').map(i => i.id); ids.forEach(id => { prog[id] = { pos: 30, at: Date.now() }; }); const left = shPool('Fearless').length; ids.forEach(id => { delete prog[id]; }); return { had: ids.length, left }; });
+    const empty = await X.evaluate(() => { const keep = prog; prog = {}; Object.values(I).forEach(i => { if (i.who === 'Fearless') prog[i.id] = { done: true }; }); const b = document.createElement('button'); b.innerHTML = '<em>A sermon you haven’t heard</em>'; window.__p = []; shuffle('Fearless', b); const t = b.textContent; prog = keep; return { t, played: __p.length }; });
+    const ok = row && label === 'Under 20 min' && u20.length === 25 && u20.every(x => x.m > 0 && x.m < 20 && !x.nar && !x.heard) && long.every(x => x.m >= 60) && tb.length === 1 && tb[0] === 'Platt' && pl.every(x => x.who === 'Platt') && heardSkip.had > 0 && heardSkip.left === 0 && empty.played === 0 && /heard them all/.test(empty.t) && (await X.evaluate(() => S.get('shlen'))) === 'any';
+    return ok || { row, label, u20: u20.slice(0, 3), long: long.slice(0, 3), tb, pl: pl.slice(0, 3), heardSkip, empty }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
