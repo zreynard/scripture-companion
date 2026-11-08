@@ -9,7 +9,7 @@
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background-color:#0b1020;background-image:radial-gradient(ellipse at 50% 40%,#141c30 0%,#0b1020 65%,#070a14 100%)}
 .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif}
 #stage{position:fixed;top:0;left:0;width:100%;height:100%}
-.slide{position:absolute;top:7%;left:6%;width:88%;height:86%;display:table;table-layout:fixed;opacity:0;-webkit-transition:opacity .35s ease;transition:opacity .35s ease}
+.slide{position:absolute;top:7%;left:6%;width:88%;height:86%;display:table;table-layout:fixed;opacity:0;-webkit-transition:opacity .15s ease;transition:opacity .15s ease}
 .slide.on{opacity:1}
 .slide .tx{display:table-cell;vertical-align:middle;text-align:center;line-height:1.32;letter-spacing:.005em;word-wrap:break-word;color:#f6efe0}
 .slide .tx div{margin:0 0 .12em}
@@ -54,10 +54,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-s
     var ok = r.width > innerWidth * 0.25 && Math.abs(cx - innerWidth / 2) < innerWidth * 0.12 && Math.abs(cy - innerHeight / 2) < innerHeight * 0.2;
     if (ok !== layoutOk) { layoutOk = ok; if (sess) sess.hello(); }
   }
-  function fit(el) {
+  /* the biggest text that fits, found in a few steps; each slide's size is kept, and the next and previous are sized ahead, so a tap only swaps text */
+  var SZ = {};
+  if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', function () { SZ = {}; paint(true); });   /* sizes measured before the font arrived are measured again */
+  function over(el, tx, box) { return tx.offsetHeight > box.height + 1 || tx.scrollWidth > tx.offsetWidth + 1 || el.offsetWidth > box.width + 1; }
+  function fit(el, k) {
     var tx = el.querySelector('.tx'), r0 = el.getBoundingClientRect(), box = { width: parseFloat(el.style.width) || r0.width, height: parseFloat(el.style.height) || r0.height }, hi = Math.min(innerHeight * 0.115, innerWidth * 0.072), lo = innerHeight * 0.035, sz = hi;
+    var ck = k ? k + '|' + innerWidth + 'x' + innerHeight : '';
+    if (ck && SZ[ck]) { tx.style.fontSize = SZ[ck] + 'px'; return; }
     tx.style.fontSize = sz + 'px';
-    for (var i = 0; i < 40 && (tx.offsetHeight > box.height + 1 || tx.scrollWidth > tx.offsetWidth + 1 || el.offsetWidth > box.width + 1) && sz > lo; i++) { sz *= 0.95; tx.style.fontSize = sz + 'px'; }
+    if (over(el, tx, box)) { var a = lo, b = hi; for (var i = 0; i < 9; i++) { var m = (a + b) / 2; tx.style.fontSize = m + 'px'; if (over(el, tx, box)) b = m; else a = m; } sz = a; tx.style.fontSize = sz + 'px'; }
+    if (ck) SZ[ck] = sz;
+  }
+  function slideEl(sl) { var el = document.createElement('div'); el.className = 'slide'; place($('#stage'), el);
+    if (sl) el.innerHTML = '<div class="tx serif">' + sl.l.map(function (l) { return l ? '<div>' + esc(l) + '</div>' : '<div class="gap"></div>'; }).join('') + '</div>'; return el; }
+  function dress(el) { var tx0 = el.firstChild; tx0.style.display = 'table-cell'; tx0.style.verticalAlign = 'middle'; tx0.style.textAlign = 'center'; tx0.style.width = el.style.width; }
+  function prefit() {
+    if (!deck || !state) return; var sg = deck.songs[state.song || 0], st = $('#stage'), n = state.slide || 0; if (!sg) return;
+    [n + 1, n - 1].forEach(function (i) { var sl = sg.slides[i], k = state.song + ':' + i + ':' + (deck.dv || 0); if (!sl || SZ[k + '|' + innerWidth + 'x' + innerHeight]) return;
+      var el = slideEl(sl); el.style.visibility = 'hidden'; st.appendChild(el); dress(el); fit(el, k); st.removeChild(el); });
   }
   /* sizes set in pixels too: some TV browsers ignore parts of the page's CSS */
   function place(st, el) {
@@ -81,12 +96,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-s
   function paint(force) {
     var c = cur(), key = !state ? 'none' : state.blank || state.ended ? 'blank' : c && c.slide ? (state.song + ':' + state.slide + ':' + (deck.dv || 0)) : 'none';
     if (key === shown && !force) return; shown = key;
-    var st = $('#stage'), olds = Array.prototype.slice.call(st.querySelectorAll('.slide'));
-    var el = document.createElement('div'); el.className = 'slide'; place(st, el);
-    if (key !== 'blank' && key !== 'none') el.innerHTML = '<div class="tx serif">' + c.slide.l.map(function (l) { return l ? '<div>' + esc(l) + '</div>' : '<div class="gap"></div>'; }).join('') + '</div>';
-    st.appendChild(el); if (el.firstChild) { var tx0 = el.firstChild; tx0.style.display = 'table-cell'; tx0.style.verticalAlign = 'middle'; tx0.style.textAlign = 'center'; tx0.style.width = el.style.width; fit(el); check(el); }
-    olds.forEach(function (o) { o.classList.remove('on'); setTimeout(function () { if (o.parentNode) o.parentNode.removeChild(o); }, 450); });
+    var st = $('#stage'), olds = Array.prototype.slice.call(st.querySelectorAll('.slide')), words = key !== 'blank' && key !== 'none';
+    var el = slideEl(words ? c.slide : null);
+    st.appendChild(el); if (el.firstChild) { dress(el); fit(el, key); check(el); }
+    olds.forEach(function (o) { o.classList.remove('on'); setTimeout(function () { if (o.parentNode) o.parentNode.removeChild(o); }, 250); });
     setTimeout(function () { if (el.parentNode) el.classList.add('on'); }, 20);
+    clearTimeout(paint.pf); if (words) paint.pf = setTimeout(prefit, 150);
   }
   function join(info) {
     if (lp) { lp.stop(); lp = null; }

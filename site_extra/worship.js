@@ -228,10 +228,11 @@
     var p = song.parsed || parse(song.src), secs = p.sections, out = [], idx = order && order.length ? order : secs.map(function (s, i) { return i; });
     idx.forEach(function (si, oi) {
       var s = secs[si]; if (!s) return;
-      if (!s.lyric) { out.push({ s: s.label, sec: si, occ: oi, l: [] }); return; }
+      if (!s.lyric) return;   // instrumental parts have no slide: the screen is for the words
       var parts = splitSection(s.lines);
       parts.forEach(function (lines, pi) { out.push({ s: s.label + (parts.length > 1 ? ' (' + (pi + 1) + '/' + parts.length + ')' : ''), sec: si, occ: oi, part: pi, l: lines }); });
     });
+    if (!out.length && secs.length) out.push({ s: 'Instrumental', sec: 0, occ: 0, l: [] });   // a song with no words still has its one (blank) slide
     return out;
   }
   /* ---- fit a chord chart to its box: the biggest text that fits, in 1-3 columns; pages only if it still cannot fit ----

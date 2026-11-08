@@ -110,12 +110,13 @@ button{font:inherit;color:inherit;cursor:pointer}
   function toast(t) { var e = $('#toast'); e.textContent = t; e.style.opacity = 1; clearTimeout(toast.t); toast.t = setTimeout(function () { e.style.opacity = 0; }, 2200); }
   function screenURL() { return base + 'tv/#s=' + H.s + '&k=' + H.k; }
   function remoteURL() { return base + 'live/#s=' + H.s + '&k=' + H.k; }
-  if (lead) { $('#back').hidden = false; $('#back').href = base + '#worship'; $('#bEnd').hidden = false; } else $('#bScreen').hidden = true;   /* connecting the TV is the leader's job */
+  if (lead) { $('#back').hidden = false; $('#back').href = base + '#worship'; $('#bEnd').hidden = false;
+    $('#back').onclick = function (e) { if (!sess || !sess.state) return; e.preventDefault(); sess.set({ blank: true }); var t0 = Date.now(); (function wait() { if (!sess.pending || Date.now() - t0 > 900) location.href = base + '#worship'; else setTimeout(wait, 40); })(); }; } else $('#bScreen').hidden = true;   /* connecting the TV is the leader's job */
   var saved = null; if (lead) try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) saved = w; } catch (e) {}
   /* a TV or friend still on one of this phone's earlier worship times is told to move to this one */
   function moveOld() {
     var prev = []; try { prev = JSON.parse(localStorage.getItem('sc:wprev') || '[]') || []; } catch (e) {}
-    prev = prev.filter(function (x) { return x && x.sid && x.sid !== H.s && Date.now() - x.at < 12 * 3600e3; }); if (!prev.length) return;
+    prev = prev.filter(function (x) { return x && x.sid && x.sid !== H.s && Date.now() - x.at < 8 * 24 * 3600e3; }); if (!prev.length) return;
     prev.forEach(function (x) { var o; try { o = new Live.Session({ sid: x.sid, key: x.key, role: 'lead', name: 'Leader' }); } catch (e) { return; }
       setTimeout(function () { o.set({ moved: { sid: H.s, key: H.k }, blank: false }); }, 4000);
       setTimeout(function () { o.set({ moved: { sid: H.s, key: H.k }, blank: false }); }, 12000);
@@ -124,17 +125,22 @@ button{font:inherit;color:inherit;cursor:pointer}
   if (lead) setTimeout(moveOld, 1500);
   var myName = ''; try { myName = localStorage.getItem('scwp:name') || ''; } catch (e) {}
   try { sess = new Live.Session({ sid: H.s, key: H.k, role: lead ? 'lead' : 'remote', name: myName,
-    onState: function (s, via) { var was = state; state = s; if (s.moved && s.moved.sid && s.moved.sid !== H.s && !lead) { location.replace(base + 'live/#s=' + s.moved.sid + '&k=' + s.moved.key); location.reload(); return; } if (s.ended && !lead) return ended(); told(was, s, via); paint(); },
+    onState: function (s, via) { var was = state; state = s; if (lead) { touch(); if (goPending) setTimeout(goStart, 0); } if (s.moved && s.moved.sid && s.moved.sid !== H.s && !lead) { location.replace(base + 'live/#s=' + s.moved.sid + '&k=' + s.moved.key); location.reload(); return; } if (s.ended && !lead) return ended(); told(was, s, via); paint(); },
     onDeck: function (d) { deck = d; paint(true); },
     onStatus: function (x) {
       var was = st.relays; st = x; pill();
       if (lead && saved && x.relays > was) sess.send('d', deck, true);   // put the songs back on the relay after any reconnect
     } }); } catch (e) { $('#app').innerHTML = '<div class="wait"><h2 class="serif">This link is broken</h2><p>Ask for the link again, or open Worship in the app.</p></div>'; return; }
+  /* the same worship time carries on across songs: Present again lands here with the new song first (go), and the TV never reconnects */
+  var goPending = !!(lead && saved && saved.go), deckSent = null, touched = 0;
+  function touch() { var n = Date.now(); if (n - touched < 60000) return; touched = n; try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) { w.last = n; localStorage.setItem('sc:wlive', JSON.stringify(w)); } } catch (e) {} }
+  function goStart() { if (!goPending) return; goPending = false; (deckSent || Promise.resolve()).then(function () { sess.set({ song: 0, slide: 0, blank: false }); });
+    try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) { delete w.go; localStorage.setItem('sc:wlive', JSON.stringify(w)); } } catch (e) {} }
   /* songs saved before a fix are tidied (words split into syllables joined back) and sent again */
-  function tidy(d) { var ch = false; (d.songs || []).forEach(function (sg) { (sg.slides || []).forEach(function (sl) { sl.l = (sl.l || []).map(function (x) { if (!x) return x; var y = Worship.desyl({ text: x, chords: [] }).text; if (y !== x) ch = true; return y; }); }); }); return ch; }
+  function tidy(d) { var ch = false; (d.songs || []).forEach(function (sg) { var n0 = (sg.slides || []).length, wd = function (sl) { return sl.l && sl.l.some(function (x) { return x; }); }; if ((sg.slides || []).some(wd)) sg.slides = sg.slides.filter(wd); if (sg.slides.length !== n0) ch = true; (sg.slides || []).forEach(function (sl) { sl.l = (sl.l || []).map(function (x) { if (!x) return x; var y = Worship.desyl({ text: x, chords: [] }).text; if (y !== x) ch = true; return y; }); }); }); return ch; }
   if (lead && saved && tidy(saved.deck)) { saved.deck.dv = Date.now(); try { localStorage.setItem('sc:wlive', JSON.stringify(saved)); } catch (e) {} }
-  if (lead && saved) { deck = saved.deck; if (!deck.dv) deck.dv = saved.at || Date.now(); sess.deck = deck; sess.send('d', deck, true); paint(true);   /* the songs are already here: show them now */
-    setTimeout(function () { if (!sess.state) sess.set({ song: 0, slide: 0, blank: false }); }, 2500); }
+  if (lead && saved) { deck = saved.deck; if (!deck.dv) deck.dv = saved.at || Date.now(); sess.deck = deck; deckSent = sess.send('d', deck, true); paint(true);   /* the songs are already here: show them now */
+    setTimeout(function () { if (goPending) goStart(); else if (!sess.state) sess.set({ song: 0, slide: 0, blank: false }); }, 3000); }
   setTimeout(function () { if (!deck) $('#app').innerHTML = '<div class="wait"><h2 class="serif">Waiting for the songs…</h2><p>If this stays, the worship time may have ended, or this network blocks the live service. Try another Wi‑Fi or your phone’s data.</p></div>'; }, 9000);
   var BUILD = '__BUILD__';
   /* a screen tells us its version and whether its lyrics sit right; if not, one tap refreshes it from here */

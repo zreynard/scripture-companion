@@ -47,7 +47,7 @@ T('E36 whole section on one slide when it fits', () => eq(S('Chorus\n' + 'line,\
 T('E37 long section splits, never one-line leftovers', () => { const sl = S('Verse 1\n' + Array.from({ length: 13 }, (_, i) => 'line ' + i + (i % 2 ? '.' : ',')).join('\n')); return sl.every(x => x.l.length >= 3) || sl.map(x => x.l.length); });
 T('E38 split prefers the stanza break', () => eq(S('Verse\na,\nb.\nc,\nd.\ne,\nf.\n\ng,\nh,\ni,\nj.').map(x => x.l.length), [6, 4]));
 T('E39 no slide over 8 screen lines', () => { const sl = S('Verse\n' + Array.from({ length: 40 }, (_, i) => 'this is a fairly long lyric line number ' + i).join('\n')); return sl.every(x => x.l.reduce((a, t) => a + Math.ceil(t.length / 34), 0) <= 8) || sl.map(x => x.l.length); });
-T('E40 instrumental is an empty slide', () => eq(S('Intro\nG D\n\nVerse\nwords').map(x => x.l.length), [0, 1]));
+T('E40 instrumental parts get no slide; a song with no words keeps one blank slide', () => eq([S('Intro\nG D\n\nVerse\nwords').map(x => x.l.length), S('Intro\nG D\n\nInterlude\nC G').map(x => x.l.length)], [[1], [0]]));
 T('E41 arrangement order with repeats', () => { const p = P('Verse 1\na\n\nChorus\nb\n\nVerse 2\nc'); return eq(W.slides({ parsed: p }, [0, 1, 2, 1, 1]).map(x => x.s), ['Verse 1', 'Chorus', 'Verse 2', 'Chorus', 'Chorus']); });
 T('E42 slides carry section and occurrence', () => { const sl = W.slides({ parsed: P('Verse 1\na\n\nChorus\nb') }, [0, 1, 1]); return eq(sl.map(x => [x.sec, x.occ]), [[0, 0], [1, 1], [1, 2]]); });
 T('E43 slides hold no chords or brackets', () => S('Verse\n[G]a [D]b\nC  G\nwords here').every(x => x.l.every(t => !/\[|\]/.test(t) && !/^\s*[A-G]\s+[A-G]\s*$/.test(t))));
