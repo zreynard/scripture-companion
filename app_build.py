@@ -1074,7 +1074,21 @@ body.bpsopen{overflow:hidden}body.bpsopen #np.on.mini{z-index:13}body.bpsopen.np
 .bb-js .bb-k{font:700 11px -apple-system,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin:16px 4px 8px}
 .bb-rec{display:flex;gap:8px;flex-wrap:wrap}.bb-rec button{height:34px;padding:0 13px;border-radius:17px;background:#fff;border:1px solid rgba(27,36,64,.1);font:600 13.5px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}
 .bb-cg{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.bb-cg button{height:42px;border-radius:21px;background:#fff;border:1px solid rgba(27,36,64,.08);font:600 15px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}.bb-cg button.here{background:#c9a24a;color:#fff;border-color:#c9a24a}
-.bb-bk{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.bb-bk button{min-height:40px;padding:4px;border-radius:12px;background:#fff;border:1px solid rgba(27,36,64,.08);font:600 13px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}.bb-bk button.on{background:var(--ink);color:#fff}
+.bb-bk{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.bb-bk button{min-height:40px;padding:4px;border-radius:12px;background:#fff;border:1px solid rgba(27,36,64,.08);font:600 13px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}.bb-bk button.on{background:rgba(201,162,74,.22);border-color:#c9a24a;color:#5e4610}
+.bb-sf{display:flex;align-items:center;gap:9px;height:46px;margin:0 2px 4px;padding:0 6px 0 15px;border-radius:23px;background:#fffdf7;border:1px solid rgba(27,36,64,.1);box-shadow:0 1px 2px rgba(60,45,10,.05);color:#8a8fa3;transition:border-color .15s,box-shadow .15s}
+.bb-sf:focus-within{border-color:#c9a24a;box-shadow:0 0 0 3px rgba(201,162,74,.18);color:#a8812a}
+.bb-sf input{flex:1;min-width:0;border:0;background:none;outline:none;font:500 16px -apple-system,system-ui,sans-serif;color:var(--ink);-webkit-appearance:none;appearance:none}.bb-sf input::placeholder{color:#9a9eb0}.bb-sf input::-webkit-search-cancel-button{display:none}
+.bb-sf button{flex:none;width:32px;height:32px;border-radius:50%;border:0;background:rgba(27,36,64,.07);color:#5b6077;font-size:13px;cursor:pointer}
+#bbmain.typing .bb-cur{display:none}
+.bb-jr{display:flex;align-items:center;justify-content:space-between;width:100%;margin:12px 0 2px;padding:12px 16px;border-radius:16px;background:#fff;border:1px solid rgba(201,162,74,.55);box-shadow:0 2px 10px rgba(201,162,74,.12);text-align:left;cursor:pointer}
+.bb-jr small{display:block;font:700 10.5px -apple-system,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}.bb-jr b{font:500 21px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--ink)}.bb-jr i{font-style:normal;font-size:22px;color:#c9a24a}
+.bb-flt{display:flex;gap:6px;overflow-x:auto;margin:0 0 6px;padding:0 2px 2px;scrollbar-width:none}.bb-flt::-webkit-scrollbar{display:none}
+.bb-flt button{flex:none;height:30px;padding:0 12px;border-radius:15px;border:1px solid rgba(27,36,64,.1);background:#fff;font:600 12.5px -apple-system,system-ui,sans-serif;color:#5b6077;cursor:pointer}.bb-flt button.on{background:rgba(201,162,74,.2);border-color:#c9a24a;color:#5e4610}
+.bb-vr{display:block;width:100%;text-align:left;padding:11px 4px;border:0;border-bottom:1px solid rgba(27,36,64,.07);background:none;cursor:pointer}
+.bb-vr b{display:block;font:600 13px -apple-system,system-ui,sans-serif;color:var(--gold2);margin-bottom:3px}.bb-vr span{display:block;font:400 16px/1.45 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--ink)}.bb-vr mark{background:rgba(201,162,74,.28);color:inherit;border-radius:3px;padding:0 1px}
+.bb-more{display:block;margin:12px auto 4px;height:36px;padding:0 18px;border-radius:18px;border:1px solid rgba(27,36,64,.12);background:#fff;font:600 13.5px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}
+.bb-none{margin:12px 4px;color:#7a7f93;font-size:14.5px}
+.vs.bb-flash{background:rgba(201,162,74,.28);border-radius:6px;transition:background 1.2s ease}
 .lib .bp-cont{background:#fffdf7;color:var(--ink);border:1px solid rgba(27,36,64,.08);box-shadow:0 2px 10px rgba(27,36,64,.06);margin:4px 0 14px}.lib .bp-cont small{color:var(--gold2)}.lib .bp-cont em{color:var(--mute)}.lib .bp-cont .bp-pp{background:#c9a24a;color:#fff}.lib .bp-cont .bp-pp svg path,.lib .bp-cont .bp-pp svg rect{fill:#fff}
 .lib-ser{margin-top:6px}
 .sh-sec{display:flex;align-items:baseline;justify-content:space-between}
@@ -2051,7 +2065,7 @@ let NPY=0;addEventListener('scroll',()=>{const y=scrollY,dy=y-NPY;if(view!=='bib
 addEventListener('scroll',()=>{if(view!=='bible')return;if(!BB.auto)BB.uScroll=Date.now();bbMore();clearTimeout(BB.st);BB.st=setTimeout(bbScrolled,250)},{passive:true});
 function wireBible(){const p=bbPos(),b=bbBook(p.b),tx=$('#bbtx');BB.first=[b,p.c];BB.last=[b,p.c];BB.busy=true;BB.seen={};BB.mk='';bbLeftPaint();
  bbSec(b,p.c).then(sec=>{if(view!=='bible')return;tx.innerHTML='';tx.appendChild(sec);BB.busy=false;bbUp();
-  const v=(p.v||1)>1?sec.querySelector(`.vs[data-v="${p.v}"]`):null;bbScrollTo(v?v.getBoundingClientRect().top+scrollY-bbTop()-14:0);setTimeout(bbMore,60);bbSync();if(BBM)bbMark(true)})
+  const v=(p.v||1)>1?sec.querySelector(`.vs[data-v="${p.v}"]`):null;bbScrollTo(v?v.getBoundingClientRect().top+scrollY-bbTop()-14:0);if(v&&BB.flash===p.v){v.classList.add('bb-flash');setTimeout(()=>v.classList.remove('bb-flash'),2200)}BB.flash=0;setTimeout(bbMore,60);bbSync();if(BBM)bbMark(true)})
   .catch(()=>{BB.busy=false;tx.innerHTML='<p class="bb-wait">This chapter could not be opened. Check the connection and try again.</p>'});
  $('#bbtt').onclick=()=>bbJump();
  $('#bbin').onclick=()=>{BB.intros=!BB.intros;S.set('bbintro',BB.intros);const bt=$('#bbin');bt.classList.toggle('on',BB.intros);bt.setAttribute('aria-pressed',BB.intros);note(BB.intros?'The narrator’s introduction will come before each chapter':'Straight from chapter to chapter');bbLeftPaint();npLeftPaint()};
@@ -2074,14 +2088,40 @@ function bbSync(){const f=$('#bbfab');if(!f)return;f.hidden=!!(BBM&&cur&&!audio.
 function bbShort(b){return b.name.length<=7?b.name:b.abbr}
 function bbJump(sel){const p=bbPos(),cb=sel||p.b,b=bbBook(cb),el=$('#bps'),rec=(S.get('bbrec',[])||[]).filter(x=>D.books.some(y=>y.name===x.b)).slice(0,4),mi=D.books.findIndex(x=>x.name==='Matthew');
  const grid=bs=>`<div class="bb-bk">${bs.map(x=>`<button data-bbb="${esc(x.name)}" class="${x.name===cb?'on':''}">${esc(bbShort(x))}</button>`).join('')}</div>`;
- el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh bb-js" role="dialog" aria-modal="true" aria-label="Go to"><button class="grab2" data-bpsx aria-label="Close"></button><div class="bps-t" style="margin:6px 4px 4px">Go to</div>
-  ${rec.length?`<div class="bb-k">Recent</div><div class="bb-rec">${rec.map(x=>`<button data-bbgo="${esc(x.b)}|${x.c}">${esc(x.b+' '+x.c)}</button>`).join('')}</div>`:''}
-  <div class="bb-k">${esc(b.name)} · chapter</div><div class="bb-cg">${Array.from({length:+b.n},(_,i)=>i+1).map(c=>`<button data-bbgo="${esc(b.name)}|${c}" class="${b.name===p.b&&c===p.c?'here':''}">${c}</button>`).join('')}</div>
-  <div class="bb-k">Old Testament</div>${grid(D.books.slice(0,mi))}<div class="bb-k">New Testament</div>${grid(D.books.slice(mi))}</div>`;
+ el.innerHTML=`<div class="bps-bg" data-bpsx></div><div class="bps-sh bb-js" role="dialog" aria-modal="true" aria-label="Go to"><button class="grab2" data-bpsx aria-label="Close"></button><div class="bps-t" style="margin:6px 4px 10px">Go to</div>
+  <label class="bb-sf"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input id="bbq" type="search" enterkeyhint="go" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Book, chapter or words" aria-label="Find a book, chapter or words"><button id="bbqx" type="button" aria-label="Clear" hidden>✕</button></label>
+  <div id="bbres"></div><div id="bbmain">
+  ${rec.length?`<div class="bb-cur"><div class="bb-k">Recent</div><div class="bb-rec">${rec.map(x=>`<button data-bbgo="${esc(x.b)}|${x.c}">${esc(x.b+' '+x.c)}</button>`).join('')}</div></div>`:''}
+  <div class="bb-cur"><div class="bb-k">${esc(b.name)} · chapter</div><div class="bb-cg">${Array.from({length:+b.n},(_,i)=>i+1).map(c=>`<button data-bbgo="${esc(b.name)}|${c}" class="${b.name===p.b&&c===p.c?'here':''}">${c}</button>`).join('')}</div></div>
+  <div class="bb-grp"><div class="bb-k">Old Testament</div>${grid(D.books.slice(0,mi))}</div><div class="bb-grp"><div class="bb-k">New Testament</div>${grid(D.books.slice(mi))}</div></div></div>`;
  const opening=el.hidden;el.hidden=false;document.body.classList.add('bpsopen');if(opening)requestAnimationFrame(()=>el.classList.add('on'));
  el.querySelectorAll('[data-bpsx]').forEach(x=>x.onclick=closeSeries);
  el.querySelectorAll('[data-bbb]').forEach(x=>x.onclick=()=>{bbJump(x.dataset.bbb);const sh=el.querySelector('.bps-sh');if(sh)sh.scrollTop=0});
- el.querySelectorAll('[data-bbgo]').forEach(x=>x.onclick=()=>{const [bn,c]=x.dataset.bbgo.split('|');BB.pos={b:bn,c:+c,v:1};S.set('bbpos',BB.pos);{const r=(S.get('bbrec',[])||[]).filter(y=>!(y.b===bn&&y.c===+c));r.unshift({b:bn,c:+c});S.set('bbrec',r.slice(0,6))}closeSeries();render();window.scrollTo(0,0)})}
+ bbWireGo(el);const q=$('#bbq');q.oninput=()=>{clearTimeout(BB.jt);$('#bbqx').hidden=!q.value;BB.jt=setTimeout(bbFilter,120)};
+ q.onkeydown=e=>{if(e.key!=='Enter')return;e.preventDefault();bbFilter();const f=$('#bbres [data-bbv]')||(document.querySelectorAll('#bbmain .bb-bk button:not([hidden])').length===1?$('#bbmain .bb-bk button:not([hidden])'):null);if(f)f.click();else q.blur()};
+ $('#bbqx').onclick=()=>{q.value='';$('#bbqx').hidden=true;bbFilter();q.focus()}}
+function bbGo(bn,c,v){BB.pos={b:bn,c:+c,v:+v||1};BB.flash=+v>1?+v:0;S.set('bbpos',BB.pos);{const r=(S.get('bbrec',[])||[]).filter(y=>!(y.b===bn&&y.c===+c));r.unshift({b:bn,c:+c});S.set('bbrec',r.slice(0,6))}closeSeries();render();window.scrollTo(0,0)}
+function bbWireGo(root){root.querySelectorAll('[data-bbgo]').forEach(x=>x.onclick=()=>{const [bn,c]=x.dataset.bbgo.split('|');bbGo(bn,c,1)});root.querySelectorAll('[data-bbv]').forEach(x=>x.onclick=()=>{const [bn,c,v]=x.dataset.bbv.split('|');bbGo(bn,c,v)})}
+/* the search field: a reference jumps, letters narrow the books, words find verses (all, one testament, or this book) */
+function bbBookMatch(b,n){if(!n)return true;const nz=n.replace(/\s+/g,''),nm=srNorm(b.name),A=D.alias||{};
+ return nm.startsWith(n)||nm.replace(/\s+/g,'').startsWith(nz)||(!/^\d/.test(n)&&nm.replace(/^\d\s*/,'').startsWith(n))||srNorm(b.abbr).startsWith(nz)||(nz.length>=2&&Object.keys(A).some(k=>A[k]===b.name&&k.replace(/\s+/g,'').startsWith(nz)))}
+function bbFilter(){const inp=$('#bbq'),res=$('#bbres'),main=$('#bbmain');if(!inp||!res||!main)return;const q=inp.value.trim(),n=srNorm(q);main.classList.toggle('typing',!!n);
+ const ref=n?srRef(q):null,wordy=!ref&&n.replace(/[0-9:]/g,'').trim().length>=3;let shown=[];
+ main.querySelectorAll('.bb-bk button').forEach(x=>{const b=bbBook(x.dataset.bbb),on=!n||(ref?b.name===ref.b.name:bbBookMatch(b,n));x.hidden=!on;if(on&&n)shown.push(b)});
+ main.querySelectorAll('.bb-grp').forEach(g=>{g.hidden=!!n&&!g.querySelector('.bb-bk button:not([hidden])')});
+ let h='';if(ref){const {b,c,v,e}=ref,cc=c||1,lab=b.name+' '+cc+(v?':'+v+(e?'–'+e:''):'');h+=`<button class="bb-jr" data-bbv="${esc(b.name)}|${cc}|${v||1}"><span><small>Go to</small><b>${esc(lab)}</b></span><i>›</i></button>`}
+ else if(shown.length===1){const b=shown[0];h+=`<div class="bb-k">${esc(b.name)} · chapter</div><div class="bb-cg">${Array.from({length:+b.n},(_,i)=>i+1).map(c=>`<button data-bbgo="${esc(b.name)}|${c}">${c}</button>`).join('')}</div>`}
+ if(wordy)h+=`<div id="bbvs"><div class="bb-k">In the Bible</div><p class="bb-none">Searching…</p></div>`;
+ else if(n&&!ref&&!shown.length)h+=`<p class="bb-none">No book by that name. Type a few more letters to search the words.</p>`;
+ res.innerHTML=h;bbWireGo(res);if(wordy)bbWords(n)}
+function bbWords(n){const W=n.replace(/[0-9:]/g,' ').split(' ').filter(Boolean),ph=W.join(' '),f=BB.jf||'all',mi=D.books.findIndex(x=>x.name==='Matthew'),here=bbPos().b,k=BB.jk||20;
+ srBible().then(all=>{const box=$('#bbvs'),inp=$('#bbq');if(!box||!inp||srNorm(inp.value.trim())!==n)return;const A=[],B=[];
+  all.forEach(([b,d],bi)=>{if(!d)return;if(f==='ot'&&bi>=mi||f==='nt'&&bi<mi||f==='book'&&b.name!==here)return;d.chapters.forEach((vs,ci)=>(vs||[]).forEach(x=>{const t=srNorm(x.t);if(t.includes(ph))A.push([b,ci+1,x]);else if(W.length>1&&W.every(w=>t.includes(w)))B.push([b,ci+1,x])}))});
+  const L=[...A,...B],chip=(v,l)=>`<button data-bbf="${v}" class="${f===v?'on':''}">${esc(l)}</button>`;
+  box.innerHTML=`<div class="bb-k">In the Bible${L.length?' · '+L.length.toLocaleString()+' verse'+(L.length>1?'s':''):''}</div><div class="bb-flt">${chip('all','All')}${chip('ot','Old Testament')}${chip('nt','New Testament')}${chip('book',here)}</div>`
+   +(L.length?L.slice(0,k).map(([b,c,x])=>`<button class="bb-vr" data-bbv="${esc(b.name)}|${c}|${x.v}"><b>${esc(b.name+' '+c+':'+x.v)}</b><span>${srHi(srSnip(x.t,ph,W),W)}</span></button>`).join('')+(L.length>k?`<button class="bb-more" data-bbmore>Show more</button>`:''):`<p class="bb-none">Nothing found${f!=='all'?' here':''} for “${esc(n)}”.</p>`);
+  bbWireGo(box);box.querySelectorAll('[data-bbf]').forEach(x=>x.onclick=()=>{BB.jf=x.dataset.bbf;BB.jk=20;bbWords(n)});const m=box.querySelector('[data-bbmore]');if(m)m.onclick=()=>{BB.jk=k+40;bbWords(n)}})
+  .catch(()=>{const box=$('#bbvs');if(box)box.innerHTML='<p class="bb-none">The Bible text did not load. Check your connection.</p>'})}
 function bpView(){return `<div class="jv bpv">${moreBtn()}<div class="jv-eb">Guided listening</div><h1 class="jv-t">Series</h1>`+bpCont()+bpBody()+'</div>'}
 /* the series you are in the middle of, one tap to carry on (also at the top of Library) */
 function bpCont(){const ls=bpGet(S.get('bplast',''));let h='';
