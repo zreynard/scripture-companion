@@ -5,7 +5,10 @@ PASS  1,189 chapters, numbered 1..n in order inside every book
 PASS  app always walks in canonical order (no order switch left)
 
 == Placement (each teaching sits only where its stated passage is)
-PASS  every placement matches the teaching's passage
+FAIL  every placement matches the teaching's passage  (3 of 3174)
+        - 2 John at 2 John 1; its passage is 
+        - 3 John at 3 John 1; its passage is 
+        - Jude at Jude 1; its passage is 
 PASS  every passage named in a title is on the road where it says
 PASS  no chapter outside its book
 PASS  each multi-book survey stands exactly once
@@ -58,4 +61,4 @@ PASS  overviews and points stay short (22 words or fewer)
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-41 of 41 checks pass
+40 of 41 checks pass
