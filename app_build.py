@@ -1160,7 +1160,7 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 .tr2{display:flex;align-items:center;gap:12px;padding:10px 2px}
 .vsrch{position:absolute;top:calc(env(safe-area-inset-top) + 16px);right:60px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(27,36,64,.06);color:#4a5272;display:flex;align-items:center;justify-content:center;cursor:pointer}
 #np .np-top #np-fav{margin-left:auto;color:var(--mute)}#np .np-top #np-fav.on{color:var(--gold2)}#np .np-top #np-fav.on path{fill:currentColor}#np .np-top #np-fav[hidden]+#np-srch{margin-left:auto}
-#np .np-top #np-srch{color:var(--mute)}#np.mini #np-srch,#np.mini #np-fav{display:none}
+#np-core,#np-fav{display:none!important}#np .np-top #np-srch{color:var(--mute);margin-left:auto}#np.mini #np-srch,#np.mini #np-fav{display:none}
 #gsr{position:fixed;top:0;right:0;bottom:0;left:0;z-index:30;background:#f4efe3;display:flex;flex-direction:column;opacity:0;transform:translateY(12px);transition:opacity .18s,transform .18s}
 #gsr.on{opacity:1;transform:none}
 #gsr .sh{display:flex;gap:10px;align-items:center;padding:calc(env(safe-area-inset-top) + 10px) 16px 10px}
@@ -2273,7 +2273,7 @@ function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotion
 
  h+=`<div class="jv-sec sh-sec"><span>Teachers</span>${shLenPick()}</div><button class="lib-t sh-row" data-shuf=""><span class="av sh-av"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></span><span><b>Shuffle</b><em id="shsub">A sermon you haven’t heard</em></span><i class="sh-pl"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8.5 5.6v12.8a.8.8 0 0 0 1.2.7l10-6.4a.8.8 0 0 0 0-1.4l-10-6.4a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg></i></button>`+['Platt','PAM','Skip','Davey','Fearless'].filter(k=>cnt[k]).map(k=>`<button class="lib-t" data-tch="${k}"><span class="av" style="background:${TCH_C[k]}">${(n=>n[0][0]+n[n.length-1][0])(NAMES[k].split(' '))}</span><span><b>${NAMES[k]}</b><em>${(cnt[k]||0).toLocaleString()} teachings</em></span><i>›</i></button>`).join('');
  const fav=Object.entries(S.get('fav',{})).filter(([id])=>I[id]).sort((a,z)=>z[1]-a[1]);
- if(fav.length)h+=`<div class="jv-sec">Saved</div><div class="lib-rec">${fav.slice(0,12).map(([id])=>{const left=leftOf(id);return `<button data-full="${id}"><small>${esc(teacher(I[id]).split(' ').slice(-1)[0])}</small><b>${esc(dispTitle(I[id]))}</b><em>${esc(I[id].pass?shortPass(I[id].pass):'')}${isDone(id)?' · heard':left?' · '+atSpd(left)+' left':''}</em></button>`}).join('')}</div>`;
+ if(false&&fav.length)h+=`<div class="jv-sec">Saved</div><div class="lib-rec">${fav.slice(0,12).map(([id])=>{const left=leftOf(id);return `<button data-full="${id}"><small>${esc(teacher(I[id]).split(' ').slice(-1)[0])}</small><b>${esc(dispTitle(I[id]))}</b><em>${esc(I[id].pass?shortPass(I[id].pass):'')}${isDone(id)?' · heard':left?' · '+atSpd(left)+' left':''}</em></button>`}).join('')}</div>`;
  if(rec.length)h+=`<div class="jv-sec">Recently played</div><div class="lib-rec">${rec.map(([id,p])=>{const s=bpOf(id),left=leftOf(id);return `<button data-${s?'bpplay2':'full'}="${id}"${s?` data-sid="${s.id}"`:''}><small>${s?'Series':'Journey'}</small><b>${esc(s?bpName(s,id):dispTitle(I[id]))}</b><em>${esc(teacher(I[id]).split(' ').slice(-1)[0])} · ${p.done?'heard':left?atSpd(left)+' left':'started'}</em></button>`}).join('')}</div>`;
  const sk=Object.keys(SKIP).length;if(sk)h+=`<button class="lnk lib-sk" id="unskip">${sk} skipped for now — bring them back</button>`;
  return h+'</div>'}
@@ -2925,9 +2925,11 @@ function narNext(){const was=NAR;if(!was)return;read[was.b.abbr+was.c]=true;S.se
  render();note(was.b.name+' '+was.c+' ✓')}   /* one chapter at a time: the Bible tab is where reading keeps going */
 let fullAtScroll=0;
 /* teaching you mark as particularly valuable: kept in the Library under Saved */
-function corePaint(){const b=$('#np-core');if(!b)return;let ok=false;
+function corePaint(){const b=$('#np-core');if(b)b.hidden=true;return;   /* Make Core is no longer offered */
+ let ok=false;
  if(coreOn()&&cur&&I[cur]&&!I[cur].nar){const x=walk()[jpIdx()],uk=x?coreKey(x):null;ok=uk!=null&&deepIds(jpIdx()).includes(cur);if(ok)b.dataset.u=String(uk)}b.hidden=!ok}
-function favPaint(){corePaint();const b=$('#np-fav');if(!b)return;const it=I[cur],ok=it&&!it.nar&&!it.blob;b.hidden=!ok;const on=ok&&!!S.get('fav',{})[cur];b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.setAttribute('aria-label',on?'Saved: tap to remove':'Save this teaching')}
+function favPaint(){corePaint();const b=$('#np-fav');if(b)b.hidden=true;return;   /* the bookmark is no longer offered */
+ if(!b)return;const it=I[cur],ok=it&&!it.nar&&!it.blob;b.hidden=!ok;const on=ok&&!!S.get('fav',{})[cur];b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.setAttribute('aria-label',on?'Saved: tap to remove':'Save this teaching')}
 function setMini(m){NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;roomForPlayer();if(!m&&NAR&&cur===NAR.id){narUser=0;readerFill(true);setTimeout(()=>narMark(true),60)}}
 (()=>{const np=NP();let y0=null,x0=0,dy=0,dx=0,tb=null,bx=0,by=0;
  /* buttons act the moment the finger lifts: an iPhone can drop the click while the reader moves, and a button press never drags the player */

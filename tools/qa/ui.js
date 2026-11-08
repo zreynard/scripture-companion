@@ -209,6 +209,11 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await X.evaluate(() => { const s = bpList()[0]; BP[s.id] = { cur: bpIds(s)[2] }; S.set('bp', BP); S.set('bplast', s.id); LT = 'teachers'; render(); }); await wait(400); const cont = await X.evaluate(() => { const c = document.querySelector('.lib .bp-cont'); return c ? c.textContent.slice(0, 60) : ''; });
     const old = await X.evaluate(() => { setView('bigpicture'); return [view, LT]; });
     return (seg === 'Teachers,Series,Topics,Books' && ser.includes('Bible Survey') && ser.includes('The Bible from 30,000 Feet') && /Continue/.test(cont) && old[0] === 'library' && old[1] === 'series') || { seg, ser, cont, old }; });
+  await T('U61 the player offers no Make Core and no bookmark; Library has no Saved list', async () => { const X = await open(await ctx());
+    await X.evaluate(() => { S.set('fav', { c532d51fe14b: Date.now() }); play('c532d51fe14b', { full: true }); }); await wait(1200);
+    const np = await X.evaluate(() => ({ core: !!(document.querySelector('#np-core') || {}).offsetParent, fav: !!(document.querySelector('#np-fav') || {}).offsetParent, srch: !!(document.querySelector('#np-srch') || {}).offsetParent }));
+    await X.evaluate(() => { setMini(true); $('#tabs [data-tab2=library]').click(); }); await wait(600); const saved = await X.evaluate(() => [...document.querySelectorAll('.jv-sec')].some(e => /Saved/.test(e.textContent)));
+    return (!np.core && !np.fav && np.srch && !saved) || { np, saved }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
