@@ -266,6 +266,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await X.evaluate(() => { BB.pos = { b: 'Genesis', c: 3, v: 1 }; S.set('bbrec', [{ b: 'Genesis', c: 3 }]); $('#tabs [data-tab2=bible]').click(); }); await wait(1200); await X.click('#bbtt'); await wait(500);
     const vis = () => X.evaluate(() => [...document.querySelectorAll('#bbmain .bb-bk button')].filter(b => !b.hidden).map(b => b.dataset.bbb));
     await X.fill('#bbq', 'jo'); await wait(400); const jo = await vis();
+    const sameWay = []; for (const t of ['neh', 'nehe', 'nehemiah', 'Neh.']) { await X.fill('#bbq', t); await wait(400); sameWay.push(await X.evaluate(() => ({ jr: !!document.querySelector('.bb-jr'), ch: document.querySelectorAll('#bbres .bb-cg button').length, vs: !!document.querySelector('#bbvs') }))); }
     await X.fill('#bbq', 'love is patient'); await wait(400); for (let i = 0; i < 100 && !(await X.evaluate(() => !!document.querySelector('#bbvs .bb-vr'))); i++) await wait(200);
     const all = await X.evaluate(() => [...document.querySelectorAll('#bbvs .bb-vr b')].map(x => x.textContent));
     await X.click('[data-bbf=ot]'); await wait(1500); const ot = await X.evaluate(() => document.querySelectorAll('#bbvs .bb-vr').length);
@@ -273,8 +274,8 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await X.click('#bbqx'); await wait(300); const back = await X.evaluate(() => ({ cur: !!document.querySelector('#bbmain:not(.typing) .bb-cur .bb-rec'), n: [...document.querySelectorAll('#bbmain .bb-bk button')].filter(b => !b.hidden).length, res: $('#bbres').innerHTML }));
     await X.fill('#bbq', 'rom 8:28'); await wait(400); const jr = await X.evaluate(() => ($('.bb-jr b') || {}).textContent); await X.press('#bbq', 'Enter'); await wait(1500);
     const pos = await X.evaluate(() => ({ b: BB.pos.b, c: BB.pos.c, v: BB.pos.v, t: $('#bbtl').textContent }));
-    const ok = jo.join() === 'Joshua,Job,Joel,Jonah,John,1 John,2 John,3 John' && all.includes('1 Corinthians 13:4') && ot === 0 && nt.includes('1 Corinthians 13:4') && back.cur && back.n === 66 && !back.res && jr === 'Romans 8:28' && pos.b === 'Romans' && pos.c === 8 && pos.v === 28 && pos.t === 'Romans 8';
-    return ok || { jo, all: all.slice(0, 3), ot, nt: nt.slice(0, 3), back, jr, pos }; });
+    const ok = sameWay.every(x => !x.jr && x.ch === 13 && !x.vs) && jo.join() === 'Joshua,Job,Joel,Jonah,John,1 John,2 John,3 John' && all.includes('1 Corinthians 13:4') && ot === 0 && nt.includes('1 Corinthians 13:4') && back.cur && back.n === 66 && !back.res && jr === 'Romans 8:28' && pos.b === 'Romans' && pos.c === 8 && pos.v === 28 && pos.t === 'Romans 8';
+    return ok || { sameWay, jo, all: all.slice(0, 3), ot, nt: nt.slice(0, 3), back, jr, pos }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

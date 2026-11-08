@@ -2106,11 +2106,13 @@ function bbWireGo(root){root.querySelectorAll('[data-bbgo]').forEach(x=>x.onclic
 function bbBookMatch(b,n){if(!n)return true;const nz=n.replace(/\s+/g,''),nm=srNorm(b.name),A=D.alias||{};
  return nm.startsWith(n)||nm.replace(/\s+/g,'').startsWith(nz)||(!/^\d/.test(n)&&nm.replace(/^\d\s*/,'').startsWith(n))||srNorm(b.abbr).startsWith(nz)||(nz.length>=2&&Object.keys(A).some(k=>A[k]===b.name&&k.replace(/\s+/g,'').startsWith(nz)))}
 function bbFilter(){const inp=$('#bbq'),res=$('#bbres'),main=$('#bbmain');if(!inp||!res||!main)return;const q=inp.value.trim(),n=srNorm(q);main.classList.toggle('typing',!!n);
- const ref=n?srRef(q):null,wordy=!ref&&n.replace(/[0-9:]/g,'').trim().length>=3;let shown=[];
+ let ref=n?srRef(q):null;if(ref&&!ref.c)ref=null;let shown=[];   /* a book name alone ("neh", "nehemiah") is a book, not a jump: the Go to card needs a chapter */
  main.querySelectorAll('.bb-bk button').forEach(x=>{const b=bbBook(x.dataset.bbb),on=!n||(ref?b.name===ref.b.name:bbBookMatch(b,n));x.hidden=!on;if(on&&n)shown.push(b)});
  main.querySelectorAll('.bb-grp').forEach(g=>{g.hidden=!!n&&!g.querySelector('.bb-bk button:not([hidden])')});
+ const AL=D.alias||{},nz=n.replace(/\s+/g,''),exact=n&&!ref?D.books.find(b=>srNorm(b.name)===n||AL[n]===b.name||AL[nz]===b.name):null,
+  wordy=!ref&&n.replace(/[0-9:]/g,'').trim().length>=3&&!shown.length;   /* words search the text when they are not a book name */
  let h='';if(ref){const {b,c,v,e}=ref,cc=c||1,lab=b.name+' '+cc+(v?':'+v+(e?'–'+e:''):'');h+=`<button class="bb-jr" data-bbv="${esc(b.name)}|${cc}|${v||1}"><span><small>Go to</small><b>${esc(lab)}</b></span><i>›</i></button>`}
- else if(shown.length===1){const b=shown[0];h+=`<div class="bb-k">${esc(b.name)} · chapter</div><div class="bb-cg">${Array.from({length:+b.n},(_,i)=>i+1).map(c=>`<button data-bbgo="${esc(b.name)}|${c}">${c}</button>`).join('')}</div>`}
+ else if(exact||shown.length===1){const b=exact||shown[0];h+=`<div class="bb-k">${esc(b.name)} · chapter</div><div class="bb-cg">${Array.from({length:+b.n},(_,i)=>i+1).map(c=>`<button data-bbgo="${esc(b.name)}|${c}">${c}</button>`).join('')}</div>`}
  if(wordy)h+=`<div id="bbvs"><div class="bb-k">In the Bible</div><p class="bb-none">Searching…</p></div>`;
  else if(n&&!ref&&!shown.length)h+=`<p class="bb-none">No book by that name. Type a few more letters to search the words.</p>`;
  res.innerHTML=h;bbWireGo(res);if(wordy)bbWords(n)}
