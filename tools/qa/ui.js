@@ -229,6 +229,19 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await X.click('[data-topic=enemy]'); await wait(800);
     const r = await X.evaluate(() => ({ keys: [...document.querySelectorAll('.tp-k b')].map(x => x.textContent), sc: [...document.querySelectorAll('.tp-sc small')].map(x => x.textContent), txt: (document.querySelector('.bps-sh') || document.body).textContent }));
     return (has && r.keys.includes('Ephesians 6:10–20') && r.sc.includes('Secret Church 7') && /Six Foundations for Spiritual Battle/.test(r.txt)) || { has, keys: r.keys, sc: r.sc }; });
+  await T('U64 Library: Continue sits at the top, in the same place on every tab', async () => { const X = await open(await ctx());
+    await X.evaluate(() => { const s = bpList()[1]; BP[s.id] = { cur: bpIds(s)[5] }; S.set('bp', BP); S.set('bplast', s.id); $('#tabs [data-tab2=library]').click(); }); await wait(500);
+    const ys = []; for (const t of ['teachers', 'series', 'topics', 'books']) { await X.click(`[data-lt=${t}]`); await wait(300); ys.push(await X.evaluate(() => { const c = document.querySelectorAll('.lib .bp-cont'), g = document.querySelector('.lib-seg'); return c.length === 1 && c[0].getBoundingClientRect().top < g.getBoundingClientRect().top ? Math.round(c[0].getBoundingClientRect().top) : -1; })); }
+    return (ys.every(y => y > 0 && y === ys[0])) || ys; });
+  await T('U65 Journey: six section cards before their books hold the wide surveys; the book keeps its own; old places stay put', async () => { const X = await open(await ctx());
+    const r = await X.evaluate(() => { const w = walk(), at = n => w.findIndex(x => x.c.sec && x.b.name === n), secs = w.filter(x => x.c.sec).map(x => stopName(x) + '>' + w[w.indexOf(x) + 1].b.name);
+      const ot = stopIds(w[at('Genesis')]), gen = stopIds(w[at('Genesis') + 1]), mat = stopIds(w[at('Matthew') + 1]); const mal = w.findIndex(x => x.b.name === 'Malachi' && x.c.c === 4);
+      return { secs, ot: ot.length, otOk: ot.every(id => /Testament|Pentateuch|Genesis, Exodus/.test(I[id].t)), gen: gen.every(id => !ot.includes(id)) && gen.length > 0, mat: mat.length, nx: [stopName(w[mal + 1]), stopName(w[mal + 2])], key: stopKey(w[at('Genesis')]) }; });
+    await X.evaluate(() => { S.set('jp', 'Gen:0'); render(); }); await wait(300); const g = await X.evaluate(() => stopName(walk()[jpIdx()]));
+    await X.evaluate(() => { const w = walk(); JZ = 'stop'; jMove(w.findIndex(x => x.c.sec && x.b.name === 'Genesis')); }); await wait(900);
+    const card = await X.evaluate(() => ({ ban: !!document.querySelector('#jart'), rows: document.querySelectorAll('#jv .jv-list [data-row]').length, tg: !!document.querySelector('#jv .jv-tg') }));
+    const ok = r.secs.join(',') === 'The Old Testament>Genesis,History>Joshua,Wisdom & Song>Job,The Prophets>Isaiah,The New Testament>Matthew,Acts & the Letters>Acts' && r.ot === 8 && r.otOk && r.gen && r.mat >= 1 && r.nx.join() === 'The New Testament,Matthew' && r.key === 'Gen:s' && g === 'Genesis' && !card.ban && card.rows >= 5 && !card.tg;
+    return ok || { r, g, card }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
