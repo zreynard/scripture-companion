@@ -1058,7 +1058,9 @@ body.bpsopen{overflow:hidden}body.bpsopen #np.on.mini{z-index:13}body.bpsopen.np
 .lib-sc{display:flex;flex-direction:column;justify-content:flex-end;width:100%;height:96px;padding:14px 18px;border:0;border-radius:22px;background:radial-gradient(circle at 86% 20%,rgba(201,162,74,.22),rgba(201,162,74,0) 45%),#1b2440;color:#fff;text-align:left;cursor:pointer;font:inherit}
 .lib-sc b{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:22px;font-weight:500}.lib-sc span{font-size:13px;color:rgba(255,255,255,.75)}
 .bbv{padding-top:0}
-.bb-h{position:sticky;top:0;z-index:4;margin:0 -20px;padding:calc(env(safe-area-inset-top) + 12px) 20px 8px;background:rgba(244,239,227,.95);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.bb-h{position:sticky;top:0;z-index:4;margin:0 -20px;padding:calc(env(safe-area-inset-top) + 12px) 20px 8px;background:rgba(244,239,227,.95);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 10px}
+.bb-left,#np .np-left{font:500 13px -apple-system,system-ui,sans-serif;color:#8a8fa3;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bb-left{flex-basis:100%;margin-top:-2px}.bb-left:empty{display:none}.bb-left b,#np .np-left b{font-weight:600;color:#5b6077}.bb-left i,#np .np-left i{font-style:normal;margin:0 7px}
+#np .np-left{text-align:center;margin:8px 0 0}#np .np-left[hidden],#np.mini .np-left{display:none}
 .bb-tt{border:0;background:none;padding:4px 0;font:500 27px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color:var(--ink);display:flex;align-items:center;gap:8px;cursor:pointer;min-width:0}.bb-tt span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bb-tt i{font-style:normal;font-size:14px;color:var(--gold2)}
 .bb-in{flex:none;height:32px;padding:0 12px;border-radius:16px;border:1px solid rgba(201,162,74,.45);background:#fffaf0;color:var(--gold2);font:700 13px -apple-system,system-ui,sans-serif;cursor:pointer}.bb-in.on{background:#c9a24a;color:#fff;border-color:#c9a24a}
 .bb-up{display:block;margin:10px auto 0;border:0;background:none;color:var(--gold2);font:700 14px -apple-system,system-ui,sans-serif;padding:8px 12px;cursor:pointer}.bb-up[hidden]{display:none}
@@ -1200,7 +1202,7 @@ body.npon.hidehd #tabs{box-shadow:inset 0 2px 0 var(--gold)}
 <div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="np-core" class="np-core" hidden>Make Core</button><button id="np-fav" aria-label="Save this teaching" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v16l-5-3.6L7 20z"/></svg></button><button id="np-srch" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button><button id="cls" aria-label="Stop and close">✕</button></div>
 <div class="art" id="np-art"></div><div class="np-d" id="np-d"></div>
 <div class="t serif" id="np-t"></div><div class="s" id="np-s"></div><div id="np-read" aria-label="Reader"></div>
-<input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div>
+<input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div><div class="np-left" id="npleft" hidden></div>
 <div class="ctl"><button class="side sk" id="prv" aria-label="Previous"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5l-10 7 10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button><button class="side" id="bk">↺ 10</button><button class="big" id="pp" style="display:flex;align-items:center;justify-content:center"></button><button class="side" id="fw">10 ↻</button><button class="side sk" id="nxt" aria-label="Next"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button></div>
 <div id="np-hl" aria-hidden="true"><i></i></div><div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="bedb" hidden aria-haspopup="true">♪ Music</button><button id="zz">Sleep off</button></div><div id="bedpop" hidden></div></div>
 <audio id="audio" preload="metadata"></audio><audio id="praym" preload="none"></audio><audio id="bedm" preload="none"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
@@ -2011,7 +2013,7 @@ const BB={pos:S.get('bbpos',null),intros:!!S.get('bbintro',false),first:null,las
 let BBM=false;   /* the narration now playing was started here, so it keeps going */
 function bbBook(n){return D.books.find(b=>b.name===n)||D.books[0]}
 function bbPos(){const p=BB.pos;if(p&&D.books.some(b=>b.name===p.b)&&p.c>=1)return p;const x=walk()[jpIdx()];return x&&!x.c.intro?{b:x.b.name,c:x.c.c,v:1}:{b:'Genesis',c:1,v:1}}
-function bibleView(){const p=bbPos();return `<div class="jv bbv"><div class="bb-h"><button class="bb-tt" id="bbtt" aria-label="Go to a book and chapter"><span id="bbtl">${esc(p.b+' '+p.c)}</span><i>▾</i></button><button class="bb-in${BB.intros?' on':''}" id="bbin" aria-pressed="${BB.intros}">Intros</button></div><button class="bb-up" id="bbup" hidden></button><div class="bb-tx" id="bbtx"><p class="bb-wait">Opening ${esc(p.b+' '+p.c)}…</p></div></div><button class="bb-fab" id="bbfab" aria-label="Listen from here">${icon('play',15,0,'#fff')}<span>Listen</span></button>`}
+function bibleView(){const p=bbPos();return `<div class="jv bbv"><div class="bb-h"><button class="bb-tt" id="bbtt" aria-label="Go to a book and chapter"><span id="bbtl">${esc(p.b+' '+p.c)}</span><i>▾</i></button><button class="bb-in${BB.intros?' on':''}" id="bbin" aria-pressed="${BB.intros}">Intros</button><div class="bb-left" id="bbleft"></div></div><button class="bb-up" id="bbup" hidden></button><div class="bb-tx" id="bbtx"><p class="bb-wait">Opening ${esc(p.b+' '+p.c)}…</p></div></div><button class="bb-fab" id="bbfab" aria-label="Listen from here">${icon('play',15,0,'#fff')}<span>Listen</span></button>`}
 function bbSec(b,c){return loadBook(b.name).then(d=>{const s=document.createElement('section');s.className='bb-sec';s.dataset.b=b.name;s.dataset.c=c;s.dataset.k=b.abbr+c;s.innerHTML=`<h3 class="bb-ch">${esc(b.name)} ${c}</h3><div class="bb-body">${chapterBody(d,c,null)}</div>`;return s})}
 function bbTop(){const h=document.querySelector('.bb-h');return h?h.getBoundingClientRect().bottom:0}
 function bbTopVerse(){const t=bbTop()+4;for(const v of document.querySelectorAll('.bb-sec .vs')){if(v.getBoundingClientRect().bottom>t){const s=v.closest('.bb-sec');return {b:s.dataset.b,c:+s.dataset.c,v:+v.dataset.v}}}return null}
@@ -2021,19 +2023,19 @@ function bbUp(){const bt=$('#bbup');if(!bt||!BB.first)return;const pv=chBefore(.
 function bbMore(){if(view!=='bible'||BB.busy||!BB.last||document.documentElement.scrollHeight-scrollY-innerHeight>1600)return;const nx=chAfter(...BB.last);if(!nx)return;BB.busy=true;
  bbSec(...nx).then(sec=>{const tx=$('#bbtx');if(tx&&view==='bible'){tx.appendChild(sec);BB.last=nx}BB.busy=false;bbMore()}).catch(()=>{BB.busy=false})}
 /* where you are: saved as you scroll; a chapter you read through (for more than a few seconds) counts in your Journey */
-function bbScrolled(){if(view!=='bible')return;const t=bbTopVerse();if(!t)return;const was=BB.pos;BB.pos=t;S.set('bbpos',t);const tl=$('#bbtl');if(tl)tl.textContent=t.b+' '+t.c;
+function bbScrolled(){if(view!=='bible')return;const t=bbTopVerse();if(!t)return;const was=BB.pos;BB.pos=t;S.set('bbpos',t);const tl=$('#bbtl');if(tl)tl.textContent=t.b+' '+t.c;if(!was||was.b!==t.b||was.c!==t.c)bbLeftPaint();
  if(!was||was.b!==t.b||was.c!==t.c){const r=(S.get('bbrec',[])||[]).filter(x=>!(x.b===t.b&&x.c===t.c));r.unshift({b:t.b,c:t.c});S.set('bbrec',r.slice(0,6))}
  const now=Date.now();let changed=false;document.querySelectorAll('.bb-sec').forEach(s=>{const vs=s.querySelectorAll('.vs');if(!vs.length)return;const f=vs[0].getBoundingClientRect(),l=vs[vs.length-1].getBoundingClientRect();
   if(f.bottom>0&&f.top<innerHeight&&!BB.seen[s.dataset.k])BB.seen[s.dataset.k]=now;
   if(l.top<innerHeight&&l.bottom>0&&BB.seen[s.dataset.k]&&now-BB.seen[s.dataset.k]>15000&&!read[s.dataset.k]){read[s.dataset.k]=true;changed=true}});
  if(changed)S.set('read',read)}
 addEventListener('scroll',()=>{if(view!=='bible')return;if(!BB.auto)BB.uScroll=Date.now();bbMore();clearTimeout(BB.st);BB.st=setTimeout(bbScrolled,250)},{passive:true});
-function wireBible(){const p=bbPos(),b=bbBook(p.b),tx=$('#bbtx');BB.first=[b,p.c];BB.last=[b,p.c];BB.busy=true;BB.seen={};BB.mk='';
+function wireBible(){const p=bbPos(),b=bbBook(p.b),tx=$('#bbtx');BB.first=[b,p.c];BB.last=[b,p.c];BB.busy=true;BB.seen={};BB.mk='';bbLeftPaint();
  bbSec(b,p.c).then(sec=>{if(view!=='bible')return;tx.innerHTML='';tx.appendChild(sec);BB.busy=false;bbUp();
   const v=(p.v||1)>1?sec.querySelector(`.vs[data-v="${p.v}"]`):null;bbScrollTo(v?v.getBoundingClientRect().top+scrollY-bbTop()-14:0);setTimeout(bbMore,60);bbSync();if(BBM)bbMark(true)})
   .catch(()=>{BB.busy=false;tx.innerHTML='<p class="bb-wait">This chapter could not be opened. Check the connection and try again.</p>'});
  $('#bbtt').onclick=()=>bbJump();
- $('#bbin').onclick=()=>{BB.intros=!BB.intros;S.set('bbintro',BB.intros);const bt=$('#bbin');bt.classList.toggle('on',BB.intros);bt.setAttribute('aria-pressed',BB.intros);note(BB.intros?'The narrator’s introduction will come before each chapter':'Straight from chapter to chapter')};
+ $('#bbin').onclick=()=>{BB.intros=!BB.intros;S.set('bbintro',BB.intros);const bt=$('#bbin');bt.classList.toggle('on',BB.intros);bt.setAttribute('aria-pressed',BB.intros);note(BB.intros?'The narrator’s introduction will come before each chapter':'Straight from chapter to chapter');bbLeftPaint();npLeftPaint()};
  $('#bbfab').onclick=()=>{const t=bbTopVerse()||p;bbPlayFrom(bbBook(t.b),t.c,t.v)};bbSync()}
 /* reading aloud from here; with intros on, a new chapter starts with its introduction (and a new book with the book's) */
 function bbPlayFrom(b,c,v){JM=false;BPM=null;DEEP=null;PLAYSTOP=null;BB.q=null;BBM=true;BB.uScroll=0;
@@ -2101,6 +2103,7 @@ const TOPIC_IC={kingdom:['#6b5320','<path d="M4 17 3 7l5 4 4-6 4 6 5-4-1 10z"/><
  faith:['#2e5a6b','<circle cx="12" cy="5" r="2"/><path d="M12 7v14"/><path d="M5 13.5a7 7 0 0 0 14 0"/><path d="M8.5 10.5h7"/>'],
  grace:['#5b4a7a','<path d="M12 3v18M7 8.5h10"/>'],
  suffering:['#4a5272','<path d="M12 3.5s6 6.4 6 10.5a6 6 0 0 1-12 0c0-4.1 6-10.5 6-10.5z"/><path d="M9.2 14.5a2.9 2.9 0 0 0 2.8 2.6"/>'],
+ enemy:['#4a4f63','<path d="M12 3 5 5.8v5.4c0 4.4 3 8 7 9.8 4-1.8 7-5.4 7-9.8V5.8z"/><path d="M12 8v7M9 11h6"/>'],
  church:['#7a4b2a','<path d="M12 2v4M10 4h4"/><path d="M5 21V11l7-5 7 5v10z"/><path d="M10 21v-4.5a2 2 0 0 1 4 0V21"/>'],
  missions:['#2e4639','<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.5 5.7 3.5 9s-1 6.3-3.5 9c-2.5-2.7-3.5-5.7-3.5-9s1-6.3 3.5-9z"/>']};
 const topicIc=(id,sz)=>{const t=TOPIC_IC[id]||['#4a5272',''];return `<span class="tp-ic" style="background:${t[0]}1a;width:${sz}px;height:${sz}px" aria-hidden="true"><svg viewBox="0 0 24 24" width="${Math.round(sz*.56)}" height="${Math.round(sz*.56)}" fill="none" stroke="${t[0]}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".85">${t[1]}</svg></span>`};
@@ -2790,7 +2793,7 @@ function next(){if(inDeep()){const i=DEEP.i,ids=deepIds(i),k=ids.indexOf(cur),nx
  const w=walk(),x=w[PLAYSTOP!=null?PLAYSTOP:camp];if(!x)return;const ids=orderedIds(x.b,x.c),k=ids.indexOf(cur);if(k<0)return;
  for(let j=k+1;j<ids.length;j++)if(I[ids[j]].audio&&!isDone(ids[j])&&okWho(ids[j])&&!SKIP[ids[j]]){play(ids[j]);return}}
 let saveSec=-1;onAudio('timeupdate',()=>{if(!cur||narWait)return;const d=audio.duration||0,t=audio.currentTime;
- if(START){if(START.id!==cur)START=null;else if(t<START.st-1){if(!audio.seeking)audio.currentTime=START.st}else START=null}   /* the start point holds even where the first seek is dropped */{const hl=$('#np-hl i');if(hl)hl.style.width=(d?Math.min(100,100*t/d):0)+'%'}$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(Math.max(0,d-t-tail())/speed);
+ if(START){if(START.id!==cur)START=null;else if(t<START.st-1){if(!audio.seeking)audio.currentTime=START.st}else START=null}   /* the start point holds even where the first seek is dropped */{const hl=$('#np-hl i');if(hl)hl.style.width=(d?Math.min(100,100*t/d):0)+'%'}$('#seek').value=d?1000*t/d:0;$('#cur').textContent=fmt(t);$('#rem').textContent='-'+fmt(Math.max(0,d-t-tail())/speed);npLeftPaint();
  if(tail()&&d&&d-t<=tail()&&!audio.paused&&!audio.seeking&&ready){audio.pause();finished();return}/* the outro after the last word: done */
  if(I[cur].nar){if(!ready)return;narMark();if(BBM&&view==='bible')bbMark();if(d&&d-t<45)narPrefetch();const sec=Math.floor(t);if(sec%5===0&&sec!==saveSec){saveSec=sec;const pos=S.get('narpos',{});pos[cur]=t;S.set('narpos',pos)}return}
  if(!ready)return;const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
@@ -2809,7 +2812,7 @@ onAudio('error',()=>{if(narWait)return;if(cur&&I[cur].nar&&narRetry<3){narRetry+
 $('#pp').onclick=()=>cur&&(audio.paused?audio.play().catch(()=>{}):audio.pause());$('#bk').onclick=()=>audio.currentTime-=10;$('#fw').onclick=()=>audio.currentTime+=10;
 $('#seek').oninput=e=>{if(audio.duration)audio.currentTime=audio.duration*e.target.value/1000};
 const setSpeed=v=>{speed=Math.round(Math.min(3,Math.max(0.5,v))*100)/100;AUDIO_EL.forEach(a=>a.playbackRate=speed);$('#spd').textContent=spdLabel();S.set('speed',speed);retime()};
-function retime(){document.querySelectorAll('[data-dur]').forEach(e=>e.textContent=durTxt(+e.dataset.dur));document.querySelectorAll('[data-hrs]').forEach(e=>{const [h,a]=e.dataset.hrs.split(',').map(Number);e.textContent=hrsTxt(h,a)});if(cur&&audio.duration)$('#rem').textContent='-'+fmt(Math.max(0,audio.duration-audio.currentTime-tail())/speed)}$('#spd').onclick=e=>{e.stopPropagation();if(NP().classList.contains('mini')){const L=[.7,.8,.9,1,1.25,1.5,1.75,2],k=L.findIndex(v=>Math.abs(v-speed)<.01);setSpeed(L[(k+1)%L.length]);return}setSpeed(1)};$('#spd-dn').onclick=e=>{e.stopPropagation();setSpeed(speed-0.05)};$('#spd-up').onclick=e=>{e.stopPropagation();setSpeed(speed+0.05)};
+function retime(){document.querySelectorAll('[data-dur]').forEach(e=>e.textContent=durTxt(+e.dataset.dur));document.querySelectorAll('[data-hrs]').forEach(e=>{const [h,a]=e.dataset.hrs.split(',').map(Number);e.textContent=hrsTxt(h,a)});if(cur&&audio.duration)$('#rem').textContent='-'+fmt(Math.max(0,audio.duration-audio.currentTime-tail())/speed);bbLeftPaint();npLeftPaint()}$('#spd').onclick=e=>{e.stopPropagation();if(NP().classList.contains('mini')){const L=[.7,.8,.9,1,1.25,1.5,1.75,2],k=L.findIndex(v=>Math.abs(v-speed)<.01);setSpeed(L[(k+1)%L.length]);return}setSpeed(1)};$('#spd-dn').onclick=e=>{e.stopPropagation();setSpeed(speed-0.05)};$('#spd-up').onclick=e=>{e.stopPropagation();setSpeed(speed+0.05)};
 $('#bedb').onclick=e=>{e.stopPropagation();bedPop()};AUDIO_EL.forEach(b=>['play','pause','ended'].forEach(ev=>b.addEventListener(ev,()=>{try{bbSync()}catch(e){}})));AUDIO_EL.forEach(b=>['play','pause','ended','emptied'].forEach(ev=>b.addEventListener(ev,()=>bedSync())));
 let zz=0,zzT=null;$('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};
 $('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};$('#np-core').onclick=e=>{e.stopPropagation();const u=e.currentTarget.dataset.u;if(u==null||!cur)return;const set=coreSet();set[u]=[cur];S.set('coreSet',set);JV.deep=false;DEEP=null;note('Now Core for '+stopName(walk()[jpIdx()])+'.');corePaint();render()};$('#np-srch').onclick=e=>{e.stopPropagation();openSearch()};$('#np-fav').onclick=e=>{e.stopPropagation();if(!cur)return;const f=S.get('fav',{});if(f[cur])delete f[cur];else f[cur]=Date.now();S.set('fav',f);favPaint()};
@@ -2869,6 +2872,19 @@ function introText(abbr){return NTX[abbr]||(NTX[abbr]=fetch('narrative/'+abbr+'.
 function introParas(t){return (t||'').split(/\n\s*\n/).map(p=>`<p>${rich(p.trim())}</p>`).join('')}
 const wireNames=el=>el.querySelectorAll('[data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});
 function narDur(abbr,c){const n=NARR[abbr];return n&&n.d?n.d[n.c.indexOf(c)]||0:0}
+/* time left in the book and the whole Bible from a chapter on, at the current speed (with the narrator's intros when they are on) */
+let BBL=null;
+function bbLeftIdx(){const k=BB.intros?1:0;if(BBL&&BBL.k===k)return BBL;const L=[],at={};
+ D.books.forEach(b=>{const n=NI[b.abbr]||{};for(let c=1;c<=+b.n;c++){const ip=k?(+n[String(c)]||0)+(c===1?(+n['0']||0):0):0;at[b.abbr+c]=L.length;L.push({b:b.name,d:(narDur(b.abbr,c)||0)+ip,ip})}});
+ const suf=new Array(L.length+1).fill(0),bk=new Array(L.length+1).fill(0);for(let i=L.length-1;i>=0;i--){suf[i]=suf[i+1]+L[i].d;bk[i]=L[i].d+(i+1<L.length&&L[i+1].b===L[i].b?bk[i+1]:0)}
+ return BBL={k,at,L,suf,bk}}
+function bbLeft(b,c,into){const X=bbLeftIdx(),i=X.at[b.abbr+c];if(i==null)return null;const sp=spNow(),u=into==null?0:X.L[i].ip+Math.max(0,into);return {book:Math.max(0,X.bk[i]-u)/sp,bible:Math.max(0,X.suf[i]-u)/sp}}
+function leftHM(s){const m=Math.round(s/60);return m>=60?Math.floor(m/60).toLocaleString()+' h '+(m%60)+' m':Math.max(1,m)+' min'}
+function leftTxt(name,L){return L?`<b>${esc(name)}</b> ${leftHM(L.book)} left<i>·</i><b>Bible</b> ${leftHM(L.bible)} left`:''}
+function bbLeftPaint(){const el=$('#bbleft');if(!el)return;const p=BB.pos||bbPos(),b=bbBook(p.b);el.innerHTML=leftTxt(b.name,bbLeft(b,p.c))}
+let NPL='';function npLeftPaint(){const el=$('#npleft');if(!el)return;let h='';
+ if(BBM){if(NAR&&cur===NAR.id)h=leftTxt(NAR.b.name,bbLeft(NAR.b,NAR.c,audio.currentTime||0));else if(BB.q)h=leftTxt(BB.q.b.name,bbLeft(BB.q.b,BB.q.c))}
+ if(h!==NPL){NPL=h;el.innerHTML=h;el.hidden=!h}}
 function narTimes(abbr){return NT[abbr]||(NT[abbr]=fetch('narration/'+abbr+'.json').then(r=>{if(!r.ok)throw 0;return r.json()}).catch(e=>{delete NT[abbr];throw e}))}
 function narItem(b,c){const id=narId(b.abbr,c);if(!I[id])I[id]={id,t:b.name+' '+c,audio:NRAW+b.abbr+'_'+String(c).padStart(3,'0')+'.mp3',who:'Alistair',by:'The Bible',nar:{abbr:b.abbr,c,book:b.name}};return id}
 /* start chapter c of book b: at verse v, from the top (v=0), or where it was left (v=null) */
