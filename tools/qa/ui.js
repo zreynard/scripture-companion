@@ -276,6 +276,11 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const pos = await X.evaluate(() => ({ b: BB.pos.b, c: BB.pos.c, v: BB.pos.v, t: $('#bbtl').textContent }));
     const ok = sameWay.every(x => !x.jr && x.ch === 13 && !x.vs) && jo.join() === 'Joshua,Job,Joel,Jonah,John,1 John,2 John,3 John' && all.includes('1 Corinthians 13:4') && ot === 0 && nt.includes('1 Corinthians 13:4') && back.cur && back.n === 66 && !back.res && jr === 'Romans 8:28' && pos.b === 'Romans' && pos.c === 8 && pos.v === 28 && pos.t === 'Romans 8';
     return ok || { sameWay, jo, all: all.slice(0, 3), ot, nt: nt.slice(0, 3), back, jr, pos }; });
+  await T('U70 Teaching starts here: saves your start point (synced key), the recording starts there, Undo puts it back', async () => { const X = await open(await ctx());
+    const r = await X.evaluate(() => { const ID = 'c532d51fe14b', orig = I[ID].s || 0; cur = ID; Object.defineProperty(audio, 'currentTime', { get: () => 301.4, set: () => {}, configurable: true });
+      setMini(false); NP().classList.add('on'); cutPaint(); const shown = !$('#cutb').hidden; $('#cutb').click(); const saved = (S.get('cut', {}) || {})[ID], s1 = I[ID].s, inKeys = BK_KEYS.includes('cut') && BK_MAP.includes('cut');
+      const u = document.querySelector('#note .note-undo'); if (u) u.click(); const s2 = I[ID].s, gone = !((S.get('cut', {}) || {})[ID] >= 0); return { shown, saved, s1, s2, orig, inKeys, gone, undo: !!u }; });
+    return (r.shown && r.saved === 300 && r.s1 === 300 && r.undo && r.gone && r.s2 === r.orig && r.inKeys) || r; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

@@ -21,6 +21,9 @@ on:
       from_run:
         description: "merge the measurements a finished run saved (its run id), without measuring again"
         default: ""
+      evaluate:
+        description: "1 = measure and write the words around each new cut to the trim-eval branch; save nothing"
+        default: "0"
 permissions:
   contents: write
   actions: write
@@ -48,16 +51,18 @@ jobs:
       - run: |
           ALL=${{ github.event.inputs.all || '0' }}
           if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" = "7" ]; then ALL=1; fi
-          ALL=$ALL SRCS="${{ github.event.inputs.sources }}" IDS="${{ github.event.inputs.ids }}" DUMP="${{ github.event.inputs.dump }}" python tools/trim.py measure ${{ matrix.shard }} 16
+          AUDIT="${{ github.event.inputs.evaluate }}" ALL=$ALL SRCS="${{ github.event.inputs.sources }}" IDS="${{ github.event.inputs.ids }}" DUMP="${{ github.event.inputs.dump }}" python tools/trim.py measure ${{ matrix.shard }} 16
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: trim-${{ matrix.shard }}
-          path: trim/
+          path: |
+            trim/
+            audit/
           if-no-files-found: ignore
   merge:
     needs: measure
-    if: ${{ always() && github.event.inputs.dump != '1' }}
+    if: ${{ always() && github.event.inputs.dump != '1' && github.event.inputs.evaluate != '1' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -84,3 +89,23 @@ jobs:
           git commit -q -m "Intro and outro trim points"
           for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
           gh workflow run refresh.yml -f sources=fearless -f check_links=false
+  evalreport:
+    needs: measure
+    if: ${{ always() && github.event.inputs.evaluate == '1' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+      - run: mkdir -p audit && find parts -name '*.jsonl' -exec sh -c 'cp "$1" "audit/$(basename $(dirname $(dirname $1)))-$(basename $1)"' _ {} \; ; ls audit | wc -l
+      - run: python tools/trim_audit.py report
+      - run: |
+          mkdir /tmp/d && cp audit/* /tmp/d/ && cd /tmp/d
+          git init -q -b trim-eval && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "trim evaluation"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" trim-eval

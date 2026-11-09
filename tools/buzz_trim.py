@@ -92,10 +92,13 @@ def measure():
         sb = rule.get("start_by", trim.WIN)
         s = trim.find_start([w for w in ws if w[0] < trim.WIN], rule)
         s2, why = preacher_fix(ws4, s, sb)
+        if it["src"] in trim.SERVICE:
+            ss = trim.service_start(ws, it, lo=s2)
+            if ss is not None and ss > s2: s2, why = ss, (why + "; " if why else "") + "service: teaching from the text line"
         T = rule.get("tail", trim.WIN); off = L - T
         tw = [(a - off, b - off, w) for a, b, w in ws if a >= off]
         e = trim.find_end(tw, rule, T); ewhy = getattr(trim.find_end, "why", "")
-        if s2 > 600 or e > 400: s2, e = min(s2, 0), min(e, 0)
+        if s2 > 900 or e > 400: s2, e = min(s2, 0), min(e, 0)
         out[it.get("aid", it["id"])] = [s2, e]
         rec = {"id": it["id"], "src": it["src"], "t": it["t"], "who": it["who"], "pass": it.get("pass", ""), "s": s2, "e": e, "dur": L,
                "old": [it.get("s") or 0, it.get("e") or 0], "rule_start": s, "speaker_fix": why, "end_why": ewhy, "via": "transcript",

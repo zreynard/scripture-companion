@@ -102,9 +102,114 @@ RULES = {
                       "start": [r"this (message|lesson|sermon) (is|comes) from the (\w+ )?ministry of (stephen|steven) \w+", r"for (more )?information,? (please )?visit wisdom ?online(?: ?\.? ?org)?"], "end": COMMON_OUT + [r"wisdom ?online", r"wisdom international"]},
 }
 
+# ---- from the November audit (tools/trim_audit.py: the words around every cut, read one by one) ----
+RULES["skip_connect"]["start"] += [r"what skip has for us today[^.?!]*[.?!]( (we'?ll|we will) be in [^.?!]*[.?!])?",
+    r"\bas (skip|he) begins( today'?s (lesson|study|teaching|message))?[^.?!]*[.?!]", r"\blet'?s get started with skip'?s teaching[^.?!]*[.?!]( we'?ll be in [^.?!]*[.?!])?",
+    r"\b(now,? )?let'?s (get started with|get into|dive into|continue with) today'?s (message|teaching|study|lesson)\b[^.?!]*[.?!]( we'?ll be in [^.?!]*[.?!])?",
+    r"\bas we join skip\b[^.?!]*[.?!]", r"\bas we continue in the bible from 30,?000 feet[^.?!]*[.?!]( here'?s pastor skip[.!])?",
+    r"\blet'?s turn to [^.?!]{0,60}(today'?s teaching|as skip|what skip)[^.?!]*[.?!]"]
+RULES["skip_connect"]["end"] += [r"we'?re (so )?glad you joined us", r"thanks so much for being with us", r"before (you go|we go|we let you go)", r"that concludes",
+    r"pray(ing)? that god will provide the support", r"partner with me", r"make a connection", r"tune in tomorrow", r"come back (tomorrow|next time)",
+    r"thank you for your generosity", r"thanks for listening to connect"]
+RULES["skip_connect"]["tail"] = 330
+RULES["davey_archive"]["end"] += [r"you'?ve been listening to the teaching ministry", r"this message is copyrighted", r"let'?s (close by )?sing\b", r"\bsing with me\b"]
+RULES["skip_archive"]["end"] = [p if p != r"let'?s stand\b" else r"let'?s (all )?stand\b(?! and (let'?s )?pray)" for p in RULES["skip_archive"]["end"]] + [
+    r"if you'?ve missed any of our expound", r"as skip pointed out", r"if you'?ve been following (along )?with us", r"may the lord watch over and keep you",
+    r"welcome to god'?s family", r"we hope you enjoyed this message"]
+RULES["skip_archive"]["tail"] = 330
+RULES["skip_church"]["end"] += [r"stand to (your|our) feet", r"read ahead"]
+
+# Church services: the welcome, announcements, giving and promos come first; the teaching starts at the text or the series.
+SERVICE = {"2819_podcast", "fearless", "mclean_podcast", "mclean_oceans", "mclean_api", "brookhills", "brookhills_ia", "radical_message", "skip_church", "platt_messages"}
+NUMW = r"(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d+)"
+TEXT_START = [r"\b(open|turn)( up)?( with me)?( (in|to) your bibles?)?( with me)? to\b", r"\bif you have (a|your|his) (bible|word)\b",
+    r"\bour (text|passage|scripture) (today|this morning|tonight|for today)\b", r"\b(week|part|session) " + NUMW + r" (of|in) (our|a|the|this)\b",
+    r"\bseries (called|entitled|titled)\b", r"\bwe('?re| are) (in|walking through|continuing|going through) (a series|the (book|gospel|letter) of|our (journey|series|study))",
+    r"\bnote ?takers\b", r"\bthe word of the lord (reads|says)\b", r"\b(today|tonight|this morning),? we('?re| are) (continuing|beginning|starting|going to (look|study|be|dive))",
+    r"\blet'?s dive (in|into)\b", r"\b(this is|today is) (week|part|the final message|the beginning)\b", r"\bjourney through\b", r"\bwe'?re (in|turning to) (the book of )?\w+ chapter\b",
+    r"\blet'?s (worship the lord|hear from god) (through|in) (the study of )?his word\b", r"\blet'?s jump (right )?(back )?in\b"]
+PRE_STRONG = [r"\bbefore we (dive|jump|get|go|turn)( in| into| to)?\b", r"\b(sign up|register|registration|merchandise|online store|gift bag|membership class|baby dedications?|21 days of prayer)\b",
+    r"\b(giving|offering|tithes?|generosity|give online|text to give|offering baskets?)\b", r"\b[a-z]+ ?\.(org|com|church)\b|\bdot (org|com|church)\b",
+    r"\bthis (coming )?(sunday|saturday|wednesday|weekend)\b", r"\bnext (sunday|saturday|weekend)\b", r"\b(conference|retreat|trip to israel|israel trip|visiting israel)\b",
+    r"\bthank you to (our|all) (staff|volunteers|worship)", r"\bstand up and say hi\b", r"\bdownload (the|our) app\b", r"\b(join us in|please) welcom(e|ing) (dr\.? |pastor |brother )?[a-z]+\b"]
+
+def sents_of(ws):
+    out, a = [], 0
+    for k, w in enumerate(ws):
+        if re.search(r"[.?!]$", w[2]) or k == len(ws) - 1:
+            out.append((a, k, ws[a][0], " ".join(x[2] for x in ws[a:k + 1]).lower())); a = k + 1
+    return out
+
+def passage_pats(it):
+    m = re.match(r"\s*((?:[1-3] )?[A-Za-z][A-Za-z ]*?)\s+(\d+)", (it.get("pass") or "").split(";")[0])
+    if not m: return []
+    book, ch = m.group(1).strip().lower(), m.group(2)
+    nb = re.sub(r"^1 ", "(1|first|1st) ", re.sub(r"^2 ", "(2|second|2nd) ", re.sub(r"^3 ", "(3|third|3rd) ", book)))
+    return [rf"\b{nb}(,? chapter)? {ch}\b", rf"\bbook of {nb}\b"]
+
+def service_start(ws, it, lo=0.0, horizon=900):
+    """Where the teaching starts in a service: the first text/series line not followed by announcements (keeping a prayer
+    just before it); None if there is no such line."""
+    S = [x for x in sents_of(ws) if x[2] >= lo and x[2] < horizon]
+    if not S: return None
+    pre = lambda t: any(re.search(p, t, I) for p in PRE_STRONG)
+    tx = TEXT_START + passage_pats(it)
+    for i, (a, b, t0, txt) in enumerate(S):
+        if not any(re.search(p, txt, I) for p in tx): continue
+        if any(pre(x[3]) for x in S[i:] if x[2] < t0 + 75): continue          # announcements right after: not yet
+        j = i
+        while j > 0 and t0 - S[j - 1][2] <= 60 and re.search(r"\b(let'?s pray|pray|father|lord|amen)\b", S[j - 1][3]) and not pre(S[j - 1][3]): j -= 1
+        return max(lo, round(S[j][2] - 0.3, 1))
+    last = None
+    for i, x in enumerate(S):
+        if pre(x[3]): last = i
+    if last is not None and last + 1 < len(S) and S[-1][2] - S[last][2] > 90: return max(lo, round(S[last + 1][2] - 0.3, 1))
+    return None
+
+# After the sermon: songs, communion, praise breaks, dismissals, outros (a cut right after the final Amen when there is one)
+POST = [r"put your hands together", r"give (god|him|the lord|your \w+|jesus) (some |a )?(radical )?praise", r"take the roof off", r"if you (received|receive) (that|this)",
+    r"\b(let'?s|would you|will you|please) (all )?stand\b(?! and (let'?s )?pray)(?! with me (and|as) (we|i) pray)", r"stand to (your|our) feet", r"\b(let'?s|we'?re going to|we'?ll) sing\b",
+    r"\bsing with me\b", r"\bworship team\b", r"\bthis song\b", r"lord'?s supper", r"\bcommunion\b", r"\bthe elements\b", r"\b(tables?|altar) (is|are) open\b", r"\bdismiss\b",
+    r"\bour mcs?\b", r"\bnext week,? we\b", r"take a (stretch )?break", r"let'?s pause there", r"not (going to be|gonna be) on (the )?podcasts?", r"\bbaptiz", r"come back up (here )?on (the )?stage",
+    r"\bthank you for coming\b", r"you'?ve been listening to", r"this message is copyrighted", r"welcome to god'?s family", r"\bread ahead\b"]
+
+def post_cut(ws, L, region=200):
+    text, spans = joined(ws)
+    first, why = None, ""
+    for p in POST:
+        for m in re.finditer(p, text, I):
+            k = word_at(spans, m.start())
+            if ws[k][0] >= L - region:
+                if first is None or k < first: first, why = k, m.group(0)[:40]
+                break
+    if first is None: return None, ""
+    j = sentence_start(ws, first); c = ws[j][0] - 0.2
+    for a in range(j - 1, -1, -1):
+        if c - ws[a][1] > 40: break
+        if re.fullmatch(r"amen[.!,?]?", ws[a][2], I): c = ws[a][1] + 0.6; break
+    return c, why
+
+def loop_cut(ws, L, region=200):
+    """Speech recognition repeating one short line over music: cut where the repeats begin."""
+    S = [x for x in sents_of(ws) if x[2] >= L - region]
+    for i in range(len(S) - 2):
+        t = re.sub(r"[^a-z ]", "", S[i][3]).strip()
+        if len(t) < 60 and t == re.sub(r"[^a-z ]", "", S[i + 1][3]).strip() == re.sub(r"[^a-z ]", "", S[i + 2][3]).strip(): return S[i][2] - 0.2
+    return None
+
 def words_of(pcm, model):
     segs, _ = model.transcribe(pcm, beam_size=1, language="en", vad_filter=True, word_timestamps=True, condition_on_previous_text=False)
     return [(w.start, w.end, w.word.strip()) for s in segs for w in (s.words or []) if w.word.strip()]
+
+def head_bytes(url, secs, dur):
+    """Enough of a file's opening to hold `secs` seconds (from its size and length)."""
+    try:
+        r = requests.head(url, headers=H, timeout=60, allow_redirects=True); n = int(r.headers.get("content-length") or 0)
+    except Exception: n = 0
+    try: dur = float(dur or 0)
+    except Exception: dur = 0
+    if n and dur: return min(n, int(n * min(1.0, (secs + 30) / dur) * 1.15) + 400_000)
+    return int((secs + 30) * 24_000)
 
 def fetch(url, tail=False, nbytes=4_000_000):
     """Bytes of the opening (or closing) of the file; a whole small file for formats that cannot be read in part."""
@@ -224,7 +329,13 @@ def find_end(ws, rule, L):
                 if c - ws[a][1] > within: break
                 if ws[a + 1][0] - ws[a][1] >= mn: c = ws[a][1] + 0.6; break
         cut = c if cut is None else min(cut, c)
+    pc, pwhy = post_cut(ws, L)
+    if pc is not None and (cut is None or pc < cut): cut = pc; find_end.why = "after the sermon: " + pwhy
+    lc = loop_cut(ws, L)
+    if lc is not None and (cut is None or lc < cut): cut = lc; find_end.why = "repeating line (music)"
     if cut is None: cut = ws[-1][1] + 0.6 if L - ws[-1][1] > 3 else L
+    for w in ws:                                                   # an Amen just after the cut belongs to the prayer
+        if cut - 0.5 <= w[0] <= cut + 2.5 and re.fullmatch(r"amen[.!,?]?", w[2], I): cut = max(cut, w[1] + 0.5)
     return max(0.0, round(L - cut, 1))
 
 def items():
@@ -257,18 +368,25 @@ def measure(k, n):
     for x, it in enumerate(todo, 1):
         rule = RULES[it["src"]]
         try:
-            head, whole = fetch(it["audio"])
+            svc = it["src"] in SERVICE
+            head, whole = fetch(it["audio"], nbytes=head_bytes(it["audio"], 900, it.get("dur")) if svc else 4_000_000)
             pcm = decode(head)
+            sw = words_of(pcm[: (300 if svc else WIN) * 16000], model)
+            hw = [w for w in sw if w[0] < WIN]
             if whole:
                 L = len(pcm) / 16000
-                hw = words_of(pcm[: WIN * 16000], model)
                 tl = pcm[-rule.get("tail", WIN) * 16000:]
             else:
-                hw = words_of(pcm[: WIN * 16000], model)
                 tail, _ = fetch(it["audio"], tail=True, nbytes=7_000_000)
                 tl = decode(tail)[-rule.get("tail", WIN) * 16000:]
             tw = words_of(tl, model); TL = len(tl) / 16000
             s, e = find_start(hw, rule), find_end(tw, rule, TL)
+            if svc:                                                  # a service: past the welcome and announcements to the text
+                ss = service_start(sw, it, lo=s)
+                if ss is None and len(pcm) > 300 * 16000:
+                    more = words_of(pcm[300 * 16000: 900 * 16000], model); sw = sw + [(a + 300, b + 300, w) for a, b, w in more]
+                    ss = service_start(sw, it, lo=s)
+                if ss is not None: s = ss
             if os.environ.get("DUMP") == "1":                    # the words with their times, to write rules from
                 def lines(ws, off=0):
                     row, t = [], None
@@ -279,7 +397,15 @@ def measure(k, n):
                     if row: print(f"    {t + off:7.1f}  {' '.join(row)}")
                 print(f"=== {it['id']} {it['src']} {it['t']!r}  start={s} end_before={e}  (tail window {TL:.0f}s)\n  HEAD"); lines([w for w in hw if w[0] < 240])
                 print("  TAIL (seconds from the window start)"); lines(tw)
-            if s > 300 or e > 300: s, e = min(s, 0), min(e, 0)   # never cut more than a publisher's intro/outro could be
+            if s > (900 if svc else 300) or e > 400: s, e = min(s, 0), min(e, 0)   # never cut more than an intro/outro (or a service's opening) could be
+            if os.environ.get("AUDIT") == "1":                    # the words around the new cuts, to read and compare
+                import trim_audit as TA
+                rec = {"id": it["id"], "src": it["src"], "t": it["t"], "who": it["who"], "pass": it.get("pass", ""), "s": s, "e": e, "dur": it.get("dur"),
+                       "old": [it.get("s") or 0, it.get("e") or 0], "end_why": getattr(find_end, "why", ""),
+                       "before": TA.sentences(sw, max(0, s - 75), s), "after": TA.sentences(sw, s, s + 100),
+                       "end_before": TA.sentences(tw, TL - e - 90, TL - e, off=-TL), "end_after": TA.sentences(tw, TL - e, TL, off=-TL)}
+                os.makedirs(os.path.join(HERE, "audit"), exist_ok=True)
+                with open(os.path.join(HERE, "audit", f"{k}.jsonl"), "a") as af: af.write(json.dumps(rec) + "\n")
             out[it.get("aid", it["id"])] = [s, e]   # by recording: a recording moved to another title (audio_fixes.json) keeps its points
             nxt = " ".join(w[2] for w in hw if w[0] >= s)[:70]
             prv = " ".join(w[2] for w in tw if w[1] <= TL - e)[-70:]
@@ -304,6 +430,7 @@ def merge():
         json.dump(old_e, open(os.path.join(d, f"trim_{src}_end.json"), "w"), indent=0, sort_keys=True)
         print(src, len(m), "measured;", sum(1 for v in m.values() if v[0] > 0), "start later;", sum(1 for v in m.values() if v[1] > 0), "end sooner")
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 if __name__ == "__main__":
     if sys.argv[1] == "measure": measure(int(sys.argv[2]), int(sys.argv[3]))
     else: merge()
