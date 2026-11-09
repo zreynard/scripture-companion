@@ -61,7 +61,7 @@ RULES = {
                              r"visit (our website at )?(www\.)?calvary", r"prayer ?watch line", r"thank you and god bless",
                              r"this is the end of this message", r"further information on any of our products", r"free catalog", r"toll.?free", r"800 ?-? ?272",
                              r"let'?s stand\b", r"pastors are (down )?(here )?at the front"]},
-    "skip_church": {"start": [r"in this message from pastor skip[^.?!]*[.?!]", r"this is expound\.?", r"welcome to calvary church with skip[^.?!]*[.?!]"],
+    "skip_church": {"start": [r"(in|through) this message (from|with) pastor skip[^.?!]*[.?!]", r"this is expound\.?", r"welcome to calvary church with skip[^.?!]*[.?!]"],
                     "promo": [r"^(we'?ll|we will|we won'?t|you'?ll|you will|and (we'?ll|you'?ll|remember))\b(?!.*\b(turn|bibles?|open)\b)"],
                     "end": [r"thank(s| you)( so much)? for joining us (for|in) (this|today'?s) (message|teaching)", r"for more resources from calvary",
                             r"share your story", r"my ?story at", r"support this bible teaching ministry", r"visit (www\.)?calvary", r"give at calvary"]},
