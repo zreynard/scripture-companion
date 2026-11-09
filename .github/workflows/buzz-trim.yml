@@ -20,7 +20,7 @@ permissions:
   contents: write
   actions: write
 concurrency:
-  group: trim
+  group: buzz-trim
   cancel-in-progress: false
 jobs:
   buzz:
