@@ -176,23 +176,30 @@ def passage_pats(it):
     nb = re.sub(r"^1 ", "(1|first|1st) ", re.sub(r"^2 ", "(2|second|2nd) ", re.sub(r"^3 ", "(3|third|3rd) ", book)))
     return [rf"\b{nb}(,? chapter)? {ch}\b", rf"\bbook of {nb}\b"]
 
-def service_start(ws, it, lo=0.0, horizon=330):
-    """Where the teaching starts in a service: after the last welcome/announcement sentence of the opening, at the first
-    text/series line (keeping a prayer just before it), else right after the welcome; None if the opening has neither."""
-    S = [x for x in sents_of(ws) if x[2] >= lo and x[2] < horizon]
+# The message line that opens the sermon, and the phrases only a welcome block has (2819 and Fearless, from 66 openings read by hand)
+MSG_LINE = [r"\bseries\b", r"\bservice called\b", r"\btitle (of|for) (this|today'?s|the) message\b", r"\btitle of today'?s message\b",
+    r"\bweek (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d+) of\b", r"\bwalk(ing)? through (the book of|this|the gospel|matthew|our)",
+    r"\bour text (today|this morning|tonight)\b", r"\blet'?s (jump|begin|get) into\b", r"\blet'?s begin with the word\b", r"\bjourney through\b",
+    r"\bthe word of the lord reads\b", r"\bpreaching from\b", r"\bi'?m (going|gonna) to be (sharing|preaching|bringing)\b", r"\b(come|coming) to the end of\b", r"\bfinal (message|installment)\b"]
+WELCOME_ONLY = [r"\bunbeliever", r"\bbelong before you believe\b", r"\bdigital disciples?\b", r"\boverflow\b", r"\bonline (family|community)\b",
+    r"\bbefore we (jump|get|dive) into the proclamation\b", r"\bmy name is\b", r"\bbe seated\b", r"\bhave a seat\b", r"\bbirthday\b", r"\bmother'?s day\b",
+    r"\bfather'?s day\b", r"\bmerch", r"\bgive it up for\b", r"\bwelcome (to )?(the )?(28|2819|fearless|our guests|all of our guests)"]
+
+def service_start(ws, it, lo=0.0, horizon=600, look=30):
+    """Where the teaching starts in a service: the first message line (series, title, text) not followed within `look` s by
+    welcome-block phrases; else right after the opening's last welcome/announcement sentence; None if neither."""
+    S = [x for x in sents_of(ws) if lo <= x[2] < horizon]
     if not S: return None
-    pre = lambda t: any(re.search(p, t, I) for p in PRE_STRONG + PRE_WELCOME)
-    tx = TEXT_START + passage_pats(it)
-    is_tx = lambda t: any(re.search(p, t, I) for p in tx)
+    msg = lambda t: any(re.search(p, t, I) for p in MSG_LINE)
+    only = lambda t: any(re.search(p, t, I) for p in WELCOME_ONLY)
+    wel = lambda t: any(re.search(p, t, I) for p in WELCOME_ONLY + PRE_STRONG + PRE_WELCOME)
+    for i, x in enumerate(S):
+        if not msg(x[3]) or only(x[3]): continue
+        if any(only(y[3]) for y in S[i + 1:] if y[2] < x[2] + look): continue
+        return max(lo, round(x[2] - 0.3, 1))
     last = None
     for i, x in enumerate(S):
-        if x[2] < 300 and pre(x[3]) and not is_tx(x[3]): last = i
-    first = 0 if last is None else last + 1
-    for i in range(first, len(S)):
-        if is_tx(S[i][3]) and (last is not None or S[i][2] < 120):
-            j = i
-            while j > first and S[i][2] - S[j - 1][2] <= 60 and re.search(r"\b(let'?s pray|pray|father|lord|amen)\b", S[j - 1][3]): j -= 1
-            return max(lo, round(S[j][2] - 0.3, 1))
+        if wel(x[3]): last = i
     if last is not None and last + 1 < len(S): return max(lo, round(S[last + 1][2] - 0.3, 1))
     return None
 
@@ -432,7 +439,7 @@ def measure(k, n):
         rule = RULES[it["src"]]
         try:
             svc = it["src"] in SERVICE or it["src"] in ANNOUNCE
-            head, whole = fetch(it["audio"], nbytes=head_bytes(it["audio"], 330, it.get("dur")) if svc else 4_000_000)
+            head, whole = fetch(it["audio"], nbytes=head_bytes(it["audio"], 600 if it["src"] in SERVICE else 330, it.get("dur")) if svc else 4_000_000)
             pcm = decode(head)
             sw = words_of(pcm[: (330 if svc else WIN) * 16000], model)
             hw = [w for w in sw if w[0] < WIN]
@@ -444,7 +451,9 @@ def measure(k, n):
                 tl = decode(tail)[-rule.get("tail", WIN) * 16000:]
             tw = words_of(tl, model); TL = len(tl) / 16000
             s, e = find_start(hw, rule), find_end(tw, rule, TL)
-            if it["src"] in SERVICE:                                 # a service: past the welcome and announcements to the text
+            if it["src"] in SERVICE:                                 # a service: past the welcome and announcements to the message line
+                if not any(any(re.search(p, x[3], I) for p in MSG_LINE) for x in sents_of(sw)) and len(pcm) > 330 * 16000:
+                    more = words_of(pcm[330 * 16000: 600 * 16000], model); sw = sw + [(a + 330, b + 330, w) for a, b, w in more]
                 ss = service_start(sw, it, lo=s)
                 if ss is not None: s = ss
             elif it["src"] in ANNOUNCE:                              # "before we dive into God's Word ..." announcements
@@ -460,7 +469,7 @@ def measure(k, n):
                     if row: print(f"    {t + off:7.1f}  {' '.join(row)}")
                 print(f"=== {it['id']} {it['src']} {it['t']!r}  start={s} end_before={e}  (tail window {TL:.0f}s)\n  HEAD"); lines([w for w in sw if w[0] < 330])
                 print("  TAIL (seconds from the window start)"); lines(tw)
-            if s > (330 if svc else 300) or e > 400: s, e = min(s, 0), min(e, 0)   # never cut more than an intro/outro (or a service's opening) could be
+            if s > (600 if it["src"] in SERVICE else 330 if svc else 300) or e > 400: s, e = min(s, 0), min(e, 0)   # never cut more than an intro/outro (or a service's opening) could be
             if os.environ.get("AUDIT") == "1":                    # the words around the new cuts, to read and compare
                 import trim_audit as TA
                 rec = {"id": it["id"], "src": it["src"], "t": it["t"], "who": it["who"], "pass": it.get("pass", ""), "s": s, "e": e, "dur": it.get("dur"),
