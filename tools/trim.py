@@ -156,7 +156,8 @@ PRE_STRONG = [r"\bbefore we (dive|jump|get|go|turn)( in| into| to)?\b", r"\b(sig
     r"\b(giving|offering|tithes?|generosity|give online|text to give|offering baskets?)\b", r"\b[a-z]+ ?\.(org|com|church)\b|\bdot (org|com|church)\b",
     r"\bthis (coming )?(sunday|saturday|wednesday|weekend)\b", r"\bnext (sunday|saturday|weekend)\b", r"\b(conference|retreat|trip to israel|israel trip|visiting israel)\b",
     r"\bthank you to (our|all) (staff|volunteers|worship)", r"\bstand up and say hi\b", r"\bdownload (the|our) app\b", r"\b(join us in|please) welcom(e|ing) (dr\.? |pastor |brother )?[a-z]+\b",
-    r"\bdigital disciples\b", r"\boverflow\b", r"\bwelcome (to )?(the )?unbeliever", r"\bmy name is \w+", r"\bhonou?r (the|our|my) (pastor|shepherd|lead pastor|elders?)",
+    ]
+PRE_WELCOME = [r"\bdigital disciples\b", r"\boverflow\b", r"\bwelcome (to )?(the )?unbeliever", r"\bmy name is \w+", r"\bhonou?r (the|our|my) (pastor|shepherd|lead pastor|elders?)",
     r"\bwelcome (to )?(the )?(28|2819|twenty)", r"\b(be|you could be|go ahead and be) seated\b", r"\bhave a seat\b", r"\bshout ?out\b", r"\bgive it up for\b",
     r"\bbelong before you believe\b", r"\bwe('?re| are) a church rooted\b", r"\bnot playing church\b", r"\bwelcome our guests\b", r"\bjust a reminder\b",
     r"\b(couple|few) (of )?(things|announcements)\b", r"\bi want to (reference|mention|share) (a couple|two|a few|some)\b"]
@@ -176,22 +177,23 @@ def passage_pats(it):
     return [rf"\b{nb}(,? chapter)? {ch}\b", rf"\bbook of {nb}\b"]
 
 def service_start(ws, it, lo=0.0, horizon=330):
-    """Where the teaching starts in a service: the first text/series line not followed by announcements (keeping a prayer
-    just before it); None if there is no such line."""
+    """Where the teaching starts in a service: after the last welcome/announcement sentence of the opening, at the first
+    text/series line (keeping a prayer just before it), else right after the welcome; None if the opening has neither."""
     S = [x for x in sents_of(ws) if x[2] >= lo and x[2] < horizon]
     if not S: return None
-    pre = lambda t: any(re.search(p, t, I) for p in PRE_STRONG)
+    pre = lambda t: any(re.search(p, t, I) for p in PRE_STRONG + PRE_WELCOME)
     tx = TEXT_START + passage_pats(it)
-    for i, (a, b, t0, txt) in enumerate(S):
-        if not any(re.search(p, txt, I) for p in tx): continue
-        if any(pre(x[3]) for x in S[i:] if x[2] < t0 + 75): continue          # announcements right after: not yet
-        j = i
-        while j > 0 and t0 - S[j - 1][2] <= 60 and re.search(r"\b(let'?s pray|pray|father|lord|amen)\b", S[j - 1][3]) and not pre(S[j - 1][3]): j -= 1
-        return max(lo, round(S[j][2] - 0.3, 1))
+    is_tx = lambda t: any(re.search(p, t, I) for p in tx)
     last = None
     for i, x in enumerate(S):
-        if pre(x[3]): last = i
-    if last is not None and last + 1 < len(S) and S[-1][2] - S[last][2] > 90 and S[last][2] < 240: return max(lo, round(S[last + 1][2] - 0.3, 1))
+        if x[2] < 300 and pre(x[3]) and not is_tx(x[3]): last = i
+    first = 0 if last is None else last + 1
+    for i in range(first, len(S)):
+        if is_tx(S[i][3]) and (last is not None or S[i][2] < 120):
+            j = i
+            while j > first and S[i][2] - S[j - 1][2] <= 60 and re.search(r"\b(let'?s pray|pray|father|lord|amen)\b", S[j - 1][3]): j -= 1
+            return max(lo, round(S[j][2] - 0.3, 1))
+    if last is not None and last + 1 < len(S): return max(lo, round(S[last + 1][2] - 0.3, 1))
     return None
 
 BEFORE_WE = r"\bbefore we (dive|jump|get|go) (in|into)\b|\bbefore we (do|begin|start)\b,? (i|let me|a couple|just|i want)|\bjust a reminder\b|\b(couple|few) (of )?(things|announcements)\b|\bstart praying about who you might invite\b"

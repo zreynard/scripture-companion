@@ -62,7 +62,7 @@ jobs:
           if-no-files-found: ignore
   merge:
     needs: measure
-    if: ${{ always() && github.event.inputs.dump != '1' && github.event.inputs.evaluate != '1' }}
+    if: ${{ !cancelled() && github.event.inputs.dump != '1' && github.event.inputs.evaluate != '1' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -84,10 +84,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
-          git add data/intro_skip/
-          git diff --cached --quiet && exit 0
-          git commit -q -m "Intro and outro trim points"
-          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          # each try starts from the newest main and merges again, so a save made meanwhile is never lost or half-merged
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python app_build.py >/dev/null && python tools/trim.py merge
+            git add data/intro_skip/
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Intro and outro trim points"
+            git push -q origin HEAD:main && break
+            sleep $((i*7))
+          done
           gh workflow run refresh.yml -f sources=fearless -f check_links=false
   evalreport:
     needs: measure
