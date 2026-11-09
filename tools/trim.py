@@ -184,12 +184,9 @@ def service_start(ws, it, lo=0.0, horizon=330):
     pre = lambda t: any(re.search(p, t, I) for p in PRE_STRONG + PRE_WELCOME)
     tx = TEXT_START + passage_pats(it)
     is_tx = lambda t: any(re.search(p, t, I) for p in tx)
-    last, prev_t = None, None                     # the opening welcome block: from the start, with no 60 s stretch free of welcome/announcement words
+    last = None
     for i, x in enumerate(S):
-        if x[2] >= 300: break
-        if pre(x[3]) and not is_tx(x[3]):
-            if (prev_t is None and x[2] - lo > 60) or (prev_t is not None and x[2] - prev_t > 60): break
-            last, prev_t = i, x[2]
+        if x[2] < 300 and pre(x[3]) and not is_tx(x[3]): last = i
     first = 0 if last is None else last + 1
     for i in range(first, len(S)):
         if is_tx(S[i][3]) and (last is not None or S[i][2] < 120):
@@ -461,7 +458,7 @@ def measure(k, n):
                         row.append(w[2])
                         if re.search(r"[.?!]$", w[2]): print(f"    {t + off:7.1f}  {' '.join(row)}"); row, t = [], None
                     if row: print(f"    {t + off:7.1f}  {' '.join(row)}")
-                print(f"=== {it['id']} {it['src']} {it['t']!r}  start={s} end_before={e}  (tail window {TL:.0f}s)\n  HEAD"); lines([w for w in hw if w[0] < 240])
+                print(f"=== {it['id']} {it['src']} {it['t']!r}  start={s} end_before={e}  (tail window {TL:.0f}s)\n  HEAD"); lines([w for w in sw if w[0] < 330])
                 print("  TAIL (seconds from the window start)"); lines(tw)
             if s > (330 if svc else 300) or e > 400: s, e = min(s, 0), min(e, 0)   # never cut more than an intro/outro (or a service's opening) could be
             if os.environ.get("AUDIT") == "1":                    # the words around the new cuts, to read and compare
