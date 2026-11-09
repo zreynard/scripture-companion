@@ -120,7 +120,9 @@ RULES["skip_archive"]["tail"] = 330
 RULES["skip_church"]["end"] += [r"stand to (your|our) feet", r"read ahead"]
 
 # Church services: the welcome, announcements, giving and promos come first; the teaching starts at the text or the series.
-SERVICE = {"2819_podcast", "fearless", "mclean_podcast", "mclean_oceans", "mclean_api", "brookhills", "brookhills_ia", "radical_message", "skip_church", "platt_messages"}
+SERVICE = {"2819_podcast", "fearless"}          # long welcomes and announcements by the pastor himself before the text
+# sources whose pastor sometimes says "before we dive into God's Word" and gives announcements first (start after them)
+ANNOUNCE = {"mclean_podcast", "mclean_oceans", "mclean_api", "platt_messages", "radical_message"}
 NUMW = r"(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d+)"
 TEXT_START = [r"\b(open|turn)( up)?( with me)?( (in|to) your bibles?)?( with me)? to\b", r"\bif you have (a|your|his) (bible|word)\b",
     r"\bour (text|passage|scripture) (today|this morning|tonight|for today)\b", r"\b(week|part|session) " + NUMW + r" (of|in) (our|a|the|this)\b",
@@ -147,7 +149,7 @@ def passage_pats(it):
     nb = re.sub(r"^1 ", "(1|first|1st) ", re.sub(r"^2 ", "(2|second|2nd) ", re.sub(r"^3 ", "(3|third|3rd) ", book)))
     return [rf"\b{nb}(,? chapter)? {ch}\b", rf"\bbook of {nb}\b"]
 
-def service_start(ws, it, lo=0.0, horizon=900):
+def service_start(ws, it, lo=0.0, horizon=330):
     """Where the teaching starts in a service: the first text/series line not followed by announcements (keeping a prayer
     just before it); None if there is no such line."""
     S = [x for x in sents_of(ws) if x[2] >= lo and x[2] < horizon]
@@ -163,7 +165,19 @@ def service_start(ws, it, lo=0.0, horizon=900):
     last = None
     for i, x in enumerate(S):
         if pre(x[3]): last = i
-    if last is not None and last + 1 < len(S) and S[-1][2] - S[last][2] > 90: return max(lo, round(S[last + 1][2] - 0.3, 1))
+    if last is not None and last + 1 < len(S) and S[-1][2] - S[last][2] > 90 and S[last][2] < 240: return max(lo, round(S[last + 1][2] - 0.3, 1))
+    return None
+
+BEFORE_WE = r"\bbefore we (dive|jump|get|go) (in|into)\b|\bbefore we (do|begin|start)\b,? (i|let me|a couple|just|i want)"
+def announce_start(ws, it, lo=0.0, horizon=330):
+    """Only when the preacher says "before we dive into God's Word" and announces things: start at the next text/series line."""
+    S = [x for x in sents_of(ws) if lo <= x[2] < horizon]
+    k = next((i for i, x in enumerate(S) if re.search(BEFORE_WE, x[3], I)), None)
+    if k is None: return None
+    pre = lambda t: any(re.search(p, t, I) for p in PRE_STRONG)
+    tx = TEXT_START + passage_pats(it) + [r"\b(all right|alright|okay|ok),? (so )?(today|let'?s|we'?re)\b", r"\bwe'?re in week \w+\b"]
+    for i in range(k + 1, len(S)):
+        if any(re.search(p, S[i][3], I) for p in tx) and not any(pre(x[3]) for x in S[i:] if x[2] < S[i][2] + 45): return round(S[i][2] - 0.3, 1)
     return None
 
 # After the sermon: songs, communion, praise breaks, dismissals, outros (a cut right after the final Amen when there is one)
@@ -173,13 +187,20 @@ POST = [r"put your hands together", r"give (god|him|the lord|your \w+|jesus) (so
     r"\bour mcs?\b", r"\bnext week,? we\b", r"take a (stretch )?break", r"let'?s pause there", r"not (going to be|gonna be) on (the )?podcasts?", r"\bbaptiz", r"come back up (here )?on (the )?stage",
     r"\bthank you for coming\b", r"you'?ve been listening to", r"this message is copyrighted", r"welcome to god'?s family", r"\bread ahead\b"]
 
-def post_cut(ws, L, region=200):
+POST_STRONG = [r"you'?ve been listening to", r"this message is copyrighted", r"let'?s close by singing", r"\bsing with me\b", r"\bworship team\b (is|here is|are) (going to|gonna)",
+    r"not (going to be|gonna be) on (the )?podcasts?", r"take a (stretch )?break", r"let'?s pause there", r"welcome to god'?s family", r"\bread ahead\b",
+    r"put your hands together", r"take the roof off", r"if you (received|receive) (that|this)", r"\bour mcs?\b", r"\bdismiss (you|us)\b",
+    r"\b(those|who are) serving the lord'?s supper\b", r"\b(tables?|altar) (is|are) open\b", r"come back up (here )?on (the )?stage"]
+def post_cut(ws, L, region=100):
     text, spans = joined(ws)
     first, why = None, ""
-    for p in POST:
-        for m in re.finditer(p, text, I):
-            k = word_at(spans, m.start())
-            if ws[k][0] >= L - region:
+    amen_t = [w[1] for w in ws if re.fullmatch(r"amen[.!,?]?", w[2], I)]
+    for strong, pats in ((True, POST_STRONG), (False, POST)):
+        for p in pats:
+            for m in re.finditer(p, text, I):
+                k = word_at(spans, m.start())
+                if ws[k][0] < L - region: continue
+                if not strong and not any(0 <= ws[k][0] - a <= 60 for a in amen_t): continue   # a weak word counts only right after the closing Amen
                 if first is None or k < first: first, why = k, m.group(0)[:40]
                 break
     if first is None: return None, ""
@@ -189,12 +210,13 @@ def post_cut(ws, L, region=200):
         if re.fullmatch(r"amen[.!,?]?", ws[a][2], I): c = ws[a][1] + 0.6; break
     return c, why
 
-def loop_cut(ws, L, region=200):
-    """Speech recognition repeating one short line over music: cut where the repeats begin."""
+def loop_cut(ws, L, region=100):
+    """Speech recognition repeating one line over music (four times or more, two words or more): cut where the repeats begin."""
     S = [x for x in sents_of(ws) if x[2] >= L - region]
-    for i in range(len(S) - 2):
-        t = re.sub(r"[^a-z ]", "", S[i][3]).strip()
-        if len(t) < 60 and t == re.sub(r"[^a-z ]", "", S[i + 1][3]).strip() == re.sub(r"[^a-z ]", "", S[i + 2][3]).strip(): return S[i][2] - 0.2
+    n = lambda x: re.sub(r"[^a-z ]", "", x[3]).strip()
+    for i in range(len(S) - 3):
+        t = n(S[i])
+        if len(t.split()) >= 2 and len(t) < 60 and t == n(S[i + 1]) == n(S[i + 2]) == n(S[i + 3]): return S[i][2] - 0.2
     return None
 
 def words_of(pcm, model):
@@ -368,10 +390,10 @@ def measure(k, n):
     for x, it in enumerate(todo, 1):
         rule = RULES[it["src"]]
         try:
-            svc = it["src"] in SERVICE
-            head, whole = fetch(it["audio"], nbytes=head_bytes(it["audio"], 900, it.get("dur")) if svc else 4_000_000)
+            svc = it["src"] in SERVICE or it["src"] in ANNOUNCE
+            head, whole = fetch(it["audio"], nbytes=head_bytes(it["audio"], 330, it.get("dur")) if svc else 4_000_000)
             pcm = decode(head)
-            sw = words_of(pcm[: (300 if svc else WIN) * 16000], model)
+            sw = words_of(pcm[: (330 if svc else WIN) * 16000], model)
             hw = [w for w in sw if w[0] < WIN]
             if whole:
                 L = len(pcm) / 16000
@@ -381,11 +403,11 @@ def measure(k, n):
                 tl = decode(tail)[-rule.get("tail", WIN) * 16000:]
             tw = words_of(tl, model); TL = len(tl) / 16000
             s, e = find_start(hw, rule), find_end(tw, rule, TL)
-            if svc:                                                  # a service: past the welcome and announcements to the text
+            if it["src"] in SERVICE:                                 # a service: past the welcome and announcements to the text
                 ss = service_start(sw, it, lo=s)
-                if ss is None and len(pcm) > 300 * 16000:
-                    more = words_of(pcm[300 * 16000: 900 * 16000], model); sw = sw + [(a + 300, b + 300, w) for a, b, w in more]
-                    ss = service_start(sw, it, lo=s)
+                if ss is not None: s = ss
+            elif it["src"] in ANNOUNCE:                              # "before we dive into God's Word ..." announcements
+                ss = announce_start(sw, it, lo=s)
                 if ss is not None: s = ss
             if os.environ.get("DUMP") == "1":                    # the words with their times, to write rules from
                 def lines(ws, off=0):
@@ -397,7 +419,7 @@ def measure(k, n):
                     if row: print(f"    {t + off:7.1f}  {' '.join(row)}")
                 print(f"=== {it['id']} {it['src']} {it['t']!r}  start={s} end_before={e}  (tail window {TL:.0f}s)\n  HEAD"); lines([w for w in hw if w[0] < 240])
                 print("  TAIL (seconds from the window start)"); lines(tw)
-            if s > (900 if svc else 300) or e > 400: s, e = min(s, 0), min(e, 0)   # never cut more than an intro/outro (or a service's opening) could be
+            if s > (330 if svc else 300) or e > 400: s, e = min(s, 0), min(e, 0)   # never cut more than an intro/outro (or a service's opening) could be
             if os.environ.get("AUDIT") == "1":                    # the words around the new cuts, to read and compare
                 import trim_audit as TA
                 rec = {"id": it["id"], "src": it["src"], "t": it["t"], "who": it["who"], "pass": it.get("pass", ""), "s": s, "e": e, "dur": it.get("dur"),
