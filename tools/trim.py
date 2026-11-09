@@ -41,6 +41,8 @@ RULES = {
     "secret_church_podcast": {"start": [r"this is (the )?secret church \w+,? episode \w+\.?", r"is a resource from radical ?\.? ?net\.?", r"radical ?\.? ?net (forward )?slash \w+\."],
                               "end": [r"thank you for listening", r"you can find more episodes", r"free resources.{0,40}radical"]},
     "mclean_podcast": {"start": [], "end": []},
+    "mclean_oceans": {"start": [], "end": []},
+    "mclean_api": {"start": [], "end": []},
     "brookhills": {"start": [], "end": []},
     "brookhills_ia": {"start": [], "end": COMMON_OUT},
     "2819_podcast": {"start": [], "anchor": r"(mighty|majestic|matchless).{0,30}name of (our )?soon[- ]?coming king",

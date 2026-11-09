@@ -1,0 +1,13 @@
+# Does Buzzsprout still refuse GitHub's servers? A few polite requests, one at a time, with the app's honest name.
+name: Buzzsprout probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          UA="scripture-companion (personal Bible app; github.com/zreynard/scripture-companion)"
+          for u in https://www.buzzsprout.com/107460/episodes/12436357-don-t-hold-back-part-3.mp3 https://www.buzzsprout.com/2545810/episodes/17991699-some-warnings-about-worship.mp3 https://www.buzzsprout.com/2545807/episodes/17990668-dragons-and-dinosaurs-job-40-15-42-6.mp3 https://www.buzzsprout.com/2545807/episodes/18663258-the-gospel-of-christ-in-isaiah-isaiah-52-13-53-12.mp3 https://www.buzzsprout.com/2545807/episodes/19249132-cleaning-his-father-s-house-john-2-12-3-15.mp3; do
+            echo "== $u"; curl -s -o /dev/null -A "$UA" -r 0-1023 -w "%{http_code} final=%{url_effective} size=%{size_download}\n" -L "$u"; sleep 3
+          done

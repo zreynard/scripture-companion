@@ -1,0 +1,67 @@
+# Check the cuts (tools/trim_audit.py): the words around every start and end point, with flags; the report goes to
+# the "trim-audit" branch. By hand only.
+name: Trim audit
+on:
+  workflow_dispatch:
+    inputs:
+      per:
+        description: "random recordings per source (0 = every one)"
+        default: "40"
+      sources:
+        description: "only these sources (comma list)"
+        default: ""
+      ids:
+        description: "only these recordings (comma list of ids)"
+        default: ""
+      seed:
+        description: "sample seed"
+        default: "7"
+permissions:
+  contents: write
+concurrency:
+  group: trim-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper
+      - run: python app_build.py >/dev/null
+      - run: PER="${{ inputs.per }}" SRCS="${{ inputs.sources }}" IDS="${{ inputs.ids }}" SEED="${{ inputs.seed }}" python tools/trim_audit.py audit ${{ matrix.shard }} 16
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audit-${{ matrix.shard }}
+          path: audit/
+          if-no-files-found: ignore
+  report:
+    needs: audit
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+      - run: mkdir -p audit && find parts -name '*.jsonl' -exec sh -c 'cp "$1" "audit/$(basename $(dirname $1))-$(basename $1)"' _ {} \; ; ls audit | wc -l
+      - run: python tools/trim_audit.py report
+      - run: |
+          mkdir /tmp/d && cp audit/* /tmp/d/ && cd /tmp/d
+          git init -q -b trim-audit && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "trim audit"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" trim-audit
