@@ -57,6 +57,8 @@ def preacher_fix(ws, s, start_by):
     if not after or len(count) < 2: return s, ""
     other = sum(1 for w in after[:40] if w[3] != main)
     if other < 25: return s, ""
+    said = " ".join(w[2] for w in after[:60] if w[3] != main).lower()   # only an announcer: not someone reading Scripture
+    if not trim_audit.hits(trim_audit.ADD, said): return s, ""
     for k, w in enumerate(ws):            # the next run of 30+ words by the main speaker, starting at a sentence
         if w[0] < s or w[3] != main: continue
         run = ws[k:k + 30]
@@ -90,7 +92,7 @@ def measure():
         rule = trim.RULES[it["src"]]; ws = [w[:3] for w in ws4]
         L = max(float(it.get("dur") or 0), ws[-1][1] + 1)
         sb = rule.get("start_by", trim.WIN)
-        s = trim.find_start([w for w in ws if w[0] < trim.WIN], rule)
+        s = trim.find_start([w for w in ws if w[0] < max(trim.WIN, rule.get("start_by", trim.WIN))], rule)
         s2, why = preacher_fix(ws4, s, sb)
         if it["src"] in trim.SERVICE or it["src"] in trim.ANNOUNCE:
             ss = (trim.service_start if it["src"] in trim.SERVICE else trim.announce_start)(ws, it, lo=s2)

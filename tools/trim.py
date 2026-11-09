@@ -123,6 +123,13 @@ RULES["skip_archive"]["end"] = [p for p in RULES["skip_archive"]["end"] if p != 
     r"welcome to god'?s family", r"we hope you enjoyed this message"]
 RULES["skip_archive"]["tail"] = 330
 RULES["skip_church"]["end"] += [r"read ahead"]
+RULES["platt_messages"]["start"] += [r"today'?s episode is a rerun of[^.?!]*[.?!]", r"we hope you'?ve enjoyed this week'?s episode[^.?!]*[.?!]"]
+RULES["platt_messages"]["end"] += [r"you are listening to (radical|david platt)"]
+RULES["street_preachers"]["start"] += [r"\bstay locked[.!]?", r"you'?re now tuned into the street preach\w*[^.?!]*[.?!]", r"we pray that you'?re blessed by the content you'?re about to receive[.!]?",
+    r"\bwe are (uh )?(walking (down )?through|continu\w+ to (track|walk) through|in) (this text|(1|first|2|second) peter|the book of \w+)"]
+RULES["street_preachers"]["start_by"] = 420
+RULES["street_preachers"]["end"] += [r"\b(yo|hey|so),? street team\b", r"if you'?ve (been watching|enjoyed) this episode", r"if you'?re watching this (episode|podcast)",
+    r"before we pray,? we want to shout out", r"we pray you were blessed by this behind the scenes", r"tim and i will be in investfest", r"grab a copy", r"shout out some of our sponsors"]
 
 # Church services: the welcome, announcements, giving and promos come first; the teaching starts at the text or the series.
 SERVICE = {"2819_podcast", "fearless"}          # long welcomes and announcements by the pastor himself before the text
@@ -179,10 +186,12 @@ def service_start(ws, it, lo=0.0, horizon=330):
     return None
 
 BEFORE_WE = r"\bbefore we (dive|jump|get|go) (in|into)\b|\bbefore we (do|begin|start)\b,? (i|let me|a couple|just|i want)|\bjust a reminder\b|\b(couple|few) (of )?(things|announcements)\b|\bstart praying about who you might invite\b"
+BEFORE_WE_STRICT = r"\bbefore we (dive|jump|get|go) (in|into)\b|\bbefore we (do|begin|start)\b,? (i|let me|a couple|just|i want)"
 def announce_start(ws, it, lo=0.0, horizon=330):
     """Only when the preacher says "before we dive into God's Word" and announces things: start at the next text/series line."""
     S = [x for x in sents_of(ws) if lo <= x[2] < horizon]
-    k = next((i for i, x in enumerate(S) if re.search(BEFORE_WE, x[3], I)), None)
+    mark = BEFORE_WE if it["src"].startswith("mclean") else BEFORE_WE_STRICT
+    k = next((i for i, x in enumerate(S) if re.search(mark, x[3], I)), None)
     if k is None: return None
     pre = lambda t: any(re.search(p, t, I) for p in PRE_STRONG)
     tx = TEXT_START + passage_pats(it) + [r"\b(all right|alright|okay|ok),? (so )?(today|let'?s|we'?re)\b", r"\bwe'?re in week \w+\b"]
