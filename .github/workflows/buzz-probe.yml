@@ -16,3 +16,9 @@ jobs:
             grep -o "<podcast:[a-zA-Z]*[^>]*>" feed.xml | sed -E 's/url="[^"]*"/url=../' | sort | uniq -c | sort -rn | head -8
             grep -o '<podcast:transcript[^>]*>' feed.xml | head -2; grep -o '<podcast:chapters[^>]*>' feed.xml | head -2; sleep 2
           done
+          for u in https://www.buzzsprout.com/107460/20070184/chapters.json https://www.buzzsprout.com/2545810/20019799/chapters.json https://www.buzzsprout.com/2545807/20019768/chapters.json https://www.buzzsprout.com/107460/12436357/chapters.json; do
+            echo "## chapters $u"; curl -s -L -A "$UA" "$u" -w "\n%{http_code}\n" | head -c 1500; echo; sleep 2
+          done
+          for u in https://www.buzzsprout.com/107460/20070184/transcript.json https://www.buzzsprout.com/2545807/17990668/transcript.json; do
+            echo "## transcript $u"; curl -s -L -A "$UA" "$u" -o t.json -w "%{http_code} %{size_download}\n"; head -c 1200 t.json; echo; sleep 2
+          done
