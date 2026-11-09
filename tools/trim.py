@@ -128,6 +128,9 @@ RULES["platt_messages"]["end"] += [r"you are listening to (radical|david platt)"
 RULES["street_preachers"]["start"] += [r"\bstay locked[.!]?", r"you'?re now tuned into the street preach\w*[^.?!]*[.?!]", r"we pray that you'?re blessed by the content you'?re about to receive[.!]?",
     r"\bwe are (uh )?(walking (down )?through|continu\w+ to (track|walk) through|in) (this text|(1|first|2|second) peter|the book of \w+)"]
 RULES["street_preachers"]["start_by"] = 420
+RULES["davey_wfth"]["end"] += [r"with that (powerful )?illustration,? we bring today'?s message to a close", r"i hope this time in god'?s word today", r"this ministry exists to",
+    r"you'?ve been listening to wisdom for the heart", r"this is wisdom for the heart with", r"as we close today"]
+RULES["davey_wfth"]["back_gap"] = (8, 60)
 RULES["street_preachers"]["end"] += [r"\b(yo|hey|so),? street team\b", r"if you'?ve (been watching|enjoyed) this episode", r"if you'?re watching this (episode|podcast)",
     r"before we pray,? we want to shout out", r"we pray you were blessed by this behind the scenes", r"tim and i will be in investfest", r"grab a copy", r"shout out some of our sponsors"]
 

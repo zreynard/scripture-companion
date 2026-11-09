@@ -44,7 +44,11 @@ def words(show, ep):
     out = []
     for s in segs:
         b = (s.get("body") or "").strip()
-        if b: out.append((float(s.get("startTime") or 0), float(s.get("endTime") or 0), b, s.get("speaker") or ""))
+        if not b: continue
+        st, en = float(s.get("startTime") or 0), float(s.get("endTime") or 0)
+        if re.fullmatch(r"[^\w']+", b) and out:            # punctuation comes as its own token: it belongs to the word before
+            a = out[-1]; out[-1] = (a[0], a[1], a[2] + b.replace(" ", ""), a[3]); continue
+        out.append((st, min(en, st + 2.0), b, s.get("speaker") or ""))   # a word's end time can stretch over the music after it
     return out
 
 def preacher_fix(ws, s, start_by):
@@ -89,6 +93,7 @@ def measure():
         if not sh or ep not in avail.get(sh, set()): n_no += 1; continue
         ws4 = words(sh, ep)
         if not ws4: n_no += 1; continue
+        if it.get("dur") and ws4[-1][1] < 0.85 * float(it["dur"]): n_no += 1; print(f"[{x}/{len(todo)}] {it['src']} {it['t'][:40]!r}: transcript ends at {ws4[-1][1]:.0f}s of {it['dur']}s (another episode's?), skipped", flush=True); continue
         rule = trim.RULES[it["src"]]; ws = [w[:3] for w in ws4]
         L = max(float(it.get("dur") or 0), ws[-1][1] + 1)
         sb = rule.get("start_by", trim.WIN)
