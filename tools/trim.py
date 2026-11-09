@@ -40,9 +40,9 @@ RULES = {
                         "end": COMMON_OUT + [r"secretchurch", r"join us for secret church"]},
     "secret_church_podcast": {"start": [r"this is (the )?secret church \w+,? episode \w+\.?", r"is a resource from radical ?\.? ?net\.?", r"radical ?\.? ?net (forward )?slash \w+\."],
                               "end": [r"thank you for listening", r"you can find more episodes", r"free resources.{0,40}radical"]},
-    "mclean_podcast": {"start": [], "end": []},
-    "mclean_oceans": {"start": [], "end": []},
-    "mclean_api": {"start": [], "end": []},
+    "mclean_podcast": {"start": [], "end": [], "amen_end": 25},
+    "mclean_oceans": {"start": [], "end": [], "amen_end": 25},
+    "mclean_api": {"start": [], "end": [], "amen_end": 25},
     "brookhills": {"start": [], "end": []},
     "brookhills_ia": {"start": [], "end": COMMON_OUT},
     "2819_podcast": {"start": [], "anchor": r"(mighty|majestic|matchless).{0,30}name of (our )?soon[- ]?coming king",
@@ -112,12 +112,17 @@ RULES["skip_connect"]["end"] += [r"we'?re (so )?glad you joined us", r"thanks so
     r"pray(ing)? that god will provide the support", r"partner with me", r"make a connection", r"tune in tomorrow", r"come back (tomorrow|next time)",
     r"thank you for your generosity", r"thanks for listening to connect"]
 RULES["skip_connect"]["tail"] = 330
+RULES["skip_connect"]["end"] += [r"\bthat'?s sk\w*p h\w+\b", r"\b(this|his) message is from (the|his) series", r"a message from his series", r"find the full message",
+    r"that'?s why we share these bible teachings", r"the scripture is vital if you'?re going to", r"through your generous support", r"consider a gift",
+    r"here'?s how you can (do that|give)", r"now,? here'?s an opportunity", r"now,? here'?s skip to share"]
 RULES["davey_archive"]["end"] += [r"you'?ve been listening to the teaching ministry", r"this message is copyrighted", r"let'?s (close by )?sing\b", r"\bsing with me\b"]
-RULES["skip_archive"]["end"] = [p if p != r"let'?s stand\b" else r"let'?s (all )?stand\b(?! and (let'?s )?pray)" for p in RULES["skip_archive"]["end"]] + [
+RULES["skip_archive"]["start"] += [r"the bible from 30,?000 feet[^.?!]*[.?!]( soaring through the scriptures?[^.?!]*[.?!])?", r"welcome to expound[^.?!]*[.?!]",
+    r"thank(s| you) for listening to (this|the|our) (service|message|teaching)[^.?!]*[.?!]"]
+RULES["skip_archive"]["end"] = [p for p in RULES["skip_archive"]["end"] if p != r"let'?s stand\b"] + [r"thank(s| you)( so much)? for listening to (this|the|our) (service|message|teaching)",
     r"if you'?ve missed any of our expound", r"as skip pointed out", r"if you'?ve been following (along )?with us", r"may the lord watch over and keep you",
     r"welcome to god'?s family", r"we hope you enjoyed this message"]
 RULES["skip_archive"]["tail"] = 330
-RULES["skip_church"]["end"] += [r"stand to (your|our) feet", r"read ahead"]
+RULES["skip_church"]["end"] += [r"read ahead"]
 
 # Church services: the welcome, announcements, giving and promos come first; the teaching starts at the text or the series.
 SERVICE = {"2819_podcast", "fearless"}          # long welcomes and announcements by the pastor himself before the text
@@ -129,11 +134,16 @@ TEXT_START = [r"\b(open|turn)( up)?( with me)?( (in|to) your bibles?)?( with me)
     r"\bseries (called|entitled|titled)\b", r"\bwe('?re| are) (in|walking through|continuing|going through) (a series|the (book|gospel|letter) of|our (journey|series|study))",
     r"\bnote ?takers\b", r"\bthe word of the lord (reads|says)\b", r"\b(today|tonight|this morning),? we('?re| are) (continuing|beginning|starting|going to (look|study|be|dive))",
     r"\blet'?s dive (in|into)\b", r"\b(this is|today is) (week|part|the final message|the beginning)\b", r"\bjourney through\b", r"\bwe'?re (in|turning to) (the book of )?\w+ chapter\b",
-    r"\blet'?s (worship the lord|hear from god) (through|in) (the study of )?his word\b", r"\blet'?s jump (right )?(back )?in\b"]
+    r"\blet'?s (worship the lord|hear from god) (through|in) (the study of )?his word\b", r"\blet'?s jump (right )?(back )?in\b",
+    r"\b(back half|front half|final message|last message) of (a|our|the) series\b", r"\bseason (one|two|three|four|\d+)\b", r"\bwe('?re| are) in (a|our) (brand new )?series\b"]
 PRE_STRONG = [r"\bbefore we (dive|jump|get|go|turn)( in| into| to)?\b", r"\b(sign up|register|registration|merchandise|online store|gift bag|membership class|baby dedications?|21 days of prayer)\b",
     r"\b(giving|offering|tithes?|generosity|give online|text to give|offering baskets?)\b", r"\b[a-z]+ ?\.(org|com|church)\b|\bdot (org|com|church)\b",
     r"\bthis (coming )?(sunday|saturday|wednesday|weekend)\b", r"\bnext (sunday|saturday|weekend)\b", r"\b(conference|retreat|trip to israel|israel trip|visiting israel)\b",
-    r"\bthank you to (our|all) (staff|volunteers|worship)", r"\bstand up and say hi\b", r"\bdownload (the|our) app\b", r"\b(join us in|please) welcom(e|ing) (dr\.? |pastor |brother )?[a-z]+\b"]
+    r"\bthank you to (our|all) (staff|volunteers|worship)", r"\bstand up and say hi\b", r"\bdownload (the|our) app\b", r"\b(join us in|please) welcom(e|ing) (dr\.? |pastor |brother )?[a-z]+\b",
+    r"\bdigital disciples\b", r"\boverflow\b", r"\bwelcome (to )?(the )?unbeliever", r"\bmy name is \w+", r"\bhonou?r (the|our|my) (pastor|shepherd|lead pastor|elders?)",
+    r"\bwelcome (to )?(the )?(28|2819|twenty)", r"\b(be|you could be|go ahead and be) seated\b", r"\bhave a seat\b", r"\bshout ?out\b", r"\bgive it up for\b",
+    r"\bbelong before you believe\b", r"\bwe('?re| are) a church rooted\b", r"\bnot playing church\b", r"\bwelcome our guests\b", r"\bjust a reminder\b",
+    r"\b(couple|few) (of )?(things|announcements)\b", r"\bi want to (reference|mention|share) (a couple|two|a few|some)\b"]
 
 def sents_of(ws):
     out, a = [], 0
@@ -168,7 +178,7 @@ def service_start(ws, it, lo=0.0, horizon=330):
     if last is not None and last + 1 < len(S) and S[-1][2] - S[last][2] > 90 and S[last][2] < 240: return max(lo, round(S[last + 1][2] - 0.3, 1))
     return None
 
-BEFORE_WE = r"\bbefore we (dive|jump|get|go) (in|into)\b|\bbefore we (do|begin|start)\b,? (i|let me|a couple|just|i want)"
+BEFORE_WE = r"\bbefore we (dive|jump|get|go) (in|into)\b|\bbefore we (do|begin|start)\b,? (i|let me|a couple|just|i want)|\bjust a reminder\b|\b(couple|few) (of )?(things|announcements)\b|\bstart praying about who you might invite\b"
 def announce_start(ws, it, lo=0.0, horizon=330):
     """Only when the preacher says "before we dive into God's Word" and announces things: start at the next text/series line."""
     S = [x for x in sents_of(ws) if lo <= x[2] < horizon]
@@ -214,9 +224,9 @@ def loop_cut(ws, L, region=100):
     """Speech recognition repeating one line over music (four times or more, two words or more): cut where the repeats begin."""
     S = [x for x in sents_of(ws) if x[2] >= L - region]
     n = lambda x: re.sub(r"[^a-z ]", "", x[3]).strip()
-    for i in range(len(S) - 3):
+    for i in range(len(S) - 4):
         t = n(S[i])
-        if len(t.split()) >= 2 and len(t) < 60 and t == n(S[i + 1]) == n(S[i + 2]) == n(S[i + 3]): return S[i][2] - 0.2
+        if i + 4 < len(S) and len(t.split()) >= 2 and len(t) < 60 and t == n(S[i + 1]) == n(S[i + 2]) == n(S[i + 3]) == n(S[i + 4]): return S[i][2] - 0.2
     return None
 
 def words_of(pcm, model):
@@ -355,6 +365,9 @@ def find_end(ws, rule, L):
     if pc is not None and (cut is None or pc < cut): cut = pc; find_end.why = "after the sermon: " + pwhy
     lc = loop_cut(ws, L)
     if lc is not None and (cut is None or lc < cut): cut = lc; find_end.why = "repeating line (music)"
+    if rule.get("amen_end"):                                   # the service's last Amen, near the end: stop right after it
+        am = [w for w in ws if re.fullmatch(r"amen[.!,?]?", w[2], I) and w[1] >= L - rule["amen_end"]]
+        if am and (cut is None or am[-1][1] + 0.8 < cut): cut = am[-1][1] + 0.8; find_end.why = "last amen"
     if cut is None: cut = ws[-1][1] + 0.6 if L - ws[-1][1] > 3 else L
     for w in ws:                                                   # an Amen just after the cut belongs to the prayer
         if cut - 0.5 <= w[0] <= cut + 2.5 and re.fullmatch(r"amen[.!,?]?", w[2], I): cut = max(cut, w[1] + 0.5)
