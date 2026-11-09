@@ -12,7 +12,7 @@ jobs:
             echo "== $u"; curl -s -o /dev/null -A "$UA" -r 0-1023 -w "%{http_code} final=%{url_effective} size=%{size_download}\n" -L "$u"; sleep 3
           done
           for f in 107460 2545810 2545807 2353448 2524921 295772; do
-            echo "## feed $f"; curl -s -A "$UA" "https://feeds.buzzsprout.com/$f.rss" -o feed.xml -w "%{http_code} %{size_download}\n"
+            echo "## feed $f"; curl -s -L -A "$UA" "https://feeds.buzzsprout.com/$f.rss" -o feed.xml -w "%{http_code} %{size_download}\n"
             grep -o "<podcast:[a-zA-Z]*[^>]*>" feed.xml | sed -E 's/url="[^"]*"/url=../' | sort | uniq -c | sort -rn | head -8
             grep -o '<podcast:transcript[^>]*>' feed.xml | head -2; grep -o '<podcast:chapters[^>]*>' feed.xml | head -2; sleep 2
           done
