@@ -115,7 +115,7 @@ RULES["skip_connect"]["tail"] = 330
 RULES["skip_connect"]["end"] += [r"\bthat'?s sk\w*p h\w+\b", r"\b(this|his) message is from (the|his) series", r"a message from his series", r"find the full message",
     r"that'?s why we share these bible teachings", r"the scripture is vital if you'?re going to", r"through your generous support", r"consider a gift",
     r"here'?s how you can (do that|give)", r"now,? here'?s an opportunity", r"now,? here'?s skip to share"]
-RULES["davey_archive"]["end"] += [r"you'?ve been listening to the teaching ministry", r"this message is copyrighted", r"let'?s (close by )?sing\b", r"\bsing with me\b"]
+RULES["davey_archive"]["end"] += [r"you('?ve| have) been listening to the teaching ministry", r"the preceding message by (dr\.? )?stephen", r"was produced by wisdom (for the heart|international)", r"this message is copyrighted", r"let'?s (close by )?sing\b", r"\bsing with me\b"]
 RULES["skip_archive"]["start"] += [r"(?#exact)the bible from 30 ?,? ?000 feet,? soaring through the scriptures?,? from genesis to revelation[.,]?", r"welcome to expound[^.?!]*[.?!]",
     r"grow (in|and) grace,? and (in )?the knowledge of our lord[^.?!]*[.?!]",
     r"thank(s| you) for listening to (this|the|our) (service|message|teaching)[^.?!]*[.?!]"]
@@ -209,13 +209,13 @@ def announce_start(ws, it, lo=0.0, horizon=330):
     return None
 
 # After the sermon: songs, communion, praise breaks, dismissals, outros (a cut right after the final Amen when there is one)
-POST = [r"put your hands together", r"give (god|him|the lord|your \w+|jesus) (some |a )?(radical )?praise", r"take the roof off", r"if you (received|receive) (that|this)",
+POST = [r"we('?re| are) (going to|gonna) take a (short |quick )?break", r"\bcome on up here\b", r"put your hands together", r"give (god|him|the lord|your \w+|jesus) (some |a )?(radical )?praise", r"take the roof off", r"if you (received|receive) (that|this)",
     r"\b(let'?s|would you|will you|please) (all )?stand\b(?! and (let'?s )?pray)(?! with me (and|as) (we|i) pray)", r"stand to (your|our) feet", r"\b(let'?s|we'?re going to|we'?ll) sing\b",
     r"\bsing with me\b", r"\bworship team\b", r"\bthis song\b", r"lord'?s supper", r"\bcommunion\b", r"\bthe elements\b", r"\b(tables?|altar) (is|are) open\b", r"\bdismiss\b",
     r"\bour mcs?\b", r"\bnext week,? we\b", r"take a (stretch )?break", r"let'?s pause there", r"not (going to be|gonna be) on (the )?podcasts?", r"\bbaptiz", r"come back up (here )?on (the )?stage",
     r"\bthank you for coming\b", r"you'?ve been listening to", r"this message is copyrighted", r"welcome to god'?s family", r"\bread ahead\b"]
 
-POST_STRONG = [r"you'?ve been listening to", r"this message is copyrighted", r"let'?s close by singing", r"\bsing with me\b", r"\bworship team\b (is|here is|are) (going to|gonna)",
+POST_STRONG = [r"you('?ve| have) been listening to", r"the preceding message by", r"this message is copyrighted", r"let'?s close by singing", r"\bsing with me\b", r"\bworship team\b (is|here is|are) (going to|gonna)",
     r"not (going to be|gonna be) on (the )?podcasts?", r"take a (stretch )?break", r"let'?s pause there", r"welcome to god'?s family", r"\bread ahead\b",
     r"put your hands together", r"take the roof off", r"if you (received|receive) (that|this)", r"\bour mcs?\b", r"\bdismiss (you|us)\b",
     r"\b(those|who are) serving the lord'?s supper\b", r"\b(tables?|altar) (is|are) open\b", r"come back up (here )?on (the )?stage"]
