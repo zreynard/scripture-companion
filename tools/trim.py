@@ -127,11 +127,16 @@ RULES["skip_church"]["end"] += [r"read ahead"]
 RULES["platt_messages"]["start"] += [r"today'?s episode is a rerun of[^.?!]*[.?!]", r"we hope you'?ve enjoyed this week'?s episode[^.?!]*[.?!]"]
 RULES["platt_messages"]["end"] += [r"you are listening to (radical|david platt)"]
 RULES["street_preachers"]["start"] += [r"\bstay locked[.!]?", r"you'?re now tuned into the street preach\w*[^.?!]*[.?!]", r"we pray that you'?re blessed by the content you'?re about to receive[.!]?",
-    r"(?#at)\bwe('?re| are) (uh )?(walking (down )?through|continu\w+ to (track|walk) through|in) (this text|(1|first|2|second) peter|the book of \w+)"]
+    r"(?#at)\bwe('?re| are),? ((uh|um),? )*(walking (down )?through|continu\w+ to (track|walk)( through)?|in)(,? (uh|um),?)* (this text|(1|first|2|second|1st|2nd) peter|the book of \w+)"]
 RULES["street_preachers"]["start_by"] = 420
 RULES["davey_wfth"]["end"] += [r"with that (powerful )?illustration,? we bring today'?s message to a close", r"i hope this time in god'?s word today", r"this ministry exists to",
     r"you'?ve been listening to wisdom for the heart", r"this is wisdom for the heart with", r"as we close today"]
 RULES["davey_wfth"]["back_gap"] = (8, 60)
+RULES["davey_wfth"]["start"] += [r"(the )?message you'?re about to hear is called[^.?!]*[.?!]", r"stay with us for this message called[^.?!]*[.?!]",
+    r"stephen'?s calling today'?s lesson[^.?!]*[.?!]", r"stephen dav\w* has a message for you called[^.?!]*[.?!]", r"today,? stephen dav\w* continues his series[^.?!]*[.?!]",
+    r"here'?s stephen dav\w*[.!]"]
+RULES["davey_journey"]["start"] += [r"stephen called this lesson[^.?!]*[.?!]", r"and this lesson is called[^.?!]*[.?!]", r"here'?s stephen with a lesson called[^.?!]*[.?!]",
+    r"welcome to the wisdom journey[^.?!]*[.?!]"]
 RULES["street_preachers"]["end"] += [r"\b(yo|hey|so),? street team\b", r"if you'?ve (been watching|enjoyed) this episode", r"if you'?re watching this (episode|podcast)",
     r"before we pray,? we want to shout out", r"we pray you were blessed by this behind the scenes", r"tim and i will be in investfest", r"grab a copy", r"shout out some of our sponsors"]
 
