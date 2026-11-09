@@ -286,7 +286,8 @@ def joined(ws):
     text, spans = "", []
     for k, w in enumerate(ws):
         if text: text += " "
-        spans.append((len(text), len(text) + len(w[2]))); text += w[2]
+        t = w[2].replace("\u2019", "'").replace("\u2018", "'")
+        spans.append((len(text), len(text) + len(t))); text += t
     return text.lower(), spans
 
 def word_at(spans, pos):

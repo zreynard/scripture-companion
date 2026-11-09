@@ -43,7 +43,7 @@ def words(show, ep):
     except Exception: return None
     out = []
     for s in segs:
-        b = (s.get("body") or "").strip()
+        b = (s.get("body") or "").strip().replace("\u2019", "'").replace("\u2018", "'").replace("\u201c", '"').replace("\u201d", '"')   # typographic quotes, as the rules write them
         if not b or re.fullmatch(r"no-?transcript[.,]?", b, re.I): continue      # the transcript marking a stretch it did not transcribe
         st, en = float(s.get("startTime") or 0), float(s.get("endTime") or 0)
         if re.fullmatch(r"[^\w']+", b) and out:            # punctuation comes as its own token: it belongs to the word before
