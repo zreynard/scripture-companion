@@ -127,7 +127,7 @@ RULES["skip_church"]["end"] += [r"read ahead"]
 RULES["platt_messages"]["start"] += [r"today'?s episode is a rerun of[^.?!]*[.?!]", r"we hope you'?ve enjoyed this week'?s episode[^.?!]*[.?!]"]
 RULES["platt_messages"]["end"] += [r"you are listening to (radical|david platt)"]
 RULES["street_preachers"]["start"] += [r"\bstay locked[.!]?", r"you'?re now tuned into the street preach\w*[^.?!]*[.?!]", r"we pray that you'?re blessed by the content you'?re about to receive[.!]?",
-    r"\bwe are (uh )?(walking (down )?through|continu\w+ to (track|walk) through|in) (this text|(1|first|2|second) peter|the book of \w+)"]
+    r"(?#at)\bwe('?re| are) (uh )?(walking (down )?through|continu\w+ to (track|walk) through|in) (this text|(1|first|2|second) peter|the book of \w+)"]
 RULES["street_preachers"]["start_by"] = 420
 RULES["davey_wfth"]["end"] += [r"with that (powerful )?illustration,? we bring today'?s message to a close", r"i hope this time in god'?s word today", r"this ministry exists to",
     r"you'?ve been listening to wisdom for the heart", r"this is wisdom for the heart with", r"as we close today"]
@@ -313,8 +313,12 @@ def after_last(ws, text, spans, pats, lo, hi, exact=False):
     for pat in pats:
         for m in re.finditer(pat, text, I):
             k = word_at(spans, m.end() - 1)
-            if lo <= ws[word_at(spans, m.start())][0] <= hi and (last is None or k > last): last, lx = k, pat.startswith("(?#exact)")
-    return None if last is None else (last + 1 if exact or lx else sentence_end(ws, last) + 1)
+            if lo <= ws[word_at(spans, m.start())][0] <= hi and (last is None or k > last):
+                last, lx = k, ("at" if pat.startswith("(?#at)") else "exact" if pat.startswith("(?#exact)") else "")
+                if lx == "at": at = sentence_start(ws, word_at(spans, m.start()))
+    if last is None: return None
+    if lx == "at": return at                       # the teaching starts with this very sentence
+    return last + 1 if exact or lx == "exact" else sentence_end(ws, last) + 1
 
 def find_start(ws, rule):
     if not ws: return 0.0
