@@ -16,6 +16,9 @@ on:
       merge:
         description: "1 = save the points to data/intro_skip"
         default: "0"
+      debug:
+        description: "1 = print each recording's last transcript words"
+        default: "0"
 permissions:
   contents: write
   actions: write
@@ -33,7 +36,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -q -r requirements.txt
       - run: python app_build.py >/dev/null
-      - run: ALL="${{ inputs.all }}" SRCS="${{ inputs.sources }}" IDS="${{ inputs.ids }}" python tools/buzz_trim.py measure
+      - run: DEBUG="${{ inputs.debug }}" ALL="${{ inputs.all }}" SRCS="${{ inputs.sources }}" IDS="${{ inputs.ids }}" python tools/buzz_trim.py measure
       - run: python tools/trim_audit.py report
       - run: |
           mkdir /tmp/d && cp audit/* trim/buzz.json /tmp/d/ && cd /tmp/d

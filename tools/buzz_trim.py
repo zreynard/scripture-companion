@@ -98,13 +98,14 @@ def measure():
         L = max(float(it.get("dur") or 0), ws[-1][1] + 1)
         sb = rule.get("start_by", trim.WIN)
         s = trim.find_start([w for w in ws if w[0] < max(trim.WIN, rule.get("start_by", trim.WIN))], rule)
-        s2, why = preacher_fix(ws4, s, sb)
+        s2, why = preacher_fix(ws4, s, sb) if it["src"] in ("davey_wfth", "davey_journey") else (s, "")   # announcers' radio shows only
         if it["src"] in trim.SERVICE or it["src"] in trim.ANNOUNCE:
             ss = (trim.service_start if it["src"] in trim.SERVICE else trim.announce_start)(ws, it, lo=s2)
             if ss is not None and ss > s2: s2, why = ss, (why + "; " if why else "") + "service: teaching from the text line"
         T = rule.get("tail", trim.WIN); off = L - T
         tw = [(a - off, b - off, w) for a, b, w in ws if a >= off]
         e = trim.find_end(tw, rule, T); ewhy = getattr(trim.find_end, "why", "")
+        if os.environ.get("DEBUG") == "1": print("  last tokens", ws4[-6:], "L", L, "T", T, "tw", len(tw), tw[-2:] if tw else None, "e", e, flush=True)
         if s2 > 900 or e > 400: s2, e = min(s2, 0), min(e, 0)
         out[it.get("aid", it["id"])] = [s2, e]
         rec = {"id": it["id"], "src": it["src"], "t": it["t"], "who": it["who"], "pass": it.get("pass", ""), "s": s2, "e": e, "dur": L,

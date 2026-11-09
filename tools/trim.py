@@ -138,7 +138,7 @@ RULES["street_preachers"]["end"] += [r"\b(yo|hey|so),? street team\b", r"if you'
 # Church services: the welcome, announcements, giving and promos come first; the teaching starts at the text or the series.
 SERVICE = {"2819_podcast", "fearless"}          # long welcomes and announcements by the pastor himself before the text
 # sources whose pastor sometimes says "before we dive into God's Word" and gives announcements first (start after them)
-ANNOUNCE = {"mclean_podcast", "mclean_oceans", "mclean_api", "platt_messages", "radical_message"}
+ANNOUNCE = {"mclean_podcast", "mclean_oceans", "mclean_api", "radical_message"}
 NUMW = r"(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d+)"
 TEXT_START = [r"\b(open|turn)( up)?( with me)?( (in|to) your bibles?)?( with me)? to\b", r"\bif you have (a|your|his) (bible|word)\b",
     r"\bour (text|passage|scripture) (today|this morning|tonight|for today)\b", r"\b(week|part|session) " + NUMW + r" (of|in) (our|a|the|this)\b",
