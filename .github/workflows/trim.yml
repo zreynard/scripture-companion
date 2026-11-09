@@ -37,9 +37,9 @@ jobs:
     timeout-minutes: 300
     strategy:
       fail-fast: false
-      max-parallel: 16
+      max-parallel: 20
       matrix:
-        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -51,7 +51,7 @@ jobs:
       - run: |
           ALL=${{ github.event.inputs.all || '0' }}
           if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" = "7" ]; then ALL=1; fi
-          AUDIT="${{ github.event.inputs.evaluate }}" ALL=$ALL SRCS="${{ github.event.inputs.sources }}" IDS="${{ github.event.inputs.ids }}" DUMP="${{ github.event.inputs.dump }}" python tools/trim.py measure ${{ matrix.shard }} 16
+          AUDIT="${{ github.event.inputs.evaluate }}" ALL=$ALL SRCS="${{ github.event.inputs.sources }}" IDS="${{ github.event.inputs.ids }}" DUMP="${{ github.event.inputs.dump }}" python tools/trim.py measure ${{ matrix.shard }} 40
       - uses: actions/upload-artifact@v4
         if: always()
         with:
