@@ -11,3 +11,8 @@ jobs:
           for u in https://www.buzzsprout.com/107460/episodes/12436357-don-t-hold-back-part-3.mp3 https://www.buzzsprout.com/2545810/episodes/17991699-some-warnings-about-worship.mp3 https://www.buzzsprout.com/2545807/episodes/17990668-dragons-and-dinosaurs-job-40-15-42-6.mp3 https://www.buzzsprout.com/2545807/episodes/18663258-the-gospel-of-christ-in-isaiah-isaiah-52-13-53-12.mp3 https://www.buzzsprout.com/2545807/episodes/19249132-cleaning-his-father-s-house-john-2-12-3-15.mp3; do
             echo "== $u"; curl -s -o /dev/null -A "$UA" -r 0-1023 -w "%{http_code} final=%{url_effective} size=%{size_download}\n" -L "$u"; sleep 3
           done
+          for f in 107460 2545810 2545807 2353448 2524921 295772; do
+            echo "## feed $f"; curl -s -A "$UA" "https://feeds.buzzsprout.com/$f.rss" -o feed.xml -w "%{http_code} %{size_download}\n"
+            grep -o "<podcast:[a-zA-Z]*[^>]*>" feed.xml | sed -E 's/url="[^"]*"/url=../' | sort | uniq -c | sort -rn | head -8
+            grep -o '<podcast:transcript[^>]*>' feed.xml | head -2; grep -o '<podcast:chapters[^>]*>' feed.xml | head -2; sleep 2
+          done
