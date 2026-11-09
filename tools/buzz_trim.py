@@ -44,7 +44,7 @@ def words(show, ep):
     out = []
     for s in segs:
         b = (s.get("body") or "").strip()
-        if not b: continue
+        if not b or re.fullmatch(r"no-?transcript[.,]?", b, re.I): continue      # the transcript marking a stretch it did not transcribe
         st, en = float(s.get("startTime") or 0), float(s.get("endTime") or 0)
         if re.fullmatch(r"[^\w']+", b) and out:            # punctuation comes as its own token: it belongs to the word before
             a = out[-1]; out[-1] = (a[0], a[1], a[2] + b.replace(" ", ""), a[3]); continue

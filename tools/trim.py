@@ -382,8 +382,8 @@ def find_end(ws, rule, L):
         am = [w for w in ws if re.fullmatch(r"amen[.!,?]?", w[2], I) and w[1] >= L - rule["amen_end"]]
         if am and (cut is None or am[-1][1] + 0.8 < cut): cut = am[-1][1] + 0.8; find_end.why = "last amen"
     if cut is None:
-        for k in range(len(ws) - 1, max(0, len(ws) - 5), -1):      # <= 3 words after a 12 s silence near the end: music heard as words
-            if ws[k][0] - ws[k - 1][1] >= 12 and ws[k][0] >= L - 60 and len(ws) - k <= 3: cut = ws[k - 1][1] + 0.6; find_end.why = "silence, then stray words"; break
+        for k in range(len(ws) - 1, max(0, len(ws) - 5), -1):      # <= 3 words after an 8 s silence near the end: music heard as words
+            if ws[k][0] - ws[k - 1][1] >= 8 and ws[k][0] >= L - 60 and len(ws) - k <= 3: cut = ws[k - 1][1] + 0.6; find_end.why = "silence, then stray words"; break
     if cut is None: cut = ws[-1][1] + 0.6 if L - ws[-1][1] > 3 else L
     for w in ws:                                                   # an Amen just after the cut belongs to the prayer
         if cut - 0.5 <= w[0] <= cut + 2.5 and re.fullmatch(r"amen[.!,?]?", w[2], I): cut = max(cut, w[1] + 0.5)
