@@ -216,6 +216,8 @@ SC_PASSAGES.update({
 SC_NO_PLACE = set()
 # shows kept in the catalog but left off the road (Pray the Word: short prayers, not teaching)
 OFF_ROAD_SOURCES = {"ptw"}
+# Skip's topical Sunday sermons are left out, except these, which teach one whole book (id: book)
+SKIP_TOPICAL_KEEP = {"a4b8a24a1cb7": "Song of Solomon"}   # The Shulamite Bride (11 Jan 2026)
 # Fearless Church (Spring Hill, TN): Sunday sermons, published on praise.global (the archive fearlesstn.org embeds).
 FEARLESS_FEED = "https://praise.global/feed/fearlesstn"
 SHOWS = {"fearless": "Fearless Church", "brookhills_ia": "The Church at Brook Hills", "davey_archive": "Sermon archive", "ptw": "Pray the Word", "davey_wfth": "Wisdom for the Heart", "davey_journey": "The Wisdom Journey"}

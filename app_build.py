@@ -125,11 +125,19 @@ def main():
     team = {f"guest:{n}" for n in config.PAM_CHURCH_PREACHERS}
     skip_guest = lambda e: e["source"].startswith("skip_") and e["speaker"].startswith("guest:")  # Calvary Church guests keep Skip's series unbroken
     # Skip Heitzig: his verse-by-verse walk-throughs and Bible from 30,000 Feet, not his topical Sunday sermons
-    skip_kept = lambda e: not e["source"].startswith("skip_") or is_walk(e["title"]) or re.match(r"\s*Flight\b", e["title"])
+    skip_kept = lambda e: not e["source"].startswith("skip_") or is_walk(e["title"]) or re.match(r"\s*Flight\b", e["title"]) or e["id"] in config.SKIP_TOPICAL_KEEP
     for e in entries:   # Skip's studies of one-chapter books are titled "Jude", "2 John": give them their passage
         t = (e.get("title") or "").strip()
         if e["source"].startswith("skip_") and t in ONE_CH and not e.get("refs"):
             e["refs"] = {t: {"chapters": [1], "verse_level": False, "whole_book": True, "raw": [t]}}; e["refs_text"] = t + " 1"
+        bk = config.SKIP_TOPICAL_KEEP.get(e["id"])
+        if bk:   # a sermon on the whole book: on that book's page
+            e["refs"] = {bk: {"chapters": list(range(1, CHAPTERS[bk] + 1)), "verse_level": False, "whole_book": True, "raw": [bk]}}
+            e["refs_text"] = bk; e["track"] = "overview"
+        # a walk-through of part of a book ("Song of Solomon 4-8") belongs on those chapters, even when it is most of the book
+        if e["source"].startswith("skip_") and e.get("track") == "overview" and len(e.get("refs") or {}) == 1 and is_walk(t):
+            (b, d), = e["refs"].items()
+            if not d["whole_book"] and b in CHAPTERS and len(d["chapters"]) < CHAPTERS[b] and min(d["chapters"]) > 1: e["track"] = "sermon"
     usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["source"] not in config.OFF_ROAD_SOURCES and skip_kept(e) and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e) or e["speaker"].startswith("fearless:"))]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
     CH, WALK, VS = {}, {}, {}  # chapters per book for each item; WALK = titled only by its passage (a walk-through message); VS = verses
@@ -2362,14 +2370,19 @@ function openSCNight(n){closeSeries();OPEN.add('sc:'+n);view='sc';S.set('view',v
 const PT_ORDER={Platt:0,PAM:1,Davey:2,Skip:3,Fearless:4},LOCK_IC='<svg class="pt-lock" viewBox="0 0 24 24" width="12" height="12" aria-label="Private"><rect x="5" y="11" width="14" height="9" rx="2" fill="currentColor"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
 function ptTitle(t){t=(t||'').replace(/\s*\([^)]*\d[^)]*\)\s*/g,' ');let g=t.split('|').map(x=>x.trim());if(g.length>2)g=g.slice(0,2);else if(g.length===2&&/David Platt|^[A-Z][a-z]+ [A-Z][a-z]+$|Image Of|Kingmaker|Let Down|How To Fight|Here As It Is/.test(g[1]))g=g.slice(0,1);return g.join(' | ').trim()}
 function ptKey(t){return ptTitle(t).toLowerCase().replace(/’/g,"'").replace(/[^a-z0-9]+/g,' ').trim()}
-function ptBuild(d){let R,N;try{R=new RegExp(d.rx,'i');N=d.nx?new RegExp(d.nx,'i'):null}catch(e){return null}
- const best={};for(const i of Object.values(I)){if(i.tr==='devotional'||!i.audio||i.nar||String(i.id).startsWith('int:'))continue;const t=ptTitle(i.t);if(!R.test(t)||(N&&N.test(t))||/^\s*Secret Church\b/.test(t))continue;
+function ptBuild(d){let R=null,N;try{R=d.rx?new RegExp(d.rx,'i'):null;N=d.nx?new RegExp(d.nx,'i'):null}catch(e){return null}
+ const best={};if(R)for(const i of Object.values(I)){if(i.tr==='devotional'||!i.audio||i.nar||String(i.id).startsWith('int:'))continue;const t=ptTitle(i.t);if(!R.test(t)||(N&&N.test(t))||/^\s*Secret Church\b/.test(t))continue;
   const k=i.who+'|'+ptKey(i.t),r=[i.dur?1:0,i.date||''],h=best[k];if(!h||r[0]>h.r[0]||(r[0]===h.r[0]&&r[1]>h.r[1]))best[k]={r,id:i.id}}
  const ids=Object.values(best).map(x=>x.id),ess=[];
  for(const pat of d.ess||[]){let P;try{P=new RegExp(pat,'i')}catch(e){continue}const hit=ids.filter(x=>P.test(ptTitle(I[x].t))&&!ess.includes(x)).sort((a,b)=>String(I[a].date||'').localeCompare(String(I[b].date||'')));if(hit.length)ess.push(hit[0])}
- const sc=d.sc||[],more=ids.filter(x=>!ess.includes(x)&&!(I[x].sc&&sc.includes(I[x].sc[0]))).sort((a,b)=>((PT_ORDER[I[a].who]??9)-(PT_ORDER[I[b].who]??9))||ptKey(I[a].t).localeCompare(ptKey(I[b].t)));
- return {id:d.id,name:d.name,blurb:d.blurb||'',keys:d.keys||[],sc,ess,more,private:true}}
-function ptApply(defs){D.topics=(D.topics||[]).filter(t=>!t.private);for(const d of defs||[]){if(!d||!d.id||!d.rx)continue;const t=ptBuild(d);if(!t)continue;D.topics.push(t);if(d.icon)TOPIC_IC[d.id]=d.icon}
+ /* whole books the topic takes in: every message on that book, chapter by chapter, then the book overviews */
+ const bks=[],inBk=new Set();for(const p of d.pb||[]){const b=(D.books||[]).find(x=>x.name===p.b);if(!b)continue;const L=[],ok=id=>{const i=I[id];return i&&i.audio&&!i.nar&&!i.sc&&!/^\s*Secret Church\b/.test(i.t)&&!ess.includes(id)&&!L.includes(id)};
+  const ord=(a,b)=>(PT_ORDER[I[a].who]??9)-(PT_ORDER[I[b].who]??9);
+  for(const ch of b.ch||[])for(const id of (ch.ids||[]).filter(ok).sort(ord))L.push(id);for(const id of (b.ov||[]).filter(ok).sort(ord))L.push(id);
+  if(L.length){bks.push({label:p.label||p.b,ids:L});L.forEach(x=>inBk.add(x))}}
+ const sc=d.sc||[],more=ids.filter(x=>!ess.includes(x)&&!inBk.has(x)&&!(I[x].sc&&sc.includes(I[x].sc[0]))).sort((a,b)=>((PT_ORDER[I[a].who]??9)-(PT_ORDER[I[b].who]??9))||ptKey(I[a].t).localeCompare(ptKey(I[b].t)));
+ return {id:d.id,name:d.name,blurb:d.blurb||'',keys:d.keys||[],sc,ess,bks,more,private:true}}
+function ptApply(defs){D.topics=(D.topics||[]).filter(t=>!t.private);for(const d of defs||[]){if(!d||!d.id||!(d.rx||(d.pb&&d.pb.length)))continue;const t=ptBuild(d);if(!t)continue;D.topics.push(t);if(d.icon)TOPIC_IC[d.id]=d.icon}
  if(view==='library'&&LT==='topics')render()}
 async function ptLoad(){if(!bkOn()){try{localStorage.removeItem('sc:ptdef')}catch(e){}if((D.topics||[]).some(t=>t.private))ptApply([]);return}
  const c=S.get('ptdef',null);if(c)ptApply(c);   /* kept on this device only (not a synced key) */
@@ -2378,7 +2391,7 @@ async function ptLoad(){if(!bkOn()){try{localStorage.removeItem('sc:ptdef')}catc
 function openTopic(id){const t=(D.topics||[]).find(x=>x.id===id);if(!t)return;const G=scGroups();
  const keys=t.keys.map(k=>`<button class="tp-k" data-kgo="${esc(k.b)}|${k.c}"><b>${esc(k.ref)}</b><span>${esc(k.note)}</span><i>›</i></button>`).join('');
  const nights=t.sc.map(n=>G.find(g=>g.ev.n===n)).filter(Boolean).map(g=>`<button class="tp-sc" data-scn="${g.ev.n}"><small>Secret Church ${g.ev.n}</small><b>${esc(g.ev.title)}</b><span>David Platt · ${g.ids.length} sessions ›</span></button>`).join('');
- const list=()=>{const row=id=>tRow({i:I[id]},null);let h=`<div class="jv-sec">Essential teaching</div>${t.ess.map(row).join('')}`;
+ const list=()=>{const row=id=>tRow({i:I[id]},null);let h=t.ess.length?`<div class="jv-sec">Essential teaching</div>${t.ess.map(row).join('')}`:'';for(const g of t.bks||[])h+=`<div class="jv-sec">${esc(g.label)}</div>${g.ids.map(row).join('')}`;
   if(t.more.length){const by={};t.more.forEach(id=>(by[I[id].who]=by[I[id].who]||[]).push(id));h+=`<div class="jv-sec">More teaching</div>`+Object.entries(by).map(([k,l])=>`<details class="tch-b"><summary>${esc(NAMES[k]||k)}<span>${l.length}</span></summary>${l.map(row).join('')}</details>`).join('')}return h};
  openListSheet(t.name,`<div class="tp-hd">${topicIc(t.id,44)}<div class="bps-t">${esc(t.name)}${t.private?LOCK_IC:''}</div></div>${t.private?'<p class="pt-note">Only on your devices</p>':''}<p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,el=>{
   el.querySelectorAll('[data-kgo]').forEach((b,j)=>b.onclick=()=>{const sh=el.querySelector('.bps-sh');topicPassage(t,t.keys[j],sh?sh.scrollTop:0)});el.querySelectorAll('[data-scn]').forEach(b=>b.onclick=()=>{const sh=el.querySelector('.bps-sh');topicNight(t,+b.dataset.scn,sh?sh.scrollTop:0)})})}

@@ -281,19 +281,24 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       setMini(false); NP().classList.add('on'); cutPaint(); const shown = !$('#cutb').hidden; $('#cutb').click(); const saved = (S.get('cut', {}) || {})[ID], s1 = I[ID].s, inKeys = BK_KEYS.includes('cut') && BK_MAP.includes('cut');
       const u = document.querySelector('#note .note-undo'); if (u) u.click(); const s2 = I[ID].s, gone = !((S.get('cut', {}) || {})[ID] >= 0); return { shown, saved, s1, s2, orig, inKeys, gone, undo: !!u }; });
     return (r.shown && r.saved === 300 && r.s1 === 300 && r.undo && r.gone && r.s2 === r.orig && r.inKeys) || r; });
-  await T('U71 private topics: built from the private repo only with the backup key (lock, sermons, chapter link); without the key nothing is asked or shown', async () => {
-    const DEF = [{"id": "qa_private", "name": "QA Private Topic", "blurb": "A stand-in topic for tests.", "icon": ["#4a5272", "<circle cx=\"12\" cy=\"12\" r=\"6\"/>"], "keys": [{"b": "1 Corinthians", "c": 6, "to": 6, "ref": "1 Corinthians 6:12\u201320", "note": "test passage"}], "rx": "\\bprayer\\b", "nx": "", "sc": [19], "ess": ["^Prayer that Amazes Jesus$"]}];
+  await T('U71 private topics: built from the private repo only with the backup key (lock, sermons, a whole book of teaching, chapter link); without the key nothing is asked or shown', async () => {
+    const DEF = [{"id": "qa_private", "name": "QA Private Topic", "blurb": "A stand-in topic for tests.", "icon": ["#4a5272", "<circle cx=\"12\" cy=\"12\" r=\"6\"/>"], "keys": [{"b": "1 Corinthians", "c": 6, "to": 6, "ref": "1 Corinthians 6:12\u201320", "note": "test passage"}], "rx": "\\bprayer\\b", "nx": "", "sc": [19], "ess": ["^Prayer that Amazes Jesus$"], "pb": [{"b": "Jonah", "label": "QA Book"}]}];
     const c1 = await ctx(); const A = await open(c1); let asked = 0;
     await A.evaluate(DEF => { window.__asked = 0; window.bkGH = (path, o) => { window.__asked++; return Promise.resolve(new Response(JSON.stringify(DEF), { status: 200 })); }; S.set('bkkey', 'test'); }, DEF);
     await A.evaluate(() => ptLoad()); await wait(300);
-    const r = await A.evaluate(() => { const t = D.topics.find(x => x.id === 'qa_private'); return { has: !!t, n: t ? t.ess.length + t.more.length : 0, sc: t ? t.sc.join() : '', asked: window.__asked }; });
+    const r = await A.evaluate(() => { const t = D.topics.find(x => x.id === 'qa_private'); const bk = t && t.bks[0]; return { has: !!t, n: t ? t.ess.length + t.more.length : 0, sc: t ? t.sc.join() : '', asked: window.__asked, bk: bk ? bk.ids.length : 0, bkOnly: !!bk && bk.ids.every(x => !t.more.includes(x) && !t.ess.includes(x)) && bk.ids.every(x => /Jonah/.test(I[x].pass || '')) }; });
     await A.evaluate(() => { $('#tabs [data-tab2=library]').click(); }); await wait(400); await A.click('[data-lt=topics]'); await wait(300);
     const row = await A.evaluate(() => { const b = document.querySelector('[data-topic=qa_private]'); return b ? { lock: !!b.querySelector('.pt-lock'), em: b.querySelector('em').textContent } : null; });
-    await A.click('[data-topic=qa_private]'); await wait(600); const sheet = await A.evaluate(() => ({ note: !!document.querySelector('.pt-note'), rows: document.querySelectorAll('.bps-sh [data-row], .bps-sh .voice, .bps-sh .tr2').length, sc: !!document.querySelector('.tp-sc') }));
+    await A.click('[data-topic=qa_private]'); await wait(600); const sheet = await A.evaluate(() => ({ note: !!document.querySelector('.pt-note'), rows: document.querySelectorAll('.bps-sh [data-row], .bps-sh .voice, .bps-sh .tr2').length, sc: !!document.querySelector('.tp-sc'), bk: [...document.querySelectorAll('.bps-sh .jv-sec')].some(e => e.textContent === 'QA Book') }));
     await A.evaluate(() => { S.set('bkkey', ''); localStorage.removeItem('sc:bkkey'); return ptLoad(); }); await wait(200); const gone = await A.evaluate(() => !D.topics.some(t => t.private) && !localStorage.getItem('sc:ptdef'));
     const B = await open(await ctx()); await B.evaluate(() => { window.__asked = 0; window.bkGH = () => { window.__asked++; return Promise.resolve(new Response('[]')); }; }); await wait(1200);
     const nokey = await B.evaluate(() => ({ asked: window.__asked, has: D.topics.some(t => t.private), html: document.documentElement.outerHTML.includes('QA Private Topic') }));
-    return (r.has && r.n >= 6 && r.sc === '19' && r.asked >= 1 && row && row.lock && /Only on your devices/.test(row.em) && sheet.note && sheet.sc && gone && nokey.asked === 0 && !nokey.has && !nokey.html) || { r, row, sheet, gone, nokey }; });
+    return (r.has && r.n >= 6 && r.bk >= 2 && r.bkOnly && sheet.bk && r.sc === '19' && r.asked >= 1 && row && row.lock && /Only on your devices/.test(row.em) && sheet.note && sheet.sc && gone && nokey.asked === 0 && !nokey.has && !nokey.html) || { r, row, sheet, gone, nokey }; });
+  await T('U72 Song of Solomon: Skip\'s 4-8 study sits on chapters 4-8; his Shulamite Bride sermon is on the book page', async () => {
+    const A = await open(await ctx());
+    const r = await A.evaluate(() => { const b = D.books.find(x => x.name === 'Song of Solomon'); const on = c => b.ch.find(x => x.c === c).ids.map(id => I[id].t);
+      return { c4: on(4).includes('Song of Solomon 4-8'), c8: on(8).includes('Song of Solomon 4-8'), c3: on(3).includes('Song of Solomon 4-8'), ov: b.ov.map(id => I[id].t) }; });
+    return (r.c4 && r.c8 && !r.c3 && r.ov.includes('The Shulamite Bride') && !r.ov.includes('Song of Solomon 4-8')) || r; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
