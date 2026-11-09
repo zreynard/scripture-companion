@@ -116,7 +116,8 @@ RULES["skip_connect"]["end"] += [r"\bthat'?s sk\w*p h\w+\b", r"\b(this|his) mess
     r"that'?s why we share these bible teachings", r"the scripture is vital if you'?re going to", r"through your generous support", r"consider a gift",
     r"here'?s how you can (do that|give)", r"now,? here'?s an opportunity", r"now,? here'?s skip to share"]
 RULES["davey_archive"]["end"] += [r"you'?ve been listening to the teaching ministry", r"this message is copyrighted", r"let'?s (close by )?sing\b", r"\bsing with me\b"]
-RULES["skip_archive"]["start"] += [r"the bible from 30,?000 feet[^.?!]*[.?!]( soaring through the scriptures?[^.?!]*[.?!])?", r"welcome to expound[^.?!]*[.?!]",
+RULES["skip_archive"]["start"] += [r"(?#exact)the bible from 30 ?,? ?000 feet,? soaring through the scriptures?,? from genesis to revelation[.,]?", r"welcome to expound[^.?!]*[.?!]",
+    r"grow (in|and) grace,? and (in )?the knowledge of our lord[^.?!]*[.?!]",
     r"thank(s| you) for listening to (this|the|our) (service|message|teaching)[^.?!]*[.?!]"]
 RULES["skip_archive"]["end"] = [p for p in RULES["skip_archive"]["end"] if p != r"let'?s stand\b"] + [r"thank(s| you)( so much)? for listening to (this|the|our) (service|message|teaching)",
     r"if you'?ve missed any of our expound", r"as skip pointed out", r"if you'?ve been following (along )?with us", r"may the lord watch over and keep you",
@@ -311,8 +312,8 @@ def after_last(ws, text, spans, pats, lo, hi, exact=False):
     for pat in pats:
         for m in re.finditer(pat, text, I):
             k = word_at(spans, m.end() - 1)
-            if lo <= ws[word_at(spans, m.start())][0] <= hi and (last is None or k > last): last = k
-    return None if last is None else (last + 1 if exact else sentence_end(ws, last) + 1)
+            if lo <= ws[word_at(spans, m.start())][0] <= hi and (last is None or k > last): last, lx = k, pat.startswith("(?#exact)")
+    return None if last is None else (last + 1 if exact or lx else sentence_end(ws, last) + 1)
 
 def find_start(ws, rule):
     if not ws: return 0.0
@@ -380,6 +381,9 @@ def find_end(ws, rule, L):
     if rule.get("amen_end"):                                   # the service's last Amen, near the end: stop right after it
         am = [w for w in ws if re.fullmatch(r"amen[.!,?]?", w[2], I) and w[1] >= L - rule["amen_end"]]
         if am and (cut is None or am[-1][1] + 0.8 < cut): cut = am[-1][1] + 0.8; find_end.why = "last amen"
+    if cut is None:
+        for k in range(len(ws) - 1, max(0, len(ws) - 5), -1):      # <= 3 words after a 12 s silence near the end: music heard as words
+            if ws[k][0] - ws[k - 1][1] >= 12 and ws[k][0] >= L - 60 and len(ws) - k <= 3: cut = ws[k - 1][1] + 0.6; find_end.why = "silence, then stray words"; break
     if cut is None: cut = ws[-1][1] + 0.6 if L - ws[-1][1] > 3 else L
     for w in ws:                                                   # an Amen just after the cut belongs to the prayer
         if cut - 0.5 <= w[0] <= cut + 2.5 and re.fullmatch(r"amen[.!,?]?", w[2], I): cut = max(cut, w[1] + 0.5)
