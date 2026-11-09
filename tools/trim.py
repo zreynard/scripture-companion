@@ -184,9 +184,12 @@ def service_start(ws, it, lo=0.0, horizon=330):
     pre = lambda t: any(re.search(p, t, I) for p in PRE_STRONG + PRE_WELCOME)
     tx = TEXT_START + passage_pats(it)
     is_tx = lambda t: any(re.search(p, t, I) for p in tx)
-    last = None
+    last, prev_t = None, None                     # the opening welcome block: from the start, with no 60 s stretch free of welcome/announcement words
     for i, x in enumerate(S):
-        if x[2] < 300 and pre(x[3]) and not is_tx(x[3]): last = i
+        if x[2] >= 300: break
+        if pre(x[3]) and not is_tx(x[3]):
+            if (prev_t is None and x[2] - lo > 60) or (prev_t is not None and x[2] - prev_t > 60): break
+            last, prev_t = i, x[2]
     first = 0 if last is None else last + 1
     for i in range(first, len(S)):
         if is_tx(S[i][3]) and (last is not None or S[i][2] < 120):
