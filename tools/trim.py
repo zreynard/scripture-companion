@@ -115,7 +115,8 @@ RULES["skip_connect"]["tail"] = 330
 RULES["skip_connect"]["end"] += [r"\bthat'?s sk\w*p h\w+\b", r"\b(this|his) message is from (the|his) series", r"a message from his series", r"find the full message",
     r"that'?s why we share these bible teachings", r"the scripture is vital if you'?re going to", r"through your generous support", r"consider a gift",
     r"here'?s how you can (do that|give)", r"now,? here'?s an opportunity", r"now,? here'?s skip to share"]
-RULES["davey_archive"]["end"] += [r"you('?ve| have) been listening to the teaching ministry", r"the preceding message by (dr\.? )?stephen", r"was produced by wisdom (for the heart|international)", r"this message is copyrighted", r"let'?s (close by )?sing\b", r"\bsing with me\b"]
+RULES["davey_archive"]["end"] += [r"you('?ve| have) been listening to the teaching ministry", r"the preceding message by (dr\.? )?stephen", r"was produced by wisdom (for the heart|international)", r"this message is copyrighted"]
+# "let's sing" can be inside a story: it ends a sermon only in the after-sermon rules (right after the Amen, or "let's close by singing" near the end)
 RULES["skip_archive"]["start"] += [r"(?#exact)the bible from 30 ?,? ?000 feet,? soaring through the scriptures?,? from genesis to revelation[.,]?", r"welcome to expound[^.?!]*[.?!]",
     r"grow (in|and) grace,? and (in )?the knowledge of our lord[^.?!]*[.?!]",
     r"thank(s| you) for listening to (this|the|our) (service|message|teaching)[^.?!]*[.?!]"]
