@@ -41,8 +41,18 @@ TOPICS = [
       ("1 Corinthians", 7, "1 Corinthians 7", "Marriage and singleness"),
       ("Ephesians", 5, "Ephesians 5:21–6:4", "Marriage and Christ's love for the church"),
       ("Colossians", 3, "Colossians 3:18–21", "Husbands, wives, children, parents")],
-     r"marriage|married|husbands?|wives|\bwife\b|parent|children|famil|singleness|sexual", r"church family|family of god|a family that|special needs|unborn|culture of death|little children|next generation", [11],
+     r"marriage|married|husbands?|wives|\bwife\b|parent|children|famil|singleness|sexual", r"church family|family of god|a family that|special needs|unborn|culture of death|little children|next generation|children of the night|family tree|true family|new marriage", [11],
      [r"^God.s Good Design for Marriage and Singleness . Part 1$", r"^God.s Good Design for Marriage and Singleness - Part 2$", r"^The Difference Jesus Makes in Marriage$", r"^The Difference Jesus Makes in Children and Parents$", r"^Beauty in Both Singleness and Marriage$", r"^A Parent's Bill of Rights"]),
+    ("manhood", "Manhood",
+     "God calls men to be strong and gentle: to know him, love their wives as Christ loved the church, bring up their children in the Lord, and lead by serving.",
+     [("Genesis", 2, "Genesis 2:15–24", "Called to work, keep and love"),
+      ("Joshua", 24, "Joshua 24:14–15", "As for me and my house"),
+      ("1 Corinthians", 16, "1 Corinthians 16:13–14", "Act like men; let all be done in love"),
+      ("Ephesians", 5, "Ephesians 5:25–6:4", "Love your wife; bring up your children in the Lord"),
+      ("1 Timothy", 3, "1 Timothy 3:1–7", "He must manage his own household well"),
+      ("Titus", 2, "Titus 2:1–8", "Older men and younger men")],
+     r"\bmanhood|masculin|young men|old men|men and women|servant leader|leadership|when leaders fall|shepherd the flock", "", [],
+     []),
     ("disciple", "Discipleship",
      "A disciple follows Jesus: hears his call, trusts him, obeys him, and helps others follow him too. It costs everything, and it is worth it.",
      [("Matthew", 4, "Matthew 4:18–22", "Follow me, and I will make you fishers of men"),
@@ -127,6 +137,20 @@ TOPICS = [
      [r"^Our Obligation to the Unreached – Part 1$", r"^Unreached People: Not a Missions Problem$", r"^The Song of Heaven and the Sound of All Nations$", r"^Why the Great Commission is Great$", r"^Divine Sovereignty: The Fuel of Death-Defying Missions$"]),
 ]
 
+# Sections inside a topic: (label, title pattern, exclusions). A section takes from every sermon in the app, not only
+# the topic's own title matches, so one sermon can sit in two topics (a father's sermon in Marriage & Family and Manhood).
+SECTIONS = {
+    "marriage": [
+        ("Marriage", r"marriage|married|husbands?|wives|\bwife\b", r"^beauty in both singleness|new marriage|sexual"),
+        ("Parenting & Fatherhood", r"parent|children and parents|father-son|fatherhood|raising (children|kids)", r"orphan|fatherhood of god"),
+        ("Singleness", r"singleness|\bsingle\b", r""),
+    ],
+    "manhood": [
+        ("A Man of God", r"\bmanhood|masculin|young men|old men|men and women", r""),
+        ("Leading Your Home", r"^(attachment: )?the gospel and (marriage|parents)$|^the difference jesus makes in (marriage|children and parents)|father-son|^a parent's bill of rights|^god's design for marriage", r""),
+        ("Leading Others", r"servant leader|leadership|when leaders fall|shepherd the flock", r""),
+    ],
+}
 TEACHER_ORDER = {"Platt": 0, "PAM": 1, "Davey": 2, "Skip": 3, "Fearless": 4}
 _SPEAKER = re.compile(r"\s*\|\s*(David Platt|Philip Anthony Mitchell|[A-Z][a-z]+ [A-Z][a-z]+|Elder [A-Z][a-z]+ [A-Z][a-z]+)\s*(\||$)")
 
@@ -177,9 +201,37 @@ def build(items, chapters, on_road):
                          key=lambda x: (x not in on_road, items[x].get("date") or ""), reverse=False)
             if hit:
                 essential.append(hit[0])
+        # with sections, the essentials lead their own section instead of a list of their own
+        secs = SECTIONS.get(tid, [])
+        bks, taken = [], set() if secs else set(essential)
+        def same(x):   # one sermon, whatever feed it came through: "(Part 2)" stays, "(Titus 2:6-8)" and a series prefix go
+            t = re.sub(r"\s*\([^)]*\d:\d[^)]*\)", "", items[x]["t"]).split("|")[0]
+            return (items[x]["who"], re.sub(r"^attachment ", "", re.sub(r"[^a-z0-9]+", " ", t.lower().replace("’", "'")).strip()))
+        whole = lambda k: (k[0], re.sub(r" (part|pt) ?\d+[ab]?$", "", k[1]))
+        for label, pat, ex in secs:
+            P, X = re.compile(pat, re.I), re.compile(ex, re.I) if ex else None
+            pick = {}
+            for i in items.values():
+                if i["tr"] == "devotional" or not i.get("audio") or i["id"] in taken or (i.get("sc") and i["sc"][0] in nights):
+                    continue
+                t = _title(i["t"])
+                if not P.search(t) or (X and X.search(t)) or re.match(r"^\s*Secret Church\b", t) or same(i["id"]) in {same(x) for x in taken}:
+                    continue
+                k, rank = same(i["id"]), (i["id"] in on_road, bool(i.get("dur")), i.get("date") or "")
+                if k not in pick or rank > pick[k][0]:
+                    pick[k] = (rank, i["id"])
+            # a radio show's "Part 1"/"Part 2" of a sermon the archive also has whole: the whole one only
+            got = [v[1] for k, v in pick.items() if not (whole(k) != k and whole(k) in pick)]
+            got.sort(key=lambda x: (x not in essential, essential.index(x) if x in essential else 0, TEACHER_ORDER.get(items[x]["who"], 9), _key(items[x]["t"]), items[x]["t"]))
+            if got:
+                bks.append({"label": label, "ids": got}); taken |= set(got)
+        if secs:
+            essential = [x for x in essential if x not in taken]
+            gone = {same(y) for y in taken} | {whole(same(y)) for y in taken}
+            ids = [x for x in ids if x not in taken and same(x) not in gone and whole(same(x)) not in gone]
         more = sorted((x for x in ids if x not in essential and not (items[x].get("sc") and items[x]["sc"][0] in nights)),
                       key=lambda x: (TEACHER_ORDER.get(items[x]["who"], 9), _key(items[x]["t"])))
         out.append({"id": tid, "name": name, "blurb": blurb,
                     "keys": [{"b": b, "c": c, "to": _to(ref, c), "ref": ref, "note": note} for b, c, ref, note in keys],
-                    "sc": nights, "ess": essential, "more": more})
+                    "sc": nights, "ess": essential, "more": more, **({"bks": bks} if bks else {})})
     return out
