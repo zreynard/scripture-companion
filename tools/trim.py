@@ -240,7 +240,8 @@ def items():
     road |= {i for i, it in D["items"].items() if it["src"] in ("davey_archive", "davey_sermons", "davey_wfth", "davey_journey")}
     # and every Bible from 30,000 Feet flight, the radio versions in parts too
     road |= {i for i, it in D["items"].items() if it["src"].startswith("skip_") and re.match(r"\s*Flight\b", it["t"] or "")}
-    return sorted([D["items"][i] for i in road if i in D["items"] and D["items"][i].get("audio") and D["items"][i]["src"] in RULES], key=lambda i: i["id"])
+    road |= set(D["items"])   # every recording: the Library and search too, not only the road
+    return sorted([D["items"][i] for i in road if i in D["items"] and D["items"][i].get("audio") and not D["items"][i].get("nar") and D["items"][i]["src"] in RULES], key=lambda i: i["id"])
 
 def measure(k, n):
     from faster_whisper import WhisperModel
@@ -249,7 +250,7 @@ def measure(k, n):
     for f in glob.glob(os.path.join(HERE, "data", "intro_skip", "trim_*.json")):
         if not f.endswith("_end.json"): have.update(json.load(open(f)))
     SR = {x for x in os.environ.get("SRCS", "").split(",") if x}; ID = {x for x in os.environ.get("IDS", "").split(",") if x}
-    todo = [i for i in items() if (not SR or i["src"] in SR) and (not ID or i["id"] in ID) and (os.environ.get("ALL") == "1" or ID or i.get("aid", i["id"]) not in have)][k::n]
+    todo = [i for i in items() if "buzzsprout.com" not in str(i["audio"]) and (not SR or i["src"] in SR) and (not ID or i["id"] in ID) and (os.environ.get("ALL") == "1" or ID or i.get("aid", i["id"]) not in have)][k::n]
     os.makedirs(os.path.join(HERE, "trim"), exist_ok=True)
     out, path = {}, os.path.join(HERE, "trim", f"{k}.json")
     print(f"shard {k}/{n}: {len(todo)} recordings", flush=True)

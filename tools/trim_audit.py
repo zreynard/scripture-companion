@@ -113,7 +113,7 @@ def report():
         out.append("=" * 100); out.append(src); out.append("=" * 100)
         for r in L:
             fl = {k: v for k, v in r.get("flags", {}).items() if v}
-            out.append(f"\n## {r['id']} | {r['t'][:70]} | {r['who']} | {r['pass']} | start {r['s']}s  end -{r['e']}s  len {r['dur']}  {'FLAGS ' + json.dumps(fl) if fl else ''} {r.get('error', '')}")
+            out.append(f"\n## {r['id']} | {r['t'][:70]} | {r['who']} | {r['pass']} | start {r['s']}s  end -{r['e']}s  len {r['dur']}{'  (was +%s -%s)' % tuple(r['old']) if r.get('old') else ''}{'  [' + r['speaker_fix'] + ']' if r.get('speaker_fix') else ''}{'  end: ' + r['end_why'] if r.get('end_why') else ''}  {'FLAGS ' + json.dumps(fl) if fl else ''} {r.get('error', '')}")
             for lab in ("opening", "before", "after", "end_before", "end_after"):
                 if r.get(lab): out.append(f"  [{lab}]"); out += [f"    {t:8.1f}  {s}" for t, s in r[lab]]
     open(os.path.join(HERE, "audit", "report.txt"), "w").write("\n".join(out))

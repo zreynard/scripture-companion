@@ -1,0 +1,54 @@
+# Start and end points for Buzzsprout recordings from the transcripts their feeds publish (tools/buzz_trim.py).
+# The words around every cut go to the "trim-buzz" branch to read; merge=1 also saves the points.
+name: Buzzsprout trims
+on:
+  workflow_dispatch:
+    inputs:
+      all:
+        description: "1 = measure again those already measured"
+        default: "1"
+      sources:
+        description: "only these sources (comma list)"
+        default: ""
+      ids:
+        description: "only these recordings (comma list)"
+        default: ""
+      merge:
+        description: "1 = save the points to data/intro_skip"
+        default: "0"
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: trim
+  cancel-in-progress: false
+jobs:
+  buzz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - run: python app_build.py >/dev/null
+      - run: ALL="${{ inputs.all }}" SRCS="${{ inputs.sources }}" IDS="${{ inputs.ids }}" python tools/buzz_trim.py measure
+      - run: python tools/trim_audit.py report
+      - run: |
+          mkdir /tmp/d && cp audit/* trim/buzz.json /tmp/d/ && cd /tmp/d
+          git init -q -b trim-buzz && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "buzzsprout trims"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" trim-buzz
+      - if: ${{ inputs.merge == '1' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python tools/trim.py merge
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add data/intro_skip/
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Buzzsprout trim points (from published transcripts)"
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*5)); done
+          gh workflow run refresh.yml -f sources=fearless -f check_links=false
