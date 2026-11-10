@@ -20,7 +20,7 @@ jobs:
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
       - run: |
           pip install -q torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
-          pip install -q "speechbrain==1.0.3" numpy requests huggingface_hub
+          pip install -q "speechbrain==1.0.3" numpy requests "huggingface_hub==0.25.2"
       - run: python tools/voice_id.py embed ${{ matrix.k }} 12
       - uses: actions/upload-artifact@v4
         with:
