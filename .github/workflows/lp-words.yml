@@ -1,0 +1,20 @@
+# The words and their times at the end of one recording (tools/lp_words.py). By hand only.
+name: LP words
+on:
+  workflow_dispatch:
+    inputs:
+      src: {description: "recording id", default: "0030f8fdb4bf"}
+      sb: {description: "seconds before the end where it starts", default: "126"}
+      e: {description: "seconds before the end where it ends", default: "5"}
+jobs:
+  words:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper numpy
+      - run: python app_build.py >/dev/null
+      - run: python tools/lp_words.py "${{ inputs.src }}" "${{ inputs.sb }}" "${{ inputs.e }}"
