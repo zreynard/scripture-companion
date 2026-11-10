@@ -5,7 +5,7 @@ PASS  1,189 chapters, numbered 1..n in order inside every book
 PASS  app always walks in canonical order (no order switch left)
 
 == Placement (each teaching sits only where its stated passage is)
-FAIL  every placement matches the teaching's passage  (4 of 3327)
+FAIL  every placement matches the teaching's passage  (4 of 3421)
         - The Shulamite Bride shown as overview at Song of Solomon, refs ['1 Kings']
         - 2 John at 2 John 1; its passage is 
         - 3 John at 3 John 1; its passage is 
@@ -44,7 +44,8 @@ PASS  no two script functions share a name
 PASS  no dates in the future
 PASS  feed episodes on the road all carry a date
 PASS  every id is the hash of its link (progress keys stable)
-PASS  every shipped entry from the original catalog still exists (same id)
+FAIL  every shipped entry from the original catalog still exists  (1)
+        - could not compare: Unterminated string starting at: line 1 column 267 (char 266)
 PASS  nothing unverified (PENDING / FAIL) on the road
 PASS  no teaching twice in one chapter
 
@@ -62,4 +63,4 @@ PASS  overviews and points stay short (22 words or fewer)
 PASS  nothing about women / mothers / womanhood on the road
 PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
 
-40 of 41 checks pass
+39 of 41 checks pass
