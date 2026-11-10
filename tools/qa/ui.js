@@ -344,11 +344,11 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     // a short local clip stands in for the sermon's recording
     await A.evaluate(() => { ledCur().audio = SILENT; ledCur().sb = 0.5; ledCur().e = 0; });
     await A.click('[data-ledpp]'); await wait(900);
-    const p = await A.evaluate(() => ({ id: LED.id, src: LED.el && LED.el.getAttribute('src') === SILENT, main: cur && String(cur).startsWith('led:'), en: LED.en > LED.st, inLib: Object.keys(I).filter(k => k.startsWith('led:')).length }));
-    await A.click('[data-ledsp]'); const sp = await A.evaluate(() => ({ sp: LED.sp, rate: LED.el.playbackRate, t: document.querySelector('[data-ledsp]').textContent }));
+    const p = await A.evaluate(() => ({ id: LED.id, src: !!(LED.c && (LED.c.a.getAttribute('src') || '').startsWith(SILENT)), muted: LED.c && LED.c.a.muted, main: cur && String(cur).startsWith('led:'), en: LED.c && LED.c.end > LED.c.t0, inLib: Object.keys(I).filter(k => k.startsWith('led:')).length }));
+    await A.click('[data-ledsp]'); const sp = await A.evaluate(() => ({ sp: LED.sp, rate: LED.c.a.playbackRate, t: document.querySelector('[data-ledsp]').textContent }));
     const mu = await A.evaluate(() => { const b = document.querySelector('[data-ledmu]'); if (!b) return 'none'; const was = BED.led; b.click(); const now = BED.led; b.click(); return was !== now && BED.led === was; });
     return new RegExp('^Be Led ' + v.who + ' 1×( ♪ Music (on|off))?$').test(v.txt) && v.old === 0 && v.short === 0 && v.n >= 6 && v.sk === 2 && g.p === v.p0 + 1 && g.id !== v.id0
-      && p.id === g.id && p.src && !p.main && p.inLib === 0 && sp.sp === 1.1 && sp.rate === 1.1 && sp.t === '1.1×' && mu !== false || { v, g, p, sp, mu }; });
+      && p.id === g.id && p.src && p.muted === false && !p.main && p.inLib === 0 && sp.sp === 1.1 && sp.rate === 1.1 && sp.t === '1.1×' && mu !== false || { v, g, p, sp, mu }; });
   await T('U77 Meditate: today\'s saying read by a pastor; Begin reads it (Listen), a breath, again (Again), then Be still with no clock until Amen; n of N with arrows', async () => {
     const A = await open(await ctx());
     await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prtop=g]'); await wait(300); await A.click('[data-prm=med]'); await wait(400);

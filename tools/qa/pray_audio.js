@@ -25,25 +25,31 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
   const b = await ENGINE.launch(ENGINE === chromium ? { args: ['--autoplay-policy=no-user-gesture-required'] } : {});
   const p = await (await b.newContext()).newPage();
   await p.goto(SITE + '?x=' + Date.now()); await p.waitForTimeout(1500);
-  const L = await p.evaluate(() => [...(PRAY.led || []).map(x => ({ kind: 'led', id: x.id, who: x.who, url: x.audio, sb: x.sb, e: x.e })),
+  const L = await p.evaluate(() => [...(PRAY.led || []).map(x => ({ kind: 'led', id: x.id, who: x.who, url: x.audio, audio: x.audio, sb: x.sb, e: x.e, L: x.L, dur: x.dur })),
                                      ...(PRAY.med || []).filter(x => x.audio).map(x => ({ kind: 'med', id: x.ref, who: x.who, url: x.audio, a: x.a, b: x.b }))]);
   const out = []; let k = 0;
   async function one(x) {
     if (/buzzsprout\.com/.test(x.url)) { return { ...x, ok: null, note: 'Buzzsprout refuses GitHub servers: not checked here' }; }
     const r = await p.evaluate(async x => {
-      const a = new Audio(); a.muted = true; a.preload = 'metadata';
-      const wait = (ev, ms) => new Promise(ok => { const t = setTimeout(() => ok(false), ms); a.addEventListener(ev, () => { clearTimeout(t); ok(true) }, { once: true }); });
-      a.src = x.url; if (!await wait('loadedmetadata', 30000)) return { ok: false, note: 'no metadata in 30 s', err: a.error && a.error.code };
-      const L = a.duration, t0 = x.kind === 'led' ? L - x.sb : x.a, end = x.kind === 'led' ? L - x.e : x.b;
-      a.src = x.url + '#t=' + t0.toFixed(2);
-      const pl = wait('playing', 25000); a.play().catch(() => {});
-      if (!await pl) return { ok: false, L, note: 'did not start playing in 25 s', err: a.error && a.error.code };
-      const at = a.currentTime; const t1 = Date.now();
-      while (a.currentTime < t0 + 1 && Date.now() - t1 < 20000) await new Promise(r => setTimeout(r, 200));
-      const moved = a.currentTime >= t0 + 1;
-      a.currentTime = Math.max(t0, end - 1.5); const sk = await wait('seeked', 15000);
-      a.pause(); a.removeAttribute('src'); a.load();
-      return { ok: moved && Math.abs(at - t0) < 1.5 && sk, L: +L.toFixed(2), t0: +t0.toFixed(2), opened_at: +at.toFixed(2), moved, seek_end: sk };
+      // the app's own player (clipper), exactly as Be Led and Meditate use it
+      const c = clipper(new Audio(), {}); c.rate = 1;
+      let t0, end, fix = null;
+      if (x.kind === 'med') { t0 = x.a; end = x.b; }
+      else { [t0, end] = ledSpan(x); fix = d => { if (isFinite(d) && d > 0) { const [s, e] = ledSpan(x, d); c.t0 = s; c.end = e } }; }
+      c.go(x.url, t0, end, fix);
+      const t = Date.now(); while (c.state !== 'playing' && c.state !== 'error' && Date.now() - t < 30000) await new Promise(r => setTimeout(r, 100));
+      if (c.state !== 'playing') { const st = c.state; c.clear(); return { ok: false, note: 'state ' + st + ' after 30 s', err: c.a.error && c.a.error.code }; }
+      await new Promise(r => setTimeout(r, 1500));
+      const at = c.a.currentTime, T0 = c.t0, L = c.a.duration;
+      const near = at >= T0 - 0.3 && at <= T0 + 4;              // playing from the stretch's start
+      let stop = null;
+      if (x.kind === 'med') {                                      // and stopping at its end
+        c.a.currentTime = Math.max(c.t0, c.end - 1.2);
+        const t2 = Date.now(); while (c.state !== 'ended' && Date.now() - t2 < 15000) await new Promise(r => setTimeout(r, 50));
+        stop = c.state === 'ended' ? +(c.a.currentTime - c.end).toFixed(2) : null;
+      }
+      c.clear();
+      return { ok: near && (x.kind !== 'med' || (stop !== null && Math.abs(stop) <= 0.3)), L: isFinite(L) ? +L.toFixed(2) : null, t0: +T0.toFixed(2), at: +at.toFixed(2), stop };
     }, x).catch(e => ({ ok: false, note: String(e).slice(0, 120) }));
     return { ...x, ...r, mp3: await vbr(x.url) };
   }

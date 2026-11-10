@@ -2783,7 +2783,7 @@ function clipper(a,h){const c={a,t0:0,end:0,url:'',rate:1,tm:null,wd:null,ld:nul
  c.err=()=>{clr();try{a.pause()}catch(e){}st('error');if(h.error)h.error()};
  c.speed=()=>{try{a.defaultPlaybackRate=c.rate;a.playbackRate=c.rate}catch(e){}};
  a.addEventListener('playing',()=>{clearTimeout(c.wd);clearTimeout(c.ld);c.tries=0;st('playing');c.arm()});
- a.addEventListener('waiting',()=>{clearTimeout(c.ld);c.ld=setTimeout(()=>{if(!a.paused&&a.readyState<3&&c.state==='playing')st('loading')},3000)});
+ a.addEventListener('waiting',()=>{if(c.state==='starting')return;clearTimeout(c.ld);c.ld=setTimeout(()=>{if(!a.paused&&a.readyState<3&&c.state==='playing')st('loading')},3000)});   /* while starting, the start's own 3 s timer says Loading… */
  a.addEventListener('pause',()=>{clearTimeout(c.tm);clearTimeout(c.ld);if(c.state==='playing'||c.state==='loading')st('paused')});
  ['seeked','ratechange'].forEach(e=>a.addEventListener(e,()=>c.arm()));
  a.addEventListener('timeupdate',()=>{if(c.end&&!a.paused&&a.currentTime>=c.end-0.03)c.fin();else if(h.tick)h.tick()});

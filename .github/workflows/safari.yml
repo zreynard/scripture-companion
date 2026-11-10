@@ -11,6 +11,9 @@ jobs:
         with:
           node-version: "22"
       - run: npm i --no-save playwright@1.48.2 >/dev/null && npx playwright install --with-deps webkit >/dev/null
+      - name: Pray, every scenario (published site)
+        if: always()
+        run: BROWSER=webkit SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/pray.js
       - name: Browsers (published site)
         run: BROWSER=webkit SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/ui.js
       - name: Live sync (real relays)
