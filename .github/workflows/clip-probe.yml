@@ -1,0 +1,31 @@
+# Pray's recordings byte by byte (tools/clip_probe.py): which hosts let the app read a stretch itself, constant or
+# variable bitrate; and one stretch's exact bytes, heard as a phone would play them. By hand only.
+name: Clip probe
+on:
+  workflow_dispatch:
+    inputs:
+      src: {description: "recording id for the slice", default: "0030f8fdb4bf"}
+      sb: {description: "seconds before the end where the slice starts", default: "131"}
+      e: {description: "seconds before the end where it ends", default: "1"}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - run: python app_build.py >/dev/null
+      - run: python tools/clip_probe.py probe
+  slice:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper numpy
+      - run: python app_build.py >/dev/null
+      - run: python tools/clip_probe.py slice "${{ inputs.src }}" "${{ inputs.sb }}" "${{ inputs.e }}"
