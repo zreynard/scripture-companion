@@ -85,11 +85,25 @@ jobs:
             u=$(grep -o '<enclosure[^>]*url="[^"]*"' "$f" | head -2 | sed -E 's/.*url="([^"]*)".*/\1/'); for x in $u; do
               echo "== audio $x"; curl -s -o /dev/null -A "$UA" -r 0-1023 -L -w "%{http_code} final=%{url_effective} size=%{size_download}\n" "$x"; sleep 3; done
           done
-      - name: Subsplash media list (public, no login; a refusal is reported and left)
+      - name: Subsplash library pages (public, server-rendered) and every feed episode
         run: |
           UA="scripture-companion (personal Bible app; github.com/zreynard/scripture-companion)"
-          for u in "https://core.subsplash.com/media/v1/media-items?filter%5Bapp_key%5D=9M4PJJ&page%5Bsize%5D=5" "https://feeds.subsplash.com/9M4PJJ" "https://subsplash.com/u/-9M4PJJ/media/l/46a8f0c?format=json"; do
-            echo "## $u"; curl -s -A "$UA" -H "Accept: application/json" "$u" -o r.out -w "%{http_code} %{content_type} %{size_download}\n"; head -c 600 r.out; echo; sleep 3
+          python3 - <<'PY'
+          import re, xml.etree.ElementTree as ET
+          IT = "{http://www.itunes.com/dtds/podcast-1.0.dtd}"
+          for it in ET.parse("probe/feed_1220936479.xml").getroot().find("channel").findall("item"):
+              print("VALL", (it.findtext("pubDate") or "")[5:16], "|", it.findtext(IT + "author"), "|", it.findtext(IT + "duration"), "|", it.findtext("title"))
+          PY
+          for u in "https://subsplash.com/u/-9M4PJJ/media" "https://subsplash.com/u/-9M4PJJ/media/l/46a8f0c" "https://subsplash.com/u/-9M4PJJ/media/l/n4hnpm5"; do
+            echo "## page $u"; curl -s -L -A "$UA" "$u" -o page.html -w "%{http_code} %{size_download}\n"
+            python3 - <<'PY'
+          import re
+          t = open("page.html", encoding="utf-8", errors="replace").read().replace('\\"', '"')
+          print("  item slugs:", len(set(re.findall(r"media/d/([a-z0-9]+-[a-z0-9-]+)", t))), sorted(set(re.findall(r"media/d/([a-z0-9]+-[a-z0-9-]+)", t)))[:60])
+          print("  list slugs:", sorted(set(re.findall(r"media/l/([a-z0-9]+)", t)))[:60])
+          print("  titles:", re.findall(r'"title":"([^"]{3,90})"', t)[:60])
+          PY
+            sleep 3
           done
       - uses: actions/upload-artifact@v4
         with: { name: vaughan-probe, path: probe/ }
