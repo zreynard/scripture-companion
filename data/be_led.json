@@ -1,77 +1,992 @@
 {
- "_note": "Be Led (Pray tab): pastors leading in prayer, the closing prayers of their sermons. Each plays from its sermon's own recording: sb = seconds before the file's end where the prayer starts, e = seconds before the end where it ends (the amen). music = the recording has none under the prayer, so the soaking music plays (set by tools/led_probe.py). Test set, Nov 2026.",
+ "_note": "Be Led (Pray tab): pastors leading in prayer, the closing prayers of their sermons, chosen for power (4 strong, 5 the strongest) from every sermon's closing words, each at least a minute. Each plays from its sermon's own recording: sb = seconds before the file's end where the prayer starts, e = where it ends; both set in a pause and checked word by word with the sound measured (tools/led_check.py), never on a word or mid-sound. music = the recording has none under the prayer, so your soaking music plays. Nov 2026.",
  "prayers": [
   {
-   "src": "449964348000",
-   "sb": 81.0,
+   "src": "004e99e2eee4",
+   "sb": 209.52,
    "e": 0.0,
-   "title": "When I stumble",
-   "theme": "Grace",
-   "music": true
+   "music": false,
+   "power": 5
   },
   {
-   "src": "a412e28b2e2f",
-   "sb": 90.0,
-   "e": 0.0,
-   "title": "I surrender all",
-   "theme": "Surrender",
-   "music": true
+   "src": "0e62ce8e72b0",
+   "sb": 518.64,
+   "e": 439.32,
+   "music": true,
+   "power": 5
   },
   {
-   "src": "214c88140008",
-   "sb": 82.3,
+   "src": "0e86f86dff16",
+   "sb": 282.74,
+   "e": 13.79,
+   "music": true,
+   "power": 5
+  },
+  {
+   "src": "1665cda6fef2",
+   "sb": 219.18,
+   "e": 15.05,
+   "music": true,
+   "power": 5
+  },
+  {
+   "src": "2de8bf34433c",
+   "sb": 90.68,
+   "e": 15.76,
+   "music": false,
+   "power": 5
+  },
+  {
+   "src": "38072c57fe41",
+   "sb": 93.18,
    "e": 0.0,
-   "title": "A sinner in need of a Savior",
-   "theme": "Salvation",
-   "music": true
+   "music": true,
+   "power": 5
+  },
+  {
+   "src": "3c5b44c3be5f",
+   "sb": 112.75,
+   "e": 0.0,
+   "music": true,
+   "power": 5
+  },
+  {
+   "src": "516f5229757a",
+   "sb": 160.7,
+   "e": 95.96,
+   "music": true,
+   "power": 5
+  },
+  {
+   "src": "6dff8df24c8f",
+   "sb": 94.02,
+   "e": 0.0,
+   "music": false,
+   "power": 5
+  },
+  {
+   "src": "aab8ddc57a72",
+   "sb": 137.19,
+   "e": 0.0,
+   "music": true,
+   "power": 5
+  },
+  {
+   "src": "ade93e4f6c6e",
+   "sb": 213.57,
+   "e": 85.35,
+   "music": true,
+   "power": 5
+  },
+  {
+   "src": "b29be2a36db8",
+   "sb": 73.43,
+   "e": 0.0,
+   "music": true,
+   "power": 5
+  },
+  {
+   "src": "e01a31c7668b",
+   "sb": 164.56,
+   "e": 0.0,
+   "music": true,
+   "power": 5
+  },
+  {
+   "src": "0030f8fdb4bf",
+   "sb": 125.33,
+   "e": 6.95,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "01435f2761b1",
+   "sb": 327.42,
+   "e": 238.92,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "0237bbf4384d",
+   "sb": 141.97,
+   "e": 36.75,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "08290e08c5d6",
+   "sb": 170.03,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "0b0581a0cf0a",
+   "sb": 144.63,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "0b8890e7e00d",
+   "sb": 111.01,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "0c8371d99fe9",
+   "sb": 85.04,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "0dedbb3dd09a",
+   "sb": 229.42,
+   "e": 164.9,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "0df277ab51d5",
+   "sb": 82.21,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "10c50197304c",
+   "sb": 97.91,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "10e5bd2d8ff1",
+   "sb": 85.18,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "1232b6e584c8",
+   "sb": 147.33,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "12637085db3b",
+   "sb": 103.06,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "139e9929e5ef",
+   "sb": 82.46,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "14e00d5c3834",
+   "sb": 84.76,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "1700ce053b2d",
+   "sb": 88.08,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "1ba9feaef6f6",
+   "sb": 216.56,
+   "e": 147.64,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "2433e078cc77",
+   "sb": 85.04,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "2511794cb024",
+   "sb": 102.59,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "272454949724",
+   "sb": 231.03,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "2c32e329fce5",
+   "sb": 148.8,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "2c3df3db3e6a",
+   "sb": 97.62,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "2c84753922b4",
+   "sb": 82.53,
+   "e": 12.21,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "2ca55ef42025",
+   "sb": 329.57,
+   "e": 259.57,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "2e2e81726f60",
+   "sb": 85.66,
+   "e": 13.46,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "33ae67ae3e15",
+   "sb": 134.4,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "36081634f92e",
+   "sb": 95.98,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "365a767c6317",
+   "sb": 284.5,
+   "e": 79.84,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "39daf6b0ad4e",
+   "sb": 87.35,
+   "e": 3.23,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "3a1cb6208b1c",
+   "sb": 161.98,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "3a26a6946570",
+   "sb": 221.65,
+   "e": 90.55,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "3e93acc5a257",
+   "sb": 140.5,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "3efbff77a669",
+   "sb": 77.4,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "3f75837edb19",
+   "sb": 313.93,
+   "e": 247.53,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "43cf1da956b0",
+   "sb": 111.74,
+   "e": 14.38,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "44947b58389d",
+   "sb": 102.6,
+   "e": 4.09,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "44dbbdee2fb5",
+   "sb": 117.82,
+   "e": 14.23,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "46491e525202",
+   "sb": 126.83,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "46c869f92c9d",
+   "sb": 283.41,
+   "e": 200.39,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "46fdc68bb2fc",
+   "sb": 112.33,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "481dfadde44d",
+   "sb": 140.74,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "4d03072f11c8",
+   "sb": 134.65,
+   "e": 2.27,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "4daefc88c681",
+   "sb": 189.62,
+   "e": 81.63,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "539c797870c1",
+   "sb": 166.7,
+   "e": 20.84,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "53f45cf1ea75",
+   "sb": 89.77,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "58e6f0ead978",
+   "sb": 116.53,
+   "e": 12.35,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "5941cfc0690c",
+   "sb": 141.24,
+   "e": 35.2,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "5aebc9151bd3",
+   "sb": 89.08,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "5b86581d4abe",
+   "sb": 121.18,
+   "e": 0.15,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "5b98f651f993",
+   "sb": 154.76,
+   "e": 6.04,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "5c65eaf3caba",
+   "sb": 69.04,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "5c936e99618a",
+   "sb": 87.27,
+   "e": 15.95,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "64c8992d9dad",
+   "sb": 426.47,
+   "e": 261.19,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "6815fe3baba8",
+   "sb": 111.42,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "698e013d356d",
+   "sb": 116.48,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "6993d5667143",
+   "sb": 132.34,
+   "e": 3.0,
+   "music": false,
+   "power": 4
   },
   {
    "src": "69a32b557a2d",
-   "sb": 85.2,
+   "sb": 84.87,
    "e": 0.0,
-   "title": "Rooted as God's children",
-   "theme": "Identity",
-   "music": true
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "6a8a4125c154",
+   "sb": 88.38,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "6cd1f9119581",
+   "sb": 93.38,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "6de51b9a5608",
+   "sb": 128.12,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "73de7bcdb660",
+   "sb": 113.58,
+   "e": 11.74,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "7d26bcad41ba",
+   "sb": 109.29,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "7decc56eec5e",
+   "sb": 80.7,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "7ed6c7e03549",
+   "sb": 77.9,
+   "e": 6.82,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "83d0242ad1be",
+   "sb": 113.06,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "85e476dd15cc",
+   "sb": 126.35,
+   "e": 13.34,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "86e2d9548583",
+   "sb": 129.86,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "86f0fc71c4f5",
+   "sb": 61.76,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "87400c3b967d",
+   "sb": 120.05,
+   "e": 14.47,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "8e68d47d03f3",
+   "sb": 94.78,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "8e705edd0f3c",
+   "sb": 67.4,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "918096c4166a",
+   "sb": 72.3,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "94581b667d03",
+   "sb": 98.29,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "95f1fce060d9",
+   "sb": 78.12,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "965ea2a0629f",
+   "sb": 86.62,
+   "e": 12.16,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "988eb4cd86ce",
+   "sb": 107.48,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "98acd1653d95",
+   "sb": 251.67,
+   "e": 181.49,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "9a107da4872a",
+   "sb": 119.27,
+   "e": 5.49,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "9b07fc97413b",
+   "sb": 139.48,
+   "e": 17.96,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "9b0e8ce4f727",
+   "sb": 113.56,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "9b7abb1410bc",
+   "sb": 109.65,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "9bad1149ffbf",
+   "sb": 139.23,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "9c1be639ba34",
+   "sb": 77.82,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "9c511c807ce7",
+   "sb": 89.42,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "9edf127a4aa6",
+   "sb": 92.78,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "a102366b4b41",
+   "sb": 110.66,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "a189f6805061",
+   "sb": 72.41,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "a1d881dede22",
+   "sb": 218.57,
+   "e": 130.63,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "a2afdbcdc7d8",
+   "sb": 104.24,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "a32c05273b21",
+   "sb": 207.3,
+   "e": 4.54,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "a412e28b2e2f",
+   "sb": 89.56,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "a725d652296a",
+   "sb": 146.04,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "ab196ed583c1",
+   "sb": 452.23,
+   "e": 321.19,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "ae078c869bc1",
+   "sb": 96.72,
+   "e": 13.44,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "b13e97252115",
+   "sb": 85.49,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "b22926ab5af8",
+   "sb": 111.11,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "b48e88fd5af9",
+   "sb": 168.32,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "b7f5ee969a7c",
+   "sb": 160.57,
+   "e": 28.91,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "b9cf418919d3",
+   "sb": 109.65,
+   "e": 29.99,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "bcf109deb0b8",
+   "sb": 150.62,
+   "e": 59.58,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "bdaadf17b07e",
+   "sb": 127.61,
+   "e": 14.37,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "beb385867b01",
+   "sb": 73.78,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "c181ec72eb24",
+   "sb": 139.53,
+   "e": 7.01,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "c79901dd0315",
+   "sb": 433.0,
+   "e": 360.46,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "ca8cdb2199a9",
+   "sb": 86.06,
+   "e": 12.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "ce7ebd6f3580",
+   "sb": 92.12,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "d1fc62c47875",
+   "sb": 60.95,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "d31cab0e5a9f",
+   "sb": 121.42,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "d5452bee13b0",
+   "sb": 98.55,
+   "e": 9.01,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "d60b3dbfd400",
+   "sb": 111.3,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "d67807f71630",
+   "sb": 158.32,
+   "e": 49.46,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "d7826d75beef",
+   "sb": 114.72,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "d87746ba32f8",
+   "sb": 109.91,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "d9a7f15174bd",
+   "sb": 69.25,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "dd65019480a9",
+   "sb": 263.61,
+   "e": 199.17,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "e44568eba051",
+   "sb": 84.32,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "e9c967af4e01",
+   "sb": 519.52,
+   "e": 440.17,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "eb2791bf5c63",
+   "sb": 104.39,
+   "e": 34.89,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "ed34f2f1496a",
+   "sb": 305.22,
+   "e": 209.34,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "ef5c03e80cca",
+   "sb": 84.44,
+   "e": 0.0,
+   "music": true,
+   "power": 4
   },
   {
    "src": "f5e488db93e2",
-   "sb": 82.7,
+   "sb": 82.64,
    "e": 0.0,
-   "title": "More of You, less of us",
-   "theme": "Holy Spirit",
-   "music": true
+   "music": true,
+   "power": 4
   },
   {
-   "src": "29d7bac18ec2",
-   "sb": 116.7,
-   "e": 16.8,
-   "title": "Waiting well",
-   "theme": "Hope",
-   "music": true
+   "src": "f6ff0605b0e0",
+   "sb": 120.91,
+   "e": 0.0,
+   "music": true,
+   "power": 4
   },
   {
-   "src": "2c8fcaf460d9",
-   "sb": 93.8,
-   "e": 6.5,
-   "title": "In awe of our salvation",
-   "theme": "Salvation",
-   "music": false
+   "src": "f7ab8eeb4b71",
+   "sb": 141.9,
+   "e": 5.26,
+   "music": false,
+   "power": 4
   },
   {
-   "src": "ee4ae9193622",
-   "sb": 70.9,
-   "e": 16.2,
-   "title": "Sanctify us in Your truth",
-   "theme": "The Word",
-   "music": false
+   "src": "f8977c254bfe",
+   "sb": 354.96,
+   "e": 290.86,
+   "music": true,
+   "power": 4
   },
   {
-   "src": "b55bb22bfb6d",
-   "sb": 120.4,
-   "e": 30.0,
-   "title": "Make us one",
-   "theme": "Unity",
-   "music": false
+   "src": "f8ae01a4a71b",
+   "sb": 82.54,
+   "e": 0.0,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "fa13befea492",
+   "sb": 106.52,
+   "e": 0.0,
+   "music": false,
+   "power": 4
+  },
+  {
+   "src": "fb3bac4cf3b3",
+   "sb": 325.51,
+   "e": 247.69,
+   "music": true,
+   "power": 4
+  },
+  {
+   "src": "fbaad714432e",
+   "sb": 107.94,
+   "e": 0.0,
+   "music": true,
+   "power": 4
   }
  ]
 }
