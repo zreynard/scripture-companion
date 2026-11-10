@@ -55,17 +55,12 @@ RULES = {
                                  r"like,? (comment,? )?(and )?(share|subscribe)", r"streetpreach", r"invest ?fest", r"next episode",
                                  r"we pray you (are|were) blessed by this content", r"shut off the cameras"]},
     "fearless": {"start": [], "end": [r"let'?s (stand|worship)", r"worship team", r"see you next (week|saturday)", r"announcements?"]},
-    # Kennon Vaughan (Harvest Church, Memphis): Sunday services; first rules, refined from the openings and endings read by hand
+    # Kennon Vaughan (Harvest Church, Memphis): recordings start at the pulpit. Cut the station tag, his greeting and announcements
+    # before the sermon; end at his closing prayer (before communion and the station outro). Patterns kept only where they helped
+    # on 268 sermons checked by hand (starts are messy: hand-checked points for those are in data/intro_skip/zz_hand*.json).
     "harvest_memphis": {"start_by": 45,
-        "start": [r"the following audio is from harvest church[^.?!]*[.?!]", r"\b(thank you|thanks),? (tony|wes|worship team|guys)\b[^.?!]*[.?!]",
-                  r"\b(worship team,? )?(you (guys|all) )?(can |go ahead and )?(have|take) a seat[.!]", r"\bwelcome to harvest( church)?[^.?!]*[.?!]",
-                  r"\bmy name is ken\w*[^.?!]*[.?!]", r"\bprivilege of (being|serving)[^.?!]*[.?!]",
-                  r"\b(so )?(good|great|glad|a treat|a joy|joy|sweet) to (have|be|see)\b[^.?!]*[.?!]", r"\b(glad|good) (that )?you'?re back\b[^.?!]*[.?!]",
-                  r"\bthanks for coming back[^.?!]*[.?!]",
-                  # announcements before the sermon (a member moving away, a prayer chain, "email Tracy at ...org"): up to 3 minutes in
-                  r"(?#by=180)\bemail\b[^.?!]*[.?!]", r"(?#by=180)\b[a-z]+ ?\.(org|com)\b[^.?!]*[.?!]", r"(?#by=180)\b(signed up|sign up|register|slots? left|last sunday with us)\b[^.?!]*[.?!]"],
-        "end": [r"the tables? (are|is) (not )?open", r"thank you for listening to the audio from harvest", r"feel free to make copies", r"let'?s (stand|sing)\b",
-                r"\bannouncements?\b", r"go in peace", r"see you next (week|sunday)"]},
+        "start": [r"the following audio is from harvest church[^.?!]*[.?!]", r"\b(thank you|thanks),? (tony|wes|rodney|worship team|guys|band)\b[^.?!]*[.?!]", r"\b(worship team,? )?(you (guys|all) )?(can |go ahead and )?(have|take) a seat[.!]", r"\bwelcome to harvest( church)?[^.?!]*[.?!]", r"\bmy name('?s| is) ken\w*[^.?!]*[.?!]", r"\bprivilege(d)? (of|to) (being|serving|pastor|preach|teach)[^.?!]*[.?!]", r"\b(so )?(good|great|glad|a treat|a joy|joy|sweet|excited|delighted|an honou?r) to (have|be|see)\b[^.?!]*[.?!]", r"\bgood morning\b[^.?!]*[.?!]", r"\b(see|seeing) (your|all your) faces\b[^.?!]*[.?!]", r"(?#by=240)\bemail\b[^.?!]*[.?!]", r"(?#by=240)\b(signed up|sign up|register|registration|slots? left|last sunday with us)\b[^.?!]*[.?!]"],
+        "end": [r"the tables? (are|is) (now |not )?open", r"thank you for listening to the audio from harvest", r"feel free to make copies", r"let'?s (stand|sing)\b", r"\bministry team\b"]},
     "skip_archive": {"start": [r"this is expound\.?", r"interactive, enjoyable,? and congregational", r"grow (in|and) grace and (in )?the knowledge of our lord",
                                r"thank you for listening to this (service|message) from calvary"],
                      "end": [r"thank(s| you)( so much)? for listening to this (service|message|teaching)", r"for more resources from calvary",
