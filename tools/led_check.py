@@ -66,6 +66,10 @@ def check_audio(x, it, model):
         ams = ends[-1:] or near[-1:]
     last = ams[-1] if ams else None
     if not last: return {"verdict": "no words at the end"}
+    for _ in range(2):                              # "... in Jesus' name." "Amen." — the amen belongs to the prayer
+        nx = [w for w in tw if w[0] > last[1] + 0.02][:1]
+        if nx and AMEN.search(nx[0][2]) and nx[0][0] - last[1] < 2.5: last = nx[0]
+        else: break
     nxt = [w for w in tw if w[0] > last[1] + 0.02]
     nw = nxt[0][0] if nxt else min(TL, last[1] + 15)
     q = quiet_from(db, last[1] + 0.3, min(nw - 0.1, last[1] + 15), thr)
