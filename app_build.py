@@ -1180,7 +1180,7 @@ body.bpsopen{overflow:hidden}body.bpsopen #np.on.mini{z-index:13}body.bpsopen.np
 .jv-tp button{height:34px;padding:0 14px;border:1px solid rgba(154,117,36,.35);border-radius:17px;background:#fffdf8;color:#1b2440;font:600 13.5px -apple-system,system-ui,sans-serif;cursor:pointer}
 .bp-gs{font-size:13px;color:#5a6280;margin:0 2px 2px}
 .t-sort button{flex:1;height:34px;border:0;border-radius:15px;background:none;font:600 13.5px -apple-system,system-ui,sans-serif;color:#4a5272;cursor:pointer}
-.t-sort button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(27,36,64,.14)}
+.t-sort button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(27,36,64,.14)}.tp-seg{position:sticky;top:-6px;z-index:3;background:#f7f2e7;margin:16px -22px 8px;padding:8px 22px 6px}.tp-seg .t-sort button i{font-style:normal;font-weight:500;color:#8a8fa6;margin-left:5px}.tp-segl{font:400 13px -apple-system,system-ui,sans-serif;color:#7b8098;margin:6px 2px 0}
 .t-q{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:20px;background:#fff;border:1px solid rgba(27,36,64,.1);color:#5a6280}
 .t-q input{flex:1;min-width:0;border:0;background:none;font:15px -apple-system,system-ui,sans-serif;color:var(--ink);outline:none}
 .tr2{display:flex;align-items:center;gap:12px;padding:10px 2px}
@@ -2391,9 +2391,13 @@ async function ptLoad(){if(!bkOn()){try{localStorage.removeItem('sc:ptdef')}catc
 function openTopic(id){const t=(D.topics||[]).find(x=>x.id===id);if(!t)return;const G=scGroups();
  const keys=t.keys.map(k=>`<button class="tp-k" data-kgo="${esc(k.b)}|${k.c}"><b>${esc(k.ref)}</b><span>${esc(k.note)}</span><i>›</i></button>`).join('');
  const nights=t.sc.map(n=>G.find(g=>g.ev.n===n)).filter(Boolean).map(g=>`<button class="tp-sc" data-scn="${g.ev.n}"><small>Secret Church ${g.ev.n}</small><b>${esc(g.ev.title)}</b><span>David Platt · ${g.ids.length} sessions ›</span></button>`).join('');
- const list=()=>{const row=id=>tRow({i:I[id]},null);let h=t.ess.length?`<div class="jv-sec">Essential teaching</div>${t.ess.map(row).join('')}`:'';for(const g of t.bks||[])h+=`<div class="jv-sec">${esc(g.label)}</div>${g.ids.map(row).join('')}`;
+ const list=()=>{const row=id=>tRow({i:I[id]},null);let h=t.ess.length?`<div class="jv-sec">Essential teaching</div>${t.ess.map(row).join('')}`:'';const B=t.bks||[];if(B.length>1){const k=Math.min(+(S.get('tptab',{})[t.id]||0),B.length-1),g=B[k];   /* subtopics: a switch that stays at the top while you scroll */
+   h+=`<div class="tp-seg"><div class="t-sort" role="tablist" aria-label="Subtopics">${B.map((b,j)=>`<button role="tab" data-tpseg="${j}" aria-selected="${j===k}" class="${j===k?'on':''}">${esc(b.short||b.label)}<i>${b.ids.length}</i></button>`).join('')}</div><div class="tp-segl">${esc(g.label)}</div></div>${g.ids.map(row).join('')}`}
+  else for(const g of B)h+=`<div class="jv-sec">${esc(g.label)}</div>${g.ids.map(row).join('')}`;
   if(t.more.length){const by={};t.more.forEach(id=>(by[I[id].who]=by[I[id].who]||[]).push(id));h+=`<div class="jv-sec">More teaching</div>`+Object.entries(by).map(([k,l])=>`<details class="tch-b"><summary>${esc(NAMES[k]||k)}<span>${l.length}</span></summary>${l.map(row).join('')}</details>`).join('')}return h};
- openListSheet(t.name,`<div class="tp-hd">${topicIc(t.id,44)}<div class="bps-t">${esc(t.name)}${t.private?LOCK_IC:''}</div></div>${t.private?'<p class="pt-note">Only on your devices</p>':''}<p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,el=>{
+ openListSheet(t.name,`<div class="tp-hd">${topicIc(t.id,44)}<div class="bps-t">${esc(t.name)}${t.private?LOCK_IC:''}</div></div>${t.private?'<p class="pt-note">Only on your devices</p>':''}<p class="bps-d">${esc(t.blurb)}</p><div class="jv-sec">Key Scripture</div>${keys}${nights?`<div class="jv-sec">The deep dive</div>${nights}`:''}`,list,(el,again)=>{
+  el.querySelectorAll('[data-tpseg]').forEach(b=>b.onclick=()=>{const tb=S.get('tptab',{});tb[t.id]=+b.dataset.tpseg;S.set('tptab',tb);const sh=el.querySelector('.bps-sh'),y0=el.querySelector('.tp-seg').getBoundingClientRect().top;
+   again();const s2=el.querySelector('.tp-seg');if(sh&&s2)sh.scrollTop+=s2.getBoundingClientRect().top-y0});
   el.querySelectorAll('[data-kgo]').forEach((b,j)=>b.onclick=()=>{const sh=el.querySelector('.bps-sh');topicPassage(t,t.keys[j],sh?sh.scrollTop:0)});el.querySelectorAll('[data-scn]').forEach(b=>b.onclick=()=>{const sh=el.querySelector('.bps-sh');topicNight(t,+b.dataset.scn,sh?sh.scrollTop:0)})})}
 /* a Secret Church night, inside the topic: its sessions in order, and back to the topic where you were */
 function topicNight(t,n,y){const el=$('#bps'),sh=el.querySelector('.bps-sh'),g=scGroups().find(x=>x.ev.n===n);if(!sh||!g)return;

@@ -299,15 +299,22 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const r = await A.evaluate(() => { const b = D.books.find(x => x.name === 'Song of Solomon'); const on = c => b.ch.find(x => x.c === c).ids.map(id => I[id].t);
       return { c4: on(4).includes('Song of Solomon 4-8'), c8: on(8).includes('Song of Solomon 4-8'), c3: on(3).includes('Song of Solomon 4-8'), ov: b.ov.map(id => I[id].t) }; });
     return (r.c4 && r.c8 && !r.c3 && r.ov.includes('The Shulamite Bride') && !r.ov.includes('Song of Solomon 4-8')) || r; });
-  await T('U73 topics with sections: Manhood (A Man of God, Leading Your Home, Leading Others) and Marriage & Family (Parenting & Fatherhood); no sermon twice in a topic', async () => {
+  await T('U73 topics with subtopics: a switch (Man of God / Home / Leading) shows one subtopic at a time, sticks, remembers the tab; Marriage & Family has one too; no sermon twice in a topic', async () => {
     const A = await open(await ctx());
     const r = await A.evaluate(() => { const g = id => D.topics.find(t => t.id === id); const m = g('manhood'), f = g('marriage');
-      const labs = t => (t && t.bks || []).map(b => b.label + ':' + b.ids.length); const dup = D.topics.filter(t => { const a = [...t.ess, ...(t.bks || []).flatMap(b => b.ids), ...t.more]; return new Set(a).size !== a.length; }).map(t => t.id);
-      return { m: labs(m), f: labs(f), dup, icon: !!TOPIC_IC.manhood }; });
+      const dup = D.topics.filter(t => { const a = [...t.ess, ...(t.bks || []).flatMap(b => b.ids), ...t.more]; return new Set(a).size !== a.length; }).map(t => t.id);
+      return { m: (m.bks || []).map(b => b.short + ':' + b.ids.length), f: (f.bks || []).map(b => b.short), dup, icon: !!TOPIC_IC.manhood }; });
+    const sheet = () => A.evaluate(() => { const s = document.querySelector('.bps-sh'), seg = s && s.querySelector('.tp-seg');
+      return { btn: seg ? [...seg.querySelectorAll('button')].map(b => b.textContent + (b.classList.contains('on') ? '*' : '')) : [], lab: seg ? seg.querySelector('.tp-segl').textContent : '', rows: s ? s.querySelectorAll('#tlist [data-play]').length : 0, sticky: seg ? getComputedStyle(seg).position : '', heads: s ? [...s.querySelectorAll('#tlist .jv-sec')].map(e => e.textContent) : [] }; });
     await A.evaluate(() => { $('#tabs [data-tab2=library]').click(); }); await wait(400); await A.click('[data-lt=topics]'); await wait(300);
-    await A.click('[data-topic=manhood]'); await wait(600); const secs = await A.evaluate(() => [...document.querySelectorAll('.bps-sh .jv-sec')].map(e => e.textContent));
-    const ok = ['A Man of God', 'Leading Your Home', 'Leading Others'].every(l => r.m.some(x => x.startsWith(l + ':') && !x.endsWith(':0')) && secs.includes(l));
-    return (ok && r.f.some(x => x.startsWith('Parenting & Fatherhood:')) && r.dup.length === 0 && r.icon) || { r, secs }; });
+    await A.click('[data-topic=manhood]'); await wait(600); const s1 = await sheet();
+    await A.click('[data-tpseg="1"]'); await wait(300); const s2 = await sheet();
+    await A.evaluate(() => closeSeries()); await wait(500); await A.click('[data-topic=manhood]'); await wait(600); const s3 = await sheet();
+    await A.evaluate(() => closeSeries()); await wait(500); await A.click('[data-topic=marriage]'); await wait(600); const s4 = await sheet();
+    const n = k => +(r.m[k] || ':0').split(':')[1];
+    const ok = r.m.join() === `Man of God:${n(0)},Home:${n(1)},Leading:${n(2)}` && s1.btn.length === 3 && /\*$/.test(s1.btn[0]) && s1.lab === 'A Man of God' && s1.rows === n(0) && s1.sticky === 'sticky'
+      && /\*$/.test(s2.btn[1]) && s2.lab === 'Leading Your Home' && s2.rows === n(1) && /\*$/.test(s3.btn[1]) && s4.btn.length === 3 && s4.heads.includes('More teaching') && r.dup.length === 0 && r.icon;
+    return ok || { r, s1, s2, s3, s4 }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

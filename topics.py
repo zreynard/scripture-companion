@@ -137,18 +137,18 @@ TOPICS = [
      [r"^Our Obligation to the Unreached – Part 1$", r"^Unreached People: Not a Missions Problem$", r"^The Song of Heaven and the Sound of All Nations$", r"^Why the Great Commission is Great$", r"^Divine Sovereignty: The Fuel of Death-Defying Missions$"]),
 ]
 
-# Sections inside a topic: (label, title pattern, exclusions). A section takes from every sermon in the app, not only
+# Sections inside a topic: (label, short label for the switch, title pattern, exclusions). A section takes from every sermon in the app, not only
 # the topic's own title matches, so one sermon can sit in two topics (a father's sermon in Marriage & Family and Manhood).
 SECTIONS = {
     "marriage": [
-        ("Marriage", r"marriage|married|husbands?|wives|\bwife\b", r"^beauty in both singleness|new marriage|sexual"),
-        ("Parenting & Fatherhood", r"parent|children and parents|father-son|fatherhood|raising (children|kids)", r"orphan|fatherhood of god"),
-        ("Singleness", r"singleness|\bsingle\b", r""),
+        ("Marriage", "Marriage", r"marriage|married|husbands?|wives|\bwife\b", r"^beauty in both singleness|new marriage|sexual"),
+        ("Parenting & Fatherhood", "Parenting", r"parent|children and parents|father-son|fatherhood|raising (children|kids)", r"orphan|fatherhood of god"),
+        ("Singleness", "Singleness", r"singleness|\bsingle\b", r""),
     ],
     "manhood": [
-        ("A Man of God", r"\bmanhood|masculin|young men|old men|men and women", r""),
-        ("Leading Your Home", r"^(attachment: )?the gospel and (marriage|parents)$|^the difference jesus makes in (marriage|children and parents)|father-son|^a parent's bill of rights|^god's design for marriage", r""),
-        ("Leading Others", r"servant leader|leadership|when leaders fall|shepherd the flock", r""),
+        ("A Man of God", "Man of God", r"\bmanhood|masculin|young men|old men|men and women", r""),
+        ("Leading Your Home", "Home", r"^(attachment: )?the gospel and (marriage|parents)$|^the difference jesus makes in (marriage|children and parents)|father-son|^a parent's bill of rights|^god's design for marriage", r""),
+        ("Leading Others", "Leading", r"servant leader|leadership|when leaders fall|shepherd the flock", r""),
     ],
 }
 TEACHER_ORDER = {"Platt": 0, "PAM": 1, "Davey": 2, "Skip": 3, "Fearless": 4}
@@ -208,7 +208,7 @@ def build(items, chapters, on_road):
             t = re.sub(r"\s*\([^)]*\d:\d[^)]*\)", "", items[x]["t"]).split("|")[0]
             return (items[x]["who"], re.sub(r"^attachment ", "", re.sub(r"[^a-z0-9]+", " ", t.lower().replace("’", "'")).strip()))
         whole = lambda k: (k[0], re.sub(r" (part|pt) ?\d+[ab]?$", "", k[1]))
-        for label, pat, ex in secs:
+        for label, short, pat, ex in secs:
             P, X = re.compile(pat, re.I), re.compile(ex, re.I) if ex else None
             pick = {}
             for i in items.values():
@@ -224,7 +224,7 @@ def build(items, chapters, on_road):
             got = [v[1] for k, v in pick.items() if not (whole(k) != k and whole(k) in pick)]
             got.sort(key=lambda x: (x not in essential, essential.index(x) if x in essential else 0, TEACHER_ORDER.get(items[x]["who"], 9), _key(items[x]["t"]), items[x]["t"]))
             if got:
-                bks.append({"label": label, "ids": got}); taken |= set(got)
+                bks.append({"label": label, "short": short, "ids": got}); taken |= set(got)
         if secs:
             essential = [x for x in essential if x not in taken]
             gone = {same(y) for y in taken} | {whole(same(y)) for y in taken}
