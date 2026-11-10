@@ -1,0 +1,49 @@
+# Who preached each unnamed Harvest Church sermon (tools/voice_id.py): voice prints from three minutes of each, compared
+# with Kennon Vaughan's named sermons and the other named preachers. Results go to the vaughan-voice branch.
+name: Voice ID (Harvest)
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  embed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        k: [0,1,2,3,4,5,6,7,8,9,10,11]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: |
+          pip install -q torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "speechbrain==1.0.3" numpy requests huggingface_hub
+      - run: python tools/voice_id.py embed ${{ matrix.k }} 12
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice-${{ matrix.k }}
+          path: voice/
+  report:
+    needs: embed
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q numpy requests
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: voice-*
+          path: voice
+          merge-multiple: true
+      - run: python tools/voice_id.py report
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B vaughan-voice
+          git add -f data/vaughan_voice.json voice/report.txt voice/*.json
+          git commit -qm "Voice ID results" && git push -qf origin vaughan-voice

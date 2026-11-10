@@ -220,6 +220,8 @@ OFF_ROAD_SOURCES = {"ptw"}
 SKIP_TOPICAL_KEEP = {"a4b8a24a1cb7": "Song of Solomon"}   # The Shulamite Bride (11 Jan 2026)
 # Fearless Church (Spring Hill, TN): Sunday sermons, published on praise.global (the archive fearlesstn.org embeds).
 FEARLESS_FEED = "https://praise.global/feed/fearlesstn"
+# Kennon Vaughan (Harvest Church, Memphis): the church's Sunday podcast (Simplecast). Several preachers; his are kept.
+HARVEST_MEMPHIS_FEED = "https://feeds.simplecast.com/FdSEiZhg"
 SHOWS = {"fearless": "Fearless Church", "brookhills_ia": "The Church at Brook Hills", "davey_archive": "Sermon archive", "ptw": "Pray the Word", "davey_wfth": "Wisdom for the Heart", "davey_journey": "The Wisdom Journey"}
 # Skip Heitzig (Calvary Church, Albuquerque): public podcast feeds. Each episode's itunes:author names its speaker.
 SKIP_FEEDS = {
