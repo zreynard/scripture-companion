@@ -369,7 +369,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const line = await A.evaluate(() => (document.querySelector('[data-lpp]') || {}).textContent || '');
     await A.click('[data-lpp]'); let mv = 0;
     for (let k = 0; k < 30 && !mv; k++) { await wait(100); mv = await A.evaluate(() => PR.mv); }
-    const st = await A.evaluate(() => ({ live: !!(LP.el && LP.el.getAttribute('src')), sk: [...document.querySelectorAll('[data-lpsk]')].filter(b => !b.hidden).length, main: !!cur && String(cur).startsWith('led') }));
+    const st = await A.evaluate(() => ({ live: !!(LP.c && LP.c.a.getAttribute('src')), sk: [...document.querySelectorAll('[data-lpsk]')].filter(b => !b.hidden).length, main: !!cur && String(cur).startsWith('led') }));
     return (/^Pray it with \S/.test(line) && mv === 1 && st.live && !st.main) || { real, line, mv, st }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);

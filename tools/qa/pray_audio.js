@@ -26,7 +26,8 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
   const p = await (await b.newContext()).newPage();
   await p.goto(SITE + '?x=' + Date.now()); await p.waitForTimeout(1500);
   const L = await p.evaluate(() => [...(PRAY.led || []).map(x => ({ kind: 'led', id: x.id, who: x.who, url: x.audio, audio: x.audio, sb: x.sb, e: x.e, L: x.L, dur: x.dur })),
-                                     ...(PRAY.med || []).filter(x => x.audio).map(x => ({ kind: 'med', id: x.ref, who: x.who, url: x.audio, a: x.a, b: x.b }))]);
+                                     ...(PRAY.med || []).filter(x => x.audio).map(x => ({ kind: 'med', id: x.ref, who: x.who, url: x.audio, a: x.a, b: x.b })),
+                                     ...(PRAY.lp ? [{ kind: 'med', id: "Lord's Prayer", who: PRAY.lp.who, url: PRAY.lp.audio, a: PRAY.lp.a, b: PRAY.lp.b }] : [])]);
   const out = []; let k = 0;
   async function one(x) {
     if (/buzzsprout\.com/.test(x.url)) { return { ...x, ok: null, note: 'Buzzsprout refuses GitHub servers: not checked here' }; }

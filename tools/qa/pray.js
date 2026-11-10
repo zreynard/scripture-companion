@@ -245,7 +245,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
   });
 
   // ── The Lord's Prayer and Stillness ─────────────────────────────────────────────────────────────────────────────
-  await T('P19 the Lord\'s Prayer: the arrows (and a swipe) move through the movements; another passage turns; no pastor line', async () => {
+  await T('P19 the Lord\'s Prayer: the arrows (and a swipe) move through the movements; another passage turns; Skip Heitzig\'s line is there', async () => {
     const p = await pray_(await page(null, { hasTouch: true })); await guided(p, 'guided');
     const n = await p.evaluate(() => PRAY.moves.length); const mv = [];
     for (let i = 0; i < n - 1; i++) { await p.click('[data-prmv="1"]'); await wait(120); mv.push(await p.evaluate(() => PR.mv)); }
@@ -258,8 +258,8 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
         await new Promise(r => setTimeout(r, 200)); return PR.mv === k + 1 || PR.mv === k; });
     } catch (e) { swipe = 'skipped'; }
     const t0 = await p.evaluate(() => $('#prst').textContent); await p.click('#prsr'); await wait(400); const t1 = await p.evaluate(() => $('#prst').textContent);
-    const lp = await p.evaluate(() => !!document.querySelector('[data-lpp]'));
-    return (mv.join() === [...Array(n - 1).keys()].map(i => i + 1).join() && lastOff && backOne === n - 2 && swipe !== false && (t1 !== t0 || (await p.evaluate(() => PRAY.moves[PR.mv].sup.length)) < 2) && !lp && !p.errs.length) || { mv, lastOff, backOne, swipe, t0, t1, lp };
+    const lp = await p.evaluate(() => /^Pray it with Skip Heitzig$/.test((document.querySelector('[data-lpp]') || {}).textContent || ''));
+    return (mv.join() === [...Array(n - 1).keys()].map(i => i + 1).join() && lastOff && backOne === n - 2 && swipe !== false && (t1 !== t0 || (await p.evaluate(() => PRAY.moves[PR.mv].sup.length)) < 2) && lp && !p.errs.length) || { mv, lastOff, backOne, swipe, t0, t1, lp };
   });
   await T('P20 Stillness: with no music on the phone it says how to get it; with music it plays, pauses and skips', async () => {
     const p = await pray_(await page());
@@ -324,5 +324,53 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     return r;
   });
 
+  await T('P28 swiping left or right goes to the next or previous in every part of Pray; a swipe from the screen\'s edge or on the music panel does nothing', async () => {
+    const p = await pray_(await page(null, { hasTouch: true })); await testAudio(p); await music(p);
+    const sw = (x0, x1, sel) => p.evaluate(([x0, x1, sel]) => { const g = sel ? document.querySelector(sel) : $('#pray'); const mk = x => new Touch({ identifier: 1, target: g, clientX: x, clientY: 420 });
+      g.dispatchEvent(new TouchEvent('touchstart', { touches: [mk(x0)], bubbles: true })); g.dispatchEvent(new TouchEvent('touchmove', { touches: [mk(x1)], bubbles: true })); g.dispatchEvent(new TouchEvent('touchend', { touches: [], bubbles: true })); }, [x0, x1, sel || null]);
+    try { await p.evaluate(() => new Touch({ identifier: 1, target: document.body, clientX: 1, clientY: 1 })); } catch (e) { return true; }   // an engine without touch events here
+    const out = {};
+    await guided(p, 'led'); const l0 = await p.evaluate(() => ledOrd().p); await sw(300, 120); await wait(250); const l1 = await p.evaluate(() => ledOrd().p); await sw(120, 300); await wait(250); const l2 = await p.evaluate(() => ledOrd().p);
+    await sw(10, 200); await wait(200); const edge = await p.evaluate(() => ledOrd().p);
+    await p.click('[data-prmu]'); await sw(300, 120, '#prmu'); await wait(200); const panel = await p.evaluate(() => ledOrd().p);
+    out.led = [l0, l1, l2, edge, panel];
+    await guided(p, 'med'); await p.evaluate(() => { MED.pick = medList()[0].ref; render(); }); await sw(300, 120); await wait(250); const m1 = await p.evaluate(() => medIdx()); await sw(120, 300); await wait(250); out.med = [m1, await p.evaluate(() => medIdx())];
+    await guided(p, 'guided'); await p.evaluate(() => { PR.mv = 0; render(); }); await sw(300, 120); await wait(250); const g1 = await p.evaluate(() => PR.mv); await sw(120, 300); await wait(250); out.lp = [g1, await p.evaluate(() => PR.mv)];
+    await p.click('[data-prtop=still]'); await wait(300); const k0 = await p.evaluate(() => PM.k); await sw(300, 120); await wait(500); out.still = [k0, await p.evaluate(() => PM.k)];
+    return (out.led.join() === [l0, l0 + 1, l0, l0, l0].join() && out.med.join() === '1,0' && out.lp.join() === '1,0' && out.still[1] === (out.still[0] + 1) % 2 && !p.errs.length) || out;
+  });
+  await T('P29 Meditate\'s music plays through Listen, the breath, Again and Be still; if something pauses it mid-reading it comes back; with Music off it stays silent', async () => {
+    const p = await pray_(await page()); await testAudio(p, { a: 5, b: 8, fast: 0.4 }); await music(p); await guided(p, 'med');
+    await p.click('[data-medgo]'); const seen = {};
+    for (let k = 0; k < 200; k++) { const r = await p.evaluate(() => [MED.step, !BED.el.paused && BED.g && BED.g.gain.value > 0.05]); if (r[1]) seen[r[0]] = true; if (r[0] === 'still' && seen.still) break; await wait(50); }
+    await p.click('[data-medamen]'); await wait(300);
+    await p.click('[data-medgo]'); await until(p, () => MED.c.state === 'playing' && !BED.el.paused, 6000);
+    await p.evaluate(() => BED.el.pause()); const back = await until(p, () => !BED.el.paused, 2500);
+    await p.evaluate(() => medStop(false)); await p.evaluate(() => { BED.led = false; }); await p.click('[data-medgo]'); await until(p, () => MED.c.state === 'playing');
+    const off = await until(p, () => BED.el.paused, 5000);
+    return (seen.listen && seen.again && seen.still && back && off && !p.errs.length) || { seen, back, off, e: p.errs };
+  });
+  await T('P30 the Lord\'s Prayer with Skip Heitzig: "Pray it with" plays him here; the movements follow; the arrows go to a movement in his prayer; pause, music and a clean end', async () => {
+    const p = await pray_(await page()); await testAudio(p); await music(p);
+    await p.evaluate(() => { PRAY.lp.audio = TESTWAV; PRAY.lp.a = 2; PRAY.lp.b = 9; PRAY.lp.at = [2, 3, 4, 5, 6, 7]; PR.mv = 0; });
+    await guided(p, 'guided');
+    const line = await p.evaluate(() => document.querySelector('[data-lpp]').textContent);
+    await p.click('[data-lpp]'); await until(p, () => LP.c.state === 'playing'); const t0 = await p.evaluate(() => LP.c.a.currentTime);
+    const follow = await until(p, () => PR.mv >= 2, 5000); const music_ = await p.evaluate(() => !BED.el.paused && BED.g.gain.value > 0.05);
+    await p.click('[data-prmv="1"]'); await wait(300); const seek = await p.evaluate(() => [PR.mv, LP.c.a.currentTime]);
+    await p.click('[data-lpp]'); await wait(200); const paused = await p.evaluate(() => [LP.c.state, document.querySelector('[data-lpp]').getAttribute('aria-label')]);
+    await p.click('[data-lpp]'); await until(p, () => LP.c.state === 'playing');
+    const ended = await until(p, () => LP.c.state === 'ended', 10000); const end = await p.evaluate(() => [LP.c.a.currentTime, PR.mv, LP.done]);
+    return (line === 'Pray it with Skip Heitzig' && Math.abs(t0 - 2) < 0.5 && follow && music_ && seek[1] >= 4.9 && seek[0] >= 3 && paused[0] === 'paused' && ended && Math.abs(end[0] - 9) <= 0.2 && end[1] === 5 && end[2] && !p.errs.length) || { line, t0, follow, music_, seek, paused, ended, end, e: p.errs };
+  });
+  await T('P31 the ‹ › arrows are in view without scrolling at 390×760: Be Led with the music panel open, every Meditate saying, and the Lord\'s Prayer', async () => {
+    const p = await pray_(await page()); await testAudio(p); await music(p); const bad = [];
+    const vis = (sel) => p.evaluate(sel => [...document.querySelectorAll(sel)].map(b => { const r = b.getBoundingClientRect(), t = document.querySelector('#tabs').getBoundingClientRect(), top = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2); return r.top >= 0 && r.bottom <= t.top && (top === b || b.contains(top)); }), sel);
+    await guided(p, 'led'); await p.click('[data-prmu]'); if ((await vis('[data-ledgo]')).some(v => !v)) bad.push('led');
+    await guided(p, 'med'); const n = await p.evaluate(() => medList().length);
+    for (let k = 0; k < n; k++) { await p.evaluate(k => { MED.pick = medList()[k].ref; MED.step = ''; render(); window.scrollTo(0, 0) }, k); if ((await vis('[data-medgo2]')).some(v => !v)) bad.push('med ' + k); }
+    await guided(p, 'guided'); if ((await vis('[data-prmv]')).some(v => !v)) bad.push('lp');
+    return !bad.length || bad;
+  });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
