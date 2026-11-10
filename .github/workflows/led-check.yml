@@ -1,0 +1,42 @@
+# Be Led: each prayer's start and end set in a pause, heard again word by word (tools/led_check.py). The results go to
+# the "led-check" branch. By hand only.
+name: Be Led check
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0,1,2,3,4,5,6,7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper numpy
+      - run: python app_build.py >/dev/null
+      - run: python tools/led_check.py ${{ matrix.shard }} 8
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: check-${{ matrix.shard }}
+          path: led/
+          if-no-files-found: ignore
+  push:
+    needs: check
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+      - run: |
+          mkdir /tmp/d && find parts -name '*.jsonl' -exec cp {} /tmp/d/ \; && cd /tmp/d
+          git init -q -b led-check && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "led check"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" led-check
