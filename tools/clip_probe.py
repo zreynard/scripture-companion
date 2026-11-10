@@ -104,6 +104,53 @@ def slice_(src, sb, e):
         for w in ws: print(f"  {w[0]:7.2f} {w[1]:7.2f}  {w[2]}")
         print(json.dumps({"src": src, "url": url, "bytes": [a[0], z[0] - 1], "slice_len": round(len(pcm) / 16000, 3), "file_len": round(L, 3), "frame_t0": round(a[1], 3)}))
 
+def scan(b):
+    """Every frame's (byte, true start time) and the true length; plus the length a header-only reader estimates."""
+    i0 = id3len(b); i, f = sync(b, i0)
+    if f is None: return None
+    frames, k, tt = [], i, 0.0
+    while k < len(b):
+        ff = frame(b, k)
+        if not ff:
+            j, _ = sync(b, k + 1)
+            if j is None: break
+            k = j; continue
+        frames.append((k, tt)); tt += ff[3] / ff[1]; k += ff[2]
+    return frames, tt, (len(b) - i) * 8 / (f[0] * 1000)
+
+def truth():
+    """For each Meditate reading and the Lord's Prayer: the file's true length and its header estimate, and the
+    reading's own bytes heard (its first and last words)."""
+    t = open(os.path.join(HERE, "out", "site", "index.html"), encoding="utf-8").read()
+    D, _ = json.JSONDecoder().raw_decode(t[t.index("const D=") + 8:])
+    sys.path.insert(0, os.path.join(HERE, "tools")); import trim
+    from faster_whisper import WhisperModel
+    model = WhisperModel("small.en", device="cpu", compute_type="int8")
+    jobs = [("med", m["ref"], m["audio"], m["a"], m["b"]) for m in D["pray"]["med"]]
+    if D["pray"].get("lp"): x = D["pray"]["lp"]; jobs.append(("lp", "Lord's Prayer", x["audio"], x["a"], x["b"]))
+    files = {}
+    for kind, ref, url, a, bb in jobs:
+        r = {"kind": kind, "ref": ref, "url": url}
+        try:
+            if "buzzsprout" in url: r["note"] = "Buzzsprout refuses GitHub"; print(json.dumps(r), flush=True); continue
+            if url not in files:
+                data = requests.get(url, headers=UA, timeout=900).content
+                files[url] = (data, scan(data) if not re.search(r"\.(m4a|mp4)(\?|$)", url) else None)
+            data, sc = files[url]
+            if sc is None:
+                r["note"] = "not MP3: exact times as decoded"; print(json.dumps(r), flush=True); continue
+            frames, Lt, Le = sc
+            r.update(Lt=round(Lt, 3), Le=round(Le, 3))
+            fa = max(x for x in frames if x[1] <= a); fz = min((x for x in frames if x[1] >= bb), default=(len(data), Lt))
+            pcm = trim.decode(data[fa[0]:fz[0]]); ws = trim.words_of(pcm, model)
+            off = a - fa[1]
+            inside = [w for w in ws if w[0] >= off - 0.05 and w[1] <= off + (bb - a) + 0.1]
+            r.update(first=" ".join(w[2] for w in inside[:6]), last=" ".join(w[2] for w in inside[-6:]),
+                     before=" ".join(w[2] for w in ws if w[1] <= off + 0.05)[-50:], after=" ".join(w[2] for w in ws if w[0] >= off + (bb - a) - 0.05)[:50])
+        except Exception as ex: r["err"] = str(ex)[:120]
+        print(json.dumps(r, ensure_ascii=False), flush=True)
+
 if __name__ == "__main__":
+    if sys.argv[1] == "truth": truth(); sys.exit()
     if sys.argv[1] == "probe": probe()
     else: slice_(sys.argv[2], float(sys.argv[3]), float(sys.argv[4]))
