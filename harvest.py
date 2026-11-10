@@ -103,7 +103,10 @@ VAUGHAN_SERIES = [(r"^I Am Part \d", "I Am"), (r"Respectable Sins", "Respectable
                   (r"^Jonah", "Jonah"), (r"^Seven Letters? to", "Seven Letters to Seven Churches"), (r"^Investigating Jesus", "Investigating Jesus: The Passion in Luke"),
                   (r"^Assurance", "Assurance: Knowing That You Know"), (r"^Sanctified", "Sanctified: Romans 6–8"), (r"^The Gospel of John", "The Gospel of John"),
                   (r"^Harvest DNA", "Harvest DNA"), (r"^Stirred Afresh", "Stirred Afresh"), (r"^The Better Life", "The Better Life: Walking by the Spirit"),
-                  (r"^Pursuing Biblical Community", "Pursuing Biblical Community"), (r"^Psalms - Selections", "Psalms: Selections from Israel's Hymnbook")]
+                  (r"^Pursuing Biblical Community", "Pursuing Biblical Community"), (r"^Psalms - Selections", "Psalms: Selections from Israel's Hymnbook"),
+                  # runs through a book, from the passages and years (the sermons identified by his voice carry no series)
+                  (r"^John \d[^;]* (2018|2019|2020|2021)$", "The Gospel of John"), (r"^Titus \d[^;]* 2019$", "Titus"), (r"^1 Peter \d[^;]* 2021$", "1 Peter"),
+                  (r"^Ephesians \d[^;]* (2021|2022)$", "Ephesians"), (r"^Judges \d[^;]* (2022|2023|2024)$", "Judges"), (r"^Genesis \d[^;]* 2023$", "Genesis: Abraham")]
 
 def harvest_harvest_memphis() -> list[dict]:
     r = get(config.HARVEST_MEMPHIS_FEED, timeout=90)
