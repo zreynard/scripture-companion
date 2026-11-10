@@ -129,7 +129,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     for (let i = 0; i < 4; i++) { await p.click('[data-ledsp]'); seen.push(await p.evaluate(() => [LED.sp, LED.c.a.playbackRate, document.querySelector('[data-ledsp]').textContent].join('/'))); }
     return seen.join(' ') === '1.1/1.1/1.1× 1.25/1.25/1.25× 0.9/0.9/0.9× 1/1/1×' || seen;
   });
-  await T('P10 the soaking music plays under every prayer while Music is on (it really plays, at the Pray level), carries on ~7 s after the amen, and stops when Music is off', async () => {
+  await T('P10 the soaking music plays under every prayer while Music is on (it really plays, at the Pray level), carries on after the amen until something else plays, and stays off when Music is off', async () => {
     const p = await pray_(await page()); await testAudio(p, { sb: 12, e: 10 }); await guided(p, 'led');
     const none = await p.evaluate(() => document.querySelector('[data-prmu]').textContent);
     await music(p); await guided(p, 'led');
@@ -139,8 +139,8 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
       await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing');
       const on = await until(p, () => !BED.el.paused && BED.g && Math.abs(BED.g.gain.value - BED.plv) < 0.02, 6000);
       await p.evaluate(() => { LED.c.a.currentTime = LED.c.end - 0.3 }); await until(p, () => LED.done, 4000);
-      const tail = await p.evaluate(() => [bedWanted(), LED.tail, !BED.el.paused]);
-      await p.evaluate(() => { LED.tail = false; clearTimeout(LED.tt); bedSync(); });
+      await wait(2500); const tail = await p.evaluate(() => [bedWanted(), BED.tail, !BED.el.paused]);   // the music carries on after the amen
+      await p.evaluate(() => { audio.src = TESTWAV; audio.play().catch(() => {}); }); await until(p, () => !BED.tail, 3000); await p.evaluate(() => audio.pause());
       res.push({ own, on, tail });
     }
     await p.evaluate(() => { BED.led = false; }); await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing');

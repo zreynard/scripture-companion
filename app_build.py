@@ -2627,7 +2627,7 @@ const PR_PLAY='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true
  PR_TURN='<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 function prShuf(n){const o=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[o[i],o[j]]=[o[j],o[i]]}return o}
 function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
- a.addEventListener('play',()=>{AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});[$('#ledm'),$('#medm'),$('#lpm')].forEach(x=>{if(x&&!x.paused)x.pause()});if(window.MED&&MED.on)medStop(false);pmSession();pmPaint()});
+ a.addEventListener('play',()=>{if(BED.tail)bedStopAfter();AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});[$('#ledm'),$('#medm'),$('#lpm')].forEach(x=>{if(x&&!x.paused)x.pause()});if(window.MED&&MED.on)medStop(false);pmSession();pmPaint()});
  a.addEventListener('pause',pmPaint);a.addEventListener('playing',()=>{PM.err=0});
  a.addEventListener('ended',()=>{if(a.src!==SILENT)pmSkip(1,true)});
  a.addEventListener('error',()=>{if(!a.getAttribute('src')||a.src===SILENT||PM.err>3)return;PM.err++;setTimeout(()=>pmSkip(1,true),900)});
@@ -2640,6 +2640,7 @@ function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
    narration: it fades in when the reading plays, out when it pauses or ends (a short gap between chapters is held). */
 const BED={plv:+S.get('bedlvp',0.25)||0.25,led:S.get('bedled',true)!==false,on:!!S.get('bedon',false),lv:+S.get('bedlv',0.2)||0.2,ctx:null,g:null,el:null,unl:false,t:null,url:null,id:null,sv:0,busy:false};
 function bedEl(){if(BED.el)return BED.el;const b=BED.el=$('#bedm');
+ AUDIO_EL.forEach(x=>x.addEventListener('play',()=>{if(BED.tail){BED.tail=false;bedSync()}}));
  b.addEventListener('pause',()=>{if(!bedWanted()||b.src===SILENT)return;const n=Date.now();BED.rts=(BED.rts||[]).filter(t=>n-t<10000);if(BED.rts.length>=3)return;BED.rts.push(n);   /* paused by the phone, not by us: once more */
   setTimeout(()=>{if(bedWanted()&&b.paused){const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(bedLevel(),800)).catch(()=>{})}},400)});
  b.addEventListener('ended',()=>bedLoad(1).then(()=>{if(bedWanted())b.play().catch(()=>{})}));
@@ -2656,9 +2657,15 @@ function bedLoad(step){return plLoad().then(L=>{if(!L.length)return false;const 
 function bedNarr(){return !!(NAR&&cur===NAR.id)}
 function bedOn(){return BED.on}
 /* Pray (Be Led's prayers, Meditate's readings and stillness) has the music too, on its own switch (BED.led) and level (BED.plv) */
-function bedPray(){return !!((window.MED&&MED.on)||(window.LED&&LED.c&&(LED.c.busy()||LED.tail))||(window.LP&&LP.c&&LP.c.busy()))}
+function bedPray(){return !!(BED.tail||(window.MED&&MED.on)||(window.LED&&LED.c&&LED.c.busy())||(window.LP&&LP.c&&LP.c.busy()))}
+/* after a prayer's amen the music plays on, piece after piece, like Stillness — until you play something else, turn the
+   music off, or pause it from the lock screen or your earbuds */
+function bedOnAfter(){if(!BED.led||!(PL.list||[]).length)return;BED.tail=true;dlog('music carries on','after the amen');bedSync();
+ if('mediaSession' in navigator){PM.ms=false;try{navigator.mediaSession.metadata=new MediaMetadata({title:'Prayer music',artist:'',album:'Pray'})}catch(e){}
+  [['play',()=>{BED.tail=true;bedSync()}],['pause',()=>bedStopAfter()],['seekbackward',null],['seekforward',null],['previoustrack',()=>{bedLoad(-1).then(()=>{if(bedWanted())bedEl().play().catch(()=>{})})}],['nexttrack',()=>{bedLoad(1).then(()=>{if(bedWanted())bedEl().play().catch(()=>{})})}]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}}
+function bedStopAfter(){if(!BED.tail)return;BED.tail=false;dlog('music stops','');bedGain(0,900);setTimeout(()=>{if(!bedWanted())bedEl().pause()},950)}
 function bedLevel(){return bedPray()?BED.plv:BED.lv}
-function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(window.LED&&LED.c&&(LED.c.busy()||LED.tail))return BED.led;if(window.LP&&LP.c&&LP.c.busy())return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
+function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(BED.tail)return BED.led;if(window.LED&&LED.c&&LED.c.busy())return BED.led;if(window.LP&&LP.c&&LP.c.busy())return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
 function bedSync(){const b=bedEl();{const w=bedWanted(),k=w+'|'+(BED.ctx&&BED.ctx.state)+'|'+(b.getAttribute('src')||'').slice(0,5)+'|'+b.paused;if(DIAG.last.bed!==k){DIAG.last.bed=k;dlog('music',{wanted:w,ctx:BED.ctx?BED.ctx.state:'none',file:(b.getAttribute('src')||'none').slice(0,5),paused:b.paused,on:BED.led,pieces:(PL.list||[]).length})}}$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',bedOn());
  if(bedWanted()){clearTimeout(BED.t);const go=()=>{const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(bedLevel(),1500)).catch(()=>{})};
   if(!b.getAttribute('src')||b.src===SILENT){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())go()})}else go();return}
@@ -2854,15 +2861,15 @@ function ledFade(v,ms){const a=$('#ledm');clearInterval(LED.fd);LED.fd=null;let 
  LED.fd=setInterval(()=>{k++;try{a.volume=Math.max(0,Math.min(1,v0+(v-v0)*k/n))}catch(e){}if(k>=n){clearInterval(LED.fd);LED.fd=null}},40)}
 /* the prayer has ended: your music (under a prayer without its own) carries on a few seconds after the amen, then fades away */
 function ledEnd(){const c=LED.c;LED.done=true;clearInterval(LED.fd);LED.fd=null;try{c.a.volume=1}catch(e){}c.clear();   /* let go of the sermon's file: nothing keeps downloading */
- if(BED.led&&(PL.list||[]).length){LED.tail=true;clearTimeout(LED.tt);LED.tt=setTimeout(()=>{LED.tail=false;bedGain(0,5000);setTimeout(bedSync,5100)},7000)}ledPaint()}
-function ledPP(){const x=ledCur(),c=ledC();if(!x)return;dlog('tap Be Led',x.id+' '+(c.state||'new'));bedKick();LED.tail=false;clearTimeout(LED.tt);clearInterval(LED.fd);LED.fd=null;
+ bedOnAfter();ledPaint()}
+function ledPP(){const x=ledCur(),c=ledC();if(!x)return;dlog('tap Be Led',x.id+' '+(c.state||'new'));bedKick();clearInterval(LED.fd);LED.fd=null;
  if(LED.id===x.id&&c.a.getAttribute('src')&&c.state!=='error'){if(c.busy()){c.pause();return}try{c.a.volume=0}catch(e){}LED.fade=true;if(LED.done||c.state==='ended'){LED.done=false;c.again()}else c.resume();return}
  LED.id=x.id;LED.done=false;c.rate=LED.sp;try{c.a.volume=0}catch(e){}LED.fade=true;const [t0,end]=ledSpan(x);
  c.go(x.audio,t0,end,d=>{if(isFinite(d)&&d>0){const [s,e]=ledSpan(x,d);c.t0=s;c.end=e}});ledPaint()}
 function ledSeek(d){if(LED.c&&LED.id)LED.c.seek(d);ledRing()}
 function ledGo(d){const L=ledList();if(!L.length)return;const o=ledOrd(),on=!!(LED.c&&LED.c.busy());let p=o.p+d;
  if(p>=o.o.length){S.set('ledord',null);const n=ledOrd();n.p=0;S.set('ledord',n)}else{o.p=Math.max(0,p);S.set('ledord',o)}
- if(LED.c)LED.c.clear();LED.id=null;LED.done=false;LED.tail=false;clearTimeout(LED.tt);
+ if(LED.c)LED.c.clear();LED.id=null;LED.done=false;
  if(view==='pray'&&PR.mode==='led'){const y=scrollY;render();window.scrollTo(0,y)}if(on)ledPP();else bedSync()}
 function ledSession(){if(!('mediaSession' in navigator))return;const x=ledById(LED.id)||{};PM.ms=false;
  try{navigator.mediaSession.metadata=new MediaMetadata({title:'Be Led',artist:NAMES[x.who]||x.who||'',album:'Pray'})}catch(e){}
@@ -2917,7 +2924,7 @@ function medView(){const L=medList(),m=medCur(),k=medIdx();if(!m)return `<p clas
 var LP={c:null,done:false};
 function lpD(){return PRAY.lp||null}
 function lpC(){if(LP.c)return LP.c;const a=$('#lpm');
- LP.c=clipper(a,{state:()=>lpPaint(),end:()=>{LP.done=true;LP.c.clear();lpPaint()},error:lpPaint,tick:lpFollow});
+ LP.c=clipper(a,{state:()=>lpPaint(),end:()=>{LP.done=true;LP.c.clear();bedOnAfter();lpPaint()},error:lpPaint,tick:lpFollow});
  a.addEventListener('play',()=>{LP.done=false;AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});{const p=pmEl();if(!p.paused)p.pause()}if(LED.c&&LED.c.busy())LED.c.pause();if(MED.on)medStop(false);lpSession()});
  AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause()}));return LP.c}
 function lpLive(){return !!(LP.c&&LP.c.a.getAttribute('src')&&!LP.done&&LP.c.state!=='error'&&LP.c.state!=='')}
