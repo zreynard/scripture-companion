@@ -333,6 +333,18 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await A.evaluate(() => { $('#tabs [data-tab2=library]').click(); }); await wait(400); await A.click('[data-lt=teachers]'); await wait(300);
     const row = await A.evaluate(() => !!document.querySelector('[data-tch="Davey"]'));
     return (r.n > 0 && r.n <= 40 && r.hide === 'Davey' && r.jon && r.titus >= 2 && r.coreOk && !row) || { r, row }; });
+  await T('U76 Be Led: a third Pray mode lists pastors\' prayers by theme; a prayer plays from its sermon near the end, with the soaking music only where it has none', async () => {
+    const A = await open(await ctx());
+    await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500);
+    await A.click('[data-prm=led]'); await wait(400);
+    const v = await A.evaluate(() => ({ rows: document.querySelectorAll('[data-ledplay]').length, ths: document.querySelectorAll('[data-ledth]').length, n: (PRAY.led || []).length }));
+    const th = await A.evaluate(() => { const b = [...document.querySelectorAll('[data-ledth]')].find(x => x.dataset.ledth); return b && b.dataset.ledth; });
+    await A.click(`[data-ledth="${th}"]`); await wait(300); const f = await A.evaluate(() => document.querySelectorAll('[data-ledplay]').length);
+    await A.click('[data-ledth=""]'); await wait(300);
+    const id = await A.evaluate(() => { const x = PRAY.led.find(z => z.music); return x.id; });
+    await A.click(`[data-ledplay="${id}"]`); await wait(1500);
+    const p = await A.evaluate(id => ({ cur: String(cur), led: !!(I[id] && I[id].led), sb: I[id] && I[id].sb, tail: tail(), bed: bedLed(), mode: PR.mode, inLib: Object.values(I).filter(i => i.led && i.tr !== 'devotional').length }), id);
+    return (v.rows === v.n && v.n >= 6 && v.ths >= 3 && f >= 1 && f < v.n && p.cur === id && p.led && p.sb > 30 && p.bed && p.inLib === 0) || { v, f, p }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

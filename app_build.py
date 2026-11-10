@@ -69,6 +69,19 @@ def is_walk(title):
     for r in parse_refs(rest): rest = rest.replace(r.raw, " ")
     return bool(parse_refs(title or "")) and not re.search(r"[A-Za-z]{2,}", re.sub(r"\b(?:and|part|review|expound)\b", " ", rest, flags=re.I))
 
+def be_led(items):
+    """Be Led: pastors leading in prayer, each the closing prayer of a sermon, played from that sermon's recording
+    (data/be_led.json: sb/e = seconds before the file's end where the prayer starts and ends)."""
+    p = os.path.join(HERE, "data", "be_led.json")
+    if not os.path.exists(p): return []
+    out = []
+    for x in json.load(open(p, encoding="utf-8")).get("prayers", []):
+        it = items.get(x["src"])
+        if not it or not it.get("audio"): continue
+        out.append({"id": "led:" + x["src"], "src": x["src"], "t": x["title"], "theme": x["theme"], "sb": x["sb"], "e": x["e"],
+                    "who": it["who"], "audio": it["audio"], "len": round(x["sb"] - x["e"]), "from": it["t"], "music": bool(x.get("music"))})
+    return out
+
 def big_picture(items, vser=None):
     """Big Picture: whole-Bible series heard in order, each with its own place. Episodes are items already in the app."""
     sc = sorted([i for i in items.values() if i["src"] == "secret_church_podcast" and i["sc"] and i["sc"][0] in (1, 2)], key=lambda i: tuple(i["sc"]))
@@ -452,7 +465,7 @@ def main():
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items, VSER),
             "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst}),
             "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]},
-            "pray": {"moves": __import__("pray").build()}}
+            "pray": {"moves": __import__("pray").build(), "led": be_led(items)}}
     html = TEMPLATE.replace("__VERSION__", str(BUILD)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
@@ -888,7 +901,7 @@ body.wsong-open #tabs{display:none}body.wsong-open{padding-bottom:0!important}
 .w-pk{background:var(--bg);width:100%;max-width:560px;max-height:80vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(20px + env(safe-area-inset-bottom))}.w-pk h3{margin:0 0 8px;font-weight:400;font-size:22px}
 .w-pl label{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line)}.w-pl input{width:22px;height:22px;flex:none}.w-pl b{display:block;font-weight:600}.w-pl small{display:block;color:var(--mute);font-size:13px}
 
-.pray .pr-seg{margin:12px 0 18px}
+.pray .pr-seg{margin:12px 0 18px}.led-lead{margin:2px 2px 14px;color:#5b6280;font-size:15px;line-height:1.45}.led-ths{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}.led-ths button{height:32px;padding:0 13px;border-radius:16px;border:1px solid rgba(168,129,42,.38);background:#fff;font:600 13px -apple-system,system-ui,sans-serif;color:var(--ink)}.led-ths button.on{background:#f3e7c7;border-color:#c9a24a}.led-list{display:flex;flex-direction:column;gap:10px}.led-row{display:flex;align-items:center;gap:13px;width:100%;padding:13px 14px;border-radius:18px;border:1px solid rgba(27,36,64,.08);background:#fff;text-align:left;font:inherit;color:var(--ink);cursor:pointer}.led-row.now{border-color:#c9a24a;box-shadow:0 0 0 2px rgba(201,162,74,.18)}.led-pp{flex:none;width:44px;height:44px;border-radius:22px;background:#f3ead4;color:#7a5c16;display:flex;align-items:center;justify-content:center}.led-pp svg{width:20px;height:20px}.led-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.led-t b{font:500 18px/1.25 'Iowan Old Style',Georgia,serif}.led-t span{font-size:13px;color:#6b7088}.led-th1{flex:none;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#a8812a}.led-row.heard .led-t b{color:#4a5272}
 .pr-art{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 10px 30px rgba(27,36,64,.12);background:#eadfca;transform:translateZ(0)}
 .pr-art svg{display:block;width:100%;height:100%}
 .pr-still{height:calc(100svh - var(--tabh) - 330px);min-height:280px;max-height:560px}
@@ -1458,7 +1471,7 @@ const mins=s=>s?Math.round(s/60)+' min':'';
 const isDone=id=>!!(prog[id]&&prog[id].done);
 // Listened = at least 70% of the teaching actually played (seconds heard, not where the slider sits)
 const DONE_AT=0.5,   /* heard at least half, and reached the last two minutes (or the end): finished */
- nearEnd=(id,t)=>{const p=prog[id]||{},d=p.dur||0;return d>0&&t>=Math.min(d-(I[id].e||0)-120,(I[id].s||0)+0.95*body(id))},body=id=>{const p=prog[id]||{};return Math.max(1,(p.dur||0)-(I[id].s||0)-(I[id].e||0))},tail=()=>cur&&I[cur]&&I[cur].e||0,heardPct=id=>{const p=prog[id]||{};return p.dur&&p.heard?Math.min(100,Math.round(100*p.heard/body(id))):0};
+ nearEnd=(id,t)=>{const p=prog[id]||{},d=p.dur||0;return d>0&&t>=Math.min(d-(I[id].e||0)-120,(I[id].s||0)+0.95*body(id))},body=id=>{const p=prog[id]||{};if(I[id].sb)return Math.max(1,I[id].sb-(I[id].e||0));return Math.max(1,(p.dur||0)-(I[id].s||0)-(I[id].e||0))},tail=()=>cur&&I[cur]&&I[cur].e||0,heardPct=id=>{const p=prog[id]||{};return p.dur&&p.heard?Math.min(100,Math.round(100*p.heard/body(id))):0};
 let lastT=null,ready=true;const OPEN=new Set();
 /* ---- the Bible text (Berean Standard Bible, public domain): one file per book, fetched once, then offline ---- */
 /* ---- people, places and the map (atlas.json, loaded on first use) ---- */
@@ -2584,7 +2597,7 @@ function wireLib(){wireBP();document.querySelectorAll('[data-tch]').forEach(b=>b
 /* Pray (pray.py): Stillness is music and a quiet landscape; Guided walks the Lord's Prayer (Matthew 6:9-13). The music
    plays on its own element: it pauses a sermon and a sermon pauses it, and it is never kept in listening history */
 const PRAY=D.pray||{moves:[],music:[]};
-const PR={mode:S.get('prm','still')==='guided'?'guided':'still',mv:0,anim:''};
+const PR={mode:['guided','led'].includes(S.get('prm','still'))?S.get('prm','still'):'still',mv:0,anim:'',th:S.get('ledth','')};
 const PM={el:null,k:0,ms:false,err:0,sv:0};
 const PR_PLAY='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M8.5 5.6v12.8a.8.8 0 0 0 1.2.7l10-6.4a.8.8 0 0 0 0-1.4l-10-6.4a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg>',
  PR_PAUSE='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/></svg>',
@@ -2604,7 +2617,7 @@ function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
    iPhones ignore an audio element's volume, so the music (only the music) goes through a Web Audio gain; the narration
    itself is never touched, so its lock screen and AirPods controls stay exactly as they are. The music follows the
    narration: it fades in when the reading plays, out when it pauses or ends (a short gap between chapters is held). */
-const BED={on:!!S.get('bedon',false),lv:+S.get('bedlv',0.2)||0.2,ctx:null,g:null,el:null,unl:false,t:null,url:null,id:null,sv:0,busy:false};
+const BED={led:S.get('bedled',true)!==false,on:!!S.get('bedon',false),lv:+S.get('bedlv',0.2)||0.2,ctx:null,g:null,el:null,unl:false,t:null,url:null,id:null,sv:0,busy:false};
 function bedEl(){if(BED.el)return BED.el;const b=BED.el=$('#bedm');
  b.addEventListener('ended',()=>bedLoad(1).then(()=>{if(bedWanted())b.play().catch(()=>{})}));
  b.addEventListener('timeupdate',()=>{const n=Date.now();if(BED.id&&n-BED.sv>5000){BED.sv=n;S.set('bedpos',{id:BED.id,t:Math.floor(b.currentTime)})}});return b}
@@ -2617,21 +2630,23 @@ function bedLoad(step){return plLoad().then(L=>{if(!L.length)return false;const 
   if(step){k=(Math.max(k,0)+step)%L.length;t=0}else if(k<0)k=0;else t=p.t||0;const tr=L[k];if(!step&&BED.id===tr.id&&BED.el&&BED.el.getAttribute('src'))return true;
   return pdbDo('blob','readonly',x=>x.objectStore('blob').get(tr.id)).then(bl=>{if(!bl)return false;const b=bedEl();if(BED.url)URL.revokeObjectURL(BED.url);BED.url=URL.createObjectURL(bl);b.src=BED.url;BED.id=tr.id;S.set('bedpos',{id:tr.id,t});
    if(t)b.addEventListener('loadedmetadata',()=>{try{b.currentTime=t}catch(e){}},{once:true});return true})}).catch(()=>false)}
-function bedNarr(){return !!(NAR&&cur===NAR.id)}
-function bedWanted(){return BED.on&&bedNarr()&&!audio.paused}
-function bedSync(){const b=bedEl();$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',BED.on);
+function bedLed(){return !!(cur&&I[cur]&&I[cur].led&&I[cur].led.music)}
+function bedNarr(){return !!(NAR&&cur===NAR.id)||bedLed()}
+function bedOn(){return bedLed()?BED.led:BED.on}
+function bedWanted(){return bedOn()&&bedNarr()&&!audio.paused}
+function bedSync(){const b=bedEl();$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',bedOn());
  if(bedWanted()){clearTimeout(BED.t);const go=()=>{const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(BED.lv,1500)).catch(()=>{})};
   if(!b.getAttribute('src')||b.src===SILENT){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())go()})}else go();return}
  clearTimeout(BED.t);BED.t=setTimeout(()=>{if(bedWanted())return;bedGain(0,700);setTimeout(()=>{if(!bedWanted())b.pause()},750)},2500)}
 /* iPhones only start a sound from a tap: the first tap after turning the music on readies its player */
-function bedUnlock(){if(!BED.on||BED.unl)return;BED.unl=true;const b=bedEl(),c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});
+function bedUnlock(){if(!(BED.on||BED.led)||BED.unl)return;BED.unl=true;const b=bedEl(),c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});
  if(!b.getAttribute('src')){b.src=SILENT;b.play().then(()=>{if(!bedWanted())b.pause()}).catch(()=>{BED.unl=false})}}
 ['touchend','click'].forEach(ev=>document.addEventListener(ev,bedUnlock,true));
 function bedPop(){const p=$('#bedpop');if(!p.hidden){p.hidden=true;return}
  plLoad().then(L=>{const have=L.length>0,pc=Math.round(BED.lv*100);
-  p.innerHTML=`<label class="bp-row"><span><b>Soaking music under the reading</b><small>${have?esc((L[0].a||'Your music')+' · plays softly behind the narration'):'Your music is not on this phone yet'}</small></span><input type="checkbox" id="bedon"${BED.on?' checked':''}${have?'':' disabled'}></label>`+
+  const ld=bedLed();p.innerHTML=`<label class="bp-row"><span><b>Soaking music under the ${ld?'prayer':'reading'}</b><small>${have?esc((L[0].a||'Your music')+' · plays softly behind '+(ld?'the prayer':'the narration')):'Your music is not on this phone yet'}</small></span><input type="checkbox" id="bedon"${bedOn()?' checked':''}${have?'':' disabled'}></label>`+
    (have?`<input type="range" id="bedlv" min="3" max="60" step="1" value="${pc}" aria-label="Music level"><div class="bp-l"><span>Softer</span><span id="bedpc">Music level ${pc}%</span><span>Louder</span></div>`:`<button id="bedget">Get it in Pray</button>`);
-  p.hidden=false;const on=$('#bedon');if(on)on.onchange=()=>{BED.on=on.checked;S.set('bedon',BED.on);BED.unl=false;bedUnlock();bedSync()};
+  p.hidden=false;const on=$('#bedon');if(on)on.onchange=()=>{if(ld){BED.led=on.checked;S.set('bedled',BED.led)}else{BED.on=on.checked;S.set('bedon',BED.on)}BED.unl=false;bedUnlock();bedSync()};
   const lv=$('#bedlv');if(lv)lv.oninput=()=>{BED.lv=+lv.value/100;S.set('bedlv',BED.lv);$('#bedpc').textContent='Music level '+lv.value+'%';if(bedWanted())bedGain(BED.lv,150)};
   const gt=$('#bedget');if(gt)gt.onclick=()=>{p.hidden=true;setMini(true);const t=document.querySelector('#tabs [data-tab2=pray]');if(t)t.click()}})}
 /* the music lives on this phone: albums you bought (MP3s, or the store's ZIP), kept in IndexedDB, never uploaded */
@@ -2743,8 +2758,15 @@ function prayArt(id,band){return `<svg viewBox="${band?'0 214 390 196':'0 0 390 
 <path d="M0 372 C54 358 96 360 140 368 C190 377 222 356 270 360 C318 364 350 376 390 368 V520 H0Z" fill="#5f6b86"/>
 <path d="M0 404 C70 390 120 396 176 404 C236 413 280 398 330 400 C356 401 374 405 390 408 V520 H0Z" fill="url(#${id}f)"/>
 <path d="M0 446 C90 434 170 440 240 448 C300 455 350 446 390 442 V520 H0Z" fill="#1f2840" opacity=".9"/></svg>`}
+/* Be Led: pastors leading in prayer (the closing prayers of their sermons), by theme; each plays in the full player, speed included */
+function ledItem(id){const x=(PRAY.led||[]).find(z=>z.id===id);if(!x)return null;if(!I[id])I[id]={id,t:x.t,who:x.who,audio:x.audio,sb:x.sb,e:x.e,dur:x.len,tr:'devotional',led:{src:x.src,music:x.music,from:x.from,theme:x.theme}};return id}
+function ledView(){const L=PRAY.led||[];if(!L.length)return `<p class="led-lead">Prayers are on their way.</p>`;const th=[...new Set(L.map(x=>x.theme))],k=th.includes(PR.th)?PR.th:'';
+ const rows=L.filter(x=>!k||x.theme===k).map(x=>{const p=prog[x.id]||{},on=String(cur)===x.id;
+  return `<button class="led-row${p.done?' heard':''}${on?' now':''}" data-ledplay="${x.id}"><span class="led-pp">${PR_PLAY}</span><span class="led-t"><b>${esc(x.t)}</b><span>${esc(NAMES[x.who]||x.who)} · ${Math.max(1,Math.round(x.len/60))} min${p.done?' · prayed':''}</span></span><span class="led-th1">${esc(x.theme)}</span></button>`}).join('');
+ return `<p class="led-lead">Pastors leading you in prayer. Press play and pray along with them.</p><div class="led-ths" role="group" aria-label="Themes">${['',...th].map(t=>`<button data-ledth="${esc(t)}" class="${k===t?'on':''}">${esc(t||'All')}</button>`).join('')}</div><div class="led-list">${rows}</div>`}
 function prayView(){if(PR.mode==='guided')prSession();
- let h=`<div class="jv pray" id="pray">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Pray</h1><div class="t-sort lib-seg pr-seg" role="tablist" aria-label="Pray">${[['still','Stillness'],['guided','Guided']].map(([v,l])=>`<button role="tab" data-prm="${v}" class="${PR.mode===v?'on':''}" aria-selected="${PR.mode===v}">${l}</button>`).join('')}</div>`;
+ let h=`<div class="jv pray" id="pray">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Pray</h1><div class="t-sort lib-seg pr-seg" role="tablist" aria-label="Pray">${[['still','Stillness'],['guided','Guided'],['led','Be Led']].map(([v,l])=>`<button role="tab" data-prm="${v}" class="${PR.mode===v?'on':''}" aria-selected="${PR.mode===v}">${l}</button>`).join('')}</div>`;
+ if(PR.mode==='led')return h+ledView()+'</div>';
  if(PR.mode==='still'&&PL.list&&!PL.list.length)return h+`<div class="pr-art pr-still">${prayArt('ps')}</div><div class="pr-ctl"><button class="pr-pp" data-pm aria-label="Bring the music onto this phone" style="opacity:.4">${PR_PLAY}</button></div><p class="pr-st" data-mbst>${esc(bkOn()?(MB.msg||'Bringing your prayer music onto this phone…'):'Turn on Backup in ⋯ to bring your prayer music onto this phone.')}</p></div>`;
  if(PR.mode==='still')return h+`<div class="pr-art pr-still">${prayArt('ps')}</div><div class="pr-ctl"><button class="pr-sk" data-pms="-1" aria-label="Previous piece">${PR_SKIP(-1)}</button><button class="pr-pp" data-pm aria-label="Play the music">${PR_PLAY}</button><button class="pr-sk" data-pms="1" aria-label="Next piece">${PR_SKIP(1)}</button></div></div>`;
  const m=PRAY.moves[PR.mv]||PRAY.moves[0],s=prSup(m),n=PRAY.moves.length;
@@ -2756,6 +2778,8 @@ function prGo(d){const k=PR.mv+d;if(k<0||k>=PRAY.moves.length)return;PR.mv=k;S.s
 function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='pray')render()});return}pmPrime();if(!PL.list.length&&bkOn()&&!MB.busy)mbSync(true);
  document.querySelectorAll('[data-pradd]').forEach(b=>b.onclick=()=>prPick(()=>{if(view==='pray')render()}));
  document.querySelectorAll('[data-prm]').forEach(b=>b.onclick=()=>{if(PR.mode===b.dataset.prm)return;PR.mode=b.dataset.prm;S.set('prm',PR.mode);render()});
+ document.querySelectorAll('[data-ledth]').forEach(b=>b.onclick=()=>{PR.th=b.dataset.ledth;S.set('ledth',PR.th);render()});
+ document.querySelectorAll('[data-ledplay]').forEach(b=>b.onclick=()=>{const id=ledItem(b.dataset.ledplay);if(!id)return;if(String(cur)===id&&!audio.paused){audio.pause();return}{const pa=pmEl();if(!pa.paused)pa.pause()}play(id,{full:true});audio.play().catch(()=>{})});
  document.querySelectorAll('[data-pm]').forEach(b=>b.onclick=pmToggle);
  document.querySelectorAll('[data-pms]').forEach(b=>b.onclick=()=>pmSkip(+b.dataset.pms));
  document.querySelectorAll('[data-prmv]').forEach(b=>b.onclick=()=>prGo(+b.dataset.prmv));
@@ -2897,13 +2921,14 @@ function leveler(){if(AC)return AC;try{AC=new (window.AudioContext||window.webki
    const want=Math.max(-10,Math.min(10,TARGET-lvl));g.gain.setTargetAtTime(Math.pow(10,want/20),AC.currentTime,lvlFast>0?.3:2)},100)}catch(e){AC=null}return AC}
 function useAudioFor(i){const fx=levelFor(i)&&leveler(),want=fx?$('#audiofx'):$('#audio');if(fx&&AC.state!=='running')AC.resume().catch(()=>{});
  if(want!==audio){try{audio.pause()}catch(e){}audio=want;audio.playbackRate=speed}if(fx){lvl=null;lvlFast=40}}$('#spd').textContent=spdLabel();
-function where(id){if(I[id]&&I[id].nar)return I[id].nar.book+' '+I[id].nar.c;if(I[id]&&I[id].intro)return I[id].intro.book+(I[id].intro.c?' '+I[id].intro.c:'');for(const b of D.books){if(b.ov.includes(id)||(b.spans||[]).some(x=>x.id===id))return b.name;for(const c of b.ch)if(c.ids.includes(id))return b.name+' '+c.c}return ''}
+function where(id){if(I[id]&&I[id].led)return 'from '+dispTitle({t:I[id].led.from});if(I[id]&&I[id].nar)return I[id].nar.book+' '+I[id].nar.c;if(I[id]&&I[id].intro)return I[id].intro.book+(I[id].intro.c?' '+I[id].intro.c:'');for(const b of D.books){if(b.ov.includes(id)||(b.spans||[]).some(x=>x.id===id))return b.name;for(const c of b.ch)if(c.ids.includes(id))return b.name+' '+c.c}return ''}
 /* every list works the same way: the play button plays (or pauses) in the mini player; tapping the row opens the full player */
 function playRow(id,full){if(!I[id]||!I[id].audio)return;JM=false;BPM=null;PLAYSTOP=view==='journey'?jpIdx():view==='walk'?camp:null;
  DEEP=view==='journey'&&coreOn()&&JV.deep&&deepIds(jpIdx()).includes(id)?{i:jpIdx()}:null;if(SKIP[id]){delete SKIP[id];S.set('skip',SKIP)}
  if(full&&cur===id){setMini(false);return}play(id,full?{full:true}:{})}
 function msSermon(id){const i=I[id];if(!i||!('mediaSession' in navigator))return;navigator.mediaSession.metadata=new MediaMetadata({title:i.t,artist:teacher(i),album:where(id)});['play',()=>audio.play().catch(()=>{}),'pause',()=>audio.pause(),'seekbackward',()=>audio.currentTime-=10,'seekforward',()=>audio.currentTime+=10,'nexttrack',()=>skipTrack(1),'previoustrack',()=>skipTrack(-1)].reduce((a,v,k,arr)=>{if(k%2===0)navigator.mediaSession.setActionHandler(v,arr[k+1]);return a},0)}
-function play(id,o={}){const i=I[id];if(!i.audio)return;BBM=!!o.bb;if(!o.restore)S.set('npl',{id,at:Date.now()});let wait=false;if(cur!==id){cur=id;NP().classList.toggle('reading',!!i.nar);$('.np-lab').textContent=i.nar?'Reading':'Now playing';if(!i.nar)NAR=null;ready=false;const p=i.nar?{}:prog[id]||{},saved=p.pos||0;useAudioFor(i);const meta=()=>{const st=i.s||0;if(i.nar){if(narAt)audio.currentTime=narAt;narAt=null;narRetry=0;ready=true;narMark(true);return}const L=isFinite(audio.duration)&&audio.duration>0?audio.duration:(+i.dur||Infinity);   /* some hosts report no length yet */
+function play(id,o={}){const i=I[id];if(!i.audio)return;BBM=!!o.bb;if(!o.restore)S.set('npl',{id,at:Date.now()});let wait=false;if(cur!==id){cur=id;NP().classList.toggle('reading',!!i.nar);$('.np-lab').textContent=i.nar?'Reading':'Now playing';if(!i.nar)NAR=null;ready=false;const p=i.nar?{}:prog[id]||{},saved=p.pos||0;useAudioFor(i);const meta=()=>{let st=i.s||0;if(i.nar){if(narAt)audio.currentTime=narAt;narAt=null;narRetry=0;ready=true;narMark(true);return}const L=isFinite(audio.duration)&&audio.duration>0?audio.duration:(+i.dur||Infinity);   /* some hosts report no length yet */
+ if(i.sb&&isFinite(L))st=Math.max(0,L-i.sb);   /* Be Led: the prayer starts this far before the end */
  if(saved&&saved>st&&saved<L-5)audio.currentTime=saved;else if(st&&st<L-30){audio.currentTime=st;START={id,st}}ready=true};const setSrc=u=>{audio.src=u;narWait=false;audio.addEventListener('loadedmetadata',meta,{once:true})};if(!i.nar&&!i.blob)setSrc(i.audio);else if(NB[id]&&NB[id].u)setSrc(NB[id].u);else{narWait=true;wait=true;if(audio.src!==SILENT)try{audio.pause()}catch(e){}$('#cur').textContent='Loading…';narBlob(id).then(u=>{if(cur!==id)return;setSrc(u);if(!o.load)audio.play().catch(()=>{})}).catch(()=>{if(cur!==id)return;narWait=false;$('#np-s').textContent='This chapter did not load — check your connection and tap play.'})}  /* fresh plays start after the intro */
   $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=i.nar?'\u00a0':teacher(i)+' · '+where(id);npArt(id);favPaint();if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!o.full)}else if(o.full)setMini(false);if(i.nar)readerFill(true);if(i.intro){NP().classList.add('reading');const box=$('#np-read');box.innerHTML='';introText(i.intro.abbr).then(T=>{if(cur!==id)return;box.innerHTML=`<section class="itx"><h3 class="rc first">${esc(dispTitle(i))}</h3>${introParas(T[String(i.intro.c)])}</section>`}).catch(()=>{})}setPP();
   msSermon(id)}
