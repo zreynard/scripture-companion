@@ -26,15 +26,15 @@ Every choice keeps its reason (for the report; the app does not show it). Go Dee
 from collections import defaultdict
 import json, os, re
 
-W = {"PAM": 1.00, "Platt": 0.95, "Skip": 0.78, "Davey": 0.66}
+W = {"PAM": 1.00, "Platt": 0.95, "Vaughan": 0.85, "Skip": 0.78, "Davey": 0.66}
 WJ = 0.85                    # Davey's Wisdom Journey lessons, relative to his sermons
-NAME = {"Platt": "David Platt", "PAM": "Philip Anthony Mitchell", "Skip": "Skip Heitzig", "Davey": "Stephen Davey"}
+NAME = {"Platt": "David Platt", "PAM": "Philip Anthony Mitchell", "Skip": "Skip Heitzig", "Davey": "Stephen Davey", "Vaughan": "Kennon Vaughan"}
 MODES = {"quality": {"lam": 0.12, "mu": 0.03, "sb": 0.015, "light": 1.0, "gap": 0.5},
          "balanced": {"lam": 0.30, "mu": 0.03, "sb": 0.015, "light": 3.0, "gap": 0.45},
          "lean": {"lam": 0.55, "mu": 0.03, "sb": 0.015, "light": 4.0, "gap": 0.35},
          "short": {"lam": 1.2, "mu": 0.03, "sb": 0.015, "light": 2.0, "gap": 0.35}}   # for comparison: what ~400 hours takes
 # Listening time from the favourite teachers costs less: they are not cut to save hours
-HOUR_COST = {"PAM": 0.4, "Platt": 0.5, "Skip": 1.0, "Davey": 1.0}
+HOUR_COST = {"PAM": 0.4, "Platt": 0.5, "Vaughan": 0.8, "Skip": 1.0, "Davey": 1.0}
 # Chapters that are mostly lists (genealogies, census figures, building specifications, land allotments, rosters):
 # here a short lesson serves better than an hour, so listening time costs more ("light" times the usual cost).
 LIGHT = {"Genesis": [5, 10, 36], "Exodus": [25, 26, 27, 28, 30, 31, 35, 36, 37, 38, 39], "Leviticus": [1, 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15],

@@ -83,6 +83,75 @@ def harvest_fearless() -> list[dict]:
     _log(f"fearless: {len(out)} sermons")
     return out
 
+# ---------- Kennon Vaughan (Harvest Church, Memphis): the church's Sunday podcast. Several preachers; his are kept: the
+# ones that name him, and unnamed ones his voice identifies (tools/voice_id.py -> data/vaughan_voice.json, checked by
+# hand). Each description opens with the series and the passage ("Exodus - The God Who Rescues Exodus 15 Harvest is
+# a ..."). Hand-checked passages and decisions: data/vaughan_refs.json. ----------
+VAUGHAN_NOT_SERMON = re.compile(r"prayer (and|&) praise|starting the conversation|scotus|^kennon vaughan - \d+ ?am\b|christmas eve service|family weekend", re.I)
+
+def _vaughan_title(t: str) -> str:
+    t = re.sub(r"\s*[-–]?\s*\(?\s*(?:Dr\.?\s*)?Kenn?on V[ua]+ghan\s*\)?\s*[-–]?\s*", " ", t)
+    t = re.sub(r"^(Acts [\d:\-–]+)\s*[-–]?\s*The Book of Acts\s*$", r"\1", t)   # "Acts 13:4-13 The Book of Acts" (the series, kept apart)
+    t = re.sub(r"\s+(Respectable Sins)\s*$", "", t)
+    return re.sub(r"\s{2,}", " ", t).strip(" -–|")
+
+# series the newer titles carry, or that the older descriptions name inconsistently: (pattern on title/series/date, name)
+VAUGHAN_SERIES = [(r"^I Am Part \d", "I Am"), (r"Respectable Sins", "Respectable Sins"), (r"^Family Matters", "Family Matters"),
+                  (r"Fruit-Filled Year|^John 15:1-11\b.*2026", "A Fruit-Filled Year"), (r"^(Intro to The Book of Acts|Acts \d).*(2025|2026)", "The Book of Acts"),
+                  (r"^Ruth \d.*2024", "Ruth"), (r"^2 Timothy .*2017|^Entrusted", "Entrusted: 2 Timothy"), (r"^Exodus - The God", "Exodus: The God Who Rescues"),
+                  (r"^Ecclesiastes - ", "Ecclesiastes: The Search for Meaning"), (r"^The Local Church", "The Local Church: A Gospel-Driven Community"),
+                  (r"^Jonah", "Jonah"), (r"^Seven Letters? to", "Seven Letters to Seven Churches"), (r"^Investigating Jesus", "Investigating Jesus: The Passion in Luke"),
+                  (r"^Assurance", "Assurance: Knowing That You Know"), (r"^Sanctified", "Sanctified: Romans 6–8"), (r"^The Gospel of John", "The Gospel of John"),
+                  (r"^Harvest DNA", "Harvest DNA"), (r"^Stirred Afresh", "Stirred Afresh"), (r"^The Better Life", "The Better Life: Walking by the Spirit"),
+                  (r"^Pursuing Biblical Community", "Pursuing Biblical Community"), (r"^Psalms - Selections", "Psalms: Selections from Israel's Hymnbook")]
+
+def harvest_harvest_memphis() -> list[dict]:
+    r = get(config.HARVEST_MEMPHIS_FEED, timeout=90)
+    if not r.ok:
+        _log(f"harvest_memphis: feed fetch failed {r.status} {r.note}")
+        return []
+    from refs import parse_refs, merge_refs, refs_to_text
+    def load(name):
+        p = os.path.join(DATA, name)
+        return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+    voice = {u for u, v in (load("vaughan_voice.json").get("items") or {}).items() if v.get("verdict") == "Kennon"}
+    hand = load("vaughan_refs.json")   # {guid: {"keep": bool, "pass": "...", "title": "...", "series": "..."}}
+    secs = lambda d: int(d) if (d or "").isdigit() else sum(int(v) * 60 ** i for i, v in enumerate(reversed([x for x in (d or "").split(":") if x.isdigit()])))
+    out, seen = [], set()
+    for it in parse_rss(r.text):
+        enc, guid = html_unescape(it.get("enclosure") or ""), it.get("guid") or ""
+        if not enc or not guid: continue
+        t, a, desc = it["title"], it["author"] or "", it["description"] or ""
+        h = hand.get(guid, {})
+        named = bool(re.search(r"\bkennon\b|\bvuaghan\b", t + " " + a, re.I))
+        if h.get("keep") is False or not (named or enc in voice or h.get("keep")): continue
+        dur = secs(it["duration"])
+        if VAUGHAN_NOT_SERMON.search(t) or (dur and dur < 1200): continue
+        head = re.split(r"Harvest is a (?:non-denominational )?church", desc)[0]
+        head = re.sub(r"https?://\S+|Agape Child.*", " ", head).strip()
+        title = h.get("title") or _vaughan_title(t)
+        key = (re.sub(r"[^a-z0-9]+", " ", title.lower()).strip(), it["pubdate"][:16])
+        if key in seen: continue   # the same sermon posted twice the same day
+        seen.add(key)
+        body = re.sub(r"A Study Through \d? ?[A-Z][a-z]+", "", head)   # "Entrusted - A Study Through 2 Timothy 2 Timothy 1:3-7"
+        refs = parse_refs(title) or parse_refs(re.sub(r"\b1 Cor\b", "1 Corinthians", re.sub(r"\bCol\b", "Colossians", body)))
+        passage = h.get("pass") or (refs_to_text(merge_refs(refs)) if refs else "")
+        series = h.get("series", "")
+        if not series:   # the series the description or title names (seasonal tags such as "Advent 2018" are not series)
+            first = parse_refs(head)
+            s = head[:head.find(first[0].raw)].strip() if first and first[0].raw in head else ""
+            yr = (re.search(r"\b(?:19|20)\d\d\b", it["pubdate"]) or [""])[0]
+            series = next((name for pat, name in VAUGHAN_SERIES if re.search(pat, s) or re.search(pat, f"{t} {yr}") or re.search(pat, f"{passage} {yr}")), "")
+        e = make_entry(source="harvest_memphis", source_url=config.HARVEST_MEMPHIS_FEED, url=config.HARVEST_MEMPHIS_FEED + "#" + guid,
+                       title=title, description="", published=it["pubdate"], duration=str(dur or ""), author="Kennon Vaughan",
+                       era="vaughan", series=series, extra_ref_text=passage)
+        e["description"] = desc[:4000]
+        e["speaker"], e["speaker_evidence"] = "Vaughan", ("feed-names-him" if named else ("hand-checked" if h.get("keep") else "voice-print"))
+        e["audio_override"] = enc
+        out.append(e)
+    _log(f"harvest_memphis: {len(out)} sermons by Kennon Vaughan")
+    return out
+
 # ---------- Stephen Davey's full sermons (Wisdom International's archive; lists in data/davey_archive/, audio found by
 # tools/davey_resolve.py on Wisdom's media server) ----------
 def harvest_davey_archive() -> list[dict]:
@@ -678,7 +747,7 @@ def harvest_youtube_audio() -> list[dict]:
     return out
 
 # ---------- orchestration ----------
-ALL_SOURCES = ["fearless", "davey_archive", "brookhills_ia", "brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
+ALL_SOURCES = ["fearless", "harvest_memphis", "davey_archive", "brookhills_ia", "brookhills", "skip_archive", "skip_church", "skip_connect", "davey_sermons", "davey_wfth", "davey_journey", "ptw", "platt_messages", "secret_church", "secret_church_podcast", "twr360", "radical", "mclean", "2819_podcast",
                "youtube_2819", "youtube_pam", "youtube_victory", "victory_podcast"]
 
 def run(sources: list[str], radical_limit: int | None = None):
@@ -706,6 +775,7 @@ def run(sources: list[str], radical_limit: int | None = None):
             elif s == "radical": entries = harvest_radical(radical_limit)
             elif s == "secret_church_podcast": entries = harvest_itunes_podcast("secret_church_podcast", config.PODCAST_SEARCH_TERMS["secret_church"], r"secret church", "platt", channel_default="Platt")
             elif s == "fearless": entries = harvest_fearless()
+            elif s == "harvest_memphis": entries = harvest_harvest_memphis()
             elif s == "davey_archive": entries = harvest_davey_archive()
             elif s == "brookhills_ia": entries = harvest_brookhills_ia()
             elif s == "mclean": entries = harvest_itunes_podcast("mclean_podcast", config.PODCAST_SEARCH_TERMS["mclean"], r"mclean", "platt") + harvest_mclean_api()

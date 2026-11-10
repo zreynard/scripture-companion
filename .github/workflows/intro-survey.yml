@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       sources:
-        default: '["platt_messages","secret_church_podcast","2819_podcast","street_preachers","davey_sermons","davey_wfth","davey_journey","skip_archive","skip_church","skip_connect","brookhills","mclean_podcast","radical_message","fearless"]'
+        default: '["platt_messages","secret_church_podcast","2819_podcast","street_preachers","davey_sermons","davey_wfth","davey_journey","skip_archive","skip_church","skip_connect","brookhills","mclean_podcast","radical_message","fearless","harvest_memphis"]'
       k:
         default: "6"
 permissions:

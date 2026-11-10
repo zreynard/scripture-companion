@@ -151,7 +151,7 @@ SECTIONS = {
         ("Leading Others", "Leading", r"servant leader|leadership|when leaders fall|shepherd the flock", r""),
     ],
 }
-TEACHER_ORDER = {"Platt": 0, "PAM": 1, "Davey": 2, "Skip": 3, "Fearless": 4}
+TEACHER_ORDER = {"Platt": 0, "PAM": 1, "Davey": 2, "Skip": 3, "Vaughan": 4, "Fearless": 5}
 _SPEAKER = re.compile(r"\s*\|\s*(David Platt|Philip Anthony Mitchell|[A-Z][a-z]+ [A-Z][a-z]+|Elder [A-Z][a-z]+ [A-Z][a-z]+)\s*(\||$)")
 
 

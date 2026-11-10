@@ -55,6 +55,8 @@ RULES = {
                                  r"like,? (comment,? )?(and )?(share|subscribe)", r"streetpreach", r"invest ?fest", r"next episode",
                                  r"we pray you (are|were) blessed by this content", r"shut off the cameras"]},
     "fearless": {"start": [], "end": [r"let'?s (stand|worship)", r"worship team", r"see you next (week|saturday)", r"announcements?"]},
+    # Kennon Vaughan (Harvest Church, Memphis): Sunday services; first rules, refined from the openings and endings read by hand
+    "harvest_memphis": {"start": [], "end": [r"let'?s (stand|worship|sing)", r"worship team", r"announcements?", r"go in peace", r"see you next (week|sunday)", r"\bbenediction\b"]},
     "skip_archive": {"start": [r"this is expound\.?", r"interactive, enjoyable,? and congregational", r"grow (in|and) grace and (in )?the knowledge of our lord",
                                r"thank you for listening to this (service|message) from calvary"],
                      "end": [r"thank(s| you)( so much)? for listening to this (service|message|teaching)", r"for more resources from calvary",
@@ -142,7 +144,7 @@ RULES["street_preachers"]["end"] += [r"\b(yo|hey|so),? street team\b", r"if you'
     r"before we pray,? we want to shout out", r"we pray you were blessed by this behind the scenes", r"tim and i will be in investfest", r"grab a copy", r"shout out some of our sponsors"]
 
 # Church services: the welcome, announcements, giving and promos come first; the teaching starts at the text or the series.
-SERVICE = {"2819_podcast", "fearless"}          # long welcomes and announcements by the pastor himself before the text
+SERVICE = {"2819_podcast", "fearless", "harvest_memphis"}          # long welcomes and announcements by the pastor himself before the text
 # sources whose pastor sometimes says "before we dive into God's Word" and gives announcements first (start after them)
 ANNOUNCE = {"mclean_podcast", "mclean_oceans", "mclean_api", "radical_message"}
 NUMW = r"(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d+)"
