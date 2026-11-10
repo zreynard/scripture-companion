@@ -13,7 +13,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: led-mine
+  group: led-mine-${{ inputs.ids }}
   cancel-in-progress: false
 jobs:
   mine:

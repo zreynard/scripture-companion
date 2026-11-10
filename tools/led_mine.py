@@ -94,6 +94,21 @@ def records(it, ws, TL, pcm=None, via="whisper"):
         out.append(rec)
     return out
 
+def blocks(pcm, TL):
+    """The voice's level in 10 s blocks: [seconds before the end at the block's start, quiet frames dB, middle dB]."""
+    import numpy as np
+    out = []
+    for a in range(0, int(len(pcm) / 16000) - 5, 10):
+        seg = pcm[a * 16000:(a + 10) * 16000]
+        fr = seg[: len(seg) // 800 * 800].reshape(-1, 800); rms = np.sqrt((fr ** 2).mean(1)) + 1e-5
+        out.append([round(TL - a, 1), round(float(20 * np.log10(np.percentile(rms, 10))), 1), round(float(20 * np.log10(np.percentile(rms, 50))), 1)])
+    return out
+
+def window(it, ws, TL, pcm=None, via="whisper"):
+    """Everything heard in the closing window: every sentence (seconds before the end) and the levels."""
+    return {"src": it["id"], "who": it["who"], "t": it["t"], "pass": it.get("pass", ""), "via": via, "e_trim": float(it.get("e") or 0), "TL": round(TL, 1),
+            "lines": [[round(TL - s[0], 1), round(TL - s[1], 1), s[2]] for s in sents(ws)], "blocks": blocks(pcm, TL) if pcm is not None else []}
+
 def pick(buzz):
     t = open(os.path.join(HERE, "out", "site", "index.html"), encoding="utf-8").read()
     D, _ = json.JSONDecoder().raw_decode(t[t.index("const D=") + 8:])
@@ -118,7 +133,7 @@ def mine(k, n):
             TL = len(pcm) / 16000
             ws = trim.words_of(pcm, model)
             rs = records(it, ws, TL, pcm)
-            for r in rs: f.write(json.dumps(r, ensure_ascii=False) + "\n")
+            f.write(json.dumps(window(it, ws, TL, pcm), ensure_ascii=False) + "\n")
             f.flush(); found += bool(rs)
             print(f"[{x}/{len(todo)}] {it['who']:8} {it['t'][:44]!r}: " + ("; ".join(f"{r['len']}s at -{r['sb']:.0f} music {r['music_db']}" for r in rs) or "none"), flush=True)
         except Exception as ex:
@@ -141,7 +156,7 @@ def buzz():
         W = min(float(it.get("e") or 0) + 400, 700); off = L - W
         ws = [(a - off, b - off, w) for a, b, w, _ in ws4 if a >= off]
         rs = records(it, ws, W, via="transcript")
-        for r in rs: f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        f.write(json.dumps(window(it, ws, W, via="transcript"), ensure_ascii=False) + "\n")
         f.flush(); found += bool(rs)
         print(f"[{x}/{len(todo)}] {it['who']:8} {it['t'][:44]!r}: " + ("; ".join(f"{r['len']}s at -{r['sb']:.0f}" for r in rs) or "none"), flush=True)
     print(f"done: {found} of {len(todo)} with a prayer", flush=True)
@@ -152,9 +167,9 @@ def report():
     by = {}
     for r in R: by.setdefault(r["who"], []).append(r)
     with open(os.path.join(OUT, "report.txt"), "w") as f:
-        f.write(f"{len(R)} candidates\n")
+        f.write(f"{len(R)} recordings\n")
         for w, v in sorted(by.items()):
-            f.write(f"  {w}: {len(v)}  (60s+: {sum(1 for r in v if r['len'] >= 60)}, clean: {sum(1 for r in v if r['len'] >= 60 and not any(r['flags'].values()))})\n")
+            f.write(f"  {w}: {len(v)} recordings heard\n")
     print(open(os.path.join(OUT, "report.txt")).read())
 
 if __name__ == "__main__":
