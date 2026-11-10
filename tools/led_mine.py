@@ -41,7 +41,7 @@ def sents(ws):
     if row: out.append((t0, ws[-1][1], " ".join(row)))
     return out
 
-END = re.compile(r"\bamen\b|\bin (the )?(jesus'?|christ'?s?|his|your) (precious |holy |mighty |wonderful |matchless |good )?name\b|\bin the (precious |holy |mighty )?name of (jesus|christ|your son)", I)
+END = re.compile(r"\bamen\b|\bjesus'?s? (precious |holy |mighty )?name\b|\bin (the )?(jesus'?|christ'?s?|his|your) (precious |holy |mighty |wonderful |matchless |good )?name\b|\bin the (precious |holy |mighty )?name of (jesus|christ|your son)", I)
 PLEA = re.compile(r"\b(let us|let our|let me|may we|may our|may i|help us|help me|give us|give me|make us|make me|teach us|teach me|grant|we pray|i pray|pray that|we ask|i ask|ask that|we thank|i thank|thank you|we praise|we love you|i love you|we confess|forgive (us|me)|have mercy|we need you|i need you|we come|we bless|we worship|we trust|we surrender|fill us|fill me|change us|draw us|lead us|search (us|me)|be glorified|your (name|kingdom|will|spirit|glory|word|son|grace|mercy|love)|you are)\b", I)
 VOC = re.compile(r"(^|[,.!] ?|\b(oh|o) )(heavenly |dear |holy |gracious |good |sweet |almighty |precious |loving |righteous |our |mighty |faithful |great )?(father|lord|god|jesus|abba|holy spirit|lord jesus|king jesus)\b[,.!]", I)
 THIRD = re.compile(r"\b(god (is|was|has|had|will|says|said|does|did|wants|loves)|jesus (said|says|did|was|told|went|came)|he (says|said|is saying|tells|told)|paul|peter|moses|david|verse \d+|chapter \d+|turn (with me )?to|the text|this passage|in context|the greek|the hebrew|you guys|y'?all|listen to (me|this)|let me (tell|show|read)|look at|here'?s the|i want you to|we'?re going to|next week|this week|last week|let'?s (stand|sing|go|take)|would you stand|you can be seated|announcement|come back)\b", I)
@@ -54,7 +54,7 @@ def score(t):
 def prayers(S, end_at):
     """Closing prayer candidates [(i_start, i_end)] in the sentences S: from the end ("in Jesus' name", "amen") back over
     what is said to God, to "let's pray" or to where the teaching was. Ends after end_at (seconds) are the outro's."""
-    ends = [k for k, s in enumerate(S) if END.search(s[2]) and s[0] <= end_at + 20]
+    ends = [k for k, s in enumerate(S) if END.search(s[2])]           # (the trim's end can sit before the closing prayer: the reader decides)
     groups = []                      # "... in Jesus' name." "Amen." is one end
     for k in ends:
         if groups and S[k][0] - S[groups[-1][-1]][1] < 6: groups[-1].append(k)
@@ -65,7 +65,7 @@ def prayers(S, end_at):
         while k >= 0:
             t = S[k][2]
             if END.search(t) and S[g[0]][0] - S[k][1] > 20: break                  # the prayer before
-            if OPEN.search(t):
+            if OPEN.search(t) and not END.search(t):
                 rest = re.split(OPEN, t, maxsplit=1)[-1]
                 if score(rest) > 0 and len(rest.split()) >= 4: st = k
                 break
@@ -74,7 +74,7 @@ def prayers(S, end_at):
             elif sc < 0:
                 bad += 1
                 if bad >= 2: break
-            else:
+            elif not re.search(r"\b(we|us|our|you|your)\b", t, I):    # "We're not just talking about others." is said in a prayer too
                 quiet += 1
                 if quiet >= 4: break
             if S[a][1] - S[k][0] > 420: break
