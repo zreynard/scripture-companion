@@ -336,7 +336,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
   await T('U76 Be Led: one prayer at a time showing only who is praying; the ring plays it here from its sermon near the end, 15 s back and on, the arrows go to another; speed and music; a minute or more each', async () => {
     const A = await open(await ctx());
     await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500);
-    await A.click('[data-prm=led]'); await wait(400);
+    await A.click('[data-prtop=g]'); await wait(300); await A.click('[data-prm=led]'); await wait(400);
     const v = await A.evaluate(() => ({ txt: (() => { const c = document.querySelector('.led').cloneNode(true); c.querySelectorAll('svg').forEach(x => x.remove()); return [...c.querySelectorAll('*')].filter(e => !e.children.length).map(e => e.textContent.trim()).filter(Boolean).join(' '); })(), who: NAMES[ledCur().who], old: document.querySelectorAll('[data-ledth],[data-ledplay],.led-row,.pr-dots').length,
       short: (PRAY.led || []).filter(x => x.len < 60).length, n: (PRAY.led || []).length, sk: document.querySelectorAll('[data-ledsk]').length, p0: ledOrd().p, id0: ledCur().id }));
     await A.click('[data-ledgo="1"]'); await wait(300);
@@ -351,7 +351,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       && p.id === g.id && p.src && !p.main && p.inLib === 0 && sp.sp === 1.1 && sp.rate === 1.1 && sp.t === '1.1×' && mu !== false || { v, g, p, sp, mu }; });
   await T('U77 Meditate: today\'s saying read by a pastor; Begin reads it (Listen), a breath, again (Again), then Be still with no clock until Amen; n of N with arrows', async () => {
     const A = await open(await ctx());
-    await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prm=med]'); await wait(400);
+    await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prtop=g]'); await wait(300); await A.click('[data-prm=med]'); await wait(400);
     const v = await A.evaluate(() => ({ q: (document.querySelector('.med-q') || {}).textContent || '', nn: (document.querySelector('.med-n') || {}).textContent || '', n: medList().length, old: document.querySelectorAll('[data-medpace],[data-medpick],#med-left').length, k0: medIdx() }));
     await A.evaluate(() => { window.MED_FAST = 0.02; const m = medCur(); if (m.audio) { m.audio = SILENT; m.a = 0; m.b = 0.05 } else { m.t0 = 0; m.t1 = 0.05; window.narBlob = () => Promise.resolve(SILENT) } });
     await A.click('[data-medgo]'); const seen = new Set();
@@ -362,7 +362,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     return (v.q.length > 10 && v.nn === `${v.k0 + 1} of ${v.n}` && v.n >= 15 && v.old === 0 && seen.has('listen') && seen.has('again') && seen.has('still') && still.amen && !/\d:\d\d/.test(still.txt) && !end.on && end.go && end.step === 'done' && nx) || { v, seen: [...seen], still, end, nx }; });
   await T('U78 Guided with a pastor: a quiet "Pray it with" line plays his prayer of the Lord\'s Prayer here, and the movement on screen follows him', async () => {
     const A = await open(await ctx());
-    await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prm=guided]'); await wait(400);
+    await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prtop=g]'); await wait(300); await A.click('[data-prm=guided]'); await wait(400);
     const real = await A.evaluate(() => !!PRAY.lp);
     // a short local clip stands in for his sermon: the second movement starts right away
     await A.evaluate(() => { const n = PRAY.moves.length; PRAY.lp = Object.assign({ who: 'PAM' }, PRAY.lp || {}, { audio: SILENT, a: 0, b: 100, at: [0, 0.02, ...Array(Math.max(0, n - 2)).fill(90)] }); PR.mv = 0; render(); });
