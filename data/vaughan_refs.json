@@ -1,5 +1,40 @@
 {
  "_note": "Kennon Vaughan (Harvest Memphis feed): hand-checked decisions by episode guid. keep: true/false; pass: the passage; title; series.",
- "233a20d9-98d0-44f2-bac4-6faf84999046": {"title": "Acts 6", "pass": "Acts 6"},
- "fb1f285f-13b1-4136-8c5e-8d08eb2b9e40": {"pass": "Luke 2:1-20"}
+ "233a20d9-98d0-44f2-bac4-6faf84999046": {
+  "title": "Acts 6",
+  "pass": "Acts 6"
+ },
+ "fb1f285f-13b1-4136-8c5e-8d08eb2b9e40": {
+  "pass": "Luke 2:1-20"
+ },
+ "f1554fa9-ee4e-4d77-852a-8b914081252b": {
+  "pass": "Isaiah 55"
+ },
+ "815394b8-d349-410c-8551-ac46086eccac": {
+  "pass": "Philippians 1:21"
+ },
+ "8e8b1ade-b384-4da7-8093-42016049c456": {
+  "pass": "Acts 2:22-32"
+ },
+ "d101ec8f-1dc1-400a-be1a-52e76e5425d1": {
+  "pass": "Luke 24:1-12"
+ },
+ "455a739e-04e4-422e-a42b-f20e9fae7ea2": {
+  "pass": "Hosea 1-3"
+ },
+ "970668dc-ab91-4afb-abb4-56f624bcc493": {
+  "pass": "Luke 2:8-14"
+ },
+ "2d830acd-1295-4f46-9a39-31bf98882729": {
+  "pass": "Zechariah 9:9-10"
+ },
+ "f884d05c-2e0e-4ba9-80a0-ae42dc8accbd": {
+  "pass": "Deuteronomy 6:4-9"
+ },
+ "c7adf4f8-d84f-408f-bc3a-5705161b24f5": {
+  "pass": "Ephesians 1:15-23"
+ },
+ "10034b46-662c-48c1-a8cc-c3aa4468f78b": {
+  "pass": "John 19:30"
+ }
 }
