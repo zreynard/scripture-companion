@@ -1,0 +1,97 @@
+# Be Led: the closing prayer of every sermon (tools/led_mine.py), and who prays the Lord's Prayer through
+# (tools/find_lp.py). Read only from the recordings; the words go to the "led-mine" branch to read. By hand only.
+name: Be Led mine
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "only these recordings (comma list of ids)"
+        default: ""
+      lp:
+        description: "1 = also look for the Lord's Prayer"
+        default: "1"
+permissions:
+  contents: write
+concurrency:
+  group: led-mine
+  cancel-in-progress: false
+jobs:
+  mine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 17
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper numpy
+      - run: python app_build.py >/dev/null
+      - run: IDS="${{ inputs.ids }}" python tools/led_mine.py mine ${{ matrix.shard }} 34
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: led-${{ matrix.shard }}
+          path: led/
+          if-no-files-found: ignore
+  buzz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - run: python app_build.py >/dev/null
+      - run: IDS="${{ inputs.ids }}" python tools/led_mine.py buzz
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: led-buzz
+          path: led/
+          if-no-files-found: ignore
+  lp:
+    if: ${{ inputs.lp == '1' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper numpy
+      - run: python app_build.py >/dev/null
+      - run: python tools/find_lp.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: led-lp
+          path: led/
+          if-no-files-found: ignore
+  report:
+    needs: [mine, buzz, lp]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+      - run: mkdir -p led && find parts -type f -exec sh -c 'cp "$1" "led/$(basename $(dirname $1))-$(basename $1)"' _ {} \; ; ls led | wc -l
+      - run: python tools/led_mine.py report
+      - run: |
+          mkdir /tmp/d && cp led/* /tmp/d/ && cd /tmp/d
+          git init -q -b led-mine && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "led mine"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" led-mine
