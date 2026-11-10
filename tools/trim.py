@@ -56,7 +56,16 @@ RULES = {
                                  r"we pray you (are|were) blessed by this content", r"shut off the cameras"]},
     "fearless": {"start": [], "end": [r"let'?s (stand|worship)", r"worship team", r"see you next (week|saturday)", r"announcements?"]},
     # Kennon Vaughan (Harvest Church, Memphis): Sunday services; first rules, refined from the openings and endings read by hand
-    "harvest_memphis": {"start": [], "end": [r"let'?s (stand|worship|sing)", r"worship team", r"announcements?", r"go in peace", r"see you next (week|sunday)", r"\bbenediction\b"]},
+    "harvest_memphis": {"start_by": 45,
+        "start": [r"the following audio is from harvest church[^.?!]*[.?!]", r"\b(thank you|thanks),? (tony|wes|worship team|guys)\b[^.?!]*[.?!]",
+                  r"\b(worship team,? )?(you (guys|all) )?(can |go ahead and )?(have|take) a seat[.!]", r"\bwelcome to harvest( church)?[^.?!]*[.?!]",
+                  r"\bmy name is ken\w*[^.?!]*[.?!]", r"\bprivilege of (being|serving)[^.?!]*[.?!]",
+                  r"\b(so )?(good|great|glad|a treat|a joy|joy|sweet) to (have|be|see)\b[^.?!]*[.?!]", r"\b(glad|good) (that )?you'?re back\b[^.?!]*[.?!]",
+                  r"\bthanks for coming back[^.?!]*[.?!]",
+                  # announcements before the sermon (a member moving away, a prayer chain, "email Tracy at ...org"): up to 3 minutes in
+                  r"(?#by=180)\bemail\b[^.?!]*[.?!]", r"(?#by=180)\b[a-z]+ ?\.(org|com)\b[^.?!]*[.?!]", r"(?#by=180)\b(signed up|sign up|register|slots? left|last sunday with us)\b[^.?!]*[.?!]"],
+        "end": [r"the tables? (are|is) (not )?open", r"thank you for listening to the audio from harvest", r"feel free to make copies", r"let'?s (stand|sing)\b",
+                r"\bannouncements?\b", r"go in peace", r"see you next (week|sunday)"]},
     "skip_archive": {"start": [r"this is expound\.?", r"interactive, enjoyable,? and congregational", r"grow (in|and) grace and (in )?the knowledge of our lord",
                                r"thank you for listening to this (service|message) from calvary"],
                      "end": [r"thank(s| you)( so much)? for listening to this (service|message|teaching)", r"for more resources from calvary",
@@ -144,7 +153,7 @@ RULES["street_preachers"]["end"] += [r"\b(yo|hey|so),? street team\b", r"if you'
     r"before we pray,? we want to shout out", r"we pray you were blessed by this behind the scenes", r"tim and i will be in investfest", r"grab a copy", r"shout out some of our sponsors"]
 
 # Church services: the welcome, announcements, giving and promos come first; the teaching starts at the text or the series.
-SERVICE = {"2819_podcast", "fearless", "harvest_memphis"}          # long welcomes and announcements by the pastor himself before the text
+SERVICE = {"2819_podcast", "fearless"}          # long welcomes and announcements by the pastor himself before the text
 # sources whose pastor sometimes says "before we dive into God's Word" and gives announcements first (start after them)
 ANNOUNCE = {"mclean_podcast", "mclean_oceans", "mclean_api", "radical_message"}
 NUMW = r"(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d+)"
@@ -328,9 +337,10 @@ def after_last(ws, text, spans, pats, lo, hi, exact=False):
     exact: the word right after the match itself, for an announcer line speech recognition runs into the sermon."""
     last = None
     for pat in pats:
+        by = re.match(r"\(\?#by=(\d+)\)", pat)            # "(?#by=180)": this pattern counts up to 180 s in, whatever the rule's window
         for m in re.finditer(pat, text, I):
             k = word_at(spans, m.end() - 1)
-            if lo <= ws[word_at(spans, m.start())][0] <= hi and (last is None or k > last):
+            if lo <= ws[word_at(spans, m.start())][0] <= (int(by.group(1)) if by else hi) and (last is None or k > last):
                 last, lx = k, ("at" if pat.startswith("(?#at)") else "exact" if pat.startswith("(?#exact)") else "")
                 if lx == "at": at = sentence_start(ws, word_at(spans, m.start()))
     if last is None: return None
