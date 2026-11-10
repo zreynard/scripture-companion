@@ -355,7 +355,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const v = await A.evaluate(() => ({ q: (document.querySelector('.med-q') || {}).textContent || '', nn: (document.querySelector('.med-n') || {}).textContent || '', n: medList().length, old: document.querySelectorAll('[data-medpace],[data-medpick],#med-left').length, k0: medIdx() }));
     await A.evaluate(() => { window.MED_FAST = 0.02; const m = medCur(); if (m.audio) { m.audio = SILENT; m.a = 0; m.b = 0.05 } else { m.t0 = 0; m.t1 = 0.05; window.narBlob = () => Promise.resolve(SILENT) } });
     await A.click('[data-medgo]'); const seen = new Set();
-    for (let k = 0; k < 60; k++) { seen.add(await A.evaluate(() => MED.step)); if (seen.has('still')) break; await wait(100); }
+    for (let k = 0; k < 400; k++) { seen.add(await A.evaluate(() => MED.step)); if (seen.has('still')) break; await wait(15); }
     const still = await A.evaluate(() => ({ txt: (() => { const c = document.querySelector('.med').cloneNode(true); c.querySelectorAll('.med-ref').forEach(x => x.remove()); return c.textContent; })(), amen: !!document.querySelector('[data-medamen]') }));
     await A.click('[data-medamen]'); await wait(200); const end = await A.evaluate(() => ({ on: MED.on, go: !!document.querySelector('[data-medgo]'), step: MED.step }));
     const nx = await A.evaluate(() => { const b = document.querySelector('[data-medgo2="1"]'), k = medIdx(); if (b.disabled) return true; b.click(); return medIdx() === k + 1; });

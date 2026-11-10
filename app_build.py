@@ -2779,23 +2779,24 @@ function clipper(a,h){const c={a,t0:0,end:0,url:'',rate:1,tm:null,wd:null,ld:nul
   c.tm=setTimeout(()=>{if(!a.paused&&a.currentTime>=c.end-0.06)c.fin();else c.arm()},Math.max(15,left*1000-20))};
  c.fin=()=>{clr();if(c.state==='ended')return;st('ended');a.pause();if(h.end)h.end()};
  c.watch=()=>{clearTimeout(c.wd);clearTimeout(c.ld);c.ld=setTimeout(()=>{if(c.state==='starting')st('loading')},3000);c.wd=setTimeout(()=>{if(c.state==='starting'||c.state==='loading')c.retry()},12000)};
- c.retry=()=>{if(c.tries>=1){c.err();return}c.tries++;a.removeAttribute('src');try{a.load()}catch(e){}a.src=c.url;c.speed();a.play().catch(()=>{});c.watch()};
+ c.retry=()=>{if(c.tries>=1){c.err();return}c.tries++;c.chk=true;a.removeAttribute('src');try{a.load()}catch(e){}a.src=c.url;c.speed();a.play().catch(()=>{});c.watch()};
  c.err=()=>{clr();try{a.pause()}catch(e){}st('error');if(h.error)h.error()};
  c.speed=()=>{try{a.defaultPlaybackRate=c.rate;a.playbackRate=c.rate}catch(e){}};
  a.addEventListener('playing',()=>{clearTimeout(c.wd);clearTimeout(c.ld);c.tries=0;st('playing');c.arm()});
  a.addEventListener('waiting',()=>{if(c.state==='starting')return;clearTimeout(c.ld);c.ld=setTimeout(()=>{if(!a.paused&&a.readyState<3&&c.state==='playing')st('loading')},3000)});   /* while starting, the start's own 3 s timer says Loading… */
  a.addEventListener('pause',()=>{clearTimeout(c.tm);clearTimeout(c.ld);if(c.state==='playing'||c.state==='loading')st('paused')});
  ['seeked','ratechange'].forEach(e=>a.addEventListener(e,()=>c.arm()));
- a.addEventListener('timeupdate',()=>{if(c.end&&!a.paused&&a.currentTime>=c.end-0.03)c.fin();else if(h.tick)h.tick()});
+ a.addEventListener('timeupdate',()=>{if(c.chk&&!a.paused&&a.currentTime>0){c.chk=false;if(a.currentTime<c.t0-0.5||a.currentTime>c.t0+3){try{a.currentTime=c.t0}catch(e){}return}}   /* an engine that ignored the time fragment: put it right once it plays */
+  if(c.end&&!a.paused&&a.currentTime>=c.end-0.03)c.fin();else if(h.tick)h.tick()});
  a.addEventListener('ended',()=>c.fin());
  a.addEventListener('error',()=>{if(!a.getAttribute('src')||c.state===''||c.state==='ended')return;c.retry()});
  a.addEventListener('loadedmetadata',()=>{if(c.fix)c.fix(a.duration);if(Math.abs(a.currentTime-c.t0)>0.5)try{a.currentTime=c.t0}catch(e){}});
  /* get the file ready while the screen shows it (a phone may wait for the tap anyway) */
  c.prep=(url,t0)=>{if(!a.paused||c.state==='starting')return;const u=url+'#t='+Math.max(0,t0).toFixed(2);if(a.getAttribute('src')===u)return;c.url=u;c.t0=t0;a.preload='metadata';a.src=u};
  /* start the stretch from its first word: call it straight from the tap */
- c.go=(url,t0,end,fix)=>{clr();c.t0=Math.max(0,t0);c.end=end;c.fix=fix||null;c.tries=0;const u=url+'#t='+c.t0.toFixed(2);
+ c.go=(url,t0,end,fix)=>{clr();c.t0=Math.max(0,t0);c.end=end;c.fix=fix||null;c.tries=0;c.chk=true;const u=url+'#t='+c.t0.toFixed(2);
   if(a.getAttribute('src')!==u){c.url=u;a.src=u}else{c.url=u;try{a.currentTime=c.t0}catch(e){}}c.speed();st('starting');a.play().catch(()=>{});c.watch()};
- c.again=()=>{clr();try{a.currentTime=c.t0}catch(e){}c.speed();st('starting');a.play().catch(()=>{});c.watch()};
+ c.again=()=>{clr();c.chk=true;try{a.currentTime=c.t0}catch(e){}c.speed();st('starting');a.play().catch(()=>{});c.watch()};
  c.resume=()=>{if(!a.getAttribute('src'))return;if(a.currentTime<c.t0-0.5||a.currentTime>=c.end-0.05)try{a.currentTime=c.t0}catch(e){}st('starting');a.play().catch(()=>{});c.watch()};
  c.pause=()=>{clr();a.pause();st('paused')};
  c.seek=d=>{if(!a.getAttribute('src'))return;try{a.currentTime=Math.max(c.t0,Math.min(c.end-0.5,a.currentTime+d))}catch(e){}c.arm()};
