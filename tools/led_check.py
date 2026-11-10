@@ -60,12 +60,18 @@ def check_audio(x, it, model):
         start = (k0 + int(np.argmin(db[k0:k1]))) * 0.02
     tw = words(te - 12, te + 18)
     ams = [w for w in tw if AMEN.search(w[2]) and w[1] <= te + 1.5]
-    last = ams[-1] if ams else max([w for w in tw if w[1] <= te + 0.8] or [None], key=lambda w: w[1] if w else 0)
+    if not ams:                                    # no amen: the last word that ends a sentence (not the next sentence's first)
+        near = [w for w in tw if w[1] <= te + 0.4]
+        ends = [w for w in near if re.search(r"[.!?]$", w[2])]
+        ams = ends[-1:] or near[-1:]
+    last = ams[-1] if ams else None
     if not last: return {"verdict": "no words at the end"}
     nxt = [w for w in tw if w[0] > last[1] + 0.02]
     nw = nxt[0][0] if nxt else min(TL, last[1] + 15)
     q = quiet_from(db, last[1] + 0.3, min(nw - 0.1, last[1] + 15), thr)
-    if q is not None:
+    if not nxt and TL - last[1] < 4:                # the recording itself ends after the amen: play it to its own end
+        end = TL; verdict = "file end"
+    elif q is not None:
         end = min(q + 0.3, nw - 0.1); verdict = "clean" if q - last[1] <= 2.5 else "settled"
     elif nw - last[1] >= 0.35 and float(np.min(db[int((last[1] + 0.05) / 0.02): int((nw - 0.05) / 0.02)] if nw - last[1] > 0.15 else [0])) < thr:
         end = last[1] + (nw - last[1]) / 2; verdict = "tight"
