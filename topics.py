@@ -60,7 +60,7 @@ TOPICS = [
       ("Luke", 14, "Luke 14:25–35", "Count the cost"),
       ("Matthew", 28, "Matthew 28:16–20", "Go and make disciples")],
      r"disciple|follow me|follow(ing)? jesus|cost of following|take up (his|your) cross", r"secret disciple|cost of spiritual carelessness", [14],
-     [r"^Two Simple Words: Follow Me$", r"^Two Simple Words: Make Disciples$", r"^Realizing What It Really Means to Follow Jesus$", r"^Mission Precision: Defining Disciple$", r"^You Need Biblical Discipleship$"]),
+     [r"^Two Simple Words: Follow Me$", r"^Two Simple Words: Make Disciples$", r"^Realizing What It Really Means to Follow Jesus$", r"^Mission Precision: Defining Disciple$", r"^You Need Biblical Discipleship$", r"^A Disciple-Making Church$"]),
     ("holiness", "Holiness",
      "God is holy, and he calls his people to be holy as he is: set apart from sin and to him, made clean by Christ and growing in purity by his Spirit.",
      [("Isaiah", 6, "Isaiah 6", "Holy, holy, holy is the Lord"),
@@ -95,7 +95,7 @@ TOPICS = [
       ("Romans", 5, "Romans 5", "Peace with God"),
       ("Ephesians", 2, "Ephesians 2:1–10", "By grace you have been saved")],
      r"\bgrace\b|salvation|saved|justif|redemption|born again|forgive|the gospel:|^gospel|recovering the gospel|introducing the gospel|gripped by the gospel",
-     r"for the giver|materialism|manhood|womanhood|homosexuality|singleness|parents|divorce|marriage|religious liberty|sports|baptism", [10, 6],
+     r"for the giver|materialism|manhood|womanhood|homosexuality|singleness|parents|divorce|marriage|religious liberty|sports|baptism|gospel ambition", [10, 6],
      [r"^The Gospel: What We Believe$", r"^The Gospel: What We Need$", r"^10\.5 ", r"^Governed by Grace", r"^Forgiven \. \. \. Forgotten$"]),
     ("suffering", "Suffering",
      "Scripture never hides from pain. God is sovereign over suffering, present in it, and uses it for our good, and Christ suffered first and will wipe every tear away.",
@@ -133,7 +133,7 @@ TOPICS = [
       ("Acts", 1, "Acts 1:8", "My witnesses to the end of the earth"),
       ("Romans", 10, "Romans 10:14–17", "How will they hear?"),
       ("Revelation", 7, "Revelation 7:9–12", "Every nation, tribe, people and language")],
-     r"mission|nations|unreached|great commission|evangel", r"mission trip|cross to commission|sbc missions|state of missions|commissioning", [16, 21],
+     r"mission|nations|unreached|great commission|evangel", r"mission trip|cross to commission|sbc missions|state of missions|commissioning|mission impossible", [16, 21],
      [r"^Our Obligation to the Unreached – Part 1$", r"^Unreached People: Not a Missions Problem$", r"^The Song of Heaven and the Sound of All Nations$", r"^Why the Great Commission is Great$", r"^Divine Sovereignty: The Fuel of Death-Defying Missions$"]),
 ]
 
