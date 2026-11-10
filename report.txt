@@ -1,0 +1,95 @@
+CUTS AUDIT
+
+harvest_memphis           1 checked  errors   0  added-after-start   0  teaching-before-start   0  silent-after-start   0  added-before-end   0
+
+====================================================================================================
+harvest_memphis
+====================================================================================================
+
+## fb38ab54ca2c | Who Is The Lord, That I Should Obey Him? | Vaughan | Exodus 11 | start 520.0s  end -12.0s  len 2488.0   
+  [opening]
+         0.0  The following audio is from Harvest Church in Memphis, Tennessee.
+         4.6  Good morning, Harvest.
+         6.9  Welcome.
+         7.6  Hey, thanks, Tony.
+         8.6  Worship team leading us in such a sweet time of worship.
+        11.5  Really appreciate you guys.
+        13.3  I'm so excited to hear.
+        14.6  My name is Ken and Vaughn.
+        15.4  If I haven't met you, I've got the privilege of serving as the lead pastor here at Harvest.
+        18.6  And just really glad you've joined us this morning.
+        20.8  We're in a study of Exodus.
+        22.2  If you want to begin heading that way, this morning we will be in chapter 11.
+        26.4  So chapter 11 of Exodus is where we will be.
+        28.7  I want to just say a few things before I get to the text this morning.
+        33.6  One is just to underscore one more time what Pastor Niek was just talking about.
+        37.1  I know Steve said this, but he's the, he's our primary partner in overseas missions.
+        41.9  And it is really cool that we get to be a part of a, a I'm...
+  [before]
+       445.9  because of how much daddy gave to it.
+       448.3  And boy, I want the opposite to be true.
+       449.8  I want them to just rejoice in the fellowship of the believers, the preaching God's Word.
+       453.5  I want them to maybe in one day.
+       455.3  It's a lot to expect from a five -year -old, from an eight -year -old.
+       457.4  But maybe one day they would cherish those moments when I'm digging in so that I can feed the body and they'd be in that with me even more.
+       463.7  But for right now, I'd ask you to pray for them in that and to understand that's just the season of life that I really want to be careful with and be sensitive to the needs of my family.
+       470.6  And then the final thing I would say is, boy, I've got this thing that I've got a disdain for a church that's kind of the celebrity pastor church.
+       478.4  I don't even like to hear it when somebody says that's so and so's church.
+       481.9  I just want us to be the church of Jesus Christ.
+       484.9  I want the gifts that there's men that have teaching gifts that are being raised up as pastors and elders.
+       489.6  Let's operate within the gifts of our body.
+       491.4  Let's all be edified.
+       492.4  Let's be mature about that.
+       493.9  And I think that's a healthier thing.
+       495.4  I do not want this church to be built around any one man's personality, especially not mine.
+       499.8  So that's why we do what we do at harvest.
+       501.5  I'll say that maybe six months again from now, but there's a lot of new people, new ears that have not heard it.
+       506.3  That's why we do what we do.
+       507.3  And I hope that's something that you can be excited about with this.
+       510.3  Well, this week the text is Exodus 11.
+       512.9  If you guys would stand to your feet, I'm going to read through this 10 verses here.
+       519.0  Let's see what the Lord
+  [after]
+       520.2  would say.
+       521.3  The Lord says to Moses, Exodus 11, 1, yet one plague more I will bring upon Pharaoh and upon Egypt.
+       527.6  Afterward he will let you go from here.
+       529.6  When he lets you go, he will drive you away completely.
+       533.1  That's where he's gonna take Pharaoh to, drive you away.
+       535.5  Speak now in the hearing of the people that they ask every man of his neighbor and every woman of her neighbor for silver and gold jewelry.
+       541.9  And the Lord gave the people favor in the sight of the Egyptians.
+       544.9  Moreover, the man Moses was very great in the land of Egypt and the sight of Pharaoh's servants and the sight of the people.
+       550.0  So Moses said, thus says the Lord.
+       552.4  About midnight I will go out in the midst of Egypt and every first born in the land of Egypt shall die from the firstborn of Pharaoh who sits on the throne, even to the firstborn of the slave girl who is behind the hand mill and all the firstborn of the cattle.
+       564.8  There shall be a great cry throughout all the land of Egypt such as there's never been nor ever will be again.
+       570.2  But not a dog shall growl against any of the people of Israel, either man or beast, that you may know that the Lord makes a distinction between Egypt and Israel.
+       577.4  All these and all these your servants shall come down to me and bow down to me saying, get out you and all the people who follow you.
+       583.0  And after that I will go out.
+       584.5  And he went out from Pharaoh in hot anger.
+       586.2  Then the Lord said to Moses, Pharaoh will not listen to you, that my wonders may be multiplied in the land of Egypt.
+       591.9  Verse 10, Moses and Aaron did all these wonders before Pharaoh, and the Lord hardened Pharaoh's heart, and he did not let the people of Israel go out of his hand.
+       599.4  This is the word of God for the people of God, and the people of God said, praise be to God.
+       602.9  You may have a seat.
+       604.5  Father, I ask this morning that as I teach and proclaim the glorious wonder of the gospel through your word this morning as we see evidence of not just that you are a God that demands our obedience, but that it would be joyful obedience to...
+  [end_before]
+      -102.0  on the bone and we're going to see the epic moment of the redeeming of the nation.
+       -98.2  We're going to see salvation through judgment because our God saves even through the consequence of our sin.
+       -86.3  Father, we love you.
+       -85.2  We thank you for the truth of your word.
+       -82.7  Or that we can just digest some of this, this great moment that you said is a moment that will help all the world know who you are.
+       -74.9  And so we proclaim it, we preach it, we study it, we marinate on it.
+       -70.2  God let these truths nourish us, that we every one of us sometimes sits in Pharaoh's seat.
+       -63.8  Why am I obeying the Lord again?
+       -61.9  Why am I living my life around the truth of God's word?
+       -58.7  That we be reminded that the word fall of fresh on us today.
+       -55.8  He's the living God.
+       -54.1  His word is the demonstration of his mercy, that we might live in light and peace and fruitful enjoyment of that which he's created us to enjoy ultimately him.
+       -42.5  and that we remember that he loved us enough, that he demonstrated that even in our sin, while we were yet sinners Christ died for us.
+       -33.0  Lord our hearts are full of joy of a God who doesn't seek merely to judge but to save through judgment.
+       -26.2  We thank you ahead of time for the Passover Lamb.
+       -23.2  Can't wait to look long and link that scripture this next week.
+       -21.0  I pray our hearts be full of the joy of the living God who loves us and proved it on the cross.
+       -15.7  I thank you in Jesus name.
+       -12.8  Amen.
+  [end_after]
+       -11.5  Thank you for listening to the audio from Harvest Church in Memphis, Tennessee.
+        -6.4  Feel free to make copies and distribute this content, but please do not charge for those copies.
