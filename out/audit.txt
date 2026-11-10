@@ -5,7 +5,7 @@ PASS  1,189 chapters, numbered 1..n in order inside every book
 PASS  app always walks in canonical order (no order switch left)
 
 == Placement (each teaching sits only where its stated passage is)
-FAIL  every placement matches the teaching's passage  (4 of 3180)
+FAIL  every placement matches the teaching's passage  (4 of 3327)
         - The Shulamite Bride shown as overview at Song of Solomon, refs ['1 Kings']
         - 2 John at 2 John 1; its passage is 
         - 3 John at 3 John 1; its passage is 
@@ -18,7 +18,7 @@ PASS  surveys are not repeated inside chapters
 PASS  a book overview is not repeated inside that book's chapters
 
 == Speakers
-PASS  only David Platt, PAM, Stephen Davey, Skip Heitzig (each with their church preachers) and Fearless Church on the road
+PASS  only David Platt, PAM, Stephen Davey, Skip Heitzig (each with their church preachers), Kennon Vaughan and Fearless Church on the road
 PASS  Stephen Davey teaching comes only from his own feeds, and his feeds only from him
 PASS  Skip Heitzig teaching comes only from his own feeds, and his feeds only from him
 PASS  2819 teaching shows the preacher named in its title
