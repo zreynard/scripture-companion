@@ -85,5 +85,11 @@ jobs:
             u=$(grep -o '<enclosure[^>]*url="[^"]*"' "$f" | head -2 | sed -E 's/.*url="([^"]*)".*/\1/'); for x in $u; do
               echo "== audio $x"; curl -s -o /dev/null -A "$UA" -r 0-1023 -L -w "%{http_code} final=%{url_effective} size=%{size_download}\n" "$x"; sleep 3; done
           done
+      - name: Subsplash media list (public, no login; a refusal is reported and left)
+        run: |
+          UA="scripture-companion (personal Bible app; github.com/zreynard/scripture-companion)"
+          for u in "https://core.subsplash.com/media/v1/media-items?filter%5Bapp_key%5D=9M4PJJ&page%5Bsize%5D=5" "https://feeds.subsplash.com/9M4PJJ" "https://subsplash.com/u/-9M4PJJ/media/l/46a8f0c?format=json"; do
+            echo "## $u"; curl -s -A "$UA" -H "Accept: application/json" "$u" -o r.out -w "%{http_code} %{content_type} %{size_download}\n"; head -c 600 r.out; echo; sleep 3
+          done
       - uses: actions/upload-artifact@v4
         with: { name: vaughan-probe, path: probe/ }
