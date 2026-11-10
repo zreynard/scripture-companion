@@ -1,0 +1,14 @@
+{
+ "_note": "Be Led (Pray tab): pastors leading in prayer, the closing prayers of their sermons. Each plays from its sermon's own recording: sb = seconds before the file's end where the prayer starts, e = seconds before the end where it ends (the amen). music = the recording has none under the prayer, so the soaking music plays (set by tools/led_probe.py). Test set, Nov 2026.",
+ "prayers": [
+  {"src": "449964348000", "sb": 81.0, "e": 0.0, "title": "When I stumble", "theme": "Grace"},
+  {"src": "a412e28b2e2f", "sb": 90.0, "e": 0.0, "title": "I surrender all", "theme": "Surrender"},
+  {"src": "214c88140008", "sb": 82.3, "e": 0.0, "title": "A sinner in need of a Savior", "theme": "Salvation"},
+  {"src": "69a32b557a2d", "sb": 85.2, "e": 0.0, "title": "Rooted as God's children", "theme": "Identity"},
+  {"src": "f5e488db93e2", "sb": 82.7, "e": 0.0, "title": "More of You, less of us", "theme": "Holy Spirit"},
+  {"src": "29d7bac18ec2", "sb": 116.7, "e": 16.8, "title": "Waiting well", "theme": "Hope"},
+  {"src": "2c8fcaf460d9", "sb": 93.8, "e": 6.5, "title": "In awe of our salvation", "theme": "Salvation"},
+  {"src": "ee4ae9193622", "sb": 70.9, "e": 16.2, "title": "Sanctify us in Your truth", "theme": "The Word"},
+  {"src": "b55bb22bfb6d", "sb": 120.4, "e": 30.0, "title": "Make us one", "theme": "Unity"}
+ ]
+}

@@ -1,0 +1,15 @@
+# Music under each Be Led prayer? (tools/led_probe.py) Read only: a byte range at the end of each recording.
+name: Be Led probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt numpy
+      - run: python app_build.py >/dev/null
+      - run: python tools/led_probe.py
