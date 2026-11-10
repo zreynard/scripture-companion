@@ -1,10 +1,10 @@
 {
-  "started": "2026-11-10T01:10:27.949402+00:00",
+  "started": "2026-11-10T01:19:58.820700+00:00",
   "sources": {
     "harvest_memphis": {
-      "count": 159,
-      "seconds": 0.8
+      "count": 268,
+      "seconds": 0.4
     }
   },
-  "catalog_total": 12200
+  "catalog_total": 12309
 }
