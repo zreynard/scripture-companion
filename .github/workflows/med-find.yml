@@ -1,0 +1,54 @@
+# Meditate: pastors in the library reading Jesus' own words aloud (tools/med_find.py). Read only from the recordings;
+# the readings go to the "med-find" branch to read. By hand only.
+name: Meditate find
+on: workflow_dispatch
+permissions:
+  contents: write
+concurrency:
+  group: med-find
+  cancel-in-progress: false
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper numpy
+      - run: python app_build.py >/dev/null
+      - run: python tools/med_find.py find ${{ matrix.shard }} 16
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: med-${{ matrix.shard }}
+          path: med/
+          if-no-files-found: ignore
+  report:
+    needs: find
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - run: python app_build.py >/dev/null
+      - uses: actions/download-artifact@v4
+        with:
+          path: parts
+      - run: mkdir -p med && find parts -name '*.jsonl' -exec sh -c 'cp "$1" "med/$(basename $(dirname $1))-$(basename $1)"' _ {} \; ; ls med | wc -l
+      - run: python tools/med_find.py report
+      - run: |
+          mkdir /tmp/d && cp med/* /tmp/d/ && cd /tmp/d
+          git init -q -b med-find && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "med find"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" med-find
