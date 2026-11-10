@@ -344,7 +344,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     // a short local clip stands in for the sermon's recording
     await A.evaluate(() => { ledCur().audio = SILENT; ledCur().sb = 0.5; ledCur().e = 0; });
     await A.click('[data-ledpp]'); await wait(900);
-    const p = await A.evaluate(() => ({ id: LED.id, src: !!(LED.c && (LED.c.a.getAttribute('src') || '').startsWith(SILENT)), muted: LED.c && LED.c.a.muted, main: cur && String(cur).startsWith('led:'), en: LED.c && LED.c.end > LED.c.t0, inLib: Object.keys(I).filter(k => k.startsWith('led:')).length }));
+    const p = await A.evaluate(() => ({ id: LED.id, src: /ledm playing\s+\{[^}]*"host":"silence"/.test(diagText()), muted: LED.c && LED.c.a.muted, main: cur && String(cur).startsWith('led:'), en: LED.c && LED.c.end > LED.c.t0, inLib: Object.keys(I).filter(k => k.startsWith('led:')).length }));
     await A.click('[data-ledsp]'); const sp = await A.evaluate(() => ({ sp: LED.sp, rate: LED.c.a.playbackRate, t: document.querySelector('[data-ledsp]').textContent }));
     const mu = await A.evaluate(() => !!document.querySelector('[data-prmu]'));
     return new RegExp('^Be Led ' + v.who + ' 1× ♪ Music( on| off)?$').test(v.txt) && v.old === 0 && v.short === 0 && v.n >= 6 && v.sk === 2 && g.p === v.p0 + 1 && g.id !== v.id0
@@ -369,7 +369,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const line = await A.evaluate(() => (document.querySelector('[data-lpp]') || {}).textContent || '');
     await A.click('[data-lpp]'); let mv = 0;
     for (let k = 0; k < 30 && !mv; k++) { await wait(100); mv = await A.evaluate(() => PR.mv); }
-    const st = await A.evaluate(() => ({ live: !!(LP.c && LP.c.a.getAttribute('src')), sk: [...document.querySelectorAll('[data-lpsk]')].filter(b => !b.hidden).length, main: !!cur && String(cur).startsWith('led') }));
+    const st = await A.evaluate(() => ({ live: /lpm playing\s+\{[^}]*"host":"silence"/.test(diagText()), sk: [...document.querySelectorAll('[data-lpsk]')].filter(b => !b.hidden).length, main: !!cur && String(cur).startsWith('led') }));
     return (/^Pray it with \S/.test(line) && mv === 1 && st.live && !st.main) || { real, line, mv, st }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);

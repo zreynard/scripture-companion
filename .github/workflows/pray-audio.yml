@@ -10,6 +10,10 @@ jobs:
       fail-fast: false
       matrix:
         browser: [webkit, chromium]
+        net: [normal, fast3g]
+        exclude:
+          - browser: webkit
+            net: fast3g
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -20,4 +24,4 @@ jobs:
           node-version: "22"
       - run: pip install -q -r requirements.txt && python app_build.py >/dev/null
       - run: npm i --no-save playwright@1.48.2 >/dev/null && npx playwright install --with-deps ${{ matrix.browser }} >/dev/null
-      - run: (cd out/site && python -m http.server 8765 >/dev/null 2>&1 &) && sleep 2 && BROWSER=${{ matrix.browser }} SITE=http://localhost:8765/ node tools/qa/pray_audio.js
+      - run: (cd out/site && python -m http.server 8765 >/dev/null 2>&1 &) && sleep 2 && BROWSER=${{ matrix.browser }} THROTTLE=${{ matrix.net }} SITE=http://localhost:8765/ node tools/qa/pray_audio.js

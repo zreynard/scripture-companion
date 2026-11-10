@@ -119,9 +119,9 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
   await T('P8 the prayer stops within 0.15 s of its end, the ring full; the next tap prays it again from its start', async () => {
     const p = await pray_(await page()); await testAudio(p, { sb: 12, e: 10 }); await guided(p, 'led');   // 18 s → 20 s
     await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing');
-    await until(p, () => LED.c.state === 'ended', 6000); const a = await p.evaluate(() => ({ t: LED.c.a.currentTime, end: LED.c.end, ring: $('#ledfg').getAttribute('stroke-dasharray'), done: LED.done, icon: document.querySelector('[data-ledpp]').getAttribute('aria-label') }));
+    await until(p, () => LED.done, 6000); const a = await p.evaluate(() => ({ released: !LED.c.a.getAttribute('src'), t: LED.c.stopAt, end: LED.c.end, ring: $('#ledfg').getAttribute('stroke-dasharray'), done: LED.done, icon: document.querySelector('[data-ledpp]').getAttribute('aria-label') }));
     await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing'); const r = await p.evaluate(() => LED.c.a.currentTime);
-    return (Math.abs(a.t - a.end) <= 0.15 && a.ring.startsWith('100') && a.done && a.icon === 'Pray' && r >= 18 && r < 18.6 && !p.errs.length) || { a, r };
+    return (a.released && Math.abs(a.t - a.end) <= 0.15 && a.ring.startsWith('100') && a.done && a.icon === 'Pray' && r >= 18 && r < 18.6 && !p.errs.length) || { a, r };
   });
   await T('P9 speed steps 1× → 1.1× → 1.25× → 0.9× → 1× and applies at once, mid-prayer', async () => {
     const p = await pray_(await page()); await testAudio(p); await guided(p, 'led');
@@ -138,7 +138,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
       await p.evaluate(o => { ledList().forEach(x => x.music = o); BED.led = true; }, own);
       await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing');
       const on = await until(p, () => !BED.el.paused && BED.g && Math.abs(BED.g.gain.value - BED.plv) < 0.02, 6000);
-      await p.evaluate(() => { LED.c.a.currentTime = LED.c.end - 0.3 }); await until(p, () => LED.c.state === 'ended', 4000);
+      await p.evaluate(() => { LED.c.a.currentTime = LED.c.end - 0.3 }); await until(p, () => LED.done, 4000);
       const tail = await p.evaluate(() => [bedWanted(), LED.tail, !BED.el.paused]);
       await p.evaluate(() => { LED.tail = false; clearTimeout(LED.tt); bedSync(); });
       res.push({ own, on, tail });
@@ -202,7 +202,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
   await T('P15 each reading stops within 0.15 s of its end (no next words)', async () => {
     const p = await pray_(await page()); await testAudio(p, { a: 5, b: 7.3, fast: 0.05 }); await guided(p, 'med');
     await p.click('[data-medgo]'); await until(p, () => MED.step === 'pause', 6000); const t1 = await p.evaluate(() => MED.c.a.currentTime);
-    await until(p, () => MED.step === 'still', 8000); const t2 = await p.evaluate(() => MED.c.a.currentTime);
+    await until(p, () => MED.step === 'still', 8000); const t2 = await p.evaluate(() => MED.c.stopAt);
     return (Math.abs(t1 - 7.3) <= 0.15 && Math.abs(t2 - 7.3) <= 0.15) || { t1, t2 };
   });
   await T('P16 Meditate speed steps 1× → 0.9× → 0.8× → 1.1× → 1.25× → 1×, applies to both readings at once, and is remembered', async () => {
@@ -364,8 +364,8 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     await click('[data-prmv="1"]', 'next movement'); await wait(300); const seek = await p.evaluate(() => [PR.mv, LP.c.a.currentTime]);   // to the next movement: 14 s
     await click('[data-lpp]', 'pause'); await wait(200); const paused = await p.evaluate(() => [LP.c.state, document.querySelector('[data-lpp]').getAttribute('aria-label')]);
     await click('[data-lpp]', 'play again'); await until(p, () => LP.c.state === 'playing');
-    await p.evaluate(() => { LP.c.a.currentTime = 24.5 }); const ended = await until(p, () => LP.c.state === 'ended', 10000); const end = await p.evaluate(() => [LP.c.a.currentTime, PR.mv, LP.done]);
-    return (line === 'Pray it with Skip Heitzig' && Math.abs(t0 - 2) < 0.5 && follow && music_ && seek[1] >= 13.9 && seek[0] === 3 && paused[0] === 'paused' && ended && Math.abs(end[0] - 26) <= 0.2 && end[1] === 5 && end[2] && !p.errs.length) || { line, t0, follow, music_, seek, paused, ended, end, e: p.errs };
+    await p.evaluate(() => { LP.c.a.currentTime = 24.5 }); const ended = await until(p, () => LP.done, 10000); const end = await p.evaluate(() => [LP.c.stopAt, PR.mv, LP.done, !LP.c.a.getAttribute('src')]);
+    return (line === 'Pray it with Skip Heitzig' && Math.abs(t0 - 2) < 0.5 && follow && music_ && seek[1] >= 13.9 && seek[0] === 3 && paused[0] === 'paused' && ended && Math.abs(end[0] - 26) <= 0.2 && end[1] === 5 && end[2] && end[3] && !p.errs.length) || { line, t0, follow, music_, seek, paused, ended, end, e: p.errs };
     } catch (e) { return { failedAt: step.at, error: String(e).slice(0, 160), state: await p.evaluate(() => ({ lp: LP.c && LP.c.state, t: LP.c && LP.c.a.currentTime, mv: PR.mv, mode: PR.mode, btn: !!document.querySelector('[data-lpp]') })) }; }
   });
   await T('P31 the ‹ › arrows are in view without scrolling at 390×760: Be Led with the music panel open, every Meditate saying, and the Lord\'s Prayer', async () => {
@@ -376,6 +376,69 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     for (let k = 0; k < n; k++) { await p.evaluate(k => { MED.pick = medList()[k].ref; MED.step = ''; render(); window.scrollTo(0, 0) }, k); if ((await vis('[data-medgo2]')).some(v => !v)) bad.push('med ' + k); }
     await guided(p, 'guided'); if ((await vis('[data-prmv]')).some(v => !v)) bad.push('lp');
     return !bad.length || bad;
+  });
+  // a recording served slowly from a server here: `rate` bytes a second after the first `head` bytes; rate 0 = nothing after the head
+  async function slowServer(port, rate, head) {
+    const sr = 8000, n = sr * 30, hdr = Buffer.alloc(44); const w = (o, x) => hdr.write(x, o, 'latin1');
+    w(0, 'RIFF'); hdr.writeUInt32LE(36 + n * 2, 4); w(8, 'WAVEfmt '); hdr.writeUInt32LE(16, 16); hdr.writeUInt16LE(1, 20); hdr.writeUInt16LE(1, 22); hdr.writeUInt32LE(sr, 24); hdr.writeUInt32LE(sr * 2, 28); hdr.writeUInt16LE(2, 32); hdr.writeUInt16LE(16, 34); w(36, 'data'); hdr.writeUInt32LE(n * 2, 40);
+    const body = Buffer.alloc(n * 2); for (let i = 0; i < n; i++) body.writeInt16LE(Math.round(Math.sin(i / 8) * 2000), i * 2);
+    const all = Buffer.concat([hdr, body]), hits = { n: 0 };
+    const srv = require('http').createServer((q, r) => { hits.n++; const m = /bytes=(\d+)-/.exec(q.headers.range || ''); const a = m ? +m[1] : 0, part = all.slice(a);
+      r.writeHead(m ? 206 : 200, { 'Content-Type': 'audio/wav', 'Content-Length': part.length, 'Accept-Ranges': 'bytes', ...(m ? { 'Content-Range': `bytes ${a}-${all.length - 1}/${all.length}` } : {}), 'Access-Control-Allow-Origin': '*' });
+      let k = Math.min(head, part.length); r.write(part.slice(0, k)); if (!rate) return;   // rate 0: hold the line open, send nothing more
+      const t = setInterval(() => { if (k >= part.length || r.destroyed) { clearInterval(t); r.end(); return } const e = Math.min(part.length, k + rate / 4); r.write(part.slice(k, e)); k = e; }, 250); q.on('close', () => clearInterval(t)); });
+    await new Promise(ok => srv.listen(port, ok)); return { srv, hits };
+  }
+  await T('P32 a slow recording: "Loading…", never restarted while it is arriving, then it plays; one that sends nothing retries once after 25 s, then says it did not load', async () => {
+    const S1 = await slowServer(8811, 12000, 2000);         // 12 KB/s: slower than it plays (16 KB/s)
+    const p = await pray_(await page()); await testAudio(p); await guided(p, 'med');
+    await p.evaluate(() => { const m = medCur(); m.audio = 'http://localhost:8811/slow.wav'; m.a = 6; m.b = 9; });
+    await p.click('[data-medgo]'); const loading = await until(p, () => $('#medeb').textContent === 'Loading…' || MED.c.state === 'playing', 8000);
+    const played = await until(p, () => MED.c.stopAt > 8 || MED.step === 'pause' || MED.step === 'again' || MED.step === 'still', 40000);
+    const a = await p.evaluate(() => ({ tries: MED.c.tries, step: MED.step, err: MED.step === 'err' })); S1.srv.close();
+    const S2 = await slowServer(8812, 0, 64);               // a few bytes, then nothing
+    await p.evaluate(() => { medStop(false); const m = medCur(); m.audio = 'http://localhost:8812/stuck.wav'; m.a = 2; m.b = 4; });
+    await p.click('[data-medgo]'); const t0 = Date.now(); const errd = await until(p, () => MED.step === 'err', 70000); const took = Date.now() - t0;
+    const b2 = await p.evaluate(() => $('#medeb').textContent); S2.srv.close();
+    return (loading && played && !a.err && a.tries === 0 && S1.hits.n <= 2 && errd && took > 45000 && /didn't load/.test(b2) && S2.hits.n >= 2 && !p.errs.length) || { loading, played, a, hits1: S1.hits.n, errd, took, b2, hits2: S2.hits.n, e: p.errs };
+  });
+  await T('P33 nothing keeps downloading: after Be still, after a prayer ends, after the Lord\'s Prayer ends, and after going to another mid-load, the player has let go of its file', async () => {
+    const p = await pray_(await page()); await testAudio(p, { sb: 12, e: 10, a: 5, b: 6.5 }); const r = {};
+    await guided(p, 'med'); await p.click('[data-medgo]'); await until(p, () => MED.step === 'still', 8000); r.med = await p.evaluate(() => !MED.c.a.getAttribute('src'));
+    await p.click('[data-medamen]');
+    await guided(p, 'led'); await p.click('[data-ledpp]'); await until(p, () => LED.done, 8000); r.led = await p.evaluate(() => !LED.c.a.getAttribute('src'));
+    await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing'); await p.click('[data-ledgo="1"]'); await wait(200); r.ledAway = await p.evaluate(() => LED.c.state === 'playing' ? 'playing on (was playing)' : !LED.c.a.getAttribute('src'));
+    await p.evaluate(() => { PRAY.lp.audio = TESTWAV; PRAY.lp.a = 2; PRAY.lp.b = 4; PRAY.lp.at = [2, 2.3, 2.6, 2.9, 3.2, 3.5]; PR.mv = 0; });
+    await guided(p, 'guided'); await p.click('[data-lpp]'); await until(p, () => LP.done, 8000); r.lp = await p.evaluate(() => !LP.c.a.getAttribute('src'));
+    await guided(p, 'med'); await p.click('[data-medgo]'); await until(p, () => MED.c.state === 'playing'); await p.click('[data-medgo2="1"]'); await wait(200); r.medAway = await p.evaluate(() => !MED.c.a.getAttribute('src'));
+    return (r.med && r.led && r.ledAway && r.lp && r.medAway && !p.errs.length) || r;
+  });
+  await T('P34 browsing loads nothing: swiping through 10 sayings and 10 prayers starts no download', async () => {
+    const p = await pray_(await page(null, { hasTouch: true })); const media = [];
+    p.on('request', q => { if (q.resourceType() === 'media' || /\.(mp3|m4a|wav)(\?|#|$)/i.test(q.url())) media.push(q.url()); });
+    await guided(p, 'med'); for (let i = 0; i < 10; i++) { await p.click('[data-medgo2="1"]'); await wait(80); }
+    await guided(p, 'led'); for (let i = 0; i < 10; i++) { await p.click('[data-ledgo="1"]'); await wait(80); }
+    await wait(800); const held = await p.evaluate(() => [MED.c && MED.c.a.getAttribute('src'), LED.c && LED.c.a.getAttribute('src')]);
+    return (!media.length && !held[0] && !held[1]) || { media: media.slice(0, 4), held };
+  });
+  await T('P35 the music comes in within 1.5 s of the reading or prayer starting, in Meditate, Be Led and the Lord\'s Prayer', async () => {
+    const p = await pray_(await page()); await testAudio(p, { a: 5, b: 14, sb: 25, e: 2 }); await music(p); const r = {};
+    const timeIt = async () => { await until(p, () => !!(window.__CL && window.__CL.state === 'playing'), 8000); const t = Date.now(); const ok = await until(p, () => !BED.el.paused && BED.g && BED.g.gain.value > 0.05, 4000); return ok ? Date.now() - t : -1; };
+    await guided(p, 'med'); await p.evaluate(() => { window.__CL = medC() }); await p.click('[data-medgo]'); r.med = await timeIt(); await p.evaluate(() => medStop(false));
+    await p.evaluate(() => { BED.el.pause() }); await wait(600);
+    await guided(p, 'led'); await p.evaluate(() => { window.__CL = ledC() }); await p.click('[data-ledpp]'); r.led = await timeIt(); await p.evaluate(() => LED.c.pause());
+    await p.evaluate(() => { BED.el.pause(); PRAY.lp.audio = TESTWAV; PRAY.lp.a = 2; PRAY.lp.b = 20; PRAY.lp.at = [2, 5, 8, 11, 14, 17]; PR.mv = 0; }); await wait(600);
+    await guided(p, 'guided'); await p.evaluate(() => { window.__CL = lpC() }); await p.click('[data-lpp]'); r.lp = await timeIt();
+    return (r.med >= 0 && r.med <= 1500 && r.led >= 0 && r.led <= 1500 && r.lp >= 0 && r.lp <= 1500 && !p.errs.length) || r;
+  });
+  await T('P36 the diagnostics: a Meditate run is recorded (the tap, the reading\'s events, the music) and ⋯ → Copy diagnostics gives it', async () => {
+    const p = await pray_(await page()); await testAudio(p); await music(p); await guided(p, 'med');
+    await p.click('[data-medgo]'); await until(p, () => MED.step === 'still', 8000); await wait(1500);
+    const t = await p.evaluate(() => diagText());
+    await p.evaluate(() => { view = 'settings'; render(); }); await wait(300);
+    const btn = await p.evaluate(() => [...document.querySelectorAll('button')].some(b => b.textContent === 'Copy diagnostics'));
+    const want = ['open', 'tap Begin', 'medm playing', 'medm stopped', 'music'];
+    return (want.every(w => t.includes('  ' + w)) && btn && !p.errs.length) || { missing: want.filter(w => !t.includes('  ' + w)), btn, head: t.slice(0, 400) };
   });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

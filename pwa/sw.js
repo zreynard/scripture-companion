@@ -18,10 +18,14 @@ self.addEventListener('fetch', e => {
     e.respondWith(fetch(e.request, { cache: 'no-store' }).catch(() => caches.match(e.request)));
     return;
   }
-  if (e.request.mode === 'navigate') { // network first so new builds show up; cache when offline
-    e.respondWith(fetch(e.request, { cache: 'no-store' }).then(r => {  // always the newest page when online
-      const copy = r.clone(); caches.open(CACHE).then(c => c.put('index.html', copy)); return r;
-    }).catch(() => caches.match('index.html')));
+  if (e.request.mode === 'navigate') { // the phone's copy at once, no waiting on the network (fetched when there is none yet)
+    const fresh = () => fetch(e.request, { cache: 'no-store' }).then(r => { if (r.ok) { const copy = r.clone(); caches.open(CACHE).then(c => c.put('index.html', copy)); } return r; });
+    // (a newer build is fetched by the app itself when version.txt says there is one, so nothing competes with the audio)
+    e.respondWith(caches.match('index.html').then(hit => hit || fresh()).catch(() => fresh()));
+    return;
+  }
+  if (u.pathname.endsWith('index.html') && u.searchParams.has('sw-refresh')) {  // the app asking for the newest build, to open next
+    e.respondWith(fetch('index.html', { cache: 'no-store' }).then(r => { if (r.ok) { const copy = r.clone(); return caches.open(CACHE).then(c => c.put('index.html', copy)).then(() => r); } return r; }));
     return;
   }
   if (u.pathname.includes('/narration/')) {  // chapter timings grow as narration is published: newest when online

@@ -1285,8 +1285,18 @@ body.npslim #np.mini .ctl .big{width:36px!important;height:36px!important}body.n
 <div id="np-hl" aria-hidden="true"><i></i></div><div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="bedb" hidden aria-haspopup="true">♪ Music</button><button id="zz">Sleep off</button></div><div id="bedpop" hidden></div><div class="np-cut"><button id="cutb" hidden>Teaching starts here</button></div></div>
 <audio id="audio" preload="metadata"></audio><audio id="praym" preload="none"></audio><audio id="bedm" preload="none"></audio><audio id="ledm" preload="none"></audio><audio id="medm" preload="none"></audio><audio id="lpm" preload="none"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
 <script src="worship.js"></script>
+<script type="application/json" id="dj">const D=__DATA__</script>
 <script>
-const D=__DATA__,I=D.items;
+var DIAG={a:[],t0:Date.now(),sv:0,last:{}};
+/* what the phone did: the last 300 events (opening, Pray's taps, its players' and the music's events), kept on the phone;
+   ⋯ → Copy diagnostics copies them as text. Nothing is sent anywhere. */
+function dlog(k,o){try{DIAG.a.push([new Date().toISOString().slice(11,23),k,o==null?'':o]);if(DIAG.a.length>300)DIAG.a.splice(0,DIAG.a.length-300);
+ clearTimeout(DIAG.sv);DIAG.sv=setTimeout(()=>{try{const old=JSON.parse(localStorage.getItem('sc:diag')||'[]');localStorage.setItem('sc:diag',JSON.stringify(old.concat(DIAG.a.splice(0)).slice(-300)))}catch(e){}},1200)}catch(e){}}
+function diagText(){let L=[];try{L=JSON.parse(localStorage.getItem('sc:diag')||'[]')}catch(e){}L=L.concat(DIAG.a).slice(-300);
+ return 'Scripture Companion diagnostics · build '+(typeof APPV!=='undefined'?APPV:'?')+' · '+navigator.userAgent+'\n'+L.map(e=>e[0]+'  '+e[1]+'  '+(typeof e[2]==='string'?e[2]:JSON.stringify(e[2]))).join('\n')}
+function diagCopy(){const t=diagText(),m=document.getElementById('diagmsg');const ok=()=>{if(m)m.textContent='Copied. Paste it to Claude.'};
+ try{navigator.clipboard.writeText(t).then(ok).catch(()=>{prompt('Copy this:',t)})}catch(e){prompt('Copy this:',t)}}
+const D=JSON.parse(document.getElementById('dj').textContent.slice(8)),I=D.items;   /* the data as JSON (parsed much faster than a script literal); the block starts "const D=" so the tools still find it */
 /* "Teaching starts here": your own start points (synced), over the measured ones */
 const CUT0={};function cutApply(){const c=S.get('cut',{})||{};for(const k in c){if(!I[k])continue;if(!(k in CUT0))CUT0[k]=I[k].s||0;I[k].s=c[k]==null?CUT0[k]:+c[k]}}
 const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{let old;if(BK_DELK.includes(k))try{old=JSON.parse(localStorage.getItem('sc:'+k)||'null')}catch(e){}localStorage.setItem('sc:'+k,JSON.stringify(v));if(BK_KEYS.includes(k)){localStorage.setItem('sc:bkdirty','1');bkMark(k,old,v)}}catch(e){}}};
@@ -2649,13 +2659,13 @@ function bedOn(){return BED.on}
 function bedPray(){return !!((window.MED&&MED.on)||(window.LED&&LED.c&&(LED.c.busy()||LED.tail))||(window.LP&&LP.c&&LP.c.busy()))}
 function bedLevel(){return bedPray()?BED.plv:BED.lv}
 function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(window.LED&&LED.c&&(LED.c.busy()||LED.tail))return BED.led;if(window.LP&&LP.c&&LP.c.busy())return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
-function bedSync(){const b=bedEl();$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',bedOn());
+function bedSync(){const b=bedEl();{const w=bedWanted(),k=w+'|'+(BED.ctx&&BED.ctx.state)+'|'+(b.getAttribute('src')||'').slice(0,5)+'|'+b.paused;if(DIAG.last.bed!==k){DIAG.last.bed=k;dlog('music',{wanted:w,ctx:BED.ctx?BED.ctx.state:'none',file:(b.getAttribute('src')||'none').slice(0,5),paused:b.paused,on:BED.led,pieces:(PL.list||[]).length})}}$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',bedOn());
  if(bedWanted()){clearTimeout(BED.t);const go=()=>{const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(bedLevel(),1500)).catch(()=>{})};
   if(!b.getAttribute('src')||b.src===SILENT){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())go()})}else go();return}
  clearTimeout(BED.t);BED.t=setTimeout(()=>{if(bedWanted())return;bedGain(0,700);setTimeout(()=>{if(!bedWanted())b.pause()},750)},2500)}
 /* iPhones only start a sound from a tap: the first tap after turning the music on readies its player */
 /* a prayer or reading was tapped: wake the music in the same tap (an iPhone only lets a sound start from one) */
-function bedKick(){if(!BED.led||!(PL.list||[]).length)return;const b=bedEl(),c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});
+function bedKick(){dlog('music kick',{on:BED.led,pieces:(PL.list||[]).length,ctx:BED.ctx?BED.ctx.state:'none'});if(!BED.led||!(PL.list||[]).length)return;const b=bedEl(),c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});
  if(b.getAttribute('src')&&b.src!==SILENT){if(b.paused)b.play().catch(()=>{})}else{b.src=SILENT;b.play().catch(()=>{})}}
 function bedUnlock(){const c0=BED.ctx;if(c0&&c0.state!=='running')c0.resume().catch(()=>{});if(!(BED.on||BED.led)||BED.unl)return;BED.unl=true;const b=bedEl(),c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});
  if(!b.getAttribute('src')){b.src=SILENT;b.play().then(()=>{if(!bedWanted())b.pause()}).catch(()=>{BED.unl=false})}}
@@ -2784,12 +2794,14 @@ function clipper(a,h){const c={a,t0:0,end:0,url:'',rate:1,tm:null,wd:null,ld:nul
  const st=s=>{if(c.state===s)return;c.state=s;if(h.state)h.state(s)},clr=()=>{clearTimeout(c.tm);clearTimeout(c.wd);clearTimeout(c.ld)};
  c.arm=()=>{clearTimeout(c.tm);if(!c.end||a.paused)return;const left=(c.end-a.currentTime)/(a.playbackRate||1);if(left<=0.03){c.fin();return}
   c.tm=setTimeout(()=>{if(!a.paused&&a.currentTime>=c.end-0.06)c.fin();else c.arm()},Math.max(15,left*1000-20))};
- c.fin=()=>{clr();if(c.state==='ended')return;st('ended');a.pause();if(h.end)h.end()};
- c.watch=()=>{clearTimeout(c.wd);clearTimeout(c.ld);c.ld=setTimeout(()=>{if(c.state==='starting')st('loading')},3000);c.wd=setTimeout(()=>{if(c.state==='starting'||c.state==='loading')c.retry()},12000)};
+ c.fin=()=>{clr();if(c.state==='ended')return;c.stopAt=a.currentTime;dlog((a.id||'clip')+' stopped',{at:Math.round(a.currentTime*100)/100,end:c.end});st('ended');a.pause();if(h.end)h.end()};
+ c.watch=()=>{clearTimeout(c.wd);clearTimeout(c.ld);c.prog=Date.now();c.ld=setTimeout(()=>{if(c.state==='starting')st('loading')},3000);
+  const chk=()=>{if(c.state!=='starting'&&c.state!=='loading')return;if(Date.now()-c.prog>25000){c.retry();return}c.wd=setTimeout(chk,2500)};c.wd=setTimeout(chk,2500)};   /* a retry only when nothing has arrived for 25 s */
  c.retry=()=>{if(c.tries>=1){c.err();return}c.tries++;c.chk=true;a.removeAttribute('src');try{a.load()}catch(e){}a.src=c.url;c.speed();a.play().catch(()=>{});c.watch()};
  c.err=()=>{clr();try{a.pause()}catch(e){}st('error');if(h.error)h.error()};
  c.speed=()=>{try{a.defaultPlaybackRate=c.rate;a.playbackRate=c.rate}catch(e){}};
  a.addEventListener('playing',()=>{clearTimeout(c.wd);clearTimeout(c.ld);c.tries=0;st('playing');c.arm()});
+ ['progress','loadedmetadata','loadeddata','canplay','seeked'].forEach(e=>a.addEventListener(e,()=>{c.prog=Date.now()}));   /* bytes are arriving */
  a.addEventListener('waiting',()=>{if(c.state==='starting')return;clearTimeout(c.ld);c.ld=setTimeout(()=>{if(!a.paused&&a.readyState<3&&c.state==='playing')st('loading')},3000)});   /* while starting, the start's own 3 s timer says Loading… */
  a.addEventListener('pause',()=>{clearTimeout(c.tm);clearTimeout(c.ld);if(c.state==='playing'||c.state==='loading')st('paused')});
  ['seeked','ratechange'].forEach(e=>a.addEventListener(e,()=>c.arm()));
@@ -2841,9 +2853,9 @@ function ledC(){if(LED.c)return LED.c;const a=$('#ledm');
 function ledFade(v,ms){const a=$('#ledm');clearInterval(LED.fd);LED.fd=null;let v0=a.volume;if(Math.abs(v0-v)<0.01)return;const n=Math.max(1,Math.round(ms/40));let k=0;
  LED.fd=setInterval(()=>{k++;try{a.volume=Math.max(0,Math.min(1,v0+(v-v0)*k/n))}catch(e){}if(k>=n){clearInterval(LED.fd);LED.fd=null}},40)}
 /* the prayer has ended: your music (under a prayer without its own) carries on a few seconds after the amen, then fades away */
-function ledEnd(){const c=LED.c;LED.done=true;clearInterval(LED.fd);LED.fd=null;try{c.a.volume=1}catch(e){}
+function ledEnd(){const c=LED.c;LED.done=true;clearInterval(LED.fd);LED.fd=null;try{c.a.volume=1}catch(e){}c.clear();   /* let go of the sermon's file: nothing keeps downloading */
  if(BED.led&&(PL.list||[]).length){LED.tail=true;clearTimeout(LED.tt);LED.tt=setTimeout(()=>{LED.tail=false;bedGain(0,5000);setTimeout(bedSync,5100)},7000)}ledPaint()}
-function ledPP(){const x=ledCur(),c=ledC();if(!x)return;bedKick();LED.tail=false;clearTimeout(LED.tt);clearInterval(LED.fd);LED.fd=null;
+function ledPP(){const x=ledCur(),c=ledC();if(!x)return;dlog('tap Be Led',x.id+' '+(c.state||'new'));bedKick();LED.tail=false;clearTimeout(LED.tt);clearInterval(LED.fd);LED.fd=null;
  if(LED.id===x.id&&c.a.getAttribute('src')&&c.state!=='error'){if(c.busy()){c.pause();return}try{c.a.volume=0}catch(e){}LED.fade=true;if(LED.done||c.state==='ended'){LED.done=false;c.again()}else c.resume();return}
  LED.id=x.id;LED.done=false;c.rate=LED.sp;try{c.a.volume=0}catch(e){}LED.fade=true;const [t0,end]=ledSpan(x);
  c.go(x.audio,t0,end,d=>{if(isFinite(d)&&d>0){const [s,e]=ledSpan(x,d);c.t0=s;c.end=e}});ledPaint()}
@@ -2851,8 +2863,7 @@ function ledSeek(d){if(LED.c&&LED.id)LED.c.seek(d);ledRing()}
 function ledGo(d){const L=ledList();if(!L.length)return;const o=ledOrd(),on=!!(LED.c&&LED.c.busy());let p=o.p+d;
  if(p>=o.o.length){S.set('ledord',null);const n=ledOrd();n.p=0;S.set('ledord',n)}else{o.p=Math.max(0,p);S.set('ledord',o)}
  if(LED.c)LED.c.clear();LED.id=null;LED.done=false;LED.tail=false;clearTimeout(LED.tt);
- if(view==='pray'&&PR.mode==='led'){const y=scrollY;render();window.scrollTo(0,y)}if(on)ledPP();else{bedSync();ledPrep()}}
-function ledPrep(){const x=ledCur();if(!x||!x.L||(LED.c&&LED.c.busy()))return;ledC().prep(x.audio,ledSpan(x)[0])}
+ if(view==='pray'&&PR.mode==='led'){const y=scrollY;render();window.scrollTo(0,y)}if(on)ledPP();else bedSync()}
 function ledSession(){if(!('mediaSession' in navigator))return;const x=ledById(LED.id)||{};PM.ms=false;
  try{navigator.mediaSession.metadata=new MediaMetadata({title:'Be Led',artist:NAMES[x.who]||x.who||'',album:'Pray'})}catch(e){}
  [['play',()=>{if(!LED.c.busy())ledPP()}],['pause',()=>{if(LED.c.busy())LED.c.pause()}],['seekbackward',()=>ledSeek(-15)],['seekforward',()=>ledSeek(15)],['previoustrack',()=>ledGo(-1)],['nexttrack',()=>ledGo(1)]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}
@@ -2889,15 +2900,14 @@ function medSession(){if(!('mediaSession' in navigator))return;const m=medCur()|
 function medLabel(){const s=MED.c&&MED.c.state;if(MED.on&&s==='loading')return 'Loading…';const L={listen:'Listen',pause:'',again:'Again',still:'Be still',done:'Amen',err:"This reading didn't load. Tap Begin to try again."};return MED.step in L?L[MED.step]:'Meditate'}
 function medEb(){const e=$('#medeb');if(e)e.textContent=medLabel()}
 function medPaint(){if(view!=='pray'||PR.mode!=='med')return;const y=scrollY;render();window.scrollTo(0,y)}
-function medStart(){const m=medCur();if(!m)return;bedKick();if(!audio.paused)audio.pause();{const pa=pmEl();if(!pa.paused)pa.pause()}if(LED.c&&LED.c.busy())LED.c.pause();
+function medStart(){const m=medCur();if(!m)return;dlog('tap Begin',m.ref);bedKick();if(!audio.paused)audio.pause();{const pa=pmEl();if(!pa.paused)pa.pause()}if(LED.c&&LED.c.busy())LED.c.pause();
  const c=medC();clearTimeout(MED.t);MED.on=true;MED.k=0;MED.paused=false;MED.step='listen';c.rate=MED.sp;c.go(m.audio,m.a,m.b);medPaint();bedSync()}
 function medNext(){if(!MED.on)return;const f=window.MED_FAST||1;
  if(MED.k===0){MED.k=1;MED.step='pause';medPaint();bedSync();MED.t=setTimeout(()=>{if(!MED.on)return;MED.step='again';MED.c.again();medPaint();bedSync()},6000*f);return}
- MED.step='still';medPaint();bedSync()}
+ MED.step='still';if(MED.c)MED.c.clear();medPaint();bedSync()}
 function medPause(){const c=MED.c;if(!MED.on||!c||MED.step==='pause'||MED.step==='still')return;MED.paused=!MED.paused;if(MED.paused)c.pause();else c.resume();medPaint();bedSync()}
-function medStop(done){MED.on=false;MED.paused=false;clearTimeout(MED.t);MED.step=done?'done':'';if(MED.c)MED.c.stop();medPaint();bedSync()}
-function medGo(d){const L=medList(),k=medIdx()+d;if(k<0||k>=L.length)return;if(MED.on)medStop(false);MED.pick=L[k].ref;MED.step='';medPaint();medPrep()}
-function medPrep(){const m=medCur();if(m&&!MED.on)medC().prep(m.audio,m.a)}
+function medStop(done){MED.on=false;MED.paused=false;clearTimeout(MED.t);MED.step=done?'done':'';if(MED.c)MED.c.clear();medPaint();bedSync()}
+function medGo(d){const L=medList(),k=medIdx()+d;if(k<0||k>=L.length)return;if(MED.on)medStop(false);MED.pick=L[k].ref;MED.step='';medPaint()}
 function medView(){const L=medList(),m=medCur(),k=medIdx();if(!m)return `<p class="led-lead">The sayings are on their way.</p>`;const long=m.t.length>150;
  const ctl=MED.step==='still'?`<button class="med-go" data-medamen>Amen</button>`:MED.on?`<button class="med-pp" data-medpp aria-label="${MED.paused?'Go on':'Pause'}"${MED.step==='pause'?' disabled':''}>${MED.paused?PR_PLAY:PR_PAUSE}</button>`:`<button class="med-go" data-medgo>Begin</button>`;
  return `<div class="pr-art pr-band${long?' sm':''}">${prayArt('pm',1)}</div><section class="med${MED.on?' on':''}" aria-label="Meditate">${prHead(medLabel(),'medeb','data-medgo2',k>0,k<L.length-1,`<span class="med-n">${k+1} of ${L.length}</span>`,MED.step==='err','saying')}<p class="med-q serif${m.t.length>240?' xl':long?' l':''}">${esc(m.t)}</p><div class="med-ref">${esc(m.ref)}</div>${m.who?`<div class="med-by">Read by ${esc(NAMES[m.who]||m.who)}</div>`:''}
@@ -2907,13 +2917,13 @@ function medView(){const L=medList(),m=medCur(),k=medIdx();if(!m)return `<p clas
 var LP={c:null,done:false};
 function lpD(){return PRAY.lp||null}
 function lpC(){if(LP.c)return LP.c;const a=$('#lpm');
- LP.c=clipper(a,{state:()=>lpPaint(),end:()=>{LP.done=true;lpPaint()},error:lpPaint,tick:lpFollow});
+ LP.c=clipper(a,{state:()=>lpPaint(),end:()=>{LP.done=true;LP.c.clear();lpPaint()},error:lpPaint,tick:lpFollow});
  a.addEventListener('play',()=>{LP.done=false;AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});{const p=pmEl();if(!p.paused)p.pause()}if(LED.c&&LED.c.busy())LED.c.pause();if(MED.on)medStop(false);lpSession()});
  AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause()}));return LP.c}
 function lpLive(){return !!(LP.c&&LP.c.a.getAttribute('src')&&!LP.done&&LP.c.state!=='error'&&LP.c.state!=='')}
 /* the movement on screen follows him */
-function lpFollow(){const x=lpD(),t=LP.c.a.currentTime;let k=0;x.at.forEach((s,i)=>{if(t>=s-0.3)k=i});if(k!==PR.mv&&view==='pray'&&PR.mode==='guided'){PR.mv=k;PR.anim='l';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}}
-function lpPP(){const x=lpD();if(!x)return;bedKick();const c=lpC();
+function lpFollow(){if(!LP.c.busy())return;const x=lpD(),t=LP.c.a.currentTime;let k=0;x.at.forEach((s,i)=>{if(t>=s-0.3)k=i});if(k!==PR.mv&&view==='pray'&&PR.mode==='guided'){PR.mv=k;PR.anim='l';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}}
+function lpPP(){const x=lpD();if(!x)return;dlog('tap Pray it with',LP.c?LP.c.state:'new');bedKick();const c=lpC();
  if(c.a.getAttribute('src')&&!LP.done&&c.state!=='error'&&c.state!==''){if(c.busy())c.pause();else c.resume();return}
  LP.done=false;c.rate=1;const t0=PR.mv>0&&x.at[PR.mv]!=null?x.at[PR.mv]:x.a;c.go(x.audio,t0,x.b);c.t0=x.a;lpPaint()}
 function lpSeek(d){const x=lpD(),c=LP.c;if(!lpLive())return;try{c.a.currentTime=Math.max(x.a,Math.min(x.b-0.5,c.a.currentTime+d))}catch(e){}}
@@ -2948,7 +2958,7 @@ function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='
  document.querySelectorAll('[data-prmu]').forEach(b=>b.onclick=()=>{PR.mu=!PR.mu;const p=$('#prmu');if(p)p.hidden=!PR.mu;b.setAttribute('aria-expanded',PR.mu)});
  {const on=$('#prmuon'),lv=$('#prmulv');if(on)on.onchange=()=>{BED.led=on.checked;S.set('bedled',BED.led);BED.unl=false;bedUnlock();bedSync();const b=$('[data-prmu]');if(b)b.textContent='♪ Music '+(BED.led?'on':'off');if(lv)lv.disabled=!BED.led};
   if(lv)lv.oninput=()=>{BED.plv=+lv.value/100;lv.style.setProperty('--p',((lv.value-3)/57*100).toFixed(1)+'%');S.set('bedlvp',BED.plv);if(bedWanted()&&bedPray())bedGain(BED.plv,120)}}
- if(PR.mode==='led'){ledPaint();ledPrep()}if(PR.mode==='med')medPrep();
+ if(PR.mode==='led')ledPaint();
  document.querySelectorAll('[data-pm]').forEach(b=>b.onclick=pmToggle);
  document.querySelectorAll('[data-pms]').forEach(b=>b.onclick=()=>pmSkip(+b.dataset.pms));
  document.querySelectorAll('[data-prmv]').forEach(b=>b.onclick=()=>prGo(+b.dataset.prmv));
@@ -3058,6 +3068,7 @@ function settingsView(){
  <ol class="note bk-steps"><li><a href="https://github.com/new?name=scripture-companion-backup&visibility=private" target="_blank" rel="noopener">Create the private repo</a> (name and Private are filled in: tap <b>Create repository</b>).</li><li><a href="https://github.com/settings/personal-access-tokens/new?name=Scripture%20Companion%20backup&description=Lets%20the%20app%20save%20listening%20progress&expires_in=none&contents=write" target="_blank" rel="noopener">Make a key</a>: under <b>Repository access</b> pick <b>Only select repositories</b> → scripture-companion-backup; check <b>Contents: Read and write</b>; tap <b>Generate</b> and copy it.</li><li>Paste it here. Your iPhone offers to save it in Passwords, so a new phone fills it in.</li></ol>${bkForm(false)}`}
  <p class="note" style="margin-top:18px">By hand:</p><button class="btn" id="exp">Export</button><button class="btn" id="imp">Import</button><button class="btn" id="reset">Reset</button><textarea id="io" placeholder="Exported progress appears here; paste here to import."></textarea>
  <p class="note" id="envn">${location.protocol==='file:'||window!==window.top?'This viewer blocks audio. Serve the file from a web address and open it in Safari, then Add to Home Screen.':'Audio should stream here.'} <button class="btn" id="atest" style="padding:4px 10px">Test audio</button><span id="atest-out"></span></p>
+ <h2 class="serif" style="margin:22px 0 8px">Diagnostics</h2><p class="note">If something isn't working, copy this and paste it to Claude: what the app did (opening, Pray's players, the music). It stays on this phone.</p><p><button class="btn" onclick="diagCopy()">Copy diagnostics</button> <span id="diagmsg" class="note"></span></p>
  <button class="btn" id="back">‹ Back to the road</button></div>`}
 /* Secret Church library: every night, every session, in order (the podcast's sessions where it has them) */
 function scGroups(){const by={};D.sc.ids.forEach(id=>{const i=I[id];if(!i||!i.sc)return;(by[i.sc[0]]=by[i.sc[0]]||[]).push(id)});
@@ -3354,7 +3365,22 @@ try{awakeSet('pray',view==='pray'&&PR.mode==='guided')}catch(e){}
 /* home-screen app: offline shell + keep progress from being evicted */
 if('serviceWorker' in navigator&&isSecureContext)navigator.serviceWorker.register('sw.js').catch(()=>{});
 /* pick up new versions: check on open and whenever the app comes back to the front */
-const APPV=__VERSION__;function checkV(){fetch('version.txt?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.text():'').then(t=>{if(+t>APPV){let k='';try{k=sessionStorage.getItem('sc:rl')}catch(e){}if(k===t)return;try{sessionStorage.setItem('sc:rl',t)}catch(e){}location.replace(location.pathname+'?v='+t)}}).catch(()=>{})}checkV();document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkV()});
+/* A newer build: the app opens from the phone's copy at once, and the new one is fetched in the background; it takes
+   over when nothing is playing (never mid-prayer) — at once if the app has only just opened, else when you put it away */
+const APPV=__VERSION__,UPD={ready:null,tap:0,t0:Date.now()};
+(function(){try{const n=performance.getEntriesByType('navigation')[0]||{};dlog('open',{from:navigator.serviceWorker&&navigator.serviceWorker.controller?'app copy (service worker)':'network',fetch_ms:Math.round((n.responseEnd||0)-(n.startTime||0)),ready_ms:Math.round(n.domContentLoadedEventEnd||performance.now()),bytes:n.transferSize,v:APPV})}catch(e){}
+ ['ledm','medm','lpm','bedm','praym','audio'].forEach(id=>{const a=document.getElementById(id);if(!a)return;let pg=0;
+  const say=ev=>{let h='';try{const u=a.currentSrc||a.src||'';h=u.startsWith('blob:')?'blob':u.startsWith('data:')?'silence':u?new URL(u).host:''}catch(e){}
+   const b=a.buffered&&a.buffered.length?Math.round(a.buffered.end(a.buffered.length-1)):null;
+   dlog(id+' '+ev,{at:Math.round(a.currentTime*10)/10,host:h,ready:a.readyState,net:a.networkState,buf:b,err:a.error?a.error.code:undefined,vol:id==='bedm'&&window.BED&&BED.g?Math.round(BED.g.gain.value*100)/100:undefined,ctx:id==='bedm'&&window.BED&&BED.ctx?BED.ctx.state:undefined})};
+  ['loadstart','loadedmetadata','canplay','playing','waiting','stalled','pause','ended','error','emptied','abort'].forEach(ev=>a.addEventListener(ev,()=>say(ev)));
+  a.addEventListener('progress',()=>{const n=Date.now();if(n-pg>4000){pg=n;say('progress')}})})})();document.addEventListener('pointerdown',()=>{UPD.tap=Date.now()},true);
+function anyPlaying(){return ['audio','audiofx','praym','ledm','medm','lpm'].some(i=>{const a=document.getElementById(i);return a&&!a.paused})}
+function updGo(){if(!UPD.ready)return;let k='';try{k=sessionStorage.getItem('sc:rl')}catch(e){}if(k===UPD.ready)return;try{sessionStorage.setItem('sc:rl',UPD.ready)}catch(e){}location.replace(location.pathname+'?v='+UPD.ready)}
+function updMaybe(){if(!UPD.ready||anyPlaying())return;if(document.hidden||(Date.now()-UPD.t0<4000&&Date.now()-UPD.tap>4000))updGo()}
+function checkV(){fetch('version.txt?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.text():'').then(t=>{if(!(+t>APPV)||UPD.ready===t)return;
+  fetch('index.html?sw-refresh='+t,{cache:'no-store'}).then(r=>{if(r.ok){UPD.ready=t;updMaybe()}}).catch(()=>{})}).catch(()=>{})}
+checkV();document.addEventListener('visibilitychange',()=>{if(document.hidden)updMaybe();else checkV()});
 if(navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(()=>{});
 </script></body></html>"""
 

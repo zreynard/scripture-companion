@@ -24,6 +24,8 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
 (async () => {
   const b = await ENGINE.launch(ENGINE === chromium ? { args: ['--autoplay-policy=no-user-gesture-required'] } : {});
   const p = await (await b.newContext()).newPage();
+  const SLOW = process.env.THROTTLE === 'fast3g';   // a phone on a weak connection: 1.6 Mbps, 150 ms (Chromium)
+  if (SLOW) { const cdp = await p.context().newCDPSession(p); await cdp.send('Network.enable'); await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 150, downloadThroughput: 1.6e6 / 8, uploadThroughput: 750e3 / 8 }); }
   await p.goto(SITE + '?x=' + Date.now()); await p.waitForTimeout(1500);
   const L = await p.evaluate(() => [...(PRAY.led || []).map(x => ({ kind: 'led', id: x.id, who: x.who, url: x.audio, audio: x.audio, sb: x.sb, e: x.e, L: x.L, dur: x.dur })),
                                      ...(PRAY.med || []).filter(x => x.audio).map(x => ({ kind: 'med', id: x.ref, who: x.who, url: x.audio, a: x.a, b: x.b })),
@@ -37,9 +39,10 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
       let t0, end, fix = null;
       if (x.kind === 'med') { t0 = x.a; end = x.b; }
       else { [t0, end] = ledSpan(x); fix = d => { if (isFinite(d) && d > 0) { const [s, e] = ledSpan(x, d); c.t0 = s; c.end = e } }; }
-      c.go(x.url, t0, end, fix);
+      const tap = Date.now(); c.go(x.url, t0, end, fix);
       const t = Date.now(); while (c.state !== 'playing' && c.state !== 'error' && Date.now() - t < 30000) await new Promise(r => setTimeout(r, 100));
       if (c.state !== 'playing') { const st = c.state; c.clear(); return { ok: false, note: 'state ' + st + ' after 30 s', err: c.a.error && c.a.error.code }; }
+      const ms = Date.now() - tap;
       await new Promise(r => setTimeout(r, 1500));
       const at = c.a.currentTime, T0 = c.t0, L = c.a.duration;
       const near = at >= T0 - 0.3 && at <= T0 + 4;              // playing from the stretch's start
@@ -50,14 +53,16 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
         stop = c.state === 'ended' ? +(c.a.currentTime - c.end).toFixed(2) : null;
       }
       c.clear();
-      return { ok: near && (x.kind !== 'med' || (stop !== null && Math.abs(stop) <= 0.3)), L: isFinite(L) ? +L.toFixed(2) : null, t0: +T0.toFixed(2), at: +at.toFixed(2), stop };
+      return { ok: near && (x.kind !== 'med' || (stop !== null && Math.abs(stop) <= 0.3)), ms, L: isFinite(L) ? +L.toFixed(2) : null, t0: +T0.toFixed(2), at: +at.toFixed(2), stop };
     }, x).catch(e => ({ ok: false, note: String(e).slice(0, 120) }));
     return { ...x, ...r, mp3: await vbr(x.url) };
   }
   const q = [...L];
-  await Promise.all([...Array(4)].map(async () => { while (q.length) { const x = q.shift(); const r = await one(x); out.push(r); console.log(JSON.stringify({ n: ++k, of: L.length, ...r })); } }));
+  await Promise.all([...Array(SLOW ? 1 : 4)].map(async () => { while (q.length) { const x = q.shift(); const r = await one(x); out.push(r); console.log(JSON.stringify({ n: ++k, of: L.length, ...r })); } }));
   const bad = out.filter(r => r.ok === false), vb = out.filter(r => r.mp3 === 'vbr');
   console.log(`\n${process.env.BROWSER || 'chromium'}: ${out.filter(r => r.ok).length} play, ${bad.length} fail, ${out.filter(r => r.ok === null).length} not checked, ${vb.length} variable bitrate, of ${out.length}`);
   for (const r of bad) console.log('FAIL', r.kind, r.id, r.who, r.note || '', r.err || '');
+  const by = {}; out.filter(r => r.ms).forEach(r => { const h = new URL(r.url).host; (by[h] = by[h] || []).push(r.ms); });
+  for (const [h, v] of Object.entries(by)) { v.sort((a, b) => a - b); console.log(`tap to sound${SLOW ? ' on Fast 3G' : ''}  ${h}: median ${v[v.length >> 1]} ms, slowest ${v[v.length - 1]} ms (${v.length})`); }
   await b.close();
 })();
