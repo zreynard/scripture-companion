@@ -1,0 +1,347 @@
+{
+ "_note": "Meditate (Pray tab): things Jesus said, each read by a pastor in one of his sermons. src = the recording, a/b = seconds from its start (each clip checked word by word: His first word to His last), t = the words as he reads them. Chosen Nov 2026.",
+ "sayings": [
+  {
+   "ref": "Matthew 11:28-30",
+   "name": "Come to Me",
+   "src": "b8719da192a6",
+   "who": "Platt",
+   "a": 2257.25,
+   "b": 2275.4,
+   "t": "Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light."
+  },
+  {
+   "ref": "Matthew 6:6",
+   "name": "Your Father Who Sees in Secret",
+   "src": "476959fca2a1",
+   "who": "Platt",
+   "a": 335.55,
+   "b": 347.47,
+   "t": "When you pray, go into your room and shut the door and pray to your Father who is in secret. And your Father who sees in secret will reward you."
+  },
+  {
+   "ref": "John 14:27",
+   "name": "Peace I Leave with You",
+   "src": "f37738eeab8d",
+   "who": "Skip",
+   "a": 1083.91,
+   "b": 1100.25,
+   "t": "Peace I leave with you, My peace I give to you; not as the world gives do I give to you. Let not your heart be troubled, neither let it be afraid."
+  },
+  {
+   "ref": "John 15:5",
+   "name": "I Am the Vine",
+   "src": "3f6959e7717c",
+   "who": "Vaughan",
+   "a": 117.01,
+   "b": 126.57,
+   "t": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing."
+  },
+  {
+   "ref": "John 14:1-3",
+   "name": "Let Not Your Hearts Be Troubled",
+   "src": "8af60d507011",
+   "who": "Platt",
+   "a": 279.98,
+   "b": 298.98,
+   "t": "Do not let your hearts be troubled. Trust in God; trust also in me. In my Father's house are many rooms; if it were not so, I would have told you. I am going there to prepare a place for you. And if I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am."
+  },
+  {
+   "ref": "John 16:33",
+   "name": "I Have Overcome the World",
+   "src": "94581b667d03",
+   "who": "Vaughan",
+   "a": 279.89,
+   "b": 289.15,
+   "t": "I have said these things to you, that in me you may have peace. In the world you will have tribulation. But take heart; I have overcome the world."
+  },
+  {
+   "ref": "John 14:6",
+   "name": "The Way, the Truth, the Life",
+   "src": "8af60d507011",
+   "who": "Platt",
+   "a": 308.02,
+   "b": 319.16,
+   "t": "I am the way, and the truth, and the life. No one comes to the Father except through me."
+  },
+  {
+   "ref": "John 11:25-26",
+   "name": "The Resurrection and the Life",
+   "src": "47d573149a10",
+   "who": "Platt",
+   "a": 972.52,
+   "b": 986.89,
+   "t": "I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live, and everyone who lives and believes in me shall never die. Do you believe this?"
+  },
+  {
+   "ref": "John 10:10-11",
+   "name": "The Good Shepherd",
+   "src": "8ccc29e82b62",
+   "who": "Vaughan",
+   "a": 47.65,
+   "b": 57.89,
+   "t": "The thief comes only to steal and kill and destroy. I came that they may have life and have it abundantly. I am the good shepherd. The good shepherd lays down his life for the sheep."
+  },
+  {
+   "ref": "Luke 22:42",
+   "name": "Not My Will, but Yours",
+   "src": "b1efd2386adf",
+   "who": "Skip",
+   "a": 868.47,
+   "b": 883.45,
+   "t": "Father, if it is Your will, take this cup away from Me; nevertheless not My will, but Yours, be done."
+  },
+  {
+   "ref": "John 15:9-11",
+   "name": "Abide in My Love",
+   "src": "10c50197304c",
+   "who": "Vaughan",
+   "a": 91.27,
+   "b": 107.1,
+   "t": "As the Father has loved me, so have I loved you. Abide in my love. If you keep my commandments, you will abide in my love, just as I have kept my Father's commandments and abide in his love. These things I have spoken to you, that my joy may be in you, and that your joy may be full."
+  },
+  {
+   "ref": "Revelation 3:20",
+   "name": "I Stand at the Door and Knock",
+   "src": "b2f77c36b9ed",
+   "who": "Vaughan",
+   "a": 2526.95,
+   "b": 2537.55,
+   "t": "Behold, I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me."
+  },
+  {
+   "ref": "John 8:12",
+   "name": "The Light of the World",
+   "src": "df36bff9db17",
+   "who": "Skip",
+   "a": 939.35,
+   "b": 949.89,
+   "t": "I am the light of the world. He who follows Me shall not walk in darkness, but have the light of life."
+  },
+  {
+   "ref": "John 6:35",
+   "name": "The Bread of Life",
+   "src": "3c09f72277cd",
+   "who": "Skip",
+   "a": 3172.07,
+   "b": 3180.58,
+   "t": "I am the bread of life. He who comes to Me shall never hunger, and he who believes in Me shall never thirst."
+  },
+  {
+   "ref": "John 6:37",
+   "name": "I Will Never Cast Out",
+   "src": "d0e4dd5978d0",
+   "who": "Platt",
+   "a": 516.09,
+   "b": 521.09,
+   "t": "All that the Father gives me will come to me, and whoever comes to me I will never cast out."
+  },
+  {
+   "ref": "John 14:18",
+   "name": "I Will Not Leave You Orphans",
+   "src": "e765c9e8f5b1",
+   "who": "Vaughan",
+   "a": 115.9,
+   "b": 120.38,
+   "t": "I will not leave you as orphans; I will come to you."
+  },
+  {
+   "ref": "Matthew 6:33",
+   "name": "Seek First the Kingdom",
+   "src": "5b1cb5f255e5",
+   "who": "PAM",
+   "a": 3312.5,
+   "b": 3319.75,
+   "t": "But seek first the kingdom of God and his righteousness, and all these things will be added to you."
+  },
+  {
+   "ref": "John 15:13",
+   "name": "Greater Love Has No One",
+   "src": "fbf8c20fb3c6",
+   "who": "Vaughan",
+   "a": 107.97,
+   "b": 112.53,
+   "t": "Greater love has no one than this, that someone lay down his life for his friends."
+  },
+  {
+   "ref": "John 7:37-38",
+   "name": "If Anyone Thirsts",
+   "src": "a962fd347d1c",
+   "who": "Vaughan",
+   "a": 73.44,
+   "b": 82.02,
+   "t": "If anyone thirsts, let him come to me and drink. Whoever believes in me, as the Scripture has said, 'Out of his heart will flow rivers of living water.'"
+  },
+  {
+   "ref": "Matthew 28:18-20",
+   "name": "I Am with You Always",
+   "src": "352c6830ae9d",
+   "who": "Vaughan",
+   "a": 164.75,
+   "b": 182.41,
+   "t": "All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the very end of the age."
+  },
+  {
+   "ref": "Matthew 16:24-26",
+   "name": "Lose Your Life to Find It",
+   "src": "931e721c60cd",
+   "who": "Skip",
+   "a": 1103.26,
+   "b": 1131.62,
+   "t": "If anyone desires to come after Me, let him deny himself, and take up his cross, and follow Me. For whoever desires to save his life will lose it, but whoever loses his life for My sake will find it. For what profit is it to a man if he gains the whole world, and loses his own soul? Or what will a man give in exchange for his soul?"
+  },
+  {
+   "ref": "John 10:27-28",
+   "name": "My Sheep Hear My Voice",
+   "src": "d864168cfea9",
+   "who": "Skip",
+   "a": 3183.5,
+   "b": 3196.0,
+   "t": "My sheep hear My voice, and I know them, and they follow Me. And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My Father's hand."
+  },
+  {
+   "ref": "John 20:29",
+   "name": "Blessed Who Have Not Seen",
+   "src": "615eb49ffa73",
+   "who": "Platt",
+   "a": 1530.5,
+   "b": 1535.6,
+   "t": "Have you believed because you have seen me? Blessed are those who have not seen and yet have believed."
+  },
+  {
+   "ref": "John 8:31-32",
+   "name": "The Truth Will Set You Free",
+   "src": "0df277ab51d5",
+   "who": "Vaughan",
+   "a": 181.44,
+   "b": 189.17,
+   "t": "If you abide in my word, you are truly my disciples, and you will know the truth, and the truth will set you free."
+  },
+  {
+   "ref": "John 17:3",
+   "name": "This Is Eternal Life",
+   "src": "2de8bf34433c",
+   "who": "Skip",
+   "a": 519.03,
+   "b": 529.6,
+   "t": "And this is eternal life, that they may know You, the only true God, and Jesus Christ whom You have sent."
+  },
+  {
+   "ref": "Matthew 5:8",
+   "name": "The Pure in Heart",
+   "src": "b9c21e96c4e8",
+   "who": "Skip",
+   "a": 946.94,
+   "b": 953.13,
+   "t": "Blessed are the pure in heart, for they shall see God."
+  },
+  {
+   "ref": "Matthew 7:7-8",
+   "name": "Ask, Seek, Knock",
+   "src": "4d22fdb84b8b",
+   "who": "Skip",
+   "a": 3011.88,
+   "b": 3021.04,
+   "t": "Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you. For everyone who asks receives, and he who seeks finds, and to him who knocks the door will be opened."
+  },
+  {
+   "ref": "Matthew 22:37-39",
+   "name": "Love the Lord Your God",
+   "src": "169d72578b7d",
+   "who": "Skip",
+   "a": 4052.27,
+   "b": 4061.86,
+   "t": "You will love the Lord your God with all your heart, with all your soul, with all your mind. This is the first and the greatest commandment. And the second is like it: You will love your neighbor as yourself."
+  },
+  {
+   "ref": "John 4:13-14",
+   "name": "Living Water",
+   "src": "3f0866d3ad5d",
+   "who": "Skip",
+   "a": 2774.27,
+   "b": 2791.2,
+   "t": "Whoever drinks of this water will thirst again, but whoever drinks of the water that I shall give him will never thirst. But the water that I shall give him will become in him a fountain of water springing up into everlasting life."
+  },
+  {
+   "ref": "John 5:24",
+   "name": "From Death to Life",
+   "src": "c4207c457d5f",
+   "who": "Platt",
+   "a": 1147.87,
+   "b": 1159.21,
+   "t": "Truly, truly, I say to you, whoever hears my word and believes him who sent me has eternal life. He does not come into judgment, but has passed from death to life."
+  },
+  {
+   "ref": "John 14:21",
+   "name": "Whoever Loves Me",
+   "src": "e765c9e8f5b1",
+   "who": "Vaughan",
+   "a": 133.0,
+   "b": 142.96,
+   "t": "Whoever has my commandments and keeps them, he it is who loves me. And he who loves me will be loved by my Father, and I will love him and manifest myself to him."
+  },
+  {
+   "ref": "Matthew 10:29-31",
+   "name": "Not One Sparrow",
+   "src": "7939c56340be",
+   "who": "Platt",
+   "a": 2995.59,
+   "b": 3005.5,
+   "t": "Are not two sparrows sold for a penny? Yet not one of them will fall to the ground apart from the will of your Father. And even the very hairs of your head are all numbered. So don't be afraid; you are worth more than many sparrows."
+  },
+  {
+   "ref": "Mark 10:45",
+   "name": "To Serve and to Give His Life",
+   "src": "9d2c2cea0497",
+   "who": "Skip",
+   "a": 89.33,
+   "b": 97.62,
+   "t": "The Son of Man did not come to be served, but to serve, and to give His life a ransom for many."
+  },
+  {
+   "ref": "John 15:16",
+   "name": "You Did Not Choose Me",
+   "src": "fbf8c20fb3c6",
+   "who": "Vaughan",
+   "a": 127.03,
+   "b": 139.75,
+   "t": "You did not choose me, but I chose you and appointed you that you should go and bear fruit and that your fruit should abide, so that whatever you ask the Father in my name, he may give it to you."
+  },
+  {
+   "ref": "Luke 19:10",
+   "name": "To Seek and to Save the Lost",
+   "src": "aeb1948b4d07",
+   "who": "Skip",
+   "a": 1296.03,
+   "b": 1303.05,
+   "t": "For the Son of Man has come to seek and to save that which was lost."
+  },
+  {
+   "ref": "Matthew 5:3-6",
+   "name": "Blessed Are the Poor in Spirit",
+   "src": "7bf34017c8ae",
+   "who": "Skip",
+   "a": 2244.13,
+   "b": 2259.07,
+   "t": "Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they shall be comforted. Blessed are the meek, for they shall inherit the earth. Blessed are those who hunger and thirst after righteousness, for they shall be filled."
+  },
+  {
+   "ref": "Matthew 5:14-16",
+   "name": "Let Your Light Shine",
+   "src": "b9c21e96c4e8",
+   "who": "Skip",
+   "a": 1943.8,
+   "b": 1966.8,
+   "t": "You are the light of the world. A city that is set on a hill cannot be hidden. Nor do they light a lamp and put it under a basket, but on a lampstand, and it gives light to all who are in the house. Let your light so shine before men, that they may see your good works and glorify your Father who is in heaven."
+  },
+  {
+   "ref": "Matthew 9:37-38",
+   "name": "The Harvest Is Plentiful",
+   "src": "be0f591a4fd3",
+   "who": "Skip",
+   "a": 708.53,
+   "b": 720.58,
+   "t": "The harvest truly is plentiful, but the laborers are few. Therefore pray the Lord of the harvest to send out laborers into His harvest."
+  }
+ ]
+}
