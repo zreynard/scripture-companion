@@ -315,14 +315,15 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const ok = r.m.join() === `Man of God:${n(0)},Home:${n(1)},Leading:${n(2)}` && s1.btn.length === 3 && /\*$/.test(s1.btn[0]) && s1.lab === 'A Man of God' && s1.rows === n(0) && s1.sticky === 'sticky'
       && /\*$/.test(s2.btn[1]) && s2.lab === 'Leading Your Home' && s2.rows === n(1) && /\*$/.test(s3.btn[1]) && s4.btn.length === 3 && s4.heads.includes('More teaching') && r.dup.length === 0 && r.icon;
     return ok || { r, s1, s2, s3, s4 }; });
-  await T('U74 Kennon Vaughan: in Library teachers, the teacher switch and Core choices; his sermons on their chapters (on the road), titles without his name', async () => {
+  await T('U74 Kennon Vaughan: in Library teachers and Series, his sermons on their chapters (on the road), titles without his name, no services or panels', async () => {
     const A = await open(await ctx());
     const r = await A.evaluate(() => { const V = Object.values(I).filter(i => i.who === 'Vaughan'); const on = new Set(); for (const b of D.books) { b.ov.forEach(x => on.add(x)); b.ch.forEach(c => c.ids.forEach(x => on.add(x))); }
       const acts = D.books.find(b => b.name === 'Acts'); const a26 = acts && acts.ch.find(c => c.c === 26);
-      return { n: V.length, road: V.filter(i => on.has(i.id)).length, name: NAMES.Vaughan, acts26: !!(a26 && a26.ids.some(x => I[x].who === 'Vaughan')), named: V.filter(i => /kennon|vaughan/i.test(i.t)).length }; });
+      return { n: V.length, road: V.filter(i => on.has(i.id)).length, name: NAMES.Vaughan, acts26: !!(a26 && a26.ids.some(x => I[x].who === 'Vaughan')), named: V.filter(i => /kennon|vaughan/i.test(i.t)).length, ser: D.bp.filter(x => x.group === 'kv').length, pp: V.filter(i => /prayer (and|&) praise|starting the conversation/i.test(i.t)).length }; });
     await A.evaluate(() => { $('#tabs [data-tab2=library]').click(); }); await wait(400); await A.click('[data-lt=teachers]'); await wait(300);
     const lib = await A.evaluate(() => !!document.querySelector('[data-tch="Vaughan"]'));
-    return (r.n >= 140 && r.road >= 130 && r.name === 'Kennon Vaughan' && r.acts26 && r.named === 0 && lib) || { r, lib }; });
+    await A.click('[data-lt=series]'); await wait(300); const ser = await A.evaluate(() => document.querySelectorAll('[data-bps^="kv-"]').length);
+    return (r.n >= 140 && r.road >= 130 && r.name === 'Kennon Vaughan' && r.acts26 && r.named === 0 && lib && r.ser >= 8 && ser === r.ser && r.pp === 0) || { r, lib, ser }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

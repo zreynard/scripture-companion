@@ -69,7 +69,7 @@ def is_walk(title):
     for r in parse_refs(rest): rest = rest.replace(r.raw, " ")
     return bool(parse_refs(title or "")) and not re.search(r"[A-Za-z]{2,}", re.sub(r"\b(?:and|part|review|expound)\b", " ", rest, flags=re.I))
 
-def big_picture(items):
+def big_picture(items, vser=None):
     """Big Picture: whole-Bible series heard in order, each with its own place. Episodes are items already in the app."""
     sc = sorted([i for i in items.values() if i["src"] == "secret_church_podcast" and i["sc"] and i["sc"][0] in (1, 2)], key=lambda i: tuple(i["sc"]))
     flights = sorted([i for i in items.values() if i["src"] == "skip_archive" and re.match(r"\s*Flight\b", i["t"])], key=lambda i: (i["date"], i["t"]))
@@ -109,6 +109,26 @@ def big_picture(items):
     out.insert(1, {"id": "sos", "title": "The Story of Scripture", "by": "David Platt", "art": "sos", "group": "bp", "unit": "part",
                    "desc": "Genesis to Revelation over forty Sundays: God bringing his people to his place for his purpose, from creation to new creation. McLean Bible Church, 2019.",
                    "parts": [["", ids]], "names": names})
+    # Kennon Vaughan's sermon series, each in the order he preached it (series of three or more)
+    runs = defaultdict(list)
+    for i, name in (vser or {}).items():
+        if i in items: runs[name].append(items[i])
+    for name, L in sorted(runs.items(), key=lambda kv: min(i["date"] or "9" for i in kv[1]), reverse=True):
+        if len(L) < 3: continue
+        L.sort(key=lambda i: (i["date"] or "", i["t"]))
+        books = defaultdict(int)
+        for i in L:
+            m = re.match(r"\s*((?:[1-3] )?[A-Z][a-z]+(?: of [A-Z][a-z]+)?)\s+\d", i.get("pass") or "")
+            if m: books[m.group(1)] += 1
+        book = max(books, key=books.get) if books else ""
+        if book and books[book] * 2 < len(L): book = ""   # several books (a topical series): name none
+        yrs = sorted({i["date"][:4] for i in L if i["date"]})
+        when = yrs[0] if len(yrs) == 1 else f"{yrs[0]}–{yrs[-1]}" if yrs else ""
+        head = re.sub(r"^The ", "", name.split(":")[0])
+        label = book if book and book.lower() in head.lower() else head if len(head) <= 14 else (book or head.split()[0])
+        out.append({"id": "kv-" + re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-"), "title": name, "by": "Kennon Vaughan", "art": "kv:" + label.upper(),
+                    "group": "kv", "unit": "sermon", "desc": f"{len(L)} sermons{' through ' + book if book and book.lower() not in name.lower() else ''}, preached at Harvest Church in Memphis{', ' + when if when else ''}. In the order he preached them.",
+                    "parts": [["", [i["id"] for i in L]]]})
     return [x for x in out if any(ids for _, ids in x["parts"])]
 
 def main():
@@ -140,7 +160,7 @@ def main():
             if not d["whole_book"] and b in CHAPTERS and len(d["chapters"]) < CHAPTERS[b] and min(d["chapters"]) > 1: e["track"] = "sermon"
     usable = [e for e in entries if e["tier"] in ("V2", "V1") and e["source"] not in config.OFF_ROAD_SOURCES and skip_kept(e) and (e["speaker"] in ("Platt", "PAM", "Davey", "Skip") or e["speaker"] in team or skip_guest(e) or e["speaker"].startswith("fearless:") or e["speaker"] == "Vaughan")]
     items, by_chapter, by_book_ov, spans = {}, defaultdict(list), defaultdict(list), defaultdict(list)
-    CH, WALK, VS = {}, {}, {}  # chapters per book for each item; WALK = titled only by its passage (a walk-through message); VS = verses
+    CH, WALK, VS, VSER = {}, {}, {}, {}  # chapters per book for each item; WALK = titled only by its passage (a walk-through message); VS = verses
     VC = {}
     def vcount(book, c):
         if book not in VC:
@@ -202,6 +222,7 @@ def main():
               "sc": [e.get("sc_season"), e.get("sc_episode")] if e.get("sc_season") else None,
               **({"e": OUTROS[e["id"]]} if OUTROS.get(e["id"]) else {})}
         items[it["id"]] = it
+        if e["source"] == "harvest_memphis" and e.get("series"): VSER[it["id"]] = e["series"]
         item_books[it["id"]] = set(e["refs"])
         CH[it["id"]] = {b: set(d["chapters"]) for b, d in e["refs"].items()}
         VS[it["id"]] = {b: verses_of(b, d) for b, d in e["refs"].items()}
@@ -428,7 +449,7 @@ def main():
                                     "VC": {b[0]: [vcount(b[0], c) for c in range(1, b[2] + 1)] for b in BOOKS}}, open(os.environ["CORE_DUMP"], "wb"))
     CORE = _core.select(books, items, VS, ref_how, cited, item_books, {b[0]: [vcount(b[0], c) for c in range(1, b[2] + 1)] for b in BOOKS})
     data = {"built": __import__("datetime").date.today().isoformat(), "core": CORE["app"], "items": items, "books": books, "narr": narr, "intro": intro, "itx": intro_txt,
-            "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items),
+            "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items, VSER),
             "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst}),
             "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]},
             "pray": {"moves": __import__("pray").build()}}
@@ -2043,7 +2064,8 @@ function bpCover(art,sz){const v={sc:`<rect width="104" height="104" fill="#141b
   chronicle:`<rect width="104" height="104" fill="#e7dbbd"/><path d="M16 86 C 36 66 28 50 50 46 C 72 42 66 22 88 16" fill="none" stroke="#9a7524" stroke-width="3" stroke-linecap="round"/><g transform="translate(16 86)" fill="none" stroke="#4f5f3f" stroke-width="1.8" stroke-linecap="round"><path d="M0 0 V-16"/><path d="M0 -12 C -9 -18 -12 -26 -5 -30 C 0 -33 6 -31 7 -26 C 15 -28 16 -18 10 -14 C 6 -12 3 -12 0 -13"/></g><path d="M78 22h20v-12h-4v-5h-4v5h-4v-8h-4v8h-4z" fill="#1b2440"/>`,
   legacies:`<rect width="104" height="104" fill="#2e4639"/><circle cx="52" cy="40" r="30" fill="#f0d79a" opacity=".12"/><circle cx="52" cy="40" r="17" fill="#f0d79a" opacity=".16"/><path d="M52 24 C 46 32 46 38 52 42 C 58 38 58 32 52 24Z" fill="#f0d79a"/><rect x="47" y="44" width="10" height="34" rx="2" fill="#e9dfc6"/><path d="M36 80h32" stroke="#c9a24a" stroke-width="3" stroke-linecap="round"/><text x="52" y="96" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="7" letter-spacing="1.6" fill="#e9cf8c">LIVES OF FAITH</text>`,
   sos:`<rect width="104" height="104" fill="#22304f"/><path d="M10 78 C 26 50 40 70 52 46 S 80 30 94 22" fill="none" stroke="#c9a24a" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="1 6"/><g fill="#f0d79a"><circle cx="10" cy="78" r="3.2"/><circle cx="23" cy="60" r="2.4"/><circle cx="36" cy="64" r="2.4"/><circle cx="48" cy="52" r="2.4"/><circle cx="60" cy="40" r="2.4"/><circle cx="72" cy="35" r="2.4"/><circle cx="84" cy="27" r="2.4"/><circle cx="94" cy="22" r="3.6"/></g><text x="12" y="20" font-family="-apple-system,system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1" fill="#f0d79a">GEN → REV</text>`,
-  '30k':`<rect width="104" height="104" fill="#dfe6df"/><g fill="none" stroke="#8fa08a" stroke-width="1.2"><path d="M-4 30 C 20 20 40 36 60 26 S 96 22 110 30"/><path d="M-4 46 C 22 36 42 54 64 42 S 98 38 110 46"/><path d="M-4 62 C 24 52 44 70 66 58 S 98 56 110 62"/><path d="M-4 78 C 26 68 46 86 68 74 S 98 72 110 78"/><path d="M-4 94 C 28 84 48 100 70 90 S 98 88 110 94"/></g><path d="M14 90 C 34 70 50 64 60 52 S 84 26 92 14" fill="none" stroke="#9a7524" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/><path d="M88 10 l8 2 -6 6z" fill="#1b2440"/><text x="12" y="20" font-family="-apple-system,system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1" fill="#1b2440">30,000 FT</text>`}[art]||'';
+  '30k':`<rect width="104" height="104" fill="#dfe6df"/><g fill="none" stroke="#8fa08a" stroke-width="1.2"><path d="M-4 30 C 20 20 40 36 60 26 S 96 22 110 30"/><path d="M-4 46 C 22 36 42 54 64 42 S 98 38 110 46"/><path d="M-4 62 C 24 52 44 70 66 58 S 98 56 110 62"/><path d="M-4 78 C 26 68 46 86 68 74 S 98 72 110 78"/><path d="M-4 94 C 28 84 48 100 70 90 S 98 88 110 94"/></g><path d="M14 90 C 34 70 50 64 60 52 S 84 26 92 14" fill="none" stroke="#9a7524" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/><path d="M88 10 l8 2 -6 6z" fill="#1b2440"/><text x="12" y="20" font-family="-apple-system,system-ui,sans-serif" font-size="8" font-weight="700" letter-spacing="1" fill="#1b2440">30,000 FT</text>`}[art]||(String(art).startsWith('kv:')?(()=>{const t=esc(art.slice(3)),fs=t.length>9?8:t.length>6?10:12;   /* a book series: open book and the book's name */
+  return `<rect width="104" height="104" fill="#e5ecea"/><rect y="78" width="104" height="26" fill="#2f5d62"/><path d="M22 34 C 34 28 44 30 52 36 C 60 30 70 28 82 34 V 64 C 70 58 60 60 52 66 C 44 60 34 58 22 64Z" fill="#fff" stroke="#2f5d62" stroke-width="2.2" stroke-linejoin="round"/><path d="M52 36V66" stroke="#2f5d62" stroke-width="2"/><text x="52" y="${fs>9?95:94}" text-anchor="middle" font-family="-apple-system,system-ui,sans-serif" font-size="${fs}" font-weight="700" letter-spacing="1.2" fill="#fff">${t}</text>`})():'');
  return `<svg viewBox="0 0 104 104" width="${sz}" height="${sz}" class="bpc" aria-hidden="true">${v}</svg>`}
 function bpLen(s){const ids=bpIds(s),known=ids.filter(id=>+I[id].dur>0),sec=known.reduce((t,id)=>t+ +I[id].dur,0);
  return unitN(s,ids.length)+(known.length>=ids.length*.8&&sec?` · about ${Math.round(sec/3600)} hours`:s.id==='30k'?' · Genesis to Revelation':'')}
@@ -2146,7 +2168,7 @@ function bpCont(){const ls=bpGet(S.get('bplast',''));let h='';
 function bpBody(){const L=bpList();let h='';
  const row=s=>{const ids=bpIds(s),st=!!BP[s.id],k=bpAt(s),f=ids.filter(isDone).length/ids.length,U={session:'Session',flight:'Flight'}[s.unit];
   return `<button class="bp-row" data-bps="${s.id}">${bpCover(s.art,104)}<span class="bp-rt"><b>${esc(s.title)}</b><span class="by">${esc(s.by)}</span><span class="ds">${esc(s.desc.split('. ')[0].replace(/\.$/,''))}.</span><span class="pr"><i><b style="width:${f>0?Math.max(3,Math.round(100*f)):0}%"></b></i>${st||f>0?(U?`${U} ${k+1} of ${ids.length}`:`${k+1} of ${unitN(s,ids.length)}`):`${unitN(s,ids.length)} · not started`}</span></span></button>`};
- [['bp','Big Picture','The whole story of Scripture, start to finish'],['sc','Secret Church','David Platt’s six-hour nights of Bible study, every session in order'],['growth','Spiritual Growth','Teaching to grow by, one series at a time']].forEach(([g,t,sub])=>{
+ [['bp','Big Picture','The whole story of Scripture, start to finish'],['sc','Secret Church','David Platt’s six-hour nights of Bible study, every session in order'],['kv','Kennon Vaughan','His series at Harvest Church, Memphis: whole books, sermon by sermon'],['growth','Spiritual Growth','Teaching to grow by, one series at a time']].forEach(([g,t,sub])=>{
   if(g==='sc'){if(D.sc&&D.sc.ids.length){const N=D.sc.ids.length,n=D.sc.ids.filter(isDone).length,f=n/N;
     h+=`<div class="jv-sec">${t}</div><p class="bp-gs">${sub}</p><button class="bp-row" id="opensc">${bpCover('sc',104)}<span class="bp-rt"><b>Secret Church</b><span class="by">David Platt</span><span class="ds">Every night of Secret Church, from the whole Bible to prayer, suffering and the end of the world.</span><span class="pr"><i><b style="width:${f>0?Math.max(3,Math.round(100*f)):0}%"></b></i>${n?`${n} of ${N} sessions heard`:`${scGroups().length} nights · ${N} sessions · not started`}</span></span></button>`}return}
   const G=L.filter(s=>(s.group||'bp')===g);if(G.length)h+=`<div class="jv-sec">${t}</div><p class="bp-gs">${sub}</p>`+G.map(row).join('')});
