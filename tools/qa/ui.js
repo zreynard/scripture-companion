@@ -345,6 +345,18 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await A.click(`[data-ledplay="${id}"]`); await wait(1500);
     const p = await A.evaluate(id => ({ cur: String(cur), led: !!(I[id] && I[id].led), sb: I[id] && I[id].sb, tail: tail(), bed: bedLed(), mode: PR.mode, inLib: Object.values(I).filter(i => i.led && i.tr !== 'devotional').length }), id);
     return (v.rows === v.n && v.n >= 6 && v.ths >= 3 && f >= 1 && f < v.n && p.cur === id && p.led && p.sb > 30 && p.bed && p.inLib === 0) || { v, f, p }; });
+  await T('U77 Meditate: today\'s saying with pace choices; Begin reads it (Listen), pauses, reads again (Again), then Be still; Stop ends it', async () => {
+    const A = await open(await ctx());
+    await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prm=med]'); await wait(400);
+    const v = await A.evaluate(() => ({ n: document.querySelectorAll('[data-medpick]').length, q: (document.querySelector('.med-q') || {}).textContent || '', pace: document.querySelectorAll('[data-medpace]').length }));
+    await A.click('[data-medpace=brisk]'); await wait(200);
+    // a short local clip stands in for the chapter recording; the pauses run fast
+    await A.evaluate(() => { window.MED_FAST = 0.02; const m = medCur(); m.t0 = 0; m.t1 = 0.05; window.narBlob = () => Promise.resolve(SILENT); });
+    await A.click('[data-medgo]'); const seen = new Set();
+    for (let k = 0; k < 60; k++) { seen.add(await A.evaluate(() => MED.step)); if (seen.has('still')) break; await wait(100); }
+    const left = await A.evaluate(() => MED.left);
+    await A.click('[data-medstop]'); await wait(200); const end = await A.evaluate(() => ({ on: MED.on, go: !!document.querySelector('[data-medgo]') }));
+    return (v.n === 15 && v.q.length > 10 && v.pace === 3 && seen.has('listen') && seen.has('again') && seen.has('still') && left <= 60 && !end.on && end.go) || { v, seen: [...seen], left, end }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

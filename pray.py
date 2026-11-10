@@ -59,3 +59,29 @@ if __name__ == "__main__":
     for m in build():
         print(f"\n== {m['label']}: {m['lp']} ({m['lpr']}) — {m['ins']}")
         for s in m["sup"]: print(f"   [{len(s['t'].split()):2}] {s['r']}: {s['t']}")
+
+# Meditate: one saying of Jesus, read by the narrator from his recording of the chapter (twice), then silence.
+# Whole verses only, so the reading starts and stops on the narration's verse marks (data/narration/<abbr>.json).
+MEDITATE = [
+ ("Matthew 11:28-30", "Come to Me"), ("John 14:27", "Peace I leave with you"), ("John 15:5", "I am the vine"),
+ ("Matthew 6:33-34", "Seek first the kingdom"), ("John 8:12", "The light of the world"), ("John 11:25-26", "The resurrection and the life"),
+ ("John 14:6", "The way, the truth and the life"), ("John 10:11", "The good shepherd"), ("John 16:33", "I have overcome the world"),
+ ("Matthew 22:37-39", "Love the Lord your God"), ("John 6:35", "The bread of life"), ("Matthew 7:7", "Ask, seek, knock"),
+ ("John 13:34-35", "Love one another"), ("Mark 8:34", "Take up your cross"), ("Matthew 5:8", "The pure in heart"),
+]
+
+def meditate():
+    from canon import BOOKS
+    abbr = {b[0]: b[1] for b in BOOKS}
+    out = []
+    for ref, name in MEDITATE:
+        m = re.match(r"^(.+?) (\d+):(\d+)(?:-(\d+))?$", ref)
+        book, c, v1, v2 = m.group(1), int(m.group(2)), int(m.group(3)), int(m.group(4) or m.group(3))
+        nar = json.load(open(os.path.join(HERE, "data", "narration", abbr[book] + ".json"), encoding="utf-8"))["c"].get(str(c))
+        if not nar: continue
+        vs = dict((v, t) for v, t in nar["v"])
+        if v1 not in vs: continue
+        t1 = next((t for v, t in sorted(nar["v"]) if v > v2), nar["d"])
+        out.append({"ref": ref.replace("-", "–"), "name": name, "t": text(ref), "abbr": abbr[book], "book": book, "c": c,
+                    "t0": round(vs[v1], 2), "t1": round(t1, 2)})
+    return out
