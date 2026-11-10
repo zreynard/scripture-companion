@@ -2643,7 +2643,7 @@ function bedLoad(step){return plLoad().then(L=>{if(!L.length)return false;const 
 function bedNarr(){return !!(NAR&&cur===NAR.id)}
 function bedOn(){return BED.on}
 /* Meditate's stillness and Be Led's prayers without music of their own take the music too (their own switch, BED.led) */
-function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(window.LED&&LED.el&&!LED.el.paused&&ledMusic())return BED.led;if(window.LP&&LP.el&&!LP.el.paused&&lpMusic())return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
+function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(window.LED&&LED.el&&(!LED.el.paused||LED.tail)&&ledMusic())return BED.led;if(window.LP&&LP.el&&!LP.el.paused&&lpMusic())return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
 function bedSync(){const b=bedEl();$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',bedOn());
  if(bedWanted()){clearTimeout(BED.t);const go=()=>{const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(BED.lv,1500)).catch(()=>{})};
   if(!b.getAttribute('src')||b.src===SILENT){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())go()})}else go();return}
@@ -2771,7 +2771,7 @@ function prayArt(id,band){return `<svg viewBox="${band?'0 214 390 196':'0 0 390 
 /* Be Led: a shuffle of pastors leading in prayer (the closing prayers of their sermons), one at a time, played right
    here on its own player: the ring plays and pauses, the small arrows either side go back or on 15 seconds, the arrows
    below go to the previous or next prayer. Nothing else on the screen but who is praying. */
-var LED={el:null,id:null,st:0,en:0,sp:+S.get('ledsp',1)||1,done:false};   /* var: the music bed asks about it before this line runs */
+var LED={el:null,id:null,st:0,en:0,sp:+S.get('ledsp',1)||1,done:false,tail:false,tt:null,fd:null};   /* var: the music bed asks about it before this line runs */
 const LED_SP=[1,1.1,1.25,0.9],
  PR_BACK=`<svg viewBox="0 0 28 28" width="30" height="30" aria-hidden="true"><path d="M7.6 9.2A8.6 8.6 0 1 1 5.4 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.9 4.6v4.9h4.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="14.4" y="18.2" text-anchor="middle" font-size="7.6" font-weight="600" font-family="-apple-system,system-ui,sans-serif" fill="currentColor">15</text></svg>`,
  PR_FWD=PR_BACK.replace('<svg ','<svg style="transform:scaleX(-1)" ').replace('<text ','<text transform="translate(28 0) scale(-1 1)" ');
@@ -2787,15 +2787,20 @@ function ledOrd(){const L=ledList(),ids=L.map(x=>x.id),have=new Set(ids);let o=S
 function ledCur(){const L=ledList();if(!L.length)return null;const o=ledOrd();return ledById(o.o[o.p])||L[0]}
 function ledEl(){if(LED.el)return LED.el;const a=LED.el=new Audio();a.preload='none';
  a.addEventListener('loadedmetadata',()=>{const x=ledById(LED.id);if(!x)return;const L=a.duration;LED.st=isFinite(L)?Math.max(0,L-x.sb):0;LED.en=isFinite(L)?Math.max(LED.st+1,L-(x.e||0)):LED.st+x.len;try{a.currentTime=LED.st}catch(e){}});
- a.addEventListener('seeked',()=>{a.muted=false});
- a.addEventListener('timeupdate',()=>{if(LED.en&&a.currentTime>=LED.en&&!a.paused){a.pause();LED.done=true;try{a.currentTime=LED.st}catch(e){}}ledRing()});
- a.addEventListener('ended',()=>{LED.done=true;ledPaint()});
+ a.addEventListener('seeked',()=>{if(a.muted){a.muted=false;try{a.volume=0}catch(e){}ledFade(1,700)}});
+ a.addEventListener('timeupdate',()=>{const t=a.currentTime;if(LED.en&&t>=LED.en-1.2&&t<LED.en&&!a.paused&&!LED.fd)ledFade(0,(LED.en-t)*1000/(a.playbackRate||1));if(LED.en&&t>=LED.en&&!a.paused){a.pause();ledEnd()}ledRing()});
+ a.addEventListener('ended',ledEnd);
  a.addEventListener('play',()=>{LED.done=false;AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});if(LP.el&&!LP.el.paused)LP.el.pause();{const p=pmEl();if(!p.paused)p.pause()}if(window.MED&&MED.on)medStop(false);ledSession();ledPaint()});
  a.addEventListener('pause',ledPaint);
  AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause()}));
  return a}
-function ledPP(){const x=ledCur(),a=ledEl();if(!x)return;
- if(LED.id===x.id&&a.getAttribute('src')){if(a.paused){if(LED.done||a.currentTime<LED.st-1||a.currentTime>=LED.en)try{a.currentTime=LED.st}catch(e){}a.play().catch(()=>{})}else a.pause();return}
+function ledFade(v,ms){const a=LED.el;clearInterval(LED.fd);LED.fd=null;if(!a)return;let v0=a.volume;if(Math.abs(v0-v)<0.01)return;const n=Math.max(1,Math.round(ms/40));let k=0;
+ LED.fd=setInterval(()=>{k++;try{a.volume=Math.max(0,Math.min(1,v0+(v-v0)*k/n))}catch(e){}if(k>=n){clearInterval(LED.fd);LED.fd=null}},40)}
+/* the prayer has ended: your music (under a prayer without its own) carries on a few seconds after the amen, then fades away */
+function ledEnd(){const a=LED.el;LED.done=true;clearInterval(LED.fd);LED.fd=null;try{a.currentTime=LED.st;a.volume=1}catch(e){}
+ if(ledMusic()&&BED.led){LED.tail=true;clearTimeout(LED.tt);LED.tt=setTimeout(()=>{LED.tail=false;bedGain(0,5000);setTimeout(bedSync,5100)},7000)}ledPaint()}
+function ledPP(){const x=ledCur(),a=ledEl();if(!x)return;LED.tail=false;clearTimeout(LED.tt);clearInterval(LED.fd);LED.fd=null;try{a.volume=1}catch(e){}
+ if(LED.id===x.id&&a.getAttribute('src')){if(a.paused){if(LED.done||a.currentTime<LED.st-1||a.currentTime>=LED.en)try{a.currentTime=LED.st}catch(e){}try{a.volume=0}catch(e){}a.play().catch(()=>{});ledFade(1,500)}else a.pause();return}
  LED.id=x.id;LED.st=0;LED.en=0;LED.done=false;a.muted=true;a.src=x.audio;a.playbackRate=LED.sp;a.play().catch(()=>{a.muted=false});ledPaint()}
 function ledSeek(d){const a=LED.el;if(!a||!LED.id||!a.getAttribute('src'))return;try{a.currentTime=Math.max(LED.st,Math.min(LED.en-0.5,a.currentTime+d))}catch(e){}ledRing()}
 function ledGo(d){const L=ledList();if(!L.length)return;const o=ledOrd(),on=!!(LED.el&&!LED.el.paused);let p=o.p+d;
