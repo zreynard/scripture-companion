@@ -216,6 +216,46 @@ SC_PASSAGES.update({
 SC_NO_PLACE = set()
 # shows kept in the catalog but left off the road (Pray the Word: short prayers, not teaching)
 OFF_ROAD_SOURCES = {"ptw"}
+# Stephen Davey: hidden (the user's choice, Nov 2026) except his most essential sermons: his picks in Topics, the only
+# teaching on Jonah 2-3, and the chapters where only his teaching is good enough for the Journey's Core pick. Set DAVEY_HIDDEN = False to bring all of him back (his feeds keep harvesting daily).
+DAVEY_HIDDEN = True
+DAVEY_KEEP = {
+    "bb4db96184e9",  # Pulling Back the Kingdom Curtain (Kingdom of God)
+    "4cb20aef04cb",  # Introducing . . . The Holy Spirit (The Holy Spirit)
+    "27e720c4c32c",  # A Model for Married Women (Marriage & Family)
+    "bb6a79cdbbb9",  # The Underground Issues in Marriage (Marriage & Family)
+    "3a4016e68370",  # God's Design for Marriage (Manhood: Leading Your Home)
+    "441e3c6db3fa",  # A Parent's Bill of Rights (Manhood, Parenting)
+    "d6f3b5600d92",  # The Ultimate Father-Son Chat (Manhood, Parenting)
+    "4e4ecca97dc6",  # A Pattern for Young Men (Manhood: A Man of God)
+    "83675172e64f",  # The Treasure of Old Men (Manhood: A Man of God)
+    "9ac669df0b1d",  # Holy Preoccupation (Holiness)
+    "38c01841d5d9",  # Evidence of Repentance (Repentance)
+    "925845a365eb",  # Telling The Truth To God (Repentance)
+    "56dbd0562af2",  # Faith from the Unlikely (Faith & Trust)
+    "0d2b1dcc9a5d",  # Governed by Grace (Salvation & Grace)
+    "7a034ca9190c",  # Forgiven . . . Forgotten (Salvation & Grace)
+    "e3d783e29d31",  # Pain (Suffering)
+    "7e4e5e8bec95",  # Dealing with the Devil (The Enemy)
+    "9649b07c442c",  # See Jonah Swim (Jonah 2: no other teacher)
+    "8ea9e27e731f",  # The Prodigal Prophet Comes Home (Jonah 2)
+    "510c70968ff9",  # See Jonah Preach (Jonah 3)
+    "0dbe330d5991",  # See Jonah Reap (Jonah 3)
+    "48454e1dabc6",  # The Prodigal's Second Chance (Jonah 3)
+    # chapters where his is the only teaching good enough for Core (the Journey's pick), mostly Psalms
+    "a8cc5b1affc8",  # Learning the Hard Way or the Better Way (Ecclesiastes 5)
+    "25556f2c5599",  # Playing the Blame Game (Ezekiel 18-21)
+    "4a388e10875e",  # The Birth of Isaac (Genesis 20-21)
+    "dd51556d0891",  # Dragon & Dinosaurs (Job 40:15-42:6)
+    "5bc64424d32d",  # Almost Happily Ever After (Job 42)
+    "af3304c042e4",  # How to Respond When the Foundations Are Removed (Psalms 11-12)
+    "02a0c56d39cc",  # Courses on Prayer and Human Nature (Psalms 13-15)
+    "6fe3cd21f5a6",  # God Welcomes Both Tears and Trust (Psalms 140-143)
+    "b0d371b33fd0",  # Our Invisible, Invincible God (Psalms 144-147)
+    "393ab19bf327",  # The Final Hallelujah (Psalms 148-150)
+    "1cce308d137c",  # Keeping Our Inheritance in Mind (Psalms 16-18)
+    "ca84a9bb6399",  # ABCs of Trust (Psalm 9)
+}
 # Skip's topical Sunday sermons are left out, except these, which teach one whole book (id: book)
 SKIP_TOPICAL_KEEP = {"a4b8a24a1cb7": "Song of Solomon"}   # The Shulamite Bride (11 Jan 2026)
 # Fearless Church (Spring Hill, TN): Sunday sermons, published on praise.global (the archive fearlesstn.org embeds).

@@ -324,6 +324,15 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const lib = await A.evaluate(() => !!document.querySelector('[data-tch="Vaughan"]'));
     await A.click('[data-lt=series]'); await wait(300); const ser = await A.evaluate(() => document.querySelectorAll('[data-bps^="kv-"]').length);
     return (r.n >= 140 && r.road >= 130 && r.name === 'Kennon Vaughan' && r.acts26 && r.named === 0 && lib && r.ser >= 8 && ser === r.ser && r.pp === 0) || { r, lib, ser }; });
+  await T('U75 Stephen Davey hidden except his essential sermons: no teacher row or switch entry; Jonah 2-3 and his Manhood picks stay; every Core id exists', async () => {
+    const A = await open(await ctx());
+    const r = await A.evaluate(() => { const V = Object.values(I).filter(i => i.who === 'Davey'); const jon = D.books.find(b => b.name === 'Jonah');
+      const man = D.topics.find(t => t.id === 'manhood'), mg = man && man.bks.find(b => b.label === 'A Man of God');
+      const coreOk = CORE.u.every(u => u[3].every(x => I[x]));
+      return { n: V.length, hide: HIDE.join(), jon: [2, 3].every(c => jon.ch.find(x => x.c === c).ids.some(x => I[x])), titus: mg ? mg.ids.filter(x => I[x].who === 'Davey').length : 0, coreOk }; });
+    await A.evaluate(() => { $('#tabs [data-tab2=library]').click(); }); await wait(400); await A.click('[data-lt=teachers]'); await wait(300);
+    const row = await A.evaluate(() => !!document.querySelector('[data-tch="Davey"]'));
+    return (r.n > 0 && r.n <= 40 && r.hide === 'Davey' && r.jon && r.titus >= 2 && r.coreOk && !row) || { r, row }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

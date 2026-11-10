@@ -183,6 +183,8 @@ def main():
     check("no audio file on the road twice under different entries", bad)
     # recordings moved to their own titles (data/audio_fixes.json): every one exists, each recording is used once, and it plays under the new title
     fx = {k: v for k, v in json.load(open(os.path.join(HERE, "data", "audio_fixes.json"), encoding="utf-8")).items() if not k.startswith("_")}
+    hidden = lambda i: i not in I and E.get(i, {}).get("speaker") == "Davey" and config.DAVEY_HIDDEN and i not in config.DAVEY_KEEP
+    fx = {k: v for k, v in fx.items() if not (hidden(k) or hidden(v))}   # a hidden teacher's recordings (config.DAVEY_HIDDEN) are left out on purpose
     bad = [f"{k} or {v} missing" for k, v in fx.items() if k not in I or v not in I]
     bad += [f"{v} given to two titles" for v, n in Counter(fx.values()).items() if n > 1]
     bad += [f"{I[k]['t'][:45]} does not carry its recording" for k, v in fx.items() if k in I and I[k].get("aid") != v]
