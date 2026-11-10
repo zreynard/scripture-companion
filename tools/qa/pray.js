@@ -34,8 +34,15 @@ async function testAudio(p, opt) {
     window.MED_FAST = o.fast || 0.05;
   }, opt || {});
 }
-async function music(p) {
-  await p.evaluate(async () => { const bl = new Blob([await (await fetch(TESTWAV)).arrayBuffer()], { type: 'audio/wav' }); for (const id of ['m1', 'm2']) await pdbDo(['meta', 'blob'], 'readwrite', t => { t.objectStore('blob').put(bl, id); return t.objectStore('meta').put({ id, f: id + '.wav', sz: bl.size, t: 'Test ' + id, a: 'A', al: 'Al', n: id === 'm1' ? 1 : 2 }) }); PL.list = null; await plLoad(); render(); });
+async function music(p) {   // two pieces of music kept on the phone, as the user's own
+  await p.evaluate(async () => {
+    const bl = new Blob([await (await fetch(TESTWAV)).arrayBuffer()], { type: 'audio/wav' });
+    const meta = ['m1', 'm2'].map((id, k) => ({ id, f: id + '.wav', sz: bl.size, t: 'Test ' + id, a: 'A', al: 'Al', n: k + 1 }));
+    try { for (const m of meta) await pdbDo(['meta', 'blob'], 'readwrite', t => { t.objectStore('blob').put(bl, m.id); return t.objectStore('meta').put(m) }); }
+    catch (e) {   // an engine whose local database cannot keep audio (WebKit on Linux): hand the app the same files directly
+      const o = pdbDo; window.pdbDo = (st, mode, f) => st === 'blob' && mode === 'readonly' ? Promise.resolve(bl) : st === 'meta' && mode === 'readonly' ? Promise.resolve(meta) : o(st, mode, f);
+    }
+    PL.list = null; await plLoad(); render(); });
   await wait(300);
 }
 const until = async (p, f, ms, arg) => { const t = Date.now(); while (Date.now() - t < (ms || 8000)) { if (await p.evaluate(f, arg)) return true; await wait(80); } return false; };
@@ -257,8 +264,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
   await T('P20 Stillness: with no music on the phone it says how to get it; with music it plays, pauses and skips', async () => {
     const p = await pray_(await page());
     const none = await p.evaluate(() => (document.querySelector('[data-mbst]') || {}).textContent || '');
-    await testAudio(p);
-    await p.evaluate(async () => { const bl = new Blob([await (await fetch(TESTWAV)).arrayBuffer()], { type: 'audio/wav' }); for (const id of ['m1', 'm2']) await pdbDo(['meta', 'blob'], 'readwrite', t => { t.objectStore('blob').put(bl, id); return t.objectStore('meta').put({ id, f: id + '.wav', sz: bl.size, t: 'Test ' + id, a: 'A', al: 'Al', n: id === 'm1' ? 1 : 2 }) }); PL.list = null; await plLoad(); render(); });
+    await testAudio(p); await music(p);
     await wait(300); await p.click('[data-pm]'); const on = await until(p, () => !pmEl().paused);
     await p.click('[data-pms="1"]'); await wait(400); const k = await p.evaluate(() => PM.k);
     await p.click('[data-pm]'); await wait(200); const off = await p.evaluate(() => pmEl().paused);
@@ -294,9 +300,9 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     if (!(await p.evaluate(() => 'mediaSession' in navigator && !!window.MediaSession))) return true;   // an engine without lock-screen controls
     await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing');
     await p.evaluate(() => __MS.pause()); await wait(200); const ps = await p.evaluate(() => LED.c.state);
-    await p.evaluate(() => __MS.play()); await until(p, () => LED.c.state === 'playing'); const t = await p.evaluate(() => LED.c.a.currentTime);
-    await p.evaluate(() => __MS.seekforward()); await wait(200); const f = await p.evaluate(() => LED.c.a.currentTime);
-    await p.evaluate(() => __MS.seekbackward()); await wait(200); const bk = await p.evaluate(() => LED.c.a.currentTime);
+    await p.evaluate(() => __MS.play()); await until(p, () => LED.c.state === 'playing'); await wait(400); const t = await p.evaluate(() => LED.c.a.currentTime);
+    await p.evaluate(() => __MS.seekforward()); await wait(400); const f = await p.evaluate(() => LED.c.a.currentTime);
+    await p.evaluate(() => __MS.seekbackward()); await wait(400); const bk = await p.evaluate(() => LED.c.a.currentTime);
     const id0 = await p.evaluate(() => ledCur().id); await p.evaluate(() => __MS.nexttrack()); await until(p, () => LED.c.state === 'playing'); const id1 = await p.evaluate(() => ledCur().id);
     await p.evaluate(() => __MS.previoustrack()); await wait(300); const id2 = await p.evaluate(() => ledCur().id);
     await guided(p, 'med'); await p.click('[data-medgo]'); await until(p, () => MED.c.state === 'playing');
