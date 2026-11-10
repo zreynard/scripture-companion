@@ -179,6 +179,8 @@ def check():
             txt = " ".join(("[[ " if w is inn[0] else "") + w[2] + (" ]]" if w is inn[-1] else "") for w in ws) if inn else " ".join(w[2] for w in ws)
             cut = [w for w in ws if w[0] < x["a"] - 0.05 < w[1] or w[0] < x["b"] + 0.15 < w[1]]
             print(f"== {x['ref']} {x['who']} {x['a']}-{x['b']}{'  CUTS A WORD: ' + ', '.join(f'{w[2]}@{w[0]:.2f}-{w[1]:.2f}' for w in cut) if cut else ''}\n   {txt}", flush=True)
+            near = lambda t: " ".join(f"{w[2]}@{w[0]:.2f}-{w[1]:.2f}" for w in ws if abs(w[0] - t) < 4 or abs(w[1] - t) < 4)
+            print(f"   START: {near(x['a'])}\n   END:   {near(x['b'])}", flush=True)
         except Exception as ex:
             print(f"== {x['ref']}: {type(ex).__name__} {str(ex)[:80]}", flush=True)
 
