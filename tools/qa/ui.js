@@ -337,7 +337,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const A = await open(await ctx());
     await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500);
     await A.click('[data-prtop=g]'); await wait(300); await A.click('[data-prm=led]'); await wait(400);
-    const v = await A.evaluate(() => ({ txt: (() => { const c = document.querySelector('.led').cloneNode(true); c.querySelectorAll('svg').forEach(x => x.remove()); return [...c.querySelectorAll('*')].filter(e => !e.children.length).map(e => e.textContent.trim()).filter(Boolean).join(' '); })(), who: NAMES[ledCur().who], old: document.querySelectorAll('[data-ledth],[data-ledplay],.led-row,.pr-dots').length,
+    const v = await A.evaluate(() => ({ txt: (() => { const c = document.querySelector('.led').cloneNode(true); c.querySelectorAll('svg,[hidden]').forEach(x => x.remove()); return [...c.querySelectorAll('*')].filter(e => !e.children.length).map(e => e.textContent.trim()).filter(Boolean).join(' '); })(), who: NAMES[ledCur().who], old: document.querySelectorAll('[data-ledth],[data-ledplay],.led-row,.pr-dots').length,
       short: (PRAY.led || []).filter(x => x.len < 60).length, n: (PRAY.led || []).length, sk: document.querySelectorAll('[data-ledsk]').length, p0: ledOrd().p, id0: ledCur().id }));
     await A.click('[data-ledgo="1"]'); await wait(300);
     const g = await A.evaluate(() => ({ p: ledOrd().p, id: ledCur().id }));
@@ -346,8 +346,8 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await A.click('[data-ledpp]'); await wait(900);
     const p = await A.evaluate(() => ({ id: LED.id, src: !!(LED.c && (LED.c.a.getAttribute('src') || '').startsWith(SILENT)), muted: LED.c && LED.c.a.muted, main: cur && String(cur).startsWith('led:'), en: LED.c && LED.c.end > LED.c.t0, inLib: Object.keys(I).filter(k => k.startsWith('led:')).length }));
     await A.click('[data-ledsp]'); const sp = await A.evaluate(() => ({ sp: LED.sp, rate: LED.c.a.playbackRate, t: document.querySelector('[data-ledsp]').textContent }));
-    const mu = await A.evaluate(() => { const b = document.querySelector('[data-ledmu]'); if (!b) return 'none'; const was = BED.led; b.click(); const now = BED.led; b.click(); return was !== now && BED.led === was; });
-    return new RegExp('^Be Led ' + v.who + ' 1×( ♪ Music (on|off))?$').test(v.txt) && v.old === 0 && v.short === 0 && v.n >= 6 && v.sk === 2 && g.p === v.p0 + 1 && g.id !== v.id0
+    const mu = await A.evaluate(() => !!document.querySelector('[data-prmu]'));
+    return new RegExp('^Be Led ' + v.who + ' 1× ♪ Music( on| off)?$').test(v.txt) && v.old === 0 && v.short === 0 && v.n >= 6 && v.sk === 2 && g.p === v.p0 + 1 && g.id !== v.id0
       && p.id === g.id && p.src && p.muted === false && !p.main && p.inLib === 0 && sp.sp === 1.1 && sp.rate === 1.1 && sp.t === '1.1×' && mu !== false || { v, g, p, sp, mu }; });
   await T('U77 Meditate: today\'s saying read by a pastor; Begin reads it (Listen), a breath, again (Again), then Be still with no clock until Amen; n of N with arrows', async () => {
     const A = await open(await ctx());

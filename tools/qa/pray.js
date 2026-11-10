@@ -15,7 +15,8 @@ async function T(n, f) {
 // a page with the lock-screen handlers recorded (so a test can press them) and its page errors kept
 async function page(vp, ctxOpt) {
   const c = await b.newContext({ viewport: vp || { width: 390, height: 760 }, ...(ctxOpt || {}) });
-  await c.addInitScript(() => { window.playing = () => ['audio', 'audiofx', 'praym', 'ledm', 'medm'].map(i => document.getElementById(i)).filter(a => a && !a.paused).map(a => a.id); window.__MS = {}; try { const ms = navigator.mediaSession; if (ms) { const o = ms.setActionHandler.bind(ms); ms.setActionHandler = (k, f) => { window.__MS[k] = f; try { o(k, f) } catch (e) { } }; } } catch (e) { } });
+  await c.addInitScript(() => { window.playing = () => ['audio', 'audiofx', 'praym', 'ledm', 'medm'].map(i => document.getElementById(i)).filter(a => a && !a.paused).map(a => a.id); window.__MS = {};
+    try { const P = window.MediaSession && MediaSession.prototype, o = P && P.setActionHandler; if (o) P.setActionHandler = function (k, f) { window.__MS[k] = f; try { return o.call(this, k, f) } catch (e) { } }; } catch (e) { } });
   const p = await c.newPage(); p.errs = []; p.on('pageerror', e => p.errs.push(String(e)));
   await p.goto(SITE + '?x=' + Date.now()); await p.waitForTimeout(1500); return p;
 }
@@ -32,6 +33,10 @@ async function testAudio(p, opt) {
     (PRAY.med || []).forEach(x => { x.audio = TESTWAV; x.a = o.a || 5; x.b = o.b || 6.5; });
     window.MED_FAST = o.fast || 0.05;
   }, opt || {});
+}
+async function music(p) {
+  await p.evaluate(async () => { const bl = new Blob([await (await fetch(TESTWAV)).arrayBuffer()], { type: 'audio/wav' }); for (const id of ['m1', 'm2']) await pdbDo(['meta', 'blob'], 'readwrite', t => { t.objectStore('blob').put(bl, id); return t.objectStore('meta').put({ id, f: id + '.wav', sz: bl.size, t: 'Test ' + id, a: 'A', al: 'Al', n: id === 'm1' ? 1 : 2 }) }); PL.list = null; await plLoad(); render(); });
+  await wait(300);
 }
 const until = async (p, f, ms, arg) => { const t = Date.now(); while (Date.now() - t < (ms || 8000)) { if (await p.evaluate(f, arg)) return true; await wait(80); } return false; };
 const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#medm'].map(s => $(s)).filter(Boolean); return els.filter(a => !a.paused).map(a => a.id); };
@@ -116,16 +121,38 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     for (let i = 0; i < 4; i++) { await p.click('[data-ledsp]'); seen.push(await p.evaluate(() => [LED.sp, LED.c.a.playbackRate, document.querySelector('[data-ledsp]').textContent].join('/'))); }
     return seen.join(' ') === '1.1/1.1/1.1× 1.25/1.25/1.25× 0.9/0.9/0.9× 1/1/1×' || seen;
   });
-  await T('P10 the soaking music: under a prayer without its own while it plays and ~7 s after the amen; never with Music off or under a prayer with its own; no switch without music on the phone', async () => {
+  await T('P10 the soaking music plays under every prayer while Music is on (it really plays, at the Pray level), carries on ~7 s after the amen, and stops when Music is off', async () => {
     const p = await pray_(await page()); await testAudio(p, { sb: 12, e: 10 }); await guided(p, 'led');
-    const noMusic = await p.evaluate(() => !document.querySelector('[data-ledmu]'));
-    await p.evaluate(() => { PL.list = [{ id: 'm1', f: 'a.mp3', sz: 1, t: 'Song' }]; ledList().forEach(x => x.music = true); BED.led = true; render(); });
-    const sw = await p.evaluate(() => !!document.querySelector('[data-ledmu]'));
-    await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing'); const during = await p.evaluate(() => bedWanted());
-    await until(p, () => LED.c.state === 'ended', 6000); const after = await p.evaluate(() => [bedWanted(), LED.tail]);
-    await p.evaluate(() => { LED.tail = false; clearTimeout(LED.tt); BED.led = false; }); const off = await p.evaluate(() => bedWanted());
-    await p.evaluate(() => { BED.led = true; ledList().forEach(x => x.music = false); }); await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing'); const own = await p.evaluate(() => bedWanted());
-    return (noMusic && sw && during && after[0] && after[1] && !off && !own && !p.errs.length) || { noMusic, sw, during, after, off, own };
+    const none = await p.evaluate(() => document.querySelector('[data-prmu]').textContent);
+    await music(p); await guided(p, 'led');
+    const res = [];
+    for (const own of [true, false]) {      // a prayer measured with and without music of its own: the music plays under both
+      await p.evaluate(o => { ledList().forEach(x => x.music = o); BED.led = true; }, own);
+      await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing');
+      const on = await until(p, () => !BED.el.paused && BED.g && Math.abs(BED.g.gain.value - BED.plv) < 0.02, 6000);
+      await p.evaluate(() => { LED.c.a.currentTime = LED.c.end - 0.3 }); await until(p, () => LED.c.state === 'ended', 4000);
+      const tail = await p.evaluate(() => [bedWanted(), LED.tail, !BED.el.paused]);
+      await p.evaluate(() => { LED.tail = false; clearTimeout(LED.tt); bedSync(); });
+      res.push({ own, on, tail });
+    }
+    await p.evaluate(() => { BED.led = false; }); await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing');
+    const off = await until(p, () => BED.el.paused, 6000);
+    return (none.trim() === '♪ Music' && res.every(r => r.on && r.tail[0] && r.tail[1] && r.tail[2]) && off && !p.errs.length) || { none, res, off, e: p.errs };
+  });
+  await T('P27 the ♪ Music panel: opens and closes, switches the music on and off, and its level changes the music at once and is remembered (Be Led and Meditate)', async () => {
+    const p = await pray_(await page()); await testAudio(p, { a: 5, b: 20 }); await music(p); await guided(p, 'led');
+    const shut = await p.evaluate(() => $('#prmu').hidden);
+    await p.click('[data-prmu]'); const open = await p.evaluate(() => !$('#prmu').hidden && document.querySelector('[data-prmu]').getAttribute('aria-expanded') === 'true');
+    await p.click('[data-ledpp]'); await until(p, () => !BED.el.paused && BED.g && BED.g.gain.value > 0.05, 6000);
+    await p.evaluate(() => { const r = $('#prmulv'); r.value = 50; r.dispatchEvent(new Event('input')); }); await wait(400);
+    const loud = await p.evaluate(() => [BED.plv, +BED.g.gain.value.toFixed(2), S.get('bedlvp')]);
+    await p.click('#prmuon'); await until(p, () => BED.el.paused, 6000); const offTxt = await p.evaluate(() => [BED.led, document.querySelector('[data-prmu]').textContent, $('#prmulv').disabled]);
+    await p.click('#prmuon'); const back = await until(p, () => !BED.el.paused, 6000);
+    await p.click('[data-prmu]'); const closed = await p.evaluate(() => $('#prmu').hidden);
+    await guided(p, 'med'); const medBtn = await p.evaluate(() => !!document.querySelector('[data-prmu]'));
+    await p.click('[data-medgo]'); const medMusic = await until(p, () => MED.on && !BED.el.paused && Math.abs(BED.g.gain.value - 0.5) < 0.03, 8000);
+    await p.reload(); await wait(1500); const kept = await p.evaluate(() => [BED.plv, BED.led]);
+    return (shut && open && loud[0] === 0.5 && Math.abs(loud[1] - 0.5) < 0.03 && loud[2] === 0.5 && offTxt[0] === false && offTxt[1] === '♪ Music off' && offTxt[2] && back && closed && medBtn && medMusic && kept[0] === 0.5 && kept[1] === true && !p.errs.length) || { shut, open, loud, offTxt, back, closed, medBtn, medMusic, kept, e: p.errs };
   });
   await T('P11 a new day opens on a new prayer; a reload the same day keeps it; none repeats until all are prayed', async () => {
     const p = await pray_(await page()); await guided(p, 'led');
@@ -231,7 +258,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     const p = await pray_(await page());
     const none = await p.evaluate(() => (document.querySelector('[data-mbst]') || {}).textContent || '');
     await testAudio(p);
-    await p.evaluate(async () => { const bl = await (await fetch(TESTWAV)).blob(); for (const id of ['m1', 'm2']) await pdbDo(['meta', 'blob'], 'readwrite', t => { t.objectStore('blob').put(bl, id); return t.objectStore('meta').put({ id, f: id + '.wav', sz: bl.size, t: 'Test ' + id, a: 'A', al: 'Al', n: id === 'm1' ? 1 : 2 }) }); PL.list = null; await plLoad(); render(); });
+    await p.evaluate(async () => { const bl = new Blob([await (await fetch(TESTWAV)).arrayBuffer()], { type: 'audio/wav' }); for (const id of ['m1', 'm2']) await pdbDo(['meta', 'blob'], 'readwrite', t => { t.objectStore('blob').put(bl, id); return t.objectStore('meta').put({ id, f: id + '.wav', sz: bl.size, t: 'Test ' + id, a: 'A', al: 'Al', n: id === 'm1' ? 1 : 2 }) }); PL.list = null; await plLoad(); render(); });
     await wait(300); await p.click('[data-pm]'); const on = await until(p, () => !pmEl().paused);
     await p.click('[data-pms="1"]'); await wait(400); const k = await p.evaluate(() => PM.k);
     await p.click('[data-pm]'); await wait(200); const off = await p.evaluate(() => pmEl().paused);
@@ -264,7 +291,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
   });
   await T('P24 the lock screen and earbuds: pause, play, back and on 15 s, previous and next for Be Led; pause and play for Meditate', async () => {
     const p = await pray_(await page()); await testAudio(p); await guided(p, 'led');
-    if (!(await p.evaluate(() => 'mediaSession' in navigator))) return true;   // an engine without lock-screen controls
+    if (!(await p.evaluate(() => 'mediaSession' in navigator && !!window.MediaSession))) return true;   // an engine without lock-screen controls
     await p.click('[data-ledpp]'); await until(p, () => LED.c.state === 'playing');
     await p.evaluate(() => __MS.pause()); await wait(200); const ps = await p.evaluate(() => LED.c.state);
     await p.evaluate(() => __MS.play()); await until(p, () => LED.c.state === 'playing'); const t = await p.evaluate(() => LED.c.a.currentTime);
