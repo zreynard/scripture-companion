@@ -114,7 +114,7 @@ def harvest_harvest_memphis() -> list[dict]:
     def load(name):
         p = os.path.join(DATA, name)
         return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
-    voice = {u for u, v in (load("vaughan_voice.json").get("items") or {}).items() if v.get("verdict") == "Kennon"}
+    voice = {k for k, v in (load("vaughan_voice.json").get("items") or {}).items() if v.get("verdict") == "Kennon"}   # "7 Oct 2018 | John 3:1-21"
     hand = load("vaughan_refs.json")   # {guid: {"keep": bool, "pass": "...", "title": "...", "series": "..."}}
     secs = lambda d: int(d) if (d or "").isdigit() else sum(int(v) * 60 ** i for i, v in enumerate(reversed([x for x in (d or "").split(":") if x.isdigit()])))
     out, seen = [], set()
@@ -124,7 +124,8 @@ def harvest_harvest_memphis() -> list[dict]:
         t, a, desc = it["title"], it["author"] or "", it["description"] or ""
         h = hand.get(guid, {})
         named = bool(re.search(r"\bkennon\b|\bvuaghan\b", t + " " + a, re.I))
-        if h.get("keep") is False or not (named or enc in voice or h.get("keep")): continue
+        vkey = re.sub(r"\s+", " ", it["pubdate"][5:16]).strip() + " | " + t[:70].strip()
+        if h.get("keep") is False or not (named or vkey in voice or h.get("keep")): continue
         dur = secs(it["duration"])
         if VAUGHAN_NOT_SERMON.search(t) or (dur and dur < 1200): continue
         head = re.split(r"Harvest is a (?:non-denominational )?church", desc)[0]
@@ -142,6 +143,8 @@ def harvest_harvest_memphis() -> list[dict]:
             s = head[:head.find(first[0].raw)].strip() if first and first[0].raw in head else ""
             yr = (re.search(r"\b(?:19|20)\d\d\b", it["pubdate"]) or [""])[0]
             series = next((name for pat, name in VAUGHAN_SERIES if re.search(pat, s) or re.search(pat, f"{t} {yr}") or re.search(pat, f"{passage} {yr}")), "")
+            if not series and s and len(s) < 60 and not re.match(r"(Advent|Palm Sunday|Easter|Christmas|Stand Alone|Mother|Father|Family|Prayer|http)", s, re.I):
+                series = re.sub(r"\s+-\s+", ": ", s)   # a series the description names, e.g. "Hidden"
         e = make_entry(source="harvest_memphis", source_url=config.HARVEST_MEMPHIS_FEED, url=config.HARVEST_MEMPHIS_FEED + "#" + guid,
                        title=title, description="", published=it["pubdate"], duration=str(dur or ""), author="Kennon Vaughan",
                        era="vaughan", series=series, extra_ref_text=passage)

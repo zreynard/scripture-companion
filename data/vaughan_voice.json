@@ -1,0 +1,1791 @@
+{
+ "_note": "Unnamed Harvest Memphis sermons: whose voice (tools/voice_id.py). Key: feed date | title (first 70 characters). 'Kennon' = his voice by a clear margin over every other named preacher.",
+ "rule": "rule: Kennon when his similarity beats the nearest other preacher by more than 0.050",
+ "items": {
+  "7 Oct 2018 | John 3:1-21": {
+   "verdict": "Kennon",
+   "margin": 0.466,
+   "kennon": 0.934,
+   "nearest": "braxton, brady,",
+   "other": 0.468
+  },
+  "1 Dec 2019 | Titus 3:1-8": {
+   "verdict": "Kennon",
+   "margin": 0.474,
+   "kennon": 0.924,
+   "nearest": "braxton, brady,",
+   "other": 0.45
+  },
+  "1 Sep 2019 | Revelation 7:9-12": {
+   "verdict": "Steve Winstead",
+   "margin": -0.699,
+   "kennon": 0.231,
+   "nearest": "Steve Winstead",
+   "other": 0.93
+  },
+  "3 Mar 2019 | John 7:32-38": {
+   "verdict": "Kennon",
+   "margin": 0.402,
+   "kennon": 0.854,
+   "nearest": "braxton, brady,",
+   "other": 0.452
+  },
+  "3 Nov 2019 | Titus 2:2,6-8": {
+   "verdict": "Kennon",
+   "margin": 0.471,
+   "kennon": 0.922,
+   "nearest": "braxton, brady,",
+   "other": 0.45
+  },
+  "5 May 2019 | Family Weekend 2019": {
+   "verdict": "Ben Hicks and Andrew Johnson",
+   "margin": -0.344,
+   "kennon": 0.123,
+   "nearest": "Ben Hicks and An",
+   "other": 0.467
+  },
+  "6 Oct 2019 | Titus 1:4-9": {
+   "verdict": "Kennon",
+   "margin": 0.447,
+   "kennon": 0.902,
+   "nearest": "braxton, brady,",
+   "other": 0.455
+  },
+  "8 Dec 2019 | Luke 2:8-14": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.737,
+   "kennon": 0.196,
+   "nearest": "Jamie Trussell",
+   "other": 0.933
+  },
+  "8 Sep 2019 | Ezra 7:10, 2 Timothy 4:1-4": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.708,
+   "kennon": 0.243,
+   "nearest": "Jamie Trussell",
+   "other": 0.951
+  },
+  "1 Mar 2020 | John 13:1-20": {
+   "verdict": "Steve Winstead",
+   "margin": -0.684,
+   "kennon": 0.237,
+   "nearest": "Steve Winstead",
+   "other": 0.921
+  },
+  "1 Nov 2020 | John 19:16-30": {
+   "verdict": "Kennon",
+   "margin": 0.397,
+   "kennon": 0.915,
+   "nearest": "braxton, brady,",
+   "other": 0.517
+  },
+  "2 Feb 2020 | John 12:9-19": {
+   "verdict": "Kennon",
+   "margin": 0.426,
+   "kennon": 0.923,
+   "nearest": "braxton, brady,",
+   "other": 0.497
+  },
+  "3 Aug 2020 | 2 Corinthians 1:3-11": {
+   "verdict": "Steve Winstead",
+   "margin": -0.637,
+   "kennon": 0.241,
+   "nearest": "Steve Winstead",
+   "other": 0.877
+  },
+  "3 May 2020 | John 14:12-14": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.606,
+   "kennon": 0.233,
+   "nearest": "Jamie Trussell",
+   "other": 0.839
+  },
+  "4 Oct 2020 | John 17:20-26": {
+   "verdict": "Steve Winstead",
+   "margin": -0.679,
+   "kennon": 0.244,
+   "nearest": "Steve Winstead",
+   "other": 0.923
+  },
+  "5 Apr 2020 | Mark 11:1-19": {
+   "verdict": "Kennon",
+   "margin": 0.483,
+   "kennon": 0.944,
+   "nearest": "braxton, brady,",
+   "other": 0.461
+  },
+  "5 Jan 2020 | Psalms 32:3-5": {
+   "verdict": "Kennon",
+   "margin": 0.456,
+   "kennon": 0.907,
+   "nearest": "braxton, brady,",
+   "other": 0.451
+  },
+  "5 Jul 2020 | Ephesians 3:14-21": {
+   "verdict": "Bill Garner",
+   "margin": -0.725,
+   "kennon": 0.193,
+   "nearest": "Bill Garner",
+   "other": 0.917
+  },
+  "6 Dec 2020 | Luke 2:8-14": {
+   "verdict": "Steve Winstead",
+   "margin": -0.676,
+   "kennon": 0.28,
+   "nearest": "Steve Winstead",
+   "other": 0.956
+  },
+  "6 Sep 2020 | John 16:12-24": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.553,
+   "kennon": 0.282,
+   "nearest": "Jamie Trussell",
+   "other": 0.834
+  },
+  "7 Jun 2020 | Acts 11:19-26": {
+   "verdict": "Kennon",
+   "margin": 0.462,
+   "kennon": 0.945,
+   "nearest": "braxton, brady,",
+   "other": 0.483
+  },
+  "8 Mar 2020 | John 13:21-30": {
+   "verdict": "Antonio Jones",
+   "margin": -0.67,
+   "kennon": 0.257,
+   "nearest": "Antonio Jones",
+   "other": 0.928
+  },
+  "8 Nov 2020 | John 19:31-42": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.753,
+   "kennon": 0.18,
+   "nearest": "Jamie Trussell",
+   "other": 0.933
+  },
+  "9 Aug 2020 | 1 Corinthians 1:4-9": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.727,
+   "kennon": 0.205,
+   "nearest": "Jamie Trussell",
+   "other": 0.932
+  },
+  "9 Feb 2020 | John 12:20-36": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.699,
+   "kennon": 0.233,
+   "nearest": "Jamie Trussell",
+   "other": 0.932
+  },
+  "1 Aug 2021 | Be Active": {
+   "verdict": "Wes Selecman",
+   "margin": -0.749,
+   "kennon": 0.185,
+   "nearest": "Wes Selecman",
+   "other": 0.934
+  },
+  "2 May 2021 | 1 Peter 3:7": {
+   "verdict": "Kennon",
+   "margin": 0.494,
+   "kennon": 0.944,
+   "nearest": "braxton, brady,",
+   "other": 0.45
+  },
+  "3 Jan 2021 | Prayer and Praise Service": {
+   "verdict": "Kennon",
+   "margin": 0.404,
+   "kennon": 0.884,
+   "nearest": "braxton, brady,",
+   "other": 0.48
+  },
+  "3 Oct 2021 | Ephesians 2:8-10": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.671,
+   "kennon": 0.237,
+   "nearest": "Jamie Trussell",
+   "other": 0.907
+  },
+  "4 Apr 2021 | Easter Sunday 2021": {
+   "verdict": "Kennon",
+   "margin": 0.444,
+   "kennon": 0.95,
+   "nearest": "braxton, brady,",
+   "other": 0.506
+  },
+  "4 Jul 2021 | Be Prepared": {
+   "verdict": "Dave Newman",
+   "margin": -0.487,
+   "kennon": -0.051,
+   "nearest": "Dave Newman",
+   "other": 0.436
+  },
+  "5 Dec 2021 | Consumed With Christmas": {
+   "verdict": "Kennon",
+   "margin": 0.443,
+   "kennon": 0.938,
+   "nearest": "braxton, brady,",
+   "other": 0.495
+  },
+  "5 Sep 2021 | Ephesians 1:7-10": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.657,
+   "kennon": 0.245,
+   "nearest": "Jamie Trussell",
+   "other": 0.901
+  },
+  "6 Jun 2021 | 1 Peter 4:12-19": {
+   "verdict": "Robby Flack",
+   "margin": -0.218,
+   "kennon": 0.224,
+   "nearest": "Robby Flack",
+   "other": 0.442
+  },
+  "7 Feb 2021 | 1 Peter 1:10-12": {
+   "verdict": "Kennon",
+   "margin": 0.472,
+   "kennon": 0.923,
+   "nearest": "braxton, brady,",
+   "other": 0.451
+  },
+  "7 Mar 2021 | 1 Peter 2:1-3": {
+   "verdict": "Ben Fasano",
+   "margin": -0.206,
+   "kennon": 0.288,
+   "nearest": "Ben Fasano",
+   "other": 0.494
+  },
+  "7 Nov 2021 | Ephesians 4:1": {
+   "verdict": "Kennon",
+   "margin": 0.475,
+   "kennon": 0.952,
+   "nearest": "braxton, brady,",
+   "other": 0.477
+  },
+  "8 Aug 2021 | Be Humble": {
+   "verdict": "Seth Jewell",
+   "margin": -0.664,
+   "kennon": 0.244,
+   "nearest": "Seth Jewell",
+   "other": 0.908
+  },
+  "9 May 2021 | 1 Peter 3:8": {
+   "verdict": "Kennon",
+   "margin": 0.476,
+   "kennon": 0.956,
+   "nearest": "braxton, brady,",
+   "other": 0.481
+  },
+  "1 May 2022 | Family Day 2022": {
+   "verdict": "Ben Robin",
+   "margin": -0.277,
+   "kennon": 0.109,
+   "nearest": "Ben Robin",
+   "other": 0.387
+  },
+  "2 Jan 2022 | Colossians 1:15-23": {
+   "verdict": "Noah Martin",
+   "margin": -0.095,
+   "kennon": 0.324,
+   "nearest": "Noah Martin",
+   "other": 0.42
+  },
+  "2 Oct 2022 | Judges 2:11-3:11": {
+   "verdict": "Kennon",
+   "margin": 0.47,
+   "kennon": 0.956,
+   "nearest": "braxton, brady,",
+   "other": 0.487
+  },
+  "3 Apr 2022 | Ephesians 5:15-21": {
+   "verdict": "Kennon",
+   "margin": 0.488,
+   "kennon": 0.952,
+   "nearest": "braxton, brady,",
+   "other": 0.463
+  },
+  "3 Jul 2022 | Ephesians 6:14-15": {
+   "verdict": "Noah Martin",
+   "margin": -0.169,
+   "kennon": 0.368,
+   "nearest": "Noah Martin",
+   "other": 0.536
+  },
+  "4 Dec 2022 | Micah 5:2": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.838,
+   "kennon": 0.108,
+   "nearest": "Ronnie Stevens",
+   "other": 0.946
+  },
+  "4 Sep 2022 | Luke 11:5-13": {
+   "verdict": "Kennon",
+   "margin": 0.456,
+   "kennon": 0.934,
+   "nearest": "braxton, brady,",
+   "other": 0.478
+  },
+  "6 Feb 2022 | Church Planting, Diversity & Prayer": {
+   "verdict": "Antonio Jones",
+   "margin": -0.646,
+   "kennon": 0.144,
+   "nearest": "Antonio Jones",
+   "other": 0.789
+  },
+  "6 Mar 2022 | Ephesians 5:6-14": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.693,
+   "kennon": 0.242,
+   "nearest": "Jamie Trussell",
+   "other": 0.935
+  },
+  "6 Nov 2022 | Judges 6:1-27": {
+   "verdict": "Kennon",
+   "margin": 0.454,
+   "kennon": 0.938,
+   "nearest": "braxton, brady,",
+   "other": 0.484
+  },
+  "7 Aug 2022 | Ephesians 6:19-24": {
+   "verdict": "Kennon",
+   "margin": 0.495,
+   "kennon": 0.951,
+   "nearest": "braxton, brady,",
+   "other": 0.456
+  },
+  "8 May 2022 | Proverbs 31:28 | Mother's Day": {
+   "verdict": "Kennon",
+   "margin": 0.472,
+   "kennon": 0.943,
+   "nearest": "braxton, brady,",
+   "other": 0.471
+  },
+  "9 Jan 2022 | Prayer and Praise 2022 Part 1": {
+   "verdict": "Kennon",
+   "margin": 0.423,
+   "kennon": 0.9,
+   "nearest": "braxton, brady,",
+   "other": 0.477
+  },
+  "9 Oct 2022 | Judges 3:12-23": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.615,
+   "kennon": 0.303,
+   "nearest": "Jamie Trussell",
+   "other": 0.918
+  },
+  "1 Jan 2023 | Prayer and Praise 2023": {
+   "verdict": "Kennon",
+   "margin": 0.417,
+   "kennon": 0.874,
+   "nearest": "braxton, brady,",
+   "other": 0.457
+  },
+  "1 Oct 2023 | Freed In Order To Free": {
+   "verdict": "Ernie Frey",
+   "margin": -0.636,
+   "kennon": 0.238,
+   "nearest": "Ernie Frey",
+   "other": 0.874
+  },
+  "2 Apr 2023 | No Other Option": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.578,
+   "kennon": 0.226,
+   "nearest": "Jamie Trussell",
+   "other": 0.803
+  },
+  "2 Jul 2023 | Genesis 15:5-6": {
+   "verdict": "Wes Selecman",
+   "margin": -0.365,
+   "kennon": 0.071,
+   "nearest": "Wes Selecman",
+   "other": 0.436
+  },
+  "3 Dec 2023 | Advent | Luke 1:26-38": {
+   "verdict": "Ben Fasano",
+   "margin": -0.227,
+   "kennon": 0.281,
+   "nearest": "Ben Fasano",
+   "other": 0.508
+  },
+  "3 Sep 2023 | Genesis 24": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.833,
+   "kennon": 0.098,
+   "nearest": "Ronnie Stevens",
+   "other": 0.931
+  },
+  "4 Jun 2023 | Genesis 12:1-9": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.742,
+   "kennon": 0.168,
+   "nearest": "Jamie Trussell",
+   "other": 0.909
+  },
+  "5 Feb 2023 | Romans 8:26-30": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.768,
+   "kennon": 0.168,
+   "nearest": "Ronnie Stevens",
+   "other": 0.935
+  },
+  "5 Mar 2023 | Virgin Birth": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.655,
+   "kennon": 0.278,
+   "nearest": "Jamie Trussell",
+   "other": 0.933
+  },
+  "5 Nov 2023 | John 15:1-5,11": {
+   "verdict": "Kennon",
+   "margin": 0.417,
+   "kennon": 0.906,
+   "nearest": "braxton, brady,",
+   "other": 0.489
+  },
+  "6 Aug 2023 | Genesis 19": {
+   "verdict": "Ben Fasano",
+   "margin": -0.245,
+   "kennon": 0.234,
+   "nearest": "Ben Fasano",
+   "other": 0.479
+  },
+  "7 May 2023 | Put on Christ": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.698,
+   "kennon": 0.204,
+   "nearest": "Jamie Trussell",
+   "other": 0.902
+  },
+  "8 Oct 2023 | Galatians 5:1-6": {
+   "verdict": "Kennon",
+   "margin": 0.394,
+   "kennon": 0.873,
+   "nearest": "braxton, brady,",
+   "other": 0.479
+  },
+  "9 Apr 2023 | Approach and Respond (Easter 2023)": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.61,
+   "kennon": 0.261,
+   "nearest": "Jamie Trussell",
+   "other": 0.872
+  },
+  "9 Jul 2023 | Genesis 16": {
+   "verdict": "Steve Winstead",
+   "margin": -0.694,
+   "kennon": 0.219,
+   "nearest": "Steve Winstead",
+   "other": 0.913
+  },
+  "3 Mar 2024 | Judges 16": {
+   "verdict": "Kennon",
+   "margin": 0.453,
+   "kennon": 0.902,
+   "nearest": "braxton, brady,",
+   "other": 0.449
+  },
+  "4 Feb 2024 | Judges 12:1-7": {
+   "verdict": "Seth Jewell",
+   "margin": -0.633,
+   "kennon": 0.28,
+   "nearest": "Seth Jewell",
+   "other": 0.913
+  },
+  "5 May 2024 | Genesis 12:1": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.712,
+   "kennon": 0.209,
+   "nearest": "Jamie Trussell",
+   "other": 0.922
+  },
+  "7 Apr 2024 | Judges 17": {
+   "verdict": "Kennon",
+   "margin": 0.445,
+   "kennon": 0.922,
+   "nearest": "braxton, brady,",
+   "other": 0.477
+  },
+  "7 Jan 2024 | Prayer and Praise 2024 (Luke 11:9)": {
+   "verdict": "Kennon",
+   "margin": 0.424,
+   "kennon": 0.931,
+   "nearest": "braxton, brady,",
+   "other": 0.507
+  },
+  "1 Jun 2025 | Family Weekend 2025 (Luke Meeks & Garrett Ross) Romans 12:1-2, Hebrews": {
+   "verdict": "Landon Todd, Jamal Young, Graham Sisson",
+   "margin": -0.237,
+   "kennon": 0.006,
+   "nearest": "Landon Todd, Jam",
+   "other": 0.243
+  },
+  "5 Apr 2026 | Easter Sunday 2026": {
+   "verdict": "Kennon",
+   "margin": 0.428,
+   "kennon": 0.898,
+   "nearest": "braxton, brady,",
+   "other": 0.47
+  },
+  "5 Jan 2026 | Prayer & Praise Service": {
+   "verdict": "Kennon",
+   "margin": 0.461,
+   "kennon": 0.901,
+   "nearest": "braxton, brady,",
+   "other": 0.439
+  },
+  "10 Jan 2016 | Prayer and Praise": {
+   "verdict": "Emanuel Magliocchini",
+   "margin": -0.137,
+   "kennon": 0.043,
+   "nearest": "Emanuel Magliocc",
+   "other": 0.18
+  },
+  "21 Feb 2016 | Core Value 5: Prayer - Luke 18:1-8": {
+   "verdict": "Kennon",
+   "margin": 0.389,
+   "kennon": 0.878,
+   "nearest": "braxton, brady,",
+   "other": 0.489
+  },
+  "21 Jul 2016 | Starting The Conversation - Panel 2": {
+   "verdict": "Kennon",
+   "margin": 0.205,
+   "kennon": 0.6,
+   "nearest": "Josiah Lawrence",
+   "other": 0.395
+  },
+  "21 Jul 2016 | Starting The Conversation - Intro & Panel 1": {
+   "verdict": "Joshua Chatman",
+   "margin": -0.849,
+   "kennon": -0.159,
+   "nearest": "Joshua Chatman",
+   "other": 0.69
+  },
+  "21 Oct 2018 | John 4:1-19": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.742,
+   "kennon": 0.196,
+   "nearest": "Jamie Trussell",
+   "other": 0.938
+  },
+  "10 Mar 2019 | John 7:37-53": {
+   "verdict": "Steve Winstead",
+   "margin": -0.69,
+   "kennon": 0.2,
+   "nearest": "Steve Winstead",
+   "other": 0.89
+  },
+  "10 Nov 2019 | Titus 2:6-8": {
+   "verdict": "Kennon",
+   "margin": 0.476,
+   "kennon": 0.93,
+   "nearest": "braxton, brady,",
+   "other": 0.454
+  },
+  "13 Oct 2019 | Titus 1:10-2:1": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.735,
+   "kennon": 0.204,
+   "nearest": "Jamie Trussell",
+   "other": 0.938
+  },
+  "15 Dec 2019 | Matthew 2:1-12, 16-18": {
+   "verdict": "Bill Garner",
+   "margin": -0.678,
+   "kennon": 0.243,
+   "nearest": "Bill Garner",
+   "other": 0.921
+  },
+  "17 Nov 2019 | Titus 2:9-10": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.699,
+   "kennon": 0.194,
+   "nearest": "Jamie Trussell",
+   "other": 0.894
+  },
+  "20 Oct 2019 | Titus 2:1-5": {
+   "verdict": "Steve Winstead",
+   "margin": -0.68,
+   "kennon": 0.25,
+   "nearest": "Steve Winstead",
+   "other": 0.931
+  },
+  "22 Dec 2019 | The Story of Emmanuel": {
+   "verdict": "unsure",
+   "margin": 0.001,
+   "kennon": 0.17,
+   "nearest": "Noah Martin",
+   "other": 0.169
+  },
+  "24 Dec 2019 | Christmas Eve Service": {
+   "verdict": "Emanuel Magliocchini",
+   "margin": -0.035,
+   "kennon": 0.093,
+   "nearest": "Emanuel Magliocc",
+   "other": 0.128
+  },
+  "24 Nov 2019 | Titus 2:11-15": {
+   "verdict": "Kennon",
+   "margin": 0.447,
+   "kennon": 0.92,
+   "nearest": "braxton, brady,",
+   "other": 0.473
+  },
+  "27 Oct 2019 | Titus 2:1-5": {
+   "verdict": "Kennon",
+   "margin": 0.44,
+   "kennon": 0.913,
+   "nearest": "braxton, brady,",
+   "other": 0.473
+  },
+  "29 Dec 2019 | 2 Thessalonians 1:11-12": {
+   "verdict": "Bryce Rader",
+   "margin": -0.815,
+   "kennon": 0.117,
+   "nearest": "Bryce Rader",
+   "other": 0.932
+  },
+  "29 Sep 2019 | Titus 1:1-3": {
+   "verdict": "Kennon",
+   "margin": 0.456,
+   "kennon": 0.91,
+   "nearest": "braxton, brady,",
+   "other": 0.455
+  },
+  "10 May 2020 | John 14:15-17": {
+   "verdict": "Kennon",
+   "margin": 0.398,
+   "kennon": 0.928,
+   "nearest": "braxton, brady,",
+   "other": 0.529
+  },
+  "11 Oct 2020 | John 18:1-11": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.67,
+   "kennon": 0.242,
+   "nearest": "Jamie Trussell",
+   "other": 0.912
+  },
+  "12 Apr 2020 | Acts 2:22-28 (Easter 2020)": {
+   "verdict": "Kennon",
+   "margin": 0.46,
+   "kennon": 0.967,
+   "nearest": "braxton, brady,",
+   "other": 0.507
+  },
+  "12 Jul 2020 | 2 Thessalonians 1:11-12": {
+   "verdict": "Ben Fasano",
+   "margin": -0.186,
+   "kennon": 0.268,
+   "nearest": "Ben Fasano",
+   "other": 0.454
+  },
+  "13 Dec 2020 | Luke 1:46-55": {
+   "verdict": "Kennon",
+   "margin": 0.463,
+   "kennon": 0.945,
+   "nearest": "braxton, brady,",
+   "other": 0.482
+  },
+  "13 Sep 2020 | John 16:25-33": {
+   "verdict": "Kennon",
+   "margin": 0.441,
+   "kennon": 0.918,
+   "nearest": "braxton, brady,",
+   "other": 0.477
+  },
+  "14 Jun 2020 | John 15:12-17": {
+   "verdict": "Kennon",
+   "margin": 0.498,
+   "kennon": 0.936,
+   "nearest": "braxton, brady,",
+   "other": 0.438
+  },
+  "15 Mar 2020 | 2 Chronicles 20:6-12": {
+   "verdict": "Kennon",
+   "margin": 0.446,
+   "kennon": 0.936,
+   "nearest": "braxton, brady,",
+   "other": 0.49
+  },
+  "15 Nov 2020 | John 20:1-18": {
+   "verdict": "Kennon",
+   "margin": 0.43,
+   "kennon": 0.911,
+   "nearest": "braxton, brady,",
+   "other": 0.481
+  },
+  "16 Aug 2020 | Philippians 1:3-11": {
+   "verdict": "Seth Jewell",
+   "margin": -0.637,
+   "kennon": 0.286,
+   "nearest": "Seth Jewell",
+   "other": 0.924
+  },
+  "16 Feb 2020 | John 12:36b-43": {
+   "verdict": "Kennon",
+   "margin": 0.443,
+   "kennon": 0.938,
+   "nearest": "braxton, brady,",
+   "other": 0.494
+  },
+  "17 May 2020 | John 14:18-24": {
+   "verdict": "Kennon",
+   "margin": 0.443,
+   "kennon": 0.932,
+   "nearest": "braxton, brady,",
+   "other": 0.489
+  },
+  "18 Oct 2020 | John 18:12-27": {
+   "verdict": "Kennon",
+   "margin": 0.449,
+   "kennon": 0.913,
+   "nearest": "braxton, brady,",
+   "other": 0.464
+  },
+  "19 Apr 2020 | John 13:31-35": {
+   "verdict": "Steve Winstead",
+   "margin": -0.673,
+   "kennon": 0.262,
+   "nearest": "Steve Winstead",
+   "other": 0.935
+  },
+  "19 Jan 2020 | John 11:1-44": {
+   "verdict": "Kennon",
+   "margin": 0.479,
+   "kennon": 0.935,
+   "nearest": "braxton, brady,",
+   "other": 0.456
+  },
+  "19 Jul 2020 | Romans 15:30-33": {
+   "verdict": "Steve Winstead",
+   "margin": -0.693,
+   "kennon": 0.241,
+   "nearest": "Steve Winstead",
+   "other": 0.934
+  },
+  "20 Dec 2020 | The Story of Emmanuel": {
+   "verdict": "Kennon",
+   "margin": 0.432,
+   "kennon": 0.907,
+   "nearest": "braxton, brady,",
+   "other": 0.475
+  },
+  "20 Sep 2020 | John 17:1-5": {
+   "verdict": "Kennon",
+   "margin": 0.43,
+   "kennon": 0.953,
+   "nearest": "braxton, brady,",
+   "other": 0.524
+  },
+  "21 Jun 2020 | 1 Thessalonians 3:6-13": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.684,
+   "kennon": 0.242,
+   "nearest": "Jamie Trussell",
+   "other": 0.926
+  },
+  "22 Mar 2020 | 1 Samuel 7:3-12": {
+   "verdict": "Kennon",
+   "margin": 0.456,
+   "kennon": 0.937,
+   "nearest": "braxton, brady,",
+   "other": 0.481
+  },
+  "22 Nov 2020 | John 20:19-31": {
+   "verdict": "Kennon",
+   "margin": 0.473,
+   "kennon": 0.926,
+   "nearest": "braxton, brady,",
+   "other": 0.453
+  },
+  "23 Aug 2020 | John 15:18-27": {
+   "verdict": "Kennon",
+   "margin": 0.46,
+   "kennon": 0.934,
+   "nearest": "braxton, brady,",
+   "other": 0.475
+  },
+  "23 Feb 2020 | John 12:44-50": {
+   "verdict": "Kennon",
+   "margin": 0.45,
+   "kennon": 0.947,
+   "nearest": "braxton, brady,",
+   "other": 0.496
+  },
+  "24 May 2020 | John 14:25-31": {
+   "verdict": "Steve Winstead",
+   "margin": -0.69,
+   "kennon": 0.258,
+   "nearest": "Steve Winstead",
+   "other": 0.948
+  },
+  "25 Oct 2020 | John 18:28-19:5": {
+   "verdict": "Kennon",
+   "margin": 0.444,
+   "kennon": 0.921,
+   "nearest": "braxton, brady,",
+   "other": 0.477
+  },
+  "26 Apr 2020 | John 14:1-11": {
+   "verdict": "Kennon",
+   "margin": 0.409,
+   "kennon": 0.914,
+   "nearest": "braxton, brady,",
+   "other": 0.505
+  },
+  "26 Jan 2020 | John 11:45-12:8": {
+   "verdict": "Kennon",
+   "margin": 0.431,
+   "kennon": 0.93,
+   "nearest": "braxton, brady,",
+   "other": 0.5
+  },
+  "26 Jul 2020 | Ephesians 1:15-23": {
+   "verdict": "Kennon",
+   "margin": 0.472,
+   "kennon": 0.903,
+   "nearest": "braxton, brady,",
+   "other": 0.431
+  },
+  "27 Dec 2020 | Psalm 65:1-13": {
+   "verdict": "Wes Selecman",
+   "margin": -0.735,
+   "kennon": 0.205,
+   "nearest": "Wes Selecman",
+   "other": 0.94
+  },
+  "27 Sep 2020 | John 17:6-19": {
+   "verdict": "Kennon",
+   "margin": 0.452,
+   "kennon": 0.933,
+   "nearest": "braxton, brady,",
+   "other": 0.482
+  },
+  "28 Jun 2020 | Colossians 1:9-14": {
+   "verdict": "Antonio Jones",
+   "margin": -0.668,
+   "kennon": 0.266,
+   "nearest": "Antonio Jones",
+   "other": 0.934
+  },
+  "29 Mar 2020 | Philippians 3:7-12": {
+   "verdict": "Kennon",
+   "margin": 0.497,
+   "kennon": 0.943,
+   "nearest": "braxton, brady,",
+   "other": 0.447
+  },
+  "29 Nov 2020 | John 1:1-5": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.679,
+   "kennon": 0.249,
+   "nearest": "Jamie Trussell",
+   "other": 0.929
+  },
+  "30 Aug 2020 | John 15:26-16:11": {
+   "verdict": "Kennon",
+   "margin": 0.43,
+   "kennon": 0.925,
+   "nearest": "braxton, brady,",
+   "other": 0.495
+  },
+  "31 May 2020 | Ephesians 4:1-6": {
+   "verdict": "Kennon",
+   "margin": 0.49,
+   "kennon": 0.93,
+   "nearest": "braxton, brady,",
+   "other": 0.44
+  },
+  "10 Jan 2021 | John 21:1-16": {
+   "verdict": "Kennon",
+   "margin": 0.437,
+   "kennon": 0.841,
+   "nearest": "braxton, brady,",
+   "other": 0.404
+  },
+  "10 Oct 2021 | Ephesians 2:11-18": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.895,
+   "kennon": 0.071,
+   "nearest": "Ronnie Stevens",
+   "other": 0.966
+  },
+  "11 Apr 2021 | 1 Peter 2:13-17": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.669,
+   "kennon": 0.255,
+   "nearest": "Jamie Trussell",
+   "other": 0.924
+  },
+  "11 Jul 2021 | Be Alive": {
+   "verdict": "Steve Winstead",
+   "margin": -0.689,
+   "kennon": 0.265,
+   "nearest": "Steve Winstead",
+   "other": 0.954
+  },
+  "12 Dec 2021 | Waiting Like John": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.681,
+   "kennon": 0.269,
+   "nearest": "Jamie Trussell",
+   "other": 0.95
+  },
+  "12 Sep 2021 | Ephesians 1:11-14": {
+   "verdict": "Kennon",
+   "margin": 0.482,
+   "kennon": 0.925,
+   "nearest": "braxton, brady,",
+   "other": 0.443
+  },
+  "13 Jun 2021 | 1 Peter 5": {
+   "verdict": "Kennon",
+   "margin": 0.368,
+   "kennon": 0.89,
+   "nearest": "braxton, brady,",
+   "other": 0.522
+  },
+  "14 Feb 2021 | 1 Peter 1:13-16": {
+   "verdict": "Kennon",
+   "margin": 0.494,
+   "kennon": 0.93,
+   "nearest": "braxton, brady,",
+   "other": 0.436
+  },
+  "14 Mar 2021 | Matthew 19:16-26": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.834,
+   "kennon": 0.118,
+   "nearest": "Ronnie Stevens",
+   "other": 0.952
+  },
+  "14 Nov 2021 | Ephesians 4:7": {
+   "verdict": "Kennon",
+   "margin": 0.441,
+   "kennon": 0.926,
+   "nearest": "braxton, brady,",
+   "other": 0.485
+  },
+  "15 Aug 2021 | Be Loved": {
+   "verdict": "Ben Fasano",
+   "margin": -0.232,
+   "kennon": 0.248,
+   "nearest": "Ben Fasano",
+   "other": 0.48
+  },
+  "16 May 2021 | 1 Peter 3:13-17": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.627,
+   "kennon": 0.24,
+   "nearest": "Jamie Trussell",
+   "other": 0.867
+  },
+  "17 Jan 2021 | 1 Peter 1:1-2": {
+   "verdict": "Ben Fasano",
+   "margin": -0.348,
+   "kennon": 0.159,
+   "nearest": "Ben Fasano",
+   "other": 0.507
+  },
+  "17 Oct 2021 | Ephesians 2:19-22": {
+   "verdict": "Kennon",
+   "margin": 0.504,
+   "kennon": 0.958,
+   "nearest": "braxton, brady,",
+   "other": 0.454
+  },
+  "18 Apr 2021 | 1 Peter 2:18-25": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.622,
+   "kennon": 0.282,
+   "nearest": "Jamie Trussell",
+   "other": 0.904
+  },
+  "18 Jul 2021 | Be Loving": {
+   "verdict": "Ben Robin",
+   "margin": -0.186,
+   "kennon": 0.264,
+   "nearest": "Ben Robin",
+   "other": 0.45
+  },
+  "19 Dec 2021 | The Story of Emmanuel": {
+   "verdict": "Kennon",
+   "margin": 0.435,
+   "kennon": 0.911,
+   "nearest": "braxton, brady,",
+   "other": 0.476
+  },
+  "19 Sep 2021 | Ephesians 1:15-23": {
+   "verdict": "Kennon",
+   "margin": 0.505,
+   "kennon": 0.953,
+   "nearest": "braxton, brady,",
+   "other": 0.448
+  },
+  "21 Feb 2021 | 1 Peter 1:17-21": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.685,
+   "kennon": 0.219,
+   "nearest": "Jamie Trussell",
+   "other": 0.904
+  },
+  "21 Jun 2021 | Be Obedient": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.698,
+   "kennon": 0.218,
+   "nearest": "Jamie Trussell",
+   "other": 0.916
+  },
+  "21 Mar 2021 | 1 Peter 2:4": {
+   "verdict": "Kennon",
+   "margin": 0.433,
+   "kennon": 0.923,
+   "nearest": "braxton, brady,",
+   "other": 0.49
+  },
+  "22 Aug 2021 | Ephesians 1:1-2": {
+   "verdict": "Kennon",
+   "margin": 0.479,
+   "kennon": 0.905,
+   "nearest": "braxton, brady,",
+   "other": 0.426
+  },
+  "22 Nov 2021 | Ephesians 4:14": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.672,
+   "kennon": 0.262,
+   "nearest": "Jamie Trussell",
+   "other": 0.934
+  },
+  "23 May 2021 | 1 Peter 3:18-22": {
+   "verdict": "Kennon",
+   "margin": 0.5,
+   "kennon": 0.962,
+   "nearest": "braxton, brady,",
+   "other": 0.461
+  },
+  "24 Jan 2021 | 1 Peter 1:3-5": {
+   "verdict": "Kennon",
+   "margin": 0.36,
+   "kennon": 0.876,
+   "nearest": "braxton, brady,",
+   "other": 0.516
+  },
+  "24 Oct 2021 | Ephesians 3:1-13": {
+   "verdict": "Kennon",
+   "margin": 0.521,
+   "kennon": 0.942,
+   "nearest": "braxton, brady,",
+   "other": 0.421
+  },
+  "25 Apr 2021 | 1 Peter 3:1": {
+   "verdict": "Kennon",
+   "margin": 0.482,
+   "kennon": 0.944,
+   "nearest": "braxton, brady,",
+   "other": 0.461
+  },
+  "25 Jul 2021 | The God of Gomer": {
+   "verdict": "Kennon",
+   "margin": 0.457,
+   "kennon": 0.938,
+   "nearest": "braxton, brady,",
+   "other": 0.481
+  },
+  "26 Dec 2021 | Matthew 2:1-12": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.754,
+   "kennon": 0.18,
+   "nearest": "Ronnie Stevens",
+   "other": 0.934
+  },
+  "26 Sep 2021 | Ephesians 2:1-7": {
+   "verdict": "Kennon",
+   "margin": 0.508,
+   "kennon": 0.952,
+   "nearest": "braxton, brady,",
+   "other": 0.444
+  },
+  "27 Jun 2021 | Be Strong": {
+   "verdict": "Ben Fasano",
+   "margin": -0.813,
+   "kennon": 0.074,
+   "nearest": "Ben Fasano",
+   "other": 0.887
+  },
+  "28 Feb 2021 | 1 Peter 1:22-25": {
+   "verdict": "Kennon",
+   "margin": 0.425,
+   "kennon": 0.914,
+   "nearest": "braxton, brady,",
+   "other": 0.489
+  },
+  "28 Nov 2021 | He Will Save": {
+   "verdict": "Steve Winstead",
+   "margin": -0.705,
+   "kennon": 0.227,
+   "nearest": "Steve Winstead",
+   "other": 0.932
+  },
+  "29 Aug 2021 | Ephesians 1:3-6": {
+   "verdict": "Kennon",
+   "margin": 0.493,
+   "kennon": 0.948,
+   "nearest": "braxton, brady,",
+   "other": 0.454
+  },
+  "30 May 2021 | 1 Peter 4:1-11": {
+   "verdict": "Kennon",
+   "margin": 0.454,
+   "kennon": 0.94,
+   "nearest": "braxton, brady,",
+   "other": 0.486
+  },
+  "31 Jan 2021 | 1 Peter 1:6-9": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.663,
+   "kennon": 0.242,
+   "nearest": "Jamie Trussell",
+   "other": 0.904
+  },
+  "31 Oct 2021 | Ephesians 3:14-21": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.829,
+   "kennon": 0.115,
+   "nearest": "Ronnie Stevens",
+   "other": 0.945
+  },
+  "10 Apr 2022 | Palm Sunday | John 12:20-33": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.753,
+   "kennon": 0.182,
+   "nearest": "Ronnie Stevens",
+   "other": 0.935
+  },
+  "10 Jul 2022 | Ephesians 6:13-16": {
+   "verdict": "Seth Jewell",
+   "margin": -0.645,
+   "kennon": 0.303,
+   "nearest": "Seth Jewell",
+   "other": 0.948
+  },
+  "11 Dec 2022 | Matthew 2:13-21": {
+   "verdict": "Ben Fasano",
+   "margin": -0.283,
+   "kennon": 0.168,
+   "nearest": "Ben Fasano",
+   "other": 0.452
+  },
+  "11 Sep 2022 | Judges 1:1-7": {
+   "verdict": "Kennon",
+   "margin": 0.447,
+   "kennon": 0.938,
+   "nearest": "braxton, brady,",
+   "other": 0.491
+  },
+  "13 Feb 2022 | Ephesians 4:17-24": {
+   "verdict": "Kennon",
+   "margin": 0.428,
+   "kennon": 0.915,
+   "nearest": "braxton, brady,",
+   "other": 0.487
+  },
+  "13 Jun 2022 | Ephesians 6:10-13": {
+   "verdict": "Bill Garner",
+   "margin": -0.597,
+   "kennon": 0.304,
+   "nearest": "Bill Garner",
+   "other": 0.901
+  },
+  "13 Mar 2022 | Ephesians 5:15-17": {
+   "verdict": "Bill Garner",
+   "margin": -0.603,
+   "kennon": 0.282,
+   "nearest": "Bill Garner",
+   "other": 0.885
+  },
+  "13 Nov 2022 | Judges 6:28-32": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.661,
+   "kennon": 0.24,
+   "nearest": "Jamie Trussell",
+   "other": 0.902
+  },
+  "14 Aug 2022 | Matthew 15:21-28": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.897,
+   "kennon": 0.056,
+   "nearest": "Ronnie Stevens",
+   "other": 0.953
+  },
+  "16 Jan 2022 | Prayer and Praise 2022 Part 2": {
+   "verdict": "Kennon",
+   "margin": 0.45,
+   "kennon": 0.928,
+   "nearest": "braxton, brady,",
+   "other": 0.478
+  },
+  "16 Oct 2022 | Judges 3:31": {
+   "verdict": "Kennon",
+   "margin": 0.482,
+   "kennon": 0.936,
+   "nearest": "braxton, brady,",
+   "other": 0.455
+  },
+  "17 Apr 2022 | Easter Sunday": {
+   "verdict": "Kennon",
+   "margin": 0.428,
+   "kennon": 0.937,
+   "nearest": "braxton, brady,",
+   "other": 0.509
+  },
+  "17 Jul 2022 | Ephesians 6:13-17": {
+   "verdict": "Wes Selecman",
+   "margin": -0.741,
+   "kennon": 0.153,
+   "nearest": "Wes Selecman",
+   "other": 0.894
+  },
+  "17 May 2022 | Ephesians 5:22-24": {
+   "verdict": "Kennon",
+   "margin": 0.449,
+   "kennon": 0.942,
+   "nearest": "braxton, brady,",
+   "other": 0.493
+  },
+  "19 Jun 2022 | Ephesians 6:14": {
+   "verdict": "Jason Ellis",
+   "margin": -0.737,
+   "kennon": 0.07,
+   "nearest": "Jason Ellis",
+   "other": 0.807
+  },
+  "20 Feb 2022 | Ephesians 4:25-5:2": {
+   "verdict": "Kennon",
+   "margin": 0.447,
+   "kennon": 0.912,
+   "nearest": "braxton, brady,",
+   "other": 0.465
+  },
+  "20 Mar 2022 | Ephesians 5:18-21": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.773,
+   "kennon": 0.18,
+   "nearest": "Ronnie Stevens",
+   "other": 0.953
+  },
+  "20 Nov 2022 | Judges 7": {
+   "verdict": "Kennon",
+   "margin": 0.462,
+   "kennon": 0.947,
+   "nearest": "braxton, brady,",
+   "other": 0.484
+  },
+  "21 Aug 2022 | 1 John 1:1-4": {
+   "verdict": "Kennon",
+   "margin": 0.463,
+   "kennon": 0.95,
+   "nearest": "braxton, brady,",
+   "other": 0.487
+  },
+  "22 May 2022 | Ephesians 5:25-33": {
+   "verdict": "Kennon",
+   "margin": 0.452,
+   "kennon": 0.943,
+   "nearest": "braxton, brady,",
+   "other": 0.491
+  },
+  "23 Jan 2022 | Gospel Centrality, Family & Disciple Making": {
+   "verdict": "JB Selecman",
+   "margin": -0.225,
+   "kennon": 0.243,
+   "nearest": "JB Selecman",
+   "other": 0.468
+  },
+  "23 Oct 2022 | Judges 4": {
+   "verdict": "Kennon",
+   "margin": 0.461,
+   "kennon": 0.946,
+   "nearest": "braxton, brady,",
+   "other": 0.485
+  },
+  "24 Jul 2022 | Ephesians 6:14-17": {
+   "verdict": "Kennon",
+   "margin": 0.406,
+   "kennon": 0.878,
+   "nearest": "braxton, brady,",
+   "other": 0.472
+  },
+  "25 Sep 2022 | Judges 2:1-13": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.802,
+   "kennon": 0.148,
+   "nearest": "Ronnie Stevens",
+   "other": 0.95
+  },
+  "26 Apr 2022 | Luke 24:13-34": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.616,
+   "kennon": 0.203,
+   "nearest": "Jamie Trussell",
+   "other": 0.819
+  },
+  "26 Jun 2022 | Ephesians 6:10-14": {
+   "verdict": "Ben Fasano",
+   "margin": -0.742,
+   "kennon": 0.208,
+   "nearest": "Ben Fasano",
+   "other": 0.95
+  },
+  "27 Mar 2022 | Ephesians 5:18 Part 2": {
+   "verdict": "Kennon",
+   "margin": 0.449,
+   "kennon": 0.945,
+   "nearest": "braxton, brady,",
+   "other": 0.496
+  },
+  "27 Nov 2022 | Luke 1:26-50": {
+   "verdict": "Kennon",
+   "margin": 0.425,
+   "kennon": 0.942,
+   "nearest": "braxton, brady,",
+   "other": 0.516
+  },
+  "28 Aug 2022 | Jude 1:1-2": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.717,
+   "kennon": 0.207,
+   "nearest": "Jamie Trussell",
+   "other": 0.924
+  },
+  "29 May 2022 | Ephesians 6:1-4": {
+   "verdict": "Ben Fasano",
+   "margin": -0.273,
+   "kennon": 0.219,
+   "nearest": "Ben Fasano",
+   "other": 0.493
+  },
+  "30 Oct 2022 | Judges 5:1-12": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.732,
+   "kennon": 0.213,
+   "nearest": "Ronnie Stevens",
+   "other": 0.945
+  },
+  "31 Jul 2022 | Ephesians 6:18": {
+   "verdict": "Ben Fasano",
+   "margin": -0.144,
+   "kennon": 0.238,
+   "nearest": "Ben Fasano",
+   "other": 0.382
+  },
+  "10 Dec 2023 | Matthew 1:18-25 (Advent)": {
+   "verdict": "Kennon",
+   "margin": 0.448,
+   "kennon": 0.926,
+   "nearest": "braxton, brady,",
+   "other": 0.478
+  },
+  "10 Sep 2023 | Genesis 23:1-9, Genesis 25:7-11": {
+   "verdict": "Kennon",
+   "margin": 0.497,
+   "kennon": 0.939,
+   "nearest": "braxton, brady,",
+   "other": 0.443
+  },
+  "11 Jun 2023 | Genesis 12:10-20": {
+   "verdict": "Wes Selecman",
+   "margin": -0.693,
+   "kennon": 0.208,
+   "nearest": "Wes Selecman",
+   "other": 0.9
+  },
+  "12 Feb 2023 | Certainty": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.739,
+   "kennon": 0.154,
+   "nearest": "Jamie Trussell",
+   "other": 0.893
+  },
+  "12 Mar 2023 | The Hymn of Humiliation": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.779,
+   "kennon": 0.161,
+   "nearest": "Ronnie Stevens",
+   "other": 0.94
+  },
+  "12 Nov 2023 | Psalm 105:1-4": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.794,
+   "kennon": 0.151,
+   "nearest": "Ronnie Stevens",
+   "other": 0.945
+  },
+  "13 Aug 2023 | Genesis 20": {
+   "verdict": "Noah Martin",
+   "margin": -0.62,
+   "kennon": 0.284,
+   "nearest": "Noah Martin",
+   "other": 0.904
+  },
+  "14 May 2023 | A New People (Mother's Day)": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.663,
+   "kennon": 0.226,
+   "nearest": "Jamie Trussell",
+   "other": 0.889
+  },
+  "15 Jan 2023 | Judges 8:22": {
+   "verdict": "Kennon",
+   "margin": 0.464,
+   "kennon": 0.968,
+   "nearest": "braxton, brady,",
+   "other": 0.504
+  },
+  "15 Oct 2023 | John 4:1-8": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.853,
+   "kennon": 0.106,
+   "nearest": "Ronnie Stevens",
+   "other": 0.96
+  },
+  "16 Apr 2023 | The Tomb Is Empty, Now What?": {
+   "verdict": "JB Selecman",
+   "margin": -0.57,
+   "kennon": 0.348,
+   "nearest": "JB Selecman",
+   "other": 0.918
+  },
+  "16 Jul 2023 | Genesis 17:1-14": {
+   "verdict": "Ben Fasano",
+   "margin": -0.794,
+   "kennon": 0.143,
+   "nearest": "Ben Fasano",
+   "other": 0.936
+  },
+  "17 Dec 2023 | 1 Kings 19:1-13 (Advent)": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.707,
+   "kennon": 0.199,
+   "nearest": "Jamie Trussell",
+   "other": 0.906
+  },
+  "17 Sep 2023 | When God Disrupts Our Plans For His Purposes": {
+   "verdict": "Kennon",
+   "margin": 0.453,
+   "kennon": 0.885,
+   "nearest": "braxton, brady,",
+   "other": 0.432
+  },
+  "18 Jun 2023 | Genesis 13": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.878,
+   "kennon": 0.088,
+   "nearest": "Ronnie Stevens",
+   "other": 0.967
+  },
+  "19 Feb 2023 | Matthew 13:1-23": {
+   "verdict": "JB Selecman",
+   "margin": -0.546,
+   "kennon": 0.243,
+   "nearest": "JB Selecman",
+   "other": 0.789
+  },
+  "19 Nov 2023 | Hebrews 10:19-25": {
+   "verdict": "Kennon",
+   "margin": 0.437,
+   "kennon": 0.934,
+   "nearest": "braxton, brady,",
+   "other": 0.497
+  },
+  "20 Aug 2023 | Genesis 21:1-7": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.707,
+   "kennon": 0.226,
+   "nearest": "Jamie Trussell",
+   "other": 0.933
+  },
+  "21 May 2023 | Lamentations 3:20-26": {
+   "verdict": "Kennon",
+   "margin": 0.35,
+   "kennon": 0.688,
+   "nearest": "Braxton Brady",
+   "other": 0.338
+  },
+  "22 Jan 2023 | Suffering and Glory": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.695,
+   "kennon": 0.2,
+   "nearest": "Jamie Trussell",
+   "other": 0.895
+  },
+  "22 Mar 2023 | Mark 1:14-15": {
+   "verdict": "JB Selecman",
+   "margin": -0.212,
+   "kennon": 0.211,
+   "nearest": "JB Selecman",
+   "other": 0.423
+  },
+  "22 Oct 2023 | Matthew 11:28-30": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.685,
+   "kennon": 0.253,
+   "nearest": "Jamie Trussell",
+   "other": 0.937
+  },
+  "23 Apr 2023 | Raised with Christ": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.484,
+   "kennon": 0.219,
+   "nearest": "Jamie Trussell",
+   "other": 0.703
+  },
+  "23 Jul 2023 | Genesis 17:15-18:15": {
+   "verdict": "Dr. Robert Coleman",
+   "margin": -0.129,
+   "kennon": 0.176,
+   "nearest": "Dr. Robert Colem",
+   "other": 0.305
+  },
+  "24 Dec 2023 | The Story of Emmanuel": {
+   "verdict": "Kennon",
+   "margin": 0.313,
+   "kennon": 0.617,
+   "nearest": "Braxton Brady",
+   "other": 0.303
+  },
+  "24 Sep 2023 | When God Disrupts Our Plans For His Purposes: Part 2": {
+   "verdict": "Kennon",
+   "margin": 0.46,
+   "kennon": 0.918,
+   "nearest": "braxton, brady,",
+   "other": 0.457
+  },
+  "25 Jun 2023 | Genesis 14": {
+   "verdict": "Seth Jewell",
+   "margin": -0.61,
+   "kennon": 0.306,
+   "nearest": "Seth Jewell",
+   "other": 0.916
+  },
+  "26 Feb 2023 | The Lineage of Jesus": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.702,
+   "kennon": 0.242,
+   "nearest": "Jamie Trussell",
+   "other": 0.944
+  },
+  "26 Mar 2023 | Follow Me": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.689,
+   "kennon": 0.234,
+   "nearest": "Jamie Trussell",
+   "other": 0.924
+  },
+  "26 Nov 2023 | Matthew 4:19, 1 John 1:1-4": {
+   "verdict": "Kennon",
+   "margin": 0.464,
+   "kennon": 0.908,
+   "nearest": "braxton, brady,",
+   "other": 0.443
+  },
+  "27 Aug 2023 | Genesis 22": {
+   "verdict": "Kennon",
+   "margin": 0.478,
+   "kennon": 0.916,
+   "nearest": "braxton, brady,",
+   "other": 0.438
+  },
+  "28 May 2023 | Colossians 3:18-25": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.82,
+   "kennon": 0.125,
+   "nearest": "Ronnie Stevens",
+   "other": 0.945
+  },
+  "29 Jan 2023 | Eagerly Waiting": {
+   "verdict": "Jaime Trussell",
+   "margin": -0.623,
+   "kennon": 0.18,
+   "nearest": "Jaime Trussell",
+   "other": 0.802
+  },
+  "29 Oct 2023 | Matthew 9:35-38 (10 Year Anniversary)": {
+   "verdict": "Kennon",
+   "margin": 0.403,
+   "kennon": 0.902,
+   "nearest": "braxton, brady,",
+   "other": 0.499
+  },
+  "30 Apr 2023 | Family Weekend 2023": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.302,
+   "kennon": 0.012,
+   "nearest": "Jamie Trussell",
+   "other": 0.315
+  },
+  "30 Jul 2023 | Genesis 18:15-33": {
+   "verdict": "Wes Selecman",
+   "margin": -0.286,
+   "kennon": 0.204,
+   "nearest": "Wes Selecman",
+   "other": 0.49
+  },
+  "31 Dec 2023 | The Restoration of Years": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.852,
+   "kennon": 0.087,
+   "nearest": "Ronnie Stevens",
+   "other": 0.939
+  },
+  "10 Mar 2024 | Judges 16:4-31": {
+   "verdict": "Kennon",
+   "margin": 0.477,
+   "kennon": 0.914,
+   "nearest": "braxton, brady,",
+   "other": 0.437
+  },
+  "11 Feb 2024 | Judges 13": {
+   "verdict": "Kennon",
+   "margin": 0.426,
+   "kennon": 0.928,
+   "nearest": "braxton, brady,",
+   "other": 0.502
+  },
+  "12 May 2024 | 1 Samuel 1 (Mother's Day 2024)": {
+   "verdict": "Kennon",
+   "margin": 0.496,
+   "kennon": 0.938,
+   "nearest": "braxton, brady,",
+   "other": 0.442
+  },
+  "14 Jan 2024 | Judges 9": {
+   "verdict": "Kennon",
+   "margin": 0.395,
+   "kennon": 0.898,
+   "nearest": "braxton, brady,",
+   "other": 0.502
+  },
+  "15 Apr 2024 | Judges 18:1-6": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.664,
+   "kennon": 0.214,
+   "nearest": "Jamie Trussell",
+   "other": 0.878
+  },
+  "18 Feb 2024 | Judges 14": {
+   "verdict": "Kennon",
+   "margin": 0.439,
+   "kennon": 0.919,
+   "nearest": "braxton, brady,",
+   "other": 0.48
+  },
+  "19 May 2024 | Luke 8:16-21": {
+   "verdict": "Kent Austell",
+   "margin": -0.119,
+   "kennon": 0.318,
+   "nearest": "Kent Austell",
+   "other": 0.437
+  },
+  "20 Mar 2024 | Matthew 20:17-28": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.721,
+   "kennon": 0.21,
+   "nearest": "Ronnie Stevens",
+   "other": 0.931
+  },
+  "21 Apr 2024 | Judges 19-21": {
+   "verdict": "Kennon",
+   "margin": 0.452,
+   "kennon": 0.909,
+   "nearest": "braxton, brady,",
+   "other": 0.456
+  },
+  "21 Jan 2024 | Judges 10 (God In The Darkness)": {
+   "verdict": "Ronnie Stevens",
+   "margin": -0.812,
+   "kennon": 0.135,
+   "nearest": "Ronnie Stevens",
+   "other": 0.947
+  },
+  "22 Dec 2024 | The Story of Emmanuel (2024)": {
+   "verdict": "Kennon",
+   "margin": 0.409,
+   "kennon": 0.912,
+   "nearest": "braxton, brady,",
+   "other": 0.503
+  },
+  "24 Mar 2024 | Palm Sunday 2024": {
+   "verdict": "Kennon",
+   "margin": 0.423,
+   "kennon": 0.91,
+   "nearest": "braxton, brady,",
+   "other": 0.487
+  },
+  "25 Dec 2024 | Christmas Eve Service 2024": {
+   "verdict": "Ernie Frey",
+   "margin": -0.094,
+   "kennon": 0.076,
+   "nearest": "Ernie Frey",
+   "other": 0.17
+  },
+  "25 Feb 2024 | Judges 15": {
+   "verdict": "Ernie Frey",
+   "margin": -0.583,
+   "kennon": 0.154,
+   "nearest": "Ernie Frey",
+   "other": 0.738
+  },
+  "28 Apr 2024 | Family Weekend 2024": {
+   "verdict": "unsure",
+   "margin": -0.004,
+   "kennon": 0.339,
+   "nearest": "Brooks Kimmey",
+   "other": 0.343
+  },
+  "28 Jan 2024 | Judges 11:1-11": {
+   "verdict": "Jamie Trussell",
+   "margin": -0.667,
+   "kennon": 0.252,
+   "nearest": "Jamie Trussell",
+   "other": 0.919
+  },
+  "31 Mar 2024 | Luke 24:1-12 (Easter Sunday)": {
+   "verdict": "Kennon",
+   "margin": 0.446,
+   "kennon": 0.922,
+   "nearest": "braxton, brady,",
+   "other": 0.477
+  },
+  "12 Jan 2025 | Prayer and Praise 2025 (The Redemption Story)": {
+   "verdict": "Kennon",
+   "margin": 0.374,
+   "kennon": 0.811,
+   "nearest": "braxton, brady,",
+   "other": 0.436
+  },
+  "27 Apr 2025 | The Tomb is Empty, Now What? (JB Selectman)": {
+   "verdict": "JB Selecman",
+   "margin": -0.537,
+   "kennon": 0.292,
+   "nearest": "JB Selecman",
+   "other": 0.83
+  },
+  "29 Jun 2025 | Exodus 16:1-3 (Dylan Avery-Smith ) Respectable Sins": {
+   "verdict": "Jackson Munyon",
+   "margin": -0.269,
+   "kennon": 0.085,
+   "nearest": "Jackson Munyon",
+   "other": 0.354
+  },
+  "28 Jun 2026 | Matthew 6:1-6 - Dyllan Avery-Smith": {
+   "verdict": "Jackson Munyon",
+   "margin": -0.298,
+   "kennon": 0.087,
+   "nearest": "Jackson Munyon",
+   "other": 0.385
+  }
+ }
+}

@@ -42,8 +42,9 @@ jobs:
           path: voice
           merge-multiple: true
       - run: python tools/voice_id.py report
-      - run: |
-          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B vaughan-voice
-          git add -f data/vaughan_voice.json voice/report.txt voice/*.json
-          git commit -qm "Voice ID results" && git push -qf origin vaughan-voice
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice-report
+          path: |
+            data/vaughan_voice.json
+            voice/report.txt
