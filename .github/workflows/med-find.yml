@@ -1,11 +1,14 @@
 # Meditate: pastors in the library reading Jesus' own words aloud (tools/med_find.py). Read only from the recordings;
 # the readings go to the "med-find" branch to read. By hand only.
 name: Meditate find
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      set: {description: "1 = the first 46 sayings, 2 = the second pass", default: "2"}
 permissions:
   contents: write
 concurrency:
-  group: med-find
+  group: med-find-${{ inputs.set }}
   cancel-in-progress: false
 jobs:
   find:
@@ -13,9 +16,9 @@ jobs:
     timeout-minutes: 330
     strategy:
       fail-fast: false
-      max-parallel: 16
+      max-parallel: 20
       matrix:
-        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+        shard: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,7 +27,7 @@ jobs:
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
       - run: pip install -q -r requirements.txt faster-whisper numpy
       - run: python app_build.py >/dev/null
-      - run: python tools/med_find.py find ${{ matrix.shard }} 16
+      - run: SET=${{ inputs.set }} python tools/med_find.py find ${{ matrix.shard }} 24
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -46,9 +49,9 @@ jobs:
         with:
           path: parts
       - run: mkdir -p med && find parts -name '*.jsonl' -exec sh -c 'cp "$1" "med/$(basename $(dirname $1))-$(basename $1)"' _ {} \; ; ls med | wc -l
-      - run: python tools/med_find.py report
+      - run: SET=${{ inputs.set }} python tools/med_find.py report
       - run: |
           mkdir /tmp/d && cp med/* /tmp/d/ && cd /tmp/d
-          git init -q -b med-find && git add -A
+          git init -q -b med-find-${{ inputs.set }} && git add -A
           git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -q -m "med find"
-          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" med-find
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" med-find-${{ inputs.set }}
