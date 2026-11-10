@@ -70,7 +70,17 @@ MEDITATE = [
  ("John 13:34-35", "Love one another"), ("Mark 8:34", "Take up your cross"), ("Matthew 5:8", "The pure in heart"),
 ]
 
-def meditate():
+def meditate(items=None):
+    """Meditate: things Jesus said, each read by a pastor in one of his sermons (data/meditate.json: src, a/b = seconds
+    from the file's start, t = the words as he reads them). Until that file is there, the narrator's chapter recordings."""
+    p = os.path.join(HERE, "data", "meditate.json")
+    if items is not None and os.path.exists(p):
+        out = []
+        for x in json.load(open(p, encoding="utf-8"))["sayings"]:
+            it = items.get(x["src"])
+            if not it or not it.get("audio"): continue
+            out.append({"ref": x["ref"].replace("-", "\u2013"), "name": x.get("name", ""), "t": x["t"], "who": it["who"], "audio": it["audio"], "a": x["a"], "b": x["b"]})
+        return out
     from canon import BOOKS
     abbr = {b[0]: b[1] for b in BOOKS}
     out = []

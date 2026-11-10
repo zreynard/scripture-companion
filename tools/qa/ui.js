@@ -333,30 +333,44 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await A.evaluate(() => { $('#tabs [data-tab2=library]').click(); }); await wait(400); await A.click('[data-lt=teachers]'); await wait(300);
     const row = await A.evaluate(() => !!document.querySelector('[data-tch="Davey"]'));
     return (r.n > 0 && r.n <= 40 && r.hide === 'Davey' && r.jon && r.titus >= 2 && r.coreOk && !row) || { r, row }; });
-  await T('U76 Be Led: a third Pray mode lists pastors\' prayers by theme; a prayer plays from its sermon near the end, with the soaking music only where it has none', async () => {
+  await T('U76 Be Led: one prayer at a time showing only who is praying; the ring plays it here from its sermon near the end, 15 s back and on, the arrows go to another; speed and music; a minute or more each', async () => {
     const A = await open(await ctx());
     await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500);
     await A.click('[data-prm=led]'); await wait(400);
-    const v = await A.evaluate(() => ({ rows: document.querySelectorAll('[data-ledplay]').length, ths: document.querySelectorAll('[data-ledth]').length, n: (PRAY.led || []).length }));
-    const th = await A.evaluate(() => { const b = [...document.querySelectorAll('[data-ledth]')].find(x => x.dataset.ledth); return b && b.dataset.ledth; });
-    await A.click(`[data-ledth="${th}"]`); await wait(300); const f = await A.evaluate(() => document.querySelectorAll('[data-ledplay]').length);
-    await A.click('[data-ledth=""]'); await wait(300);
-    const id = await A.evaluate(() => { const x = PRAY.led.find(z => z.music); return x.id; });
-    await A.click(`[data-ledplay="${id}"]`); await wait(1500);
-    const p = await A.evaluate(id => ({ cur: String(cur), led: !!(I[id] && I[id].led), sb: I[id] && I[id].sb, tail: tail(), bed: bedLed(), mode: PR.mode, inLib: Object.values(I).filter(i => i.led && i.tr !== 'devotional').length }), id);
-    return (v.rows === v.n && v.n >= 6 && v.ths >= 3 && f >= 1 && f < v.n && p.cur === id && p.led && p.sb > 30 && p.bed && p.inLib === 0) || { v, f, p }; });
-  await T('U77 Meditate: today\'s saying with pace choices; Begin reads it (Listen), pauses, reads again (Again), then Be still; Stop ends it', async () => {
+    const v = await A.evaluate(() => ({ txt: (() => { const c = document.querySelector('.led').cloneNode(true); c.querySelectorAll('svg').forEach(x => x.remove()); return [...c.querySelectorAll('*')].filter(e => !e.children.length).map(e => e.textContent.trim()).filter(Boolean).join(' '); })(), who: NAMES[ledCur().who], old: document.querySelectorAll('[data-ledth],[data-ledplay],.led-row,.pr-dots').length,
+      short: (PRAY.led || []).filter(x => x.len < 60).length, n: (PRAY.led || []).length, sk: document.querySelectorAll('[data-ledsk]').length, p0: ledOrd().p, id0: ledCur().id }));
+    await A.click('[data-ledgo="1"]'); await wait(300);
+    const g = await A.evaluate(() => ({ p: ledOrd().p, id: ledCur().id }));
+    // a short local clip stands in for the sermon's recording
+    await A.evaluate(() => { ledCur().audio = SILENT; ledCur().sb = 0.5; ledCur().e = 0; });
+    await A.click('[data-ledpp]'); await wait(900);
+    const p = await A.evaluate(() => ({ id: LED.id, src: LED.el && LED.el.getAttribute('src') === SILENT, main: cur && String(cur).startsWith('led:'), en: LED.en > LED.st, inLib: Object.keys(I).filter(k => k.startsWith('led:')).length }));
+    await A.click('[data-ledsp]'); const sp = await A.evaluate(() => ({ sp: LED.sp, rate: LED.el.playbackRate, t: document.querySelector('[data-ledsp]').textContent }));
+    const mu = await A.evaluate(() => { const b = document.querySelector('[data-ledmu]'); if (!b) return 'none'; const was = BED.led; b.click(); const now = BED.led; b.click(); return was !== now && BED.led === was; });
+    return new RegExp('^Be Led ' + v.who + ' 1×( ♪ Music (on|off))?$').test(v.txt) && v.old === 0 && v.short === 0 && v.n >= 6 && v.sk === 2 && g.p === v.p0 + 1 && g.id !== v.id0
+      && p.id === g.id && p.src && !p.main && p.inLib === 0 && sp.sp === 1.1 && sp.rate === 1.1 && sp.t === '1.1×' && mu !== false || { v, g, p, sp, mu }; });
+  await T('U77 Meditate: today\'s saying read by a pastor; Begin reads it (Listen), a breath, again (Again), then Be still with no clock until Amen; n of N with arrows', async () => {
     const A = await open(await ctx());
     await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prm=med]'); await wait(400);
-    const v = await A.evaluate(() => ({ n: document.querySelectorAll('[data-medpick]').length, q: (document.querySelector('.med-q') || {}).textContent || '', pace: document.querySelectorAll('[data-medpace]').length }));
-    await A.click('[data-medpace=brisk]'); await wait(200);
-    // a short local clip stands in for the chapter recording; the pauses run fast
-    await A.evaluate(() => { window.MED_FAST = 0.02; const m = medCur(); m.t0 = 0; m.t1 = 0.05; window.narBlob = () => Promise.resolve(SILENT); });
+    const v = await A.evaluate(() => ({ q: (document.querySelector('.med-q') || {}).textContent || '', nn: (document.querySelector('.med-n') || {}).textContent || '', n: medList().length, old: document.querySelectorAll('[data-medpace],[data-medpick],#med-left').length, k0: medIdx() }));
+    await A.evaluate(() => { window.MED_FAST = 0.02; const m = medCur(); if (m.audio) { m.audio = SILENT; m.a = 0; m.b = 0.05 } else { m.t0 = 0; m.t1 = 0.05; window.narBlob = () => Promise.resolve(SILENT) } });
     await A.click('[data-medgo]'); const seen = new Set();
     for (let k = 0; k < 60; k++) { seen.add(await A.evaluate(() => MED.step)); if (seen.has('still')) break; await wait(100); }
-    const left = await A.evaluate(() => MED.left);
-    await A.click('[data-medstop]'); await wait(200); const end = await A.evaluate(() => ({ on: MED.on, go: !!document.querySelector('[data-medgo]') }));
-    return (v.n === 15 && v.q.length > 10 && v.pace === 3 && seen.has('listen') && seen.has('again') && seen.has('still') && left <= 60 && !end.on && end.go) || { v, seen: [...seen], left, end }; });
+    const still = await A.evaluate(() => ({ txt: (() => { const c = document.querySelector('.med').cloneNode(true); c.querySelectorAll('.med-ref').forEach(x => x.remove()); return c.textContent; })(), amen: !!document.querySelector('[data-medamen]') }));
+    await A.click('[data-medamen]'); await wait(200); const end = await A.evaluate(() => ({ on: MED.on, go: !!document.querySelector('[data-medgo]'), step: MED.step }));
+    const nx = await A.evaluate(() => { const b = document.querySelector('[data-medgo2="1"]'), k = medIdx(); if (b.disabled) return true; b.click(); return medIdx() === k + 1; });
+    return (v.q.length > 10 && v.nn === `${v.k0 + 1} of ${v.n}` && v.n >= 15 && v.old === 0 && seen.has('listen') && seen.has('again') && seen.has('still') && still.amen && !/\d:\d\d/.test(still.txt) && !end.on && end.go && end.step === 'done' && nx) || { v, seen: [...seen], still, end, nx }; });
+  await T('U78 Guided with a pastor: a quiet "Pray it with" line plays his prayer of the Lord\'s Prayer here, and the movement on screen follows him', async () => {
+    const A = await open(await ctx());
+    await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prm=guided]'); await wait(400);
+    const real = await A.evaluate(() => !!PRAY.lp);
+    // a short local clip stands in for his sermon: the second movement starts right away
+    await A.evaluate(() => { const n = PRAY.moves.length; PRAY.lp = Object.assign({ who: 'PAM' }, PRAY.lp || {}, { audio: SILENT, a: 0, b: 100, at: [0, 0.02, ...Array(Math.max(0, n - 2)).fill(90)] }); PR.mv = 0; render(); });
+    const line = await A.evaluate(() => (document.querySelector('[data-lpp]') || {}).textContent || '');
+    await A.click('[data-lpp]'); let mv = 0;
+    for (let k = 0; k < 30 && !mv; k++) { await wait(100); mv = await A.evaluate(() => PR.mv); }
+    const st = await A.evaluate(() => ({ live: !!(LP.el && LP.el.getAttribute('src')), sk: [...document.querySelectorAll('[data-lpsk]')].filter(b => !b.hidden).length, main: !!cur && String(cur).startsWith('led') }));
+    return (/^Pray it with \S/.test(line) && mv === 1 && st.live && !st.main) || { real, line, mv, st }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

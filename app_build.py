@@ -78,9 +78,19 @@ def be_led(items):
     for x in json.load(open(p, encoding="utf-8")).get("prayers", []):
         it = items.get(x["src"])
         if not it or not it.get("audio"): continue
-        out.append({"id": "led:" + x["src"], "src": x["src"], "t": x["title"], "theme": x["theme"], "sb": x["sb"], "e": x["e"],
-                    "who": it["who"], "audio": it["audio"], "len": round(x["sb"] - x["e"]), "from": it["t"], "music": bool(x.get("music"))})
+        if x["sb"] - x["e"] < 60: continue          # a minute at least: the ones that carry you into prayer
+        out.append({"id": "led:" + x["src"] + ("" if not x.get("n") else f":{x['n']}"), "src": x["src"], "sb": x["sb"], "e": x["e"], "who": it["who"],
+                    "audio": it["audio"], "len": round(x["sb"] - x["e"]), "music": bool(x.get("music")), "power": int(x.get("power") or 4)})
     return out
+
+def guided_lp(items):
+    """Guided: a pastor praying the Lord's Prayer through (data/guided_lp.json: src, a/b = seconds from the file's start,
+    at = where each movement begins, music = none of its own under it)."""
+    p = os.path.join(HERE, "data", "guided_lp.json")
+    if not os.path.exists(p): return None
+    x = json.load(open(p, encoding="utf-8")); it = items.get(x["src"])
+    if not it or not it.get("audio"): return None
+    return {"src": x["src"], "who": it["who"], "audio": it["audio"], "a": x["a"], "b": x["b"], "at": x["at"], "music": bool(x.get("music"))}
 
 def big_picture(items, vser=None):
     """Big Picture: whole-Bible series heard in order, each with its own place. Episodes are items already in the app."""
@@ -465,7 +475,7 @@ def main():
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items, VSER),
             "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst}),
             "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]},
-            "pray": {"moves": __import__("pray").build(), "led": be_led(items), "med": __import__("pray").meditate()}}
+            "pray": {"moves": __import__("pray").build(), "led": be_led(items), "med": __import__("pray").meditate(items), "lp": guided_lp(items)}}
     html = TEMPLATE.replace("__VERSION__", str(BUILD)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
@@ -901,7 +911,7 @@ body.wsong-open #tabs{display:none}body.wsong-open{padding-bottom:0!important}
 .w-pk{background:var(--bg);width:100%;max-width:560px;max-height:80vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(20px + env(safe-area-inset-bottom))}.w-pk h3{margin:0 0 8px;font-weight:400;font-size:22px}
 .w-pl label{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line)}.w-pl input{width:22px;height:22px;flex:none}.w-pl b{display:block;font-weight:600}.w-pl small{display:block;color:var(--mute);font-size:13px}
 
-.pray .pr-seg{margin:12px 0 18px}.led-lead{margin:2px 2px 14px;color:#5b6280;font-size:15px;line-height:1.45}.led-ths{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}.led-ths button{height:32px;padding:0 13px;border-radius:16px;border:1px solid rgba(168,129,42,.38);background:#fff;font:600 13px -apple-system,system-ui,sans-serif;color:var(--ink)}.led-ths button.on{background:#f3e7c7;border-color:#c9a24a}.led-list{display:flex;flex-direction:column;gap:10px}.led-row{display:flex;align-items:center;gap:13px;width:100%;padding:13px 14px;border-radius:18px;border:1px solid rgba(27,36,64,.08);background:#fff;text-align:left;font:inherit;color:var(--ink);cursor:pointer}.led-row.now{border-color:#c9a24a;box-shadow:0 0 0 2px rgba(201,162,74,.18)}.led-pp{flex:none;width:44px;height:44px;border-radius:22px;background:#f3ead4;color:#7a5c16;display:flex;align-items:center;justify-content:center}.led-pp svg{width:20px;height:20px}.led-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.led-t b{font:500 18px/1.25 'Iowan Old Style',Georgia,serif}.led-t span{font-size:13px;color:#6b7088}.led-th1{flex:none;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#a8812a}.led-row.heard .led-t b{color:#4a5272}.med-card{margin:4px 0 16px;padding:26px 22px 22px;border-radius:22px;background:#fff;border:1px solid rgba(27,36,64,.08);text-align:center}.med-card.on{border-color:#e6d3a3;box-shadow:0 0 0 3px rgba(201,162,74,.12)}.med-st{min-height:16px;font:600 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#a8812a;margin-bottom:12px}.med-q{margin:0;font:400 22px/1.45 'Iowan Old Style',Georgia,serif;color:var(--ink)}.med-ref{margin-top:12px;font-size:13px;color:#6b7088}.med-pace{justify-content:center}.med-go{display:block;width:100%;height:50px;margin:2px 0 22px;border:0;border-radius:25px;background:#f3e7c7;color:#5d4510;font:600 16px -apple-system,system-ui,sans-serif;cursor:pointer}.med-go.stop{background:#fff;border:1px solid rgba(27,36,64,.14);color:var(--ink)}.med-list{display:flex;flex-direction:column;gap:8px;margin-top:8px}.med-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(27,36,64,.07);background:#fff;font:inherit;color:var(--ink);text-align:left;cursor:pointer}.med-row b{font:500 16px 'Iowan Old Style',Georgia,serif}.med-row span{font-size:12.5px;color:#6b7088;white-space:nowrap}.med-row.on{border-color:#c9a24a}
+.pray .pr-seg{margin:12px 0 18px}.led-lead{margin:18px 2px 14px;color:#5b6280;font-size:15px;line-height:1.45;text-align:center}.led,.med{padding:24px 8px 4px;text-align:center}.led-who{font-size:30px;line-height:1.2;margin:12px 0 0;color:var(--ink)}.led-ctl{display:flex;align-items:center;justify-content:center;gap:26px;margin:30px 0 14px}.led-sk{width:44px;height:44px;border:0;background:none;color:#8a8fa6;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;border-radius:50%}.led-sk:active{background:rgba(27,36,64,.06)}.led-ring{position:relative;width:112px;height:112px;border:0;border-radius:50%;background:none;padding:0;cursor:pointer;color:#5d4510}.led-ring>svg{position:absolute;inset:0;width:100%;height:100%}.led-in svg{width:30px;height:30px}.led-tr{fill:none;stroke:rgba(201,162,74,.22);stroke-width:2.2}.led-fg{fill:none;stroke:#c9a24a;stroke-width:2.6;stroke-linecap:round;transition:stroke-dasharray .4s linear}.led-in{position:absolute;inset:12px;border-radius:50%;background:#fbf4e3;box-shadow:0 8px 22px rgba(120,92,30,.16),inset 0 0 0 1px rgba(201,162,74,.25);display:flex;align-items:center;justify-content:center;transition:transform .2s}.led-ring:active .led-in{transform:scale(.96)}.led-opt{display:flex;justify-content:center;gap:26px;margin:6px 0 4px}.led-opt button{border:0;background:none;color:#6b7088;font:600 14px -apple-system,system-ui,sans-serif;padding:8px 6px;min-height:38px;cursor:pointer}.pr-nav>span:empty{flex:1}.med-n{font-size:13.5px;color:var(--mute)}.med-q{margin:14px auto 0;max-width:24ch;font-size:24px;line-height:1.42;color:var(--ink);text-wrap:balance}.med-ref{margin-top:14px;font-size:13px;color:#6b7088}.med-by{margin-top:4px;font-size:12.5px;color:#8a8fa6}.med-ctl{display:flex;justify-content:center;margin:28px 0 8px;min-height:60px;align-items:center}.med-go{min-width:170px;height:54px;padding:0 30px;border-radius:27px;border:1px solid rgba(201,162,74,.45);background:#fbf4e3;color:#5d4510;font:600 16px -apple-system,system-ui,sans-serif;cursor:pointer}.lp-line{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 -6px}.lp-line .led-sk[hidden]{display:flex;visibility:hidden}.lp-pp{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px 0 8px;border-radius:22px;border:1px solid rgba(201,162,74,.4);background:#fbf4e3;color:#5d4510;font:600 14.5px -apple-system,system-ui,sans-serif;cursor:pointer}.lp-pp i{display:flex;width:30px;height:30px;align-items:center;justify-content:center}.lp-pp i svg{width:18px;height:18px}.med-pp{width:54px;height:54px;border-radius:50%;border:1px solid rgba(201,162,74,.35);background:#fbf4e3;color:#5d4510;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}.med-pp svg{width:22px;height:22px}.med-pp[disabled]{opacity:.45}
 .pr-art{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 10px 30px rgba(27,36,64,.12);background:#eadfca;transform:translateZ(0)}
 .pr-art svg{display:block;width:100%;height:100%}
 .pr-still{height:calc(100svh - var(--tabh) - 330px);min-height:280px;max-height:560px}
@@ -1283,7 +1293,7 @@ const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSO
    Saved about every 10 minutes while something changed, and whenever the app goes to the background; every backup is
    a commit, so older versions stay in the repo's history. A new phone: paste the key once and everything comes back. */
 const BK_KEYS=['camp','camp2','camp3','npl','cfg','jp','level','lk2','narpos','prog','read','skip','speed','tab','wsongs','wsets','bedon','bedlv','bedpos',
- 'fav','coreSet','bp','bplast','prm','prsup','prlast','wimp','pmpos','srecent','shlen','bbpos','bbintro','bbrec','cut'],BK={sha:null,busy:false,tried:0,err:S.get('bkerr',''),pulled:0};
+ 'fav','coreSet','bp','bplast','prm','prsup','prlast','ledord','ledsp','wimp','pmpos','srecent','shlen','bbpos','bbintro','bbrec','cut'],BK={sha:null,busy:false,tried:0,err:S.get('bkerr',''),pulled:0};
 /* Sync between devices. Each synced setting remembers when it last changed (sc:bkts), and what was removed from it
    (sc:bkdel), so two devices merge instead of overwriting each other:
    - lists of things by id (progress, chapters read, favorites, Core, bookmarks, songs, setlists) are merged item by item;
@@ -2597,7 +2607,7 @@ function wireLib(){wireBP();document.querySelectorAll('[data-tch]').forEach(b=>b
 /* Pray (pray.py): Stillness is music and a quiet landscape; Guided walks the Lord's Prayer (Matthew 6:9-13). The music
    plays on its own element: it pauses a sermon and a sermon pauses it, and it is never kept in listening history */
 const PRAY=D.pray||{moves:[],music:[]};
-const PR={mode:['guided','led','med'].includes(S.get('prm','still'))?S.get('prm','still'):'still',mv:0,anim:'',th:S.get('ledth','')};
+const PR={mode:['guided','led','med'].includes(S.get('prm','still'))?S.get('prm','still'):'still',mv:0,anim:''};
 const PM={el:null,k:0,ms:false,err:0,sv:0};
 const PR_PLAY='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M8.5 5.6v12.8a.8.8 0 0 0 1.2.7l10-6.4a.8.8 0 0 0 0-1.4l-10-6.4a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg>',
  PR_PAUSE='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><rect x="6.5" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/></svg>',
@@ -2606,7 +2616,7 @@ const PR_PLAY='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true
  PR_TURN='<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 function prShuf(n){const o=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[o[i],o[j]]=[o[j],o[i]]}return o}
 function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
- a.addEventListener('play',()=>{AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});pmSession();pmPaint()});
+ a.addEventListener('play',()=>{AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});[window.LED&&LED.el,window.LP&&LP.el].forEach(x=>{if(x&&!x.paused)x.pause()});pmSession();pmPaint()});
  a.addEventListener('pause',pmPaint);a.addEventListener('playing',()=>{PM.err=0});
  a.addEventListener('ended',()=>{if(a.src!==SILENT)pmSkip(1,true)});
  a.addEventListener('error',()=>{if(!a.getAttribute('src')||a.src===SILENT||PM.err>3)return;PM.err++;setTimeout(()=>pmSkip(1,true),900)});
@@ -2630,10 +2640,10 @@ function bedLoad(step){return plLoad().then(L=>{if(!L.length)return false;const 
   if(step){k=(Math.max(k,0)+step)%L.length;t=0}else if(k<0)k=0;else t=p.t||0;const tr=L[k];if(!step&&BED.id===tr.id&&BED.el&&BED.el.getAttribute('src'))return true;
   return pdbDo('blob','readonly',x=>x.objectStore('blob').get(tr.id)).then(bl=>{if(!bl)return false;const b=bedEl();if(BED.url)URL.revokeObjectURL(BED.url);BED.url=URL.createObjectURL(bl);b.src=BED.url;BED.id=tr.id;S.set('bedpos',{id:tr.id,t});
    if(t)b.addEventListener('loadedmetadata',()=>{try{b.currentTime=t}catch(e){}},{once:true});return true})}).catch(()=>false)}
-function bedLed(){return !!(cur&&I[cur]&&I[cur].led&&I[cur].led.music)}
-function bedNarr(){return !!(NAR&&cur===NAR.id)||bedLed()}
-function bedOn(){return bedLed()?BED.led:BED.on}
-function bedWanted(){if(window.MED&&MED.on&&MED.step!=='load')return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
+function bedNarr(){return !!(NAR&&cur===NAR.id)}
+function bedOn(){return BED.on}
+/* Meditate's stillness and Be Led's prayers without music of their own take the music too (their own switch, BED.led) */
+function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(window.LED&&LED.el&&!LED.el.paused&&ledMusic())return BED.led;if(window.LP&&LP.el&&!LP.el.paused&&lpMusic())return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
 function bedSync(){const b=bedEl();$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',bedOn());
  if(bedWanted()){clearTimeout(BED.t);const go=()=>{const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(BED.lv,1500)).catch(()=>{})};
   if(!b.getAttribute('src')||b.src===SILENT){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())go()})}else go();return}
@@ -2644,7 +2654,7 @@ function bedUnlock(){if(!(BED.on||BED.led)||BED.unl)return;BED.unl=true;const b=
 ['touchend','click'].forEach(ev=>document.addEventListener(ev,bedUnlock,true));
 function bedPop(){const p=$('#bedpop');if(!p.hidden){p.hidden=true;return}
  plLoad().then(L=>{const have=L.length>0,pc=Math.round(BED.lv*100);
-  const ld=bedLed();p.innerHTML=`<label class="bp-row"><span><b>Soaking music under the ${ld?'prayer':'reading'}</b><small>${have?esc((L[0].a||'Your music')+' · plays softly behind '+(ld?'the prayer':'the narration')):'Your music is not on this phone yet'}</small></span><input type="checkbox" id="bedon"${bedOn()?' checked':''}${have?'':' disabled'}></label>`+
+  const ld=false;p.innerHTML=`<label class="bp-row"><span><b>Soaking music under the ${ld?'prayer':'reading'}</b><small>${have?esc((L[0].a||'Your music')+' · plays softly behind '+(ld?'the prayer':'the narration')):'Your music is not on this phone yet'}</small></span><input type="checkbox" id="bedon"${bedOn()?' checked':''}${have?'':' disabled'}></label>`+
    (have?`<input type="range" id="bedlv" min="3" max="60" step="1" value="${pc}" aria-label="Music level"><div class="bp-l"><span>Softer</span><span id="bedpc">Music level ${pc}%</span><span>Louder</span></div>`:`<button id="bedget">Get it in Pray</button>`);
   p.hidden=false;const on=$('#bedon');if(on)on.onchange=()=>{if(ld){BED.led=on.checked;S.set('bedled',BED.led)}else{BED.on=on.checked;S.set('bedon',BED.on)}BED.unl=false;bedUnlock();bedSync()};
   const lv=$('#bedlv');if(lv)lv.oninput=()=>{BED.lv=+lv.value/100;S.set('bedlv',BED.lv);$('#bedpc').textContent='Music level '+lv.value+'%';if(bedWanted())bedGain(BED.lv,150)};
@@ -2758,38 +2768,107 @@ function prayArt(id,band){return `<svg viewBox="${band?'0 214 390 196':'0 0 390 
 <path d="M0 372 C54 358 96 360 140 368 C190 377 222 356 270 360 C318 364 350 376 390 368 V520 H0Z" fill="#5f6b86"/>
 <path d="M0 404 C70 390 120 396 176 404 C236 413 280 398 330 400 C356 401 374 405 390 408 V520 H0Z" fill="url(#${id}f)"/>
 <path d="M0 446 C90 434 170 440 240 448 C300 455 350 446 390 442 V520 H0Z" fill="#1f2840" opacity=".9"/></svg>`}
-/* Be Led: pastors leading in prayer (the closing prayers of their sermons), by theme; each plays in the full player, speed included */
-function ledItem(id){const x=(PRAY.led||[]).find(z=>z.id===id);if(!x)return null;if(!I[id])I[id]={id,t:x.t,who:x.who,audio:x.audio,sb:x.sb,e:x.e,dur:x.len,tr:'devotional',led:{src:x.src,music:x.music,from:x.from,theme:x.theme}};return id}
-function ledView(){const L=PRAY.led||[];if(!L.length)return `<p class="led-lead">Prayers are on their way.</p>`;const th=[...new Set(L.map(x=>x.theme))],k=th.includes(PR.th)?PR.th:'';
- const rows=L.filter(x=>!k||x.theme===k).map(x=>{const p=prog[x.id]||{},on=String(cur)===x.id;
-  return `<button class="led-row${p.done?' heard':''}${on?' now':''}" data-ledplay="${x.id}"><span class="led-pp">${PR_PLAY}</span><span class="led-t"><b>${esc(x.t)}</b><span>${esc(NAMES[x.who]||x.who)} · ${Math.max(1,Math.round(x.len/60))} min${p.done?' · prayed':''}</span></span><span class="led-th1">${esc(x.theme)}</span></button>`}).join('');
- return `<p class="led-lead">Pastors leading you in prayer. Press play and pray along with them.</p><div class="led-ths" role="group" aria-label="Themes">${['',...th].map(t=>`<button data-ledth="${esc(t)}" class="${k===t?'on':''}">${esc(t||'All')}</button>`).join('')}</div><div class="led-list">${rows}</div>`}
-/* Meditate: one saying of Jesus, read by the narrator from his chapter recording, twice; then silence to sit with it */
-var MED={on:false,el:null,step:'',k:0,t:null,tick:null,left:0,end:0,pick:null,pace:S.get('medpace','steady')};   /* var: the music bed may ask about it before this line runs */
-const MED_PACE={brisk:{l:'Brisk',gap:8,still:60},steady:{l:'Steady',gap:12,still:180},slow:{l:'Unhurried',gap:15,still:300}};
+/* Be Led: a shuffle of pastors leading in prayer (the closing prayers of their sermons), one at a time, played right
+   here on its own player: the ring plays and pauses, the small arrows either side go back or on 15 seconds, the arrows
+   below go to the previous or next prayer. Nothing else on the screen but who is praying. */
+var LED={el:null,id:null,st:0,en:0,sp:+S.get('ledsp',1)||1,done:false};   /* var: the music bed asks about it before this line runs */
+const LED_SP=[1,1.1,1.25,0.9],
+ PR_BACK=`<svg viewBox="0 0 28 28" width="30" height="30" aria-hidden="true"><path d="M7.6 9.2A8.6 8.6 0 1 1 5.4 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.9 4.6v4.9h4.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="14.4" y="18.2" text-anchor="middle" font-size="7.6" font-weight="600" font-family="-apple-system,system-ui,sans-serif" fill="currentColor">15</text></svg>`,
+ PR_FWD=PR_BACK.replace('<svg ','<svg style="transform:scaleX(-1)" ').replace('<text ','<text transform="translate(28 0) scale(-1 1)" ');
+function dayNo(){return Math.floor((Date.now()-new Date().getTimezoneOffset()*6e4)/864e5)}
+function ledList(){return PRAY.led||[]}
+function ledById(id){return ledList().find(x=>x.id===id)||null}
+/* today's place in the shuffle: the strongest first, none again until all are prayed, a new one each day */
+function ledOrd(){const L=ledList(),ids=L.map(x=>x.id),have=new Set(ids);let o=S.get('ledord',null);
+ const fresh=()=>{const f=p=>{const a=L.filter(p).map(x=>x.id);return prShuf(a.length).map(i=>a[i])};return {o:[...f(x=>(x.power||4)>=5),...f(x=>(x.power||4)<5)],p:0,d:dayNo()}};
+ if(!o||!Array.isArray(o.o)||o.o.length!==ids.length||o.o.some(i=>!have.has(i)))o=fresh();
+ else if(o.d!==dayNo()){o.p++;o.d=dayNo();if(o.p>=o.o.length)o=fresh()}
+ S.set('ledord',o);return o}
+function ledCur(){const L=ledList();if(!L.length)return null;const o=ledOrd();return ledById(o.o[o.p])||L[0]}
+function ledEl(){if(LED.el)return LED.el;const a=LED.el=new Audio();a.preload='none';
+ a.addEventListener('loadedmetadata',()=>{const x=ledById(LED.id);if(!x)return;const L=a.duration;LED.st=isFinite(L)?Math.max(0,L-x.sb):0;LED.en=isFinite(L)?Math.max(LED.st+1,L-(x.e||0)):LED.st+x.len;try{a.currentTime=LED.st}catch(e){}});
+ a.addEventListener('seeked',()=>{a.muted=false});
+ a.addEventListener('timeupdate',()=>{if(LED.en&&a.currentTime>=LED.en&&!a.paused){a.pause();LED.done=true;try{a.currentTime=LED.st}catch(e){}}ledRing()});
+ a.addEventListener('ended',()=>{LED.done=true;ledPaint()});
+ a.addEventListener('play',()=>{LED.done=false;AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});if(LP.el&&!LP.el.paused)LP.el.pause();{const p=pmEl();if(!p.paused)p.pause()}if(window.MED&&MED.on)medStop(false);ledSession();ledPaint()});
+ a.addEventListener('pause',ledPaint);
+ AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause()}));
+ return a}
+function ledPP(){const x=ledCur(),a=ledEl();if(!x)return;
+ if(LED.id===x.id&&a.getAttribute('src')){if(a.paused){if(LED.done||a.currentTime<LED.st-1||a.currentTime>=LED.en)try{a.currentTime=LED.st}catch(e){}a.play().catch(()=>{})}else a.pause();return}
+ LED.id=x.id;LED.st=0;LED.en=0;LED.done=false;a.muted=true;a.src=x.audio;a.playbackRate=LED.sp;a.play().catch(()=>{a.muted=false});ledPaint()}
+function ledSeek(d){const a=LED.el;if(!a||!LED.id||!a.getAttribute('src'))return;try{a.currentTime=Math.max(LED.st,Math.min(LED.en-0.5,a.currentTime+d))}catch(e){}ledRing()}
+function ledGo(d){const L=ledList();if(!L.length)return;const o=ledOrd(),on=!!(LED.el&&!LED.el.paused);let p=o.p+d;
+ if(p>=o.o.length){S.set('ledord',null);const n=ledOrd();n.p=0;S.set('ledord',n)}else{o.p=Math.max(0,p);S.set('ledord',o)}
+ if(LED.el){LED.el.pause();LED.el.removeAttribute('src');try{LED.el.load()}catch(e){}}LED.id=null;LED.done=false;
+ if(view==='pray'&&PR.mode==='led'){const y=scrollY;render();window.scrollTo(0,y)}if(on)ledPP()}
+function ledSession(){if(!('mediaSession' in navigator))return;const x=ledById(LED.id)||{},a=LED.el;PM.ms=false;
+ try{navigator.mediaSession.metadata=new MediaMetadata({title:'Be Led',artist:NAMES[x.who]||x.who||'',album:'Pray'})}catch(e){}
+ [['play',()=>a.play().catch(()=>{})],['pause',()=>a.pause()],['seekbackward',()=>ledSeek(-15)],['seekforward',()=>ledSeek(15)],['previoustrack',()=>ledGo(-1)],['nexttrack',()=>ledGo(1)]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}
+function ledRing(){const c=$('#ledfg'),a=LED.el;if(!c)return;const x=ledCur();let f=0;
+ if(a&&x&&LED.id===x.id&&LED.en>LED.st)f=LED.done?1:Math.max(0,Math.min(1,(a.currentTime-LED.st)/(LED.en-LED.st)));c.setAttribute('stroke-dasharray',(f*100).toFixed(2)+' 100');c.style.opacity=f>0?1:0}
+function ledPaint(){bedSync();const b=$('[data-ledpp]');if(!b)return;const x=ledCur(),on=!!(LED.el&&x&&LED.id===x.id&&!LED.el.paused);
+ b.querySelector('.led-in').innerHTML=on?PR_PAUSE:PR_PLAY;b.setAttribute('aria-label',on?'Pause':'Pray');b.classList.toggle('on',on);ledRing()}
+function ledMusic(){const x=LED.id&&ledById(LED.id);return !!(x&&x.music)}
+function ledView(){const x=ledCur();if(!x)return `<p class="led-lead">Prayers are on their way.</p>`;const mu=x.music&&(PL.list||[]).length;
+ return `<div class="pr-art pr-band">${prayArt('pl',1)}</div><section class="led" aria-label="Be Led"><div class="pr-eb">Be Led</div><p class="led-who serif">${esc(NAMES[x.who]||x.who)}</p>
+<div class="led-ctl"><button class="led-sk" data-ledsk="-15" aria-label="Back 15 seconds">${PR_BACK}</button><button class="led-ring" data-ledpp aria-label="Pray"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="47" class="led-tr"/><circle id="ledfg" cx="50" cy="50" r="47" class="led-fg" pathLength="100" stroke-dasharray="0 100" style="opacity:0" transform="rotate(-90 50 50)"/></svg><span class="led-in">${PR_PLAY}</span></button><button class="led-sk" data-ledsk="15" aria-label="Forward 15 seconds">${PR_FWD}</button></div>
+<div class="led-opt"><button data-ledsp aria-label="Speed">${LED.sp}×</button>${mu?`<button data-ledmu aria-label="Music under the prayer">♪ Music ${BED.led?'on':'off'}</button>`:''}</div></section>
+<nav class="pr-nav" aria-label="Prayers"><button class="pr-ar" data-ledgo="-1" aria-label="Previous prayer"${ledOrd().p?'':' disabled'}>${PR_AR(-1)}</button><span></span><button class="pr-ar" data-ledgo="1" aria-label="Next prayer">${PR_AR(1)}</button></nav>`}
+/* Meditate: one thing Jesus said, read by a pastor from his own sermon: once, a breath, again; then be still with it
+   (your music under it) until you say Amen. No clock. */
+var MED={on:false,el:null,step:'',k:0,t:null,end:0,pick:null,paused:false};   /* var: the music bed may ask about it before this line runs */
 function medList(){return PRAY.med||[]}
-function medCur(){const L=medList();if(!L.length)return null;const p=L.find(x=>x.ref===MED.pick);if(p)return p;const d=Math.floor((Date.now()-new Date().getTimezoneOffset()*6e4)/864e5);return L[d%L.length]}
+function medIdx(){const L=medList();if(!L.length)return -1;const k=L.findIndex(x=>x.ref===MED.pick);return k>=0?k:dayNo()%L.length}
+function medCur(){const k=medIdx();return k<0?null:medList()[k]}
 function medEl(){if(MED.el)return MED.el;const a=MED.el=new Audio();a.preload='auto';
  a.addEventListener('timeupdate',()=>{if(MED.on&&(MED.step==='listen'||MED.step==='again')&&MED.end&&a.currentTime>=MED.end){a.pause();medNext()}});
- a.addEventListener('ended',()=>{if(MED.on&&(MED.step==='listen'||MED.step==='again'))medNext()});return a}
-function medPaint(light){if(view!=='pray'||PR.mode!=='med')return;if(light){const e=$('#med-left');if(e){e.textContent=fmt(MED.left);return}}const y=scrollY;render();window.scrollTo(0,y)}
-function medStart(){const m=medCur();if(!m)return;if(!audio.paused)audio.pause();{const pa=pmEl();if(!pa.paused)pa.pause()}
- const a=medEl();try{a.src=SILENT;a.play().catch(()=>{})}catch(e){}   /* the tap readies the player while the chapter loads */
- clearTimeout(MED.t);clearInterval(MED.tick);MED.on=true;MED.k=0;MED.step='load';medPaint();bedSync();
+ a.addEventListener('seeked',()=>{a.muted=false});
+ a.addEventListener('ended',()=>{if(MED.on&&(MED.step==='listen'||MED.step==='again'))medNext()});
+ AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(MED.on)medStop(false)}));return a}
+function medPaint(){if(view!=='pray'||PR.mode!=='med')return;const y=scrollY;render();window.scrollTo(0,y)}
+function medStart(){const m=medCur();if(!m)return;if(!audio.paused)audio.pause();{const pa=pmEl();if(!pa.paused)pa.pause()}if(LED.el&&!LED.el.paused)LED.el.pause();
+ const a=medEl();clearTimeout(MED.t);MED.on=true;MED.k=0;MED.paused=false;MED.step='load';
+ if(m.audio){a.muted=true;a.src=m.audio;a.play().catch(()=>{a.muted=false});medPaint();bedSync();medRead();return}
+ try{a.src=SILENT;a.play().catch(()=>{})}catch(e){}medPaint();bedSync();   /* the narrator's chapter, if a saying has no pastor's reading */
  const b=D.books.find(x=>x.abbr===m.abbr);narBlob(narItem(b,m.c)).then(u=>{if(!MED.on)return;a.src=u;medRead()}).catch(()=>{if(!MED.on)return;MED.on=false;MED.step='err';medPaint();bedSync()})}
-function medRead(){const m=medCur(),a=medEl();if(!MED.on||!m)return;MED.step=MED.k?'again':'listen';MED.end=m.t1;a.playbackRate=1;
- const go=()=>{try{a.currentTime=m.t0}catch(e){}a.play().catch(()=>{})};if(a.readyState>=1)go();else a.addEventListener('loadedmetadata',go,{once:true});medPaint();bedSync()}
-function medNext(){if(!MED.on)return;const P=MED_PACE[MED.pace]||MED_PACE.steady,f=window.MED_FAST||1;
- if(MED.k===0){MED.k=1;MED.step='pause';medPaint();MED.t=setTimeout(medRead,P.gap*1000*f);return}
- MED.step='still';MED.left=P.still;medPaint();MED.tick=setInterval(()=>{MED.left--;if(MED.left<=0){medStop(true);return}medPaint(true)},1000*f)}
-function medStop(done){MED.on=false;clearTimeout(MED.t);clearInterval(MED.tick);MED.step=done?'done':'';if(MED.el)MED.el.pause();medPaint();bedSync()}
-function medView(){const L=medList(),m=medCur();if(!m)return `<p class="led-lead">The sayings are on their way.</p>`;
- const st={load:'Getting ready',listen:'Listen',pause:'',again:'Again',still:'Be still',done:'Amen',err:'The reading did not load. Check your connection and try again.'}[MED.step]||'';
- return `<p class="led-lead">One thing Jesus said, read twice. Then sit with it in the quiet.</p>
-<div class="med-card${MED.on?' on':''}"><div class="med-st">${esc(st)}${MED.step==='still'?` · <span id="med-left">${fmt(MED.left)}</span>`:''}</div><p class="med-q">${esc(m.t)}</p><div class="med-ref">${esc(m.ref)}</div></div>
-<div class="led-ths med-pace" role="group" aria-label="Pace">${Object.entries(MED_PACE).map(([k,v])=>`<button data-medpace="${k}" class="${MED.pace===k?'on':''}"${MED.on?' disabled':''}>${v.l}</button>`).join('')}</div>
-${MED.on?'<button class="med-go stop" data-medstop>Stop</button>':`<button class="med-go" data-medgo>${MED.step==='done'?'Again':'Begin'}</button>`}
-<div class="jv-sec">More sayings</div><div class="med-list">${L.map(x=>`<button class="med-row${x.ref===m.ref?' on':''}" data-medpick="${esc(x.ref)}"${MED.on?' disabled':''}><b>${esc(x.name)}</b><span>${esc(x.ref)}</span></button>`).join('')}</div>`}
+function medRead(){const m=medCur(),a=medEl();if(!MED.on||!m)return;const t0=m.audio?m.a:m.t0;MED.step=MED.k?'again':'listen';MED.end=m.audio?m.b:m.t1;a.playbackRate=1;
+ const go=()=>{try{a.currentTime=t0}catch(e){}a.play().catch(()=>{})};if(a.readyState>=1)go();else a.addEventListener('loadedmetadata',go,{once:true});medPaint();bedSync()}
+function medNext(){if(!MED.on)return;const f=window.MED_FAST||1;
+ if(MED.k===0){MED.k=1;MED.step='pause';medPaint();MED.t=setTimeout(medRead,6000*f);return}
+ MED.step='still';medPaint();bedSync()}
+function medPause(){const a=MED.el;if(!MED.on||!a)return;if(MED.step==='pause'){return}MED.paused=!MED.paused;if(MED.paused)a.pause();else a.play().catch(()=>{});medPaint();bedSync()}
+function medStop(done){MED.on=false;MED.paused=false;clearTimeout(MED.t);MED.step=done?'done':'';if(MED.el)MED.el.pause();medPaint();bedSync()}
+function medGo(d){const L=medList(),k=medIdx()+d;if(k<0||k>=L.length)return;if(MED.on)medStop(false);MED.pick=L[k].ref;MED.step='';medPaint()}
+function medView(){const L=medList(),m=medCur(),k=medIdx();if(!m)return `<p class="led-lead">The sayings are on their way.</p>`;
+ const st={load:'Listen',listen:'Listen',pause:'',again:'Again',still:'Be still',done:'Amen',err:'The reading did not load'}[MED.step]||'Meditate';
+ const ctl=MED.step==='still'?`<button class="med-go" data-medamen>Amen</button>`:MED.on?`<button class="med-pp" data-medpp aria-label="${MED.paused?'Go on':'Pause'}"${MED.step==='pause'?' disabled':''}>${MED.paused?PR_PLAY:PR_PAUSE}</button>`:`<button class="med-go" data-medgo>Begin</button>`;
+ return `<div class="pr-art pr-band">${prayArt('pm',1)}</div><section class="med${MED.on?' on':''}" aria-label="Meditate"><div class="pr-eb">${esc(st)}</div><p class="med-q serif">${esc(m.t)}</p><div class="med-ref">${esc(m.ref)}</div>${m.who?`<div class="med-by">Read by ${esc(NAMES[m.who]||m.who)}</div>`:''}
+<div class="med-ctl">${ctl}</div></section>
+<nav class="pr-nav" aria-label="Sayings"><button class="pr-ar" data-medgo2="-1" aria-label="Previous saying"${k>0?'':' disabled'}>${PR_AR(-1)}</button><span class="med-n">${k+1} of ${L.length}</span><button class="pr-ar" data-medgo2="1" aria-label="Next saying"${k<L.length-1?'':' disabled'}>${PR_AR(1)}</button></nav>`}
+/* Guided with a pastor: one of the library's pastors praying the Lord's Prayer through (data/guided_lp.json), played
+   from his sermon; the movement on screen follows him, the arrows go to a movement in his prayer */
+var LP={el:null,on:false,done:false};
+function lpD(){return PRAY.lp||null}
+function lpLive(){return !!(LP.el&&LP.el.getAttribute('src')&&!LP.done)}
+function lpEl(){if(LP.el)return LP.el;const a=LP.el=new Audio(),x=lpD();a.preload='none';
+ a.addEventListener('seeked',()=>{a.muted=false});
+ a.addEventListener('timeupdate',()=>{const t=a.currentTime;if(t>=x.b&&!a.paused){a.pause();LP.done=true;lpPaint();return}
+  let k=0;x.at.forEach((s,i)=>{if(t>=s-0.3)k=i});if(k!==PR.mv&&view==='pray'&&PR.mode==='guided'&&t>=x.a){PR.mv=k;PR.anim='l';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}});
+ a.addEventListener('play',()=>{LP.done=false;AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});{const p=pmEl();if(!p.paused)p.pause()}if(LED.el&&!LED.el.paused)LED.el.pause();if(MED.on)medStop(false);lpSession();lpPaint()});
+ a.addEventListener('pause',lpPaint);a.addEventListener('ended',()=>{LP.done=true;lpPaint()});
+ AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause()}));return a}
+function lpPP(){const x=lpD(),a=lpEl();if(!x)return;if(a.getAttribute('src')&&!LP.done){if(a.paused)a.play().catch(()=>{});else a.pause();return}
+ LP.done=false;const go=()=>{try{a.currentTime=x.at[PR.mv]!=null&&PR.mv>0?x.at[PR.mv]:x.a}catch(e){}};
+ if(a.getAttribute('src')){go();a.play().catch(()=>{});return}
+ a.muted=true;a.src=x.audio;a.addEventListener('loadedmetadata',go,{once:true});a.play().catch(()=>{a.muted=false});lpPaint()}
+function lpSeek(d){const x=lpD(),a=LP.el;if(!lpLive())return;try{a.currentTime=Math.max(x.a,Math.min(x.b-0.5,a.currentTime+d))}catch(e){}}
+function lpSession(){if(!('mediaSession' in navigator))return;const x=lpD(),a=LP.el;PM.ms=false;try{navigator.mediaSession.metadata=new MediaMetadata({title:"The Lord's Prayer",artist:NAMES[x.who]||x.who,album:'Pray'})}catch(e){}
+ [['play',()=>a.play().catch(()=>{})],['pause',()=>a.pause()],['seekbackward',()=>lpSeek(-15)],['seekforward',()=>lpSeek(15)],['previoustrack',()=>prGo(-1)],['nexttrack',()=>prGo(1)]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}
+function lpMusic(){const x=lpD();return !!(x&&x.music)}
+function lpPaint(){bedSync();const b=$('[data-lpp]');if(!b)return;const on=!!(LP.el&&!LP.el.paused);b.querySelector('i').innerHTML=on?PR_PAUSE:PR_PLAY;b.setAttribute('aria-label',on?'Pause':'Pray it with '+(NAMES[lpD().who]||''));
+ document.querySelectorAll('[data-lpsk]').forEach(s=>s.hidden=!lpLive())}
+function lpLine(){const x=lpD();if(!x)return '';return `<div class="lp-line"><button class="led-sk" data-lpsk="-15" aria-label="Back 15 seconds" hidden>${PR_BACK}</button><button class="lp-pp" data-lpp><i>${PR_PLAY}</i><span>Pray it with ${esc(NAMES[x.who]||x.who)}</span></button><button class="led-sk" data-lpsk="15" aria-label="Forward 15 seconds" hidden>${PR_FWD}</button></div>`}
 function prayView(){if(PR.mode==='guided')prSession();
  let h=`<div class="jv pray" id="pray">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">Pray</h1><div class="t-sort lib-seg pr-seg" role="tablist" aria-label="Pray">${[['still','Stillness'],['guided','Guided'],['led','Be Led'],['med','Meditate']].map(([v,l])=>`<button role="tab" data-prm="${v}" class="${PR.mode===v?'on':''}" aria-selected="${PR.mode===v}">${l}</button>`).join('')}</div>`;
  if(PR.mode==='led')return h+ledView()+'</div>';
@@ -2798,18 +2877,20 @@ function prayView(){if(PR.mode==='guided')prSession();
  if(PR.mode==='still')return h+`<div class="pr-art pr-still">${prayArt('ps')}</div><div class="pr-ctl"><button class="pr-sk" data-pms="-1" aria-label="Previous piece">${PR_SKIP(-1)}</button><button class="pr-pp" data-pm aria-label="Play the music">${PR_PLAY}</button><button class="pr-sk" data-pms="1" aria-label="Next piece">${PR_SKIP(1)}</button></div></div>`;
  const m=PRAY.moves[PR.mv]||PRAY.moves[0],s=prSup(m),n=PRAY.moves.length;
  return h+`<div class="pr-art pr-band">${prayArt('pg',1)}${(PL.list||[]).length?`<button class="pr-mini" data-pm aria-label="Play the music">${PR_PLAY}</button>`:''}</div>
-<section class="pr-g${PR.anim?' in-'+PR.anim:''}" aria-label="${esc(m.label)}"><div class="pr-eb">${esc(m.label)}</div><p class="pr-lp serif">${esc(m.lp)}</p><div class="pr-lpr">${esc(m.lpr)}</div><p class="pr-ins">${esc(m.ins)}</p><div class="pr-rule" aria-hidden="true"></div>
+${lpLine()}<section class="pr-g${PR.anim?' in-'+PR.anim:''}" aria-label="${esc(m.label)}"><div class="pr-eb">${esc(m.label)}</div><p class="pr-lp serif">${esc(m.lp)}</p><div class="pr-lpr">${esc(m.lpr)}</div><p class="pr-ins">${esc(m.ins)}</p><div class="pr-rule" aria-hidden="true"></div>
 <figure class="pr-sup"><blockquote class="serif" id="prst">${esc(s.t)}</blockquote><figcaption><button class="pr-supr" id="prsr" aria-label="${esc(s.r)}: show another passage"><span>${esc(s.r)}</span>${PR_TURN}</button></figcaption></figure></section>
 <nav class="pr-nav" aria-label="Movements of the prayer"><button class="pr-ar" data-prmv="-1" aria-label="Previous"${PR.mv?'':' disabled'}>${PR_AR(-1)}</button><span class="pr-dots" aria-hidden="true">${PRAY.moves.map((x,k)=>`<i class="${k===PR.mv?'on':''}"></i>`).join('')}</span><button class="pr-ar" data-prmv="1" aria-label="Next"${PR.mv<n-1?'':' disabled'}>${PR_AR(1)}</button></nav></div>`}
-function prGo(d){const k=PR.mv+d;if(k<0||k>=PRAY.moves.length)return;PR.mv=k;S.set('prlast',Date.now());PR.anim=d>0?'l':'r';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}
+function prGo(d){const k=PR.mv+d;if(k<0||k>=PRAY.moves.length)return;if(lpLive()){const x=lpD();try{LP.el.currentTime=x.at[k]}catch(e){}}PR.mv=k;S.set('prlast',Date.now());PR.anim=d>0?'l':'r';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}
 function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='pray')render()});return}pmPrime();if(!PL.list.length&&bkOn()&&!MB.busy)mbSync(true);
  document.querySelectorAll('[data-pradd]').forEach(b=>b.onclick=()=>prPick(()=>{if(view==='pray')render()}));
  document.querySelectorAll('[data-prm]').forEach(b=>b.onclick=()=>{if(PR.mode===b.dataset.prm)return;PR.mode=b.dataset.prm;S.set('prm',PR.mode);render()});
- document.querySelectorAll('[data-ledth]').forEach(b=>b.onclick=()=>{PR.th=b.dataset.ledth;S.set('ledth',PR.th);render()});
- document.querySelectorAll('[data-medgo]').forEach(b=>b.onclick=medStart);document.querySelectorAll('[data-medstop]').forEach(b=>b.onclick=()=>medStop(false));
- document.querySelectorAll('[data-medpace]').forEach(b=>b.onclick=()=>{if(MED.on)return;MED.pace=b.dataset.medpace;S.set('medpace',MED.pace);medPaint()});
- document.querySelectorAll('[data-medpick]').forEach(b=>b.onclick=()=>{if(MED.on)return;MED.pick=b.dataset.medpick;MED.step='';render();window.scrollTo(0,0)});
- document.querySelectorAll('[data-ledplay]').forEach(b=>b.onclick=()=>{const id=ledItem(b.dataset.ledplay);if(!id)return;if(String(cur)===id&&!audio.paused){audio.pause();return}{const pa=pmEl();if(!pa.paused)pa.pause()}play(id,{full:true});audio.play().catch(()=>{})});
+ document.querySelectorAll('[data-medgo]').forEach(b=>b.onclick=medStart);document.querySelectorAll('[data-medamen]').forEach(b=>b.onclick=()=>medStop(true));document.querySelectorAll('[data-medpp]').forEach(b=>b.onclick=medPause);
+ document.querySelectorAll('[data-medgo2]').forEach(b=>b.onclick=()=>medGo(+b.dataset.medgo2));
+ document.querySelectorAll('[data-lpp]').forEach(b=>b.onclick=lpPP);document.querySelectorAll('[data-lpsk]').forEach(b=>b.onclick=()=>lpSeek(+b.dataset.lpsk));if(PR.mode==='guided'&&lpD())lpPaint();
+ document.querySelectorAll('[data-ledpp]').forEach(b=>b.onclick=ledPP);document.querySelectorAll('[data-ledsk]').forEach(b=>b.onclick=()=>ledSeek(+b.dataset.ledsk));document.querySelectorAll('[data-ledgo]').forEach(b=>b.onclick=()=>ledGo(+b.dataset.ledgo));
+ document.querySelectorAll('[data-ledsp]').forEach(b=>b.onclick=()=>{LED.sp=LED_SP[(LED_SP.indexOf(LED.sp)+1)%LED_SP.length];S.set('ledsp',LED.sp);if(LED.el)LED.el.playbackRate=LED.sp;b.textContent=LED.sp+'×'});
+ document.querySelectorAll('[data-ledmu]').forEach(b=>b.onclick=()=>{BED.led=!BED.led;S.set('bedled',BED.led);BED.unl=false;bedUnlock();bedSync();b.textContent='♪ Music '+(BED.led?'on':'off')});
+ if(PR.mode==='led')ledPaint();
  document.querySelectorAll('[data-pm]').forEach(b=>b.onclick=pmToggle);
  document.querySelectorAll('[data-pms]').forEach(b=>b.onclick=()=>pmSkip(+b.dataset.pms));
  document.querySelectorAll('[data-prmv]').forEach(b=>b.onclick=()=>prGo(+b.dataset.prmv));
