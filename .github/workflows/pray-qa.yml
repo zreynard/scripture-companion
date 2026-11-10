@@ -1,0 +1,18 @@
+# Pray scenarios (tools/qa/pray.js) against the published site in one engine, optionally only some (a pattern). By hand only.
+name: Pray QA
+on:
+  workflow_dispatch:
+    inputs:
+      browser: {description: "webkit or chromium", default: "webkit"}
+      only: {description: "only the scenarios matching this pattern (empty = all)", default: ""}
+jobs:
+  pray:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm i --no-save playwright@1.48.2 >/dev/null && npx playwright install --with-deps ${{ inputs.browser }} >/dev/null
+      - run: BROWSER=${{ inputs.browser }} ONLY="${{ inputs.only }}" SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/pray.js

@@ -7,6 +7,7 @@ const SITE = process.env.SITE || 'http://localhost:8765/';
 const R = []; const wait = ms => new Promise(r => setTimeout(r, ms));
 let b;
 async function T(n, f) {
+  if (process.env.ONLY && !new RegExp(process.env.ONLY).test(n)) return;
   let to; const limit = new Promise((_, no) => { to = setTimeout(() => no(new Error('took over 3 minutes')), 180000); });
   try { const r = await Promise.race([f(), limit]); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 600)]); }
   catch (e) { R.push([n, 'FAIL ' + String(e).slice(0, 300)]); }
@@ -348,20 +349,24 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     await p.evaluate(() => BED.el.pause()); const back = await until(p, () => !BED.el.paused, 2500);
     await p.evaluate(() => medStop(false)); await p.evaluate(() => { BED.led = false; }); await p.click('[data-medgo]'); await until(p, () => MED.c.state === 'playing');
     const off = await until(p, () => BED.el.paused, 5000);
-    return (seen.listen && seen.again && seen.still && back && off && !p.errs.length) || { seen, back, off, e: p.errs };
+    const why = await p.evaluate(() => ({ src: (BED.el.getAttribute('src') || '').slice(0, 30), paused: BED.el.paused, gain: BED.g && BED.g.gain.value, ctx: BED.ctx && BED.ctx.state, led: BED.led, list: (PL.list || []).length, rts: BED.rts, err: BED.el.error && BED.el.error.code }));
+    return (seen.listen && seen.again && seen.still && back && off && !p.errs.length) || { seen, back, off, why, e: p.errs };
   });
   await T('P30 the Lord\'s Prayer with Skip Heitzig: "Pray it with" plays him here; the movements follow; the arrows go to a movement in his prayer; pause, music and a clean end', async () => {
     const p = await pray_(await page()); await testAudio(p); await music(p);
     await p.evaluate(() => { PRAY.lp.audio = TESTWAV; PRAY.lp.a = 2; PRAY.lp.b = 9; PRAY.lp.at = [2, 3, 4, 5, 6, 7]; PR.mv = 0; });
     await guided(p, 'guided');
     const line = await p.evaluate(() => document.querySelector('[data-lpp]').textContent);
-    await p.click('[data-lpp]'); await until(p, () => LP.c.state === 'playing'); const t0 = await p.evaluate(() => LP.c.a.currentTime);
+    const step = { at: 'start' }; const click = async (sel, name) => { step.at = name; await p.click(sel, { timeout: 8000 }); };
+    try {
+    await click('[data-lpp]', 'play'); await until(p, () => LP.c.state === 'playing'); const t0 = await p.evaluate(() => LP.c.a.currentTime);
     const follow = await until(p, () => PR.mv >= 2, 5000); const music_ = await p.evaluate(() => !BED.el.paused && BED.g.gain.value > 0.05);
-    await p.click('[data-prmv="1"]'); await wait(300); const seek = await p.evaluate(() => [PR.mv, LP.c.a.currentTime]);
-    await p.click('[data-lpp]'); await wait(200); const paused = await p.evaluate(() => [LP.c.state, document.querySelector('[data-lpp]').getAttribute('aria-label')]);
-    await p.click('[data-lpp]'); await until(p, () => LP.c.state === 'playing');
+    await click('[data-prmv="1"]', 'next movement'); await wait(300); const seek = await p.evaluate(() => [PR.mv, LP.c.a.currentTime]);
+    await click('[data-lpp]', 'pause'); await wait(200); const paused = await p.evaluate(() => [LP.c.state, document.querySelector('[data-lpp]').getAttribute('aria-label')]);
+    await click('[data-lpp]', 'play again'); await until(p, () => LP.c.state === 'playing');
     const ended = await until(p, () => LP.c.state === 'ended', 10000); const end = await p.evaluate(() => [LP.c.a.currentTime, PR.mv, LP.done]);
     return (line === 'Pray it with Skip Heitzig' && Math.abs(t0 - 2) < 0.5 && follow && music_ && seek[1] >= 4.9 && seek[0] >= 3 && paused[0] === 'paused' && ended && Math.abs(end[0] - 9) <= 0.2 && end[1] === 5 && end[2] && !p.errs.length) || { line, t0, follow, music_, seek, paused, ended, end, e: p.errs };
+    } catch (e) { return { failedAt: step.at, error: String(e).slice(0, 160), state: await p.evaluate(() => ({ lp: LP.c && LP.c.state, t: LP.c && LP.c.a.currentTime, mv: PR.mv, mode: PR.mode, btn: !!document.querySelector('[data-lpp]') })) }; }
   });
   await T('P31 the ‹ › arrows are in view without scrolling at 390×760: Be Led with the music panel open, every Meditate saying, and the Lord\'s Prayer', async () => {
     const p = await pray_(await page()); await testAudio(p); await music(p); const bad = [];
