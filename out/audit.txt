@@ -5,7 +5,7 @@ PASS  1,189 chapters, numbered 1..n in order inside every book
 PASS  app always walks in canonical order (no order switch left)
 
 == Placement (each teaching sits only where its stated passage is)
-FAIL  every placement matches the teaching's passage  (4 of 3180)
+FAIL  every placement matches the teaching's passage  (4 of 2197)
         - The Shulamite Bride shown as overview at Song of Solomon, refs ['1 Kings']
         - 2 John at 2 John 1; its passage is 
         - 3 John at 3 John 1; its passage is 
