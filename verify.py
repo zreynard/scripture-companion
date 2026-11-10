@@ -41,7 +41,12 @@ def title_match(claimed: str, fetched: str) -> tuple[bool, float]:
     ratio = difflib.SequenceMatcher(None, a, b).ratio()
     return ratio >= config.TITLE_MATCH_MIN, round(ratio, 3)
 
-def check_url(url: str, claimed_title: str) -> dict:
+def check_url(url: str, claimed_title: str, audio: str | None = None) -> dict:
+    """audio: for a podcast feed episode (the feed's address + "#<episode id>"), its audio file: that is what is checked."""
+    if audio:
+        rec = check_url(audio, claimed_title); rec["url"], rec["final_url"] = url, audio
+        if rec["tier"] == "V2": rec["note"] = "feed episode: its audio answers"
+        return rec
     rec = {"url": url, "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
            "status": 0, "final_url": url, "fetched_title": "", "fetched_desc": "", "match": False, "ratio": 0.0,
            "tier": "V1", "note": ""}
@@ -122,15 +127,16 @@ def run(force: bool = False, limit: int | None = None, sources: list[str] | None
         for u in [e["url"]] + e.get("alt_urls", []):
             if not u: continue  # placeholder with no link yet
             rec = log.get(u)
-            fresh = rec and datetime.fromisoformat(rec["checked_at"]) > ttl and rec["tier"] != "V1"
+            feed_ep = "#" in u and e.get("audio_override") and u == e["url"]   # a feed episode: check its audio, not the feed's title
+            fresh = rec and datetime.fromisoformat(rec["checked_at"]) > ttl and rec["tier"] != "V1" and not (feed_ep and rec.get("note") == "title mismatch")
             if force or not fresh:
-                todo.append((u, e["title"]))
+                todo.append((u, e["title"], e["audio_override"] if feed_ep else None))
     if limit:
         todo = todo[:limit]
     _log(f"{len(todo)} urls to check ({len(entries)} entries)")
     with open(LOG, "a", encoding="utf-8") as f:
-        for i, (u, t) in enumerate(todo, 1):
-            rec = check_url(u, t)
+        for i, (u, t, aud) in enumerate(todo, 1):
+            rec = check_url(u, t, aud)
             log[u] = rec
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             if i % 50 == 0:
@@ -148,6 +154,8 @@ def run(force: bool = False, limit: int | None = None, sources: list[str] | None
             main = reconsider(dict(main), e["title"])
             if main.get("note") == "title mismatch" and re.search(r"\.(mp3|m4a|aac|wav)(\?|$)", e["url"], re.I):
                 main.update({"tier": "V1", "note": "audio link: re-check as audio"})  # older check compared an mp3's 'title'
+            if main.get("note") == "title mismatch" and "#" in e["url"] and e.get("audio_override"):
+                main.update({"tier": "V1", "note": "feed episode: re-check its audio"})  # the feed's own title was compared
             if main.get("adopt_title"):
                 e["title"] = re.sub(r"\s+-\s+(Pray the Word with David Platt|Wisdom for the Heart|YouTube)\s*$", "", main["fetched_title"]).strip()
             e["tier"], e["verify_note"], e["verified_at"] = main["tier"], main.get("note", ""), main.get("checked_at", "")
