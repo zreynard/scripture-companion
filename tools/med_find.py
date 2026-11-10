@@ -160,5 +160,27 @@ def report():
                 f.write(f"  {r['src']} {r['who']:8} {r['a']:7.1f}-{r['b']:7.1f}  cover {r['cover']} span {r['span']} wps {r['wps']} dyn {r.get('dyn')}  {r['t'][:40]!r}\n     … {r['before'][-60:]} [[ {r['heard']} ]] {r['after'][:60]} …\n")
     print(open(os.path.join(OUT, "report.txt")).read()[:3000])
 
+def check():
+    """Every chosen clip (tools/med_check.json) heard again on its own, with a few seconds around it: the words inside
+    the clip are in [[ ]], so its first and last word can be checked."""
+    from faster_whisper import WhisperModel
+    model = WhisperModel("small.en", device="cpu", compute_type="int8")
+    t = open(os.path.join(HERE, "out", "site", "index.html"), encoding="utf-8").read()
+    D, _ = json.JSONDecoder().raw_decode(t[t.index("const D=") + 8:])
+    for x in json.load(open(os.path.join(HERE, "tools", "med_check.json")))["sayings"]:
+        it = D["items"].get(x["src"])
+        if not it: print(f"== {x['ref']}: recording not in the app"); continue
+        if "buzzsprout.com" in it["audio"]: print(f"== {x['ref']} {x['who']}: Buzzsprout (times from its transcript, not checked)"); continue
+        try:
+            data, _ = trim.fetch(it["audio"], nbytes=trim.head_bytes(it["audio"], x["b"] + 20, it.get("dur")))
+            pcm = trim.decode(data); lo = max(0, x["a"] - 6)
+            ws = [(a + lo, b + lo, w) for a, b, w in trim.words_of(pcm[int(lo * 16000): int((x["b"] + 6) * 16000)], model)]
+            inn = [w for w in ws if w[0] >= x["a"] - 0.05 and w[1] <= x["b"] + 0.15]
+            txt = " ".join(("[[ " if w is inn[0] else "") + w[2] + (" ]]" if w is inn[-1] else "") for w in ws) if inn else " ".join(w[2] for w in ws)
+            cut = [w for w in ws if w[0] < x["a"] - 0.05 < w[1] or w[0] < x["b"] + 0.15 < w[1]]
+            print(f"== {x['ref']} {x['who']} {x['a']}-{x['b']}{'  CUTS A WORD: ' + ', '.join(f'{w[2]}@{w[0]:.2f}-{w[1]:.2f}' for w in cut) if cut else ''}\n   {txt}", flush=True)
+        except Exception as ex:
+            print(f"== {x['ref']}: {type(ex).__name__} {str(ex)[:80]}", flush=True)
+
 if __name__ == "__main__":
-    {"find": lambda: run(int(sys.argv[2]), int(sys.argv[3])), "report": report}[sys.argv[1]]()
+    {"find": lambda: run(int(sys.argv[2]), int(sys.argv[3])), "report": report, "check": check}[sys.argv[1]]()
