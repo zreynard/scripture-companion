@@ -41,31 +41,47 @@ def sents(ws):
     if row: out.append((t0, ws[-1][1], " ".join(row)))
     return out
 
+END = re.compile(r"\bamen\b|\bin (the )?(jesus'?|christ'?s?|his|your) (precious |holy |mighty |wonderful |matchless |good )?name\b|\bin the (precious |holy |mighty )?name of (jesus|christ|your son)", I)
+PLEA = re.compile(r"\b(let us|let our|let me|may we|may our|may i|help us|help me|give us|give me|make us|make me|teach us|teach me|grant|we pray|i pray|pray that|we ask|i ask|ask that|we thank|i thank|thank you|we praise|we love you|i love you|we confess|forgive (us|me)|have mercy|we need you|i need you|we come|we bless|we worship|we trust|we surrender|fill us|fill me|change us|draw us|lead us|search (us|me)|be glorified|your (name|kingdom|will|spirit|glory|word|son|grace|mercy|love)|you are)\b", I)
+VOC = re.compile(r"(^|[,.!] ?|\b(oh|o) )(heavenly |dear |holy |gracious |good |sweet |almighty |precious |loving |righteous |our |mighty |faithful |great )?(father|lord|god|jesus|abba|holy spirit|lord jesus|king jesus)\b[,.!]", I)
+THIRD = re.compile(r"\b(god (is|was|has|had|will|says|said|does|did|wants|loves)|jesus (said|says|did|was|told|went|came)|he (says|said|is saying|tells|told)|paul|peter|moses|david|verse \d+|chapter \d+|turn (with me )?to|the text|this passage|in context|the greek|the hebrew|you guys|y'?all|listen to (me|this)|let me (tell|show|read)|look at|here'?s the|i want you to|we'?re going to|next week|this week|last week|let'?s (stand|sing|go|take)|would you stand|you can be seated|announcement|come back)\b", I)
+
+def score(t):
+    """+1 a sentence said to God, -1 one said about Him or to the room, 0 either."""
+    if THIRD.search(t): return -1
+    return 1 if (VOC.search(t) or PLEA.search(t) or END.search(t)) else 0
+
 def prayers(S, end_at):
-    """Closing prayer candidates [(i_start, i_amen)] in the sentences S; amens after end_at (seconds) are the outro's."""
-    amen = [k for k, s in enumerate(S) if AMEN.search(s[2]) and s[0] <= end_at + 20]
+    """Closing prayer candidates [(i_start, i_end)] in the sentences S: from the end ("in Jesus' name", "amen") back over
+    what is said to God, to "let's pray" or to where the teaching was. Ends after end_at (seconds) are the outro's."""
+    ends = [k for k, s in enumerate(S) if END.search(s[2]) and s[0] <= end_at + 20]
+    groups = []                      # "... in Jesus' name." "Amen." is one end
+    for k in ends:
+        if groups and S[k][0] - S[groups[-1][-1]][1] < 6: groups[-1].append(k)
+        else: groups.append([k])
     out = []
-    for a in amen:
-        prev = max([k for k in amen if k < a and S[a][0] - S[k][1] > 25] or [-1])   # an amen right before is the same prayer
-        lo = prev + 1
-        op = [k for k in range(lo, a + 1) if OPEN.search(S[k][2]) and S[a][0] - S[k][0] < 420]
-        st = None
-        if op:
-            o = op[-1] if S[a][0] - S[op[-1]][0] >= 40 else op[0]          # "let's pray ... (prayer) ... let's pray together" — the first that leaves a prayer
-            st = next((k for k in range(o, min(a, o + 4) + 1) if ADDR.search(S[k][2])), None)
-            if st is None:
-                tail = re.split(OPEN, S[o][2], maxsplit=1)
-                st = o + 1 if o < a and (not tail or len(tail[-1].split()) < 4) else o
-        else:                                                                  # no "let's pray": the earliest address to God from which it is prayer
-            for k in range(lo, a + 1):
-                if not ADDR.search(S[k][2]): continue
-                rest = S[k:a + 1]
-                if sum(1 for s in rest if SECOND.search(s[2])) >= 0.5 * len(rest) and not any(TEACHY.search(s[2]) for s in rest):
-                    st = k; break
-        if st is not None and st <= a: out.append((st, a))
-    # drop a candidate inside a longer one
-    out = [c for c in out if not any(o != c and o[0] <= c[0] and o[1] >= c[1] for o in out)]
-    return out
+    for g in groups:
+        a = g[-1]; k = g[0] - 1; bad = quiet = 0; st = g[0]
+        while k >= 0:
+            t = S[k][2]
+            if END.search(t) and S[g[0]][0] - S[k][1] > 20: break                  # the prayer before
+            if OPEN.search(t):
+                rest = re.split(OPEN, t, maxsplit=1)[-1]
+                if score(rest) > 0 and len(rest.split()) >= 4: st = k
+                break
+            sc = score(t)
+            if sc > 0: st, bad, quiet = k, 0, 0
+            elif sc < 0:
+                bad += 1
+                if bad >= 2: break
+            else:
+                quiet += 1
+                if quiet >= 4: break
+            if S[a][1] - S[k][0] > 420: break
+            k -= 1
+        while st < a and score(S[st][2]) <= 0: st += 1                             # start on words said to God
+        out.append((st, a))
+    return [c for c in out if not any(o[0] == c[0] and o[1] > c[1] for o in out)]   # the same prayer heard to a later amen
 
 def music_db(pcm, a, b):
     """The quiet frames' level against the speech (dB) between a and b seconds in pcm: near silence (< -14) = no music."""
