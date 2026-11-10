@@ -1,0 +1,64 @@
+# Kennon Vaughan (Harvest Church, Memphis): how much teaching his church's public podcast holds, before anything is
+# added. Read only: one directory lookup, the feed, and two 1 KB audio requests, with the app's honest name.
+name: Vaughan probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          UA="scripture-companion (personal Bible app; github.com/zreynard/scripture-companion)"
+          mkdir -p probe
+          for id in 1220936479 1475953272; do
+            curl -s -A "$UA" "https://itunes.apple.com/lookup?id=$id" -o probe/lookup_$id.json; sleep 2
+          done
+          python3 - <<'PY'
+          import json
+          for id in ("1220936479", "1475953272"):
+              r = (json.load(open(f"probe/lookup_{id}.json")).get("results") or [{}])[0]
+              print(id, "|", r.get("collectionName"), "|", r.get("artistName"), "|", r.get("feedUrl"), "|", r.get("trackCount"))
+              open(f"probe/feed_{id}.txt", "w").write(r.get("feedUrl") or "")
+          PY
+          for id in 1220936479 1475953272; do
+            u=$(cat probe/feed_$id.txt); [ -n "$u" ] && curl -s -L -A "$UA" "$u" -o probe/feed_$id.xml -w "feed $id: %{http_code} %{size_download} bytes\n"; sleep 2
+          done
+          python3 - <<'PY'
+          import json, re, collections, xml.etree.ElementTree as ET
+          IT = "{http://www.itunes.com/dtds/podcast-1.0.dtd}"
+          def secs(d):
+              if not d: return 0
+              if d.isdigit(): return int(d)
+              p = [int(x) for x in d.split(":") if x.isdigit()]
+              return sum(v * 60 ** i for i, v in enumerate(reversed(p)))
+          BOOK = r"(Genesis|Exodus|Leviticus|Numbers|Deuteronomy|Joshua|Judges|Ruth|Samuel|Kings|Chronicles|Ezra|Nehemiah|Esther|Job|Psalms?|Proverbs|Ecclesiastes|Song of|Isaiah|Jeremiah|Lamentations|Ezekiel|Daniel|Hosea|Joel|Amos|Obadiah|Jonah|Micah|Nahum|Habakkuk|Zephaniah|Haggai|Zechariah|Malachi|Matthew|Mark|Luke|John|Acts|Romans|Corinthians|Galatians|Ephesians|Philippians|Colossians|Thessalonians|Timothy|Titus|Philemon|Hebrews|James|Peter|Jude|Revelation)\s*\d"
+          out = {}
+          for id in ("1220936479", "1475953272"):
+              try: root = ET.parse(f"probe/feed_{id}.xml").getroot()
+              except Exception as e: print(id, "no feed", e); continue
+              ch = root.find("channel"); items = ch.findall("item")
+              rows = []
+              for it in items:
+                  t = (it.findtext("title") or "").strip(); a = (it.findtext(IT + "author") or "").strip()
+                  enc = it.find("enclosure"); url = enc.get("url") if enc is not None else ""
+                  d = (it.findtext("description") or it.findtext(IT + "summary") or "")
+                  rows.append({"t": t, "a": a, "date": (it.findtext("pubDate") or "")[:16], "dur": secs((it.findtext(IT + "duration") or "").strip()),
+                               "host": re.sub(r"^https?://([^/]+).*", r"\1", url), "url": url, "d": re.sub(r"<[^>]+>", " ", d)[:400]})
+              kv = [r for r in rows if re.search(r"kennon", r["t"] + " " + r["a"] + " " + r["d"], re.I)]
+              print(f"\n===== {id}: {ch.findtext('title')}  items {len(rows)}  mention Kennon {len(kv)}")
+              print("authors:", collections.Counter(r["a"] for r in rows).most_common(8))
+              print("hosts:", collections.Counter(r["host"] for r in rows).most_common(4))
+              yrs = collections.Counter(r["date"][12:16] if len(r["date"]) >= 16 else "?" for r in kv); print("Kennon by year:", sorted(yrs.items()))
+              speak = collections.Counter(m.group(1).strip() for r in rows for m in [re.search(r"\(([^()]*[A-Z][a-z]+ [A-Z][a-z]+)\)\s*$", r["t"])] if m); print("speakers in titles:", speak.most_common(12))
+              ds = sorted(r["dur"] for r in kv if r["dur"]); print("Kennon durations min/median/max:", (ds[0], ds[len(ds)//2], ds[-1]) if ds else None, " total hours", round(sum(ds)/3600))
+              pas = [r for r in kv if re.search(BOOK, r["t"] + " " + r["d"][:200])]; print("Kennon with a passage:", len(pas))
+              for r in kv: print("  ", r["date"][5:16], "|", r["dur"], "|", r["t"][:90])
+              out[id] = rows
+          json.dump(out, open("probe/episodes.json", "w"))
+          PY
+          for f in probe/feed_*.xml; do
+            u=$(grep -o '<enclosure[^>]*url="[^"]*"' "$f" | head -2 | sed -E 's/.*url="([^"]*)".*/\1/'); for x in $u; do
+              echo "== audio $x"; curl -s -o /dev/null -A "$UA" -r 0-1023 -L -w "%{http_code} final=%{url_effective} size=%{size_download}\n" "$x"; sleep 3; done
+          done
+      - uses: actions/upload-artifact@v4
+        with: { name: vaughan-probe, path: probe/ }
