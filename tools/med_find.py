@@ -192,7 +192,7 @@ def fix():
     (small.en), matched to the saying's text "t", the start put in the pause before the first word and the end in the
     pause after the last; and the file's true length counted frame by frame (some headers understate it)."""
     from faster_whisper import WhisperModel
-    import clip_probe as CP
+    import clip_probe as CP, requests
     model = WhisperModel("small.en", device="cpu", compute_type="int8")
     t = open(os.path.join(HERE, "out", "site", "index.html"), encoding="utf-8").read()
     D, _ = json.JSONDecoder().raw_decode(t[t.index("const D=") + 8:])
