@@ -16,6 +16,9 @@ jobs:
         run: BROWSER=webkit SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/pray.js
       - name: Browsers (published site)
         run: BROWSER=webkit SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/ui.js
+      - name: Importing a song, all the way through, in every format (published site)
+        if: always()
+        run: BROWSER=webkit SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/import.js
       - name: Live sync (real relays)
         if: always()
         run: BROWSER=webkit node tools/qa/live.js

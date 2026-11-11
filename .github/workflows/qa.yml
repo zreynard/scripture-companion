@@ -13,6 +13,12 @@ jobs:
       - run: npm i --no-save playwright@1.48.2 >/dev/null && (timeout 240 npx playwright install --with-deps chromium >/dev/null || npx playwright install chromium >/dev/null)
       - name: Engine
         run: node tools/qa/engine.js | tail -3
+      - name: Chord charts in every format, and 20,000 generated charts
+        if: always()
+        run: N=20000 node tools/qa/charts.js | tail -4
+      - name: Importing a song, all the way through, in every format (published site)
+        if: always()
+        run: SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/import.js
       - name: Old TV browsers can run the TV code (ES5, no newer built-ins)
         if: always()
         run: mkdir -p /tmp/acorn && (cd /tmp/acorn && npm i -q acorn@8.12.1 >/dev/null 2>&1) && NODE_PATH=/tmp/acorn/node_modules node tools/qa/es5.js
@@ -23,6 +29,7 @@ jobs:
         if: always()
         run: SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/pray.js
       - name: Browsers (published site)
+        if: always()
         run: SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/ui.js
       - name: Sync between devices (fake repo)
         if: always()

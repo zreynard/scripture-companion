@@ -168,8 +168,8 @@
         continue;
       }
       /* "[Hook]", "[Channel 2]": a bracketed name that is not a chord is a heading; "Repeat Hook" a repeat of one already written */
-      var bk = /^\s*\[([^\]]{1,32})\]\s*$/.exec(line), rp = /^\s*[\[(]?\s*(?:repeat|back to)\s+([^\])]{1,30}?)\s*[\])]?\s*$/i.exec(line);
-      if (bk && !isChord(bk[1].trim())) { var bh = dirHead(bk[1], false); flushChords(); if (bh.type === 'repeat') place(bh.target, bh.rep, line.trim()); else open(bh.type === 'head' ? bh.label : bk[1].trim(), bh.rep); continue; }
+      var bk = /^\s*\[([^\]]{1,32})\]\s*((?:[—–-]\s*)?\(?\s*(?:[x×]\s*\d+|\d+\s*(?:x|×|times))\s*\)?)?\s*$/i.exec(line), rp = /^\s*[\[(]?\s*(?:repeat|back to)\s+([^\])]{1,30}?)\s*[\])]?\s*$/i.exec(line);
+      if (bk && !isChord(bk[1].trim())) { var bh = dirHead(bk[1] + (bk[2] ? ' ' + bk[2] : ''), false); flushChords(); if (bh.type === 'repeat') place(bh.target, bh.rep, line.trim()); else open(bh.type === 'head' ? bh.label : bk[1].trim(), bh.rep); continue; }   /* "[Chorus] x2", "[Call And Response] (4x)" */
       if (rp && !hasInline(line) && seen(rp[1].replace(CNT, ''))) { var c3 = CNT.exec(rp[1]); flushChords(); place(rp[1].replace(CNT, '').trim(), c3 ? +(c3[1] || c3[2]) : 0, line.trim()); continue; }
       if (hasInline(line)) { flushChords(); push(inlineChords(line)); continue; }
       if (isChordLine(line)) { flushChords(); pendingChords = chordsAt(line); continue; }
