@@ -1,66 +1,8 @@
-
-== Canon and structure
-PASS  66 books in canonical order with standard chapter counts
-PASS  1,189 chapters, numbered 1..n in order inside every book
-PASS  app always walks in canonical order (no order switch left)
-
-== Placement (each teaching sits only where its stated passage is)
-FAIL  every placement matches the teaching's passage  (4 of 2206)
-        - The Shulamite Bride shown as overview at Song of Solomon, refs ['1 Kings']
-        - 2 John at 2 John 1; its passage is 
-        - 3 John at 3 John 1; its passage is 
-        - Jude at Jude 1; its passage is 
-PASS  every passage named in a title is on the road where it says
-PASS  no chapter outside its book
-PASS  each multi-book survey stands exactly once
-PASS  each survey stands at the first of its books in canonical order
-PASS  surveys are not repeated inside chapters
-PASS  a book overview is not repeated inside that book's chapters
-
-== Speakers
-PASS  only David Platt, PAM, Stephen Davey, Skip Heitzig (each with their church preachers), Kennon Vaughan and Fearless Church on the road
-PASS  Stephen Davey teaching comes only from his own feeds, and his feeds only from him
-PASS  Skip Heitzig teaching comes only from his own feeds, and his feeds only from him
-PASS  2819 teaching shows the preacher named in its title
-PASS  David Platt teaching comes only from Platt / Radical / McLean / Brook Hills sources
-PASS  McLean episodes on the road name David Platt
-
-== Order inside each chapter
-PASS  sermons before Pray the Word in every chapter
-PASS  playable before 'audio soon' in every chapter
-PASS  a series inside a chapter plays in preaching order
-
-== Secret Church
-PASS  Secret Church list runs in event/session order
-PASS  no Secret Church podcast session listed twice
-PASS  Secret Church podcast sessions numbered without gaps
-
-== Audio, dates, ids, duplicates
-PASS  every audio link is https
-PASS  no audio file on the road twice under different entries
-PASS  recordings the publisher mislabelled play under their own titles
-PASS  listings with no recording of their own are off the road
-PASS  no two script functions share a name
-PASS  no dates in the future
-PASS  feed episodes on the road all carry a date
-PASS  every id is the hash of its link (progress keys stable)
-FAIL  every shipped entry from the original catalog still exists  (1)
-        - could not compare: Unterminated string starting at: line 1 column 267 (char 266)
-PASS  nothing unverified (PENDING / FAIL) on the road
-PASS  no teaching twice in one chapter
-
-== Years
-PASS  every chapter carries its best-estimate year line
-PASS  every book shows its years on the road
-PASS  Genesis 1-11 is not given a year
-
-== Summaries
-PASS  every book has a one-sentence overview and 3-6 points
-PASS  every chapter has a one-sentence overview and 2-4 points
-PASS  overviews and points stay short (22 words or fewer)
-
-== Road rules
-PASS  nothing about women / mothers / womanhood on the road
-PASS  no PAM or Platt item that is a guest preacher's sermon (title tail)
-
-39 of 41 checks pass
+Traceback (most recent call last):
+  File "/home/runner/work/scripture-companion/scripture-companion/tools/audit.py", line 253, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/scripture-companion/scripture-companion/tools/audit.py", line 34, in main
+    D = json.loads(re.search(r"const D=(\{.*?\}),I=D.items", html, re.S).group(1).replace("<\\/", "</"))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
