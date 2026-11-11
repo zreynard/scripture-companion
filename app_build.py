@@ -91,7 +91,7 @@ def guided_lp(items):
     if not os.path.exists(p): return None
     x = json.load(open(p, encoding="utf-8")); it = items.get(x["src"])
     if not it or not it.get("audio"): return None
-    return {"src": x["src"], "who": it["who"], "audio": it["audio"], "a": x["a"], "b": x["b"], "at": x["at"], "music": bool(x.get("music"))}
+    return {"src": x["src"], "who": it["who"], "audio": it["audio"], "a": x["a"], "b": x["b"], "at": x["at"], "music": bool(x.get("music")), **({"Lt": x["Lt"]} if x.get("Lt") else {})}
 
 def big_picture(items, vser=None):
     """Big Picture: whole-Bible series heard in order, each with its own place. Episodes are items already in the app."""
@@ -2627,7 +2627,7 @@ const PR_PLAY='<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true
  PR_TURN='<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 function prShuf(n){const o=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[o[i],o[j]]=[o[j],o[i]]}return o}
 function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
- a.addEventListener('play',()=>{AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});[$('#ledm'),$('#medm'),$('#lpm')].forEach(x=>{if(x&&!x.paused)x.pause()});if(window.MED&&MED.on)medStop(false);pmSession();pmPaint()});
+ a.addEventListener('play',()=>{if(BED.tail)bedStopAfter();AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});[$('#ledm'),$('#medm'),$('#lpm')].forEach(x=>{if(x&&!x.paused)x.pause()});if(window.MED&&MED.on)medStop(false);pmSession();pmPaint()});
  a.addEventListener('pause',pmPaint);a.addEventListener('playing',()=>{PM.err=0});
  a.addEventListener('ended',()=>{if(a.src!==SILENT)pmSkip(1,true)});
  a.addEventListener('error',()=>{if(!a.getAttribute('src')||a.src===SILENT||PM.err>3)return;PM.err++;setTimeout(()=>pmSkip(1,true),900)});
@@ -2640,6 +2640,7 @@ function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
    narration: it fades in when the reading plays, out when it pauses or ends (a short gap between chapters is held). */
 const BED={plv:+S.get('bedlvp',0.25)||0.25,led:S.get('bedled',true)!==false,on:!!S.get('bedon',false),lv:+S.get('bedlv',0.2)||0.2,ctx:null,g:null,el:null,unl:false,t:null,url:null,id:null,sv:0,busy:false};
 function bedEl(){if(BED.el)return BED.el;const b=BED.el=$('#bedm');
+ AUDIO_EL.forEach(x=>x.addEventListener('play',()=>{if(BED.tail){BED.tail=false;bedSync()}}));
  b.addEventListener('pause',()=>{if(!bedWanted()||b.src===SILENT)return;const n=Date.now();BED.rts=(BED.rts||[]).filter(t=>n-t<10000);if(BED.rts.length>=3)return;BED.rts.push(n);   /* paused by the phone, not by us: once more */
   setTimeout(()=>{if(bedWanted()&&b.paused){const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(bedLevel(),800)).catch(()=>{})}},400)});
  b.addEventListener('ended',()=>bedLoad(1).then(()=>{if(bedWanted())b.play().catch(()=>{})}));
@@ -2656,9 +2657,15 @@ function bedLoad(step){return plLoad().then(L=>{if(!L.length)return false;const 
 function bedNarr(){return !!(NAR&&cur===NAR.id)}
 function bedOn(){return BED.on}
 /* Pray (Be Led's prayers, Meditate's readings and stillness) has the music too, on its own switch (BED.led) and level (BED.plv) */
-function bedPray(){return !!((window.MED&&MED.on)||(window.LED&&LED.c&&(LED.c.busy()||LED.tail))||(window.LP&&LP.c&&LP.c.busy()))}
+function bedPray(){return !!(BED.tail||(window.MED&&MED.on)||(window.LED&&LED.c&&LED.c.busy())||(window.LP&&LP.c&&LP.c.busy()))}
+/* after a prayer's amen the music plays on, piece after piece, like Stillness — until you play something else, turn the
+   music off, or pause it from the lock screen or your earbuds */
+function bedOnAfter(){if(!BED.led||!(PL.list||[]).length)return;BED.tail=true;dlog('music carries on','after the amen');bedSync();
+ if('mediaSession' in navigator){PM.ms=false;try{navigator.mediaSession.metadata=new MediaMetadata({title:'Prayer music',artist:'',album:'Pray'})}catch(e){}
+  [['play',()=>{BED.tail=true;bedSync()}],['pause',()=>bedStopAfter()],['seekbackward',null],['seekforward',null],['previoustrack',()=>{bedLoad(-1).then(()=>{if(bedWanted())bedEl().play().catch(()=>{})})}],['nexttrack',()=>{bedLoad(1).then(()=>{if(bedWanted())bedEl().play().catch(()=>{})})}]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}}
+function bedStopAfter(){if(!BED.tail)return;BED.tail=false;dlog('music stops','');bedGain(0,900);setTimeout(()=>{if(!bedWanted())bedEl().pause()},950)}
 function bedLevel(){return bedPray()?BED.plv:BED.lv}
-function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(window.LED&&LED.c&&(LED.c.busy()||LED.tail))return BED.led;if(window.LP&&LP.c&&LP.c.busy())return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
+function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(BED.tail)return BED.led;if(window.LED&&LED.c&&LED.c.busy())return BED.led;if(window.LP&&LP.c&&LP.c.busy())return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
 function bedSync(){const b=bedEl();{const w=bedWanted(),k=w+'|'+(BED.ctx&&BED.ctx.state)+'|'+(b.getAttribute('src')||'').slice(0,5)+'|'+b.paused;if(DIAG.last.bed!==k){DIAG.last.bed=k;dlog('music',{wanted:w,ctx:BED.ctx?BED.ctx.state:'none',file:(b.getAttribute('src')||'none').slice(0,5),paused:b.paused,on:BED.led,pieces:(PL.list||[]).length})}}$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',bedOn());
  if(bedWanted()){clearTimeout(BED.t);const go=()=>{const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(bedLevel(),1500)).catch(()=>{})};
   if(!b.getAttribute('src')||b.src===SILENT){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())go()})}else go();return}
@@ -2790,6 +2797,10 @@ function prayArt(id,band){return `<svg viewBox="${band?'0 214 390 196':'0 0 390 
    the stretch's start (a time fragment: nothing before it is heard, and never muted), stops exactly at its end (a timer
    from the time left, not only the coarse timeupdate an iPhone sends four times a second), and does not get stuck:
    "Loading…" after 3 s of waiting, one retry after 12 s or on an error, then an error the screen can say. */
+/* A recording's times are its true times (counted frame by frame). Some files' headers understate their length (Skip
+   Heitzig's: 3529 s for 3546 s); a phone that trusts the header measures on that shorter scale, one that counts frames
+   on the true one. Once the file opens, its length on this phone says which, and every time is put on that scale. */
+function tscale(d,Lt){return Lt&&isFinite(d)&&d>0&&Math.abs(d-Lt)>0.3?d/Lt:1}
 function clipper(a,h){const c={a,t0:0,end:0,url:'',rate:1,tm:null,wd:null,ld:null,tries:0,state:'',fix:null};
  const st=s=>{if(c.state===s)return;c.state=s;if(h.state)h.state(s)},clr=()=>{clearTimeout(c.tm);clearTimeout(c.wd);clearTimeout(c.ld)};
  c.arm=()=>{clearTimeout(c.tm);if(!c.end||a.paused)return;const left=(c.end-a.currentTime)/(a.playbackRate||1);if(left<=0.03){c.fin();return}
@@ -2809,7 +2820,7 @@ function clipper(a,h){const c={a,t0:0,end:0,url:'',rate:1,tm:null,wd:null,ld:nul
   if(c.end&&!a.paused&&a.currentTime>=c.end-0.03)c.fin();else if(h.tick)h.tick()});
  a.addEventListener('ended',()=>c.fin());
  a.addEventListener('error',()=>{if(!a.getAttribute('src')||c.state===''||c.state==='ended')return;c.retry()});
- a.addEventListener('loadedmetadata',()=>{if(c.fix)c.fix(a.duration);if(Math.abs(a.currentTime-c.t0)>0.5)try{a.currentTime=c.t0}catch(e){}});
+ a.addEventListener('loadedmetadata',()=>{if(c.fix)c.fix(a.duration);if(Math.abs(a.currentTime-c.t0)>0.15)try{a.currentTime=c.t0}catch(e){}});
  /* get the file ready while the screen shows it (a phone may wait for the tap anyway) */
  c.prep=(url,t0)=>{if(!a.paused||c.state==='starting')return;const u=url+'#t='+Math.max(0,t0).toFixed(2);if(a.getAttribute('src')===u)return;c.url=u;c.t0=t0;a.preload='metadata';a.src=u};
  /* start the stretch from its first word: call it straight from the tap */
@@ -2854,15 +2865,15 @@ function ledFade(v,ms){const a=$('#ledm');clearInterval(LED.fd);LED.fd=null;let 
  LED.fd=setInterval(()=>{k++;try{a.volume=Math.max(0,Math.min(1,v0+(v-v0)*k/n))}catch(e){}if(k>=n){clearInterval(LED.fd);LED.fd=null}},40)}
 /* the prayer has ended: your music (under a prayer without its own) carries on a few seconds after the amen, then fades away */
 function ledEnd(){const c=LED.c;LED.done=true;clearInterval(LED.fd);LED.fd=null;try{c.a.volume=1}catch(e){}c.clear();   /* let go of the sermon's file: nothing keeps downloading */
- if(BED.led&&(PL.list||[]).length){LED.tail=true;clearTimeout(LED.tt);LED.tt=setTimeout(()=>{LED.tail=false;bedGain(0,5000);setTimeout(bedSync,5100)},7000)}ledPaint()}
-function ledPP(){const x=ledCur(),c=ledC();if(!x)return;dlog('tap Be Led',x.id+' '+(c.state||'new'));bedKick();LED.tail=false;clearTimeout(LED.tt);clearInterval(LED.fd);LED.fd=null;
+ bedOnAfter();ledPaint()}
+function ledPP(){const x=ledCur(),c=ledC();if(!x)return;dlog('tap Be Led',x.id+' '+(c.state||'new'));bedKick();clearInterval(LED.fd);LED.fd=null;
  if(LED.id===x.id&&c.a.getAttribute('src')&&c.state!=='error'){if(c.busy()){c.pause();return}try{c.a.volume=0}catch(e){}LED.fade=true;if(LED.done||c.state==='ended'){LED.done=false;c.again()}else c.resume();return}
  LED.id=x.id;LED.done=false;c.rate=LED.sp;try{c.a.volume=0}catch(e){}LED.fade=true;const [t0,end]=ledSpan(x);
  c.go(x.audio,t0,end,d=>{if(isFinite(d)&&d>0){const [s,e]=ledSpan(x,d);c.t0=s;c.end=e}});ledPaint()}
 function ledSeek(d){if(LED.c&&LED.id)LED.c.seek(d);ledRing()}
 function ledGo(d){const L=ledList();if(!L.length)return;const o=ledOrd(),on=!!(LED.c&&LED.c.busy());let p=o.p+d;
  if(p>=o.o.length){S.set('ledord',null);const n=ledOrd();n.p=0;S.set('ledord',n)}else{o.p=Math.max(0,p);S.set('ledord',o)}
- if(LED.c)LED.c.clear();LED.id=null;LED.done=false;LED.tail=false;clearTimeout(LED.tt);
+ if(LED.c)LED.c.clear();LED.id=null;LED.done=false;
  if(view==='pray'&&PR.mode==='led'){const y=scrollY;render();window.scrollTo(0,y)}if(on)ledPP();else bedSync()}
 function ledSession(){if(!('mediaSession' in navigator))return;const x=ledById(LED.id)||{};PM.ms=false;
  try{navigator.mediaSession.metadata=new MediaMetadata({title:'Be Led',artist:NAMES[x.who]||x.who||'',album:'Pray'})}catch(e){}
@@ -2901,7 +2912,7 @@ function medLabel(){const s=MED.c&&MED.c.state;if(MED.on&&s==='loading')return '
 function medEb(){const e=$('#medeb');if(e)e.textContent=medLabel()}
 function medPaint(){if(view!=='pray'||PR.mode!=='med')return;const y=scrollY;render();window.scrollTo(0,y)}
 function medStart(){const m=medCur();if(!m)return;dlog('tap Begin',m.ref);bedKick();if(!audio.paused)audio.pause();{const pa=pmEl();if(!pa.paused)pa.pause()}if(LED.c&&LED.c.busy())LED.c.pause();
- const c=medC();clearTimeout(MED.t);MED.on=true;MED.k=0;MED.paused=false;MED.step='listen';c.rate=MED.sp;c.go(m.audio,m.a,m.b);medPaint();bedSync()}
+ const c=medC();clearTimeout(MED.t);MED.on=true;MED.k=0;MED.paused=false;MED.step='listen';c.rate=MED.sp;c.go(m.audio,m.a,m.b,d=>{const r=tscale(d,m.Lt);c.t0=m.a*r;c.end=m.b*r;dlog('scale',{length:d,true_length:m.Lt,ratio:Math.round(r*100000)/100000})});medPaint();bedSync()}
 function medNext(){if(!MED.on)return;const f=window.MED_FAST||1;
  if(MED.k===0){MED.k=1;MED.step='pause';medPaint();bedSync();MED.t=setTimeout(()=>{if(!MED.on)return;MED.step='again';MED.c.again();medPaint();bedSync()},6000*f);return}
  MED.step='still';if(MED.c)MED.c.clear();medPaint();bedSync()}
@@ -2917,16 +2928,17 @@ function medView(){const L=medList(),m=medCur(),k=medIdx();if(!m)return `<p clas
 var LP={c:null,done:false};
 function lpD(){return PRAY.lp||null}
 function lpC(){if(LP.c)return LP.c;const a=$('#lpm');
- LP.c=clipper(a,{state:()=>lpPaint(),end:()=>{LP.done=true;LP.c.clear();lpPaint()},error:lpPaint,tick:lpFollow});
+ LP.c=clipper(a,{state:()=>lpPaint(),end:()=>{LP.done=true;LP.c.clear();bedOnAfter();lpPaint()},error:lpPaint,tick:lpFollow});
  a.addEventListener('play',()=>{LP.done=false;AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});{const p=pmEl();if(!p.paused)p.pause()}if(LED.c&&LED.c.busy())LED.c.pause();if(MED.on)medStop(false);lpSession()});
  AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause()}));return LP.c}
 function lpLive(){return !!(LP.c&&LP.c.a.getAttribute('src')&&!LP.done&&LP.c.state!=='error'&&LP.c.state!=='')}
 /* the movement on screen follows him */
-function lpFollow(){if(!LP.c.busy())return;const x=lpD(),t=LP.c.a.currentTime;let k=0;x.at.forEach((s,i)=>{if(t>=s-0.3)k=i});if(k!==PR.mv&&view==='pray'&&PR.mode==='guided'){PR.mv=k;PR.anim='l';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}}
+function lpFollow(){if(!LP.c.busy())return;const x=lpD(),t=LP.c.a.currentTime,r=LP.r||1;let k=0;x.at.forEach((s,i)=>{if(t>=s*r-0.3)k=i});if(k!==PR.mv&&view==='pray'&&PR.mode==='guided'){PR.mv=k;PR.anim='l';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}}
 function lpPP(){const x=lpD();if(!x)return;dlog('tap Pray it with',LP.c?LP.c.state:'new');bedKick();const c=lpC();
  if(c.a.getAttribute('src')&&!LP.done&&c.state!=='error'&&c.state!==''){if(c.busy())c.pause();else c.resume();return}
- LP.done=false;c.rate=1;const t0=PR.mv>0&&x.at[PR.mv]!=null?x.at[PR.mv]:x.a;c.go(x.audio,t0,x.b);c.t0=x.a;lpPaint()}
-function lpSeek(d){const x=lpD(),c=LP.c;if(!lpLive())return;try{c.a.currentTime=Math.max(x.a,Math.min(x.b-0.5,c.a.currentTime+d))}catch(e){}}
+ LP.done=false;c.rate=1;LP.r=1;const t0=PR.mv>0&&x.at[PR.mv]!=null?x.at[PR.mv]:x.a;
+ c.go(x.audio,t0,x.b,d=>{const r=LP.r=tscale(d,x.Lt);c.t0=t0*r;c.end=x.b*r;dlog('scale',{length:d,true_length:x.Lt,ratio:Math.round(r*100000)/100000})});lpPaint()}
+function lpSeek(d){const x=lpD(),c=LP.c,r=LP.r||1;if(!lpLive())return;try{c.a.currentTime=Math.max(x.a*r,Math.min(x.b*r-0.5,c.a.currentTime+d))}catch(e){}}
 function lpSession(){if(!('mediaSession' in navigator))return;const x=lpD();PM.ms=false;try{navigator.mediaSession.metadata=new MediaMetadata({title:"The Lord's Prayer",artist:NAMES[x.who]||x.who,album:'Pray'})}catch(e){}
  [['play',()=>{if(!LP.c.busy())lpPP()}],['pause',()=>{if(LP.c.busy())LP.c.pause()}],['seekbackward',()=>lpSeek(-15)],['seekforward',()=>lpSeek(15)],['previoustrack',()=>prGo(-1)],['nexttrack',()=>prGo(1)]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}
 function lpMusic(){return true}
@@ -2944,7 +2956,7 @@ function prayView(){if(PR.mode==='guided')prSession();
  return h+`<div class="pr-art pr-band">${prayArt('pg',1)}${(PL.list||[]).length&&!lpD()?`<button class="pr-mini" data-pm aria-label="Play the music">${PR_PLAY}</button>`:''}</div>
 ${lpLine()}<section class="pr-g${PR.anim?' in-'+PR.anim:''}" aria-label="${esc(m.label)}">${prHead(m.label,'','data-prmv',PR.mv>0,PR.mv<n-1,`<span class="pr-dots" aria-hidden="true">${PRAY.moves.map((x,k)=>`<i class="${k===PR.mv?'on':''}"></i>`).join('')}</span>`,false,'movement')}<p class="pr-lp serif">${esc(m.lp)}</p><div class="pr-lpr">${esc(m.lpr)}</div><p class="pr-ins">${esc(m.ins)}</p><div class="pr-rule" aria-hidden="true"></div>
 <figure class="pr-sup"><blockquote class="serif" id="prst">${esc(s.t)}</blockquote><figcaption><button class="pr-supr" id="prsr" aria-label="${esc(s.r)}: show another passage"><span>${esc(s.r)}</span>${PR_TURN}</button></figcaption></figure></section></div>`}
-function prGo(d){const k=PR.mv+d;if(k<0||k>=PRAY.moves.length)return;if(lpLive()){const x=lpD();try{LP.c.a.currentTime=x.at[k]}catch(e){}}PR.mv=k;S.set('prlast',Date.now());PR.anim=d>0?'l':'r';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}
+function prGo(d){const k=PR.mv+d;if(k<0||k>=PRAY.moves.length)return;if(lpLive()){const x=lpD();try{LP.c.a.currentTime=x.at[k]*(LP.r||1)}catch(e){}}PR.mv=k;S.set('prlast',Date.now());PR.anim=d>0?'l':'r';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}
 function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='pray')render()});return}pmPrime();if(!PL.list.length&&bkOn()&&!MB.busy)mbSync(true);
  document.querySelectorAll('[data-pradd]').forEach(b=>b.onclick=()=>prPick(()=>{if(view==='pray')render()}));
  document.querySelectorAll('[data-prm]').forEach(b=>b.onclick=()=>{if(PR.mode===b.dataset.prm)return;PR.mode=b.dataset.prm;S.set('prm',PR.mode);S.set('prsub',PR.mode);render()});

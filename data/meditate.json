@@ -1,5 +1,5 @@
 {
- "_note": "Meditate (Pray tab): things Jesus said, each read by a pastor in one of his sermons. src = the recording, a/b = seconds from its start (each clip checked word by word: His first word to His last), t = the words as he reads them. Chosen Nov 2026.",
+ "_note": "Meditate (Pray tab): things Jesus said, each read by a pastor in one of his sermons. src = the recording, a/b = seconds from its start (each clip checked word by word: His first word to His last), t = the words as he reads them. Chosen Nov 2026. Lt = the file's true length (frame by frame; some headers understate it), so the app can put a/b (true times) on the phone's own scale.",
  "sayings": [
   {
    "ref": "Matthew 11:28-30",
@@ -8,7 +8,8 @@
    "who": "Platt",
    "a": 2257.25,
    "b": 2275.4,
-   "t": "Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light."
+   "t": "Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light.",
+   "Lt": 2946.792
   },
   {
    "ref": "Matthew 6:6",
@@ -26,7 +27,8 @@
    "who": "Skip",
    "a": 1083.91,
    "b": 1100.25,
-   "t": "Peace I leave with you, My peace I give to you; not as the world gives do I give to you. Let not your heart be troubled, neither let it be afraid."
+   "t": "Peace I leave with you, My peace I give to you; not as the world gives do I give to you. Let not your heart be troubled, neither let it be afraid.",
+   "Lt": 4132.415
   },
   {
    "ref": "John 15:5",
@@ -35,7 +37,8 @@
    "who": "Vaughan",
    "a": 117.01,
    "b": 126.57,
-   "t": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing."
+   "t": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
+   "Lt": 2924.591
   },
   {
    "ref": "John 14:1-3",
@@ -44,7 +47,8 @@
    "who": "Platt",
    "a": 279.98,
    "b": 298.98,
-   "t": "Do not let your hearts be troubled. Trust in God; trust also in me. In my Father's house are many rooms; if it were not so, I would have told you. I am going there to prepare a place for you. And if I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am."
+   "t": "Do not let your hearts be troubled. Trust in God; trust also in me. In my Father's house are many rooms; if it were not so, I would have told you. I am going there to prepare a place for you. And if I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am.",
+   "Lt": 2337.123
   },
   {
    "ref": "John 16:33",
@@ -53,7 +57,8 @@
    "who": "Vaughan",
    "a": 279.89,
    "b": 289.15,
-   "t": "I have said these things to you, that in me you may have peace. In the world you will have tribulation. But take heart; I have overcome the world."
+   "t": "I have said these things to you, that in me you may have peace. In the world you will have tribulation. But take heart; I have overcome the world.",
+   "Lt": 2793.848
   },
   {
    "ref": "John 14:6",
@@ -62,7 +67,8 @@
    "who": "Platt",
    "a": 308.02,
    "b": 319.16,
-   "t": "I am the way, and the truth, and the life. No one comes to the Father except through me."
+   "t": "I am the way, and the truth, and the life. No one comes to the Father except through me.",
+   "Lt": 2337.123
   },
   {
    "ref": "John 11:25-26",
@@ -80,7 +86,8 @@
    "who": "Vaughan",
    "a": 47.65,
    "b": 57.89,
-   "t": "The thief comes only to steal and kill and destroy. I came that they may have life and have it abundantly. I am the good shepherd. The good shepherd lays down his life for the sheep."
+   "t": "The thief comes only to steal and kill and destroy. I came that they may have life and have it abundantly. I am the good shepherd. The good shepherd lays down his life for the sheep.",
+   "Lt": 2889.024
   },
   {
    "ref": "Luke 22:42",
@@ -89,7 +96,8 @@
    "who": "Skip",
    "a": 868.47,
    "b": 883.45,
-   "t": "Father, if it is Your will, take this cup away from Me; nevertheless not My will, but Yours, be done."
+   "t": "Father, if it is Your will, take this cup away from Me; nevertheless not My will, but Yours, be done.",
+   "Lt": 3673.522
   },
   {
    "ref": "John 15:9-11",
@@ -98,7 +106,8 @@
    "who": "Vaughan",
    "a": 91.27,
    "b": 107.1,
-   "t": "As the Father has loved me, so have I loved you. Abide in my love. If you keep my commandments, you will abide in my love, just as I have kept my Father's commandments and abide in his love. These things I have spoken to you, that my joy may be in you, and that your joy may be full."
+   "t": "As the Father has loved me, so have I loved you. Abide in my love. If you keep my commandments, you will abide in my love, just as I have kept my Father's commandments and abide in his love. These things I have spoken to you, that my joy may be in you, and that your joy may be full.",
+   "Lt": 2762.24
   },
   {
    "ref": "Revelation 3:20",
@@ -107,7 +116,8 @@
    "who": "Vaughan",
    "a": 2526.95,
    "b": 2537.55,
-   "t": "Behold, I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me."
+   "t": "Behold, I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me.",
+   "Lt": 3083.651
   },
   {
    "ref": "John 8:12",
@@ -116,7 +126,8 @@
    "who": "Skip",
    "a": 939.35,
    "b": 949.89,
-   "t": "I am the light of the world. He who follows Me shall not walk in darkness, but have the light of life."
+   "t": "I am the light of the world. He who follows Me shall not walk in darkness, but have the light of life.",
+   "Lt": 4216.007
   },
   {
    "ref": "John 6:35",
@@ -125,7 +136,8 @@
    "who": "Skip",
    "a": 3172.07,
    "b": 3180.58,
-   "t": "I am the bread of life. He who comes to Me shall never hunger, and he who believes in Me shall never thirst."
+   "t": "I am the bread of life. He who comes to Me shall never hunger, and he who believes in Me shall never thirst.",
+   "Lt": 3883.99
   },
   {
    "ref": "John 6:37",
@@ -134,7 +146,8 @@
    "who": "Platt",
    "a": 516.09,
    "b": 521.09,
-   "t": "All that the Father gives me will come to me, and whoever comes to me I will never cast out."
+   "t": "All that the Father gives me will come to me, and whoever comes to me I will never cast out.",
+   "Lt": 3474.936
   },
   {
    "ref": "John 14:18",
@@ -143,7 +156,8 @@
    "who": "Vaughan",
    "a": 115.9,
    "b": 120.38,
-   "t": "I will not leave you as orphans; I will come to you."
+   "t": "I will not leave you as orphans; I will come to you.",
+   "Lt": 3254.568
   },
   {
    "ref": "Matthew 6:33",
@@ -152,7 +166,8 @@
    "who": "PAM",
    "a": 3312.5,
    "b": 3319.75,
-   "t": "But seek first the kingdom of God and his righteousness, and all these things will be added to you."
+   "t": "But seek first the kingdom of God and his righteousness, and all these things will be added to you.",
+   "Lt": 4528.32
   },
   {
    "ref": "John 15:13",
@@ -161,7 +176,8 @@
    "who": "Vaughan",
    "a": 107.97,
    "b": 112.53,
-   "t": "Greater love has no one than this, that someone lay down his life for his friends."
+   "t": "Greater love has no one than this, that someone lay down his life for his friends.",
+   "Lt": 2472.464
   },
   {
    "ref": "John 7:37-38",
@@ -170,7 +186,8 @@
    "who": "Vaughan",
    "a": 73.44,
    "b": 82.02,
-   "t": "If anyone thirsts, let him come to me and drink. Whoever believes in me, as the Scripture has said, 'Out of his heart will flow rivers of living water.'"
+   "t": "If anyone thirsts, let him come to me and drink. Whoever believes in me, as the Scripture has said, 'Out of his heart will flow rivers of living water.'",
+   "Lt": 2629.584
   },
   {
    "ref": "Matthew 28:18-20",
@@ -179,7 +196,8 @@
    "who": "Vaughan",
    "a": 164.75,
    "b": 182.41,
-   "t": "All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the very end of the age."
+   "t": "All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the very end of the age.",
+   "Lt": 2982.557
   },
   {
    "ref": "Matthew 16:24-26",
@@ -188,7 +206,8 @@
    "who": "Skip",
    "a": 1103.26,
    "b": 1131.62,
-   "t": "If anyone desires to come after Me, let him deny himself, and take up his cross, and follow Me. For whoever desires to save his life will lose it, but whoever loses his life for My sake will find it. For what profit is it to a man if he gains the whole world, and loses his own soul? Or what will a man give in exchange for his soul?"
+   "t": "If anyone desires to come after Me, let him deny himself, and take up his cross, and follow Me. For whoever desires to save his life will lose it, but whoever loses his life for My sake will find it. For what profit is it to a man if he gains the whole world, and loses his own soul? Or what will a man give in exchange for his soul?",
+   "Lt": 3945.117
   },
   {
    "ref": "John 10:27-28",
@@ -197,7 +216,8 @@
    "who": "Skip",
    "a": 3183.5,
    "b": 3196.0,
-   "t": "My sheep hear My voice, and I know them, and they follow Me. And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My Father's hand."
+   "t": "My sheep hear My voice, and I know them, and they follow Me. And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My Father's hand.",
+   "Lt": 3622.217
   },
   {
    "ref": "John 20:29",
@@ -215,7 +235,8 @@
    "who": "Vaughan",
    "a": 181.44,
    "b": 189.17,
-   "t": "If you abide in my word, you are truly my disciples, and you will know the truth, and the truth will set you free."
+   "t": "If you abide in my word, you are truly my disciples, and you will know the truth, and the truth will set you free.",
+   "Lt": 2562.792
   },
   {
    "ref": "John 17:3",
@@ -224,7 +245,8 @@
    "who": "Skip",
    "a": 519.03,
    "b": 529.6,
-   "t": "And this is eternal life, that they may know You, the only true God, and Jesus Christ whom You have sent."
+   "t": "And this is eternal life, that they may know You, the only true God, and Jesus Christ whom You have sent.",
+   "Lt": 3898.201
   },
   {
    "ref": "Matthew 5:8",
@@ -233,7 +255,8 @@
    "who": "Skip",
    "a": 946.94,
    "b": 953.13,
-   "t": "Blessed are the pure in heart, for they shall see God."
+   "t": "Blessed are the pure in heart, for they shall see God.",
+   "Lt": 2678.178
   },
   {
    "ref": "Matthew 7:7-8",
@@ -242,7 +265,8 @@
    "who": "Skip",
    "a": 3011.88,
    "b": 3021.04,
-   "t": "Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you. For everyone who asks receives, and he who seeks finds, and to him who knocks the door will be opened."
+   "t": "Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you. For everyone who asks receives, and he who seeks finds, and to him who knocks the door will be opened.",
+   "Lt": 3567.203
   },
   {
    "ref": "Matthew 22:37-39",
@@ -251,7 +275,8 @@
    "who": "Skip",
    "a": 4052.27,
    "b": 4061.86,
-   "t": "You will love the Lord your God with all your heart, with all your soul, with all your mind. This is the first and the greatest commandment. And the second is like it: You will love your neighbor as yourself."
+   "t": "You will love the Lord your God with all your heart, with all your soul, with all your mind. This is the first and the greatest commandment. And the second is like it: You will love your neighbor as yourself.",
+   "Lt": 4405.473
   },
   {
    "ref": "John 4:13-14",
@@ -260,7 +285,8 @@
    "who": "Skip",
    "a": 2774.27,
    "b": 2791.2,
-   "t": "Whoever drinks of this water will thirst again, but whoever drinks of the water that I shall give him will never thirst. But the water that I shall give him will become in him a fountain of water springing up into everlasting life."
+   "t": "Whoever drinks of this water will thirst again, but whoever drinks of the water that I shall give him will never thirst. But the water that I shall give him will become in him a fountain of water springing up into everlasting life.",
+   "Lt": 3954.181
   },
   {
    "ref": "John 5:24",
@@ -278,7 +304,8 @@
    "who": "Vaughan",
    "a": 133.0,
    "b": 142.96,
-   "t": "Whoever has my commandments and keeps them, he it is who loves me. And he who loves me will be loved by my Father, and I will love him and manifest myself to him."
+   "t": "Whoever has my commandments and keeps them, he it is who loves me. And he who loves me will be loved by my Father, and I will love him and manifest myself to him.",
+   "Lt": 3254.568
   },
   {
    "ref": "Matthew 10:29-31",
@@ -296,7 +323,8 @@
    "who": "Skip",
    "a": 89.33,
    "b": 97.62,
-   "t": "The Son of Man did not come to be served, but to serve, and to give His life a ransom for many."
+   "t": "The Son of Man did not come to be served, but to serve, and to give His life a ransom for many.",
+   "Lt": 3916.643
   },
   {
    "ref": "John 15:16",
@@ -305,7 +333,8 @@
    "who": "Vaughan",
    "a": 127.03,
    "b": 139.75,
-   "t": "You did not choose me, but I chose you and appointed you that you should go and bear fruit and that your fruit should abide, so that whatever you ask the Father in my name, he may give it to you."
+   "t": "You did not choose me, but I chose you and appointed you that you should go and bear fruit and that your fruit should abide, so that whatever you ask the Father in my name, he may give it to you.",
+   "Lt": 2472.464
   },
   {
    "ref": "Luke 19:10",
@@ -314,7 +343,8 @@
    "who": "Skip",
    "a": 1296.03,
    "b": 1303.05,
-   "t": "For the Son of Man has come to seek and to save that which was lost."
+   "t": "For the Son of Man has come to seek and to save that which was lost.",
+   "Lt": 3544.712
   },
   {
    "ref": "Matthew 5:3-6",
@@ -323,7 +353,8 @@
    "who": "Skip",
    "a": 2244.13,
    "b": 2259.07,
-   "t": "Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they shall be comforted. Blessed are the meek, for they shall inherit the earth. Blessed are those who hunger and thirst after righteousness, for they shall be filled."
+   "t": "Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they shall be comforted. Blessed are the meek, for they shall inherit the earth. Blessed are those who hunger and thirst after righteousness, for they shall be filled.",
+   "Lt": 3822.968
   },
   {
    "ref": "Matthew 5:14-16",
@@ -332,7 +363,8 @@
    "who": "Skip",
    "a": 1943.8,
    "b": 1966.8,
-   "t": "You are the light of the world. A city that is set on a hill cannot be hidden. Nor do they light a lamp and put it under a basket, but on a lampstand, and it gives light to all who are in the house. Let your light so shine before men, that they may see your good works and glorify your Father who is in heaven."
+   "t": "You are the light of the world. A city that is set on a hill cannot be hidden. Nor do they light a lamp and put it under a basket, but on a lampstand, and it gives light to all who are in the house. Let your light so shine before men, that they may see your good works and glorify your Father who is in heaven.",
+   "Lt": 2678.178
   },
   {
    "ref": "Matthew 9:37-38",
@@ -341,7 +373,8 @@
    "who": "Skip",
    "a": 708.53,
    "b": 720.58,
-   "t": "The harvest truly is plentiful, but the laborers are few. Therefore pray the Lord of the harvest to send out laborers into His harvest."
+   "t": "The harvest truly is plentiful, but the laborers are few. Therefore pray the Lord of the harvest to send out laborers into His harvest.",
+   "Lt": 3739.324
   }
  ]
 }
