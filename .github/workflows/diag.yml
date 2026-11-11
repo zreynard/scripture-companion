@@ -1,6 +1,9 @@
 # One-off diagnosis scripts that need the real internet or another browser engine.
 name: Live diagnosis
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      script: {description: "tools/qa script to run", default: "webkit_diag.js"}
 jobs:
   diag:
     runs-on: ubuntu-24.04
@@ -11,4 +14,4 @@ jobs:
         with:
           node-version: "22"
       - run: npm i --no-save playwright@1.48.2 >/dev/null && (timeout 240 npx playwright install --with-deps webkit >/dev/null || npx playwright install webkit >/dev/null)
-      - run: node tools/qa/webkit_diag.js
+      - run: node tools/qa/${{ inputs.script || 'webkit_diag.js' }}
