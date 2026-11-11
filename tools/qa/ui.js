@@ -411,6 +411,25 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await A.context().close();
     return (w2 === w1 && d1.deck.set.join() === '0,1' && d1.deck.songs[0].id === 's2' && d1.deck.songs[0].key === 'A' && d1.deck.songs.length === 4 && d3.sid === d1.sid && ids(d3) === ids(d1) && d3.deck.set.join() === '0,1') || { same: w2 === w1, set: d1.deck.set, first: d1.deck.songs[0] && d1.deck.songs[0].id, sid: [d1.sid, d3.sid], a: ids(d1), b: ids(d3) };
   });
+  await T('U82 Add a song: a whole chord-site page pasted in keeps only the chart, fills in the title, artist and key, says what it tidied, and Undo puts the paste back; typing is never touched; Paste from clipboard does the same in one tap', async () => {
+    const PAGE = 'Search\nLantern Road Chords by Test Band\n12 views, added to favorites 3 times\nRating: ★ 4.9 / 5 (12)\nTuning: E A D G B E\nKey: G\nCHORDS\nG\n2 1   3\nPLAY\nTRANSPOSE\nLISTEN\nPDF\n\n[Verse 1]\nG              C\nAn invented line for the test\nADVERTISEMENT\nOPEN IN APP\n\n[Chorus]\nD          G\nAnother invented line\n\nPrint\nReport Bad Tab\nPlease rate this tab';
+    const c = await ctx(); try { await c.grantPermissions(['clipboard-read', 'clipboard-write']); } catch (e) { } const A = await open(c); await W(A);
+    const go = async () => { await A.evaluate(() => { WS.pane = 'songs'; WS.song = null; WS.set = null; WS.edit = null; render(); }); await A.click('[data-wnew]'); await wait(200); };
+    await go(); const btn = await A.evaluate(() => { const b = $('#wf-clip'); return !!b && !b.hidden; });
+    await A.focus('#wf-src');
+    await A.evaluate(t => { const dt = new DataTransfer(); dt.setData('text/plain', t); $('#wf-src').dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt, bubbles: true, cancelable: true })); }, PAGE);
+    const r = await A.evaluate(() => ({ src: $('#wf-src').value, t: $('#wf-t').value, a: $('#wf-a').value, k: $('#wf-k').value, note: ($('#wf-tidy') || {}).textContent || '', found: ($('#wf-found') || {}).textContent || '' }));
+    await A.click('#wf-undo'); const undone = await A.evaluate(p => $('#wf-src').value === p, PAGE);
+    await A.fill('#wf-src', 'Verse 1\nG\ntyped by hand\nPrint'); await A.dispatchEvent('#wf-src', 'input'); const typed = await A.evaluate(() => $('#wf-src').value === 'Verse 1\nG\ntyped by hand\nPrint');
+    let clip = 'not offered by this browser';
+    await go();
+    const can = await A.evaluate(async t => { try { await navigator.clipboard.writeText(t); return true } catch (e) { return false } }, PAGE);
+    if (can) { await A.click('#wf-clip'); await wait(400); clip = await A.evaluate(() => /^\[Verse 1\]/.test($('#wf-src').value) && $('#wf-t').value === 'Lantern Road' && !/ADVERTISEMENT|Report Bad Tab/.test($('#wf-src').value) && $('#wf-clip').hidden); }
+    await c.close();
+    const ok = btn && /^\[Verse 1\]\nG {14}C\nAn invented line for the test\n\n\[Chorus\]/.test(r.src) && !/ADVERTISEMENT|OPEN IN APP|Report Bad Tab|Rating|PLAY|2 1/.test(r.src) && r.t === 'Lantern Road' && r.a === 'Test Band' && r.k === 'G'
+      && /Tidied the paste: removed \d+ lines from the web page · filled in the title, artist, key G\. Undo/.test(r.note) && /Verse 1/.test(r.found) && /Chorus/.test(r.found) && undone && typed && clip !== false;
+    return ok || { btn, r, undone, typed, clip };
+  });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

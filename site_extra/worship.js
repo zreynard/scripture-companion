@@ -145,6 +145,44 @@
     sections.forEach(function (s, i) { s.short = shortOf(s.label); s.kind = kindOf(s.label)[0]; s.lyric = s.lines.some(function (l) { return l && l.text.trim(); }); s.i = i; });
     return { meta: meta, sections: sections };
   }
+
+  /* ---- a whole chord-site page pasted in: keep the chart, drop the page around it ----
+     Everything before the first section heading is the page's header (title, ratings, chord diagrams, buttons): only
+     the title, artist, key and capo are read from it. Known page furniture is dropped anywhere; from the page's footer
+     (Report Bad Tab, Add to Planning Center…) on, nothing is kept. Chart lines are never reworded or re-spaced. */
+  var JUNK = /^(?:advertisement|open in app|view in app|transpose|listen|pdf|skip ad|learn more|add to favorites|autoscroll)$/i;   /* page furniture that turns up mid-song too */
+  var JUNK_RE = [/^\d[\d,.]*\s*views?\b/i, /^rating\s*:/i, /^difficulty\s*:/i, /^tuning\s*:/i, /^author\s*:/i, /^last edit\s*:/i, /^ad\s*:?\s*\(\d+:\d\d\)$/i,
+    /^(?=.*\d)(?!\s*\(?[x×]\s*\d+\)?\s*$)[\d\sxo×]+$/i, /^[★☆][★☆\s\d.\/()]*$/];   /* chord-diagram fingerings (a digit in them; not a lone x2), star ratings */
+  var FOOTER = /^(?:report bad tab|please rate this tab|add to planning center|save to my songs|rate this tab)$/i;
+  function clean(text) {
+    var L = String(text || '').replace(/\r\n?/g, '\n').replace(/ /g, ' ').split('\n'), out = { src: '', title: '', artist: '', key: '', capo: 0, dropped: 0 };
+    var isLabel = function (l) { var m = LABEL.exec(l.replace(/^\s*[\[(]?\s*(?:repeat|rpt\.?|back to)\s+/i, '')); return !!(m && !hasInline(l) && (!m[3] || isChordLine(m[3]) || /^\([^()]*\)$/.test(m[3].trim()))); };
+    var first = -1; for (var i = 0; i < L.length; i++) if (L[i].trim() && isLabel(L[i]) && !JUNK.test(L[i].trim())) { first = i; break; }
+    var start = 0;
+    if (first >= 0) {   // chord lines right before the first heading (an untitled intro) stay
+      start = first; var j = first - 1; while (j >= 0 && (!L[j].trim() || (isChordLine(L[j]) && chordsAt(L[j]).length > 1))) j--;   /* two chords or more: a lone key name (Transpose: Eb) is not an intro */ var k = j + 1; while (k < first && !L[k].trim()) k++;
+      if (k < first) start = k;
+    }
+    for (var h = 0; h < start; h++) {   // the header: what it says about the song
+      var s = L[h].trim(), m;
+      if ((m = /^(.+?)\s+(?:chords|tabs?|lyrics(?: and chords)?|chord chart)\s+by\s+(.+)$/i.exec(s))) { out.title = out.title || m[1].trim(); out.artist = out.artist || m[2].trim(); }
+      else if ((m = /^(?:key|original key|transpose)\s*:?\s*([A-G](?:#|b)?m?)\s*$/i.exec(s))) out.key = out.key || m[1];
+      else if (/^transpose\s*:?$/i.test(s) && h + 1 < start && /^[A-G](?:#|b)?m?$/.test(L[h + 1].trim()) && !(h + 2 < start && /^[A-G](?:#|b)?m?$/.test(L[h + 2].trim()))) out.key = out.key || L[h + 1].trim();
+      else if ((m = /^capo\s*:?\s*(\d+)/i.exec(s))) out.capo = +m[1];
+    }
+    var keep = [];
+    if (start < first) keep.push(/^intro\b/i.test(L[first].trim().replace(/^[\[(]/, '')) ? null : 'Intro');
+    for (var n = start; n < L.length; n++) {
+      var x = L[n].replace(/\s+$/, ''), tr = x.trim();
+      if (FOOTER.test(tr)) { while (keep.length && (!keep[keep.length - 1] || /^print$/i.test(String(keep[keep.length - 1]).trim()))) keep.pop(); break; }
+      if (tr && !isLabel(x) && !isChordLine(x) && (JUNK.test(tr) || JUNK_RE.some(function (r) { return r.test(tr); }))) continue;
+      keep.push(x);
+    }
+    keep = keep.filter(function (x) { return x !== null; });
+    var src = keep.join('\n').replace(/\n{3,}/g, '\n\n').replace(/^\n+|\n+$/g, '');
+    var before = L.filter(function (l) { return l.trim(); }).length, after = src.split('\n').filter(function (l) { return l.trim() && !/^Intro$/.test(l.trim()); }).length;
+    out.src = src; out.dropped = Math.max(0, before - after); return out;
+  }
   /* unique sections (first occurrence of each name) for "jump to" buttons */
   function uniq(sections) { var seen = {}, out = []; sections.forEach(function (s) { var k = s.label.toLowerCase(); if (!seen[k]) { seen[k] = 1; out.push(s); } }); return out; }
 
@@ -281,6 +319,6 @@
   }
   function pageOf(box, el, info) { if (!el || !info || info.pages < 2) return 0; var x = el.offsetLeft; return Math.max(0, Math.min(info.pages - 1, Math.floor((x + 4) / info.step))); }
   function turn(box, n, info) { box.scrollLeft = n * info.step; }
-  G.Worship = { desyl: desyl, snapChords: snapChords, swipe: swipe, fit: fit, pageOf: pageOf, turn: turn, parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
+  G.Worship = { clean: clean, desyl: desyl, snapChords: snapChords, swipe: swipe, fit: fit, pageOf: pageOf, turn: turn, parse: parse, uniq: uniq, chartHTML: chartHTML, slides: slides, splitSection: splitSection, transposeChord: transposeChord,
     transposeKey: transposeKey, semitones: semitones, useFlats: useFlats, keyInfo: keyInfo, KEYS_MAJ: KEYS_MAJ, KEYS_MIN: KEYS_MIN, isChord: isChord, shortOf: shortOf, esc: esc };
 })(typeof window !== 'undefined' ? window : globalThis);

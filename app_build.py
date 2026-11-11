@@ -902,6 +902,7 @@ body[data-v=pray] #np,body[data-v=worship] #np{display:none!important}
 .wc-c{font:700 14.5px/1.2 ui-monospace,Menlo,monospace;color:#a8812a;min-height:1.2em;padding-right:4px}.wc-t{white-space:pre-wrap;max-width:100%}.wc-only .wc-t{display:none}.wc-gap{height:12px}
 .w-f{display:block;margin:12px 0}.w-f span{display:block;font-size:13px;font-weight:600;color:var(--mute);margin:0 0 5px}
 .w-f input,.w-f select,.w-f textarea{width:100%;border:1px solid rgba(27,36,64,.16);border-radius:12px;background:#fff;padding:11px 12px;font:16px -apple-system,system-ui,sans-serif;color:var(--ink)}
+.w-pastebtn{width:100%;justify-content:center;margin:4px 0 2px}.w-tidy{margin:4px 2px 0}.w-tidy .lnk{font-weight:600}
 .w-f textarea#wf-src{font:14px/1.45 ui-monospace,Menlo,Consolas,monospace;white-space:pre;overflow-x:auto}
 .w-two{display:grid;grid-template-columns:1fr 110px;gap:10px}
 .w-found{font-size:13.5px;color:var(--mute);line-height:1.8}.w-sc{display:inline-block;min-width:26px;padding:0 6px;border-radius:8px;background:rgba(27,36,64,.07);font:700 12px ui-monospace,Menlo,monospace;color:var(--ink);text-align:center}
@@ -2369,6 +2370,7 @@ function wEditView(){const isNew=WS.edit==='new',s=isNew?{t:'',a:'',key:'',capo:
  <label class="w-f"><span>Artist or worship collective</span><input id="wf-a" value="${esc(s.a||'')}" autocomplete="off"></label>
  <div class="w-two"><label class="w-f"><span>Key the chart is written in</span><select id="wf-k">${keys.map(k=>`<option ${k===(s.key||'')?'selected':''} value="${k}">${k||'(from the chart)'}</option>`).join('')}</select></label>
  <label class="w-f"><span>Capo</span><select id="wf-c">${[0,1,2,3,4,5,6,7].map(c=>`<option ${c===(s.capo||0)?'selected':''}>${c}</option>`).join('')}</select></label></div>
+ ${s.src?'':`<button class="w-btn w-pastebtn" id="wf-clip" type="button">Paste from clipboard</button>`}<p class="w-hint w-tidy" id="wf-tidy" hidden></p>
  <label class="w-f"><span>Chord chart</span><textarea id="wf-src" rows="16" spellcheck="false" autocapitalize="off" placeholder="Paste the chart: chords on their own line above the words, with section names like Verse 1, Chorus, Bridge. ChordPro works too.">${esc(s.src||'')}</textarea></label>
  <div class="w-found" id="wf-found"></div>
  <label class="w-f"><span>Order to sing it (optional), e.g. V1 C V2 C B C</span><input id="wf-arr" value="${esc(s.arr||'')}" autocomplete="off" autocapitalize="characters"></label>
@@ -2391,6 +2393,15 @@ function wDateTxt(st){const d=wDate(st.date);if(!d)return 'No date';const n=wIn(
 /* the next day on the same weekday as this set's (from tomorrow on); a set with no day: today */
 function wNextLike(st){const d=wDate(st.date);if(!d)return wToday();let o=1;while(o<8&&(new Date(Date.now()+o*864e5)).getDay()!==d.getDay())o++;return wToday(o)}
 function wSaveSet(st){const sets=wSets(),i=sets.findIndex(x=>x.id===st.id);st.at=Date.now();if(i<0)sets.unshift(st);else sets[i]=st;S.set('wsets',sets)}
+/* a pasted chord-site page: keep the chart, fill the title, artist and key from the page if they are empty; Undo puts the paste back */
+function wPasteIn(raw,whole){const box=$('#wf-src'),note=$('#wf-tidy');if(!box)return false;const c=Worship.clean(raw);if(!c.dropped&&!c.title&&!c.key&&!whole)return false;
+ const before=box.value,a=box.selectionStart,z=box.selectionEnd,ins=c.src;box.value=whole||!before?ins:before.slice(0,a)+ins+before.slice(z);
+ const filled=[];if(c.title&&!$('#wf-t').value.trim()){$('#wf-t').value=c.title;filled.push('title')}if(c.artist&&!$('#wf-a').value.trim()){$('#wf-a').value=c.artist;filled.push('artist')}
+ const k=$('#wf-k');if(c.key&&k&&!k.value&&[...k.options].some(o=>o.value===c.key)){k.value=c.key;filled.push('key '+c.key)}
+ const cp=$('#wf-c');if(c.capo&&cp&&cp.value==='0'){cp.value=String(c.capo);filled.push('capo '+c.capo)}
+ if(note){note.hidden=false;note.innerHTML=(c.dropped?`Tidied the paste: removed ${c.dropped} line${c.dropped===1?'':'s'} from the web page`:'Pasted')+(filled.length?' · filled in the '+filled.join(', '):'')+`. <button class="lnk" id="wf-undo" type="button">Undo</button>`;
+  $('#wf-undo').onclick=()=>{box.value=whole||!before?raw:before.slice(0,a)+raw+before.slice(z);note.hidden=true;wFound()}}
+ const cb=$('#wf-clip');if(cb)cb.hidden=true;wFound();return true}
 function wFound(){const box=$('#wf-found');if(!box)return;const p=Worship.parse($('#wf-src').value);
  box.innerHTML=p.sections.length?'Found: '+p.sections.map(s=>`<span class="w-sc">${esc(s.short)}</span> ${esc(s.label)}${s.ref?' (repeat)':''}`).join(' · ')+(p.meta.title&&!$('#wf-t').value?` <button class="lnk" id="wf-use">Use “${esc(p.meta.title)}” as the title</button>`:''):'';
  const u=$('#wf-use');if(u)u.onclick=()=>{$('#wf-t').value=p.meta.title;if(p.meta.artist&&!$('#wf-a').value)$('#wf-a').value=p.meta.artist;if(p.meta.key&&!$('#wf-k').value)$('#wf-k').value=Worship.keyInfo(p.meta.key)?p.meta.key:'';wFound()}}
@@ -2417,6 +2428,9 @@ function wireWorship(){wsInbox();document.body.classList.toggle('wsong-open',!!(
  document.querySelectorAll('[data-wc]').forEach(b=>b.onclick=()=>{const all=wSongs(),s=all[WS.song];s.capo=Math.max(0,Math.min(9,(s.capo||0)+ +b.dataset.wc));delete s._p;S.set('wsongs',all);render()});
  // editor
  const src=$('#wf-src');if(src){src.oninput=wFound;wFound();
+  src.addEventListener('paste',e=>{const raw=e.clipboardData&&e.clipboardData.getData('text/plain');if(!raw)return;if(wPasteIn(raw,false))e.preventDefault()});
+  {const cb=$('#wf-clip');if(cb)cb.onclick=()=>{const fail=()=>{const n=$('#wf-tidy');if(n){n.hidden=false;n.textContent='Your phone kept the clipboard to itself: tap and hold the chart box below, then Paste.'}src.focus()};
+   try{navigator.clipboard.readText().then(t=>{if(!t||!t.trim()){fail();return}wPasteIn(t,true)}).catch(fail)}catch(e){fail()}}}
   $('#wf-find').onclick=()=>{const t=$('#wf-t').value.trim(),a=$('#wf-a').value.trim(),res=$('#wf-res');if(!t){res.innerHTML='<p class="w-hint">Type the title first.</p>';return}res.innerHTML='<p class="w-hint">Searching Apple Music…</p>';
    wAmSearch(t+' '+a,r=>{if(r===null){res.innerHTML='<p class="w-hint">Apple Music did not answer. Paste the link from the Music app instead (Share → Copy Link).</p>';return}
     const norm=x=>String(x||'').toLowerCase().replace(/[^a-z0-9]/g,'');r=r.filter(x=>x.trackViewUrl);

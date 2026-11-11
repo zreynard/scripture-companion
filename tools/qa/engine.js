@@ -77,5 +77,128 @@ T('E57 syllable splits join: spaced, unspaced, many parts', () => eq(['for - ev 
 T('E58 real dashes and compound words stay', () => eq(['Jesus - Lord of all', 'God - the One', 'never-ending love', 'yes - and amen'].map(x => W.desyl({ text: x, chords: [] }).text), ['Jesus - Lord of all', 'God - the One', 'never-ending love', 'yes - and amen']));
 T('E59 chords keep their syllable after joining', () => eq(W.desyl({ text: 'for - ev - er more', chords: [{ c: 'G', at: 0 }, { c: 'D', at: 6 }, { c: 'C', at: 14 }] }).chords, [{ c: 'G', at: 0 }, { c: 'D', at: 3 }, { c: 'C', at: 8 }]));
 T('E60 the TV slides show whole words', () => { const sl = W.slides({ parsed: W.parse('Chorus\nG          D\nwe sing for - ev - er\nC        G\nHal-le-lu-jah') }); const txt = JSON.stringify(sl); return (!/ - [a-z]|[a-z]-[a-z]/.test(txt) && /forever/.test(txt) && /Hallelujah/.test(txt)) || txt.slice(0, 200); });
+// --- a whole chord-site page pasted in (made-up song and words)
+const UG = `tabs.example.com
+Search
+Lantern Road Chords by Test Band
+30,892 views, added to favorites 2,907 times
+Rating: ★ 4.9 / 5 (126)
+Difficulty: Beginner
+Tuning: E A D G B E
+Author: someone
+Last edit: Feb 12, 2026
+Add to favorites
+CHORDS
+GUITAR
+G
+2 1   3
+PLAY
+C
+3 2   1
+PLAY
+VIEW IN APP
+TRANSPOSE
+LISTEN
+PDF
+G C G/B C
+
+[Verse 1]
+G              C      G
+Walking down a lantern road
+C              G/B    Am7
+Carrying a borrowed load
+
+ADVERTISEMENT
+OPEN IN APP
+Skip Ad
+Ad : (0:27)
+
+[Pre-Chorus]
+                    D
+Ooo ooo, the evening light
+Em              G/B
+x2
+
+[Chorus]
+G
+Sing it softly
+Em
+Sing it slowly
+
+[Verse 2]
+G              C      G
+Morning comes across the field
+C              G/B    Am7
+Print
+
+[Chorus]
+
+[Bridge]
+G          D
+Home is near, home is near
+
+[Ending]
+G
+Home is near
+
+Print
+Report Bad Tab
+Please rate this tab
+★★★★★ 126
+VERSIONS
+Official 11`;
+T('E61 a pasted chord-site page keeps only the chart: header, chord diagrams, buttons, ads and footer gone', () => {
+  const c = W.clean(UG), p = W.parse(c.src), labels = p.sections.map(s => s.label + (s.ref ? '*' : ''));
+  const bad = ['Search', 'views', 'Rating', 'Tuning', 'Author', 'PLAY', 'VIEW IN APP', 'TRANSPOSE', 'ADVERTISEMENT', 'OPEN IN APP', 'Skip Ad', 'Ad :', 'Report Bad Tab', 'VERSIONS', '★', '2 1'].filter(x => c.src.includes(x));
+  return (eq(labels, ['Intro', 'Verse 1', 'Pre-Chorus', 'Chorus', 'Verse 2', 'Chorus*', 'Bridge', 'Ending']) === true && !bad.length && c.title === 'Lantern Road' && c.artist === 'Test Band'
+    && /^Intro\nG C G\/B C/.test(c.src) && c.dropped >= 25) || { labels, bad, title: c.title, artist: c.artist, head: c.src.slice(0, 40), dropped: c.dropped };
+});
+T('E62 the paste clean-up never drops a chart line: a sung "Ooo", a lone "x2" and a line that just says "Print" inside a verse stay, untouched', () => {
+  const c = W.clean(UG);
+  return (/\nOoo ooo, the evening light\n/.test(c.src) && /\nx2\n/.test(c.src) && /G\/B    Am7\nPrint\n/.test(c.src) && c.src.includes('G              C      G\nWalking down a lantern road')) || c.src;
+});
+const EW = `ESSENTIAL
+WORSHIP
+Transpose:
+Eb
+
+INTRO
+Cm   Eb   Ab   Eb
+
+VERSE 1
+Cm Bb Ab Eb
+A made-up first line goes here
+Cm Bb
+A made-up second line goes here
+
+CHORUS
+Bb Cm Ab Eb
+Placeholder chorus words
+
+TURNAROUND X2
+Bb Cm Ab Eb
+
+VERSE 2
+Cm Bb Ab Eb
+More invented words here
+
+CHORUS
+
+VAMP 2 X3
+Ab Eb/G Ab Eb/G
+Invented vamp line
+
+ADD TO PLANNING CENTER
+SAVE TO MY SONGS
+RESOURCES`;
+T('E63 an Essential Worship-style page: key from "Transpose", ALL-CAPS headings with their counts, a bare CHORUS repeats it, the footer is gone', () => {
+  const c = W.clean(EW), p = W.parse(c.src), s = p.sections.map(x => x.label + (x.rep > 1 ? ' x' + x.rep : '') + (x.ref ? '*' : ''));
+  return (c.key === 'Eb' && eq(s, ['INTRO', 'VERSE 1', 'CHORUS', 'TURNAROUND x2', 'VERSE 2', 'CHORUS*', 'VAMP 2 x3']) === true && !/PLANNING|SAVE TO|RESOURCES|ESSENTIAL|Transpose/.test(c.src))
+    || { key: c.key, s, src: c.src };
+});
+T('E64 a chart pasted on its own (no page around it) comes through exactly as it was', () => {
+  const plain = '[Verse 1]\nG        C\nAn ordinary invented line\n\n[Chorus]\nD        G\nAnother invented line';
+  const c = W.clean(plain); return (c.src === plain && c.dropped === 0 && !c.title) || c;
+});
 console.log(R.map(r => (r[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + r[0] + (r[1].startsWith('PASS') ? '' : '  ' + r[1].slice(5, 300))).join('\n'));
 const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); process.exit(f ? 1 : 0);
