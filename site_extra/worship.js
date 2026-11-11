@@ -53,8 +53,19 @@
     ['bridge', /^bridge|^b\b/i, 'B'], ['intro', /^intro/i, 'I'], ['outro', /^outro|^ending|^end\b/i, 'O'], ['tag', /^tag/i, 'T'],
     ['instrumental', /^instrumental|^inst\b|^interlude|^turnaround|^break|^solo/i, 'Inst'], ['vamp', /^vamp/i, 'Vamp'], ['other', /^(?:spontaneous|ad lib|coda)/i, 'X']];
   var LABEL = /^\s*[\[(]?\s*((?:pre[- ]?chorus|prechorus|chorus|refrain|verse|bridge|intro|outro|ending|tag|instrumental|interlude|turnaround|break|solo|vamp|coda|spontaneous)(?:\s*\d+[ab]?)?)\s*[\])]?\s*:?\s*(?:[\[(]?\s*[x×]\s*(\d+)\s*[\])]?)?\s*(.*)$/i;
-  function kindOf(label) { for (var i = 0; i < KINDS.length; i++) if (KINDS[i][1].test(label.trim())) return KINDS[i]; return ['other', null, 'X']; }
-  function tidyLabel(l) { l = l.replace(/\s+/g, ' ').trim(); l = l.replace(/^(\w)/, function (c) { return c.toUpperCase(); }); return l.replace(/^Pre[- ]?chorus/i, 'Pre-Chorus').replace(/^Prechorus/i, 'Pre-Chorus'); }
+  var PRE = /^(?:final|last|first|second|double|half|big|soft)\s+(?=\S)/i;
+  function kindOf(label) { var l = label.trim().replace(PRE, ''); for (var i = 0; i < KINDS.length; i++) if (KINDS[i][1].test(l)) return KINDS[i]; return ['other', null, 'X']; }
+  function tidyLabel(l) { l = l.replace(/\s+/g, ' ').trim(); if (/[A-Z]{2}/.test(l) && l === l.toUpperCase()) l = l.toLowerCase().replace(/(^|[\s-])([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); }); l = l.replace(/^(\w)/, function (c) { return c.toUpperCase(); }); return l.replace(/^Pre[- ]?chorus/i, 'Pre-Chorus').replace(/^Prechorus/i, 'Pre-Chorus'); }
+  /* a section heading, however it is written: "Chorus 2", "[Bridge]", "TAG X3", "Tag — 3 times", "(3x)", "Repeat Bridge",
+     "Back to Chorus", "Final Tag"; null when the line is not one */
+  function head(line) {
+    var s = String(line), ref = false, pre = '', m = /^(\s*[\[(]?\s*)(?:repeat|rpt\.?|back to|sing)\s+/i.exec(s);
+    if (m) { ref = true; s = m[1] + s.slice(m[0].length); }
+    m = /^(\s*[\[(]?\s*)(final|last|first|second|double|half|big|soft)\s+(?=\S)/i.exec(s); if (m) { pre = m[2] + ' '; s = m[1] + s.slice(m[0].length); }
+    s = s.replace(/\s*[—–-]?\s*[\[(]?\s*(\d+)\s*(?:times|x)\s*[\])]?\s*$/i, ' x$1');
+    var lm = LABEL.exec(s); if (!lm) return null;
+    return { m: lm, label: pre + lm[1], rep: lm[2] ? +lm[2] : 0, ref: ref };
+  }
   function shortOf(label) { var k = kindOf(label), n = (/(\d+)/.exec(label) || [])[1]; return k[2] + (n || ''); }
 
   /* ---- reading a chart ---- */
@@ -109,17 +120,17 @@
         else if (/^(sov|start_of_verse)$/.test(d)) { open(v || 'Verse ' + (sections.filter(function (s) { return /^Verse/.test(s.label); }).length + 1)); envLabel = 1; }
         else if (/^(sob|start_of_bridge)$/.test(d)) { open(v || 'Bridge'); envLabel = 1; }
         else if (/^(eoc|eov|eob|end_of_chorus|end_of_verse|end_of_bridge)$/.test(d)) { envLabel = null; }
-        else if (d === 'c' || d === 'comment' || d === 'ci' || d === 'comment_italic') { var lm = LABEL.exec(v); if (lm) open(lm[1], lm[2] && +lm[2]); }
+        else if (d === 'c' || d === 'comment' || d === 'ci' || d === 'comment_italic') { var hc = head(v); if (hc && (!hc.m[3] || /^\([^()]*\)$/.test(hc.m[3].trim()))) open(hc.label, hc.rep); }
         else if (d === 'chorus') { open('Chorus'); cur.ref = 1; }
         continue;
       }
       if (/^\s*#/.test(line) || /^\s*\{[^}]*\}\s*$/.test(line)) continue;   // comments and unknown directives
       if (!line.trim()) { flushChords(); if (cur && cur.lines.length && cur.lines[cur.lines.length - 1] !== null) cur.lines.push(null); continue; }
       /* "Repeat Chorus", "(Back to Chorus)" sing that section again; "Verse 4 (bare, then build)" keeps its note with the label */
-      var lm2 = LABEL.exec(line.replace(/^\s*[\[(]?\s*(?:repeat|rpt\.?|back to)\s+/i, '')), note = lm2 && lm2[3] && /^\([^()]*\)$/.test(lm2[3].trim()) ? lm2[3].trim() : '';
+      var hd = head(line), lm2 = hd && hd.m, note = lm2 && lm2[3] && /^\([^()]*\)$/.test(lm2[3].trim()) ? lm2[3].trim() : '';
       if (lm2 && !hasInline(line) && (!lm2[3] || isChordLine(lm2[3]) || note)) {
         if (note) lm2[3] = '';
-        flushChords(); open(lm2[1] + (note ? ' ' + note : ''), lm2[2] && +lm2[2]);
+        flushChords(); open(hd.label + (note ? ' ' + note : ''), hd.rep);
         if (lm2[3]) pendingChords = chordsAt(lm2[3]).map(function (c) { return { c: c.c, at: c.at }; });
         continue;
       }
@@ -156,12 +167,16 @@
   var FOOTER = /^(?:report bad tab|please rate this tab|add to planning center|save to my songs|rate this tab)$/i;
   function clean(text) {
     var L = String(text || '').replace(/\r\n?/g, '\n').replace(/ /g, ' ').split('\n'), out = { src: '', title: '', artist: '', key: '', capo: 0, dropped: 0 };
-    var isLabel = function (l) { var m = LABEL.exec(l.replace(/^\s*[\[(]?\s*(?:repeat|rpt\.?|back to)\s+/i, '')); return !!(m && !hasInline(l) && (!m[3] || isChordLine(m[3]) || /^\([^()]*\)$/.test(m[3].trim()))); };
+    var DIR = /^\s*\{[^}]*\}\s*$/, SECDIR = /^\s*\{\s*(?:c|ci|comment|comment_italic|soc|sov|sob|start_of_\w+)\s*[:}]/i;
+    var isLabel = function (l) { if (SECDIR.test(l)) return true; var h = head(l), m = h && h.m; return !!(m && !hasInline(l) && (!m[3] || isChordLine(m[3]) || /^\([^()]*\)$/.test(m[3].trim()))); };
+    L.forEach(function (l) { var d = /^\s*\{\s*(title|t|artist|subtitle|st|key|capo)\s*:\s*(.*?)\s*\}\s*$/i.exec(l); if (!d) return; var k = d[1].toLowerCase(), v = d[2];
+      if (k === 'title' || k === 't') out.title = out.title || v; else if (k === 'key') out.key = out.key || (/^[A-G](?:#|b)?m?$/.test(v) ? v : ''); else if (k === 'capo') out.capo = parseInt(v, 10) || 0; else out.artist = out.artist || v; });
     var first = -1; for (var i = 0; i < L.length; i++) if (L[i].trim() && isLabel(L[i]) && !JUNK.test(L[i].trim())) { first = i; break; }
-    var start = 0;
+    var start = 0, intro = false;
     if (first >= 0) {   // chord lines right before the first heading (an untitled intro) stay
       start = first; var j = first - 1; while (j >= 0 && (!L[j].trim() || (isChordLine(L[j]) && chordsAt(L[j]).length > 1))) j--;   /* two chords or more: a lone key name (Transpose: Eb) is not an intro */ var k = j + 1; while (k < first && !L[k].trim()) k++;
-      if (k < first) start = k;
+      if (k < first) { start = k; intro = true; }
+      if (L.slice(0, start).every(function (l) { return !l.trim() || DIR.test(l); })) start = 0;   /* only ChordPro directives before it: nothing to drop */
     }
     for (var h = 0; h < start; h++) {   // the header: what it says about the song
       var s = L[h].trim(), m;
@@ -170,8 +185,8 @@
       else if (/^transpose\s*:?$/i.test(s) && h + 1 < start && /^[A-G](?:#|b)?m?$/.test(L[h + 1].trim()) && !(h + 2 < start && /^[A-G](?:#|b)?m?$/.test(L[h + 2].trim()))) out.key = out.key || L[h + 1].trim();
       else if ((m = /^capo\s*:?\s*(\d+)/i.exec(s))) out.capo = +m[1];
     }
-    var keep = [];
-    if (start < first) keep.push(/^intro\b/i.test(L[first].trim().replace(/^[\[(]/, '')) ? null : 'Intro');
+    var keep = L.slice(0, start).filter(function (l) { return DIR.test(l); });   /* ChordPro directives are part of the chart */
+    if (intro) keep.push(/^intro\b/i.test(L[first].trim().replace(/^[\[(]/, '')) ? null : 'Intro');
     for (var n = start; n < L.length; n++) {
       var x = L[n].replace(/\s+$/, ''), tr = x.trim();
       if (FOOTER.test(tr)) { while (keep.length && (!keep[keep.length - 1] || /^print$/i.test(String(keep[keep.length - 1]).trim()))) keep.pop(); break; }

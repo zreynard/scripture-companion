@@ -22,7 +22,7 @@ T('E14 isChord rejects words', () => eq(['A', 'Am', 'Bb', 'C#m7', 'D/F#', 'Esus'
 const P = t => W.parse(t), labels = t => P(t).sections.map(s => s.label);
 T('E15 plain section names', () => eq(labels('Verse 1\nwords\n\nChorus\nwords\n\nBridge\nwords'), ['Verse 1', 'Chorus', 'Bridge']));
 T('E16 bracketed and colon names', () => eq(labels('[Verse 1]\na\n\n[Chorus]\nb\n\nPre-Chorus:\nc\n\n(Bridge)\nd\n\nTag:\ne'), ['Verse 1', 'Chorus', 'Pre-Chorus', 'Bridge', 'Tag']));
-T('E17 lower and upper case names', () => eq(labels('VERSE 1\na\n\nchorus\nb\n\nPRE CHORUS\nc'), ['VERSE 1', 'Chorus', 'Pre-Chorus']));
+T('E17 lower and upper case names (an ALL-CAPS name shows in title case)', () => eq(labels('VERSE 1\na\n\nchorus\nb\n\nPRE CHORUS\nc'), ['Verse 1', 'Chorus', 'Pre-Chorus']));
 T('E18 [Chorus] is not a C chord', () => eq(P('[Chorus]\nG   D\nwords here').sections[0].lines[0].text, 'words here'));
 T('E19 [Bridge] and [Bb] told apart', () => { const p = P('[Bridge]\n[Bb]words [F]more'); return eq([p.sections[0].label, p.sections[0].lines[0].chords.map(c => c.c)], ['Bridge', ['Bb', 'F']]); });
 T('E20 chords over words keep columns', () => eq(P('Verse\nG      D/F#   Em\nAmazing words go here').sections[0].lines[0].chords, [{ c: 'G', at: 0 }, { c: 'D/F#', at: 7 }, { c: 'Em', at: 14 }]));
@@ -193,12 +193,83 @@ SAVE TO MY SONGS
 RESOURCES`;
 T('E63 an Essential Worship-style page: key from "Transpose", ALL-CAPS headings with their counts, a bare CHORUS repeats it, the footer is gone', () => {
   const c = W.clean(EW), p = W.parse(c.src), s = p.sections.map(x => x.label + (x.rep > 1 ? ' x' + x.rep : '') + (x.ref ? '*' : ''));
-  return (c.key === 'Eb' && eq(s, ['INTRO', 'VERSE 1', 'CHORUS', 'TURNAROUND x2', 'VERSE 2', 'CHORUS*', 'VAMP 2 x3']) === true && !/PLANNING|SAVE TO|RESOURCES|ESSENTIAL|Transpose/.test(c.src))
+  return (c.key === 'Eb' && eq(s, ['Intro', 'Verse 1', 'Chorus', 'Turnaround x2', 'Verse 2', 'Chorus*', 'Vamp 2 x3']) === true && !/PLANNING|SAVE TO|RESOURCES|ESSENTIAL|Transpose/.test(c.src))
     || { key: c.key, s, src: c.src };
 });
 T('E64 a chart pasted on its own (no page around it) comes through exactly as it was', () => {
   const plain = '[Verse 1]\nG        C\nAn ordinary invented line\n\n[Chorus]\nD        G\nAnother invented line';
   const c = W.clean(plain); return (c.src === plain && c.dropped === 0 && !c.title) || c;
+});
+// --- a ChordPro chart with comment headings, "N times", repeats and a final tag (a made-up song)
+const CP = `{title: Lantern Road}
+{artist: Test Band}
+{key: C}
+
+{comment: INTRO}
+| Am / F6 / | C / / / |
+
+{start_of_verse: Verse 1}
+[Am]Walking down the [F6]lantern road to[C]night
+[Am]Carrying a [F6]borrowed light[C]
+{end_of_verse}
+
+{start_of_chorus: Chorus 1}
+Sing it [Am]softly [F6]sing it [C]slow
+Every [G/C]step a place to go
+{end_of_chorus}
+
+{comment: INTERLUDE}
+| Am / F6 / | C / / / |
+
+{start_of_verse: Verse 2}
+[Am]Morning comes [F6]across the [C]field
+{end_of_verse}
+
+{start_of_chorus: Chorus 2}
+Hold it [Am]gently [F6] [C]
+{end_of_chorus}
+
+{comment: TAG — 3 TIMES}
+Hold it [Am]gently [F6] [C]
+
+{start_of_bridge: Bridge}
+I can see the [Am]lamps a[F]long the [C/E]way [G]
+{end_of_bridge}
+
+{comment: INTERLUDE}
+| Am / F6 / | C / / / |
+
+{start_of_verse: Verse 3}
+[Am]Home is near and [F6]so is [Em7]rest
+{end_of_verse}
+
+{start_of_chorus: Chorus 3}
+Walk it [Am]slowly [F6]home with [C]me
+{end_of_chorus}
+
+{comment: REPEAT BRIDGE}
+
+{comment: REPEAT CHORUS 3}
+
+{comment: FINAL TAG — 4 TIMES}
+Walk it [Am]slowly [F6]home with [C]me`;
+T('E65 a ChordPro chart with comment headings: repeats ("REPEAT BRIDGE"), counts ("— 3 TIMES") and a "FINAL TAG" all come through, in order', () => {
+  const p = W.parse(CP), s = p.sections.map(x => x.label + (x.rep > 1 ? ' x' + x.rep : '') + (x.ref ? '*' : ''));
+  return eq(s, ['Intro', 'Verse 1', 'Chorus 1', 'Interlude', 'Verse 2', 'Chorus 2', 'Tag x3', 'Bridge', 'Interlude', 'Verse 3', 'Chorus 3', 'Bridge*', 'Chorus 3*', 'Final Tag x4']);
+});
+T('E66 the same ChordPro chart: title, artist and key read; the Final Tag keeps its own lines (not glued to the chorus before); chords sit on their syllables, at line ends too', () => {
+  const p = W.parse(CP), ft = p.sections.find(x => x.label === 'Final Tag'), c3 = p.sections.find(x => x.label === 'Chorus 3' && !x.ref);
+  const v1 = p.sections.find(x => x.label === 'Verse 1').lines[0], v2 = p.sections.find(x => x.label === 'Verse 1').lines[1], end = v2.chords[v2.chords.length - 1], mid = v1.chords[v1.chords.length - 1];
+  const kind = ft && W.parse('{comment: FINAL TAG}\nx').sections[0].kind;
+  return (p.meta.title === 'Lantern Road' && p.meta.artist === 'Test Band' && p.meta.key === 'C' && ft && ft.lines.length === 1 && c3.lines.length === 1 && kind === 'tag'
+    && v1.chords[0].c === 'Am' && v1.chords[0].at === 0 && v1.text.slice(v1.chords[1].at, v1.chords[1].at + 7) === 'lantern' && mid.c === 'C' && v1.text.slice(mid.at, mid.at + 5) === 'night' && end.c === 'C' && end.at >= v2.text.replace(/\s+$/, '').length - 1)
+    || { meta: p.meta, ft: ft && ft.lines.length, c3: c3 && c3.lines.length, kind, v1: v1.text, ch: v1.chords, v2: v2.text, ch2: v2.chords };
+});
+T('E67 F6, G/C, C/E and Em7 move up a step from C to D', () => eq(['F6', 'G/C', 'C/E', 'Em7'].map(c => tr(c, 'C', 'D')), ['G6', 'A/D', 'D/F#', 'F#m7']));
+T('E68 pasting a ChordPro chart: clean keeps every line (directives too) and reads the title, artist and key from it', () => { const c = W.clean(CP); return (c.src === CP && c.title === 'Lantern Road' && c.artist === 'Test Band' && c.key === 'C' && c.dropped === 0) || { t: c.title, a: c.artist, k: c.key, d: c.dropped, same: c.src === CP }; });
+T('E69 headings written other ways: "Chorus (3x)", "Back to Chorus", "Last Chorus", "TAG X5" — and a lyric that merely starts with "Sing" is not a heading', () => {
+  const s = W.parse('Chorus\nG\nan invented line\n\nVerse\nC\nanother one\n\nChorus (3x)\n\nBack to Chorus\n\nLast Chorus\nD\nthe end line\n\nTAG X5\nG\nlast\n\nVerse 2\nG\nSing a new song to the test\n').sections.map(x => x.label + (x.rep > 1 ? ' x' + x.rep : '') + (x.ref ? '*' : ''));
+  return eq(s, ['Chorus', 'Verse', 'Chorus x3*', 'Chorus*', 'Last Chorus', 'Tag x5', 'Verse 2']);
 });
 console.log(R.map(r => (r[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + r[0] + (r[1].startsWith('PASS') ? '' : '  ' + r[1].slice(5, 300))).join('\n'));
 const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); process.exit(f ? 1 : 0);

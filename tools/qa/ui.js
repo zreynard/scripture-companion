@@ -430,6 +430,16 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       && /Tidied the paste: removed \d+ lines from the web page · filled in the title, artist, key G\. Undo/.test(r.note) && /Verse 1/.test(r.found) && /Chorus/.test(r.found) && undone && typed && clip !== false;
     return ok || { btn, r, undone, typed, clip };
   });
+  await T('U83 a ChordPro chart pasted into Add a song: Title, Artist and Key fill in from its {title}/{artist}/{key}, the chart is kept exactly, and the found line shows the repeats and the final tag', async () => {
+    const CP = '{title: Lantern Road}\n{artist: Test Band}\n{key: C}\n\n{comment: INTRO}\n| Am / F6 / | C / / / |\n\n{start_of_verse: Verse 1}\n[Am]An invented [F6]line for the [C]test\n{end_of_verse}\n\n{start_of_chorus: Chorus 1}\nAnother [Am]invented [F6]line[C]\n{end_of_chorus}\n\n{comment: TAG — 3 TIMES}\nA [Am]tag line[C]\n\n{start_of_bridge: Bridge}\nA [Am]bridge [F]line [C/E]here [G]\n{end_of_bridge}\n\n{comment: REPEAT BRIDGE}\n\n{comment: REPEAT CHORUS 1}\n\n{comment: FINAL TAG — 4 TIMES}\nA [Am]last line[C]';
+    const A = await open(await ctx()); await W(A);
+    await A.evaluate(() => { WS.pane = 'songs'; WS.song = null; WS.set = null; WS.edit = null; render(); }); await A.click('[data-wnew]'); await wait(200); await A.focus('#wf-src');
+    await A.evaluate(t => { const dt = new DataTransfer(); dt.setData('text/plain', t); $('#wf-src').dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt, bubbles: true, cancelable: true })); }, CP);
+    const r = await A.evaluate(() => ({ same: $('#wf-src').value, t: $('#wf-t').value, a: $('#wf-a').value, k: $('#wf-k').value, found: ($('#wf-found') || {}).textContent || '' }));
+    await A.context().close();
+    const ok = r.same === CP && r.t === 'Lantern Road' && r.a === 'Test Band' && r.k === 'C' && /Intro/.test(r.found) && /Tag/.test(r.found) && /Bridge \(repeat\)/.test(r.found) && /Chorus 1 \(repeat\)/.test(r.found) && /Final Tag/.test(r.found);
+    return ok || { r: Object.assign({}, r, { same: r.same === CP }) };
+  });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
