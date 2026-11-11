@@ -28,16 +28,18 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
   if (SLOW) { const cdp = await p.context().newCDPSession(p); await cdp.send('Network.enable'); await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 150, downloadThroughput: 1.6e6 / 8, uploadThroughput: 750e3 / 8 }); }
   await p.goto(SITE + '?x=' + Date.now()); await p.waitForTimeout(1500);
   const L = await p.evaluate(() => [...(PRAY.led || []).map(x => ({ kind: 'led', id: x.id, who: x.who, url: x.audio, audio: x.audio, sb: x.sb, e: x.e, L: x.L, dur: x.dur })),
-                                     ...(PRAY.med || []).filter(x => x.audio).map(x => ({ kind: 'med', id: x.ref, who: x.who, url: x.audio, a: x.a, b: x.b })),
-                                     ...(PRAY.lp ? [{ kind: 'med', id: "Lord's Prayer", who: PRAY.lp.who, url: PRAY.lp.audio, a: PRAY.lp.a, b: PRAY.lp.b }] : [])]);
+                                     ...(PRAY.med || []).filter(x => x.audio).map(x => ({ kind: 'med', id: x.ref, who: x.who, url: x.audio, a: x.a, b: x.b, Lt: x.Lt })),
+                                     ...(PRAY.lp ? [{ kind: 'med', id: "Lord's Prayer", who: PRAY.lp.who, url: PRAY.lp.audio, a: PRAY.lp.a, b: PRAY.lp.b, Lt: PRAY.lp.Lt }] : [])]);
+  const ONLY = process.env.ONLY ? new RegExp(process.env.ONLY) : null; if (ONLY) L.splice(0, L.length, ...L.filter(x => ONLY.test(x.id + ' ' + x.who)));
   const out = []; let k = 0;
   async function one(x) {
     if (/buzzsprout\.com/.test(x.url)) { return { ...x, ok: null, note: 'Buzzsprout refuses GitHub servers: not checked here' }; }
+    if (ENGINE === chromium && /\.(m4a|mp4)(\?|$)/i.test(x.url)) { return { ...x, ok: null, note: 'AAC: the test Chromium has no AAC (Chrome and Safari do); the WebKit pass plays it' }; }
     const r = await p.evaluate(async x => {
       // the app's own player (clipper), exactly as Be Led and Meditate use it
       const c = clipper(new Audio(), {}); c.rate = 1;
       let t0, end, fix = null;
-      if (x.kind === 'med') { t0 = x.a; end = x.b; }
+      if (x.kind === 'med') { t0 = x.a; end = x.b; fix = d => { const r = tscale(d, x.Lt); c.t0 = x.a * r; c.end = x.b * r }; }   // as the app does: times from the file's true length
       else { [t0, end] = ledSpan(x); fix = d => { if (isFinite(d) && d > 0) { const [s, e] = ledSpan(x, d); c.t0 = s; c.end = e } }; }
       const tap = Date.now(); c.go(x.url, t0, end, fix);
       const t = Date.now(); while (c.state !== 'playing' && c.state !== 'error' && Date.now() - t < 30000) await new Promise(r => setTimeout(r, 100));
@@ -45,12 +47,12 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
       const ms = Date.now() - tap;
       await new Promise(r => setTimeout(r, 1500));
       const at = c.a.currentTime, T0 = c.t0, L = c.a.duration;
-      const near = at >= T0 - 0.3 && at <= T0 + 4;              // playing from the stretch's start
+      const near = at >= T0 - 0.3 && at <= Math.max(T0 + 4, c.end + 0.3);              // playing from the stretch's start
       let stop = null;
-      if (x.kind === 'med') {                                      // and stopping at its end
-        c.a.currentTime = Math.max(c.t0, c.end - 1.2);
+      if (x.kind === 'med') {                                      // and stopping at its end (a short one may have ended already)
+        if (c.state !== 'ended') c.a.currentTime = Math.max(c.t0, c.end - 1.2);
         const t2 = Date.now(); while (c.state !== 'ended' && Date.now() - t2 < 15000) await new Promise(r => setTimeout(r, 50));
-        stop = c.state === 'ended' ? +(c.a.currentTime - c.end).toFixed(2) : null;
+        stop = c.state === 'ended' ? +(c.stopAt - c.end).toFixed(2) : null;
       }
       c.clear();
       return { ok: near && (x.kind !== 'med' || (stop !== null && Math.abs(stop) <= 0.3)), ms, L: isFinite(L) ? +L.toFixed(2) : null, t0: +T0.toFixed(2), at: +at.toFixed(2), stop };
@@ -58,7 +60,7 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
     return { ...x, ...r, mp3: await vbr(x.url) };
   }
   const q = [...L];
-  await Promise.all([...Array(SLOW ? 1 : 4)].map(async () => { while (q.length) { const x = q.shift(); const r = await one(x); out.push(r); console.log(JSON.stringify({ n: ++k, of: L.length, ...r })); } }));
+  await Promise.all([...Array(SLOW || process.env.ONE ? 1 : 4)].map(async () => { while (q.length) { const x = q.shift(); const r = await one(x); out.push(r); console.log(JSON.stringify({ n: ++k, of: L.length, ...r })); } }));
   const bad = out.filter(r => r.ok === false), vb = out.filter(r => r.mp3 === 'vbr');
   console.log(`\n${process.env.BROWSER || 'chromium'}: ${out.filter(r => r.ok).length} play, ${bad.length} fail, ${out.filter(r => r.ok === null).length} not checked, ${vb.length} variable bitrate, of ${out.length}`);
   for (const r of bad) console.log('FAIL', r.kind, r.id, r.who, r.note || '', r.err || '');

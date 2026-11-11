@@ -342,7 +342,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await A.click('[data-ledgo="1"]'); await wait(300);
     const g = await A.evaluate(() => ({ p: ledOrd().p, id: ledCur().id }));
     // a short local clip stands in for the sermon's recording
-    await A.evaluate(() => { ledCur().audio = SILENT; ledCur().sb = 0.5; ledCur().e = 0; });
+    await A.evaluate(() => { ledCur().audio = SILENT; ledCur().sb = 0.5; ledCur().e = 0; ledCur().L = 0; ledCur().dur = 0; });   // its length is the stand-in's, read when it loads
     await A.click('[data-ledpp]'); for (let k = 0; k < 40 && !(await A.evaluate(() => /ledm playing\s+\{[^}]*"host":"silence"/.test(diagText()))); k++) await wait(100);
     const p = await A.evaluate(() => ({ id: LED.id, src: /ledm playing\s+\{[^}]*"host":"silence"/.test(diagText()), muted: LED.c && LED.c.a.muted, main: cur && String(cur).startsWith('led:'), en: LED.c && LED.c.end > LED.c.t0, inLib: Object.keys(I).filter(k => k.startsWith('led:')).length }));
     await A.click('[data-ledsp]'); const sp = await A.evaluate(() => ({ sp: LED.sp, rate: LED.c.a.playbackRate, t: document.querySelector('[data-ledsp]').textContent }));
