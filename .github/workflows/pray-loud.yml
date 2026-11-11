@@ -1,0 +1,22 @@
+# How loud every Pray recording is where it is used (tools/pray_loud.py): integrated loudness of each Be Led prayer,
+# Meditate reading and the Lord's Prayer, so the music can sit the same under each and very quiet ones can be left out.
+# Results are in the job logs (LOUD lines); merged locally with `python tools/pray_loud.py merge`. By hand only.
+name: Pray loudness
+on: workflow_dispatch
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt
+      - run: python app_build.py >/dev/null
+      - run: python tools/pray_loud.py ${{ matrix.shard }} 12
