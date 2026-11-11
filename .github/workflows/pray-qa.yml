@@ -14,5 +14,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: npm i --no-save playwright@1.48.2 >/dev/null && (timeout 240 npx playwright install --with-deps ${{ inputs.browser }} >/dev/null || npx playwright install ${{ inputs.browser }} >/dev/null)
+      - run: npm i --no-save playwright@1.63.0 >/dev/null && (timeout 240 npx playwright install --with-deps ${{ inputs.browser }} >/dev/null || npx playwright install ${{ inputs.browser }} >/dev/null)
       - run: BROWSER=${{ inputs.browser }} ONLY="${{ inputs.only }}" SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/pray.js

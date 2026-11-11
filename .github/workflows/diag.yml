@@ -13,5 +13,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: npm i --no-save playwright@1.48.2 >/dev/null && (timeout 240 npx playwright install --with-deps webkit >/dev/null || npx playwright install webkit >/dev/null)
+      - run: npm i --no-save playwright@1.63.0 >/dev/null && (timeout 240 npx playwright install --with-deps webkit >/dev/null || npx playwright install webkit >/dev/null)
       - run: node tools/qa/${{ inputs.script || 'webkit_diag.js' }}
