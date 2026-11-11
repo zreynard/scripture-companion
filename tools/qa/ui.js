@@ -337,7 +337,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const A = await open(await ctx());
     await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500);
     await A.click('[data-prtop=g]'); await wait(300); await A.click('[data-prm=led]'); await wait(400);
-    const v = await A.evaluate(() => ({ txt: (() => { const c = document.querySelector('.led').cloneNode(true); c.querySelectorAll('svg,[hidden]').forEach(x => x.remove()); return [...c.querySelectorAll('*')].filter(e => !e.children.length).map(e => e.textContent.trim()).filter(Boolean).join(' '); })(), who: NAMES[ledCur().who], old: document.querySelectorAll('[data-ledth],[data-ledplay],.led-row,.pr-dots').length,
+    const v = await A.evaluate(() => ({ txt: (() => { const c = document.querySelector('.led').cloneNode(true); c.querySelectorAll('svg,[hidden],select').forEach(x => x.remove()); return [...c.querySelectorAll('*')].filter(e => !e.children.length).map(e => e.textContent.trim()).filter(Boolean).join(' '); })(), who: NAMES[ledCur().who], old: document.querySelectorAll('[data-ledth],[data-ledplay],.led-row,.pr-dots').length,
       short: (PRAY.led || []).filter(x => x.len < 60).length, n: (PRAY.led || []).length, sk: document.querySelectorAll('[data-ledsk]').length, p0: ledOrd().p, id0: ledCur().id }));
     await A.click('[data-ledgo="1"]'); await wait(300);
     const g = await A.evaluate(() => ({ p: ledOrd().p, id: ledCur().id }));
@@ -347,19 +347,19 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const p = await A.evaluate(() => ({ id: LED.id, src: /ledm playing\s+\{[^}]*"host":"silence"/.test(diagText()), muted: LED.c && LED.c.a.muted, main: cur && String(cur).startsWith('led:'), en: LED.c && LED.c.end > LED.c.t0, inLib: Object.keys(I).filter(k => k.startsWith('led:')).length }));
     await A.click('[data-ledsp]'); const sp = await A.evaluate(() => ({ sp: LED.sp, rate: LED.c.a.playbackRate, t: document.querySelector('[data-ledsp]').textContent }));
     const mu = await A.evaluate(() => !!document.querySelector('[data-prmu]'));
-    return new RegExp('^Be Led ' + v.who + ' 1× ♪ Music( on| off)?$').test(v.txt) && v.old === 0 && v.short === 0 && v.n >= 6 && v.sk === 2 && g.p === v.p0 + 1 && g.id !== v.id0
+    return new RegExp('^Be Led ' + v.who + ' 1× All pastors ⌄ ♪ Music( on| off)?$').test(v.txt) && v.old === 0 && v.short === 0 && v.n >= 6 && v.sk === 2 && g.p === v.p0 + 1 && g.id !== v.id0
       && p.id === g.id && p.src && p.muted === false && !p.main && p.inLib === 0 && sp.sp === 1.1 && sp.rate === 1.1 && sp.t === '1.1×' && mu !== false || { v, g, p, sp, mu }; });
-  await T('U77 Meditate: today\'s saying read by a pastor; Begin reads it (Listen), a breath, again (Again), then Be still with no clock until Amen; n of N with arrows', async () => {
+  await T('U77 Meditate: today\'s saying read by a pastor; Begin reads it once (Listen), then Be still with no clock until Amen; a shuffle, n of N with arrows', async () => {
     const A = await open(await ctx());
     await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prtop=g]'); await wait(300); await A.click('[data-prm=med]'); await wait(400);
-    const v = await A.evaluate(() => ({ q: (document.querySelector('.med-q') || {}).textContent || '', nn: (document.querySelector('.med-n') || {}).textContent || '', n: medList().length, old: document.querySelectorAll('[data-medpace],[data-medpick],#med-left').length, k0: medIdx() }));
+    const v = await A.evaluate(() => ({ q: (document.querySelector('.med-q') || {}).textContent || '', nn: (document.querySelector('.med-n') || {}).textContent || '', n: medList().length, old: document.querySelectorAll('[data-medpace],[data-medpick],#med-left').length, k0: medOrd().p }));
     await A.evaluate(() => { window.MED_FAST = 0.02; const m = medCur(); if (m.audio) { m.audio = SILENT; m.a = 0; m.b = 0.05; m.Lt = 0 } else { m.t0 = 0; m.t1 = 0.05; window.narBlob = () => Promise.resolve(SILENT) } });
     await A.click('[data-medgo]'); const seen = new Set();
     for (let k = 0; k < 400; k++) { seen.add(await A.evaluate(() => MED.step)); if (seen.has('still')) break; await wait(15); }
     const still = await A.evaluate(() => ({ txt: (() => { const c = document.querySelector('.med').cloneNode(true); c.querySelectorAll('.med-ref').forEach(x => x.remove()); return c.textContent; })(), amen: !!document.querySelector('[data-medamen]') }));
     await A.click('[data-medamen]'); await wait(200); const end = await A.evaluate(() => ({ on: MED.on, go: !!document.querySelector('[data-medgo]'), step: MED.step }));
-    const nx = await A.evaluate(() => { const b = document.querySelector('[data-medgo2="1"]'), k = medIdx(); if (b.disabled) return true; b.click(); return medIdx() === k + 1; });
-    return (v.q.length > 10 && v.nn === `${v.k0 + 1} of ${v.n}` && v.n >= 15 && v.old === 0 && seen.has('listen') && seen.has('again') && seen.has('still') && still.amen && !/\d:\d\d/.test(still.txt) && !end.on && end.go && end.step === 'done' && nx) || { v, seen: [...seen], still, end, nx }; });
+    const nx = await A.evaluate(() => { const b = document.querySelector('[data-medgo2="1"]'), o = medOrd(), k = o.p, want = o.o[k + 1]; b.click(); return medOrd().p === k + 1 && medKey(medCur()) === want; });
+    return (v.q.length > 10 && v.nn === `${v.k0 + 1} of ${v.n}` && v.n >= 15 && v.old === 0 && seen.has('listen') && !seen.has('again') && seen.has('still') && still.amen && !/\d:\d\d/.test(still.txt) && !end.on && end.go && end.step === 'done' && nx) || { v, seen: [...seen], still, end, nx }; });
   await T('U78 Guided with a pastor: a quiet "Pray it with" line plays his prayer of the Lord\'s Prayer here, and the movement on screen follows him', async () => {
     const A = await open(await ctx());
     await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prtop=g]'); await wait(300); await A.click('[data-prm=guided]'); await wait(400);

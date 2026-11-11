@@ -29,7 +29,7 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
   await p.goto(SITE + '?x=' + Date.now()); await p.waitForTimeout(1500);
   const L = await p.evaluate(() => [...(PRAY.led || []).map(x => ({ kind: 'led', id: x.id, who: x.who, url: x.audio, audio: x.audio, sb: x.sb, e: x.e, L: x.L, dur: x.dur })),
                                      ...(PRAY.med || []).filter(x => x.audio).map(x => ({ kind: 'med', id: x.ref, who: x.who, url: x.audio, a: x.a, b: x.b, Lt: x.Lt })),
-                                     ...(PRAY.lp ? [{ kind: 'med', id: "Lord's Prayer", who: PRAY.lp.who, url: PRAY.lp.audio, a: PRAY.lp.a, b: PRAY.lp.b, Lt: PRAY.lp.Lt }] : [])]);
+                                     ...(PRAY.lp ? [{ kind: 'med', id: "Lord's Prayer", who: PRAY.lp.who, url: PRAY.lp.audio, a: PRAY.lp.a, b: PRAY.lp.b, Lt: PRAY.lp.Lt }, { kind: 'whole', id: "Lord's Prayer, played through", who: PRAY.lp.who, url: PRAY.lp.audio, a: PRAY.lp.a, b: PRAY.lp.b, Lt: PRAY.lp.Lt }] : [])]);
   const ONLY = process.env.ONLY ? new RegExp(process.env.ONLY) : null; if (ONLY) L.splice(0, L.length, ...L.filter(x => ONLY.test(x.id + ' ' + x.who)));
   const out = []; let k = 0;
   async function one(x) {
@@ -39,9 +39,9 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
       // the app's own player (clipper), exactly as Be Led and Meditate use it
       const c = clipper(new Audio(), {}); c.rate = 1;
       let t0, end, fix = null;
-      if (x.kind === 'med') { t0 = x.a; end = x.b; fix = d => { const r = tscale(d, x.Lt); c.t0 = x.a * r; c.end = x.b * r }; }   // as the app does: times from the file's true length
+      if (x.kind !== 'led') { t0 = x.a; end = x.b; fix = d => { const r = c.r = tscale(d, x.Lt); c.t0 = x.a * r }; }   // as the app does: found by the file's true length, stopped at start + true time
       else { [t0, end] = ledSpan(x); fix = d => { if (isFinite(d) && d > 0) { const [s, e] = ledSpan(x, d); c.t0 = s; c.end = e } }; }
-      const tap = Date.now(); c.go(x.url, t0, end, fix);
+      const tap = Date.now(); c.go(x.url, t0, end, fix, x.kind !== 'led' ? x.b : undefined);
       const t = Date.now(); while (c.state !== 'playing' && c.state !== 'error' && Date.now() - t < 30000) await new Promise(r => setTimeout(r, 100));
       if (c.state !== 'playing') { const st = c.state; c.clear(); return { ok: false, note: 'state ' + st + ' after 30 s', err: c.a.error && c.a.error.code }; }
       const ms = Date.now() - tap;
@@ -49,6 +49,11 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
       const at = c.a.currentTime, T0 = c.t0, L = c.a.duration;
       const near = at >= T0 - 0.3 && at <= Math.max(T0 + 4, c.end + 0.3);              // playing from the stretch's start
       let stop = null;
+      if (x.kind === 'whole') {                                    // the whole prayer, start to Amen: it sounds for its true length
+        const t1 = Date.now(); while (c.state !== 'ended' && Date.now() - t1 < (x.b - x.a + 60) * 1000) await new Promise(r => setTimeout(r, 200));
+        const heard = (Date.now() - tap - ms) / 1000, done = c.state === 'ended', stop = c.stopAt; c.clear();
+        return { ok: done && Math.abs(heard - (x.b - x.a)) <= 1.5, heard: +heard.toFixed(1), want: +(x.b - x.a).toFixed(1), stopAt: stop, ms };
+      }
       if (x.kind === 'med') {                                      // and stopping at its end (a short one may have ended already)
         if (c.state !== 'ended') c.a.currentTime = Math.max(c.t0, c.end - 1.2);
         const t2 = Date.now(); while (c.state !== 'ended' && Date.now() - t2 < 15000) await new Promise(r => setTimeout(r, 50));

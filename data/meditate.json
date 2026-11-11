@@ -9,7 +9,8 @@
    "a": 2257.25,
    "b": 2275.4,
    "t": "Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light.",
-   "Lt": 2946.792
+   "Lt": 2946.792,
+   "lu": -29.3
   },
   {
    "ref": "Matthew 6:6",
@@ -18,7 +19,8 @@
    "who": "Platt",
    "a": 335.55,
    "b": 347.47,
-   "t": "When you pray, go into your room and shut the door and pray to your Father who is in secret. And your Father who sees in secret will reward you."
+   "t": "When you pray, go into your room and shut the door and pray to your Father who is in secret. And your Father who sees in secret will reward you.",
+   "lu": -23.2
   },
   {
    "ref": "John 14:27",
@@ -28,7 +30,8 @@
    "a": 1083.91,
    "b": 1100.25,
    "t": "Peace I leave with you, My peace I give to you; not as the world gives do I give to you. Let not your heart be troubled, neither let it be afraid.",
-   "Lt": 4132.415
+   "Lt": 4132.415,
+   "lu": -20.4
   },
   {
    "ref": "John 15:5",
@@ -38,7 +41,8 @@
    "a": 117.01,
    "b": 126.57,
    "t": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
-   "Lt": 2924.591
+   "Lt": 2924.591,
+   "lu": -24.2
   },
   {
    "ref": "John 14:1-3",
@@ -48,7 +52,8 @@
    "a": 279.98,
    "b": 298.98,
    "t": "Do not let your hearts be troubled. Trust in God; trust also in me. In my Father's house are many rooms; if it were not so, I would have told you. I am going there to prepare a place for you. And if I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am.",
-   "Lt": 2337.123
+   "Lt": 2337.123,
+   "lu": -21.9
   },
   {
    "ref": "John 16:33",
@@ -58,7 +63,8 @@
    "a": 279.89,
    "b": 289.15,
    "t": "I have said these things to you, that in me you may have peace. In the world you will have tribulation. But take heart; I have overcome the world.",
-   "Lt": 2793.848
+   "Lt": 2793.848,
+   "lu": -29.4
   },
   {
    "ref": "John 14:6",
@@ -68,7 +74,8 @@
    "a": 308.02,
    "b": 319.16,
    "t": "I am the way, and the truth, and the life. No one comes to the Father except through me.",
-   "Lt": 2337.123
+   "Lt": 2337.123,
+   "lu": -22.1
   },
   {
    "ref": "John 11:25-26",
@@ -77,7 +84,8 @@
    "who": "Platt",
    "a": 972.52,
    "b": 986.89,
-   "t": "I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live, and everyone who lives and believes in me shall never die. Do you believe this?"
+   "t": "I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live, and everyone who lives and believes in me shall never die. Do you believe this?",
+   "lu": -24.0
   },
   {
    "ref": "John 10:10-11",
@@ -87,7 +95,8 @@
    "a": 47.65,
    "b": 57.89,
    "t": "The thief comes only to steal and kill and destroy. I came that they may have life and have it abundantly. I am the good shepherd. The good shepherd lays down his life for the sheep.",
-   "Lt": 2889.024
+   "Lt": 2889.024,
+   "lu": -27.6
   },
   {
    "ref": "Luke 22:42",
@@ -97,7 +106,8 @@
    "a": 868.47,
    "b": 883.45,
    "t": "Father, if it is Your will, take this cup away from Me; nevertheless not My will, but Yours, be done.",
-   "Lt": 3673.522
+   "Lt": 3673.522,
+   "lu": -22.3
   },
   {
    "ref": "John 15:9-11",
@@ -107,7 +117,8 @@
    "a": 91.27,
    "b": 107.1,
    "t": "As the Father has loved me, so have I loved you. Abide in my love. If you keep my commandments, you will abide in my love, just as I have kept my Father's commandments and abide in his love. These things I have spoken to you, that my joy may be in you, and that your joy may be full.",
-   "Lt": 2762.24
+   "Lt": 2762.24,
+   "lu": -19.9
   },
   {
    "ref": "Revelation 3:20",
@@ -117,7 +128,8 @@
    "a": 2526.95,
    "b": 2537.55,
    "t": "Behold, I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me.",
-   "Lt": 3083.651
+   "Lt": 3083.651,
+   "lu": -22.4
   },
   {
    "ref": "John 8:12",
@@ -127,7 +139,8 @@
    "a": 939.35,
    "b": 949.89,
    "t": "I am the light of the world. He who follows Me shall not walk in darkness, but have the light of life.",
-   "Lt": 4216.007
+   "Lt": 4216.007,
+   "lu": -20.7
   },
   {
    "ref": "John 6:35",
@@ -137,7 +150,8 @@
    "a": 3172.07,
    "b": 3180.58,
    "t": "I am the bread of life. He who comes to Me shall never hunger, and he who believes in Me shall never thirst.",
-   "Lt": 3883.99
+   "Lt": 3883.99,
+   "lu": -15.2
   },
   {
    "ref": "John 6:37",
@@ -147,7 +161,8 @@
    "a": 516.09,
    "b": 521.09,
    "t": "All that the Father gives me will come to me, and whoever comes to me I will never cast out.",
-   "Lt": 3474.936
+   "Lt": 3474.936,
+   "lu": -35.4
   },
   {
    "ref": "John 14:18",
@@ -157,7 +172,8 @@
    "a": 115.9,
    "b": 120.38,
    "t": "I will not leave you as orphans; I will come to you.",
-   "Lt": 3254.568
+   "Lt": 3254.568,
+   "lu": -29.5
   },
   {
    "ref": "Matthew 6:33",
@@ -167,7 +183,8 @@
    "a": 3312.5,
    "b": 3319.75,
    "t": "But seek first the kingdom of God and his righteousness, and all these things will be added to you.",
-   "Lt": 4528.32
+   "Lt": 4528.32,
+   "lu": -13.8
   },
   {
    "ref": "John 15:13",
@@ -177,7 +194,8 @@
    "a": 107.97,
    "b": 112.53,
    "t": "Greater love has no one than this, that someone lay down his life for his friends.",
-   "Lt": 2472.464
+   "Lt": 2472.464,
+   "lu": -26.2
   },
   {
    "ref": "John 7:37-38",
@@ -187,7 +205,8 @@
    "a": 73.44,
    "b": 82.02,
    "t": "If anyone thirsts, let him come to me and drink. Whoever believes in me, as the Scripture has said, 'Out of his heart will flow rivers of living water.'",
-   "Lt": 2629.584
+   "Lt": 2629.584,
+   "lu": -24.2
   },
   {
    "ref": "Matthew 28:18-20",
@@ -197,7 +216,8 @@
    "a": 164.75,
    "b": 182.41,
    "t": "All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the very end of the age.",
-   "Lt": 2982.557
+   "Lt": 2982.557,
+   "lu": -21.2
   },
   {
    "ref": "Matthew 16:24-26",
@@ -207,7 +227,8 @@
    "a": 1103.26,
    "b": 1131.62,
    "t": "If anyone desires to come after Me, let him deny himself, and take up his cross, and follow Me. For whoever desires to save his life will lose it, but whoever loses his life for My sake will find it. For what profit is it to a man if he gains the whole world, and loses his own soul? Or what will a man give in exchange for his soul?",
-   "Lt": 3945.117
+   "Lt": 3945.117,
+   "lu": -21.8
   },
   {
    "ref": "John 10:27-28",
@@ -217,7 +238,8 @@
    "a": 3183.5,
    "b": 3196.0,
    "t": "My sheep hear My voice, and I know them, and they follow Me. And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My Father's hand.",
-   "Lt": 3622.217
+   "Lt": 3622.217,
+   "lu": -23.4
   },
   {
    "ref": "John 20:29",
@@ -226,7 +248,8 @@
    "who": "Platt",
    "a": 1530.5,
    "b": 1535.6,
-   "t": "Have you believed because you have seen me? Blessed are those who have not seen and yet have believed."
+   "t": "Have you believed because you have seen me? Blessed are those who have not seen and yet have believed.",
+   "lu": -20.7
   },
   {
    "ref": "John 8:31-32",
@@ -236,7 +259,8 @@
    "a": 181.44,
    "b": 189.17,
    "t": "If you abide in my word, you are truly my disciples, and you will know the truth, and the truth will set you free.",
-   "Lt": 2562.792
+   "Lt": 2562.792,
+   "lu": -28.3
   },
   {
    "ref": "John 17:3",
@@ -246,7 +270,8 @@
    "a": 519.03,
    "b": 529.6,
    "t": "And this is eternal life, that they may know You, the only true God, and Jesus Christ whom You have sent.",
-   "Lt": 3898.201
+   "Lt": 3898.201,
+   "lu": -17.7
   },
   {
    "ref": "Matthew 5:8",
@@ -256,7 +281,8 @@
    "a": 946.94,
    "b": 953.13,
    "t": "Blessed are the pure in heart, for they shall see God.",
-   "Lt": 2678.178
+   "Lt": 2678.178,
+   "lu": -24.0
   },
   {
    "ref": "Matthew 7:7-8",
@@ -266,7 +292,8 @@
    "a": 3011.88,
    "b": 3021.04,
    "t": "Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you. For everyone who asks receives, and he who seeks finds, and to him who knocks the door will be opened.",
-   "Lt": 3567.203
+   "Lt": 3567.203,
+   "lu": -27.9
   },
   {
    "ref": "Matthew 22:37-39",
@@ -276,7 +303,8 @@
    "a": 4052.27,
    "b": 4061.86,
    "t": "You will love the Lord your God with all your heart, with all your soul, with all your mind. This is the first and the greatest commandment. And the second is like it: You will love your neighbor as yourself.",
-   "Lt": 4405.473
+   "Lt": 4405.473,
+   "lu": -18.2
   },
   {
    "ref": "John 4:13-14",
@@ -286,7 +314,8 @@
    "a": 2774.27,
    "b": 2791.2,
    "t": "Whoever drinks of this water will thirst again, but whoever drinks of the water that I shall give him will never thirst. But the water that I shall give him will become in him a fountain of water springing up into everlasting life.",
-   "Lt": 3954.181
+   "Lt": 3954.181,
+   "lu": -27.8
   },
   {
    "ref": "John 5:24",
@@ -295,7 +324,8 @@
    "who": "Platt",
    "a": 1147.87,
    "b": 1159.21,
-   "t": "Truly, truly, I say to you, whoever hears my word and believes him who sent me has eternal life. He does not come into judgment, but has passed from death to life."
+   "t": "Truly, truly, I say to you, whoever hears my word and believes him who sent me has eternal life. He does not come into judgment, but has passed from death to life.",
+   "lu": -21.3
   },
   {
    "ref": "John 14:21",
@@ -305,7 +335,8 @@
    "a": 133.0,
    "b": 142.96,
    "t": "Whoever has my commandments and keeps them, he it is who loves me. And he who loves me will be loved by my Father, and I will love him and manifest myself to him.",
-   "Lt": 3254.568
+   "Lt": 3254.568,
+   "lu": -28.9
   },
   {
    "ref": "Matthew 10:29-31",
@@ -324,7 +355,8 @@
    "a": 89.33,
    "b": 97.62,
    "t": "The Son of Man did not come to be served, but to serve, and to give His life a ransom for many.",
-   "Lt": 3916.643
+   "Lt": 3916.643,
+   "lu": -24.6
   },
   {
    "ref": "John 15:16",
@@ -334,7 +366,8 @@
    "a": 127.03,
    "b": 139.75,
    "t": "You did not choose me, but I chose you and appointed you that you should go and bear fruit and that your fruit should abide, so that whatever you ask the Father in my name, he may give it to you.",
-   "Lt": 2472.464
+   "Lt": 2472.464,
+   "lu": -25.6
   },
   {
    "ref": "Luke 19:10",
@@ -344,7 +377,8 @@
    "a": 1296.03,
    "b": 1303.05,
    "t": "For the Son of Man has come to seek and to save that which was lost.",
-   "Lt": 3544.712
+   "Lt": 3544.712,
+   "lu": -26.9
   },
   {
    "ref": "Matthew 5:3-6",
@@ -354,7 +388,8 @@
    "a": 2244.13,
    "b": 2259.07,
    "t": "Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they shall be comforted. Blessed are the meek, for they shall inherit the earth. Blessed are those who hunger and thirst after righteousness, for they shall be filled.",
-   "Lt": 3822.968
+   "Lt": 3822.968,
+   "lu": -21.2
   },
   {
    "ref": "Matthew 5:14-16",
@@ -364,7 +399,8 @@
    "a": 1943.8,
    "b": 1966.8,
    "t": "You are the light of the world. A city that is set on a hill cannot be hidden. Nor do they light a lamp and put it under a basket, but on a lampstand, and it gives light to all who are in the house. Let your light so shine before men, that they may see your good works and glorify your Father who is in heaven.",
-   "Lt": 2678.178
+   "Lt": 2678.178,
+   "lu": -24.2
   },
   {
    "ref": "Matthew 9:37-38",
@@ -374,7 +410,8 @@
    "a": 708.53,
    "b": 720.58,
    "t": "The harvest truly is plentiful, but the laborers are few. Therefore pray the Lord of the harvest to send out laborers into His harvest.",
-   "Lt": 3739.324
+   "Lt": 3739.324,
+   "lu": -20.4
   },
   {
    "ref": "John 3:16-17",
@@ -384,7 +421,8 @@
    "a": 98.86,
    "b": 109.35,
    "t": "For God so loved the world, that He gave His only Son, that whoever believes in Him should not perish but have eternal life. For God did not send His Son into the world to condemn the world, but in order that the world might be saved through Him.",
-   "Lt": 2702.367
+   "Lt": 2702.367,
+   "lu": -25.5
   },
   {
    "ref": "Luke 23:34a",
@@ -394,7 +432,8 @@
    "a": 2443.65,
    "b": 2446.29,
    "t": "Father, forgive them, for they do not know what they do.",
-   "Lt": 3954.678
+   "Lt": 3954.678,
+   "lu": -22.1
   },
   {
    "ref": "John 19:30a",
@@ -404,7 +443,8 @@
    "a": 532.5,
    "b": 533.79,
    "t": "It is finished.",
-   "Lt": 2961.371
+   "Lt": 2961.371,
+   "lu": -26.4
   },
   {
    "ref": "Matthew 27:46b",
@@ -414,7 +454,8 @@
    "a": 1681.1,
    "b": 1686.54,
    "t": "My God, My God, why have You forsaken Me?",
-   "Lt": 3572.976
+   "Lt": 3572.976,
+   "lu": -27.1
   },
   {
    "ref": "Mark 14:36",
@@ -424,7 +465,8 @@
    "a": 1411.89,
    "b": 1426.56,
    "t": "Abba, Father, all things are possible for You. Take this cup away from Me; nevertheless, not what I will, but what You will.",
-   "Lt": 3518.589
+   "Lt": 3518.589,
+   "lu": -25.2
   },
   {
    "ref": "Luke 23:46a",
@@ -434,7 +476,8 @@
    "a": 3237.77,
    "b": 3244.28,
    "t": "Father, into Your hands I commit My spirit.",
-   "Lt": 3954.678
+   "Lt": 3954.678,
+   "lu": -22.2
   },
   {
    "ref": "Luke 23:43",
@@ -444,7 +487,8 @@
    "a": 304.59,
    "b": 308.28,
    "t": "Truly, I say to you, today you will be with Me in paradise.",
-   "Lt": 2858.005
+   "Lt": 2858.005,
+   "lu": -26.2
   },
   {
    "ref": "Mark 12:29-31",
@@ -454,7 +498,8 @@
    "a": 2599.35,
    "b": 2633.27,
    "t": "The first of all the commandments is: 'Hear, O Israel, the Lord our God, the Lord is one. And you shall love the Lord your God with all your heart, with all your soul, with all your mind, and with all your strength.' This is the first commandment. And the second, like it, is this: 'You shall love your neighbor as yourself.' There is no other commandment greater than these.",
-   "Lt": 3948.643
+   "Lt": 3948.643,
+   "lu": -31.4
   },
   {
    "ref": "John 15:4",
@@ -464,7 +509,8 @@
    "a": 107.53,
    "b": 116.88,
    "t": "Abide in Me, and I in you. As the branch cannot bear fruit by itself, unless it abides in the vine, neither can you, unless you abide in Me.",
-   "Lt": 2924.591
+   "Lt": 2924.591,
+   "lu": -24.2
   },
   {
    "ref": "John 14:23",
@@ -474,7 +520,8 @@
    "a": 152.11,
    "b": 159.1,
    "t": "If anyone loves Me, he will keep My word, and My Father will love him, and We will come to him and make Our home with him.",
-   "Lt": 3254.568
+   "Lt": 3254.568,
+   "lu": -28.9
   },
   {
    "ref": "Matthew 5:43-45",
@@ -484,7 +531,8 @@
    "a": 590.96,
    "b": 610.71,
    "t": "You have heard that it was said, 'You shall love your neighbor and hate your enemy.' But I say to you, love your enemies and pray for those who persecute you, so that you may be sons of your Father who is in heaven. For He makes His sun rise on the evil and on the good, and sends rain on the just and on the unjust.",
-   "Lt": 3789.584
+   "Lt": 3789.584,
+   "lu": -23.3
   },
   {
    "ref": "John 13:34-35",
@@ -494,7 +542,8 @@
    "a": 2978.96,
    "b": 2998.11,
    "t": "A new commandment I give to you, that you love one another; as I have loved you, that you also love one another. By this all will know that you are My disciples, if you have love for one another.",
-   "Lt": 3368.882
+   "Lt": 3368.882,
+   "lu": -22.2
   },
   {
    "ref": "Luke 9:23-24",
@@ -504,7 +553,8 @@
    "a": 1405.53,
    "b": 1422.62,
    "t": "If anyone desires to come after Me, let him deny himself, and take up his cross daily, and follow Me. For whoever desires to save his life will lose it, but whoever loses his life for My sake will save it.",
-   "Lt": 3510.178
+   "Lt": 3510.178,
+   "lu": -26.9
   },
   {
    "ref": "Matthew 23:37",
@@ -514,7 +564,8 @@
    "a": 1745.05,
    "b": 1759.62,
    "t": "O Jerusalem, Jerusalem, the one who kills the prophets and stones those who are sent to her! How often I wanted to gather your children together, as a hen gathers her chicks under her wings, but you were not willing!",
-   "Lt": 4043.337
+   "Lt": 4043.337,
+   "lu": -21.0
   },
   {
    "ref": "Mark 5:36",
@@ -524,7 +575,8 @@
    "a": 1112.05,
    "b": 1115.84,
    "t": "Do not be afraid; only believe.",
-   "Lt": 3907.709
+   "Lt": 3907.709,
+   "lu": -21.4
   },
   {
    "ref": "Matthew 14:27",
@@ -534,7 +586,8 @@
    "a": 2460.73,
    "b": 2466.15,
    "t": "Take heart; it is I. Do not be afraid.",
-   "Lt": 4629.629
+   "Lt": 4629.629,
+   "lu": -15.5
   },
   {
    "ref": "Mark 8:36-37",
@@ -544,7 +597,8 @@
    "a": 2787.91,
    "b": 2794.01,
    "t": "What will it profit a man if he gains the whole world, and loses his own soul? Or what will a man give in exchange for his soul?",
-   "Lt": 3446.883
+   "Lt": 3446.883,
+   "lu": -27.9
   },
   {
    "ref": "John 8:36",
@@ -554,7 +608,8 @@
    "a": 210.06,
    "b": 213.65,
    "t": "So if the Son sets you free, you will be free indeed.",
-   "Lt": 2562.792
+   "Lt": 2562.792,
+   "lu": -28.3
   },
   {
    "ref": "Matthew 6:19-21",
@@ -564,7 +619,8 @@
    "a": 2108.12,
    "b": 2129.71,
    "t": "Do not lay up for yourselves treasures on earth, where moth and rust destroy and where thieves break in and steal; but lay up for yourselves treasures in heaven, where neither moth nor rust destroys and where thieves do not break in and steal. For where your treasure is, there your heart will be also.",
-   "Lt": 3798.883
+   "Lt": 3798.883,
+   "lu": -21.8
   },
   {
    "ref": "Matthew 6:25-27",
@@ -574,7 +630,8 @@
    "a": 1902.4,
    "b": 1927.4,
    "t": "Therefore I say to you, do not worry about your life, what you will eat or what you will drink; nor about your body, what you will put on. Is not life more than food and the body more than clothing? Look at the birds of the air, for they neither sow nor reap nor gather into barns; yet your heavenly Father feeds them. Are you not of more value than they? Which of you by worrying can add one cubit to his stature?",
-   "Lt": 3617.881
+   "Lt": 3617.881,
+   "lu": -31.0
   },
   {
    "ref": "Matthew 6:28-30",
@@ -584,7 +641,8 @@
    "a": 1943.46,
    "b": 1962.81,
    "t": "Why do you worry about clothing? Consider the lilies of the field, how they grow: they neither toil nor spin; and yet I say to you that even Solomon in all his glory was not arrayed like one of these. Now if God so clothes the grass of the field, which today is, and tomorrow is thrown into the oven, will He not much more clothe you, O you of little faith?",
-   "Lt": 3617.881
+   "Lt": 3617.881,
+   "lu": -31.0
   },
   {
    "ref": "Matthew 19:26",
@@ -594,7 +652,8 @@
    "a": 2170.24,
    "b": 2179.55,
    "t": "With men this is impossible, but with God all things are possible.",
-   "Lt": 2719.451
+   "Lt": 2719.451,
+   "lu": -21.6
   },
   {
    "ref": "Mark 9:23",
@@ -604,7 +663,8 @@
    "a": 598.26,
    "b": 605.65,
    "t": "If you can believe, all things are possible to him who believes.",
-   "Lt": 3822.263
+   "Lt": 3822.263,
+   "lu": -25.8
   },
   {
    "ref": "John 15:12",
@@ -614,7 +674,8 @@
    "a": 101.78,
    "b": 107.13,
    "t": "This is My commandment, that you love one another as I have loved you.",
-   "Lt": 2472.464
+   "Lt": 2472.464,
+   "lu": -26.3
   },
   {
    "ref": "John 15:14-15",
@@ -624,7 +685,8 @@
    "a": 112.8,
    "b": 126.85,
    "t": "You are My friends if you do what I command you. No longer do I call you servants, for the servant does not know what his master is doing; but I have called you friends, for all that I have heard from My Father I have made known to you.",
-   "Lt": 2472.464
+   "Lt": 2472.464,
+   "lu": -25.9
   },
   {
    "ref": "Luke 11:9-10",
@@ -652,7 +714,8 @@
    "a": 412.3,
    "b": 421.59,
    "t": "Not everyone who says to Me, 'Lord, Lord,' shall enter the kingdom of heaven, but he who does the will of My Father in heaven.",
-   "Lt": 3389.884
+   "Lt": 3389.884,
+   "lu": -23.6
   },
   {
    "ref": "Luke 6:46",
@@ -662,7 +725,8 @@
    "a": 3622.85,
    "b": 3628.66,
    "t": "Why do you call Me 'Lord, Lord,' and you do not do the things which I say?",
-   "Lt": 3816.098
+   "Lt": 3816.098,
+   "lu": -12.6
   },
   {
    "ref": "Matthew 6:24",
@@ -672,7 +736,8 @@
    "a": 2637.89,
    "b": 2653.65,
    "t": "No one can serve two masters; for either he will hate the one and love the other, or else he will be loyal to the one and despise the other. You cannot serve God and mammon.",
-   "Lt": 3798.883
+   "Lt": 3798.883,
+   "lu": -22.0
   },
   {
    "ref": "Matthew 10:28",
@@ -682,7 +747,8 @@
    "a": 1152.0,
    "b": 1161.17,
    "t": "Do not fear those who kill the body but cannot kill the soul. But rather fear Him who is able to destroy both soul and body in hell.",
-   "Lt": 3723.389
+   "Lt": 3723.389,
+   "lu": -29.8
   },
   {
    "ref": "Matthew 10:37-39",
@@ -701,7 +767,8 @@
    "a": 214.28,
    "b": 218.66,
    "t": "Whoever does not bear his own cross and come after Me cannot be My disciple.",
-   "Lt": 3572.568
+   "Lt": 3572.568,
+   "lu": -23.5
   },
   {
    "ref": "Luke 9:62",
@@ -711,7 +778,8 @@
    "a": 3415.22,
    "b": 3421.16,
    "t": "No one, having put his hand to the plow, and looking back, is fit for the kingdom of God.",
-   "Lt": 3510.178
+   "Lt": 3510.178,
+   "lu": -27.1
   },
   {
    "ref": "Mark 1:15",
@@ -721,7 +789,8 @@
    "a": 2506.54,
    "b": 2514.73,
    "t": "The time is fulfilled, and the kingdom of God is at hand. Repent, and believe in the gospel.",
-   "Lt": 3488.914
+   "Lt": 3488.914,
+   "lu": -26.1
   },
   {
    "ref": "Matthew 4:17",
@@ -731,7 +800,8 @@
    "a": 2982.53,
    "b": 2987.45,
    "t": "Repent, for the kingdom of heaven is at hand.",
-   "Lt": 3839.216
+   "Lt": 3839.216,
+   "lu": -25.7
   },
   {
    "ref": "Matthew 4:19",
@@ -741,7 +811,8 @@
    "a": 314.4,
    "b": 318.47,
    "t": "Follow Me, and I will make you fishers of men.",
-   "Lt": 3060.576
+   "Lt": 3060.576,
+   "lu": -26.7
   },
   {
    "ref": "Matthew 20:26-28",
@@ -750,8 +821,9 @@
    "who": "Skip",
    "a": 2952.54,
    "b": 2969.35,
-   "t": "It shall not be so among you; but whoever desires to become great among you, let him be your servant. And whoever desires to be first among you, let him be your slave—just as the Son of Man did not come to be served, but to serve, and to give His life a ransom for many.",
-   "Lt": 3703.275
+   "t": "It shall not be so among you; but whoever desires to become great among you, let him be your servant. And whoever desires to be first among you, let him be your slave\u2014just as the Son of Man did not come to be served, but to serve, and to give His life a ransom for many.",
+   "Lt": 3703.275,
+   "lu": -22.2
   },
   {
    "ref": "John 13:14-15",
@@ -761,7 +833,8 @@
    "a": 2037.68,
    "b": 2056.2,
    "t": "If I then, your Lord and Teacher, have washed your feet, you also ought to wash one another's feet. For I have given you an example, that you should do as I have done to you.",
-   "Lt": 3368.882
+   "Lt": 3368.882,
+   "lu": -22.0
   },
   {
    "ref": "Matthew 25:40",
@@ -771,7 +844,8 @@
    "a": 2265.42,
    "b": 2278.71,
    "t": "And the King will answer them, 'Truly, I say to you, as you did it to one of the least of these My brothers, you did it to Me.'",
-   "Lt": 4359.131
+   "Lt": 4359.131,
+   "lu": -17.2
   },
   {
    "ref": "Matthew 25:34-36",
@@ -781,7 +855,8 @@
    "a": 1571.9,
    "b": 1589.98,
    "t": "And the King will say to those on His right hand, 'Come, you blessed of My Father, inherit the kingdom prepared for you from the foundation of the world: for I was hungry and you gave Me food; I was thirsty and you gave Me drink; I was a stranger and you took Me in; I was naked and you clothed Me; I was sick and you visited Me; I was in prison and you came to Me.'",
-   "Lt": 3928.712
+   "Lt": 3928.712,
+   "lu": -22.8
   },
   {
    "ref": "Matthew 25:21",
@@ -791,7 +866,8 @@
    "a": 2153.56,
    "b": 2161.88,
    "t": "Well done, good and faithful servant. You have been faithful over a little; I will set you over much. Enter into the joy of your master.",
-   "Lt": 3450.671
+   "Lt": 3450.671,
+   "lu": -17.7
   },
   {
    "ref": "Luke 22:19b",
@@ -801,7 +877,8 @@
    "a": 262.56,
    "b": 266.95,
    "t": "This is My body, given for you. Do this in remembrance of Me.",
-   "Lt": 2581.499
+   "Lt": 2581.499,
+   "lu": -22.0
   },
   {
    "ref": "Matthew 26:27b-28",
@@ -811,7 +888,8 @@
    "a": 2121.82,
    "b": 2128.94,
    "t": "Drink from it, all of you, for this is My blood of the new covenant, which is shed for many for the remission of sins.",
-   "Lt": 3022.576
+   "Lt": 3022.576,
+   "lu": -20.7
   },
   {
    "ref": "Matthew 26:39",
@@ -821,7 +899,8 @@
    "a": 1532.86,
    "b": 1543.11,
    "t": "My Father, if it is possible, let this cup pass from Me; nevertheless, not as I will, but as You will.",
-   "Lt": 4198.348
+   "Lt": 4198.348,
+   "lu": -26.4
   },
   {
    "ref": "Matthew 26:38",
@@ -831,7 +910,8 @@
    "a": 1730.12,
    "b": 1739.02,
    "t": "My soul is sorrowful, even to the point of death. Remain here and watch with Me.",
-   "Lt": 4074.136
+   "Lt": 4074.136,
+   "lu": -17.1
   },
   {
    "ref": "Matthew 26:41",
@@ -841,7 +921,8 @@
    "a": 3652.48,
    "b": 3660.59,
    "t": "Watch and pray, lest you enter into temptation. The spirit indeed is willing, but the flesh is weak.",
-   "Lt": 3928.712
+   "Lt": 3928.712,
+   "lu": -23.3
   },
   {
    "ref": "Luke 22:32",
@@ -851,7 +932,8 @@
    "a": 989.41,
    "b": 996.3,
    "t": "But I have prayed for you, that your faith should not fail; and when you have returned to Me, strengthen your brethren.",
-   "Lt": 4035.318
+   "Lt": 4035.318,
+   "lu": -22.9
   },
   {
    "ref": "John 17:15-17",
@@ -861,7 +943,8 @@
    "a": 2612.87,
    "b": 2628.06,
    "t": "I do not pray that You should take them out of the world, but that You should keep them from the evil one. They are not of the world, just as I am not of the world. Sanctify them by Your truth. Your word is truth.",
-   "Lt": 3898.201
+   "Lt": 3898.201,
+   "lu": -17.8
   },
   {
    "ref": "John 17:20-21",
@@ -871,7 +954,8 @@
    "a": 195.64,
    "b": 214.45,
    "t": "My prayer is not for them alone. I pray also for those who will believe in Me through their message, that all of them may be one, Father, just as You are in Me and I am in You. May they also be in us so that the world may believe that You have sent Me.",
-   "Lt": 3493.042
+   "Lt": 3493.042,
+   "lu": -28.7
   },
   {
    "ref": "John 17:24",
@@ -890,7 +974,8 @@
    "a": 3466.51,
    "b": 3491.94,
    "t": "I thank You, Father, Lord of heaven and earth, because You have hidden these things from the wise and prudent and have revealed them to babes. Even so, Father, for so it seemed good in Your sight. All things have been delivered to Me by My Father, and no one knows the Son except the Father. Nor does anyone know the Father except the Son, and the one to whom the Son wills to reveal Him.",
-   "Lt": 3723.389
+   "Lt": 3723.389,
+   "lu": -29.4
   },
   {
    "ref": "John 14:15-17",
@@ -900,7 +985,8 @@
    "a": 345.22,
    "b": 368.06,
    "t": "If you love Me, you will keep My commandments. And I will ask the Father, and He will give you another Helper, to be with you forever, even the Spirit of truth, whom the world cannot receive, because it neither sees Him nor knows Him. You know Him, for He dwells with you and will be in you.",
-   "Lt": 3365.146
+   "Lt": 3365.146,
+   "lu": -27.8
   },
   {
    "ref": "John 14:26",
@@ -910,7 +996,8 @@
    "a": 2903.16,
    "b": 2912.62,
    "t": "But the Helper, the Holy Spirit, whom the Father will send in My name, He will teach you all things, and bring to your remembrance all things that I said to you.",
-   "Lt": 4172.251
+   "Lt": 4172.251,
+   "lu": -15.7
   },
   {
    "ref": "John 16:6-7",
@@ -920,7 +1007,8 @@
    "a": 86.68,
    "b": 99.59,
    "t": "But because I have said these things to you, sorrow has filled your heart. Nevertheless, I tell you the truth: it is to your advantage that I go away, for if I do not go away, the Helper will not come to you. But if I go, I will send Him to you.",
-   "Lt": 2411.572
+   "Lt": 2411.572,
+   "lu": -26.0
   },
   {
    "ref": "John 16:13",
@@ -930,7 +1018,8 @@
    "a": 2202.27,
    "b": 2219.08,
    "t": "However, when the Spirit of truth has come, He will guide you into all truth; for He will not speak on His own authority, but whatever He hears He will speak; and He will tell you things to come.",
-   "Lt": 4074.58
+   "Lt": 4074.58,
+   "lu": -18.0
   },
   {
    "ref": "John 16:24",
@@ -940,7 +1029,8 @@
    "a": 2004.77,
    "b": 2009.68,
    "t": "Until now you have asked nothing in My name. Ask, and you will receive, that your joy may be full.",
-   "Lt": 3861.734
+   "Lt": 3861.734,
+   "lu": -23.4
   },
   {
    "ref": "John 15:7-8",
@@ -959,7 +1049,8 @@
    "a": 79.74,
    "b": 90.45,
    "t": "No one can come to Me unless the Father who sent Me draws him; and I will raise him up at the last day.",
-   "Lt": 1560.163
+   "Lt": 1560.163,
+   "lu": -25.0
   },
   {
    "ref": "John 6:40",
@@ -969,7 +1060,8 @@
    "a": 107.4,
    "b": 115.22,
    "t": "For this is the will of My Father, that everyone who looks on the Son and believes in Him should have eternal life, and I will raise him up on the last day.",
-   "Lt": 2597.232
+   "Lt": 2597.232,
+   "lu": -21.3
   },
   {
    "ref": "John 6:47-48",
@@ -979,7 +1071,8 @@
    "a": 577.49,
    "b": 583.96,
    "t": "Truly, truly, I say to you, whoever believes has eternal life. I am the bread of life.",
-   "Lt": 3474.936
+   "Lt": 3474.936,
+   "lu": -35.3
   },
   {
    "ref": "John 6:51",
@@ -989,7 +1082,8 @@
    "a": 44.34,
    "b": 53.16,
    "t": "I am the living bread that came down from heaven. If anyone eats of this bread, he will live forever. And the bread that I will give for the life of the world is My flesh.",
-   "Lt": 2947.161
+   "Lt": 2947.161,
+   "lu": -30.7
   },
   {
    "ref": "John 6:63",
@@ -999,7 +1093,8 @@
    "a": 1060.67,
    "b": 1067.94,
    "t": "It is the Spirit who gives life; the flesh profits nothing. The words that I speak to you are spirit, and they are life.",
-   "Lt": 1560.163
+   "Lt": 1560.163,
+   "lu": -24.9
   },
   {
    "ref": "John 6:27",
@@ -1009,7 +1104,8 @@
    "a": 2957.88,
    "b": 2969.45,
    "t": "Do not labor for the food which perishes, but for the food which endures to everlasting life, which the Son of Man will give you, because God the Father has set His seal upon Him.",
-   "Lt": 3883.99
+   "Lt": 3883.99,
+   "lu": -15.2
   },
   {
    "ref": "John 4:34",
@@ -1028,7 +1124,8 @@
    "a": 1879.35,
    "b": 1893.86,
    "t": "Do you not say, 'There are still four months and then comes the harvest'? Behold, I say to you, lift up your eyes and look at the fields, for they are already white for harvest!",
-   "Lt": 3057.319
+   "Lt": 3057.319,
+   "lu": -22.2
   },
   {
    "ref": "John 4:23-24",
@@ -1038,7 +1135,8 @@
    "a": 531.37,
    "b": 555.44,
    "t": "But the hour is coming, and now is, when the true worshipers will worship the Father in spirit and truth; for the Father is seeking such to worship Him. God is Spirit, and those who worship Him must worship in spirit and truth.",
-   "Lt": 3057.319
+   "Lt": 3057.319,
+   "lu": -21.8
   },
   {
    "ref": "John 10:14-15",
@@ -1048,7 +1146,8 @@
    "a": 70.68,
    "b": 78.59,
    "t": "I am the good shepherd. I know My own and My own know Me, just as the Father knows Me and I know the Father; and I lay down My life for the sheep.",
-   "Lt": 2889.024
+   "Lt": 2889.024,
+   "lu": -28.0
   },
   {
    "ref": "John 10:9",
@@ -1058,7 +1157,8 @@
    "a": 2490.68,
    "b": 2496.24,
    "t": "I am the door. If anyone enters by Me, he will be saved, and will go in and out and find pasture.",
-   "Lt": 3622.217
+   "Lt": 3622.217,
+   "lu": -23.3
   },
   {
    "ref": "John 9:4-5",
@@ -1068,7 +1168,8 @@
    "a": 752.05,
    "b": 764.04,
    "t": "I must work the works of Him who sent Me while it is day; the night is coming when no one can work. As long as I am in the world, I am the light of the world.",
-   "Lt": 3217.162
+   "Lt": 3217.162,
+   "lu": -20.8
   },
   {
    "ref": "John 12:32",
@@ -1078,7 +1179,8 @@
    "a": 3328.77,
    "b": 3332.5,
    "t": "And I, if I am lifted up from the earth, will draw all peoples to Myself.",
-   "Lt": 3901.074
+   "Lt": 3901.074,
+   "lu": -15.8
   },
   {
    "ref": "John 11:40",
@@ -1088,7 +1190,8 @@
    "a": 1049.35,
    "b": 1054.96,
    "t": "Did I not say to you that if you would believe you would see the glory of God?",
-   "Lt": 3505.267
+   "Lt": 3505.267,
+   "lu": -20.5
   },
   {
    "ref": "John 14:9",
@@ -1098,7 +1201,8 @@
    "a": 252.3,
    "b": 260.23,
    "t": "Have I been with you so long, and you still do not know Me, Philip? Whoever has seen Me has seen the Father. How can you say, 'Show us the Father'?",
-   "Lt": 3088.44
+   "Lt": 3088.44,
+   "lu": -26.7
   },
   {
    "ref": "John 15:18-19",
@@ -1108,7 +1212,8 @@
    "a": 306.63,
    "b": 321.48,
    "t": "If the world hates you, know that it has hated Me before it hated you. If you were of the world, the world would love you as its own; but because you are not of the world, but I chose you out of the world, therefore the world hates you.",
-   "Lt": 2812.368
+   "Lt": 2812.368,
+   "lu": -28.6
   },
   {
    "ref": "John 20:21",
@@ -1118,7 +1223,8 @@
    "a": 234.72,
    "b": 239.51,
    "t": "Peace be with you. As the Father has sent Me, even so I am sending you.",
-   "Lt": 3504.509
+   "Lt": 3504.509,
+   "lu": -25.7
   },
   {
    "ref": "Luke 24:38-39",
@@ -1128,7 +1234,8 @@
    "a": 2707.53,
    "b": 2726.3,
    "t": "Why are you troubled? And why do doubts arise in your hearts? Behold My hands and My feet, that it is I Myself. Handle Me and see, for a spirit does not have flesh and bones as you see I have.",
-   "Lt": 3158.7
+   "Lt": 3158.7,
+   "lu": -23.3
   },
   {
    "ref": "Mark 16:15",
@@ -1138,7 +1245,8 @@
    "a": 2537.4,
    "b": 2542.19,
    "t": "Go into all the world and preach the gospel to every creature.",
-   "Lt": 4027.402
+   "Lt": 4027.402,
+   "lu": -24.4
   },
   {
    "ref": "Acts 1:8",
@@ -1148,7 +1256,8 @@
    "a": 562.27,
    "b": 573.98,
    "t": "But you shall receive power when the Holy Spirit has come upon you; and you shall be witnesses to Me in Jerusalem, and in all Judea and Samaria, and to the end of the earth.",
-   "Lt": 2315.128
+   "Lt": 2315.128,
+   "lu": -20.8
   },
   {
    "ref": "Luke 4:18-19",
@@ -1158,7 +1267,8 @@
    "a": 597.27,
    "b": 615.06,
    "t": "The Spirit of the Lord is upon Me, because He has anointed Me to proclaim good news to the poor. He has sent Me to proclaim liberty to the captives and recovering of sight to the blind, to set at liberty those who are oppressed, to proclaim the year of the Lord's favor.",
-   "Lt": 4142.211
+   "Lt": 4142.211,
+   "lu": -24.1
   },
   {
    "ref": "Luke 5:32",
@@ -1168,7 +1278,8 @@
    "a": 991.04,
    "b": 996.29,
    "t": "I have not come to call the righteous, but sinners, to repentance.",
-   "Lt": 3540.976
+   "Lt": 3540.976,
+   "lu": -27.1
   },
   {
    "ref": "Luke 15:10",
@@ -1178,7 +1289,8 @@
    "a": 1903.54,
    "b": 1911.25,
    "t": "Likewise, I say to you, there is joy in the presence of the angels of God over one sinner who repents.",
-   "Lt": 3702.727
+   "Lt": 3702.727,
+   "lu": -21.5
   },
   {
    "ref": "Matthew 18:12-14",
@@ -1188,7 +1300,8 @@
    "a": 974.38,
    "b": 996.51,
    "t": "What do you think? If a man has a hundred sheep, and one of them goes astray, does he not leave the ninety-nine and go to the mountains to seek the one that is straying? And if he should find it, assuredly, I say to you, he rejoices more over that sheep than over the ninety-nine that did not go astray. Even so it is not the will of your Father who is in heaven that one of these little ones should perish.",
-   "Lt": 3771.167
+   "Lt": 3771.167,
+   "lu": -31.3
   },
   {
    "ref": "Luke 18:14",
@@ -1198,7 +1311,8 @@
    "a": 872.51,
    "b": 884.58,
    "t": "I tell you, this man went down to his house justified rather than the other; for everyone who exalts himself will be humbled, and he who humbles himself will be exalted.",
-   "Lt": 3637.969
+   "Lt": 3637.969,
+   "lu": -21.6
   },
   {
    "ref": "Matthew 23:11-12",
@@ -1208,7 +1322,8 @@
    "a": 2535.54,
    "b": 2544.51,
    "t": "But he who is greatest among you shall be your servant. And whoever exalts himself will be humbled, and he who humbles himself will be exalted.",
-   "Lt": 3703.014
+   "Lt": 3703.014,
+   "lu": -21.5
   },
   {
    "ref": "Luke 13:3",
@@ -1218,7 +1333,8 @@
    "a": 381.07,
    "b": 388.16,
    "t": "I tell you, no! But unless you repent, you too will all perish.",
-   "Lt": 3208.568
+   "Lt": 3208.568,
+   "lu": -25.3
   },
   {
    "ref": "Matthew 5:10-12",
@@ -1228,7 +1344,8 @@
    "a": 1545.11,
    "b": 1569.6,
    "t": "Blessed are those who are persecuted for righteousness' sake, for theirs is the kingdom of heaven. Blessed are you when they revile and persecute you, and say all kinds of evil against you falsely for My sake. Rejoice and be exceedingly glad, for great is your reward in heaven, for so they persecuted the prophets who were before you.",
-   "Lt": 2678.178
+   "Lt": 2678.178,
+   "lu": -24.3
   },
   {
    "ref": "Matthew 5:9",
@@ -1238,7 +1355,8 @@
    "a": 1226.8,
    "b": 1232.31,
    "t": "Blessed are the peacemakers, for they shall be called sons of God.",
-   "Lt": 2678.178
+   "Lt": 2678.178,
+   "lu": -24.1
   },
   {
    "ref": "Matthew 5:7",
@@ -1257,7 +1375,8 @@
    "a": 1929.41,
    "b": 1943.26,
    "t": "You are the salt of the earth; but if the salt loses its flavor, how shall it be seasoned? It is then good for nothing but to be thrown out and trampled underfoot by men.",
-   "Lt": 2678.178
+   "Lt": 2678.178,
+   "lu": -24.3
   },
   {
    "ref": "Matthew 5:48",
@@ -1267,7 +1386,8 @@
    "a": 3810.33,
    "b": 3815.08,
    "t": "Be perfect, just as your Father in heaven is perfect.",
-   "Lt": 3952.744
+   "Lt": 3952.744,
+   "lu": -31.6
   },
   {
    "ref": "Matthew 6:14-15",
@@ -1277,7 +1397,8 @@
    "a": 1295.8,
    "b": 1307.33,
    "t": "For if you forgive men their trespasses, your heavenly Father will also forgive you. But if you do not forgive men their trespasses, neither will your Father forgive your trespasses.",
-   "Lt": 3617.881
+   "Lt": 3617.881,
+   "lu": -30.9
   },
   {
    "ref": "Matthew 7:1-2",
@@ -1287,7 +1408,8 @@
    "a": 466.14,
    "b": 483.23,
    "t": "Judge not, that you be not judged. For with what judgment you judge, you will be judged; and with the measure you use, it will be measured back to you.",
-   "Lt": 4124.787
+   "Lt": 4124.787,
+   "lu": -24.0
   },
   {
    "ref": "Matthew 7:3-5",
@@ -1297,7 +1419,8 @@
    "a": 245.79,
    "b": 277.01,
    "t": "Why do you see the speck that is in your brother's eye, but do not notice the log that is in your own eye? Or how can you say to your brother, 'Let me take the speck out of your eye,' when there is the log in your own eye? You hypocrite, first take the log out of your own eye, and then you will see clearly to take the speck out of your brother's eye.",
-   "Lt": 2672.04
+   "Lt": 2672.04,
+   "lu": -16.5
   },
   {
    "ref": "Matthew 7:13-14",
@@ -1307,7 +1430,8 @@
    "a": 2555.08,
    "b": 2569.42,
    "t": "Enter by the narrow gate; for wide is the gate and broad is the way that leads to destruction, and there are many who go in by it. Because narrow is the gate and difficult is the way which leads to life, and there are few who find it.",
-   "Lt": 4124.787
+   "Lt": 4124.787,
+   "lu": -24.8
   },
   {
    "ref": "Luke 6:27-28",
@@ -1317,7 +1441,8 @@
    "a": 3096.8,
    "b": 3110.31,
    "t": "But I say to you who hear: Love your enemies, do good to those who hate you, bless those who curse you, and pray for those who spitefully use you.",
-   "Lt": 3445.992
+   "Lt": 3445.992,
+   "lu": -22.2
   },
   {
    "ref": "Luke 6:35-36",
@@ -1327,7 +1452,8 @@
    "a": 1644.5,
    "b": 1665.58,
    "t": "But love your enemies, do good, and lend, hoping for nothing in return; and your reward will be great, and you will be sons of the Most High. For He is kind to the unthankful and evil. Therefore be merciful, just as your Father also is merciful.",
-   "Lt": 3442.521
+   "Lt": 3442.521,
+   "lu": -26.8
   },
   {
    "ref": "Luke 6:37-38",
@@ -1337,7 +1463,8 @@
    "a": 3390.13,
    "b": 3406.48,
    "t": "Judge not, and you shall not be judged. Condemn not, and you shall not be condemned. Forgive, and you will be forgiven. Give, and it will be given to you: good measure, pressed down, shaken together, and running over will be put into your bosom. For with the same measure that you use, it will be measured back to you.",
-   "Lt": 3445.992
+   "Lt": 3445.992,
+   "lu": -22.0
   },
   {
    "ref": "Luke 6:45",
@@ -1347,7 +1474,8 @@
    "a": 1763.82,
    "b": 1777.5,
    "t": "A good man out of the good treasure of his heart brings forth good; and an evil man out of the evil treasure of his heart brings forth evil. For out of the abundance of the heart his mouth speaks.",
-   "Lt": 3442.521
+   "Lt": 3442.521,
+   "lu": -26.9
   },
   {
    "ref": "Matthew 10:16",
@@ -1366,7 +1494,8 @@
    "a": 791.65,
    "b": 811.42,
    "t": "Therefore whoever confesses Me before men, him I will also confess before My Father who is in heaven. But whoever denies Me before men, him I will also deny before My Father who is in heaven.",
-   "Lt": 3994.697
+   "Lt": 3994.697,
+   "lu": -21.4
   },
   {
    "ref": "Matthew 12:30",
@@ -1376,7 +1505,8 @@
    "a": 18.9,
    "b": 26.45,
    "t": "He who is not with Me is against Me, and he who does not gather with Me scatters abroad.",
-   "Lt": 4410.175
+   "Lt": 4410.175,
+   "lu": -21.9
   },
   {
    "ref": "Matthew 12:50",
@@ -1386,7 +1516,8 @@
    "a": 1029.84,
    "b": 1039.45,
    "t": "For whoever does the will of My Father in heaven is My brother and sister and mother.",
-   "Lt": 3428.467
+   "Lt": 3428.467,
+   "lu": -20.2
   },
   {
    "ref": "Matthew 14:31",
@@ -1396,7 +1527,8 @@
    "a": 3375.57,
    "b": 3379.58,
    "t": "You of little faith, why did you doubt?",
-   "Lt": 4629.629
+   "Lt": 4629.629,
+   "lu": -15.9
   },
   {
    "ref": "Matthew 16:18",
@@ -1406,7 +1538,8 @@
    "a": 167.76,
    "b": 175.72,
    "t": "And I tell you that you are Peter, and on this rock I will build My church, and the gates of Hades will not overcome it.",
-   "Lt": 2631.889
+   "Lt": 2631.889,
+   "lu": -27.4
   },
   {
    "ref": "Matthew 17:20",
@@ -1416,7 +1549,8 @@
    "a": 1237.4,
    "b": 1250.32,
    "t": "Because of your unbelief; for assuredly, I say to you, if you have faith as a mustard seed, you will say to this mountain, 'Move from here to there,' and it will move; and nothing will be impossible for you.",
-   "Lt": 3733.081
+   "Lt": 3733.081,
+   "lu": -24.2
   },
   {
    "ref": "Matthew 18:3-4",
@@ -1426,7 +1560,8 @@
    "a": 523.9,
    "b": 540.58,
    "t": "I say to you, unless you are converted and become as little children, you will by no means enter the kingdom of heaven. Therefore whoever humbles himself as this little child is the greatest in the kingdom of heaven.",
-   "Lt": 3562.632
+   "Lt": 3562.632,
+   "lu": -21.2
   },
   {
    "ref": "Matthew 18:20",
@@ -1454,7 +1589,8 @@
    "a": 675.05,
    "b": 683.46,
    "t": "Daughter, your faith has made you well. Go in peace, and be healed of your affliction.",
-   "Lt": 4366.184
+   "Lt": 4366.184,
+   "lu": -24.0
   },
   {
    "ref": "Luke 7:50",
@@ -1464,7 +1600,8 @@
    "a": 2586.01,
    "b": 2589.88,
    "t": "Your faith has saved you. Go in peace.",
-   "Lt": 3205.747
+   "Lt": 3205.747,
+   "lu": -24.7
   },
   {
    "ref": "Luke 10:20",
@@ -1474,7 +1611,8 @@
    "a": 1651.68,
    "b": 1663.7,
    "t": "Nevertheless do not rejoice in this, that the spirits are subject to you, but rather rejoice because your names are written in heaven.",
-   "Lt": 3459.474
+   "Lt": 3459.474,
+   "lu": -28.0
   },
   {
    "ref": "Luke 10:41-42",
@@ -1484,7 +1622,8 @@
    "a": 2890.29,
    "b": 2903.56,
    "t": "Martha, Martha, you are worried and troubled about many things. But one thing is needed, and Mary has chosen that good part, which will not be taken away from her.",
-   "Lt": 3459.474
+   "Lt": 3459.474,
+   "lu": -28.2
   },
   {
    "ref": "Luke 12:34",
@@ -1494,7 +1633,8 @@
    "a": 1158.71,
    "b": 1163.01,
    "t": "For where your treasure is, there your heart will be also.",
-   "Lt": 3706.07
+   "Lt": 3706.07,
+   "lu": -24.9
   },
   {
    "ref": "Matthew 24:35",
@@ -1504,7 +1644,8 @@
    "a": 605.37,
    "b": 612.52,
    "t": "Heaven and earth will pass away, but My words will by no means pass away.",
-   "Lt": 4125.048
+   "Lt": 4125.048,
+   "lu": -25.6
   },
   {
    "ref": "Matthew 4:4",
@@ -1514,7 +1655,8 @@
    "a": 149.33,
    "b": 158.04,
    "t": "It is written, 'Man shall not live by bread alone, but by every word that proceeds from the mouth of God.'",
-   "Lt": 3952.744
+   "Lt": 3952.744,
+   "lu": -34.1
   },
   {
    "ref": "Revelation 22:12-13",
@@ -1524,7 +1666,8 @@
    "a": 3385.19,
    "b": 3400.44,
    "t": "Behold, I am coming quickly, and My reward is with Me, to give to every one according to his work. I am the Alpha and the Omega, the Beginning and the End, the First and the Last.",
-   "Lt": 4181.629
+   "Lt": 4181.629,
+   "lu": -19.4
   },
   {
    "ref": "Acts 20:35b",
@@ -1534,7 +1677,8 @@
    "a": 406.62,
    "b": 409.53,
    "t": "It is more blessed to give than to receive.",
-   "Lt": 3759.192
+   "Lt": 3759.192,
+   "lu": -29.3
   }
  ]
 }

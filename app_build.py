@@ -81,7 +81,7 @@ def be_led(items):
         if x["sb"] - x["e"] < 60: continue          # a minute at least: the ones that carry you into prayer
         out.append({"id": "led:" + x["src"] + ("" if not x.get("n") else f":{x['n']}"), "src": x["src"], "sb": x["sb"], "e": x["e"], "who": it["who"],
                     "audio": it["audio"], "len": round(x["sb"] - x["e"]), "music": bool(x.get("music")), "power": int(x.get("power") or 4),
-                    "dur": it.get("dur"), **({"L": x["L"]} if x.get("L") else {})})   # L = the file's length as a browser reports it
+                    "dur": it.get("dur"), **({"L": x["L"]} if x.get("L") else {}), **({"lu": x["lu"]} if x.get("lu") is not None else {})})   # L = the file's length as a browser reports it; lu = how loud the prayer is (LUFS)
     return out
 
 def guided_lp(items):
@@ -91,7 +91,17 @@ def guided_lp(items):
     if not os.path.exists(p): return None
     x = json.load(open(p, encoding="utf-8")); it = items.get(x["src"])
     if not it or not it.get("audio"): return None
-    return {"src": x["src"], "who": it["who"], "audio": it["audio"], "a": x["a"], "b": x["b"], "at": x["at"], "music": bool(x.get("music")), **({"Lt": x["Lt"]} if x.get("Lt") else {})}
+    return {"src": x["src"], "who": it["who"], "audio": it["audio"], "a": x["a"], "b": x["b"], "at": x["at"], "music": bool(x.get("music")), **({"Lt": x["Lt"]} if x.get("Lt") else {}), **({"lu": x["lu"]} if x.get("lu") is not None else {})}
+
+def pray_level(P):
+    """How loud Pray's recordings are (tools/pray_loud.py, LUFS): the middle of them (lum), which the music under each is set
+    against; a prayer or reading far quieter than the rest (over 6 dB) is left out, since a phone cannot turn it up."""
+    vals = [x["lu"] for x in P["led"] + P["med"] + ([P["lp"]] if P.get("lp") else []) if x.get("lu") is not None]
+    if not vals: return P
+    import statistics
+    m = statistics.median(vals); P["lum"] = round(m, 1)
+    for k in ("led", "med"): P[k] = [x for x in P[k] if x.get("lu") is None or x["lu"] >= m - 6]
+    return P
 
 def big_picture(items, vser=None):
     """Big Picture: whole-Bible series heard in order, each with its own place. Episodes are items already in the app."""
@@ -476,7 +486,7 @@ def main():
             "sc": {"events": sc_events, "ids": [i["id"] for i in sc_items]}, "ptw": [i["id"] for i in ptw], "bp": big_picture(items, VSER),
             "topics": topics.build(items, CH, {i for lst in by_chapter.values() for i in lst} | {i for lst in by_book_ov.values() for i in lst}),
             "alias": {a.lower().replace(".", ""): b[0] for b in BOOKS for a in b[4] + [b[0], b[1]]},
-            "pray": {"moves": __import__("pray").build(), "led": be_led(items), "med": __import__("pray").meditate(items), "lp": guided_lp(items)}}
+            "pray": pray_level({"moves": __import__("pray").build(), "led": be_led(items), "med": __import__("pray").meditate(items), "lp": guided_lp(items)})}
     html = TEMPLATE.replace("__VERSION__", str(BUILD)).replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     open(OUT, "w", encoding="utf-8").write(html)
@@ -912,7 +922,7 @@ body.wsong-open #tabs{display:none}body.wsong-open{padding-bottom:0!important}
 .w-pk{background:var(--bg);width:100%;max-width:560px;max-height:80vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(20px + env(safe-area-inset-bottom))}.w-pk h3{margin:0 0 8px;font-weight:400;font-size:22px}
 .w-pl label{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line)}.w-pl input{width:22px;height:22px;flex:none}.w-pl b{display:block;font-weight:600}.w-pl small{display:block;color:var(--mute);font-size:13px}
 
-.pray .pr-seg{margin:12px 0 18px}.pray .pr-sub{margin:-8px auto 18px;max-width:330px;background:none;padding:0;gap:4px}.pray .pr-sub button{height:30px;font-size:13px;font-weight:600;color:#6b7088;border-radius:15px}.pray .pr-sub button.on{background:#f3e7c7;color:#5d4510;box-shadow:none}.led-lead{margin:18px 2px 14px;color:#5b6280;font-size:15px;line-height:1.45;text-align:center}.led,.med{padding:22px 8px 4px;text-align:center}.med{padding-top:18px}.led-who{font-size:30px;line-height:1.2;margin:12px 0 0;color:var(--ink)}.led-ctl{display:flex;align-items:center;justify-content:center;gap:26px;margin:30px 0 14px}.led-sk{width:44px;height:44px;border:0;background:none;color:#8a8fa6;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;border-radius:50%}.led-sk:active{background:rgba(27,36,64,.06)}.led-ring{position:relative;width:112px;height:112px;border:0;border-radius:50%;background:none;padding:0;cursor:pointer;color:#5d4510}.led-ring>svg{position:absolute;inset:0;width:100%;height:100%}.led-in svg{width:30px;height:30px}.led-tr{fill:none;stroke:rgba(201,162,74,.22);stroke-width:2.2}.led-fg{fill:none;stroke:#c9a24a;stroke-width:2.6;stroke-linecap:round;transition:stroke-dasharray .4s linear}.led-in{position:absolute;inset:12px;border-radius:50%;background:#fbf4e3;box-shadow:0 8px 22px rgba(120,92,30,.16),inset 0 0 0 1px rgba(201,162,74,.25);display:flex;align-items:center;justify-content:center;transition:transform .2s}.led-ring:active .led-in{transform:scale(.96)}.led-opt{display:flex;justify-content:center;gap:26px;margin:6px 0 4px}.led-opt button{border:0;background:none;color:#6b7088;font:600 14px -apple-system,system-ui,sans-serif;padding:8px 6px;min-height:38px;cursor:pointer}.pr-nav>span:empty{flex:1}.med-n{font-size:13.5px;color:var(--mute)}.med-q{margin:14px auto 0;max-width:24ch;font-size:24px;line-height:1.42;color:var(--ink);text-wrap:balance}.med-q.l{font-size:20px;line-height:1.4;max-width:29ch}.med-q.xl{font-size:17.5px;line-height:1.4;max-width:34ch}.med-q.xxl{font-size:16px;line-height:1.36;max-width:36ch}.pray .pr-band.sm{height:72px}.pray .pr-nav.flow{position:static;background:none;margin-top:6px}.pr-eb.err{color:#9a4a2a;letter-spacing:.04em;text-transform:none;font-size:13.5px;font-weight:600}.med-opt{margin:2px 0 0}.med-ref{margin-top:14px;font-size:13px;color:#6b7088}.med-by{margin-top:4px;font-size:12.5px;color:#8a8fa6}.med-ctl{display:flex;justify-content:center;margin:20px 0 4px;min-height:58px;align-items:center}.med-go{min-width:170px;height:54px;padding:0 30px;border-radius:27px;border:1px solid rgba(201,162,74,.45);background:#fbf4e3;color:#5d4510;font:600 16px -apple-system,system-ui,sans-serif;cursor:pointer}.lp-line{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 -6px}.lp-line .led-sk[hidden]{display:flex;visibility:hidden}.lp-pp{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px 0 8px;border-radius:22px;border:1px solid rgba(201,162,74,.4);background:#fbf4e3;color:#5d4510;font:600 14.5px -apple-system,system-ui,sans-serif;cursor:pointer}.lp-pp i{display:flex;width:30px;height:30px;align-items:center;justify-content:center}.lp-pp i svg{width:18px;height:18px}.pr-mu{margin:8px auto 0;max-width:300px;padding:12px 16px 10px;border-radius:16px;background:#fff;border:1px solid rgba(27,36,64,.08);text-align:left}.pr-mu-row{display:flex;justify-content:space-between;align-items:center;gap:12px;font:500 14.5px -apple-system,system-ui,sans-serif;color:var(--ink);padding:2px 0 10px}#prmulv{-webkit-appearance:none;appearance:none;width:100%;height:4px;margin:12px 0 10px;border-radius:2px;background:linear-gradient(#c9a24a,#c9a24a) 0/var(--p,40%) 100% no-repeat,#e8e3d6;outline:none}#prmulv::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid rgba(201,162,74,.5);box-shadow:0 1px 4px rgba(27,36,64,.18)}#prmulv::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid rgba(201,162,74,.5)}.pr-mu .bp-l{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute)}#prmulv:disabled{opacity:.4}.pr-mu-none{margin:0;font-size:13.5px;color:var(--mute);line-height:1.4}.pr-sw{appearance:none;-webkit-appearance:none;flex:none;width:46px;height:28px;border-radius:14px;background:#dcd8cc;position:relative;cursor:pointer;transition:background .2s;margin:0}.pr-sw::before{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .2s}.pr-sw:checked{background:#c9a24a}.pr-sw:checked::before{transform:translateX(18px)}.pr-head{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto}.pr-hc{min-width:150px;max-width:230px;display:flex;flex-direction:column;align-items:center;gap:5px}.pr-ha{flex:none;width:44px;height:44px;border:0;padding:0;background:radial-gradient(circle,rgba(27,36,64,.07) 0 16.5px,transparent 17.5px);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%}.pr-ha:active{background:radial-gradient(circle,rgba(27,36,64,.13) 0 16.5px,transparent 17.5px)}.pr-ha[disabled]{opacity:.28;cursor:default}.pr-hc .med-n{font-size:12px;color:var(--mute);letter-spacing:.01em}.pr-hc .pr-dots i{width:5px;height:5px}.pr-hc .pr-dots i.on{width:14px}.lp-opt{margin:2px 0 -4px}.med-pp{width:54px;height:54px;border-radius:50%;border:1px solid rgba(201,162,74,.35);background:#fbf4e3;color:#5d4510;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}.med-pp svg{width:22px;height:22px}.med-pp[disabled]{opacity:.45}
+.pray .pr-seg{margin:12px 0 18px}.pray .pr-sub{margin:-8px auto 18px;max-width:330px;background:none;padding:0;gap:4px}.pray .pr-sub button{height:30px;font-size:13px;font-weight:600;color:#6b7088;border-radius:15px}.pray .pr-sub button.on{background:#f3e7c7;color:#5d4510;box-shadow:none}.led-lead{margin:18px 2px 14px;color:#5b6280;font-size:15px;line-height:1.45;text-align:center}.led,.med{padding:22px 8px 4px;text-align:center}.med{padding-top:18px}.led-who{font-size:30px;line-height:1.2;margin:12px 0 0;color:var(--ink)}.led-ctl{display:flex;align-items:center;justify-content:center;gap:26px;margin:30px 0 14px}.led-sk{width:44px;height:44px;border:0;background:none;color:#8a8fa6;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;border-radius:50%}.led-sk:active{background:rgba(27,36,64,.06)}.led-ring{position:relative;width:112px;height:112px;border:0;border-radius:50%;background:none;padding:0;cursor:pointer;color:#5d4510}.led-ring>svg{position:absolute;inset:0;width:100%;height:100%}.led-in svg{width:30px;height:30px}.led-tr{fill:none;stroke:rgba(201,162,74,.22);stroke-width:2.2}.led-fg{fill:none;stroke:#c9a24a;stroke-width:2.6;stroke-linecap:round;transition:stroke-dasharray .4s linear}.led-in{position:absolute;inset:12px;border-radius:50%;background:#fbf4e3;box-shadow:0 8px 22px rgba(120,92,30,.16),inset 0 0 0 1px rgba(201,162,74,.25);display:flex;align-items:center;justify-content:center;transition:transform .2s}.led-ring:active .led-in{transform:scale(.96)}.led-opt{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:22px;margin:6px 0 4px}.led-pick{position:relative;display:inline-flex;align-items:center;color:#6b7088;font:600 14px -apple-system,system-ui,sans-serif;padding:8px 6px;min-height:38px}.led-pick select{position:absolute;inset:0;width:100%;height:100%;opacity:0;font-size:16px;cursor:pointer;-webkit-appearance:none;appearance:none}.led-opt button{border:0;background:none;color:#6b7088;font:600 14px -apple-system,system-ui,sans-serif;padding:8px 6px;min-height:38px;cursor:pointer}.pr-nav>span:empty{flex:1}.med-n{font-size:13.5px;color:var(--mute)}.med-q{margin:14px auto 0;max-width:24ch;font-size:24px;line-height:1.42;color:var(--ink);text-wrap:balance}.med-q.l{font-size:20px;line-height:1.4;max-width:29ch}.med-q.xl{font-size:17.5px;line-height:1.4;max-width:34ch}.med-q.xxl{font-size:16px;line-height:1.36;max-width:36ch}.pray .pr-band.sm{height:72px}.pray .pr-nav.flow{position:static;background:none;margin-top:6px}.pr-eb.err{color:#9a4a2a;letter-spacing:.04em;text-transform:none;font-size:13.5px;font-weight:600}.med-opt{margin:2px 0 0}.med-ref{margin-top:14px;font-size:13px;color:#6b7088}.med-by{margin-top:4px;font-size:12.5px;color:#8a8fa6}.med-ctl{display:flex;justify-content:center;margin:20px 0 4px;min-height:58px;align-items:center}.med-go{min-width:170px;height:54px;padding:0 30px;border-radius:27px;border:1px solid rgba(201,162,74,.45);background:#fbf4e3;color:#5d4510;font:600 16px -apple-system,system-ui,sans-serif;cursor:pointer}.lp-line{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0 -6px}.lp-line .led-sk[hidden]{display:flex;visibility:hidden}.lp-pp{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px 0 8px;border-radius:22px;border:1px solid rgba(201,162,74,.4);background:#fbf4e3;color:#5d4510;font:600 14.5px -apple-system,system-ui,sans-serif;cursor:pointer}.lp-pp i{display:flex;width:30px;height:30px;align-items:center;justify-content:center}.lp-pp i svg{width:18px;height:18px}.pr-mu{margin:8px auto 0;max-width:300px;padding:12px 16px 10px;border-radius:16px;background:#fff;border:1px solid rgba(27,36,64,.08);text-align:left}.pr-mu-row{display:flex;justify-content:space-between;align-items:center;gap:12px;font:500 14.5px -apple-system,system-ui,sans-serif;color:var(--ink);padding:2px 0 10px}#prmulv{-webkit-appearance:none;appearance:none;width:100%;height:4px;margin:12px 0 10px;border-radius:2px;background:linear-gradient(#c9a24a,#c9a24a) 0/var(--p,40%) 100% no-repeat,#e8e3d6;outline:none}#prmulv::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid rgba(201,162,74,.5);box-shadow:0 1px 4px rgba(27,36,64,.18)}#prmulv::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid rgba(201,162,74,.5)}.pr-mu .bp-l{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mute)}#prmulv:disabled{opacity:.4}.pr-mu-none{margin:0;font-size:13.5px;color:var(--mute);line-height:1.4}.pr-sw{appearance:none;-webkit-appearance:none;flex:none;width:46px;height:28px;border-radius:14px;background:#dcd8cc;position:relative;cursor:pointer;transition:background .2s;margin:0}.pr-sw::before{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .2s}.pr-sw:checked{background:#c9a24a}.pr-sw:checked::before{transform:translateX(18px)}.pr-head{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto}.pr-hc{min-width:150px;max-width:230px;display:flex;flex-direction:column;align-items:center;gap:5px}.pr-ha{flex:none;width:44px;height:44px;border:0;padding:0;background:radial-gradient(circle,rgba(27,36,64,.07) 0 16.5px,transparent 17.5px);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;border-radius:50%}.pr-ha:active{background:radial-gradient(circle,rgba(27,36,64,.13) 0 16.5px,transparent 17.5px)}.pr-ha[disabled]{opacity:.28;cursor:default}.pr-hc .med-n{font-size:12px;color:var(--mute);letter-spacing:.01em}.pr-hc .pr-dots i{width:5px;height:5px}.pr-hc .pr-dots i.on{width:14px}.lp-opt{margin:2px 0 -4px}.med-pp{width:54px;height:54px;border-radius:50%;border:1px solid rgba(201,162,74,.35);background:#fbf4e3;color:#5d4510;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}.med-pp svg{width:22px;height:22px}.med-pp[disabled]{opacity:.45}
 .pr-art{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 10px 30px rgba(27,36,64,.12);background:#eadfca;transform:translateZ(0)}
 .pr-art svg{display:block;width:100%;height:100%}
 .pr-still{height:calc(100svh - var(--tabh) - 330px);min-height:280px;max-height:560px}
@@ -2634,26 +2644,87 @@ function pmEl(){if(PM.el)return PM.el;const a=PM.el=$('#praym');
  a.addEventListener('timeupdate',()=>{const n=Date.now();if(n-PM.sv>5000){PM.sv=n;S.set('pmpos',{k:PM.k,t:Math.floor(a.currentTime)})}});
  AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause();if(PM.ms){PM.ms=false;if(cur)msSermon(cur)}}));
  return a}
-/* Music under the reading: your soaking music (the same files as Pray) plays softly while Bible narration plays.
-   iPhones ignore an audio element's volume, so the music (only the music) goes through a Web Audio gain; the narration
-   itself is never touched, so its lock screen and AirPods controls stay exactly as they are. The music follows the
-   narration: it fades in when the reading plays, out when it pauses or ends (a short gap between chapters is held). */
-const BED={plv:+S.get('bedlvp',0.25)||0.25,led:S.get('bedled',true)!==false,on:!!S.get('bedon',false),lv:+S.get('bedlv',0.2)||0.2,ctx:null,g:null,el:null,unl:false,t:null,url:null,id:null,sv:0,busy:false};
+/* Music under the reading and under every prayer: your soaking music (the same files as Pray) plays softly while Bible
+   narration or a prayer plays. It is a plain audio element, like Stillness (an iPhone keeps those playing beside another
+   recording, with the screen locked too; it pauses Web Audio). iPhones ignore an element's volume, so how soft it is
+   goes into the file itself: each MP3 frame carries a gain the decoder applies, and lowering it (1.5 dB a step, as
+   mp3gain does) makes a quieter copy without re-encoding; a WAV's samples are scaled. A gentle fade-in is put in the
+   same way where it starts. Other formats (rare) go through a Web Audio gain as before. */
+const BED={plv:+S.get('bedlvp',0.25)||0.25,led:S.get('bedled',true)!==false,on:!!S.get('bedon',false),lv:+S.get('bedlv',0.2)||0.2,ctx:null,g:null,el:null,unl:false,t:null,url:null,id:null,sv:0,busy:false,
+ src:null,st:null,mode:'',vt:null,ours:0};
+const VOLOK=(()=>{try{const a=new Audio();a.volume=0.5;return Math.abs(a.volume-0.5)<0.01}catch(e){return false}})();   /* false on an iPhone */
+/* MP3: every granule's global gain, where it is in the file (bit position), which frame, and its original value */
+function mp3Map(u8){let i=0;const n=u8.length;if(u8[0]===0x49&&u8[1]===0x44&&u8[2]===0x33)i=10+((u8[6]&127)<<21|(u8[7]&127)<<14|(u8[8]&127)<<7|(u8[9]&127));
+ const BR1=[0,32,40,48,56,64,80,96,112,128,160,192,224,256,320],BR2=[0,8,16,24,32,40,48,56,64,80,96,112,128,144,160],SR={3:[44100,48000,32000],2:[22050,24000,16000],0:[11025,12000,8000]};
+ const pos=[],frm=[],crc=[];let f=0,spf=1152,sr=44100,miss=0;
+ const hdr=k=>{if(k+4>n||u8[k]!==0xFF||(u8[k+1]&0xE0)!==0xE0)return null;const ver=(u8[k+1]>>3)&3,lay=(u8[k+1]>>1)&3,bri=u8[k+2]>>4,sri=(u8[k+2]>>2)&3;
+  if(ver===1||lay!==1||bri===0||bri===15||sri===3)return null;const kb=(ver===3?BR1:BR2)[bri],r=SR[ver][sri],pad=(u8[k+2]>>1)&1;
+  return {ver,r,len:Math.floor((ver===3?144000:72000)*kb/r)+pad,crc:!(u8[k+1]&1),nch:(u8[k+3]>>6)===3?1:2}};
+ while(i<n-4){const h=hdr(i);if(!h||(i+h.len<n-4&&!hdr(i+h.len))){i++;if(++miss>65536&&!pos.length)return null;continue}
+  if(i+h.len>n)break;sr=h.r;spf=h.ver===3?1152:576;const si=(i+4+(h.crc?2:0))*8,m1=h.ver===3;
+  const head=m1?9+(h.nch===1?5:3)+4*h.nch:8+(h.nch===1?1:2),slot=m1?59:63,ng=m1?2:1;
+  for(let g=0;g<ng;g++)for(let c=0;c<h.nch;c++){pos.push(si+head+(g*h.nch+c)*slot+21);frm.push(f)}
+  if(h.crc)crc.push([i,h.nch,m1]);f++;i+=h.len}
+ if(f<20)return null;const p=Uint32Array.from(pos),o=new Uint8Array(p.length);for(let k=0;k<p.length;k++)o[k]=bits8(u8,p[k]);
+ return {kind:'mp3',pos:p,frm:Uint32Array.from(frm),orig:o,crc,fps:sr/spf}}
+function bits8(u8,b){const B=b>>3,s=b&7;return ((u8[B]<<8|u8[B+1])>>(8-s))&255}
+function setBits8(u8,b,v){const B=b>>3,s=b&7,w=(u8[B]<<8|u8[B+1])&~(255<<(8-s))|(v<<(8-s));u8[B]=(w>>8)&255;u8[B+1]=w&255}
+function crc16(u8,i,nbits){let c=0xFFFF;const add=(v,nb)=>{for(let k=nb-1;k>=0;k--){const bit=(v>>k)&1,top=(c>>15)&1;c=(c<<1)&0xFFFF;if(top^bit)c^=0x8005}};
+ add(u8[i+2],8);add(u8[i+3],8);const s=(i+6)*8;for(let k=0;k<nbits;k++)add((u8[(s+k)>>3]>>(7-((s+k)&7)))&1,1);return c}
+/* WAV (16-bit PCM): where the samples are */
+function wavMap(u8){const dv=new DataView(u8.buffer,u8.byteOffset,u8.byteLength);if(u8.length<44||dv.getUint32(0)!==0x52494646||dv.getUint32(8)!==0x57415645)return null;
+ let i=12,fmt=null;while(i+8<=u8.length){const id=dv.getUint32(i),sz=dv.getUint32(i+4,true);if(id===0x666d7420)fmt={ch:dv.getUint16(i+10,true),sr:dv.getUint32(i+12,true),bits:dv.getUint16(i+22,true),tag:dv.getUint16(i+8,true)};
+  if(id===0x64617461&&fmt&&fmt.tag===1&&fmt.bits===16&&!((i+8)&1)){const n=Math.min(sz,u8.length-i-8)>>1;return {kind:'wav',off:i+8,n,orig:new Int16Array(u8.slice(i+8,i+8+n*2).buffer),sps:fmt.sr*fmt.ch}}
+  i+=8+sz+(sz&1)}return null}
+/* a copy of the piece, `steps` × 1.5 dB softer, fading in over 2 s from `at` seconds (null: no fade) */
+function bedSoft(steps,at){const s=BED.src,u8=s.u8,m=s.map,FADE=16;
+ if(m.kind==='mp3'){const f0=at==null?-1:Math.floor(at*m.fps),fn=Math.max(1,Math.round(2*m.fps));
+  for(let k=0;k<m.pos.length;k++){const fr=m.frm[k];let st=steps;if(f0>=0&&fr>=f0&&fr<f0+fn)st+=Math.round(FADE*(1-(fr-f0)/fn));setBits8(u8,m.pos[k],Math.max(0,m.orig[k]-st))}
+  for(const [i,nch,m1] of m.crc){const nb=m1?(nch===1?136:256):(nch===1?72:136),c=crc16(u8,i,nb);u8[i+4]=c>>8;u8[i+5]=c&255}}
+ else{const pcm=new Int16Array(u8.buffer,u8.byteOffset+m.off,m.n),g=Math.pow(10,-1.5*steps/20),s0=at==null?-1:Math.floor(at*m.sps),sn=2*m.sps;
+  for(let k=0;k<m.n;k++){let v=m.orig[k]*g;if(s0>=0&&k>=s0&&k<s0+sn)v*=Math.pow(10,-1.5*FADE*(1-(k-s0)/sn)/20);pcm[k]=v}}
+ return new Blob([u8],{type:s.type})}
+function bedSteps(v){return Math.max(0,Math.min(40,Math.round(-20*Math.log10(Math.max(0.001,v))/1.5)))}
 function bedEl(){if(BED.el)return BED.el;const b=BED.el=$('#bedm');
  AUDIO_EL.forEach(x=>x.addEventListener('play',()=>{if(BED.tail){BED.tail=false;bedSync()}}));
- b.addEventListener('pause',()=>{if(!bedWanted()||b.src===SILENT)return;const n=Date.now();BED.rts=(BED.rts||[]).filter(t=>n-t<10000);if(BED.rts.length>=3)return;BED.rts.push(n);   /* paused by the phone, not by us: once more */
-  setTimeout(()=>{if(bedWanted()&&b.paused){const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(bedLevel(),800)).catch(()=>{})}},400)});
- b.addEventListener('ended',()=>bedLoad(1).then(()=>{if(bedWanted())b.play().catch(()=>{})}));
+ b.addEventListener('pause',()=>{if(Date.now()-BED.ours<300||!bedWanted()||b.src===SILENT)return;   /* not one we made (a swap or our own pause) */const n=Date.now();BED.rts=(BED.rts||[]).filter(t=>n-t<10000);
+  dlog('music paused by the phone',{with:['audio','ledm','medm','lpm'].filter(i=>{const e=document.getElementById(i);return e&&!e.paused}).join(' ')||'nothing',tries:BED.rts.length});
+  if(BED.rts.length>=3)return;BED.rts.push(n);   /* paused by the phone, not by us: once more */
+  setTimeout(()=>{if(bedWanted()&&b.paused)bedStart()},400)});
+ b.addEventListener('ended',()=>bedLoad(1).then(ok=>{if(ok&&bedWanted())bedStart(0)}));
  b.addEventListener('timeupdate',()=>{const n=Date.now();if(BED.id&&n-BED.sv>5000){BED.sv=n;S.set('bedpos',{id:BED.id,t:Math.floor(b.currentTime)})}});return b}
+/* other formats only: the music through a Web Audio gain */
 function bedCtx(){if(BED.ctx)return BED.ctx;const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;
  try{BED.ctx=new C();const s=BED.ctx.createMediaElementSource(bedEl());BED.g=BED.ctx.createGain();BED.g.gain.value=0;s.connect(BED.g);BED.g.connect(BED.ctx.destination)}catch(e){BED.ctx=null;BED.g=null}
  try{if(navigator.audioSession)navigator.audioSession.type='playback'}catch(e){}return BED.ctx}
-function bedGain(v,ms){const b=bedEl();if(BED.g&&BED.ctx){const t=BED.ctx.currentTime,g=BED.g.gain;try{g.cancelScheduledValues(t);g.setValueAtTime(g.value,t);g.linearRampToValueAtTime(v,t+ms/1000)}catch(e){g.value=v}}else{try{b.volume=Math.max(0,Math.min(1,v))}catch(e){}}}
+/* the element's own volume, where a phone honours it: only for fading in and out */
+function bedVol(v,ms){const b=bedEl();clearInterval(BED.vt);if(!VOLOK)return;const v0=b.volume,n=Math.max(1,Math.round(ms/40));let k=0;
+ BED.vt=setInterval(()=>{k++;try{b.volume=Math.max(0,Math.min(1,v0+(v-v0)*k/n))}catch(e){}if(k>=n)clearInterval(BED.vt)},40)}
+/* set the music to `v` (0 fades it out); a different level makes a new copy, swapped in where it is */
+function bedGain(v,ms){const b=bedEl();
+ if(BED.mode==='wa'){const c=bedCtx();if(c&&BED.g){const t=c.currentTime,g=BED.g.gain;try{g.cancelScheduledValues(t);g.setValueAtTime(g.value,t);g.linearRampToValueAtTime(v,t+ms/1000)}catch(e){g.value=v}}return}
+ if(v<=0){bedVol(0,ms);return}
+ if(BED.src&&bedSteps(v)!==BED.st&&b.getAttribute('src')&&b.src!==SILENT){const t=b.currentTime,on=!b.paused;bedPut(v,null,t);if(on)b.play().catch(()=>{})}
+ bedVol(1,ms)}
+/* put the piece on the element at level v, fading in from `fade` (seconds) or not, at position t */
+function bedPut(v,fade,t){const b=bedEl(),s=bedSteps(v);BED.st=s;const bl=bedSoft(s,fade),old=BED.url;BED.url=URL.createObjectURL(bl);BED.ours=Date.now();b.src=BED.url;
+ if(t)b.addEventListener('loadedmetadata',()=>{try{b.currentTime=t}catch(e){}},{once:true});if(old)setTimeout(()=>URL.revokeObjectURL(old),3000);dlog('music level',{steps:s,dB:-1.5*s,fade:fade!=null,at:Math.round(t||0)})}
 /* which piece and where: carries on from where it last stopped, track after track */
 function bedLoad(step){return plLoad().then(L=>{if(!L.length)return false;const p=S.get('bedpos',null);let k=p?L.findIndex(x=>x.id===p.id):-1,t=0;
-  if(step){k=(Math.max(k,0)+step)%L.length;t=0}else if(k<0)k=0;else t=p.t||0;const tr=L[k];if(!step&&BED.id===tr.id&&BED.el&&BED.el.getAttribute('src'))return true;
-  return pdbDo('blob','readonly',x=>x.objectStore('blob').get(tr.id)).then(bl=>{if(!bl)return false;const b=bedEl();if(BED.url)URL.revokeObjectURL(BED.url);BED.url=URL.createObjectURL(bl);b.src=BED.url;BED.id=tr.id;S.set('bedpos',{id:tr.id,t});
-   if(t)b.addEventListener('loadedmetadata',()=>{try{b.currentTime=t}catch(e){}},{once:true});return true})}).catch(()=>false)}
+  if(step){k=(Math.max(k,0)+step)%L.length;t=0}else if(k<0)k=0;else t=p.t||0;const tr=L[k];if(!step&&BED.id===tr.id&&BED.src)return true;
+  return pdbDo('blob','readonly',x=>x.objectStore('blob').get(tr.id)).then(bl=>{if(!bl)return false;return bl.arrayBuffer().then(ab=>{const u8=new Uint8Array(ab);
+   let map=null;try{map=mp3Map(u8)||wavMap(u8)}catch(e){map=null}
+   BED.src={u8,map,type:bl.type||'audio/mpeg',t};BED.id=tr.id;BED.st=null;S.set('bedpos',{id:tr.id,t});
+   if(!map){BED.mode='wa';const b=bedEl();if(BED.url)URL.revokeObjectURL(BED.url);BED.url=URL.createObjectURL(bl);b.src=BED.url;if(t)b.addEventListener('loadedmetadata',()=>{try{b.currentTime=t}catch(e){}},{once:true})}
+   else BED.mode=map.kind;dlog('music piece',{kind:BED.mode,mb:Math.round(u8.length/1e5)/10,at:t});return true})})}).catch(e=>{dlog('music load failed',String(e).slice(0,80));return false})}
+/* start (or carry on) the music at its level, fading in */
+function bedStart(t0){const b=bedEl(),v=bedLevel();
+ if(BED.mode==='wa'){const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(v,1500)).catch(e=>dlog('music play refused',String(e).slice(0,60)));return}
+ if(!BED.src)return;const t=t0!=null?t0:(b.getAttribute('src')&&b.src!==SILENT?b.currentTime:BED.src.t||0);
+ if(VOLOK)try{b.volume=0}catch(e){}bedPut(v,t,t);if(BED.g)BED.g.gain.value=1;
+ b.play().then(()=>bedVol(1,1500)).catch(e=>dlog('music play refused',String(e).slice(0,60)))}
+/* how loud the music is right now (0 when it is not playing), as a gain */
+function bedNow(){const b=bedEl();if(b.paused||!b.getAttribute('src')||b.src===SILENT)return 0;if(BED.mode==='wa')return BED.g?BED.g.gain.value:0;return (BED.st==null?0:Math.pow(10,-1.5*BED.st/20))*(VOLOK?b.volume:1)}
 function bedNarr(){return !!(NAR&&cur===NAR.id)}
 function bedOn(){return BED.on}
 /* Pray (Be Led's prayers, Meditate's readings and stillness) has the music too, on its own switch (BED.led) and level (BED.plv) */
@@ -2662,27 +2733,32 @@ function bedPray(){return !!(BED.tail||(window.MED&&MED.on)||(window.LED&&LED.c&
    music off, or pause it from the lock screen or your earbuds */
 function bedOnAfter(){if(!BED.led||!(PL.list||[]).length)return;BED.tail=true;dlog('music carries on','after the amen');bedSync();
  if('mediaSession' in navigator){PM.ms=false;try{navigator.mediaSession.metadata=new MediaMetadata({title:'Prayer music',artist:'',album:'Pray'})}catch(e){}
-  [['play',()=>{BED.tail=true;bedSync()}],['pause',()=>bedStopAfter()],['seekbackward',null],['seekforward',null],['previoustrack',()=>{bedLoad(-1).then(()=>{if(bedWanted())bedEl().play().catch(()=>{})})}],['nexttrack',()=>{bedLoad(1).then(()=>{if(bedWanted())bedEl().play().catch(()=>{})})}]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}}
-function bedStopAfter(){if(!BED.tail)return;BED.tail=false;dlog('music stops','');bedGain(0,900);setTimeout(()=>{if(!bedWanted())bedEl().pause()},950)}
-function bedLevel(){return bedPray()?BED.plv:BED.lv}
+  [['play',()=>{BED.tail=true;bedSync()}],['pause',()=>bedStopAfter()],['seekbackward',null],['seekforward',null],['previoustrack',()=>{bedLoad(-1).then(ok=>{if(ok&&bedWanted())bedStart(0)})}],['nexttrack',()=>{bedLoad(1).then(ok=>{if(ok&&bedWanted())bedStart(0)})}]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}}
+function bedStopAfter(){if(!BED.tail)return;BED.tail=false;dlog('music stops','');bedGain(0,900);setTimeout(()=>{if(!bedWanted()){BED.ours=Date.now();bedEl().pause()}},950)}
+/* how loud the music is: your level; under a prayer, moved by how loud that pastor's recording is, so it sits the same
+   under every one */
+function bedVoice(){const lu=window.LP&&LP.c&&LP.c.busy()?(lpD()||{}).lu:window.MED&&MED.on?(medCur()||{}).lu:window.LED&&LED.id?(ledById(LED.id)||{}).lu:null;
+ return lu==null||PRAY.lum==null?1:Math.max(0.25,Math.min(1.6,Math.pow(10,(lu-PRAY.lum)/20)))}
+function bedLevel(){return bedPray()?BED.plv*bedVoice():BED.lv}
 function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(BED.tail)return BED.led;if(window.LED&&LED.c&&LED.c.busy())return BED.led;if(window.LP&&LP.c&&LP.c.busy())return BED.led;return bedOn()&&bedNarr()&&!audio.paused}
-function bedSync(){const b=bedEl();{const w=bedWanted(),k=w+'|'+(BED.ctx&&BED.ctx.state)+'|'+(b.getAttribute('src')||'').slice(0,5)+'|'+b.paused;if(DIAG.last.bed!==k){DIAG.last.bed=k;dlog('music',{wanted:w,ctx:BED.ctx?BED.ctx.state:'none',file:(b.getAttribute('src')||'none').slice(0,5),paused:b.paused,on:BED.led,pieces:(PL.list||[]).length})}}$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',bedOn());
- if(bedWanted()){clearTimeout(BED.t);const go=()=>{const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});b.play().then(()=>bedGain(bedLevel(),1500)).catch(()=>{})};
-  if(!b.getAttribute('src')||b.src===SILENT){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())go()})}else go();return}
- clearTimeout(BED.t);BED.t=setTimeout(()=>{if(bedWanted())return;bedGain(0,700);setTimeout(()=>{if(!bedWanted())b.pause()},750)},2500)}
-/* iPhones only start a sound from a tap: the first tap after turning the music on readies its player */
-/* a prayer or reading was tapped: wake the music in the same tap (an iPhone only lets a sound start from one) */
-function bedKick(){dlog('music kick',{on:BED.led,pieces:(PL.list||[]).length,ctx:BED.ctx?BED.ctx.state:'none'});if(!BED.led||!(PL.list||[]).length)return;const b=bedEl(),c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});
- if(b.getAttribute('src')&&b.src!==SILENT){if(b.paused)b.play().catch(()=>{})}else{b.src=SILENT;b.play().catch(()=>{})}}
-function bedUnlock(){const c0=BED.ctx;if(c0&&c0.state!=='running')c0.resume().catch(()=>{});if(!(BED.on||BED.led)||BED.unl)return;BED.unl=true;const b=bedEl(),c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{});
- if(!b.getAttribute('src')){b.src=SILENT;b.play().then(()=>{if(!bedWanted())b.pause()}).catch(()=>{BED.unl=false})}}
+function bedSync(){const b=bedEl();{const w=bedWanted(),k=w+'|'+BED.mode+'|'+(b.getAttribute('src')||'').slice(0,5)+'|'+b.paused;if(DIAG.last.bed!==k){DIAG.last.bed=k;dlog('music',{wanted:w,kind:BED.mode||'none',file:(b.getAttribute('src')||'none').slice(0,5),paused:b.paused,on:BED.led,pieces:(PL.list||[]).length})}}$('#bedb').hidden=!bedNarr();$('#bedb').classList.toggle('on',bedOn());
+ if(bedWanted()){clearTimeout(BED.t);
+  if(!BED.src){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())bedStart()});return}
+  if(b.paused||b.src===SILENT)bedStart();else bedGain(bedLevel(),1500);return}
+ clearTimeout(BED.t);BED.t=setTimeout(()=>{if(bedWanted())return;bedGain(0,700);setTimeout(()=>{if(!bedWanted()){BED.ours=Date.now();b.pause()}},750)},2500)}
+/* iPhones only start a sound from a tap: a prayer or reading was tapped, so the music's player is readied in that tap */
+function bedKick(){dlog('music kick',{on:BED.led,pieces:(PL.list||[]).length,kind:BED.mode||'none'});if(!BED.led||!(PL.list||[]).length)return;const b=bedEl();
+ if(BED.mode==='wa'){const c=bedCtx();if(c&&c.state!=='running')c.resume().catch(()=>{})}
+ if(b.paused&&(!b.getAttribute('src')||b.src===SILENT)){b.src=SILENT;b.play().catch(()=>{})}}
+function bedUnlock(){const c0=BED.ctx;if(c0&&c0.state!=='running')c0.resume().catch(()=>{});if(!(BED.on||BED.led)||BED.unl)return;BED.unl=true;const b=bedEl();
+ if(!b.getAttribute('src')){b.src=SILENT;b.play().then(()=>{if(!bedWanted()){BED.ours=Date.now();b.pause()}}).catch(()=>{BED.unl=false})}}
 ['touchend','click'].forEach(ev=>document.addEventListener(ev,bedUnlock,true));
 function bedPop(){const p=$('#bedpop');if(!p.hidden){p.hidden=true;return}
  plLoad().then(L=>{const have=L.length>0,pc=Math.round(BED.lv*100);
   const ld=false;p.innerHTML=`<label class="bp-row"><span><b>Soaking music under the ${ld?'prayer':'reading'}</b><small>${have?esc((L[0].a||'Your music')+' · plays softly behind '+(ld?'the prayer':'the narration')):'Your music is not on this phone yet'}</small></span><input type="checkbox" id="bedon"${bedOn()?' checked':''}${have?'':' disabled'}></label>`+
    (have?`<input type="range" id="bedlv" min="3" max="60" step="1" value="${pc}" aria-label="Music level"><div class="bp-l"><span>Softer</span><span id="bedpc">Music level ${pc}%</span><span>Louder</span></div>`:`<button id="bedget">Get it in Pray</button>`);
   p.hidden=false;const on=$('#bedon');if(on)on.onchange=()=>{if(ld){BED.led=on.checked;S.set('bedled',BED.led)}else{BED.on=on.checked;S.set('bedon',BED.on)}BED.unl=false;bedUnlock();bedSync()};
-  const lv=$('#bedlv');if(lv)lv.oninput=()=>{BED.lv=+lv.value/100;S.set('bedlv',BED.lv);$('#bedpc').textContent='Music level '+lv.value+'%';if(bedWanted())bedGain(BED.lv,150)};
+  const lv=$('#bedlv');if(lv){lv.oninput=()=>{BED.lv=+lv.value/100;S.set('bedlv',BED.lv);$('#bedpc').textContent='Music level '+lv.value+'%';if(bedWanted()&&BED.mode==='wa')bedGain(BED.lv,150)};lv.onchange=()=>{if(bedWanted())bedGain(bedLevel(),150)}}
   const gt=$('#bedget');if(gt)gt.onclick=()=>{p.hidden=true;setMini(true);const t=document.querySelector('#tabs [data-tab2=pray]');if(t)t.click()}})}
 /* the music lives on this phone: albums you bought (MP3s, or the store's ZIP), kept in IndexedDB, never uploaded */
 const PDB={db:null};
@@ -2801,30 +2877,35 @@ function prayArt(id,band){return `<svg viewBox="${band?'0 214 390 196':'0 0 390 
    Heitzig's: 3529 s for 3546 s); a phone that trusts the header measures on that shorter scale, one that counts frames
    on the true one. Once the file opens, its length on this phone says which, and every time is put on that scale. */
 function tscale(d,Lt){return Lt&&isFinite(d)&&d>0&&Math.abs(d-Lt)>0.3?d/Lt:1}
-function clipper(a,h){const c={a,t0:0,end:0,url:'',rate:1,tm:null,wd:null,ld:null,tries:0,state:'',fix:null};
+function clipper(a,h){const c={a,t0:0,end:0,url:'',rate:1,tm:null,wd:null,ld:null,tries:0,state:'',fix:null,r:1,endT:null,aE:null,aT:null};
  const st=s=>{if(c.state===s)return;c.state=s;if(h.state)h.state(s)},clr=()=>{clearTimeout(c.tm);clearTimeout(c.wd);clearTimeout(c.ld)};
  c.arm=()=>{clearTimeout(c.tm);if(!c.end||a.paused)return;const left=(c.end-a.currentTime)/(a.playbackRate||1);if(left<=0.03){c.fin();return}
   c.tm=setTimeout(()=>{if(!a.paused&&a.currentTime>=c.end-0.06)c.fin();else c.arm()},Math.max(15,left*1000-20))};
- c.fin=()=>{clr();if(c.state==='ended')return;c.stopAt=a.currentTime;dlog((a.id||'clip')+' stopped',{at:Math.round(a.currentTime*100)/100,end:c.end});st('ended');a.pause();if(h.end)h.end()};
+ /* a file whose length is misreported: the engine finds a time by that length (true × r), but once it plays its clock runs
+    at true speed — so the end is where it is now plus the true time still to go (re-anchored at every jump) */
+ c.anchor=()=>{if(c.endT==null)return;const t=a.currentTime;c.aE=t;c.aT=t/(c.r||1);c.end=t+(c.endT-c.aT);c.arm()};
+ c.trueAt=t=>c.aE==null?t/(c.r||1):c.aT+(t-c.aE);
+ c.fin=(why)=>{clr();if(c.state==='ended')return;c.stopAt=a.currentTime;dlog((a.id||'clip')+' stopped',{at:Math.round(a.currentTime*100)/100,end:Math.round(c.end*100)/100,why:why||'end reached',true_at:c.endT!=null?Math.round(c.trueAt(a.currentTime)*100)/100:undefined,r:c.r!==1?Math.round(c.r*1e5)/1e5:undefined});st('ended');a.pause();if(h.end)h.end()};
  c.watch=()=>{clearTimeout(c.wd);clearTimeout(c.ld);c.prog=Date.now();c.ld=setTimeout(()=>{if(c.state==='starting')st('loading')},3000);
   const chk=()=>{if(c.state!=='starting'&&c.state!=='loading')return;if(Date.now()-c.prog>25000){c.retry();return}c.wd=setTimeout(chk,2500)};c.wd=setTimeout(chk,2500)};   /* a retry only when nothing has arrived for 25 s */
  c.retry=()=>{if(c.tries>=1){c.err();return}c.tries++;c.chk=true;a.removeAttribute('src');try{a.load()}catch(e){}a.src=c.url;c.speed();a.play().catch(()=>{});c.watch()};
  c.err=()=>{clr();try{a.pause()}catch(e){}st('error');if(h.error)h.error()};
  c.speed=()=>{try{a.defaultPlaybackRate=c.rate;a.playbackRate=c.rate}catch(e){}};
- a.addEventListener('playing',()=>{clearTimeout(c.wd);clearTimeout(c.ld);c.tries=0;st('playing');c.arm()});
+ a.addEventListener('playing',()=>{clearTimeout(c.wd);clearTimeout(c.ld);c.tries=0;if(c.endT!=null&&c.aE==null)c.anchor();st('playing');c.arm()});
  ['progress','loadedmetadata','loadeddata','canplay','seeked'].forEach(e=>a.addEventListener(e,()=>{c.prog=Date.now()}));   /* bytes are arriving */
  a.addEventListener('waiting',()=>{if(c.state==='starting')return;clearTimeout(c.ld);c.ld=setTimeout(()=>{if(!a.paused&&a.readyState<3&&c.state==='playing')st('loading')},3000)});   /* while starting, the start's own 3 s timer says Loading… */
  a.addEventListener('pause',()=>{clearTimeout(c.tm);clearTimeout(c.ld);if(c.state==='playing'||c.state==='loading')st('paused')});
- ['seeked','ratechange'].forEach(e=>a.addEventListener(e,()=>c.arm()));
+ a.addEventListener('seeked',()=>{if(c.endT!=null)c.anchor();else c.arm()});a.addEventListener('ratechange',()=>c.arm());
+ a.addEventListener('durationchange',()=>{if(c.fix&&c.url&&isFinite(a.duration)&&a.duration>0){const e=c.end;c.fix(a.duration);if(c.endT!=null&&c.aE!=null)c.end=e}});   /* a revised length changes later jumps only */
  a.addEventListener('timeupdate',()=>{if(c.chk&&!a.paused&&a.currentTime>0){c.chk=false;if(a.currentTime<c.t0-0.5||a.currentTime>c.t0+3){try{a.currentTime=c.t0}catch(e){}return}}   /* an engine that ignored the time fragment: put it right once it plays */
   if(c.end&&!a.paused&&a.currentTime>=c.end-0.03)c.fin();else if(h.tick)h.tick()});
- a.addEventListener('ended',()=>c.fin());
+ a.addEventListener('ended',()=>c.fin('the file ended'));
  a.addEventListener('error',()=>{if(!a.getAttribute('src')||c.state===''||c.state==='ended')return;c.retry()});
- a.addEventListener('loadedmetadata',()=>{if(c.fix)c.fix(a.duration);if(Math.abs(a.currentTime-c.t0)>0.15)try{a.currentTime=c.t0}catch(e){}});
+ a.addEventListener('loadedmetadata',()=>{if(c.fix)c.fix(a.duration);if(Math.abs(a.currentTime-c.t0)>0.15)try{a.currentTime=c.t0}catch(e){}else if(c.endT!=null)c.anchor()});
  /* get the file ready while the screen shows it (a phone may wait for the tap anyway) */
  c.prep=(url,t0)=>{if(!a.paused||c.state==='starting')return;const u=url+'#t='+Math.max(0,t0).toFixed(2);if(a.getAttribute('src')===u)return;c.url=u;c.t0=t0;a.preload='metadata';a.src=u};
  /* start the stretch from its first word: call it straight from the tap */
- c.go=(url,t0,end,fix)=>{clr();c.t0=Math.max(0,t0);c.end=end;c.fix=fix||null;c.tries=0;c.chk=true;const u=url+'#t='+c.t0.toFixed(2);
+ c.go=(url,t0,end,fix,endT)=>{clr();c.t0=Math.max(0,t0);c.end=end;c.fix=fix||null;c.tries=0;c.chk=true;c.r=1;c.endT=endT==null?null:endT;c.aE=null;c.aT=null;const u=url+'#t='+c.t0.toFixed(2);
   if(a.getAttribute('src')!==u){c.url=u;a.src=u}else{c.url=u;try{a.currentTime=c.t0}catch(e){}}c.speed();st('starting');a.play().catch(()=>{});c.watch()};
  c.again=()=>{clr();c.chk=true;try{a.currentTime=c.t0}catch(e){}c.speed();st('starting');a.play().catch(()=>{});c.watch()};
  c.resume=()=>{if(!a.getAttribute('src'))return;if(a.currentTime<c.t0-0.5||a.currentTime>=c.end-0.05)try{a.currentTime=c.t0}catch(e){}st('starting');a.play().catch(()=>{});c.watch()};
@@ -2839,7 +2920,7 @@ function clipper(a,h){const c={a,t0:0,end:0,url:'',rate:1,tm:null,wd:null,ld:nul
 /* Be Led: a shuffle of pastors leading in prayer (the closing prayers of their sermons), one at a time, played right
    here on its own player: the ring plays and pauses, the small arrows either side go back or on 15 seconds, the arrows
    below go to the previous or next prayer. Nothing else on the screen but who is praying. */
-var LED={c:null,id:null,sp:+S.get('ledsp',1)||1,done:false,tail:false,tt:null,fd:null};   /* var: the music bed asks about it before this line runs */
+var LED={c:null,id:null,sp:+S.get('ledsp',1)||1,done:false,tail:false,tt:null,fd:null,who:S.get('ledwho','')||''};   /* var: the music bed asks about it before this line runs */
 const LED_SP=[1,1.1,1.25,0.9],
  PR_BACK=`<svg viewBox="0 0 28 28" width="30" height="30" aria-hidden="true"><path d="M7.6 9.2A8.6 8.6 0 1 1 5.4 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7.9 4.6v4.9h4.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="14.4" y="18.2" text-anchor="middle" font-size="7.6" font-weight="600" font-family="-apple-system,system-ui,sans-serif" fill="currentColor">15</text></svg>`,
  PR_FWD=PR_BACK.replace('<svg ','<svg style="transform:scaleX(-1)" ').replace('<text ','<text transform="translate(28 0) scale(-1 1)" ');
@@ -2852,7 +2933,13 @@ function ledOrd(){const L=ledList(),ids=L.map(x=>x.id),have=new Set(ids);let o=S
  if(!o||!Array.isArray(o.o)||o.o.length!==ids.length||o.o.some(i=>!have.has(i)))o=fresh();
  else if(o.d!==dayNo()){o.p++;o.d=dayNo();if(o.p>=o.o.length)o=fresh()}
  S.set('ledord',o);return o}
-function ledCur(){const L=ledList();if(!L.length)return null;const o=ledOrd();return ledById(o.o[o.p])||L[0]}
+function ledOk(id){const x=ledById(id);return !!x&&(!LED.who||x.who===LED.who)}
+/* with a pastor chosen: his prayer at or after today's place in the shuffle */
+function ledCur(){const L=ledList();if(!L.length)return null;const o=ledOrd();
+ if(LED.who&&!ledOk(o.o[o.p])){let p=o.o.findIndex((id,j)=>j>o.p&&ledOk(id));if(p<0)p=o.o.findIndex(ledOk);if(p>=0){o.p=p;S.set('ledord',o)}}
+ return ledById(o.o[o.p])||L[0]}
+function ledPrev(){const o=ledOrd();return o.o.some((id,j)=>j<o.p&&ledOk(id))}
+function ledWhos(){const s=[];ledList().forEach(x=>{if(!s.includes(x.who))s.push(x.who)});return s}
 /* where the prayer starts and ends, in seconds from the file's start: from its measured length (sb/e count back from the end) */
 function ledSpan(x,L){L=L||x.L||x.dur||0;return L?[Math.max(0,L-x.sb),Math.max(0,L-x.sb)+Math.max(1,x.sb-(x.e||0))]:[0,1e9]}
 function ledC(){if(LED.c)return LED.c;const a=$('#ledm');
@@ -2871,8 +2958,8 @@ function ledPP(){const x=ledCur(),c=ledC();if(!x)return;dlog('tap Be Led',x.id+'
  LED.id=x.id;LED.done=false;c.rate=LED.sp;try{c.a.volume=0}catch(e){}LED.fade=true;const [t0,end]=ledSpan(x);
  c.go(x.audio,t0,end,d=>{if(isFinite(d)&&d>0){const [s,e]=ledSpan(x,d);c.t0=s;c.end=e}});ledPaint()}
 function ledSeek(d){if(LED.c&&LED.id)LED.c.seek(d);ledRing()}
-function ledGo(d){const L=ledList();if(!L.length)return;const o=ledOrd(),on=!!(LED.c&&LED.c.busy());let p=o.p+d;
- if(p>=o.o.length){S.set('ledord',null);const n=ledOrd();n.p=0;S.set('ledord',n)}else{o.p=Math.max(0,p);S.set('ledord',o)}
+function ledGo(d){const L=ledList();if(!L.length)return;const o=ledOrd(),on=!!(LED.c&&LED.c.busy());let p=o.p+d;while(p>=0&&p<o.o.length&&!ledOk(o.o[p]))p+=d;
+ if(p<0)return;if(p>=o.o.length){S.set('ledord',null);const n=ledOrd();n.p=Math.max(0,n.o.findIndex(ledOk));S.set('ledord',n)}else{o.p=p;S.set('ledord',o)}
  if(LED.c)LED.c.clear();LED.id=null;LED.done=false;
  if(view==='pray'&&PR.mode==='led'){const y=scrollY;render();window.scrollTo(0,y)}if(on)ledPP();else bedSync()}
 function ledSession(){if(!('mediaSession' in navigator))return;const x=ledById(LED.id)||{};PM.ms=false;
@@ -2891,18 +2978,25 @@ function ledMusic(){const x=LED.id&&ledById(LED.id);return !!(x&&x.music)}
 /* the heading with its arrows: ‹ BE LED ›, ‹ MEDITATE › (n of N), ‹ DRAW NEAR › (the movements) — always in view */
 function prHead(eb,id,attr,prev,next,sub,err,lb){return `<div class="pr-head"><button class="pr-ha" ${attr}="-1" aria-label="Previous ${lb}"${prev?'':' disabled'}>${PR_AR(-1)}</button><div class="pr-hc"><div class="pr-eb${err?' err':''}"${id?` id="${id}"`:''}>${esc(eb)}</div>${sub||''}</div><button class="pr-ha" ${attr}="1" aria-label="Next ${lb}"${next?'':' disabled'}>${PR_AR(1)}</button></div>`}
 function ledView(){const x=ledCur();if(!x)return `<p class="led-lead">Prayers are on their way.</p>`;
- return `<div class="pr-art pr-band">${prayArt('pl',1)}</div><section class="led" aria-label="Be Led">${prHead('Be Led','ledeb','data-ledgo',ledOrd().p>0,true,'',false,'prayer')}<p class="led-who serif">${esc(NAMES[x.who]||x.who)}</p>
+ return `<div class="pr-art pr-band">${prayArt('pl',1)}</div><section class="led" aria-label="Be Led">${prHead('Be Led','ledeb','data-ledgo',ledPrev(),true,'',false,'prayer')}<p class="led-who serif">${esc(NAMES[x.who]||x.who)}</p>
 <div class="led-ctl"><button class="led-sk" data-ledsk="-15" aria-label="Back 15 seconds">${PR_BACK}</button><button class="led-ring" data-ledpp aria-label="Pray"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="47" class="led-tr"/><circle id="ledfg" cx="50" cy="50" r="47" class="led-fg" pathLength="100" stroke-dasharray="0 100" style="opacity:0" transform="rotate(-90 50 50)"/></svg><span class="led-in">${PR_PLAY}</span></button><button class="led-sk" data-ledsk="15" aria-label="Forward 15 seconds">${PR_FWD}</button></div>
-<div class="led-opt"><button data-ledsp aria-label="Speed">${LED.sp}×</button>${prMuBtn()}</div>${prMuPanel()}</section>`}
-/* Meditate: one thing Jesus said, read by a pastor from his own sermon: once, a breath, again; then be still with it
-   (your music under it) until you say Amen. No clock. Its own speed, remembered. */
+<div class="led-opt"><button data-ledsp aria-label="Speed">${LED.sp}×</button><label class="led-pick"><select data-ledwho aria-label="Which pastor"><option value="">All pastors</option>${ledWhos().map(w=>`<option value="${esc(w)}"${LED.who===w?' selected':''}>${esc(NAMES[w]||w)}</option>`).join('')}</select><span aria-hidden="true">${esc(LED.who?(NAMES[LED.who]||LED.who):'All pastors')} ⌄</span></label>${prMuBtn()}</div>${prMuPanel()}</section>`}
+/* Meditate: one thing Jesus said, read once by a pastor from his own sermon; then be still with it (your music under
+   it) until you say Amen. A shuffle, a new one each day. No clock. Its own speed, remembered. */
 var MED={c:null,on:false,step:'',k:0,t:null,pick:null,paused:false,sp:+S.get('medsp',1)||1};   /* var: the music bed may ask about it before this line runs */
 const MED_SP=[1,0.9,0.8,1.1,1.25];
 function medList(){return (PRAY.med||[]).filter(x=>x.audio)}
-function medIdx(){const L=medList();if(!L.length)return -1;const k=L.findIndex(x=>x.ref===MED.pick);return k>=0?k:dayNo()%L.length}
+function medKey(x){return x.ref+'|'+x.who}
+function medFresh(){const k=medList().map(medKey);return {o:prShuf(k.length).map(i=>k[i]),p:0,d:dayNo()}}
+/* today's place in the shuffle: none again until all are heard, a new one each day */
+function medOrd(){const keys=medList().map(medKey),have=new Set(keys);let o=S.get('medord',null);
+ if(!o||!Array.isArray(o.o)||o.o.length!==keys.length||o.o.some(k=>!have.has(k)))o=medFresh();
+ else if(o.d!==dayNo()){o.p++;o.d=dayNo();if(o.p>=o.o.length)o=medFresh()}
+ S.set('medord',o);return o}
+function medIdx(){const L=medList();if(!L.length)return -1;if(MED.pick){const k=L.findIndex(x=>x.ref===MED.pick);if(k>=0)return k}const o=medOrd(),k=L.findIndex(x=>medKey(x)===o.o[o.p]);return k>=0?k:0}
 function medCur(){const k=medIdx();return k<0?null:medList()[k]}
 function medC(){if(MED.c)return MED.c;const a=$('#medm');
- MED.c=clipper(a,{state:s=>{if(s==='loading'||s==='playing')medEb();bedSync()},end:()=>{if(MED.on&&(MED.step==='listen'||MED.step==='again'))medNext()},error:()=>{if(!MED.on)return;MED.on=false;MED.paused=false;clearTimeout(MED.t);MED.step='err';medPaint();bedSync()}});
+ MED.c=clipper(a,{state:s=>{if(s==='loading'||s==='playing')medEb();bedSync()},end:()=>{if(MED.on&&MED.step==='listen')medNext()},error:()=>{if(!MED.on)return;MED.on=false;MED.paused=false;clearTimeout(MED.t);MED.step='err';medPaint();bedSync()}});
  a.addEventListener('play',()=>{AUDIO_EL.forEach(b=>{if(!b.paused)b.pause()});{const p=pmEl();if(!p.paused)p.pause()}if(LED.c&&LED.c.busy())LED.c.pause();if(window.LP&&LP.c&&LP.c.busy())LP.c.pause();medSession()});
  AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(MED.on)medStop(false)}));return MED.c}
 function medSession(){if(!('mediaSession' in navigator))return;const m=medCur()||{};PM.ms=false;
@@ -2918,16 +3012,15 @@ function medFit(){const q=document.querySelector('.med-q'),c=document.querySelec
  for(let k=0;k<12&&fs>15&&c.getBoundingClientRect().bottom+window.scrollY>lim;k++){fs=Math.max(15,fs-1);q.style.fontSize=fs+'px';q.style.lineHeight='1.38'}}
 window.addEventListener('resize',()=>{if(view==='pray'&&PR.mode==='med')medFit()});window.addEventListener('orientationchange',()=>setTimeout(()=>{if(view==='pray'&&PR.mode==='med')medFit()},300));
 function medStart(){const m=medCur();if(!m)return;dlog('tap Begin',m.ref);bedKick();if(!audio.paused)audio.pause();{const pa=pmEl();if(!pa.paused)pa.pause()}if(LED.c&&LED.c.busy())LED.c.pause();
- const c=medC();clearTimeout(MED.t);MED.on=true;MED.k=0;MED.paused=false;MED.step='listen';c.rate=MED.sp;c.go(m.audio,m.a,m.b,d=>{const r=tscale(d,m.Lt);c.t0=m.a*r;c.end=m.b*r;dlog('scale',{length:d,true_length:m.Lt,ratio:Math.round(r*100000)/100000})});medPaint();bedSync()}
-function medNext(){if(!MED.on)return;const f=window.MED_FAST||1;
- if(MED.k===0){MED.k=1;MED.step='pause';medPaint();bedSync();MED.t=setTimeout(()=>{if(!MED.on)return;MED.step='again';MED.c.again();medPaint();bedSync()},6000*f);return}
+ const c=medC();clearTimeout(MED.t);MED.on=true;MED.k=0;MED.paused=false;MED.step='listen';c.rate=MED.sp;c.go(m.audio,m.a,m.b,d=>{const r=c.r=tscale(d,m.Lt);c.t0=m.a*r;dlog('scale',{length:d,true_length:m.Lt,ratio:Math.round(r*100000)/100000})},m.b);medPaint();bedSync()}
+function medNext(){if(!MED.on)return;
  MED.step='still';if(MED.c)MED.c.clear();medPaint();bedSync()}
 function medPause(){const c=MED.c;if(!MED.on||!c||MED.step==='pause'||MED.step==='still')return;MED.paused=!MED.paused;if(MED.paused)c.pause();else c.resume();medPaint();bedSync()}
 function medStop(done){MED.on=false;MED.paused=false;clearTimeout(MED.t);MED.step=done?'done':'';if(MED.c)MED.c.clear();medPaint();bedSync()}
-function medGo(d){const L=medList(),k=medIdx()+d;if(k<0||k>=L.length)return;if(MED.on)medStop(false);MED.pick=L[k].ref;MED.step='';medPaint()}
+function medGo(d){if(!medList().length)return;const o=medOrd(),p=o.p+d;if(p<0)return;if(MED.on)medStop(false);S.set('medord',p>=o.o.length?medFresh():Object.assign(o,{p}));MED.pick=null;MED.step='';medPaint()}
 function medView(){const L=medList(),m=medCur(),k=medIdx();if(!m)return `<p class="led-lead">The sayings are on their way.</p>`;const long=m.t.length>150;
  const ctl=MED.step==='still'?`<button class="med-go" data-medamen>Amen</button>`:MED.on?`<button class="med-pp" data-medpp aria-label="${MED.paused?'Go on':'Pause'}"${MED.step==='pause'?' disabled':''}>${MED.paused?PR_PLAY:PR_PAUSE}</button>`:`<button class="med-go" data-medgo>Begin</button>`;
- return `<div class="pr-art pr-band${long?' sm':''}">${prayArt('pm',1)}</div><section class="med${MED.on?' on':''}" aria-label="Meditate">${prHead(medLabel(),'medeb','data-medgo2',k>0,k<L.length-1,`<span class="med-n">${k+1} of ${L.length}</span>`,MED.step==='err','saying')}<p class="med-q serif${m.t.length>330?' xl xxl':m.t.length>240?' xl':m.t.length>=140?' l':''}">${esc(m.t)}</p><div class="med-ref">${esc(m.ref)}</div>${m.who?`<div class="med-by">Read by ${esc(NAMES[m.who]||m.who)}</div>`:''}
+ return `<div class="pr-art pr-band${long?' sm':''}">${prayArt('pm',1)}</div><section class="med${MED.on?' on':''}" aria-label="Meditate">${prHead(medLabel(),'medeb','data-medgo2',medOrd().p>0,true,`<span class="med-n">${medOrd().p+1} of ${L.length}</span>`,MED.step==='err','saying')}<p class="med-q serif${m.t.length>330?' xl xxl':m.t.length>240?' xl':m.t.length>=140?' l':''}">${esc(m.t)}</p><div class="med-ref">${esc(m.ref)}</div>${m.who?`<div class="med-by">Read by ${esc(NAMES[m.who]||m.who)}</div>`:''}
 <div class="med-ctl">${ctl}</div><div class="led-opt med-opt"><button data-medsp aria-label="Reading speed">${MED.sp}×</button>${prMuBtn()}</div>${prMuPanel()}</section>`}
 /* Guided with a pastor: one of the library's pastors praying the Lord's Prayer through (data/guided_lp.json), played
    from his sermon; the movement on screen follows him, the arrows go to a movement in his prayer */
@@ -2939,12 +3032,12 @@ function lpC(){if(LP.c)return LP.c;const a=$('#lpm');
  AUDIO_EL.forEach(b=>b.addEventListener('play',()=>{if(!a.paused)a.pause()}));return LP.c}
 function lpLive(){return !!(LP.c&&LP.c.a.getAttribute('src')&&!LP.done&&LP.c.state!=='error'&&LP.c.state!=='')}
 /* the movement on screen follows him */
-function lpFollow(){if(!LP.c.busy())return;const x=lpD(),t=LP.c.a.currentTime,r=LP.r||1;let k=0;x.at.forEach((s,i)=>{if(t>=s*r-0.3)k=i});if(k!==PR.mv&&view==='pray'&&PR.mode==='guided'){PR.mv=k;PR.anim='l';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}}
+function lpFollow(){if(!LP.c.busy())return;const x=lpD(),t=LP.c.trueAt(LP.c.a.currentTime);let k=0;x.at.forEach((s,i)=>{if(t>=s-0.3)k=i});if(k!==PR.mv&&view==='pray'&&PR.mode==='guided'){PR.mv=k;PR.anim='l';const y=scrollY;render();PR.anim='';window.scrollTo(0,y)}}
 function lpPP(){const x=lpD();if(!x)return;dlog('tap Pray it with',LP.c?LP.c.state:'new');bedKick();const c=lpC();
  if(c.a.getAttribute('src')&&!LP.done&&c.state!=='error'&&c.state!==''){if(c.busy())c.pause();else c.resume();return}
  LP.done=false;c.rate=1;LP.r=1;const t0=PR.mv>0&&x.at[PR.mv]!=null?x.at[PR.mv]:x.a;
- c.go(x.audio,t0,x.b,d=>{const r=LP.r=tscale(d,x.Lt);c.t0=t0*r;c.end=x.b*r;dlog('scale',{length:d,true_length:x.Lt,ratio:Math.round(r*100000)/100000})});lpPaint()}
-function lpSeek(d){const x=lpD(),c=LP.c,r=LP.r||1;if(!lpLive())return;try{c.a.currentTime=Math.max(x.a*r,Math.min(x.b*r-0.5,c.a.currentTime+d))}catch(e){}}
+ c.go(x.audio,t0,x.b,d=>{const r=LP.r=c.r=tscale(d,x.Lt);c.t0=t0*r;dlog('scale',{length:d,true_length:x.Lt,ratio:Math.round(r*100000)/100000})},x.b);lpPaint()}
+function lpSeek(d){const x=lpD(),c=LP.c,r=LP.r||1;if(!lpLive())return;try{c.a.currentTime=Math.max(x.a*r,Math.min(c.end-0.5,c.a.currentTime+d))}catch(e){}}
 function lpSession(){if(!('mediaSession' in navigator))return;const x=lpD();PM.ms=false;try{navigator.mediaSession.metadata=new MediaMetadata({title:"The Lord's Prayer",artist:NAMES[x.who]||x.who,album:'Pray'})}catch(e){}
  [['play',()=>{if(!LP.c.busy())lpPP()}],['pause',()=>{if(LP.c.busy())LP.c.pause()}],['seekbackward',()=>lpSeek(-15)],['seekforward',()=>lpSeek(15)],['previoustrack',()=>prGo(-1)],['nexttrack',()=>prGo(1)]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}
 function lpMusic(){return true}
@@ -2971,11 +3064,12 @@ function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='
  document.querySelectorAll('[data-medgo2]').forEach(b=>b.onclick=()=>medGo(+b.dataset.medgo2));
  document.querySelectorAll('[data-lpp]').forEach(b=>b.onclick=lpPP);document.querySelectorAll('[data-lpsk]').forEach(b=>b.onclick=()=>lpSeek(+b.dataset.lpsk));if(PR.mode==='guided'&&lpD())lpPaint();
  document.querySelectorAll('[data-ledpp]').forEach(b=>b.onclick=ledPP);document.querySelectorAll('[data-ledsk]').forEach(b=>b.onclick=()=>ledSeek(+b.dataset.ledsk));document.querySelectorAll('[data-ledgo]').forEach(b=>b.onclick=()=>ledGo(+b.dataset.ledgo));
+ document.querySelectorAll('[data-ledwho]').forEach(s=>s.onchange=()=>{LED.who=s.value;S.set('ledwho',LED.who);const on=!!(LED.c&&LED.c.busy());if(LED.id&&!ledOk(LED.id)){if(LED.c)LED.c.clear();LED.id=null;LED.done=false}const y=scrollY;render();window.scrollTo(0,y);if(on&&!LED.id)ledPP()});
  document.querySelectorAll('[data-ledsp]').forEach(b=>b.onclick=()=>{LED.sp=LED_SP[(LED_SP.indexOf(LED.sp)+1)%LED_SP.length];S.set('ledsp',LED.sp);if(LED.c)LED.c.setRate(LED.sp);b.textContent=LED.sp+'×'});
  document.querySelectorAll('[data-medsp]').forEach(b=>b.onclick=()=>{MED.sp=MED_SP[(MED_SP.indexOf(MED.sp)+1)%MED_SP.length];S.set('medsp',MED.sp);if(MED.c)MED.c.setRate(MED.sp);b.textContent=MED.sp+'×'});
  document.querySelectorAll('[data-prmu]').forEach(b=>b.onclick=()=>{PR.mu=!PR.mu;const p=$('#prmu');if(p)p.hidden=!PR.mu;b.setAttribute('aria-expanded',PR.mu)});
  {const on=$('#prmuon'),lv=$('#prmulv');if(on)on.onchange=()=>{BED.led=on.checked;S.set('bedled',BED.led);BED.unl=false;bedUnlock();bedSync();const b=$('[data-prmu]');if(b)b.textContent='♪ Music '+(BED.led?'on':'off');if(lv)lv.disabled=!BED.led};
-  if(lv)lv.oninput=()=>{BED.plv=+lv.value/100;lv.style.setProperty('--p',((lv.value-3)/57*100).toFixed(1)+'%');S.set('bedlvp',BED.plv);if(bedWanted()&&bedPray())bedGain(BED.plv,120)}}
+  if(lv){lv.oninput=()=>{BED.plv=+lv.value/100;lv.style.setProperty('--p',((lv.value-3)/57*100).toFixed(1)+'%');S.set('bedlvp',BED.plv);if(bedWanted()&&bedPray()&&BED.mode==='wa')bedGain(bedLevel(),120)};lv.onchange=()=>{if(bedWanted()&&bedPray())bedGain(bedLevel(),120)}}}
  if(PR.mode==='led')ledPaint();if(PR.mode==='med')medFit();
  document.querySelectorAll('[data-pm]').forEach(b=>b.onclick=pmToggle);
  document.querySelectorAll('[data-pms]').forEach(b=>b.onclick=()=>pmSkip(+b.dataset.pms));
@@ -3393,7 +3487,7 @@ const APPV=__VERSION__,UPD={ready:null,tap:0,t0:Date.now()};
    dlog(id+' '+ev,{at:Math.round(a.currentTime*10)/10,host:h,ready:a.readyState,net:a.networkState,buf:b,err:a.error?a.error.code:undefined,vol:id==='bedm'&&window.BED&&BED.g?Math.round(BED.g.gain.value*100)/100:undefined,ctx:id==='bedm'&&window.BED&&BED.ctx?BED.ctx.state:undefined})};
   ['loadstart','loadedmetadata','canplay','playing','waiting','stalled','pause','ended','error','emptied','abort'].forEach(ev=>a.addEventListener(ev,()=>say(ev)));
   a.addEventListener('progress',()=>{const n=Date.now();if(n-pg>4000){pg=n;say('progress')}})})})();document.addEventListener('pointerdown',()=>{UPD.tap=Date.now()},true);
-function anyPlaying(){return ['audio','audiofx','praym','ledm','medm','lpm'].some(i=>{const a=document.getElementById(i);return a&&!a.paused})}
+function anyPlaying(){return ['audio','audiofx','praym','ledm','medm','lpm','bedm'].some(i=>{const a=document.getElementById(i);return a&&!a.paused})}
 function updGo(){if(!UPD.ready)return;let k='';try{k=sessionStorage.getItem('sc:rl')}catch(e){}if(k===UPD.ready)return;try{sessionStorage.setItem('sc:rl',UPD.ready)}catch(e){}location.replace(location.pathname+'?v='+UPD.ready)}
 function updMaybe(){if(!UPD.ready||anyPlaying())return;if(document.hidden||(Date.now()-UPD.t0<4000&&Date.now()-UPD.tap>4000))updGo()}
 function checkV(){fetch('version.txt?'+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.text():'').then(t=>{if(!(+t>APPV)||UPD.ready===t)return;
