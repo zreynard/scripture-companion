@@ -16,9 +16,15 @@ def lufs(path, t0, dur):
     return (float(i[-1]) if i else None), (float(pk[-1]) if pk else None)
 
 def length(path):
-    p = subprocess.run(["ffmpeg", "-hide_banner", "-i", path, "-f", "null", "-"], capture_output=True, text=True, timeout=900)   # stats on: the last time= is the decoded length
-    t = re.findall(r"time=(\d+):(\d+):([\d.]+)", p.stderr)
-    return int(t[-1][0]) * 3600 + int(t[-1][1]) * 60 + float(t[-1][2]) if t else None
+    """The decoded length: every sample counted (8 kHz mono, 2 bytes each), not the header's estimate."""
+    p = subprocess.Popen(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", path, "-ac", "1", "-ar", "8000", "-f", "s16le", "-"], stdout=subprocess.PIPE)
+    n = 0
+    while True:
+        c = p.stdout.read(1 << 20)
+        if not c: break
+        n += len(c)
+    p.wait()
+    return n / 16000 if n else None
 
 def jobs():
     h = open(os.path.join(HERE, "out", "site", "index.html"), encoding="utf-8").read()
@@ -69,15 +75,15 @@ def merge(logs):
     for x in L["prayers"]:
         k = ("led", "led:" + x["src"] + ("" if not x.get("n") else f":{x['n']}"))
         if k in got: x["lu"] = got[k]; n += 1
-    json.dump(L, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    json.dump(L, open(p, "w", encoding="utf-8"), indent=1)
     p = os.path.join(HERE, "data", "meditate.json"); M = json.load(open(p, encoding="utf-8"))
     for x in M["sayings"]:
         k = ("med", f'{x["src"]}@{x["a"]}')
         if k in got: x["lu"] = got[k]; n += 1
-    json.dump(M, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    json.dump(M, open(p, "w", encoding="utf-8"), indent=1)
     p = os.path.join(HERE, "data", "guided_lp.json"); G = json.load(open(p, encoding="utf-8"))
     if ("lp", "lp") in got: G["lu"] = got[("lp", "lp")]; n += 1
-    json.dump(G, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    json.dump(G, open(p, "w", encoding="utf-8"), indent=1)
     print(f"{n} stretches given their loudness ({len(got)} measured)")
 
 if __name__ == "__main__":
