@@ -1,0 +1,16 @@
+# Meditate: each chosen reading set on His exact first and last words, and its file's true length (tools/med_find.py fix).
+name: Meditate fix
+on: workflow_dispatch
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q -r requirements.txt faster-whisper numpy
+      - run: python app_build.py >/dev/null
+      - run: python tools/med_find.py fix

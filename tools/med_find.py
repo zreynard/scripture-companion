@@ -187,5 +187,41 @@ def check():
         except Exception as ex:
             print(f"== {x['ref']}: {type(ex).__name__} {str(ex)[:80]}", flush=True)
 
+def fix():
+    """Every reading in tools/med_check.json set on His exact first and last words: the stretch around it heard
+    (small.en), matched to the saying's text "t", the start put in the pause before the first word and the end in the
+    pause after the last; and the file's true length counted frame by frame (some headers understate it)."""
+    from faster_whisper import WhisperModel
+    import clip_probe as CP
+    model = WhisperModel("small.en", device="cpu", compute_type="int8")
+    t = open(os.path.join(HERE, "out", "site", "index.html"), encoding="utf-8").read()
+    D, _ = json.JSONDecoder().raw_decode(t[t.index("const D=") + 8:])
+    out = []
+    for x in json.load(open(os.path.join(HERE, "tools", "med_check.json")))["sayings"]:
+        it = D["items"].get(x["src"]); r = dict(x)
+        try:
+            if not it: r["note"] = "recording not in the app"; out.append(r); continue
+            if "buzzsprout.com" in it["audio"]: r["note"] = "Buzzsprout: kept as found"; out.append(r); continue
+            data = requests.get(it["audio"], headers=trim.H, timeout=900).content
+            pcm = trim.decode(data); lo = max(0, x["a"] - 5); hi = x["b"] + 5
+            ws = [(a + lo, b + lo, w) for a, b, w in trim.words_of(pcm[int(lo * 16000): int(hi * 16000)], model)]
+            T = [norm(w) for w in x["t"].split() if norm(w)]; W = [norm(w[2]) for w in ws]
+            sm = difflib.SequenceMatcher(None, T, W, autojunk=False); bl = [b for b in sm.get_matching_blocks() if b.size]
+            if not bl: r["note"] = "words not found"; out.append(r); continue
+            j0, j1 = bl[0].b, bl[-1].b + bl[-1].size - 1
+            cover = sum(b.size for b in bl) / max(1, len(T))
+            prev_end = ws[j0 - 1][1] if j0 > 0 else ws[j0][0] - 1; nxt = ws[j1 + 1][0] if j1 + 1 < len(ws) else ws[j1][1] + 1
+            a = max(prev_end + 0.05, ws[j0][0] - 0.15); b = min(nxt - 0.05, ws[j1][1] + 0.3)
+            r.update(a=round(a, 2), b=round(b, 2), cover=round(cover, 2), heard=" ".join(w[2] for w in ws[j0:j1 + 1]),
+                     before=" ".join(w[2] for w in ws[max(0, j0 - 6):j0]), after=" ".join(w[2] for w in ws[j1 + 1:j1 + 6]),
+                     gap_before=round(ws[j0][0] - prev_end, 2), gap_after=round(nxt - ws[j1][1], 2), was=[x["a"], x["b"]])
+            if not re.search(r"\.(m4a|mp4)(\?|$)", it["audio"]):
+                sc = CP.scan(data)
+                if sc: r["Lt"] = round(sc[1], 3); r["Le"] = round(sc[2], 3)
+        except Exception as ex: r["err"] = f"{type(ex).__name__} {str(ex)[:80]}"
+        out.append(r); print(json.dumps(r, ensure_ascii=False), flush=True)
+    os.makedirs(OUT, exist_ok=True); json.dump({"sayings": out}, open(os.path.join(OUT, "fixed.json"), "w"), indent=1, ensure_ascii=False)
+
 if __name__ == "__main__":
+    if sys.argv[1] == "fix": fix(); sys.exit()
     {"find": lambda: run(int(sys.argv[2]), int(sys.argv[3])), "report": report, "check": check}[sys.argv[1]]()

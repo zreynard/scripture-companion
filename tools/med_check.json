@@ -1,384 +1,1224 @@
 {
  "sayings": [
   {
-   "ref": "Matthew 11:28-30",
-   "name": "Come to Me",
-   "src": "b8719da192a6",
-   "who": "Platt",
-   "a": 2257.12,
-   "b": 2276.7,
-   "t": "Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls. For my yoke is easy, and my burden is light.",
-   "why": "ESV. Full, uninterrupted reading; slow (2.7 wps) and followed by 'Oh, the wonder of this text.' No adjustment."
+   "ref": "John 3:16-17",
+   "name": "For God So Loved",
+   "src": "da5a8e2976d4",
+   "who": "Vaughan",
+   "a": 98.71,
+   "b": 109.45,
+   "t": "For God so loved the world, that He gave His only Son, that whoever believes in Him should not perish but have eternal life. For God did not send His Son into the world to condemn the world, but in order that the world might be saved through Him.",
+   "why": "Vaughan's formal Scripture reading; only clean one (Platt repeats a line)"
   },
   {
-   "ref": "Matthew 6:6",
-   "name": "Your Father Who Sees in Secret",
-   "src": "476959fca2a1",
-   "who": "Platt",
-   "a": 335.19,
-   "b": 347.47,
-   "t": "When you pray, go into your room and shut the door and pray to your Father who is in secret. And your Father who sees in secret will reward you.",
-   "why": "ESV (he begins at 'When you pray'). Clean, whisper-timed, dyn 12.9. Alt: Platt 14e38fa59532 (202.1-219.1, 'Being with God in Quiet', slower 1.9 wps) but its times come from captions, so less exact. No adjustment."
-  },
-  {
-   "ref": "John 14:27",
-   "name": "Peace I Leave with You",
-   "src": "f37738eeab8d",
+   "ref": "Luke 23:34a",
+   "name": "Father, Forgive Them",
+   "src": "9aa377775652",
    "who": "Skip",
-   "a": 1083.91,
-   "b": 1100.25,
-   "t": "Peace I leave with you, My peace I give to you; not as the world gives do I give to you. Let not your heart be troubled, neither let it be afraid.",
-   "why": "NKJV. Slowest (2.05 wps) and most expressive (dyn 18.6) of the two clean Skip readings. No adjustment."
+   "a": 2443.28,
+   "b": 2446.83,
+   "t": "Father, forgive them, for they do not know what they do.",
+   "why": "Read as the passage; trailing narration about the garments trimmed"
   },
   {
-   "ref": "John 15:5",
-   "name": "I Am the Vine",
+   "ref": "John 19:30a",
+   "name": "It Is Finished",
+   "src": "32f421efd3c9",
+   "who": "Vaughan",
+   "a": 532.65,
+   "b": 533.61,
+   "t": "It is finished.",
+   "why": "Weighty reading (dyn 16.6) followed by 'the word of God'; narration after it trimmed, check the cut"
+  },
+  {
+   "ref": "Matthew 27:46b",
+   "name": "Why Have You Forsaken Me?",
+   "src": "303dae57abac",
+   "who": "Skip",
+   "a": 1681.32,
+   "b": 1686.55,
+   "t": "My God, My God, why have You forsaken Me?",
+   "why": "Slow (1.86 w/s), followed by 'this was a guttural scream'; Aramaic + 'that is' trimmed"
+  },
+  {
+   "ref": "Mark 14:36",
+   "name": "Not My Will",
+   "src": "36081634f92e",
+   "who": "Skip",
+   "a": 1411.06,
+   "b": 1426.62,
+   "t": "Abba, Father, all things are possible for You. Take this cup away from Me; nevertheless, not what I will, but what You will.",
+   "why": "Very slow and expressive (1.55 w/s, dyn 22.4)"
+  },
+  {
+   "ref": "Luke 23:46a",
+   "name": "Into Your Hands",
+   "src": "9aa377775652",
+   "who": "Skip",
+   "a": 3237.62,
+   "b": 3243.07,
+   "t": "Father, into Your hands I commit My spirit.",
+   "why": "Slow (1.58 w/s), introduced as 'the seventh saying on the cross'; narration trimmed"
+  },
+  {
+   "ref": "Luke 23:43",
+   "name": "Today in Paradise",
+   "src": "f471fea5492a",
+   "who": "Vaughan",
+   "a": 304.31,
+   "b": 308.25,
+   "t": "Truly, I say to you, today you will be with Me in paradise.",
+   "why": "Complete, clean reading; the others drop 'Truly'"
+  },
+  {
+   "ref": "Mark 12:29-31",
+   "name": "The Greatest Commandment",
+   "src": "05aa3a9ec0f5",
+   "who": "Skip",
+   "a": 2598.58,
+   "b": 2633.36,
+   "t": "The first of all the commandments is: 'Hear, O Israel, the Lord our God, the Lord is one. And you shall love the Lord your God with all your heart, with all your soul, with all your mind, and with all your strength.' This is the first commandment. And the second, like it, is this: 'You shall love your neighbor as yourself.' There is no other commandment greater than these.",
+   "why": "Slow and expressive (2.11 w/s, dyn 17.8); the scribe's question and 'Jesus answered him' trimmed"
+  },
+  {
+   "ref": "John 15:4",
+   "name": "Abide in Me",
    "src": "3f6959e7717c",
    "who": "Vaughan",
-   "a": 117.01,
-   "b": 126.57,
-   "t": "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.",
-   "why": "ESV. Clean; most expressive (dyn 13.1) of Vaughan's five clean readings. No adjustment."
+   "a": 107.26,
+   "b": 116.89,
+   "t": "Abide in Me, and I in you. As the branch cannot bear fruit by itself, unless it abides in the vine, neither can you, unless you abide in Me.",
+   "why": "Vaughan reading John 15; every reading starts after 'Abide', so it is extended 1 word"
   },
   {
-   "ref": "John 14:1-3",
-   "name": "Let Not Your Hearts Be Troubled",
-   "src": "8af60d507011",
-   "who": "Platt",
-   "a": 279.88,
-   "b": 298.98,
-   "t": "Do not let your hearts be troubled. Trust in God; trust also in me. In my Father's house are many rooms; if it were not so, I would have told you. I am going there to prepare a place for you. And if I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am.",
-   "why": "NIV (1984). Complete reading; Vaughan's alternative clips off the first and last words. ('me. me.' in the transcript is likely a recognition echo.) No adjustment."
-  },
-  {
-   "ref": "John 16:33",
-   "name": "I Have Overcome the World",
-   "src": "94581b667d03",
-   "who": "Vaughan",
-   "a": 279.89,
-   "b": 289.19,
-   "t": "I have said these things to you, that in me you may have peace. In the world you will have tribulation. But take heart; I have overcome the world.",
-   "why": "ESV. Clean, read as Scripture ('This is the word of God for the people of God' follows), dyn 13.8. No adjustment."
-  },
-  {
-   "ref": "John 14:6",
-   "name": "The Way, the Truth, the Life",
-   "src": "8af60d507011",
-   "who": "Platt",
-   "a": 308.02,
-   "b": 319.16,
-   "t": "I am the way, and the truth, and the life. No one comes to the Father except through me.",
-   "why": "ESV. Slowest (1.92 wps), by far the most dynamic (dyn 33.9); sermon on the exclusivity of Christ. Transcript shows 'No No one' (likely an emphatic 'No—no one' or an echo). Clean alternative: Vaughan c8b556df74d3 234.5-240.3. No adjustment."
-  },
-  {
-   "ref": "John 11:25-26",
-   "name": "The Resurrection and the Life",
-   "src": "47d573149a10",
-   "who": "Platt",
-   "a": 972.49,
-   "b": 986.89,
-   "t": "I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live, and everyone who lives and believes in me shall never die. Do you believe this?",
-   "why": "ESV. Slower and more deliberate (2.41 wps) than Vaughan's (3.51). No adjustment."
-  },
-  {
-   "ref": "John 10:10-11",
-   "name": "The Good Shepherd",
-   "src": "8ccc29e82b62",
-   "who": "Vaughan",
-   "a": 47.65,
-   "b": 57.89,
-   "t": "The thief comes only to steal and kill and destroy. I came that they may have life and have it abundantly. I am the good shepherd. The good shepherd lays down his life for the sheep.",
-   "why": "ESV. One continuous reading of vv.10-11, made by joining Vaughan's 10:10 clip (start 47.65) and his 10:11 clip (end 57.89) from the same recording. This captures 'abundantly', which every 10:10 clip ends just before. Ref widened to 10:10-11. No word-count estimate needed."
-  },
-  {
-   "ref": "Luke 22:42",
-   "name": "Not My Will, but Yours",
-   "src": "b1efd2386adf",
-   "who": "Skip",
-   "a": 868.38,
-   "b": 883.41,
-   "t": "Father, if it is Your will, take this cup away from Me; nevertheless not My will, but Yours, be done.",
-   "why": "NKJV. Very slow and weighty (1.4 wps, dyn 22.1). No adjustment."
-  },
-  {
-   "ref": "John 15:9-11",
-   "name": "Abide in My Love",
-   "src": "10c50197304c",
-   "who": "Vaughan",
-   "a": 91.27,
-   "b": 107.4,
-   "t": "As the Father has loved me, so have I loved you. Abide in my love. If you keep my commandments, you will abide in my love, just as I have kept my Father's commandments and abide in his love. These things I have spoken to you, that my joy may be in you, and that your joy may be full.",
-   "why": "ESV. Clean, read as Scripture ('The Word of God for the people of God' follows), dyn 13.1. Every clip ends before the final word 'full', so b is extended by 1 word (+0.27 s at 3.69 wps)."
-  },
-  {
-   "ref": "Revelation 3:20",
-   "name": "I Stand at the Door and Knock",
-   "src": "b2f77c36b9ed",
-   "who": "Vaughan",
-   "a": 2526.77,
-   "b": 2537.93,
-   "t": "Behold, I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me.",
-   "why": "ESV. Clean and unhurried (2.96 wps, dyn 13.4); about equal to Skip eefced1ea727 (NKJV), so Vaughan was chosen to spread the pastors. No adjustment."
-  },
-  {
-   "ref": "John 8:12",
-   "name": "The Light of the World",
-   "src": "df36bff9db17",
-   "who": "Skip",
-   "a": 939.35,
-   "b": 949.89,
-   "t": "I am the light of the world. He who follows Me shall not walk in darkness, but have the light of life.",
-   "why": "NKJV. Slowest clean reading (2.24 wps). No adjustment."
-  },
-  {
-   "ref": "John 6:35",
-   "name": "The Bread of Life",
-   "src": "3c09f72277cd",
-   "who": "Skip",
-   "a": 3172.0,
-   "b": 3180.58,
-   "t": "I am the bread of life. He who comes to Me shall never hunger, and he who believes in Me shall never thirst.",
-   "why": "NKJV. Clean, the most expressive reading (dyn 13.5); followed by 'he has fulfilled that promise'. No adjustment."
-  },
-  {
-   "ref": "John 6:37",
-   "name": "I Will Never Cast Out",
-   "src": "d0e4dd5978d0",
-   "who": "Platt",
-   "a": 516.09,
-   "b": 521.09,
-   "t": "All that the Father gives me will come to me, and whoever comes to me I will never cast out.",
-   "why": "ESV. Every clip misses the opening word(s) and the closing 'cast out'. This one needs the fewest added: a moved 1 word earlier for 'All' (-0.23 s) and b extended 2 words for 'cast out' (+0.45 s) at 4.42 wps."
-  },
-  {
-   "ref": "John 14:18",
-   "name": "I Will Not Leave You Orphans",
+   "ref": "John 14:23",
+   "name": "We Will Make Our Home",
    "src": "e765c9e8f5b1",
    "who": "Vaughan",
-   "a": 115.9,
-   "b": 120.52,
-   "t": "I will not leave you as orphans; I will come to you.",
-   "why": "ESV. Clean, introduced as 'Jesus speaking'; slower than Skip's (3.06 vs 3.55 wps), dyn 16.9. No adjustment."
+   "a": 151.94,
+   "b": 159.14,
+   "t": "If anyone loves Me, he will keep My word, and My Father will love him, and We will come to him and make Our home with him.",
+   "why": "Complete, expressive (dyn 14.1)"
   },
   {
-   "ref": "Matthew 6:33",
-   "name": "Seek First the Kingdom",
-   "src": "5b1cb5f255e5",
-   "who": "PAM",
-   "a": 3312.39,
-   "b": 3320.03,
-   "t": "But seek first the kingdom of God and his righteousness, and all these things will be added to you.",
-   "why": "ESV. Philip Anthony Mitchell, the most passionate reading (dyn 18.4, 2.74 wps), delivered as the climax: 'I got to give you something.' No adjustment."
-  },
-  {
-   "ref": "John 15:13",
-   "name": "Greater Love Has No One",
-   "src": "fbf8c20fb3c6",
-   "who": "Vaughan",
-   "a": 107.97,
-   "b": 112.53,
-   "t": "Greater love has no one than this, that someone lay down his life for his friends.",
-   "why": "ESV. Introduced with 'These are the very words of Jesus'; more expressive than Skip's (dyn 9.7 vs 6.8). No adjustment."
-  },
-  {
-   "ref": "John 7:37-38",
-   "name": "If Anyone Thirsts",
-   "src": "a962fd347d1c",
-   "who": "Vaughan",
-   "a": 73.39,
-   "b": 81.99,
-   "t": "If anyone thirsts, let him come to me and drink. Whoever believes in me, as the Scripture has said, 'Out of his heart will flow rivers of living water.'",
-   "why": "ESV. The only clean reading (Skip's three run on into v.39); read as Scripture ('This is the word of God...' follows). No adjustment."
-  },
-  {
-   "ref": "Matthew 28:18-20",
-   "name": "I Am with You Always",
-   "src": "352c6830ae9d",
-   "who": "Vaughan",
-   "a": 164.75,
-   "b": 182.41,
-   "t": "All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the very end of the age.",
-   "why": "ESV (transcript has 'to the very end', kept as heard). Framed as 'hear these words as a disciple of Christ today' and followed by 'The word of God'. Whisper-timed; Platt's two NIV readings use caption times. No adjustment."
-  },
-  {
-   "ref": "Matthew 16:24-26",
-   "name": "Lose Your Life to Find It",
-   "src": "931e721c60cd",
-   "who": "Skip",
-   "a": 1103.26,
-   "b": 1132.02,
-   "t": "If anyone desires to come after Me, let him deny himself, and take up his cross, and follow Me. For whoever desires to save his life will lose it, but whoever loses his life for My sake will find it. For what profit is it to a man if he gains the whole world, and loses his own soul? Or what will a man give in exchange for his soul?",
-   "why": "NKJV. Complete and clean, deliberate (2.46 wps). Also covers Mark 8:34, which was dropped. No adjustment."
-  },
-  {
-   "ref": "John 10:27-28",
-   "name": "My Sheep Hear My Voice",
-   "src": "d864168cfea9",
-   "who": "Skip",
-   "a": 3182.41,
-   "b": 3196.08,
-   "t": "My sheep hear My voice, and I know them, and they follow Me. And I give them eternal life, and they shall never perish; neither shall anyone snatch them out of My hand.",
-   "why": "NKJV. Expressive (dyn 17.7). The clip starts with the end of v.26 ('my sheep. As I said to you,'), so a is moved 6 words later (+2.29 s at 2.62 wps). The transcript ends 'my Father's hand'; that may be a recognition slip, so the NKJV 'My hand' is shown."
-  },
-  {
-   "ref": "John 20:29",
-   "name": "Blessed Who Have Not Seen",
-   "src": "615eb49ffa73",
+   "ref": "Matthew 5:43-45",
+   "name": "Love Your Enemies",
+   "src": "333d9c4c3ab9",
    "who": "Platt",
-   "a": 1529.86,
-   "b": 1535.78,
-   "t": "Have you believed because you have seen me? Blessed are those who have not seen and yet have believed.",
-   "why": "ESV. The only reading with no inserted comment and a good lead-out ('Oh, do you hear it...'); dyn 14.4. a moved 3 words earlier to include 'Have you believed' (-0.82 s at 3.64 wps)."
+   "a": 590.69,
+   "b": 610.59,
+   "t": "You have heard that it was said, 'You shall love your neighbor and hate your enemy.' But I say to you, love your enemies and pray for those who persecute you, so that you may be sons of your Father who is in heaven. For He makes His sun rise on the evil and on the good, and sends rain on the just and on the unjust.",
+   "why": "Platt reading the passage straight through; extended 1 word for the last word, 'unjust'"
   },
   {
-   "ref": "John 8:31-32",
-   "name": "The Truth Will Set You Free",
+   "ref": "John 13:34-35",
+   "name": "Love One Another",
+   "src": "7e9ac3817db7",
+   "who": "Skip",
+   "a": 2977.65,
+   "b": 2998.17,
+   "t": "A new commandment I give to you, that you love one another; as I have loved you, that you also love one another. By this all will know that you are My disciples, if you have love for one another.",
+   "why": "Slow (2.07 w/s); only reading"
+  },
+  {
+   "ref": "Luke 9:23-24",
+   "name": "Take Up Your Cross Daily",
+   "src": "b3f0b3cc5065",
+   "who": "Skip",
+   "a": 1405.06,
+   "b": 1422.58,
+   "t": "If anyone desires to come after Me, let him deny himself, and take up his cross daily, and follow Me. For whoever desires to save his life will lose it, but whoever loses his life for My sake will save it.",
+   "why": "Clean and complete, deliberate (2.32 w/s)"
+  },
+  {
+   "ref": "Matthew 23:37",
+   "name": "O Jerusalem, Jerusalem",
+   "src": "dfe3a008553b",
+   "who": "Skip",
+   "a": 1744.86,
+   "b": 1760.0,
+   "t": "O Jerusalem, Jerusalem, the one who kills the prophets and stones those who are sent to her! How often I wanted to gather your children together, as a hen gathers her chicks under her wings, but you were not willing!",
+   "why": "Read as a lament (dyn 18.1); extended 1 word at the start for 'O' and 2 at the end for 'not willing'"
+  },
+  {
+   "ref": "Mark 5:36",
+   "name": "Only Believe",
+   "src": "4ff8098e462d",
+   "who": "Skip",
+   "a": 1110.88,
+   "b": 1115.86,
+   "t": "Do not be afraid; only believe.",
+   "why": "Very slow and emphatic (1.4 w/s, dyn 22)"
+  },
+  {
+   "ref": "Matthew 14:27",
+   "name": "Take Heart, It Is I",
+   "src": "21212a415729",
+   "who": "PAM",
+   "a": 2461.3,
+   "b": 2466.5,
+   "t": "Take heart; it is I. Do not be afraid.",
+   "why": "PAM, slow and dramatic (2.0 w/s, dyn 22.3); the only complete one"
+  },
+  {
+   "ref": "Matthew 16:15",
+   "name": "Who Do You Say I Am?",
+   "src": "0d0ef0c4e8c7",
+   "who": "PAM",
+   "a": 149.22,
+   "b": 156.75,
+   "t": "But what about you? Who do you say I am?",
+   "why": "Slow and deliberate (1.46 w/s, dyn 20)"
+  },
+  {
+   "ref": "Mark 8:36-37",
+   "name": "Gain the Whole World",
+   "src": "9b7abb1410bc",
+   "who": "Skip",
+   "a": 2787.56,
+   "b": 2794.3,
+   "t": "What will it profit a man if he gains the whole world, and loses his own soul? Or what will a man give in exchange for his soul?",
+   "why": "Only reading; clean but quick"
+  },
+  {
+   "ref": "John 8:36",
+   "name": "Free Indeed",
    "src": "0df277ab51d5",
    "who": "Vaughan",
-   "a": 181.37,
-   "b": 189.17,
-   "t": "If you abide in my word, you are truly my disciples, and you will know the truth, and the truth will set you free.",
-   "why": "ESV. Clean, highest coverage, dyn 13.5. No adjustment."
+   "a": 210.07,
+   "b": 213.69,
+   "t": "So if the Son sets you free, you will be free indeed.",
+   "why": "Formal reading ending with 'the word of God'; complete"
   },
   {
-   "ref": "John 17:3",
-   "name": "This Is Eternal Life",
-   "src": "2de8bf34433c",
+   "ref": "Matthew 6:19-21",
+   "name": "Treasures in Heaven",
+   "src": "e88c81e7ecb1",
    "who": "Skip",
-   "a": 519.03,
-   "b": 529.6,
-   "t": "This is eternal life, that they may know You, the only true God, and Jesus Christ whom You have sent.",
-   "why": "NKJV. Slow, prayerful reading (2.03 wps). No adjustment."
+   "a": 2107.97,
+   "b": 2129.61,
+   "t": "Do not lay up for yourselves treasures on earth, where moth and rust destroy and where thieves break in and steal; but lay up for yourselves treasures in heaven, where neither moth nor rust destroys and where thieves do not break in and steal. For where your treasure is, there your heart will be also.",
+   "why": "Clean, word-exact NKJV"
   },
   {
-   "ref": "Matthew 5:8",
-   "name": "The Pure in Heart",
-   "src": "b9c21e96c4e8",
+   "ref": "Matthew 6:25-27",
+   "name": "Do Not Worry",
+   "src": "28d44a56c38e",
    "who": "Skip",
-   "a": 946.97,
-   "b": 953.13,
-   "t": "Blessed are the pure in heart, for they shall see God.",
-   "why": "NKJV. Slow (2.01 wps), dyn 13.5, whisper-timed. Alt: Platt e84e430f2fca 642.6-649.7 (1.72 wps, 'so good' follows) but its times come from captions. No adjustment."
+   "a": 1901.95,
+   "b": 1927.32,
+   "t": "Therefore I say to you, do not worry about your life, what you will eat or what you will drink; nor about your body, what you will put on. Is not life more than food and the body more than clothing? Look at the birds of the air, for they neither sow nor reap nor gather into barns; yet your heavenly Father feeds them. Are you not of more value than they? Which of you by worrying can add one cubit to his stature?",
+   "why": "The only clean reading (the others insert comments); extended 1 word for 'stature'; tiny repeat of 'life'"
   },
   {
-   "ref": "Matthew 7:7-8",
-   "name": "Ask, Seek, Knock",
-   "src": "4d22fdb84b8b",
+   "ref": "Matthew 6:28-30",
+   "name": "Consider the Lilies",
+   "src": "28d44a56c38e",
    "who": "Skip",
-   "a": 3011.88,
-   "b": 3021.04,
-   "t": "Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you. For everyone who asks receives, and he who seeks finds, and to him who knocks the door will be opened.",
-   "why": "NKJV. The only complete reading with no break: Platt restarts mid-verse, and Skip's other clip has a comment inside it. Quick (4.85 wps), but it needs no adjustment."
+   "a": 1943.13,
+   "b": 1962.81,
+   "t": "Why do you worry about clothing? Consider the lilies of the field, how they grow: they neither toil nor spin; and yet I say to you that even Solomon in all his glory was not arrayed like one of these. Now if God so clothes the grass of the field, which today is, and tomorrow is thrown into the oven, will He not much more clothe you, O you of little faith?",
+   "why": "Clean, complete reading (Platt's has 'the flowers' added; PAM's has comments)"
   },
   {
-   "ref": "Matthew 22:37-39",
-   "name": "Love the Lord Your God",
-   "src": "169d72578b7d",
+   "ref": "Matthew 19:26",
+   "name": "All Things Are Possible",
+   "src": "01600baad953",
    "who": "Skip",
-   "a": 4052.14,
-   "b": 4062.2,
-   "t": "Love the Lord your God with all your heart, with all your soul, with all your mind. This is the first and the greatest commandment. And the second is like it: You will love your neighbor as yourself.",
-   "why": "Close to NIV, read quickly in a survey sermon. The only reading, and clean. No adjustment."
+   "a": 2169.65,
+   "b": 2179.51,
+   "t": "With men this is impossible, but with God all things are possible.",
+   "why": "Slowest and most expressive (1.31 w/s, dyn 27.4)"
   },
   {
-   "ref": "John 4:13-14",
-   "name": "Living Water",
-   "src": "3f0866d3ad5d",
+   "ref": "Mark 9:23",
+   "name": "If You Can Believe",
+   "src": "c9d22405fe89",
    "who": "Skip",
-   "a": 2773.83,
-   "b": 2791.85,
-   "t": "Whoever drinks of this water will thirst again, but whoever drinks of the water that I shall give him will never thirst. But the water that I shall give him will become in him a fountain of water springing up into everlasting life.",
-   "why": "NKJV. Slower of the two and followed by the next verse, not commentary. a moved 1 word earlier to include 'Whoever' (-0.4 s at 2.48 wps)."
+   "a": 597.89,
+   "b": 605.71,
+   "t": "If you can believe, all things are possible to him who believes.",
+   "why": "Slow and emphatic (1.69 w/s, dyn 23.5)"
   },
   {
-   "ref": "John 5:24",
-   "name": "From Death to Life",
-   "src": "c4207c457d5f",
-   "who": "Platt",
-   "a": 1147.87,
-   "b": 1159.21,
-   "t": "Truly, truly, I say to you, whoever hears my word and believes him who sent me has eternal life. He does not come into judgment, but has passed from death to life.",
-   "why": "ESV. The only reading, clean, dyn 14.5. No adjustment."
-  },
-  {
-   "ref": "John 14:21",
-   "name": "Whoever Loves Me",
-   "src": "e765c9e8f5b1",
-   "who": "Vaughan",
-   "a": 133.0,
-   "b": 142.96,
-   "t": "Whoever has my commandments and keeps them, he it is who loves me. And he who loves me will be loved by my Father, and I will love him and manifest myself to him.",
-   "why": "ESV. The only complete reading (Skip's two miss 'He who'); dyn 14.1. No adjustment."
-  },
-  {
-   "ref": "Matthew 10:29-31",
-   "name": "Not One Sparrow",
-   "src": "7939c56340be",
-   "who": "Platt",
-   "a": 2995.59,
-   "b": 3005.5,
-   "t": "Are not two sparrows sold for a penny? Yet not one of them will fall to the ground apart from the will of your Father. And even the very hairs of your head are all numbered. So don't be afraid; you are worth more than many sparrows.",
-   "why": "NIV (1984). The only reading, clean, introduced with 'listen to what he says'. Times come from captions and the pace looks fast (5.1 wps), so check that the end is not clipped. No adjustment."
-  },
-  {
-   "ref": "Mark 10:45",
-   "name": "To Serve and to Give His Life",
-   "src": "9d2c2cea0497",
-   "who": "Skip",
-   "a": 89.13,
-   "b": 97.97,
-   "t": "The Son of Man did not come to be served, but to serve, and to give His life a ransom for many.",
-   "why": "NKJV, quoted without the opening 'For even'. The only clean reading (the others include 'Excuse me' or a comment). No adjustment."
-  },
-  {
-   "ref": "John 15:16",
-   "name": "You Did Not Choose Me",
+   "ref": "John 15:12",
+   "name": "As I Have Loved You",
    "src": "fbf8c20fb3c6",
    "who": "Vaughan",
-   "a": 127.03,
-   "b": 139.75,
-   "t": "You did not choose me, but I chose you and appointed you that you should go and bear fruit and that your fruit should abide, so that whatever you ask the Father in my name, he may give it to you.",
-   "why": "ESV. Clean and complete, dyn 13.4; Skip's has a stutter ('appointed pointed'). No adjustment."
+   "a": 101.53,
+   "b": 107.15,
+   "t": "This is My commandment, that you love one another as I have loved you.",
+   "why": "Introduced with 'These are the very words of Jesus'; slow (2.64 w/s, dyn 15.7)"
   },
   {
-   "ref": "Luke 19:10",
-   "name": "To Seek and to Save the Lost",
-   "src": "aeb1948b4d07",
+   "ref": "John 15:14-15",
+   "name": "I Have Called You Friends",
+   "src": "fbf8c20fb3c6",
+   "who": "Vaughan",
+   "a": 112.65,
+   "b": 126.89,
+   "t": "You are My friends if you do what I command you. No longer do I call you servants, for the servant does not know what his master is doing; but I have called you friends, for all that I have heard from My Father I have made known to you.",
+   "why": "Clean and complete, expressive (dyn 14.3)"
+  },
+  {
+   "ref": "Luke 11:9-10",
+   "name": "Ask, Seek, Knock",
+   "src": "de2eb498190a",
+   "who": "Platt",
+   "a": 311.15,
+   "b": 326.62,
+   "t": "So I say to you: Ask and it will be given to you; seek and you will find; knock and the door will be opened to you. For everyone who asks receives; he who seeks finds; and to him who knocks, the door will be opened.",
+   "why": "Clean and complete"
+  },
+  {
+   "ref": "Luke 11:13",
+   "name": "How Much More",
+   "src": "0ed1345a3789",
+   "who": "Platt",
+   "a": 342.41,
+   "b": 351.62,
+   "t": "If you then, though you are evil, know how to give good gifts to your children, how much more will your Father in heaven give the Holy Spirit to those who ask Him!",
+   "why": "Clean (Vaughan's has a stutter)"
+  },
+  {
+   "ref": "Matthew 7:21",
+   "name": "Not Everyone Who Says Lord",
+   "src": "df831b504be0",
    "who": "Skip",
-   "a": 1296.03,
-   "b": 1303.05,
-   "t": "For the Son of Man has come to seek and to save that which was lost.",
-   "why": "NKJV. Clean, deliberate (2.53 wps), followed by 'one of the best texts in all of the New Testament'. No adjustment."
+   "a": 411.91,
+   "b": 421.67,
+   "t": "Not everyone who says to Me, 'Lord, Lord,' shall enter the kingdom of heaven, but he who does the will of My Father in heaven.",
+   "why": "Read straight through the passage"
   },
   {
-   "ref": "Matthew 5:3-6",
-   "name": "Blessed Are the Poor in Spirit",
-   "src": "7bf34017c8ae",
+   "ref": "Luke 6:46",
+   "name": "Why Call Me Lord?",
+   "src": "18fb8cc1c9bc",
    "who": "Skip",
-   "a": 2244.13,
-   "b": 2259.07,
-   "t": "Blessed are the poor in spirit, for theirs is the kingdom of heaven. Blessed are those who mourn, for they shall be comforted. Blessed are the meek, for they shall inherit the earth. Blessed are those who hunger and thirst after righteousness, for they shall be filled.",
-   "why": "NKJV ('thirst after' as he reads it). The only reading, complete and clean. The clip stops before he continues into v.7. No adjustment."
+   "a": 3622.52,
+   "b": 3628.72,
+   "t": "Why do you call Me 'Lord, Lord,' and you do not do the things which I say?",
+   "why": "Strong, expressive (dyn 20.6)"
   },
   {
-   "ref": "Matthew 5:14-16",
-   "name": "Let Your Light Shine",
+   "ref": "Matthew 6:24",
+   "name": "No One Can Serve Two Masters",
+   "src": "e88c81e7ecb1",
+   "who": "Skip",
+   "a": 2637.78,
+   "b": 2653.93,
+   "t": "No one can serve two masters; for either he will hate the one and love the other, or else he will be loyal to the one and despise the other. You cannot serve God and mammon.",
+   "why": "Deliberate reading; every reading cut before 'mammon', so extended 1 word"
+  },
+  {
+   "ref": "Matthew 10:28",
+   "name": "Whom to Fear",
+   "src": "b613555ceac1",
+   "who": "Skip",
+   "a": 1151.65,
+   "b": 1161.25,
+   "t": "Do not fear those who kill the body but cannot kill the soul. But rather fear Him who is able to destroy both soul and body in hell.",
+   "why": "Clean, slower than Platt's (4.5 w/s)"
+  },
+  {
+   "ref": "Matthew 10:37-39",
+   "name": "Worthy of Me",
+   "src": "7939c56340be",
+   "who": "Platt",
+   "a": 396.06,
+   "b": 411.68,
+   "t": "Anyone who loves his father or mother more than Me is not worthy of Me; anyone who loves his son or daughter more than Me is not worthy of Me; and anyone who does not take his cross and follow Me is not worthy of Me. Whoever finds his life will lose it, and whoever loses his life for My sake will find it.",
+   "why": "The only one with the first word; complete"
+  },
+  {
+   "ref": "Luke 14:27",
+   "name": "Cannot Be My Disciple",
+   "src": "4851e80aad93",
+   "who": "Platt",
+   "a": 214.12,
+   "b": 218.82,
+   "t": "Whoever does not bear his own cross and come after Me cannot be My disciple.",
+   "why": "Platt reading it with weight ('takes it a step deeper')"
+  },
+  {
+   "ref": "Luke 9:62",
+   "name": "Hand to the Plow",
+   "src": "b3f0b3cc5065",
+   "who": "Skip",
+   "a": 3415.11,
+   "b": 3421.49,
+   "t": "No one, having put his hand to the plow, and looking back, is fit for the kingdom of God.",
+   "why": "Clean; Platt's is rushed (5.1 w/s)"
+  },
+  {
+   "ref": "Mark 1:15",
+   "name": "The Time Is Fulfilled",
+   "src": "a1f6e54345e1",
+   "who": "Skip",
+   "a": 2504.75,
+   "b": 2514.71,
+   "t": "The time is fulfilled, and the kingdom of God is at hand. Repent, and believe in the gospel.",
+   "why": "Slow and emphatic (1.84 w/s, dyn 20.1); there may be a small repeat of 'fulfilled'"
+  },
+  {
+   "ref": "Matthew 4:17",
+   "name": "Repent, the Kingdom Is Near",
+   "src": "54f3620e10ad",
+   "who": "Skip",
+   "a": 2982.36,
+   "b": 2988.04,
+   "t": "Repent, for the kingdom of heaven is at hand.",
+   "why": "Slow and emphatic (1.88 w/s, dyn 21.9); every reading is cut before 'at hand', so extended 2 words"
+  },
+  {
+   "ref": "Matthew 4:19",
+   "name": "Follow Me",
+   "src": "93289c9d904c",
+   "who": "Platt",
+   "a": 313.57,
+   "b": 318.51,
+   "t": "Follow Me, and I will make you fishers of men.",
+   "why": "Platt reading the text, expressive (dyn 25.1); the NIV version has 'Jesus said' in the middle"
+  },
+  {
+   "ref": "Matthew 20:26-28",
+   "name": "Not to Be Served",
+   "src": "df41d56397c0",
+   "who": "Skip",
+   "a": 2952.21,
+   "b": 2969.39,
+   "t": "It shall not be so among you; but whoever desires to become great among you, let him be your servant. And whoever desires to be first among you, let him be your slave—just as the Son of Man did not come to be served, but to serve, and to give His life a ransom for many.",
+   "why": "Clean and complete"
+  },
+  {
+   "ref": "Mark 9:35",
+   "name": "Last of All, Servant of All",
+   "src": "9d2c2cea0497",
+   "who": "Skip",
+   "a": 188.45,
+   "b": 195.13,
+   "t": "If anyone desires to be first, he shall be last of all and servant of all.",
+   "why": "Clean, word-exact"
+  },
+  {
+   "ref": "John 13:14-15",
+   "name": "Wash One Another's Feet",
+   "src": "7e9ac3817db7",
+   "who": "Skip",
+   "a": 2038.18,
+   "b": 2056.42,
+   "t": "If I then, your Lord and Teacher, have washed your feet, you also ought to wash one another's feet. For I have given you an example, that you should do as I have done to you.",
+   "why": "Slow (2.05 w/s, dyn 15); 'so I am' from v13 trimmed"
+  },
+  {
+   "ref": "Matthew 25:40",
+   "name": "The Least of These",
+   "src": "706ba1e69397",
+   "who": "PAM",
+   "a": 2264.89,
+   "b": 2278.79,
+   "t": "And the King will answer them, 'Truly, I say to you, as you did it to one of the least of these My brothers, you did it to Me.'",
+   "why": "Only reading; deliberate (2.35 w/s)"
+  },
+  {
+   "ref": "Matthew 25:34-36",
+   "name": "Come, You Blessed",
+   "src": "d48da4a4d4fd",
+   "who": "Skip",
+   "a": 1571.88,
+   "b": 1590.34,
+   "t": "And the King will say to those on His right hand, 'Come, you blessed of My Father, inherit the kingdom prepared for you from the foundation of the world: for I was hungry and you gave Me food; I was thirsty and you gave Me drink; I was a stranger and you took Me in; I was naked and you clothed Me; I was sick and you visited Me; I was in prison and you came to Me.'",
+   "why": "Clean but quick; both readings are equally fast"
+  },
+  {
+   "ref": "Matthew 25:21",
+   "name": "Well Done, Good and Faithful",
+   "src": "8186be3ae08f",
+   "who": "PAM",
+   "a": 2153.71,
+   "b": 2162.09,
+   "t": "Well done, good and faithful servant. You have been faithful over a little; I will set you over much. Enter into the joy of your master.",
+   "why": "Complete (Skip's misses the end); 'His master said to him' trimmed"
+  },
+  {
+   "ref": "Luke 22:19b",
+   "name": "Do This in Remembrance",
+   "src": "57b2609c9530",
+   "who": "Platt",
+   "a": 262.43,
+   "b": 266.54,
+   "t": "This is My body, given for you. Do this in remembrance of Me.",
+   "why": "Clean; ended before the narration ('In the same way after the supper...')"
+  },
+  {
+   "ref": "Matthew 26:27b-28",
+   "name": "My Blood of the Covenant",
+   "src": "71e96384e243",
+   "who": "Skip",
+   "a": 2121.47,
+   "b": 2129.29,
+   "t": "Drink from it, all of you, for this is My blood of the new covenant, which is shed for many for the remission of sins.",
+   "why": "Clean; 'Take, eat...' and the narration ('he took the cup... saying') trimmed"
+  },
+  {
+   "ref": "Matthew 26:39",
+   "name": "Not as I Will",
+   "src": "ed595da60fdf",
+   "who": "Skip",
+   "a": 1532.37,
+   "b": 1543.17,
+   "t": "My Father, if it is possible, let this cup pass from Me; nevertheless, not as I will, but as You will.",
+   "why": "Slow and expressive (2.08 w/s, dyn 15.5)"
+  },
+  {
+   "ref": "Matthew 26:38",
+   "name": "My Soul Is Sorrowful",
+   "src": "4d0f7f516dd3",
+   "who": "PAM",
+   "a": 1730.33,
+   "b": 1739.41,
+   "t": "My soul is sorrowful, even to the point of death. Remain here and watch with Me.",
+   "why": "PAM introduces it with 'this is so powerful'; slow (1.91 w/s); only reading"
+  },
+  {
+   "ref": "Matthew 26:41",
+   "name": "Watch and Pray",
+   "src": "d48da4a4d4fd",
+   "who": "Skip",
+   "a": 3652.25,
+   "b": 3660.63,
+   "t": "Watch and pray, lest you enter into temptation. The spirit indeed is willing, but the flesh is weak.",
+   "why": "Slower and more expressive than PAM's, which has a recognition error"
+  },
+  {
+   "ref": "Luke 22:32",
+   "name": "I Have Prayed for You",
+   "src": "88f5e6f53ccd",
+   "who": "Skip",
+   "a": 988.78,
+   "b": 996.42,
+   "t": "But I have prayed for you, that your faith should not fail; and when you have returned to Me, strengthen your brethren.",
+   "why": "Only reading; extended 1 word for 'brethren'"
+  },
+  {
+   "ref": "John 17:15-17",
+   "name": "Sanctify Them by the Truth",
+   "src": "2de8bf34433c",
+   "who": "Skip",
+   "a": 2612.49,
+   "b": 2627.95,
+   "t": "I do not pray that You should take them out of the world, but that You should keep them from the evil one. They are not of the world, just as I am not of the world. Sanctify them by Your truth. Your word is truth.",
+   "why": "Clean, needs no adjustment"
+  },
+  {
+   "ref": "John 17:20-21",
+   "name": "That They May Be One",
+   "src": "45ef1af3d5f9",
+   "who": "Platt",
+   "a": 195.67,
+   "b": 214.41,
+   "t": "My prayer is not for them alone. I pray also for those who will believe in Me through their message, that all of them may be one, Father, just as You are in Me and I am in You. May they also be in us so that the world may believe that You have sent Me.",
+   "why": "Platt reading the prayer; extended 3 words for 'My prayer is'"
+  },
+  {
+   "ref": "John 17:24",
+   "name": "Be with Me Where I Am",
+   "src": "f5a6700f2556",
+   "who": "Platt",
+   "a": 213.75,
+   "b": 223.73,
+   "t": "Father, I want those You have given Me to be with Me where I am, and to see My glory, the glory You have given Me because You loved Me before the creation of the world.",
+   "why": "Clean, slower of the two Platt readings"
+  },
+  {
+   "ref": "Matthew 11:25-27",
+   "name": "Revealed to Little Children",
+   "src": "b613555ceac1",
+   "who": "Skip",
+   "a": 3466.34,
+   "b": 3491.96,
+   "t": "I thank You, Father, Lord of heaven and earth, because You have hidden these things from the wise and prudent and have revealed them to babes. Even so, Father, for so it seemed good in Your sight. All things have been delivered to Me by My Father, and no one knows the Son except the Father. Nor does anyone know the Father except the Son, and the one to whom the Son wills to reveal Him.",
+   "why": "Complete (Platt's is cut before the last word)"
+  },
+  {
+   "ref": "John 14:15-17",
+   "name": "Another Helper",
+   "src": "4fd473824ee9",
+   "who": "Vaughan",
+   "a": 345.08,
+   "b": 368.08,
+   "t": "If you love Me, you will keep My commandments. And I will ask the Father, and He will give you another Helper, to be with you forever, even the Spirit of truth, whom the world cannot receive, because it neither sees Him nor knows Him. You know Him, for He dwells with you and will be in you.",
+   "why": "Vaughan's formal reading; slow and expressive (2.6 w/s, dyn 18)"
+  },
+  {
+   "ref": "John 14:26",
+   "name": "He Will Teach You All Things",
+   "src": "74fb69b718e9",
+   "who": "Skip",
+   "a": 2903.03,
+   "b": 2913.68,
+   "t": "But the Helper, the Holy Spirit, whom the Father will send in My name, He will teach you all things, and bring to your remembrance all things that I said to you.",
+   "why": "Comment after it trimmed ('Now this happened to the disciples...')"
+  },
+  {
+   "ref": "John 16:6-7",
+   "name": "It Is to Your Advantage",
+   "src": "f5e488db93e2",
+   "who": "Vaughan",
+   "a": 86.59,
+   "b": 99.63,
+   "t": "But because I have said these things to you, sorrow has filled your heart. Nevertheless, I tell you the truth: it is to your advantage that I go away, for if I do not go away, the Helper will not come to you. But if I go, I will send Him to you.",
+   "why": "Clean; also includes v6, which Jesus says too"
+  },
+  {
+   "ref": "John 16:13",
+   "name": "Into All Truth",
+   "src": "1e03526f94e8",
+   "who": "Skip",
+   "a": 2201.72,
+   "b": 2219.15,
+   "t": "However, when the Spirit of truth has come, He will guide you into all truth; for He will not speak on His own authority, but whatever He hears He will speak; and He will tell you things to come.",
+   "why": "Clean and deliberate (2.33 w/s)"
+  },
+  {
+   "ref": "John 16:24",
+   "name": "That Your Joy May Be Full",
+   "src": "0c8371d99fe9",
+   "who": "Skip",
+   "a": 2004.39,
+   "b": 2009.76,
+   "t": "Until now you have asked nothing in My name. Ask, and you will receive, that your joy may be full.",
+   "why": "Both readings are cut before 'full'; extended 1 word"
+  },
+  {
+   "ref": "John 15:7-8",
+   "name": "Ask Whatever You Wish",
+   "src": "bb53d0942d0f",
+   "who": "Platt",
+   "a": 539.95,
+   "b": 552.42,
+   "t": "If you abide in Me, and My words abide in you, ask whatever you wish, and it will be done for you. By this My Father is glorified, that you bear much fruit and so prove to be My disciples.",
+   "why": "Clean, slowest of the five"
+  },
+  {
+   "ref": "John 6:44",
+   "name": "Unless the Father Draws Him",
+   "src": "0c9dc6185673",
+   "who": "Skip",
+   "a": 79.13,
+   "b": 90.45,
+   "t": "No one can come to Me unless the Father who sent Me draws him; and I will raise him up at the last day.",
+   "why": "Complete, slowest (2.26 w/s)"
+  },
+  {
+   "ref": "John 6:40",
+   "name": "I Will Raise Him Up",
+   "src": "270fe3798cb8",
+   "who": "Vaughan",
+   "a": 107.53,
+   "b": 115.59,
+   "t": "For this is the will of My Father, that everyone who looks on the Son and believes in Him should have eternal life, and I will raise him up on the last day.",
+   "why": "Vaughan's formal reading ('the word of God for the people of God')"
+  },
+  {
+   "ref": "John 6:47-48",
+   "name": "I Am the Bread of Life",
+   "src": "d0e4dd5978d0",
+   "who": "Platt",
+   "a": 577.2,
+   "b": 583.98,
+   "t": "Truly, truly, I say to you, whoever believes has eternal life. I am the bread of life.",
+   "why": "Clean, the most deliberate (2.8 w/s, dyn 13.6)"
+  },
+  {
+   "ref": "John 6:51",
+   "name": "The Living Bread",
+   "src": "16c1edc856e3",
+   "who": "Vaughan",
+   "a": 44.27,
+   "b": 52.29,
+   "t": "I am the living bread that came down from heaven. If anyone eats of this bread, he will live forever. And the bread that I will give for the life of the world is My flesh.",
+   "why": "Clean and word-exact"
+  },
+  {
+   "ref": "John 6:63",
+   "name": "Spirit and Life",
+   "src": "0c9dc6185673",
+   "who": "Skip",
+   "a": 1060.04,
+   "b": 1068.03,
+   "t": "It is the Spirit who gives life; the flesh profits nothing. The words that I speak to you are spirit, and they are life.",
+   "why": "Clean; extended 2 words for 'It is'"
+  },
+  {
+   "ref": "John 6:27",
+   "name": "Food That Endures",
+   "src": "3c09f72277cd",
+   "who": "Skip",
+   "a": 2957.62,
+   "b": 2969.73,
+   "t": "Do not labor for the food which perishes, but for the food which endures to everlasting life, which the Son of Man will give you, because God the Father has set His seal upon Him.",
+   "why": "Expressive (dyn 13.3); extended 2 words for 'upon him' (Vaughan's would need 15 words trimmed)"
+  },
+  {
+   "ref": "John 4:34",
+   "name": "My Food Is His Will",
+   "src": "28b7a1d9f71e",
+   "who": "Platt",
+   "a": 485.99,
+   "b": 492.45,
+   "t": "My food is to do the will of Him who sent Me and to accomplish His work.",
+   "why": "Slowest of the seven (2.95 w/s)"
+  },
+  {
+   "ref": "John 4:35",
+   "name": "Lift Up Your Eyes",
+   "src": "6aaef3dec2b2",
+   "who": "Skip",
+   "a": 1876.23,
+   "b": 1893.85,
+   "t": "Do you not say, 'There are still four months and then comes the harvest'? Behold, I say to you, lift up your eyes and look at the fields, for they are already white for harvest!",
+   "why": "Slow and expressive (2.07 w/s, dyn 16.3)"
+  },
+  {
+   "ref": "John 4:23-24",
+   "name": "In Spirit and Truth",
+   "src": "6aaef3dec2b2",
+   "who": "Skip",
+   "a": 531.06,
+   "b": 555.46,
+   "t": "But the hour is coming, and now is, when the true worshipers will worship the Father in spirit and truth; for the Father is seeking such to worship Him. God is Spirit, and those who worship Him must worship in spirit and truth.",
+   "why": "Slowest (1.9 w/s, dyn 17.5)"
+  },
+  {
+   "ref": "John 10:14-15",
+   "name": "I Am the Good Shepherd",
+   "src": "8ccc29e82b62",
+   "who": "Vaughan",
+   "a": 70.69,
+   "b": 78.67,
+   "t": "I am the good shepherd. I know My own and My own know Me, just as the Father knows Me and I know the Father; and I lay down My life for the sheep.",
+   "why": "Clean (Skip's is flat, dyn 4.2)"
+  },
+  {
+   "ref": "John 10:9",
+   "name": "I Am the Door",
+   "src": "d864168cfea9",
+   "who": "Skip",
+   "a": 2490.37,
+   "b": 2496.63,
+   "t": "I am the door. If anyone enters by Me, he will be saved, and will go in and out and find pasture.",
+   "why": "Clean (the other Skip reading has 'verse 9' in it)"
+  },
+  {
+   "ref": "John 9:4-5",
+   "name": "The Light of the World",
+   "src": "71f2c216690f",
+   "who": "Skip",
+   "a": 751.72,
+   "b": 764.04,
+   "t": "I must work the works of Him who sent Me while it is day; the night is coming when no one can work. As long as I am in the world, I am the light of the world.",
+   "why": "Extended 1 word for 'I' (Vaughan's would need v3 trimmed out)"
+  },
+  {
+   "ref": "John 12:32",
+   "name": "If I Am Lifted Up",
+   "src": "f0f1311d25e4",
+   "who": "Skip",
+   "a": 3328.64,
+   "b": 3332.56,
+   "t": "And I, if I am lifted up from the earth, will draw all peoples to Myself.",
+   "why": "Clean (the other has an extra 'I')"
+  },
+  {
+   "ref": "John 12:46",
+   "name": "Not Remain in Darkness",
+   "src": "7a0323f900bc",
+   "who": "Vaughan",
+   "a": 56.27,
+   "b": 61.27,
+   "t": "I have come into the world as light, so that whoever believes in Me may not remain in darkness.",
+   "why": "Only reading; clean"
+  },
+  {
+   "ref": "John 11:40",
+   "name": "You Would See the Glory",
+   "src": "5cac0ca17a99",
+   "who": "Skip",
+   "a": 1049.01,
+   "b": 1055.05,
+   "t": "Did I not say to you that if you would believe you would see the glory of God?",
+   "why": "Clean and the most measured (Vaughan's is 6.4 w/s)"
+  },
+  {
+   "ref": "John 14:9",
+   "name": "Whoever Has Seen Me",
+   "src": "c8b556df74d3",
+   "who": "Vaughan",
+   "a": 252.43,
+   "b": 260.29,
+   "t": "Have I been with you so long, and you still do not know Me, Philip? Whoever has seen Me has seen the Father. How can you say, 'Show us the Father'?",
+   "why": "Vaughan's formal reading; Philip's line and 'Jesus said to him' trimmed (Skip's is a comment plus a quote)"
+  },
+  {
+   "ref": "John 15:18-19",
+   "name": "If the World Hates You",
+   "src": "450f7c5b51ab",
+   "who": "Vaughan",
+   "a": 306.66,
+   "b": 321.06,
+   "t": "If the world hates you, know that it has hated Me before it hated you. If you were of the world, the world would love you as its own; but because you are not of the world, but I chose you out of the world, therefore the world hates you.",
+   "why": "Introduced with 'These are Jesus' own words'; every reading stops before 'therefore the world hates you', so extended 5 words"
+  },
+  {
+   "ref": "John 20:21",
+   "name": "As the Father Has Sent Me",
+   "src": "123b758ecb93",
+   "who": "Vaughan",
+   "a": 234.49,
+   "b": 239.53,
+   "t": "Peace be with you. As the Father has sent Me, even so I am sending you.",
+   "why": "Clean, the more measured of the two"
+  },
+  {
+   "ref": "Luke 24:38-39",
+   "name": "Touch Me and See",
+   "src": "ad34ad0ffbdf",
+   "who": "Skip",
+   "a": 2707.14,
+   "b": 2726.36,
+   "t": "Why are you troubled? And why do doubts arise in your hearts? Behold My hands and My feet, that it is I Myself. Handle Me and see, for a spirit does not have flesh and bones as you see I have.",
+   "why": "Slowest (2.27 w/s), clean"
+  },
+  {
+   "ref": "Mark 16:15",
+   "name": "Go into All the World",
+   "src": "ff2983783ef5",
+   "who": "Skip",
+   "a": 2536.01,
+   "b": 2542.27,
+   "t": "Go into all the world and preach the gospel to every creature.",
+   "why": "Slow and expressive (2.16 w/s, dyn 20.9)"
+  },
+  {
+   "ref": "Acts 1:8",
+   "name": "You Shall Receive Power",
+   "src": "02ba18b9b12c",
+   "who": "Skip",
+   "a": 562.1,
+   "b": 574.04,
+   "t": "But you shall receive power when the Holy Spirit has come upon you; and you shall be witnesses to Me in Jerusalem, and in all Judea and Samaria, and to the end of the earth.",
+   "why": "Clean and the most measured"
+  },
+  {
+   "ref": "Luke 4:18-19",
+   "name": "The Spirit of the Lord",
+   "src": "f4c81bab2955",
+   "who": "Platt",
+   "a": 596.98,
+   "b": 616.52,
+   "t": "The Spirit of the Lord is upon Me, because He has anointed Me to proclaim good news to the poor. He has sent Me to proclaim liberty to the captives and recovering of sight to the blind, to set at liberty those who are oppressed, to proclaim the year of the Lord's favor.",
+   "why": "Complete (the Skip readings miss 'Lord' or have a stumble)"
+  },
+  {
+   "ref": "Luke 5:32",
+   "name": "I Came to Call Sinners",
+   "src": "2aa14ca841d4",
+   "who": "Skip",
+   "a": 991.07,
+   "b": 996.16,
+   "t": "I have not come to call the righteous, but sinners, to repentance.",
+   "why": "Verse 31 trimmed because of a stumble ('a doctor, a physician'); v32 is clean"
+  },
+  {
+   "ref": "Luke 15:10",
+   "name": "Joy over One Sinner",
+   "src": "0ca6fadff4a4",
+   "who": "Skip",
+   "a": 1901.71,
+   "b": 1910.48,
+   "t": "Likewise, I say to you, there is joy in the presence of the angels of God over one sinner who repents.",
+   "why": "Only reading; the end of v9 ('the piece which I lost') trimmed"
+  },
+  {
+   "ref": "Matthew 18:12-14",
+   "name": "The One Lost Sheep",
+   "src": "b0b17dd477c9",
+   "who": "Skip",
+   "a": 974.09,
+   "b": 996.43,
+   "t": "What do you think? If a man has a hundred sheep, and one of them goes astray, does he not leave the ninety-nine and go to the mountains to seek the one that is straying? And if he should find it, assuredly, I say to you, he rejoices more over that sheep than over the ninety-nine that did not go astray. Even so it is not the will of your Father who is in heaven that one of these little ones should perish.",
+   "why": "Clean (3e7806 has 'Verse 12' in it)"
+  },
+  {
+   "ref": "Luke 18:14",
+   "name": "Went Home Justified",
+   "src": "31d6c604b199",
+   "who": "Skip",
+   "a": 871.8,
+   "b": 884.54,
+   "t": "I tell you, this man went down to his house justified rather than the other; for everyone who exalts himself will be humbled, and he who humbles himself will be exalted.",
+   "why": "Clean, the more measured of the two"
+  },
+  {
+   "ref": "Matthew 23:11-12",
+   "name": "The Greatest Shall Serve",
+   "src": "08306112363e",
+   "who": "Skip",
+   "a": 2534.29,
+   "b": 2544.47,
+   "t": "But he who is greatest among you shall be your servant. And whoever exalts himself will be humbled, and he who humbles himself will be exalted.",
+   "why": "Trimmed 2 words from v10 ('the Christ'); PAM's has a garbled word and reads like a quote"
+  },
+  {
+   "ref": "Luke 13:3",
+   "name": "Unless You Repent",
+   "src": "1833e30623c0",
+   "who": "Platt",
+   "a": 380.58,
+   "b": 388.12,
+   "t": "I tell you, no! But unless you repent, you too will all perish.",
+   "why": "Slow and grave (1.9 w/s)"
+  },
+  {
+   "ref": "Matthew 5:10-12",
+   "name": "Blessed Are the Persecuted",
    "src": "b9c21e96c4e8",
    "who": "Skip",
-   "a": 1943.8,
-   "b": 1966.58,
-   "t": "You are the light of the world. A city that is set on a hill cannot be hidden. Nor do they light a lamp and put it under a basket, but on a lampstand, and it gives light to all who are in the house. Let your light so shine before men, that they may see your good works and glorify your Father who is in heaven.",
-   "why": "NKJV. Clean, whisper-timed, dyn 15.4; Skip's other reading paraphrases v.16, and Platt's uses caption times. No adjustment."
+   "a": 1544.47,
+   "b": 1569.65,
+   "t": "Blessed are those who are persecuted for righteousness' sake, for theirs is the kingdom of heaven. Blessed are you when they revile and persecute you, and say all kinds of evil against you falsely for My sake. Rejoice and be exceedingly glad, for great is your reward in heaven, for so they persecuted the prophets who were before you.",
+   "why": "Only reading; complete"
   },
   {
-   "ref": "Matthew 9:37-38",
-   "name": "The Harvest Is Plentiful",
-   "src": "be0f591a4fd3",
+   "ref": "Matthew 5:9",
+   "name": "Blessed Are the Peacemakers",
+   "src": "b9c21e96c4e8",
    "who": "Skip",
-   "a": 708.1,
-   "b": 720.58,
-   "t": "The harvest truly is plentiful, but the laborers are few. Therefore pray the Lord of the harvest to send out laborers into His harvest.",
-   "why": "NKJV. Slow (2.04 wps), dyn 14.3. Vaughan 3e4a2492c6b8 (ESV, 59.3-68.8) is an equally clean alternative. No adjustment."
+   "a": 1226.61,
+   "b": 1232.31,
+   "t": "Blessed are the peacemakers, for they shall be called sons of God.",
+   "why": "Slowest clean one (2.4 w/s)"
+  },
+  {
+   "ref": "Matthew 5:7",
+   "name": "Blessed Are the Merciful",
+   "src": "e84e430f2fca",
+   "who": "Platt",
+   "a": 363.33,
+   "b": 368.9,
+   "t": "Blessed are the merciful, for they shall receive mercy.",
+   "why": "Slowest (1.85 w/s)"
+  },
+  {
+   "ref": "Matthew 5:13",
+   "name": "Salt of the Earth",
+   "src": "b9c21e96c4e8",
+   "who": "Skip",
+   "a": 1929.38,
+   "b": 1943.34,
+   "t": "You are the salt of the earth; but if the salt loses its flavor, how shall it be seasoned? It is then good for nothing but to be thrown out and trampled underfoot by men.",
+   "why": "Expressive (dyn 16.9), complete"
+  },
+  {
+   "ref": "Matthew 5:17",
+   "name": "Not to Abolish but Fulfill",
+   "src": "17071c394ff6",
+   "who": "Skip",
+   "a": 230.62,
+   "b": 243.32,
+   "t": "Do not think that I came to destroy the Law or the Prophets. I did not come to destroy but to fulfill.",
+   "why": "Slow and expressive (1.83 w/s, dyn 22.8)"
+  },
+  {
+   "ref": "Matthew 5:48",
+   "name": "Be Perfect",
+   "src": "de7a8b5cbd44",
+   "who": "Skip",
+   "a": 3810.24,
+   "b": 3815.0,
+   "t": "Be perfect, just as your Father in heaven is perfect.",
+   "why": "Delivered as 'the injunction' with weight (dyn 22); starts cleanly"
+  },
+  {
+   "ref": "Matthew 6:14-15",
+   "name": "If You Forgive Others",
+   "src": "28d44a56c38e",
+   "who": "Skip",
+   "a": 1295.43,
+   "b": 1307.26,
+   "t": "For if you forgive men their trespasses, your heavenly Father will also forgive you. But if you do not forgive men their trespasses, neither will your Father forgive your trespasses.",
+   "why": "Read straight on from the prayer; extended 2 words for 'your trespasses'"
+  },
+  {
+   "ref": "Matthew 6:22-23",
+   "name": "The Lamp of the Body",
+   "src": "40468c3b5c4f",
+   "who": "PAM",
+   "a": 3808.2,
+   "b": 3824.28,
+   "t": "The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light, but if your eye is bad, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!",
+   "why": "The only clean one (the Skip readings have comments in them); expressive (dyn 19.2)"
+  },
+  {
+   "ref": "Matthew 7:1-2",
+   "name": "Judge Not",
+   "src": "2e46d25cae6e",
+   "who": "Skip",
+   "a": 465.53,
+   "b": 483.26,
+   "t": "Judge not, that you be not judged. For with what judgment you judge, you will be judged; and with the measure you use, it will be measured back to you.",
+   "why": "Slow and expressive (1.76 w/s, dyn 20.7); extended 1 word for 'Judge' (PAM's has a comment in it)"
+  },
+  {
+   "ref": "Matthew 7:3-5",
+   "name": "The Log in Your Eye",
+   "src": "0ddb47487be1",
+   "who": "PAM",
+   "a": 245.41,
+   "b": 277.05,
+   "t": "Why do you see the speck that is in your brother's eye, but do not notice the log that is in your own eye? Or how can you say to your brother, 'Let me take the speck out of your eye,' when there is the log in your own eye? You hypocrite, first take the log out of your own eye, and then you will see clearly to take the speck out of your brother's eye.",
+   "why": "Clean, expressive (dyn 17.1)"
+  },
+  {
+   "ref": "Matthew 7:13-14",
+   "name": "The Narrow Gate",
+   "src": "2e46d25cae6e",
+   "who": "Skip",
+   "a": 2554.65,
+   "b": 2569.63,
+   "t": "Enter by the narrow gate; for wide is the gate and broad is the way that leads to destruction, and there are many who go in by it. Because narrow is the gate and difficult is the way which leads to life, and there are few who find it.",
+   "why": "Only reading; clean but flat"
+  },
+  {
+   "ref": "Luke 6:27-28",
+   "name": "Bless Those Who Curse You",
+   "src": "dd03595da984",
+   "who": "Skip",
+   "a": 3096.53,
+   "b": 3110.27,
+   "t": "But I say to you who hear: Love your enemies, do good to those who hate you, bless those who curse you, and pray for those who spitefully use you.",
+   "why": "Clean (the other has a comment in it)"
+  },
+  {
+   "ref": "Luke 6:35-36",
+   "name": "Be Merciful",
+   "src": "457a0f38b224",
+   "who": "Skip",
+   "a": 1644.37,
+   "b": 1665.68,
+   "t": "But love your enemies, do good, and lend, hoping for nothing in return; and your reward will be great, and you will be sons of the Most High. For He is kind to the unthankful and evil. Therefore be merciful, just as your Father also is merciful.",
+   "why": "More measured and expressive of the two"
+  },
+  {
+   "ref": "Luke 6:37-38",
+   "name": "Give, and It Will Be Given",
+   "src": "dd03595da984",
+   "who": "Skip",
+   "a": 3389.78,
+   "b": 3406.51,
+   "t": "Judge not, and you shall not be judged. Condemn not, and you shall not be condemned. Forgive, and you will be forgiven. Give, and it will be given to you: good measure, pressed down, shaken together, and running over will be put into your bosom. For with the same measure that you use, it will be measured back to you.",
+   "why": "Clean; extended 1 word for 'Judge'"
+  },
+  {
+   "ref": "Luke 6:45",
+   "name": "Out of the Heart",
+   "src": "457a0f38b224",
+   "who": "Skip",
+   "a": 1763.71,
+   "b": 1776.76,
+   "t": "A good man out of the good treasure of his heart brings forth good; and an evil man out of the evil treasure of his heart brings forth evil. For out of the abundance of the heart his mouth speaks.",
+   "why": "Clean; extended 1 word for 'A'"
+  },
+  {
+   "ref": "Matthew 10:16",
+   "name": "Sheep Among Wolves",
+   "src": "7939c56340be",
+   "who": "Platt",
+   "a": 278.65,
+   "b": 288.08,
+   "t": "I am sending you out like sheep among wolves. Therefore be as shrewd as snakes and as innocent as doves.",
+   "why": "Only reading; deliberate (2.29 w/s)"
+  },
+  {
+   "ref": "Matthew 10:32-33",
+   "name": "Confess Me Before Men",
+   "src": "1c9142bead8a",
+   "who": "Skip",
+   "a": 790.98,
+   "b": 811.48,
+   "t": "Therefore whoever confesses Me before men, him I will also confess before My Father who is in heaven. But whoever denies Me before men, him I will also deny before My Father who is in heaven.",
+   "why": "Slow (1.87 w/s), complete; the others miss the first words"
+  },
+  {
+   "ref": "Matthew 12:30",
+   "name": "With Me or Against Me",
+   "src": "104a46c7eb1a",
+   "who": "Skip",
+   "a": 18.55,
+   "b": 26.26,
+   "t": "He who is not with Me is against Me, and he who does not gather with Me scatters abroad.",
+   "why": "Clean; extended 1 word for 'abroad'"
+  },
+  {
+   "ref": "Matthew 12:50",
+   "name": "My Brother and Sister",
+   "src": "03c31c3fec79",
+   "who": "Skip",
+   "a": 1029.65,
+   "b": 1039.53,
+   "t": "For whoever does the will of My Father in heaven is My brother and sister and mother.",
+   "why": "Slowest, expressive (1.85 w/s, dyn 18.5)"
+  },
+  {
+   "ref": "Matthew 14:31",
+   "name": "Why Did You Doubt?",
+   "src": "21212a415729",
+   "who": "PAM",
+   "a": 3375.22,
+   "b": 3379.62,
+   "t": "You of little faith, why did you doubt?",
+   "why": "PAM, deliberate (2.16 w/s, dyn 15.8)"
+  },
+  {
+   "ref": "Matthew 16:18",
+   "name": "I Will Build My Church",
+   "src": "0d0ef0c4e8c7",
+   "who": "PAM",
+   "a": 167.43,
+   "b": 175.95,
+   "t": "And I tell you that you are Peter, and on this rock I will build My church, and the gates of Hades will not overcome it.",
+   "why": "Clean (Skip's has 'or Hades' added)"
+  },
+  {
+   "ref": "Matthew 17:20",
+   "name": "Faith as a Mustard Seed",
+   "src": "10e5bd2d8ff1",
+   "who": "Skip",
+   "a": 1236.69,
+   "b": 1250.77,
+   "t": "Because of your unbelief; for assuredly, I say to you, if you have faith as a mustard seed, you will say to this mountain, 'Move from here to there,' and it will move; and nothing will be impossible for you.",
+   "why": "Only reading; complete"
+  },
+  {
+   "ref": "Matthew 18:3-4",
+   "name": "Become Like Little Children",
+   "src": "3e7806c446a2",
+   "who": "Skip",
+   "a": 523.62,
+   "b": 541.02,
+   "t": "I say to you, unless you are converted and become as little children, you will by no means enter the kingdom of heaven. Therefore whoever humbles himself as this little child is the greatest in the kingdom of heaven.",
+   "why": "Clean ending (b0b17 has 'Dan, could you turn that down'); starts after 'Assuredly'"
+  },
+  {
+   "ref": "Matthew 18:20",
+   "name": "Where Two or Three Gather",
+   "src": "15cc0609d6bb",
+   "who": "Platt",
+   "a": 854.14,
+   "b": 860.29,
+   "t": "For where two or three come together in My name, there am I with them.",
+   "why": "Clean, the slowest Platt reading"
+  },
+  {
+   "ref": "Matthew 19:14",
+   "name": "Let the Children Come",
+   "src": "cded3b1e81c3",
+   "who": "Platt",
+   "a": 238.15,
+   "b": 246.13,
+   "t": "Let the little children come to Me, and do not hinder them, for to such belongs the kingdom of heaven.",
+   "why": "The only clean one"
+  },
+  {
+   "ref": "Mark 5:34",
+   "name": "Daughter, Your Faith",
+   "src": "e7763f2c1911",
+   "who": "Skip",
+   "a": 674.9,
+   "b": 683.44,
+   "t": "Daughter, your faith has made you well. Go in peace, and be healed of your affliction.",
+   "why": "Tender and expressive (dyn 19.5); the other has 'love that' in it"
+  },
+  {
+   "ref": "Luke 7:50",
+   "name": "Your Faith Has Saved You",
+   "src": "e31610e1e1ef",
+   "who": "Skip",
+   "a": 2585.85,
+   "b": 2589.75,
+   "t": "Your faith has saved you. Go in peace.",
+   "why": "Slow and expressive (2.5 w/s, dyn 19.5)"
+  },
+  {
+   "ref": "Luke 10:20",
+   "name": "Names Written in Heaven",
+   "src": "232dea38f905",
+   "who": "Skip",
+   "a": 1651.53,
+   "b": 1664.09,
+   "t": "Nevertheless do not rejoice in this, that the spirits are subject to you, but rather rejoice because your names are written in heaven.",
+   "why": "Slow (1.94 w/s), complete"
+  },
+  {
+   "ref": "Luke 10:41-42",
+   "name": "Martha, Martha",
+   "src": "232dea38f905",
+   "who": "Skip",
+   "a": 2890.06,
+   "b": 2903.62,
+   "t": "Martha, Martha, you are worried and troubled about many things. But one thing is needed, and Mary has chosen that good part, which will not be taken away from her.",
+   "why": "Only reading; one small self-correction ('the good, that good part')"
+  },
+  {
+   "ref": "Luke 12:34",
+   "name": "Where Your Treasure Is",
+   "src": "47ffed130e88",
+   "who": "Skip",
+   "a": 1158.58,
+   "b": 1163.52,
+   "t": "For where your treasure is, there your heart will be also.",
+   "why": "Clean and complete"
+  },
+  {
+   "ref": "Matthew 24:35",
+   "name": "My Words Will Not Pass Away",
+   "src": "7b45a21321e4",
+   "who": "Skip",
+   "a": 605.03,
+   "b": 612.49,
+   "t": "Heaven and earth will pass away, but My words will by no means pass away.",
+   "why": "Slowest (2.22 w/s), expressive"
+  },
+  {
+   "ref": "Matthew 4:4",
+   "name": "Not by Bread Alone",
+   "src": "de7a8b5cbd44",
+   "who": "Skip",
+   "a": 149.24,
+   "b": 158.1,
+   "t": "It is written, 'Man shall not live by bread alone, but by every word that proceeds from the mouth of God.'",
+   "why": "Clean (the other Skip reading has 'quoting Deuteronomy' in it)"
+  },
+  {
+   "ref": "Revelation 22:12-13",
+   "name": "Behold, I Am Coming Quickly",
+   "src": "83d0242ad1be",
+   "who": "Skip",
+   "a": 3385.0,
+   "b": 3400.46,
+   "t": "Behold, I am coming quickly, and My reward is with Me, to give to every one according to his work. I am the Alpha and the Omega, the Beginning and the End, the First and the Last.",
+   "why": "Slow and expressive (2.4 w/s, dyn 20.3); trimmed before v14 ('Blessed are those who do His commandments...')"
+  },
+  {
+   "ref": "Acts 20:35b",
+   "name": "More Blessed to Give",
+   "src": "0da7b9e0899c",
+   "who": "Platt",
+   "a": 407.13,
+   "b": 409.51,
+   "t": "It is more blessed to give than to receive.",
+   "why": "Only reading; Paul's lead-in ('remember the words of the Lord Jesus, how He Himself said') trimmed, keeping only the Lord's words"
   }
  ]
 }
