@@ -417,7 +417,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
   await T('P34 browsing loads nothing: swiping through 10 sayings and 10 prayers starts no download', async () => {
     const p = await pray_(await page(null, { hasTouch: true })); const media = [];
     p.on('request', q => { if (q.resourceType() === 'media' || /\.(mp3|m4a|wav)(\?|#|$)/i.test(q.url())) media.push(q.url()); });
-    await guided(p, 'med'); for (let i = 0; i < 10; i++) { await p.click('[data-medgo2="1"]'); await wait(80); }
+    await guided(p, 'med'); await p.evaluate(() => { MED.pick = medList()[0].ref; render(); }); for (let i = 0; i < 10; i++) { await p.click('[data-medgo2="1"]'); await wait(80); }
     await guided(p, 'led'); for (let i = 0; i < 10; i++) { await p.click('[data-ledgo="1"]'); await wait(80); }
     await wait(800); const held = await p.evaluate(() => [MED.c && MED.c.a.getAttribute('src'), LED.c && LED.c.a.getAttribute('src')]);
     return (!media.length && !held[0] && !held[1]) || { media: media.slice(0, 4), held };
