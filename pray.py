@@ -79,7 +79,7 @@ def meditate(items=None):
         for x in json.load(open(p, encoding="utf-8"))["sayings"]:
             it = items.get(x["src"])
             if not it or not it.get("audio"): continue
-            out.append({"ref": x["ref"].replace("-", "\u2013"), "name": x.get("name", ""), "t": x["t"], "who": it["who"], "audio": it["audio"], "a": x["a"], "b": x["b"]})
+            out.append({"ref": x["ref"].replace("-", "\u2013"), "name": x.get("name", ""), "t": x["t"], "who": it["who"], "audio": it["audio"], "a": x["a"], "b": x["b"], **({"Lt": x["Lt"]} if x.get("Lt") else {})})
         return out
     from canon import BOOKS
     abbr = {b[0]: b[1] for b in BOOKS}

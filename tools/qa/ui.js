@@ -343,7 +343,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const g = await A.evaluate(() => ({ p: ledOrd().p, id: ledCur().id }));
     // a short local clip stands in for the sermon's recording
     await A.evaluate(() => { ledCur().audio = SILENT; ledCur().sb = 0.5; ledCur().e = 0; });
-    await A.click('[data-ledpp]'); await wait(900);
+    await A.click('[data-ledpp]'); for (let k = 0; k < 40 && !(await A.evaluate(() => /ledm playing\s+\{[^}]*"host":"silence"/.test(diagText()))); k++) await wait(100);
     const p = await A.evaluate(() => ({ id: LED.id, src: /ledm playing\s+\{[^}]*"host":"silence"/.test(diagText()), muted: LED.c && LED.c.a.muted, main: cur && String(cur).startsWith('led:'), en: LED.c && LED.c.end > LED.c.t0, inLib: Object.keys(I).filter(k => k.startsWith('led:')).length }));
     await A.click('[data-ledsp]'); const sp = await A.evaluate(() => ({ sp: LED.sp, rate: LED.c.a.playbackRate, t: document.querySelector('[data-ledsp]').textContent }));
     const mu = await A.evaluate(() => !!document.querySelector('[data-prmu]'));
@@ -365,7 +365,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await A.evaluate(() => { $('#tabs [data-tab2=pray]').click(); }); await wait(500); await A.click('[data-prtop=g]'); await wait(300); await A.click('[data-prm=guided]'); await wait(400);
     const real = await A.evaluate(() => !!PRAY.lp);
     // a short local clip stands in for his sermon: the second movement starts right away
-    await A.evaluate(() => { const n = PRAY.moves.length; PRAY.lp = Object.assign({ who: 'PAM' }, PRAY.lp || {}, { audio: SILENT, a: 0, b: 100, at: [0, 0.02, ...Array(Math.max(0, n - 2)).fill(90)] }); PR.mv = 0; render(); });
+    await A.evaluate(() => { const n = PRAY.moves.length; PRAY.lp = Object.assign({ who: 'PAM' }, PRAY.lp || {}, { audio: SILENT, Lt: 0, a: 0, b: 100, at: [0, 0.02, ...Array(Math.max(0, n - 2)).fill(90)] }); PR.mv = 0; render(); });
     const line = await A.evaluate(() => (document.querySelector('[data-lpp]') || {}).textContent || '');
     await A.click('[data-lpp]'); let mv = 0;
     for (let k = 0; k < 30 && !mv; k++) { await wait(100); mv = await A.evaluate(() => PR.mv); }

@@ -1,15 +1,16 @@
 {
- "_note": "Guided (Pray \u2192 Lord's Prayer): Skip Heitzig praying the Lord's Prayer through, line by line, as the closing prayer of \"Jeremiah 13-14\". a/b = seconds from the file's start (its start and end in a pause, checked word by word); at = where each movement begins, on his words (tools/lp_words.py): Our Father \u00b7 oh Lord, how holy, hallowed \u00b7 We desire your kingdom \u00b7 Lord, you know us\u2026 daily bread \u00b7 Forgive us, Lord \u00b7 Lord, keep us from temptation. music = your music under it.",
+ "_note": "Guided (Pray \u2192 Lord's Prayer): Skip Heitzig praying the Lord's Prayer through, line by line, as the closing prayer of \"Jeremiah 13-14\". All times are TRUE times (frame by frame; the file's header understates its length, Lt = its true length): a/b = its start (in the pause before \"Our Father\") and end (after \"In Jesus' name\", before \"Let's stand\"); at = where each movement begins, on his words, from the transcription of the exact bytes (tools/clip_probe.py slice): Our Father \u00b7 O Lord, how holy, hallowed \u00b7 We desire your kingdom \u00b7 Lord, you know what we need\u2026 daily bread \u00b7 Forgive us, Lord \u00b7 Lord, keep us from temptation. The app puts them on the phone's own scale (tscale).",
  "src": "0030f8fdb4bf",
- "a": 3404.02,
- "b": 3525.85,
+ "Lt": 3545.94,
+ "a": 3420.64,
+ "b": 3542.14,
  "at": [
-  3404.02,
-  3411.05,
-  3416.9,
-  3430.9,
-  3452.3,
-  3474.8
+  3420.64,
+  3427.34,
+  3433.29,
+  3447.14,
+  3468.69,
+  3491.54
  ],
  "music": true
 }
