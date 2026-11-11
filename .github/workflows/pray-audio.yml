@@ -28,5 +28,5 @@ jobs:
         with:
           node-version: "22"
       - run: pip install -q -r requirements.txt && python app_build.py >/dev/null
-      - run: npm i --no-save playwright@1.48.2 >/dev/null && (npx playwright install --with-deps ${{ matrix.browser }} >/dev/null || npx playwright install ${{ matrix.browser }} >/dev/null)
+      - run: npm i --no-save playwright@1.48.2 >/dev/null && (timeout 240 npx playwright install --with-deps ${{ matrix.browser }} >/dev/null || npx playwright install ${{ matrix.browser }} >/dev/null)
       - run: (cd out/site && python -m http.server 8765 >/dev/null 2>&1 &) && sleep 2 && ONLY="${{ inputs.only }}" ONE="${{ inputs.only }}" BROWSER=${{ matrix.browser }} THROTTLE=${{ matrix.net }} SITE=http://localhost:8765/ node tools/qa/pray_audio.js
