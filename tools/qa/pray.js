@@ -33,6 +33,7 @@ async function testAudio(p, opt) {
     (PRAY.led || []).forEach(x => { x.audio = TESTWAV; x.sb = o.sb || 20; x.e = o.e || 10; x.L = 30; x.dur = 30; });
     (PRAY.med || []).forEach(x => { x.audio = TESTWAV; x.a = o.a || 5; x.b = o.b || 6.5; x.Lt = 0; });
     if (PRAY.lp) PRAY.lp.Lt = 0;
+    PRAY.lum = null;   // the stand-in has no measured loudness: the music sits at your level
     window.MED_FAST = o.fast || 0.05;
   }, opt || {});
 }
@@ -525,6 +526,15 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     await p.reload(); await wait(1500); await pray(p); const kept = await p.evaluate(() => [LED.who, ledCur().who]);
     await p.selectOption('[data-ledwho]', ''); await wait(300); const all = await p.evaluate(() => [LED.who, S.get('ledwho')]);
     return (whos[0] === '' && whos.includes('Skip') && whos.includes('PAM') && one.who === 'Vaughan' && /Kennon Vaughan ⌄/.test(one.label) && /Vaughan/.test(one.name) && walk.every(w => w === 'Vaughan') && kept.join() === 'Vaughan,Vaughan' && all.join() === ',' && !p.errs.length) || { whos, one, walk, kept, all, e: p.errs };
+  });
+  await T('P44 the music follows how loud the prayer is: under a recording 6 dB quieter than the middle it is 6 dB softer, under one 3 dB louder 3 dB louder; Meditate the same', async () => {
+    const p = await pray_(await page()); await testAudio(p, { sb: 25, e: 2, a: 5, b: 20 }); await music(p); await guided(p, 'led');
+    await p.evaluate(() => { PRAY.lum = -20; ledList().forEach(x => { x.lu = -26 }); });
+    await p.click('[data-ledpp]'); const q = await until(p, () => Math.abs(bedNow() / (BED.plv * 0.501) - 1) < 0.2, 6000); const lq = await p.evaluate(() => +bedNow().toFixed(3));
+    await p.evaluate(() => LED.c.pause()); await wait(300);
+    await p.evaluate(() => { medList().forEach(x => { x.lu = -17 }); }); await guided(p, 'med'); await p.click('[data-medgo]');
+    const l = await until(p, () => MED.on && Math.abs(bedNow() / Math.min(1, BED.plv * 1.413) - 1) < 0.2, 6000); const ll = await p.evaluate(() => +bedNow().toFixed(3));
+    return (q && l && !p.errs.length) || { q, lq, l, ll, plv: await p.evaluate(() => BED.plv), e: p.errs };
   });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
