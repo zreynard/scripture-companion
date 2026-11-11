@@ -870,6 +870,21 @@ body[data-v=pray] #np,body[data-v=worship] #np{display:none!important}
 .w-empty{color:var(--mute);font-size:15px;line-height:1.5;margin:18px 4px}
 .w-add{display:block;width:100%;height:50px;margin-top:8px;border-radius:25px;border:1px dashed rgba(27,36,64,.25);background:none;font:600 15px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}
 .w-q{width:100%;height:44px;border-radius:22px;border:1px solid var(--line);background:#fff;padding:0 16px;font:inherit;margin:12px 0 0}
+.w-grp{font:700 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9a7a2c;margin:22px 4px -4px}
+.w-tn{display:block;width:100%;text-align:left;border:0;border-radius:20px;padding:16px 18px 14px;margin:14px 0 4px;background:linear-gradient(180deg,#fbf3df,#f6ead0);box-shadow:0 4px 16px rgba(150,110,30,.12);color:var(--ink);font:inherit;cursor:pointer}
+.w-tn .k{font:700 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9a7a2c}
+.w-tn b{display:block;font-size:25px;font-weight:500;margin:4px 0 8px}
+.w-tn ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:3px}
+.w-tn li{font-size:15px;color:#3b4262;display:flex;gap:10px}.w-tn li em{font-style:normal;color:#b08a3a;font-weight:600;width:14px;text-align:right;flex:none}
+.w-tn .go{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font:600 14px -apple-system,system-ui,sans-serif;color:#9a7a2c}
+.w-row .w-when{display:block;font:600 12.5px -apple-system,system-ui,sans-serif;font-style:normal;color:#9a7a2c;margin-bottom:1px}
+.w-past{display:block;width:100%;border:0;background:none;color:var(--mute);font:600 14px -apple-system,system-ui,sans-serif;padding:16px 4px 4px;text-align:left;cursor:pointer}
+.w-row.w-pastrow{background:#faf6ee;box-shadow:none;border:1px solid rgba(27,36,64,.06)}.w-row.w-pastrow b{font-size:17px;color:#4a5272}
+.w-dl{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.w-date{position:relative;display:inline-flex;align-items:center;gap:8px;border-radius:16px;background:#f6ecd6;padding:7px 12px;font:600 14.5px -apple-system,system-ui,sans-serif;color:#7a5c1c;cursor:pointer}
+.w-date small{font-weight:500;color:#9a7a2c;font-size:13.5px}
+.w-date input{position:absolute;inset:0;width:100%;height:100%;opacity:0;font-size:16px;cursor:pointer;-webkit-appearance:none;appearance:none;border:0;padding:0;margin:0}
+.w-nod{border:0;background:none;color:var(--mute);font:500 13.5px -apple-system,system-ui,sans-serif;padding:8px 6px;cursor:pointer}
 .w-live{display:flex;align-items:center;gap:12px;margin:14px 0 4px;padding:12px 16px;border-radius:16px;background:var(--ink);color:#fff;text-decoration:none}.w-live i{width:9px;height:9px;border-radius:50%;background:#4fc184;box-shadow:0 0 0 4px rgba(79,193,132,.25)}.w-live span{flex:1}.w-live b{display:block}.w-live small{display:block;opacity:.75;font-size:13px}
 .w-back{display:inline-flex;align-items:center;gap:4px;border:0;background:none;color:var(--gold2);font:600 15px -apple-system,system-ui,sans-serif;padding:10px 0;cursor:pointer}
 .w-title{font-size:30px;font-weight:400;line-height:1.15;margin:4px 0 2px}.w-by{color:var(--mute);font-size:15px}
@@ -2252,7 +2267,15 @@ const TOPIC_IC={kingdom:['#6b5320','<path d="M4 17 3 7l5 4 4-6 4 6 5-4-1 10z"/><
 const topicIc=(id,sz)=>{const t=TOPIC_IC[id]||['#4a5272',''];return `<span class="tp-ic" style="background:${t[0]}1a;width:${sz}px;height:${sz}px" aria-hidden="true"><svg viewBox="0 0 24 24" width="${Math.round(sz*.56)}" height="${Math.round(sz*.56)}" fill="none" stroke="${t[0]}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".85">${t[1]}</svg></span>`};
 /* Worship (site_extra/worship.js does the music): a personal songbook, setlists, and Present, which hands the set to
    live/ (presenter and remote) and tv/ (the screen). Songs and setlists live on this phone and in your private backup. */
-const WS={pane:S.get('wpane','sets'),song:null,edit:null,set:null,q:'',am:null};
+const WS={pane:S.get('wpane','sets'),song:null,edit:null,set:null,q:'',am:null,past:false};
+/* setlists by date: a set may carry a day ('YYYY-MM-DD', your local calendar); one without is a saved set (a playlist) */
+function wToday(o){const d=new Date();if(o)d.setDate(d.getDate()+o);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function wDate(s){const m=/^(\d{4})-(\d\d)-(\d\d)$/.exec(s||'');return m?new Date(+m[1],+m[2]-1,+m[3]):null}
+function wIn(st){const d=wDate(st&&st.date);return d?Math.round((d.getTime()-d.getTimezoneOffset()*6e4)/864e5)-dayNo():null}   /* days from today */
+function wWhen(st){const d=wDate(st.date),n=wIn(st);if(!d)return '';if(n===0)return new Date().getHours()>=15?'Tonight':'Today';if(n===1)return 'Tomorrow';
+ if(n>1&&n<7)return d.toLocaleDateString('en-US',{weekday:'long'})+' · in '+n+' days';return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}
+function wGroups(sets){const g={today:[],upcoming:[],saved:[],past:[]};sets.forEach(st=>{const n=wIn(st);(n==null?g.saved:n===0?g.today:n>0?g.upcoming:g.past).push(st)});
+ g.upcoming.sort((a,b)=>a.date.localeCompare(b.date));g.past.sort((a,b)=>b.date.localeCompare(a.date));g.saved.sort((a,b)=>(a.name||'').localeCompare(b.name||''));return g}
 const wSongs=()=>S.get('wsongs',{}),wSets=()=>S.get('wsets',[]);
 function wId(){return 'w'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
 function wLive(){const w=S.get('wlive',null);return w&&Date.now()-w.at<12*3600e3?w:null}
@@ -2297,7 +2320,12 @@ function worshipView(){
    :`<p class="w-empty">${ids.length?'No song matches.':'Your songbook is empty. Add a song by pasting its chord chart: chords above the words, or ChordPro.'}</p>`;
   return h+`<button class="w-add" data-wnew>Add a song</button></div>`}
  const sets=wSets();
- h+=sets.length?`<div class="w-list">${sets.map(st=>`<button class="w-row" data-wset="${st.id}"><span><b class="serif">${esc(st.name||'Untitled set')}</b><small>${st.items.length} song${st.items.length===1?'':'s'}${st.items.length?' · '+esc(st.items.slice(0,3).map(it=>(songs[it.id]||{}).t).filter(Boolean).join(', ')):''}</small></span><i>›</i></button>`).join('')}</div>`
+ const titles=st=>st.items.map(it=>(songs[it.id]||{}).t).filter(Boolean),g=wGroups(sets);
+ const row=(st,past)=>`<button class="w-row${past?' w-pastrow':''}" data-wset="${st.id}"><span>${st.date?`<em class="w-when">${esc(wWhen(st))}</em>`:''}<b class="serif">${esc(st.name||'Untitled set')}</b><small>${st.items.length} song${st.items.length===1?'':'s'}${st.items.length?' · '+esc(titles(st).slice(0,3).join(', ')):''}</small></span><i>›</i></button>`;
+ const card=st=>`<button class="w-tn" data-wset="${st.id}"><span class="k">${esc(wWhen(st))} · ${wDate(st.date).toLocaleDateString('en-US',{weekday:'long'})}</span><b class="serif">${esc(st.name||'Untitled set')}</b>${st.items.length?`<ol>${titles(st).slice(0,8).map((t,i)=>`<li><em>${i+1}</em>${esc(t)}</li>`).join('')}</ol>`:''}<span class="go"><span>${st.items.length} song${st.items.length===1?'':'s'}</span><span>Open ›</span></span></button>`;
+ h+=sets.length?g.today.map(card).join('')+(g.upcoming.length?`<div class="w-grp">Coming up</div><div class="w-list">${g.upcoming.map(st=>row(st)).join('')}</div>`:'')
+   +(g.saved.length?`${g.today.length||g.upcoming.length||g.past.length?'<div class="w-grp">Saved</div>':''}<div class="w-list">${g.saved.map(st=>row(st)).join('')}</div>`:'')
+   +(g.past.length?`<button class="w-past" data-wpast aria-expanded="${WS.past}">Past sets · ${g.past.length} ${WS.past?'⌃':'⌄'}</button>${WS.past?`<div class="w-list">${g.past.map(st=>row(st,1)).join('')}</div>`:''}`:'')
   :`<p class="w-empty">${ids.length?'Gather songs into a setlist for your next worship time.':'Start by adding songs in the Songs tab, then gather them into a setlist.'}</p>`;
  return h+`<button class="w-add" data-wnewset>New setlist</button></div>`}
 function wSongView(){const s=wSongs()[WS.song];if(!s){WS.song=null;return worshipView()}
@@ -2352,11 +2380,16 @@ function wEditView(){const isNew=WS.edit==='new',s=isNew?{t:'',a:'',key:'',capo:
 function wSetView(){const sets=wSets(),st=sets.find(x=>x.id===WS.set);if(!st){WS.set=null;return worshipView()}const songs=wSongs();
  return `<div class="jv wsp"><button class="w-back" data-wback>${W_IC.back}Setlists</button>
  <input class="w-name serif" id="ws-name" value="${esc(st.name||'')}" placeholder="Name this set">
+ <div class="w-dl"><label class="w-date"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span id="ws-dtxt">${wDateTxt(st)}</span><span aria-hidden="true">⌄</span><input type="date" id="ws-date" value="${esc(st.date||'')}" aria-label="The day of this set"></label>${st.date?'<button class="w-nod" data-wnodate>No date</button>':''}</div>
  <div class="w-acts"><button class="w-btn pri" data-wpresentset="${st.id}" ${st.items.length?'':'disabled'}>${W_IC.play}Present</button><button class="w-btn" data-wpick>Add songs</button></div>
  ${st.items.length?`<div class="w-items">${st.items.map((it,i)=>{const s=songs[it.id];if(!s)return '';const key=wKeyOf(s,it);return `<div class="w-it"><span class="w-n">${i+1}</span><button class="w-itt" data-wsong="${s.id}"><b class="serif">${esc(s.t)}</b><small>${esc(s.a||'')}</small></button>
   <span class="w-ik"><button class="w-kb s" data-wik="${i}|-1" aria-label="Key down">−</button><b>${esc(key||'?')}</b><button class="w-kb s" data-wik="${i}|1" aria-label="Key up">+</button></span>
   <span class="w-mv"><button data-wmv="${i}|-1" aria-label="Move up" ${i?'':'disabled'}>↑</button><button data-wmv="${i}|1" aria-label="Move down" ${i<st.items.length-1?'':'disabled'}>↓</button><button data-wrm="${i}" aria-label="Remove">✕</button></span></div>`}).join('')}</div>`:'<p class="w-empty">No songs yet. Tap Add songs.</p>'}
- <div class="w-acts"><button class="w-btn" data-wdup>Duplicate</button><button class="w-btn w-del" data-wdelset>Delete</button></div></div>`}
+ <div class="w-acts"><button class="w-btn" data-wagain>Use again…</button><button class="w-btn" data-wdup>Duplicate</button><button class="w-btn w-del" data-wdelset>Delete</button></div></div>`}
+function wDateTxt(st){const d=wDate(st.date);if(!d)return 'No date';const n=wIn(st),rel=n===0?'today':n===1?'tomorrow':n>1&&n<7?'in '+n+' days':n===-1?'yesterday':'';
+ return esc(d.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'}))+(rel?` <small>· ${rel}</small>`:'')}
+/* the next day on the same weekday as this set's (from tomorrow on); a set with no day: today */
+function wNextLike(st){const d=wDate(st.date);if(!d)return wToday();let o=1;while(o<8&&(new Date(Date.now()+o*864e5)).getDay()!==d.getDay())o++;return wToday(o)}
 function wSaveSet(st){const sets=wSets(),i=sets.findIndex(x=>x.id===st.id);st.at=Date.now();if(i<0)sets.unshift(st);else sets[i]=st;S.set('wsets',sets)}
 function wFound(){const box=$('#wf-found');if(!box)return;const p=Worship.parse($('#wf-src').value);
  box.innerHTML=p.sections.length?'Found: '+p.sections.map(s=>`<span class="w-sc">${esc(s.short)}</span> ${esc(s.label)}${s.ref?' (repeat)':''}`).join(' · ')+(p.meta.title&&!$('#wf-t').value?` <button class="lnk" id="wf-use">Use “${esc(p.meta.title)}” as the title</button>`:''):'';
@@ -2371,11 +2404,12 @@ function wireWorship(){wsInbox();document.body.classList.toggle('wsong-open',!!(
  const q=$('#wq');if(q)q.oninput=()=>{WS.q=q.value;const y=q.selectionStart;render();const n=$('#wq');n.focus();n.setSelectionRange(y,y)};
  document.querySelectorAll('[data-wsong]').forEach(b=>b.onclick=()=>{WS.song=b.dataset.wsong;WS.from=WS.set;WS.set=null;render();scrollTo(0,0)});
  document.querySelectorAll('[data-wset]').forEach(b=>b.onclick=()=>{WS.set=b.dataset.wset;render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wpast]').forEach(b=>b.onclick=()=>{WS.past=!WS.past;const y=scrollY;render();window.scrollTo(0,y)});
  document.querySelectorAll('[data-wback]').forEach(b=>b.onclick=()=>{if(WS.song){WS.song=null;if(WS.from){WS.set=WS.from;WS.from=null}}else WS.set=null;render();scrollTo(0,0)});
  document.querySelectorAll('[data-wnew]').forEach(b=>b.onclick=()=>{WS.edit='new';render();scrollTo(0,0)});
  document.querySelectorAll('[data-wedit]').forEach(b=>b.onclick=()=>{WS.edit=b.dataset.wedit;render();scrollTo(0,0)});
  document.querySelectorAll('[data-wcancel]').forEach(b=>b.onclick=()=>{WS.edit=null;render();scrollTo(0,0)});
- document.querySelectorAll('[data-wnewset]').forEach(b=>b.onclick=()=>{const st={id:wId(),name:'',items:[]};wSaveSet(st);WS.set=st.id;render();scrollTo(0,0);const n=$('#ws-name');if(n)n.focus()});
+ document.querySelectorAll('[data-wnewset]').forEach(b=>b.onclick=()=>{const st={id:wId(),name:'',items:[],date:wToday()};wSaveSet(st);WS.set=st.id;render();scrollTo(0,0);const n=$('#ws-name');if(n)n.focus()});
  document.querySelectorAll('[data-wpresent]').forEach(b=>b.onclick=()=>wPresent([{id:b.dataset.wpresent}],''));
  document.querySelectorAll('[data-wpresentset]').forEach(b=>b.onclick=()=>{const st=wSets().find(x=>x.id===b.dataset.wpresentset);if(st)wPresent(st.items,st.name)});
  const song=WS.song&&wSongs()[WS.song];
@@ -2404,6 +2438,12 @@ function wireWorship(){wsInbox();document.body.classList.toggle('wsong-open',!!(
   document.querySelectorAll('[data-wrm]').forEach(b=>b.onclick=()=>{st.items.splice(+b.dataset.wrm,1);wSaveSet(st);render()});
   document.querySelectorAll('[data-wik]').forEach(b=>b.onclick=()=>{const [i,d]=b.dataset.wik.split('|').map(Number),it=st.items[i],s=wSongs()[it.id],k=wKeyOf(s,it);if(!k){alert('Set this song’s key in Edit first.');return}it.key=Worship.transposeKey(k,d);wSaveSet(st);render()});
   document.querySelectorAll('[data-wdup]').forEach(b=>b.onclick=()=>{const c={id:wId(),name:(st.name||'Set')+' (copy)',items:st.items.map(x=>Object.assign({},x))};wSaveSet(c);WS.set=c.id;render();scrollTo(0,0)});
+  /* use again: the same set on a new day (the next of its weekday), the calendar open to change it */
+  document.querySelectorAll('[data-wagain]').forEach(b=>b.onclick=()=>{const c={id:wId(),name:st.name||'',items:st.items.map(x=>Object.assign({},x)),date:wNextLike(st)};wSaveSet(c);WS.set=c.id;render();scrollTo(0,0);
+   const di=$('#ws-date');if(di)try{di.showPicker?di.showPicker():di.focus()}catch(e){di.focus()}});
+  {const di=$('#ws-date');if(di)di.onchange=()=>{st.date=di.value||undefined;if(!st.date)delete st.date;wSaveSet(st);const tx=$('#ws-dtxt');if(tx)tx.innerHTML=wDateTxt(st)};
+   if(di)di.onblur=()=>setTimeout(()=>{if(view==='worship'&&WS.set===st.id&&!WS.song&&document.body.contains(di)){const y=scrollY;render();window.scrollTo(0,y)}},0)}   /* after the calendar closes; never mid-redraw */
+  document.querySelectorAll('[data-wnodate]').forEach(b=>b.onclick=()=>{delete st.date;wSaveSet(st);render()});
   document.querySelectorAll('[data-wdelset]').forEach(b=>b.onclick=()=>{if(!confirm('Delete this setlist? The songs stay in your songbook.'))return;S.set('wsets',wSets().filter(x=>x.id!==st.id));WS.set=null;render()});
   document.querySelectorAll('[data-wpick]').forEach(b=>b.onclick=()=>{const songs=wSongs(),ids=Object.keys(songs).sort((a,c)=>songs[a].t.localeCompare(songs[c].t));
    if(!ids.length){alert('Your songbook is empty: add songs in the Songs tab first.');return}

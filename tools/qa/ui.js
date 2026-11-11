@@ -371,6 +371,46 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     for (let k = 0; k < 30 && !mv; k++) { await wait(100); mv = await A.evaluate(() => PR.mv); }
     const st = await A.evaluate(() => ({ live: /lpm playing\s+\{[^}]*"host":"silence"/.test(diagText()), sk: [...document.querySelectorAll('[data-lpsk]')].filter(b => !b.hidden).length, main: !!cur && String(cur).startsWith('led') }));
     return (/^Pray it with \S/.test(line) && mv === 1 && st.live && !st.main) || { real, line, mv, st }; });
+  await T('U80 setlists by date: Tonight/Today on top with its songs, then Coming up soonest first ("Tomorrow", "<Day> · in 2 days", "<Mon d>"), Saved (no date), Past folded away; a date set in a set moves it and is backed up; Use again copies it onto the next same weekday; a new setlist is dated today', async () => {
+    const A = await open(await ctx()); await W(A); await seed(A, 4);
+    await A.evaluate(() => { const it = ['s0', 's1', 's2'].map(id => ({ id })); S.set('wsets', [
+      { id: 'u', name: 'Saved One', items: it.slice(0, 2) }, { id: 'p', name: 'Last Week', items: it, date: wToday(-5) }, { id: 'l', name: 'Later', items: it, date: wToday(10) },
+      { id: 'f', name: 'In Two', items: it, date: wToday(2) }, { id: 'm', name: 'Tomorrow Set', items: it, date: wToday(1) }, { id: 't', name: 'Tonight Set', items: it, date: wToday() }]); WS.set = null; WS.song = null; WS.pane = 'sets'; WS.past = false; render(); });
+    await wait(200);
+    const v = await A.evaluate(() => ({ card: (document.querySelector('.w-tn') || {}).textContent || '', grps: [...document.querySelectorAll('.w-grp')].map(x => x.textContent),
+      rows: [...document.querySelectorAll('.w-row')].map(r => [r.querySelector('b').textContent, (r.querySelector('.w-when') || {}).textContent || '']), past: (document.querySelector('[data-wpast]') || {}).textContent || '' }));
+    await A.click('[data-wpast]'); await wait(150); const pastRows = await A.$$eval('.w-pastrow b', e => e.map(x => x.textContent));
+    const okList = /^(Tonight|Today) · \w+day/.test(v.card) && /Tonight Set/.test(v.card) && /1Song 0/.test(v.card) && v.grps.join() === 'Coming up,Saved'
+      && v.rows.map(r => r[0]).join() === 'Tomorrow Set,In Two,Later,Saved One' && v.rows[0][1] === 'Tomorrow' && /^\w+day · in 2 days$/.test(v.rows[1][1]) && /^[A-Z][a-z]{2}, [A-Z][a-z]{2} \d{1,2}$/.test(v.rows[2][1]) && v.rows[3][1] === ''
+      && /^Past sets · 1 ⌄$/.test(v.past.trim()) && pastRows.join() === 'Last Week';
+    // date the saved set: it moves to Coming up, and the backup has it
+    await A.click('[data-wset="u"]'); await wait(150); const d3 = await A.evaluate(() => wToday(3)); await A.fill('#ws-date', d3); await A.dispatchEvent('#ws-date', 'change'); await A.dispatchEvent('#ws-date', 'blur');
+    const txt = await A.textContent('#ws-dtxt'); const backed = await A.evaluate(d => (bkSnap().wsets || []).some(s => s.id === 'u' && s.date === d), d3);
+    await A.click('[data-wback]'); await wait(150); const moved = await A.evaluate(() => [...document.querySelectorAll('.w-row')].slice(0, 4).map(r => r.querySelector('b').textContent));
+    // No date puts it back in Saved
+    await A.click('[data-wset="u"]'); await A.click('[data-wnodate]'); await wait(100); const undated = await A.evaluate(() => !('date' in S.get('wsets').find(s => s.id === 'u')) && $('#ws-dtxt').textContent === 'No date');
+    await A.click('[data-wback]'); await wait(100);
+    // use again: last week's set onto the next same weekday, same songs and keys
+    await A.evaluate(() => { WS.past = true; render(); }); await A.click('[data-wset="p"]'); await A.click('[data-wagain]'); await wait(200);
+    const again = await A.evaluate(() => { const L = S.get('wsets'), c = L.find(s => s.id === WS.set), o = L.find(s => s.id === 'p'); return { same: c.id !== 'p' && c.name === o.name && JSON.stringify(c.items) === JSON.stringify(o.items), in: wIn(c), wd: wDate(c.date).getDay() === wDate(o.date).getDay() }; });
+    await A.click('[data-wback]'); await A.click('[data-wnewset]'); await wait(150); const fresh = await A.evaluate(() => { const c = S.get('wsets').find(s => s.id === WS.set); return c.date === wToday(); });
+    await A.context().close();
+    return (okList && /in 3 days/.test(txt) && backed && moved.slice(0, 4).join() === 'Tomorrow Set,In Two,Saved One,Later' && undated && again.same && again.in > 0 && again.in <= 7 && again.wd && fresh) || { v, pastRows, txt, backed, moved, undated, again, fresh };
+  });
+  await T('U81 a set\'s date is only organisation: presenting a dated set gives the same TV deck, changing its date leaves the live worship time untouched, and Present again keeps the same worship time', async () => {
+    const A = await open(await ctx()); await W(A); await seed(A, 4);
+    await A.evaluate(() => { S.set('wsets', [{ id: 'd', name: 'Dated', items: [{ id: 's2', key: 'A' }, { id: 's0' }], date: wToday(2) }]); WS.set = 'd'; WS.pane = 'sets'; render(); });
+    await A.click('[data-wpresentset]'); await A.waitForURL(/live\//, { timeout: 8000 }); await wait(1000);
+    const w1 = await A.evaluate(() => localStorage.getItem('sc:wlive')), d1 = JSON.parse(w1);
+    await A.goto(SITE); await wait(700); await W(A); await A.evaluate(() => { WS.set = 'd'; render(); });
+    await A.fill('#ws-date', await A.evaluate(() => wToday(5))); await A.dispatchEvent('#ws-date', 'change'); await A.dispatchEvent('#ws-date', 'blur'); await wait(200);
+    const w2 = await A.evaluate(() => localStorage.getItem('sc:wlive'));
+    await A.evaluate(() => { WS.set = 'd'; render(); }); await A.click('[data-wpresentset]'); await A.waitForURL(/live\//, { timeout: 8000 }); await wait(1000);
+    const d3 = JSON.parse(await A.evaluate(() => localStorage.getItem('sc:wlive')));
+    const ids = d => d.deck.songs.map(s => s.id + ':' + s.key).join();
+    await A.context().close();
+    return (w2 === w1 && d1.deck.set.join() === '0,1' && d1.deck.songs[0].id === 's2' && d1.deck.songs[0].key === 'A' && d1.deck.songs.length === 4 && d3.sid === d1.sid && ids(d3) === ids(d1) && d3.deck.set.join() === '0,1') || { same: w2 === w1, set: d1.deck.set, first: d1.deck.songs[0] && d1.deck.songs[0].id, sid: [d1.sid, d3.sid], a: ids(d1), b: ids(d3) };
+  });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
