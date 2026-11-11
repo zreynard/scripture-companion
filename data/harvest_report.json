@@ -1,77 +1,9 @@
 {
-  "started": "2026-11-10T20:36:41.403261+00:00",
+  "started": "2026-11-11T17:22:09.640494+00:00",
   "sources": {
-    "ptw": {
-      "count": 4382,
-      "seconds": 9.4
-    },
-    "platt_messages": {
-      "count": 572,
-      "seconds": 0.5
-    },
-    "secret_church_podcast": {
-      "count": 198,
-      "seconds": 0.5
-    },
-    "twr360": {
-      "count": 43,
-      "seconds": 24.7
-    },
-    "2819_podcast": {
-      "count": 149,
-      "seconds": 0.3
-    },
-    "mclean": {
-      "count": 395,
-      "seconds": 4.3
-    },
-    "street_preachers": {
-      "count": 36,
-      "seconds": 0.1
-    },
-    "davey_sermons": {
-      "count": 169,
-      "seconds": 2.5
-    },
-    "davey_wfth": {
-      "count": 1152,
-      "seconds": 14.2
-    },
-    "davey_journey": {
-      "count": 1163,
-      "seconds": 12.8
-    },
-    "davey_archive": {
-      "count": 368,
-      "seconds": 0.1
-    },
-    "brookhills": {
-      "count": 59,
-      "seconds": 32.1
-    },
-    "brookhills_ia": {
-      "count": 371,
-      "seconds": 3.7
-    },
-    "skip_archive": {
-      "count": 4133,
-      "seconds": 172.5
-    },
-    "skip_church": {
-      "count": 100,
-      "seconds": 0.5
-    },
-    "skip_connect": {
-      "count": 1441,
-      "seconds": 1.1
-    },
     "fearless": {
       "count": 11,
-      "seconds": 3.0
-    },
-    "harvest_memphis": {
-      "count": 268,
-      "seconds": 0.3
+      "seconds": 2.5
     }
   },
   "catalog_total": 12314
