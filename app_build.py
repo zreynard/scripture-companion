@@ -2911,6 +2911,12 @@ function medSession(){if(!('mediaSession' in navigator))return;const m=medCur()|
 function medLabel(){const s=MED.c&&MED.c.state;if(MED.on&&s==='loading')return 'Loading…';const L={listen:'Listen',pause:'',again:'Again',still:'Be still',done:'Amen',err:"This reading didn't load. Tap Begin to try again."};return MED.step in L?L[MED.step]:'Meditate'}
 function medEb(){const e=$('#medeb');if(e)e.textContent=medLabel()}
 function medPaint(){if(view!=='pray'||PR.mode!=='med')return;const y=scrollY;render();window.scrollTo(0,y)}
+/* the saying sized to the screen it is on: a size smaller at a time (not below 15px) until Begin, the pause or Amen sits
+   above the tab bar — every phone's font and screen differ, so it is measured, not guessed */
+function medFit(){const q=document.querySelector('.med-q'),c=document.querySelector('.med-ctl button'),tb=$('#tabs');if(!q||!c||!tb)return;
+ q.style.fontSize='';q.style.lineHeight='';let fs=parseFloat(getComputedStyle(q).fontSize);const lim=tb.getBoundingClientRect().top-6;
+ for(let k=0;k<12&&fs>15&&c.getBoundingClientRect().bottom+window.scrollY>lim;k++){fs=Math.max(15,fs-1);q.style.fontSize=fs+'px';q.style.lineHeight='1.38'}}
+window.addEventListener('resize',()=>{if(view==='pray'&&PR.mode==='med')medFit()});window.addEventListener('orientationchange',()=>setTimeout(()=>{if(view==='pray'&&PR.mode==='med')medFit()},300));
 function medStart(){const m=medCur();if(!m)return;dlog('tap Begin',m.ref);bedKick();if(!audio.paused)audio.pause();{const pa=pmEl();if(!pa.paused)pa.pause()}if(LED.c&&LED.c.busy())LED.c.pause();
  const c=medC();clearTimeout(MED.t);MED.on=true;MED.k=0;MED.paused=false;MED.step='listen';c.rate=MED.sp;c.go(m.audio,m.a,m.b,d=>{const r=tscale(d,m.Lt);c.t0=m.a*r;c.end=m.b*r;dlog('scale',{length:d,true_length:m.Lt,ratio:Math.round(r*100000)/100000})});medPaint();bedSync()}
 function medNext(){if(!MED.on)return;const f=window.MED_FAST||1;
@@ -2921,7 +2927,7 @@ function medStop(done){MED.on=false;MED.paused=false;clearTimeout(MED.t);MED.ste
 function medGo(d){const L=medList(),k=medIdx()+d;if(k<0||k>=L.length)return;if(MED.on)medStop(false);MED.pick=L[k].ref;MED.step='';medPaint()}
 function medView(){const L=medList(),m=medCur(),k=medIdx();if(!m)return `<p class="led-lead">The sayings are on their way.</p>`;const long=m.t.length>150;
  const ctl=MED.step==='still'?`<button class="med-go" data-medamen>Amen</button>`:MED.on?`<button class="med-pp" data-medpp aria-label="${MED.paused?'Go on':'Pause'}"${MED.step==='pause'?' disabled':''}>${MED.paused?PR_PLAY:PR_PAUSE}</button>`:`<button class="med-go" data-medgo>Begin</button>`;
- return `<div class="pr-art pr-band${long?' sm':''}">${prayArt('pm',1)}</div><section class="med${MED.on?' on':''}" aria-label="Meditate">${prHead(medLabel(),'medeb','data-medgo2',k>0,k<L.length-1,`<span class="med-n">${k+1} of ${L.length}</span>`,MED.step==='err','saying')}<p class="med-q serif${m.t.length>330?' xl xxl':m.t.length>240?' xl':long?' l':''}">${esc(m.t)}</p><div class="med-ref">${esc(m.ref)}</div>${m.who?`<div class="med-by">Read by ${esc(NAMES[m.who]||m.who)}</div>`:''}
+ return `<div class="pr-art pr-band${long?' sm':''}">${prayArt('pm',1)}</div><section class="med${MED.on?' on':''}" aria-label="Meditate">${prHead(medLabel(),'medeb','data-medgo2',k>0,k<L.length-1,`<span class="med-n">${k+1} of ${L.length}</span>`,MED.step==='err','saying')}<p class="med-q serif${m.t.length>330?' xl xxl':m.t.length>240?' xl':m.t.length>=140?' l':''}">${esc(m.t)}</p><div class="med-ref">${esc(m.ref)}</div>${m.who?`<div class="med-by">Read by ${esc(NAMES[m.who]||m.who)}</div>`:''}
 <div class="med-ctl">${ctl}</div><div class="led-opt med-opt"><button data-medsp aria-label="Reading speed">${MED.sp}×</button>${prMuBtn()}</div>${prMuPanel()}</section>`}
 /* Guided with a pastor: one of the library's pastors praying the Lord's Prayer through (data/guided_lp.json), played
    from his sermon; the movement on screen follows him, the arrows go to a movement in his prayer */
@@ -2970,7 +2976,7 @@ function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='
  document.querySelectorAll('[data-prmu]').forEach(b=>b.onclick=()=>{PR.mu=!PR.mu;const p=$('#prmu');if(p)p.hidden=!PR.mu;b.setAttribute('aria-expanded',PR.mu)});
  {const on=$('#prmuon'),lv=$('#prmulv');if(on)on.onchange=()=>{BED.led=on.checked;S.set('bedled',BED.led);BED.unl=false;bedUnlock();bedSync();const b=$('[data-prmu]');if(b)b.textContent='♪ Music '+(BED.led?'on':'off');if(lv)lv.disabled=!BED.led};
   if(lv)lv.oninput=()=>{BED.plv=+lv.value/100;lv.style.setProperty('--p',((lv.value-3)/57*100).toFixed(1)+'%');S.set('bedlvp',BED.plv);if(bedWanted()&&bedPray())bedGain(BED.plv,120)}}
- if(PR.mode==='led')ledPaint();
+ if(PR.mode==='led')ledPaint();if(PR.mode==='med')medFit();
  document.querySelectorAll('[data-pm]').forEach(b=>b.onclick=pmToggle);
  document.querySelectorAll('[data-pms]').forEach(b=>b.onclick=()=>pmSkip(+b.dataset.pms));
  document.querySelectorAll('[data-prmv]').forEach(b=>b.onclick=()=>prGo(+b.dataset.prmv));
