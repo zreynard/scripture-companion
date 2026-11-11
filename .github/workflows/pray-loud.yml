@@ -2,7 +2,10 @@
 # Meditate reading and the Lord's Prayer, so the music can sit the same under each and very quiet ones can be left out.
 # Results are in the job logs (LOUD lines); merged locally with `python tools/pray_loud.py merge`. By hand only.
 name: Pray loudness
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      kinds: {description: "which: led, med, lp (comma-separated)", default: "led,med,lp"}
 jobs:
   measure:
     runs-on: ubuntu-latest
@@ -19,4 +22,4 @@ jobs:
       - run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg >/dev/null
       - run: pip install -q -r requirements.txt
       - run: python app_build.py >/dev/null
-      - run: python tools/pray_loud.py ${{ matrix.shard }} 12
+      - run: KINDS="${{ inputs.kinds }}" python tools/pray_loud.py ${{ matrix.shard }} 12

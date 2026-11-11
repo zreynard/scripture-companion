@@ -16,7 +16,7 @@ def lufs(path, t0, dur):
     return (float(i[-1]) if i else None), (float(pk[-1]) if pk else None)
 
 def length(path):
-    p = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", path, "-f", "null", "-"], capture_output=True, text=True, timeout=900)
+    p = subprocess.run(["ffmpeg", "-hide_banner", "-i", path, "-f", "null", "-"], capture_output=True, text=True, timeout=900)   # stats on: the last time= is the decoded length
     t = re.findall(r"time=(\d+):(\d+):([\d.]+)", p.stderr)
     return int(t[-1][0]) * 3600 + int(t[-1][1]) * 60 + float(t[-1][2]) if t else None
 
@@ -32,8 +32,9 @@ def jobs():
 def run(shard, of):
     import requests
     by = {}
+    kinds = set((os.environ.get("KINDS") or "led,med,lp").split(","))
     for j in jobs():
-        if int(hashlib.md5(j[2].encode()).hexdigest(), 16) % of == shard: by.setdefault(j[2], []).append(j)
+        if j[0] in kinds and int(hashlib.md5(j[2].encode()).hexdigest(), 16) % of == shard: by.setdefault(j[2], []).append(j)
     print(f"shard {shard}/{of}: {len(by)} files, {sum(len(v) for v in by.values())} stretches", flush=True)
     for url, js in by.items():
         if "buzzsprout" in url:
