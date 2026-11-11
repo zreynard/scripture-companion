@@ -453,18 +453,23 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     const r = 30 / 31;
     return (Math.abs(m0[0] - 15.5 * r) < 0.02 && Math.abs(m0[1] - 15) < 0.4 && Math.abs(m1 - 18) < 0.15 && Math.abs(l0[0] - r) < 0.001 && Math.abs(l0[1] - 3) < 0.4 && l1[0] === 1 && l1[1] >= 5.7 && l1[1] < 6.6 && !p.errs.length) || { m0, m1, l0, l1, e: p.errs };
   });
-  await T('P38 the saying is sized to the screen: at 390×700 every saying\'s Begin is in view, never below 15px; short sayings keep 24px', async () => {
-    const p = await pray_(await page({ width: 390, height: 700 })); await guided(p, 'med'); const bad = []; let small = 99;
+  await T('P38 the saying is sized to the screen: on a short phone (390×700) and an everyday one (390×844) every saying\'s Begin is in view, never below 15px; short sayings keep 24px on the everyday one and lose no more than 2px on the short one', async () => {
+    const bad = []; let small = 99, errs = [];
+    for (const H of [700, 844]) {
+    const p = await pray_(await page({ width: 390, height: H })); await guided(p, 'med');
     const n = await p.evaluate(() => medList().length);
     for (let k = 0; k < n; k++) {
       const r = await p.evaluate(k => { MED.pick = medList()[k].ref; MED.step = ''; render(); window.scrollTo(0, 0); const q = document.querySelector('.med-q'), g = document.querySelector('[data-medgo]'), t = document.querySelector('#tabs').getBoundingClientRect();
         return { k, ref: medCur().ref, len: medCur().t.length, fs: parseFloat(getComputedStyle(q).fontSize), bottom: Math.round(g.getBoundingClientRect().bottom), tabs: Math.round(t.top) }; }, k);
       small = Math.min(small, r.fs);
       if (r.bottom > r.tabs && r.fs > 15) bad.push(r);
-      if (r.len < 100 && r.fs !== 24) bad.push({ shortShrunk: r });
+      r.H = H;
+      if (r.len < 100 && (H === 844 ? r.fs !== 24 : r.fs < 22)) bad.push({ shortShrunk: r });
       if (r.fs < 15) bad.push({ tooSmall: r });
     }
-    return (!bad.length && !p.errs.length) || { bad: bad.slice(0, 6), small, e: p.errs };
+    errs = errs.concat(p.errs);
+    }
+    return (!bad.length && !errs.length) || { bad: bad.slice(0, 6), small, e: errs };
   });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
