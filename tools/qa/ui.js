@@ -424,12 +424,13 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await A.fill('#wf-src', 'Verse 1\nG\ntyped by hand\nPrint'); await A.dispatchEvent('#wf-src', 'input'); const typed = await A.evaluate(() => $('#wf-src').value === 'Verse 1\nG\ntyped by hand\nPrint');
     let clip = 'not offered by this browser';
     await go();
-    const can = await A.evaluate(async t => { try { await navigator.clipboard.writeText(t); return true } catch (e) { return false } }, PAGE);
+    // Safari asks you to confirm a clipboard read with its own Paste bubble, which a test cannot press: checked in Chrome's engine only
+    const can = ENGINE === chromium && await A.evaluate(async t => { try { await navigator.clipboard.writeText(t); return true } catch (e) { return false } }, PAGE);
     if (can) { await A.click('#wf-clip'); await wait(400); clip = await A.evaluate(() => /^\[Verse 1\]/.test($('#wf-src').value) && $('#wf-t').value === 'Lantern Road' && !/ADVERTISEMENT|Report Bad Tab/.test($('#wf-src').value) && $('#wf-clip').hidden); }
     await c.close();
     const ok = btn && /^\[Verse 1\]\nG {14}C\nAn invented line for the test\n\n\[Chorus\]/.test(r.src) && !/ADVERTISEMENT|OPEN IN APP|Report Bad Tab|Rating|PLAY|2 1/.test(r.src) && r.t === 'Lantern Road' && r.a === 'Test Band' && r.k === 'G'
       && /Tidied the paste: removed \d+ lines from the web page · filled in the title, artist, key G\. Undo/.test(r.note) && /Verse 1/.test(r.found) && /Chorus/.test(r.found) && undone && typed && clip !== false;
-    return ok || { btn, r, undone, typed, clip };
+    return ok || { btn, undone, typed, clip, note: r.note, k: r.k, t: r.t, a: r.a, src: r.src.slice(0, 80) };
   });
   await T('U83 a ChordPro chart pasted into Add a song: Title, Artist and Key fill in from its {title}/{artist}/{key}, the chart is kept exactly, and the found line shows the repeats and the final tag', async () => {
     const CP = '{title: Lantern Road}\n{artist: Test Band}\n{key: C}\n\n{comment: INTRO}\n| Am / F6 / | C / / / |\n\n{start_of_verse: Verse 1}\n[Am]An invented [F6]line for the [C]test\n{end_of_verse}\n\n{start_of_chorus: Chorus 1}\nAnother [Am]invented [F6]line[C]\n{end_of_chorus}\n\n{comment: TAG — 3 TIMES}\nA [Am]tag line[C]\n\n{start_of_bridge: Bridge}\nA [Am]bridge [F]line [C/E]here [G]\n{end_of_bridge}\n\n{comment: REPEAT BRIDGE}\n\n{comment: REPEAT CHORUS 1}\n\n{comment: FINAL TAG — 4 TIMES}\nA [Am]last line[C]';
