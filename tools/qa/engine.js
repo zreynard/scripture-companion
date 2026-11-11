@@ -54,7 +54,7 @@ T('E43 slides hold no chords or brackets', () => S('Verse\n[G]a [D]b\nC  G\nword
 // --- chart HTML is escaped (no injection from a pasted chart)
 T('E44 chart HTML escapes tags', () => { const h = W.chartHTML({ src: 'Verse <img src=x onerror=alert(1)>\n<script>alert(1)</script>\n[G]<b>bold</b>' }); return !/<script|<img|<b>/.test(h) || h; });
 T('E45 chart HTML transposes', () => /F#m/.test(W.chartHTML({ src: 'Verse\nEm\nwords' }, { semis: 2, flats: false })));
-T('E46 compact repeats print the label only', () => { const h = W.chartHTML({ src: 'Chorus\nhello\n\nVerse\nx\n\nChorus' }, { compactRepeats: true }); return (h.match(/hello/g) || []).length === 1 || h; });
+T('E46 a repeated section is shown in full where it is sung, marked (repeat)', () => { const h = W.chartHTML({ src: 'Chorus\nhello\n\nVerse\nx\n\nChorus' }, { compactRepeats: true }); return ((h.match(/hello/g) || []).length === 2 && /Chorus <i>\(repeat\)<\/i>/.test(h)) || h; });
 T('E47 huge chart (2,000 lines) is fast', () => { const t0 = Date.now(); const big = Array.from({ length: 250 }, (_, i) => 'Verse ' + i + '\nG   D\nwords and more words\nEm  C\nanother line here\n').join('\n'); const p = P(big); W.slides({ parsed: p }); W.chartHTML({ parsed: p }); return (Date.now() - t0 < 1500 && p.sections.length === 250) || { ms: Date.now() - t0, n: p.sections.length }; });
 T('E48 unicode and smart quotes kept', () => eq(P('Verse\nG\n’Tis grace – “holy” é').sections[0].lines[0].text, '’Tis grace – “holy” é'));
 T('E49 borrowed chords spelled with flats in sharp keys', () => eq([tr('Bb', 'C', 'G'), tr('Eb', 'C', 'D'), tr('Ab', 'C', 'A'), tr('Bb', 'C', 'E')], ['F', 'F', 'F', 'D']));
@@ -63,15 +63,15 @@ T('E51 flat keys stay flat', () => eq(['C', 'Dm', 'Em', 'F', 'G', 'Am'].map(c =>
 T('E52 minor key relative spelling', () => eq(['Am', 'C', 'Dm', 'E', 'G'].map(c => tr(c, 'Am', 'Gm')), ['Gm', 'Bb', 'Cm', 'D', 'F']));
 T('E53 slash basses follow their chord', () => eq([tr('C/E', 'C', 'Db'), tr('G/B', 'G', 'Ab'), tr('F/A', 'F', 'E'), tr('D/A', 'D', 'Eb'), tr('Am/G', 'C', 'Bb')], ['Db/F', 'Ab/C', 'E/G#', 'Eb/Bb', 'Gm/F']));
 // --- chords never split words
-T('E54 a chord inside a word moves to the start of that word', () => eq(W.snapChords('walk the town', [{ c: 'G', at: 11 }, { c: 'D', at: 2 }]), [{ c: 'D', at: 0 }, { c: 'G', at: 9 }]));
+T('E54 a chord inside a word stays on its letter; one written over a space moves on to the next word', () => eq(W.snapChords('walk the town', [{ c: 'G', at: 11 }, { c: 'D', at: 2 }, { c: 'C', at: 4 }]), [{ c: 'D', at: 2 }, { c: 'C', at: 5 }, { c: 'G', at: 11 }]));
 T('E55 a chord on the space before a word sits on the word; chords after the words stay put', () => eq(W.snapChords('if you go', [{ c: 'C', at: 6 }, { c: 'D', at: 12 }, { c: 'G', at: 0 }]), [{ c: 'G', at: 0 }, { c: 'C', at: 7 }, { c: 'D', at: 9 }]));
-T('E56 rendered chart never cuts a word between two chord pieces, and keeps every chord', () => {
+T('E56 where a chord falls inside a word, the piece after it is drawn floating (so the word reads whole), and every chord is kept', () => {
   const src = 'Verse 1\n  G     D        Em    C\nwalking slowly across the river\n   C        G   D/F#\nsinging all the way along home  \n\nChorus\nEm  D   C   G\n  carry me further up the hill  G  D';
-  const html = W.chartHTML({ parsed: W.parse(src) }, {}); const bad = [];
-  for (const line of html.split('<div class="wc-l').slice(1)) { const segs = [...line.matchAll(/<span class="wc-t">([^<]*)<\/span>/g)].map(m => m[1].replace(/&nbsp;/g, ' '));
-    for (let i = 1; i < segs.length; i++) if (/\w$/.test(segs[i - 1]) && /^\w/.test(segs[i])) bad.push(segs[i - 1].slice(-4) + '|' + segs[i].slice(0, 4)); }
+  const html = W.chartHTML({ parsed: W.parse(src) }, {}); const bad = []; let cuts = 0;
+  for (const line of html.split('<div class="wc-l').slice(1)) { const segs = [...line.matchAll(/<span class="wc-w( wc-in)?">(?:<span class="wc-c">[^<]*<\/span>)?<span class="wc-t">([^<]*)<\/span>/g)].map(m => ({ fl: !!m[1], t: m[2].replace(/&nbsp;/g, ' ') }));
+    for (let i = 1; i < segs.length; i++) if (/\w$/.test(segs[i - 1].t) && /^\w/.test(segs[i].t)) { cuts++; if (!segs[i].fl) bad.push(segs[i - 1].t.slice(-4) + '|' + segs[i].t.slice(0, 4)); } }
   const n = (html.match(/<span class="wc-c">[^<]+<\/span>/g) || []).length;
-  return (bad.length === 0 && n === 11) || { bad, n }; });
+  return (bad.length === 0 && cuts > 0 && n === 11) || { bad, cuts, n }; });
 // --- words split into syllables are put back together
 T('E57 syllable splits join: spaced, unspaced, many parts', () => eq(['for - ev - er and ev - er', 'Ho-ly, ho-ly', 'Hal-le-lu-jah', 'A - men', 'a - bove'].map(x => W.desyl({ text: x, chords: [] }).text), ['forever and ever', 'Holy, holy', 'Hallelujah', 'Amen', 'above']));
 T('E58 real dashes and compound words stay', () => eq(['Jesus - Lord of all', 'God - the One', 'never-ending love', 'yes - and amen'].map(x => W.desyl({ text: x, chords: [] }).text), ['Jesus - Lord of all', 'God - the One', 'never-ending love', 'yes - and amen']));
@@ -270,6 +270,137 @@ T('E68 pasting a ChordPro chart: clean keeps every line (directives too) and rea
 T('E69 headings written other ways: "Chorus (3x)", "Back to Chorus", "Last Chorus", "TAG X5" — and a lyric that merely starts with "Sing" is not a heading', () => {
   const s = W.parse('Chorus\nG\nan invented line\n\nVerse\nC\nanother one\n\nChorus (3x)\n\nBack to Chorus\n\nLast Chorus\nD\nthe end line\n\nTAG X5\nG\nlast\n\nVerse 2\nG\nSing a new song to the test\n').sections.map(x => x.label + (x.rep > 1 ? ' x' + x.rep : '') + (x.ref ? '*' : ''));
   return eq(s, ['Chorus', 'Verse', 'Chorus x3*', 'Chorus*', 'Last Chorus', 'Tag x5', 'Verse 2']);
+});
+// --- the whole pipeline on made-up songs shaped like real charts (no real lyrics anywhere in these tests)
+// shaped like a chart with a chorus repeat by instruction, two custom-named instrumental passages and an alternate chorus
+const SHAPE_A = `{title: Morning Field}
+{artist: Test Band}
+{key: B}
+
+{comment: INTRO}
+| B | B | G#m | G#m |
+| F# | F# | E | E |
+
+{start_of_verse: Verse 1}
+All the li[B]ght comes in
+Over e[G#m]very hill
+Where the [F#]river bends
+On the qu[E]iet sill
+{end_of_verse}
+
+{start_of_verse: Verse 2}
+I could w[B]alk this road
+As I o[G#m]ften do
+{end_of_verse}
+
+{start_of_chorus: Chorus}
+So we r[B]aise a sound
+Over all the [F#]ground
+And the morning is a can[E]delight
+[G#m]Hey - la - [F#]hey
+
+And we k[B]now the way
+And we sing a [F#]song
+[G#m]Hey - la - [F#]hey - l[B]a
+{end_of_chorus}
+
+{start_of_verse: Verse 3}
+There's a [B]brand new day
+There's a [G#m]road to take
+With the [F#]lanterns lit
+For the [E]morning's sake
+{end_of_verse}
+
+{comment: REPEAT CHORUS}
+
+{comment: CHANNEL 1}
+| B | B | B | B |
+| B | B | B | B |
+
+{start_of_bridge: Bridge}
+[B]Come along the road
+[F#]Lift a lantern high
+Get up and walk the [B]road [F#]
+{end_of_bridge}
+
+{comment: CHANNEL 2}
+| E | E | G#m | F# |
+
+{start_of_chorus: Alternate Chorus}
+So we r[B]aise a sound
+Over all the [F#m]ground
+[Em]Hey - la - h[B]ey
+{end_of_chorus}`;
+const kinds = p => p.sections.map(s => s.label + (s.rep > 1 ? ' x' + s.rep : '') + (s.ref ? '*' : '') + (s.missing ? '?' : ''));
+T('E70 a chorus repeated by instruction is placed where it is sung; custom-named passages (CHANNEL 1, CHANNEL 2) are sections of their own; an alternate chorus keeps its own words', () => {
+  const p = W.parse(SHAPE_A), k = kinds(p);
+  const v3 = p.sections.find(s => s.label === 'Verse 3'), rep = p.sections[5], ch1 = p.sections.find(s => s.label === 'Channel 1'), alt = p.sections.find(s => s.label === 'Alternate Chorus'), cho = p.sections.find(s => s.label === 'Chorus' && !s.ref);
+  return (eq(k, ['Intro', 'Verse 1', 'Verse 2', 'Chorus', 'Verse 3', 'Chorus*', 'Channel 1', 'Bridge', 'Channel 2', 'Alternate Chorus']) === true
+    && v3.lines.length === 4 && rep.of === 3 && rep.lines === cho.lines && ch1.kind === 'instrumental' && !ch1.lyric && ch1.lines.length === 2 && !alt.ref && alt.kind === 'chorus' && alt.short === 'AC' && alt.lines.length === 3 && !p.warnings.length)
+    || { k, v3: v3 && v3.lines.length, of: rep.of, ch1: ch1 && [ch1.kind, ch1.lines.length], alt: alt && [alt.ref, alt.kind, alt.short, alt.lines.length], w: p.warnings };
+});
+T('E71 how a repeat finds its section: the same name; else the same kind and number; with no number the nearest one before; "Verse 2" never stands in for "Verse 1"; an asked-for repeat of something not in the chart stays in place, marked, and is reported', () => {
+  const p = W.parse('Chorus 1\nG\naaa\n\nChorus 2\nC\nbbb\n\nVerse 1\nD\nccc\n\nRepeat Chorus\n\nRepeat Chorus 1\n\n{comment: Repeat CHORUS 2 x2}\n\nVerse 2\n\n{comment: Repeat Hook}\n\n[Hook]\nE\nddd\n\n[Hook]');
+  const k = kinds(p), of = p.sections.map(s => s.of == null ? '' : s.of).join(',');
+  return (eq(k, ['Chorus 1', 'Chorus 2', 'Verse 1', 'Chorus 2*', 'Chorus 1*', 'Chorus 2 x2*', 'Verse 2', 'Hook*', 'Hook', 'Hook*']) === true && of === ',,,1,0,1,,8,,8' && p.warnings.length === 0)
+    || { k, of, w: p.warnings };
+});
+T('E72 a repeat that matches nothing: kept in place with its name, marked, reported in plain words; nothing invented', () => {
+  const p = W.parse('[Verse]\nG\nan invented line\n\n{comment: REPEAT HOOK}'), s = p.sections[1];
+  return (s && s.missing && !s.lines.length && s.label === 'Hook' && /REPEAT HOOK.*no Hook in this chart/.test(p.warnings[0] || '')) || { s, w: p.warnings };
+});
+T('E73 nothing meaningful is dropped: a {comment} inside a section is a note to the band; a sentence-like comment is a note; an unknown directive is reported (and kept in the chart text)', () => {
+  const src = '{start_of_verse: Verse 1}\n{comment: softly, guitar only}\n[G]An invented [C]line\n{end_of_verse}\n{comment: everyone in, build to the end}\n{start_of_chorus}\n[D]Another one\n{end_of_chorus}\n{flavour: spicy}\n{tempo: 72}';
+  const p = W.parse(src), v = p.sections[0], c = p.sections[1];
+  return (eq(kinds(p), ['Verse 1', 'Chorus']) === true && eq(v.notes, ['softly, guitar only']) === true && eq(c.notes, ['everyone in, build to the end']) === true && eq(v.lines.length, 1) === true && eq(c.label, 'Chorus') === true
+    && (v.notes.length + (c.notes || []).length + (p.meta.notes || []).length) === 2 && p.meta.tempo === '72' && p.warnings.length === 1 && /flavour/.test(p.warnings[0]))
+    || { k: kinds(p), vn: v.notes, cn: c.notes, mn: p.meta.notes, w: p.warnings };
+});
+T('E74 section names are not a fixed list: {comment: SPOKEN WORD}, [Groove], {start_of_grid: Turn 2}, {comment: Post-Chorus} all become sections; ALL-CAPS names read in title case', () => {
+  const p = W.parse('{comment: SPOKEN WORD}\nan invented spoken line\n\n[Groove]\n| G | C |\n\n{start_of_grid: Turn 2}\n| D | D |\n{end_of_grid}\n\n{comment: Post-Chorus}\n[G]oh oh');
+  return eq(kinds(p), ['Spoken Word', 'Groove', 'Turn 2', 'Post-Chorus']);
+});
+T('E75 every chord quality and slash chord survives a trip through all 12 keys and back, and each key spells with its own sharps or flats', () => {
+  const CH = ['G', 'Em7', 'Cadd9', 'Dsus4', 'D/F#', 'Am7b5', 'Bbmaj7', 'F#m', 'C#dim', 'Ebsus2', 'Ab6', 'B7(b9)', 'G#m', 'Esus', 'A2', 'F/A', 'Csus2/G', 'Dm(maj7)'];
+  const bad = [];
+  for (let k = 0; k < 12; k++) {
+    const to = W.KEYS_MAJ[(7 + k) % 12], flats = W.useFlats ? W.useFlats(to) : /b/.test(to);
+    CH.forEach(c => { const up = W.transposeChord(c, k, flats), back = W.transposeChord(up, (12 - k) % 12, /b/.test(c));
+      const pc = x => { const m = /^([A-G](?:#|b)?)/.exec(x); return m && W.NOTE ? W.NOTE[m[1]] : m && m[1]; };
+      if (W.NOTE ? pc(back) !== pc(c) : !back) bad.push([c, k, up, back]);
+      if (up.replace(/^[A-G](#|b)?/, '').replace(/\/[A-G](#|b)?$/, '') !== c.replace(/^[A-G](#|b)?/, '').replace(/\/[A-G](#|b)?$/, '')) bad.push(['quality', c, k, up]);
+      const root = up.replace(/\/.*$/, '').slice(0, 2);   // the root follows the key; a slash bass is spelled as the chord's own note (B/D#)
+      if (flats && /#/.test(root) || !flats && /^[A-G]b/.test(root) && k) bad.push(['spelling', c, k, to, up]); });
+  }
+  return !bad.length || bad.slice(0, 6);
+});
+T('E76 malformed or odd input never throws and never loses words: an unclosed [G, a stray ], CRLF line ends, tabs, an empty chart, chords only', () => {
+  const srcs = ['', '   \n\n', 'Verse 1\r\n[G an unclosed bracket line\r\nstray ] in a line\r\n\tTabbed\tline', '| G | C |\n| D | D |', '{c: }\n{}\n{start_of_chorus}\nno end marker here'];
+  const lost = [];
+  srcs.forEach(s => { const p = W.parse(s), txt = p.sections.map(x => x.lines.map(l => l ? l.text : '').join(' ')).join(' ');
+    ['unclosed', 'bracket', 'stray', 'Tabbed', 'no end marker'].forEach(w => { if (s.includes(w) && !txt.includes(w)) lost.push([w, s.slice(0, 20)]); }); });
+  return !lost.length || lost;
+});
+T('E77 a chord inside a word floats above its letter (the word stays whole); at a word\'s start it keeps its own room; two chords too close inside a word do not overlap', () => {
+  const h = W.chartHTML({ src: 'Chorus\nAll that I have is a hal[E]lelujah\n[G#m]Hey - la - [F#]hey\nlan[A]te[B]rn' });
+  const lines = h.split('<div class="wc-l').slice(1);
+  const whole = l => l.replace(/^[^>]*>/, '').replace(/<span class="wc-c">[^<]*<\/span>/g, '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+  return (/wc-hasin/.test(lines[0]) && /class="wc-w wc-in"><span class="wc-c">E</.test(lines[0]) && whole(lines[0]) === 'All that I have is a hallelujah'
+    && /class="wc-w"><span class="wc-c">G#m/.test(lines[1]) && /wc-in"><span class="wc-c">A</.test(lines[2]) && /class="wc-w"><span class="wc-c">B</.test(lines[2]) && whole(lines[2]) === 'lantern')
+    || lines.map(whole);
+});
+T('E78 nothing is lost between the chart and what is read: every chord and every word of every section written in both test charts is in the result, once per section written', () => {
+  const bad = [];
+  [SHAPE_A, CP].forEach((src, si) => {
+    const p = W.parse(src), defs = p.sections.filter(s => !s.ref);
+    const wantChords = (src.match(/\[([^\]\s]{1,8})\]/g) || []).length + src.split('\n').filter(l => /^\s*\|/.test(l)).reduce((a, l) => a + l.split(/[|\s]+/).filter(x => x && W.isChord(x)).length, 0);
+    const got = defs.reduce((a, s) => a + s.lines.reduce((b, l) => b + (l ? l.chords.length : 0), 0), 0);
+    if (got !== wantChords) bad.push(['chords', si, got, wantChords]);
+    const words = src.replace(/\{[^}]*\}/g, '').replace(/\[[^\]]*\]/g, '').replace(/\|[^\n]*/g, '').replace(/ - /g, '').split(/\s+/).filter(w => /[a-z]/i.test(w)).length;
+    const gotW = defs.reduce((a, s) => a + s.lines.reduce((b, l) => b + (l ? l.text.split(/\s+/).filter(w => /[a-z]/i.test(w)).length : 0), 0), 0);
+    if (gotW !== words) bad.push(['words', si, gotW, words]);
+  });
+  return !bad.length || bad;
 });
 console.log(R.map(r => (r[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + r[0] + (r[1].startsWith('PASS') ? '' : '  ' + r[1].slice(5, 300))).join('\n'));
 const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); process.exit(f ? 1 : 0);

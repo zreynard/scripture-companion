@@ -49,11 +49,11 @@
   function transposeKey(k, semis) { var i = keyInfo(k); return i ? keyName(i.pc + semis, i.minor) : k; }
 
   /* ---- section labels ---- */
-  var KINDS = [['pre-chorus', /^pre[- ]?chorus|^prechorus|^pc\b/i, 'PC'], ['chorus', /^chorus|^refrain|^ch\b|^c\b/i, 'C'], ['verse', /^verse|^v\b/i, 'V'],
+  var KINDS = [['pre-chorus', /^pre[- ]?chorus|^prechorus|^pc\b/i, 'PC'], ['post-chorus', /^post[- ]?chorus/i, 'PoC'], ['chorus', /^chorus|^refrain|^ch\b|^c\b/i, 'C'], ['verse', /^verse|^v\b/i, 'V'],
     ['bridge', /^bridge|^b\b/i, 'B'], ['intro', /^intro/i, 'I'], ['outro', /^outro|^ending|^end\b/i, 'O'], ['tag', /^tag/i, 'T'],
-    ['instrumental', /^instrumental|^inst\b|^interlude|^turnaround|^break|^solo/i, 'Inst'], ['vamp', /^vamp/i, 'Vamp'], ['other', /^(?:spontaneous|ad lib|coda)/i, 'X']];
-  var LABEL = /^\s*[\[(]?\s*((?:pre[- ]?chorus|prechorus|chorus|refrain|verse|bridge|intro|outro|ending|tag|instrumental|interlude|turnaround|break|solo|vamp|coda|spontaneous)(?:\s*\d+[ab]?)?)\s*[\])]?\s*:?\s*(?:[\[(]?\s*[x×]\s*(\d+)\s*[\])]?)?\s*(.*)$/i;
-  var PRE = /^(?:final|last|first|second|double|half|big|soft)\s+(?=\S)/i;
+    ['instrumental', /^instrumental|^inst\b|^interlude|^turnaround|^break|^solo|^channel/i, 'Inst'], ['vamp', /^vamp/i, 'Vamp'], ['other', /^(?:spontaneous|ad lib|coda)/i, 'X']];
+  var LABEL = /^\s*[\[(]?\s*((?:pre[- ]?chorus|prechorus|post[- ]?chorus|chorus|refrain|verse|bridge|intro|outro|ending|tag|instrumental|interlude|turnaround|breakdown|break|solo|vamp|coda|spontaneous|channel|hook|reprise)(?:\s*\d+[ab]?)?)\s*[\])]?\s*:?\s*(?:[\[(]?\s*[x×]\s*(\d+)\s*[\])]?)?\s*(.*)$/i;
+  var PRE = /^(?:final|last|first|second|third|double|half|big|soft|quiet|full|alternate|alt\.?)\s+(?=\S)/i;
   function kindOf(label) { var l = label.trim().replace(PRE, ''); for (var i = 0; i < KINDS.length; i++) if (KINDS[i][1].test(l)) return KINDS[i]; return ['other', null, 'X']; }
   function tidyLabel(l) { l = l.replace(/\s+/g, ' ').trim(); if (/[A-Z]{2}/.test(l) && l === l.toUpperCase()) l = l.toLowerCase().replace(/(^|[\s-])([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); }); l = l.replace(/^(\w)/, function (c) { return c.toUpperCase(); }); return l.replace(/^Pre[- ]?chorus/i, 'Pre-Chorus').replace(/^Prechorus/i, 'Pre-Chorus'); }
   /* a section heading, however it is written: "Chorus 2", "[Bridge]", "TAG X3", "Tag — 3 times", "(3x)", "Repeat Bridge",
@@ -61,12 +61,12 @@
   function head(line) {
     var s = String(line), ref = false, pre = '', m = /^(\s*[\[(]?\s*)(?:repeat|rpt\.?|back to|sing)\s+/i.exec(s);
     if (m) { ref = true; s = m[1] + s.slice(m[0].length); }
-    m = /^(\s*[\[(]?\s*)(final|last|first|second|double|half|big|soft)\s+(?=\S)/i.exec(s); if (m) { pre = m[2] + ' '; s = m[1] + s.slice(m[0].length); }
+    m = /^(\s*[\[(]?\s*)(final|last|first|second|third|double|half|big|soft|quiet|full|alternate|alt\.?)\s+(?=\S)/i.exec(s); if (m) { pre = m[2] + ' '; s = m[1] + s.slice(m[0].length); }
     s = s.replace(/\s*[—–-]?\s*[\[(]?\s*(\d+)\s*(?:times|x)\s*[\])]?\s*$/i, ' x$1');
     var lm = LABEL.exec(s); if (!lm) return null;
     return { m: lm, label: pre + lm[1], rep: lm[2] ? +lm[2] : 0, ref: ref };
   }
-  function shortOf(label) { var k = kindOf(label), n = (/(\d+)/.exec(label) || [])[1]; return k[2] + (n || ''); }
+  function shortOf(label) { var k = kindOf(label), n = (/(\d+)/.exec(label) || [])[1], p = PRE.exec(label.trim()); return (p ? p[0].charAt(0).toUpperCase() : '') + k[2] + (n || ''); }
 
   /* ---- reading a chart ---- */
   function tokens(line) { return line.replace(/[|]/g, ' ').trim().split(/\s+/).filter(Boolean); }
@@ -103,37 +103,74 @@
     for (var i = 0; i <= t.length; i++) { before[i] = n; if (i < t.length && !drop[i]) { out += t[i]; n++; } }
     return { text: out, chords: (l.chords || []).map(function (c) { return { c: c.c, at: c.at <= t.length ? before[c.at] : c.at - (t.length - out.length) }; }) };
   }
+  /* a {comment:} or {start_of_x: label} as structure: a repeat of a section, a heading of any name ("CHANNEL 1",
+     "Alternate Chorus"), or a note to the band ("softly, then build"). Nothing in it is thrown away. */
+  var CNT = /\s*[—–-]?\s*[\[(]?\s*(?:[x×]\s*(\d+)|(\d+)\s*(?:x|×|times))\s*[\])]?\s*$/i;
+  function dirHead(v, inside) {
+    var s = String(v || '').trim(), c, r = /^[\[(]?\s*(?:repeat|rpt\.?|back to|sing|play)\s+(.+?)[\])]?$/i.exec(s);
+    if (!s) return null;
+    if (r) { var tg = r[1]; c = CNT.exec(tg); if (c) tg = tg.slice(0, c.index); return { type: 'repeat', target: tg.trim(), rep: c ? +(c[1] || c[2]) : 0 }; }
+    if (inside) return { type: 'note', text: s };   /* within a section: a note to the band */
+    var h = head(s);
+    if (h && (!h.m[3] || /^\([^()]*\)$/.test(h.m[3].trim()))) return { type: 'head', label: h.label + (h.m[3] ? ' ' + h.m[3].trim() : ''), rep: h.rep };
+    c = CNT.exec(s); var name = (c ? s.slice(0, c.index) : s).trim().replace(/:$/, ''), w = name.split(/\s+/);
+    if (name && name.length <= 32 && w.length <= 4 && !/[.,!?;"]$/.test(name) && /^[A-Z0-9]/.test(name)
+      && (name === name.toUpperCase() || w.every(function (x) { return /^[A-Z0-9(]/.test(x) || /^(?:of|the|and|to|a|in|on|for|with)$/.test(x); })))
+      return { type: 'head', label: name, rep: c ? +(c[1] || c[2]) : 0 };
+    return { type: 'note', text: s };
+  }
+  var META_DIR = /^(?:tempo|time|ccli|ccli_license|copyright|duration|album|year|composer|lyricist|arranger|sorttitle|sortartist|meta|new_page|np|new_physical_page|npp|column_break|cb|columns|col|textfont|tf|textsize|ts|textcolour|chordfont|cf|chordsize|cs|chordcolour|titles|define|chord|pagetype|diagrams|grid|g|no_grid|ng|highlight|image|x_[\w-]+)$/i;
+  /* reading: lines into sections (a section is written once; a repeat is a placement of it) */
   function parse(src) {
-    var meta = {}, sections = [], cur = null, lines = String(src || '').replace(/\r/g, '').split('\n'), pendingChords = null, envLabel = null;
-    function open(label, rep) { cur = { label: tidyLabel(label), lines: [], rep: rep || 1 }; sections.push(cur); }
+    var meta = {}, sections = [], warnings = [], cur = null, lines = String(src || '').replace(/\r/g, '').split('\n'), pendingChords = null, envLabel = null;
+    var pend = [], closed = false;   /* a note written between sections belongs to the one that follows */
+    function open(label, rep) { cur = { label: tidyLabel(label), lines: [], rep: rep || 1 }; if (pend.length) { cur.notes = pend; pend = []; } closed = false; sections.push(cur); return cur; }
+    function place(target, rep, raw) { var s = open(target, rep); s.want = target; s.raw = raw; cur = null; return s; }   /* a repeat: filled in once all is read */
+    function note(text) { if (cur && !closed) (cur.notes = cur.notes || []).push(text); else pend.push(text); }
     function ensure() { if (!cur) open('Verse ' + (sections.filter(function (s) { return /^Verse/.test(s.label); }).length + 1)); }
     function push(l) { ensure(); cur.lines.push(l && l.text ? desyl(l) : l); }
     function flushChords() { if (pendingChords) { push({ text: '', chords: pendingChords }); pendingChords = null; } }
+    function seen(name) { var n = tidyLabel(name).toLowerCase(); return sections.some(function (s) { return s.lines.length && s.label.toLowerCase() === n; }); }
     for (var i = 0; i < lines.length; i++) {
       var raw = lines[i].replace(/\t/g, '    '), line = raw.replace(/\s+$/, '');
       var dir = /^\s*\{\s*([a-z_]+)\s*(?::\s*(.*?))?\s*\}\s*$/i.exec(line);
       if (dir) {
-        flushChords(); var d = dir[1].toLowerCase(), v = (dir[2] || '').trim();
+        flushChords(); var d = dir[1].toLowerCase(), v = (dir[2] || '').trim(), se;
         if (d === 't' || d === 'title') meta.title = v; else if (d === 'st' || d === 'subtitle' || d === 'artist') meta.artist = v;
         else if (d === 'key') meta.key = v; else if (d === 'capo') meta.capo = parseInt(v, 10) || 0; else if (d === 'tempo') meta.tempo = v;
-        else if (/^(soc|start_of_chorus)$/.test(d)) { open(v || 'Chorus'); envLabel = 1; }
-        else if (/^(sov|start_of_verse)$/.test(d)) { open(v || 'Verse ' + (sections.filter(function (s) { return /^Verse/.test(s.label); }).length + 1)); envLabel = 1; }
-        else if (/^(sob|start_of_bridge)$/.test(d)) { open(v || 'Bridge'); envLabel = 1; }
-        else if (/^(eoc|eov|eob|end_of_chorus|end_of_verse|end_of_bridge)$/.test(d)) { envLabel = null; }
-        else if (d === 'c' || d === 'comment' || d === 'ci' || d === 'comment_italic') { var hc = head(v); if (hc && (!hc.m[3] || /^\([^()]*\)$/.test(hc.m[3].trim()))) open(hc.label, hc.rep); }
-        else if (d === 'chorus') { open('Chorus'); cur.ref = 1; }
+        else if (d === 'chorus') { place(v || 'Chorus', 0, line.trim()); }
+        else if ((se = /^(?:start_of_(\w+)|so([a-z]))$/.exec(d))) {
+          var kind = se[1] || { c: 'chorus', v: 'verse', b: 'bridge', t: 'tab', g: 'grid' }[se[2]] || se[2];
+          open(v || (kind === 'verse' ? 'Verse ' + (sections.filter(function (s) { return /^Verse/.test(s.label); }).length + 1) : kind.charAt(0).toUpperCase() + kind.slice(1)));
+          envLabel = 1;
+        }
+        else if (/^(?:end_of_\w+|eo[a-z])$/.test(d)) { envLabel = null; closed = true; }
+        else if (d === 'c' || d === 'comment' || d === 'ci' || d === 'comment_italic' || d === 'cb' && v || d === 'comment_box') {
+          var h = dirHead(v, !!envLabel);
+          if (!h) continue;
+          if (h.type === 'repeat') place(h.target, h.rep, line.trim());
+          else if (h.type === 'head') open(h.label, h.rep);
+          else note(h.text);
+        }
+        else if (META_DIR.test(d)) { if (v) meta[d] = v; }
+        else warnings.push('Not used: ' + line.trim());
         continue;
       }
-      if (/^\s*#/.test(line) || /^\s*\{[^}]*\}\s*$/.test(line)) continue;   // comments and unknown directives
+      if (/^\s*#/.test(line) || /^\s*\{[^}]*\}\s*$/.test(line)) { if (/^\s*\{/.test(line)) warnings.push('Not read: ' + line.trim()); continue; }   // comments; a directive written oddly is reported
       if (!line.trim()) { flushChords(); if (cur && cur.lines.length && cur.lines[cur.lines.length - 1] !== null) cur.lines.push(null); continue; }
       /* "Repeat Chorus", "(Back to Chorus)" sing that section again; "Verse 4 (bare, then build)" keeps its note with the label */
-      var hd = head(line), lm2 = hd && hd.m, note = lm2 && lm2[3] && /^\([^()]*\)$/.test(lm2[3].trim()) ? lm2[3].trim() : '';
-      if (lm2 && !hasInline(line) && (!lm2[3] || isChordLine(lm2[3]) || note)) {
-        if (note) lm2[3] = '';
-        flushChords(); open(hd.label + (note ? ' ' + note : ''), hd.rep);
-        if (lm2[3]) pendingChords = chordsAt(lm2[3]).map(function (c) { return { c: c.c, at: c.at }; });
+      var hd = head(line), lm2 = hd && hd.m, nt = lm2 && lm2[3] && /^\([^()]*\)$/.test(lm2[3].trim()) ? lm2[3].trim() : '';
+      if (lm2 && !hasInline(line) && (!lm2[3] || isChordLine(lm2[3]) || nt)) {
+        if (nt) lm2[3] = '';
+        flushChords();
+        if (hd.ref && !lm2[3]) place(hd.label + (nt ? ' ' + nt : ''), hd.rep, line.trim());
+        else { open(hd.label + (nt ? ' ' + nt : ''), hd.rep); if (lm2[3]) pendingChords = chordsAt(lm2[3]).map(function (c) { return { c: c.c, at: c.at }; }); }
         continue;
       }
+      /* "[Hook]", "[Channel 2]": a bracketed name that is not a chord is a heading; "Repeat Hook" a repeat of one already written */
+      var bk = /^\s*\[([^\]]{1,32})\]\s*$/.exec(line), rp = /^\s*[\[(]?\s*(?:repeat|back to)\s+([^\])]{1,30}?)\s*[\])]?\s*$/i.exec(line);
+      if (bk && !isChord(bk[1].trim())) { var bh = dirHead(bk[1], false); flushChords(); if (bh.type === 'repeat') place(bh.target, bh.rep, line.trim()); else open(bh.type === 'head' ? bh.label : bk[1].trim(), bh.rep); continue; }
+      if (rp && !hasInline(line) && seen(rp[1].replace(CNT, ''))) { var c3 = CNT.exec(rp[1]); flushChords(); place(rp[1].replace(CNT, '').trim(), c3 ? +(c3[1] || c3[2]) : 0, line.trim()); continue; }
       if (hasInline(line)) { flushChords(); push(inlineChords(line)); continue; }
       if (isChordLine(line)) { flushChords(); pendingChords = chordsAt(line); continue; }
       var text = line;
@@ -145,17 +182,33 @@
       push({ text: text, chords: [] });
     }
     flushChords();
+    if (pend.length) { var last = sections[sections.length - 1]; if (last) last.notes = (last.notes || []).concat(pend); else meta.notes = (meta.notes || []).concat(pend); }
     sections.forEach(function (s) { while (s.lines.length && s.lines[s.lines.length - 1] === null) s.lines.pop(); while (s.lines.length && s.lines[0] === null) s.lines.shift(); });
-    /* a label written again with no lines of its own ("Chorus", "(Chorus x2)") repeats the first section of that name */
-    var seen = {};
-    sections.forEach(function (s) {
-      var k = s.label.toLowerCase();
-      if (!s.lines.length && seen[k]) { s.ref = 1; s.lines = seen[k].lines; }
-      else if (s.lines.length && !seen[k]) seen[k] = s;
-    });
-    sections.forEach(function (s, i) { s.short = shortOf(s.label); s.kind = kindOf(s.label)[0]; s.lyric = s.lines.some(function (l) { return l && l.text.trim(); }); s.i = i; });
-    return { meta: meta, sections: sections };
+    resolve(sections, warnings);
+    sections.forEach(function (s, i) { s.short = shortOf(s.label); s.kind = s.kind || kindOf(s.label)[0]; s.lyric = s.lines.some(function (l) { return l && l.text.trim(); }); s.i = i; });
+    return { meta: meta, sections: sections, warnings: warnings };
   }
+  /* interpreting: every placement with no lines of its own is a repeat of a section written elsewhere in the chart —
+     the same name; else the same kind and number ("Chorus 2"); else, with no number, the nearest one of that kind before
+     it. An asked-for repeat ("Repeat Hook") that matches nothing stays in place, marked, and is reported. */
+  function resolve(sections, warnings) {
+    var defs = []; sections.forEach(function (s, i) { if (s.lines.length) defs.push(i); });
+    var num = function (l) { var m = /(\d+)/.exec(l); return m ? m[1] : ''; }, base = function (l) { return l.toLowerCase().replace(/\s*\([^)]*\)\s*$/, '').trim(); };
+    sections.forEach(function (s, i) {
+      if (s.lines.length) return;
+      var want = tidyLabel(s.want || s.label), w = base(want), k = kindOf(want)[0], n = num(want), pick = null;
+      var before = defs.filter(function (d) { return d < i; }).reverse(), after = defs.filter(function (d) { return d > i; }), all = before.concat(after);
+      all.some(function (d) { if (base(sections[d].label) === w) { pick = d; return true; } });
+      if (pick == null && k !== 'other') {
+        if (n) all.some(function (d) { var t = sections[d]; if (kindOf(t.label)[0] === k && num(t.label) === n && !PRE.test(t.label)) { pick = d; return true; } });
+        else all.some(function (d) { var t = sections[d]; if (kindOf(t.label)[0] === k && !PRE.test(t.label)) { pick = d; return true; } });
+      }
+      if (pick != null) { var t = sections[pick]; s.ref = 1; s.of = pick; s.lines = t.lines; s.kind = t.kind || kindOf(t.label)[0]; if (s.want) s.label = t.label; }
+      else if (s.want) { s.missing = 1; warnings.push('“' + (s.raw || 'Repeat ' + want) + '”: there is no ' + want + ' in this chart, so it is shown as a heading only'); }
+    });
+    sections.forEach(function (s) { delete s.want; delete s.raw; });
+  }
+
 
   /* ---- a whole chord-site page pasted in: keep the chart, drop the page around it ----
      Everything before the first section heading is the page's header (title, ratings, chord diagrams, buttons): only
@@ -209,8 +262,9 @@
     var W = /[A-Za-z0-9'\u2019\u00C0-\u024F-]/;
     return chords.map(function (c) {
       var a = Math.max(0, Math.min(c.at, t.length));
-      if (a > 0 && a < t.length && W.test(t[a - 1]) && W.test(t[a])) { while (a > 0 && W.test(t[a - 1])) a--; }
-      else if (a < t.length && t[a] === ' ') { var b = a; while (b < t.length && t[b] === ' ') b++; if (b < t.length) a = b; }
+      /* a chord inside a word stays on its letter (the renderer floats it above, the word stays whole); one written over a
+         space moves on to the next word */
+      if (a < t.length && t[a] === ' ') { var b = a; while (b < t.length && t[b] === ' ') b++; if (b < t.length) a = b; }
       return { c: c.c, at: a };
     }).sort(function (x, y) { return x.at - y.at; });
   }
@@ -218,13 +272,17 @@
     if (!l) return '<div class="wc-gap"></div>';
     var ch = snapChords(l.text || '', l.chords || []);
     if (!ch.length) return '<div class="wc-l"><span class="wc-w"><span class="wc-t">' + (esc(l.text) || '&nbsp;') + '</span></span></div>';
-    var out = '', t = l.text, pos = 0;
+    var out = '', t = l.text, pos = 0, inw = false, lastAt = -99, lastLen = 0;
     if (ch[0].at > 0) out += '<span class="wc-w"><span class="wc-c"></span><span class="wc-t">' + esc(t.slice(0, ch[0].at)) + '</span></span>';
     ch.forEach(function (c, i) {
-      var end = i + 1 < ch.length ? ch[i + 1].at : t.length, seg = t.slice(c.at, end);
-      out += '<span class="wc-w"><span class="wc-c">' + esc(transposeChord(c.c, semis, flats)) + '</span><span class="wc-t">' + (seg ? esc(seg) : '&nbsp;') + '</span></span>';
+      var end = i + 1 < ch.length ? ch[i + 1].at : t.length, seg = t.slice(c.at, end), name = transposeChord(c.c, semis, flats);
+      /* a chord inside a word ("hal|lelujah") floats above that letter so the word stays whole — unless it would run into
+         the chord before it, then it keeps its own room as at a word's start */
+      var mid = c.at > 0 && /[A-Za-z\u00C0-\u024F'’]/.test(t.charAt(c.at - 1)) && /[A-Za-z\u00C0-\u024F'’]/.test(t.charAt(c.at)) && c.at - lastAt > lastLen + 1;   /* only a floating chord before it can be run into */
+      if (mid) { inw = true; lastAt = c.at; lastLen = name.length; }
+      out += '<span class="wc-w' + (mid ? ' wc-in' : '') + '"><span class="wc-c">' + esc(name) + '</span><span class="wc-t">' + (seg ? esc(seg) : '&nbsp;') + '</span></span>';
     });
-    return '<div class="wc-l' + (t.trim() ? '' : ' wc-only') + '">' + out + '</div>';
+    return '<div class="wc-l' + (t.trim() ? '' : ' wc-only') + (inw ? ' wc-hasin' : '') + '">' + out + '</div>';
   }
   function chartHTML(song, opts) {
     opts = opts || {}; var p = song.parsed || parse(song.src), semis = opts.semis || 0, flats = opts.flats;
@@ -235,8 +293,10 @@
     });
     return p.sections.map(function (s, i) {
       if (same[i]) return '<section class="wc-s" data-sec="' + i + '"><h4 class="wc-h">' + esc(s.label) + ' <i>(same as ' + esc(same[i]) + ')</i></h4></section>';
-      return '<section class="wc-s' + (opts.cur === i ? ' on' : '') + '" data-sec="' + i + '"><h4 class="wc-h">' + esc(s.label) + (s.rep > 1 ? ' <i>×' + s.rep + '</i>' : '') + (s.ref ? ' <i>(repeat)</i>' : '') + '</h4>' +
-        (s.ref && opts.compactRepeats ? '' : s.lines.map(function (l) { return lineHTML(l, semis, flats); }).join('')) + '</section>';
+      /* a repeat is shown in full where it is sung (its words and chords come from where it is written) */
+      return '<section class="wc-s' + (opts.cur === i ? ' on' : '') + (s.ref ? ' wc-rep' : '') + (s.missing ? ' wc-miss' : '') + '" data-sec="' + i + '"><h4 class="wc-h">' + esc(s.label) + (s.rep > 1 ? ' <i>×' + s.rep + '</i>' : '') + (s.ref ? ' <i>(repeat)</i>' : '') + (s.missing ? ' <i>(not in this chart)</i>' : '') + '</h4>' +
+        (s.notes || []).map(function (n) { return '<p class="wc-note">' + esc(n) + '</p>'; }).join('') +
+        s.lines.map(function (l) { return lineHTML(l, semis, flats); }).join('') + '</section>';
     }).join('');
   }
 

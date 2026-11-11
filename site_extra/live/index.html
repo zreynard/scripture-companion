@@ -40,6 +40,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .wfit .wc .wc-s{break-inside:avoid;margin:0 0 .65em;padding:.15em .4em .25em;border-radius:.5em}.wfit .wc .wc-s.on{background:rgba(201,162,74,.2)}
 .wfit .wc .wc-h{font-size:.6em;margin:0 0 .2em}.wfit .wc .wc-l{font-size:1em;margin:0 0 .22em;line-height:1.16}.wfit .wc .wc-c{font-size:.8em}.wfit .wc .wc-gap{height:.35em}
 .wfit .wc.inl .wc-l{display:block}.wfit .wc.inl .wc-w{display:inline;white-space:pre-wrap}.wfit .wc.inl .wc-t{display:inline}
+.wfit .wc.inl .wc-in{position:relative}.wfit .wc.inl .wc-in>.wc-c{position:absolute;left:0;bottom:100%;padding:0;vertical-align:0;white-space:nowrap}.wfit .wc.inl .wc-hasin{padding-top:.55em}
+.wc-in{position:relative}.wc-note{margin:0 0 .3em;font-size:.72em;font-style:italic;color:var(--mute,#7a7f96)}.wc-miss .wc-h i{color:#b4553a}
 .wfit .wc.inl .wc-c{display:inline;font-size:.66em;vertical-align:.62em;line-height:1;min-height:0;padding:0 .12em 0 0}.wfit .wc.inl .wc-c:empty{display:none}.wfit .wc.inl .wc-only .wc-c{font-size:.82em;vertical-align:0;padding-right:.5em}
 .wfit-pg{position:absolute;right:8px;bottom:6px;font:700 12px -apple-system,system-ui,sans-serif;color:var(--mute);background:rgba(244,239,227,.92);padding:3px 8px;border-radius:10px}
 .wc-s{margin:0 0 16px;padding:8px 10px;border-radius:12px;transition:background .25s}.wc-s.on{background:rgba(201,162,74,.16)}
@@ -172,7 +174,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   function cur() { var s = state || { song: 0, slide: 0 }; var sg = deck && deck.songs[s.song || 0]; return { s: s, sg: sg, sl: sg && sg.slides[s.slide || 0] }; }
   function nextOf(s) { var n = Live.step(deck, state || s, 1); return n ? { song: n.song, slide: n.slide, sg: deck.songs[n.song] } : null; }
   /* the chord chart is drawn here from the song's own chart (older links carry it ready-made) */
-  function chartOf(sg) { if (sg.chart) return sg.chart; if (!sg._chart) sg._chart = Worship.chartHTML({ parsed: Worship.parse(sg.src || '') }, { semis: sg.semis || 0, flats: sg.flats, compactRepeats: true }); return sg._chart; }
+  function chartOf(sg) { if (sg.chart) return sg.chart; if (!sg._chart) sg._chart = Worship.chartHTML({ parsed: Worship.parse(sg.src || '') }, { semis: sg.semis || 0, flats: sg.flats }); return sg._chart; }
   /* every change goes through here: helpers cannot move the lyrics while the leader has shared control turned off */
   function ctl(p) { if (!lead && state && state.lock) { toast('The leader has paused shared control'); return null; } return sess.set(p); }
   /* when someone else changes the song or blanks the screen, say who */

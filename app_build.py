@@ -906,7 +906,7 @@ body[data-v=pray] #np,body[data-v=worship] #np{display:none!important}
 .w-f textarea#wf-src{font:14px/1.45 ui-monospace,Menlo,Consolas,monospace;white-space:pre;overflow-x:auto}
 .w-two{display:grid;grid-template-columns:1fr 110px;gap:10px}
 .w-found{font-size:13.5px;color:var(--mute);line-height:1.8}.w-sc{display:inline-block;min-width:26px;padding:0 6px;border-radius:8px;background:rgba(27,36,64,.07);font:700 12px ui-monospace,Menlo,monospace;color:var(--ink);text-align:center}
-.w-hint{font-size:13.5px;color:var(--mute);margin:8px 2px}
+.w-hint{font-size:13.5px;color:var(--mute);margin:8px 2px}.w-warn{display:block;margin-top:6px;font-size:13px;color:#a05a2c}
 .w-am{display:flex;flex-direction:column;gap:6px;margin-top:10px}.w-am button{display:flex;align-items:center;gap:10px;padding:8px;border-radius:12px;border:1px solid var(--line);background:#fff;text-align:left;font:inherit;color:var(--ink);cursor:pointer}
 .w-am img{width:44px;height:44px;border-radius:6px;flex:none;background:#eee}.w-am span{flex:1;min-width:0}.w-am b{display:block;font-size:14.5px}.w-am small{display:block;font-size:12.5px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.w-am i{font-style:normal;font-size:12px;color:#3f9b6a;font-weight:700;flex:none}
 .w-name{width:100%;border:0;border-bottom:1px solid var(--line);background:none;font-size:28px;padding:6px 0;margin:2px 0 4px;color:var(--ink)}
@@ -933,6 +933,8 @@ body.wsong-open #tabs{display:none}body.wsong-open{padding-bottom:0!important}
 .w-tools{margin:6px 0 2px;padding:8px 10px;border-radius:14px;background:#fffdf8;box-shadow:0 2px 10px rgba(27,36,64,.06)}.w-tools .w-keys{margin:0}.w-tools .w-acts{margin:8px 0 0}
 .wfit .wc.inl .wc-l{display:block}.wfit .wc.inl .wc-w{display:inline;white-space:pre-wrap}.wfit .wc.inl .wc-t{display:inline}
 .wfit .wc.inl .wc-c{display:inline;font-size:.66em;vertical-align:.62em;line-height:1;min-height:0;padding:0 .12em 0 0}.wfit .wc.inl .wc-c:empty{display:none}
+.wfit .wc.inl .wc-in{position:relative}.wfit .wc.inl .wc-in>.wc-c{position:absolute;left:0;bottom:100%;padding:0;vertical-align:0;white-space:nowrap}.wfit .wc.inl .wc-hasin{padding-top:.55em}
+.wc-in{position:relative}.wc-note{margin:0 0 .3em;font-size:.72em;font-style:italic;color:var(--mute,#7a7f96)}.wc-miss .wc-h i{color:#b4553a}
 .wfit .wc.inl .wc-only .wc-c{font-size:.82em;vertical-align:0;padding-right:.5em}
 .w-pick{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(15,22,40,.38);z-index:40;display:flex;align-items:flex-end;justify-content:center}
 .w-pk{background:var(--bg);width:100%;max-width:560px;max-height:80vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(20px + env(safe-area-inset-bottom))}.w-pk h3{margin:0 0 8px;font-weight:400;font-size:22px}
@@ -2337,7 +2339,7 @@ function wSongView(){const s=wSongs()[WS.song];if(!s){WS.song=null;return worshi
  <span class="w-kl" style="margin-left:auto">Capo</span><button class="w-kb" data-wc="-1" aria-label="Capo down">−</button><b class="w-kv">${capo}</b><button class="w-kb" data-wc="1" aria-label="Capo up">+</button></div>
  ${capo&&sh.shapeKey?`<div class="w-capo">Capo ${capo}: play ${esc(sh.shapeKey)} shapes, sounds in ${esc(key)}</div>`:''}
  <div class="w-acts">${wLinks(s,'sm ic')}<button class="w-btn sm" data-wedit="${s.id}">Edit</button></div></div>`:''}
- ${p.sections.length?`<div class="wfit" id="wfit"><div class="wc">${Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats,compactRepeats:true})}</div><span class="wfit-pg" id="wfpg" hidden></span></div>`:'<p class="w-empty">No chart yet. Tap the key button, then Edit, to paste one.</p>'}</div>`}
+ ${p.sections.length?`<div class="wfit" id="wfit"><div class="wc">${Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats})}</div><span class="wfit-pg" id="wfpg" hidden></span></div>`:'<p class="w-empty">No chart yet. Tap the key button, then Edit, to paste one.</p>'}</div>`}
 /* next or previous song when the song was opened from a setlist */
 function wStep(d){const set=WS.from&&wSets().find(x=>x.id===WS.from);if(!set)return false;const ids=set.items.map(it=>it.id).filter(id=>wSongs()[id]),i=ids.indexOf(WS.song),j=i+d;if(i<0||j<0||j>=ids.length)return false;WS.song=ids[j];render();return true}
 /* the chart fills the screen below the header: biggest text that fits, more columns on iPad and sideways; pages turn by a tap at the side */
@@ -2403,7 +2405,8 @@ function wPasteIn(raw,whole){const box=$('#wf-src'),note=$('#wf-tidy');if(!box)r
   $('#wf-undo').onclick=()=>{box.value=whole||!before?raw:before.slice(0,a)+raw+before.slice(z);note.hidden=true;wFound()}}
  const cb=$('#wf-clip');if(cb)cb.hidden=true;wFound();return true}
 function wFound(){const box=$('#wf-found');if(!box)return;const p=Worship.parse($('#wf-src').value);
- box.innerHTML=p.sections.length?'Found: '+p.sections.map(s=>`<span class="w-sc">${esc(s.short)}</span> ${esc(s.label)}${s.ref?' (repeat)':''}`).join(' · ')+(p.meta.title&&!$('#wf-t').value?` <button class="lnk" id="wf-use">Use “${esc(p.meta.title)}” as the title</button>`:''):'';
+ const warn=(p.warnings||[]).length?`<span class="w-warn">${p.warnings.slice(0,4).map(esc).join('<br>')}</span>`:'';   /* what the chart reader could not use: shown, never blocking */
+ box.innerHTML=(p.sections.length?'Found: '+p.sections.map(s=>`<span class="w-sc">${esc(s.short)}</span> ${esc(s.label)}${s.rep>1?' ×'+s.rep:''}${s.ref?' (repeat)':''}${s.missing?' (not in this chart)':''}`).join(' · ')+(p.meta.title&&!$('#wf-t').value?` <button class="lnk" id="wf-use">Use “${esc(p.meta.title)}” as the title</button>`:''):'')+warn;
  const u=$('#wf-use');if(u)u.onclick=()=>{$('#wf-t').value=p.meta.title;if(p.meta.artist&&!$('#wf-a').value)$('#wf-a').value=p.meta.artist;if(p.meta.key&&!$('#wf-k').value)$('#wf-k').value=Worship.keyInfo(p.meta.key)?p.meta.key:'';wFound()}}
 /* Apple Music: the store's own search (no account), so you pick the exact recording and artist */
 function wAmSearch(q,cb){fetch('https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q),{cache:'no-store'}).then(r=>{if(!r.ok)throw r.status;return r.json()}).then(d=>cb((d&&d.results)||[])).catch(()=>wAmJsonp(q,cb))}

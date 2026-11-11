@@ -108,7 +108,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await swipeOn(X, 20); await wait(200); const still = await X.evaluate(() => $('#wfit')._pg);
     return (last === pages - 1 && t2 === 'Second' && /Song 2 of 2/.test(pos) && t1 === 'First' && pg1 === pages - 1 && still === pg1) || { pages, last, t2, pos, t1, pg1, still }; });
   await T('U50 a normal song fits on one screen on iPhone and iPad', async () => { const bad = []; for (const d of ['iPhone SE', 'iPhone 14', 'iPad Mini', 'iPad Pro 11']) { const X = await open(await ctx(devices[d])); await X.evaluate(src => { S.set('wsongs', { a: { id: 'a', t: 'Alpha', key: 'G', src } }); WS.song = 'a'; $('#tabs [data-tab2=worship]').click(); }, SONG('x')); await wait(500);
-    const r = await X.evaluate(() => ({ pages: $('#wfit')._fit.pages, fs: parseFloat(getComputedStyle($('#wfit .wc')).fontSize), sc: document.scrollingElement.scrollHeight > innerHeight + 2 })); if (r.pages !== 1 || r.fs < 13 || r.sc) bad.push([d, r]); } return bad.length === 0 || bad; });
+    const r = await X.evaluate(() => ({ pages: $('#wfit')._fit.pages, fs: parseFloat(getComputedStyle($('#wfit .wc')).fontSize), sc: document.scrollingElement.scrollHeight > innerHeight + 2 })); if (r.pages !== 1 || r.fs < (/iPhone/.test(d) ? 11.5 : 13) || r.sc) bad.push([d, r]); } return bad.length === 0 || bad; });   // a phone may go down to the chart's own floor (11.5px) before turning to a second page
   await T('U51 TV screen works on older TV browsers: no inset shorthand, lyrics fill the middle at 1080p', async () => { const css = await (await fetch(SITE + 'tv/')).text(); if (/[^-\w]inset:/.test(css)) return 'tv page uses inset';
     const c2 = await b.newContext({ viewport: { width: 1920, height: 1080 } }); const P = await c2.newPage(); await P.goto(SITE + 'tv/'); await wait(500);
     const r = await P.evaluate(() => { const st = document.getElementById('stage'); const el = document.createElement('div'); el.className = 'slide on'; el.innerHTML = '<div class="tx serif"><div>line one of the song here</div><div>line two of the song</div></div>'; st.appendChild(el); document.getElementById('pair').hidden = true; const r = el.getBoundingClientRect(), t = el.firstChild.getBoundingClientRect(); return { w: Math.round(r.width), h: Math.round(r.height), cx: Math.round(t.left + t.width / 2), cy: Math.round(t.top + t.height / 2) }; });
@@ -404,16 +404,17 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const w1 = await A.evaluate(() => localStorage.getItem('sc:wlive')), d1 = JSON.parse(w1);
     await A.goto(SITE); await wait(700); await W(A); await A.evaluate(() => { WS.set = 'd'; render(); });
     await A.fill('#ws-date', await A.evaluate(() => wToday(5))); await A.dispatchEvent('#ws-date', 'change'); await A.dispatchEvent('#ws-date', 'blur'); await wait(200);
-    const w2 = await A.evaluate(() => localStorage.getItem('sc:wlive'));
+    const w2 = await A.evaluate(() => localStorage.getItem('sc:wlive'));   // the live page keeps its own last-seen time in it: compare the session and the deck
+    const core = s => { const o = JSON.parse(s); return JSON.stringify([o.sid, o.key, o.at, o.name, o.deck]); };
     await A.evaluate(() => { WS.set = 'd'; render(); }); await A.click('[data-wpresentset]'); await A.waitForURL(/live\//, { timeout: 8000 }); await wait(1000);
     const d3 = JSON.parse(await A.evaluate(() => localStorage.getItem('sc:wlive')));
     const ids = d => d.deck.songs.map(s => s.id + ':' + s.key).join();
     await A.context().close();
-    return (w2 === w1 && d1.deck.set.join() === '0,1' && d1.deck.songs[0].id === 's2' && d1.deck.songs[0].key === 'A' && d1.deck.songs.length === 4 && d3.sid === d1.sid && ids(d3) === ids(d1) && d3.deck.set.join() === '0,1') || { same: w2 === w1, set: d1.deck.set, first: d1.deck.songs[0] && d1.deck.songs[0].id, sid: [d1.sid, d3.sid], a: ids(d1), b: ids(d3) };
+    return (core(w2) === core(w1) && d1.deck.set.join() === '0,1' && d1.deck.songs[0].id === 's2' && d1.deck.songs[0].key === 'A' && d1.deck.songs.length === 4 && d3.sid === d1.sid && ids(d3) === ids(d1) && d3.deck.set.join() === '0,1') || { same: core(w2) === core(w1), set: d1.deck.set, first: d1.deck.songs[0] && d1.deck.songs[0].id, sid: [d1.sid, d3.sid], a: ids(d1), b: ids(d3) };
   });
   await T('U82 Add a song: a whole chord-site page pasted in keeps only the chart, fills in the title, artist and key, says what it tidied, and Undo puts the paste back; typing is never touched; Paste from clipboard does the same in one tap', async () => {
     const PAGE = 'Search\nLantern Road Chords by Test Band\n12 views, added to favorites 3 times\nRating: ★ 4.9 / 5 (12)\nTuning: E A D G B E\nKey: G\nCHORDS\nG\n2 1   3\nPLAY\nTRANSPOSE\nLISTEN\nPDF\n\n[Verse 1]\nG              C\nAn invented line for the test\nADVERTISEMENT\nOPEN IN APP\n\n[Chorus]\nD          G\nAnother invented line\n\nPrint\nReport Bad Tab\nPlease rate this tab';
-    const c = await ctx(); try { await c.grantPermissions(['clipboard-read', 'clipboard-write']); } catch (e) { } const A = await open(c); await W(A);
+    const c = await ctx(); if (ENGINE === chromium) await c.grantPermissions(['clipboard-read', 'clipboard-write']); const A = await open(c); await W(A);   // Safari's test engine has no clipboard permission to grant
     const go = async () => { await A.evaluate(() => { WS.pane = 'songs'; WS.song = null; WS.set = null; WS.edit = null; render(); }); await A.click('[data-wnew]'); await wait(200); };
     await go(); const btn = await A.evaluate(() => { const b = $('#wf-clip'); return !!b && !b.hidden; });
     await A.focus('#wf-src');
@@ -439,6 +440,27 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await A.context().close();
     const ok = r.same === CP && r.t === 'Lantern Road' && r.a === 'Test Band' && r.k === 'C' && /Intro/.test(r.found) && /Tag/.test(r.found) && /Bridge \(repeat\)/.test(r.found) && /Chorus 1 \(repeat\)/.test(r.found) && /Final Tag/.test(r.found);
     return ok || { r: Object.assign({}, r, { same: r.same === CP }) };
+  });
+  await T('U84 a made-up ChordPro chart, end to end: saved, it shows the repeated chorus in full where it is sung, CHANNEL 1/2 as headed passages, chords inside words floating; the key changes every chord; a reload and an edit-save keep the chart exactly; Present carries the repeat', async () => {
+    const CH = '{title: Morning Field}\n{artist: Test Band}\n{key: B}\n\n{comment: INTRO}\n| B | B | G#m | G#m |\n\n{start_of_verse: Verse 1}\nAll the li[B]ght comes in\nOver e[G#m]very hill\n{end_of_verse}\n\n{start_of_chorus: Chorus}\nSo we r[B]aise a sound\nOver all the [F#]ground\n{end_of_chorus}\n\n{start_of_verse: Verse 2}\nThere\'s a [B]brand new day\n{end_of_verse}\n\n{comment: REPEAT CHORUS}\n\n{comment: CHANNEL 1}\n| B | B | B | B |\n\n{start_of_bridge: Bridge}\n[B]Come along the road\n{end_of_bridge}\n\n{comment: CHANNEL 2}\n| E | E | G#m | F# |\n\n{start_of_chorus: Alternate Chorus}\nSo we r[B]aise a sound\nOver all the [F#m]ground\n{end_of_chorus}';
+    const A = await open(await ctx()); await W(A);
+    await A.evaluate(src => { const m = S.get('wsongs', {}); m.mf = { id: 'mf', t: 'Morning Field', a: 'Test Band', key: 'B', src }; S.set('wsongs', m); WS.pane = 'songs'; WS.song = 'mf'; WS.set = null; WS.edit = null; render(); }, CH);
+    await wait(300);
+    const view = await A.evaluate(() => { const secs = [...document.querySelectorAll('#wfit .wc-s')].map(s => ({ h: s.querySelector('.wc-h').textContent, n: s.querySelectorAll('.wc-l').length, txt: [...s.querySelectorAll('.wc-t')].map(x => x.textContent).join('') }));
+      const fl = [...document.querySelectorAll('#wfit .wc-in')].map(w => { const c = w.querySelector('.wc-c'), r = c.getBoundingClientRect(), t = w.querySelector('.wc-t').getBoundingClientRect(); return { c: c.textContent, above: r.bottom <= t.top + 2, pos: getComputedStyle(c).position }; });
+      return { secs, fl }; });
+    const h = view.secs.map(s => s.h), rep = view.secs[4];
+    const k0 = await A.evaluate(() => [...document.querySelectorAll('#wfit .wc-c')].map(c => c.textContent).filter(Boolean).join(' '));
+    await A.evaluate(() => { const all = wSongs(); all.mf.pk = 'C'; delete all.mf._p; S.set('wsongs', all); render(); }); await wait(200);
+    const k1 = await A.evaluate(() => [...document.querySelectorAll('#wfit .wc-c')].map(c => c.textContent).filter(Boolean).join(' '));
+    await A.reload(); await wait(800); await W(A); await A.evaluate(() => { WS.song = 'mf'; WS.edit = 'mf'; render(); }); await wait(200); await A.click('#wf-save'); await wait(300);
+    const kept = await A.evaluate(src => S.get('wsongs').mf.src === src, CH);
+    const sl = await A.evaluate(() => Worship.slides({ parsed: Worship.parse(S.get('wsongs').mf.src) }).map(x => x.s));
+    await A.context().close();
+    const ok = h.join('|') === 'Intro|Verse 1|Chorus|Verse 2|Chorus (repeat)|Channel 1|Bridge|Channel 2|Alternate Chorus' && rep.n === 2 && /raise a sound/.test(rep.txt)
+      && view.fl.length >= 4 && view.fl.every(f => f.above)   /* above its letter: floating in the compact layout, its own row in the roomy one */ && view.secs[1].txt.includes('All the light comes in')
+      && k0.split(' ').length === k1.split(' ').length && /^C C A#m|^C C Am|^C C/.test(k1) && k1 !== k0 && kept && sl.filter(s => s === 'Chorus').length === 2;
+    return ok || { h, rep, fl: view.fl.slice(0, 5), k0: k0.slice(0, 40), k1: k1.slice(0, 40), kept, sl };
   });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
