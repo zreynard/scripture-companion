@@ -51,8 +51,8 @@ async function vbr(url) {   // the first frame of the MP3: a Xing or VBRI header
       let stop = null;
       if (x.kind === 'whole') {                                    // the whole prayer, start to Amen: it sounds for its true length
         const t1 = Date.now(); while (c.state !== 'ended' && Date.now() - t1 < (x.b - x.a + 60) * 1000) await new Promise(r => setTimeout(r, 200));
-        const heard = (Date.now() - tap - ms) / 1000, done = c.state === 'ended', stop = c.stopAt; c.clear();
-        return { ok: done && Math.abs(heard - (x.b - x.a)) <= 1.5, heard: +heard.toFixed(1), want: +(x.b - x.a).toFixed(1), stopAt: stop, ms };
+        const heard = (Date.now() - tap - ms) / 1000, done = c.state === 'ended', stop = c.stopAt, T0 = c.t0; c.clear();   // heard includes any wait for the network
+        return { ok: done && Math.abs((stop - T0) - (x.b - x.a)) <= 0.3, played: +(stop - T0).toFixed(2), heard: +heard.toFixed(1), want: +(x.b - x.a).toFixed(1), stopAt: stop, ms };
       }
       if (x.kind === 'med') {                                      // and stopping at its end (a short one may have ended already)
         if (c.state !== 'ended') c.a.currentTime = Math.max(c.t0, c.end - 1.2);
