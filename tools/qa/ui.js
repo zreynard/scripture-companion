@@ -462,6 +462,12 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       && k0.split(' ').length === k1.split(' ').length && /^C C A#m|^C C Am|^C C/.test(k1) && k1 !== k0 && kept && sl.filter(s => s === 'Chorus').length === 2;
     return ok || { h, rep, fl: view.fl.slice(0, 5), k0: k0.slice(0, 40), k1: k1.slice(0, 40), kept, sl };
   });
+  await T('U85 a song saved with a reading from an older version of the chart reader is read again: its sections come out as the reader reads them now', async () => {
+    const A = await open(await ctx()); await W(A);
+    await A.evaluate(() => { const src = 'Verse 1\nG\nan invented line\n\n{comment: CHANNEL 1}\n| G | G |'; S.set('wsongs', { o: { id: 'o', t: 'Old', key: 'G', src, _p: { src, v: { meta: {}, sections: [{ label: 'Verse 1', lines: [], short: 'V1', kind: 'verse' }] } } } }); WS.pane = 'songs'; WS.song = 'o'; WS.set = null; WS.edit = null; render(); });
+    await wait(300); const h = await A.evaluate(() => [...document.querySelectorAll('#wfit .wc-h')].map(x => x.textContent)); await A.context().close();
+    return h.join('|') === 'Verse 1|Channel 1' || h;
+  });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

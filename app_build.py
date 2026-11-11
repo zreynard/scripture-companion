@@ -2296,7 +2296,7 @@ function wSp(s){return s.sp||'https://open.spotify.com/search/'+encodeURICompone
 function wLinks(s,cls){return `<a class="w-btn ${cls}" href="${esc(wAm(s))}" target="_blank" rel="noopener" aria-label="Listen on Apple Music">${W_IC.apple}</a><a class="w-btn ${cls}" href="${esc(wSp(s))}" target="_blank" rel="noopener" aria-label="Listen on Spotify">${W_SPOT}</a>`}
 function wKeyOf(song,item){return (item&&item.key)||song.pk||song.key||''}
 function wShape(song,key,capo){const semis=song.key&&key?Worship.semitones(song.key,key):0,sk=capo?Worship.transposeKey(key,-capo):key;return {semis:((semis-(capo||0))%12+12)%12,flats:sk||key||false,shapeKey:sk}}
-function wParsed(song){return song._p&&song._p.src===song.src?song._p.v:(song._p={src:song.src,v:Worship.parse(song.src)}).v}
+function wParsed(song){return song._p&&song._p.src===song.src&&song._p.pv===Worship.PV?song._p.v:(song._p={src:song.src,pv:Worship.PV,v:Worship.parse(song.src)}).v}   /* read again after the reader improves */
 function wOrder(song){const p=wParsed(song);if(!song.arr||!song.arr.trim())return null;const by={};p.sections.forEach((s,i)=>{const k=s.short.toLowerCase();if(!(k in by))by[k]=i;const l=s.label.toLowerCase();if(!(l in by))by[l]=i});
  const o=song.arr.split(/[\s,>→-]+/).map(t=>by[t.toLowerCase()]).filter(i=>i!=null);return o.length?o:null}
 function wDeckSong(song,item){const p=wParsed(song),key=wKeyOf(song,item),capo=item&&item.capo!=null?item.capo:(song.capo||0),sh=wShape(song,key,capo);
