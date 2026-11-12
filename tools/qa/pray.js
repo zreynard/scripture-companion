@@ -153,14 +153,15 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
   });
   await T('P27 the ♪ Music panel: opens and closes, switches the music on and off, and its level changes the music at once and is remembered (Be Led and Meditate)', async () => {
     const p = await pray_(await page()); await testAudio(p, { a: 5, b: 20 }); await music(p); await guided(p, 'led');
-    const shut = await p.evaluate(() => $('#prmu').hidden);
-    await p.click('[data-prmu]'); const open = await p.evaluate(() => !$('#prmu').hidden && document.querySelector('[data-prmu]').getAttribute('aria-expanded') === 'true');
-    await p.click('[data-ledpp]'); await until(p, () => bedNow() > 0.05, 6000);
-    await p.evaluate(() => { const r = $('#prmulv'); r.value = 50; r.dispatchEvent(new Event('input')); r.dispatchEvent(new Event('change')); }); await until(p, () => Math.abs(bedNow() / 0.5 - 1) < 0.2, 4000);
+    const shut = await p.evaluate(() => !$('#mucard'));
+    await p.click('[data-prmu]'); await wait(300); const open = await p.evaluate(() => !!$('#mucard') && document.querySelector('[data-prmu]').getAttribute('aria-expanded') === 'true');
+    await p.keyboard.press('Escape'); await p.click('[data-ledpp]'); await until(p, () => bedNow() > 0.05, 6000);
+    await p.click('[data-prmu]'); await wait(300);
+    await p.evaluate(() => { const r = $('#mclv'); r.value = 50; r.dispatchEvent(new Event('input')); r.dispatchEvent(new Event('change')); }); await until(p, () => Math.abs(bedNow() / 0.5 - 1) < 0.2, 4000);
     const loud = await p.evaluate(() => [BED.plv, +bedNow().toFixed(2), S.get('bedlvp')]);
-    await p.click('#prmuon'); await until(p, () => BED.el.paused, 6000); const offTxt = await p.evaluate(() => [BED.led, document.querySelector('[data-prmu]').textContent, $('#prmulv').disabled]);
-    await p.click('#prmuon'); const back = await until(p, () => !BED.el.paused, 6000);
-    await p.click('[data-prmu]'); const closed = await p.evaluate(() => $('#prmu').hidden);
+    await p.click('#mcon'); await until(p, () => BED.el.paused, 6000); const offTxt = await p.evaluate(() => [BED.led, document.querySelector('[data-prmu]').textContent, $('#mclv').disabled]);
+    await p.click('#mcon'); const back = await until(p, () => !BED.el.paused, 6000);
+    await p.click('[data-prmu]'); const closed = await p.evaluate(() => !$('#mucard'));
     await guided(p, 'med'); const medBtn = await p.evaluate(() => !!document.querySelector('[data-prmu]'));
     await p.click('[data-medgo]'); const medMusic = await until(p, () => MED.on && Math.abs(bedNow() / 0.5 - 1) < 0.2, 8000);
     await p.reload(); await wait(1500); const kept = await p.evaluate(() => [BED.plv, BED.led]);
@@ -337,7 +338,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     const out = {};
     await guided(p, 'led'); const l0 = await p.evaluate(() => ledOrd().p); await sw(300, 120); await wait(250); const l1 = await p.evaluate(() => ledOrd().p); await sw(120, 300); await wait(250); const l2 = await p.evaluate(() => ledOrd().p);
     await sw(10, 200); await wait(200); const edge = await p.evaluate(() => ledOrd().p);
-    await p.click('[data-prmu]'); await sw(300, 120, '#prmu'); await wait(200); const panel = await p.evaluate(() => ledOrd().p);
+    await p.click('[data-prmu]'); await wait(300); await sw(300, 120, '#mucard'); await wait(200); const panel = await p.evaluate(() => ledOrd().p);
     out.led = [l0, l1, l2, edge, panel];
     await guided(p, 'med'); await p.evaluate(() => { S.set('medord', Object.assign(medOrd(), { p: 0 })); MED.pick = null; render(); }); await sw(300, 120); await wait(250); const m1 = await p.evaluate(() => medOrd().p); await sw(120, 300); await wait(250); out.med = [m1, await p.evaluate(() => medOrd().p)];
     await guided(p, 'guided'); await p.evaluate(() => { PR.mv = 0; render(); }); await sw(300, 120); await wait(250); const g1 = await p.evaluate(() => PR.mv); await sw(120, 300); await wait(250); out.lp = [g1, await p.evaluate(() => PR.mv)];
@@ -497,7 +498,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     const p = await pray_(await page()); await testAudio(p, { sb: 25, e: 2 }); await music(p); await guided(p, 'led');
     await p.click('[data-ledpp]'); const on = await until(p, () => bedNow() > 0.05, 6000); await wait(1500);
     const a = await p.evaluate(() => ({ ctx: !!BED.ctx, kind: BED.mode, st: BED.st, t: BED.el.currentTime }));
-    await p.click('[data-prmu]'); await p.evaluate(() => { const r = $('#prmulv'); r.value = 50; r.dispatchEvent(new Event('input')); r.dispatchEvent(new Event('change')); });
+    await p.click('[data-prmu]'); await wait(300); await p.evaluate(() => { const r = $('#mclv'); r.value = 50; r.dispatchEvent(new Event('input')); r.dispatchEvent(new Event('change')); });
     const swapped = await until(p, () => BED.st === bedSteps(0.5) && !BED.el.paused && BED.el.currentTime > 0.5, 4000);
     const b2 = await p.evaluate(() => ({ st: BED.st, t: BED.el.currentTime, ctx: !!BED.ctx }));
     return (on && !a.ctx && a.kind === 'wav' && swapped && b2.t >= a.t - 0.3 && b2.st < a.st && !b2.ctx && !p.errs.length) || { on, a, swapped, b2, e: p.errs };
@@ -538,5 +539,35 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     const l = await until(p, () => MED.on && Math.abs(bedNow() / Math.min(1, BED.plv * 1.413) - 1) < 0.2, 6000); const ll = await p.evaluate(() => +bedNow().toFixed(3));
     return (q && l && !p.errs.length) || { q, lq, l, ll, plv: await p.evaluate(() => BED.plv), e: p.errs };
   });
+  await T('P45 the ♪ Music card in Be Led, Meditate and the Lord\'s Prayer: floats over the page (nothing moves), stays on screen; ♪ again, Escape, a swipe down, a tap elsewhere (which still works), another screen, another tab all close it; a redraw of the same screen keeps it, and nothing ever reopens it by itself', async () => {
+    const out = {};
+    for (const vp of [{ width: 390, height: 760 }, { width: 320, height: 568 }]) {
+      const p = await pray_(await page(vp)); await testAudio(p); await music(p); const k = vp.width;
+      for (const m of ['led', 'med', 'guided']) {
+        await guided(p, m); await p.evaluate(() => document.querySelector('[data-prmu]').scrollIntoView({ block: 'center' })); await wait(250);
+        const boxes = () => p.evaluate(() => [...document.querySelectorAll('[data-ledgo],[data-ledpp],[data-medgo],[data-medgo2],[data-prmv],[data-lppp],[data-prmu]')].map(e => { const r = e.getBoundingClientRect(); return [Math.round(r.x), Math.round(r.y), Math.round(r.width), Math.round(r.height)].join(','); }).join(' '));
+        const b0 = await boxes(); await p.click('[data-prmu]'); await wait(350);
+        const o = await p.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(), tb = $('#tabs').getBoundingClientRect(); return { on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= tb.top + 1, t: c.innerText.split('\n')[0], exp: document.querySelector('[data-prmu]').getAttribute('aria-expanded') }; });
+        const b1 = await boxes();
+        await p.click('[data-prmu]'); const again = await p.evaluate(() => !$('#mucard'));
+        await p.click('[data-prmu]'); await wait(300); await p.keyboard.press('Escape'); const esc = await p.evaluate(() => !$('#mucard'));
+        await p.click('[data-prmu]'); await wait(300); const swipe = await p.evaluate(() => { const c = $('#mucard'), g = c.querySelector('.mc-grab') || c; const mk = (y) => [{ clientX: 100, clientY: y, identifier: 1, target: g }];
+          const ev = (type, list) => { const e = new Event(type, { bubbles: true }); Object.defineProperty(e, type === 'touchend' ? 'changedTouches' : 'touches', { value: list }); if (type === 'touchend') Object.defineProperty(e, 'touches', { value: [] }); g.dispatchEvent(e); };
+          ev('touchstart', mk(100)); ev('touchend', mk(180)); return !$('#mucard'); });
+        await p.click('[data-prmu]'); await wait(300); await p.evaluate(() => render()); await wait(150); const kept = await p.evaluate(() => !!$('#mucard') && document.body.contains(MU.anchor));
+        await p.mouse.click(30, 30); await wait(150); const outside = await p.evaluate(() => !$('#mucard'));
+        await p.evaluate(() => render()); await wait(150); const stays = await p.evaluate(() => !$('#mucard'));
+        out[k + m] = { o, moved: b0 !== b1, again, esc, swipe, kept, outside, stays };
+      }
+      // a tap elsewhere does what it touched; another screen and another tab close it
+      await guided(p, 'led'); await p.click('[data-prmu]'); await wait(300); const pick = await p.evaluate(() => ledOrd().p); await p.click('[data-ledgo="1"]').catch(() => p.click('[data-ledgo]:last-of-type')); await wait(300);
+      out[k + 'through'] = await p.evaluate(p0 => [!$('#mucard'), ledOrd().p !== p0], pick);
+      await p.click('[data-prmu]'); await wait(300); await p.click('[data-prm=med]'); await wait(300); out[k + 'screen'] = await p.evaluate(() => !$('#mucard'));
+      await p.click('[data-prmu]'); await wait(300); await p.evaluate(() => $('#tabs [data-tab2=library]').click()); await wait(300); await p.evaluate(() => $('#tabs [data-tab2=pray]').click()); await wait(300); out[k + 'tab'] = await p.evaluate(() => !$('#mucard'));
+      out[k + 'errs'] = p.errs;
+    }
+    const bad = Object.entries(out).filter(([k, v]) => /errs$/.test(k) ? v.length : Array.isArray(v) ? !v.every(Boolean) : typeof v === 'boolean' ? !v
+      : !(v.o && v.o.on && v.o.t === 'Music under the prayer' && v.o.exp === 'true' && !v.moved && v.again && v.esc && v.swipe && v.kept && v.outside && v.stays));
+    return !bad.length || bad; });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

@@ -140,7 +140,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await X.evaluate(() => { const v = document.querySelector('#jread .vs[data-v="10"]'); window.scrollTo(0, v.getBoundingClientRect().top + scrollY - 160); }); await wait(500); await X.evaluate(() => dispatchEvent(new Event('scroll'))); await wait(300);
     const fab = await X.evaluate(() => document.querySelector('.jr-fab').classList.contains('show')); await X.click('.jr-fab'); await wait(300); const lis = await X.evaluate(() => __np.splice(0));
     return (tap.length === 1 && tap[0][0] === 12 && tap[0][2] && rd.open && rd.verses > 20 && rd.np === 0 && fab && lis.length === 1 && lis[0][1] === 10) || { tap, rd, fab, lis }; });
-  await T('U55 soaking music under the narration: on/off and level in the player; follows play, pause, chapter gaps; never under a sermon', async () => { const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const errs2 = []; X.on('pageerror', e => errs2.push(e.message)); await X.goto(SITE); await wait(1500);
+  await T('U55 soaking music under the narration: on/off and level in the player\'s ♪ card; follows play, pause, chapter gaps; a sermon has its own switch (off here), so none under it', async () => { const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const errs2 = []; X.on('pageerror', e => errs2.push(e.message)); await X.goto(SITE); await wait(1500);
 
   // seed the phone's music store with a 20 s tone, and a 30 s tone as stand-in narration
   const seeded = await X.evaluate(async () => { let wav; try {
@@ -156,15 +156,15 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
   // turn the music on through the player's own panel
   await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; NP().classList.add('on'); setMini(false); bedSync(); }); await wait(600);
   const shown = await X.evaluate(() => !$('#bedb').hidden); await X.evaluate(() => $('#bedb').scrollIntoView({ block: 'center' })); await X.click('#bedb', { force: true }); await wait(500); 
-  const panel = await X.evaluate(() => ({ chk: !!$('#bedon'), slider: !!$('#bedlv'), text: $('#bedpop').innerText.slice(0, 90) }));
-  await X.click('#bedon'); await X.fill('#bedlv', '30'); await X.dispatchEvent('#bedlv', 'input'); await wait(200);
+  const panel = await X.evaluate(() => ({ chk: !!$('#mcon'), slider: !!$('#mclv'), text: $('#mucard').innerText.slice(0, 90) }));
+  await X.click('#mcon'); await X.fill('#mclv', '30'); await X.dispatchEvent('#mclv', 'input'); await wait(200); await X.keyboard.press('Escape');
   await X.evaluate(() => { audio.src = __narr; audio.play(); }); await wait(2500);
   const on = await X.evaluate(() => ({ narr: !audio.paused, music: !$('#bedm').paused, gain: BED.g ? +BED.g.gain.value.toFixed(2) : 'no-ctx', ctx: BED.ctx && BED.ctx.state, lv: S.get('bedlv'), saved: S.get('bedon') }));
   await X.evaluate(() => audio.pause()); await wait(1200); const brief = await X.evaluate(() => !$('#bedm').paused);
   await X.evaluate(() => audio.play()); await wait(1500); const resumed = await X.evaluate(() => !$('#bedm').paused);
   await X.evaluate(() => audio.pause()); await wait(3800); const off = await X.evaluate(() => ({ music: !$('#bedm').paused, gain: BED.g ? +BED.g.gain.value.toFixed(2) : 'no-ctx' }));
   await X.evaluate(() => { cur = Object.keys(I).find(k => I[k].audio && !I[k].nar && k !== NAR.id); audio.play(); bedSync(); }); await wait(3800); const sermon = await X.evaluate(() => ({ music: !$('#bedm').paused, btnHidden: $('#bedb').hidden }));
-    await cc.close(); return (shown && panel.chk && panel.slider && on.narr && on.music && (on.gain === 0.3 || on.gain === 'no-ctx') && on.lv === 0.3 && on.saved === true && brief && resumed && !off.music && !sermon.music && sermon.btnHidden && errs2.length === 0) || { shown, panel, on, brief, resumed, off, sermon, errs2 }; });
+    await cc.close(); return (shown && panel.chk && panel.slider && on.narr && on.music && (on.gain === 0.3 || on.gain === 'no-ctx') && on.lv === 0.3 && on.saved === true && brief && resumed && !off.music && !sermon.music && !sermon.btnHidden && /Music under the Bible reading/.test(panel.text) && errs2.length === 0) || { shown, panel, on, brief, resumed, off, sermon, errs2 }; });
   await T('U56 a TV on an earlier worship time follows when Present starts a new one; tv/?new shows a fresh code', async () => { const c2 = await b.newContext({ viewport: { width: 1280, height: 800 } }); const L = await c2.newPage(); L.on('pageerror', e => errs.push('U56:' + e.message)); await L.goto(SITE); await wait(700);
     const mk = (n, extra) => `Verse 1\nG\nfirst song ${n} line\n\nChorus\nC\nwe sing for - ev - er ${n}\n\nRepeat Chorus${extra || ''}`;
     await L.evaluate(src => { S.set('wsongs', { a: { id: 'a', t: 'Old song', key: 'G', src } }); wPresent([{ id: 'a' }], 'One'); }, mk('one')); await L.waitForURL(/live\//); await wait(1500); await L.click('#bNext'); const h1 = L.url().split('#')[1].replace('&lead=1', '');
@@ -576,6 +576,40 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       && out.playing && Math.abs(out.t0 - out.start) < 3 && Math.abs(out.fw - out.t0 - 15) < 3 && Math.abs(out.fw - out.bk - 30) < 3 && out.sp[0] === 1.25 && /1\.25× speed/.test(out.sp[1])
       && out.saved >= 95 && out.saved < 110 && Math.abs(out.resume - out.saved) < 1 && out.from[0] === 90 && /Starts at 1:30/.test(out.from[1]) && Math.abs(out.fromAt - 90) < 3 && Math.abs(out.begin[0] - (d.s || 0)) < 3;
     return ok || { shown, out, s: d.s }; });
+  await T('U93 soaking music under a sermon: ♪ Music shows on every sermon; its card is "Music under sermons" with its own switch (kept apart from the Bible reading\'s) and the shared level; on, the music plays under the sermon and stops with it; the card floats (Play and the arrows never move), stays on screen on an iPhone SE, and closes on ♪ again, Escape, a tap elsewhere (which still works), shrinking the player and another recording', async () => {
+    const out = {};
+    for (const dev of ['iPhone 14', 'iPhone SE']) { const cc = await b.newContext({ ...devices[dev] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500);
+      await X.evaluate(async () => { const wav = (sec, hz) => { const sr = 8000, n = sr * sec, buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf); const w = (o, s) => [...s].forEach((ch, i) => v.setUint8(o + i, ch.charCodeAt(0)));
+          w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, sr, true); v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
+          for (let i = 0; i < n; i++) v.setInt16(44 + i * 2, Math.sin(i / sr * 2 * Math.PI * hz) * 8000, true); return new Blob([buf], { type: 'audio/wav' }); };
+        const bl = wav(20, 220), meta = [{ id: 'tst', f: 'tone.wav', t: 'Test tone', a: 'Test artist', al: 'Test', n: 1 }];
+        try { await pdbDo('meta', 'readwrite', t => t.objectStore('meta').put(meta[0])); await pdbDo('blob', 'readwrite', t => t.objectStore('blob').put(bl, 'tst')); }
+        catch (e) { const o = pdbDo; window.pdbDo = (st, mode, f) => st === 'blob' && mode === 'readonly' ? Promise.resolve(bl) : st === 'meta' && mode === 'readonly' ? Promise.resolve(meta) : o(st, mode, f).catch(() => null); }
+        PL.list = null; await plLoad(); window.__ser = URL.createObjectURL(wav(40, 440)); });
+      const ID = 'c532d51fe14b';
+      await X.evaluate(async ID => { play(ID, { full: true }); audio.pause(); await new Promise(r => setTimeout(r, 300)); audio.src = __ser; bedSync(); }, ID); await wait(300);
+      const boxes = () => X.evaluate(() => ['#pp', '#prv', '#nxt', '#bk', '#fw', '#seek', '#bedb', '#zz'].map(s => { const r = $(s).getBoundingClientRect(); return [s, Math.round(r.x), Math.round(r.y), Math.round(r.width), Math.round(r.height)].join(','); }).join(' '));
+      const o = { btn: await X.evaluate(() => [!$('#bedb').hidden, $('#bedb').textContent]) }; const b0 = await boxes();
+      await X.click('#bedb'); await wait(400);
+      o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded') }; });
+      o.moved = b0 !== await boxes();
+      await X.click('#mcon'); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
+      await X.click('#bedb'); o.again = await X.evaluate(() => !$('#mucard'));
+      await X.evaluate(() => audio.play()); o.plays = await (async () => { for (let i = 0; i < 60; i++) { if (await X.evaluate(() => !audio.paused && !$('#bedm').paused)) return true; await wait(100); } return false; })();
+      await X.evaluate(() => audio.pause()); await wait(3800); o.stops = await X.evaluate(() => $('#bedm').paused);
+      await X.click('#bedb'); await wait(300); await X.keyboard.press('Escape'); o.esc = await X.evaluate(() => !$('#mucard'));
+      // a tap elsewhere closes it and still does what it touched (the "…" opens its menu)
+      await X.click('#bedb'); await wait(300); await X.click('#np-more'); await wait(200); o.through = await X.evaluate(() => [!$('#mucard'), !!$('#smenu')]); await X.click('#smenu [data-sm=copy]'); await wait(200); o.full = await X.evaluate(() => !NP().classList.contains('mini') && !!$('#mucard') === false);
+      await X.click('#bedb'); await wait(300); await X.evaluate(() => setMini(true)); o.mini = await X.evaluate(() => !$('#mucard')); await X.evaluate(() => setMini(false)); await wait(200);
+      await X.click('#bedb'); await wait(300); await X.evaluate(() => { play(Object.keys(I).find(k => canShare(k) && k !== 'c532d51fe14b'), { full: true }); audio.pause(); }); o.other = await X.evaluate(() => !$('#mucard'));
+      // the Bible reading keeps its own switch
+      await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; setMini(false); bedSync(); }); await wait(300);
+      await X.click('#bedb'); await wait(400); o.read = await X.evaluate(() => [$('#mucard').innerText.split('\n')[0], $('#mcon').checked, $('#bedb').textContent]);
+      o.errs = e2; out[dev] = o; await cc.close(); }
+    const ok = Object.values(out).every(o => o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && !o.card.chk && o.card.exp === 'true' && !o.moved
+      && o.saved[0] === true && o.saved[1] === false && o.saved[2] && !o.saved[3] && o.saved[4] === '♪ Music on' && o.saved[5] && o.full && o.again && o.plays && o.stops && o.esc && o.through[0] && o.through[1] && o.mini && o.other
+      && o.read[0] === 'Music under the Bible reading' && o.read[1] === false && o.read[2] === '♪ Music off' && !o.errs.length);
+    return ok || out; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
