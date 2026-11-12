@@ -86,7 +86,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const a = await X.evaluate(() => [Object.keys(S.get('wsongs', {})).length, S.get('wsets', []).length]); await X.evaluate(() => { const s = S.get('wsongs', {}); delete s.in_b; S.set('wsongs', s); wsInbox.last = 0; }); await X.reload(); await wait(800); await X.evaluate(() => $('#tabs [data-tab2=worship]').click()); await wait(1500); const b2 = await X.evaluate(() => Object.keys(S.get('wsongs', {})).length); await cc.close(); return (a[0] === 2 && a[1] === 1 && b2 === 1) || { a, b2 }; });
   await T('U39 Journey, Bible, Library, Pray and Settings all still open', async () => { const X = await open(await ctx()); const r = {}; for (const t of ['journey', 'bible', 'library', 'pray', 'worship']) { await X.evaluate(t => $('#tabs [data-tab2=' + t + ']').click(), t); await wait(500); r[t] = (await X.evaluate(() => document.querySelector('#main').innerText.length)) > 40; } await X.evaluate(() => setView('settings')); await wait(400); r.settings = /Backup/.test(await X.textContent('#main')); return Object.values(r).every(Boolean) || r; });
   await T('U40 Pray music and a sermon never play at once', async () => { const X = await open(await ctx()); return await X.evaluate(() => typeof pmToggle === 'function' && typeof msSermon === 'function'); });
-  await T('U41 the offline cache never stores the TV page as the app', async () => { const s = await (await fetch(SITE + 'sw.js')).text(); return /\\\/\(tv\|live\)\\\//.test(s) && /'worship\.js'/.test(s) || 'sw.js missing the rule'; });
+  await T('U41 the offline cache never stores the TV, remote or shared-sermon pages as the app', async () => { const s = await (await fetch(SITE + 'sw.js')).text(); return /\\\/\(tv\|live\|s\)\\\//.test(s) && /'worship\.js'/.test(s) || 'sw.js missing the rule'; });
   await T('U42 titles with emoji and accents', async () => { const X = await open(await ctx()); await X.evaluate(() => { S.set('wsongs', { e: { id: 'e', t: 'Alabaré 🙏 “Holy”', key: 'E', src: 'Verse\nE\npalabra' } }); $('#tabs [data-tab2=worship]').click(); WS.pane = 'songs'; render(); }); await wait(300); return /Alabaré 🙏 “Holy”/.test(await X.textContent('#main')); });
   await T('U43 a chart that is only chords (instrumental piece) presents fine', async () => { const X = await open(await ctx()); await X.evaluate(() => { S.set('wsongs', { i: { id: 'i', t: 'Instrumental', key: 'G', src: 'Intro\nG D Em C\n\nInterlude\nC G D' } }); wPresent([{ id: 'i' }], ''); }); await X.waitForURL(/live\//); await wait(1200); return /instrumental/.test(await X.textContent('.mon')); });
   await T('U44 a song with no chart at all does not break Present', async () => { const X = await open(await ctx()); await X.evaluate(() => { S.set('wsongs', { n: { id: 'n', t: 'Empty', key: '', src: '' } }); WS.song = 'n'; $('#tabs [data-tab2=worship]').click(); WS.song = 'n'; render(); }); await wait(300); const t = await X.textContent('#main'); return /No chart yet/.test(t) || t.slice(0, 200); });
@@ -476,6 +476,106 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await wait(300); const h = await A.evaluate(() => [...document.querySelectorAll('#wfit .wc-h')].map(x => x.textContent)); await A.context().close();
     return h.join('|') === 'Verse 1|Channel 1' || h;
   });
+  // share a sermon and favorites
+  const stubShare = X => X.evaluate(() => { window.__sh = []; window.__cp = []; navigator.share = d => { __sh.push(d); return Promise.resolve(); };
+    try { Object.defineProperty(navigator, 'clipboard', { value: { writeText: t => { __cp.push(t); return Promise.resolve(); } }, configurable: true }); } catch (e) { } });
+  const SH_ID = 'c532d51fe14b';
+  await T('U86 the "…" by the title: shown for a sermon (hidden for Bible narration); Favorite, Share sermon, Share from mm:ss once you are past its start, Copy link; the share sheet gets the title, "Teacher · Passage" and the friend page link', async () => { const X = await open(await ctx()); await stubShare(X);
+    const r = await X.evaluate(async ID => { const w = ms => new Promise(r => setTimeout(r, ms)); play(ID, { full: true }); audio.pause(); await w(200); const out = { shown: !$('#np-more').hidden };
+      $('#np-more').click(); await w(150); out.items = [...document.querySelectorAll('#smenu [data-sm]')].map(b => b.textContent.trim());
+      document.querySelector('#smenu [data-sm=share]').click(); await w(150); out.share = __sh[0]; out.closed = !$('#smenu');
+      Object.defineProperty(audio, 'currentTime', { get: () => (+I[ID].s || 0) + 760.6, set: () => { }, configurable: true });
+      $('#np-more').click(); await w(150); out.items2 = [...document.querySelectorAll('#smenu [data-sm]')].map(b => b.textContent.trim()); document.querySelector('#smenu [data-sm=here]').click(); await w(150); out.here = __sh[1];
+      $('#np-more').click(); await w(150); document.querySelector('#smenu [data-sm=copy]').click(); await w(300); out.copied = __cp[0]; out.note = ($('#note') || {}).textContent || '';
+      delete audio.currentTime; const want = { title: dispTitle(I[ID]), text: [teacher(I[ID]), I[ID].pass].filter(Boolean).join(' · '), at: Math.floor((+I[ID].s || 0) + 760.6), clk: clock((+I[ID].s || 0) + 760.6) };
+      const nb = D.books.find(b => hasNar(b.abbr, 1)), nid = nb ? narItem(nb, 1) : null; if (nid) { play(nid, { full: true }); audio.pause(); await w(150); out.narHidden = $('#np-more').hidden; } else out.narHidden = 'no narration';
+      return { out, want }; }, SH_ID);
+    const o = r.out, w = r.want, base = SITE + 's/' + SH_ID + '.html';
+    return (o.shown && JSON.stringify(o.items) === JSON.stringify(['Favorite', 'Share sermon', 'Copy link']) && o.closed && o.share && o.share.title === w.title && o.share.text === w.text && o.share.url === base
+      && o.items2.includes('Share from ' + w.clk) && o.here && o.here.url === base + '?t=' + w.at && o.copied === base && /Link copied/.test(o.note) && o.narHidden === true) || r; });
+  await T('U87 no share sheet (a desktop browser): Share copies the link instead; cancelling the share sheet copies nothing', async () => { const X = await open(await ctx()); await stubShare(X);
+    const r = await X.evaluate(async ID => { const w = ms => new Promise(r => setTimeout(r, ms)); navigator.share = () => Promise.reject(Object.assign(new Error('x'), { name: 'AbortError' })); shareSermon(ID, 0); await w(200); const a = __cp.length;
+      try { Object.defineProperty(navigator, 'share', { value: undefined, configurable: true }); } catch (e) { navigator.share = undefined; } shareSermon(ID, 0); await w(200); return { cancelCopied: a, copied: __cp[0] }; }, SH_ID);
+    return (r.cancelCopied === 0 && r.copied === SITE + 's/' + SH_ID + '.html') || r; });
+  await T('U88 Favorite from the menu: kept (and backed up), the Library shows one Favorites row with the count, it opens the list; un-favorite removes it and the row goes when none are left', async () => { const X = await open(await ctx()); await stubShare(X);
+    const r = await X.evaluate(async ID => { const w = ms => new Promise(r => setTimeout(r, ms)); $('#tabs [data-tab2=library]').click(); await w(300); const before = !!document.querySelector('#main [data-favs]');
+      play(ID, { full: true }); audio.pause(); await w(150); $('#np-more').click(); await w(100); document.querySelector('#smenu [data-sm=fav]').click(); await w(300);
+      const kept = !!S.get('fav', {})[ID], backed = BK_KEYS.includes('fav') && BK_MAP.includes('fav'), note1 = ($('#note') || {}).textContent || ''; setMini(true); await w(100);
+      const row = document.querySelector('#main [data-favs]'), rowText = row ? row.textContent : ''; $('#np-more').click(); await w(100); const label = document.querySelector('#smenu [data-sm=fav]').textContent.trim(); closeSermonMenu();
+      row.click(); await w(300); const sheet = [...document.querySelectorAll('#bps [data-row]')].map(e => e.dataset.row), head = ($('#favc') || {}).textContent;
+      document.querySelector('#bps [data-bpsx]').click(); await w(200); sermonMenu(ID, $('#np-more')); document.querySelector('#smenu [data-sm=fav]').click(); await w(300);
+      return { before, kept, backed, note1, rowText, label, sheet, head, gone: !S.get('fav', {})[ID], rowGone: !document.querySelector('#main [data-favs]') }; }, SH_ID);
+    return (!r.before && r.kept && r.backed && /Added to Favorites/.test(r.note1) && /Favorites/.test(r.rowText) && /1 sermon you/.test(r.rowText) && r.label === 'Favorited' && r.sheet.join() === SH_ID && r.head === '1 sermon' && r.gone && r.rowGone) || r; });
+  await T('U89 the Favorites list: search by title, teacher or passage (with "n of N"), and every sort — recently saved, teacher (grouped), book of the Bible in Bible order (grouped), not heard yet first, shortest first — remembered', async () => { const X = await open(await ctx());
+    const r = await X.evaluate(async () => { const w = ms => new Promise(r => setTimeout(r, ms)); const ok = Object.keys(I).filter(k => canShare(k) && I[k].pass && I[k].dur && /^(?:[123]\s)?[A-Za-z]/.test(I[k].pass));
+      const pick = []; const seen = new Set(); for (const k of ok) { const key = I[k].who + '|' + favBook(k); if (!seen.has(key) && D.books.some(b => b.name === favBook(k))) { seen.add(key); pick.push(k); } if (pick.length >= 8) break; }
+      const f = {}; pick.forEach((k, n) => f[k] = 1000 + n); S.set('fav', f); prog[pick[2]] = { done: 1, at: 1 }; S.set('prog', prog);
+      $('#tabs [data-tab2=library]').click(); await w(300); document.querySelector('#main [data-favs]').click(); await w(300);
+      const rows = () => [...document.querySelectorAll('#bps [data-row]')].map(e => e.dataset.row), groups = () => [...document.querySelectorAll('#bps .fav-g')].map(e => e.textContent);
+      const sortBy = async k => { const s = $('#favs'); s.value = k; s.dispatchEvent(new Event('change')); await w(200); };
+      const out = { n: pick.length, saved: rows() };
+      await sortBy('teacher'); out.teacher = rows(); out.tg = groups(); await sortBy('book'); out.book = rows(); out.bg = groups(); await sortBy('new'); out.new0 = rows(); await sortBy('short'); out.short = rows(); out.remember = S.get('favsort');
+      const q = $('#favq'), T0 = I[pick[1]]; q.value = dispTitle(T0).split(/\s+/).filter(x => x.length > 3).slice(0, 2).join(' '); q.dispatchEvent(new Event('input')); await w(200); out.qTitle = rows(); out.qn = $('#favn').textContent;
+      q.value = 'zzqqxx'; q.dispatchEvent(new Event('input')); await w(200); out.none = ($('#bps .fav-none') || {}).textContent || '';
+      q.value = teacher(I[pick[0]]).split(' ').slice(-1)[0]; q.dispatchEvent(new Event('input')); await w(200); out.qTeacher = rows();
+      const exp = { saved: [...pick].reverse(), teacher: [...pick].sort((a, b) => teacher(I[a]).localeCompare(teacher(I[b])) || f[b] - f[a]),
+        bookOrder: pick.map(k => D.books.findIndex(b => b.name === favBook(k))), short: [...pick].sort((a, b) => I[a].dur - I[b].dur || f[b] - f[a]),
+        teacherHits: pick.filter(k => teacher(I[k]).includes(teacher(I[pick[0]]).split(' ').slice(-1)[0])), tg: [...new Set([...pick].sort((a, b) => teacher(I[a]).localeCompare(teacher(I[b]))).map(k => teacher(I[k])))] };
+      return { out, exp, pick, b0: pick[1], done: pick[2] }; });
+    const o = r.out, e = r.exp, bi = o.book.map(k => r.pick.indexOf(k)).map(i => e.bookOrder[i]);
+    const ok = o.n >= 4 && JSON.stringify(o.saved) === JSON.stringify(e.saved) && JSON.stringify(o.teacher) === JSON.stringify(e.teacher) && JSON.stringify(o.tg) === JSON.stringify(e.tg)
+      && bi.every((x, i) => i === 0 || x >= bi[i - 1]) && o.bg.length >= 2 && o.new0[o.new0.length - 1] === r.done && JSON.stringify(o.short) === JSON.stringify(e.short) && o.remember === 'short'
+      && o.qTitle.includes(r.b0) && /of \d+/.test(o.qn) && /No favorite matches/.test(o.none) && JSON.stringify([...o.qTeacher].sort()) === JSON.stringify([...e.teacherHits].sort());
+    return ok || r; });
+  await T('U90 press and hold a sermon in a list (or right-click it): the row lifts and the same menu opens, without playing or opening it; a short tap on play still plays; Bible narration rows get no menu', async () => { const X = await open(await ctx());
+    const r = await X.evaluate(async ID => { const w = ms => new Promise(r => setTimeout(r, ms)); S.set('fav', { [ID]: 1 }); $('#tabs [data-tab2=library]').click(); await w(300); document.querySelector('#main [data-favs]').click(); await w(300);
+      const row = document.querySelector('#bps [data-row="' + ID + '"]'), rc = row.getBoundingClientRect(), x = rc.left + 40, y = rc.top + rc.height / 2;
+      const touch = (type, el) => { const ev = new Event(type, { bubbles: true, cancelable: true }); Object.defineProperty(ev, 'touches', { value: type === 'touchend' ? [] : [{ clientX: x, clientY: y }] }); el.dispatchEvent(ev); };
+      const tgt = row.querySelector('.tx') || row; const cur0 = cur;
+      touch('touchstart', tgt); await w(650); const open1 = !!$('#smenu'), lifted = !!document.querySelector('#smenu .sm-lift'), items = [...document.querySelectorAll('#smenu [data-sm]')].map(b => b.dataset.sm).join();
+      touch('touchend', tgt); tgt.click(); await w(200); const played = cur !== cur0 || NP().classList.contains('on'); closeSermonMenu();
+      touch('touchstart', tgt); await w(100); const ev2 = new Event('touchmove', { bubbles: true }); Object.defineProperty(ev2, 'touches', { value: [{ clientX: x, clientY: y + 30 }] }); tgt.dispatchEvent(ev2); await w(600); const scrolled = !$('#smenu');
+      touch('touchend', tgt); await w(800);
+      tgt.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true, clientX: x, clientY: y })); await w(150); const right = !!$('#smenu'); closeSermonMenu(); await w(750);
+      const pb = row.querySelector('[data-play]'); touch('touchstart', pb); await w(80); touch('touchend', pb); pb.click(); await w(300); const tap = cur === ID; audio.pause();
+      const nb = D.books.find(b => hasNar(b.abbr, 1)), nid = narItem(nb, 1), fake = document.createElement('div'); fake.dataset.row = nid; document.body.appendChild(fake);
+      fake.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true })); await w(100); const narMenu = !!$('#smenu'); fake.remove();
+      return { open1, lifted, items, played, scrolled, right, tap, narMenu }; }, SH_ID);
+    return (r.open1 && r.lifted && r.items === 'fav,share,copy' && !r.played && r.scrolled && r.right && r.tap && !r.narMenu) || r; });
+  await T('U91 a share page for every sermon with a recording (none for narration, intros or Be Led): each under 5 KB, none of the app data in it, its own preview card (title, "Teacher · Passage", the app icon, its own address), not indexed', async () => { const X = await open(await ctx());
+    const want = await X.evaluate(() => Object.keys(I).filter(canShare).map(k => ({ id: k, t: I[k].t, d: [teacher(I[k]), I[k].pass].filter(Boolean).join(' · ') })));
+    const nar = await X.evaluate(() => Object.keys(I).filter(k => I[k].audio && (I[k].nar || I[k].intro)).slice(0, 3)); await X.context().close();
+    const ent = s => s.replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+    const bad = []; const sample = want.filter((_, i) => i % 17 === 0).concat(want.slice(-3));
+    for (const w of sample) { const res = await fetch(SITE + 's/' + w.id + '.html'); const h = await res.text(); const og = k => { const m = new RegExp('<meta property="og:' + k + '" content="([^"]*)"').exec(h); return m ? ent(m[1]) : null; };
+      if (!res.ok || h.length > 5000 || /const D=|wsongs|bkkey/.test(h) || og('title') !== w.t || og('description') !== w.d || !/og:image" content="https:\/\/[^"]+\/icon-512\.png"/.test(h) || og('url') !== 'https://zreynard.github.io/scripture-companion/s/' + w.id + '.html' || !/name="robots" content="noindex"/.test(h)) bad.push([w.id, res.status, h.length, og('title'), og('description')]); }
+    const fs = require('fs'), path = require('path'), dir = path.join(__dirname, '../../out/site/s'); let count = null, big = [];
+    if (fs.existsSync(dir)) { const files = fs.readdirSync(dir).filter(f => f.endsWith('.html')); count = files.length; big = files.filter(f => fs.statSync(path.join(dir, f)).size > 5000); }
+    const narPages = []; for (const id of nar) { const res = await fetch(SITE + 's/' + id + '.html'); if (res.ok) narPages.push(id); }
+    return (bad.length === 0 && (count === null || count === want.length) && big.length === 0 && narPages.length === 0) || { bad: bad.slice(0, 4), count, want: want.length, big: big.slice(0, 3), narPages }; });
+  // a 17-minute tone, 4 kHz 8-bit (longer than where the test sermon starts): the stand-in recording for the friend's page
+  const TONE = (() => { const sr = 4000, n = sr * 1020, buf = Buffer.alloc(44 + n); buf.write('RIFF', 0); buf.writeUInt32LE(36 + n, 4); buf.write('WAVEfmt ', 8); buf.writeUInt32LE(16, 16); buf.writeUInt16LE(1, 20); buf.writeUInt16LE(1, 22);
+    buf.writeUInt32LE(sr, 24); buf.writeUInt32LE(sr, 28); buf.writeUInt16LE(1, 32); buf.writeUInt16LE(8, 34); buf.write('data', 36); buf.writeUInt32LE(n, 40); for (let i = 0; i < n; i++) buf[44 + i] = 128 + Math.round(Math.sin(i / sr * 2 * Math.PI * 220) * 40); return buf; })();
+  const wavRange = r => { const m = /bytes=(\d+)-(\d*)/.exec(r.request().headers()['range'] || ''); if (!m) return r.fulfill({ status: 200, contentType: 'audio/wav', headers: { 'accept-ranges': 'bytes' }, body: TONE });
+    const a = +m[1], z = m[2] ? Math.min(+m[2], TONE.length - 1) : TONE.length - 1; return r.fulfill({ status: 206, contentType: 'audio/wav', headers: { 'accept-ranges': 'bytes', 'content-range': `bytes ${a}-${z}/${TONE.length}` }, body: TONE.subarray(a, z + 1) }); };
+  const friend = async (q = '', keep) => { const c = keep || await ctx(); const F = await c.newPage(); F.on('pageerror', e => errs.push('U92 share page:' + e.message));
+    await F.route(/^https?:\/\/(?!localhost)/, r => r.request().resourceType() === 'media' || /\.(mp3|m4a|wav)(\?|#|$)/i.test(r.request().url()) ? wavRange(r) : r.continue());
+    await F.goto(SITE + 's/' + SH_ID + '.html' + q); await wait(700); return F; };
+  await T('U92 the friend\'s page on a phone that has never seen the app: the title, teacher and passage, artwork; Play starts where the sermon starts; ±15 s and speed work; a "from 1:30" link starts there and offers the beginning; coming back resumes; the app\'s offline helper never takes it over', async () => {
+    const c = await ctx(), F = await friend('', c); const d = await F.evaluate(() => LS.d);
+    const shown = await F.evaluate(() => ({ t: document.querySelector('.ls-t').textContent, by: document.querySelector('.ls-by').textContent, art: document.querySelector('.ls-art .a-w').textContent, k: document.querySelector('.ls-k').textContent, src: !!document.querySelector('.ls-src'), sw: !!navigator.serviceWorker && !!navigator.serviceWorker.controller }));
+    const out = {};
+    await F.click('#ls-pp'); await wait(1500); out.t0 = await F.evaluate(() => LS.a.currentTime); out.playing = await F.evaluate(() => !LS.a.paused); out.start = await F.evaluate(() => LS.start());
+    await F.click('#ls-fw'); await wait(150); out.fw = await F.evaluate(() => LS.a.currentTime); await F.click('#ls-bk'); await F.click('#ls-bk'); await wait(150); out.bk = await F.evaluate(() => LS.a.currentTime);
+    await F.click('#ls-sp'); out.sp = [await F.evaluate(() => LS.a.playbackRate), await F.textContent('#ls-sp')];
+    await F.evaluate(() => { LS.a.currentTime = 95; }); await wait(6500); out.saved = await F.evaluate(id => +localStorage.getItem('sc-listen:' + id), d.id); await F.close();
+    const G = await friend('', c); out.resume = await G.evaluate(() => LS.start()); await G.close();
+    const H = await friend('?t=90'); out.from = await H.evaluate(() => [LS.start(), (document.querySelector('.ls-from') || {}).textContent || '']); await H.click('#ls-pp'); await wait(1200); out.fromAt = await H.evaluate(() => LS.a.currentTime);
+    await H.click('#ls-begin'); await wait(800); out.begin = await H.evaluate(() => [LS.a.currentTime, LS.start()]); await H.context().close(); await c.close();
+    const ok = shown.t === d.t && shown.by === [d.teacher, d.pass].filter(Boolean).join(' · ') && shown.art === d.teacher && /Shared with you/i.test(shown.k) && shown.src === !!d.url && !shown.sw
+      && out.playing && Math.abs(out.t0 - out.start) < 3 && Math.abs(out.fw - out.t0 - 15) < 3 && Math.abs(out.fw - out.bk - 30) < 3 && out.sp[0] === 1.25 && /1\.25× speed/.test(out.sp[1])
+      && out.saved >= 95 && out.saved < 110 && Math.abs(out.resume - out.saved) < 1 && out.from[0] === 90 && /Starts at 1:30/.test(out.from[1]) && Math.abs(out.fromAt - 90) < 3 && Math.abs(out.begin[0] - (d.s || 0)) < 3;
+    return ok || { shown, out, s: d.s }; });
   await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

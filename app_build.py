@@ -494,9 +494,53 @@ def main():
     print(f"wrote {OUT}: {len(items)} items, {n_audio} with in-app audio; off the road: {len(off_road)}")
     json.dump(sorted(f'{items[i]["t"]}  [{WHY.get(i, "")}]' for i in off_road), open(os.path.join(HERE, "out", "off_road.json"), "w"), indent=0, ensure_ascii=False)
     write_site(html)
+    write_share_pages(items, html)
 
 def blk(t, book):
     return ATLAS.link_book(t, book) if ATLAS.ok else t
+
+SITE_URL = "https://zreynard.github.io/scripture-companion/"   # the app's public address: link previews need it in full
+
+def write_share_pages(items, html):
+    """s/<id>.html: one small page per sermon, for a link you send a friend — its own preview card (title, teacher,
+    passage), and a player that streams the sermon from the church's host. Only the sermon's public details are in it.
+    The artwork's colours, icons and teacher names are read from the app's own code, so the page matches the player."""
+    import html as H, re as _re
+    d = os.path.join(SITE, "s"); os.makedirs(d, exist_ok=True)
+    js = lambda name: _re.search(r"const " + name + r"=(\{.*?\});", TEMPLATE, _re.S).group(1)
+    art = "window.SC_ART={colors:" + js("ART_C") + ",icons:" + js("MEDAL_ICON") + ",medal:{Platt:'apostle',PAM:'prophet',Davey:'writer',Skip:'patriarch'}};"
+    names = dict(_re.findall(r"(\w+):'([^']+)'", js("NAMES")))
+    open(os.path.join(d, "art.js"), "w", encoding="utf-8").write(art + "\n")
+    for f in ("listen.js", "listen.css"): shutil_copy(os.path.join(HERE, "site_extra", "s", f), os.path.join(d, f))
+    D, _ = json.JSONDecoder().raw_decode(html[html.index("const D=") + 8:])
+    place = {}                                   # the label the player's artwork shows: the same rule as the app's where()
+    for bk in D.get("books", []):
+        for x in bk.get("ov", []) + [s["id"] for s in bk.get("spans", []) or []]: place.setdefault(x, bk["name"])
+        for c in bk.get("ch", []):
+            for x in c.get("ids", []): place.setdefault(x, f'{bk["name"]} {c["c"]}')
+    n = 0
+    for i in items.values():
+        if not i.get("audio") or i.get("nar") or i.get("intro") or i.get("blob") or i.get("led") or not _re.fullmatch(r"[\w-]+", i["id"]): continue
+        who = i.get("who") or ""; teach = i.get("by") or names.get(who, who)
+        m = _re.match(r"^((?:[123]\s)?[A-Za-z][A-Za-z ]*?\s*\d+)", i.get("pass") or "")
+        rec = {"id": i["id"], "t": i.get("t") or "", "who": who, "teacher": teach, "pass": i.get("pass") or "", "where": place.get(i["id"]) or (m.group(1) if m else ""),
+               "show": i.get("show") or "", "audio": i["audio"], "s": float(i.get("s") or 0), "dur": float(i.get("dur") or 0), "url": i.get("url") or ""}
+        desc = " · ".join(x for x in (teach, i.get("pass")) if x)
+        e = lambda s: H.escape(str(s), quote=True)
+        data = json.dumps(rec, ensure_ascii=False).replace("</", "<\\/")
+        page = (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+                f'<title>{e(rec["t"])} · {e(teach)}</title><meta name="description" content="{e(desc)}"><meta name="robots" content="noindex">'
+                f'<meta property="og:type" content="website"><meta property="og:title" content="{e(rec["t"])}"><meta property="og:description" content="{e(desc)}">'
+                f'<meta property="og:image" content="{SITE_URL}icon-512.png"><meta property="og:url" content="{SITE_URL}s/{e(i["id"])}.html"><meta name="twitter:card" content="summary">'
+                f'<meta name="theme-color" content="#f4efe4"><link rel="icon" href="../icon-192.png"><link rel="apple-touch-icon" href="../icon-180.png">'
+                f'<link rel="stylesheet" href="listen.css?v={BUILD}"></head><body>'
+                f'<script type="application/json" id="sd">{data}</script>'
+                f'<script src="art.js?v={BUILD}"></script><script src="listen.js?v={BUILD}"></script></body></html>')
+        open(os.path.join(d, i["id"] + ".html"), "w", encoding="utf-8").write(page); n += 1
+    print(f"wrote {n} share pages in {d}")
+
+def shutil_copy(a, b):
+    import shutil; shutil.copy(a, b)
 
 def write_site(html: str):
     """out/site/: index.html + manifest + icons + service worker — the installable home-screen app."""
@@ -767,6 +811,22 @@ body.mapopen #sheet{z-index:24}
 .upn{color:var(--gold2);font-weight:700}
 .acts .go2{background:rgba(255,255,255,.6)}
 .endacts .rdone{flex:1;text-align:center;color:var(--gold2);font-weight:600;padding:10px}
+.np-tr{display:flex;align-items:center;gap:12px}.np-tr .t{flex:1;min-width:0}
+#np-more{flex:none;width:36px;height:36px;border-radius:18px;border:0;background:rgba(27,36,64,.08);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}#np-more[hidden],#np.mini #np-more{display:none}
+[data-row],[data-full]{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+#smenu{position:fixed;inset:0;z-index:300}#smenu .sm-bg{position:absolute;inset:0;background:rgba(27,36,64,.18);opacity:0;transition:opacity .18s}
+#smenu .sm-bg.blur{background:rgba(27,36,64,.22);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}#smenu.on .sm-bg{opacity:1}
+#smenu .sm-box{position:absolute;width:250px;background:rgba(255,253,248,.98);border-radius:16px;box-shadow:0 18px 50px rgba(27,36,64,.28);overflow:hidden;opacity:0;transform:scale(.96);transition:transform .16s,opacity .16s}#smenu.on .sm-box{opacity:1;transform:none}
+#smenu .sm-box button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px 16px;border:0;background:none;font:16px -apple-system,system-ui,sans-serif;color:var(--ink);text-align:left;cursor:pointer}
+#smenu .sm-box button+button{border-top:1px solid rgba(27,36,64,.08)}#smenu .sm-box i{color:#6b7088;display:flex}
+#smenu .sm-lift{position:absolute;margin:0!important;transform:scale(1.03);box-shadow:0 14px 34px rgba(27,36,64,.3);border-radius:18px;background:#fffdf8;pointer-events:none}
+.fav-av{background:#c9a24a!important;color:#c0392b;display:flex;align-items:center;justify-content:center}
+.fav-h{display:flex;align-items:center;gap:12px;margin:4px 0 12px}.fav-h .fav-av{width:44px;height:44px;border-radius:22px;flex:none}.fav-h b{display:block;font-size:24px;font-weight:500}.fav-h small{color:var(--mute);font-size:13px}
+.fav-q{display:flex;align-items:center;gap:8px;background:rgba(27,36,64,.07);border-radius:12px;padding:0 12px;height:42px;margin:0 0 10px;color:#7a7f96}
+.fav-q input{flex:1;min-width:0;border:0;background:none;font:16px -apple-system,system-ui,sans-serif;color:var(--ink);outline:none;height:100%}
+.fav-bar{display:flex;justify-content:space-between;align-items:center;margin:0 2px 10px;font:600 14px -apple-system,system-ui,sans-serif;color:var(--mute)}
+.fav-sort{position:relative;color:#9a7a2c;cursor:pointer}.fav-sort select{position:absolute;inset:0;width:100%;height:100%;opacity:0;font-size:16px;cursor:pointer;-webkit-appearance:none;appearance:none}
+.fav-g{font:700 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9a7a2c;margin:16px 4px 6px}.fav-none{color:var(--mute);margin:18px 4px}
 #note{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 64px);transform:translate(-50%,-12px);max-width:min(340px,90vw);background:var(--ink);color:#fff;border-radius:16px;padding:10px 16px;font-size:14px;line-height:1.35;text-align:center;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60}
 #note.on{opacity:1;transform:translate(-50%,0)}
 .lnk{border:0;background:none;padding:0;font:inherit;color:var(--gold2);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
@@ -1307,7 +1367,7 @@ body.npslim #np.mini .ctl .big{width:36px!important;height:36px!important}body.n
 <div id="np"><div class="grab"></div>
 <div class="np-top"><button id="np-min" aria-label="Shrink player"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="np-lab">Now playing</span><button id="np-core" class="np-core" hidden>Make Core</button><button id="np-fav" aria-label="Save this teaching" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v16l-5-3.6L7 20z"/></svg></button><button id="np-srch" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button><button id="cls" aria-label="Stop and close">✕</button></div>
 <div class="art" id="np-art"></div><div class="np-d" id="np-d"></div>
-<div class="t serif" id="np-t"></div><div class="s" id="np-s"></div><div id="np-read" aria-label="Reader"></div>
+<div class="np-tr"><div class="t serif" id="np-t"></div><button id="np-more" aria-label="Favorite or share this sermon" hidden></button></div><div class="s" id="np-s"></div><div id="np-read" aria-label="Reader"></div>
 <input type="range" id="seek" min="0" max="1000" value="0"><div class="times"><span id="cur">0:00</span><span id="rem">-0:00</span></div><div class="np-left" id="npleft" hidden></div>
 <div class="ctl"><button class="side sk" id="prv" aria-label="Previous"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5l-10 7 10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button><button class="side" id="bk">↺ 10</button><button class="big" id="pp" style="display:flex;align-items:center;justify-content:center"></button><button class="side" id="fw">10 ↻</button><button class="side sk" id="nxt" aria-label="Next"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button></div>
 <div id="np-hl" aria-hidden="true"><i></i></div><div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="bedb" hidden aria-haspopup="true">♪ Music</button><button id="zz">Sleep off</button></div><div id="bedpop" hidden></div><div class="np-cut"><button id="cutb" hidden>Teaching starts here</button></div></div>
@@ -2477,6 +2537,7 @@ function libView(){const cnt={};Object.values(I).forEach(i=>{if(i.tr!=='devotion
   return h+`<div class="jv-sec">Old Testament</div>${grid(ot)}<div class="jv-sec">New Testament</div>${grid(nt)}</div>`}
  const rec=Object.entries(prog).filter(([id,p])=>I[id]&&!I[id].nar&&p&&p.at).sort((a,z)=>z[1].at-a[1].at).slice(0,6);
 
+ {const nf=favList().length;if(nf)h+=`<button class="lib-t sh-row fav-row" data-favs><span class="av sh-av fav-av">${IC_HEART(true).replace(/19/g,'21')}</span><span><b>Favorites</b><em>${nf} sermon${nf===1?'':'s'} you’ve marked</em></span><i>›</i></button>`}
  h+=`<div class="jv-sec sh-sec"><span>Teachers</span>${shLenPick()}</div><button class="lib-t sh-row" data-shuf=""><span class="av sh-av"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></span><span><b>Shuffle</b><em id="shsub">A sermon you haven’t heard</em></span><i class="sh-pl"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M8.5 5.6v12.8a.8.8 0 0 0 1.2.7l10-6.4a.8.8 0 0 0 0-1.4l-10-6.4a.8.8 0 0 0-1.2.7z" fill="currentColor"/></svg></i></button>`+['Platt','PAM','Skip','Davey','Vaughan','Fearless'].filter(k=>!HIDE.includes(k)).filter(k=>cnt[k]).map(k=>`<button class="lib-t" data-tch="${k}"><span class="av" style="background:${TCH_C[k]}">${(n=>n[0][0]+n[n.length-1][0])(NAMES[k].split(' '))}</span><span><b>${NAMES[k]}</b><em>${(cnt[k]||0).toLocaleString()} teachings</em></span><i>›</i></button>`).join('');
  const fav=Object.entries(S.get('fav',{})).filter(([id])=>I[id]).sort((a,z)=>z[1]-a[1]);
  if(false&&fav.length)h+=`<div class="jv-sec">Saved</div><div class="lib-rec">${fav.slice(0,12).map(([id])=>{const left=leftOf(id);return `<button data-full="${id}"><small>${esc(teacher(I[id]).split(' ').slice(-1)[0])}</small><b>${esc(dispTitle(I[id]))}</b><em>${esc(I[id].pass?shortPass(I[id].pass):'')}${isDone(id)?' · heard':left?' · '+atSpd(left)+' left':''}</em></button>`}).join('')}</div>`;
@@ -2680,7 +2741,7 @@ function openTeacher(k){const el=$('#bps');if(TS.k!==k){TS.k=k;TS.q='';TS.more=0
  el.querySelectorAll('[data-tsort]').forEach(b=>b.onclick=()=>{TS.sort=b.dataset.tsort;S.set('tsort',TS.sort);TS.more=0;el.querySelectorAll('[data-tsort]').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});$('#tlist').innerHTML=tList();wireL()});
  el.querySelectorAll('[data-shuf]').forEach(b=>b.onclick=()=>shuffle(b.dataset.shuf,b));
  const q=$('#tq');let tt=null;q.oninput=()=>{clearTimeout(tt);tt=setTimeout(()=>{TS.q=q.value;TS.more=0;$('#tlist').innerHTML=tList();wireL()},150)}}
-function wireLib(){wireBP();document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('#main [data-shuf]').forEach(b=>b.onclick=()=>shuffle(b.dataset.shuf||null,b));const sl=$('#shlen');if(sl)sl.onchange=()=>{S.set('shlen',sl.value);const t=$('#shlent');if(t)t.textContent=(SH_LEN.find(x=>x[0]===sl.value)||SH_LEN[0])[1]};document.querySelectorAll('[data-lt]').forEach(b=>b.onclick=()=>{LT=b.dataset.lt;S.set('libtab',LT);render()});document.querySelectorAll('#main [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));document.querySelectorAll('[data-lbook]').forEach(b=>b.onclick=()=>openLibBook(b.dataset.lbook));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2,true));document.querySelectorAll('#main [data-full]').forEach(b=>b.onclick=e=>{e.stopPropagation();playRow(b.dataset.full,true)})}
+function wireLib(){wireBP();document.querySelectorAll('#main [data-favs]').forEach(b=>b.onclick=openFavs);document.querySelectorAll('[data-tch]').forEach(b=>b.onclick=()=>openTeacher(b.dataset.tch));document.querySelectorAll('#main [data-shuf]').forEach(b=>b.onclick=()=>shuffle(b.dataset.shuf||null,b));const sl=$('#shlen');if(sl)sl.onchange=()=>{S.set('shlen',sl.value);const t=$('#shlent');if(t)t.textContent=(SH_LEN.find(x=>x[0]===sl.value)||SH_LEN[0])[1]};document.querySelectorAll('[data-lt]').forEach(b=>b.onclick=()=>{LT=b.dataset.lt;S.set('libtab',LT);render()});document.querySelectorAll('#main [data-topic]').forEach(b=>b.onclick=()=>openTopic(b.dataset.topic));document.querySelectorAll('[data-lbook]').forEach(b=>b.onclick=()=>openLibBook(b.dataset.lbook));document.querySelectorAll('[data-bpplay2]').forEach(b=>b.onclick=()=>bpPlay(b.dataset.sid,b.dataset.bpplay2,true));document.querySelectorAll('#main [data-full]').forEach(b=>b.onclick=e=>{e.stopPropagation();playRow(b.dataset.full,true)})}
 
 /* Pray (pray.py): Stillness is music and a quiet landscape; Guided walks the Lord's Prayer (Matthew 6:9-13). The music
    plays on its own element: it pauses a sermon and a sermon pauses it, and it is never kept in listening history */
@@ -3280,7 +3341,7 @@ function msSermon(id){const i=I[id];if(!i||!('mediaSession' in navigator))return
 function play(id,o={}){const i=I[id];if(!i.audio)return;BBM=!!o.bb;if(!o.restore)S.set('npl',{id,at:Date.now()});let wait=false;if(cur!==id){cur=id;NP().classList.toggle('reading',!!i.nar);$('.np-lab').textContent=i.nar?'Reading':'Now playing';if(!i.nar)NAR=null;ready=false;const p=i.nar?{}:prog[id]||{},saved=p.pos||0;useAudioFor(i);const meta=()=>{let st=i.s||0;if(i.nar){if(narAt)audio.currentTime=narAt;narAt=null;narRetry=0;ready=true;narMark(true);return}const L=isFinite(audio.duration)&&audio.duration>0?audio.duration:(+i.dur||Infinity);   /* some hosts report no length yet */
  if(i.sb&&isFinite(L))st=Math.max(0,L-i.sb);   /* Be Led: the prayer starts this far before the end */
  if(saved&&saved>st&&saved<L-5)audio.currentTime=saved;else if(st&&st<L-30){audio.currentTime=st;START={id,st}}ready=true};const setSrc=u=>{audio.src=u;narWait=false;audio.addEventListener('loadedmetadata',meta,{once:true})};if(!i.nar&&!i.blob)setSrc(i.audio);else if(NB[id]&&NB[id].u)setSrc(NB[id].u);else{narWait=true;wait=true;if(audio.src!==SILENT)try{audio.pause()}catch(e){}$('#cur').textContent='Loading…';narBlob(id).then(u=>{if(cur!==id)return;setSrc(u);if(!o.load)audio.play().catch(()=>{})}).catch(()=>{if(cur!==id)return;narWait=false;$('#np-s').textContent='This chapter did not load — check your connection and tap play.'})}  /* fresh plays start after the intro */
-  $('#np-t').textContent=dispTitle(i);$('#np-s').textContent=i.nar?'\u00a0':teacher(i)+' · '+where(id);npArt(id);favPaint();if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!o.full)}else if(o.full)setMini(false);if(i.nar)readerFill(true);if(i.intro){NP().classList.add('reading');const box=$('#np-read');box.innerHTML='';introText(i.intro.abbr).then(T=>{if(cur!==id)return;box.innerHTML=`<section class="itx"><h3 class="rc first">${esc(dispTitle(i))}</h3>${introParas(T[String(i.intro.c)])}</section>`}).catch(()=>{})}setPP();
+  $('#np-t').textContent=dispTitle(i);{const mb=$('#np-more');if(mb){mb.innerHTML=IC_DOTS;mb.hidden=!canShare(id)}}$('#np-s').textContent=i.nar?'\u00a0':teacher(i)+' · '+where(id);npArt(id);favPaint();if(!NP().classList.contains('on')){NP().classList.add('on');setMini(!o.full)}else if(o.full)setMini(false);if(i.nar)readerFill(true);if(i.intro){NP().classList.add('reading');const box=$('#np-read');box.innerHTML='';introText(i.intro.abbr).then(T=>{if(cur!==id)return;box.innerHTML=`<section class="itx"><h3 class="rc first">${esc(dispTitle(i))}</h3>${introParas(T[String(i.intro.c)])}</section>`}).catch(()=>{})}setPP();
   msSermon(id)}
  if(o.load||wait)return;audio.paused?audio.play().catch(()=>{}):audio.pause()}
 function next(){if(inDeep()){const i=DEEP.i,ids=deepIds(i),k=ids.indexOf(cur),nx=ids.slice(k+1).find(id=>!isDone(id)&&!SKIP[id]);
@@ -3322,7 +3383,7 @@ let zz=0,zzT=null;$('#cutb').onclick=e=>{e.stopPropagation();if(!cur||!I[cur]||I
  note('Will start at '+fmt(t)+' from now on');const n=$('#note');if(n){const u=document.createElement('button');u.className='note-undo';u.textContent='Undo';u.onclick=()=>{const c2=S.get('cut',{})||{};if(was===undefined)delete c2[id];else c2[id]=was;S.set('cut',c2);if(was===undefined&&id in CUT0){I[id].s=CUT0[id]}cutApply();n.classList.remove('on')};n.appendChild(u)}};
 function cutPaint(){const b=$('#cutb');if(!b)return;const it=cur&&I[cur],t=audio.currentTime||0,show=!!it&&!it.nar&&!it.intro&&!/^int:/.test(cur)&&t>5&&t<1500&&Math.abs(t-(it.s||0))>4;if(b.hidden===show)b.hidden=!show}
 $('#zz').onclick=()=>{const m=[0,15,30,60];zz=m[(m.indexOf(zz)+1)%m.length];$('#zz').textContent=zz?'Sleep '+zz+'m':'Sleep off';clearTimeout(zzT);if(zz)zzT=setTimeout(()=>{audio.pause();zz=0;$('#zz').textContent='Sleep off'},zz*60000)};
-$('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};$('#np-core').onclick=e=>{e.stopPropagation();const u=e.currentTarget.dataset.u;if(u==null||!cur)return;const set=coreSet();set[u]=[cur];S.set('coreSet',set);JV.deep=false;DEEP=null;note('Now Core for '+stopName(walk()[jpIdx()])+'.');corePaint();render()};$('#np-srch').onclick=e=>{e.stopPropagation();openSearch()};$('#np-fav').onclick=e=>{e.stopPropagation();if(!cur)return;const f=S.get('fav',{});if(f[cur])delete f[cur];else f[cur]=Date.now();S.set('fav',f);favPaint()};
+$('#prv').onclick=e=>{e.stopPropagation();skipTrack(-1)};$('#nxt').onclick=e=>{e.stopPropagation();skipTrack(1)};$('#np-min').onclick=e=>{e.stopPropagation();setMini(true)};$('#np-more').onclick=e=>{e.stopPropagation();if(cur)sermonMenu(cur,e.currentTarget)};$('#np-core').onclick=e=>{e.stopPropagation();const u=e.currentTarget.dataset.u;if(u==null||!cur)return;const set=coreSet();set[u]=[cur];S.set('coreSet',set);JV.deep=false;DEEP=null;note('Now Core for '+stopName(walk()[jpIdx()])+'.');corePaint();render()};$('#np-srch').onclick=e=>{e.stopPropagation();openSearch()};$('#np-fav').onclick=e=>{e.stopPropagation();if(!cur)return;const f=S.get('fav',{});if(f[cur])delete f[cur];else f[cur]=Date.now();S.set('fav',f);favPaint()};
 $('#cls').onclick=e=>{e.stopPropagation();S.set('npl',null);audio.pause();audio.removeAttribute('src');audio.load();cur=null;NAR=null;document.querySelectorAll('.vs.now').forEach(e=>e.classList.remove('now'));narBar();NP().classList.remove('on');roomForPlayer();render()};
 /* player sheet: swipe down or tap the page to shrink it to a bar; tap or swipe up the bar to open it */
 function NP(){return $('#np')}
@@ -3452,6 +3513,61 @@ function narNext(){const was=NAR;if(!was)return;read[was.b.abbr+was.c]=true;S.se
  if(JM){const x=walk()[jpIdx()];if(x&&!x.c.intro&&x.b.name===was.b.name&&x.c.c===was.c){next();return}JM=false}
  render();note(was.b.name+' '+was.c+' ✓')}   /* one chapter at a time: the Bible tab is where reading keeps going */
 let fullAtScroll=0;
+/* ---- a sermon's menu (the ••• by its title, or press and hold it in any list): Favorite, Share, Share from where you
+   are, Copy link. A shared link opens a small page anyone can listen on (s/<id>.html), nothing of yours in it. ---- */
+const IC_DOTS='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="5" cy="12" r="1.9" fill="currentColor"/><circle cx="12" cy="12" r="1.9" fill="currentColor"/><circle cx="19" cy="12" r="1.9" fill="currentColor"/></svg>',
+ IC_HEART=on=>`<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="${on?'#c0392b':'none'}" stroke="${on?'#c0392b':'currentColor'}" stroke-width="2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>`,
+ IC_SHARE='<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7.5 7.5L12 3l4.5 4.5"/><path d="M6 11H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-1"/></svg>',
+ IC_LINK='<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>';
+function canShare(id){const i=I[id];return !!(i&&i.audio&&!i.nar&&!i.intro&&!i.blob&&!i.led&&/^[\w-]+$/.test(id))}
+function isFav(id){return !!S.get('fav',{})[id]}
+function setFav(id,on){const f=S.get('fav',{});if(on)f[id]=Date.now();else delete f[id];S.set('fav',f);dlog(on?'favorite':'unfavorite',id);if(view==='library'){const y=scrollY;render();window.scrollTo(0,y)}}
+function shareUrl(id,t){return new URL('s/'+id+'.html'+(t?'?t='+t:''),location.href.replace(/[?#].*$/,'')).href}
+function copyLink(url){const ok=()=>note('Link copied'),old=()=>{const t=document.createElement('textarea');t.value=url;t.setAttribute('readonly','');t.style.cssText='position:fixed;opacity:0;top:0';document.body.appendChild(t);t.select();let done=false;try{done=document.execCommand('copy')}catch(e){}t.remove();done?ok():note(url)};
+ try{navigator.clipboard.writeText(url).then(ok,old)}catch(e){old()}}
+function shareSermon(id,t){const i=I[id],url=shareUrl(id,t),text=[teacher(i),i.pass].filter(Boolean).join(' · ');dlog('share',{id,from:t||0});
+ if(navigator.share)navigator.share({title:dispTitle(i),text,url}).catch(e=>{if(!e||e.name!=='AbortError')copyLink(url)});else copyLink(url)}
+function clock(s){s=Math.max(0,Math.floor(s));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(x).padStart(2,'0')}
+function sermonMenu(id,anchor,lift){closeSermonMenu();if(!canShare(id))return;const i=I[id],fav=isFav(id);
+ const here=cur===id&&audio&&isFinite(audio.currentTime)&&audio.currentTime>(+i.s||0)+5?Math.floor(audio.currentTime):0;
+ const items=[['fav',fav?'Favorited':'Favorite',IC_HEART(fav)],['share','Share sermon',IC_SHARE]].concat(here?[['here','Share from '+clock(here),IC_SHARE]]:[],[['copy','Copy link',IC_LINK]]);
+ const m=document.createElement('div');m.id='smenu';m.innerHTML=`<div class="sm-bg${lift?' blur':''}"></div><div class="sm-box" role="menu" aria-label="${esc(dispTitle(i))}">${items.map(([k,t,ic])=>`<button role="menuitem" data-sm="${k}"><span>${esc(t)}</span><i>${ic}</i></button>`).join('')}</div>`;
+ document.body.appendChild(m);
+ if(lift){const r=lift.getBoundingClientRect(),c=lift.cloneNode(true);c.classList.add('sm-lift');c.removeAttribute('id');c.style.cssText=`left:${r.left}px;top:${r.top}px;width:${r.width}px`;m.insertBefore(c,m.lastChild)}
+ const box=m.querySelector('.sm-box'),r=anchor.getBoundingClientRect(),h=box.offsetHeight,below=r.bottom+10+h<innerHeight-10;
+ box.style.top=(below?r.bottom+10:Math.max(10,r.top-10-h))+'px';box.style.right=Math.max(14,innerWidth-r.right)+'px';box.style.transformOrigin=(below?'top':'bottom')+' right';
+ requestAnimationFrame(()=>m.classList.add('on'));m.querySelector('.sm-bg').onclick=closeSermonMenu;
+ m.querySelectorAll('[data-sm]').forEach(b=>b.onclick=e=>{e.stopPropagation();const k=b.dataset.sm;closeSermonMenu();
+  if(k==='fav'){setFav(id,!fav);note(fav?'Removed from Favorites':'Added to Favorites')}else if(k==='share')shareSermon(id,0);else if(k==='here')shareSermon(id,here);else copyLink(shareUrl(id,0))})}
+function closeSermonMenu(){const m=$('#smenu');if(m)m.remove()}
+/* press and hold a sermon in any list (or right-click it) for the same menu; the press never also plays or opens it */
+(function(){let t=null,sx=0,sy=0,fired=0;const ROW='[data-row],[data-full]',idOf=r=>r.dataset.row||r.dataset.full;
+ document.addEventListener('touchstart',e=>{const r=e.target.closest&&e.target.closest(ROW);if(!r||!canShare(idOf(r))||e.target.closest('#smenu'))return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;clearTimeout(t);
+  t=setTimeout(()=>{t=null;fired=Date.now();try{navigator.vibrate&&navigator.vibrate(8)}catch(x){}sermonMenu(idOf(r),r,r)},480)},{passive:true});
+ document.addEventListener('touchmove',e=>{if(!t)return;const p=e.touches[0];if(Math.abs(p.clientX-sx)>10||Math.abs(p.clientY-sy)>10){clearTimeout(t);t=null}},{passive:true});
+ ['touchend','touchcancel'].forEach(ev=>document.addEventListener(ev,()=>{clearTimeout(t);t=null},{passive:true}));
+ document.addEventListener('click',e=>{if(Date.now()-fired<700&&!(e.target.closest&&e.target.closest('#smenu'))){e.preventDefault();e.stopPropagation()}},true);
+ document.addEventListener('contextmenu',e=>{const r=e.target.closest&&e.target.closest(ROW);if(!r||!canShare(idOf(r)))return;e.preventDefault();fired=Date.now();sermonMenu(idOf(r),r,r)})})();
+/* Favorites: one row in the Library opens them all — searchable, sorted your way, grouped when sorted by teacher or book */
+const FAV_SORTS=[['saved','Recently saved'],['teacher','Teacher'],['book','Book of the Bible'],['new','Not heard yet'],['short','Shortest first']];
+function favList(){return Object.entries(S.get('fav',{})).filter(([id])=>canShare(id)).map(([id,ts])=>({id,ts}))}
+function favBook(id){const m=/^((?:[123]\s)?[A-Za-z][A-Za-z ]*?)\s*\d/.exec(I[id].pass||'');return m?m[1].trim():''}
+function openFavs(){let q='',sort=S.get('favsort','saved');if(!FAV_SORTS.some(s=>s[0]===sort))sort='saved';
+ const bix=b=>{const k=D.books.findIndex(x=>x.name===b);return k<0?999:k},ch=id=>+((/(\d+)/.exec((I[id].pass||'').replace(/^[123]\s/,''))||[])[1]||0);
+ const match=x=>{if(!q)return true;const i=I[x.id],s=[dispTitle(i),i.t,teacher(i),i.pass,i.show].filter(Boolean).join(' ').toLowerCase();return q.toLowerCase().split(/\s+/).filter(Boolean).every(w=>s.includes(w))};
+ const BY={saved:(a,b)=>b.ts-a.ts,teacher:(a,b)=>teacher(I[a.id]).localeCompare(teacher(I[b.id]))||b.ts-a.ts,book:(a,b)=>bix(favBook(a.id))-bix(favBook(b.id))||ch(a.id)-ch(b.id)||b.ts-a.ts,
+  new:(a,b)=>(isDone(a.id)?1:0)-(isDone(b.id)?1:0)||b.ts-a.ts,short:(a,b)=>(+I[a.id].dur||1e9)-(+I[b.id].dur||1e9)||b.ts-a.ts};
+ const shown=()=>favList().filter(match).sort(BY[sort]);
+ const list=()=>{const L=shown(),N=favList().length,grp=sort==='teacher'?x=>teacher(I[x.id]):sort==='book'?x=>favBook(x.id)||'Other':null;let h='',last=null;
+  if(!L.length)return `<p class="fav-none">${N?'No favorite matches “'+esc(q)+'”.':'No favorites yet. Tap ••• on a sermon, then Favorite.'}</p>`;
+  L.forEach(x=>{if(grp){const g=grp(x);if(g!==last){h+=`<div class="fav-g">${esc(g)}</div>`;last=g}}h+=voiceHTML(x.id)});return h};
+ const head=`<div class="fav-h"><span class="fav-av">${IC_HEART(true).replace(/19/g,'22')}</span><span><b class="serif">Favorites</b><small id="favc"></small></span></div>
+<label class="fav-q">${'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>'}<input id="favq" type="search" placeholder="Search your favorites" autocomplete="off" enterkeyhint="search" aria-label="Search your favorites"></label>
+<div class="fav-bar"><span id="favn"></span><label class="fav-sort">Sort: <span id="favsl">${FAV_SORTS.find(s=>s[0]===sort)[1]}</span> ⌄<select id="favs" aria-label="Sort favorites">${FAV_SORTS.map(([k,l])=>`<option value="${k}"${k===sort?' selected':''}>${l}</option>`).join('')}</select></label></div>`;
+ openListSheet('Favorites',head,list,(el,refresh)=>{const qi=el.querySelector('#favq'),ss=el.querySelector('#favs'),N=favList().length;
+  el.querySelector('#favc').textContent=N+' sermon'+(N===1?'':'s');el.querySelector('#favn').textContent=q?shown().length+' of '+N:'';
+  qi.oninput=()=>{q=qi.value.trim();refresh()};ss.onchange=()=>{sort=ss.value;S.set('favsort',sort);el.querySelector('#favsl').textContent=FAV_SORTS.find(s=>s[0]===sort)[1];refresh()}})}
+
 /* teaching you mark as particularly valuable: kept in the Library under Saved */
 function corePaint(){const b=$('#np-core');if(b)b.hidden=true;return;   /* Make Core is no longer offered */
  let ok=false;

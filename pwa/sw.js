@@ -14,7 +14,7 @@ self.addEventListener('fetch', e => {
   const u = new URL(e.request.url);
   if (e.request.method !== 'GET' || u.origin !== location.origin) return; // audio + links: straight to network
   if (u.pathname.endsWith('version.txt')) return;                          // version checks never come from cache
-  if (e.request.mode === 'navigate' && /\/(tv|live)\//.test(u.pathname)) {  // the Worship screen and remote pages: never stored as the app
+  if (e.request.mode === 'navigate' && /\/(tv|live|s)\//.test(u.pathname)) {  // the Worship screen, remote and shared-sermon pages: never stored as the app
     e.respondWith(fetch(e.request, { cache: 'no-store' }).catch(() => caches.match(e.request)));
     return;
   }
