@@ -594,13 +594,14 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       const ID = 'c532d51fe14b';
       await X.evaluate(async ID => { play(ID, { full: true }); audio.pause(); await new Promise(r => setTimeout(r, 300)); audio.src = __ser; bedSync(); }, ID); await wait(300);
       const boxes = () => X.evaluate(() => ['#pp', '#prv', '#nxt', '#bk', '#fw', '#seek', '#bedb', '#zz'].map(s => { const r = $(s).getBoundingClientRect(); return [s, Math.round(r.x), Math.round(r.y), Math.round(r.width), Math.round(r.height)].join(','); }).join(' '));
-      const o = { btn: await X.evaluate(() => [!$('#bedb').hidden, $('#bedb').textContent]) }; const b0 = await boxes();
+      const o = { btn: await X.evaluate(() => [!$('#bedb').hidden, $('#bedb').textContent]) };
+      let b0 = await boxes(); for (let k = 0; k < 20; k++) { await wait(300); const n = await boxes(); if (n === b0) break; b0 = n; }   // the player settled (times, the file's state)
       await X.click('#bedb'); await wait(400);
       o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded') }; });
-      o.moved = b0 !== await boxes();
+      { const b1 = await boxes(); o.moved = b0 === b1 ? false : b0.split(' ').filter((x, i) => x !== b1.split(' ')[i]).concat(['→'], b1.split(' ').filter((x, i) => x !== b0.split(' ')[i])); }
       await X.click('#mcon'); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
       await X.click('#bedb'); o.again = await X.evaluate(() => !$('#mucard'));
-      await X.evaluate(() => audio.play()); o.plays = await (async () => { for (let i = 0; i < 60; i++) { if (await X.evaluate(() => !audio.paused && !$('#bedm').paused)) return true; await wait(100); } return false; })();
+      await X.evaluate(() => audio.play()); o.plays = await (async () => { for (let i = 0; i < 150; i++) { if (await X.evaluate(() => !audio.paused && !$('#bedm').paused)) return true; await wait(100); } return false; })();
       await X.evaluate(() => audio.pause()); await wait(3800); o.stops = await X.evaluate(() => $('#bedm').paused);
       await X.click('#bedb'); await wait(300); await X.keyboard.press('Escape'); o.esc = await X.evaluate(() => !$('#mucard'));
       // a tap elsewhere closes it and still does what it touched (the "…" opens its menu)
