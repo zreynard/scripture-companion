@@ -4,9 +4,13 @@ const { chromium, webkit, devices } = require('playwright');
 const ENGINE = process.env.BROWSER === 'webkit' ? webkit : chromium;   // BROWSER=webkit runs everything in Safari's engine
 const SITE = process.env.SITE || 'http://localhost:8765/';
 const R = [], wait = ms => new Promise(r => setTimeout(r, ms));
+/* Safari's engine reports a download of the app's own file that a test cut off (closing or leaving the page) as a page
+   error "… due to access control checks." The app already catches it and nothing shows on the phone, so only that exact
+   report, for this site's own files, is not counted */
+const CUTOFF = m => /due to access control checks\.?$/.test(m) && m.includes(new URL(SITE).host + new URL(SITE).pathname.replace(/\/$/, ''));
 /* each result prints as soon as it is known, and no test may take more than 2 minutes (a stuck one fails, the rest still run) */
 async function T(n, f) { global.__T = n.split(' ')[0]; let to; const limit = new Promise((_, no) => { to = setTimeout(() => no(new Error('took over 2 minutes')), 120000); });
-  try { const r = await Promise.race([f(), limit]); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 260)]); } catch (e) { const m = String(e.message), loc = (m.match(/waiting for (locator\([^\n]*\))/) || [])[1] || ''; R.push([n, 'FAIL threw ' + m.split('\n')[0].slice(0, 160) + (loc ? ' · ' + loc.slice(0, 120) : '')]); }
+  try { const r = await Promise.race([f(), limit]); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 1500)]); } catch (e) { const m = String(e.message), loc = (m.match(/waiting for (locator\([^\n]*\))/) || [])[1] || ''; R.push([n, 'FAIL threw ' + m.split('\n')[0].slice(0, 160) + (loc ? ' · ' + loc.slice(0, 120) : '')]); }
   clearTimeout(to); const x = R[R.length - 1]; console.log((x[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + x[0] + (x[1].startsWith('PASS') ? '' : '  ' + x[1].slice(5))); }
 const verse = (n, k) => Array.from({ length: n }, (_, i) => `G        D\nline ${k} ${i} of this song,\nEm       C\nanother line ${i} here.`).join('\n');
 const SONG = (t, extra = '') => `Intro: G D Em C\n\nVerse 1\n${verse(2, 'v1')}\n\nChorus\nC      G\nsing it out, sing it out,\nEm     D\nlift it high.\n\nVerse 2\n${verse(2, 'v2')}\n\nChorus\n\nBridge\nC   D   Em\nhere we stand${extra}`;
@@ -164,7 +168,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
   await X.evaluate(() => audio.play()); await wait(1500); const resumed = await X.evaluate(() => !$('#bedm').paused);
   await X.evaluate(() => audio.pause()); await wait(3800); const off = await X.evaluate(() => ({ music: !$('#bedm').paused, gain: BED.g ? +BED.g.gain.value.toFixed(2) : 'no-ctx' }));
   await X.evaluate(() => { cur = Object.keys(I).find(k => I[k].audio && !I[k].nar && k !== NAR.id); audio.play(); bedSync(); }); await wait(3800); const sermon = await X.evaluate(() => ({ music: !$('#bedm').paused, btnHidden: $('#bedb').hidden }));
-    await cc.close(); return (shown && panel.chk && panel.slider && on.narr && on.music && (on.gain === 0.3 || on.gain === 'no-ctx') && on.lv === 0.3 && on.saved === true && brief && resumed && !off.music && !sermon.music && !sermon.btnHidden && /Music under the Bible reading/.test(panel.text) && errs2.length === 0) || { shown, panel, on, brief, resumed, off, sermon, errs2 }; });
+    await cc.close(); return (shown && panel.chk && panel.slider && on.narr && on.music && (on.gain === 0.3 || on.gain === 'no-ctx') && on.lv === 0.3 && on.saved === true && brief && resumed && !off.music && !sermon.music && !sermon.btnHidden && /Music under the Bible reading/.test(panel.text) && errs2.filter(m => !CUTOFF(m)).length === 0) || { shown, panel, on, brief, resumed, off, sermon, errs2 }; });
   await T('U56 a TV on an earlier worship time follows when Present starts a new one; tv/?new shows a fresh code', async () => { const c2 = await b.newContext({ viewport: { width: 1280, height: 800 } }); const L = await c2.newPage(); L.on('pageerror', e => errs.push('U56:' + e.message)); await L.goto(SITE); await wait(700);
     const mk = (n, extra) => `Verse 1\nG\nfirst song ${n} line\n\nChorus\nC\nwe sing for - ev - er ${n}\n\nRepeat Chorus${extra || ''}`;
     await L.evaluate(src => { S.set('wsongs', { a: { id: 'a', t: 'Old song', key: 'G', src } }); wPresent([{ id: 'a' }], 'One'); }, mk('one')); await L.waitForURL(/live\//); await wait(1500); await L.click('#bNext'); const h1 = L.url().split('#')[1].replace('&lead=1', '');
@@ -547,11 +551,12 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const nar = await X.evaluate(() => Object.keys(I).filter(k => I[k].audio && (I[k].nar || I[k].intro)).slice(0, 3)); await X.context().close();
     const ent = s => s.replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
     const bad = []; const sample = want.filter((_, i) => i % 17 === 0).concat(want.slice(-3));
-    for (const w of sample) { const res = await fetch(SITE + 's/' + w.id + '.html'); const h = await res.text(); const og = k => { const m = new RegExp('<meta property="og:' + k + '" content="([^"]*)"').exec(h); return m ? ent(m[1]) : null; };
+    const get = async u => { let r; for (let k = 0; k < 5; k++) { r = await fetch(u); if (r.status < 500) return r; await wait(1500 * (k + 1)); } return r; };
+    for (const w of sample) { const res = await get(SITE + 's/' + w.id + '.html'); const h = await res.text(); const og = k => { const m = new RegExp('<meta property="og:' + k + '" content="([^"]*)"').exec(h); return m ? ent(m[1]) : null; };
       if (!res.ok || h.length > 5000 || /const D=|wsongs|bkkey/.test(h) || og('title') !== w.t || og('description') !== w.d || !/og:image" content="https:\/\/[^"]+\/icon-512\.png"/.test(h) || og('url') !== 'https://zreynard.github.io/scripture-companion/s/' + w.id + '.html' || !/name="robots" content="noindex"/.test(h)) bad.push([w.id, res.status, h.length, og('title'), og('description')]); }
     const fs = require('fs'), path = require('path'), dir = path.join(__dirname, '../../out/site/s'); let count = null, big = [];
     if (fs.existsSync(dir)) { const files = fs.readdirSync(dir).filter(f => f.endsWith('.html')); count = files.length; big = files.filter(f => fs.statSync(path.join(dir, f)).size > 5000); }
-    const narPages = []; for (const id of nar) { const res = await fetch(SITE + 's/' + id + '.html'); if (res.ok) narPages.push(id); }
+    const narPages = []; for (const id of nar) { const res = await get(SITE + 's/' + id + '.html'); if (res.ok) narPages.push(id); }
     return (bad.length === 0 && (count === null || count === want.length) && big.length === 0 && narPages.length === 0) || { bad: bad.slice(0, 4), count, want: want.length, big: big.slice(0, 3), narPages }; });
   // a 17-minute tone, 4 kHz 8-bit (longer than where the test sermon starts): the stand-in recording for the friend's page
   const TONE = (() => { const sr = 4000, n = sr * 1020, buf = Buffer.alloc(44 + n); buf.write('RIFF', 0); buf.writeUInt32LE(36 + n, 4); buf.write('WAVEfmt ', 8); buf.writeUInt32LE(16, 16); buf.writeUInt16LE(1, 20); buf.writeUInt16LE(1, 22);
@@ -605,11 +610,11 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       // the Bible reading keeps its own switch
       await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; setMini(false); bedSync(); }); await wait(300);
       await X.click('#bedb'); await wait(400); o.read = await X.evaluate(() => [$('#mucard').innerText.split('\n')[0], $('#mcon').checked, $('#bedb').textContent]);
-      o.errs = e2; out[dev] = o; await cc.close(); }
+      o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; await cc.close(); }
     const ok = Object.values(out).every(o => o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && !o.card.chk && o.card.exp === 'true' && !o.moved
       && o.saved[0] === true && o.saved[1] === false && o.saved[2] && !o.saved[3] && o.saved[4] === '♪ Music on' && o.saved[5] && o.full && o.again && o.plays && o.stops && o.esc && o.through[0] && o.through[1] && o.mini && o.other
       && o.read[0] === 'Music under the Bible reading' && o.read[1] === false && o.read[2] === '♪ Music off' && !o.errs.length);
     return ok || out; });
-  await T('U45 no page errors anywhere', async () => errs.length === 0 || errs.slice(0, 6));
+  await T('U45 no page errors anywhere', async () => { const e = errs.filter(m => !CUTOFF(m)); return e.length === 0 || e.slice(0, 6); });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
