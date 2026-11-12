@@ -35,8 +35,11 @@ self.addEventListener('fetch', e => {
     return;
   }
   if (u.pathname.includes('/bible/')) {  // Bible books: kept once downloaded, across app versions
-    e.respondWith(caches.open('sc-bible-1').then(c => c.match(e.request).then(r => r || fetch(e.request).then(res => { if (res.ok) c.put(e.request, res.clone()); return res; }))));
+    e.respondWith(caches.open('sc-bible-1').then(c => c.match(e.request).then(r => r || fetch(e.request).then(res => { if (res.ok) c.put(e.request, res.clone()); return res; }))).catch(gone));
     return;
   }
-  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
+  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)).catch(gone));
 });
+/* a download that fails or is cut off is answered as plainly unavailable (the app shows its own message), never as a
+   broken reply — Safari reports a broken one as an access-control error on the page */
+function gone() { return new Response('', { status: 504, statusText: 'Unavailable' }); }

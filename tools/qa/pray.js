@@ -52,7 +52,9 @@ const until = async (p, f, ms, arg) => { const t = Date.now(); while (Date.now()
 const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#medm'].map(s => $(s)).filter(Boolean); return els.filter(a => !a.paused).map(a => a.id); };
 
 (async () => {
-  b = await ENGINE.launch(ENGINE === chromium ? { args: ['--autoplay-policy=no-user-gesture-required'] } : {});
+  // the slow and broken recordings come from a test server on this machine; newer Chrome blocks a public page (the
+  // published site) from reaching one, so that check is off in this test browser only
+  b = await ENGINE.launch(ENGINE === chromium ? { args: ['--autoplay-policy=no-user-gesture-required', '--disable-features=LocalNetworkAccessChecks,BlockInsecurePrivateNetworkRequests,PrivateNetworkAccessSendPreflights,PrivateNetworkAccessRespectPreflightResults'] } : {});
 
   // ── Navigation and memory ───────────────────────────────────────────────────────────────────────────────────────
   await T('P1 Pray opens on Stillness the first time; Guided opens on Be Led the first time', async () => {

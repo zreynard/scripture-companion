@@ -5,7 +5,7 @@ const ENGINE = process.env.BROWSER === 'webkit' ? webkit : chromium;   // BROWSE
 const SITE = process.env.SITE || 'http://localhost:8765/';
 const R = [], wait = ms => new Promise(r => setTimeout(r, ms));
 /* each result prints as soon as it is known, and no test may take more than 2 minutes (a stuck one fails, the rest still run) */
-async function T(n, f) { let to; const limit = new Promise((_, no) => { to = setTimeout(() => no(new Error('took over 2 minutes')), 120000); });
+async function T(n, f) { global.__T = n.split(' ')[0]; let to; const limit = new Promise((_, no) => { to = setTimeout(() => no(new Error('took over 2 minutes')), 120000); });
   try { const r = await Promise.race([f(), limit]); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 260)]); } catch (e) { const m = String(e.message), loc = (m.match(/waiting for (locator\([^\n]*\))/) || [])[1] || ''; R.push([n, 'FAIL threw ' + m.split('\n')[0].slice(0, 160) + (loc ? ' · ' + loc.slice(0, 120) : '')]); }
   clearTimeout(to); const x = R[R.length - 1]; console.log((x[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + x[0] + (x[1].startsWith('PASS') ? '' : '  ' + x[1].slice(5))); }
 const verse = (n, k) => Array.from({ length: n }, (_, i) => `G        D\nline ${k} ${i} of this song,\nEm       C\nanother line ${i} here.`).join('\n');
@@ -14,7 +14,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
 (async () => {
   const b = await ENGINE.launch(); const errs = [];
   const ctx = async (dev = devices['iPhone 14']) => { const c = await b.newContext(dev); return c; };
-  const open = async (c, path = '') => { const p = await c.newPage(); p.on('pageerror', e => errs.push(path + ':' + e.message)); p.on('dialog', d => { p._lastDialog = d.message(); d.accept(); }); await p.goto(SITE + path); await wait(700); return p; };
+  const open = async (c, path = '') => { const p = await c.newPage(); p.on('pageerror', e => errs.push((global.__T || '') + ' ' + path + ':' + e.message));   /* which test it happened in */ p.on('dialog', d => { p._lastDialog = d.message(); d.accept(); }); await p.goto(SITE + path); await wait(700); return p; };
   const seed = (p, n = 1, src = SONG) => p.evaluate(([n, srcs]) => { const m = {}; for (let i = 0; i < n; i++) m['s' + i] = { id: 's' + i, t: 'Song ' + i, a: 'Artist ' + i, key: 'G', src: srcs[i % srcs.length] }; S.set('wsongs', m); }, [n, [typeof src === 'function' ? src('a') : src]]);
   const TL = async p => { if (!(await p.$('.w-tools'))) { await p.click('[data-wtools]'); await wait(150); } };
   const W = p => p.evaluate(() => { const s = $('#tabs [data-tab2=worship]'); s.click(); });
