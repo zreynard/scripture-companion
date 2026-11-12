@@ -592,7 +592,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
         catch (e) { const o = pdbDo; window.pdbDo = (st, mode, f) => st === 'blob' && mode === 'readonly' ? Promise.resolve(bl) : st === 'meta' && mode === 'readonly' ? Promise.resolve(meta) : o(st, mode, f).catch(() => null); }
         PL.list = null; await plLoad(); window.__ser = URL.createObjectURL(wav(40, 440)); });
       const ID = 'c532d51fe14b';
-      await X.evaluate(async ID => { play(ID, { full: true }); audio.pause(); await new Promise(r => setTimeout(r, 300)); audio.src = __ser; bedSync(); }, ID); await wait(300);
+      await X.evaluate(async ID => { I[ID].audio = __ser; I[ID].s = 0; play(ID, { full: true }); audio.pause(); await new Promise(r => setTimeout(r, 300)); bedSync(); }, ID); await wait(300);   // the stand-in recording, from its start
       const boxes = () => X.evaluate(() => ['#pp', '#prv', '#nxt', '#bk', '#fw', '#seek', '#bedb', '#zz'].map(s => { const r = $(s).getBoundingClientRect(); return [s, Math.round(r.x), Math.round(r.y), Math.round(r.width), Math.round(r.height)].join(','); }).join(' '));
       const o = { btn: await X.evaluate(() => [!$('#bedb').hidden, $('#bedb').textContent]) };
       let b0 = await boxes(); for (let k = 0; k < 20; k++) { await wait(300); const n = await boxes(); if (n === b0) break; b0 = n; }   // the player settled (times, the file's state)
