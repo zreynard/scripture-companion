@@ -343,7 +343,7 @@ const playing = () => { const els = ['#audio', '#audiofx', '#praym', '#ledm', '#
     await guided(p, 'med'); await p.evaluate(() => { S.set('medord', Object.assign(medOrd(), { p: 0 })); MED.pick = null; render(); }); await sw(300, 120); await wait(250); const m1 = await p.evaluate(() => medOrd().p); await sw(120, 300); await wait(250); out.med = [m1, await p.evaluate(() => medOrd().p)];
     await guided(p, 'guided'); await p.evaluate(() => { PR.mv = 0; render(); }); await sw(300, 120); await wait(250); const g1 = await p.evaluate(() => PR.mv); await sw(120, 300); await wait(250); out.lp = [g1, await p.evaluate(() => PR.mv)];
     await p.click('[data-prtop=still]'); await wait(300); const k0 = await p.evaluate(() => PM.k); await sw(300, 120); await wait(500); out.still = [k0, await p.evaluate(() => PM.k)];
-    return (out.led.join() === [l0, l0 + 1, l0, l0, l0].join() && out.med.join() === '1,0' && out.lp.join() === '1,0' && out.still[1] === (out.still[0] + 1) % 2 && !p.errs.length) || out;
+    return (out.led.join() === [l0, l0 + 1, l0, l0, l0].join() && out.med.join() === '1,0' && out.lp.join() === '1,0' && out.still[1] === (out.still[0] + 1) % 2 && !p.errs.length) || { ...out, errs: p.errs.slice(0, 3) };
   });
   await T('P29 Meditate\'s music plays through Listen and Be still; if something pauses it mid-reading it comes back; with Music off it stays silent', async () => {
     const p = await pray_(await page()); await testAudio(p, { a: 5, b: 8, fast: 0.4 }); await music(p); await guided(p, 'med');

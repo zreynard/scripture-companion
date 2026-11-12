@@ -2904,8 +2904,8 @@ function musicCard(anchor,kind){const same=MU.el&&MU.anchor===anchor;closeMusic(
     if(kind==='pray'){BED.plv=v;S.set('bedlvp',v)}else{BED.lv=v;S.set('bedlv',v)}if(bedWanted()&&BED.mode==='wa')bedGain(bedLevel(),150)};
    r.onchange=()=>{if(bedWanted())bedGain(bedLevel(),150)}}
   const g=m.querySelector('#mcget');if(g)g.onclick=()=>{closeMusic();setMini(true);PR.mode='still';S.set('prm','still');const tb=document.querySelector('#tabs [data-tab2=pray]');if(tb)tb.click();else render()};
-  let y0=null;m.addEventListener('touchstart',e=>{y0=e.target.closest('input,button')?null:e.touches[0].clientY},{passive:true});
-  m.addEventListener('touchend',e=>{if(y0!=null&&e.changedTouches[0].clientY-y0>40)closeMusic();y0=null},{passive:true})})}
+  let y0=null;m.addEventListener('touchstart',e=>{const q=e.touches&&e.touches[0];y0=!q||(e.target.closest&&e.target.closest('input,button'))?null:q.clientY},{passive:true});
+  m.addEventListener('touchend',e=>{const q=e.changedTouches&&e.changedTouches[0];if(y0!=null&&q&&q.clientY-y0>40)closeMusic();y0=null},{passive:true})})}
 /* a tap anywhere but the card (or its ♪ button) closes it, and the tap still goes through */
 document.addEventListener('pointerdown',e=>{if(MU.el&&!MU.el.contains(e.target)&&!(MU.anchor&&MU.anchor.contains(e.target)))closeMusic()},true);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMusic()});
