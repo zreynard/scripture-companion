@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020"><title>Worship · Screen</title>
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<style>
+/* written for every TV browser, including old ones: no CSS variables, no flexbox; centring by table cells; sizes also set in pixels by the script */
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:#0b1020;color:#f6efe0;overflow:hidden;cursor:default}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background-color:#0b1020;background-image:radial-gradient(ellipse at 50% 40%,#141c30 0%,#0b1020 65%,#070a14 100%)}
+.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif}
+#stage{position:fixed;top:0;left:0;width:100%;height:100%}
+.slide{position:absolute;top:7%;left:6%;width:88%;height:86%;display:table;table-layout:fixed;opacity:0;-webkit-transition:opacity .15s ease;transition:opacity .15s ease}
+.slide.on{opacity:1}
+.slide .tx{display:table-cell;vertical-align:middle;text-align:center;line-height:1.32;letter-spacing:.005em;word-wrap:break-word;color:#f6efe0}
+.slide .tx div{margin:0 0 .12em}
+.slide .tx .gap{height:.55em}
+#pair[hidden]{display:none}
+#pair{position:fixed;top:0;left:0;width:100%;height:100%;display:table;text-align:center}
+#pair .pc{display:table-cell;vertical-align:middle;padding:6vh}
+#pair h1{margin:0;font-weight:400;font-size:6vh;color:#f6efe0}
+#pair .code{font:600 15vh/1 Menlo,Consolas,"Courier New",monospace;letter-spacing:.14em;color:#c9a24a;margin:3vh 0}
+#pair p{margin:3vh auto 0;font-size:2.7vh;line-height:1.45;color:#a9a497;max-width:60vw}
+#pair p b{color:#f6efe0;font-weight:600}
+#hint{position:fixed;left:0;right:0;bottom:3vh;text-align:center;font-size:1.9vh;color:#a9a497;-webkit-transition:opacity .6s;transition:opacity .6s;pointer-events:none}
+#hint span{background:rgba(255,255,255,.06);padding:.8vh 1.6vh;border-radius:2vh}
+#dot{position:fixed;right:1.6vh;bottom:1.6vh;width:1vh;height:1vh;border-radius:50%;background:#c46a4a;opacity:0;-webkit-transition:opacity .6s;transition:opacity .6s}
+#dot.show{opacity:.7}
+#old{position:fixed;top:0;left:0;width:100%;height:100%;display:none;text-align:center;padding:30vh 8vh 0;font-size:3.4vh;line-height:1.5;color:#f6efe0}
+</style></head>
+<body>
+<div id="stage"></div>
+<div id="pair" hidden><div class="pc"><h1 class="serif">Worship</h1><div class="code" id="code">······</div>
+<p>On your phone, open <b>Worship</b>, start <b>Present</b>, tap <b>Connect a screen</b>, and enter this code.</p><p id="pst">Connecting…</p></div></div>
+<div id="hint" style="opacity:0"></div><div id="dot" title="Reconnecting"></div>
+<div id="old">This TV's web browser is too old to show live lyrics.<br>Connect a laptop to the TV with HDMI and open this page there instead.</div>
+<script src="../live.js"></script>
+<script>
+/* The screen: lyrics only. It joins a session from its link (#s=..&k=..) or by showing a pairing code.
+   It keeps the last lyrics on screen through any outage, and its own keys work with no internet:
+   → / Space / PageDown next · ← / PageUp back · B blank · 1–9 a section · [ ] songs · F full screen */
+(function () {
+  'use strict';
+  var $ = function (s) { return document.querySelector(s); };
+  if (!window.WebSocket || !window.crypto || !crypto.subtle || !window.Promise || !window.Uint8Array) { $('#old').style.display = 'block'; return; }
+  var SKEY = 'scwp:screen', sess = null, deck = null, state = null, shown = '', lp = null, wake = null, downSince = 0;
+  function hp() { var o = {}; location.hash.replace(/^#/, '').split('&').forEach(function (kv) { var i = kv.indexOf('='); if (i > 0) { var v = kv.slice(i + 1); try { v = decodeURIComponent(v); } catch (e) {} o[kv.slice(0, i)] = v; } }); return o; }
+  function hint(t, ms) { var h = $('#hint'); h.innerHTML = '<span>' + esc(t) + '</span>'; h.style.opacity = 1; clearTimeout(hint.t); hint.t = setTimeout(function () { h.style.opacity = 0; }, ms || 4000); }
+  function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+  function cur() { if (!deck || !state) return null; var sg = deck.songs[state.song || 0]; return sg ? { song: sg, slide: sg.slides[state.slide || 0] } : null; }
+  /* biggest text that fits: start large, shrink only as far as needed */
+  /* the lyrics must sit in the middle of the screen, big; if not, say so to the leader's phone */
+  function check(el) {
+    var t = el.querySelector('.tx'); if (!t) return; var r = t.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    var ok = r.width > innerWidth * 0.25 && Math.abs(cx - innerWidth / 2) < innerWidth * 0.12 && Math.abs(cy - innerHeight / 2) < innerHeight * 0.2;
+    if (ok !== layoutOk) { layoutOk = ok; if (sess) sess.hello(); }
+  }
+  /* the biggest text that fits, found in a few steps; each slide's size is kept, and the next and previous are sized ahead, so a tap only swaps text */
+  var SZ = {};
+  if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', function () { SZ = {}; paint(true); });   /* sizes measured before the font arrived are measured again */
+  function over(el, tx, box) { return tx.offsetHeight > box.height + 1 || tx.scrollWidth > tx.offsetWidth + 1 || el.offsetWidth > box.width + 1; }
+  function fit(el, k) {
+    var tx = el.querySelector('.tx'), r0 = el.getBoundingClientRect(), box = { width: parseFloat(el.style.width) || r0.width, height: parseFloat(el.style.height) || r0.height }, hi = Math.min(innerHeight * 0.115, innerWidth * 0.072), lo = innerHeight * 0.035, sz = hi;
+    var ck = k ? k + '|' + innerWidth + 'x' + innerHeight : '';
+    if (ck && SZ[ck]) { tx.style.fontSize = SZ[ck] + 'px'; return; }
+    tx.style.fontSize = sz + 'px';
+    if (over(el, tx, box)) { var a = lo, b = hi; for (var i = 0; i < 9; i++) { var m = (a + b) / 2; tx.style.fontSize = m + 'px'; if (over(el, tx, box)) b = m; else a = m; } sz = a; tx.style.fontSize = sz + 'px'; }
+    if (ck) SZ[ck] = sz;
+  }
+  function slideEl(sl) { var el = document.createElement('div'); el.className = 'slide'; place($('#stage'), el);
+    if (sl) el.innerHTML = '<div class="tx serif">' + sl.l.map(function (l) { return l ? '<div>' + esc(l) + '</div>' : '<div class="gap"></div>'; }).join('') + '</div>'; return el; }
+  function dress(el) { var tx0 = el.firstChild; tx0.style.display = 'table-cell'; tx0.style.verticalAlign = 'middle'; tx0.style.textAlign = 'center'; tx0.style.width = el.style.width; }
+  function prefit() {
+    if (!deck || !state) return; var sg = deck.songs[state.song || 0], st = $('#stage'), n = state.slide || 0; if (!sg) return;
+    [n + 1, n - 1].forEach(function (i) { var sl = sg.slides[i], k = state.song + ':' + i + ':' + (deck.dv || 0); if (!sl || SZ[k + '|' + innerWidth + 'x' + innerHeight]) return;
+      var el = slideEl(sl); el.style.visibility = 'hidden'; st.appendChild(el); dress(el); fit(el, k); st.removeChild(el); });
+  }
+  /* sizes set in pixels too: some TV browsers ignore parts of the page's CSS */
+  function place(st, el) {
+    var w = innerWidth, h = innerHeight, px = Math.round(w * 0.06), py = Math.round(h * 0.07);
+    st.style.position = 'fixed'; st.style.left = '0px'; st.style.top = '0px'; st.style.width = w + 'px'; st.style.height = h + 'px'; st.style.padding = '0px';
+    el.style.position = 'absolute'; el.style.display = 'table'; el.style.tableLayout = 'fixed'; el.style.left = px + 'px'; el.style.top = py + 'px'; el.style.width = (w - 2 * px) + 'px'; el.style.height = (h - 2 * py) + 'px';
+  }
+  /* a screen left on for hours picks up a new version by itself (it rejoins the same worship time after reloading) */
+  var BUILD = '1794602742', layoutOk = true;
+  /* load the newest page: a new address each version, so no browser can hand back an old saved copy */
+  function freshLoad(v) {
+    var k = 'scwp:tvload'; try { if (sessionStorage.getItem(k) === v) return; sessionStorage.setItem(k, v); } catch (e) {}
+    location.replace(location.pathname + '?v=' + v + location.hash);
+  }
+  function checkVersion() {
+    try { var x = new XMLHttpRequest(); x.open('GET', '../version.txt?' + Date.now(), true);
+      x.onload = function () { var v = (x.responseText || '').replace(/\s/g, ''); if (x.status !== 200 || !/^\d+$/.test(v) || !/^\d+$/.test(BUILD)) return; if (+v > +BUILD) freshLoad(v); };
+      x.send(); } catch (e) {}
+  }
+  checkVersion(); setInterval(checkVersion, 3 * 60 * 1000);
+  function paint(force) {
+    var c = cur(), key = !state ? 'none' : state.blank || state.ended ? 'blank' : c && c.slide ? (state.song + ':' + state.slide + ':' + (deck.dv || 0)) : 'none';
+    if (key === shown && !force) return; shown = key;
+    var st = $('#stage'), olds = Array.prototype.slice.call(st.querySelectorAll('.slide')), words = key !== 'blank' && key !== 'none';
+    var el = slideEl(words ? c.slide : null);
+    st.appendChild(el); if (el.firstChild) { dress(el); fit(el, key); check(el); }
+    olds.forEach(function (o) { o.classList.remove('on'); setTimeout(function () { if (o.parentNode) o.parentNode.removeChild(o); }, 250); });
+    setTimeout(function () { if (el.parentNode) el.classList.add('on'); }, 20);
+    clearTimeout(paint.pf); if (words) paint.pf = setTimeout(prefit, 150);
+  }
+  function join(info) {
+    if (lp) { lp.stop(); lp = null; }
+    if (sess) { try { sess.close(); } catch (e) {} sess = null; deck = state = null; shown = ''; }
+    try { localStorage.setItem(SKEY, JSON.stringify({ sid: info.sid, key: info.key, at: Date.now() })); } catch (e) {}
+    try { sess = new Live.Session({ sid: info.sid, key: info.key, role: 'screen', name: 'TV keyboard',
+      info: function () { return { ver: BUILD, ok: layoutOk, w: innerWidth, h: innerHeight }; },
+      onCmd: function (m) { if (m.reload) freshLoad(String(Date.now())); },
+      onState: function (s) { if (s.moved && s.moved.sid && s.moved.sid !== info.sid) { join(s.moved); return; } state = s; if (s.ended) { paint(); setTimeout(endScreen, 4000); return; } paint(); },   /* the phone started a new worship time: follow it */
+      onDeck: function (d) { deck = d; paint(true); },
+      onDeckCleared: function () {},
+      onStatus: function (st) {
+        if (st.relays) { downSince = 0; $('#dot').classList.remove('show'); if (!join.said) { join.said = 1; hint('Connected · press F for full screen', 5000); } }
+        else { if (!downSince) downSince = Date.now(); if (Date.now() - downSince > 8000) $('#dot').classList.add('show'); }
+      } }); } catch (e) { try { localStorage.removeItem(SKEY); } catch (x) {} sess = null; pairMode(); return; }
+    $('#pair').hidden = true; keepAwake();
+  }
+  function endScreen() { if (sess) { sess.close(); sess = null; } try { localStorage.removeItem(SKEY); } catch (e) {} deck = state = null; shown = ''; $('#stage').innerHTML = ''; history.replaceState(null, '', location.pathname); pairMode(); }
+  function pairMode() {
+    var c = Live.code(6); $('#code').textContent = c; $('#pair').hidden = false; $('#pst').textContent = 'Connecting…';
+    lp = Live.listenPair(c, function (m) { join(m); }, function (n) { $('#pst').textContent = n ? 'Ready. Waiting for your phone…' : 'Connecting…'; });
+    setTimeout(function () { if (lp && !sess) { lp.stop(); pairMode(); } }, 30 * 60 * 1000);   // a fresh code every half hour
+  }
+  function keepAwake() { try { if (navigator.wakeLock && navigator.wakeLock.request) { var q = navigator.wakeLock.request('screen'); if (q && q.then) q.then(function (w) { wake = w; }, function () {}); } } catch (e) {} }
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible' && sess) keepAwake(); });
+  /* keys and clicker work here even with no internet */
+  function go(d) { if (!sess || !deck || !state || state.lock) return; var n = Live.step(deck, state, d); if (n) sess.set(n); }
+  function jumpSec(n) { var sg = deck && state && deck.songs[state.song || 0]; if (!sg) return; var seen = [], idx = -1; sg.slides.forEach(function (x, i) { var k = x.sec; if (seen.indexOf(k) < 0) { seen.push(k); if (seen.length === n) idx = i; } }); if (idx >= 0) sess.set({ slide: idx, blank: false }); }
+  function song(d) { if (!deck || !state || state.lock) return; var n = Live.songStep(deck, state, d); if (n) sess.set(n); }
+  addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'f' || k === 'F') { var d = document.documentElement; fullscreen(); return; }
+    if (!sess) return;
+    if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'ArrowDown' || k === 'Enter') { e.preventDefault(); go(1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'ArrowUp' || k === 'Backspace') { e.preventDefault(); go(-1); }
+    else if ((k === 'b' || k === 'B' || k === '.') && !(state && state.lock)) sess.set({ blank: !(state && state.blank) });
+    else if (/^[1-9]$/.test(k)) jumpSec(+k);
+    else if (k === ']') song(1); else if (k === '[') song(-1);
+  });
+  addEventListener('dblclick', function () { fullscreen(true); });
+  function fullscreen(onlyIn) { try { var d = document.documentElement, on = document.fullscreenElement || document.webkitFullscreenElement; if (!on) { var r = (d.requestFullscreen || d.webkitRequestFullscreen || function () {}).call(d); if (r && r.catch) r.catch(function () {}); } else if (!onlyIn) (document.exitFullscreen || document.webkitExitFullscreen || function () {}).call(document); } catch (e) {} }
+  addEventListener('resize', function () { paint(true); });
+  var h = hp(), saved = null; try { saved = JSON.parse(localStorage.getItem(SKEY) || 'null'); } catch (e) {}
+  if (/[?&]new\b/.test(location.search)) { saved = null; try { localStorage.removeItem(SKEY); } catch (e) {} }   /* tv/?new: a fresh code, whatever it was showing */
+  if (h.s && h.k) join({ sid: h.s, key: h.k });
+  else if (saved && Date.now() - saved.at < 12 * 3600e3) join(saved);
+  else pairMode();
+})();
+</script>
+</body></html>

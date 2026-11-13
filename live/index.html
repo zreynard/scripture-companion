@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<meta name="theme-color" content="#f4efe3"><title>Worship · Live</title>
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#f4efe3;--ink:#1b2440;--mute:#6b7390;--line:rgba(27,36,64,.12);--gold:#c9a24a;--gold2:#a8812a;--navy:#121a2e;--warm:#f6efe0}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;max-width:100%}
+body{font:16px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;padding:env(safe-area-inset-top) 0 calc(118px + env(safe-area-inset-bottom))}
+button{font:inherit;color:inherit;cursor:pointer}
+.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+.top{display:flex;align-items:center;gap:6px;padding:12px 12px 6px;max-width:100vw}
+.back{border:0;background:none;color:var(--gold2);font-weight:600;font-size:15px;padding:8px 4px;text-decoration:none;white-space:nowrap}
+.pill{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 11px;border-radius:16px;background:rgba(27,36,64,.06);font-size:13px;font-weight:600;color:var(--ink);border:0;white-space:nowrap;min-width:0;flex:0 1 auto;overflow:hidden}.pill span{overflow:hidden;text-overflow:ellipsis}
+.pill i{width:8px;height:8px;border-radius:50%;background:#b8b2a2;flex:none}.pill.ok i{background:#3f9b6a}.pill.warn i{background:#d08a2e}.pill.bad i{background:#c4553a}
+.sp{flex:1}
+[hidden]{display:none!important}
+.ib{width:38px;height:38px;border-radius:19px;border:0;background:rgba(27,36,64,.06);display:flex;align-items:center;justify-content:center;padding:0;flex:none}
+.song{display:flex;align-items:center;gap:10px;margin:6px 14px 10px;padding:12px 14px;border-radius:16px;background:#fffdf8;box-shadow:0 3px 12px rgba(27,36,64,.06);border:0;width:calc(100% - 28px);text-align:left}
+.song b{display:block;font-size:19px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.song small{display:block;font-size:13px;color:var(--mute)}
+.song .k{margin-left:auto;font:700 13px ui-monospace,Menlo,monospace;color:var(--gold2);background:rgba(201,162,74,.14);padding:4px 9px;border-radius:10px;flex:none}
+.seg{display:flex;background:rgba(27,36,64,.07);border-radius:20px;padding:3px;margin:0 14px 12px}
+.seg button{flex:1;height:34px;border:0;border-radius:17px;background:none;font-weight:600;font-size:14px;color:#4a5272}.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(27,36,64,.14)}
+.mon{margin:0 14px;border-radius:16px;background:radial-gradient(120% 90% at 50% 40%,#16213a,#0f1628 70%);color:var(--warm);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:4% 6%;position:relative;overflow:hidden}
+.mon .tx{font-size:clamp(13px,4.2vw,26px);line-height:1.3}
+.mon{cursor:pointer;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+.mon .tz{position:absolute;top:0;bottom:0;display:flex;align-items:center;color:rgba(246,239,224,.28);pointer-events:none}.mon .tz.l{left:6px}.mon .tz.r{right:6px}
+.mon.flash{box-shadow:inset 0 0 0 3px rgba(201,162,74,.55)}
+.taphint{margin:6px 14px 0;font-size:12.5px;color:var(--mute);text-align:center}
+@media (max-height:700px){.taphint{display:none}}.mon .tx .gap{height:.5em}
+.mon .lab{position:absolute;left:10px;top:8px;font:700 10px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,239,224,.5)}
+.mon.blank .tx{opacity:.12}.mon.blank::after{content:'Screen blank';position:absolute;top:auto;right:0;bottom:10px;left:0;font:600 12px -apple-system,system-ui,sans-serif;color:rgba(246,239,224,.7)}
+.next{margin:10px 14px 0;padding:10px 12px;border-radius:12px;background:rgba(27,36,64,.05);font-size:14px;color:var(--mute);display:flex;gap:8px}
+.next b{color:var(--ink);font-weight:650;white-space:nowrap}.next span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 14px 4px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-width:48px;height:44px;padding:0 14px;border-radius:22px;border:1px solid rgba(27,36,64,.16);background:#fff;font-weight:650;font-size:15px}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chart{margin:6px 10px 0}
+.wfit{position:relative;overflow:hidden;border-radius:12px}
+.wfit .wc .wc-s{break-inside:avoid;margin:0 0 .65em;padding:.15em .4em .25em;border-radius:.5em}.wfit .wc .wc-s.on{background:rgba(201,162,74,.2)}
+.wfit .wc .wc-h{font-size:.6em;margin:0 0 .2em}.wfit .wc .wc-l{font-size:1em;margin:0 0 .22em;line-height:1.16}.wfit .wc .wc-c{font-size:.8em}.wfit .wc .wc-gap{height:.35em}
+.wfit .wc.inl .wc-l{display:block}.wfit .wc.inl .wc-w{display:inline;white-space:pre-wrap}.wfit .wc.inl .wc-t{display:inline}
+.wfit .wc.inl .wc-in{position:relative}.wfit .wc.inl .wc-in>.wc-c{position:absolute;left:0;bottom:100%;padding:0;vertical-align:0;white-space:nowrap}.wfit .wc.inl .wc-hasin{padding-top:.55em}
+.wc-in{position:relative}.wc-note{margin:0 0 .3em;font-size:.72em;font-style:italic;color:var(--mute,#7a7f96)}.wc-miss .wc-h i{color:#b4553a}
+.wfit .wc.inl .wc-c{display:inline;font-size:.66em;vertical-align:.62em;line-height:1;min-height:0;padding:0 .12em 0 0}.wfit .wc.inl .wc-c:empty{display:none}.wfit .wc.inl .wc-only .wc-c{font-size:.82em;vertical-align:0;padding-right:.5em}
+.wfit-pg{position:absolute;right:8px;bottom:6px;font:700 12px -apple-system,system-ui,sans-serif;color:var(--mute);background:rgba(244,239,227,.92);padding:3px 8px;border-radius:10px}
+.wc-s{margin:0 0 16px;padding:8px 10px;border-radius:12px;transition:background .25s}.wc-s.on{background:rgba(201,162,74,.16)}
+.wc-h{margin:0 0 6px;font:700 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7a5c16}.wc-h i{font-style:normal;color:var(--mute);letter-spacing:0;text-transform:none;font-weight:600}
+.wc-l{display:flex;flex-wrap:wrap;align-items:flex-end;font-size:17px;line-height:1.25;margin:0 0 6px}.wc-w{display:inline-flex;flex-direction:column;white-space:pre-wrap;max-width:100%}
+.wc-c{font:700 14px/1.2 ui-monospace,Menlo,monospace;color:#a8812a;min-height:1.2em;padding-right:4px}.wc-t{white-space:pre-wrap;max-width:100%}.wc-only .wc-t{display:none}.wc-gap{height:10px}
+.bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:10px;padding:10px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(250,246,236,.96);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1px solid var(--line);z-index:5}
+.bar button{height:64px;border-radius:20px;border:0;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;gap:8px}
+.b-blank{width:84px;background:rgba(27,36,64,.07)}.b-blank.on{background:#c4553a;color:#fff}
+.b-prev{width:100px;background:rgba(27,36,64,.07)}.b-next{flex:1;background:var(--ink);color:#fff;font-size:20px}.b-blank{font-size:14px;width:72px}
+.wait{padding:60px 28px;text-align:center;color:var(--mute)}.wait h2{color:var(--ink);font-weight:400;font-size:26px;margin:0 0 10px}
+.sheet{position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(15,22,40,.38);display:flex;align-items:flex-end;justify-content:center;z-index:20}
+.sheet[hidden]{display:none}
+.sh{background:var(--bg);width:100%;max-width:560px;max-height:86vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(22px + env(safe-area-inset-bottom))}
+.sh h3{margin:2px 0 6px;font-size:22px;font-weight:400}.sh p{margin:6px 0 12px;color:var(--mute);font-size:14.5px;line-height:1.45}.sh p b{color:var(--ink)}
+.sh .row{display:flex;gap:10px;margin:10px 0}
+.btn{height:48px;padding:0 18px;border-radius:24px;border:1px solid rgba(27,36,64,.16);background:#fff;font-weight:650;font-size:15px}.btn.pri{background:var(--ink);color:#fff;border-color:var(--ink)}.btn.wide{width:100%}
+.code-in{width:100%;height:64px;border-radius:16px;border:1px solid rgba(27,36,64,.2);background:#fff;text-align:center;font:700 32px ui-monospace,Menlo,monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+.url{font:600 14px ui-monospace,Menlo,monospace;background:#fff;border-radius:12px;padding:10px 12px;word-break:break-all;border:1px solid var(--line)}
+.qr{display:flex;justify-content:center;margin:8px 0 4px}.qr img,.qr svg{width:210px;height:210px;image-rendering:pixelated;background:#fff;padding:10px;border-radius:14px}
+.list button{display:flex;align-items:center;gap:12px;width:100%;padding:12px 10px;border:0;background:none;border-bottom:1px solid var(--line);text-align:left}
+.list .n{width:26px;height:26px;border-radius:13px;background:rgba(27,36,64,.07);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.srch{width:100%;height:46px;border-radius:14px;border:1px solid rgba(27,36,64,.18);background:#fff;padding:0 14px;font-size:16px;margin:4px 0 6px}
+.lh{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:14px 2px 2px}
+.tog{display:flex;align-items:center;gap:12px;padding:12px 2px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:12px 0}.tog span{flex:1}.tog small{display:block;color:var(--mute);font-size:13px}
+.tog input{width:46px;height:28px;flex:none;accent-color:#1b2440}
+.who{color:var(--mute);font-size:14px;margin:8px 2px}.lockb{background:rgba(27,36,64,.07);border-radius:12px;padding:9px 12px;margin:0 0 10px;font-size:14px;color:var(--ink);text-align:center}
+.bar.locked button{opacity:.35}
+.tvw{display:flex;align-items:center;gap:10px;margin:0 14px 10px;padding:10px 12px;border-radius:14px;background:#fff4e0;border:1px solid #e8c98a;font-size:14px;color:#5a4214}.tvw span{flex:1}.tvw button{height:38px;padding:0 14px;border-radius:19px;border:0;background:#1b2440;color:#fff;font-weight:700;font-size:14px}
+#tvw[hidden]{display:none}
+.list .on .n{background:var(--ink);color:#fff}.list b{font-weight:600}.list small{display:block;color:var(--mute);font-size:13px}
+.toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 16px;border-radius:18px;font-size:14px;font-weight:600;z-index:30;opacity:0;transition:opacity .3s;pointer-events:none}
+.keys{display:none}
+@media (max-height:760px){
+ .top{padding-top:8px;padding-bottom:2px}.song{padding:8px 12px;margin:4px 14px 8px}.song b{font-size:17px}.seg{margin-bottom:8px}.seg button{height:30px}
+ .chips{padding-top:8px}.chip{height:38px}.bar{padding-top:8px}.bar button{height:54px}body{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+ .mon{max-height:calc(100svh - 400px);min-height:92px}.next{margin-top:8px;padding:8px 12px}}
+@media (orientation:landscape) and (max-height:520px){
+ .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:10px;padding:0 6px}.seg{display:none}.chart{display:block!important}
+ .song{display:none}.mon{aspect-ratio:auto;height:calc(100svh - 250px);min-height:80px}.keys{display:none}.wrap .chart{margin-top:0}
+ .chips{padding:6px 10px 2px}.chip{height:34px;min-width:40px;padding:0 10px;font-size:14px}.bar button{height:48px}body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}}
+@media (min-width:900px){
+ body{padding-bottom:110px}.wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;padding:0 10px}
+ .mon .tx{font-size:clamp(16px,1.9vw,30px)}.seg{display:none}.chart{display:block!important}
+ .keys{display:block;margin:14px 14px 0;font-size:13px;color:var(--mute)}.keys kbd{font:600 12px ui-monospace,Menlo,monospace;background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--ink)}
+ .bar{justify-content:center}.bar button{max-width:220px}.b-next{flex:0 1 320px}
+}
+</style></head>
+<body>
+<div class="top"><a class="back" id="back" hidden>‹ Worship</a><button class="pill" id="pill"><i></i><span>Connecting…</span></button><span class="sp"></span>
+<button class="ib" id="bScreen" aria-label="Connect a screen"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button>
+<button class="ib" id="bShare" aria-label="Share the remote"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></button>
+<button class="ib" id="bEnd" aria-label="End" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+<div id="tvw" hidden></div><div id="app"><div class="wait"><h2 class="serif">Joining…</h2><p>Getting the songs for this worship time.</p></div></div>
+<div class="bar" id="bar" hidden><button class="b-blank" id="bBlank">Blank</button><button class="b-prev" id="bPrev" aria-label="Back"><svg width="20" height="20" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back</button><button class="b-next" id="bNext">Next <svg width="20" height="20" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+<div class="sheet" id="sh" hidden><div class="sh" id="shb"></div></div>
+<div class="toast" id="toast"></div>
+<script src="../live.js"></script><script src="../worship.js"></script><script src="../qrcode.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (s) { return document.querySelector(s); }, esc = Worship.esc;
+  function hp() { var o = {}; location.hash.replace(/^#/, '').split('&').forEach(function (kv) { var i = kv.indexOf('='); if (i > 0) { var v = kv.slice(i + 1); try { v = decodeURIComponent(v); } catch (e) {} o[kv.slice(0, i)] = v; } }); return o; }
+  var H = hp(), lead = H.lead === '1', sess = null, deck = null, state = null, view = 'lyrics', st = { relays: 0, screens: 0 }, gotFirst = false, base = location.href.replace(/live\/.*$/, '');
+  try { view = localStorage.getItem('scwp:view') || (lead ? 'chords' : 'lyrics'); } catch (e) {}
+  if (!H.s || !H.k) { $('#app').innerHTML = '<div class="wait"><h2 class="serif">No worship time here</h2><p>Open this from Worship in the app, or from the link someone shared.</p></div>'; return; }
+  if (!window.crypto || !crypto.subtle || !window.WebSocket) { $('#app').innerHTML = '<div class="wait"><h2 class="serif">This browser is too old</h2><p>Open the link in Safari or Chrome.</p></div>'; return; }
+  function toast(t) { var e = $('#toast'); e.textContent = t; e.style.opacity = 1; clearTimeout(toast.t); toast.t = setTimeout(function () { e.style.opacity = 0; }, 2200); }
+  function screenURL() { return base + 'tv/#s=' + H.s + '&k=' + H.k; }
+  function remoteURL() { return base + 'live/#s=' + H.s + '&k=' + H.k; }
+  if (lead) { $('#back').hidden = false; $('#back').href = base + '#worship'; $('#bEnd').hidden = false;
+    $('#back').onclick = function (e) { if (!sess || !sess.state) return; e.preventDefault(); sess.set({ blank: true }); var t0 = Date.now(); (function wait() { if (!sess.pending || Date.now() - t0 > 900) location.href = base + '#worship'; else setTimeout(wait, 40); })(); }; } else $('#bScreen').hidden = true;   /* connecting the TV is the leader's job */
+  var saved = null; if (lead) try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) saved = w; } catch (e) {}
+  /* a TV or friend still on one of this phone's earlier worship times is told to move to this one */
+  function moveOld() {
+    var prev = []; try { prev = JSON.parse(localStorage.getItem('sc:wprev') || '[]') || []; } catch (e) {}
+    prev = prev.filter(function (x) { return x && x.sid && x.sid !== H.s && Date.now() - x.at < 8 * 24 * 3600e3; }); if (!prev.length) return;
+    prev.forEach(function (x) { var o; try { o = new Live.Session({ sid: x.sid, key: x.key, role: 'lead', name: 'Leader' }); } catch (e) { return; }
+      setTimeout(function () { o.set({ moved: { sid: H.s, key: H.k }, blank: false }); }, 4000);
+      setTimeout(function () { o.set({ moved: { sid: H.s, key: H.k }, blank: false }); }, 12000);
+      setTimeout(function () { o.close(); }, 20000); });
+  }
+  if (lead) setTimeout(moveOld, 1500);
+  var myName = ''; try { myName = localStorage.getItem('scwp:name') || ''; } catch (e) {}
+  try { sess = new Live.Session({ sid: H.s, key: H.k, role: lead ? 'lead' : 'remote', name: myName,
+    onState: function (s, via) { var was = state; state = s; if (lead) { touch(); if (goPending) setTimeout(goStart, 0); } if (s.moved && s.moved.sid && s.moved.sid !== H.s && !lead) { location.replace(base + 'live/#s=' + s.moved.sid + '&k=' + s.moved.key); location.reload(); return; } if (s.ended && !lead) return ended(); told(was, s, via); paint(); },
+    onDeck: function (d) { deck = d; paint(true); },
+    onStatus: function (x) {
+      var was = st.relays; st = x; pill();
+      if (lead && saved && x.relays > was) sess.send('d', deck, true);   // put the songs back on the relay after any reconnect
+    } }); } catch (e) { $('#app').innerHTML = '<div class="wait"><h2 class="serif">This link is broken</h2><p>Ask for the link again, or open Worship in the app.</p></div>'; return; }
+  /* the same worship time carries on across songs: Present again lands here with the new song first (go), and the TV never reconnects */
+  var goPending = !!(lead && saved && saved.go), deckSent = null, touched = 0;
+  function touch() { var n = Date.now(); if (n - touched < 60000) return; touched = n; try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) { w.last = n; localStorage.setItem('sc:wlive', JSON.stringify(w)); } } catch (e) {} }
+  function goStart() { if (!goPending) return; goPending = false; (deckSent || Promise.resolve()).then(function () { sess.set({ song: 0, slide: 0, blank: false }); });
+    try { var w = JSON.parse(localStorage.getItem('sc:wlive') || 'null'); if (w && w.sid === H.s) { delete w.go; localStorage.setItem('sc:wlive', JSON.stringify(w)); } } catch (e) {} }
+  /* songs saved before a fix are tidied (words split into syllables joined back) and sent again */
+  function tidy(d) { var ch = false; (d.songs || []).forEach(function (sg) { var n0 = (sg.slides || []).length, wd = function (sl) { return sl.l && sl.l.some(function (x) { return x; }); }; if ((sg.slides || []).some(wd)) sg.slides = sg.slides.filter(wd); if (sg.slides.length !== n0) ch = true; (sg.slides || []).forEach(function (sl) { sl.l = (sl.l || []).map(function (x) { if (!x) return x; var y = Worship.desyl({ text: x, chords: [] }).text; if (y !== x) ch = true; return y; }); }); }); return ch; }
+  if (lead && saved && tidy(saved.deck)) { saved.deck.dv = Date.now(); try { localStorage.setItem('sc:wlive', JSON.stringify(saved)); } catch (e) {} }
+  if (lead && saved) { deck = saved.deck; if (!deck.dv) deck.dv = saved.at || Date.now(); sess.deck = deck; deckSent = sess.send('d', deck, true); paint(true);   /* the songs are already here: show them now */
+    setTimeout(function () { if (goPending) goStart(); else if (!sess.state) sess.set({ song: 0, slide: 0, blank: false }); }, 3000); }
+  setTimeout(function () { if (!deck) $('#app').innerHTML = '<div class="wait"><h2 class="serif">Waiting for the songs…</h2><p>If this stays, the worship time may have ended, or this network blocks the live service. Try another Wi‑Fi or your phone’s data.</p></div>'; }, 9000);
+  var BUILD = '1794602742';
+  /* a screen tells us its version and whether its lyrics sit right; if not, one tap refreshes it from here */
+  function tvCheck() {
+    var w = $('#tvw'), n = Date.now(), bad = null;
+    for (var k in sess.peers) { var x = sess.peers[k]; if (x.role !== 'screen' || n - x.seen > 20000) continue;
+      if (x.ok === false) bad = 'The TV is not showing the lyrics properly.'; else if (!bad && (!x.ver || (/^\d+$/.test(BUILD) && /^\d+$/.test(String(x.ver)) && +x.ver < +BUILD))) bad = 'The TV has an older version of the page.'; }
+    if (!lead || !bad) { w.hidden = true; return; }
+    w.className = 'tvw'; w.hidden = false; w.innerHTML = '<span>' + bad + '</span><button id="tvfix">Refresh TV</button>';
+    $('#tvfix').onclick = function () { sess.cmd({ reload: true }); toast('Refreshing the TV…'); w.hidden = true; tvCheck.quiet = Date.now(); };
+    if (tvCheck.quiet && n - tvCheck.quiet < 15000) w.hidden = true;
+  }
+  /* keep this phone's screen on while it is running worship (a locked phone stops sending) */
+  var wake = null;
+  function keepAwake() { try { if (navigator.wakeLock && navigator.wakeLock.request && document.visibilityState === 'visible' && !wake) { var q = navigator.wakeLock.request('screen'); if (q && q.then) q.then(function (w) { wake = w; w.addEventListener('release', function () { wake = null; }); }, function () {}); } } catch (e) {} }
+  /* home-screen apps on older iPhones ignore the wake lock: a tiny silent, muted video loop keeps the screen on too */
+  var avid = null;
+  function awakeVid() { try { if (!avid) { avid = document.createElement('video'); avid.muted = true; avid.loop = true; avid.playsInline = true; avid.setAttribute('playsinline', ''); avid.setAttribute('muted', ''); avid.setAttribute('aria-hidden', 'true');
+      avid.style.cssText = 'position:fixed;left:0;bottom:0;width:1px;height:1px;opacity:0.01;pointer-events:none;z-index:-1'; avid.src = 'data:video/mp4;base64,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'; document.body.appendChild(avid); }
+    if (avid.paused && document.visibilityState === 'visible') { var q = avid.play(); if (q && q.catch) q.catch(function () {}); } } catch (e) {} }
+  keepAwake(); awakeVid(); document.addEventListener('visibilitychange', function () { keepAwake(); awakeVid(); }); document.addEventListener('click', function () { keepAwake(); awakeVid(); }, true);
+  function pill() { try { tvCheck(); } catch (e) {}
+    var p = $('#pill'), t, c;
+    if (!st.relays) { t = 'Reconnecting…'; c = 'bad'; } else if (st.screens) { t = st.screens > 1 ? st.screens + ' screens' : (lead ? 'Screen on' : 'TV on'); c = 'ok'; } else if (!lead) { t = 'Live'; c = 'ok'; } else { t = 'No screen'; c = 'warn'; }
+    p.className = 'pill ' + c; p.querySelector('span').textContent = t;
+  }
+  setInterval(pill, 3000);
+  function ended() { $('#bar').hidden = true; $('#app').innerHTML = '<div class="wait"><h2 class="serif">This worship time has ended</h2><p>Thanks for helping lead.</p></div>'; sess.close(); }
+  function cur() { var s = state || { song: 0, slide: 0 }; var sg = deck && deck.songs[s.song || 0]; return { s: s, sg: sg, sl: sg && sg.slides[s.slide || 0] }; }
+  function nextOf(s) { var n = Live.step(deck, state || s, 1); return n ? { song: n.song, slide: n.slide, sg: deck.songs[n.song] } : null; }
+  /* the chord chart is drawn here from the song's own chart (older links carry it ready-made) */
+  function chartOf(sg) { if (sg.chart) return sg.chart; if (!sg._chart) sg._chart = Worship.chartHTML({ parsed: Worship.parse(sg.src || '') }, { semis: sg.semis || 0, flats: sg.flats }); return sg._chart; }
+  /* every change goes through here: helpers cannot move the lyrics while the leader has shared control turned off */
+  function ctl(p) { if (!lead && state && state.lock) { toast('The leader has paused shared control'); return null; } return sess.set(p); }
+  /* when someone else changes the song or blanks the screen, say who */
+  function told(was, s, via) {
+    if (!was || !deck || via === 'me' || s.by === sess.id) return;
+    var who = s.who || 'Someone', sg = deck.songs[s.song || 0];
+    if ((was.song || 0) !== (s.song || 0) && sg) toast(who + ' → ' + sg.t);
+    else if (!was.blank && s.blank) toast(who + ' blanked the screen');
+    else if (!!was.lock !== !!s.lock && !lead) toast(s.lock ? 'The leader is driving now' : 'You can move the lyrics again');
+  }
+  function showHint() { try { return +(localStorage.getItem('scwp:taps') || 0) < 3; } catch (e) { return false; } }
+  function tapped() { try { localStorage.setItem('scwp:taps', +(localStorage.getItem('scwp:taps') || 0) + 1); } catch (e) {} }
+  function songLabel(i) { var set = Live.setOf(deck), p = set.indexOf(i); return p >= 0 ? 'Song ' + (p + 1) + ' of ' + set.length + (deck.name ? ' · ' + esc(deck.name) : '') : 'From the songbook'; }
+  function linesHTML(l) { return l.length ? l.map(function (x) { return x ? '<div>' + esc(x) + '</div>' : '<div class="gap"></div>'; }).join('') : '<div style="opacity:.55;font-size:.7em">(no words: instrumental)</div>'; }
+  function paint(full) {
+    if (!deck) return; $('#bar').hidden = false;
+    var c = cur(); if (!c.sg) return;
+    var s = { song: c.s.song || 0, slide: c.s.slide || 0 }, nx = nextOf(s), secs = [], seen = {}, side = innerWidth > innerHeight && innerHeight <= 520 && innerWidth < 900;
+    c.sg.slides.forEach(function (x) { if (!seen[x.sec]) { seen[x.sec] = 1; secs.push({ sec: x.sec, label: x.s.replace(/ \(\d+\/\d+\)$/, ''), short: c.sg.short[x.sec] }); } });
+    var h = (!lead && state && state.lock ? '<div class="lockb">Following the leader · they have paused shared control</div>' : '') + '<button class="song" id="bSongs"><span style="min-width:0"><small>' + songLabel(s.song) + ' · tap for all songs</small><b class="serif">' + esc(c.sg.t) + '</b></span>' + (c.sg.key ? '<span class="k">' + esc(c.sg.key) + (c.sg.capo ? ' · capo ' + c.sg.capo : '') + '</span>' : '') + '</button>';
+    h += '<div class="seg"><button data-v="lyrics" class="' + (view === 'lyrics' ? 'on' : '') + '">Lyrics</button><button data-v="chords" class="' + (view === 'chords' ? 'on' : '') + '">Chords</button></div>';
+    h += '<div class="wrap"><div class="col1"' + (view === 'chords' ? ' data-phone-hide' : '') + '>';
+    h += '<div class="mon' + (c.s.blank ? ' blank' : '') + '"><span class="lab">' + esc((side ? c.sg.t + ' · ' : '') + (c.sl ? c.sl.s : '')) + '</span><div class="tx serif">' + (c.sl ? linesHTML(c.sl.l) : '') + '</div><span class="tz l"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tz r"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>' + (showHint() ? '<div class="taphint">Tap the lyrics to go forward · tap the left edge to go back</div>' : '');
+    h += nx ? '<div class="next"><b>Next' + (nx.song !== s.song ? ' song' : '') + ':</b><span>' + esc(nx.song !== s.song ? nx.sg.t : nx.sg.slides[nx.slide].s) + (nx.sg.slides[nx.slide].l[0] ? ' — ' + esc(nx.sg.slides[nx.slide].l[0]) : '') + '</span></div>' : '<div class="next"><b>End</b><span>This is the last slide</span></div>';
+    var chipsH = '<div class="chips">' + secs.map(function (x) { return '<button class="chip' + (c.sl && c.sl.sec === x.sec ? ' on' : '') + '" data-sec="' + x.sec + '" title="' + esc(x.label) + '">' + esc(x.label.length <= 9 ? x.label : x.short) + '</button>'; }).join('') + '</div>';
+    if (side) h += chipsH;
+    h += '<div class="keys"><kbd>→</kbd> next · <kbd>←</kbd> back · <kbd>B</kbd> blank · <kbd>1</kbd>–<kbd>9</kbd> section · <kbd>[</kbd> <kbd>]</kbd> song</div></div>';
+    h += '<div class="col2">' + (side ? '' : chipsH);
+    h += '<div class="chart wfit" id="chart"' + (view === 'chords' || innerWidth >= 900 ? '' : ' style="display:none"') + '><div class="wc">' + chartOf(c.sg) + '</div><span class="wfit-pg" id="cpg" hidden></span></div></div></div>';
+    $('#app').innerHTML = h;
+    if (view === 'chords' && innerWidth < 900 && !(innerWidth > innerHeight && innerHeight <= 520)) { var c1 = document.querySelector('.col1 .mon'); if (c1) c1.style.display = 'none'; }
+    var on = c.sl ? document.querySelector('#chart [data-sec="' + c.sl.sec + '"]') : null;
+    document.querySelectorAll('#chart .wc-s').forEach(function (e) { e.classList.toggle('on', e === on); });
+    fitChart(on, c.s.song);
+    var chip = document.querySelector('.chip.on'); if (chip) chip.scrollIntoView({ inline: 'center', block: 'nearest' });
+    $('#bar').classList.toggle('locked', !lead && !!(state && state.lock));
+    $('#bBlank').classList.toggle('on', !!c.s.blank); $('#bBlank').textContent = c.s.blank ? 'Show' : 'Blank';
+    $('#bSongs').onclick = songsSheet;
+    document.querySelectorAll('.seg [data-v]').forEach(function (b) { b.onclick = function () { view = b.dataset.v; try { localStorage.setItem('scwp:view', view); } catch (e) {} paint(true); }; });
+    document.querySelectorAll('.chip').forEach(function (b) { b.onclick = function () { jump(+b.dataset.sec); }; });
+    var mon = document.querySelector('.mon'); if (mon) { Worship.swipe(mon, function (d) { go(d); });
+      /* tap the lyrics: forward; tap the left third: back */
+      mon.onclick = function (e) { if (mon._swiped && Date.now() - mon._swiped < 400) return; var r = mon.getBoundingClientRect(); go(e.clientX - r.left < r.width / 3 ? -1 : 1); tapped(); mon.classList.add('flash'); setTimeout(function () { mon.classList.remove('flash'); }, 160); }; }
+  }
+  /* the chord chart fits its space (no scrolling while playing); a long one turns to the page holding the current section */
+  var fitFor = null;
+  function fitChart(on, song) {
+    var box = $('#chart'); if (!box || getComputedStyle(box).display === 'none') return;
+    var top = box.getBoundingClientRect().top + scrollY, pad = parseFloat(getComputedStyle(document.body).paddingBottom) || 0, bar = ($('#bar') || {}).offsetHeight || 0;
+    box.style.height = Math.max(110, innerHeight - top - Math.max(pad, bar) - 6) + 'px';
+    var key = song + ':' + innerWidth + 'x' + innerHeight;
+    if (fitFor !== key || !box._fit) { box._fit = Worship.fit(box); fitFor = key; }
+    var info = box._fit, pg = Worship.pageOf(box, on, info); Worship.turn(box, pg, info); box._pg = pg;
+    var lab = $('#cpg'); if (lab) { lab.hidden = info.pages < 2; lab.textContent = (pg + 1) + ' / ' + info.pages; }
+    if (!box._sw) { box._sw = 1; Worship.swipe(box, function (d) { var i = box._fit; if (!i || i.pages < 2) return; box._pg = Math.max(0, Math.min(i.pages - 1, box._pg + d)); Worship.turn(box, box._pg, i); if (lab) lab.textContent = (box._pg + 1) + ' / ' + i.pages; }); }
+    box.onclick = function (e) { if (box._swiped && Date.now() - box._swiped < 400) return; var i = box._fit; if (!i || i.pages < 2) return; var r = box.getBoundingClientRect(); box._pg = Math.max(0, Math.min(i.pages - 1, box._pg + (e.clientX - r.left > r.width / 2 ? 1 : -1))); Worship.turn(box, box._pg, i); if (lab) lab.textContent = (box._pg + 1) + ' / ' + i.pages; };
+  }
+  function refit() { clearTimeout(fitChart.t); fitChart.t = setTimeout(function () { fitFor = null; paint(true); }, 150); }
+  /* Safari does not always send 'resize' when an iPad turns: watch the turn and the page's own size as well */
+  addEventListener('resize', refit); addEventListener('orientationchange', function () { setTimeout(refit, 250); });
+  if (window.visualViewport) visualViewport.addEventListener('resize', refit);
+  if (window.ResizeObserver) { var lw = 0, lh = 0; new ResizeObserver(function () { if (innerWidth === lw && innerHeight === lh) return; lw = innerWidth; lh = innerHeight; refit(); }).observe(document.documentElement); }
+  /* the next time this section comes in the song (after where we are); the first one if it does not come again */
+  function jump(sec) {
+    var c = cur(); if (!c.sg) return; var at = c.s.slide || 0, i, idx = -1;
+    var curOcc = c.sl ? c.sl.occ : -1;
+    for (i = 0; i < c.sg.slides.length; i++) { var x = c.sg.slides[i]; if (x.sec === sec && !x.part && x.occ > curOcc) { idx = i; break; } }
+    if (idx < 0) for (i = 0; i < c.sg.slides.length; i++) if (c.sg.slides[i].sec === sec && !c.sg.slides[i].part) { idx = i; break; }
+    if (idx >= 0) ctl({ slide: idx, blank: false });
+  }
+  function go(d) {
+    if (!deck) return; var n = Live.step(deck, state || { song: 0, slide: 0 }, d);
+    if (!n) return d > 0 ? toast('End of the set · tap the song name to pick another') : null;
+    ctl(n);
+  }
+  function song(d) { var n = deck && Live.songStep(deck, state || { song: 0 }, d); if (n) ctl(n); }
+  $('#bNext').onclick = function () { go(1); }; $('#bPrev').onclick = function () { go(-1); };
+  $('#bBlank').onclick = function () { ctl({ blank: !(state && state.blank) }); };
+  function sheet(html) { $('#shb').innerHTML = html; $('#sh').hidden = false; }
+  $('#sh').onclick = function (e) { if (e.target.id === 'sh' || e.target.closest('[data-close]')) $('#sh').hidden = true; };
+  /* all songs: this set first, then the whole songbook, with search. Picking one puts it on the screen. */
+  function songsSheet() {
+    var cs = (state && state.song) || 0, set = Live.setOf(deck), q = '';
+    var norm = function (x) { return String(x || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim(); };
+    var row = function (i, n) { var s = deck.songs[i]; return '<button data-song="' + i + '" class="' + (i === cs ? 'on' : '') + '"><span class="n">' + n + '</span><span><b>' + esc(s.t) + '</b><small>' + esc([s.a, s.key].filter(Boolean).join(' · ')) + '</small></span></button>'; };
+    function list() {
+      var w = norm(q).split(' ').filter(Boolean), hit = function (i) { var s = deck.songs[i], t = norm(s.t + ' ' + (s.a || '')); return w.every(function (x) { return t.indexOf(x) >= 0; }); };
+      var inSet = set.filter(hit), rest = deck.songs.map(function (x, i) { return i; }).filter(function (i) { return set.indexOf(i) < 0 && hit(i); });
+      var h = (inSet.length ? (rest.length || set.length < deck.songs.length ? '<div class="lh">' + esc(deck.name || 'This set') + '</div>' : '') + inSet.map(function (i) { return row(i, set.indexOf(i) + 1); }).join('') : '') +
+        (rest.length ? '<div class="lh">Songbook</div>' + rest.map(function (i) { return row(i, '♪'); }).join('') : '') + (!inSet.length && !rest.length ? '<p class="who">No song matches “' + esc(q) + '”.</p>' : '');
+      $('#slist').innerHTML = h;
+      document.querySelectorAll('#slist [data-song]').forEach(function (b) { b.onclick = function () {
+        var i = +b.dataset.song, p = set.indexOf(cs), inS = set.indexOf(i) >= 0;
+        ctl({ song: i, slide: 0, blank: false, ret: inS ? null : (p >= 0 ? p : (state && state.ret != null ? state.ret : null)) }); $('#sh').hidden = true;
+      }; });
+    }
+    sheet('<h3 class="serif">Songs</h3>' + (deck.songs.length > 6 ? '<input class="srch" id="sq" type="search" placeholder="Search ' + deck.songs.length + ' songs" autocomplete="off">' : '') + '<div class="list" id="slist"></div><div class="row"><button class="btn wide" data-close>Close</button></div>');
+    list(); var sq = $('#sq'); if (sq) sq.oninput = function () { q = sq.value; list(); };
+  }
+  $('#bScreen').onclick = function () {
+    var wide = innerWidth >= 900;
+    sheet('<h3 class="serif">Connect a screen</h3><p>On the TV or laptop, open <b>' + esc(base.replace(/^https?:\/\//, '')) + 'tv</b>. It shows a code: type it here.</p>' +
+      '<input class="code-in" id="cin" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="······"><div class="row"><button class="btn pri wide" id="cgo">Connect</button></div><p id="cmsg"></p>' +
+      '<p style="margin-top:18px">Or open this link on the laptop or TV:</p><div class="url">' + esc(screenURL()) + '</div><div class="row"><button class="btn" id="ccopy">Copy link</button>' + (wide ? '<button class="btn pri" id="caud">Open audience window here</button>' : '') + '</div>' +
+      (wide ? '<p>Drag the audience window onto the TV, then press <b>F</b> for full screen. This window stays your presenter view.</p>' : '') + '<div class="row"><button class="btn wide" data-close>Done</button></div>');
+    $('#cin').focus();
+    $('#cgo').onclick = function () {
+      var c = $('#cin').value.toUpperCase().replace(/[^A-Z0-9]/g, ''); if (c.length !== 6) { $('#cmsg').textContent = 'The code has 6 letters and numbers.'; return; }
+      $('#cmsg').textContent = 'Connecting…';
+      Live.sendPair(c, { sid: H.s, key: H.k }).then(function (n) {
+        if (!n) { $('#cmsg').textContent = 'Could not reach the live service. Check your connection and try again.'; return; }
+        $('#cmsg').textContent = 'Sent. The screen should show the lyrics in a moment.';
+        var t0 = Date.now(), iv = setInterval(function () { if (sess.screens() > 0) { clearInterval(iv); $('#sh').hidden = true; toast('Screen connected'); } else if (Date.now() - t0 > 12000) { clearInterval(iv); $('#cmsg').textContent = 'No screen answered. Check the code on the TV and try again.'; } }, 500);
+      });
+    };
+    $('#cin').onkeydown = function (e) { if (e.key === 'Enter') $('#cgo').onclick(); };
+    $('#ccopy').onclick = function () { copy(screenURL()); };
+    if ($('#caud')) $('#caud').onclick = function () { window.open(screenURL(), 'scwp-audience', 'popup,width=1280,height=720'); $('#sh').hidden = true; };
+  };
+  function copy(t) { (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { toast('Link copied'); }).catch(function () { prompt('Copy this link', t); }); }
+  $('#bShare').onclick = function () {
+    var u = remoteURL(), q = qrcode(0, 'M'); q.addData(u); q.make();
+    sheet('<h3 class="serif">Let someone help</h3><p>Send this link. They see the song you are on, can move the lyrics and pick any song from your songbook. No app or account needed. It works until you end this worship time.</p>' + (lead ? '<label class="tog"><span><b>Let others move the lyrics</b><small>Turn off and everyone else just follows you</small></span><input type="checkbox" id="slock"' + (state && state.lock ? '' : ' checked') + '></label><div class="who" id="swho"></div>' : '') + '<div class="qr">' + q.createSvgTag({ cellSize: 6, margin: 2, scalable: true }) + '</div><div class="url">' + esc(u) + '</div><div class="row">' + (navigator.share ? '<button class="btn pri" id="sshare">Share…</button>' : '') + '<button class="btn" id="scopy">Copy link</button><button class="btn" data-close>Done</button></div>');
+    if ($('#sshare')) $('#sshare').onclick = function () { navigator.share({ title: 'Worship remote', url: u }).catch(function () {}); };
+    $('#scopy').onclick = function () { copy(u); };
+    if ($('#slock')) { $('#slock').onchange = function () { sess.set({ lock: !$('#slock').checked }); toast($('#slock').checked ? 'Others can move the lyrics' : 'Only you can move the lyrics now'); }; whoList(); }
+  };
+  function whoList() {
+    var e = $('#swho'); if (!e || $('#sh').hidden) return; var n = Date.now(), names = [];
+    for (var k in sess.peers) { var p = sess.peers[k]; if (p.role === 'remote' && n - p.seen < 20000) names.push(p.name || 'Someone'); }
+    e.textContent = names.length ? 'Connected now: ' + names.join(', ') : 'Nobody else has joined yet.'; clearTimeout(whoList.t); whoList.t = setTimeout(whoList, 3000);
+  }
+  /* a helper says their name once, so everyone can see who moved the lyrics */
+  function askName() {
+    sheet('<h3 class="serif">Joining worship</h3><p>You can move the lyrics for everyone: <b>Next</b>, <b>Back</b>, or tap the lyrics. The leader connects the TV.</p><p>Your first name, so others can see who moved the lyrics:</p><input class="srch" id="nm" autocomplete="given-name" maxlength="30" placeholder="Your name"><div class="row"><button class="btn pri wide" id="nmok">Join</button></div>');
+    var go2 = function () { var v = $('#nm').value.trim(); if (!v) return $('#nm').focus(); try { localStorage.setItem('scwp:name', v); } catch (e) {} sess.setName(v); $('#sh').hidden = true; };
+    $('#nmok').onclick = go2; $('#nm').onkeydown = function (e) { if (e.key === 'Enter') go2(); };
+  }
+  if (!lead && !myName) setTimeout(askName, 300);
+  $('#bEnd').onclick = function () {
+    sheet('<h3 class="serif">End worship time?</h3><p>The screen goes blank and the shared remote links stop working.</p><div class="row"><button class="btn pri" id="eok">End</button><button class="btn" data-close>Keep going</button></div>');
+    $('#eok').onclick = function () { sess.end().then(function () { try { localStorage.removeItem('sc:wlive'); } catch (e) {} location.href = base + '#worship'; }); };
+  };
+  $('#pill').onclick = function () { pill(); toast(st.relays ? (st.screens ? 'Live: the screen is following along' : lead ? 'Live. Connect a screen with the TV button' : 'Live. Your taps move the lyrics for everyone') : 'No connection. Your taps will send when it is back'); };
+  addEventListener('keydown', function (e) {
+    if (e.target.tagName === 'INPUT') return; var k = e.key;
+    if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'ArrowDown') { e.preventDefault(); go(1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'ArrowUp') { e.preventDefault(); go(-1); }
+    else if (k === 'b' || k === 'B' || k === '.') ctl({ blank: !(state && state.blank) });
+    else if (/^[1-9]$/.test(k) && deck) { var c = cur(), seen = []; c.sg.slides.forEach(function (x) { if (seen.indexOf(x.sec) < 0) seen.push(x.sec); }); if (seen[+k - 1] != null) jump(seen[+k - 1]); }
+    else if (k === ']') song(1); else if (k === '[') song(-1);
+  });
+})();
+</script>
+</body></html>

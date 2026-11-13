@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#eef3fb"/><stop offset=".45" stop-color="#f4efe3"/>
+      <stop offset=".8" stop-color="#fbf0d4"/><stop offset="1" stop-color="#fff7dc"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#a8812a"/><stop offset=".6" stop-color="#c9a24a"/><stop offset="1" stop-color="#e8cf86"/>
+    </linearGradient>
+    <radialGradient id="glory" cx="512" cy="250" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff7dc"/><stop offset=".35" stop-color="#f6e2a6" stop-opacity=".75"/><stop offset="1" stop-color="#f6e2a6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#sky)"/>
+  <circle cx="512" cy="250" r="300" fill="url(#glory)"/>
+  <g stroke="#c9a24a" stroke-width="4" stroke-linecap="round" opacity=".55">
+    <path d="M512 250 L512 92"/><path d="M512 250 L400 120"/><path d="M512 250 L624 120"/>
+    <path d="M512 250 L318 178"/><path d="M512 250 L706 178"/><path d="M512 250 L290 262"/><path d="M512 250 L734 262"/>
+  </g>
+  <path d="M120 690 C260 650 360 700 512 672 C660 646 760 690 904 660" fill="none" stroke="#1b2440" stroke-opacity=".28" stroke-width="3"/>
+  <path d="M90 770 C240 742 380 790 520 760 C680 728 800 770 934 748" fill="none" stroke="#1b2440" stroke-opacity=".18" stroke-width="3"/>
+  <path id="road" d="M300 1024 C330 880 700 860 640 700 C590 570 400 560 470 430 C510 360 512 320 512 290"
+        fill="none" stroke="url(#leaf)" stroke-width="64" stroke-linecap="round"/>
+  <path d="M300 1024 C330 880 700 860 640 700 C590 570 400 560 470 430 C510 360 512 320 512 290"
+        fill="none" stroke="#fff" stroke-width="7" stroke-dasharray="26 22" stroke-linecap="round" opacity=".95"/>
+  <circle cx="512" cy="282" r="30" fill="#fff7dc" stroke="#a8812a" stroke-width="6"/>
+</svg>
