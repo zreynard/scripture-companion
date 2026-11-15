@@ -21,6 +21,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .song .k{margin-left:auto;font:700 13px ui-monospace,Menlo,monospace;color:var(--gold2);background:rgba(201,162,74,.14);padding:4px 9px;border-radius:10px;flex:none}
 .seg{display:flex;background:rgba(27,36,64,.07);border-radius:20px;padding:3px;margin:0 14px 12px}
 .seg button{flex:1;height:34px;border:0;border-radius:17px;background:none;font-weight:600;font-size:14px;color:#4a5272}.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(27,36,64,.14)}
+.fileview{position:relative;overflow:auto;-webkit-overflow-scrolling:touch;margin:0 14px;border-radius:12px;overscroll-behavior:contain}.fileview .wfv-pages{padding:2px}
+.fsbtn{position:sticky;top:6px;float:right;margin:6px 6px -46px 0;z-index:2;height:36px;padding:0 12px;border:0;border-radius:18px;background:rgba(27,36,64,.82);color:#fff;font:600 13.5px -apple-system,system-ui,sans-serif}
 .mon{margin:0 14px;border-radius:16px;background:radial-gradient(120% 90% at 50% 40%,#16213a,#0f1628 70%);color:var(--warm);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:4% 6%;position:relative;overflow:hidden}
 .mon .tx{font-size:clamp(13px,4.2vw,26px);line-height:1.3}
 .mon{cursor:pointer;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
@@ -99,7 +101,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 <div class="bar" id="bar" hidden><button class="b-blank" id="bBlank">Blank</button><button class="b-prev" id="bPrev" aria-label="Back"><svg width="20" height="20" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back</button><button class="b-next" id="bNext">Next <svg width="20" height="20" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 <div class="sheet" id="sh" hidden><div class="sh" id="shb"></div></div>
 <div class="toast" id="toast"></div>
-<script src="../live.js"></script><script src="../worship.js"></script><script src="../qrcode.js"></script>
+<script src="../live.js"></script><script src="../worship.js"></script><script src="../qrcode.js"></script><script src="../wfile.js"></script>
 <script>
 (function () {
   'use strict';
@@ -128,7 +130,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   var myName = ''; try { myName = localStorage.getItem('scwp:name') || ''; } catch (e) {}
   try { sess = new Live.Session({ sid: H.s, key: H.k, role: lead ? 'lead' : 'remote', name: myName,
     onState: function (s, via) { var was = state; state = s; if (lead) { touch(); if (goPending) setTimeout(goStart, 0); } if (s.moved && s.moved.sid && s.moved.sid !== H.s && !lead) { location.replace(base + 'live/#s=' + s.moved.sid + '&k=' + s.moved.key); location.reload(); return; } if (s.ended && !lead) return ended(); told(was, s, via); paint(); },
-    onDeck: function (d) { deck = d; paint(true); },
+    onDeck: function (d) { deck = d; paint(true); fileCheck(); },
     onStatus: function (x) {
       var was = st.relays; st = x; pill();
       if (lead && saved && x.relays > was) sess.send('d', deck, true);   // put the songs back on the relay after any reconnect
@@ -141,7 +143,7 @@ button{font:inherit;color:inherit;cursor:pointer}
   /* songs saved before a fix are tidied (words split into syllables joined back) and sent again */
   function tidy(d) { var ch = false; (d.songs || []).forEach(function (sg) { var n0 = (sg.slides || []).length, wd = function (sl) { return sl.l && sl.l.some(function (x) { return x; }); }; if ((sg.slides || []).some(wd)) sg.slides = sg.slides.filter(wd); if (sg.slides.length !== n0) ch = true; (sg.slides || []).forEach(function (sl) { sl.l = (sl.l || []).map(function (x) { if (!x) return x; var y = Worship.desyl({ text: x, chords: [] }).text; if (y !== x) ch = true; return y; }); }); }); return ch; }
   if (lead && saved && tidy(saved.deck)) { saved.deck.dv = Date.now(); try { localStorage.setItem('sc:wlive', JSON.stringify(saved)); } catch (e) {} }
-  if (lead && saved) { deck = saved.deck; if (!deck.dv) deck.dv = saved.at || Date.now(); sess.deck = deck; deckSent = sess.send('d', deck, true); paint(true);   /* the songs are already here: show them now */
+  if (lead && saved) { deck = saved.deck; if (!deck.dv) deck.dv = saved.at || Date.now(); sess.deck = deck; deckSent = sess.send('d', deck, true); paint(true); fileCheck();   /* the songs are already here: show them now */
     setTimeout(function () { if (goPending) goStart(); else if (!sess.state) sess.set({ song: 0, slide: 0, blank: false }); }, 3000); }
   setTimeout(function () { if (!deck) $('#app').innerHTML = '<div class="wait"><h2 class="serif">Waiting for the songs…</h2><p>If this stays, the worship time may have ended, or this network blocks the live service. Try another Wi‑Fi or your phone’s data.</p></div>'; }, 9000);
   var BUILD = '__BUILD__';
@@ -189,23 +191,38 @@ button{font:inherit;color:inherit;cursor:pointer}
   function tapped() { try { localStorage.setItem('scwp:taps', +(localStorage.getItem('scwp:taps') || 0) + 1); } catch (e) {} }
   function songLabel(i) { var set = Live.setOf(deck), p = set.indexOf(i); return p >= 0 ? 'Song ' + (p + 1) + ' of ' + set.length + (deck.name ? ' · ' + esc(deck.name) : '') : 'From the songbook'; }
   function linesHTML(l) { return l.length ? l.map(function (x) { return x ? '<div>' + esc(x) + '</div>' : '<div class="gap"></div>'; }).join('') : '<div style="opacity:.55;font-size:.7em">(no words: instrumental)</div>'; }
+  /* the song's chart file (a PDF or photos), on this phone only: drawn once per song, then shown again as it is */
+  var FILES = null, fileEls = {}, fileTop = {};
+  function fileHere(sg) { return !!(window.WFile && FILES && sg && sg.file && sg.file.length && sg.file.every(function (r) { return FILES.has(r.id); })); }
+  function fileCheck() { if (!window.WFile || !deck || !deck.songs.some(function (s) { return s.file && s.file.length; })) return; WFile.ids().then(function (s) { var had = FILES && FILES.size; FILES = s; if (!had && s.size) paint(true); }).catch(function () {}); }
+  function showFile(sg) {
+    var box = $('#fileview'); if (!box) return; var top = box.getBoundingClientRect().top + scrollY, bar = ($('#bar') || {}).offsetHeight || 0;
+    box.style.height = Math.max(160, innerHeight - top - bar - 8) + 'px';
+    var fb = document.createElement('button'); fb.className = 'fsbtn'; fb.type = 'button'; fb.textContent = '⤢ Full screen'; fb.onclick = function () { WFile.open(sg.file, sg.t, { back: '#fileview .fsbtn' }); }; box.appendChild(fb);
+    var el = fileEls[sg.id]; if (!el || (el._wfc && el._wfc.dead)) { el = fileEls[sg.id] = document.createElement('div'); el.innerHTML = '<p class="wfv-msg">Opening the chart…</p>'; box.appendChild(el); WFile.render(el, sg.file, { root: box }).catch(function () { el.innerHTML = '<p class="wfv-msg">The chart could not be drawn here.</p>'; }); }
+    else box.appendChild(el);
+    if (el._wfc && el._wfc.observe) el._wfc.observe(box); else setTimeout(function () { if (el._wfc && el._wfc.observe && el.isConnected) el._wfc.observe(el.parentNode); }, 400);
+    box.scrollTop = fileTop[sg.id] || 0; box.onscroll = function () { fileTop[sg.id] = box.scrollTop; };   /* Next and Back keep your place in the chart */
+  }
   function paint(full) {
     if (!deck) return; $('#bar').hidden = false;
     var c = cur(); if (!c.sg) return;
     var s = { song: c.s.song || 0, slide: c.s.slide || 0 }, nx = nextOf(s), secs = [], seen = {}, side = innerWidth > innerHeight && innerHeight <= 520 && innerWidth < 900;
     c.sg.slides.forEach(function (x) { if (!seen[x.sec]) { seen[x.sec] = 1; secs.push({ sec: x.sec, label: x.s.replace(/ \(\d+\/\d+\)$/, ''), short: c.sg.short[x.sec] }); } });
     var h = (!lead && state && state.lock ? '<div class="lockb">Following the leader · they have paused shared control</div>' : '') + '<button class="song" id="bSongs"><span style="min-width:0"><small>' + songLabel(s.song) + ' · tap for all songs</small><b class="serif">' + esc(c.sg.t) + '</b></span>' + (c.sg.key ? '<span class="k">' + esc(c.sg.key) + (c.sg.capo ? ' · capo ' + c.sg.capo : '') + '</span>' : '') + '</button>';
-    h += '<div class="seg"><button data-v="lyrics" class="' + (view === 'lyrics' ? 'on' : '') + '">Lyrics</button><button data-v="chords" class="' + (view === 'chords' ? 'on' : '') + '">Chords</button></div>';
-    h += '<div class="wrap"><div class="col1"' + (view === 'chords' ? ' data-phone-hide' : '') + '>';
+    var hasF = fileHere(c.sg), fv = view === 'file' && hasF;
+    h += '<div class="seg"><button data-v="lyrics" class="' + (view === 'lyrics' ? 'on' : '') + '">Lyrics</button><button data-v="chords" class="' + (view === 'chords' || (view === 'file' && !hasF) ? 'on' : '') + '">Chords</button>' + (hasF ? '<button data-v="file" class="' + (fv ? 'on' : '') + '">File</button>' : '') + '</div>';
+    h += '<div class="wrap"><div class="col1"' + (view === 'chords' || fv ? ' data-phone-hide' : '') + '>';
     h += '<div class="mon' + (c.s.blank ? ' blank' : '') + '"><span class="lab">' + esc((side ? c.sg.t + ' · ' : '') + (c.sl ? c.sl.s : '')) + '</span><div class="tx serif">' + (c.sl ? linesHTML(c.sl.l) : '') + '</div><span class="tz l"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="tz r"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>' + (showHint() ? '<div class="taphint">Tap the lyrics to go forward · tap the left edge to go back</div>' : '');
     h += nx ? '<div class="next"><b>Next' + (nx.song !== s.song ? ' song' : '') + ':</b><span>' + esc(nx.song !== s.song ? nx.sg.t : nx.sg.slides[nx.slide].s) + (nx.sg.slides[nx.slide].l[0] ? ' — ' + esc(nx.sg.slides[nx.slide].l[0]) : '') + '</span></div>' : '<div class="next"><b>End</b><span>This is the last slide</span></div>';
     var chipsH = '<div class="chips">' + secs.map(function (x) { return '<button class="chip' + (c.sl && c.sl.sec === x.sec ? ' on' : '') + '" data-sec="' + x.sec + '" title="' + esc(x.label) + '">' + esc(x.label.length <= 9 ? x.label : x.short) + '</button>'; }).join('') + '</div>';
     if (side) h += chipsH;
     h += '<div class="keys"><kbd>→</kbd> next · <kbd>←</kbd> back · <kbd>B</kbd> blank · <kbd>1</kbd>–<kbd>9</kbd> section · <kbd>[</kbd> <kbd>]</kbd> song</div></div>';
     h += '<div class="col2">' + (side ? '' : chipsH);
-    h += '<div class="chart wfit" id="chart"' + (view === 'chords' || innerWidth >= 900 ? '' : ' style="display:none"') + '><div class="wc">' + chartOf(c.sg) + '</div><span class="wfit-pg" id="cpg" hidden></span></div></div></div>';
+    h += fv ? '<div class="fileview" id="fileview"></div></div></div>' : '<div class="chart wfit" id="chart"' + (view === 'chords' || (view === 'file' && !hasF) || innerWidth >= 900 ? '' : ' style="display:none"') + '><div class="wc">' + chartOf(c.sg) + '</div><span class="wfit-pg" id="cpg" hidden></span></div></div></div>';
     $('#app').innerHTML = h;
-    if (view === 'chords' && innerWidth < 900 && !(innerWidth > innerHeight && innerHeight <= 520)) { var c1 = document.querySelector('.col1 .mon'); if (c1) c1.style.display = 'none'; }
+    if ((view === 'chords' || fv) && innerWidth < 900 && !(innerWidth > innerHeight && innerHeight <= 520)) { var c1 = document.querySelector('.col1 .mon'); if (c1) c1.style.display = 'none'; }
+    if (fv) showFile(c.sg);
     var on = c.sl ? document.querySelector('#chart [data-sec="' + c.sl.sec + '"]') : null;
     document.querySelectorAll('#chart .wc-s').forEach(function (e) { e.classList.toggle('on', e === on); });
     fitChart(on, c.s.song);

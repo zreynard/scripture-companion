@@ -10,7 +10,7 @@ const R = [], wait = ms => new Promise(r => setTimeout(r, ms));
 const CUTOFF = m => /due to access control checks\.?$/.test(m) && m.includes(new URL(SITE).host + new URL(SITE).pathname.replace(/\/$/, ''));
 /* each result prints as soon as it is known, and no test may take more than 2 minutes (a stuck one fails, the rest still run) */
 async function T(n, f) { global.__T = n.split(' ')[0]; let to; const limit = new Promise((_, no) => { to = setTimeout(() => no(new Error('took over 2 minutes')), 120000); });
-  try { const r = await Promise.race([f(), limit]); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 1500)]); } catch (e) { const m = String(e.message), loc = (m.match(/waiting for (locator\([^\n]*\))/) || [])[1] || ''; R.push([n, 'FAIL threw ' + m.split('\n')[0].slice(0, 160) + (loc ? ' · ' + loc.slice(0, 120) : '')]); }
+  try { const r = await Promise.race([f(), limit]); R.push([n, r === true ? 'PASS' : 'FAIL ' + JSON.stringify(r).slice(0, 3000)]); } catch (e) { const m = String(e.message), loc = (m.match(/waiting for (locator\([^\n]*\))/) || [])[1] || ''; R.push([n, 'FAIL threw ' + m.split('\n')[0].slice(0, 160) + (loc ? ' · ' + loc.slice(0, 120) : '')]); }
   clearTimeout(to); const x = R[R.length - 1]; console.log((x[1].startsWith('PASS') ? 'PASS ' : 'FAIL ') + x[0] + (x[1].startsWith('PASS') ? '' : '  ' + x[1].slice(5))); }
 const verse = (n, k) => Array.from({ length: n }, (_, i) => `G        D\nline ${k} ${i} of this song,\nEm       C\nanother line ${i} here.`).join('\n');
 const SONG = (t, extra = '') => `Intro: G D Em C\n\nVerse 1\n${verse(2, 'v1')}\n\nChorus\nC      G\nsing it out, sing it out,\nEm     D\nlift it high.\n\nVerse 2\n${verse(2, 'v2')}\n\nChorus\n\nBridge\nC   D   Em\nhere we stand${extra}`;
@@ -616,6 +616,120 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       && o.saved[0] === true && o.saved[1] === false && o.saved[2] && !o.saved[3] && o.saved[4] === '♪ Music on' && o.saved[5] && o.full && o.again && o.plays && o.stops && o.esc && o.through[0] && o.through[1] && o.mini && o.other
       && o.read[0] === 'Music under the Bible reading' && o.read[1] === false && o.read[2] === '♪ Music off' && !o.errs.length);
     return ok || out; });
+  // listening analytics, music after the narrator, chart files
+  const toneWav = (sec, hz) => { const sr = 8000, n = sr * sec, buf = Buffer.alloc(44 + n * 2); buf.write('RIFF', 0); buf.writeUInt32LE(36 + n * 2, 4); buf.write('WAVEfmt ', 8); buf.writeUInt32LE(16, 16); buf.writeUInt16LE(1, 20); buf.writeUInt16LE(1, 22);
+    buf.writeUInt32LE(sr, 24); buf.writeUInt32LE(sr * 2, 28); buf.writeUInt16LE(2, 32); buf.writeUInt16LE(16, 34); buf.write('data', 36); buf.writeUInt32LE(n * 2, 40); for (let i = 0; i < n; i++) buf.writeInt16LE(Math.round(Math.sin(i / sr * 2 * Math.PI * hz) * 6000), 44 + i * 2); return buf; };
+  const seedMusicAndTones = X => X.evaluate(async b64 => { const bin = Uint8Array.from(atob(b64), c => c.charCodeAt(0)), bl = new Blob([bin], { type: 'audio/wav' }), meta = [{ id: 'tst', f: 'tone.wav', t: 'Test tone', a: 'Test artist', al: 'Test', n: 1 }];
+    try { await pdbDo('meta', 'readwrite', t => t.objectStore('meta').put(meta[0])); await pdbDo('blob', 'readwrite', t => t.objectStore('blob').put(bl, 'tst')); }
+    catch (e) { const o = pdbDo; window.pdbDo = (st, mode, f) => st === 'blob' && mode === 'readonly' ? Promise.resolve(bl) : st === 'meta' && mode === 'readonly' ? Promise.resolve(meta) : o(st, mode, f).catch(() => null); }
+    PL.list = null; await plLoad(); window.__tone = URL.createObjectURL(bl); }, toneWav(40, 330).toString('base64'));
+  await T('U94 listening analytics: what plays is counted per day and phone (a sermon: its teacher, the Journey, the hour; the Bible read aloud; Pray), synced (the backup keeps both phones\' days and the larger copy of a day), the Settings card shows hours overall, on the Journey, the last 7 days and the streak, and See all opens the Listening page with every section; the new keys are backed up', async () => {
+    const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500); await seedMusicAndTones(X);
+    const ID = await X.evaluate(() => { const fa = firstAt(); return Object.keys(I).find(k => fa[k] != null && I[k].audio && !I[k].nar && !I[k].intro && I[k].who); });
+    const o = {};
+    await X.evaluate(ID => { LDAY = {}; S.set('lday', {}); I[ID].audio = __tone; I[ID].s = 0; play(ID, { full: true }); }, ID);
+    await wait(12500); await X.evaluate(() => audio.pause()); await wait(300);
+    o.sermon = await X.evaluate(ID => { const e = LDAY[lgDay(Date.now()) + '|' + lgDev()] || {}; return { s: e.s, j: e.j, who: (e.w || {})[I[ID].who], hour: (e.h || {})[new Date().getHours()], saved: !!(S.get('lday', {})[lgDay(Date.now()) + '|' + lgDev()]) }; }, ID);
+    await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; audio.src = __tone; audio.play().catch(() => { }); lgTick(); }); await wait(6500); await X.evaluate(() => audio.pause()); await wait(300);
+    await X.evaluate(() => { const a = $('#praym'); a.src = __tone; a.muted = false; a.play().catch(() => { }); lgTick(); }); await wait(6500); await X.evaluate(() => $('#praym').pause()); await wait(300);
+    o.other = await X.evaluate(() => { const e = LDAY[lgDay(Date.now()) + '|' + lgDev()] || {}; return { n: e.n, p: e.p }; });
+    o.merge = await X.evaluate(() => { const d = '2026-11-15', L = { data: { lday: { [d + '|a']: { s: 100 }, [d + '|c']: { s: 5 } } }, ts: { lday: 1 }, del: {} }, R = { data: { lday: { [d + '|b']: { s: 50 }, [d + '|a']: { s: 60 } } }, ts: { lday: 9 }, del: {} };
+      const m = bkMerge(L, R).data.lday; return [Object.keys(m).sort().join(), m[d + '|a'].s, BK_KEYS.includes('lday') && BK_MAP.includes('lday'), ['favsort', 'ledwho', 'tsort', 'medord'].every(k => BK_KEYS.includes(k))]; });
+    await X.evaluate(() => { audio.pause(); setMini(true); LDAY[lgDay(Date.now()) + '|zz9'] = { s: 3600, j: 1800, n: 0, p: 0, c: 4000 }; S.set('lday', LDAY); setView('settings'); }); await wait(400);   // another phone's hour today
+    o.card = await X.evaluate(() => { const c = $('#openstats'); return c ? [...c.querySelectorAll('.lg-row > span')].map(s => s.innerText.replace(/\s+/g, ' ')) : null; });
+    await X.click('#openstats'); await wait(500);
+    o.page = await X.evaluate(() => ({ view, h: [...document.querySelectorAll('.lgp .lg-h')].map(x => x.textContent), tiles: document.querySelectorAll('.lgp .lg-tile').length, bars: document.querySelectorAll('.lgp [data-chart] [data-tip]').length }));
+    await X.evaluate(() => document.querySelectorAll('.lgp [data-chart] [data-tip]')[29].dispatchEvent(new MouseEvent('click', { bubbles: true }))); o.tip = await X.evaluate(() => document.querySelector('.lgp .lg-tip').textContent);
+    await X.click('#lgback'); await wait(300); o.back = await X.evaluate(() => view);
+    o.errs = e2.filter(m => !CUTOFF(m)); await cc.close();
+    const ok = o.sermon.s >= 9 && o.sermon.s <= 16 && Math.abs(o.sermon.j - o.sermon.s) < 0.2 && Math.abs(o.sermon.who - o.sermon.s) < 0.2 && o.sermon.hour >= 9 && o.sermon.saved && o.other.n >= 4 && o.other.n <= 9 && o.other.p >= 4 && o.other.p <= 9
+      && o.merge[0] === '2026-11-15|a,2026-11-15|b,2026-11-15|c' && o.merge[1] === 100 && o.merge[2] && o.merge[3] && o.card && o.card.length === 4 && /^1\.0 hour overall/.test(o.card[0]) && /^30 minutes on the Journey/.test(o.card[1]) && /^1\.0 hour last 7 days/.test(o.card[2]) && /^1 day streak/.test(o.card[3])
+      && o.page.view === 'stats' && ['Last 30 days', 'When you listen', 'By teacher', 'The Journey', 'Speed'].every(h => o.page.h.includes(h)) && o.page.tiles >= 8 && o.page.bars === 30 + 24 + 7 && /^\w{3}, \w{3} \d+ · 60 min \(Journey 30, Other sermons 30\)$/.test(o.tip) && o.back === 'settings' && !o.errs.length;
+    return ok || o; });
+  await T('U95 the music carries on after the narrator finishes (Bible reading music on) until something else plays; with the reading music off it stops', async () => {
+    const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500); await seedMusicAndTones(X);
+    const run = async on => { await X.evaluate(on => { BED.on = on; BED.ser = false; BED.tail = false; const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; BBM = false; JM = false; audio.src = __tone; audio.play().catch(() => { }); bedSync(); }, on);
+      for (let i = 0; i < 80 && on; i++) { if (await X.evaluate(() => !$('#bedm').paused)) break; await wait(100); }
+      await X.evaluate(() => { audio.pause(); finished(); }); await wait(4500);   // the chapter is done; nothing else plays
+      return X.evaluate(() => ({ music: !$('#bedm').paused, tail: BED.tail })); };
+    const o = {}; o.on = await run(true);
+    await X.evaluate(() => { const id = Object.keys(I).find(k => I[k].audio && !I[k].nar && !I[k].intro); I[id].audio = __tone; I[id].s = 0; play(id, {}); }); await wait(4500); o.next = await X.evaluate(() => ({ music: !$('#bedm').paused, tail: BED.tail })); await X.evaluate(() => audio.pause());
+    o.off = await run(false); o.errs = e2.filter(m => !CUTOFF(m)); await cc.close();
+    return (o.on.music && o.on.tail === 'read' && !o.next.music && !o.next.tail && !o.off.music && !o.off.tail && !o.errs.length) || o; });
+  // a tiny hand-made PDF (made-up words) and a one-pixel PNG
+  const mkpdf = pages => { const objs = [], add = s => { objs.push(s); return objs.length; }, font = add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
+    const cs = pages.map(lines => { const body = 'BT /F1 22 Tf 60 740 Td 28 TL ' + lines.map(l => '(' + l + ') Tj T*').join(' ') + ' ET'; return add(`<< /Length ${body.length} >>\nstream\n${body}\nendstream`); });
+    const pagesId = objs.length + pages.length + 1, kids = cs.map(c => add(`<< /Type /Page /Parent ${pagesId} 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 ${font} 0 R >> >> /Contents ${c} 0 R >>`));
+    add(`<< /Type /Pages /Kids [${kids.map(k => k + ' 0 R').join(' ')}] /Count ${kids.length} >>`); const cat = add(`<< /Type /Catalog /Pages ${pagesId} 0 R >>`);
+    let out = '%PDF-1.4\n'; const offs = []; objs.forEach((o, i) => { offs.push(out.length); out += `${i + 1} 0 obj\n${o}\nendobj\n`; });
+    const x = out.length; out += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n` + offs.map(o => String(o).padStart(10, '0') + ' 00000 n \n').join('') + `trailer\n<< /Size ${objs.length + 1} /Root ${cat} 0 R >>\nstartxref\n${x}\n%%EOF\n`; return Buffer.from(out, 'latin1'); };
+  const PDF2 = { name: 'Lantern Road.pdf', mimeType: 'application/pdf', buffer: mkpdf([['Lantern Road', 'Verse 1', 'G C G', 'walking down a lantern road'], ['Chorus', 'C D', 'sing it softly, sing it slowly']]) };
+  const PNG1 = { name: 'chart photo.png', mimeType: 'image/png', buffer: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==', 'base64') };
+  const attach = async (X, files) => { const [fc] = await Promise.all([X.waitForEvent('filechooser'), X.click('#wf-attach')]); await fc.setFiles(files); for (let i = 0; i < 50; i++) { if (await X.evaluate(() => (WS.efile || []).length > 0 && !/Keeping/.test(($('#wf-fmsg') || {}).textContent || ''))) break; await wait(100); } };
+  const pagesIn = (X, sel) => X.evaluate(async sel => { for (let i = 0; i < 80; i++) { const n = document.querySelectorAll(sel + ' .wfv-page').length, laid = document.querySelector(sel + ' [data-pages]') || document.querySelector(sel + '[data-pages]'); if (n && laid && !document.querySelector(sel + ' .wfv-msg')) return n; await new Promise(r => setTimeout(r, 100)); } return document.querySelectorAll(sel + ' .wfv-page').length || (document.querySelector(sel + ' .wfv-msg') || {}).textContent || 0; }, sel);
+  await T('U96 a chart file: attach a PDF (title filled from its name), save with no chart text, the song opens on File and draws both pages; full screen opens and closes; it is kept through a reload; the songbook shows a PDF badge; Replace with a photo deletes the PDF; deleting the song deletes the photo; a second PDF or a non-chart file is refused', async () => {
+    const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500); const o = {};
+    await X.evaluate(() => { $('#tabs [data-tab2=worship]').click(); WS.pane = 'songs'; WS.song = null; WS.set = null; WS.edit = null; render(); }); await wait(300); await X.click('[data-wnew]'); await wait(300);
+    await attach(X, [PDF2]); o.title = await X.inputValue('#wf-t'); o.list = await X.evaluate(() => $('#wf-file').innerText.replace(/\s+/g, ' '));
+    await X.click('#wf-save'); await wait(400); const id = await X.evaluate(() => WS.song); o.song = await X.evaluate(id => wSongs()[id].file, id);
+    o.seg = await X.evaluate(() => [...document.querySelectorAll('[data-wfv]')].map(b => b.textContent + (b.classList.contains('on') ? '*' : '')).join('|')); o.pages = await pagesIn(X, '#wfpages');
+    await X.click('[data-wffull]'); o.full = await pagesIn(X, '#wfview'); o.fullN = await X.evaluate(() => $('#wfview .wfv-n').textContent); await X.click('#wfview .wfv-x'); o.closed = await X.evaluate(() => !$('#wfview'));
+    await X.reload(); await wait(1500); await X.evaluate(id => { $('#tabs [data-tab2=worship]').click(); WS.song = id; WS.edit = null; render(); }, id); o.reload = await pagesIn(X, '#wfpages');
+    await X.evaluate(() => { WS.song = null; WS.pane = 'songs'; render(); }); o.badge = await X.evaluate(() => (document.querySelector('.w-row .wf-badge') || {}).textContent);
+    const pdfId = o.song[0].id; await X.evaluate(id => { WS.edit = id; render(); }, id); await wait(200);
+    await X.evaluate(() => { window.__al = []; window.alert = m => __al.push(m); });
+    const [fc] = await Promise.all([X.waitForEvent('filechooser'), X.click('#wf-attach')]); await fc.setFiles([PDF2, { ...PDF2, name: 'second.pdf' }]); await wait(400); o.two = await X.evaluate(() => $('#wf-fmsg').textContent);
+    const [fc2] = await Promise.all([X.waitForEvent('filechooser'), X.click('#wf-attach')]); await fc2.setFiles([{ name: 'notes.txt', mimeType: 'text/plain', buffer: Buffer.from('hello') }]); await wait(400); o.txt = await X.evaluate(() => $('#wf-fmsg').textContent);
+    await attach(X, [PNG1]); await X.click('#wf-save'); await wait(500);
+    o.after = await X.evaluate(async ([id, pdfId]) => ({ file: wSongs()[id].file.map(r => r.ty).join(), pdfGone: !(await WFile.get(pdfId)), gone: JSON.parse(localStorage.getItem('sc:wfgone') || '[]').includes(pdfId) }), [id, pdfId]); o.img = await pagesIn(X, '#wfpages');
+    const pngId = await X.evaluate(id => wSongs()[id].file[0].id, id);
+    await X.evaluate(id => { WS.edit = id; render(); window.confirm = () => true; }, id); await X.click('#wf-del'); await wait(400); o.del = await X.evaluate(async pngId => !(await WFile.get(pngId)), pngId);
+    o.errs = e2.filter(m => !CUTOFF(m)); await cc.close();
+    const ok = o.title === 'Lantern Road' && /Lantern Road\.pdf PDF · 1 KB/.test(o.list) && o.song.length === 1 && o.song[0].ty === 'application/pdf' && o.seg === 'Chords|File · PDF*' && o.pages === 2 && o.full === 2 && o.fullN === '1 / 2' && o.closed && o.reload === 2 && o.badge === 'PDF'
+      && /one PDF/.test(o.two) && /not a PDF or a photo/.test(o.txt) && o.after.file === 'image/png' && o.after.pdfGone && o.after.gone && o.img === 1 && o.del && !o.errs.length;
+    return ok || o; });
+  await T('U97 chart files in the backup: attaching uploads the file (in parts) and its index to your private repo; a new phone with the same backup brings the file over when the song is opened, and draws it; taking it off the song removes it from the repo', async () => {
+    const repo = {}; let shaN = 0; const R = { puts: 0, dels: 0 };
+    const fake = async route => { const req = route.request(), u = new URL(req.url()), m = /\/repos\/[^/]+\/[^/]+\/contents\/(.+)$/.exec(u.pathname), path = m && decodeURIComponent(m[1]);
+      if (!path) return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ private: true, permissions: { push: true } }) });
+      const raw = /raw/.test(req.headers()['accept'] || '');
+      if (req.method() === 'GET') { const f = repo[path]; if (!f) { const kids = Object.keys(repo).filter(k => k.startsWith(path + '/')); return kids.length ? route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(kids.map(k => ({ path: k, sha: repo[k].sha }))) }) : route.fulfill({ status: 404, body: '{}' }); }
+        return raw ? route.fulfill({ status: 200, contentType: 'application/octet-stream', body: Buffer.from(f.content, 'base64') }) : route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ sha: f.sha, encoding: 'base64', content: f.content }) }); }
+      const body = JSON.parse(req.postData() || '{}');
+      if (req.method() === 'PUT') { if (repo[path] && body.sha !== repo[path].sha) return route.fulfill({ status: 409, body: '{}' }); repo[path] = { content: body.content, sha: 's' + (++shaN) }; R.puts++; return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ content: { sha: repo[path].sha } }) }); }
+      if (req.method() === 'DELETE') { delete repo[path]; R.dels++; return route.fulfill({ status: 200, body: '{}' }); }
+      return route.fulfill({ status: 405, body: '{}' }); };
+    const phone = async () => { const c = await b.newContext({ ...devices['iPhone 14'], serviceWorkers: 'block' }); await c.route(/api\.github\.com/, fake);   /* no offline helper: Safari's engine sends a page's requests through it, past the fake GitHub */ await c.addInitScript(() => { try { localStorage.setItem('sc:bkkey', JSON.stringify('fake-key')); localStorage.setItem('sc:bkrepo', JSON.stringify('me/backup')); } catch (e) { } });
+      const X = await c.newPage(); X.e2 = []; X.on('pageerror', e => X.e2.push(e.message)); await X.goto(SITE); await wait(1800); return X; };
+    const A = await phone(), o = {};
+    await A.evaluate(() => { $('#tabs [data-tab2=worship]').click(); WS.pane = 'songs'; WS.song = null; WS.set = null; WS.edit = null; render(); }); await wait(300); await A.click('[data-wnew]'); await wait(300);
+    await attach(A, [PDF2]); await A.click('#wf-save'); const id = await A.evaluate(() => WS.song);
+    for (let i = 0; i < 80; i++) { if (repo['wfiles/index.json']) break; await wait(150); }
+    const idx = repo['wfiles/index.json'] ? JSON.parse(Buffer.from(repo['wfiles/index.json'].content, 'base64').toString()) : []; o.up = { idx: idx.map(x => [x.ty, x.parts, x.sz]), part: Object.keys(repo).filter(k => /^wfiles\/f/.test(k)).length };
+    const songs = await A.evaluate(() => S.get('wsongs'));
+    const B = await phone(); await B.evaluate(s => { S.set('wsongs', s); }, songs);
+    o.bHas = await B.evaluate(async id => !!(await WFile.get(wSongs()[id].file[0].id)), id);
+    await B.evaluate(id => { $('#tabs [data-tab2=worship]').click(); WS.song = id; WS.edit = null; render(); }, id); o.bPages = await pagesIn(B, '#wfpages'); o.bKept = await B.evaluate(async id => !!(await WFile.get(wSongs()[id].file[0].id)), id);
+    await A.evaluate(id => { WS.edit = id; render(); }, id); await wait(200); await A.click('#wf-fdel'); await A.click('#wf-save');
+    for (let i = 0; i < 80; i++) { if (!Object.keys(repo).some(k => /^wfiles\/f/.test(k))) break; await wait(150); }
+    o.removed = { parts: Object.keys(repo).filter(k => /^wfiles\/f/.test(k)).length, idx: repo['wfiles/index.json'] ? JSON.parse(Buffer.from(repo['wfiles/index.json'].content, 'base64').toString()).length : 'no index', dels: R.dels, paths: Object.keys(repo), log: await A.evaluate(() => DIAG.a.filter(x => /chart/.test(JSON.stringify(x))).slice(-5)) };
+    o.errs = A.e2.concat(B.e2).filter(m => !CUTOFF(m)); await A.context().close(); await B.context().close();
+    return (o.up.idx.length === 1 && o.up.idx[0][0] === 'application/pdf' && o.up.idx[0][1] === 1 && o.up.part === 1 && !o.bHas && o.bPages === 2 && o.bKept && o.removed.parts === 0 && o.removed.idx === 0 && o.removed.dels >= 1 && !o.errs.length) || o; });
+  await T('U98 Present with a chart file: the leader\'s phone gets Lyrics | Chords | File, File draws the pages and keeps them through Next; only the file\'s name and id go with the songs (never the file); a song with only a file shows its title on the screen', async () => {
+    const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500); const o = {};
+    await X.evaluate(() => { $('#tabs [data-tab2=worship]').click(); WS.pane = 'songs'; WS.song = null; WS.set = null; WS.edit = null; render(); }); await wait(300); await X.click('[data-wnew]'); await wait(300);
+    await X.fill('#wf-t', 'Lantern Road'); await X.fill('#wf-src', 'Verse 1\nG C\nwalking down a lantern road\n\nChorus\nC D\nsing it softly');
+    await attach(X, [PDF2]); await X.click('#wf-save'); await wait(300); const id = await X.evaluate(() => WS.song);
+    await X.evaluate(() => { WS.edit = 'new'; render(); }); await wait(200); await attach(X, [{ ...PDF2, name: 'Only A File.pdf' }]); await X.click('#wf-save'); await wait(300); const id2 = await X.evaluate(() => WS.song);
+    await X.evaluate(([a, z]) => { S.set('wsets', [{ id: 'fs', name: 'Files', items: [{ id: a }, { id: z }] }]); WS.song = null; WS.set = 'fs'; render(); }, [id, id2]); await wait(200);
+    await X.click('[data-wpresentset]'); await X.waitForURL(/live\//, { timeout: 10000 }); await wait(2000);
+    const deck = await X.evaluate(() => JSON.parse(localStorage.getItem('sc:wlive')).deck); o.deck = { file: deck.songs[0].file, json: JSON.stringify(deck.songs[0].file || '').length, buf: /buf|base64/.test(JSON.stringify(deck)), only: deck.songs[1].slides.map(s => s.l.join(' ')) };
+    for (let i = 0; i < 30; i++) { if (await X.$('.seg [data-v=file]')) break; await wait(150); }
+    o.seg = await X.evaluate(() => [...document.querySelectorAll('.seg [data-v]')].map(b => b.dataset.v).join());
+    await X.click('.seg [data-v=file]'); o.pages = await pagesIn(X, '#fileview'); await X.click('#bNext'); await wait(500); o.next = await X.evaluate(() => document.querySelectorAll('#fileview .wfv-page').length);
+    await X.evaluate(() => { try { localStorage.setItem('scwp:view', 'lyrics'); } catch (e) { } });
+    o.errs = e2.filter(m => !CUTOFF(m)); await cc.close();
+    return (o.deck.file && o.deck.file[0].n === 'Lantern Road.pdf' && o.deck.json < 300 && !o.deck.buf && o.deck.only.join() === 'Only A File' && o.seg === 'lyrics,chords,file' && o.pages === 2 && o.next === 2 && !o.errs.length) || o; });
   await T('U45 no page errors anywhere', async () => { const e = errs.filter(m => !CUTOFF(m)); return e.length === 0 || e.slice(0, 6); });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

@@ -31,6 +31,9 @@ jobs:
       - name: Browsers (published site)
         if: always()
         run: SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/ui.js
+      - name: Worship chart files (File view) on phone, iPad and computer, turned, full screen, Present, offline (published site)
+        if: always()
+        run: SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/fileview.js
       - name: Sync between devices (fake repo)
         if: always()
         run: SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/sync.js

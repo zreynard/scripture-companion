@@ -911,6 +911,21 @@ body.mapopen #sheet{z-index:24}
 #np.mini .ctl{grid-column:1/-1;grid-row:5;margin:0;padding:0 4px}#np.mini .ctl .big{width:46px;height:46px;font-size:18px}
 #np.mini .ctl{display:flex;justify-content:space-between}#np.mini{background:rgba(255,255,255,.96)}
 .settings{padding:calc(70px + env(safe-area-inset-top)) 20px 60px;max-width:560px}
+.lg-card{display:block;width:100%;margin:0 0 20px;padding:14px 16px 12px;border:1px solid rgba(27,36,64,.08);border-radius:18px;background:#fffdf8;color:var(--ink);text-align:left;cursor:pointer;box-shadow:0 4px 16px rgba(27,36,64,.06);font:inherit}
+.lg-k{display:block;font:700 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9a7a2c;margin-bottom:8px}
+.lg-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.lg-row b{display:block;font:500 24px/1.1 "Iowan Old Style",Palatino,Georgia,serif;color:var(--ink)}.lg-row small{display:block;font-size:11.5px;line-height:1.25;color:var(--mute);margin-top:3px}
+.lg-go{display:block;margin-top:10px;font:600 13.5px -apple-system,system-ui,sans-serif;color:#9a7a2c}
+.lg-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0 6px}.lg-tile{background:#fffdf8;border:1px solid rgba(27,36,64,.07);border-radius:16px;padding:12px 14px}
+.lg-tile b{display:block;font:500 26px/1.1 "Iowan Old Style",Palatino,Georgia,serif;color:var(--ink)}.lg-tile span{display:block;font-size:13px;color:var(--ink);margin-top:3px}.lg-tile small{display:block;font-size:12px;color:var(--mute);margin-top:2px;line-height:1.3}
+.lg-h{font:700 12px -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#9a7a2c;margin:26px 0 6px}.lg-sub{margin:0 0 8px}
+.lg-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--ink);margin:0 0 8px}.lg-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.lg-chart{background:#fffdf8;border:1px solid rgba(27,36,64,.07);border-radius:16px;padding:12px 12px 8px;margin:0 0 10px}.lg-svg{display:block;width:100%;height:auto;overflow:visible}
+.lg-svg text{font:10px -apple-system,system-ui,sans-serif;fill:#7a7f96}.lg-base{stroke:rgba(27,36,64,.15);stroke-width:1}.lg-svg g{cursor:pointer}.lg-svg g.lg-on path,.lg-svg g.lg-on rect:not([fill=transparent]){opacity:.75}
+.lg-tip{margin:6px 2px 0;font-size:12.5px;color:var(--mute);min-height:1.3em}
+.lg-teach{display:flex;flex-direction:column;gap:9px;margin-top:8px}.lg-tr{display:grid;grid-template-columns:118px 1fr auto;gap:10px;align-items:center;font-size:13.5px}.lg-tn{color:var(--ink)}
+.lg-tb{height:8px;border-radius:4px;background:rgba(27,36,64,.07);overflow:hidden}.lg-tb i{display:block;height:100%;border-radius:4px;background:#2a5fa8}.lg-tv{color:var(--mute);font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.lg-rec{display:flex;flex-direction:column;gap:6px;margin-top:8px}.lg-rec button{text-align:left;border:0;background:#fffdf8;border-radius:12px;padding:10px 12px;border:1px solid rgba(27,36,64,.07);color:var(--ink);font:inherit;cursor:pointer}.lg-rec b{display:block;font-weight:600;font-size:14.5px}.lg-rec small{color:var(--mute);font-size:12.5px}
+.lg-foot{margin-top:22px}
 .settings .note{color:var(--mute);font-size:14px;line-height:1.5}textarea{width:100%;height:110px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;font:12px/1.4 ui-monospace,monospace}
 .btn{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 14px;font:inherit;margin:4px 6px 4px 0}
 .bk-steps{padding-left:20px}.bk-steps li{margin:6px 0}.bk-steps a{color:var(--gold2);font-weight:600}
@@ -929,6 +944,11 @@ body[data-v=pray] #np,body[data-v=worship] #np{display:none!important}
 .w-row{display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px;border-radius:16px;border:0;background:#fffdf8;box-shadow:0 3px 12px rgba(27,36,64,.06);text-align:left;color:var(--ink);cursor:pointer;font:inherit}
 .w-row span{flex:1;min-width:0}.w-row b{display:block;font-size:19px;font-weight:500}.w-row small{display:block;font-size:13px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.w-row i{font-style:normal;color:var(--gold2);font-size:22px}
 .w-empty{color:var(--mute);font-size:15px;line-height:1.5;margin:18px 4px}
+.wf-seg{margin:10px 0 8px}.wf-box{margin:4px 0 0}.wf-pages{max-width:900px;margin:0 auto}
+.wf-acts{display:flex;gap:8px;justify-content:center;margin:2px 0 10px}#wfpages .wfv-page{cursor:zoom-in}
+.wf-badge{font-style:normal;font-weight:700;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#7a5c1c;background:#f6ecd6;border-radius:6px;padding:1px 6px;margin-left:4px;vertical-align:1px}
+.wf-list{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}.wf-list li{background:#fff;border:1px solid rgba(27,36,64,.08);border-radius:12px;padding:9px 12px}.wf-list b{display:block;font-size:14.5px;font-weight:600;word-break:break-word}.wf-list small{color:var(--mute);font-size:12.5px}
+.wf-btns{display:flex;gap:8px;margin-top:8px}
 .w-add{display:block;width:100%;height:50px;margin-top:8px;border-radius:25px;border:1px dashed rgba(27,36,64,.25);background:none;font:600 15px -apple-system,system-ui,sans-serif;color:var(--ink);cursor:pointer}
 .w-q{width:100%;height:44px;border-radius:22px;border:1px solid var(--line);background:#fff;padding:0 16px;font:inherit;margin:12px 0 0}
 .w-grp{font:700 11.5px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9a7a2c;margin:22px 4px -4px}
@@ -1373,7 +1393,7 @@ body.npslim #np.mini .ctl .big{width:36px!important;height:36px!important}body.n
 <div class="ctl"><button class="side sk" id="prv" aria-label="Previous"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 5l-10 7 10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button><button class="side" id="bk">↺ 10</button><button class="big" id="pp" style="display:flex;align-items:center;justify-content:center"></button><button class="side" id="fw">10 ↻</button><button class="side sk" id="nxt" aria-label="Next"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button></div>
 <div id="np-hl" aria-hidden="true"><i></i></div><div class="ctl2"><div class="spd"><button id="spd-dn" aria-label="Slower">−</button><button id="spd">1×</button><button id="spd-up" aria-label="Faster">+</button></div><button id="bedb" hidden aria-haspopup="dialog" aria-expanded="false">♪ Music</button><button id="zz">Sleep off</button></div><div class="np-cut"><button id="cutb" hidden>Teaching starts here</button></div></div>
 <audio id="audio" preload="metadata"></audio><audio id="praym" preload="none"></audio><audio id="bedm" preload="none"></audio><audio id="ledm" preload="none"></audio><audio id="medm" preload="none"></audio><audio id="lpm" preload="none"></audio><audio id="audiofx" preload="metadata" crossorigin="anonymous"></audio>
-<script src="worship.js"></script>
+<script src="worship.js"></script><script src="wfile.js"></script>
 <script type="application/json" id="dj">const D=__DATA__</script>
 <script>
 var DIAG={a:[],t0:Date.now(),sv:0,last:{}};
@@ -1392,7 +1412,7 @@ const S={get(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSO
 /* Automatic backup to the listener's own private GitHub repo. The key never leaves this phone except to GitHub.
    Saved about every 10 minutes while something changed, and whenever the app goes to the background; every backup is
    a commit, so older versions stay in the repo's history. A new phone: paste the key once and everything comes back. */
-const BK_KEYS=['camp','camp2','camp3','npl','cfg','jp','level','lk2','narpos','prog','read','skip','speed','tab','wsongs','wsets','bedon','bedser','bedlv','bedlvp','bedpos',
+const BK_KEYS=['camp','camp2','camp3','npl','cfg','jp','level','lk2','narpos','prog','read','skip','speed','tab','wsongs','wsets','bedon','bedser','bedlv','lday','favsort','ledwho','tsort','medord','bedlvp','bedpos',
  'fav','coreSet','bp','bplast','prm','prsub','prsup','prlast','ledord','ledsp','medsp','bedled','wimp','pmpos','srecent','shlen','bbpos','bbintro','bbrec','cut'],BK={sha:null,busy:false,tried:0,err:S.get('bkerr',''),pulled:0};
 /* Sync between devices. Each synced setting remembers when it last changed (sc:bkts), and what was removed from it
    (sc:bkdel), so two devices merge instead of overwriting each other:
@@ -1401,7 +1421,7 @@ const BK_KEYS=['camp','camp2','camp3','npl','cfg','jp','level','lk2','narpos','p
    - listening progress keeps the newest position, and anything finished on either device stays finished
    - everything else: the most recent change wins
    - where you are (the stop, tab, view) stays with the device you are using; opening the app takes the newest */
-const BK_MAP=['prog','read','narpos','fav','coreSet','skip','bp','wsongs','prsup','cut'],BK_LIST=['wsets'],BK_UNION=['wimp'],BK_NAV=['camp','camp2','camp3','npl','jp','tab','lk2'],BK_DELK=BK_MAP.concat(BK_LIST);
+const BK_MAP=['prog','read','narpos','fav','coreSet','skip','bp','wsongs','prsup','cut','lday'],BK_LIST=['wsets'],BK_UNION=['wimp'],BK_NAV=['camp','camp2','camp3','npl','jp','tab','lk2'],BK_DELK=BK_MAP.concat(BK_LIST);
 function bkJ(k,d){try{const v=localStorage.getItem('sc:'+k);return v==null?d:JSON.parse(v)}catch(e){return d}}
 function bkIds(k,v){return !v?[]:BK_LIST.includes(k)?(Array.isArray(v)?v.map(x=>x&&x.id).filter(Boolean):[]):(typeof v==='object'?Object.keys(v):[])}
 function bkMark(k,old,v){const t=Date.now(),ts=bkJ('bkts',{});ts[k]=t;localStorage.setItem('sc:bkts',JSON.stringify(ts));
@@ -1415,7 +1435,7 @@ function bkMerge(L,R){const out={data:{},ts:{},del:{}},YEAR=365*864e5,now=Date.n
   const gone=out.del[k]||{},keep=(id,side)=>!(gone[id]&&gone[id]>=(side==='L'?lt:rt));
   if(BK_MAP.includes(k)&&typeof lv==='object'&&typeof rv==='object'&&!Array.isArray(lv)){const o={};
    new Set([...Object.keys(lv),...Object.keys(rv)]).forEach(id=>{const x=lv[id],y=rv[id];
-    if(x!==undefined&&y!==undefined){let v=rNew?y:x;if(k==='prog'&&typeof x==='object'&&typeof y==='object'){const xn=(x.at||0)>=(y.at||0);v=Object.assign({},xn?y:x,xn?x:y);const xd=x.done&&!(y.reopen&&(y.at||0)>=(x.at||0)),yd=y.done&&!(x.reopen&&(x.at||0)>=(y.at||0));if(xd||yd)v.done=true;else delete v.done}else if(k==='read')v=x||y;o[id]=v}
+    if(x!==undefined&&y!==undefined){let v=rNew?y:x;if(k==='prog'&&typeof x==='object'&&typeof y==='object'){const xn=(x.at||0)>=(y.at||0);v=Object.assign({},xn?y:x,xn?x:y);const xd=x.done&&!(y.reopen&&(y.at||0)>=(x.at||0)),yd=y.done&&!(x.reopen&&(x.at||0)>=(y.at||0));if(xd||yd)v.done=true;else delete v.done}else if(k==='read')v=x||y;else if(k==='lday'&&typeof x==='object'&&typeof y==='object')v=lgSum(x)>=lgSum(y)?x:y;o[id]=v}
     else if(x!==undefined){if(keep(id,'L'))o[id]=x}else if(keep(id,'R'))o[id]=y});out.data[k]=o;return}
   if(BK_LIST.includes(k)&&Array.isArray(lv)&&Array.isArray(rv)){const A=rNew?rv:lv,B=rNew?lv:rv,aS=rNew?'R':'L',bS=rNew?'L':'R',ids=new Set(),o=[];
    A.forEach(x=>{if(x&&x.id&&!ids.has(x.id)&&keep(x.id,aS)){ids.add(x.id);o.push(x)}});B.forEach(x=>{if(x&&x.id&&!ids.has(x.id)&&keep(x.id,bS)){ids.add(x.id);o.push(x)}});out.data[k]=o;return}
@@ -1423,7 +1443,7 @@ function bkMerge(L,R){const out={data:{},ts:{},del:{}},YEAR=365*864e5,now=Date.n
   out.data[k]=rNew?rv:lv});
  return out}
 /* after a merge brought something new: the app's own copies in memory follow */
-function bkRefresh(keys){const has=k=>keys.includes(k);
+function bkRefresh(keys){const has=k=>keys.includes(k);try{if(has('lday'))LDAY=S.get('lday',{})}catch(e){}
  try{if(has('prog'))prog=S.get('prog',{});if(has('read'))read=S.get('read',{});if(has('cfg'))cfg=Object.assign(S.get('cfg',{who:''}),{order:'canon'});if(has('camp'))camp=S.get('camp',null)}catch(e){}
  try{if(has('skip'))SKIP=S.get('skip',{})}catch(e){}try{if(has('bp'))BP=S.get('bp',{})}catch(e){}try{if(has('tab'))TAB=S.get('tab',TAB)}catch(e){}
  try{if(has('npl')&&(!cur||audio.paused))setTimeout(nplRestore,200)}catch(e){}
@@ -2361,7 +2381,8 @@ function wParsed(song){return song._p&&song._p.src===song.src&&song._p.pv===Wors
 function wOrder(song){const p=wParsed(song);if(!song.arr||!song.arr.trim())return null;const by={};p.sections.forEach((s,i)=>{const k=s.short.toLowerCase();if(!(k in by))by[k]=i;const l=s.label.toLowerCase();if(!(l in by))by[l]=i});
  const o=song.arr.split(/[\s,>→-]+/).map(t=>by[t.toLowerCase()]).filter(i=>i!=null);return o.length?o:null}
 function wDeckSong(song,item){const p=wParsed(song),key=wKeyOf(song,item),capo=item&&item.capo!=null?item.capo:(song.capo||0),sh=wShape(song,key,capo);
- return {id:song.id,t:song.t,a:song.a||'',key,capo,slides:Worship.slides({parsed:p},wOrder(song)),short:p.sections.map(s=>s.short),src:song.src||'',semis:sh.semis||0,flats:!!sh.flats}}
+ let slides=Worship.slides({parsed:p},wOrder(song)),short=p.sections.map(s=>s.short);if(!slides.length){slides=[{s:'Title',sec:0,l:[song.t]}];short=['T']}   /* a song with only a chart file: its title on the screen */
+ return {id:song.id,t:song.t,a:song.a||'',key,capo,slides,short,src:song.src||'',semis:sh.semis||0,flats:!!sh.flats,...((song.file||[]).length?{file:song.file.map(r=>({id:r.id,ty:r.ty,n:r.n,sz:r.sz}))}:{})}}   /* only the file's name and id: the file itself never leaves this phone */
 /* the link carries the whole songbook: this set first, then every other song (A to Z), so anyone helping can pick any song */
 /* a worship time lasts until End, or until it has sat untouched this long; then Present starts a new one and the TV follows */
 const WLIVE_IDLE=4*3600e3;
@@ -2380,7 +2401,7 @@ function worshipView(){
  if(WS.pane==='songs'){
   if(ids.length>8)h+=`<input class="w-q" id="wq" type="search" placeholder="Search your songs" value="${esc(WS.q)}">`;
   const q=WS.q.trim().toLowerCase(),show=ids.filter(id=>!q||(songs[id].t+' '+(songs[id].a||'')).toLowerCase().includes(q));
-  h+=show.length?`<div class="w-list">${show.map(id=>{const s=songs[id];return `<button class="w-row" data-wsong="${id}"><span><b class="serif">${esc(s.t)}</b><small>${esc([s.a,wKeyOf(s)&&'Key '+wKeyOf(s)].filter(Boolean).join(' · '))}</small></span><i>›</i></button>`}).join('')}</div>`
+  h+=show.length?`<div class="w-list">${show.map(id=>{const s=songs[id];return `<button class="w-row" data-wsong="${id}"><span><b class="serif">${esc(s.t)}</b><small>${esc([s.a,wKeyOf(s)&&'Key '+wKeyOf(s)].filter(Boolean).join(' · '))}${(s.file||[]).length?` <em class="wf-badge">${esc(WFile.label(s.file))}</em>`:''}</small></span><i>›</i></button>`}).join('')}</div>`
    :`<p class="w-empty">${ids.length?'No song matches.':'Your songbook is empty. Add a song by pasting its chord chart: chords above the words, or ChordPro.'}</p>`;
   return h+`<button class="w-add" data-wnew>Add a song</button></div>`}
  const sets=wSets();
@@ -2392,6 +2413,62 @@ function worshipView(){
    +(g.past.length?`<button class="w-past" data-wpast aria-expanded="${WS.past}">Past sets · ${g.past.length} ${WS.past?'⌃':'⌄'}</button>${WS.past?`<div class="w-list">${g.past.map(st=>row(st,1)).join('')}</div>`:''}`:'')
   :`<p class="w-empty">${ids.length?'Gather songs into a setlist for your next worship time.':'Start by adding songs in the Songs tab, then gather them into a setlist.'}</p>`;
  return h+`<button class="w-add" data-wnewset>New setlist</button></div>`}
+/* ---- chart files: a PDF or photos of the song, shown exactly as they are (site_extra/wfile.js keeps and draws them);
+   the song holds only small references (s.file), which sync with the songbook; the files themselves go to your backup
+   repo (wfiles/<id>/<part> and wfiles/index.json) and come back on a new phone ---- */
+const WF={busy:false,last:0,msg:'',pend:{}};
+function wfvOf(s){const v=(S.get('wfv',{})||{})[s.id];return v==='chart'&&Worship.parse&&(s.src||'').trim()?'chart':v==='file'||!(s.src||'').trim()?'file':'chart'}
+function wfvSet(id,v){const m=S.get('wfv',{})||{};m[id]=v;S.set('wfv',m)}
+function wfEditList(){const L=WS.efile||[];return L.length?`<ul class="wf-list">${L.map(x=>`<li><b>${esc(x.n||'Chart')}</b><small>${WFile.kind(x.ty)==='pdf'?'PDF':'Photo'} · ${WFile.size(x.sz||0)}</small></li>`).join('')}</ul>`:'<p class="w-hint" style="margin:2px 0 0">None yet.</p>'}
+/* files no longer on any song: off this phone now, and out of the backup at its next sync */
+function wfDrop(ids,local){(ids||[]).forEach(id=>{WFile.del(id).catch(()=>{})});if(!local&&(ids||[]).length){const g=new Set(JSON.parse(localStorage.getItem('sc:wfgone')||'[]'));ids.forEach(i=>g.add(i));localStorage.setItem('sc:wfgone',JSON.stringify([...g]));setTimeout(()=>wfSync(true),500)}}
+function wfWireEdit(){const at=$('#wf-attach');if(!at)return;const msg=t=>{const m=$('#wf-fmsg');if(m){m.hidden=!t;m.textContent=t||''}};
+ at.onclick=()=>{const inp=document.createElement('input');inp.type='file';inp.multiple=true;inp.accept='application/pdf,.pdf,image/*';inp.style.display='none';document.body.appendChild(inp);
+  inp.onchange=async()=>{const fs=[...inp.files];inp.remove();if(!fs.length)return;const pdfs=fs.filter(f=>/pdf/i.test(f.type)||/\.pdf$/i.test(f.name));
+   if(pdfs.length>1||(pdfs.length&&fs.length>1)){msg('Pick one PDF, or one or more photos.');return}msg('Keeping it on this phone…');
+   try{const refs=await WFile.add(fs);const old=(WS.efile||[]).map(x=>x.id);wfDrop((WS.enew||[]).filter(i=>old.includes(i)),true);WS.enew=refs.map(r=>r.id);WS.efile=refs;dlog('chart file attached',{n:refs.length,kb:Math.round(refs.reduce((a,r)=>a+r.sz,0)/1024)});
+    const box=$('#wf-file');if(box)box.innerHTML=wfEditList();at.textContent='Replace';if(!$('#wf-fdel')){const b=document.createElement('button');b.className='w-btn';b.id='wf-fdel';b.type='button';b.textContent='Remove';at.after(b);wfWireRemove()}
+    msg('Attached. Save to keep it with the song.');if(!$('#wf-t').value.trim())$('#wf-t').value=fs[0].name.replace(/\.[a-z0-9]+$/i,'').replace(/[_-]+/g,' ').trim()}
+   catch(e){const m=String(e&&e.message||e);msg(/^kind/.test(m)?'That is not a PDF or a photo.':/^big/.test(m)?'That file is over 40 MB: export a smaller PDF.':/space/.test(m)?'This phone could not keep the file (it may be out of room). Free some space and try again.':'The file could not be read. Try again, or save it to Files first.');dlog('chart file failed',m)}};
+  inp.click()};
+ wfWireRemove()}
+function wfWireRemove(){const rm=$('#wf-fdel');if(rm)rm.onclick=()=>{wfDrop((WS.enew||[]),true);WS.enew=[];WS.efile=[];const box=$('#wf-file');if(box)box.innerHTML=wfEditList();$('#wf-attach').textContent='Attach PDF or photos';rm.remove();const m=$('#wf-fmsg');if(m){m.hidden=false;m.textContent='Removed. Save to take it off the song.'}}}
+/* a file this phone does not have yet: fetched from the backup there and then */
+async function wfMissing(r){if(!bkOn())return false;if(WF.pend[r.id])return WF.pend[r.id];return WF.pend[r.id]=(async()=>{try{const {list}=await ghIndex('wfiles/index.json');const x=list.find(y=>y.id===r.id);if(!x)return false;await wfGet(x,p=>{const b=$('#wfpages');if(b)b.innerHTML=`<p class="wfv-msg">Bringing the chart onto this phone… ${p}%</p>`});return true}catch(e){return false}finally{delete WF.pend[r.id]}})()}
+function wfWireSong(){document.querySelectorAll('[data-wfv]').forEach(b=>b.onclick=()=>{wfvSet(WS.song,b.dataset.wfv);render()});
+ const s=wSongs()[WS.song],box=$('#wfpages');if(!s||!(s.file||[]).length)return;
+ if(box)WFile.render(box,s.file,{missing:wfMissing}).then(n=>{box.dataset.ready='1';if(!n&&!box.querySelector('.wfv-msg'))box.innerHTML='<p class="wfv-msg">Nothing to show.</p>'}).catch(e=>{box.innerHTML='<p class="wfv-msg">The chart could not be drawn here. Use Share to open it in another app.</p>';dlog('chart file draw failed',String(e).slice(0,80))});
+ const f=document.querySelector('[data-wffull]');if(f)f.onclick=()=>WFile.open(s.file,s.t,{missing:wfMissing,back:'[data-wffull]'});
+ if(box)box.onclick=e=>{const pg=e.target.closest&&e.target.closest('.wfv-page');if(!pg)return;const v=WFile.open(s.file,s.t,{missing:wfMissing,back:'[data-wffull]'}),k=+pg.dataset.page||1;   /* a tap on a page: full screen, at that page */
+  if(k>1){const go=()=>{const el=v.querySelector('.wfv-page[data-page="'+k+'"]');if(el)el.scrollIntoView({block:'start'});else if(v.isConnected)setTimeout(go,80)};setTimeout(go,60)}};
+ const sh=document.querySelector('[data-wfshare]');if(sh)sh.onclick=()=>WFile.share(s.file,s.t)}
+/* the backup: one index, files in 2 MB parts (GitHub ends any request after 10 s) */
+async function ghIndex(path){const r=await bkGH('/contents/'+path);if(r.status===404)return {sha:null,list:[]};if(!r.ok)throw r.status;const j=await r.json();let c=j.content;
+ if(!c||j.encoding!=='base64'){const r2=await bkGH('/git/blobs/'+j.sha);if(!r2.ok)throw r2.status;c=(await r2.json()).content}return {sha:j.sha,list:JSON.parse(bkUn64(c))}}
+async function ghPutIndex(path,list,sha,msg){const body={message:msg,content:bkB64(JSON.stringify(list))};if(sha)body.sha=sha;let r=await bkGH('/contents/'+path,{method:'PUT',body:JSON.stringify(body)});
+ if(r.status===409||r.status===422){const cur=await ghIndex(path);if(cur.sha)body.sha=cur.sha;else delete body.sha;r=await bkGH('/contents/'+path,{method:'PUT',body:JSON.stringify(body)})}if(!r.ok)throw r.status;return (await r.json()).content.sha}
+async function wfGet(x,prog){const parts=[];for(let i=0;i<x.parts;i++){let got=null;
+  for(let tr=0;!got;tr++){try{const r=await bkGH('/contents/wfiles/'+x.id+'/'+i,{accept:'raw'});if(!r.ok){if(r.status===401||r.status===403||r.status===404||tr>=4)throw r.status;await mbWait(1500*(tr+1));continue}got=await r.arrayBuffer()}
+   catch(e){if(typeof e==='number')throw e;if(tr>=4)throw 'net';await mbWait(1500*(tr+1))}}
+  parts.push(got);if(prog)prog(Math.round((i+1)/x.parts*100))}
+ const buf=await new Blob(parts).arrayBuffer();if(buf.byteLength!==x.sz)throw 'size';
+ try{await WFile.put({id:x.id,ty:x.ty,n:x.n,sz:x.sz,buf})}catch(e){throw 'space'}}
+function wfRefs(){const m={};Object.values(wSongs()).forEach(s=>(s.file||[]).forEach(r=>{if(r&&r.id)m[r.id]=r}));return m}
+async function wfSync(force){if(!bkOn())return;if(WF.busy){if(force)WF.again=true;return}if(!force&&Date.now()-WF.last<5*60e3)return;WF.busy=true;WF.again=false;WF.last=Date.now();try{
+  const refs=wfRefs(),here=await WFile.ids();let {sha,list}=await ghIndex('wfiles/index.json');const on=new Set(list.map(x=>x.id));
+  /* down: songs here whose files are in the backup but not on this phone */
+  for(const x of list)if(refs[x.id]&&!here.has(x.id)){WF.msg='Bringing a chart file onto this phone…';await wfGet(x);here.add(x.id)}
+  /* up: files on this phone that the backup does not have */
+  for(const id of Object.keys(refs))if(here.has(id)&&!on.has(id)){const rec=await WFile.get(id);if(!rec||!rec.buf)continue;const bl=new Blob([rec.buf]),n=Math.max(1,Math.ceil(bl.size/MB_PART));
+   for(let i=0;i<n;i++){const b64=await b64blob(bl.slice(i*MB_PART,(i+1)*MB_PART));for(let tr=0;;tr++){try{await mbPut('wfiles/'+id+'/'+i,b64,'Chart file: '+(rec.n||id)+(n>1?` (${i+1}/${n})`:''));break}catch(e){if(e===401||e===403||tr>=4)throw typeof e==='number'?e:'net';await mbWait(2000*(tr+1))}}}
+   list.push({id,ty:rec.ty,n:rec.n,sz:rec.sz,parts:n});on.add(id);sha=await ghPutIndex('wfiles/index.json',list,sha,'Chart files list')}
+  /* gone: files taken off their song on this phone */
+  const gone=JSON.parse(localStorage.getItem('sc:wfgone')||'[]').filter(id=>!refs[id]);
+  if(gone.length){for(const id of gone){const x=list.find(y=>y.id===id);if(!x)continue;for(let i=0;i<x.parts;i++){const g=await bkGH('/contents/wfiles/'+id+'/'+i);if(g.ok){const j=await g.json();await bkGH('/contents/wfiles/'+id+'/'+i,{method:'DELETE',body:JSON.stringify({message:'Remove chart file',sha:j.sha})})}}}
+   const keep=list.filter(x=>!gone.includes(x.id));if(keep.length!==list.length)sha=await ghPutIndex('wfiles/index.json',keep,sha,'Chart files list');localStorage.setItem('sc:wfgone','[]')}
+  WF.msg='';dlog('chart files synced',{files:Object.keys(refs).length})}
+ catch(e){WF.msg=String(e);WF.last=0;dlog('chart files sync failed',String(e).slice(0,60))}finally{WF.busy=false;if(WF.again){WF.again=false;setTimeout(()=>wfSync(true),50)}}}   /* a sync asked for while one ran (a file just attached): it runs next, never dropped */
+setTimeout(()=>wfSync(),9000);
 function wSongView(){const s=wSongs()[WS.song];if(!s){WS.song=null;return worshipView()}
  const key=wKeyOf(s),capo=s.capo||0,sh=wShape(s,key,capo),p=wParsed(s),set=WS.from&&wSets().find(x=>x.id===WS.from),pos=set?set.items.findIndex(it=>it.id===s.id):-1;
  return `<div class="jv wsp wsong"><div class="w-st"><button class="w-back" data-wback aria-label="Back">${W_IC.back}</button><div class="w-tt"><b class="serif">${esc(s.t)}</b><small>${esc([s.a,set&&pos>=0?'Song '+(pos+1)+' of '+set.items.length:''].filter(Boolean).join(' · '))}</small></div>
@@ -2400,7 +2477,9 @@ function wSongView(){const s=wSongs()[WS.song];if(!s){WS.song=null;return worshi
  <span class="w-kl" style="margin-left:auto">Capo</span><button class="w-kb" data-wc="-1" aria-label="Capo down">−</button><b class="w-kv">${capo}</b><button class="w-kb" data-wc="1" aria-label="Capo up">+</button></div>
  ${capo&&sh.shapeKey?`<div class="w-capo">Capo ${capo}: play ${esc(sh.shapeKey)} shapes, sounds in ${esc(key)}</div>`:''}
  <div class="w-acts">${wLinks(s,'sm ic')}<button class="w-btn sm" data-wedit="${s.id}">Edit</button></div></div>`:''}
- ${p.sections.length?`<div class="wfit" id="wfit"><div class="wc">${Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats})}</div><span class="wfit-pg" id="wfpg" hidden></span></div>`:'<p class="w-empty">No chart yet. Tap the key button, then Edit, to paste one.</p>'}</div>`}
+ ${(s.file||[]).length?`<div class="t-sort lib-seg wf-seg" role="tablist"><button role="tab" data-wfv="chart" class="${wfvOf(s)==='chart'?'on':''}" aria-selected="${wfvOf(s)==='chart'}">Chords</button><button role="tab" data-wfv="file" class="${wfvOf(s)==='file'?'on':''}" aria-selected="${wfvOf(s)==='file'}">File · ${esc(WFile.label(s.file))}</button></div>`:''}
+ ${(s.file||[]).length&&wfvOf(s)==='file'?`<div class="wf-box"><div class="wf-acts"><button class="w-btn sm" data-wffull>⤢ Full screen</button><button class="w-btn sm" data-wfshare>Share</button></div><div class="wf-pages" id="wfpages" title="Tap to open full screen"><p class="wfv-msg">Opening the chart…</p></div></div>`
+ :p.sections.length?`<div class="wfit" id="wfit"><div class="wc">${Worship.chartHTML({parsed:p},{semis:sh.semis,flats:sh.flats})}</div><span class="wfit-pg" id="wfpg" hidden></span></div>`:'<p class="w-empty">No chart yet. Tap the key button, then Edit, to paste one or attach a PDF or photos.</p>'}</div>`}
 /* next or previous song when the song was opened from a setlist */
 function wStep(d){const set=WS.from&&wSets().find(x=>x.id===WS.from);if(!set)return false;const ids=set.items.map(it=>it.id).filter(id=>wSongs()[id]),i=ids.indexOf(WS.song),j=i+d;if(i<0||j<0||j>=ids.length)return false;WS.song=ids[j];render();return true}
 /* the chart fills the screen below the header: biggest text that fits, more columns on iPad and sideways; pages turn by a tap at the side */
@@ -2427,6 +2506,7 @@ async function wsInbox(force){if(!bkOn()||wsInbox.busy||(!force&&Date.now()-(wsI
   if(n){S.set('wsongs',songs);S.set('wsets',sets)}S.set('wimp',[...imp]);if(n&&view==='worship'){const y=scrollY;render();scrollTo(0,y)}}catch(e){}finally{wsInbox.busy=false}}
 setTimeout(()=>wsInbox(),4000);
 function wEditView(){const isNew=WS.edit==='new',s=isNew?{t:'',a:'',key:'',capo:0,am:'',notes:'',src:'',arr:''}:wSongs()[WS.edit];if(!s){WS.edit=null;return worshipView()}
+ if(WS.efor!==WS.edit){WS.efor=WS.edit;WS.efile=(s.file||[]).slice();WS.enew=[]}
  const keys=[''].concat(Worship.KEYS_MAJ,Worship.KEYS_MIN);
  return `<div class="jv wsp"><button class="w-back" data-wcancel>${W_IC.back}${isNew?'Songs':'Back'}</button><h1 class="w-title serif">${isNew?'Add a song':'Edit song'}</h1>
  <label class="w-f"><span>Title</span><input id="wf-t" value="${esc(s.t)}" autocomplete="off"></label>
@@ -2436,6 +2516,8 @@ function wEditView(){const isNew=WS.edit==='new',s=isNew?{t:'',a:'',key:'',capo:
  ${s.src?'':`<button class="w-btn w-pastebtn" id="wf-clip" type="button">Paste from clipboard</button>`}<p class="w-hint w-tidy" id="wf-tidy" hidden></p>
  <label class="w-f"><span>Chord chart</span><textarea id="wf-src" rows="16" spellcheck="false" autocapitalize="off" placeholder="Paste the chart: chords on their own line above the words, with section names like Verse 1, Chorus, Bridge. ChordPro works too.">${esc(s.src||'')}</textarea></label>
  <div class="w-found" id="wf-found"></div>
+ <div class="w-f wf-files"><span>Chart file (a PDF or photos of the chords and lyrics, shown exactly as they are)</span><div id="wf-file">${wfEditList()}</div>
+ <div class="wf-btns"><button class="w-btn" id="wf-attach" type="button">${(WS.efile||[]).length?'Replace':'Attach PDF or photos'}</button>${(WS.efile||[]).length?'<button class="w-btn" id="wf-fdel" type="button">Remove</button>':''}</div><p class="w-hint" id="wf-fmsg" hidden></p></div>
  <label class="w-f"><span>Order to sing it (optional), e.g. V1 C V2 C B C</span><input id="wf-arr" value="${esc(s.arr||'')}" autocomplete="off" autocapitalize="characters"></label>
  <label class="w-f"><span>Apple Music link</span><input id="wf-am" value="${esc(s.am||'')}" placeholder="https://music.apple.com/…" autocomplete="off" inputmode="url"></label>
  <label class="w-f"><span>Spotify link</span><input id="wf-sp" value="${esc(s.sp||'')}" placeholder="https://open.spotify.com/track/…" autocomplete="off" inputmode="url"></label>
@@ -2473,7 +2555,7 @@ function wFound(){const box=$('#wf-found');if(!box)return;const p=Worship.parse(
 function wAmSearch(q,cb){fetch('https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q),{cache:'no-store'}).then(r=>{if(!r.ok)throw r.status;return r.json()}).then(d=>cb((d&&d.results)||[])).catch(()=>wAmJsonp(q,cb))}
 function wAmJsonp(q,cb){const n='amcb'+Date.now();const sc=document.createElement('script');let done=false;window[n]=d=>{done=true;delete window[n];sc.remove();cb((d&&d.results)||[])};
  sc.src='https://itunes.apple.com/search?media=music&entity=song&limit=12&term='+encodeURIComponent(q)+'&callback='+n;sc.onerror=()=>{if(!done){delete window[n];cb(null)}};document.head.appendChild(sc);setTimeout(()=>{if(!done)cb(null)},9000)}
-function wireWorship(){wsInbox();document.body.classList.toggle('wsong-open',!!(WS.song&&!WS.edit));if(WS.song&&!WS.edit)requestAnimationFrame(wFitSong);
+function wireWorship(){wsInbox();wfSync();document.body.classList.toggle('wsong-open',!!(WS.song&&!WS.edit));if(WS.song&&!WS.edit)requestAnimationFrame(wFitSong);wfWireSong();
  document.querySelectorAll('[data-wtools]').forEach(b=>b.onclick=()=>{WS.tools=!WS.tools;render()});
  document.querySelectorAll('[data-wp]').forEach(b=>b.onclick=()=>{WS.pane=b.dataset.wp;S.set('wpane',WS.pane);render()});
  const q=$('#wq');if(q)q.oninput=()=>{WS.q=q.value;const y=q.selectionStart;render();const n=$('#wq');n.focus();n.setSelectionRange(y,y)};
@@ -2483,7 +2565,7 @@ function wireWorship(){wsInbox();document.body.classList.toggle('wsong-open',!!(
  document.querySelectorAll('[data-wback]').forEach(b=>b.onclick=()=>{if(WS.song){WS.song=null;if(WS.from){WS.set=WS.from;WS.from=null}}else WS.set=null;render();scrollTo(0,0)});
  document.querySelectorAll('[data-wnew]').forEach(b=>b.onclick=()=>{WS.edit='new';render();scrollTo(0,0)});
  document.querySelectorAll('[data-wedit]').forEach(b=>b.onclick=()=>{WS.edit=b.dataset.wedit;render();scrollTo(0,0)});
- document.querySelectorAll('[data-wcancel]').forEach(b=>b.onclick=()=>{WS.edit=null;render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wcancel]').forEach(b=>b.onclick=()=>{wfDrop(WS.enew||[],true);WS.enew=[];WS.efor=null;WS.edit=null;render();scrollTo(0,0)});
  document.querySelectorAll('[data-wnewset]').forEach(b=>b.onclick=()=>{const st={id:wId(),name:'',items:[],date:wToday()};wSaveSet(st);WS.set=st.id;render();scrollTo(0,0);const n=$('#ws-name');if(n)n.focus()});
  document.querySelectorAll('[data-wpresent]').forEach(b=>b.onclick=()=>wPresent([{id:b.dataset.wpresent}],''));
  document.querySelectorAll('[data-wpresentset]').forEach(b=>b.onclick=()=>{const st=wSets().find(x=>x.id===b.dataset.wpresentset);if(st)wPresent(st.items,st.name)});
@@ -2504,11 +2586,12 @@ function wireWorship(){wsInbox();document.body.classList.toggle('wsong-open',!!(
      res.innerHTML=`<p class="w-hint">Apple Music: ${esc(x.trackName)} · ${esc(x.artistName)}<br>Spotify: the button opens a Spotify search for this song. For the exact track, paste its link (Spotify → Share → Copy Song Link).</p>`})})};
   $('#wf-save').onclick=()=>{const t=$('#wf-t').value.trim();if(!t){alert('Give the song a title.');return}const all=wSongs(),id=WS.edit==='new'?wId():WS.edit,o=all[id]||{id};
    const p=Worship.parse(src.value);let key=$('#wf-k').value||(p.meta.key&&Worship.keyInfo(p.meta.key)?p.meta.key:'');
-   Object.assign(o,{id,t,a:$('#wf-a').value.trim(),key,capo:+$('#wf-c').value||0,src:src.value,arr:$('#wf-arr').value.trim(),am:amLink($('#wf-am').value.trim()),sp:$('#wf-sp').value.trim(),notes:$('#wf-n').value.trim(),at:Date.now(),edited:1});delete o._p;
+   const was=(o.file||[]).map(x=>x.id),now=(WS.efile||[]).map(x=>x.id);Object.assign(o,{id,t,a:$('#wf-a').value.trim(),key,capo:+$('#wf-c').value||0,src:src.value,arr:$('#wf-arr').value.trim(),am:amLink($('#wf-am').value.trim()),sp:$('#wf-sp').value.trim(),notes:$('#wf-n').value.trim(),at:Date.now(),edited:1});delete o._p;
    if(o.am&&!/^https:\/\/(music|itunes)\.apple\.com\//.test(o.am)){alert('That does not look like an Apple Music link (it should start with https://music.apple.com/).');return}
    if(o.sp&&!/^https:\/\/open\.spotify\.com\//.test(o.sp)){alert('That does not look like a Spotify link (it should start with https://open.spotify.com/).');return}
-   all[id]=o;S.set('wsongs',all);WS.edit=null;WS.song=id;render();scrollTo(0,0)};
-  const del=$('#wf-del');if(del)del.onclick=()=>{if(!confirm('Delete this song? It is also taken out of your setlists.'))return;const all=wSongs();delete all[WS.edit];S.set('wsongs',all);S.set('wsets',wSets().map(st=>(st.items=st.items.filter(it=>it.id!==WS.edit),st)));WS.edit=null;WS.song=null;render()}}
+   if(now.length)o.file=WS.efile.slice();else delete o.file;wfDrop(was.filter(x=>!now.includes(x)));all[id]=o;S.set('wsongs',all);WS.enew=[];WS.efor=null;WS.edit=null;WS.song=id;if(now.length&&!(o.src||'').trim())wfvSet(id,'file');render();scrollTo(0,0);if(now.length)setTimeout(()=>wfSync(true),300)};
+  wfWireEdit();
+  const del=$('#wf-del');if(del)del.onclick=()=>{if(!confirm('Delete this song? It is also taken out of your setlists.'))return;const all=wSongs();wfDrop(((all[WS.edit]||{}).file||[]).map(x=>x.id).concat(WS.enew||[]));WS.enew=[];WS.efor=null;delete all[WS.edit];S.set('wsongs',all);S.set('wsets',wSets().map(st=>(st.items=st.items.filter(it=>it.id!==WS.edit),st)));WS.edit=null;WS.song=null;render()}}
  // setlist
  const st=WS.set&&wSets().find(x=>x.id===WS.set);
  if(st){const nm=$('#ws-name');nm.onchange=()=>{st.name=nm.value.trim();wSaveSet(st)};
@@ -2850,19 +2933,19 @@ function bedPlayer(){const i=cur&&I[cur];return !!(i&&i.audio&&!i.led)}
 /* narration has its switch (BED.on), sermons and introductions theirs (BED.ser); one level (BED.lv) */
 function bedOn(){return bedNarr()?BED.on:BED.ser}
 /* Pray (Be Led's prayers, Meditate's readings and stillness) has the music too, on its own switch (BED.led) and level (BED.plv) */
-function bedPray(){return !!(BED.tail||(window.MED&&MED.on)||(window.LED&&LED.c&&LED.c.busy())||(window.LP&&LP.c&&LP.c.busy()))}
+function bedPray(){return !!(BED.tail==='pray'||(window.MED&&MED.on)||(window.LED&&LED.c&&LED.c.busy())||(window.LP&&LP.c&&LP.c.busy()))}
 /* after a prayer's amen the music plays on, piece after piece, like Stillness — until you play something else, turn the
    music off, or pause it from the lock screen or your earbuds */
-function bedOnAfter(){if(!BED.led||!(PL.list||[]).length)return;BED.tail=true;dlog('music carries on','after the amen');bedSync();
+function bedOnAfter(kind){kind=kind||'pray';if(!(kind==='read'?BED.on:BED.led)||!(PL.list||[]).length)return;BED.tail=kind;dlog('music carries on',kind==='read'?'after the reading':'after the amen');bedSync();
  if('mediaSession' in navigator){PM.ms=false;try{navigator.mediaSession.metadata=new MediaMetadata({title:'Prayer music',artist:'',album:'Pray'})}catch(e){}
-  [['play',()=>{BED.tail=true;bedSync()}],['pause',()=>bedStopAfter()],['seekbackward',null],['seekforward',null],['previoustrack',()=>{bedLoad(-1).then(ok=>{if(ok&&bedWanted())bedStart(0)})}],['nexttrack',()=>{bedLoad(1).then(ok=>{if(ok&&bedWanted())bedStart(0)})}]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}}
+  [['play',()=>{BED.tail=kind;bedSync()}],['pause',()=>bedStopAfter()],['seekbackward',null],['seekforward',null],['previoustrack',()=>{bedLoad(-1).then(ok=>{if(ok&&bedWanted())bedStart(0)})}],['nexttrack',()=>{bedLoad(1).then(ok=>{if(ok&&bedWanted())bedStart(0)})}]].forEach(([k,f])=>{try{navigator.mediaSession.setActionHandler(k,f)}catch(e){}})}}
 function bedStopAfter(){if(!BED.tail)return;BED.tail=false;dlog('music stops','');bedGain(0,900);setTimeout(()=>{if(!bedWanted()){BED.ours=Date.now();bedEl().pause()}},950)}
 /* how loud the music is: your level; under a prayer, moved by how loud that pastor's recording is, so it sits the same
    under every one */
 function bedVoice(){const lu=window.LP&&LP.c&&LP.c.busy()?(lpD()||{}).lu:window.MED&&MED.on?(medCur()||{}).lu:window.LED&&LED.id?(ledById(LED.id)||{}).lu:null;
  return lu==null||PRAY.lum==null?1:Math.max(0.25,Math.min(1.6,Math.pow(10,(lu-PRAY.lum)/20)))}
 function bedLevel(){return bedPray()?BED.plv*bedVoice():BED.lv}
-function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(BED.tail)return BED.led;if(window.LED&&LED.c&&LED.c.busy())return BED.led;if(window.LP&&LP.c&&LP.c.busy())return BED.led;return bedOn()&&bedPlayer()&&!audio.paused}
+function bedWanted(){if(window.MED&&MED.on)return BED.led&&MED.step!=='load'&&!MED.paused;if(BED.tail)return BED.tail==='read'?BED.on:BED.led;if(window.LED&&LED.c&&LED.c.busy())return BED.led;if(window.LP&&LP.c&&LP.c.busy())return BED.led;return bedOn()&&bedPlayer()&&!audio.paused}
 function bedSync(){const b=bedEl();{const w=bedWanted(),k=w+'|'+BED.mode+'|'+(b.getAttribute('src')||'').slice(0,5)+'|'+b.paused;if(DIAG.last.bed!==k){DIAG.last.bed=k;dlog('music',{wanted:w,kind:BED.mode||'none',file:(b.getAttribute('src')||'none').slice(0,5),paused:b.paused,on:BED.led,pieces:(PL.list||[]).length})}}$('#bedb').hidden=!bedPlayer();muBtns();
  if(bedWanted()){clearTimeout(BED.t);
   if(!BED.src){if(BED.busy)return;BED.busy=true;bedLoad(0).then(ok=>{BED.busy=false;if(ok&&bedWanted())bedStart()});return}
@@ -3231,7 +3314,7 @@ function wirePray(){pmEl();pmPaint();if(!PL.list){plLoad().then(()=>{if(view==='
   g.addEventListener('touchstart',e=>{t0=null;if(e.touches.length!==1)return;const t=e.touches[0];if(t.clientX<22||(e.target.closest&&e.target.closest('#mucard,input,.pr-sub,.pr-seg')))return;t0={x:t.clientX,y:t.clientY,lx:t.clientX,ly:t.clientY,t:Date.now(),y0:scrollY}},{passive:true});
   g.addEventListener('touchmove',e=>{if(t0&&e.touches.length===1){t0.lx=e.touches[0].clientX;t0.ly=e.touches[0].clientY}},{passive:true});
   g.addEventListener('touchend',()=>{if(!t0)return;const dx=t0.lx-t0.x,dy=t0.ly-t0.y,ok=Date.now()-t0.t<900&&Math.abs(scrollY-t0.y0)<16;t0=null;if(ok&&Math.abs(dx)>50&&Math.abs(dx)>1.7*Math.abs(dy))swipe(dx<0?1:-1)},{passive:true})}}
-function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boot=true;view=location.hash==='#worship'?'worship':'journey';if(location.hash==='#worship')history.replaceState(null,'',location.pathname);S.set('view',view);try{cutApply()}catch(e){}migrateCamp();migrateCamp3();nplFix();setTimeout(nplOnce,400);setTimeout(()=>{try{ptLoad()}catch(e){}},700)}tabsPaint();if(view==='pray'){m.innerHTML=prayView();wire();wirePray();return}if(view!=='worship')document.body.classList.remove('wsong-open');if(view==='worship'){m.innerHTML=worshipView();wire();wireWorship();return}if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){view='library';LT='series';S.set('view',view);S.set('libtab',LT)}if(view==='bible'){m.innerHTML=bibleView();wire();wireBible();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}
+function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boot=true;view=location.hash==='#worship'?'worship':'journey';if(location.hash==='#worship')history.replaceState(null,'',location.pathname);S.set('view',view);try{cutApply()}catch(e){}migrateCamp();migrateCamp3();nplFix();setTimeout(nplOnce,400);setTimeout(()=>{try{ptLoad()}catch(e){}},700)}tabsPaint();if(view==='pray'){m.innerHTML=prayView();wire();wirePray();return}if(view!=='worship')document.body.classList.remove('wsong-open');if(view==='worship'){m.innerHTML=worshipView();wire();wireWorship();return}if(view==='journey'&&JZ==='stop'){m.innerHTML=journeyView();wire();wireJourney();return}if(view==='bigpicture'){view='library';LT='series';S.set('view',view);S.set('libtab',LT)}if(view==='bible'){m.innerHTML=bibleView();wire();wireBible();return}if(view==='library'){m.innerHTML=libView();wire();wireLib();return}if(!render.boot2){render.boot2=true;migrateCamp();camp=jpIdx();const a=nextAction(camp);if(a&&a.step){TAB=a.step;S.set('tab',TAB)}}if(view==='settings'){m.innerHTML=settingsView();wire();return}if(view==='sc'){m.innerHTML=scView();wire();return}if(view==='stats'){lgTick(true);m.innerHTML=statsView();wireStats();return}
  migrateCamp();migrateCamp3();const w=walk();let first=jpIdx();if(camp==null||camp>=w.length)camp=first;  /* the road is walked up to your place */
  const rd=w.filter(x=>!x.c.intro&&read[x.b.abbr+x.c.c]).length;$('#pct').innerHTML=`<b>${rd}</b> of 1,189 chapters · ${Math.round(1000*rd/1189)/10}%`;
  const rows=D.books[0].yr?24:16,rowH=240,top=120,H=top+rows*rowH+200,x0=70,x1=320;let d=`M ${x0} ${top}`;for(let r=0;r<rows;r++){const f=r%2?x1:x0,t=r%2?x0:x1,y=top+r*rowH;d+=` C ${f} ${y+rowH*.55}, ${t} ${y+rowH*.45}, ${t} ${y+rowH}`}
@@ -3320,8 +3403,84 @@ function go(i){if(view==='journey'&&JZ==='road'){roadPick(i);return}{const w=wal
 /* one step along the road: from your place that is walking on; anywhere else it is just looking */
 function stepTo(to){go(to)}
 function bkForm(again){return `<form id="bkf" class="bkf" autocomplete="on"><input type="text" name="username" autocomplete="username" value="Scripture Companion backup" readonly class="bk-u" tabindex="-1" aria-hidden="true"><input type="password" name="password" id="bkkey" autocomplete="current-password" placeholder="${again?'Paste a new GitHub key':'Paste your GitHub key'}" required><input type="text" id="bkrepo" value="${esc(bkRepo())}" aria-label="Backup repo (owner/name)" autocapitalize="off" spellcheck="false"><button class="btn" type="submit">${again?'Use this key':'Turn on backup'}</button><p class="note" id="bkmsg"></p></form>`}
+/* ---- listening, day by day: how long something was actually playing, kept per day and per phone ("2026-11-15|k3x9q1"),
+   so the backup combines every phone without one overwriting another. s = sermons (j: of them on the Journey, w: by
+   teacher), n = the Bible read aloud and the introductions, p = Pray, c = recording seconds heard (speed), h = by hour ---- */
+let LDAY=S.get('lday',{});const LG={t:0,w:null,sv:0,dev:null};
+function lgDev(){if(LG.dev)return LG.dev;let d=localStorage.getItem('sc:devid');if(!d){d=Math.random().toString(36).slice(2,8);try{localStorage.setItem('sc:devid',d)}catch(e){}}return LG.dev=d}
+function lgDay(ms){const d=new Date(ms);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function lgSum(e){return e?(e.s||0)+(e.n||0)+(e.p||0)+(e.c||0):0}
+function lgEntry(ms){const k=lgDay(ms)+'|'+lgDev();return LDAY[k]||(LDAY[k]={})}
+function lgWhat(){try{if(audio&&!audio.paused&&cur&&I[cur]){const i=I[cur];if(i.nar||i.intro)return {k:'n'};if(i.led)return {k:'p'};return {k:'s',j:firstAt()[cur]!=null,w:i.who||''}}
+ if(['ledm','medm','lpm','praym'].some(x=>{const e=document.getElementById(x);return e&&!e.paused&&!e.muted&&e.getAttribute('src')&&e.src!==SILENT}))return {k:'p'}}catch(e){}return null}
+const r1=x=>Math.round(x*10)/10;
+/* the time since the last look belongs to what was playing then (at most 30 s, so a phone that slept adds nothing) */
+function lgTick(save){const n=Date.now(),dt=LG.t?Math.min(30,(n-LG.t)/1000):0,w=LG.w;LG.t=n;LG.w=lgWhat();
+ if(w&&dt>0.2){const e=lgEntry(n);e[w.k]=r1((e[w.k]||0)+dt);if(w.j)e.j=r1((e.j||0)+dt);if(w.w){e.w=e.w||{};e.w[w.w]=r1((e.w[w.w]||0)+dt)}const h=new Date(n).getHours();e.h=e.h||{};e.h[h]=r1((e.h[h]||0)+dt)}
+ if((save||n-LG.sv>30000)&&(w||save)){LG.sv=n;S.set('lday',LDAY)}}
+function lgHeard(dt){const e=lgEntry(Date.now());e.c=r1((e.c||0)+dt)}
+setInterval(()=>lgTick(),5000);
+function lgWire(){['play','playing','pause','ended'].forEach(ev=>{AUDIO_EL.forEach(x=>x.addEventListener(ev,()=>lgTick(ev!=='play')));['ledm','medm','lpm','praym'].forEach(id=>{const x=document.getElementById(id);if(x)x.addEventListener(ev,()=>lgTick(ev!=='play'))})})}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')lgTick(true)});
+/* what the numbers say, for Settings and the Listening page */
+function lgDays(){const by={};Object.entries(LDAY).forEach(([k,e])=>{const d=k.split('|')[0],o=by[d]||(by[d]={s:0,j:0,n:0,p:0,c:0,w:{},h:{}});['s','j','n','p','c'].forEach(f=>o[f]+=e[f]||0);
+ Object.entries(e.w||{}).forEach(([x,v])=>o.w[x]=(o.w[x]||0)+v);Object.entries(e.h||{}).forEach(([x,v])=>o.h[x]=(o.h[x]||0)+v)});return by}
+function lgStats(){const by=lgDays(),fa=firstAt(),P=Object.entries(prog).filter(([id,v])=>v&&I[id]&&!I[id].nar);
+ const heard=P.reduce((a,[,v])=>a+(v.heard||0),0),jour=P.filter(([id])=>fa[id]!=null).reduce((a,[,v])=>a+(v.heard||0),0);
+ let n=0,p=0,wall=0,lj=0;Object.values(by).forEach(o=>{n+=o.n;p+=o.p;lj+=o.j;wall+=o.s+o.n+o.p});
+ const today=new Date();today.setHours(12,0,0,0);const dayK=i=>lgDay(today.getTime()-i*864e5),tot=o=>o?o.s+o.n+o.p:0;
+ const week=[0,1,2,3,4,5,6].reduce((a,i)=>a+tot(by[dayK(i)]),0),lastWeek=[7,8,9,10,11,12,13].reduce((a,i)=>a+tot(by[dayK(i)]),0);
+ /* a day counts when something played at least a minute (the log), or a sermon was last played that day (before the log) */
+ const on=new Set(Object.entries(by).filter(([,o])=>tot(o)>=60).map(([d])=>d));P.forEach(([,v])=>{if(v.at&&(v.heard||0)>60)on.add(lgDay(v.at))});
+ let streak=0;for(let i=on.has(dayK(0))?0:1;on.has(dayK(i));i++)streak++;
+ let best=0,run=0,prev=null;[...on].sort().forEach(d=>{const t=new Date(d+'T12:00:00').getTime();run=prev!=null&&Math.round((t-prev)/864e5)===1?run+1:1;prev=t;best=Math.max(best,run)});
+ const fin=P.filter(([,v])=>v.done).length,started=P.filter(([,v])=>(v.heard||0)>60).length;
+ let c=0,s=0;Object.values(by).forEach(o=>{c+=o.c;s+=o.s});
+ return {by,heard,jour:Math.max(jour,lj),n,p,all:Math.max(heard+n+p,wall),week,lastWeek,streak,best,fin,started,c,s,dayK,tot,first:Object.keys(by).sort()[0]||null}}
+const hrs=s=>{const h=s/3600;return h>=10?Math.round(h).toLocaleString():h>=1?h.toFixed(1):h>0?(s/60<1?'<1 min':Math.round(s/60)+' min'):'0'};
+const hv=s=>{const h=s/3600;return h>=1?[h>=10?Math.round(h).toLocaleString():h.toFixed(1),h<1.05?'hour':'hours']:[Math.round(s/60).toLocaleString(),Math.round(s/60)===1?'minute':'minutes']};
+const hrsU=s=>{const v=hrs(s);return /min$/.test(v)?v:v+(v==='1.0'||v==='1'?' hour':' hours')};
+function lgCard(){const L=lgStats();return `<button class="lg-card" id="openstats" aria-label="Listening: see all"><span class="lg-k">Listening</span>
+<span class="lg-row">${[[L.all,'overall'],[L.jour,'on the Journey'],[L.week,'last 7 days']].map(([s,l])=>{const [v,u]=hv(s);return `<span><b>${v}</b><small>${u} ${l}</small></span>`}).join('')}<span><b>${L.streak}</b><small>day streak</small></span></span><span class="lg-go">See all ›</span></button>`}
+/* the Listening page: tiles, the last 30 days, when you listen, teachers, the Journey, speed */
+const LG_C={j:'#2a5fa8',s:'#b8781a',n:'#2a9a72',p:'#8a3f8e'},LG_N={j:'Journey',s:'Other sermons',n:'Scripture',p:'Pray'};
+function lgBars(vals,o){/* one series of bars: vals [{v,lab,tip}] */const W=o.w||340,H=o.h||110,n=vals.length,gap=o.gap==null?2:o.gap,bw=(W-gap*(n-1))/n,mx=Math.max(1,...vals.map(x=>x.v));
+ return `<svg class="lg-svg" viewBox="0 0 ${W} ${H+18}" role="img" aria-label="${esc(o.aria||'')}">`+vals.map((x,i)=>{const h=x.v?Math.max(2,x.v/mx*H):0,X=i*(bw+gap);
+  return `<g data-tip="${esc(x.tip)}"><rect x="${X}" y="0" width="${bw}" height="${H}" fill="transparent"/>${h?`<path d="${barPath(X,H-h,bw,h)}" fill="${o.color||LG_C.j}"/>`:''}${x.lab?`<text x="${X+bw/2}" y="${H+14}" text-anchor="middle">${esc(x.lab)}</text>`:''}</g>`}).join('')+`<line x1="0" x2="${W}" y1="${H}" y2="${H}" class="lg-base"/></svg>`}
+function barPath(x,y,w,h){const r=Math.min(4,w/2,h);return `M${x},${y+h}V${y+r}Q${x},${y} ${x+r},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h}Z`}
+function lgStack(days,L){/* the last 30 days, minutes, stacked Journey / other sermons / Scripture / Pray, 2px gaps */const W=340,H=120,n=days.length,gap=2,bw=(W-gap*(n-1))/n;
+ const vals=days.map(d=>{const o=L.by[d]||{};return {j:(o.j||0)/60,s:Math.max(0,(o.s||0)-(o.j||0))/60,n:(o.n||0)/60,p:(o.p||0)/60}}),mx=Math.max(10,...vals.map(v=>v.j+v.s+v.n+v.p));
+ return `<svg class="lg-svg" viewBox="0 0 ${W} ${H+18}" role="img" aria-label="Minutes listened, last 30 days">`+vals.map((v,i)=>{const X=i*(bw+gap);let y=H,segs='';const ks=['j','s','n','p'].filter(k=>v[k]>0);
+  ks.forEach((k,q)=>{const h=v[k]/mx*H;if(h<0.5)return;const top=q===ks.length-1;segs+=top?`<path d="${barPath(X,y-h,bw,h)}" fill="${LG_C[k]}"/>`:`<rect x="${X}" y="${y-h}" width="${bw}" height="${Math.max(0,h-1)}" fill="${LG_C[k]}"/>`;y-=h+ (top?0:1)});
+  const d=new Date(days[i]+'T12:00:00'),tot=v.j+v.s+v.n+v.p,lab=i%7===(n-1)%7?d.toLocaleDateString('en-US',{month:'short',day:'numeric'}):'';
+  return `<g data-tip="${esc(d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+' · '+(tot?Math.max(1,Math.round(tot))+' min':'nothing')+((ps=>ps.length>1?' ('+ps.join(', ')+')':'')(['j','s','n','p'].filter(k=>v[k]>=0.5).map(k=>LG_N[k]+' '+Math.round(v[k])))))}"><rect x="${X}" y="0" width="${bw}" height="${H}" fill="transparent"/>${segs}${lab?`<text x="${X+bw/2}" y="${H+14}" text-anchor="middle">${lab}</text>`:''}</g>`}).join('')+`<line x1="0" x2="${W}" y1="${H}" y2="${H}" class="lg-base"/></svg>`}
+function statsView(){const L=lgStats(),days=[...Array(30)].map((_,i)=>L.dayK(29-i)),wk=L.week,lw=L.lastWeek;
+ const H24=[...Array(24)].map((_,h)=>Object.values(L.by).reduce((a,o)=>a+(o.h[h]||0),0)),WD=[0,0,0,0,0,0,0];Object.entries(L.by).forEach(([d,o])=>{WD[(new Date(d+'T12:00:00').getDay()+6)%7]+=L.tot(o)});
+ const T={};Object.entries(prog).forEach(([id,v])=>{const i=I[id];if(!v||!i||i.nar||i.intro)return;const k=i.who||'';const o=T[k]||(T[k]={h:0,f:0});o.h+=v.heard||0;if(v.done)o.f++});
+ const TL=Object.entries(T).filter(([,o])=>o.h>=60).sort((a,b)=>b[1].h-a[1].h),tmax=Math.max(1,...TL.map(([,o])=>o.h));
+ const w=walk(),j=jpIdx(),rd=w.filter(x=>!x.c.intro&&read[scrKey(x)]).length,chs=w.filter(x=>!x.c.intro).length;let cf=0,ct=0;if(coreOn())w.forEach((x,i)=>stepsOf(i).teach.forEach(id=>{ct++;if(isDone(id))cf++}));
+ const recent=Object.entries(prog).filter(([id,v])=>v&&v.done&&I[id]&&!I[id].nar).sort((a,b)=>(b[1].at||0)-(a[1].at||0)).slice(0,5);
+ const avgSp=L.s>60?L.c/L.s:0,saved=Math.max(0,L.c-L.s),since=L.first?new Date(L.first+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'today';
+ const tileH=(s,l,sub)=>{const [v,u]=hv(s);return tile(v,u+' '+l,sub)},tile=(v,l,sub)=>`<div class="lg-tile"><b>${v}</b><span>${l}</span>${sub?`<small>${sub}</small>`:''}</div>`;
+ const diff=wk-lw,pct=lw>=600?Math.round(diff/lw*100):null;
+ return `<div class="settings lgp"><button class="btn" id="lgback">‹ Settings</button><h2 class="serif" style="margin:14px 0 4px">Listening</h2>
+<p class="note">Everything you've listened to, on every phone with your backup.</p>
+<div class="lg-tiles">${tileH(L.all,'overall','sermons, Scripture and Pray')}${tileH(L.jour,'on the Journey',L.heard?Math.round(L.jour/L.heard*100)+'% of your teaching':'')}${tileH(L.heard,'of teaching',L.fin.toLocaleString()+' sermon'+(L.fin===1?'':'s')+' finished')}${tileH(L.n,'of Scripture','read aloud, since '+since)}${tileH(L.p,'in Pray','since '+since)}${tile(L.streak,'day streak','best '+L.best)}</div>
+<h3 class="lg-h">Last 30 days</h3><p class="note lg-sub">${hrsU(wk)} in the last 7 days${pct!=null?` · ${pct>=0?'+':''}${pct}% on the week before`:lw?` · ${hrsU(lw)} the week before`:''}</p>
+<div class="lg-legend">${['j','s','n','p'].map(k=>`<span><i style="background:${LG_C[k]}"></i>${LG_N[k]}</span>`).join('')}</div>
+<div class="lg-chart" data-chart>${lgStack(days,L)}<p class="lg-tip" aria-live="polite">Tap a day for its minutes.</p></div>
+<h3 class="lg-h">When you listen</h3><div class="lg-chart" data-chart>${lgBars(H24.map((v,h)=>({v,lab:h%6===0?['12a','6a','12p','6p'][h/6]:'',tip:(h%12||12)+(h<12?' am':' pm')+' · '+(v?Math.round(v/60)+' min':'nothing')})),{aria:'Minutes by hour of day',color:LG_C.j})}<p class="lg-tip" aria-live="polite">Tap an hour.</p></div>
+<div class="lg-chart" data-chart>${lgBars(WD.map((v,i)=>({v,lab:'MTWTFSS'[i],tip:['Mondays','Tuesdays','Wednesdays','Thursdays','Fridays','Saturdays','Sundays'][i]+' · '+(v?hrsU(v):'nothing')})),{aria:'By weekday',h:70,gap:6,color:LG_C.j})}<p class="lg-tip" aria-live="polite">Tap a day of the week.</p></div>
+<h3 class="lg-h">By teacher</h3><div class="lg-teach">${TL.map(([k,o])=>`<div class="lg-tr"><span class="lg-tn">${esc(NAMES[k]||k||'Other')}</span><span class="lg-tb"><i style="width:${(o.h/tmax*100).toFixed(1)}%"></i></span><span class="lg-tv">${hrs(o.h)}${/min/.test(hrs(o.h))?'':' h'} · ${o.f} done</span></div>`).join('')||'<p class="note">Nothing yet.</p>'}</div>
+<h3 class="lg-h">The Journey</h3><div class="lg-tiles">${tile((j+1).toLocaleString()+' / '+w.length.toLocaleString(),'stop you are at',esc(stopName(w[j])))}${tile(rd.toLocaleString()+' / '+chs.toLocaleString(),'chapters of Scripture')}${ct?tile(cf.toLocaleString()+' / '+ct.toLocaleString(),'Core teachings finished'):''}</div>
+<h3 class="lg-h">Speed</h3><p class="note">${avgSp?`You listen at <b>${avgSp.toFixed(2).replace(/0$/,'')}×</b> on average${saved>=60?`, which has saved you <b>${hrsU(saved)}</b>`:''} since ${since}.`:`Speed is set to <b>${speed}×</b>. The average and the time it saves show once you've listened a little.`}</p>
+${recent.length?`<h3 class="lg-h">Recently finished</h3><div class="lg-rec">${recent.map(([id,v])=>`<button data-full="${id}"><b>${esc(dispTitle(I[id]))}</b><small>${esc(teacher(I[id]))}${v.at?' · '+new Date(v.at).toLocaleDateString('en-US',{month:'short',day:'numeric'}):''}</small></button>`).join('')}</div>`:''}
+<p class="note lg-foot">Kept with your backup and combined across your phones. Day-by-day history starts ${since}; the totals include everything before.</p></div>`}
+function wireStats(){const b=$('#lgback');if(b)b.onclick=()=>{view='settings';render();window.scrollTo(0,0)};
+ document.querySelectorAll('[data-chart]').forEach(c=>c.querySelectorAll('[data-tip]').forEach(g=>g.onclick=()=>{c.querySelectorAll('.lg-on').forEach(x=>x.classList.remove('lg-on'));g.classList.add('lg-on');c.querySelector('.lg-tip').textContent=g.dataset.tip}));
+ document.querySelectorAll('.lg-rec [data-full]').forEach(x=>x.onclick=()=>play(x.dataset.full,{full:true}))}
 function settingsView(){
- return `<div class="settings"><button class="sccard" id="opensc"><span class="serif">Secret Church</span><small>${scGroups().length} nights · every session in order ›</small></button><h2 class="serif" style="margin:0 0 8px">Your journey</h2><p class="note">${(()=>{const w=walk(),j=jpIdx(),rd=w.filter(x=>!x.c.intro&&read[scrKey(x)]).length,hh=Math.round(Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0)/3600),sk=Object.keys(SKIP).length;
+ return `<div class="settings"><button class="sccard" id="opensc"><span class="serif">Secret Church</span><small>${scGroups().length} nights · every session in order ›</small></button>${lgCard()}<h2 class="serif" style="margin:0 0 8px">Your journey</h2><p class="note">${(()=>{const w=walk(),j=jpIdx(),rd=w.filter(x=>!x.c.intro&&read[scrKey(x)]).length,hh=Math.round(Object.values(prog).reduce((a,v)=>a+(v&&v.heard||0),0)/3600),sk=Object.keys(SKIP).length;
   return `You are at <b>${esc(stopName(w[j]))}</b>${rd?`, with ${rd.toLocaleString()} chapter${rd>1?'s':''} of Scripture read`:''}${hh?` and ${hh.toLocaleString()} hour${hh>1?'s':''} of teaching heard`:''}.</p><p class="note">${coreOn()?`Each stop has three steps: the narrator's <b>Introduction</b>, the <b>Scripture</b> to read or hear, and one <b>Core</b> teaching on it, chosen for how well it explains the passage. Everything else on the chapter is in <b>Go Deeper</b>, optional. A teaching that covers several chapters shows on each of them. Any sermon in Go Deeper can be made Core with a tap.`:`Each stop on the road has three steps: an <b>Overview</b> (the book, or a stretch of chapters), the <b>Scripture</b> itself to read or hear, and <b>Teaching</b>: the whole chapter first, then verse by verse. Continue always offers the next one. A teaching that covers several chapters waits at the first of them, and the next chapter waits for you.`}${sk?` <button class="lnk" id="unskip">Bring back the ${sk} you skipped</button>`:''}`})()}</p>
  <p>
  <span class="btn" id="who" style="display:inline-block;cursor:pointer">Voices: ${cfg.who?NAMES[cfg.who]+' only':'everyone'} — switch</span></p>
@@ -3349,7 +3508,7 @@ function scView(){const G=scGroups(),tot=G.reduce((a,g)=>a+g.ids.length,0);
 function spdLabel(){return (speed%1?speed.toFixed(2).replace(/0$/,''):speed)+'×'}
 let audio=$('#audio');const AUDIO_EL=[$('#audio'),$('#audiofx')];let cur=null,speed=S.get('speed',1);AUDIO_EL.forEach(a=>a.playbackRate=speed);
 /* events from whichever player is active (the other one is idle) */
-function onAudio(type,fn){AUDIO_EL.forEach(el=>el.addEventListener(type,e=>{if(el===audio)fn(e)}))}
+function onAudio(type,fn){AUDIO_EL.forEach(el=>el.addEventListener(type,e=>{if(el===audio)fn(e)}))}lgWire();
 /* ---- Even out volume: the leveler listens as audio plays and steers every episode to one level (loud ones down,
    quiet ones up, within ±10 dB, slowly so speech never pumps; pauses between words are ignored), then a gentle
    limiter catches peaks. Only for hosts that allow the browser to process their audio (CORS). ---- */
@@ -3396,7 +3555,7 @@ let saveSec=-1;onAudio('timeupdate',()=>{if(!cur||narWait)return;const d=audio.d
  if(tail()&&d&&d-t<=tail()&&!audio.paused&&!audio.seeking&&ready){audio.pause();finished();return}/* the outro after the last word: done */
  if(I[cur].nar){if(!ready)return;narMark();if(BBM&&view==='bible')bbMark();if(d&&d-t<45)narPrefetch();const sec=Math.floor(t);if(sec%5===0&&sec!==saveSec){saveSec=sec;const pos=S.get('narpos',{});pos[cur]=t;S.set('narpos',pos)}return}
  if(!ready)return;const p=prog[cur]=Object.assign(prog[cur]||{},{dur:d});
- if(lastT!==null&&!audio.paused&&!audio.seeking){const dt=t-lastT;if(dt>0&&dt<4)p.heard=Math.min(d||Infinity,(p.heard||0)+dt)}lastT=t;
+ if(lastT!==null&&!audio.paused&&!audio.seeking){const dt=t-lastT;if(dt>0&&dt<4){p.heard=Math.min(d||Infinity,(p.heard||0)+dt);lgHeard(dt)}}lastT=t;
  const wasDone=!!p.done;if(d&&p.heard>=DONE_AT*body(cur)&&nearEnd(cur,t)){p.done=true;delete p.reopen}const nowDone=!!p.done,sec=Math.floor(t);
  if((sec%5===0&&sec!==saveSec)||nowDone!==wasDone){saveSec=sec;p.pos=t;p.at=Date.now();S.set('prog',prog);if(nowDone!==wasDone)render()}});
 onAudio('seeking',()=>{lastT=null});onAudio('play',()=>{lastT=null});
@@ -3543,9 +3702,9 @@ function narStep(dir){const k=narNow();if(dir<0){const t0=k>=0?NAR.m[k][1]:0;aud
 /* the next chapter read aloud, across books */
 function narAfter(b,c){if(hasNar(b.abbr,c+1))return [b,c+1];const i=D.books.findIndex(x=>x.name===b.name);for(let j=i+1;j<D.books.length;j++)if(hasNar(D.books[j].abbr,1))return [D.books[j],1];return null}
 function narNext(){const was=NAR;if(!was)return;read[was.b.abbr+was.c]=true;S.set('read',read);const pos=S.get('narpos',{});delete pos[was.id];S.set('narpos',pos);
- if(BBM){const nx=narAfter(was.b,was.c);if(nx)bbPlayFrom(nx[0],nx[1],1);else{BBM=false;bbSync()}return}   /* from the Bible tab: on to the next chapter */
+ if(BBM){const nx=narAfter(was.b,was.c);if(nx)bbPlayFrom(nx[0],nx[1],1);else{BBM=false;bbSync();bedOnAfter('read')}return}   /* from the Bible tab: on to the next chapter */
  if(JM){const x=walk()[jpIdx()];if(x&&!x.c.intro&&x.b.name===was.b.name&&x.c.c===was.c){next();return}JM=false}
- render();note(was.b.name+' '+was.c+' ✓')}   /* one chapter at a time: the Bible tab is where reading keeps going */
+ render();note(was.b.name+' '+was.c+' ✓');bedOnAfter('read')}   /* one chapter at a time: the Bible tab is where reading keeps going */
 let fullAtScroll=0;
 /* ---- a sermon's menu (the ••• by its title, or press and hold it in any list): Favorite, Share, Share from where you
    are, Copy link. A shared link opens a small page anyone can listen on (s/<id>.html), nothing of yours in it. ---- */
@@ -3644,7 +3803,7 @@ function wire(){if(view==='settings'&&!PL.list)plLoad().then(()=>{if(view==='set
  const mo=$('#more');if(mo)mo.onclick=()=>{decorate.more=true;decorate.moving=true;render();decorate.moving=false};
  const g=$('#gear');g.onclick=()=>setView(view==='settings'?PREV:'settings');document.querySelectorAll('[data-settings]').forEach(b=>b.onclick=()=>setView('settings'));document.querySelectorAll('[data-srch]').forEach(b=>b.onclick=()=>openSearch());
  const back=$('#back');if(back)back.onclick=()=>setView(PREV==='settings'?'journey':PREV);const us=$('#unskip');if(us)us.onclick=()=>{SKIP={};S.set('skip',SKIP);note('Everything you skipped is waiting again where it belongs.');render()};
- const osc=$('#opensc');if(osc)osc.onclick=()=>{view='sc';S.set('view',view);render();window.scrollTo(0,0)};
+ const ost=$('#openstats');if(ost)ost.onclick=()=>{lgTick(true);view='stats';S.set('view',view);render();window.scrollTo(0,0)};const osc=$('#opensc');if(osc)osc.onclick=()=>{view='sc';S.set('view',view);render();window.scrollTo(0,0)};
  const scb=$('#scback');if(scb)scb.onclick=()=>{LT='series';S.set('libtab',LT);setView('library')};
  document.querySelectorAll('details.sce').forEach(d=>d.ontoggle=()=>{d.open?OPEN.add(d.dataset.sck):OPEN.delete(d.dataset.sck)});const ord=$('#ord');if(ord)ord.onclick=()=>{cfg.order=cfg.order==='narr'?'canon':'narr';S.set('cfg',cfg);render()};const lvb=$('#lvl');if(lvb)lvb.onclick=()=>{S.set('level',!levelOn());render()};document.querySelectorAll('[data-cpref]').forEach(b=>b.onclick=()=>{const k=b.dataset.cpref;if(k==='off')cfg.core=false;else{cfg.core=true;cfg.corePref=k}S.set('cfg',cfg);render()});
  const cr=$('#corereset');if(cr)cr.onclick=()=>{S.set('coreSet',{});render()};
