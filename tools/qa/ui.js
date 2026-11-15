@@ -661,7 +661,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       return X.evaluate(() => ({ music: !$('#bedm').paused, tail: BED.tail })); };
     const o = {}; o.on = await run(true);
     await X.evaluate(() => { const id = Object.keys(I).find(k => I[k].audio && !I[k].nar && !I[k].intro); I[id].audio = __tone; I[id].s = 0; play(id, {}); }); await wait(4500); o.next = await X.evaluate(() => ({ music: !$('#bedm').paused, tail: BED.tail })); await X.evaluate(() => audio.pause());
-    o.off = await run(false); o.errs = e2.filter(m => !CUTOFF(m)); o.log = await X.evaluate(() => DIAG.a.filter(x => /music|bed/i.test(JSON.stringify(x))).slice(-8).map(x => JSON.stringify(x).slice(0, 160))); await cc.close();
+    o.off = await run(false); o.errs = e2.filter(m => !CUTOFF(m)); o.log = await X.evaluate(() => DIAG.a.slice(-14).map(x => JSON.stringify(x).slice(0, 140))); await cc.close();
     return (o.on.music && o.on.tail === 'read' && !o.next.music && !o.next.tail && !o.off.music && !o.off.tail && !o.errs.length) || o; });
   // a tiny hand-made PDF (made-up words) and a one-pixel PNG
   const mkpdf = pages => { const objs = [], add = s => { objs.push(s); return objs.length; }, font = add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
@@ -742,7 +742,8 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     const out = {};
     for (const dev of ['iPhone SE', 'iPhone 14 landscape', 'iPhone 14']) { const cc = await b.newContext({ ...devices[dev] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500);
       const o = await X.evaluate(async () => { const w = ms => new Promise(r => setTimeout(r, ms)), ID = 'c532d51fe14b'; play(ID, { full: true }); audio.pause(); await w(500); const np = NP();
-        const r = { touch: getComputedStyle(np).touchAction, tall: np.scrollHeight > np.clientHeight + 2, reach: {} };
+        const vv = window.visualViewport, wide = [...document.querySelectorAll('body *')].filter(e => { const q = e.getBoundingClientRect(); return q.width && q.right > innerWidth + 2 && getComputedStyle(e).position !== 'fixed'; }).slice(0, 4).map(e => (e.id || String(e.className).slice(0, 30) || e.tagName) + ':' + Math.round(e.getBoundingClientRect().right));
+        const r = { touch: getComputedStyle(np).touchAction, tall: np.scrollHeight > np.clientHeight + 2, reach: {}, geo: { inner: [innerWidth, innerHeight], vv: vv ? [Math.round(vv.width), Math.round(vv.height), +vv.scale.toFixed(2)] : null, doc: [document.documentElement.clientWidth, document.documentElement.clientHeight, document.documentElement.scrollWidth], np: [np.clientHeight, np.scrollHeight, Math.round(np.getBoundingClientRect().height)], wide } };
         np.scrollTop = np.scrollHeight; await w(200);
         ['#pp', '#prv', '#nxt', '#spd', '#bedb', '#zz', '#seek', '#np-more'].forEach(s => { const e = $(s); if (!e || e.hidden || !e.offsetParent) return; const q = e.getBoundingClientRect(); np.scrollTop = 0; let ok = false;
           for (let y = 0; y <= np.scrollHeight; y += 40) { np.scrollTop = y; const k = e.getBoundingClientRect(); if (k.top >= 0 && k.bottom <= innerHeight) { ok = true; break; } } r.reach[s] = ok; });
