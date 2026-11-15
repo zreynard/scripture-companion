@@ -595,7 +595,10 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       await X.evaluate(async ID => { I[ID].audio = __ser; I[ID].s = 0; play(ID, { full: true }); audio.pause(); await new Promise(r => setTimeout(r, 300)); bedSync(); }, ID); await wait(300);   // the stand-in recording, from its start
       const boxes = () => X.evaluate(() => ['#pp', '#prv', '#nxt', '#bk', '#fw', '#seek', '#bedb', '#zz'].map(s => { const r = $(s).getBoundingClientRect(); return [s, Math.round(r.x), Math.round(r.y), Math.round(r.width), Math.round(r.height)].join(','); }).join(' '));
       const o = { btn: await X.evaluate(() => [!$('#bedb').hidden, $('#bedb').textContent]) };
-      await X.evaluate(() => $('#bedb').scrollIntoView({ block: 'center' })); await wait(300);   // in view first: the test's click must not scroll the player (a tap never does)
+      /* the button fully on screen first, as a person would have it before tapping: the player panel scrolled to it */
+      o.inView = await X.evaluate(async () => { const b = $('#bedb'); for (let i = 0; i < 4; i++) { const r = b.getBoundingClientRect(); if (r.top >= 0 && r.bottom <= innerHeight - 8) return true;
+          let s = b.parentElement; while (s && s !== document.body && !(s.scrollHeight > s.clientHeight + 1 && /auto|scroll/.test(getComputedStyle(s).overflowY))) s = s.parentElement;
+          const d = r.bottom - innerHeight + 60; if (s && s !== document.body) s.scrollTop += d; else window.scrollBy(0, d); await new Promise(z => setTimeout(z, 250)); } return false; });
       let b0 = await boxes(); for (let k = 0; k < 20; k++) { await wait(300); const n = await boxes(); if (n === b0) break; b0 = n; }   // the player settled (times, the file's state)
       await X.evaluate(() => $('#bedb').click()); await wait(400);   // a tap where it is (the test's own click would scroll the player first)
       o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded') }; });
@@ -613,7 +616,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; setMini(false); bedSync(); }); await wait(300);
       await X.click('#bedb'); await wait(400); o.read = await X.evaluate(() => [$('#mucard').innerText.split('\n')[0], $('#mcon').checked, $('#bedb').textContent]);
       o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; await cc.close(); }
-    const ok = Object.values(out).every(o => o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && !o.card.chk && o.card.exp === 'true' && !o.moved
+    const ok = Object.values(out).every(o => o.inView && o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && !o.card.chk && o.card.exp === 'true' && !o.moved
       && o.saved[0] === true && o.saved[1] === false && o.saved[2] && !o.saved[3] && o.saved[4] === '♪ Music on' && o.saved[5] && o.full && o.again && o.plays && o.stops && o.esc && o.through[0] && o.through[1] && o.mini && o.other
       && o.read[0] === 'Music under the Bible reading' && o.read[1] === false && o.read[2] === '♪ Music off' && !o.errs.length);
     return ok || out; });
