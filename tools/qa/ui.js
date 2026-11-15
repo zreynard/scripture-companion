@@ -597,7 +597,8 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       const boxes = () => X.evaluate(() => { const np = NP(), q = np.getBoundingClientRect(); return ['#pp', '#prv', '#nxt', '#bk', '#fw', '#seek', '#bedb', '#zz'].map(s => { const r = $(s).getBoundingClientRect(); return [s, Math.round(r.x - q.x + np.scrollLeft), Math.round(r.y - q.y + np.scrollTop), Math.round(r.width), Math.round(r.height)].join(','); }).join(' '); });
       const o = { btn: await X.evaluate(() => [!$('#bedb').hidden, $('#bedb').textContent]) };
       /* the button fully on screen first, as a person would have it before tapping: the player panel scrolled to it */
-      o.inView = await X.evaluate(async () => { const b = $('#bedb'); for (let i = 0; i < 4; i++) { const r = b.getBoundingClientRect(); if (r.top >= 0 && r.bottom <= innerHeight - 8) return true;
+      o.inView = await X.evaluate(async () => { const b = $('#bedb'), np = NP(); for (let i = 0; i < 40; i++) { const m = getComputedStyle(np).transform; if (m === 'none' || /^matrix\(1, 0, 0, 1, 0, 0\)$/.test(m)) break; await new Promise(z => setTimeout(z, 100)); }   // the player has finished sliding up
+        for (let i = 0; i < 4; i++) { const r = b.getBoundingClientRect(); if (r.top >= 0 && r.bottom <= innerHeight - 8) return true;
           let s = b.parentElement; while (s && s !== document.body && !(s.scrollHeight > s.clientHeight + 1 && /auto|scroll/.test(getComputedStyle(s).overflowY))) s = s.parentElement;
           const d = r.bottom - innerHeight + 60; if (s && s !== document.body) s.scrollTop += d; else window.scrollBy(0, d); await new Promise(z => setTimeout(z, 250)); } return false; });
       let b0 = await boxes(); for (let k = 0; k < 20; k++) { await wait(300); const n = await boxes(); if (n === b0) break; b0 = n; }   // the player settled (times, the file's state)
