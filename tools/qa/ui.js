@@ -615,7 +615,8 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       // the Bible reading keeps its own switch
       await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; setMini(false); bedSync(); }); await wait(300);
       step = 'bedb click 6'; await X.click('#bedb'); await wait(400); o.read = await X.evaluate(() => [$('#mucard').innerText.split('\n')[0], $('#mcon').checked, $('#bedb').textContent]);
-      o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; } catch (e) { out[dev] = { failedAt: step, err: String(e).slice(0, 200) }; } await cc.close(); }
+      o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; } catch (e) { out[dev] = { failedAt: step, err: String(e).split('Call log:')[1] ? String(e).split('Call log:')[1].slice(0, 700) : String(e).slice(0, 300), geo: await X.evaluate(() => { const R = e => e ? (r => [Math.round(r.left), Math.round(r.top), Math.round(r.width), Math.round(r.height)])(e.getBoundingClientRect()) : null, b = $('#bedb'), r = b.getBoundingClientRect(), top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+        return { vp: [innerWidth, innerHeight], bedb: R(b), card: R($('#mucard')), at: top ? (top.id || String(top.className) || top.tagName) : null, mini: NP().classList.contains('mini') }; }).catch(x => String(x)) }; } await cc.close(); }
     const ok = Object.values(out).every(o => !o.failedAt && o.inView && o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && o.card.clear && !o.card.chk && o.card.exp === 'true' && !o.moved
       && o.saved[0] === true && o.saved[1] === false && o.saved[2] && !o.saved[3] && o.saved[4] === '♪ Music on' && o.saved[5] && o.full && o.again && o.plays && o.stops && o.esc && o.through[0] && o.through[1] && o.mini && o.other
       && o.read[0] === 'Music under the Bible reading' && o.read[1] === false && o.read[2] === '♪ Music off' && !o.errs.length);
@@ -659,7 +660,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       return X.evaluate(() => ({ music: !$('#bedm').paused, tail: BED.tail })); };
     const o = {}; o.on = await run(true);
     await X.evaluate(() => { const id = Object.keys(I).find(k => I[k].audio && !I[k].nar && !I[k].intro); I[id].audio = __tone; I[id].s = 0; play(id, {}); }); await wait(4500); o.next = await X.evaluate(() => ({ music: !$('#bedm').paused, tail: BED.tail })); await X.evaluate(() => audio.pause());
-    o.off = await run(false); o.errs = e2.filter(m => !CUTOFF(m)); await cc.close();
+    o.off = await run(false); o.errs = e2.filter(m => !CUTOFF(m)); o.log = await X.evaluate(() => DIAG.a.filter(x => /music|bed/i.test(JSON.stringify(x))).slice(-8).map(x => JSON.stringify(x).slice(0, 160))); await cc.close();
     return (o.on.music && o.on.tail === 'read' && !o.next.music && !o.next.tail && !o.off.music && !o.off.tail && !o.errs.length) || o; });
   // a tiny hand-made PDF (made-up words) and a one-pixel PNG
   const mkpdf = pages => { const objs = [], add = s => { objs.push(s); return objs.length; }, font = add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
