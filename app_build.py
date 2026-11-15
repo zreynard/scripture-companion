@@ -890,7 +890,7 @@ body.mapopen #sheet{z-index:24}
 #np-read .rc{font:600 12px -apple-system,system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin:22px 0 2px}#np-read .rc:first-child{margin-top:6px}
 #np-read .txt{font-size:19px;line-height:1.7}#np-read .rmore{display:block;margin:18px auto;border:1px solid var(--line);background:#fff;border-radius:20px;padding:9px 16px;font:14px -apple-system,system-ui,sans-serif;color:var(--ink)}
 .narbar .nx{background:#fff;color:var(--ink);border:1px solid var(--line);padding:9px 12px}
-#np .ctl2{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}
+#np .ctl2{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-top:10px;row-gap:6px}
 #np #bedb{border:1px solid rgba(27,36,64,.14);border-radius:22px;background:#fff;padding:8px 12px;font-size:14.5px;font-weight:600;color:var(--ink)}#np #bedb.on{background:#f6ecd6;color:#7a5c1c;border-color:#e3cf9c}#bedb[hidden]{display:none}
 .spd{display:flex;align-items:center;gap:2px;border:1px solid rgba(27,36,64,.14);border-radius:22px;background:#fff}.spd button{min-width:40px;font-weight:600}#np .ctl2 .spd button{padding:8px 10px}#spd{min-width:58px!important}
 #np .ctl2 button{background:none;border:0;color:var(--ink);font:inherit;font-size:15px;padding:10px 4px;white-space:nowrap}
@@ -3787,7 +3787,10 @@ function setMini(m){if(m)closeMusic();NP().classList.toggle('mini',m);if(!m)full
   if(dy>50)setMini(true);else if(dy<-30)setMini(false)});
  np.addEventListener('click',e=>{if(e.target.closest('input')||e.target.closest('button'))return;if(Date.now()-(+np.dataset.swiped||0)<500)return;if(np.classList.contains('mini')){if(document.body.classList.contains('npslim')){document.body.classList.remove('npslim');return}setMini(false)}else if(e.target.closest('.grab'))setMini(true)});
  document.addEventListener('click',e=>{if(np.classList.contains('on')&&!np.classList.contains('mini')&&!np.contains(e.target)&&!(e.target.closest&&e.target.closest('#mucard,#smenu')))setMini(true)},true);
- addEventListener('scroll',()=>{if(MU.el){fullAtScroll=scrollY;return}if(np.classList.contains('on')&&!np.classList.contains('mini')&&Math.abs(scrollY-fullAtScroll)>60)setMini(true)},{passive:true});   /* never while the ♪ card is in use (a slider drag can nudge the page behind) */
+ /* only your own scrolling of the page behind shrinks the full player: the app moving the page (the road finding your
+    stop after it loads) never does, and neither does anything while the ♪ card is in use */
+ let uScroll=0;['touchmove','wheel','keydown'].forEach(ev=>addEventListener(ev,e=>{const g=e.target;if(!(g&&g.nodeType===1&&(np.contains(g)||g.closest('#mucard,#smenu'))))uScroll=Date.now()},{passive:true,capture:true}));
+ addEventListener('scroll',()=>{if(MU.el||Date.now()-uScroll>900){fullAtScroll=scrollY;return}if(np.classList.contains('on')&&!np.classList.contains('mini')&&Math.abs(scrollY-fullAtScroll)>60)setMini(true)},{passive:true});   /* never while the ♪ card is in use (a slider drag can nudge the page behind) */
 })();
 /* wiring */
 function wire(){if(view==='settings'&&!PL.list)plLoad().then(()=>{if(view==='settings')render()});document.querySelectorAll('.settings [data-pradd]').forEach(b=>b.onclick=()=>prPick(()=>{if(view==='settings')render()}));document.querySelectorAll('.settings [data-prrm]').forEach(b=>b.onclick=()=>{if(confirm(bkOn()?'Remove all prayer music from this phone and from your backup?':'Remove all prayer music from this phone?'))prRemoveAll().then(()=>mbRemoveAll().catch(()=>{})).then(()=>render())});document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});

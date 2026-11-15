@@ -745,6 +745,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
         const vv = window.visualViewport, wide = [...document.querySelectorAll('body *')].filter(e => { const q = e.getBoundingClientRect(); return q.width && q.right > innerWidth + 2 && getComputedStyle(e).position !== 'fixed'; }).slice(0, 4).map(e => (e.id || String(e.className).slice(0, 30) || e.tagName) + ':' + Math.round(e.getBoundingClientRect().right));
         const r = { touch: getComputedStyle(np).touchAction, tall: np.scrollHeight > np.clientHeight + 2, reach: {}, geo: { inner: [innerWidth, innerHeight], vv: vv ? [Math.round(vv.width), Math.round(vv.height), +vv.scale.toFixed(2)] : null, doc: [document.documentElement.clientWidth, document.documentElement.clientHeight, document.documentElement.scrollWidth], np: [np.clientHeight, np.scrollHeight, Math.round(np.getBoundingClientRect().height)], wide } };
         np.scrollTop = np.scrollHeight; await w(200);
+        r.over = ['#pp', '#prv', '#nxt', '#spd', '#bedb', '#zz', '#seek', '#np-more'].filter(s => { const e = $(s); if (!e || e.hidden || !e.offsetParent) return false; const q = e.getBoundingClientRect(); return q.left < -1 || q.right > innerWidth + 1; });
         ['#pp', '#prv', '#nxt', '#spd', '#bedb', '#zz', '#seek', '#np-more'].forEach(s => { const e = $(s); if (!e || e.hidden || !e.offsetParent) return; const q = e.getBoundingClientRect(); np.scrollTop = 0; let ok = false;
           for (let y = 0; y <= np.scrollHeight; y += 40) { np.scrollTop = y; const k = e.getBoundingClientRect(); if (k.top >= 0 && k.bottom <= innerHeight) { ok = true; break; } } r.reach[s] = ok; });
         const T = (y) => new Touch({ identifier: 1, target: $('#np-art') || np, clientX: 120, clientY: y });
@@ -755,8 +756,14 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
         return r; });
       if (process.env.SHOTS) { await X.evaluate(() => { NP().classList.remove('mini'); NP().scrollTop = 0; }); await wait(300); await X.screenshot({ path: process.env.SHOTS + '/U99-' + dev.replace(/\s+/g, '') + '.png' }); }
       o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; await cc.close(); }
-    const ok = Object.values(out).every(o => o.touch === 'pan-y' && Object.values(o.reach).every(Boolean) && Object.keys(o.reach).length >= 6 && (o.topPull === undefined || o.topPull === true) && (o.scrolledPull === undefined || o.scrolledPull === false) && !o.errs.length);
+    const ok = Object.values(out).every(o => o.touch === 'pan-y' && !o.over.length && Object.values(o.reach).every(Boolean) && Object.keys(o.reach).length >= 6 && (o.topPull === undefined || o.topPull === true) && (o.scrolledPull === undefined || o.scrolledPull === false) && !o.errs.length);
     return ok || out; });
+  await T('U100 the full player stays open when the app moves the page behind it (the road finding your stop after it loads), and still shrinks when you scroll the page yourself', async () => {
+    const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500);
+    const r = await X.evaluate(async () => { const w = ms => new Promise(r => setTimeout(r, ms)); document.body.style.minHeight = '6000px'; play('c532d51fe14b', { full: true }); audio.pause(); await w(1100);   // past any recent touch
+      window.scrollTo(0, 900); await w(300); const app = !NP().classList.contains('mini');
+      dispatchEvent(new WheelEvent('wheel', { deltaY: 400, bubbles: true })); window.scrollTo(0, 1500); await w(300); const you = NP().classList.contains('mini'); return { app, you }; });
+    await cc.close(); return (r.app && r.you && !e2.filter(m => !CUTOFF(m)).length) || { r, e2 }; });
   await T('U45 no page errors anywhere', async () => { const e = errs.filter(m => !CUTOFF(m)); return e.length === 0 || e.slice(0, 6); });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });
