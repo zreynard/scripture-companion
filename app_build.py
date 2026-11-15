@@ -2454,7 +2454,7 @@ async function wfGet(x,prog){const parts=[];for(let i=0;i<x.parts;i++){let got=n
  const buf=await new Blob(parts).arrayBuffer();if(buf.byteLength!==x.sz)throw 'size';
  try{await WFile.put({id:x.id,ty:x.ty,n:x.n,sz:x.sz,buf})}catch(e){throw 'space'}}
 function wfRefs(){const m={};Object.values(wSongs()).forEach(s=>(s.file||[]).forEach(r=>{if(r&&r.id)m[r.id]=r}));return m}
-async function wfSync(force){if(!bkOn()||WF.busy||(!force&&Date.now()-WF.last<5*60e3))return;WF.busy=true;WF.last=Date.now();try{
+async function wfSync(force){if(!bkOn())return;if(WF.busy){if(force)WF.again=true;return}if(!force&&Date.now()-WF.last<5*60e3)return;WF.busy=true;WF.again=false;WF.last=Date.now();try{
   const refs=wfRefs(),here=await WFile.ids();let {sha,list}=await ghIndex('wfiles/index.json');const on=new Set(list.map(x=>x.id));
   /* down: songs here whose files are in the backup but not on this phone */
   for(const x of list)if(refs[x.id]&&!here.has(x.id)){WF.msg='Bringing a chart file onto this phone…';await wfGet(x);here.add(x.id)}
@@ -2467,7 +2467,7 @@ async function wfSync(force){if(!bkOn()||WF.busy||(!force&&Date.now()-WF.last<5*
   if(gone.length){for(const id of gone){const x=list.find(y=>y.id===id);if(!x)continue;for(let i=0;i<x.parts;i++){const g=await bkGH('/contents/wfiles/'+id+'/'+i);if(g.ok){const j=await g.json();await bkGH('/contents/wfiles/'+id+'/'+i,{method:'DELETE',body:JSON.stringify({message:'Remove chart file',sha:j.sha})})}}}
    const keep=list.filter(x=>!gone.includes(x.id));if(keep.length!==list.length)sha=await ghPutIndex('wfiles/index.json',keep,sha,'Chart files list');localStorage.setItem('sc:wfgone','[]')}
   WF.msg='';dlog('chart files synced',{files:Object.keys(refs).length})}
- catch(e){WF.msg=String(e);WF.last=0;dlog('chart files sync failed',String(e).slice(0,60))}finally{WF.busy=false}}
+ catch(e){WF.msg=String(e);WF.last=0;dlog('chart files sync failed',String(e).slice(0,60))}finally{WF.busy=false;if(WF.again){WF.again=false;setTimeout(()=>wfSync(true),50)}}}   /* a sync asked for while one ran (a file just attached): it runs next, never dropped */
 setTimeout(()=>wfSync(),9000);
 function wSongView(){const s=wSongs()[WS.song];if(!s){WS.song=null;return worshipView()}
  const key=wKeyOf(s),capo=s.capo||0,sh=wShape(s,key,capo),p=wParsed(s),set=WS.from&&wSets().find(x=>x.id===WS.from),pos=set?set.items.findIndex(it=>it.id===s.id):-1;
