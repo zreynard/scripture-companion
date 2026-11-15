@@ -2968,7 +2968,7 @@ function muKind(){return bedNarr()?'read':'ser'}
 function muBtns(){const have=(PL.list||[]).length,lab=on=>'♪ Music'+(have?(on?' on':' off'):''),pb=$('#bedb');
  if(pb){const on=bedOn();pb.textContent=lab(on);pb.classList.toggle('on',on&&!!have)}document.querySelectorAll('[data-prmu]').forEach(b=>b.textContent=lab(BED.led))}
 function closeMusic(){if(!MU.el)return;MU.el.remove();if(MU.anchor)MU.anchor.setAttribute('aria-expanded','false');MU.el=MU.anchor=null}
-function muPlace(keep){const m=MU.el,a=MU.anchor;if(!m||!a)return;const r=a.getBoundingClientRect();if(!keep)MU.ay=r.top;const w=Math.min(330,innerWidth-28);m.style.width=w+'px';m.style.maxHeight='';const h=m.offsetHeight;   /* measured at its own width */
+function muPlace(keep){const m=MU.el,a=MU.anchor;if(!m||!a)return;const r=a.getBoundingClientRect();if(!r.width&&!r.height){closeMusic();return}   /* its button is gone (hidden): the card goes too, never left floating */if(!keep)MU.ay=r.top;const w=Math.min(330,innerWidth-28);m.style.width=w+'px';m.style.maxHeight='';const h=m.offsetHeight;   /* measured at its own width */
  const tb=$('#tabs'),np=NP(),lim=[innerHeight-10];if(tb&&getComputedStyle(tb).display!=='none'){const q=tb.getBoundingClientRect();if(q.height&&q.top<innerHeight)lim.push(q.top-8)}
  if(np&&np.classList.contains('on')&&np.classList.contains('mini')){const q=np.getBoundingClientRect();if(q.top<innerHeight)lim.push(q.top-8)}const bot=Math.min(...lim);
  /* below the button if it fits, else above; where neither has room, the roomier side, the card no taller than that room (it scrolls inside): it never covers its own button */
@@ -3783,7 +3783,7 @@ function setMini(m){if(m)closeMusic();NP().classList.toggle('mini',m);if(!m)full
   if(dy>50)setMini(true);else if(dy<-30)setMini(false)});
  np.addEventListener('click',e=>{if(e.target.closest('input')||e.target.closest('button'))return;if(Date.now()-(+np.dataset.swiped||0)<500)return;if(np.classList.contains('mini')){if(document.body.classList.contains('npslim')){document.body.classList.remove('npslim');return}setMini(false)}else if(e.target.closest('.grab'))setMini(true)});
  document.addEventListener('click',e=>{if(np.classList.contains('on')&&!np.classList.contains('mini')&&!np.contains(e.target)&&!(e.target.closest&&e.target.closest('#mucard,#smenu')))setMini(true)},true);
- addEventListener('scroll',()=>{if(np.classList.contains('on')&&!np.classList.contains('mini')&&Math.abs(scrollY-fullAtScroll)>60)setMini(true)},{passive:true});
+ addEventListener('scroll',()=>{if(MU.el){fullAtScroll=scrollY;return}if(np.classList.contains('on')&&!np.classList.contains('mini')&&Math.abs(scrollY-fullAtScroll)>60)setMini(true)},{passive:true});   /* never while the ♪ card is in use (a slider drag can nudge the page behind) */
 })();
 /* wiring */
 function wire(){if(view==='settings'&&!PL.list)plLoad().then(()=>{if(view==='settings')render()});document.querySelectorAll('.settings [data-pradd]').forEach(b=>b.onclick=()=>prPick(()=>{if(view==='settings')render()}));document.querySelectorAll('.settings [data-prrm]').forEach(b=>b.onclick=()=>{if(confirm(bkOn()?'Remove all prayer music from this phone and from your backup?':'Remove all prayer music from this phone?'))prRemoveAll().then(()=>mbRemoveAll().catch(()=>{})).then(()=>render())});document.querySelectorAll('.clearing [data-nk]').forEach(b=>b.onclick=e=>{e.stopPropagation();openSheet(b.dataset.nk,b.dataset.ns)});

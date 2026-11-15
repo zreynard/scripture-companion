@@ -593,7 +593,8 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
         PL.list = null; await plLoad(); window.__ser = URL.createObjectURL(wav(40, 440)); });
       const ID = 'c532d51fe14b';
       await X.evaluate(async ID => { I[ID].audio = __ser; I[ID].s = 0; play(ID, { full: true }); audio.pause(); await new Promise(r => setTimeout(r, 300)); bedSync(); }, ID); await wait(300);   // the stand-in recording, from its start
-      const boxes = () => X.evaluate(() => ['#pp', '#prv', '#nxt', '#bk', '#fw', '#seek', '#bedb', '#zz'].map(s => { const r = $(s).getBoundingClientRect(); return [s, Math.round(r.x), Math.round(r.y), Math.round(r.width), Math.round(r.height)].join(','); }).join(' '));
+      /* each control's place inside the player (its own scrolling left out): only the card opening could change these */
+      const boxes = () => X.evaluate(() => { const np = NP(), q = np.getBoundingClientRect(); return ['#pp', '#prv', '#nxt', '#bk', '#fw', '#seek', '#bedb', '#zz'].map(s => { const r = $(s).getBoundingClientRect(); return [s, Math.round(r.x - q.x + np.scrollLeft), Math.round(r.y - q.y + np.scrollTop), Math.round(r.width), Math.round(r.height)].join(','); }).join(' '); });
       const o = { btn: await X.evaluate(() => [!$('#bedb').hidden, $('#bedb').textContent]) };
       /* the button fully on screen first, as a person would have it before tapping: the player panel scrolled to it */
       o.inView = await X.evaluate(async () => { const b = $('#bedb'); for (let i = 0; i < 4; i++) { const r = b.getBoundingClientRect(); if (r.top >= 0 && r.bottom <= innerHeight - 8) return true;
@@ -603,7 +604,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       await X.evaluate(() => $('#bedb').click()); await wait(400);   // a tap where it is (the test's own click would scroll the player first)
       o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(), b = $('#bedb').getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded'), clear: r.bottom <= b.top || r.top >= b.bottom }; });
       { const b1 = await boxes(); o.moved = b0 === b1 ? false : b0.split(' ').filter((x, i) => x !== b1.split(' ')[i]).concat(['→'], b1.split(' ').filter((x, i) => x !== b0.split(' ')[i])); }
-      step = 'switch'; await X.click('#mcon'); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
+      step = 'switch'; await X.click('#mcon'); o.stillFull = await X.evaluate(() => !NP().classList.contains('mini') && !!$('#mucard')); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
       step = 'bedb click 1'; await X.click('#bedb'); o.again = await X.evaluate(() => !$('#mucard'));
       await X.evaluate(() => audio.play()); o.plays = await (async () => { for (let i = 0; i < 150; i++) { if (await X.evaluate(() => !audio.paused && !$('#bedm').paused)) return true; await wait(100); } return false; })();
       await X.evaluate(() => audio.pause()); await wait(3800); o.stops = await X.evaluate(() => $('#bedm').paused);
@@ -617,7 +618,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       step = 'bedb click 6'; await X.click('#bedb'); await wait(400); o.read = await X.evaluate(() => [$('#mucard').innerText.split('\n')[0], $('#mcon').checked, $('#bedb').textContent]);
       o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; } catch (e) { out[dev] = { failedAt: step, err: String(e).split('Call log:')[1] ? String(e).split('Call log:')[1].slice(0, 700) : String(e).slice(0, 300), geo: await X.evaluate(() => { const R = e => e ? (r => [Math.round(r.left), Math.round(r.top), Math.round(r.width), Math.round(r.height)])(e.getBoundingClientRect()) : null, b = $('#bedb'), r = b.getBoundingClientRect(), top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
         return { vp: [innerWidth, innerHeight], bedb: R(b), card: R($('#mucard')), at: top ? (top.id || String(top.className) || top.tagName) : null, mini: NP().classList.contains('mini') }; }).catch(x => String(x)) }; } await cc.close(); }
-    const ok = Object.values(out).every(o => !o.failedAt && o.inView && o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && o.card.clear && !o.card.chk && o.card.exp === 'true' && !o.moved
+    const ok = Object.values(out).every(o => !o.failedAt && o.inView && o.stillFull && o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && o.card.clear && !o.card.chk && o.card.exp === 'true' && !o.moved
       && o.saved[0] === true && o.saved[1] === false && o.saved[2] && !o.saved[3] && o.saved[4] === '♪ Music on' && o.saved[5] && o.full && o.again && o.plays && o.stops && o.esc && o.through[0] && o.through[1] && o.mini && o.other
       && o.read[0] === 'Music under the Bible reading' && o.read[1] === false && o.read[2] === '♪ Music off' && !o.errs.length);
     return ok || out; });
