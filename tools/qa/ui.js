@@ -595,6 +595,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       await X.evaluate(async ID => { I[ID].audio = __ser; I[ID].s = 0; play(ID, { full: true }); audio.pause(); await new Promise(r => setTimeout(r, 300)); bedSync(); }, ID); await wait(300);   // the stand-in recording, from its start
       const boxes = () => X.evaluate(() => ['#pp', '#prv', '#nxt', '#bk', '#fw', '#seek', '#bedb', '#zz'].map(s => { const r = $(s).getBoundingClientRect(); return [s, Math.round(r.x), Math.round(r.y), Math.round(r.width), Math.round(r.height)].join(','); }).join(' '));
       const o = { btn: await X.evaluate(() => [!$('#bedb').hidden, $('#bedb').textContent]) };
+      await X.evaluate(() => $('#bedb').scrollIntoView({ block: 'center' })); await wait(300);   // in view first: the test's click must not scroll the player (a tap never does)
       let b0 = await boxes(); for (let k = 0; k < 20; k++) { await wait(300); const n = await boxes(); if (n === b0) break; b0 = n; }   // the player settled (times, the file's state)
       await X.click('#bedb'); await wait(400);
       o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded') }; });
@@ -711,7 +712,8 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     o.bHas = await B.evaluate(async id => !!(await WFile.get(wSongs()[id].file[0].id)), id);
     await B.evaluate(id => { $('#tabs [data-tab2=worship]').click(); WS.song = id; WS.edit = null; render(); }, id); o.bPages = await pagesIn(B, '#wfpages'); o.bKept = await B.evaluate(async id => !!(await WFile.get(wSongs()[id].file[0].id)), id);
     await A.evaluate(id => { WS.edit = id; render(); }, id); await wait(200); await A.click('#wf-fdel'); await A.click('#wf-save');
-    for (let i = 0; i < 80; i++) { if (!Object.keys(repo).some(k => /^wfiles\/f/.test(k))) break; await wait(150); }
+    const idxN = () => repo['wfiles/index.json'] ? JSON.parse(Buffer.from(repo['wfiles/index.json'].content, 'base64').toString()).length : -1;
+    for (let i = 0; i < 120; i++) { if (!Object.keys(repo).some(k => /^wfiles\/f/.test(k)) && idxN() === 0) break; await wait(150); }   // the parts go first, then the list
     o.removed = { parts: Object.keys(repo).filter(k => /^wfiles\/f/.test(k)).length, idx: repo['wfiles/index.json'] ? JSON.parse(Buffer.from(repo['wfiles/index.json'].content, 'base64').toString()).length : 'no index', dels: R.dels, paths: Object.keys(repo), log: await A.evaluate(() => DIAG.a.filter(x => /chart/.test(JSON.stringify(x))).slice(-5)) };
     o.errs = A.e2.concat(B.e2).filter(m => !CUTOFF(m)); await A.context().close(); await B.context().close();
     return (o.up.idx.length === 1 && o.up.idx[0][0] === 'application/pdf' && o.up.idx[0][1] === 1 && o.up.part === 1 && !o.bHas && o.bPages === 2 && o.bKept && o.removed.parts === 0 && o.removed.idx === 0 && o.removed.dels >= 1 && !o.errs.length) || o; });
