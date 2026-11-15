@@ -597,7 +597,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       const o = { btn: await X.evaluate(() => [!$('#bedb').hidden, $('#bedb').textContent]) };
       await X.evaluate(() => $('#bedb').scrollIntoView({ block: 'center' })); await wait(300);   // in view first: the test's click must not scroll the player (a tap never does)
       let b0 = await boxes(); for (let k = 0; k < 20; k++) { await wait(300); const n = await boxes(); if (n === b0) break; b0 = n; }   // the player settled (times, the file's state)
-      await X.click('#bedb'); await wait(400);
+      await X.evaluate(() => $('#bedb').click()); await wait(400);   // a tap where it is (the test's own click would scroll the player first)
       o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded') }; });
       { const b1 = await boxes(); o.moved = b0 === b1 ? false : b0.split(' ').filter((x, i) => x !== b1.split(' ')[i]).concat(['→'], b1.split(' ').filter((x, i) => x !== b0.split(' ')[i])); }
       await X.click('#mcon'); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
