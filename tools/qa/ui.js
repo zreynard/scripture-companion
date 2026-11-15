@@ -604,7 +604,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       await X.evaluate(() => $('#bedb').click()); await wait(400);   // a tap where it is (the test's own click would scroll the player first)
       o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(), b = $('#bedb').getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded'), clear: r.bottom <= b.top || r.top >= b.bottom }; });
       { const b1 = await boxes(); o.moved = b0 === b1 ? false : b0.split(' ').filter((x, i) => x !== b1.split(' ')[i]).concat(['→'], b1.split(' ').filter((x, i) => x !== b0.split(' ')[i])); }
-      step = 'switch'; await X.click('#mcon'); o.stillFull = await X.evaluate(() => !NP().classList.contains('mini') && !!$('#mucard')); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
+      step = 'switch'; await X.evaluate(() => $('#mcon').click()); o.stillFull = await X.evaluate(() => !NP().classList.contains('mini') && !!$('#mucard')); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
       step = 'bedb click 1'; await X.click('#bedb'); o.again = await X.evaluate(() => !$('#mucard'));
       await X.evaluate(() => audio.play()); o.plays = await (async () => { for (let i = 0; i < 150; i++) { if (await X.evaluate(() => !audio.paused && !$('#bedm').paused)) return true; await wait(100); } return false; })();
       await X.evaluate(() => audio.pause()); await wait(3800); o.stops = await X.evaluate(() => $('#bedm').paused);
@@ -738,6 +738,23 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     await X.evaluate(() => { try { localStorage.setItem('scwp:view', 'lyrics'); } catch (e) { } });
     o.errs = e2.filter(m => !CUTOFF(m)); await cc.close();
     return (o.deck.file && o.deck.file[0].n === 'Lantern Road.pdf' && o.deck.json < 300 && !o.deck.buf && o.deck.only.join() === 'Only A File' && o.seg === 'lyrics,chords,file' && o.pages === 2 && o.next === 2 && !o.errs.length) || o; });
+  await T('U99 the full player on a small phone and turned sideways: it scrolls with a finger when taller than the screen, every control can be reached, and pulling down shrinks it only from the top (scrolled down, a pull scrolls back instead)', async () => {
+    const out = {};
+    for (const dev of ['iPhone SE', 'iPhone 14 landscape', 'iPhone 14']) { const cc = await b.newContext({ ...devices[dev] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500);
+      const o = await X.evaluate(async () => { const w = ms => new Promise(r => setTimeout(r, ms)), ID = 'c532d51fe14b'; play(ID, { full: true }); audio.pause(); await w(500); const np = NP();
+        const r = { touch: getComputedStyle(np).touchAction, tall: np.scrollHeight > np.clientHeight + 2, reach: {} };
+        np.scrollTop = np.scrollHeight; await w(200);
+        ['#pp', '#prv', '#nxt', '#spd', '#bedb', '#zz', '#seek', '#np-more'].forEach(s => { const e = $(s); if (!e || e.hidden || !e.offsetParent) return; const q = e.getBoundingClientRect(); np.scrollTop = 0; let ok = false;
+          for (let y = 0; y <= np.scrollHeight; y += 40) { np.scrollTop = y; const k = e.getBoundingClientRect(); if (k.top >= 0 && k.bottom <= innerHeight) { ok = true; break; } } r.reach[s] = ok; });
+        const T = (y) => new Touch({ identifier: 1, target: $('#np-art') || np, clientX: 120, clientY: y });
+        const pull = (y0, y1) => { const tg = $('#np-art') || np; tg.dispatchEvent(new TouchEvent('touchstart', { touches: [T(y0)], bubbles: true, cancelable: true })); tg.dispatchEvent(new TouchEvent('touchmove', { touches: [T(y1)], bubbles: true, cancelable: true })); tg.dispatchEvent(new TouchEvent('touchend', { touches: [], changedTouches: [T(y1)], bubbles: true, cancelable: true })); };
+        let canTouch = true; try { new Touch({ identifier: 1, target: np, clientX: 1, clientY: 1 }); } catch (e) { canTouch = false; }
+        if (canTouch) { if (r.tall) { np.scrollTop = 120; await w(100); pull(150, 300); await w(300); r.scrolledPull = np.classList.contains('mini'); }
+          np.scrollTop = 0; await w(100); pull(150, 320); await w(400); r.topPull = np.classList.contains('mini'); }
+        return r; });
+      o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; await cc.close(); }
+    const ok = Object.values(out).every(o => o.touch === 'pan-y' && Object.values(o.reach).every(Boolean) && Object.keys(o.reach).length >= 6 && (o.topPull === undefined || o.topPull === true) && (o.scrolledPull === undefined || o.scrolledPull === false) && !o.errs.length);
+    return ok || out; });
   await T('U45 no page errors anywhere', async () => { const e = errs.filter(m => !CUTOFF(m)); return e.length === 0 || e.slice(0, 6); });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

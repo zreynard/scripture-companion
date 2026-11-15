@@ -866,7 +866,7 @@ body.mapopen #sheet{z-index:24}
 #np .ctl button{background:none;border:0;color:var(--ink);font:inherit;font-size:15px;padding:10px}
 #np .ctl .big{width:64px;height:64px;border-radius:50%;background:var(--gold);color:#1b2440;font-size:26px}
 #np .grab{position:relative;cursor:grab}#np .grab::after{content:"";position:absolute;left:-80px;right:-80px;top:-14px;bottom:-12px}
-#np{touch-action:none}#np input[type=range]{touch-action:auto}
+#np{touch-action:none}#np:not(.mini){touch-action:pan-y;overscroll-behavior:contain}#np input[type=range]{touch-action:auto}
 #np:not(.mini){top:0;z-index:13;border-radius:0;display:flex;flex-direction:column;background:#f7f2e7;backdrop-filter:none;padding:calc(6px + env(safe-area-inset-top)) 26px calc(18px + env(safe-area-inset-bottom));overflow-y:auto}
 #np:not(.mini) .grab{display:none}
 #np .np-top{display:flex;align-items:center;justify-content:space-between;margin:2px -8px 0}
@@ -3770,14 +3770,18 @@ function corePaint(){const b=$('#np-core');if(b)b.hidden=true;return;   /* Make 
 function favPaint(){corePaint();const b=$('#np-fav');if(b)b.hidden=true;return;   /* the bookmark is no longer offered */
  if(!b)return;const it=I[cur],ok=it&&!it.nar&&!it.blob;b.hidden=!ok;const on=ok&&!!S.get('fav',{})[cur];b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.setAttribute('aria-label',on?'Saved: tap to remove':'Save this teaching')}
 function setMini(m){if(m)closeMusic();NP().classList.toggle('mini',m);if(!m)fullAtScroll=scrollY;roomForPlayer();if(!m&&NAR&&cur===NAR.id){narUser=0;readerFill(true);setTimeout(()=>narMark(true),60)}}
-(()=>{const np=NP();let y0=null,x0=0,dy=0,dx=0,tb=null,bx=0,by=0;
+(()=>{const np=NP();let y0=null,x0=0,dy=0,dx=0,tb=null,bx=0,by=0,top0=true;
  /* buttons act the moment the finger lifts: an iPhone can drop the click while the reader moves, and a button press never drags the player */
  np.addEventListener('touchstart',e=>{tb=e.target.closest('button');if(tb){bx=e.touches[0].clientX;by=e.touches[0].clientY}},{passive:true});
  np.addEventListener('touchmove',e=>{if(tb&&Math.hypot(e.touches[0].clientX-bx,e.touches[0].clientY-by)>12)tb=null},{passive:true});
  np.addEventListener('touchend',e=>{const b=tb;tb=null;if(!b||b.disabled)return;if(e.cancelable)e.preventDefault();b.click()});
  np.addEventListener('touchcancel',()=>{tb=null});
- np.addEventListener('touchstart',e=>{if(e.target.closest('input,button')||(e.target.closest('#np-read')&&!np.classList.contains('mini')))return;y0=e.touches[0].clientY;x0=e.touches[0].clientX;dy=0;dx=0;np.style.transition='none'},{passive:true});
- np.addEventListener('touchmove',e=>{if(y0===null)return;dy=e.touches[0].clientY-y0;dx=e.touches[0].clientX-x0;if(!np.classList.contains('mini')&&dy>0&&Math.abs(dy)>Math.abs(dx))np.style.transform=`translateY(${dy}px)`},{passive:true});
+ np.addEventListener('touchstart',e=>{if(e.target.closest('input,button')||(e.target.closest('#np-read')&&!np.classList.contains('mini')))return;y0=e.touches[0].clientY;x0=e.touches[0].clientX;dy=0;dx=0;top0=np.scrollTop<=0;np.style.transition='none'},{passive:true});
+ /* the full player scrolls with your finger when it is taller than the screen (a small phone, or turned sideways); pulling
+    down shrinks it only from the top, like an iPhone sheet */
+ np.addEventListener('touchmove',e=>{if(y0===null)return;dy=e.touches[0].clientY-y0;dx=e.touches[0].clientX-x0;const full=!np.classList.contains('mini');
+  if(full&&!(top0&&np.scrollTop<=0)){if(Math.abs(dy)>Math.abs(dx))dy=0;return}
+  if(full&&dy>0&&Math.abs(dy)>Math.abs(dx)){if(e.cancelable)e.preventDefault();np.style.transform=`translateY(${dy}px)`}},{passive:false});
  np.addEventListener('touchend',()=>{if(y0===null)return;np.style.transition='';np.style.transform='';y0=null;
   if(Math.abs(dx)>60&&Math.abs(dx)>2*Math.abs(dy)){np.dataset.swiped=Date.now();skipTrack(dx<0?1:-1);return}
   if(dy>50)setMini(true);else if(dy<-30)setMini(false)});
