@@ -583,7 +583,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     return ok || { shown, out, s: d.s }; });
   await T('U93 soaking music under a sermon: ♪ Music shows on every sermon; its card is "Music under sermons" with its own switch (kept apart from the Bible reading\'s) and the shared level; on, the music plays under the sermon and stops with it; the card floats (Play and the arrows never move), stays on screen on an iPhone SE, and closes on ♪ again, Escape, a tap elsewhere (which still works), shrinking the player and another recording', async () => {
     const out = {};
-    for (const dev of ['iPhone 14', 'iPhone SE']) { const cc = await b.newContext({ ...devices[dev] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500);
+    for (const dev of ['iPhone 14', 'iPhone SE']) { const cc = await b.newContext({ ...devices[dev] }); const X = await cc.newPage(); let step = 'open'; try { const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500);
       await X.evaluate(async () => { const wav = (sec, hz) => { const sr = 8000, n = sr * sec, buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf); const w = (o, s) => [...s].forEach((ch, i) => v.setUint8(o + i, ch.charCodeAt(0)));
           w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, sr, true); v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
           for (let i = 0; i < n; i++) v.setInt16(44 + i * 2, Math.sin(i / sr * 2 * Math.PI * hz) * 8000, true); return new Blob([buf], { type: 'audio/wav' }); };
@@ -603,20 +603,20 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       await X.evaluate(() => $('#bedb').click()); await wait(400);   // a tap where it is (the test's own click would scroll the player first)
       o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded') }; });
       { const b1 = await boxes(); o.moved = b0 === b1 ? false : b0.split(' ').filter((x, i) => x !== b1.split(' ')[i]).concat(['→'], b1.split(' ').filter((x, i) => x !== b0.split(' ')[i])); }
-      await X.click('#mcon'); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
-      await X.click('#bedb'); o.again = await X.evaluate(() => !$('#mucard'));
+      step = 'switch'; await X.click('#mcon'); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
+      step = 'bedb click 1'; await X.click('#bedb'); o.again = await X.evaluate(() => !$('#mucard'));
       await X.evaluate(() => audio.play()); o.plays = await (async () => { for (let i = 0; i < 150; i++) { if (await X.evaluate(() => !audio.paused && !$('#bedm').paused)) return true; await wait(100); } return false; })();
       await X.evaluate(() => audio.pause()); await wait(3800); o.stops = await X.evaluate(() => $('#bedm').paused);
-      await X.click('#bedb'); await wait(300); await X.keyboard.press('Escape'); o.esc = await X.evaluate(() => !$('#mucard'));
+      step = 'bedb click 2'; await X.click('#bedb'); await wait(300); await X.keyboard.press('Escape'); o.esc = await X.evaluate(() => !$('#mucard'));
       // a tap elsewhere closes it and still does what it touched (the "…" opens its menu)
-      await X.click('#bedb'); await wait(300); await X.click('#np-more'); await wait(200); o.through = await X.evaluate(() => [!$('#mucard'), !!$('#smenu')]); await X.click('#smenu [data-sm=copy]'); await wait(200); o.full = await X.evaluate(() => !NP().classList.contains('mini') && !!$('#mucard') === false);
-      await X.click('#bedb'); await wait(300); await X.evaluate(() => setMini(true)); o.mini = await X.evaluate(() => !$('#mucard')); await X.evaluate(() => setMini(false)); await wait(200);
-      await X.click('#bedb'); await wait(300); await X.evaluate(() => { play(Object.keys(I).find(k => canShare(k) && k !== 'c532d51fe14b'), { full: true }); audio.pause(); }); o.other = await X.evaluate(() => !$('#mucard'));
+      step = 'bedb click 3'; await X.click('#bedb'); await wait(300); step = 'menu'; await X.click('#np-more'); await wait(200); o.through = await X.evaluate(() => [!$('#mucard'), !!$('#smenu')]); await X.click('#smenu [data-sm=copy]'); await wait(200); o.full = await X.evaluate(() => !NP().classList.contains('mini') && !!$('#mucard') === false);
+      step = 'bedb click 4'; await X.click('#bedb'); await wait(300); await X.evaluate(() => setMini(true)); o.mini = await X.evaluate(() => !$('#mucard')); await X.evaluate(() => setMini(false)); await wait(200);
+      step = 'bedb click 5'; await X.click('#bedb'); await wait(300); await X.evaluate(() => { play(Object.keys(I).find(k => canShare(k) && k !== 'c532d51fe14b'), { full: true }); audio.pause(); }); o.other = await X.evaluate(() => !$('#mucard'));
       // the Bible reading keeps its own switch
       await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; setMini(false); bedSync(); }); await wait(300);
-      await X.click('#bedb'); await wait(400); o.read = await X.evaluate(() => [$('#mucard').innerText.split('\n')[0], $('#mcon').checked, $('#bedb').textContent]);
-      o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; await cc.close(); }
-    const ok = Object.values(out).every(o => o.inView && o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && !o.card.chk && o.card.exp === 'true' && !o.moved
+      step = 'bedb click 6'; await X.click('#bedb'); await wait(400); o.read = await X.evaluate(() => [$('#mucard').innerText.split('\n')[0], $('#mcon').checked, $('#bedb').textContent]);
+      o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; } catch (e) { out[dev] = { failedAt: step, err: String(e).slice(0, 200) }; } await cc.close(); }
+    const ok = Object.values(out).every(o => !o.failedAt && o.inView && o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && !o.card.chk && o.card.exp === 'true' && !o.moved
       && o.saved[0] === true && o.saved[1] === false && o.saved[2] && !o.saved[3] && o.saved[4] === '♪ Music on' && o.saved[5] && o.full && o.again && o.plays && o.stops && o.esc && o.through[0] && o.through[1] && o.mini && o.other
       && o.read[0] === 'Music under the Bible reading' && o.read[1] === false && o.read[2] === '♪ Music off' && !o.errs.length);
     return ok || out; });
@@ -652,6 +652,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
     return ok || o; });
   await T('U95 the music carries on after the narrator finishes (Bible reading music on) until something else plays; with the reading music off it stops', async () => {
     const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500); await seedMusicAndTones(X);
+    await X.mouse.click(5, 300); await wait(200);   // a real tap first: a phone starts sound only after one
     const run = async on => { await X.evaluate(on => { BED.on = on; BED.ser = false; BED.tail = false; const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; BBM = false; JM = false; audio.src = __tone; audio.play().catch(() => { }); bedSync(); }, on);
       for (let i = 0; i < 80 && on; i++) { if (await X.evaluate(() => !$('#bedm').paused)) break; await wait(100); }
       await X.evaluate(() => { audio.pause(); finished(); }); await wait(4500);   // the chapter is done; nothing else plays
