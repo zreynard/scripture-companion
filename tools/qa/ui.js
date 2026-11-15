@@ -601,7 +601,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
           const d = r.bottom - innerHeight + 60; if (s && s !== document.body) s.scrollTop += d; else window.scrollBy(0, d); await new Promise(z => setTimeout(z, 250)); } return false; });
       let b0 = await boxes(); for (let k = 0; k < 20; k++) { await wait(300); const n = await boxes(); if (n === b0) break; b0 = n; }   // the player settled (times, the file's state)
       await X.evaluate(() => $('#bedb').click()); await wait(400);   // a tap where it is (the test's own click would scroll the player first)
-      o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded') }; });
+      o.card = await X.evaluate(() => { const c = $('#mucard'); if (!c) return null; const r = c.getBoundingClientRect(), b = $('#bedb').getBoundingClientRect(); return { t: c.innerText.split('\n')[0], on: r.top >= 0 && r.left >= 0 && r.right <= innerWidth && r.bottom <= innerHeight, chk: $('#mcon').checked, exp: $('#bedb').getAttribute('aria-expanded'), clear: r.bottom <= b.top || r.top >= b.bottom }; });
       { const b1 = await boxes(); o.moved = b0 === b1 ? false : b0.split(' ').filter((x, i) => x !== b1.split(' ')[i]).concat(['→'], b1.split(' ').filter((x, i) => x !== b0.split(' ')[i])); }
       step = 'switch'; await X.click('#mcon'); await wait(200); o.saved = await X.evaluate(() => [S.get('bedser'), S.get('bedon', false), BED.ser, BED.on, $('#bedb').textContent, !NP().classList.contains('mini') && !!$('#mucard')]);
       step = 'bedb click 1'; await X.click('#bedb'); o.again = await X.evaluate(() => !$('#mucard'));
@@ -616,7 +616,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       await X.evaluate(() => { const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; setMini(false); bedSync(); }); await wait(300);
       step = 'bedb click 6'; await X.click('#bedb'); await wait(400); o.read = await X.evaluate(() => [$('#mucard').innerText.split('\n')[0], $('#mcon').checked, $('#bedb').textContent]);
       o.errs = e2.filter(m => !CUTOFF(m)); out[dev] = o; } catch (e) { out[dev] = { failedAt: step, err: String(e).slice(0, 200) }; } await cc.close(); }
-    const ok = Object.values(out).every(o => !o.failedAt && o.inView && o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && !o.card.chk && o.card.exp === 'true' && !o.moved
+    const ok = Object.values(out).every(o => !o.failedAt && o.inView && o.btn[0] && o.btn[1] === '♪ Music off' && o.card && o.card.t === 'Music under sermons' && o.card.on && o.card.clear && !o.card.chk && o.card.exp === 'true' && !o.moved
       && o.saved[0] === true && o.saved[1] === false && o.saved[2] && !o.saved[3] && o.saved[4] === '♪ Music on' && o.saved[5] && o.full && o.again && o.plays && o.stops && o.esc && o.through[0] && o.through[1] && o.mini && o.other
       && o.read[0] === 'Music under the Bible reading' && o.read[1] === false && o.read[2] === '♪ Music off' && !o.errs.length);
     return ok || out; });

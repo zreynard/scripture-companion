@@ -2968,10 +2968,12 @@ function muKind(){return bedNarr()?'read':'ser'}
 function muBtns(){const have=(PL.list||[]).length,lab=on=>'♪ Music'+(have?(on?' on':' off'):''),pb=$('#bedb');
  if(pb){const on=bedOn();pb.textContent=lab(on);pb.classList.toggle('on',on&&!!have)}document.querySelectorAll('[data-prmu]').forEach(b=>b.textContent=lab(BED.led))}
 function closeMusic(){if(!MU.el)return;MU.el.remove();if(MU.anchor)MU.anchor.setAttribute('aria-expanded','false');MU.el=MU.anchor=null}
-function muPlace(keep){const m=MU.el,a=MU.anchor;if(!m||!a)return;const r=a.getBoundingClientRect();if(!keep)MU.ay=r.top;const w=Math.min(330,innerWidth-28),h=m.offsetHeight;
+function muPlace(keep){const m=MU.el,a=MU.anchor;if(!m||!a)return;const r=a.getBoundingClientRect();if(!keep)MU.ay=r.top;const w=Math.min(330,innerWidth-28);m.style.width=w+'px';m.style.maxHeight='';const h=m.offsetHeight;   /* measured at its own width */
  const tb=$('#tabs'),np=NP(),lim=[innerHeight-10];if(tb&&getComputedStyle(tb).display!=='none'){const q=tb.getBoundingClientRect();if(q.height&&q.top<innerHeight)lim.push(q.top-8)}
  if(np&&np.classList.contains('on')&&np.classList.contains('mini')){const q=np.getBoundingClientRect();if(q.top<innerHeight)lim.push(q.top-8)}const bot=Math.min(...lim);
- const below=r.bottom+8+h<=bot,top=below?r.bottom+8:Math.max(10,r.top-8-h);m.style.width=w+'px';m.style.top=top+'px';
+ /* below the button if it fits, else above; where neither has room, the roomier side, the card no taller than that room (it scrolls inside): it never covers its own button */
+ const dn=bot-(r.bottom+8),up=r.top-8-10,below=h<=dn||(h>up&&dn>up),room=Math.max(90,below?dn:up),hh=Math.min(h,room);if(h>room)m.style.maxHeight=room+'px';
+ const top=below?r.bottom+8:r.top-8-hh;m.style.top=top+'px';
  m.style.left=Math.max(14,Math.min(innerWidth-14-w,r.left+r.width/2-w/2))+'px';m.style.transformOrigin=(below?'top':'bottom')+' center'}
 function musicCard(anchor,kind){const same=MU.el&&MU.anchor===anchor;closeMusic();if(same)return;
  const m=document.createElement('div');m.id='mucard';m.setAttribute('role','dialog');m.setAttribute('aria-label','Music');MU.el=m;MU.anchor=anchor;MU.kind=kind;MU.view=view;MU.mode=PR.mode;
