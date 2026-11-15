@@ -1,13 +1,17 @@
 // Scripture Companion service worker. Caches only the app itself so it opens offline;
 // sermon audio always streams from the publisher (never cached, never proxied).
 const CACHE = 'sc-v__VERSION__';
-const SHELL = ['./', 'index.html', 'worship.js', 'manifest.webmanifest', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
+const SHELL = ['./', 'index.html', 'worship.js', 'wfile.js', 'manifest.webmanifest', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
+// pdf.js, for the Worship chart files: its own cache, named by its version, so an app update never downloads it again
+const PDF = 'sc-pdf-4.10.38', PDF_FILES = ['pdf/pdf.min.mjs?v=4.10.38', 'pdf/pdf.worker.min.mjs?v=4.10.38'];
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL))
+    .then(() => caches.open(PDF).then(c => Promise.all(PDF_FILES.map(f => c.match(f).then(hit => hit || c.add(f).catch(() => {})))))) // a missing pdf.js never blocks the update
+    .then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys()
-    .then(ks => Promise.all(ks.filter(k => k.startsWith('sc-') && k !== CACHE && k !== 'sc-bible-1').map(k => caches.delete(k))))
+    .then(ks => Promise.all(ks.filter(k => k.startsWith('sc-') && k !== CACHE && k !== 'sc-bible-1' && k !== PDF).map(k => caches.delete(k))))
     .then(() => self.clients.claim()));
 });
 self.addEventListener('fetch', e => {
@@ -32,6 +36,10 @@ self.addEventListener('fetch', e => {
     e.respondWith(fetch(e.request, { cache: 'no-cache' }).then(r => {
       if (r.ok) { const copy = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); } return r;
     }).catch(() => caches.match(e.request)));
+    return;
+  }
+  if (u.pathname.includes('/pdf/')) {  // pdf.js: kept once downloaded, across app versions
+    e.respondWith(caches.open(PDF).then(c => c.match(e.request).then(r => r || fetch(e.request).then(res => { if (res.ok) c.put(e.request, res.clone()); return res; }))).catch(gone));
     return;
   }
   if (u.pathname.includes('/bible/')) {  // Bible books: kept once downloaded, across app versions
