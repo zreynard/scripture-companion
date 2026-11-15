@@ -656,10 +656,14 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
   await T('U95 the music carries on after the narrator finishes (Bible reading music on) until something else plays; with the reading music off it stops', async () => {
     const cc = await b.newContext({ ...devices['iPhone 14'] }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500); await seedMusicAndTones(X);
     await X.mouse.click(5, 300); await wait(200);   // a real tap first: a phone starts sound only after one
-    const run = async on => { await X.evaluate(on => { BED.on = on; BED.ser = false; BED.tail = false; const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; BBM = false; JM = false; audio.src = __tone; audio.play().catch(() => { }); bedSync(); }, on);
+    const run = async on => {   /* as a person does it: the reading in the full player, the ♪ card, its switch tapped (a tap is what lets music start) */
+      await X.evaluate(() => { BED.tail = false; BED.ser = false; const hb = D.books.find(x => x.name === 'Hebrews'), nid = narItem(hb, 12); NAR = { b: hb, c: 12, id: nid, m: [] }; cur = nid; BBM = false; JM = false; NP().classList.add('on'); setMini(false); audio.src = __tone; bedSync(); });
+      await wait(400); await X.evaluate(() => $('#bedb').scrollIntoView({ block: 'center' })); await X.click('#bedb', { force: true }); await wait(400);
+      if (await X.evaluate(() => $('#mcon').checked) !== on) await X.click('#mcon'); await X.keyboard.press('Escape');
+      await X.evaluate(() => audio.play().catch(() => { }));
       for (let i = 0; i < 80 && on; i++) { if (await X.evaluate(() => !$('#bedm').paused)) break; await wait(100); }
       await X.evaluate(() => { audio.pause(); finished(); }); await wait(4500);   // the chapter is done; nothing else plays
-      return X.evaluate(() => ({ music: !$('#bedm').paused, tail: BED.tail })); };
+      return X.evaluate(() => ({ music: !$('#bedm').paused, tail: BED.tail, on: BED.on })); };
     const o = {}; o.on = await run(true);
     await X.evaluate(() => { const id = Object.keys(I).find(k => I[k].audio && !I[k].nar && !I[k].intro); I[id].audio = __tone; I[id].s = 0; play(id, {}); }); await wait(4500); o.next = await X.evaluate(() => ({ music: !$('#bedm').paused, tail: BED.tail })); await X.evaluate(() => audio.pause());
     o.off = await run(false); o.errs = e2.filter(m => !CUTOFF(m)); o.log = await X.evaluate(() => JSON.parse(localStorage.getItem('sc:diag') || '[]').concat(DIAG.a).slice(-16).map(x => JSON.stringify(x).slice(0, 140)));   // the log moves to storage every second await cc.close();
