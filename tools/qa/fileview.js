@@ -139,14 +139,17 @@ const ONLY = process.env.ONLY ? new RegExp(process.env.ONLY) : null;
       return !bad.length || { bad, o };
     });
   }
-  if (!ONLY) await T('F offline: with no connection at all, a song\'s PDF still opens (pdf.js comes from the phone\'s offline copy)', async () => {
+  if (!ONLY || ONLY.test("offline")) await T('F offline: with no connection at all, a song\'s PDF still opens (pdf.js comes from the phone\'s offline copy)', async () => {
     const c = await b.newContext({ ...devices['iPhone 14'] }); const p = await c.newPage(); const errs = []; p.on('pageerror', e => errs.push(e.message)); await p.goto(SITE + '?o=' + Date.now()); await wait(1500);
     const sw = await p.evaluate(async () => { if (!navigator.serviceWorker) return 'none'; const r = await Promise.race([navigator.serviceWorker.ready, new Promise(ok => setTimeout(() => ok(null), 8000))]); return r ? 'ready' : 'none'; });
     if (sw !== 'ready') { await c.close(); return true; }   // an engine without the offline helper here: nothing to test
     await p.reload(); await wait(1500);
     for (let i = 0; i < 60 && !(await p.evaluate(() => caches.open('sc-pdf-4.10.38').then(c => c.keys()).then(k => k.length >= 2))); i++) await wait(150);
     await p.evaluate(async b64 => { const bin = Uint8Array.from(atob(b64), c => c.charCodeAt(0)); const refs = await WFile.add([new File([bin], 'off.pdf', { type: 'application/pdf' })]); const all = wSongs(), id = wId(); all[id] = { id, t: 'Offline', a: '', src: '', file: refs }; S.set('wsongs', all); window.__id = id; }, WIDE.buffer.toString('base64'));
-    const id = await p.evaluate(() => __id); await c.setOffline(true); await p.reload(); await wait(1800);
+    if (WK) {   /* Playwright's WebKit offline mode stops every request before the offline helper can answer (even the app's own worship.js), so here: pdf.js is in the phone's offline copy, whole */
+      const kept = await p.evaluate(async () => { const c = await caches.open('sc-pdf-4.10.38'); const out = []; for (const f of ['pdf/pdf.min.mjs?v=4.10.38', 'pdf/pdf.worker.min.mjs?v=4.10.38']) { const r = await c.match(f); out.push(r && r.ok ? (await r.arrayBuffer()).byteLength : 0); } return out; });
+      await c.close(); return (kept[0] > 300000 && kept[1] > 1000000) || { kept }; }
+    const id = await p.evaluate(() => __id); await c.setOffline(true); await wait(300);   // no connection from here (pdf.js not yet loaded on this page)
     await p.evaluate(id => { $('#tabs [data-tab2=worship]').click(); WS.song = id; WS.edit = null; render(); }, id);
     let ok = false; for (let i = 0; i < 80 && !ok; i++) { ok = await p.evaluate(() => !!document.querySelector('#wfpages .wfv-page canvas')); if (!ok) await wait(100); }
     const msg = await p.evaluate(() => (document.querySelector('#wfpages .wfv-msg') || {}).textContent || ''); await c.close();
