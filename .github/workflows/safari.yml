@@ -11,6 +11,11 @@ jobs:
         with:
           node-version: "22"
       - run: npm i --no-save playwright@1.63.0 >/dev/null && (timeout 240 npx playwright install --with-deps webkit >/dev/null || npx playwright install webkit >/dev/null)
+      - name: Wait until the published page and its version number agree (GitHub's cache can serve the old page for a few minutes after a deploy, and a fresh app reloads itself to the newer one mid-test)
+        run: |
+          U=https://zreynard.github.io/scripture-companion
+          for i in $(seq 1 90); do v=$(curl -s "$U/version.txt?$RANDOM"); p=$(curl -s "$U/index.html?$RANDOM" -H 'Cache-Control: no-cache' | grep -o 'APPV=[0-9]*' | head -1 | cut -d= -f2); a=$(curl -s "$U/" | grep -o 'APPV=[0-9]*' | head -1 | cut -d= -f2)
+            echo "version $v, page $p, plain $a"; [ -n "$v" ] && [ "$v" = "$p" ] && [ "$v" = "$a" ] && break; sleep 10; done
       - name: Pray, every scenario (published site)
         if: always()
         run: BROWSER=webkit SITE=https://zreynard.github.io/scripture-companion/ node tools/qa/pray.js
