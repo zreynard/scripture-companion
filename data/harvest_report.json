@@ -1,78 +1,78 @@
 {
-  "started": "2026-11-15T19:27:41.188552+00:00",
+  "started": "2026-11-16T19:38:04.442295+00:00",
   "sources": {
     "ptw": {
-      "count": 4387,
-      "seconds": 10.7
+      "count": 4388,
+      "seconds": 10.2
     },
     "platt_messages": {
       "count": 573,
-      "seconds": 0.8
+      "seconds": 0.5
     },
     "secret_church_podcast": {
       "count": 198,
-      "seconds": 0.9
+      "seconds": 0.6
     },
     "twr360": {
       "count": 43,
-      "seconds": 26.4
+      "seconds": 28.5
     },
     "2819_podcast": {
       "count": 149,
       "seconds": 0.3
     },
     "mclean": {
-      "count": 393,
-      "seconds": 5.5
+      "count": 397,
+      "seconds": 4.9
     },
     "street_preachers": {
       "count": 36,
       "seconds": 0.1
     },
     "davey_sermons": {
-      "count": 169,
-      "seconds": 2.9
+      "count": 171,
+      "seconds": 2.6
     },
     "davey_wfth": {
-      "count": 1158,
-      "seconds": 16.7
+      "count": 1160,
+      "seconds": 16.1
     },
     "davey_journey": {
-      "count": 1169,
-      "seconds": 14.3
+      "count": 1171,
+      "seconds": 13.8
     },
     "davey_archive": {
       "count": 368,
-      "seconds": 0.2
+      "seconds": 0.1
     },
     "brookhills": {
       "count": 59,
-      "seconds": 37.9
+      "seconds": 40.4
     },
     "brookhills_ia": {
       "count": 371,
-      "seconds": 1.8
+      "seconds": 1.5
     },
     "skip_archive": {
-      "count": 4134,
-      "seconds": 228.3
+      "count": 4135,
+      "seconds": 214.6
     },
     "skip_church": {
-      "count": 101,
-      "seconds": 0.6
+      "count": 102,
+      "seconds": 0.5
     },
     "skip_connect": {
-      "count": 1445,
-      "seconds": 1.7
+      "count": 1446,
+      "seconds": 1.4
     },
     "fearless": {
       "count": 11,
-      "seconds": 2.3
+      "seconds": 2.9
     },
     "harvest_memphis": {
-      "count": 268,
-      "seconds": 0.8
+      "count": 269,
+      "seconds": 0.3
     }
   },
-  "catalog_total": 12331
+  "catalog_total": 12340
 }
