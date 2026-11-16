@@ -779,7 +779,7 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
         return { text: p.textContent.trim(), label: p.getAttribute('aria-label'), onTop: !!mid && (mid === p || p.contains(mid)), inView: r.top >= 0 && r.bottom <= Math.min(innerHeight, tb.top) && r.left >= 0 && r.right <= innerWidth, h: Math.round(r.height + 4), clearOfPlayer: !npr || r.bottom <= npr.top || r.top >= npr.bottom }; });
       const o = { top: await pill() };
       await X.evaluate(async () => { play('c532d51fe14b', {}); audio.pause(); await new Promise(r => setTimeout(r, 400)); window.scrollTo(0, document.documentElement.scrollHeight); }); await wait(600);
-      o.bottom = await pill(); o.stuck = await X.evaluate(() => $('#wbar').classList.contains('stuck') && getComputedStyle($('#wbar .w-st2')).opacity);
+      o.bottom = await pill(); o.stuck = await X.evaluate(async () => { for (let i = 0; i < 20; i++) { const s = $('#wbar').classList.contains('stuck'), op = +getComputedStyle($('#wbar .w-st2')).opacity; if (s && (op > 0.5 || innerHeight <= 520)) return String(op); await new Promise(r => setTimeout(r, 100)); } return $('#wbar').classList.contains('stuck') && getComputedStyle($('#wbar .w-st2')).opacity; });   // after its fade-in
       o.over = await X.evaluate(() => document.documentElement.scrollWidth - innerWidth);
       await X.click('#wbar .w-plus'); await wait(300); o.opens = await X.evaluate(() => WS.edit === 'new' && !!$('#wf-t')); await X.evaluate(() => { WS.edit = null; render(); });
       await X.evaluate(() => { WS.pane = 'sets'; render(); window.scrollTo(0, 0); }); await wait(200); o.sets = await pill(); await X.click('#wbar .w-plus'); await wait(300); o.setOpens = await X.evaluate(() => !!WS.set && S.get('wsets', []).length === 1);
