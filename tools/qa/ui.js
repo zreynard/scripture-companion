@@ -770,6 +770,33 @@ const LONG = 'Verse 1\n' + verse(14, 'L') + '\n\nChorus\n' + verse(6, 'C') + '\n
       window.scrollTo(0, 900); await w(300); const app = !NP().classList.contains('mini');
       dispatchEvent(new WheelEvent('wheel', { deltaY: 400, bubbles: true })); window.scrollTo(0, 1500); await w(300); const you = NP().classList.contains('mini'); return { app, you }; });
     await cc.close(); return (r.app && !e2.filter(m => !CUTOFF(m)).length) || { r, e2 }; });   /* (on a phone the full player covers the page, so nothing of yours scrolls it; a scripted wheel is not reliable in every engine) */
+  await T('U101 adding is obvious and always within reach: the gold "+ Song" / "+ Setlist" stays at the top beside the tabs while you scroll (never under the mini player or tab bar, nothing off the edge, a 44-point target), the small title shows once the big one is gone, a search with no match offers to add it, the empty songbook leads with its button, and N adds on a computer', async () => {
+    const out = {}, NAMES = Array.from({ length: 40 }, (_, i) => 'Made-up song ' + String(i).padStart(2, '0'));
+    for (const [name, dev] of [['iPhone 14', devices['iPhone 14']], ['iPhone SE', devices['iPhone SE']], ['sideways', devices['iPhone 14 landscape']], ['iPad', devices['iPad Pro 11']], ['computer', { viewport: { width: 1280, height: 800 } }]]) {
+      const cc = await b.newContext({ ...dev }); const X = await cc.newPage(); const e2 = []; X.on('pageerror', e => e2.push(e.message)); await X.goto(SITE); await wait(1500);
+      await X.evaluate(N => { const m = {}; N.forEach((t, i) => m['s' + i] = { id: 's' + i, t, a: 'Test Band', key: 'G', src: 'Verse\nG\nline' }); S.set('wsongs', m); S.set('wsets', []); $('#tabs [data-tab2=worship]').click(); WS.pane = 'songs'; WS.q = ''; render(); window.scrollTo(0, 0); }, NAMES); await wait(400);
+      const pill = () => X.evaluate(() => { const p = document.querySelector('#wbar .w-plus'); if (!p) return null; const r = p.getBoundingClientRect(), tb = $('#tabs').getBoundingClientRect(), mid = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2), np = NP(), npr = np.classList.contains('on') ? np.getBoundingClientRect() : null;
+        return { text: p.textContent.trim(), label: p.getAttribute('aria-label'), onTop: !!mid && (mid === p || p.contains(mid)), inView: r.top >= 0 && r.bottom <= Math.min(innerHeight, tb.top) && r.left >= 0 && r.right <= innerWidth, h: Math.round(r.height + 4), clearOfPlayer: !npr || r.bottom <= npr.top || r.top >= npr.bottom }; });
+      const o = { top: await pill() };
+      await X.evaluate(async () => { play('c532d51fe14b', {}); audio.pause(); await new Promise(r => setTimeout(r, 400)); window.scrollTo(0, document.documentElement.scrollHeight); }); await wait(600);
+      o.bottom = await pill(); o.stuck = await X.evaluate(() => $('#wbar').classList.contains('stuck') && getComputedStyle($('#wbar .w-st2')).opacity);
+      o.over = await X.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+      await X.click('#wbar .w-plus'); await wait(300); o.opens = await X.evaluate(() => WS.edit === 'new' && !!$('#wf-t')); await X.evaluate(() => { WS.edit = null; render(); });
+      await X.evaluate(() => { WS.pane = 'sets'; render(); window.scrollTo(0, 0); }); await wait(200); o.sets = await pill(); await X.click('#wbar .w-plus'); await wait(300); o.setOpens = await X.evaluate(() => !!WS.set && S.get('wsets', []).length === 1);
+      // search: typing never flickers the bar; no match offers to add it
+      await X.evaluate(() => { WS.set = null; WS.pane = 'songs'; render(); window.scrollTo(0, 0); }); await wait(200);
+      const flips = await X.evaluate(async () => { let n = 0; const g0 = () => $('#wbar').classList.contains('stuck'); let s = g0(); const q = $('#wq'); for (const ch of 'zzq') { q.value += ch; q.dispatchEvent(new Event('input')); await new Promise(r => setTimeout(r, 60)); if (g0() !== s) { n++; s = g0(); } } return n; }); o.flips = flips;
+      o.none = await X.evaluate(() => { const b = document.querySelector('[data-wnewq]'); return b ? b.textContent.trim() : null; }); if (o.none) { await X.click('[data-wnewq]'); await wait(300); o.prefill = await X.evaluate(() => $('#wf-t') && $('#wf-t').value); }
+      // N on a computer
+      if (name === 'computer') { await X.evaluate(() => { WS.edit = null; WS.q = ''; WS.pane = 'songs'; render(); document.activeElement && document.activeElement.blur(); }); await X.keyboard.press('n'); await wait(300); o.key = await X.evaluate(() => WS.edit === 'new'); }
+      // the empty songbook
+      await X.evaluate(() => { WS.edit = null; WS.q = ''; S.set('wsongs', {}); S.set('wsets', []); WS.pane = 'songs'; render(); }); await wait(200);
+      o.empty = await X.evaluate(() => ({ hero: !!document.querySelector('.w-hero [data-wnew]'), text: (document.querySelector('.w-hero b') || {}).textContent }));
+      o.errs = e2.filter(m => !CUTOFF(m)); out[name] = o; await cc.close(); }
+    const good = p => p && p.onTop && p.inView && p.h >= 44 && p.clearOfPlayer;
+    const ok = Object.entries(out).every(([n, o]) => good(o.top) && good(o.bottom) && o.top.text === 'Song' && o.top.label === 'Add a song' && o.stuck && (n === 'sideways' || +o.stuck > 0.5) && o.over <= 1 && o.opens && good(o.sets) && o.sets.text === 'Setlist' && o.sets.label === 'New setlist' && o.setOpens
+      && o.flips === 0 && /Add “zzq” as a new song/.test(o.none || '') && o.prefill === 'zzq' && (n !== 'computer' || o.key) && o.empty.hero && o.empty.text === 'Your songbook is empty' && !o.errs.length);
+    return ok || out; });
   await T('U45 no page errors anywhere', async () => { const e = errs.filter(m => !CUTOFF(m)); return e.length === 0 || e.slice(0, 6); });
   const f = R.filter(r => !r[1].startsWith('PASS')).length; console.log(`\n${R.length - f}/${R.length} passed`); await b.close(); process.exit(f ? 1 : 0);
 })().catch(e => { console.log(R.map(r => r.join(' ')).join('\n')); console.error(e); process.exit(1); });

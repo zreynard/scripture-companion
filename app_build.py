@@ -944,6 +944,20 @@ body[data-v=pray] #np,body[data-v=worship] #np{display:none!important}
 .w-row{display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px;border-radius:16px;border:0;background:#fffdf8;box-shadow:0 3px 12px rgba(27,36,64,.06);text-align:left;color:var(--ink);cursor:pointer;font:inherit}
 .w-row span{flex:1;min-width:0}.w-row b{display:block;font-size:19px;font-weight:500}.w-row small{display:block;font-size:13px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.w-row i{font-style:normal;color:var(--gold2);font-size:22px}
 .w-empty{color:var(--mute);font-size:15px;line-height:1.5;margin:18px 4px}
+.w-bar{position:sticky;top:env(safe-area-inset-top);z-index:4;background:rgba(244,239,227,.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);margin:10px -20px 6px;padding:6px 20px 8px}
+.w-bar.stuck{border-bottom:1px solid rgba(27,36,64,.07)}
+.w-bar.stuck::before{content:'';position:absolute;left:0;right:0;bottom:100%;height:env(safe-area-inset-top);background:rgba(244,239,227,.96)}
+.w-st2{font-size:19px;line-height:1.2;color:var(--ink);height:0;opacity:0;overflow:hidden;transition:height .18s,opacity .18s,margin .18s}
+.w-bar.stuck .w-st2{height:24px;opacity:1;margin:0 0 6px}
+@media (max-height:520px){.w-bar.stuck .w-st2{height:0;opacity:0;margin:0}}
+.w-bar-r{display:flex;align-items:center;gap:8px}.w-bar .t-sort{flex:1;min-width:0;margin:0}
+.w-plus{flex:none;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:5px;height:40px;padding:0 15px 0 12px;border:0;border-radius:20px;background:#c9a24a;color:#1b2440;font:600 15px -apple-system,BlinkMacSystemFont,system-ui,sans-serif;white-space:nowrap;cursor:pointer;box-shadow:0 2px 8px rgba(150,110,30,.22);-webkit-tap-highlight-color:transparent}
+.w-plus::after{content:'';position:absolute;inset:-2px}.w-plus:active{background:#b8913c}.w-plus:focus-visible{outline:2px solid #1b2440;outline-offset:2px}
+body.wlist #topbar{opacity:0!important}
+.w-hero{margin:26px 0 10px;padding:26px 20px 22px;border-radius:20px;background:#fffdf8;border:1px solid rgba(27,36,64,.07);text-align:center}
+.w-hero b{display:block;font-size:22px;font-weight:500;color:var(--ink)}.w-hero p{margin:8px auto 16px;max-width:340px;color:var(--mute);font-size:15px;line-height:1.45}
+.w-heroB{height:50px;padding:0 22px;border-radius:25px;font-size:16px}
+.w-none{margin-top:6px}.w-none .w-btn{display:inline-flex;align-items:center;gap:6px}
 .wf-seg{margin:10px 0 8px}.wf-box{margin:4px 0 0}.wf-pages{max-width:900px;margin:0 auto}
 .wf-acts{display:flex;gap:8px;justify-content:center;margin:2px 0 10px}#wfpages .wfv-page{cursor:zoom-in}
 .wf-badge{font-style:normal;font-weight:700;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#7a5c1c;background:#f6ecd6;border-radius:6px;padding:1px 6px;margin-left:4px;vertical-align:1px}
@@ -2393,17 +2407,26 @@ function wPresent(items,name){const songs=wSongs(),list=items.map(it=>songs[it.i
  const sid=u(b.slice(0,12)),key=u(b.slice(12,28));{const old=S.get('wlive',null);if(old&&old.sid){const pv=(S.get('wprev',[])||[]).filter(x=>x&&x.sid!==old.sid&&Date.now()-x.at<8*24*3600e3);pv.unshift({sid:old.sid,key:old.key,at:Date.now()});S.set('wprev',pv.slice(0,4))}}S.set('wlive',{sid,key,at:Date.now(),last:Date.now(),go:Date.now(),name:name||list[0].t,deck:{name:name||'',set,songs:list.concat(rest)}});
  location.href='live/#s='+sid+'&k='+key+'&lead=1'}
 function wHead(t){return `<div class="jv wsp">${moreBtn()}<h1 class="jv-t" style="margin-top:6px">${t}</h1>`}
+function wList(){return view==='worship'&&!WS.edit&&!WS.song&&!WS.set}
+function wStuck(){const g=$('#wbar');if(!g)return;const t=document.querySelector('.wsp .jv-t'),top=parseFloat(getComputedStyle(g).top)||0;g.classList.toggle('stuck',!!t&&t.getBoundingClientRect().bottom<top+6)}
+addEventListener('scroll',()=>{if(wList())wStuck()},{passive:true});
+/* on a computer: N adds to the open tab (never while typing) */
+document.addEventListener('keydown',e=>{if(!wList()||e.metaKey||e.ctrlKey||e.altKey||(e.key!=='n'&&e.key!=='N'))return;const g=e.target;if(g&&(g.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(g.tagName)))return;const b=document.querySelector('#wbar .w-plus');if(b){e.preventDefault();b.click()}});
 function worshipView(){
  if(WS.edit)return wEditView();if(WS.song)return wSongView();if(WS.set)return wSetView();
- const live=wLive();let h=wHead('Worship')+`<div class="t-sort lib-seg" role="tablist" aria-label="Worship">${[['sets','Setlists'],['songs','Songs']].map(([v,l])=>`<button role="tab" data-wp="${v}" class="${WS.pane===v?'on':''}" aria-selected="${WS.pane===v}">${l}</button>`).join('')}</div>`;
+ const live=wLive(),PLUS='<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
+ /* the bar stays at the top while you scroll: the Setlists | Songs switch, and beside it the way to add to the open tab */
+ let h=wHead('Worship')+`<div class="w-bar" id="wbar"><div class="w-st2 serif" aria-hidden="true">Worship</div><div class="w-bar-r"><div class="t-sort lib-seg" role="tablist" aria-label="Worship">${[['sets','Setlists'],['songs','Songs']].map(([v,l])=>`<button role="tab" data-wp="${v}" class="${WS.pane===v?'on':''}" aria-selected="${WS.pane===v}">${l}</button>`).join('')}</div>`
+  +(WS.pane==='songs'?`<button class="w-plus" data-wnew aria-label="Add a song" title="Add a song (N)">${PLUS}<span>Song</span></button>`:`<button class="w-plus" data-wnewset aria-label="New setlist" title="New setlist (N)">${PLUS}<span>Setlist</span></button>`)+`</div></div>`;
  if(live)h+=`<a class="w-live" href="live/#s=${live.sid}&k=${live.key}&lead=1"><i></i><span><b>Live now</b><small>${esc(live.name||'')} · back to the presentation</small></span>${W_IC.play}</a>`;
  const songs=wSongs(),ids=Object.keys(songs).sort((a,b)=>songs[a].t.localeCompare(songs[b].t));
  if(WS.pane==='songs'){
   if(ids.length>8)h+=`<input class="w-q" id="wq" type="search" placeholder="Search your songs" value="${esc(WS.q)}">`;
   const q=WS.q.trim().toLowerCase(),show=ids.filter(id=>!q||(songs[id].t+' '+(songs[id].a||'')).toLowerCase().includes(q));
   h+=show.length?`<div class="w-list">${show.map(id=>{const s=songs[id];return `<button class="w-row" data-wsong="${id}"><span><b class="serif">${esc(s.t)}</b><small>${esc([s.a,wKeyOf(s)&&'Key '+wKeyOf(s)].filter(Boolean).join(' · '))}${(s.file||[]).length?` <em class="wf-badge">${esc(WFile.label(s.file))}</em>`:''}</small></span><i>›</i></button>`}).join('')}</div>`
-   :`<p class="w-empty">${ids.length?'No song matches.':'Your songbook is empty. Add a song by pasting its chord chart: chords above the words, or ChordPro.'}</p>`;
-  return h+`<button class="w-add" data-wnew>Add a song</button></div>`}
+   :ids.length?`<div class="w-none"><p class="w-empty">No song matches “${esc(WS.q.trim())}”.</p><button class="w-btn" data-wnewq>${PLUS}Add “${esc(WS.q.trim())}” as a new song</button></div>`
+   :`<div class="w-hero"><b class="serif">Your songbook is empty</b><p>Paste a chord chart (chords above the words, or ChordPro), or attach a PDF or photos of it.</p><button class="w-plus w-heroB" data-wnew>${PLUS}<span>Add your first song</span></button></div>`;
+  return h+'</div>'}
  const sets=wSets();
  const titles=st=>st.items.map(it=>(songs[it.id]||{}).t).filter(Boolean),g=wGroups(sets);
  const row=(st,past)=>`<button class="w-row${past?' w-pastrow':''}" data-wset="${st.id}"><span>${st.date?`<em class="w-when">${esc(wWhen(st))}</em>`:''}<b class="serif">${esc(st.name||'Untitled set')}</b><small>${st.items.length} song${st.items.length===1?'':'s'}${st.items.length?' · '+esc(titles(st).slice(0,3).join(', ')):''}</small></span><i>›</i></button>`;
@@ -2411,8 +2434,9 @@ function worshipView(){
  h+=sets.length?g.today.map(card).join('')+(g.upcoming.length?`<div class="w-grp">Coming up</div><div class="w-list">${g.upcoming.map(st=>row(st)).join('')}</div>`:'')
    +(g.saved.length?`${g.today.length||g.upcoming.length||g.past.length?'<div class="w-grp">Saved</div>':''}<div class="w-list">${g.saved.map(st=>row(st)).join('')}</div>`:'')
    +(g.past.length?`<button class="w-past" data-wpast aria-expanded="${WS.past}">Past sets · ${g.past.length} ${WS.past?'⌃':'⌄'}</button>${WS.past?`<div class="w-list">${g.past.map(st=>row(st,1)).join('')}</div>`:''}`:'')
-  :`<p class="w-empty">${ids.length?'Gather songs into a setlist for your next worship time.':'Start by adding songs in the Songs tab, then gather them into a setlist.'}</p>`;
- return h+`<button class="w-add" data-wnewset>New setlist</button></div>`}
+  :ids.length?`<div class="w-hero"><b class="serif">No setlists yet</b><p>Gather songs into a setlist for your next worship time.</p><button class="w-plus w-heroB" data-wnewset>${PLUS}<span>New setlist</span></button></div>`
+  :`<div class="w-hero"><b class="serif">No songs yet</b><p>Add songs first, then gather them into a setlist.</p><button class="w-plus w-heroB" data-wtosongs>${PLUS}<span>Add a song first</span></button></div>`;
+ return h+'</div>'}
 /* ---- chart files: a PDF or photos of the song, shown exactly as they are (site_extra/wfile.js keeps and draws them);
    the song holds only small references (s.file), which sync with the songbook; the files themselves go to your backup
    repo (wfiles/<id>/<part> and wfiles/index.json) and come back on a new phone ---- */
@@ -2505,7 +2529,7 @@ async function wsInbox(force){if(!bkOn()||wsInbox.busy||(!force&&Date.now()-(wsI
   const sets=wSets();(d.sets||[]).forEach(x=>{if(imp.has(x.id))return;imp.add(x.id);if(!sets.some(y=>y.id===x.id)){sets.unshift(Object.assign({},x,{items:x.items.filter(it=>songs[it.id])}));n++}});
   if(n){S.set('wsongs',songs);S.set('wsets',sets)}S.set('wimp',[...imp]);if(n&&view==='worship'){const y=scrollY;render();scrollTo(0,y)}}catch(e){}finally{wsInbox.busy=false}}
 setTimeout(()=>wsInbox(),4000);
-function wEditView(){const isNew=WS.edit==='new',s=isNew?{t:'',a:'',key:'',capo:0,am:'',notes:'',src:'',arr:''}:wSongs()[WS.edit];if(!s){WS.edit=null;return worshipView()}
+function wEditView(){const isNew=WS.edit==='new',s=isNew?{t:WS.newT||'',a:'',key:'',capo:0,am:'',notes:'',src:'',arr:''}:wSongs()[WS.edit];if(!s){WS.edit=null;return worshipView()}
  if(WS.efor!==WS.edit){WS.efor=WS.edit;WS.efile=(s.file||[]).slice();WS.enew=[]}
  const keys=[''].concat(Worship.KEYS_MAJ,Worship.KEYS_MIN);
  return `<div class="jv wsp"><button class="w-back" data-wcancel>${W_IC.back}${isNew?'Songs':'Back'}</button><h1 class="w-title serif">${isNew?'Add a song':'Edit song'}</h1>
@@ -2563,7 +2587,10 @@ function wireWorship(){wsInbox();wfSync();document.body.classList.toggle('wsong-
  document.querySelectorAll('[data-wset]').forEach(b=>b.onclick=()=>{WS.set=b.dataset.wset;render();scrollTo(0,0)});
  document.querySelectorAll('[data-wpast]').forEach(b=>b.onclick=()=>{WS.past=!WS.past;const y=scrollY;render();window.scrollTo(0,y)});
  document.querySelectorAll('[data-wback]').forEach(b=>b.onclick=()=>{if(WS.song){WS.song=null;if(WS.from){WS.set=WS.from;WS.from=null}}else WS.set=null;render();scrollTo(0,0)});
- document.querySelectorAll('[data-wnew]').forEach(b=>b.onclick=()=>{WS.edit='new';render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wnew]').forEach(b=>b.onclick=()=>{WS.newT='';WS.edit='new';render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wnewq]').forEach(b=>b.onclick=()=>{WS.newT=WS.q.trim();WS.q='';WS.edit='new';render();scrollTo(0,0)});
+ document.querySelectorAll('[data-wtosongs]').forEach(b=>b.onclick=()=>{WS.pane='songs';S.set('wpane','songs');WS.newT='';WS.edit='new';render();scrollTo(0,0)});
+ wStuck();
  document.querySelectorAll('[data-wedit]').forEach(b=>b.onclick=()=>{WS.edit=b.dataset.wedit;render();scrollTo(0,0)});
  document.querySelectorAll('[data-wcancel]').forEach(b=>b.onclick=()=>{wfDrop(WS.enew||[],true);WS.enew=[];WS.efor=null;WS.edit=null;render();scrollTo(0,0)});
  document.querySelectorAll('[data-wnewset]').forEach(b=>b.onclick=()=>{const st={id:wId(),name:'',items:[],date:wToday()};wSaveSet(st);WS.set=st.id;render();scrollTo(0,0);const n=$('#ws-name');if(n)n.focus()});
@@ -3335,7 +3362,7 @@ function render(){roomForPlayer();const m=$('#main');if(!render.boot){render.boo
   <div class="clearing" id="clearing"></div>
   <svg id="w2" viewBox="0 0 390 ${H}" preserveAspectRatio="xMidYMin meet"><use href="#scene"/></svg></div>`;
  decorate(w,first);wire();if(view==='journey'){m.insertAdjacentHTML('beforeend',hereCard());const ht=m.querySelector('[data-z2]');if(ht)ht.onclick=()=>setZoom('stop');const hp=$('#herep');if(hp)hp.onclick=()=>{jCont();render()}}}
-{const r0=render;render=function(){const x=r0.apply(this,arguments);try{muAfter()}catch(e){}return x}}
+{const r0=render;render=function(){const x=r0.apply(this,arguments);try{muAfter()}catch(e){}try{document.body.classList.toggle('wlist',wList())}catch(e){}return x}}
 function decorate(w,first){const road=$('#road'),svg=road.ownerSVGElement,L=road.getTotalLength(),POS=render.POS,TOT=render.TOT,at=i=>road.getPointAtLength(L*POS[Math.max(0,Math.min(w.length-1,Math.round(i)))]/TOT);
  // labels with collision avoidance: short books alternate sides and get pushed apart, with leader lines back to the road
  const labs=[];let lands='',idx=0,prevSide=null,prevShort=false;
