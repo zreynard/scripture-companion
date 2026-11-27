@@ -1,0 +1,41 @@
+CUTS AUDIT
+
+platt_messages            1 checked  errors   0  added-after-start   1  teaching-before-start   0  silent-after-start   0  added-before-end   0
+
+====================================================================================================
+platt_messages
+====================================================================================================
+
+## f23ce77be9ec | Distinct for the Father’s Glory | Platt | Matthew 5:13–16 | start 8.7s  end -8.3s  len 1167.0  (was +0 -0)  FLAGS {"added_after_start": ["give"]} 
+  [before]
+         0.4  You are listening to David Platt Messages, a weekly podcast with sermons and messages from pastor, author, and teacher David Platt.
+  [after]
+         9.0  If you have a Bible, and I hope you or somebody around you does you can look on with, let me invite you to open with me to Matthew chapter 5.
+        17.3  I have a lot of ground to cover in a little bit of time, so I'm going to dive right in.
+        21.8  Near the beginning of the most famous sermon in history, Jesus looks in the eyes of his followers in Matthew 5.13 and says, You are the salt of the earth.
+        37.0  But if salt has lost its taste, how shall its saltiness be restored?
+        43.6  It's no longer good for anything except to be thrown out and trampled under people's feet.
+        49.4  You are the light of the world.
+        52.2  A city set on a hill cannot be hidden.
+        55.4  Nor do people light a lamp and put it under a basket, but on a stand, and it gives light to all in the house.
+        61.6  In the same way, let your light shine before others, so that they may see your good works and give glory to your Father who is in heaven.
+        72.3  So think about what Jesus just said about the world and about us.
+        77.3  He just said two things about the world.
+        79.8  One, that the world is decaying.
+        83.7  One of Salt's primary purposes in a first century without refrigeration was to preserve meat to keep it from going bad, decaying.
+        91.9  And Jesus is saying, this world needs salt.
+        95.8  This world is decaying.
+        97.4  So don't be surprised when you see cultures in this world deteriorating.
+       103.1  Whether you're in first century Rome or 21st century America.
+       107.7  Now many in the world
+  [end_before]
+       -97.0  and knows, and you're accountable ultimately to him, not to them.
+       -90.0  And to bring it around full circle.
+       -88.0  This is what makes us a distinct otherworldly community.
+       -83.7  Our eyes are not fixed on what this world says about us because our eyes are fixed on what this world sees about God.
+       -70.7  We are not living for our name in any way.
+       -67.1  We are living for his name alone.
+       -64.7  We are living, we are laying down our lives in every specific way he calls each of us to, no matter what the cost may be, to show the world that God is good, that God is the father to the fatherless, that God is the defender of the weak, that God is the helper of the poor, that God is the protector of the oppressed, that God is the deliverer of the enslaved, that God is the savior of the world.
+       -35.2  So, church, based on the authority of Jesus Himself, I call you tonight to be who he says you are.
+       -26.0  You are a distinct, otherworldly community, radically committed to working for others' good intimacy with God for the glory of his name alone.
+       -11.8  May it be so.net.
